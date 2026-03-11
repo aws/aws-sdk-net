@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPullRequestStatusException
+        /// message.
+        /// </summary>
+        public InvalidPullRequestStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPullRequestStatusException with the specified error
         /// message.
         /// </summary>

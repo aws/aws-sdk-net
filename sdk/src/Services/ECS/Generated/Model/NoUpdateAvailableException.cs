@@ -41,6 +41,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for NoUpdateAvailableException
+        /// message.
+        /// </summary>
+        public NoUpdateAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoUpdateAvailableException with the specified error
         /// message.
         /// </summary>

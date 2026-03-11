@@ -32,13 +32,13 @@ namespace Amazon.PCS.Model
     /// <summary>
     /// Container for the parameters to the CreateComputeNodeGroup operation.
     /// Creates a managed set of compute nodes. You associate a compute node group with a
-    /// cluster through 1 or more Amazon Web Services PCS queues or as part of the login fleet.
-    /// A compute node group includes the definition of the compute properties and lifecycle
-    /// management. Amazon Web Services PCS uses the information you provide to this API action
-    /// to launch compute nodes in your account. You can only specify subnets in the same
-    /// Amazon VPC as your cluster. You receive billing charges for the compute nodes that
-    /// Amazon Web Services PCS launches in your account. You must already have a launch template
-    /// before you call this API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
+    /// cluster through 1 or more PCS queues or as part of the login fleet. A compute node
+    /// group includes the definition of the compute properties and lifecycle management.
+    /// PCS uses the information you provide to this API action to launch compute nodes in
+    /// your account. You can only specify subnets in the same Amazon VPC as your cluster.
+    /// You receive billing charges for the compute nodes that PCS launches in your account.
+    /// You must already have a launch template before you call this API. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
     /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide for Linux Instances</i>.
     /// </summary>
@@ -61,9 +61,9 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        ///  The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch
-        /// compute nodes (Amazon EC2 instances). If you don't provide this value, Amazon Web
-        /// Services PCS uses the AMI ID specified in the custom launch template.
+        ///  The ID of the Amazon Machine Image (AMI) that PCS uses to launch compute nodes (Amazon
+        /// EC2 instances). If you don't provide this value, PCS uses the AMI ID specified in
+        /// the custom launch template.
         /// </para>
         /// </summary>
         public string AmiId
@@ -161,22 +161,11 @@ namespace Amazon.PCS.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role
         /// when launching EC2 instances. The role contained in your instance profile must have
-        /// the <c>pcs:RegisterComputeNodeGroupInstance</c> permission. The resource identifier
-        /// of the ARN must start with <c>AWSPCS</c> or it must have <c>/aws-pcs/</c> in its path.
+        /// the <c>pcs:RegisterComputeNodeGroupInstance</c> permission and the role name must
+        /// start with <c>AWSPCS</c> or must have the path <c>/aws-pcs/</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM
+        /// instance profiles for PCS</a> in the <i>PCS User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>Examples</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</c> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IamInstanceProfileArn
@@ -194,8 +183,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property InstanceConfigs. 
         /// <para>
-        /// A list of EC2 instance configurations that Amazon Web Services PCS can provision in
-        /// the compute node group.
+        /// A list of EC2 instance configurations that PCS can provision in the compute node group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -219,9 +207,12 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property PurchaseOption. 
         /// <para>
-        /// Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS
-        /// supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
-        /// purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you
+        /// Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances,
+        /// Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon
+        /// EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using
+        /// Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you
         /// don't provide this option, it defaults to On-Demand.
         /// </para>
         /// </summary>

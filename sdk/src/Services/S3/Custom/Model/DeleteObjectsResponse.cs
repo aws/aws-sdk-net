@@ -25,15 +25,11 @@ namespace Amazon.S3.Model
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
-    public class DeleteObjectsResponse : AmazonWebServiceResponse, System.Runtime.Serialization.ISerializable
+    public partial class DeleteObjectsResponse : AmazonWebServiceResponse, System.Runtime.Serialization.ISerializable
 #else
-    public class DeleteObjectsResponse : AmazonWebServiceResponse
+    public partial class DeleteObjectsResponse : AmazonWebServiceResponse
 #endif
-
     {
-        private List<DeletedObject> deleted = AWSConfigs.InitializeCollections ? new List<DeletedObject>() : null;
-        private List<DeleteError> errors = AWSConfigs.InitializeCollections ? new List<DeleteError>() : null;
-        private RequestCharged requestCharged;
 
         /// <summary>
         /// A default constructor for DeleteObjectsResponse
@@ -42,56 +38,7 @@ namespace Amazon.S3.Model
         {
         }
 
-        /// <summary>
-        /// Gets and sets the DeletedObjects property.
-        /// A list of successful deletes.
-        /// Set only when Quiet=false on DeleteObjectsRequest.
-        /// </summary>
-        public List<DeletedObject> DeletedObjects
-        {
-            get { return this.deleted; }
-            set { this.deleted = value; }
-        }
 
-        // Check to see if Deleted property is set
-        internal bool IsSetDeletedObjects()
-        {
-            return this.deleted != null && (this.deleted.Count > 0 || !AWSConfigs.InitializeCollections);
-        }
-
-        /// <summary>
-        /// Gets and sets the DeleteErrors property.
-        /// A list of errors encountered while deleting objects.
-        /// </summary>
-        public List<DeleteError> DeleteErrors
-        {
-            get { return this.errors; }
-            set { this.errors = value; }
-        }
-
-        // Check to see if DeleteErrors property is set
-        internal bool IsSetDeleteErrors()
-        {
-            return this.errors != null && (this.errors.Count > 0 || !AWSConfigs.InitializeCollections);
-        }
-
-        /// <summary>
-        /// If present, indicates that the requester was successfully charged for the request.
-        /// </summary>
-        public RequestCharged RequestCharged
-        {
-            get { return this.requestCharged; }
-            set { this.requestCharged = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if RequestCharged is set.
-        /// </summary>
-        /// <returns>true, if RequestCharged property is set.</returns>
-        internal bool IsSetRequestCharged()
-        {
-            return requestCharged != null;
-        }
 
 #if !NETSTANDARD
         /// <summary>
@@ -103,9 +50,9 @@ namespace Amazon.S3.Model
         {
             if (info != null)
             {
-                this.deleted = (List<DeletedObject>)info.GetValue("deleted", typeof(List<DeletedObject>));
-                this.errors = (List<DeleteError>)info.GetValue("errors", typeof(List<DeleteError>));
-                this.requestCharged = RequestCharged.FindValue((string) info.GetValue("requestCharged", typeof(string)));
+                this._deletedObjects = (List<DeletedObject>)info.GetValue("deleted", typeof(List<DeletedObject>));
+                this._deleteErrors = (List<DeleteError>)info.GetValue("errors", typeof(List<DeleteError>));
+                this._requestCharged = RequestCharged.FindValue((string) info.GetValue("requestCharged", typeof(string)));
             }
         }
 
@@ -121,9 +68,9 @@ namespace Amazon.S3.Model
         {
             if (info != null)
             {
-                info.AddValue("deleted", deleted);
-                info.AddValue("errors", errors);
-                info.AddValue("requestCharged", (string) requestCharged);
+                info.AddValue("deleted", _deletedObjects);
+                info.AddValue("errors", _deleteErrors);
+                info.AddValue("requestCharged", (string) _requestCharged);
             }
         }
 #endif

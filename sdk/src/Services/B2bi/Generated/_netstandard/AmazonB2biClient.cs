@@ -286,7 +286,7 @@ namespace Amazon.B2bi
 
         internal virtual CreateCapabilityResponse CreateCapability(CreateCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapabilityResponseUnmarshaller.Instance;
 
@@ -332,11 +332,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
         public virtual Task<CreateCapabilityResponse> CreateCapabilityAsync(CreateCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapabilityResponseUnmarshaller.Instance;
 
@@ -348,7 +352,7 @@ namespace Amazon.B2bi
 
         internal virtual CreatePartnershipResponse CreatePartnership(CreatePartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnershipResponseUnmarshaller.Instance;
 
@@ -394,11 +398,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreatePartnership">REST API Reference for CreatePartnership Operation</seealso>
         public virtual Task<CreatePartnershipResponse> CreatePartnershipAsync(CreatePartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnershipResponseUnmarshaller.Instance;
 
@@ -410,7 +418,7 @@ namespace Amazon.B2bi
 
         internal virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -456,11 +464,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -472,7 +484,7 @@ namespace Amazon.B2bi
 
         internal virtual CreateStarterMappingTemplateResponse CreateStarterMappingTemplate(CreateStarterMappingTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStarterMappingTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStarterMappingTemplateResponseUnmarshaller.Instance;
 
@@ -524,11 +536,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">REST API Reference for CreateStarterMappingTemplate Operation</seealso>
         public virtual Task<CreateStarterMappingTemplateResponse> CreateStarterMappingTemplateAsync(CreateStarterMappingTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStarterMappingTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStarterMappingTemplateResponseUnmarshaller.Instance;
 
@@ -540,7 +556,7 @@ namespace Amazon.B2bi
 
         internal virtual CreateTransformerResponse CreateTransformer(CreateTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransformerResponseUnmarshaller.Instance;
 
@@ -621,11 +637,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateTransformer">REST API Reference for CreateTransformer Operation</seealso>
         public virtual Task<CreateTransformerResponse> CreateTransformerAsync(CreateTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransformerResponseUnmarshaller.Instance;
 
@@ -637,7 +657,7 @@ namespace Amazon.B2bi
 
         internal virtual DeleteCapabilityResponse DeleteCapability(DeleteCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapabilityResponseUnmarshaller.Instance;
 
@@ -677,11 +697,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
         public virtual Task<DeleteCapabilityResponse> DeleteCapabilityAsync(DeleteCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapabilityResponseUnmarshaller.Instance;
 
@@ -693,7 +717,7 @@ namespace Amazon.B2bi
 
         internal virtual DeletePartnershipResponse DeletePartnership(DeletePartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnershipResponseUnmarshaller.Instance;
 
@@ -733,11 +757,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeletePartnership">REST API Reference for DeletePartnership Operation</seealso>
         public virtual Task<DeletePartnershipResponse> DeletePartnershipAsync(DeletePartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnershipResponseUnmarshaller.Instance;
 
@@ -749,7 +777,7 @@ namespace Amazon.B2bi
 
         internal virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -789,11 +817,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -805,7 +837,7 @@ namespace Amazon.B2bi
 
         internal virtual DeleteTransformerResponse DeleteTransformer(DeleteTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransformerResponseUnmarshaller.Instance;
 
@@ -846,11 +878,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">REST API Reference for DeleteTransformer Operation</seealso>
         public virtual Task<DeleteTransformerResponse> DeleteTransformerAsync(DeleteTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransformerResponseUnmarshaller.Instance;
 
@@ -862,7 +898,7 @@ namespace Amazon.B2bi
 
         internal virtual GenerateMappingResponse GenerateMapping(GenerateMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMappingResponseUnmarshaller.Instance;
 
@@ -921,11 +957,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
         public virtual Task<GenerateMappingResponse> GenerateMappingAsync(GenerateMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMappingResponseUnmarshaller.Instance;
 
@@ -937,7 +977,7 @@ namespace Amazon.B2bi
 
         internal virtual GetCapabilityResponse GetCapability(GetCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapabilityResponseUnmarshaller.Instance;
 
@@ -973,11 +1013,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetCapability">REST API Reference for GetCapability Operation</seealso>
         public virtual Task<GetCapabilityResponse> GetCapabilityAsync(GetCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapabilityResponseUnmarshaller.Instance;
 
@@ -989,7 +1033,7 @@ namespace Amazon.B2bi
 
         internal virtual GetPartnershipResponse GetPartnership(GetPartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartnershipResponseUnmarshaller.Instance;
 
@@ -1026,11 +1070,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetPartnership">REST API Reference for GetPartnership Operation</seealso>
         public virtual Task<GetPartnershipResponse> GetPartnershipAsync(GetPartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartnershipResponseUnmarshaller.Instance;
 
@@ -1042,7 +1090,7 @@ namespace Amazon.B2bi
 
         internal virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -1078,11 +1126,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -1094,7 +1146,7 @@ namespace Amazon.B2bi
 
         internal virtual GetTransformerResponse GetTransformer(GetTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerResponseUnmarshaller.Instance;
 
@@ -1132,11 +1184,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformer">REST API Reference for GetTransformer Operation</seealso>
         public virtual Task<GetTransformerResponse> GetTransformerAsync(GetTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerResponseUnmarshaller.Instance;
 
@@ -1148,7 +1204,7 @@ namespace Amazon.B2bi
 
         internal virtual GetTransformerJobResponse GetTransformerJob(GetTransformerJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerJobResponseUnmarshaller.Instance;
 
@@ -1192,11 +1248,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformerJob">REST API Reference for GetTransformerJob Operation</seealso>
         public virtual Task<GetTransformerJobResponse> GetTransformerJobAsync(GetTransformerJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerJobResponseUnmarshaller.Instance;
 
@@ -1208,7 +1268,7 @@ namespace Amazon.B2bi
 
         internal virtual ListCapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapabilitiesResponseUnmarshaller.Instance;
 
@@ -1241,11 +1301,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         public virtual Task<ListCapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapabilitiesResponseUnmarshaller.Instance;
 
@@ -1257,7 +1321,7 @@ namespace Amazon.B2bi
 
         internal virtual ListPartnershipsResponse ListPartnerships(ListPartnershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnershipsResponseUnmarshaller.Instance;
 
@@ -1294,11 +1358,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListPartnerships">REST API Reference for ListPartnerships Operation</seealso>
         public virtual Task<ListPartnershipsResponse> ListPartnershipsAsync(ListPartnershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnershipsResponseUnmarshaller.Instance;
 
@@ -1310,7 +1378,7 @@ namespace Amazon.B2bi
 
         internal virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1343,11 +1411,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1359,7 +1431,7 @@ namespace Amazon.B2bi
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1388,11 +1460,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1404,7 +1480,7 @@ namespace Amazon.B2bi
 
         internal virtual ListTransformersResponse ListTransformers(ListTransformersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransformersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransformersResponseUnmarshaller.Instance;
 
@@ -1437,11 +1513,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         public virtual Task<ListTransformersResponse> ListTransformersAsync(ListTransformersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransformersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransformersResponseUnmarshaller.Instance;
 
@@ -1453,7 +1533,7 @@ namespace Amazon.B2bi
 
         internal virtual StartTransformerJobResponse StartTransformerJob(StartTransformerJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTransformerJobResponseUnmarshaller.Instance;
 
@@ -1508,11 +1588,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/StartTransformerJob">REST API Reference for StartTransformerJob Operation</seealso>
         public virtual Task<StartTransformerJobResponse> StartTransformerJobAsync(StartTransformerJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTransformerJobResponseUnmarshaller.Instance;
 
@@ -1524,7 +1608,7 @@ namespace Amazon.B2bi
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1562,11 +1646,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1578,7 +1666,7 @@ namespace Amazon.B2bi
 
         internal virtual TestConversionResponse TestConversion(TestConversionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConversionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConversionResponseUnmarshaller.Instance;
 
@@ -1615,11 +1703,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">REST API Reference for TestConversion Operation</seealso>
         public virtual Task<TestConversionResponse> TestConversionAsync(TestConversionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConversionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConversionResponseUnmarshaller.Instance;
 
@@ -1631,7 +1723,7 @@ namespace Amazon.B2bi
 
         internal virtual TestMappingResponse TestMapping(TestMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestMappingResponseUnmarshaller.Instance;
 
@@ -1668,11 +1760,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestMapping">REST API Reference for TestMapping Operation</seealso>
         public virtual Task<TestMappingResponse> TestMappingAsync(TestMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestMappingResponseUnmarshaller.Instance;
 
@@ -1684,7 +1780,7 @@ namespace Amazon.B2bi
 
         internal virtual TestParsingResponse TestParsing(TestParsingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestParsingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestParsingResponseUnmarshaller.Instance;
 
@@ -1720,11 +1816,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestParsing">REST API Reference for TestParsing Operation</seealso>
         public virtual Task<TestParsingResponse> TestParsingAsync(TestParsingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestParsingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestParsingResponseUnmarshaller.Instance;
 
@@ -1736,7 +1836,7 @@ namespace Amazon.B2bi
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1766,11 +1866,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1782,7 +1886,7 @@ namespace Amazon.B2bi
 
         internal virtual UpdateCapabilityResponse UpdateCapability(UpdateCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapabilityResponseUnmarshaller.Instance;
 
@@ -1828,11 +1932,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
         public virtual Task<UpdateCapabilityResponse> UpdateCapabilityAsync(UpdateCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapabilityResponseUnmarshaller.Instance;
 
@@ -1844,7 +1952,7 @@ namespace Amazon.B2bi
 
         internal virtual UpdatePartnershipResponse UpdatePartnership(UpdatePartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartnershipResponseUnmarshaller.Instance;
 
@@ -1890,11 +1998,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdatePartnership">REST API Reference for UpdatePartnership Operation</seealso>
         public virtual Task<UpdatePartnershipResponse> UpdatePartnershipAsync(UpdatePartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartnershipResponseUnmarshaller.Instance;
 
@@ -1906,7 +2018,7 @@ namespace Amazon.B2bi
 
         internal virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -1951,11 +2063,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -1967,7 +2083,7 @@ namespace Amazon.B2bi
 
         internal virtual UpdateTransformerResponse UpdateTransformer(UpdateTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTransformerResponseUnmarshaller.Instance;
 
@@ -2014,11 +2130,15 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateTransformer">REST API Reference for UpdateTransformer Operation</seealso>
         public virtual Task<UpdateTransformerResponse> UpdateTransformerAsync(UpdateTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTransformerResponseUnmarshaller.Instance;
 

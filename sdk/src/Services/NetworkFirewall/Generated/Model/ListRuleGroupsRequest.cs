@@ -41,6 +41,7 @@ namespace Amazon.NetworkFirewall.Model
         private int? _maxResults;
         private string _nextToken;
         private ResourceManagedStatus _scope;
+        private SubscriptionStatus _subscriptionStatus;
         private RuleGroupType _type;
 
         /// <summary>
@@ -123,6 +124,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionStatus. 
+        /// <para>
+        /// Filters the results to show only rule groups with the specified subscription status.
+        /// Use this to find subscribed or unsubscribed rule groups.
+        /// </para>
+        /// </summary>
+        public SubscriptionStatus SubscriptionStatus
+        {
+            get { return this._subscriptionStatus; }
+            set { this._subscriptionStatus = value; }
+        }
+
+        // Check to see if SubscriptionStatus property is set
+        internal bool IsSetSubscriptionStatus()
+        {
+            return this._subscriptionStatus != null;
         }
 
         /// <summary>

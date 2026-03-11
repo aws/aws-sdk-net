@@ -197,6 +197,7 @@ namespace Amazon.RDS.Model
         /// The current value of the option setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

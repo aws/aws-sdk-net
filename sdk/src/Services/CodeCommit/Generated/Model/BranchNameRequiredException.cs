@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for BranchNameRequiredException
+        /// message.
+        /// </summary>
+        public BranchNameRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BranchNameRequiredException with the specified error
         /// message.
         /// </summary>

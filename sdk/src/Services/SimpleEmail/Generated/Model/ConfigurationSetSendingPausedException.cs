@@ -45,6 +45,13 @@ namespace Amazon.SimpleEmail.Model
         private string _configurationSetName;
 
         /// <summary>
+        /// Default constructor for ConfigurationSetSendingPausedException
+        /// message.
+        /// </summary>
+        public ConfigurationSetSendingPausedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConfigurationSetSendingPausedException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     {
         private string _intent;
         private string _intentId;
+        private RelevanceLevel _relevanceLevel;
 
         /// <summary>
         /// Gets and sets the property Intent. 
@@ -73,6 +74,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetIntentId()
         {
             return this._intentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelevanceLevel. 
+        /// <para>
+        /// The relevance level of the detected intent.
+        /// </para>
+        /// </summary>
+        public RelevanceLevel RelevanceLevel
+        {
+            get { return this._relevanceLevel; }
+            set { this._relevanceLevel = value; }
+        }
+
+        // Check to see if RelevanceLevel property is set
+        internal bool IsSetRelevanceLevel()
+        {
+            return this._relevanceLevel != null;
         }
 
     }

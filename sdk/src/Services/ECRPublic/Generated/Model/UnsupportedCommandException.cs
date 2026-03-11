@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedCommandException
+        /// message.
+        /// </summary>
+        public UnsupportedCommandException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedCommandException with the specified error
         /// message.
         /// </summary>

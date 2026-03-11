@@ -44,12 +44,14 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _ebsRootVolumeSize;
         private int? _ebsRootVolumeThroughput;
         private Ec2InstanceAttributes _ec2InstanceAttributes;
+        private bool? _extendedSupport;
         private string _id;
         private InstanceCollectionType _instanceCollectionType;
         private KerberosAttributes _kerberosAttributes;
         private string _logEncryptionKmsKeyId;
         private string _logUri;
         private string _masterPublicDnsName;
+        private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
         private int? _normalizedInstanceHours;
         private string _osReleaseLabel;
@@ -272,6 +274,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendedSupport. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public bool? ExtendedSupport
+        {
+            get { return this._extendedSupport; }
+            set { this._extendedSupport = value; }
+        }
+
+        // Check to see if ExtendedSupport property is set
+        internal bool IsSetExtendedSupport()
+        {
+            return this._extendedSupport.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the cluster.
@@ -388,6 +408,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetMasterPublicDnsName()
         {
             return this._masterPublicDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// Contains Cloudwatch log configuration metadata and settings.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
         }
 
         /// <summary>

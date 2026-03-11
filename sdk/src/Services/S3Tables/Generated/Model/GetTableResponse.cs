@@ -38,6 +38,7 @@ namespace Amazon.S3Tables.Model
         private string _createdBy;
         private OpenTableFormat _format;
         private string _managedByService;
+        private ManagedTableInformation _managedTableInformation;
         private string _metadataLocation;
         private DateTime? _modifiedAt;
         private string _modifiedBy;
@@ -124,6 +125,25 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetManagedByService()
         {
             return this._managedByService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedTableInformation. 
+        /// <para>
+        /// If this table is managed by S3 Tables, contains additional information such as replication
+        /// details.
+        /// </para>
+        /// </summary>
+        public ManagedTableInformation ManagedTableInformation
+        {
+            get { return this._managedTableInformation; }
+            set { this._managedTableInformation = value; }
+        }
+
+        // Check to see if ManagedTableInformation property is set
+        internal bool IsSetManagedTableInformation()
+        {
+            return this._managedTableInformation != null;
         }
 
         /// <summary>

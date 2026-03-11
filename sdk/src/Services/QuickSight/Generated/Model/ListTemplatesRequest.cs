@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTemplates operation.
-    /// Lists all the templates in the current Amazon QuickSight account.
+    /// Lists all the templates in the current Amazon Quick Sight account.
     /// </summary>
     public partial class ListTemplatesRequest : AmazonQuickSightRequest
     {

@@ -137,6 +137,22 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Status);
             }
 
+            if(publicRequest.IsSetTagPropagationConfigurations())
+            {
+                context.Writer.WritePropertyName("tagPropagationConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagPropagationConfigurationsListValue in publicRequest.TagPropagationConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagPropagationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagPropagationConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

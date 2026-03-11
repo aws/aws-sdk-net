@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkloadAccessToken operation.
-    /// Obtains an Workload access token for agentic workloads not acting on behalf of user.
+    /// Obtains a workload access token for agentic workloads not acting on behalf of a user.
     /// </summary>
     public partial class GetWorkloadAccessTokenRequest : AmazonBedrockAgentCoreRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadName. 
         /// <para>
-        /// Unique identifier for the registered agent
+        /// The unique identifier for the registered workload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]

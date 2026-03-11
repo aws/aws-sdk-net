@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for TransactionConflictException
+        /// message.
+        /// </summary>
+        public TransactionConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransactionConflictException with the specified error
         /// message.
         /// </summary>

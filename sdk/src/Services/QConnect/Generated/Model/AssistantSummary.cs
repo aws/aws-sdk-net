@@ -41,6 +41,7 @@ namespace Amazon.QConnect.Model
         private string _description;
         private AssistantIntegrationConfiguration _integrationConfiguration;
         private string _name;
+        private List<OrchestratorConfigurationEntry> _orchestratorConfigurationList = AWSConfigs.InitializeCollections ? new List<OrchestratorConfigurationEntry>() : null;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private AssistantStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -180,6 +181,29 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestratorConfigurationList. 
+        /// <para>
+        /// The list of orchestrator configurations for the assistant.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<OrchestratorConfigurationEntry> OrchestratorConfigurationList
+        {
+            get { return this._orchestratorConfigurationList; }
+            set { this._orchestratorConfigurationList = value; }
+        }
+
+        // Check to see if OrchestratorConfigurationList property is set
+        internal bool IsSetOrchestratorConfigurationList()
+        {
+            return this._orchestratorConfigurationList != null && (this._orchestratorConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

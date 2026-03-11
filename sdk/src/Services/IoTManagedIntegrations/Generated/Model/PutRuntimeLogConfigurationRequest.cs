@@ -31,8 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRuntimeLogConfiguration operation.
-    /// Set the runtime log configuration for a specific managed thing or for all managed
-    /// things as a group.
+    /// Set the runtime log configuration for a specific managed thing.
     /// </summary>
     public partial class PutRuntimeLogConfigurationRequest : AmazonIoTManagedIntegrationsRequest
     {

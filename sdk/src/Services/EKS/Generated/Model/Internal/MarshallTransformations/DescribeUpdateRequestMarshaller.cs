@@ -72,6 +72,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAddonName())
                 request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
             
+            if (publicRequest.IsSetCapabilityName())
+                request.Parameters.Add("capabilityName", StringUtils.FromString(publicRequest.CapabilityName));
+            
             if (publicRequest.IsSetNodegroupName())
                 request.Parameters.Add("nodegroupName", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/updates/{updateId}";

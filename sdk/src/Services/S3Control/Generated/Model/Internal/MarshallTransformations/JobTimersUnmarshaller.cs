@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobTimers Object
     /// </summary>  
-    public class JobTimersUnmarshaller : IXmlUnmarshaller<JobTimers, XmlUnmarshallerContext>
+    public partial class JobTimersUnmarshaller : IXmlUnmarshaller<JobTimers, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ElapsedTimeInActiveSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, JobTimers unmarshalledObject, int targetDepth);
+
         private static JobTimersUnmarshaller _instance = new JobTimersUnmarshaller();        
 
         /// <summary>

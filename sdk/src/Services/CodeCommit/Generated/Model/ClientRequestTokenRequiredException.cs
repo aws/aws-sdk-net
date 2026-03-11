@@ -43,6 +43,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ClientRequestTokenRequiredException
+        /// message.
+        /// </summary>
+        public ClientRequestTokenRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClientRequestTokenRequiredException with the specified error
         /// message.
         /// </summary>

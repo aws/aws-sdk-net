@@ -41,8 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS generated ID for the data store from which files are being exported for an
-        /// export job.
+        /// The data store identifier from which files are being exported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -61,7 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The AWS generated ID for an export job.
+        /// The export job identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -80,8 +79,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED,
-        /// or FAILED.
+        /// The export job status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

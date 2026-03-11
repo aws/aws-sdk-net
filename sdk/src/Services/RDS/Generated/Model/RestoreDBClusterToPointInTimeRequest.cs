@@ -63,6 +63,7 @@ namespace Amazon.RDS.Model
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonRDSRequest
     {
         private long? _backtrackWindow;
+        private int? _backupRetentionPeriod;
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbClusterInstanceClass;
@@ -85,6 +86,7 @@ namespace Amazon.RDS.Model
         private string _performanceInsightsKMSKeyId;
         private int? _performanceInsightsRetentionPeriod;
         private int? _port;
+        private string _preferredBackupWindow;
         private bool? _publiclyAccessible;
         private RdsCustomClusterConfiguration _rdsCustomClusterConfiguration;
         private DateTime? _restoreToTime;
@@ -95,6 +97,7 @@ namespace Amazon.RDS.Model
         private string _sourceDbClusterResourceId;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private bool? _useLatestRestorableTime;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -131,6 +134,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetBacktrackWindow()
         {
             return this._backtrackWindow.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days for which automated backups are retained. Specify a minimum value
+        /// of <c>1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a value from 1 to 35.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int? BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod; }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
         }
 
         /// <summary>
@@ -897,6 +936,56 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, using the <c>BackupRetentionPeriod</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is a 30-minute window selected at random from an 8-hour block of time
+        /// for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+        /// Backup window</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be in Universal Coordinated Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
         /// Specifies whether the DB cluster is publicly accessible.
@@ -1212,6 +1301,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to resources associated with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>cluster-auto-backup</c> - The DB cluster's automated backup.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

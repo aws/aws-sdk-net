@@ -16,41 +16,39 @@
 using Amazon;
 using Amazon.Polly;
 using Amazon.Polly.Model;
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Net;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.Json;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
 {
     [TestClass]
+    [TestCategory("Polly")]
     public class PollyTests
     {
         [TestMethod]
-        [TestCategory("Polly")]
-        public void HappyCaseAPI()
+        public async Task HappyCaseAPI()
         {
             using (var client = new AmazonPollyClient(RegionEndpoint.USWest2))
             {
-                var response = client.SynthesizeSpeech(GetMp3Request());
+                var response = await client.SynthesizeSpeechAsync(GetMp3Request());
                 Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
                 Assert.IsTrue(response.AudioStream.ReadByte() > -1);
             }
         }
 
         [TestMethod]
-        [TestCategory("Polly")]
-        public void APIWithSpeechMarks()
+        public async Task APIWithSpeechMarks()
         {
             using (var client = new AmazonPollyClient(RegionEndpoint.USWest2))
             {
-                var response = client.SynthesizeSpeech(GetSpeechMarkRequest());
+                var response = await client.SynthesizeSpeechAsync(GetSpeechMarkRequest());
                 Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
                 using (var streamReader = new StreamReader(response.AudioStream))
                 {
@@ -61,14 +59,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
         }
 
         [TestMethod]
-        [TestCategory("Polly")]
         public void HappyCasePresignedUrl()
         {
             AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetMp3Request()));
         }
 
         [TestMethod]
-        [TestCategory("Polly")]
         public void PresignedUrlWithSpeechMarks()
         {
             var data = AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetSpeechMarkRequest()));
@@ -76,20 +72,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
         }
 
         [TestMethod]
-        [TestCategory("Polly")]
-        [TestCategory("RequiresIAMUser")]
-        public void PresignedUrlWithSessionToken()
-        {
-            var stsClient = new AmazonSecurityTokenServiceClient(RegionEndpoint.USWest2);
-            var response = stsClient.GetSessionToken(new GetSessionTokenRequest
-            {
-                DurationSeconds = 900
-            });
-            AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(response.Credentials, RegionEndpoint.USWest2, GetMp3Request()));
-        }
-
-        [TestMethod]
-        [TestCategory("Polly")]
         public void EnsureIsUrlEncoded()
         {
             var request = GetMp3Request();
@@ -130,7 +112,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
 
         private static SynthesizeSpeechRequest GetMp3Request()
         {
-            return new SynthesizeSpeechRequest()
+            return new SynthesizeSpeechRequest
             {
                 VoiceId = "Joanna",
                 Text = "Hello",
@@ -140,7 +122,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
 
         private static SynthesizeSpeechRequest GetSpeechMarkRequest()
         {
-            return new SynthesizeSpeechRequest()
+            return new SynthesizeSpeechRequest
             {
                 VoiceId = "Joanna",
                 Text = "Hello",

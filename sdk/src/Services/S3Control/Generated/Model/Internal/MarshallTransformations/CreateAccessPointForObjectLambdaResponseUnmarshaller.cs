@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateAccessPointForObjectLambda operation
     /// </summary>  
-    public class CreateAccessPointForObjectLambdaResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateAccessPointForObjectLambdaResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             CreateAccessPointForObjectLambdaResponse response = new CreateAccessPointForObjectLambdaResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -83,7 +84,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -109,6 +109,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateAccessPointForObjectLambdaResponse response);
 
         private static CreateAccessPointForObjectLambdaResponseUnmarshaller _instance = new CreateAccessPointForObjectLambdaResponseUnmarshaller();        
 

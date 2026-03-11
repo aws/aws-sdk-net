@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSsmlException
+        /// message.
+        /// </summary>
+        public InvalidSsmlException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSsmlException with the specified error
         /// message.
         /// </summary>

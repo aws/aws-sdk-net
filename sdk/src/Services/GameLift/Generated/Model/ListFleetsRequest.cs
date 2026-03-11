@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFleets operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves a collection of fleet resources in an Amazon Web Services Region. You can
     /// filter the result set to find only those fleets that are deployed with a specific
     /// build or script. For fleets that have multiple locations, this operation retrieves
     /// fleets based on their home Region only.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can use operation in the following ways: 

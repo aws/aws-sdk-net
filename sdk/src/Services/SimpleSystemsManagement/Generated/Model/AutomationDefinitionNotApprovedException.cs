@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AutomationDefinitionNotApprovedException
+        /// message.
+        /// </summary>
+        public AutomationDefinitionNotApprovedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AutomationDefinitionNotApprovedException with the specified error
         /// message.
         /// </summary>

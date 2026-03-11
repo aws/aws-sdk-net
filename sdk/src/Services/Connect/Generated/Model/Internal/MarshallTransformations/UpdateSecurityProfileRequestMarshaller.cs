@@ -99,6 +99,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAllowedFlowModules())
+            {
+                context.Writer.WritePropertyName("AllowedFlowModules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedFlowModulesListValue in publicRequest.AllowedFlowModules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FlowModuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAllowedFlowModulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetApplications())
             {
                 context.Writer.WritePropertyName("Applications");
@@ -119,6 +135,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetGranularAccessControlConfiguration())
+            {
+                context.Writer.WritePropertyName("GranularAccessControlConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GranularAccessControlConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GranularAccessControlConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetHierarchyRestrictedResources())

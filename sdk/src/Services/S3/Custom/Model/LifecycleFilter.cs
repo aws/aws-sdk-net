@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Filter identifying one or more objects to which a <see cref="LifecycleRule"/> applies.
     /// </summary>
-    public class LifecycleFilter
+    public partial class LifecycleFilter
     {
         /// <summary>
         /// The predicate used by the filter.

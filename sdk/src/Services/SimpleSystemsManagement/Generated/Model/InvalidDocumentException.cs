@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDocumentException
+        /// message.
+        /// </summary>
+        public InvalidDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDocumentException with the specified error
         /// message.
         /// </summary>

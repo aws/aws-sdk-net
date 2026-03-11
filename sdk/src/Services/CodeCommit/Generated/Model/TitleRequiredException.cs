@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for TitleRequiredException
+        /// message.
+        /// </summary>
+        public TitleRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TitleRequiredException with the specified error
         /// message.
         /// </summary>

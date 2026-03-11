@@ -32,7 +32,8 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Container for the parameters to the CreateManagedThing operation.
     /// Creates a managed thing. A managed thing contains the device identifier, protocol
-    /// supported, and capabilities of the device in a protocol-specific format.
+    /// supported, and capabilities of the device in a data model format defined by Managed
+    /// integrations.
     /// </summary>
     public partial class CreateManagedThingRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -52,11 +53,12 @@ namespace Amazon.IoTManagedIntegrations.Model
         private Role _role;
         private string _serialNumber;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private WiFiSimpleSetupConfiguration _wiFiSimpleSetupConfiguration;
 
         /// <summary>
         /// Gets and sets the property AuthenticationMaterial. 
         /// <para>
-        /// The authentication material defining the device connectivity setup requests. The authentication
+        /// The authentication material defining the device connectivity setup requests. The authorization
         /// materials used are the device bar code.
         /// </para>
         /// </summary>
@@ -383,6 +385,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WiFiSimpleSetupConfiguration. 
+        /// <para>
+        /// The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning
+        /// capabilities and timeout settings.
+        /// </para>
+        /// </summary>
+        public WiFiSimpleSetupConfiguration WiFiSimpleSetupConfiguration
+        {
+            get { return this._wiFiSimpleSetupConfiguration; }
+            set { this._wiFiSimpleSetupConfiguration = value; }
+        }
+
+        // Check to see if WiFiSimpleSetupConfiguration property is set
+        internal bool IsSetWiFiSimpleSetupConfiguration()
+        {
+            return this._wiFiSimpleSetupConfiguration != null;
         }
 
     }

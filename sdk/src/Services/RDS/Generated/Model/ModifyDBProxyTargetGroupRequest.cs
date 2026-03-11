@@ -65,7 +65,7 @@ namespace Amazon.RDS.Model
         /// The name of the proxy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }
@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// The name of the target group to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TargetGroupName
         {
             get { return this._targetGroupName; }

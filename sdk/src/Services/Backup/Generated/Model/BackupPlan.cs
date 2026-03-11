@@ -39,6 +39,7 @@ namespace Amazon.Backup.Model
         private List<AdvancedBackupSetting> _advancedBackupSettings = AWSConfigs.InitializeCollections ? new List<AdvancedBackupSetting>() : null;
         private string _backupPlanName;
         private List<BackupRule> _rules = AWSConfigs.InitializeCollections ? new List<BackupRule>() : null;
+        private List<ScanSetting> _scanSettings = AWSConfigs.InitializeCollections ? new List<ScanSetting>() : null;
 
         /// <summary>
         /// Gets and sets the property AdvancedBackupSettings. 
@@ -111,6 +112,30 @@ namespace Amazon.Backup.Model
         internal bool IsSetRules()
         {
             return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanSettings. 
+        /// <para>
+        /// Contains your scanning configuration for the backup plan and includes the Malware
+        /// scanner, your selected resources, and scanner role.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ScanSetting> ScanSettings
+        {
+            get { return this._scanSettings; }
+            set { this._scanSettings = value; }
+        }
+
+        // Check to see if ScanSettings property is set
+        internal bool IsSetScanSettings()
+        {
+            return this._scanSettings != null && (this._scanSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

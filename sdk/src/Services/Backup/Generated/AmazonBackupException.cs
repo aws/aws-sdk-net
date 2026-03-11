@@ -36,6 +36,14 @@ namespace Amazon.Backup
         /// <summary>
         /// Construct instance of AmazonBackupException
         /// </summary>
+        public AmazonBackupException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBackupException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBackupException(string message)
             : base(message)

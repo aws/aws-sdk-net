@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGameSessionQueue operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Creates a placement queue that processes requests for new game sessions. A queue uses
     /// FleetIQ algorithms to locate the best available placement locations for a new game
     /// session, and then prompts the game server process to start a new game session.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// A game session queue is configured with a set of destinations (Amazon GameLift Servers
@@ -349,6 +353,11 @@ namespace Amazon.GameLift.Model
         /// a <c>TIMED_OUT</c> status. If you don't specify a request timeout, the queue uses
         /// a default value.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The minimum value is 10 and the maximum value is 600.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int? TimeoutInSeconds

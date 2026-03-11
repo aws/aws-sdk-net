@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKMSArnException
+        /// message.
+        /// </summary>
+        public InvalidKMSArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKMSArnException with the specified error
         /// message.
         /// </summary>

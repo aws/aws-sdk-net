@@ -83,6 +83,7 @@ namespace Amazon.FSx.Model
         private string _fileSystemTypeVersion;
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
+        private NetworkType _networkType;
         private CreateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _storageCapacity;
@@ -182,6 +183,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetLustreConfiguration()
         {
             return this._lustreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Sets the network type for the Amazon FSx for OpenZFS file system that you're creating
+        /// from a backup.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

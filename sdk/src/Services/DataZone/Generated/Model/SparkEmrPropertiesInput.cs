@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private string _instanceProfileArn;
         private string _javaVirtualEnv;
         private string _logUri;
+        private string _managedEndpointArn;
         private string _pythonVirtualEnv;
         private string _runtimeRole;
         private string _trustedCertificatesS3Uri;
@@ -48,7 +49,7 @@ namespace Amazon.DataZone.Model
         /// The compute ARN of Spark EMR.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Min=0, Max=2048)]
         public string ComputeArn
         {
             get { return this._computeArn; }
@@ -116,6 +117,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetLogUri()
         {
             return this._logUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedEndpointArn. 
+        /// <para>
+        /// The managed endpoint ARN of the EMR on EKS cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string ManagedEndpointArn
+        {
+            get { return this._managedEndpointArn; }
+            set { this._managedEndpointArn = value; }
+        }
+
+        // Check to see if ManagedEndpointArn property is set
+        internal bool IsSetManagedEndpointArn()
+        {
+            return this._managedEndpointArn != null;
         }
 
         /// <summary>

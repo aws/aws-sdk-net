@@ -41,6 +41,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientCacheClusterCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientCacheClusterCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientCacheClusterCapacityException with the specified error
         /// message.
         /// </summary>

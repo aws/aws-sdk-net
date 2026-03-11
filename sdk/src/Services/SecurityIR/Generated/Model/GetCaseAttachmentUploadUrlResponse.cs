@@ -39,7 +39,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property AttachmentPresignedUrl. 
         /// <para>
-        /// Response element providing the Amazon S3 presigned UTL to upload the attachment.
+        /// Response element providing the Amazon S3 presigned URL to upload the attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

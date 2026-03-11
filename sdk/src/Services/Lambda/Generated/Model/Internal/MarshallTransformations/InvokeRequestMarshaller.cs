@@ -84,6 +84,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 request.Headers["X-Amz-Client-Context"] = publicRequest.ClientContextBase64;
             }
         
+            if (publicRequest.IsSetDurableExecutionName()) 
+            {
+                request.Headers["X-Amz-Durable-Execution-Name"] = publicRequest.DurableExecutionName;
+            }
+        
             if (publicRequest.IsSetInvocationType()) 
             {
                 request.Headers["X-Amz-Invocation-Type"] = publicRequest.InvocationType;
@@ -92,6 +97,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLogType()) 
             {
                 request.Headers["X-Amz-Log-Type"] = publicRequest.LogType;
+            }
+        
+            if (publicRequest.IsSetTenantId()) 
+            {
+                request.Headers["X-Amz-Tenant-Id"] = publicRequest.TenantId;
             }
             request.UseQueryString = true;
 

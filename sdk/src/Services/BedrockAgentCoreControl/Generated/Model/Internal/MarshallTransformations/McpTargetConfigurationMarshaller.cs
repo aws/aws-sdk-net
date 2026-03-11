@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetApiGateway())
+            {
+                context.Writer.WritePropertyName("apiGateway");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ApiGatewayTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApiGateway, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");
@@ -53,6 +64,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                 var marshaller = McpLambdaTargetConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lambda, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMcpServer())
+            {
+                context.Writer.WritePropertyName("mcpServer");
+                context.Writer.WriteStartObject();
+
+                var marshaller = McpServerTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.McpServer, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -40,6 +40,13 @@ namespace Amazon.Deadline.Model
         private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
         /// message.
         /// </summary>

@@ -46,6 +46,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetError())
+            {
+                context.Writer.WritePropertyName("error");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ErrorBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Error, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");

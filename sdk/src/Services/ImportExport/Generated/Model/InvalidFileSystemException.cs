@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFileSystemException
+        /// message.
+        /// </summary>
+        public InvalidFileSystemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFileSystemException with the specified error
         /// message.
         /// </summary>

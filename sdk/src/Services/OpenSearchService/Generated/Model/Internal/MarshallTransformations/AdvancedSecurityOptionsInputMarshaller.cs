@@ -58,6 +58,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
+            if(requestObject.IsSetIAMFederationOptions())
+            {
+                context.Writer.WritePropertyName("IAMFederationOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IAMFederationOptionsInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.IAMFederationOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetInternalUserDatabaseEnabled())
             {
                 context.Writer.WritePropertyName("InternalUserDatabaseEnabled");

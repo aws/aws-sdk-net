@@ -36,6 +36,14 @@ namespace Amazon.WAFRegional
         /// <summary>
         /// Construct instance of AmazonWAFRegionalException
         /// </summary>
+        public AmazonWAFRegionalException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWAFRegionalException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWAFRegionalException(string message)
             : base(message)

@@ -29,10 +29,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             if (context.IsEmptyResponse)
                 return null;
 <#
-    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
-    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers())
-    {
     Member eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
+    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
+    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers() && eventPayloadMember != null)
+    {
         if(eventPayloadMember.ModelShape.IsString)
         {
 #>

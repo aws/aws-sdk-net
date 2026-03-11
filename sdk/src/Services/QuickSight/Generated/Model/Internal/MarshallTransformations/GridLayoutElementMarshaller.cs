@@ -46,6 +46,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBackgroundStyle())
+            {
+                context.Writer.WritePropertyName("BackgroundStyle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GridLayoutElementBackgroundStyleMarshaller.Instance;
+                marshaller.Marshall(requestObject.BackgroundStyle, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetBorderRadius())
+            {
+                context.Writer.WritePropertyName("BorderRadius");
+                context.Writer.WriteStringValue(requestObject.BorderRadius);
+            }
+
+            if(requestObject.IsSetBorderStyle())
+            {
+                context.Writer.WritePropertyName("BorderStyle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GridLayoutElementBorderStyleMarshaller.Instance;
+                marshaller.Marshall(requestObject.BorderStyle, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetColumnIndex())
             {
                 context.Writer.WritePropertyName("ColumnIndex");
@@ -70,6 +98,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ElementType);
             }
 
+            if(requestObject.IsSetLoadingAnimation())
+            {
+                context.Writer.WritePropertyName("LoadingAnimation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LoadingAnimationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LoadingAnimation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPadding())
+            {
+                context.Writer.WritePropertyName("Padding");
+                context.Writer.WriteStringValue(requestObject.Padding);
+            }
+
             if(requestObject.IsSetRowIndex())
             {
                 context.Writer.WritePropertyName("RowIndex");
@@ -80,6 +125,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RowSpan");
                 context.Writer.WriteNumberValue(requestObject.RowSpan.Value);
+            }
+
+            if(requestObject.IsSetSelectedBorderStyle())
+            {
+                context.Writer.WritePropertyName("SelectedBorderStyle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GridLayoutElementBorderStyleMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelectedBorderStyle, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

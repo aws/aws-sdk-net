@@ -208,6 +208,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WiFiSimpleSetupConfiguration", targetDepth))
+                {
+                    var unmarshaller = WiFiSimpleSetupConfigurationUnmarshaller.Instance;
+                    response.WiFiSimpleSetupConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

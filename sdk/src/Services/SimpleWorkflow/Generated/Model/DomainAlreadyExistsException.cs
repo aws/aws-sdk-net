@@ -41,6 +41,13 @@ namespace Amazon.SimpleWorkflow.Model
     {
 
         /// <summary>
+        /// Default constructor for DomainAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DomainAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DomainAlreadyExistsException with the specified error
         /// message.
         /// </summary>

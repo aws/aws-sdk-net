@@ -48,7 +48,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long? Duration
         {
             get { return this._duration; }
@@ -72,6 +72,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Instruction
         {
             get { return this._instruction; }
@@ -90,7 +91,7 @@ namespace Amazon.GeoRoutes.Model
         /// Type of the step.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RouteFerryAfterTravelStepType Type
         {
             get { return this._type; }

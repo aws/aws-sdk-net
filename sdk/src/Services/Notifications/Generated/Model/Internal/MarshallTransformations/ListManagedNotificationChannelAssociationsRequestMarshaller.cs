@@ -62,6 +62,8 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ManagedNotificationConfigurationArn))
+                throw new AmazonNotificationsException("Request object does not have required field ManagedNotificationConfigurationArn set");
             
             if (publicRequest.IsSetManagedNotificationConfigurationArn())
                 request.Parameters.Add("managedNotificationConfigurationArn", StringUtils.FromString(publicRequest.ManagedNotificationConfigurationArn));

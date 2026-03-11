@@ -42,6 +42,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for MalformedQueryException
+        /// message.
+        /// </summary>
+        public MalformedQueryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedQueryException with the specified error
         /// message.
         /// </summary>

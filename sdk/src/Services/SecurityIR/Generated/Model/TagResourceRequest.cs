@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Grants permission to add a tag(s) to a designated resource.
+    /// Adds a tag(s) to a designated resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonSecurityIRRequest
     {

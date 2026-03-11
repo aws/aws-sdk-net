@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSInvalidSignatureException
+        /// message.
+        /// </summary>
+        public KMSInvalidSignatureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSInvalidSignatureException with the specified error
         /// message.
         /// </summary>

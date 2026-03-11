@@ -36,6 +36,14 @@ namespace Amazon.Ep2parsearn
         /// <summary>
         /// Construct instance of AmazonEp2parsearnException
         /// </summary>
+        public AmazonEp2parsearnException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEp2parsearnException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEp2parsearnException(string message)
             : base(message)

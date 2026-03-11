@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientS3BucketPolicyException
+        /// message.
+        /// </summary>
+        public InsufficientS3BucketPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientS3BucketPolicyException with the specified error
         /// message.
         /// </summary>

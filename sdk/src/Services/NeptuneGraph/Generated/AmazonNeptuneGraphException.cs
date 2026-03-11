@@ -36,6 +36,14 @@ namespace Amazon.NeptuneGraph
         /// <summary>
         /// Construct instance of AmazonNeptuneGraphException
         /// </summary>
+        public AmazonNeptuneGraphException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNeptuneGraphException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNeptuneGraphException(string message)
             : base(message)

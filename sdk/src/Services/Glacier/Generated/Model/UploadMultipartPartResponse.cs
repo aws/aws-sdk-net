@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon S3 Glacier response to your request.
+    /// Contains the Amazon Glacier response to your request.
     /// </summary>
     public partial class UploadMultipartPartResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
+        /// The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
         /// </para>
         /// </summary>
         public string Checksum

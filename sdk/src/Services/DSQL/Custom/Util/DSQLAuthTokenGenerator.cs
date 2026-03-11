@@ -121,6 +121,56 @@ namespace Amazon.DSQL.Util
 
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(string hostname)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAuthTokenAsync(region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(RegionEndpoint region, string hostname)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return await GenerateDbConnectAuthTokenAsync(credentials, region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(AWSCredentials credentials, string hostname)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAuthTokenAsync(credentials, region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
         /// </summary>
         /// <param name="credentials">The credentials for the token.</param>
         /// <param name="region">The region of the DSQL database.</param>
@@ -199,6 +249,56 @@ namespace Amazon.DSQL.Util
 
             var immutableCredentials = credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(string hostname)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAdminAuthTokenAsync(region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(RegionEndpoint region, string hostname)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return await GenerateDbConnectAdminAuthTokenAsync(credentials, region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(AWSCredentials credentials, string hostname)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAdminAuthTokenAsync(credentials, region, hostname).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -32,6 +32,42 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the CreateFormType operation.
     /// Creates a metadata form type.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The domain must exist and be in an <c>ENABLED</c> state. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The owning project must exist and be accessible.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The name must be unique within the domain.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For custom form types, to indicate that a field should be searchable, annotate it
+    /// with <c>@amazon.datazone#searchable</c>. By default, searchable fields are indexed
+    /// for semantic search, where related query terms will match the attribute value even
+    /// if they are not stemmed or keyword matches. To indicate that a field should be indexed
+    /// for lexical search (which disables semantic search but supports stemmed and partial
+    /// matches), annotate it with <c>@amazon.datazone#searchable(modes:["LEXICAL"])</c>.
+    /// To indicate that a field should be indexed for technical identifier search (for more
+    /// information on technical identifier search, see: <a href="https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/">https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/</a>),
+    /// annotate it with <c>@amazon.datazone#searchable(modes:["TECHNICAL"])</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To denote that a field will store glossary term ids (which are filterable via the
+    /// Search/SearchListings APIs), annotate it with <c>@amazon.datazone#glossaryterm("${GLOSSARY_ID}")</c>,
+    /// where <c>${GLOSSARY_ID}</c> is the id of the glossary that the glossary terms stored
+    /// in the field belong to. 
+    /// </para>
     /// </summary>
     public partial class CreateFormTypeRequest : AmazonDataZoneRequest
     {

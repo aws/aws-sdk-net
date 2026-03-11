@@ -396,6 +396,11 @@ namespace Amazon.Route53.Model
         /// endpoint and the time that it sends the next health check request. Each Route 53 health
         /// checker makes requests at this interval.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>RequestInterval</c> is not supported when you specify a value for <c>Type</c>
+        /// of <c>RECOVERY_CONTROL</c>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// You can't change the value of <c>RequestInterval</c> after you create a health check.
@@ -430,8 +435,13 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <c>FailureThreshold</c>, the default value is three
-        /// health checks.
+        ///  <c>FailureThreshold</c> is not supported when you specify a value for <c>Type</c>
+        /// of <c>RECOVERY_CONTROL</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Otherwise, if you don't specify a value for <c>FailureThreshold</c>, the default value
+        /// is three health checks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -453,6 +463,11 @@ namespace Amazon.Route53.Model
         /// Specify whether you want Amazon Route 53 to measure the latency between health checkers
         /// in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch
         /// latency graphs on the <b>Health Checks</b> page in the Route 53 console.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>MeasureLatency</c> is not supported when you specify a value for <c>Type</c> of
+        /// <c>RECOVERY_CONTROL</c>.
         /// </para>
         ///  <important> 
         /// <para>

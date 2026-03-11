@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PayloadWithXmlName Object
     /// </summary>  
-    public class PayloadWithXmlNameUnmarshaller : IXmlUnmarshaller<PayloadWithXmlName, XmlUnmarshallerContext>
+    public partial class PayloadWithXmlNameUnmarshaller : IXmlUnmarshaller<PayloadWithXmlName, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, PayloadWithXmlName unmarshalledObject, int targetDepth);
+
         private static PayloadWithXmlNameUnmarshaller _instance = new PayloadWithXmlNameUnmarshaller();        
 
         /// <summary>

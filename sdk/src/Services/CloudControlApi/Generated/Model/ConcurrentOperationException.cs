@@ -39,6 +39,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentOperationException
+        /// message.
+        /// </summary>
+        public ConcurrentOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentOperationException with the specified error
         /// message.
         /// </summary>

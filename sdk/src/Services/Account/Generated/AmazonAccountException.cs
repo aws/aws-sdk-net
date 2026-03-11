@@ -36,6 +36,14 @@ namespace Amazon.Account
         /// <summary>
         /// Construct instance of AmazonAccountException
         /// </summary>
+        public AmazonAccountException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAccountException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAccountException(string message)
             : base(message)

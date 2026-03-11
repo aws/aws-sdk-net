@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteContinuousDeploymentPolicy operation
     /// </summary>  
-    public class DeleteContinuousDeploymentPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteContinuousDeploymentPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteContinuousDeploymentPolicyResponse response = new DeleteContinuousDeploymentPolicyResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -96,6 +97,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteContinuousDeploymentPolicyResponse response);
 
         private static DeleteContinuousDeploymentPolicyResponseUnmarshaller _instance = new DeleteContinuousDeploymentPolicyResponseUnmarshaller();        
 

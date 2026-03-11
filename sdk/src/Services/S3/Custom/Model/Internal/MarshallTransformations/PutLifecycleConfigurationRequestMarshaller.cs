@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,229 +13,100 @@
  * permissions and limitations under the License.
  */
 
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Xml;
 using System.Text;
-using Amazon.S3.Util;
+using System.Xml.Serialization;
+
+using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using System.Xml;
 
-#pragma warning disable 1591,CS0612,CS0618
-
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Put Bucket Lifecycle Request Marshaller
+    /// Custom marshaller for PutLifecycleConfigurationRequest with custom methods
     /// </summary>
-    public class PutLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, PutLifecycleConfigurationRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
-	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((PutLifecycleConfigurationRequest)input);
-		}
-
-        public IRequest Marshall(PutLifecycleConfigurationRequest putLifecycleConfigurationRequest)
+    public partial class PutLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, PutLifecycleConfigurationRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Custom marshall for lifecycle rule filter
+        /// </summary>
+        /// <param name="publicRequestConfigurationRulesValue"></param>
+        /// <param name="xmlWriter"></param>
+        public void FilterCustomMarshall(LifecycleRule publicRequestConfigurationRulesValue, XmlWriter xmlWriter)
         {
-            IRequest request = new DefaultRequest(putLifecycleConfigurationRequest, "AmazonS3");
-
-            request.HttpMethod = "PUT";
-
-            if (putLifecycleConfigurationRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putLifecycleConfigurationRequest.ExpectedBucketOwner));
-
-            if (putLifecycleConfigurationRequest.IsSetChecksumAlgorithm())
-                request.Headers[S3Constants.AmzHeaderSdkChecksumAlgorithm] = S3Transforms.ToStringValue(putLifecycleConfigurationRequest.ChecksumAlgorithm);
-
-            if (string.IsNullOrEmpty(putLifecycleConfigurationRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutLifecycleConfigurationRequest.BucketName");
-
-            request.ResourcePath = "/";
-
-            request.AddSubResource("lifecycle");
-
-            var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            if (publicRequestConfigurationRulesValue.Filter != null)
             {
-                var lifecycleConfigurationLifecycleConfiguration = putLifecycleConfigurationRequest.Configuration;
-                if (lifecycleConfigurationLifecycleConfiguration != null)
+                xmlWriter.WriteStartElement("Filter");
+                if (publicRequestConfigurationRulesValue.Filter.LifecycleFilterPredicate != null)
                 {
-                    xmlWriter.WriteStartElement("LifecycleConfiguration", S3Constants.S3RequestXmlNamespace);
-
-                    if (lifecycleConfigurationLifecycleConfiguration != null)
+                    publicRequestConfigurationRulesValue.Filter.LifecycleFilterPredicate.Accept(new LifecycleFilterPredicateMarshallVisitor(xmlWriter));
+                    xmlWriter.WriteEndElement();
+                    // only return if there is a predicate so we don't write it twice
+                    return;
+                }
+                if (publicRequestConfigurationRulesValue.Filter.And != null)
+                {
+                    xmlWriter.WriteStartElement("And");
+                    if (publicRequestConfigurationRulesValue.Filter.And.IsSetObjectSizeGreaterThan())
+                        xmlWriter.WriteElementString("ObjectSizeGreaterThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.And.ObjectSizeGreaterThan.Value));
+                    if (publicRequestConfigurationRulesValue.Filter.And.IsSetObjectSizeLessThan())
+                        xmlWriter.WriteElementString("ObjectSizeLessThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.And.ObjectSizeLessThan.Value));
+                    if (publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
+                        xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Prefix));
+                    var publicRequestConfigurationRulesValueFilterAndTags = publicRequestConfigurationRulesValue.Filter.And.Tags;
+                    if (publicRequestConfigurationRulesValueFilterAndTags != null && (publicRequestConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections))
                     {
-                        var lifecycleConfigurationLifecycleConfigurationrulesList = lifecycleConfigurationLifecycleConfiguration.Rules;
-                        if (lifecycleConfigurationLifecycleConfigurationrulesList != null && lifecycleConfigurationLifecycleConfigurationrulesList.Count > 0)
+                        foreach (var publicRequestConfigurationRulesValueFilterAndTagsValue in publicRequestConfigurationRulesValueFilterAndTags)
                         {
-                            foreach (var lifecycleConfigurationLifecycleConfigurationrulesListValue in lifecycleConfigurationLifecycleConfigurationrulesList)
+                            if (publicRequestConfigurationRulesValueFilterAndTagsValue != null)
                             {
-                                xmlWriter.WriteStartElement("Rule");
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
-                                {
-                                    var expiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.Expiration;
-                                    if (expiration != null)
-                                    {
-                                        xmlWriter.WriteStartElement("Expiration");
-                                        if (expiration.IsSetDate())
-                                        {
-                                            xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(expiration.Date.Value));
-                                        }
-                                        if (expiration.IsSetDays())
-                                        {
-                                            xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(expiration.Days.Value));
-                                        }
-                                        if (expiration.IsSetExpiredObjectDeleteMarker())
-                                        {
-                                            xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", S3Transforms.ToXmlStringValue(expiration.ExpiredObjectDeleteMarker.Value));
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
-
-                                    var transitions = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transitions;
-                                    if (transitions != null && transitions.Count > 0)
-                                    {
-                                        foreach (var transition in transitions)
-                                        {
-                                            if (transition != null)
-                                            {
-                                                xmlWriter.WriteStartElement("Transition");
-                                                if (transition.IsSetDate())
-                                                {
-                                                    xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(transition.Date.Value));
-                                                }
-                                                if (transition.IsSetDays())
-                                                {
-                                                    xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(transition.Days.Value));
-                                                }
-                                                if (transition.IsSetStorageClass())
-                                                {
-                                                    xmlWriter.WriteElementString("StorageClass", S3Transforms.ToXmlStringValue(transition.StorageClass));
-                                                }
-                                                xmlWriter.WriteEndElement();
-                                            }
-                                        }
-                                    }
-
-                                    var noncurrentVersionExpiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionExpiration;
-                                    if (noncurrentVersionExpiration != null)
-                                    {
-                                        xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
-                                        if (noncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
-                                        {
-                                            xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NewerNoncurrentVersions.Value));
-                                        }
-                                        if (noncurrentVersionExpiration.IsSetNoncurrentDays())
-                                        {
-                                            xmlWriter.WriteElementString("NoncurrentDays", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NoncurrentDays.Value));
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
-
-                                    var noncurrentVersionTransitions = lifecycleConfigurationLifecycleConfigurationrulesListValue.NoncurrentVersionTransitions;
-                                    if (noncurrentVersionTransitions != null && noncurrentVersionTransitions.Count > 0)
-                                    {
-                                        foreach (var noncurrentVersionTransition in noncurrentVersionTransitions)
-                                        {
-                                            if (noncurrentVersionTransition != null)
-                                            {
-                                                xmlWriter.WriteStartElement("NoncurrentVersionTransition");
-                                                if (noncurrentVersionTransition.IsSetNewerNoncurrentVersions())
-                                                {
-                                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NewerNoncurrentVersions.Value));
-                                                }
-                                                if (noncurrentVersionTransition.IsSetNoncurrentDays())
-                                                {
-                                                    xmlWriter.WriteElementString("NoncurrentDays", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NoncurrentDays.Value));
-                                                }
-                                                if (noncurrentVersionTransition.IsSetStorageClass())
-                                                {
-                                                    xmlWriter.WriteElementString("StorageClass", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.StorageClass));
-                                                }
-                                                xmlWriter.WriteEndElement();
-                                            }
-                                        }
-                                    }
-
-                                    var abortIncompleteMultipartUpload = lifecycleConfigurationLifecycleConfigurationrulesListValue.AbortIncompleteMultipartUpload;
-                                    if (abortIncompleteMultipartUpload != null)
-                                    {
-                                        xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload");
-                                        if (abortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
-                                        {
-                                            xmlWriter.WriteElementString("DaysAfterInitiation", S3Transforms.ToXmlStringValue(abortIncompleteMultipartUpload.DaysAfterInitiation.Value));
-                                        }
-                                        xmlWriter.WriteEndElement();
-                                    }
-                                }
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetId())
-                                {
-                                    xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Id));
-                                }
-
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetFilter())
-                                {
-                                    xmlWriter.WriteStartElement("Filter");
-                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue.Filter.IsSetLifecycleFilterPredicate())
-                                        lifecycleConfigurationLifecycleConfigurationrulesListValue.Filter.LifecycleFilterPredicate.Accept(new LifecycleFilterPredicateMarshallVisitor(xmlWriter));
-                                    xmlWriter.WriteEndElement();
-                                }
-
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetStatus())
-                                {
-                                    xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Status));
-                                }
-                                else
-                                {
-                                    xmlWriter.WriteElementString("Status", "Disabled");
-                                }
+                                xmlWriter.WriteStartElement("Tag");
+                                if (publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Key));
+                                if (publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Value));
                                 xmlWriter.WriteEndElement();
                             }
                         }
                     }
                     xmlWriter.WriteEndElement();
                 }
+                if (publicRequestConfigurationRulesValue.Filter.IsSetObjectSizeGreaterThan())
+                    xmlWriter.WriteElementString("ObjectSizeGreaterThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.ObjectSizeGreaterThan.Value));
+                if (publicRequestConfigurationRulesValue.Filter.IsSetObjectSizeLessThan())
+                    xmlWriter.WriteElementString("ObjectSizeLessThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.ObjectSizeLessThan.Value));
+                if (publicRequestConfigurationRulesValue.Filter.IsSetPrefix())
+                    xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Prefix));
+                if (publicRequestConfigurationRulesValue.Filter.Tag != null)
+                {
+                    xmlWriter.WriteStartElement("Tag");
+                    if (publicRequestConfigurationRulesValue.Filter.Tag.IsSetKey())
+                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Key));
+                    if (publicRequestConfigurationRulesValue.Filter.Tag.IsSetValue())
+                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Value));
+                    xmlWriter.WriteEndElement();
+                }
+                xmlWriter.WriteEndElement();
             }
-
-            try
-            {
-                var content = stringWriter.ToString();
-                request.Content = Encoding.UTF8.GetBytes(content);
-                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
-
-                ChecksumUtils.SetChecksumData(
-                    request, 
-                    putLifecycleConfigurationRequest.ChecksumAlgorithm, 
-                    fallbackToMD5: false, 
-                    isRequestChecksumRequired: true, 
-                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
-                );
-            }
-            catch (EncoderFallbackException e)
-            {
-                throw new AmazonServiceException("Unable to marshall request to XML", e);
-            }
-
-            return request;
         }
-
-	    private static PutLifecycleConfigurationRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static PutLifecycleConfigurationRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new PutLifecycleConfigurationRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
+        void CustomStatusMarshalling(XmlWriter writer, LifecycleRule rule)
+        {
+            if (rule.IsSetStatus())
+            {
+                writer.WriteElementString("Status", S3Transforms.ToXmlStringValue(rule.Status));
+            }
+            else
+            {
+                writer.WriteElementString("Status", "Disabled");
+            } 
+        }
     }
 }
-

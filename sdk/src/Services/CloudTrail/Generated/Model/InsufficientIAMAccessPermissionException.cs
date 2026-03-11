@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientIAMAccessPermissionException
+        /// message.
+        /// </summary>
+        public InsufficientIAMAccessPermissionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientIAMAccessPermissionException with the specified error
         /// message.
         /// </summary>

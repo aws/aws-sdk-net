@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCaCertificatesBundleException
+        /// message.
+        /// </summary>
+        public InvalidCaCertificatesBundleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCaCertificatesBundleException with the specified error
         /// message.
         /// </summary>

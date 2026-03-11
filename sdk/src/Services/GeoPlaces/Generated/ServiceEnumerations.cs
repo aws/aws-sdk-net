@@ -471,6 +471,10 @@ namespace Amazon.GeoPlaces
         /// </summary>
         public static readonly PlaceType District = new PlaceType("District");
         /// <summary>
+        /// Constant InferredSecondaryAddress for PlaceType
+        /// </summary>
+        public static readonly PlaceType InferredSecondaryAddress = new PlaceType("InferredSecondaryAddress");
+        /// <summary>
         /// Constant InterpolatedAddress for PlaceType
         /// </summary>
         public static readonly PlaceType InterpolatedAddress = new PlaceType("InterpolatedAddress");

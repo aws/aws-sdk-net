@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHoursOfOperationOverride operation.
-    /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+    /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
     /// </summary>
     public partial class DeleteHoursOfOperationOverrideRequest : AmazonConnectRequest
     {

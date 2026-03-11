@@ -1602,12 +1602,12 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// You can delete a hosted zone only if it contains only the default SOA record and NS
-        /// resource record sets. If the hosted zone contains other resource record sets, you
-        /// must delete them before you can delete the hosted zone. If you try to delete a hosted
-        /// zone that contains other resource record sets, the request fails, and Route 53 returns
-        /// a <c>HostedZoneNotEmpty</c> error. For information about deleting records from your
-        /// hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+        /// You can delete a hosted zone only if it contains only the default SOA and NS records
+        /// and has DNSSEC signing disabled. If the hosted zone contains other records or has
+        /// DNSSEC enabled, you must delete the records and disable DNSSEC before deletion. Attempting
+        /// to delete a hosted zone with additional records or DNSSEC enabled returns a <c>HostedZoneNotEmpty</c>
+        /// error. For information about deleting records, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3708,6 +3708,49 @@ namespace Amazon.Route53
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateHostedZoneFeatures
+
+
+
+        /// <summary>
+        /// Updates the features configuration for a hosted zone. This operation allows you to
+        /// enable or disable specific features for your hosted zone, such as accelerated recovery.
+        /// 
+        ///  
+        /// <para>
+        /// Accelerated recovery enables you to update DNS records in your public hosted zone
+        /// even when the us-east-1 region is unavailable.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneFeatures service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHostedZoneFeatures service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneFeatures">REST API Reference for UpdateHostedZoneFeatures Operation</seealso>
+        Task<UpdateHostedZoneFeaturesResponse> UpdateHostedZoneFeaturesAsync(UpdateHostedZoneFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

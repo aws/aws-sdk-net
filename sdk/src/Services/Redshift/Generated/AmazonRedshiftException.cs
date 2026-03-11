@@ -36,6 +36,14 @@ namespace Amazon.Redshift
         /// <summary>
         /// Construct instance of AmazonRedshiftException
         /// </summary>
+        public AmazonRedshiftException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRedshiftException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRedshiftException(string message)
             : base(message)

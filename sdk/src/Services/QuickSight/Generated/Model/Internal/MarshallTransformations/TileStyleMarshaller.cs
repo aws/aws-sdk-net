@@ -46,6 +46,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBackgroundColor())
+            {
+                context.Writer.WritePropertyName("BackgroundColor");
+                context.Writer.WriteStringValue(requestObject.BackgroundColor);
+            }
+
             if(requestObject.IsSetBorder())
             {
                 context.Writer.WritePropertyName("Border");
@@ -55,6 +61,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Border, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetBorderRadius())
+            {
+                context.Writer.WritePropertyName("BorderRadius");
+                context.Writer.WriteStringValue(requestObject.BorderRadius);
+            }
+
+            if(requestObject.IsSetPadding())
+            {
+                context.Writer.WritePropertyName("Padding");
+                context.Writer.WriteStringValue(requestObject.Padding);
             }
 
         }

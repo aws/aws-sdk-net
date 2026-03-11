@@ -65,6 +65,8 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetProfileId())
                 throw new AmazonIAMRolesAnywhereException("Request object does not have required field ProfileId set");
             request.AddPathResource("{profileId}", StringUtils.FromString(publicRequest.ProfileId));
+            if (string.IsNullOrEmpty(publicRequest.CertificateField))
+                throw new AmazonIAMRolesAnywhereException("Request object does not have required field CertificateField set");
             
             if (publicRequest.IsSetCertificateField())
                 request.Parameters.Add("certificateField", StringUtils.FromString(publicRequest.CertificateField));

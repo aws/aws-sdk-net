@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CapacityReservationPendingException
+        /// message.
+        /// </summary>
+        public CapacityReservationPendingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CapacityReservationPendingException with the specified error
         /// message.
         /// </summary>

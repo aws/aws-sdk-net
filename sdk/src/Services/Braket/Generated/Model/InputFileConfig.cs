@@ -42,7 +42,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// A named input source that an Amazon Braket job can consume.
+        /// A named input source that an Amazon Braket hybrid job can consume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -80,7 +80,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The location of the channel data.
+        /// The location of the input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

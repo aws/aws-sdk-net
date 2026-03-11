@@ -269,7 +269,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.GetActivityTaskResponse.Input</property>
-    <max>262144</max>
+    <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.GetActivityTaskResponse.TaskToken</property>
@@ -572,6 +572,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateRequest.Context</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateRequest.Definition</property>
     <min>1</min>
     <max>1048576</max>
@@ -584,6 +588,11 @@
     <property>Amazon.StepFunctions.Model.TestStateRequest.RoleArn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateRequest.StateName</property>
+    <min>1</min>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateRequest.Variables</property>
@@ -870,6 +879,22 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.AfterItemBatcher</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.AfterItemSelector</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.AfterItemsPath</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.AfterItemsPointer</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterParameters</property>
     <max>262144</max>
   </property-value-rule>
@@ -886,12 +911,37 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.MaxConcurrency</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.Result</property>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.ToleratedFailureCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.ToleratedFailurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.Variables</property>
     <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionErrorDetails.CatchIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionErrorDetails.RetryBackoffIntervalSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionErrorDetails.RetryIndex</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.LambdaFunctionFailedEventDetails.Cause</property>
@@ -1057,6 +1107,20 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.MapStateStartedEventDetails.Length</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MockErrorOutput.Cause</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MockErrorOutput.Error</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.MockInput.Result</property>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ResourceNotFoundException.ResourceName</property>
@@ -1263,6 +1327,23 @@
     <property>Amazon.StepFunctions.Model.TaskTimedOutEventDetails.ResourceType</property>
     <min>1</min>
     <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateConfiguration.ErrorCausedByState</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateConfiguration.MapItemReaderData</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateConfiguration.MapIterationFailureCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateConfiguration.RetrierRetryCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.TooManyTagsException.ResourceName</property>

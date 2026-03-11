@@ -47,7 +47,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property DestinationName. 
         /// <para>
-        /// A filter to list only the wireless devices that use this destination.
+        /// A filter to list only the wireless devices that use as uplink destination.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

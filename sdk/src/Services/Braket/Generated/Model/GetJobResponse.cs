@@ -59,9 +59,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
         /// <para>
-        /// Definition of the Amazon Braket job created. Specifies the container image the job
-        /// uses, information about the Python scripts used for entry and training, and the user-defined
-        /// metrics used to evaluation the job.
+        /// Definition of the Amazon Braket hybrid job created. Provides information about the
+        /// container image used, and the Python scripts used for training.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +102,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property BillableDuration. 
         /// <para>
-        /// The billable time the Amazon Braket job used to complete.
+        /// The billable time for which the Amazon Braket hybrid job used to complete.
         /// </para>
         /// </summary>
         public int? BillableDuration
@@ -121,7 +120,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CheckpointConfig. 
         /// <para>
-        /// Information about the output locations for job checkpoint data.
+        /// Information about the output locations for hybrid job checkpoint data.
         /// </para>
         /// </summary>
         public JobCheckpointConfig CheckpointConfig
@@ -139,7 +138,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the Amazon Braket job was created.
+        /// The time at which the Amazon Braket hybrid job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,7 +157,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DeviceConfig. 
         /// <para>
-        /// The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.
+        /// The primary device used by the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         public DeviceConfig DeviceConfig
@@ -176,7 +175,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
-        /// The date and time that the Amazon Braket job ended.
+        /// The time at which the Amazon Braket hybrid job ended.
         /// </para>
         /// </summary>
         public DateTime? EndedAt
@@ -194,7 +193,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// Details about the type and time events occurred related to the Amazon Braket job.
+        /// Details about the time and type of events occurred related to the Amazon Braket hybrid
+        /// job.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -218,7 +218,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// A description of the reason why an Amazon Braket job failed, if it failed.
+        /// A description of the reason why an Amazon Braket hybrid job failed, if it failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -237,9 +237,9 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// Algorithm-specific parameters used by an Amazon Braket job that influence the quality
-        /// of the traiing job. The values are set with a string of JSON key:value pairs, where
-        /// the key is the name of the hyperparameter and the value is the value of th hyperparameter.
+        /// Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the
+        /// quality of the traiing job. The values are set with a map of JSON key:value pairs,
+        /// where the key is the name of the hyperparameter and the value is the value of th hyperparameter.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -306,7 +306,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the Amazon Braket job.
+        /// The ARN of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -325,7 +325,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the Amazon Braket job.
+        /// The name of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -344,8 +344,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// The path to the S3 location where job artifacts are stored and the encryption key
-        /// used to store them there.
+        /// The path to the S3 location where hybrid job artifacts are stored and the encryption
+        /// key used to store them there.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -364,8 +364,9 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QueueInfo. 
         /// <para>
-        /// Queue information for the requested job. Only returned if <c>QueueInfo</c> is specified
-        /// in the <c>additionalAttributeNames"</c> field in the <c>GetJob</c> API request.
+        /// Queue information for the requested hybrid job. Only returned if <c>QueueInfo</c>
+        /// is specified in the <c>additionalAttributeNames"</c> field in the <c>GetJob</c> API
+        /// request.
         /// </para>
         /// </summary>
         public HybridJobQueueInfo QueueInfo
@@ -385,7 +386,8 @@ namespace Amazon.Braket.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
         /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job
-        /// container on behalf of user, and output resources to the s3 buckets of a user.
+        /// container on behalf of user, and output results and other hybrid job details to the
+        /// s3 buckets of a user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -404,7 +406,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The date and time that the Amazon Braket job was started.
+        /// The time at which the Amazon Braket hybrid job was started.
         /// </para>
         /// </summary>
         public DateTime? StartedAt
@@ -422,7 +424,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Amazon Braket job.
+        /// The status of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -441,7 +443,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        /// The user-defined criteria that specifies when to stop a job running.
+        /// The user-defined criteria that specifies when to stop a running hybrid job.
         /// </para>
         /// </summary>
         public JobStoppingCondition StoppingCondition
@@ -459,8 +461,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A tag object that consists of a key and an optional value, used to manage metadata
-        /// for Amazon Braket resources.
+        /// The tags associated with this hybrid job.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

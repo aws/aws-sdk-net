@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketEncryptionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("encryption");
         
@@ -83,39 +84,53 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules = publicRequest.ServerSideEncryptionConfiguration.ServerSideEncryptionRules;
-                    if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules != null && (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.ServerSideEncryptionConfiguration.IsSetServerSideEncryptionRules()) 
                     {
                         foreach (var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue in publicRequestServerSideEncryptionConfigurationServerSideEncryptionRules) 
                         {
-                        if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Rule");
-                            if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBucketKeyEnabled())
-                                xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BucketKeyEnabled.Value));
-                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault != null)
+                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue != null)
                             {
-                                xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
-                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionAlgorithm())
-                                    xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.ServerSideEncryptionAlgorithm));
-                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                                    xmlWriter.WriteElementString("KMSMasterKeyID", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.ServerSideEncryptionKeyManagementServiceKeyId));
+                                xmlWriter.WriteStartElement("Rule");
+                                if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBlockedEncryptionTypes())
+                                {
+                                    xmlWriter.WriteStartElement("BlockedEncryptionTypes");
+                                    var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType = publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.EncryptionType;
+                                    if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.IsSetEncryptionType()) 
+                                    {
+                                        foreach (var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue in publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType) 
+                                        {
+                                            xmlWriter.WriteStartElement("EncryptionType");
+                                            xmlWriter.WriteValue(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue);
+                                            xmlWriter.WriteEndElement();
+                                        }            
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBucketKeyEnabled())
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BucketKeyEnabled.Value));
+                                if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetServerSideEncryptionByDefault())
+                                {
+                                    xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
+                                    if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionAlgorithm())
+                                        xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.ServerSideEncryptionAlgorithm));
+                                    if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                                        xmlWriter.WriteElementString("KMSMasterKeyID", StringUtils.FromString(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault.ServerSideEncryptionKeyManagementServiceKeyId));
+                                    xmlWriter.WriteEndElement();
+                                }
                                 xmlWriter.WriteEndElement();
                             }
-                            xmlWriter.WriteEndElement();
-                        }
                         }            
                     }
 
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -129,8 +144,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutBucketEncryptionRequestMarshaller _instance = new PutBucketEncryptionRequestMarshaller();        
@@ -152,5 +165,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketEncryptionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketEncryptionRequest publicRequest);
     }    
 }

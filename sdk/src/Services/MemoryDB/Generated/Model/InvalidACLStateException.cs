@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The ACL is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidACLStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidACLStateException
+        /// message.
+        /// </summary>
+        public InvalidACLStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidACLStateException with the specified error

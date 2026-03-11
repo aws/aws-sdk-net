@@ -986,6 +986,98 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  CreateTieringConfiguration
+
+
+        /// <summary>
+        /// Creates a tiering configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A tiering configuration enables automatic movement of backup data to a lower-cost
+        /// storage tier based on the age of backed-up objects in the backup vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each vault can only have one vault-specific tiering configuration, in addition to
+        /// any global configuration that applies to all vaults.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        CreateTieringConfigurationResponse CreateTieringConfiguration(CreateTieringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a tiering configuration.
+        /// 
+        ///  
+        /// <para>
+        /// A tiering configuration enables automatic movement of backup data to a lower-cost
+        /// storage tier based on the age of backed-up objects in the backup vault.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each vault can only have one vault-specific tiering configuration, in addition to
+        /// any global configuration that applies to all vaults.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateTieringConfiguration">REST API Reference for CreateTieringConfiguration Operation</seealso>
+        Task<CreateTieringConfigurationResponse> CreateTieringConfigurationAsync(CreateTieringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBackupPlan
 
 
@@ -1706,6 +1798,60 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DeleteTieringConfiguration
+
+
+        /// <summary>
+        /// Deletes the tiering configuration specified by a tiering configuration name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        DeleteTieringConfigurationResponse DeleteTieringConfiguration(DeleteTieringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the tiering configuration specified by a tiering configuration name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
+        Task<DeleteTieringConfigurationResponse> DeleteTieringConfigurationAsync(DeleteTieringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeBackupJob
 
 
@@ -2291,6 +2437,60 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRestoreJob">REST API Reference for DescribeRestoreJob Operation</seealso>
         Task<DescribeRestoreJobResponse> DescribeRestoreJobAsync(DescribeRestoreJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeScanJob
+
+
+        /// <summary>
+        /// Returns scan job details for the specified ScanJobID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScanJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">REST API Reference for DescribeScanJob Operation</seealso>
+        DescribeScanJobResponse DescribeScanJob(DescribeScanJobRequest request);
+
+
+
+        /// <summary>
+        /// Returns scan job details for the specified ScanJobID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScanJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeScanJob">REST API Reference for DescribeScanJob Operation</seealso>
+        Task<DescribeScanJobResponse> DescribeScanJobAsync(DescribeScanJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3295,6 +3495,64 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetSupportedResourceTypes">REST API Reference for GetSupportedResourceTypes Operation</seealso>
         Task<GetSupportedResourceTypesResponse> GetSupportedResourceTypesAsync(GetSupportedResourceTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTieringConfiguration
+
+
+        /// <summary>
+        /// Returns <c>TieringConfiguration</c> details for the specified <c>TieringConfigurationName</c>.
+        /// The details are the body of a tiering configuration in JSON format, in addition to
+        /// configuration metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        GetTieringConfigurationResponse GetTieringConfiguration(GetTieringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Returns <c>TieringConfiguration</c> details for the specified <c>TieringConfigurationName</c>.
+        /// The details are the body of a tiering configuration in JSON format, in addition to
+        /// configuration metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetTieringConfiguration">REST API Reference for GetTieringConfiguration Operation</seealso>
+        Task<GetTieringConfigurationResponse> GetTieringConfigurationAsync(GetTieringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4612,6 +4870,94 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  ListScanJobs
+
+
+        /// <summary>
+        /// Returns a list of existing scan jobs for an authenticated account for the last 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListScanJobs service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">REST API Reference for ListScanJobs Operation</seealso>
+        ListScanJobsResponse ListScanJobs(ListScanJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of existing scan jobs for an authenticated account for the last 30
+        /// days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScanJobs service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobs">REST API Reference for ListScanJobs Operation</seealso>
+        Task<ListScanJobsResponse> ListScanJobsAsync(ListScanJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListScanJobSummaries
+
+
+        /// <summary>
+        /// This is a request for a summary of scan jobs created or running within the most recent
+        /// 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListScanJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">REST API Reference for ListScanJobSummaries Operation</seealso>
+        ListScanJobSummariesResponse ListScanJobSummaries(ListScanJobSummariesRequest request);
+
+
+
+        /// <summary>
+        /// This is a request for a summary of scan jobs created or running within the most recent
+        /// 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScanJobSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScanJobSummaries service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListScanJobSummaries">REST API Reference for ListScanJobSummaries Operation</seealso>
+        Task<ListScanJobSummariesResponse> ListScanJobSummariesAsync(ListScanJobSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTags
 
 
@@ -4701,6 +5047,48 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">REST API Reference for ListTags Operation</seealso>
         Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTieringConfigurations
+
+
+        /// <summary>
+        /// Returns a list of tiering configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTieringConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListTieringConfigurations service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        ListTieringConfigurationsResponse ListTieringConfigurations(ListTieringConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of tiering configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTieringConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTieringConfigurations service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTieringConfigurations">REST API Reference for ListTieringConfigurations Operation</seealso>
+        Task<ListTieringConfigurationsResponse> ListTieringConfigurationsAsync(ListTieringConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5120,6 +5508,11 @@ namespace Amazon.Backup
         /// <para>
         /// Does not support continuous backups.
         /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/recov-point-create-a-copy.html#backup-copy-retry">Copy
+        /// job retry</a> for information on how Backup retries copy job operations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCopyJob service method.</param>
         /// 
@@ -5156,6 +5549,11 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// Does not support continuous backups.
+        /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/recov-point-create-a-copy.html#backup-copy-retry">Copy
+        /// job retry</a> for information on how Backup retries copy job operations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCopyJob service method.</param>
@@ -5303,6 +5701,76 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">REST API Reference for StartRestoreJob Operation</seealso>
         Task<StartRestoreJobResponse> StartRestoreJobAsync(StartRestoreJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartScanJob
+
+
+        /// <summary>
+        /// Starts scanning jobs for specific resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScanJob service method.</param>
+        /// 
+        /// <returns>The response from the StartScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">REST API Reference for StartScanJob Operation</seealso>
+        StartScanJobResponse StartScanJob(StartScanJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts scanning jobs for specific resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScanJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartScanJob service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartScanJob">REST API Reference for StartScanJob Operation</seealso>
+        Task<StartScanJobResponse> StartScanJobAsync(StartScanJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6283,6 +6751,120 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
         Task<UpdateRestoreTestingSelectionResponse> UpdateRestoreTestingSelectionAsync(UpdateRestoreTestingSelectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateTieringConfiguration
+
+
+        /// <summary>
+        /// This request will send changes to your specified tiering configuration. <c>TieringConfigurationName</c>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ResourceSelection</c> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resources</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TieringDownSettingsInDays</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTieringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        UpdateTieringConfigurationResponse UpdateTieringConfiguration(UpdateTieringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// This request will send changes to your specified tiering configuration. <c>TieringConfigurationName</c>
+        /// cannot be updated after it is created.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ResourceSelection</c> can contain:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resources</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TieringDownSettingsInDays</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTieringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTieringConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateTieringConfiguration">REST API Reference for UpdateTieringConfiguration Operation</seealso>
+        Task<UpdateTieringConfigurationResponse> UpdateTieringConfigurationAsync(UpdateTieringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

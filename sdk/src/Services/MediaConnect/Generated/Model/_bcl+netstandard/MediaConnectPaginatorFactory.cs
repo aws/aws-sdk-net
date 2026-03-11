@@ -91,5 +91,29 @@ namespace Amazon.MediaConnect.Model
         {
             return new ListReservationsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRouterInputs operation
+        ///</summary>
+        public IListRouterInputsPaginator ListRouterInputs(ListRouterInputsRequest request) 
+        {
+            return new ListRouterInputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRouterNetworkInterfaces operation
+        ///</summary>
+        public IListRouterNetworkInterfacesPaginator ListRouterNetworkInterfaces(ListRouterNetworkInterfacesRequest request) 
+        {
+            return new ListRouterNetworkInterfacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRouterOutputs operation
+        ///</summary>
+        public IListRouterOutputsPaginator ListRouterOutputs(ListRouterOutputsRequest request) 
+        {
+            return new ListRouterOutputsPaginator(this.client, request);
+        }
     }
 }

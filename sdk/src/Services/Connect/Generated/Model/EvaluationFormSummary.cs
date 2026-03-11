@@ -52,7 +52,6 @@ namespace Amazon.Connect.Model
         /// The version of the active evaluation form version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? ActiveVersion
         {
             get { return this._activeVersion; }
@@ -221,7 +220,7 @@ namespace Amazon.Connect.Model
         /// The version number of the latest evaluation form version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? LatestVersion
         {
             get { return this._latestVersion; }
@@ -240,7 +239,7 @@ namespace Amazon.Connect.Model
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

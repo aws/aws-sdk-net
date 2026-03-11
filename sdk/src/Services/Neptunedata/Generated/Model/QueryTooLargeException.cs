@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for QueryTooLargeException
+        /// message.
+        /// </summary>
+        public QueryTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryTooLargeException with the specified error
         /// message.
         /// </summary>

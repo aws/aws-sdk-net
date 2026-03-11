@@ -475,6 +475,10 @@ namespace Amazon.Neptunedata
         /// </summary>
         public static readonly S3BucketRegion ApEast1 = new S3BucketRegion("ap-east-1");
         /// <summary>
+        /// Constant ApEast2 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApEast2 = new S3BucketRegion("ap-east-2");
+        /// <summary>
         /// Constant ApNortheast1 for S3BucketRegion
         /// </summary>
         public static readonly S3BucketRegion ApNortheast1 = new S3BucketRegion("ap-northeast-1");
@@ -483,9 +487,17 @@ namespace Amazon.Neptunedata
         /// </summary>
         public static readonly S3BucketRegion ApNortheast2 = new S3BucketRegion("ap-northeast-2");
         /// <summary>
+        /// Constant ApNortheast3 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApNortheast3 = new S3BucketRegion("ap-northeast-3");
+        /// <summary>
         /// Constant ApSouth1 for S3BucketRegion
         /// </summary>
         public static readonly S3BucketRegion ApSouth1 = new S3BucketRegion("ap-south-1");
+        /// <summary>
+        /// Constant ApSouth2 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApSouth2 = new S3BucketRegion("ap-south-2");
         /// <summary>
         /// Constant ApSoutheast1 for S3BucketRegion
         /// </summary>
@@ -495,9 +507,29 @@ namespace Amazon.Neptunedata
         /// </summary>
         public static readonly S3BucketRegion ApSoutheast2 = new S3BucketRegion("ap-southeast-2");
         /// <summary>
+        /// Constant ApSoutheast3 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApSoutheast3 = new S3BucketRegion("ap-southeast-3");
+        /// <summary>
+        /// Constant ApSoutheast4 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApSoutheast4 = new S3BucketRegion("ap-southeast-4");
+        /// <summary>
+        /// Constant ApSoutheast5 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApSoutheast5 = new S3BucketRegion("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast7 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion ApSoutheast7 = new S3BucketRegion("ap-southeast-7");
+        /// <summary>
         /// Constant CaCentral1 for S3BucketRegion
         /// </summary>
         public static readonly S3BucketRegion CaCentral1 = new S3BucketRegion("ca-central-1");
+        /// <summary>
+        /// Constant CaWest1 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion CaWest1 = new S3BucketRegion("ca-west-1");
         /// <summary>
         /// Constant CnNorth1 for S3BucketRegion
         /// </summary>
@@ -511,9 +543,17 @@ namespace Amazon.Neptunedata
         /// </summary>
         public static readonly S3BucketRegion EuCentral1 = new S3BucketRegion("eu-central-1");
         /// <summary>
+        /// Constant EuCentral2 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion EuCentral2 = new S3BucketRegion("eu-central-2");
+        /// <summary>
         /// Constant EuNorth1 for S3BucketRegion
         /// </summary>
         public static readonly S3BucketRegion EuNorth1 = new S3BucketRegion("eu-north-1");
+        /// <summary>
+        /// Constant EuSouth2 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion EuSouth2 = new S3BucketRegion("eu-south-2");
         /// <summary>
         /// Constant EuWest1 for S3BucketRegion
         /// </summary>
@@ -527,9 +567,21 @@ namespace Amazon.Neptunedata
         /// </summary>
         public static readonly S3BucketRegion EuWest3 = new S3BucketRegion("eu-west-3");
         /// <summary>
+        /// Constant IlCentral1 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion IlCentral1 = new S3BucketRegion("il-central-1");
+        /// <summary>
+        /// Constant MeCentral1 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion MeCentral1 = new S3BucketRegion("me-central-1");
+        /// <summary>
         /// Constant MeSouth1 for S3BucketRegion
         /// </summary>
         public static readonly S3BucketRegion MeSouth1 = new S3BucketRegion("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for S3BucketRegion
+        /// </summary>
+        public static readonly S3BucketRegion MxCentral1 = new S3BucketRegion("mx-central-1");
         /// <summary>
         /// Constant SaEast1 for S3BucketRegion
         /// </summary>

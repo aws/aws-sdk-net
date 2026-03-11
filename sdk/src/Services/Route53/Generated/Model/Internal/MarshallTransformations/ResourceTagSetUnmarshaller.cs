@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceTagSet Object
     /// </summary>  
-    public class ResourceTagSetUnmarshaller : IXmlUnmarshaller<ResourceTagSet, XmlUnmarshallerContext>
+    public partial class ResourceTagSetUnmarshaller : IXmlUnmarshaller<ResourceTagSet, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,6 +78,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -86,6 +88,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ResourceTagSet unmarshalledObject, int targetDepth);
+
         private static ResourceTagSetUnmarshaller _instance = new ResourceTagSetUnmarshaller();        
 
         /// <summary>

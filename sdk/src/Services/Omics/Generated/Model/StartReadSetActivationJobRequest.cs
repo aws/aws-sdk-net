@@ -31,8 +31,16 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReadSetActivationJob operation.
-    /// Activates an archived read set. To reduce storage charges, Amazon Omics archives unused
-    /// read sets after 30 days.
+    /// Activates an archived read set and returns its metadata in a JSON formatted output.
+    /// AWS HealthOmics automatically archives unused read sets after 30 days. To monitor
+    /// the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
+    /// operation.
+    /// 
+    ///  
+    /// <para>
+    /// To learn more, see <a href="https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html">Activating
+    /// read sets</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class StartReadSetActivationJobRequest : AmazonOmicsRequest
     {

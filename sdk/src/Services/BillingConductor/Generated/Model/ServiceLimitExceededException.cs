@@ -43,6 +43,13 @@ namespace Amazon.BillingConductor.Model
         private string _serviceCode;
 
         /// <summary>
+        /// Default constructor for ServiceLimitExceededException
+        /// message.
+        /// </summary>
+        public ServiceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLimitExceededException with the specified error
         /// message.
         /// </summary>

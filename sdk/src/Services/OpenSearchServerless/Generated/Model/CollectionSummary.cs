@@ -35,7 +35,9 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class CollectionSummary
     {
         private string _arn;
+        private string _collectionGroupName;
         private string _id;
+        private string _kmsKeyArn;
         private string _name;
         private CollectionStatus _status;
 
@@ -58,6 +60,25 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CollectionGroupName. 
+        /// <para>
+        /// The name of the collection group that contains this collection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=32)]
+        public string CollectionGroupName
+        {
+            get { return this._collectionGroupName; }
+            set { this._collectionGroupName = value; }
+        }
+
+        // Check to see if CollectionGroupName property is set
+        internal bool IsSetCollectionGroupName()
+        {
+            return this._collectionGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier of the collection.
@@ -74,6 +95,25 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the Amazon Web Services Key Management Service key used to encrypt the
+        /// collection.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

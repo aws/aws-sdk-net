@@ -31,8 +31,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableImportFindingsForProduct operation.
-    /// Disables the integration of the specified product with Security Hub. After the integration
-    /// is disabled, findings from that product are no longer sent to Security Hub.
+    /// Disables the integration of the specified product with Security Hub CSPM. After the
+    /// integration is disabled, findings from that product are no longer sent to Security
+    /// Hub CSPM.
     /// </summary>
     public partial class DisableImportFindingsForProductRequest : AmazonSecurityHubRequest
     {

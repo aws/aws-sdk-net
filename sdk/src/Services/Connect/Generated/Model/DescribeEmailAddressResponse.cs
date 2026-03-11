@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class DescribeEmailAddressResponse : AmazonWebServiceResponse
     {
+        private List<AliasConfiguration> _aliasConfigurations = AWSConfigs.InitializeCollections ? new List<AliasConfiguration>() : null;
         private string _createTimestamp;
         private string _description;
         private string _displayName;
@@ -42,6 +43,32 @@ namespace Amazon.Connect.Model
         private string _emailAddressId;
         private string _modifiedTimestamp;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AliasConfigurations. 
+        /// <para>
+        /// A list of alias configurations associated with this email address. Contains details
+        /// about email addresses that forward to this primary email address. The list can contain
+        /// at most one alias configuration per email address.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<AliasConfiguration> AliasConfigurations
+        {
+            get { return this._aliasConfigurations; }
+            set { this._aliasConfigurations = value; }
+        }
+
+        // Check to see if AliasConfigurations property is set
+        internal bool IsSetAliasConfigurations()
+        {
+            return this._aliasConfigurations != null && (this._aliasConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTimestamp. 

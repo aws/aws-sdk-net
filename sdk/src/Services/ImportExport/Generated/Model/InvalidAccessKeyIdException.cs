@@ -41,6 +41,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAccessKeyIdException
+        /// message.
+        /// </summary>
+        public InvalidAccessKeyIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAccessKeyIdException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedAvailabilityZoneException
+        /// message.
+        /// </summary>
+        public UnsupportedAvailabilityZoneException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedAvailabilityZoneException with the specified error
         /// message.
         /// </summary>

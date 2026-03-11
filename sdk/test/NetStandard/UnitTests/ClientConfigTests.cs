@@ -30,6 +30,7 @@ namespace UnitTests
             "LogResponse",
             "AWSTokenProvider",
             "BufferSize",
+            "MaxStaleConnectionRetries",
             "ProgressUpdateInterval",
             "ResignRetries",
             "AllowAutoRedirect",
@@ -72,7 +73,9 @@ namespace UnitTests
             "RequestChecksumCalculation",
             "ResponseChecksumValidation",
             "IdentityResolverConfiguration",
-            "DefaultAWSCredentials"
+            "DefaultAWSCredentials",
+            "AuthSchemePreference",
+            "SigV4aSigningRegionSet",
         };
 
         [Fact]

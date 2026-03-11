@@ -34,7 +34,26 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class RuleDetail
     {
+        private GlossaryTermEnforcementDetail _glossaryTermEnforcementDetail;
         private MetadataFormEnforcementDetail _metadataFormEnforcementDetail;
+
+        /// <summary>
+        /// Gets and sets the property GlossaryTermEnforcementDetail. 
+        /// <para>
+        /// The enforcement details of a glossary term that's part of the metadata rule.
+        /// </para>
+        /// </summary>
+        public GlossaryTermEnforcementDetail GlossaryTermEnforcementDetail
+        {
+            get { return this._glossaryTermEnforcementDetail; }
+            set { this._glossaryTermEnforcementDetail = value; }
+        }
+
+        // Check to see if GlossaryTermEnforcementDetail property is set
+        internal bool IsSetGlossaryTermEnforcementDetail()
+        {
+            return this._glossaryTermEnforcementDetail != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MetadataFormEnforcementDetail. 

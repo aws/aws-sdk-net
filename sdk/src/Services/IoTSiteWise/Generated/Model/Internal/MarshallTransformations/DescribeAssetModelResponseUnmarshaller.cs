@@ -136,6 +136,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("interfaceDetails", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InterfaceRelationship, InterfaceRelationshipUnmarshaller>(InterfaceRelationshipUnmarshaller.Instance);
+                    response.InterfaceDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             if (context.ResponseData.IsHeaderPresent("ETag"))
                 response.ETag = context.ResponseData.GetHeaderValue("ETag");

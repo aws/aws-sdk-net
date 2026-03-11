@@ -43,6 +43,13 @@ namespace Amazon.Translate.Model
         private string _targetLanguageCode;
 
         /// <summary>
+        /// Default constructor for UnsupportedLanguagePairException
+        /// message.
+        /// </summary>
+        public UnsupportedLanguagePairException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedLanguagePairException with the specified error
         /// message.
         /// </summary>

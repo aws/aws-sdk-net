@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToGetUpstreamLayerException
+        /// message.
+        /// </summary>
+        public UnableToGetUpstreamLayerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToGetUpstreamLayerException with the specified error
         /// message.
         /// </summary>

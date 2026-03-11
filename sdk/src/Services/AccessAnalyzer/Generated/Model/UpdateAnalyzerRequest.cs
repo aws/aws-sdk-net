@@ -32,6 +32,12 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Container for the parameters to the UpdateAnalyzer operation.
     /// Modifies the configuration of an existing analyzer.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action is not supported for external access analyzers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateAnalyzerRequest : AmazonAccessAnalyzerRequest
     {

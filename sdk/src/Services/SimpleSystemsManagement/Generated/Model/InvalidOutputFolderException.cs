@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOutputFolderException
+        /// message.
+        /// </summary>
+        public InvalidOutputFolderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOutputFolderException with the specified error
         /// message.
         /// </summary>

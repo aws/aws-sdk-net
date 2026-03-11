@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for InvalidParameterValueException
+        /// message.
+        /// </summary>
+        public InvalidParameterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterValueException with the specified error
         /// message.
         /// </summary>

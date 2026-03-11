@@ -271,7 +271,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual CreateAssistantResponse CreateAssistant(CreateAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantResponseUnmarshaller.Instance;
 
@@ -308,7 +308,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistant">REST API Reference for CreateAssistant Operation</seealso>
         public virtual Task<CreateAssistantResponse> CreateAssistantAsync(CreateAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual CreateAssistantAssociationResponse CreateAssistantAssociation(CreateAssistantAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistantAssociation">REST API Reference for CreateAssistantAssociation Operation</seealso>
         public virtual Task<CreateAssistantAssociationResponse> CreateAssistantAssociationAsync(CreateAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual CreateContentResponse CreateContent(CreateContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContentResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateContent">REST API Reference for CreateContent Operation</seealso>
         public virtual Task<CreateContentResponse> CreateContentAsync(CreateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContentResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual CreateKnowledgeBaseResponse CreateKnowledgeBase(CreateKnowledgeBaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         public virtual Task<CreateKnowledgeBaseResponse> CreateKnowledgeBaseAsync(CreateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual CreateQuickResponseResponse CreateQuickResponse(CreateQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuickResponseResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
         public virtual Task<CreateQuickResponseResponse> CreateQuickResponseAsync(CreateQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuickResponseResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -593,7 +593,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual DeleteAssistantResponse DeleteAssistant(DeleteAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteAssistant">REST API Reference for DeleteAssistant Operation</seealso>
         public virtual Task<DeleteAssistantResponse> DeleteAssistantAsync(DeleteAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual DeleteAssistantAssociationResponse DeleteAssistantAssociation(DeleteAssistantAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteAssistantAssociation">REST API Reference for DeleteAssistantAssociation Operation</seealso>
         public virtual Task<DeleteAssistantAssociationResponse> DeleteAssistantAssociationAsync(DeleteAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual DeleteContentResponse DeleteContent(DeleteContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContentResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteContent">REST API Reference for DeleteContent Operation</seealso>
         public virtual Task<DeleteContentResponse> DeleteContentAsync(DeleteContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContentResponseUnmarshaller.Instance;
 
@@ -731,7 +731,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual DeleteImportJobResponse DeleteImportJob(DeleteImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportJobResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
         public virtual Task<DeleteImportJobResponse> DeleteImportJobAsync(DeleteImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportJobResponseUnmarshaller.Instance;
 
@@ -779,7 +779,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual DeleteKnowledgeBaseResponse DeleteKnowledgeBase(DeleteKnowledgeBaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -827,7 +827,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         public virtual Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual DeleteQuickResponseResponse DeleteQuickResponse(DeleteQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
         public virtual Task<DeleteQuickResponseResponse> DeleteQuickResponseAsync(DeleteQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
 
@@ -881,7 +881,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetAssistantResponse GetAssistant(GetAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantResponseUnmarshaller.Instance;
 
@@ -911,7 +911,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetAssistant">REST API Reference for GetAssistant Operation</seealso>
         public virtual Task<GetAssistantResponse> GetAssistantAsync(GetAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetAssistantAssociationResponse GetAssistantAssociation(GetAssistantAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetAssistantAssociation">REST API Reference for GetAssistantAssociation Operation</seealso>
         public virtual Task<GetAssistantAssociationResponse> GetAssistantAssociationAsync(GetAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetContentResponse GetContent(GetContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentResponseUnmarshaller.Instance;
 
@@ -995,7 +995,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetContent">REST API Reference for GetContent Operation</seealso>
         public virtual Task<GetContentResponse> GetContentAsync(GetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetContentSummaryResponse GetContentSummary(GetContentSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentSummaryResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetContentSummary">REST API Reference for GetContentSummary Operation</seealso>
         public virtual Task<GetContentSummaryResponse> GetContentSummaryAsync(GetContentSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentSummaryResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         public virtual Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetKnowledgeBaseResponse GetKnowledgeBase(GetKnowledgeBaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         public virtual Task<GetKnowledgeBaseResponse> GetKnowledgeBaseAsync(GetKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetQuickResponseResponse GetQuickResponse(GetQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQuickResponseResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
         public virtual Task<GetQuickResponseResponse> GetQuickResponseAsync(GetQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQuickResponseResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.ConnectWisdomService
         [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         internal virtual GetRecommendationsResponse GetRecommendations(GetRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.ConnectWisdomService
         [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual Task<GetRecommendationsResponse> GetRecommendationsAsync(GetRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -1253,7 +1253,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -1265,7 +1265,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListAssistantAssociationsResponse ListAssistantAssociations(ListAssistantAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantAssociationsResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistantAssociations">REST API Reference for ListAssistantAssociations Operation</seealso>
         public virtual Task<ListAssistantAssociationsResponse> ListAssistantAssociationsAsync(ListAssistantAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantAssociationsResponseUnmarshaller.Instance;
 
@@ -1307,7 +1307,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListAssistantsResponse ListAssistants(ListAssistantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantsResponseUnmarshaller.Instance;
 
@@ -1334,7 +1334,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistants">REST API Reference for ListAssistants Operation</seealso>
         public virtual Task<ListAssistantsResponse> ListAssistantsAsync(ListAssistantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantsResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListContentsResponse ListContents(ListContentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContentsResponseUnmarshaller.Instance;
 
@@ -1376,7 +1376,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListContents">REST API Reference for ListContents Operation</seealso>
         public virtual Task<ListContentsResponse> ListContentsAsync(ListContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContentsResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListImportJobsResponse ListImportJobs(ListImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
         public virtual Task<ListImportJobsResponse> ListImportJobsAsync(ListImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
 
@@ -1427,7 +1427,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListKnowledgeBasesResponse ListKnowledgeBases(ListKnowledgeBasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKnowledgeBasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
 
@@ -1454,7 +1454,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         public virtual Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(ListKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKnowledgeBasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListQuickResponsesResponse ListQuickResponses(ListQuickResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickResponsesResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
         public virtual Task<ListQuickResponsesResponse> ListQuickResponsesAsync(ListQuickResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickResponsesResponseUnmarshaller.Instance;
 
@@ -1508,7 +1508,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1544,7 +1544,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual NotifyRecommendationsReceivedResponse NotifyRecommendationsReceived(NotifyRecommendationsReceivedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyRecommendationsReceivedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyRecommendationsReceivedResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/NotifyRecommendationsReceived">REST API Reference for NotifyRecommendationsReceived Operation</seealso>
         public virtual Task<NotifyRecommendationsReceivedResponse> NotifyRecommendationsReceivedAsync(NotifyRecommendationsReceivedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyRecommendationsReceivedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyRecommendationsReceivedResponseUnmarshaller.Instance;
 
@@ -1590,7 +1590,7 @@ namespace Amazon.ConnectWisdomService
         [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         internal virtual QueryAssistantResponse QueryAssistant(QueryAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryAssistantResponseUnmarshaller.Instance;
 
@@ -1627,7 +1627,7 @@ namespace Amazon.ConnectWisdomService
         [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual Task<QueryAssistantResponse> QueryAssistantAsync(QueryAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryAssistantResponseUnmarshaller.Instance;
 
@@ -1639,7 +1639,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual RemoveKnowledgeBaseTemplateUriResponse RemoveKnowledgeBaseTemplateUri(RemoveKnowledgeBaseTemplateUriRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -1669,7 +1669,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RemoveKnowledgeBaseTemplateUri">REST API Reference for RemoveKnowledgeBaseTemplateUri Operation</seealso>
         public virtual Task<RemoveKnowledgeBaseTemplateUriResponse> RemoveKnowledgeBaseTemplateUriAsync(RemoveKnowledgeBaseTemplateUriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -1681,7 +1681,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual SearchContentResponse SearchContent(SearchContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContentResponseUnmarshaller.Instance;
 
@@ -1712,7 +1712,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchContent">REST API Reference for SearchContent Operation</seealso>
         public virtual Task<SearchContentResponse> SearchContentAsync(SearchContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContentResponseUnmarshaller.Instance;
 
@@ -1724,7 +1724,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual SearchQuickResponsesResponse SearchQuickResponses(SearchQuickResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQuickResponsesResponseUnmarshaller.Instance;
 
@@ -1759,7 +1759,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
         public virtual Task<SearchQuickResponsesResponse> SearchQuickResponsesAsync(SearchQuickResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQuickResponsesResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual SearchSessionsResponse SearchSessions(SearchSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSessionsResponseUnmarshaller.Instance;
 
@@ -1801,7 +1801,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchSessions">REST API Reference for SearchSessions Operation</seealso>
         public virtual Task<SearchSessionsResponse> SearchSessionsAsync(SearchSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSessionsResponseUnmarshaller.Instance;
 
@@ -1813,7 +1813,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual StartContentUploadResponse StartContentUpload(StartContentUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentUploadResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartContentUpload">REST API Reference for StartContentUpload Operation</seealso>
         public virtual Task<StartContentUploadResponse> StartContentUploadAsync(StartContentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentUploadResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual StartImportJobResponse StartImportJob(StartImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportJobResponseUnmarshaller.Instance;
 
@@ -1911,7 +1911,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
         public virtual Task<StartImportJobResponse> StartImportJobAsync(StartImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportJobResponseUnmarshaller.Instance;
 
@@ -1923,7 +1923,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1951,7 +1951,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1963,7 +1963,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1987,7 +1987,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1999,7 +1999,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual UpdateContentResponse UpdateContent(UpdateContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContentResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateContent">REST API Reference for UpdateContent Operation</seealso>
         public virtual Task<UpdateContentResponse> UpdateContentAsync(UpdateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContentResponseUnmarshaller.Instance;
 
@@ -2045,7 +2045,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual UpdateKnowledgeBaseTemplateUriResponse UpdateKnowledgeBaseTemplateUri(UpdateKnowledgeBaseTemplateUriRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateKnowledgeBaseTemplateUri">REST API Reference for UpdateKnowledgeBaseTemplateUri Operation</seealso>
         public virtual Task<UpdateKnowledgeBaseTemplateUriResponse> UpdateKnowledgeBaseTemplateUriAsync(UpdateKnowledgeBaseTemplateUriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -2090,7 +2090,7 @@ namespace Amazon.ConnectWisdomService
 
         internal virtual UpdateQuickResponseResponse UpdateQuickResponse(UpdateQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickResponseResponseUnmarshaller.Instance;
 
@@ -2130,7 +2130,7 @@ namespace Amazon.ConnectWisdomService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
         public virtual Task<UpdateQuickResponseResponse> UpdateQuickResponseAsync(UpdateQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickResponseResponseUnmarshaller.Instance;
 

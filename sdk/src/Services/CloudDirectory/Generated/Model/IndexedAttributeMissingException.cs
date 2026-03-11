@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for IndexedAttributeMissingException
+        /// message.
+        /// </summary>
+        public IndexedAttributeMissingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IndexedAttributeMissingException with the specified error
         /// message.
         /// </summary>

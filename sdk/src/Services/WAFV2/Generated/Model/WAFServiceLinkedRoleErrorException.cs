@@ -45,6 +45,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFServiceLinkedRoleErrorException
+        /// message.
+        /// </summary>
+        public WAFServiceLinkedRoleErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFServiceLinkedRoleErrorException with the specified error
         /// message.
         /// </summary>

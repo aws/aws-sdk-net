@@ -42,6 +42,16 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A list of objects in the organization.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>Status</c> parameter in the API response will be retired on September 9, 2026.
+        /// Although both the account <c>State</c> and account <c>Status</c> parameters are currently
+        /// available in the Organizations APIs (<c>DescribeAccount</c>, <c>ListAccounts</c>,
+        /// <c>ListAccountsForParent</c>), we recommend that you update your scripts or other
+        /// code to use the <c>State</c> parameter instead of <c>Status</c> before September 9,
+        /// 2026.
+        /// </para>
+        ///  </important>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

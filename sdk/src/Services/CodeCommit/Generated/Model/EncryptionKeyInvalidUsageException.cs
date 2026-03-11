@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionKeyInvalidUsageException
+        /// message.
+        /// </summary>
+        public EncryptionKeyInvalidUsageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionKeyInvalidUsageException with the specified error
         /// message.
         /// </summary>

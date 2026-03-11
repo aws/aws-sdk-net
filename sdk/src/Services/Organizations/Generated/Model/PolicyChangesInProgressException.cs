@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyChangesInProgressException
+        /// message.
+        /// </summary>
+        public PolicyChangesInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyChangesInProgressException with the specified error
         /// message.
         /// </summary>

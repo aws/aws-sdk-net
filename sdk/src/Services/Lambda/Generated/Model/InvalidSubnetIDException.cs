@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for InvalidSubnetIDException
+        /// message.
+        /// </summary>
+        public InvalidSubnetIDException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSubnetIDException with the specified error
         /// message.
         /// </summary>

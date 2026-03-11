@@ -36,6 +36,14 @@ namespace Amazon.ChimeSDKIdentity
         /// <summary>
         /// Construct instance of AmazonChimeSDKIdentityException
         /// </summary>
+        public AmazonChimeSDKIdentityException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonChimeSDKIdentityException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonChimeSDKIdentityException(string message)
             : base(message)

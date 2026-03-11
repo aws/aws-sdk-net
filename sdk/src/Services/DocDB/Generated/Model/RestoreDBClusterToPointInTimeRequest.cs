@@ -44,9 +44,11 @@ namespace Amazon.DocDB.Model
         private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyId;
+        private string _networkType;
         private int? _port;
         private DateTime? _restoreToTime;
         private string _restoreType;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceDBClusterIdentifier;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -210,6 +212,39 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c> | <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port number on which the new cluster accepts connections.
@@ -317,6 +352,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetRestoreType()
         {
             return this._restoreType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.
+        /// </para>
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

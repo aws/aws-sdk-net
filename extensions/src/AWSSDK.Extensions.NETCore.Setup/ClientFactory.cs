@@ -17,10 +17,12 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Credentials.Internal;
+using Amazon.Util;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -263,6 +265,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.AuthenticationRegion = defaultConfig.AuthenticationRegion;
             }
+            if (defaultConfig.AuthSchemePreference != null)
+            {
+                config.AuthSchemePreference = defaultConfig.AuthSchemePreference;
+            }
             if (defaultConfig.BufferSize.HasValue)
             {
                 config.BufferSize = defaultConfig.BufferSize.Value;
@@ -295,10 +301,6 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.FastFailRequests = defaultConfig.FastFailRequests.Value;
             }
-            if (defaultConfig.HttpClientCacheSize.HasValue)
-            {
-                config.HttpClientCacheSize = defaultConfig.HttpClientCacheSize.Value;
-            }
             if (defaultConfig.IgnoreConfiguredEndpointUrls.HasValue)
             {
                 config.IgnoreConfiguredEndpointUrls = defaultConfig.IgnoreConfiguredEndpointUrls.Value;
@@ -314,6 +316,10 @@ namespace Amazon.Extensions.NETCore.Setup
             if (defaultConfig.MaxErrorRetry.HasValue)
             {
                 config.MaxErrorRetry = defaultConfig.MaxErrorRetry.Value;
+            }
+            if (defaultConfig.MaxStaleConnectionRetries.HasValue)
+            {
+                config.MaxStaleConnectionRetries = defaultConfig.MaxStaleConnectionRetries.Value;
             }
             if (defaultConfig.ProgressUpdateInterval.HasValue)
             {
@@ -331,6 +337,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.RetryMode = defaultConfig.RetryMode.Value;
             }
+            if (defaultConfig.SigV4aSigningRegionSet != null)
+            {
+                config.SigV4aSigningRegionSet = defaultConfig.SigV4aSigningRegionSet;
+            }
             if (defaultConfig.ThrottleRetries.HasValue)
             {
                 config.ThrottleRetries = defaultConfig.ThrottleRetries.Value;
@@ -343,6 +353,10 @@ namespace Amazon.Extensions.NETCore.Setup
             if (defaultConfig.ConnectTimeout.HasValue)
             {
                 config.ConnectTimeout = defaultConfig.ConnectTimeout.Value;
+            }
+            if (defaultConfig.MaxConnectionsPerServer.HasValue)
+            {
+                config.MaxConnectionsPerServer = defaultConfig.MaxConnectionsPerServer.Value;
             }
 #endif
             if (defaultConfig.UseAlternateUserAgentHeader.HasValue)
@@ -367,7 +381,26 @@ namespace Amazon.Extensions.NETCore.Setup
                 ProcessServiceSpecificSettings(config, defaultConfig.ServiceSpecificSettings);
             }
 
+            // It is possible that this library might be used in .NET Framework application. In that
+            // case the SDK used at runtime will be the .NET Framework variant. To avoid getting
+            // MissingMethodException exceptions for config properties that don't exist in 
+            // .NET Framework variant put the set calls in a separate method only called
+            // if the SDK is not the .NET Framework variant.
+            if (!AWSSDKUtils.IsNETFramework())
+            {
+                SetNETStandardAndAboveSettings(defaultConfig, config);
+            }
+
             return config;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void SetNETStandardAndAboveSettings(DefaultClientConfig defaultConfig, ClientConfig config)
+        {
+            if (defaultConfig.HttpClientCacheSize.HasValue)
+            {
+                config.HttpClientCacheSize = defaultConfig.HttpClientCacheSize.Value;
+            }
         }
 
 #if NET8_0_OR_GREATER

@@ -92,8 +92,8 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property NumberOfOnCalls. 
         /// <para>
         /// The number of contacts, or shift team members designated to be on call concurrently
-        /// during a shift. For example, in an on-call schedule containing ten contacts, a value
-        /// of <c>2</c> designates that two of them are on call at any given time.
+        /// during a shift. For example, in an on-call schedule that contains ten contacts, a
+        /// value of <c>2</c> designates that two of them are on call at any given time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -131,7 +131,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ShiftCoverages. 
         /// <para>
-        /// Information about the days of the week included in on-call rotation coverage.
+        /// Information about the days of the week that the on-call rotation coverage includes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

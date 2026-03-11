@@ -141,7 +141,7 @@ namespace Amazon.KeyManagementService.Model
         /// The <c>AliasName</c> value must be string of 1-256 characters. It can contain only
         /// alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The
         /// alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved
-        /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a>.
         /// </para>
         /// </summary>
@@ -161,7 +161,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>. The KMS key must be in the same Amazon Web Services Region. 
         /// </para>
         ///  

@@ -36,6 +36,14 @@ namespace Amazon.VoiceID
         /// <summary>
         /// Construct instance of AmazonVoiceIDException
         /// </summary>
+        public AmazonVoiceIDException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonVoiceIDException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonVoiceIDException(string message)
             : base(message)

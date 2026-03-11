@@ -36,6 +36,14 @@ namespace Amazon.Macie2
         /// <summary>
         /// Construct instance of AmazonMacie2Exception
         /// </summary>
+        public AmazonMacie2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMacie2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMacie2Exception(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientSnsTopicPolicyException
+        /// message.
+        /// </summary>
+        public InsufficientSnsTopicPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientSnsTopicPolicyException with the specified error
         /// message.
         /// </summary>

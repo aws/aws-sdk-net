@@ -109,6 +109,14 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for ListMalwareScans operation
+        ///</summary>
+        public IListMalwareScansPaginator ListMalwareScans(ListMalwareScansRequest request) 
+        {
+            return new ListMalwareScansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         public IListMembersPaginator ListMembers(ListMembersRequest request) 
@@ -133,11 +141,27 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for ListThreatEntitySets operation
+        ///</summary>
+        public IListThreatEntitySetsPaginator ListThreatEntitySets(ListThreatEntitySetsRequest request) 
+        {
+            return new ListThreatEntitySetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListThreatIntelSets operation
         ///</summary>
         public IListThreatIntelSetsPaginator ListThreatIntelSets(ListThreatIntelSetsRequest request) 
         {
             return new ListThreatIntelSetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrustedEntitySets operation
+        ///</summary>
+        public IListTrustedEntitySetsPaginator ListTrustedEntitySets(ListTrustedEntitySetsRequest request) 
+        {
+            return new ListTrustedEntitySetsPaginator(this.client, request);
         }
     }
 }

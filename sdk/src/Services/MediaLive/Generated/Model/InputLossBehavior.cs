@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property BlackFrameMsec. Documentation update needed
         /// </summary>
-        [AWSProperty(Min=0, Max=1000000)]
         public int? BlackFrameMsec
         {
             get { return this._blackFrameMsec; }
@@ -61,7 +60,6 @@ namespace Amazon.MediaLive.Model
         /// this field specifies the color to use. Value: 6 hex characters representing the values
         /// of RGB.
         /// </summary>
-        [AWSProperty(Min=6, Max=6)]
         public string InputLossImageColor
         {
             get { return this._inputLossImageColor; }
@@ -109,7 +107,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property RepeatFrameMsec. Documentation update needed
         /// </summary>
-        [AWSProperty(Min=0, Max=1000000)]
         public int? RepeatFrameMsec
         {
             get { return this._repeatFrameMsec; }

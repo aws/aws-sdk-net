@@ -249,6 +249,56 @@ namespace Amazon.CostOptimizationHub
 
 
     /// <summary>
+    /// Constants used for properties of type GranularityType.
+    /// </summary>
+    public class GranularityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Daily for GranularityType
+        /// </summary>
+        public static readonly GranularityType Daily = new GranularityType("Daily");
+        /// <summary>
+        /// Constant Monthly for GranularityType
+        /// </summary>
+        public static readonly GranularityType Monthly = new GranularityType("Monthly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GranularityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GranularityType FindValue(string value)
+        {
+            return FindValue<GranularityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GranularityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImplementationEffort.
     /// </summary>
     public class ImplementationEffort : ConstantClass
@@ -518,6 +568,10 @@ namespace Amazon.CostOptimizationHub
         /// Constant MemoryDbReservedInstances for ResourceType
         /// </summary>
         public static readonly ResourceType MemoryDbReservedInstances = new ResourceType("MemoryDbReservedInstances");
+        /// <summary>
+        /// Constant NatGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType NatGateway = new ResourceType("NatGateway");
         /// <summary>
         /// Constant OpenSearchReservedInstances for ResourceType
         /// </summary>

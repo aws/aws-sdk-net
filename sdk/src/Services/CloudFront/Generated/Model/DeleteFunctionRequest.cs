@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// The name of the function that you are deleting.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

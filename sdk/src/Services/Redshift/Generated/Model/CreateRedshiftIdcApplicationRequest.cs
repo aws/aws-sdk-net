@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class CreateRedshiftIdcApplicationRequest : AmazonRedshiftRequest
     {
+        private ApplicationType _applicationType;
         private List<AuthorizedTokenIssuer> _authorizedTokenIssuerList = AWSConfigs.InitializeCollections ? new List<AuthorizedTokenIssuer>() : null;
         private string _iamRoleArn;
         private string _idcDisplayName;
@@ -42,6 +43,27 @@ namespace Amazon.Redshift.Model
         private string _identityNamespace;
         private string _redshiftIdcApplicationName;
         private List<ServiceIntegrationsUnion> _serviceIntegrations = AWSConfigs.InitializeCollections ? new List<ServiceIntegrationsUnion>() : null;
+        private List<string> _ssoTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of application being created. Valid values are <c>None</c> or <c>Lakehouse</c>.
+        /// Use <c>Lakehouse</c> to enable Amazon Redshift federated permissions on cluster.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthorizedTokenIssuerList. 
@@ -186,6 +208,53 @@ namespace Amazon.Redshift.Model
         internal bool IsSetServiceIntegrations()
         {
             return this._serviceIntegrations != null && (this._serviceIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SsoTagKeys. 
+        /// <para>
+        /// A list of tags keys that Redshift Identity Center applications copy to IAM Identity
+        /// Center. For each input key, the tag corresponding to the key-value pair is propagated.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SsoTagKeys
+        {
+            get { return this._ssoTagKeys; }
+            set { this._ssoTagKeys = value; }
+        }
+
+        // Check to see if SsoTagKeys property is set
+        internal bool IsSetSsoTagKeys()
+        {
+            return this._ssoTagKeys != null && (this._ssoTagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

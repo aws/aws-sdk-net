@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SQS.NetStandard", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGenerator", "..\..\..\..\generator\ServiceClientGenerator\ServiceClientGenerator.csproj", "{D3C088B4-9D88-4718-B956-B7682DE5614D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.UnitTestUtilities.NetStandard", "..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.NetStandard.csproj", "{0162C212-EBE7-4175-9E32-5174B86F414B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.UnitTestUtilities", "..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{16EABAA8-9625-D75F-C03D-CCD90882E010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,10 @@ Global
 		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3C088B4-9D88-4718-B956-B7682DE5614D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0162C212-EBE7-4175-9E32-5174B86F414B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0162C212-EBE7-4175-9E32-5174B86F414B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0162C212-EBE7-4175-9E32-5174B86F414B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0162C212-EBE7-4175-9E32-5174B86F414B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

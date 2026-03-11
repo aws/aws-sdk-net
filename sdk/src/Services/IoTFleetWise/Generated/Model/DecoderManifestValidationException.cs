@@ -42,6 +42,13 @@ namespace Amazon.IoTFleetWise.Model
         private List<InvalidSignalDecoder> _invalidSignals = AWSConfigs.InitializeCollections ? new List<InvalidSignalDecoder>() : null;
 
         /// <summary>
+        /// Default constructor for DecoderManifestValidationException
+        /// message.
+        /// </summary>
+        public DecoderManifestValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DecoderManifestValidationException with the specified error
         /// message.
         /// </summary>

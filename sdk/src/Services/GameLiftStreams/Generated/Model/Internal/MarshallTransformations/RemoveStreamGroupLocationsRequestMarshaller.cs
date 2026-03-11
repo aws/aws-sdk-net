@@ -65,6 +65,8 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetIdentifier())
                 throw new AmazonGameLiftStreamsException("Request object does not have required field Identifier set");
             request.AddPathResource("{Identifier}", StringUtils.FromString(publicRequest.Identifier));
+            if (publicRequest.Locations == null)
+                throw new AmazonGameLiftStreamsException("Request object does not have required field Locations set");
             
             if (publicRequest.IsSetLocations())
                 request.ParameterCollection.Add("locations", publicRequest.Locations);

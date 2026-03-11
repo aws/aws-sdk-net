@@ -71,6 +71,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.ReportType))
+                throw new AmazonIoTException("Request object does not have required field ReportType set");
             
             if (publicRequest.IsSetReportType())
                 request.Parameters.Add("reportType", StringUtils.FromString(publicRequest.ReportType));

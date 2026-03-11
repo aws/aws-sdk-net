@@ -36,6 +36,14 @@ namespace Amazon.RecycleBin
         /// <summary>
         /// Construct instance of AmazonRecycleBinException
         /// </summary>
+        public AmazonRecycleBinException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRecycleBinException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRecycleBinException(string message)
             : base(message)

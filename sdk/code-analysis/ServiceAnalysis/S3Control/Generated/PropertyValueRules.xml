@@ -1524,6 +1524,12 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.DSSEKMSFilter.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.Description</property>
     <min>1</min>
     <max>256</max>
@@ -1618,6 +1624,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:[^:]+:s3:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.JobReport.ExpectedBucketOwner</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.JobReport.Prefix</property>
@@ -2003,6 +2014,12 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.S3UpdateObjectEncryptionSSEKMS.KMSKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.SelectionCriteria.Delimiter</property>
     <max>1</max>
   </property-value-rule>
@@ -2021,6 +2038,12 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.SSEKMSFilter.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensAwsOrg.Arn</property>
     <min>1</min>
     <max>1024</max>
@@ -2030,6 +2053,10 @@
     <property>Amazon.S3Control.Model.StorageLensConfiguration.Id</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.StorageLensConfiguration.PrefixDelimiter</property>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensConfiguration.StorageLensArn</property>

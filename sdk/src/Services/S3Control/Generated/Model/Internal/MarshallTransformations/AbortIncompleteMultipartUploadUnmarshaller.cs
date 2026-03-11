@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AbortIncompleteMultipartUpload Object
     /// </summary>  
-    public class AbortIncompleteMultipartUploadUnmarshaller : IXmlUnmarshaller<AbortIncompleteMultipartUpload, XmlUnmarshallerContext>
+    public partial class AbortIncompleteMultipartUploadUnmarshaller : IXmlUnmarshaller<AbortIncompleteMultipartUpload, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.DaysAfterInitiation = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AbortIncompleteMultipartUpload unmarshalledObject, int targetDepth);
+
         private static AbortIncompleteMultipartUploadUnmarshaller _instance = new AbortIncompleteMultipartUploadUnmarshaller();        
 
         /// <summary>

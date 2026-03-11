@@ -81,6 +81,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetRulePrioritiesRequestMarshaller _instance = new SetRulePrioritiesRequestMarshaller();        

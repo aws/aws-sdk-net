@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for IdempotencyException
+        /// message.
+        /// </summary>
+        public IdempotencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdempotencyException with the specified error
         /// message.
         /// </summary>

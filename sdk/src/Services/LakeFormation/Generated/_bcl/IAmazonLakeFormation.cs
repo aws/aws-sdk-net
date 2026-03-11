@@ -128,8 +128,30 @@ namespace Amazon.LakeFormation
         /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
         /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
         /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
-        /// A typical IAM policy attached to such a role would look as follows: 
+        /// A typical IAM policy attached to such a role would include the following actions:
+        /// 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// glue:*Database*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*Table*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*Partition*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*UserDefinedFunction*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// lakeformation:GetDataAccess
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeDecoratedRoleWithSAML service method.</param>
         /// 
@@ -169,8 +191,30 @@ namespace Amazon.LakeFormation
         /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
         /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
         /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
-        /// A typical IAM policy attached to such a role would look as follows: 
+        /// A typical IAM policy attached to such a role would include the following actions:
+        /// 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// glue:*Database*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*Table*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*Partition*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// glue:*UserDefinedFunction*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// lakeformation:GetDataAccess
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeDecoratedRoleWithSAML service method.</param>
         /// <param name="cancellationToken">
@@ -974,11 +1018,19 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Deletes the specified LF-tag given a key name. If the input parameter tag key was
-        /// not found, then the operation will throw an exception. When you delete an LF-tag,
-        /// the <c>LFTagPolicy</c> attached to the LF-tag becomes invalid. If the deleted LF-tag
-        /// was still assigned to any resource, the tag policy attach to the deleted LF-tag will
-        /// no longer be applied to the resource.
+        /// Deletes an LF-tag by its key name. The operation fails if the specified tag key doesn't
+        /// exist. When you delete an LF-Tag: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The associated LF-Tag policy becomes invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Resources that had this tag assigned will no longer have the tag policy applied to
+        /// them.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
         /// 
@@ -1004,11 +1056,19 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Deletes the specified LF-tag given a key name. If the input parameter tag key was
-        /// not found, then the operation will throw an exception. When you delete an LF-tag,
-        /// the <c>LFTagPolicy</c> attached to the LF-tag becomes invalid. If the deleted LF-tag
-        /// was still assigned to any resource, the tag policy attach to the deleted LF-tag will
-        /// no longer be applied to the resource.
+        /// Deletes an LF-tag by its key name. The operation fails if the specified tag key doesn't
+        /// exist. When you delete an LF-Tag: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The associated LF-Tag policy becomes invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Resources that had this tag assigned will no longer have the tag policy applied to
+        /// them.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
         /// <param name="cancellationToken">
@@ -2088,6 +2148,144 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetTemporaryDataLocationCredentials
+
+
+        /// <summary>
+        /// Allows a user or application in a secure environment to access data in a specific
+        /// Amazon S3 location registered with Lake Formation by providing temporary scoped credentials
+        /// that are limited to the requested data location and the caller's authorized access
+        /// level.
+        /// 
+        ///  
+        /// <para>
+        ///  The API operation returns an error in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data location is not registered with Lake Formation. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No Glue table is associated with the data location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller doesn't have required permissions on the associated table. The caller must
+        /// have <c>SELECT</c> or <c>SUPER</c> permissions on the associated table, and credential
+        /// vending for full table access must be enabled in the data lake settings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/full-table-credential-vending.html">Application
+        /// integration for full table access</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The data location is in a different Amazon Web Services Region. Lake Formation doesn't
+        /// support cross-Region access when vending credentials for a data location. Lake Formation
+        /// only supports Amazon S3 paths registered within the same Region as the API call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryDataLocationCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetTemporaryDataLocationCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConflictException">
+        /// Multiple resources exist with the same Amazon S3 location
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryDataLocationCredentials">REST API Reference for GetTemporaryDataLocationCredentials Operation</seealso>
+        GetTemporaryDataLocationCredentialsResponse GetTemporaryDataLocationCredentials(GetTemporaryDataLocationCredentialsRequest request);
+
+
+
+        /// <summary>
+        /// Allows a user or application in a secure environment to access data in a specific
+        /// Amazon S3 location registered with Lake Formation by providing temporary scoped credentials
+        /// that are limited to the requested data location and the caller's authorized access
+        /// level.
+        /// 
+        ///  
+        /// <para>
+        ///  The API operation returns an error in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data location is not registered with Lake Formation. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No Glue table is associated with the data location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller doesn't have required permissions on the associated table. The caller must
+        /// have <c>SELECT</c> or <c>SUPER</c> permissions on the associated table, and credential
+        /// vending for full table access must be enabled in the data lake settings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/full-table-credential-vending.html">Application
+        /// integration for full table access</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The data location is in a different Amazon Web Services Region. Lake Formation doesn't
+        /// support cross-Region access when vending credentials for a data location. Lake Formation
+        /// only supports Amazon S3 paths registered within the same Region as the API call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryDataLocationCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTemporaryDataLocationCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ConflictException">
+        /// Multiple resources exist with the same Amazon S3 location
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryDataLocationCredentials">REST API Reference for GetTemporaryDataLocationCredentials Operation</seealso>
+        Task<GetTemporaryDataLocationCredentialsResponse> GetTemporaryDataLocationCredentialsAsync(GetTemporaryDataLocationCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTemporaryGluePartitionCredentials
 
 
@@ -2666,7 +2864,9 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// This operation returns only those permissions that have been explicitly granted.
+        /// This operation returns only those permissions that have been explicitly granted. If
+        /// both <c>Principal</c> and <c>Resource</c> parameters are provided, the response returns
+        /// effective permissions rather than the explicitly granted permissions.
         /// </para>
         ///  
         /// <para>
@@ -2698,7 +2898,9 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// This operation returns only those permissions that have been explicitly granted.
+        /// This operation returns only those permissions that have been explicitly granted. If
+        /// both <c>Principal</c> and <c>Resource</c> parameters are provided, the response returns
+        /// effective permissions rather than the explicitly granted permissions.
         /// </para>
         ///  
         /// <para>

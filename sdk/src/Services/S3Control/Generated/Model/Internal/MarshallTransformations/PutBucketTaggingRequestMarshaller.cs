@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -74,20 +75,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Tagging", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     var publicRequestTaggingTagSet = publicRequest.Tagging.TagSet;
-                    if (publicRequestTaggingTagSet != null && (publicRequestTaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tagging.IsSetTagSet()) 
                     {
                         xmlWriter.WriteStartElement("TagSet");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 
                         {
-                        if (publicRequestTaggingTagSetValue != null)
-                        {
-                            xmlWriter.WriteStartElement("member");
-                            if(publicRequestTaggingTagSetValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
-                            if(publicRequestTaggingTagSetValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTaggingTagSetValue != null)
+                            {
+                                xmlWriter.WriteStartElement("member");
+                                if(publicRequestTaggingTagSetValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
+                                if(publicRequestTaggingTagSetValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
@@ -95,6 +96,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -107,8 +109,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutBucketTaggingRequestMarshaller _instance = new PutBucketTaggingRequestMarshaller();        
@@ -130,5 +130,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketTaggingRequest publicRequest);
     }    
 }

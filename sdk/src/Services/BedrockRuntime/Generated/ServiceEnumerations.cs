@@ -79,6 +79,108 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type AudioFormat.
+    /// </summary>
+    public class AudioFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Aac for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Aac = new AudioFormat("aac");
+        /// <summary>
+        /// Constant Flac for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Flac = new AudioFormat("flac");
+        /// <summary>
+        /// Constant M4a for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat M4a = new AudioFormat("m4a");
+        /// <summary>
+        /// Constant Mka for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mka = new AudioFormat("mka");
+        /// <summary>
+        /// Constant Mkv for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mkv = new AudioFormat("mkv");
+        /// <summary>
+        /// Constant Mp3 for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mp3 = new AudioFormat("mp3");
+        /// <summary>
+        /// Constant Mp4 for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mp4 = new AudioFormat("mp4");
+        /// <summary>
+        /// Constant Mpeg for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mpeg = new AudioFormat("mpeg");
+        /// <summary>
+        /// Constant Mpga for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mpga = new AudioFormat("mpga");
+        /// <summary>
+        /// Constant Ogg for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Ogg = new AudioFormat("ogg");
+        /// <summary>
+        /// Constant Opus for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Opus = new AudioFormat("opus");
+        /// <summary>
+        /// Constant Pcm for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Pcm = new AudioFormat("pcm");
+        /// <summary>
+        /// Constant Wav for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Wav = new AudioFormat("wav");
+        /// <summary>
+        /// Constant Webm for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Webm = new AudioFormat("webm");
+        /// <summary>
+        /// Constant XAac for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat XAac = new AudioFormat("x-aac");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioFormat FindValue(string value)
+        {
+            return FindValue<AudioFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CachePointType.
     /// </summary>
     public class CachePointType : ConstantClass
@@ -118,6 +220,56 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CachePointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CacheTTL.
+    /// </summary>
+    public class CacheTTL : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIVE_MINUTES for CacheTTL
+        /// </summary>
+        public static readonly CacheTTL FIVE_MINUTES = new CacheTTL("5m");
+        /// <summary>
+        /// Constant ONE_HOUR for CacheTTL
+        /// </summary>
+        public static readonly CacheTTL ONE_HOUR = new CacheTTL("1h");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheTTL(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheTTL FindValue(string value)
+        {
+            return FindValue<CacheTTL>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheTTL(string value)
         {
             return FindValue(value);
         }
@@ -296,6 +448,56 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailAutomatedReasoningLogicWarningType.
+    /// </summary>
+    public class GuardrailAutomatedReasoningLogicWarningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_FALSE for GuardrailAutomatedReasoningLogicWarningType
+        /// </summary>
+        public static readonly GuardrailAutomatedReasoningLogicWarningType ALWAYS_FALSE = new GuardrailAutomatedReasoningLogicWarningType("ALWAYS_FALSE");
+        /// <summary>
+        /// Constant ALWAYS_TRUE for GuardrailAutomatedReasoningLogicWarningType
+        /// </summary>
+        public static readonly GuardrailAutomatedReasoningLogicWarningType ALWAYS_TRUE = new GuardrailAutomatedReasoningLogicWarningType("ALWAYS_TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAutomatedReasoningLogicWarningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAutomatedReasoningLogicWarningType FindValue(string value)
+        {
+            return FindValue<GuardrailAutomatedReasoningLogicWarningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAutomatedReasoningLogicWarningType(string value)
         {
             return FindValue(value);
         }
@@ -939,6 +1141,60 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailOrigin.
+    /// </summary>
+    public class GuardrailOrigin : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ENFORCED for GuardrailOrigin
+        /// </summary>
+        public static readonly GuardrailOrigin ACCOUNT_ENFORCED = new GuardrailOrigin("ACCOUNT_ENFORCED");
+        /// <summary>
+        /// Constant ORGANIZATION_ENFORCED for GuardrailOrigin
+        /// </summary>
+        public static readonly GuardrailOrigin ORGANIZATION_ENFORCED = new GuardrailOrigin("ORGANIZATION_ENFORCED");
+        /// <summary>
+        /// Constant REQUEST for GuardrailOrigin
+        /// </summary>
+        public static readonly GuardrailOrigin REQUEST = new GuardrailOrigin("REQUEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailOrigin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailOrigin FindValue(string value)
+        {
+            return FindValue<GuardrailOrigin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailOrigin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailOutputScope.
     /// </summary>
     public class GuardrailOutputScope : ConstantClass
@@ -982,6 +1238,56 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailOutputScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailOwnership.
+    /// </summary>
+    public class GuardrailOwnership : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CROSS_ACCOUNT for GuardrailOwnership
+        /// </summary>
+        public static readonly GuardrailOwnership CROSS_ACCOUNT = new GuardrailOwnership("CROSS_ACCOUNT");
+        /// <summary>
+        /// Constant SELF for GuardrailOwnership
+        /// </summary>
+        public static readonly GuardrailOwnership SELF = new GuardrailOwnership("SELF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailOwnership(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailOwnership FindValue(string value)
+        {
+            return FindValue<GuardrailOwnership>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailOwnership(string value)
         {
             return FindValue(value);
         }
@@ -1517,6 +1823,52 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type OutputFormatType.
+    /// </summary>
+    public class OutputFormatType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json_schema for OutputFormatType
+        /// </summary>
+        public static readonly OutputFormatType Json_schema = new OutputFormatType("json_schema");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputFormatType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputFormatType FindValue(string value)
+        {
+            return FindValue<OutputFormatType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputFormatType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PerformanceConfigLatency.
     /// </summary>
     public class PerformanceConfigLatency : ConstantClass
@@ -1560,6 +1912,64 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PerformanceConfigLatency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceTierType.
+    /// </summary>
+    public class ServiceTierType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Default = new ServiceTierType("default");
+        /// <summary>
+        /// Constant Flex for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Flex = new ServiceTierType("flex");
+        /// <summary>
+        /// Constant Priority for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Priority = new ServiceTierType("priority");
+        /// <summary>
+        /// Constant Reserved for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Reserved = new ServiceTierType("reserved");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceTierType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceTierType FindValue(string value)
+        {
+            return FindValue<ServiceTierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceTierType(string value)
         {
             return FindValue(value);
         }
@@ -1681,9 +2091,21 @@ namespace Amazon.BedrockRuntime
         /// </summary>
         public static readonly StopReason Guardrail_intervened = new StopReason("guardrail_intervened");
         /// <summary>
+        /// Constant Malformed_model_output for StopReason
+        /// </summary>
+        public static readonly StopReason Malformed_model_output = new StopReason("malformed_model_output");
+        /// <summary>
+        /// Constant Malformed_tool_use for StopReason
+        /// </summary>
+        public static readonly StopReason Malformed_tool_use = new StopReason("malformed_tool_use");
+        /// <summary>
         /// Constant Max_tokens for StopReason
         /// </summary>
         public static readonly StopReason Max_tokens = new StopReason("max_tokens");
+        /// <summary>
+        /// Constant Model_context_window_exceeded for StopReason
+        /// </summary>
+        public static readonly StopReason Model_context_window_exceeded = new StopReason("model_context_window_exceeded");
         /// <summary>
         /// Constant Stop_sequence for StopReason
         /// </summary>
@@ -1772,6 +2194,52 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ToolResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToolUseType.
+    /// </summary>
+    public class ToolUseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Server_tool_use for ToolUseType
+        /// </summary>
+        public static readonly ToolUseType Server_tool_use = new ToolUseType("server_tool_use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolUseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolUseType FindValue(string value)
+        {
+            return FindValue<ToolUseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolUseType(string value)
         {
             return FindValue(value);
         }

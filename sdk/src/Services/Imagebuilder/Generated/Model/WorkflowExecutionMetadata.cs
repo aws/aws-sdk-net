@@ -37,6 +37,7 @@ namespace Amazon.Imagebuilder.Model
         private string _endTime;
         private string _message;
         private string _parallelGroup;
+        private bool? _retried;
         private string _startTime;
         private WorkflowExecutionStatus _status;
         private int? _totalStepCount;
@@ -101,6 +102,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetParallelGroup()
         {
             return this._parallelGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Retried. 
+        /// <para>
+        /// Indicates retry status for this runtime instance of the workflow.
+        /// </para>
+        /// </summary>
+        public bool? Retried
+        {
+            get { return this._retried; }
+            set { this._retried = value; }
+        }
+
+        // Check to see if Retried property is set
+        internal bool IsSetRetried()
+        {
+            return this._retried.HasValue; 
         }
 
         /// <summary>

@@ -31,16 +31,10 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the PutVectors operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Adds one or more vectors to a vector index. To specify the vector index, you can either
     /// use both the vector bucket name and the vector index name, or use the vector index
     /// Amazon Resource Name (ARN). 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// For more information about limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations
@@ -62,7 +56,6 @@ namespace Amazon.S3Vectors.Model
     /// You must have the <c>s3vectors:PutVectors</c> permission to use this operation. 
     /// </para>
     ///  </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class PutVectorsRequest : AmazonS3VectorsRequest
     {

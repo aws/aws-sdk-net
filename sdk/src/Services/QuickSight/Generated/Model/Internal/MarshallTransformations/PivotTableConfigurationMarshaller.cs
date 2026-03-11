@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDashboardCustomizationVisualOptions())
+            {
+                context.Writer.WritePropertyName("DashboardCustomizationVisualOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DashboardCustomizationVisualOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DashboardCustomizationVisualOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetFieldOptions())
             {
                 context.Writer.WritePropertyName("FieldOptions");

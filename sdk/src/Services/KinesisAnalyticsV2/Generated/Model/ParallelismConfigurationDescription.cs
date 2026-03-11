@@ -113,7 +113,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Service for Apache Flink can increase the <c>CurrentParallelism</c> value in response
         /// to application load. The service can increase <c>CurrentParallelism</c> up to the
         /// maximum parallelism, which is <c>ParalellismPerKPU</c> times the maximum KPUs for
-        /// the application. The maximum KPUs for an application is 32 by default, and can be
+        /// the application. The maximum KPUs for an application is 64 by default, and can be
         /// increased by requesting a limit increase. If application load is reduced, the service
         /// can reduce the <c>CurrentParallelism</c> value down to the <c>Parallelism</c> setting.
         /// </para>

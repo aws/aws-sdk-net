@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTrafficRoutingConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidTrafficRoutingConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTrafficRoutingConfigurationException with the specified error
         /// message.
         /// </summary>

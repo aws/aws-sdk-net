@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryNotSharedException
+        /// message.
+        /// </summary>
+        public DirectoryNotSharedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryNotSharedException with the specified error
         /// message.
         /// </summary>

@@ -74,6 +74,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("warmThroughputSpecification", targetDepth))
+                {
+                    var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.WarmThroughputSpecification = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

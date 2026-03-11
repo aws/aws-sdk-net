@@ -42,7 +42,6 @@ namespace Amazon.SecurityHub.Model
         /// The project key for a JiraCloud instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ProjectKey
         {
             get { return this._projectKey; }

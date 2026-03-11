@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleOrderableOptionsException
+        /// message.
+        /// </summary>
+        public IncompatibleOrderableOptionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleOrderableOptionsException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotDeleteEntityWhileInUseException
+        /// message.
+        /// </summary>
+        public CannotDeleteEntityWhileInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotDeleteEntityWhileInUseException with the specified error
         /// message.
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecurityProfileApplications operation.
-    /// Returns a list of third-party applications in a specific security profile.
+    /// Returns a list of third-party applications or MCP Servers in a specific security profile.
     /// </summary>
     public partial class ListSecurityProfileApplicationsRequest : AmazonConnectRequest
     {

@@ -39,6 +39,13 @@ namespace Amazon.MigrationHub.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalServerErrorException
+        /// message.
+        /// </summary>
+        public InternalServerErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerErrorException with the specified error
         /// message.
         /// </summary>

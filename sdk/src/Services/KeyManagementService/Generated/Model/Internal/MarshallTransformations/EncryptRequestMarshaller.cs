@@ -121,7 +121,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPlaintext())
             {
                 context.Writer.WritePropertyName("Plaintext");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Plaintext));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Plaintext);
             }
 
             writer.WriteEndObject();

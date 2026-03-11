@@ -33,7 +33,8 @@ namespace Amazon.Signer.Model
     /// Container for the parameters to the CancelSigningProfile operation.
     /// Changes the state of an <c>ACTIVE</c> signing profile to <c>CANCELED</c>. A canceled
     /// profile is still viewable with the <c>ListSigningProfiles</c> operation, but it cannot
-    /// perform new signing jobs, and is deleted two years after cancelation.
+    /// perform new signing jobs. See <a href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+    /// Retention</a> for more information on scheduled deletion of a canceled signing profile.
     /// </summary>
     public partial class CancelSigningProfileRequest : AmazonSignerRequest
     {

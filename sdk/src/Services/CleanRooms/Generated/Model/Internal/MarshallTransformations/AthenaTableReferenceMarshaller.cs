@@ -46,6 +46,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCatalogName())
+            {
+                context.Writer.WritePropertyName("catalogName");
+                context.Writer.WriteStringValue(requestObject.CatalogName);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
@@ -56,6 +62,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("outputLocation");
                 context.Writer.WriteStringValue(requestObject.OutputLocation);
+            }
+
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("region");
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetTableName())

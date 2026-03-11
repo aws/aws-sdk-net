@@ -40,6 +40,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUsageDimensionException
+        /// message.
+        /// </summary>
+        public InvalidUsageDimensionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUsageDimensionException with the specified error
         /// message.
         /// </summary>

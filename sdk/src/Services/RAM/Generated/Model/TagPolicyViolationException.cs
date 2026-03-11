@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for TagPolicyViolationException
+        /// message.
+        /// </summary>
+        public TagPolicyViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagPolicyViolationException with the specified error
         /// message.
         /// </summary>

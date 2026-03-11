@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAccessPointException
+        /// message.
+        /// </summary>
+        public InvalidAccessPointException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAccessPointException with the specified error
         /// message.
         /// </summary>

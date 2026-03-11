@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FilePathConflictsWithSubmodulePathException
+        /// message.
+        /// </summary>
+        public FilePathConflictsWithSubmodulePathException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FilePathConflictsWithSubmodulePathException with the specified error
         /// message.
         /// </summary>

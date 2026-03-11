@@ -39,6 +39,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidManifestException
+        /// message.
+        /// </summary>
+        public InvalidManifestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidManifestException with the specified error
         /// message.
         /// </summary>

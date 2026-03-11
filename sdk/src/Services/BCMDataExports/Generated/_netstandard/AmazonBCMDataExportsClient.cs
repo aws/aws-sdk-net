@@ -279,7 +279,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual CreateExportResponse CreateExport(CreateExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExportResponseUnmarshaller.Instance;
 
@@ -323,6 +323,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the CreateExport service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -339,7 +342,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/CreateExport">REST API Reference for CreateExport Operation</seealso>
         public virtual Task<CreateExportResponse> CreateExportAsync(CreateExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExportResponseUnmarshaller.Instance;
 
@@ -351,7 +354,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual DeleteExportResponse DeleteExport(DeleteExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExportResponseUnmarshaller.Instance;
 
@@ -384,7 +387,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/DeleteExport">REST API Reference for DeleteExport Operation</seealso>
         public virtual Task<DeleteExportResponse> DeleteExportAsync(DeleteExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExportResponseUnmarshaller.Instance;
 
@@ -396,7 +399,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual GetExecutionResponse GetExecution(GetExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExecutionResponseUnmarshaller.Instance;
 
@@ -429,7 +432,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/GetExecution">REST API Reference for GetExecution Operation</seealso>
         public virtual Task<GetExecutionResponse> GetExecutionAsync(GetExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExecutionResponseUnmarshaller.Instance;
 
@@ -441,7 +444,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual GetExportResponse GetExport(GetExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportResponseUnmarshaller.Instance;
 
@@ -474,7 +477,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportResponseUnmarshaller.Instance;
 
@@ -486,7 +489,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual GetTableResponse GetTable(GetTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -517,7 +520,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/GetTable">REST API Reference for GetTable Operation</seealso>
         public virtual Task<GetTableResponse> GetTableAsync(GetTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -529,7 +532,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -562,7 +565,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public virtual Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -574,7 +577,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -604,7 +607,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -616,7 +619,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -646,7 +649,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -658,7 +661,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -676,6 +679,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -691,7 +697,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -703,7 +709,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -721,6 +727,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -736,7 +745,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -748,7 +757,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -766,6 +775,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -781,7 +793,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -793,7 +805,7 @@ namespace Amazon.BCMDataExports
 
         internal virtual UpdateExportResponse UpdateExport(UpdateExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExportResponseUnmarshaller.Instance;
 
@@ -827,7 +839,7 @@ namespace Amazon.BCMDataExports
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-data-exports-2023-11-26/UpdateExport">REST API Reference for UpdateExport Operation</seealso>
         public virtual Task<UpdateExportResponse> UpdateExportAsync(UpdateExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExportResponseUnmarshaller.Instance;
 

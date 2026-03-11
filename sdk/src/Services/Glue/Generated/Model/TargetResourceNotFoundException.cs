@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetResourceNotFoundException
+        /// message.
+        /// </summary>
+        public TargetResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetResourceNotFoundException with the specified error
         /// message.
         /// </summary>

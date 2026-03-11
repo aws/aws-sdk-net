@@ -47,6 +47,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ApplicationArn
         {
             get { return this._applicationArn; }

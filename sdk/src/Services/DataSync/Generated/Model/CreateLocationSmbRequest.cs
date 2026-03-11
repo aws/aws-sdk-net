@@ -45,6 +45,8 @@ namespace Amazon.DataSync.Model
     {
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SmbAuthenticationType _authenticationType;
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domain;
         private MemoryStream _kerberosKeytab;
@@ -69,7 +71,7 @@ namespace Amazon.DataSync.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4)]
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }
@@ -104,6 +106,75 @@ namespace Amazon.DataSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, either a <c>Password</c>
+        /// or <c>KerberosKeytab</c> (for <c>NTLM</c> (default) and <c>KERBEROS</c> authentication
+        /// types, respectively) that DataSync uses to access a specific SMB storage location,
+        /// with a customer-managed KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you include this parameter as part of a <c>CreateLocationSmbRequest</c> request,
+        /// you provide only the KMS key ARN. DataSync uses this KMS key together with either
+        /// the <c>Password</c> or <c>KerberosKeytab</c> you specify to create a DataSync-managed
+        /// secret to store the location access credentials.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that DataSync has permission to access the KMS key that you specify.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use either <c>CmkSecretConfig</c> (with either <c>Password</c> or <c>KerberosKeytab</c>)
+        /// or <c>CustomSecretConfig</c> (without any <c>Password</c> and <c>KerberosKeytab</c>)
+        /// to provide credentials for a <c>CreateLocationSmbRequest</c> request. Do not provide
+        /// both <c>CmkSecretConfig</c> and <c>CustomSecretConfig</c> parameters for the same
+        /// request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed Secrets Manager secret
+        /// where the SMB storage location credentials is stored in Secrets Manager as plain text
+        /// (for <c>Password</c>) or binary (for <c>KerberosKeytab</c>). This configuration includes
+        /// the secret ARN, and the ARN for an IAM role that provides access to the secret.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use either <c>CmkSecretConfig</c> (with <c>SasConfiguration</c>) or <c>CustomSecretConfig</c>
+        /// (without <c>SasConfiguration</c>) to provide credentials for a <c>CreateLocationSmbRequest</c>
+        /// request. Do not provide both parameters for the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>

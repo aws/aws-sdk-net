@@ -1,25 +1,25 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Amazon;
+using Amazon.Route53;
+using Amazon.Route53.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
-using Amazon.Route53;
-using Amazon.Route53.Model;
 using System.Threading;
-using Amazon;
-using AWSSDK_DotNet.IntegrationTests.Utils;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
+    [TestCategory("Route53")]
     public class Route53 : TestBase<AmazonRoute53Client>
     {
         private const string COMMENT = "comment";
         private const string ZONE_NAME = "aws.sdk.com.";
+
         private static string CALLER_REFERENCE { get { return Guid.NewGuid().ToString(); } }
-        private static TimeSpan pollingPeriod = TimeSpan.FromSeconds(30);
-        private static TimeSpan maxWaitTime = TimeSpan.FromMinutes(5);
+        private static readonly TimeSpan maxWaitTime = TimeSpan.FromMinutes(5);
 
         // The ID of the zone we created in this test
         private string createdZoneId;
@@ -34,14 +34,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         // Ensures the HostedZone we create during this test is correctly released.
-        [TestCleanup()]
-        public void TearDown()
+        [TestCleanup]
+        public async Task TearDown()
         {
             if (!string.IsNullOrEmpty(createdZoneId))
             {
                 try
                 {
-                    Client.DeleteHostedZone(new DeleteHostedZoneRequest { Id = createdZoneId });
+                    await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = createdZoneId });
                 }
                 catch { }
             }
@@ -50,10 +50,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // Runs through a number of the APIs in the Route 53 client to make sure we can
         // correct send requests and unmarshall responses.
         [TestMethod]
-        [TestCategory("Route53")]
-        public void TestRoute53()
+        public async Task TestRoute53()
         {
-            var geoLocations = Client.ListGeoLocations().GeoLocationDetailsList;
+            var listGeoLocationsResponse = await Client.ListGeoLocationsAsync();
+            var geoLocations = listGeoLocationsResponse.GeoLocationDetailsList;
             Assert.IsNotNull(geoLocations);
             Assert.AreNotEqual(0, geoLocations.Count);
 
@@ -63,28 +63,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 CallerReference = CALLER_REFERENCE,
                 HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT }
             };
+
             // Create Hosted Zone
-
-            var createResponse = UtilityMethods.WaitUntilSuccess<CreateHostedZoneResponse>(
-                () => Client.CreateHostedZone(createRequest)
+            var createResponse = await UtilityMethods.WaitUntilSuccessAsync(
+                () => Client.CreateHostedZoneAsync(createRequest)
             );
-
             createdZoneId = createResponse.HostedZone.Id;
             createdZoneChangeId = createResponse.ChangeInfo.Id;
 
-            assertValidCreatedHostedZone(createResponse.HostedZone);
-            assertValidDelegationSet(createResponse.DelegationSet);
-            assertValidChangeInfo(createResponse.ChangeInfo);
+            AssertValidCreatedHostedZone(createResponse.HostedZone);
+            AssertValidDelegationSet(createResponse.DelegationSet);
+            AssertValidChangeInfo(createResponse.ChangeInfo);
             Assert.IsNotNull(createResponse.Location);
 
             // Get Hosted Zone
             GetHostedZoneRequest getRequest = new GetHostedZoneRequest { Id = createdZoneId };
-            var getHostedZoneResponse = Client.GetHostedZone(getRequest);
-            assertValidDelegationSet(getHostedZoneResponse.DelegationSet);
-            assertValidCreatedHostedZone(getHostedZoneResponse.HostedZone);
+            var getHostedZoneResponse = await Client.GetHostedZoneAsync(getRequest);
+            AssertValidDelegationSet(getHostedZoneResponse.DelegationSet);
+            AssertValidCreatedHostedZone(getHostedZoneResponse.HostedZone);
 
             // List Hosted Zones
-            List<HostedZone> hostedZones = Client.ListHostedZones().HostedZones;
+            var listZonesResponse = await Client.ListHostedZonesAsync();
+            var hostedZones = listZonesResponse.HostedZones;
             Assert.IsTrue(hostedZones.Count > 0);
             foreach (HostedZone hostedZone in hostedZones)
             {
@@ -94,9 +94,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
 
             // List Resource Record Sets
-            ListResourceRecordSetsRequest listRequest = new ListResourceRecordSetsRequest { HostedZoneId = createdZoneId, MaxItems = "10" };
-            List<ResourceRecordSet> resourceRecordSets = Client.ListResourceRecordSets(listRequest).ResourceRecordSets;
+            var listRecordSetsResponse = await Client.ListResourceRecordSetsAsync(new ListResourceRecordSetsRequest 
+            { 
+                HostedZoneId = createdZoneId,
+                MaxItems = "10" 
+            });
 
+            var resourceRecordSets = listRecordSetsResponse.ResourceRecordSets;
             Assert.IsTrue(resourceRecordSets.Count > 0);
             ResourceRecordSet existingResourceRecordSet = resourceRecordSets[0];
             foreach (ResourceRecordSet rrset in resourceRecordSets)
@@ -107,12 +111,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsTrue(rrset.ResourceRecords.Count > 0);
             }
 
-
             // Get Change
-            ChangeInfo changeInfo = Client.GetChange(new GetChangeRequest { Id = createdZoneChangeId }).ChangeInfo;
+            var getChangeResponse = await Client.GetChangeAsync(new GetChangeRequest { Id = createdZoneChangeId });
+            ChangeInfo changeInfo = getChangeResponse.ChangeInfo;
             Assert.IsTrue(changeInfo.Id.EndsWith(createdZoneChangeId));
-            assertValidChangeInfo(changeInfo);
-
+            AssertValidChangeInfo(changeInfo);
 
             // Change Resource Record Sets
             ResourceRecordSet newResourceRecordSet = new ResourceRecordSet
@@ -124,32 +127,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 HealthCheckId = null
             };
 
-            changeInfo = Client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest
+            var changeResponse = await Client.ChangeResourceRecordSetsAsync(new ChangeResourceRecordSetsRequest
             {
                 HostedZoneId = createdZoneId,
                 ChangeBatch = new ChangeBatch
                 {
                     Comment = COMMENT,
-                    Changes = new List<Change> 
-                    { 
+                    Changes = new List<Change>
+                    {
                         new Change { Action = "DELETE", ResourceRecordSet = existingResourceRecordSet },
                         new Change { Action = "CREATE", ResourceRecordSet = newResourceRecordSet }
                     }
                 }
-            }).ChangeInfo;
+            });
 
-            assertValidChangeInfo(changeInfo);
+            changeInfo = changeResponse.ChangeInfo;
+            AssertValidChangeInfo(changeInfo);
 
             // Delete Hosted Zone
-            var deleteHostedZoneResult = Client.DeleteHostedZone(new DeleteHostedZoneRequest { Id = createdZoneId });
-            assertValidChangeInfo(deleteHostedZoneResult.ChangeInfo);
+            var deleteHostedZoneResult = await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = createdZoneId });
+            AssertValidChangeInfo(deleteHostedZoneResult.ChangeInfo);
         }
 
         [TestMethod]
-        [TestCategory("Route53")]
-        public void HealthCheckTests()
+        public async Task HealthCheckTests()
         {
-            var createRequest = new CreateHealthCheckRequest()
+            var createRequest = new CreateHealthCheckRequest
             {
                 CallerReference = Guid.NewGuid().ToString(),
                 HealthCheckConfig = new HealthCheckConfig()
@@ -161,13 +164,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     FailureThreshold = 5
                 }
             };
-            var createResponse = Client.CreateHealthCheck(createRequest);
+            var createResponse = await Client.CreateHealthCheckAsync(createRequest);
             Assert.IsNotNull(createResponse.HealthCheck.Id);
             Assert.AreEqual(10, createResponse.HealthCheck.HealthCheckConfig.RequestInterval);
             Assert.AreEqual(5, createResponse.HealthCheck.HealthCheckConfig.FailureThreshold);
             string healthCheckId = createResponse.HealthCheck.Id;
 
-            var listResponse = Client.ListHealthChecks();
+            var listResponse = await Client.ListHealthChecksAsync();
             Assert.IsNotNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
 
             GetHealthCheckStatusResponse status = null;
@@ -177,7 +180,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 try
                 {
-                    status = Client.GetHealthCheckStatus(new GetHealthCheckStatusRequest
+                    status = await Client.GetHealthCheckStatusAsync(new GetHealthCheckStatusRequest
                     {
                         HealthCheckId = healthCheckId
                     });
@@ -185,29 +188,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
                 catch (NoSuchHealthCheckException)
                 {
-                    Thread.Sleep(TimeSpan.FromSeconds(10));
+                    await Task.Delay(TimeSpan.FromSeconds(10));
                 }
             }
             Assert.IsNotNull(status);
 
             if (status.HealthCheckObservations == null)
+            {
                 Assert.IsFalse(AWSConfigs.InitializeCollections);
+            }
             else
+            {
                 Assert.IsNotNull(status.HealthCheckObservations);
+            }
 
-            var healthCheck = Client.GetHealthCheck(new GetHealthCheckRequest
+            var getResponse = await Client.GetHealthCheckAsync(new GetHealthCheckRequest
             {
                 HealthCheckId = healthCheckId
-            }).HealthCheck;
+            });
+            var healthCheck = getResponse.HealthCheck;
             Assert.IsNotNull(healthCheck);
             Assert.IsNotNull(healthCheck.Id);
             Assert.IsNotNull(healthCheck.HealthCheckConfig);
 
-            var tagSet = Client.ListTagsForResource(new ListTagsForResourceRequest
+            var listTagsBeforeResponse = await Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId
-            }).ResourceTagSet;
+            });
+            var tagSet = listTagsBeforeResponse.ResourceTagSet;
             Assert.IsNotNull(tagSet);
             Assert.IsNotNull(tagSet.ResourceId);
 
@@ -221,7 +230,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsNull(tagSet.Tags);
             }
 
-            Client.ChangeTagsForResource(new ChangeTagsForResourceRequest
+            await Client.ChangeTagsForResourceAsync(new ChangeTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId,
@@ -231,11 +240,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             });
 
-            tagSet = Client.ListTagsForResource(new ListTagsForResourceRequest
+            var listTagsAfterResponse = await Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId
-            }).ResourceTagSet;
+            });
+            tagSet = listTagsAfterResponse.ResourceTagSet;
             Assert.IsNotNull(tagSet);
             Assert.IsNotNull(tagSet.ResourceId);
             Assert.IsNotNull(tagSet.ResourceType);
@@ -244,9 +254,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual("Test", tagSet.Tags[0].Key);
             Assert.AreEqual("true", tagSet.Tags[0].Value);
 
-            Client.DeleteHealthCheck(new DeleteHealthCheckRequest() { HealthCheckId = healthCheckId });
+            await Client.DeleteHealthCheckAsync(new DeleteHealthCheckRequest { HealthCheckId = healthCheckId });
 
-            listResponse = Client.ListHealthChecks();
+            listResponse = await Client.ListHealthChecksAsync();
             if (listResponse.HealthChecks != null)
             {
                 Assert.IsNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
@@ -254,119 +264,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("Route53")]
-        [Ignore("Excluding flaky Route53 delegation set test.")]
-        public void DelegationSetTests()
+        public async Task VPCTests()
         {
-            List<string> createdSets = new List<string>();
-
-            var sets = Client.ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
-            var setCount = sets.DelegationSets.Count;
-
-            var callerReference = "DNSMigration" + DateTime.UtcNow.ToFileTime();
-            var createResponse = Client.CreateReusableDelegationSet(new CreateReusableDelegationSetRequest
-            {
-                CallerReference = callerReference
-            });
-            Assert.IsNotNull(createResponse.Location);
-            var delegationSet = createResponse.DelegationSet;
-            Assert.IsNotNull(delegationSet);
-            Assert.IsNotNull(delegationSet.CallerReference);
-            Assert.IsNotNull(delegationSet.Id);
-            Assert.IsNotNull(delegationSet.NameServers);
-            Assert.AreNotEqual(0, delegationSet.NameServers.Count);
-            createdSets.Add(delegationSet.Id);
-
-            sets = Client.ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
-            Assert.AreEqual(setCount + 1, sets.DelegationSets.Count);
-
-            CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
-            {
-                Name = ZONE_NAME,
-                CallerReference = CALLER_REFERENCE,
-                HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT },
-                DelegationSetId = delegationSet.Id
-            };
-            createdZoneId = UtilityMethods.WaitUntilSuccess<string>(() => 
-                Client.CreateHostedZone(createRequest).HostedZone.Id
-            );
-
-            var hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
-            {
-                Id = createdZoneId
-            });
-            Assert.IsNotNull(hostedZoneInfo.VPCs);
-            Assert.IsFalse(hostedZoneInfo.HostedZone.Config.PrivateZone.Value);
-            Assert.AreEqual(delegationSet.Id, hostedZoneInfo.DelegationSet.Id);
-
-            var hostedZones = Client.ListHostedZones(new ListHostedZonesRequest
-            {
-                DelegationSetId = delegationSet.Id
-            }).HostedZones;
-            Assert.AreEqual(1, hostedZones.Count);
-
-            // add a second set
-            callerReference = "DNSMigration" + DateTime.UtcNow.ToFileTime();
-            createResponse = Client.CreateReusableDelegationSet(new CreateReusableDelegationSetRequest
-            {
-                CallerReference = callerReference
-            });
-            delegationSet = createResponse.DelegationSet;
-            createdSets.Add(delegationSet.Id);
-
-            int totalSetCount = 0;
-            string nextMarker = null;
-            do
-            {
-                var response = Client.ListReusableDelegationSets(new ListReusableDelegationSetsRequest
-                {
-                    MaxItems = "1",
-                    Marker = nextMarker
-                });
-                totalSetCount += response.DelegationSets.Count;
-                nextMarker = response.NextMarker;
-            } while (!string.IsNullOrEmpty(nextMarker));
-            Assert.AreEqual(setCount + 2, totalSetCount);
-
-            Client.DeleteHostedZone(new DeleteHostedZoneRequest
-            {
-                Id = createdZoneId
-            });
-            createdZoneId = null;
-
-            foreach (var setId in createdSets)
-            {
-                Client.DeleteReusableDelegationSet(new DeleteReusableDelegationSetRequest
-                {
-                    Id = setId
-                });
-            }
-
-            sets = Client.ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
-            Assert.AreEqual(setCount, sets.DelegationSets.Count);
-        }
-
-        [TestMethod]
-        [TestCategory("Route53")]
-        public void VPCTests()
-        {
-            var vpc1 = CreateVPC();
-            var vpc2 = CreateVPC();
+            var vpc1 = await CreateVPC();
+            var vpc2 = await CreateVPC();
 
             try
             {
-                CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
+                var createRequest = new CreateHostedZoneRequest
                 {
                     Name = ZONE_NAME,
                     CallerReference = CALLER_REFERENCE,
                     HostedZoneConfig = new HostedZoneConfig { Comment = COMMENT },
                     VPC = vpc1
                 };
-                createdZoneId = UtilityMethods.WaitUntilSuccess<string>(() => 
-                    Client.CreateHostedZone(createRequest).HostedZone.Id
-                );
 
-                var hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+                var createResponse = await UtilityMethods.WaitUntilSuccessAsync(
+                    () => Client.CreateHostedZoneAsync(createRequest)
+                );
+                createdZoneId = createResponse.HostedZone.Id;
+
+                var hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
                 });
@@ -374,86 +292,86 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
                 Assert.IsTrue(hostedZoneInfo.HostedZone.Config.PrivateZone.Value);
 
-                var changeInfo = Client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest
+                var associateResponse = await Client.AssociateVPCWithHostedZoneAsync(new AssociateVPCWithHostedZoneRequest
                 {
                     VPC = vpc2,
                     Comment = COMMENT,
                     HostedZoneId = createdZoneId
-                }).ChangeInfo;
+                });
+                var changeInfo = associateResponse.ChangeInfo;
                 Assert.IsNotNull(changeInfo);
                 Assert.IsNotNull(changeInfo.Comment);
-                assertValidChangeInfo(changeInfo);
+                AssertValidChangeInfo(changeInfo);
 
-                hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+                hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
                 });
                 Assert.IsNotNull(hostedZoneInfo.VPCs);
                 Assert.AreEqual(2, hostedZoneInfo.VPCs.Count);
 
-                changeInfo = Client.DisassociateVPCFromHostedZone(new DisassociateVPCFromHostedZoneRequest
+                var disassociateResponse = await Client.DisassociateVPCFromHostedZoneAsync(new DisassociateVPCFromHostedZoneRequest
                 {
                     HostedZoneId = createdZoneId,
                     VPC = vpc2
-                }).ChangeInfo;
-                assertValidChangeInfo(changeInfo);
+                });
+                changeInfo = disassociateResponse.ChangeInfo;
+                AssertValidChangeInfo(changeInfo);
 
-                hostedZoneInfo = Client.GetHostedZone(new GetHostedZoneRequest
+                hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
                 });
                 Assert.IsNotNull(hostedZoneInfo.VPCs);
                 Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
 
-                changeInfo = Client.DeleteHostedZone(new DeleteHostedZoneRequest
+                var deleteResponse = await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest
                 {
                     Id = createdZoneId
-                }).ChangeInfo;
-                assertValidChangeInfo(changeInfo);
+                });
+                changeInfo = deleteResponse.ChangeInfo;
+                AssertValidChangeInfo(changeInfo);
             }
             finally
             {
-                DeleteVPC(vpc1);
-                DeleteVPC(vpc2);
+                await DeleteVPC(vpc1);
+                await DeleteVPC(vpc2);
             }
         }
 
-        // Deletes a VPC
-        private void DeleteVPC(VPC vpc)
+        private async Task DeleteVPC(VPC vpc)
         {
             using (var ec2 = new Amazon.EC2.AmazonEC2Client())
             {
-                ec2.DeleteVpc(new Amazon.EC2.Model.DeleteVpcRequest
+                await ec2.DeleteVpcAsync(new Amazon.EC2.Model.DeleteVpcRequest
                 {
                     VpcId = vpc.VPCId
                 });
             }
         }
 
-        // Creates a VPC
-        private VPC CreateVPC()
+        private async Task<VPC> CreateVPC()
         {
             var region = VPCRegion.FindValue(AWSConfigs.RegionEndpoint.SystemName);
-
-            using(var ec2 = new Amazon.EC2.AmazonEC2Client())
+            using (var ec2 = new Amazon.EC2.AmazonEC2Client())
             {
-                var ec2Vpc = ec2.CreateVpc(new Amazon.EC2.Model.CreateVpcRequest
+                var createResponse = await ec2.CreateVpcAsync(new Amazon.EC2.Model.CreateVpcRequest
                 {
                     CidrBlock = "10.0.0.0/16",
                     InstanceTenancy = Amazon.EC2.Tenancy.Default
-                }).Vpc;
+                });
 
                 return new VPC
                 {
                     VPCRegion = region,
-                    VPCId = ec2Vpc.VpcId
+                    VPCId = createResponse.Vpc.VpcId
                 };
             }
         }
 
         // Asserts that the specified HostedZone is valid and represents the same
         // HostedZone that we initially created at the very start of this test.        
-        private void assertValidCreatedHostedZone(HostedZone hostedZone)
+        private void AssertValidCreatedHostedZone(HostedZone hostedZone)
         {
             Assert.AreEqual(ZONE_NAME, hostedZone.Name);
             Assert.IsNotNull(hostedZone.Id);
@@ -461,7 +379,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         // Asserts that the specified DelegationSet is valid.                 
-        private void assertValidDelegationSet(DelegationSet delegationSet)
+        private void AssertValidDelegationSet(DelegationSet delegationSet)
         {
             Assert.IsTrue(delegationSet.NameServers.Count > 0);
             foreach (string server in delegationSet.NameServers)
@@ -471,7 +389,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
         
         // Asserts that the specified ChangeInfo is valid.         
-        private void assertValidChangeInfo(ChangeInfo change)
+        private void AssertValidChangeInfo(ChangeInfo change)
         {
             Assert.IsNotNull(change.Id);
             Assert.IsNotNull(change.Status);

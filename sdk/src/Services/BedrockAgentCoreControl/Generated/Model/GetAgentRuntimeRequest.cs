@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAgentRuntime operation.
-    /// Gets an Amazon Secure Agent.
+    /// Gets an Amazon Bedrock AgentCore Runtime.
     /// </summary>
     public partial class GetAgentRuntimeRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime to retrieve.
+        /// The unique identifier of the AgentCore Runtime to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeVersion. 
         /// <para>
-        /// The version of the agent runtime to retrieve.
+        /// The version of the AgentCore Runtime to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

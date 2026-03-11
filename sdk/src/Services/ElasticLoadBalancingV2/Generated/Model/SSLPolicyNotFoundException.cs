@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for SSLPolicyNotFoundException
+        /// message.
+        /// </summary>
+        public SSLPolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SSLPolicyNotFoundException with the specified error
         /// message.
         /// </summary>

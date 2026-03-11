@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDefaultQBusinessApplication operation.
-    /// Describes a Amazon Q Business application that is linked to an Amazon QuickSight account.
+    /// Describes a Amazon Q Business application that is linked to an Quick Sight account.
     /// </summary>
     public partial class DescribeDefaultQBusinessApplicationRequest : AmazonQuickSightRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon QuickSight account that is linked to the Amazon Q Business application
+        /// The ID of the Quick Sight account that is linked to the Amazon Q Business application
         /// that you want described.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that contains the linked Amazon Q Business application.
+        /// The Quick Sight namespace that contains the linked Amazon Q Business application.
         /// If this field is left blank, the default namespace is used. Currently, the default
         /// namespace is the only valid value for this parameter.
         /// </para>

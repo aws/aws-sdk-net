@@ -30,14 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have provided a name for the customer managed configuration recorder that is not
-    /// valid.
+    /// The configuration recorder name is not valid. The prefix "<c>AWSConfigurationRecorderFor</c>"
+    /// is reserved for service-linked configuration recorders.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidConfigurationRecorderNameException : AmazonConfigServiceException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidConfigurationRecorderNameException
+        /// message.
+        /// </summary>
+        public InvalidConfigurationRecorderNameException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidConfigurationRecorderNameException with the specified error

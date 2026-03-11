@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for UserGroupNotFoundException
+        /// message.
+        /// </summary>
+        public UserGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserGroupNotFoundException with the specified error
         /// message.
         /// </summary>

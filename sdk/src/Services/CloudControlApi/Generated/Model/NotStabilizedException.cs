@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for NotStabilizedException
+        /// message.
+        /// </summary>
+        public NotStabilizedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotStabilizedException with the specified error
         /// message.
         /// </summary>

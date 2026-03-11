@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for TagsLimitExceededException
+        /// message.
+        /// </summary>
+        public TagsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagsLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyApplicationsException
+        /// message.
+        /// </summary>
+        public TooManyApplicationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyApplicationsException with the specified error
         /// message.
         /// </summary>

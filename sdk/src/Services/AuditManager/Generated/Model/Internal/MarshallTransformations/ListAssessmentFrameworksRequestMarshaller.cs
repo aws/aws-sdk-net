@@ -62,6 +62,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.FrameworkType))
+                throw new AmazonAuditManagerException("Request object does not have required field FrameworkType set");
             
             if (publicRequest.IsSetFrameworkType())
                 request.Parameters.Add("frameworkType", StringUtils.FromString(publicRequest.FrameworkType));

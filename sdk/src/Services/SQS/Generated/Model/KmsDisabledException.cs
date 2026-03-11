@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsDisabledException
+        /// message.
+        /// </summary>
+        public KmsDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsDisabledException with the specified error
         /// message.
         /// </summary>

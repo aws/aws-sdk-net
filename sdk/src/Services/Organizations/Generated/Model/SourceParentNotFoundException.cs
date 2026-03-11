@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceParentNotFoundException
+        /// message.
+        /// </summary>
+        public SourceParentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceParentNotFoundException with the specified error
         /// message.
         /// </summary>

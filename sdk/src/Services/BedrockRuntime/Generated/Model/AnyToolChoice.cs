@@ -31,7 +31,8 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// The model must request at least one tool (no text is generated). For example, <c>{"any"
-    /// : {}}</c>.
+    /// : {}}</c>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class AnyToolChoice
     {

@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountRegisteredException
+        /// message.
+        /// </summary>
+        public AccountRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountRegisteredException with the specified error
         /// message.
         /// </summary>

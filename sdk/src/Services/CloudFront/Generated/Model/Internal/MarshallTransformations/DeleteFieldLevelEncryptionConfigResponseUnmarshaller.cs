@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteFieldLevelEncryptionConfig operation
     /// </summary>  
-    public class DeleteFieldLevelEncryptionConfigResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteFieldLevelEncryptionConfigResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteFieldLevelEncryptionConfigResponse response = new DeleteFieldLevelEncryptionConfigResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -92,6 +93,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteFieldLevelEncryptionConfigResponse response);
 
         private static DeleteFieldLevelEncryptionConfigResponseUnmarshaller _instance = new DeleteFieldLevelEncryptionConfigResponseUnmarshaller();        
 

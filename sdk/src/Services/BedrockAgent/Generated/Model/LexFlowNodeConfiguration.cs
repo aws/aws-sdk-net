@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model
         /// The Region to invoke the Amazon Lex bot in.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public string LocaleId
         {
             get { return this._localeId; }

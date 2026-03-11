@@ -30,13 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-    /// Billing view only supports <c>LINKED_ACCOUNT</c> and <c>Tags</c>.
+    /// See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
+    /// Billing view only supports <c>LINKED_ACCOUNT</c>, <c>Tags</c>, and <c>CostCategories</c>.
     /// </summary>
     public partial class Expression
     {
+        private CostCategoryValues _costCategories;
         private DimensionValues _dimensions;
         private TagValues _tags;
+        private TimeRange _timeRange;
+
+        /// <summary>
+        /// Gets and sets the property CostCategories. 
+        /// <para>
+        ///  The filter that's based on <c>CostCategory</c> values. 
+        /// </para>
+        /// </summary>
+        public CostCategoryValues CostCategories
+        {
+            get { return this._costCategories; }
+            set { this._costCategories = value; }
+        }
+
+        // Check to see if CostCategories property is set
+        internal bool IsSetCostCategories()
+        {
+            return this._costCategories != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -72,6 +92,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetTags()
         {
             return this._tags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeRange. 
+        /// <para>
+        ///  Specifies a time range filter for the billing view data. 
+        /// </para>
+        /// </summary>
+        public TimeRange TimeRange
+        {
+            get { return this._timeRange; }
+            set { this._timeRange = value; }
+        }
+
+        // Check to see if TimeRange property is set
+        internal bool IsSetTimeRange()
+        {
+            return this._timeRange != null;
         }
 
     }

@@ -16,132 +16,105 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Integration tests for the bucket policy status
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class BucketPolicyTests : TestBase<AmazonS3Client>
     {
-        public static string bucketName;
+        private static string bucketName;
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestGetBucketPolicyStatus_IsPublic()
+        public async Task TestGetBucketPolicyStatus_IsPublic()
         {
-            //Set the bucket policy to public
-            var putRequest = new PutBucketPolicyRequest
+            // Set the bucket policy to public
+            await Client.PutBucketPolicyAsync(new PutBucketPolicyRequest
             {
                 BucketName = bucketName,
                 Policy = string.Format(@"{{
-                              ""Version"":""2012-10-17"",                                 
-                              ""Statement"":[
-                                {{
-                                  ""Sid"":""AddPerm"",
-                                  ""Effect"":""Allow"",
-                                  ""Principal"": ""*"",
-                                  ""Action"":[""s3:GetObject""],
-                                  ""Resource"":[""arn:aws:s3:::{0}/*""]
-                                }}
-                              ]
-                            }}", bucketName)
-            };
-            Client.PutBucketPolicy(putRequest);
-
-            //Get the policy status on the bucket
-            GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
-            {
-                BucketName = bucketName
-            };
-
-            var getResponse = S3TestUtils.WaitForConsistency(() =>
-            {
-                var res = Client.GetBucketPolicyStatus(getRequest);
-                return res.PolicyStatus?.IsPublic == true ? res : null;
+                    ""Version"":""2012-10-17"",
+                    ""Statement"":[
+                        {{
+                            ""Sid"":""AddPerm"",
+                            ""Effect"":""Allow"",
+                            ""Principal"": ""*"",
+                            ""Action"":[""s3:GetObject""],
+                            ""Resource"":[""arn:aws:s3:::{0}/*""]
+                        }}
+                    ]
+                }}", bucketName)
             });
 
+            var getResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
+            {
+                var res = await Client.GetBucketPolicyStatusAsync(new GetBucketPolicyStatusRequest
+                {
+                    BucketName = bucketName
+                });
+                return res.PolicyStatus?.IsPublic == true ? res : null;
+            });
             Assert.AreEqual(true, getResponse.PolicyStatus.IsPublic);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestGetBucketPolicyStatus_IsNotPublic()
+        public async Task TestGetBucketPolicyStatus_IsNotPublic()
         {
-            //Set the bucket policy to not public
-            var putRequest = new PutBucketPolicyRequest
+            // Set the bucket policy to not public
+            await Client.PutBucketPolicyAsync(new PutBucketPolicyRequest
             {
                 BucketName = bucketName,
-                Policy = string.Format(@"{{
-                              ""Version"":""2012-10-17"",                                 
-                              ""Statement"":[
-                                {{
-                                  ""Sid"":""AddPerm"",
-                                  ""Effect"":""Deny"",
-                                  ""Principal"": ""*"",
-                                  ""Action"":[""s3:GetObject""],
-                                  ""Resource"":[""arn:aws:s3:::{0}/*""]
-                                }}
-                              ]
-                            }}", bucketName)
-            };
-            Client.PutBucketPolicy(putRequest);
+                Policy = string.Format(
+                @"{{
+                    ""Version"":""2012-10-17"",
+                    ""Statement"":[
+                        {{
+                            ""Sid"":""AddPerm"",
+                            ""Effect"":""Deny"",
+                            ""Principal"": ""*"",
+                            ""Action"":[""s3:GetObject""],
+                            ""Resource"":[""arn:aws:s3:::{0}/*""]
+                        }}
+                    ]
+                }}", bucketName)
+            });
 
-            //Get the policy status on the bucket
-            GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
+            var getResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                BucketName = bucketName
-            };
-
-            var getResponse = S3TestUtils.WaitForConsistency(() =>
-            {
-                var res = Client.GetBucketPolicyStatus(getRequest);
+                var res = await Client.GetBucketPolicyStatusAsync(new GetBucketPolicyStatusRequest
+                {
+                    BucketName = bucketName
+                });
                 return res.PolicyStatus?.IsPublic == false ? res : null;
             });
             Assert.AreEqual(false, getResponse.PolicyStatus.IsPublic);
         }
 
         [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "The bucket policy does not exist")]
-        public void TestGetBucketPolicyStatus_PolicyNotSet()
-        {            
-            try
-            {
-                //Get the policy status on the bucket
-                GetBucketPolicyStatusRequest getRequest = new GetBucketPolicyStatusRequest
+        public async Task TestGetBucketPolicyStatus_PolicyNotSet()
+        {
+            var exception = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+                Client.GetBucketPolicyStatusAsync(new GetBucketPolicyStatusRequest
                 {
                     BucketName = bucketName
-                };
+                })
+            );
 
-                UtilityMethods.WaitUntilException(() =>
-                {
-                    Client.GetBucketPolicyStatus(getRequest);                    
-                });
-            }
-            catch (AmazonS3Exception ex)
-            {
-                Assert.AreEqual<string>("The bucket policy does not exist", ex.Message);
-                throw;
-            }         
+            Assert.AreEqual("The bucket policy does not exist", exception.Message);
         }
-
     }
 }

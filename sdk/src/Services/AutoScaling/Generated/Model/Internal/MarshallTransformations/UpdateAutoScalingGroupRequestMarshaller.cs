@@ -149,6 +149,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DefaultInstanceWarmup", StringUtils.FromInt(publicRequest.DefaultInstanceWarmup));
                 }
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    request.Parameters.Add("DeletionProtection", StringUtils.FromString(publicRequest.DeletionProtection));
+                }
                 if(publicRequest.IsSetDesiredCapacity())
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
@@ -164,6 +168,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHealthCheckType())
                 {
                     request.Parameters.Add("HealthCheckType", StringUtils.FromString(publicRequest.HealthCheckType));
+                }
+                if(publicRequest.IsSetInstanceLifecyclePolicy())
+                {
+                    if(publicRequest.InstanceLifecyclePolicy.IsSetRetentionTriggers())
+                    {
+                        if(publicRequest.InstanceLifecyclePolicy.RetentionTriggers.IsSetTerminateHookAbandon())
+                        {
+                            request.Parameters.Add("InstanceLifecyclePolicy" + "." + "RetentionTriggers" + "." + "TerminateHookAbandon", StringUtils.FromString(publicRequest.InstanceLifecyclePolicy.RetentionTriggers.TerminateHookAbandon));
+                        }
+                    }
                 }
                 if(publicRequest.IsSetInstanceMaintenancePolicy())
                 {
@@ -262,6 +276,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                  int publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex = 1;
                                  foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValue in publicRequest.MixedInstancesPolicy.LaunchTemplate.Overrides)
                                  {
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetImageId())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "ImageId", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.ImageId));
+                                    }
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceRequirements())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorCount())
@@ -591,6 +609,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(publicRequest.VPCZoneIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateAutoScalingGroupRequestMarshaller _instance = new UpdateAutoScalingGroupRequestMarshaller();        

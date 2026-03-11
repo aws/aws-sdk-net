@@ -59,6 +59,20 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetDatabaseInstallationFiles())
+                {
+                    if (publicRequest.DatabaseInstallationFiles.Count == 0)
+                        request.Parameters.Add("DatabaseInstallationFiles", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DatabaseInstallationFiles)
+                         {
+                             request.Parameters.Add("DatabaseInstallationFiles" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetDatabaseInstallationFilesS3BucketName())
                 {
                     request.Parameters.Add("DatabaseInstallationFilesS3BucketName", StringUtils.FromString(publicRequest.DatabaseInstallationFilesS3BucketName));
@@ -121,6 +135,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UseAwsProvidedLatestImage", StringUtils.FromBool(publicRequest.UseAwsProvidedLatestImage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateCustomDBEngineVersionRequestMarshaller _instance = new CreateCustomDBEngineVersionRequestMarshaller();        

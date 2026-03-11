@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicatePolicyException
+        /// message.
+        /// </summary>
+        public DuplicatePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicatePolicyException with the specified error
         /// message.
         /// </summary>

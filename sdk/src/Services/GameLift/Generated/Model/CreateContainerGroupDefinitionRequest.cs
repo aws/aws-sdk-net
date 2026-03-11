@@ -31,12 +31,16 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContainerGroupDefinition operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
     /// your game server with Amazon GameLift Servers managed containers hosting. An Amazon
     /// GameLift Servers container group is similar to a container task or pod. Use container
     /// group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// A container group definition determines how Amazon GameLift Servers deploys your containers
@@ -281,7 +285,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
+        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2026. See more details in the
         /// <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
         /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift
         /// Servers, first update the game server build to server SDK 5.x, and then deploy to

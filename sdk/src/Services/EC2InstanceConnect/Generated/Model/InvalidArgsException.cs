@@ -39,6 +39,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidArgsException
+        /// message.
+        /// </summary>
+        public InvalidArgsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidArgsException with the specified error
         /// message.
         /// </summary>

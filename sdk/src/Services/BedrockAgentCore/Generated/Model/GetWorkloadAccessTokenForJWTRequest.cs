@@ -31,8 +31,8 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkloadAccessTokenForJWT operation.
-    /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-    /// JWT token
+    /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+    /// using a JWT token.
     /// </summary>
     public partial class GetWorkloadAccessTokenForJWTRequest : AmazonBedrockAgentCoreRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UserToken. 
         /// <para>
-        /// OAuth2 token issued by the user's identity provider
+        /// The OAuth 2.0 token issued by the user's identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=131072)]
@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadName. 
         /// <para>
-        /// Unique identifier for the registered agent
+        /// The unique identifier for the registered workload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]

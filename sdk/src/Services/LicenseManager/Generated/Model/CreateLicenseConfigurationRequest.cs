@@ -50,6 +50,7 @@ namespace Amazon.LicenseManager.Model
         private long? _licenseCount;
         private bool? _licenseCountHardLimit;
         private LicenseCountingType _licenseCountingType;
+        private long? _licenseExpiry;
         private List<string> _licenseRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private List<ProductInformation> _productInformationList = AWSConfigs.InitializeCollections ? new List<ProductInformation>() : null;
@@ -145,6 +146,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetLicenseCountingType()
         {
             return this._licenseCountingType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseExpiry. 
+        /// <para>
+        /// License configuration expiry.
+        /// </para>
+        /// </summary>
+        public long? LicenseExpiry
+        {
+            get { return this._licenseExpiry; }
+            set { this._licenseExpiry = value; }
+        }
+
+        // Check to see if LicenseExpiry property is set
+        internal bool IsSetLicenseExpiry()
+        {
+            return this._licenseExpiry.HasValue; 
         }
 
         /// <summary>

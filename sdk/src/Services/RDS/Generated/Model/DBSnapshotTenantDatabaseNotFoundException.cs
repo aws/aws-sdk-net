@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSnapshotTenantDatabaseNotFoundException
+        /// message.
+        /// </summary>
+        public DBSnapshotTenantDatabaseNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSnapshotTenantDatabaseNotFoundException with the specified error
         /// message.
         /// </summary>

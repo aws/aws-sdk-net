@@ -46,6 +46,7 @@ namespace Amazon.KafkaConnect.Model
         private KafkaClusterEncryptionInTransitDescription _kafkaClusterEncryptionInTransit;
         private string _kafkaConnectVersion;
         private LogDeliveryDescription _logDelivery;
+        private NetworkType _networkType;
         private List<PluginDescription> _plugins = AWSConfigs.InitializeCollections ? new List<PluginDescription>() : null;
         private string _serviceExecutionRoleArn;
         private WorkerConfigurationDescription _workerConfiguration;
@@ -266,6 +267,25 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetLogDelivery()
         {
             return this._logDelivery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the connector. It gives connectors connectivity to either IPv4
+        /// (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

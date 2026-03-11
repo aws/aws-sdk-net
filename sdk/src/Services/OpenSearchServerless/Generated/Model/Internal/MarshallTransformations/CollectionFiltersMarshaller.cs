@@ -46,6 +46,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCollectionGroupName())
+            {
+                context.Writer.WritePropertyName("collectionGroupName");
+                context.Writer.WriteStringValue(requestObject.CollectionGroupName);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

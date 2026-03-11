@@ -34,11 +34,6 @@ namespace Amazon.EC2.Model
     /// Describes available Amazon Web Services services in a prefix list format, which includes
     /// the prefix list name and prefix list ID of the service and the IP address range for
     /// the service.
-    /// 
-    ///  
-    /// <para>
-    /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
-    /// </para>
     /// </summary>
     public partial class DescribePrefixListsRequest : AmazonEC2Request
     {

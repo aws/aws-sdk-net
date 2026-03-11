@@ -62,6 +62,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";
             request.HttpMethod = "GET";
 
+            if (publicRequest.MaxResults == null)
+                throw new AmazonFinSpaceDataException("Request object does not have required field MaxResults set");
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for DelegationSetNotReusableException
+        /// message.
+        /// </summary>
+        public DelegationSetNotReusableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DelegationSetNotReusableException with the specified error
         /// message.
         /// </summary>

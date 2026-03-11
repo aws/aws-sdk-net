@@ -1857,6 +1857,158 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type PullRequestBuildApproverRole.
+    /// </summary>
+    public class PullRequestBuildApproverRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BITBUCKET_ADMIN for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole BITBUCKET_ADMIN = new PullRequestBuildApproverRole("BITBUCKET_ADMIN");
+        /// <summary>
+        /// Constant BITBUCKET_READ for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole BITBUCKET_READ = new PullRequestBuildApproverRole("BITBUCKET_READ");
+        /// <summary>
+        /// Constant BITBUCKET_WRITE for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole BITBUCKET_WRITE = new PullRequestBuildApproverRole("BITBUCKET_WRITE");
+        /// <summary>
+        /// Constant GITHUB_ADMIN for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITHUB_ADMIN = new PullRequestBuildApproverRole("GITHUB_ADMIN");
+        /// <summary>
+        /// Constant GITHUB_MAINTAIN for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITHUB_MAINTAIN = new PullRequestBuildApproverRole("GITHUB_MAINTAIN");
+        /// <summary>
+        /// Constant GITHUB_READ for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITHUB_READ = new PullRequestBuildApproverRole("GITHUB_READ");
+        /// <summary>
+        /// Constant GITHUB_TRIAGE for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITHUB_TRIAGE = new PullRequestBuildApproverRole("GITHUB_TRIAGE");
+        /// <summary>
+        /// Constant GITHUB_WRITE for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITHUB_WRITE = new PullRequestBuildApproverRole("GITHUB_WRITE");
+        /// <summary>
+        /// Constant GITLAB_DEVELOPER for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITLAB_DEVELOPER = new PullRequestBuildApproverRole("GITLAB_DEVELOPER");
+        /// <summary>
+        /// Constant GITLAB_GUEST for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITLAB_GUEST = new PullRequestBuildApproverRole("GITLAB_GUEST");
+        /// <summary>
+        /// Constant GITLAB_MAINTAINER for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITLAB_MAINTAINER = new PullRequestBuildApproverRole("GITLAB_MAINTAINER");
+        /// <summary>
+        /// Constant GITLAB_OWNER for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITLAB_OWNER = new PullRequestBuildApproverRole("GITLAB_OWNER");
+        /// <summary>
+        /// Constant GITLAB_PLANNER for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITLAB_PLANNER = new PullRequestBuildApproverRole("GITLAB_PLANNER");
+        /// <summary>
+        /// Constant GITLAB_REPORTER for PullRequestBuildApproverRole
+        /// </summary>
+        public static readonly PullRequestBuildApproverRole GITLAB_REPORTER = new PullRequestBuildApproverRole("GITLAB_REPORTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PullRequestBuildApproverRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PullRequestBuildApproverRole FindValue(string value)
+        {
+            return FindValue<PullRequestBuildApproverRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PullRequestBuildApproverRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PullRequestBuildCommentApproval.
+    /// </summary>
+    public class PullRequestBuildCommentApproval : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_PULL_REQUESTS for PullRequestBuildCommentApproval
+        /// </summary>
+        public static readonly PullRequestBuildCommentApproval ALL_PULL_REQUESTS = new PullRequestBuildCommentApproval("ALL_PULL_REQUESTS");
+        /// <summary>
+        /// Constant DISABLED for PullRequestBuildCommentApproval
+        /// </summary>
+        public static readonly PullRequestBuildCommentApproval DISABLED = new PullRequestBuildCommentApproval("DISABLED");
+        /// <summary>
+        /// Constant FORK_PULL_REQUESTS for PullRequestBuildCommentApproval
+        /// </summary>
+        public static readonly PullRequestBuildCommentApproval FORK_PULL_REQUESTS = new PullRequestBuildCommentApproval("FORK_PULL_REQUESTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PullRequestBuildCommentApproval(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PullRequestBuildCommentApproval FindValue(string value)
+        {
+            return FindValue<PullRequestBuildCommentApproval>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PullRequestBuildCommentApproval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportCodeCoverageSortByType.
     /// </summary>
     public class ReportCodeCoverageSortByType : ConstantClass

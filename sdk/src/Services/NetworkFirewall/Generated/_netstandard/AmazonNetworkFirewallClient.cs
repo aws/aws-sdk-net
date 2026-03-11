@@ -394,7 +394,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual AcceptNetworkFirewallTransitGatewayAttachmentResponse AcceptNetworkFirewallTransitGatewayAttachment(AcceptNetworkFirewallTransitGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -462,7 +462,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AcceptNetworkFirewallTransitGatewayAttachment">REST API Reference for AcceptNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual Task<AcceptNetworkFirewallTransitGatewayAttachmentResponse> AcceptNetworkFirewallTransitGatewayAttachmentAsync(AcceptNetworkFirewallTransitGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual AssociateAvailabilityZonesResponse AssociateAvailabilityZones(AssociateAvailabilityZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateAvailabilityZones">REST API Reference for AssociateAvailabilityZones Operation</seealso>
         public virtual Task<AssociateAvailabilityZonesResponse> AssociateAvailabilityZonesAsync(AssociateAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual AssociateFirewallPolicyResponse AssociateFirewallPolicy(AssociateFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateFirewallPolicy">REST API Reference for AssociateFirewallPolicy Operation</seealso>
         public virtual Task<AssociateFirewallPolicyResponse> AssociateFirewallPolicyAsync(AssociateFirewallPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual AssociateSubnetsResponse AssociateSubnets(AssociateSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetsResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateSubnets">REST API Reference for AssociateSubnets Operation</seealso>
         public virtual Task<AssociateSubnetsResponse> AssociateSubnetsAsync(AssociateSubnetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetsResponseUnmarshaller.Instance;
 
@@ -709,11 +709,79 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  AttachRuleGroupsToProxyConfiguration
+
+        internal virtual AttachRuleGroupsToProxyConfigurationResponse AttachRuleGroupsToProxyConfiguration(AttachRuleGroupsToProxyConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachRuleGroupsToProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachRuleGroupsToProxyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<AttachRuleGroupsToProxyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches <a>ProxyRuleGroup</a> resources to a <a>ProxyConfiguration</a> 
+        /// 
+        ///  
+        /// <para>
+        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
+        /// The details of the behavior are defined in the rule groups that you add to your configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachRuleGroupsToProxyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachRuleGroupsToProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">REST API Reference for AttachRuleGroupsToProxyConfiguration Operation</seealso>
+        public virtual Task<AttachRuleGroupsToProxyConfigurationResponse> AttachRuleGroupsToProxyConfigurationAsync(AttachRuleGroupsToProxyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachRuleGroupsToProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachRuleGroupsToProxyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachRuleGroupsToProxyConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateFirewall
 
         internal virtual CreateFirewallResponse CreateFirewall(CreateFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallResponseUnmarshaller.Instance;
 
@@ -803,7 +871,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">REST API Reference for CreateFirewall Operation</seealso>
         public virtual Task<CreateFirewallResponse> CreateFirewallAsync(CreateFirewallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallResponseUnmarshaller.Instance;
 
@@ -815,7 +883,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual CreateFirewallPolicyResponse CreateFirewallPolicy(CreateFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -875,7 +943,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">REST API Reference for CreateFirewallPolicy Operation</seealso>
         public virtual Task<CreateFirewallPolicyResponse> CreateFirewallPolicyAsync(CreateFirewallPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -883,11 +951,322 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  CreateProxy
+
+        internal virtual CreateProxyResponse CreateProxy(CreateProxyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Network Firewall <a>Proxy</a> 
+        /// 
+        ///  
+        /// <para>
+        /// Attaches a Proxy configuration to a NAT Gateway. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a proxy's tags, use the standard Amazon Web Services resource tagging operations,
+        /// <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about proxies, use <a>ListProxies</a> and <a>DescribeProxy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
+        /// The operation you requested isn't supported by Network Firewall.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">REST API Reference for CreateProxy Operation</seealso>
+        public virtual Task<CreateProxyResponse> CreateProxyAsync(CreateProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProxyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateProxyConfiguration
+
+        internal virtual CreateProxyConfigurationResponse CreateProxyConfiguration(CreateProxyConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProxyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Network Firewall <a>ProxyConfiguration</a> 
+        /// 
+        ///  
+        /// <para>
+        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
+        /// The details of the behavior are defined in the rule groups that you add to your configuration.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a proxy configuration's tags, use the standard Amazon Web Services resource
+        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about proxies, use <a>ListProxyConfigurations</a> and <a>DescribeProxyConfiguration</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">REST API Reference for CreateProxyConfiguration Operation</seealso>
+        public virtual Task<CreateProxyConfigurationResponse> CreateProxyConfigurationAsync(CreateProxyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProxyConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateProxyRuleGroup
+
+        internal virtual CreateProxyRuleGroupResponse CreateProxyRuleGroup(CreateProxyRuleGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyRuleGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProxyRuleGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Network Firewall <a>ProxyRuleGroup</a> 
+        /// 
+        ///  
+        /// <para>
+        /// Collections of related proxy filtering rules. Rule groups help you manage and reuse
+        /// sets of rules across multiple proxy configurations. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a proxy rule group's tags, use the standard Amazon Web Services resource
+        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about proxy rule groups, use <a>ListProxyRuleGroups</a> and
+        /// <a>DescribeProxyRuleGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
+        /// and <a>DescribeProxyRule</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRuleGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">REST API Reference for CreateProxyRuleGroup Operation</seealso>
+        public virtual Task<CreateProxyRuleGroupResponse> CreateProxyRuleGroupAsync(CreateProxyRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyRuleGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProxyRuleGroupResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateProxyRules
+
+        internal virtual CreateProxyRulesResponse CreateProxyRules(CreateProxyRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyRulesResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProxyRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates Network Firewall <a>ProxyRule</a> resources. 
+        /// 
+        ///  
+        /// <para>
+        /// Attaches new proxy rule(s) to an existing proxy rule group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
+        /// and <a>DescribeProxyRule</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProxyRules service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">REST API Reference for CreateProxyRules Operation</seealso>
+        public virtual Task<CreateProxyRulesResponse> CreateProxyRulesAsync(CreateProxyRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProxyRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProxyRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProxyRulesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateRuleGroup
 
         internal virtual CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -947,7 +1326,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -959,7 +1338,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual CreateTLSInspectionConfigurationResponse CreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1040,7 +1419,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
         public virtual Task<CreateTLSInspectionConfigurationResponse> CreateTLSInspectionConfigurationAsync(CreateTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1052,7 +1431,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual CreateVpcEndpointAssociationResponse CreateVpcEndpointAssociation(CreateVpcEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1116,7 +1495,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateVpcEndpointAssociation">REST API Reference for CreateVpcEndpointAssociation Operation</seealso>
         public virtual Task<CreateVpcEndpointAssociationResponse> CreateVpcEndpointAssociationAsync(CreateVpcEndpointAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1128,7 +1507,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DeleteFirewallResponse DeleteFirewall(DeleteFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallResponseUnmarshaller.Instance;
 
@@ -1201,7 +1580,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewall">REST API Reference for DeleteFirewall Operation</seealso>
         public virtual Task<DeleteFirewallResponse> DeleteFirewallAsync(DeleteFirewallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallResponseUnmarshaller.Instance;
 
@@ -1213,7 +1592,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DeleteFirewallPolicyResponse DeleteFirewallPolicy(DeleteFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1269,7 +1648,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewallPolicy">REST API Reference for DeleteFirewallPolicy Operation</seealso>
         public virtual Task<DeleteFirewallPolicyResponse> DeleteFirewallPolicyAsync(DeleteFirewallPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1281,7 +1660,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DeleteNetworkFirewallTransitGatewayAttachmentResponse DeleteNetworkFirewallTransitGatewayAttachment(DeleteNetworkFirewallTransitGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -1296,7 +1675,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  <important> 
         /// <para>
-        /// After you delete a transit gateway attachment, raffic will no longer flow through
+        /// After you delete a transit gateway attachment, traffic will no longer flow through
         /// the firewall endpoints.
         /// </para>
         ///  </important> 
@@ -1342,7 +1721,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">REST API Reference for DeleteNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual Task<DeleteNetworkFirewallTransitGatewayAttachmentResponse> DeleteNetworkFirewallTransitGatewayAttachmentAsync(DeleteNetworkFirewallTransitGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -1350,11 +1729,263 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  DeleteProxy
+
+        internal virtual DeleteProxyResponse DeleteProxy(DeleteProxyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>Proxy</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// Detaches a Proxy configuration from a NAT Gateway. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
+        /// The operation you requested isn't supported by Network Firewall.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxy">REST API Reference for DeleteProxy Operation</seealso>
+        public virtual Task<DeleteProxyResponse> DeleteProxyAsync(DeleteProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProxyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteProxyConfiguration
+
+        internal virtual DeleteProxyConfigurationResponse DeleteProxyConfiguration(DeleteProxyConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProxyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>ProxyConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">REST API Reference for DeleteProxyConfiguration Operation</seealso>
+        public virtual Task<DeleteProxyConfigurationResponse> DeleteProxyConfigurationAsync(DeleteProxyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProxyConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteProxyRuleGroup
+
+        internal virtual DeleteProxyRuleGroupResponse DeleteProxyRuleGroup(DeleteProxyRuleGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyRuleGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProxyRuleGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>ProxyRuleGroup</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRuleGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">REST API Reference for DeleteProxyRuleGroup Operation</seealso>
+        public virtual Task<DeleteProxyRuleGroupResponse> DeleteProxyRuleGroupAsync(DeleteProxyRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyRuleGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProxyRuleGroupResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteProxyRules
+
+        internal virtual DeleteProxyRulesResponse DeleteProxyRules(DeleteProxyRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProxyRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified <a>ProxyRule</a>(s). currently attached to a <a>ProxyRuleGroup</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProxyRules service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">REST API Reference for DeleteProxyRules Operation</seealso>
+        public virtual Task<DeleteProxyRulesResponse> DeleteProxyRulesAsync(DeleteProxyRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProxyRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProxyRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProxyRulesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteResourcePolicy
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1406,7 +2037,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1418,7 +2049,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -1474,7 +2105,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual Task<DeleteRuleGroupResponse> DeleteRuleGroupAsync(DeleteRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -1486,7 +2117,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DeleteTLSInspectionConfigurationResponse DeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1539,7 +2170,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
         public virtual Task<DeleteTLSInspectionConfigurationResponse> DeleteTLSInspectionConfigurationAsync(DeleteTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1551,7 +2182,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DeleteVpcEndpointAssociationResponse DeleteVpcEndpointAssociation(DeleteVpcEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1615,7 +2246,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteVpcEndpointAssociation">REST API Reference for DeleteVpcEndpointAssociation Operation</seealso>
         public virtual Task<DeleteVpcEndpointAssociationResponse> DeleteVpcEndpointAssociationAsync(DeleteVpcEndpointAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1627,7 +2258,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeFirewallResponse DescribeFirewall(DescribeFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallResponseUnmarshaller.Instance;
 
@@ -1676,7 +2307,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewall">REST API Reference for DescribeFirewall Operation</seealso>
         public virtual Task<DescribeFirewallResponse> DescribeFirewallAsync(DescribeFirewallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallResponseUnmarshaller.Instance;
 
@@ -1688,7 +2319,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeFirewallMetadataResponse DescribeFirewallMetadata(DescribeFirewallMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallMetadataResponseUnmarshaller.Instance;
 
@@ -1738,7 +2369,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallMetadata">REST API Reference for DescribeFirewallMetadata Operation</seealso>
         public virtual Task<DescribeFirewallMetadataResponse> DescribeFirewallMetadataAsync(DescribeFirewallMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallMetadataResponseUnmarshaller.Instance;
 
@@ -1750,7 +2381,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeFirewallPolicyResponse DescribeFirewallPolicy(DescribeFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1799,7 +2430,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicy">REST API Reference for DescribeFirewallPolicy Operation</seealso>
         public virtual Task<DescribeFirewallPolicyResponse> DescribeFirewallPolicyAsync(DescribeFirewallPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1811,7 +2442,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeFlowOperationResponse DescribeFlowOperation(DescribeFlowOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowOperationResponseUnmarshaller.Instance;
 
@@ -1860,7 +2491,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFlowOperation">REST API Reference for DescribeFlowOperation Operation</seealso>
         public virtual Task<DescribeFlowOperationResponse> DescribeFlowOperationAsync(DescribeFlowOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowOperationResponseUnmarshaller.Instance;
 
@@ -1872,7 +2503,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeLoggingConfigurationResponse DescribeLoggingConfiguration(DescribeLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1921,7 +2552,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         public virtual Task<DescribeLoggingConfigurationResponse> DescribeLoggingConfigurationAsync(DescribeLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1929,11 +2560,256 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  DescribeProxy
+
+        internal virtual DescribeProxyResponse DescribeProxy(DescribeProxyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxy">REST API Reference for DescribeProxy Operation</seealso>
+        public virtual Task<DescribeProxyResponse> DescribeProxyAsync(DescribeProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProxyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeProxyConfiguration
+
+        internal virtual DescribeProxyConfigurationResponse DescribeProxyConfiguration(DescribeProxyConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProxyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">REST API Reference for DescribeProxyConfiguration Operation</seealso>
+        public virtual Task<DescribeProxyConfigurationResponse> DescribeProxyConfigurationAsync(DescribeProxyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProxyConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeProxyRule
+
+        internal virtual DescribeProxyRuleResponse DescribeProxyRule(DescribeProxyRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProxyRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy configuration for the specified proxy
+        /// rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProxyRule service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">REST API Reference for DescribeProxyRule Operation</seealso>
+        public virtual Task<DescribeProxyRuleResponse> DescribeProxyRuleAsync(DescribeProxyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProxyRuleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeProxyRuleGroup
+
+        internal virtual DescribeProxyRuleGroupResponse DescribeProxyRuleGroup(DescribeProxyRuleGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyRuleGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyRuleGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProxyRuleGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRuleGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">REST API Reference for DescribeProxyRuleGroup Operation</seealso>
+        public virtual Task<DescribeProxyRuleGroupResponse> DescribeProxyRuleGroupAsync(DescribeProxyRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeProxyRuleGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProxyRuleGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProxyRuleGroupResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeResourcePolicy
 
         internal virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1982,7 +2858,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1994,7 +2870,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeRuleGroupResponse DescribeRuleGroup(DescribeRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupResponseUnmarshaller.Instance;
 
@@ -2043,7 +2919,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroup">REST API Reference for DescribeRuleGroup Operation</seealso>
         public virtual Task<DescribeRuleGroupResponse> DescribeRuleGroupAsync(DescribeRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupResponseUnmarshaller.Instance;
 
@@ -2055,7 +2931,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeRuleGroupMetadataResponse DescribeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
 
@@ -2106,7 +2982,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
         public virtual Task<DescribeRuleGroupMetadataResponse> DescribeRuleGroupMetadataAsync(DescribeRuleGroupMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
 
@@ -2118,7 +2994,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeRuleGroupSummaryResponse DescribeRuleGroupSummary(DescribeRuleGroupSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
 
@@ -2180,7 +3056,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">REST API Reference for DescribeRuleGroupSummary Operation</seealso>
         public virtual Task<DescribeRuleGroupSummaryResponse> DescribeRuleGroupSummaryAsync(DescribeRuleGroupSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
 
@@ -2192,7 +3068,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeTLSInspectionConfigurationResponse DescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -2241,7 +3117,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
         public virtual Task<DescribeTLSInspectionConfigurationResponse> DescribeTLSInspectionConfigurationAsync(DescribeTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -2253,7 +3129,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DescribeVpcEndpointAssociationResponse DescribeVpcEndpointAssociation(DescribeVpcEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -2302,7 +3178,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeVpcEndpointAssociation">REST API Reference for DescribeVpcEndpointAssociation Operation</seealso>
         public virtual Task<DescribeVpcEndpointAssociationResponse> DescribeVpcEndpointAssociationAsync(DescribeVpcEndpointAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -2310,11 +3186,79 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  DetachRuleGroupsFromProxyConfiguration
+
+        internal virtual DetachRuleGroupsFromProxyConfigurationResponse DetachRuleGroupsFromProxyConfiguration(DetachRuleGroupsFromProxyConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachRuleGroupsFromProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachRuleGroupsFromProxyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DetachRuleGroupsFromProxyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Detaches <a>ProxyRuleGroup</a> resources from a <a>ProxyConfiguration</a> 
+        /// 
+        ///  
+        /// <para>
+        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
+        /// The details of the behavior are defined in the rule groups that you add to your configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachRuleGroupsFromProxyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachRuleGroupsFromProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">REST API Reference for DetachRuleGroupsFromProxyConfiguration Operation</seealso>
+        public virtual Task<DetachRuleGroupsFromProxyConfigurationResponse> DetachRuleGroupsFromProxyConfigurationAsync(DetachRuleGroupsFromProxyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachRuleGroupsFromProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachRuleGroupsFromProxyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachRuleGroupsFromProxyConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateAvailabilityZones
 
         internal virtual DisassociateAvailabilityZonesResponse DisassociateAvailabilityZones(DisassociateAvailabilityZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -2383,7 +3327,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateAvailabilityZones">REST API Reference for DisassociateAvailabilityZones Operation</seealso>
         public virtual Task<DisassociateAvailabilityZonesResponse> DisassociateAvailabilityZonesAsync(DisassociateAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -2395,7 +3339,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual DisassociateSubnetsResponse DisassociateSubnets(DisassociateSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetsResponseUnmarshaller.Instance;
 
@@ -2453,7 +3397,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateSubnets">REST API Reference for DisassociateSubnets Operation</seealso>
         public virtual Task<DisassociateSubnetsResponse> DisassociateSubnetsAsync(DisassociateSubnetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetsResponseUnmarshaller.Instance;
 
@@ -2465,7 +3409,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual GetAnalysisReportResultsResponse GetAnalysisReportResults(GetAnalysisReportResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalysisReportResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalysisReportResultsResponseUnmarshaller.Instance;
 
@@ -2519,7 +3463,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">REST API Reference for GetAnalysisReportResults Operation</seealso>
         public virtual Task<GetAnalysisReportResultsResponse> GetAnalysisReportResultsAsync(GetAnalysisReportResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalysisReportResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalysisReportResultsResponseUnmarshaller.Instance;
 
@@ -2531,7 +3475,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListAnalysisReportsResponse ListAnalysisReports(ListAnalysisReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysisReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
 
@@ -2580,7 +3524,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">REST API Reference for ListAnalysisReports Operation</seealso>
         public virtual Task<ListAnalysisReportsResponse> ListAnalysisReportsAsync(ListAnalysisReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysisReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
 
@@ -2592,7 +3536,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListFirewallPoliciesResponse ListFirewallPolicies(ListFirewallPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallPoliciesResponseUnmarshaller.Instance;
 
@@ -2640,7 +3584,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPolicies">REST API Reference for ListFirewallPolicies Operation</seealso>
         public virtual Task<ListFirewallPoliciesResponse> ListFirewallPoliciesAsync(ListFirewallPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallPoliciesResponseUnmarshaller.Instance;
 
@@ -2652,7 +3596,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListFirewallsResponse ListFirewalls(ListFirewallsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallsResponseUnmarshaller.Instance;
 
@@ -2705,7 +3649,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewalls">REST API Reference for ListFirewalls Operation</seealso>
         public virtual Task<ListFirewallsResponse> ListFirewallsAsync(ListFirewallsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallsResponseUnmarshaller.Instance;
 
@@ -2717,7 +3661,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListFlowOperationResultsResponse ListFlowOperationResults(ListFlowOperationResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationResultsResponseUnmarshaller.Instance;
 
@@ -2778,7 +3722,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperationResults">REST API Reference for ListFlowOperationResults Operation</seealso>
         public virtual Task<ListFlowOperationResultsResponse> ListFlowOperationResultsAsync(ListFlowOperationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationResultsResponseUnmarshaller.Instance;
 
@@ -2790,7 +3734,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListFlowOperationsResponse ListFlowOperations(ListFlowOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
 
@@ -2853,7 +3797,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
         public virtual Task<ListFlowOperationsResponse> ListFlowOperationsAsync(ListFlowOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
 
@@ -2861,11 +3805,197 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  ListProxies
+
+        internal virtual ListProxiesResponse ListProxies(ListProxiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProxiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProxiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProxiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for the proxies that you have defined. Depending on your setting
+        /// for max results and the number of proxies, a single call might not return the full
+        /// list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProxies service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">REST API Reference for ListProxies Operation</seealso>
+        public virtual Task<ListProxiesResponse> ListProxiesAsync(ListProxiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProxiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProxiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProxiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListProxyConfigurations
+
+        internal virtual ListProxyConfigurationsResponse ListProxyConfigurations(ListProxyConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProxyConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProxyConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProxyConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for the proxy configuration that you have defined. Depending
+        /// on your setting for max results and the number of proxy configurations, a single call
+        /// might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxyConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProxyConfigurations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">REST API Reference for ListProxyConfigurations Operation</seealso>
+        public virtual Task<ListProxyConfigurationsResponse> ListProxyConfigurationsAsync(ListProxyConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProxyConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProxyConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProxyConfigurationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListProxyRuleGroups
+
+        internal virtual ListProxyRuleGroupsResponse ListProxyRuleGroups(ListProxyRuleGroupsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProxyRuleGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProxyRuleGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProxyRuleGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for the proxy rule groups that you have defined. Depending
+        /// on your setting for max results and the number of proxy rule groups, a single call
+        /// might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxyRuleGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProxyRuleGroups service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">REST API Reference for ListProxyRuleGroups Operation</seealso>
+        public virtual Task<ListProxyRuleGroupsResponse> ListProxyRuleGroupsAsync(ListProxyRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProxyRuleGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProxyRuleGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProxyRuleGroupsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListRuleGroups
 
         internal virtual ListRuleGroupsResponse ListRuleGroups(ListRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -2913,7 +4043,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual Task<ListRuleGroupsResponse> ListRuleGroupsAsync(ListRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -2925,7 +4055,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2984,7 +4114,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2996,7 +4126,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListTLSInspectionConfigurationsResponse ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTLSInspectionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTLSInspectionConfigurationsResponseUnmarshaller.Instance;
 
@@ -3044,7 +4174,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
         public virtual Task<ListTLSInspectionConfigurationsResponse> ListTLSInspectionConfigurationsAsync(ListTLSInspectionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTLSInspectionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTLSInspectionConfigurationsResponseUnmarshaller.Instance;
 
@@ -3056,7 +4186,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual ListVpcEndpointAssociationsResponse ListVpcEndpointAssociations(ListVpcEndpointAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -3110,7 +4240,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListVpcEndpointAssociations">REST API Reference for ListVpcEndpointAssociations Operation</seealso>
         public virtual Task<ListVpcEndpointAssociationsResponse> ListVpcEndpointAssociationsAsync(ListVpcEndpointAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -3122,7 +4252,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3210,7 +4340,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3222,7 +4352,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual RejectNetworkFirewallTransitGatewayAttachmentResponse RejectNetworkFirewallTransitGatewayAttachment(RejectNetworkFirewallTransitGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -3238,8 +4368,8 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// Only the firewall owner can reject the attachment. After rejection, no traffic will
-        /// flow through the firewall endpoints for this attachment.
+        /// Only the transit gateway owner can reject the attachment. After rejection, no traffic
+        /// will flow through the firewall endpoints for this attachment.
         /// </para>
         ///  
         /// <para>
@@ -3290,7 +4420,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RejectNetworkFirewallTransitGatewayAttachment">REST API Reference for RejectNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual Task<RejectNetworkFirewallTransitGatewayAttachmentResponse> RejectNetworkFirewallTransitGatewayAttachmentAsync(RejectNetworkFirewallTransitGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -3302,7 +4432,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual StartAnalysisReportResponse StartAnalysisReport(StartAnalysisReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
 
@@ -3356,7 +4486,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">REST API Reference for StartAnalysisReport Operation</seealso>
         public virtual Task<StartAnalysisReportResponse> StartAnalysisReportAsync(StartAnalysisReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
 
@@ -3368,7 +4498,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual StartFlowCaptureResponse StartFlowCapture(StartFlowCaptureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowCaptureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowCaptureResponseUnmarshaller.Instance;
 
@@ -3434,7 +4564,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowCapture">REST API Reference for StartFlowCapture Operation</seealso>
         public virtual Task<StartFlowCaptureResponse> StartFlowCaptureAsync(StartFlowCaptureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowCaptureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowCaptureResponseUnmarshaller.Instance;
 
@@ -3446,7 +4576,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual StartFlowFlushResponse StartFlowFlush(StartFlowFlushRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowFlushRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowFlushResponseUnmarshaller.Instance;
 
@@ -3505,7 +4635,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowFlush">REST API Reference for StartFlowFlush Operation</seealso>
         public virtual Task<StartFlowFlushResponse> StartFlowFlushAsync(StartFlowFlushRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowFlushRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowFlushResponseUnmarshaller.Instance;
 
@@ -3517,7 +4647,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3576,7 +4706,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3588,7 +4718,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3647,7 +4777,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3659,7 +4789,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateAvailabilityZoneChangeProtectionResponse UpdateAvailabilityZoneChangeProtection(UpdateAvailabilityZoneChangeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityZoneChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
 
@@ -3724,7 +4854,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateAvailabilityZoneChangeProtection">REST API Reference for UpdateAvailabilityZoneChangeProtection Operation</seealso>
         public virtual Task<UpdateAvailabilityZoneChangeProtectionResponse> UpdateAvailabilityZoneChangeProtectionAsync(UpdateAvailabilityZoneChangeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityZoneChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
 
@@ -3736,7 +4866,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateFirewallAnalysisSettingsResponse UpdateFirewallAnalysisSettings(UpdateFirewallAnalysisSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallAnalysisSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallAnalysisSettingsResponseUnmarshaller.Instance;
 
@@ -3776,6 +4906,9 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
@@ -3785,7 +4918,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">REST API Reference for UpdateFirewallAnalysisSettings Operation</seealso>
         public virtual Task<UpdateFirewallAnalysisSettingsResponse> UpdateFirewallAnalysisSettingsAsync(UpdateFirewallAnalysisSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallAnalysisSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallAnalysisSettingsResponseUnmarshaller.Instance;
 
@@ -3797,7 +4930,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateFirewallDeleteProtectionResponse UpdateFirewallDeleteProtection(UpdateFirewallDeleteProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDeleteProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDeleteProtectionResponseUnmarshaller.Instance;
 
@@ -3855,7 +4988,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDeleteProtection">REST API Reference for UpdateFirewallDeleteProtection Operation</seealso>
         public virtual Task<UpdateFirewallDeleteProtectionResponse> UpdateFirewallDeleteProtectionAsync(UpdateFirewallDeleteProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDeleteProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDeleteProtectionResponseUnmarshaller.Instance;
 
@@ -3867,7 +5000,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateFirewallDescriptionResponse UpdateFirewallDescription(UpdateFirewallDescriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDescriptionResponseUnmarshaller.Instance;
 
@@ -3920,7 +5053,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDescription">REST API Reference for UpdateFirewallDescription Operation</seealso>
         public virtual Task<UpdateFirewallDescriptionResponse> UpdateFirewallDescriptionAsync(UpdateFirewallDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDescriptionResponseUnmarshaller.Instance;
 
@@ -3932,7 +5065,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateFirewallEncryptionConfigurationResponse UpdateFirewallEncryptionConfiguration(UpdateFirewallEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -3987,7 +5120,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
         public virtual Task<UpdateFirewallEncryptionConfigurationResponse> UpdateFirewallEncryptionConfigurationAsync(UpdateFirewallEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -3999,7 +5132,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateFirewallPolicyResponse UpdateFirewallPolicy(UpdateFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -4051,7 +5184,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicy">REST API Reference for UpdateFirewallPolicy Operation</seealso>
         public virtual Task<UpdateFirewallPolicyResponse> UpdateFirewallPolicyAsync(UpdateFirewallPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -4063,7 +5196,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateFirewallPolicyChangeProtectionResponse UpdateFirewallPolicyChangeProtection(UpdateFirewallPolicyChangeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyChangeProtectionResponseUnmarshaller.Instance;
 
@@ -4121,7 +5254,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyChangeProtection">REST API Reference for UpdateFirewallPolicyChangeProtection Operation</seealso>
         public virtual Task<UpdateFirewallPolicyChangeProtectionResponse> UpdateFirewallPolicyChangeProtectionAsync(UpdateFirewallPolicyChangeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyChangeProtectionResponseUnmarshaller.Instance;
 
@@ -4133,7 +5266,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -4222,7 +5355,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateLoggingConfigurationResponse> UpdateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -4230,11 +5363,319 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  UpdateProxy
+
+        internal virtual UpdateProxyResponse UpdateProxy(UpdateProxyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProxyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of the specified proxy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
+        /// The operation you requested isn't supported by Network Firewall.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">REST API Reference for UpdateProxy Operation</seealso>
+        public virtual Task<UpdateProxyResponse> UpdateProxyAsync(UpdateProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProxyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateProxyConfiguration
+
+        internal virtual UpdateProxyConfigurationResponse UpdateProxyConfiguration(UpdateProxyConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProxyConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of the specified proxy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">REST API Reference for UpdateProxyConfiguration Operation</seealso>
+        public virtual Task<UpdateProxyConfigurationResponse> UpdateProxyConfigurationAsync(UpdateProxyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProxyConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateProxyRule
+
+        internal virtual UpdateProxyRuleResponse UpdateProxyRule(UpdateProxyRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProxyRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of the specified proxy rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProxyRule service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">REST API Reference for UpdateProxyRule Operation</seealso>
+        public virtual Task<UpdateProxyRuleResponse> UpdateProxyRuleAsync(UpdateProxyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProxyRuleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateProxyRuleGroupPriorities
+
+        internal virtual UpdateProxyRuleGroupPrioritiesResponse UpdateProxyRuleGroupPriorities(UpdateProxyRuleGroupPrioritiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRuleGroupPrioritiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyRuleGroupPrioritiesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProxyRuleGroupPrioritiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates proxy rule group priorities within a proxy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRuleGroupPriorities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProxyRuleGroupPriorities service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">REST API Reference for UpdateProxyRuleGroupPriorities Operation</seealso>
+        public virtual Task<UpdateProxyRuleGroupPrioritiesResponse> UpdateProxyRuleGroupPrioritiesAsync(UpdateProxyRuleGroupPrioritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRuleGroupPrioritiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyRuleGroupPrioritiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProxyRuleGroupPrioritiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateProxyRulePriorities
+
+        internal virtual UpdateProxyRulePrioritiesResponse UpdateProxyRulePriorities(UpdateProxyRulePrioritiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRulePrioritiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyRulePrioritiesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProxyRulePrioritiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates proxy rule priorities within a proxy rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRulePriorities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProxyRulePriorities service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">REST API Reference for UpdateProxyRulePriorities Operation</seealso>
+        public virtual Task<UpdateProxyRulePrioritiesResponse> UpdateProxyRulePrioritiesAsync(UpdateProxyRulePrioritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProxyRulePrioritiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProxyRulePrioritiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProxyRulePrioritiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateRuleGroup
 
         internal virtual UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -4295,7 +5736,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual Task<UpdateRuleGroupResponse> UpdateRuleGroupAsync(UpdateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -4307,7 +5748,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateSubnetChangeProtectionResponse UpdateSubnetChangeProtection(UpdateSubnetChangeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubnetChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubnetChangeProtectionResponseUnmarshaller.Instance;
 
@@ -4362,7 +5803,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateSubnetChangeProtection">REST API Reference for UpdateSubnetChangeProtection Operation</seealso>
         public virtual Task<UpdateSubnetChangeProtectionResponse> UpdateSubnetChangeProtectionAsync(UpdateSubnetChangeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubnetChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubnetChangeProtectionResponseUnmarshaller.Instance;
 
@@ -4374,7 +5815,7 @@ namespace Amazon.NetworkFirewall
 
         internal virtual UpdateTLSInspectionConfigurationResponse UpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -4436,7 +5877,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
         public virtual Task<UpdateTLSInspectionConfigurationResponse> UpdateTLSInspectionConfigurationAsync(UpdateTLSInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 

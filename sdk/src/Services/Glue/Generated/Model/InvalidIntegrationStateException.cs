@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIntegrationStateException
+        /// message.
+        /// </summary>
+        public InvalidIntegrationStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIntegrationStateException with the specified error
         /// message.
         /// </summary>

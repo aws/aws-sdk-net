@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ChannelsIn. Number of input channels to be used.
         /// </summary>
-        [AWSProperty(Min=1, Max=16)]
         public int? ChannelsIn
         {
             get { return this._channelsIn; }
@@ -80,7 +79,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ChannelsOut. Number of output channels to be produced.Valid
         /// values: 1, 2, 4, 6, 8
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
         public int? ChannelsOut
         {
             get { return this._channelsOut; }

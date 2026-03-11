@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceAccessNotEnabledException
+        /// message.
+        /// </summary>
+        public ServiceAccessNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceAccessNotEnabledException with the specified error
         /// message.
         /// </summary>

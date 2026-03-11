@@ -87,6 +87,7 @@ namespace Amazon.Redshift.Model
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
         private bool? _availabilityZoneRelocation;
+        private string _catalogName;
         private string _clusterIdentifier;
         private string _clusterParameterGroupName;
         private List<string> _clusterSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -111,6 +112,7 @@ namespace Amazon.Redshift.Model
         private int? _port;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private string _redshiftIdcApplicationArn;
         private string _reservedNodeId;
         private string _snapshotArn;
         private string _snapshotClusterIdentifier;
@@ -257,6 +259,47 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvailabilityZoneRelocation()
         {
             return this._availabilityZoneRelocation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogName. 
+        /// <para>
+        /// The name of the Glue Data Catalog that will be associated with the cluster enabled
+        /// with Amazon Redshift federated permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain at least one lowercase letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens
+        /// (-).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Pattern: <c>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>my-catalog_01</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CatalogName
+        {
+            get { return this._catalogName; }
+            set { this._catalogName = value; }
+        }
+
+        // Check to see if CatalogName property is set
+        internal bool IsSetCatalogName()
+        {
+            return this._catalogName != null;
         }
 
         /// <summary>
@@ -859,6 +902,27 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftIdcApplicationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling
+        /// Amazon Web Services IAM Identity Center trusted identity propagation on a cluster
+        /// enabled with Amazon Redshift federated permissions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string RedshiftIdcApplicationArn
+        {
+            get { return this._redshiftIdcApplicationArn; }
+            set { this._redshiftIdcApplicationArn = value; }
+        }
+
+        // Check to see if RedshiftIdcApplicationArn property is set
+        internal bool IsSetRedshiftIdcApplicationArn()
+        {
+            return this._redshiftIdcApplicationArn != null;
         }
 
         /// <summary>

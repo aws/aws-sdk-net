@@ -1,0 +1,14 @@
+{
+    "shapeModifiers": {
+        "CacheTTL": {
+            "modify": [
+                {
+                    "5m": { "emitPropertyName": "FIVE_MINUTES" }
+                },
+                {
+                    "1h": { "emitPropertyName": "ONE_HOUR" }
+                }
+            ]
+        }
+    }
+}

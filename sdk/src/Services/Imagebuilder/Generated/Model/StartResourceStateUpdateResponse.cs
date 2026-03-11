@@ -58,7 +58,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The requested ARN of the Image Builder resource for the asynchronous update.
+        /// The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous
+        /// update.
         /// </para>
         /// </summary>
         public string ResourceArn

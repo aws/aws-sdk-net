@@ -30,12 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains the summary of the actions.
+    /// Contains the summary of the actions, including information about where the action
+    /// resolves to.
     /// </summary>
     public partial class ActionSummary
     {
         private string _actionDefinitionId;
         private string _actionId;
+        private ResolveTo _resolveTo;
         private TargetResource _targetResource;
 
         /// <summary>
@@ -74,6 +76,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetActionId()
         {
             return this._actionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolveTo. 
+        /// <para>
+        /// The detailed resource this action resolves to.
+        /// </para>
+        /// </summary>
+        public ResolveTo ResolveTo
+        {
+            get { return this._resolveTo; }
+            set { this._resolveTo = value; }
+        }
+
+        // Check to see if ResolveTo property is set
+        internal bool IsSetResolveTo()
+        {
+            return this._resolveTo != null;
         }
 
         /// <summary>

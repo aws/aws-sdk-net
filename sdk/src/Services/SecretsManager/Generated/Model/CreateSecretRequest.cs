@@ -120,6 +120,7 @@ namespace Amazon.SecretsManager.Model
         private MemoryStream _secretBinary;
         private string _secretString;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property AddReplicaRegions. 
@@ -441,6 +442,27 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The exact string that identifies the partner that holds the external secret. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using
+        /// Secrets Manager managed external secrets</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

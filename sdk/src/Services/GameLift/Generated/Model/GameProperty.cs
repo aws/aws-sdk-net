@@ -58,6 +58,19 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The game property identifier.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Required=true, Max=32)]
         public string Key

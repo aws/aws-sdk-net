@@ -31,7 +31,45 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMapGlyphs operation.
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetGlyphs.html">
+    /// <c>GetGlyphs</c> </a> unless you require <c>Grab</c> data.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>GetMapGlyphs</c> is part of a previous Amazon Location Service Maps API (version
+    /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+    /// 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version 2 <c>GetGlyphs</c> operation gives a better user experience and is compatible
+    /// with the remainder of the V2 Maps API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+    /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+    /// continue using API version 1 when using <c>Grab</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+    /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+    /// Guide</a>.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
     /// Retrieves glyphs used to display labels on a map.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class GetMapGlyphsRequest : AmazonLocationServiceRequest
     {
@@ -48,7 +86,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri</a>
         /// styles: 
         /// </para>
         ///  <ul> <li> 
@@ -78,7 +116,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
         /// Technologies</a> styles:
         /// </para>
         ///  <ul> <li> 
@@ -93,7 +131,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
         /// styles:
         /// </para>
         ///  <ul> <li> 
@@ -103,7 +141,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/previous/developerguide/open-data.html">Open
         /// Data</a> styles:
         /// </para>
         ///  <ul> <li> 
@@ -164,7 +202,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>

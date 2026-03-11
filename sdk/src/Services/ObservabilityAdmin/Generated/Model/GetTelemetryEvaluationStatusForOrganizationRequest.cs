@@ -32,8 +32,9 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// Container for the parameters to the GetTelemetryEvaluationStatusForOrganization operation.
     /// This returns the onboarding status of the telemetry configuration feature for the
-    /// organization. It can only be called by a Management Account of an AWS Organization
-    /// or an assigned Delegated Admin Account of AWS CloudWatch telemetry config.
+    /// organization. It can only be called by a Management Account of an Amazon Web Services
+    /// Organization or an assigned Delegated Admin Account of Amazon CloudWatch telemetry
+    /// config.
     /// </summary>
     public partial class GetTelemetryEvaluationStatusForOrganizationRequest : AmazonObservabilityAdminRequest
     {

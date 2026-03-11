@@ -59,6 +59,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFNonEmptyEntityException
+        /// message.
+        /// </summary>
+        public WAFNonEmptyEntityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFNonEmptyEntityException with the specified error
         /// message.
         /// </summary>

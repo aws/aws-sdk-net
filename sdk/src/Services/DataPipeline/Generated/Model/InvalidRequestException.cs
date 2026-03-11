@@ -41,6 +41,13 @@ namespace Amazon.DataPipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRequestException
+        /// message.
+        /// </summary>
+        public InvalidRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
         /// message.
         /// </summary>

@@ -202,6 +202,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetWarmThroughputSpecification())
+            {
+                context.Writer.WritePropertyName("warmThroughputSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WarmThroughputSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WarmThroughputSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

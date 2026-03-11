@@ -287,7 +287,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual AssociateRepositoryResponse AssociateRepository(AssociateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRepositoryResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">REST API Reference for AssociateRepository Operation</seealso>
         public virtual Task<AssociateRepositoryResponse> AssociateRepositoryAsync(AssociateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRepositoryResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual CreateCodeReviewResponse CreateCodeReview(CreateCodeReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
         public virtual Task<CreateCodeReviewResponse> CreateCodeReviewAsync(CreateCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual DescribeCodeReviewResponse DescribeCodeReview(DescribeCodeReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeReviewResponseUnmarshaller.Instance;
 
@@ -455,7 +455,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">REST API Reference for DescribeCodeReview Operation</seealso>
         public virtual Task<DescribeCodeReviewResponse> DescribeCodeReviewAsync(DescribeCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeReviewResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual DescribeRecommendationFeedbackResponse DescribeRecommendationFeedback(DescribeRecommendationFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">REST API Reference for DescribeRecommendationFeedback Operation</seealso>
         public virtual Task<DescribeRecommendationFeedbackResponse> DescribeRecommendationFeedbackAsync(DescribeRecommendationFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -515,7 +515,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual DescribeRepositoryAssociationResponse DescribeRepositoryAssociation(DescribeRepositoryAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRepositoryAssociation">REST API Reference for DescribeRepositoryAssociation Operation</seealso>
         public virtual Task<DescribeRepositoryAssociationResponse> DescribeRepositoryAssociationAsync(DescribeRepositoryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual DisassociateRepositoryResponse DisassociateRepository(DisassociateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRepositoryResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DisassociateRepository">REST API Reference for DisassociateRepository Operation</seealso>
         public virtual Task<DisassociateRepositoryResponse> DisassociateRepositoryAsync(DisassociateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRepositoryResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual ListCodeReviewsResponse ListCodeReviews(ListCodeReviewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
 
@@ -649,7 +649,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">REST API Reference for ListCodeReviews Operation</seealso>
         public virtual Task<ListCodeReviewsResponse> ListCodeReviewsAsync(ListCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual ListRecommendationFeedbackResponse ListRecommendationFeedback(ListRecommendationFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">REST API Reference for ListRecommendationFeedback Operation</seealso>
         public virtual Task<ListRecommendationFeedbackResponse> ListRecommendationFeedbackAsync(ListRecommendationFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual ListRepositoryAssociationsResponse ListRepositoryAssociations(ListRepositoryAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoryAssociationsResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRepositoryAssociations">REST API Reference for ListRepositoryAssociations Operation</seealso>
         public virtual Task<ListRepositoryAssociationsResponse> ListRepositoryAssociationsAsync(ListRepositoryAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoryAssociationsResponseUnmarshaller.Instance;
 
@@ -805,7 +805,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -835,7 +835,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual PutRecommendationFeedbackResponse PutRecommendationFeedback(PutRecommendationFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">REST API Reference for PutRecommendationFeedback Operation</seealso>
         public virtual Task<PutRecommendationFeedbackResponse> PutRecommendationFeedbackAsync(PutRecommendationFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -938,7 +938,7 @@ namespace Amazon.CodeGuruReviewer
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -968,7 +968,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

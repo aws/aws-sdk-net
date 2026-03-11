@@ -33,26 +33,70 @@
 		{
 			var projectFileConfigurations = (IEnumerable<ProjectFileConfiguration>)this.Session["ProjectFileConfigurations"];
 			var targetFramework = projectFileConfigurations.Single(p=>p.Name.Equals(dependencyList.Key)).NuGetTargetPlatform;
-#>			
-      <group targetFramework="<#=targetFramework#>">
-<#
+
+            // Dependencies might have targets defined, so group by targets. If target is not defined, then use targetFramework determined from projectFileConfiguration.
+            var targetFrameworkDependencies = new Dictionary<string, List<ServiceClientGenerator.Dependency>>();
+
             foreach(var dependency in dependencyList.Value)
             {
+                // Add dependency for each target.
+                if (dependency.Targets?.Count > 0)
+                {
+                    foreach(var target in dependency.Targets)
+                    {
+                        if (targetFrameworkDependencies.ContainsKey(target))
+                        {
+                            targetFrameworkDependencies[target].Add(dependency);
+                        }
+                        else
+                        {
+                            targetFrameworkDependencies.Add(target, new List<ServiceClientGenerator.Dependency>(){ dependency });
+                        }
+                    }
+                }
+                else // Add dependency only for target determined from projectFileConfiguration
+                {
+                    if (targetFrameworkDependencies.ContainsKey(targetFramework))
+                    {
+                        targetFrameworkDependencies[targetFramework].Add(dependency);
+                    }
+                    else
+                    {
+                        targetFrameworkDependencies.Add(targetFramework, new List<ServiceClientGenerator.Dependency>(){ dependency });
+                    }
+                }
+            }
+            
+            // Now sort target framework dictionary by key and add dependencies for each group.
+            var sortedtargetFrameworkDependencies = targetFrameworkDependencies.OrderBy(pair => pair.Key);
+
+            // Add dependency group for each target. We need no add AWSDependencies in target determined from projectFileConfiguration since we are already adding these later.
+            foreach (var targetFrameworkDependencyPair in sortedtargetFrameworkDependencies)
+            {
+                // Blank targetFramework property is not valid in <group>
+                if (string.IsNullOrWhiteSpace(targetFrameworkDependencyPair.Key))
+                {
+#>
+      <group>
+<#
+                }
+                else
+                {
+#>
+      <group targetFramework="<#=targetFrameworkDependencyPair.Key#>">
+<#
+                }
+
+                foreach(var dependency in targetFrameworkDependencyPair.Value)
+                {
 #>
         <dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
 <#		
-            }
-#>
-<#
-            foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
-            {
-#>
-        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
-<#
-            }
+                }
 #>
       </group>
 <#
+            }
 		}
 	}	
 #>

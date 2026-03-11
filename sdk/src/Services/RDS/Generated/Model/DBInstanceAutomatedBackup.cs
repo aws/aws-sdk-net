@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBInstanceAutomatedBackup
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private string _availabilityZone;
         private string _awsBackupRecoveryPointArn;
@@ -59,19 +60,49 @@ namespace Amazon.RDS.Model
         private bool? _multiTenant;
         private string _optionGroupName;
         private int? _port;
+        private string _preferredBackupWindow;
         private string _region;
         private RestoreWindow _restoreWindow;
         private string _status;
+        private StorageEncryptionType _storageEncryptionType;
         private int? _storageThroughput;
         private string _storageType;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tdeCredentialArn;
         private string _timezone;
         private string _vpcId;
 
         /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// The additional storage volumes associated with the automated backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>GP3 | IO2</c> 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The allocated storage size for the the automated backup in gibibytes (GiB).
+        /// The allocated storage size for the automated backup in gibibytes (GiB).
         /// </para>
         /// </summary>
         public int? AllocatedStorage
@@ -510,6 +541,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c>.
+        /// </para>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The Amazon Web Services Region associated with the automated backup.
@@ -578,6 +628,40 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the automated backup. Possible
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The automated backup is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The automated backup is encrypted using an Amazon Web Services owned
+        /// KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The automated backup is encrypted using a customer managed KMS key
+        /// or Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
         /// The storage throughput for the automated backup.
@@ -611,6 +695,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

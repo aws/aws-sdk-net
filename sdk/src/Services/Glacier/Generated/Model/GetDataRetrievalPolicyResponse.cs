@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon S3 Glacier response to the <c>GetDataRetrievalPolicy</c> request.
+    /// Contains the Amazon Glacier response to the <c>GetDataRetrievalPolicy</c> request.
     /// </summary>
     public partial class GetDataRetrievalPolicyResponse : AmazonWebServiceResponse
     {

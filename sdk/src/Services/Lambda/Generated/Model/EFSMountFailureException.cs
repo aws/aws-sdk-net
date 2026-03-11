@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EFSMountFailureException
+        /// message.
+        /// </summary>
+        public EFSMountFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EFSMountFailureException with the specified error
         /// message.
         /// </summary>

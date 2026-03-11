@@ -61,6 +61,14 @@ namespace Amazon.SecurityIR.Model
         }
 
         /// <summary>
+        /// Paginator for ListInvestigations operation
+        ///</summary>
+        public IListInvestigationsPaginator ListInvestigations(ListInvestigationsRequest request) 
+        {
+            return new ListInvestigationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMemberships operation
         ///</summary>
         public IListMembershipsPaginator ListMemberships(ListMembershipsRequest request) 

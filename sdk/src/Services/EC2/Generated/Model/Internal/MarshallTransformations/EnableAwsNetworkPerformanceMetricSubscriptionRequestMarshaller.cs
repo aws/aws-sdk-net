@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Statistic", StringUtils.FromString(publicRequest.Statistic));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller _instance = new EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller();        

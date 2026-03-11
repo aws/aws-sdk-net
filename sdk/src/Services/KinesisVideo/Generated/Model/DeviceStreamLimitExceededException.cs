@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for DeviceStreamLimitExceededException
+        /// message.
+        /// </summary>
+        public DeviceStreamLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeviceStreamLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomKeyStoreHasCMKsException
+        /// message.
+        /// </summary>
+        public CustomKeyStoreHasCMKsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomKeyStoreHasCMKsException with the specified error
         /// message.
         /// </summary>

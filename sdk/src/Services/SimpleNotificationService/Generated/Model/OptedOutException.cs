@@ -41,6 +41,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for OptedOutException
+        /// message.
+        /// </summary>
+        public OptedOutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OptedOutException with the specified error
         /// message.
         /// </summary>

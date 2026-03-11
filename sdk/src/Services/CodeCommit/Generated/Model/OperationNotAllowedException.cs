@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationNotAllowedException
+        /// message.
+        /// </summary>
+        public OperationNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationNotAllowedException with the specified error
         /// message.
         /// </summary>

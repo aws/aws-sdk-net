@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyConfigurationTemplatesException
+        /// message.
+        /// </summary>
+        public TooManyConfigurationTemplatesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyConfigurationTemplatesException with the specified error
         /// message.
         /// </summary>

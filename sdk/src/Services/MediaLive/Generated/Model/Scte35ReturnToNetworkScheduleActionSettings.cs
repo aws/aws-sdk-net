@@ -40,7 +40,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SpliceEventId. The splice_event_id for the SCTE-35 splice_insert,
         /// as defined in SCTE-35.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true)]
         public long? SpliceEventId
         {
             get { return this._spliceEventId; }

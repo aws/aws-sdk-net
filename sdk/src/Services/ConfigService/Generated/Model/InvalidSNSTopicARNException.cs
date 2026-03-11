@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSNSTopicARNException
+        /// message.
+        /// </summary>
+        public InvalidSNSTopicARNException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSNSTopicARNException with the specified error
         /// message.
         /// </summary>

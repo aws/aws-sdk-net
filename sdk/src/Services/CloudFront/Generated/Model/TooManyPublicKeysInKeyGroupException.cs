@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyPublicKeysInKeyGroupException
+        /// message.
+        /// </summary>
+        public TooManyPublicKeysInKeyGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyPublicKeysInKeyGroupException with the specified error
         /// message.
         /// </summary>

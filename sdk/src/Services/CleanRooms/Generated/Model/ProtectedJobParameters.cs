@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ProtectedJobParameters
     {
         private string _analysisTemplateArn;
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisTemplateArn. 
@@ -42,7 +43,7 @@ namespace Amazon.CleanRooms.Model
         ///  The ARN of the analysis template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string AnalysisTemplateArn
         {
             get { return this._analysisTemplateArn; }
@@ -53,6 +54,31 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAnalysisTemplateArn()
         {
             return this._analysisTemplateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Runtime configuration values passed to the PySpark analysis script. Parameter names
+        /// and types must match those defined in the analysis template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

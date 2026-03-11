@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedCacheNodeAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ReservedCacheNodeAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedCacheNodeAlreadyExistsException with the specified error
         /// message.
         /// </summary>

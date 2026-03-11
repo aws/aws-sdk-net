@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchDeliveryChannelException
+        /// message.
+        /// </summary>
+        public NoSuchDeliveryChannelException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchDeliveryChannelException with the specified error
         /// message.
         /// </summary>

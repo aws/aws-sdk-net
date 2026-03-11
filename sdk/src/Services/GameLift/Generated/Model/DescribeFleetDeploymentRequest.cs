@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetDeployment operation.
-    /// Retrieves information about a managed container fleet deployment. 
+    /// <b>This API works with the following fleet types:</b> Container
     /// 
+    ///  
+    /// <para>
+    /// Retrieves information about a managed container fleet deployment. 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

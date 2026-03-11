@@ -28,6 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
@@ -45,7 +49,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         {
             return this.Marshall((GetMetricWidgetImageRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -54,23 +58,40 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetMetricWidgetImageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "GetMetricWidgetImage");
-            request.Parameters.Add("Version", "2010-08-01");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/GetMetricWidgetImage";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2010-08-01";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            var writer = CborWriterPool.Rent();
+            try
             {
-                if(publicRequest.IsSetMetricWidget())
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetMetricWidget())
                 {
-                    request.Parameters.Add("MetricWidget", StringUtils.FromString(publicRequest.MetricWidget));
+                    context.Writer.WriteTextString("MetricWidget");
+                    context.Writer.WriteTextString(publicRequest.MetricWidget);
                 }
-                if(publicRequest.IsSetOutputFormat())
+                if (publicRequest.IsSetOutputFormat())
                 {
-                    request.Parameters.Add("OutputFormat", StringUtils.FromString(publicRequest.OutputFormat));
+                    context.Writer.WriteTextString("OutputFormat");
+                    context.Writer.WriteTextString(publicRequest.OutputFormat);
                 }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
-                    private static GetMetricWidgetImageRequestMarshaller _instance = new GetMetricWidgetImageRequestMarshaller();        
+        private static GetMetricWidgetImageRequestMarshaller _instance = new GetMetricWidgetImageRequestMarshaller();        
 
         internal static GetMetricWidgetImageRequestMarshaller GetInstance()
         {

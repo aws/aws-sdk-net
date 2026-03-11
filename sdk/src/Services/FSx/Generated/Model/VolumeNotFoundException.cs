@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for VolumeNotFoundException
+        /// message.
+        /// </summary>
+        public VolumeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VolumeNotFoundException with the specified error
         /// message.
         /// </summary>

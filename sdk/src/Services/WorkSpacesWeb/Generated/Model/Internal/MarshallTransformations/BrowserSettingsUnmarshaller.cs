@@ -86,6 +86,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("webContentFilteringPolicy", targetDepth))
+                {
+                    var unmarshaller = WebContentFilteringPolicyUnmarshaller.Instance;
+                    unmarshalledObject.WebContentFilteringPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

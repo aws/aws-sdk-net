@@ -34,10 +34,31 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Dimensions
     {
+        private AgentStatusIdentifier _agentStatus;
         private Channel _channel;
         private QueueReference _queue;
         private RoutingProfileReference _routingProfile;
         private string _routingStepExpression;
+        private string _subtype;
+        private string _validationTestType;
+
+        /// <summary>
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// Information about the agent status assigned to the user.
+        /// </para>
+        /// </summary>
+        public AgentStatusIdentifier AgentStatus
+        {
+            get { return this._agentStatus; }
+            set { this._agentStatus = value; }
+        }
+
+        // Check to see if AgentStatus property is set
+        internal bool IsSetAgentStatus()
+        {
+            return this._agentStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -107,6 +128,43 @@ namespace Amazon.Connect.Model
         internal bool IsSetRoutingStepExpression()
         {
             return this._routingStepExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtype. 
+        /// <para>
+        /// The subtype of the channel used for the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string Subtype
+        {
+            get { return this._subtype; }
+            set { this._subtype = value; }
+        }
+
+        // Check to see if Subtype property is set
+        internal bool IsSetSubtype()
+        {
+            return this._subtype != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationTestType. 
+        /// <para>
+        /// The testing and simulation type
+        /// </para>
+        /// </summary>
+        public string ValidationTestType
+        {
+            get { return this._validationTestType; }
+            set { this._validationTestType = value; }
+        }
+
+        // Check to see if ValidationTestType property is set
+        internal bool IsSetValidationTestType()
+        {
+            return this._validationTestType != null;
         }
 
     }

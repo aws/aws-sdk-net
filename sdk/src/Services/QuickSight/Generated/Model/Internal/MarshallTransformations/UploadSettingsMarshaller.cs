@@ -52,6 +52,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.ContainsHeader.Value);
             }
 
+            if(requestObject.IsSetCustomCellAddressRange())
+            {
+                context.Writer.WritePropertyName("CustomCellAddressRange");
+                context.Writer.WriteStringValue(requestObject.CustomCellAddressRange);
+            }
+
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");

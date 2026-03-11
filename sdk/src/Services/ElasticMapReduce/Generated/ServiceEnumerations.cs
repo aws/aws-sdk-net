@@ -823,6 +823,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         public static readonly InstanceFleetState PROVISIONING = new InstanceFleetState("PROVISIONING");
         /// <summary>
+        /// Constant RECONFIGURING for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState RECONFIGURING = new InstanceFleetState("RECONFIGURING");
+        /// <summary>
         /// Constant RESIZING for InstanceFleetState
         /// </summary>
         public static readonly InstanceFleetState RESIZING = new InstanceFleetState("RESIZING");

@@ -41,6 +41,13 @@ namespace Amazon.ElasticFileSystem.Model
         private string _accessPointId;
 
         /// <summary>
+        /// Default constructor for AccessPointAlreadyExistsException
+        /// message.
+        /// </summary>
+        public AccessPointAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessPointAlreadyExistsException with the specified error
         /// message.
         /// </summary>

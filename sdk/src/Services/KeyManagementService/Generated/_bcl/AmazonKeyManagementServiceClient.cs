@@ -49,9 +49,9 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-    /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-    /// some variations of this term.
+    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+    /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+    /// changes, KMS is keeping some variations of this term.
     /// </para>
     ///  
     /// <para>
@@ -564,7 +564,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public virtual CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelKeyDeletionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
 
@@ -750,7 +750,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public virtual Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelKeyDeletionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelKeyDeletionResponseUnmarshaller.Instance;
             
@@ -1006,7 +1006,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ConnectCustomKeyStore">REST API Reference for ConnectCustomKeyStore Operation</seealso>
         public virtual ConnectCustomKeyStoreResponse ConnectCustomKeyStore(ConnectCustomKeyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ConnectCustomKeyStore">REST API Reference for ConnectCustomKeyStore Operation</seealso>
         public virtual Task<ConnectCustomKeyStoreResponse> ConnectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
             
@@ -1363,8 +1363,8 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
-        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed keys</a>.</param>
+        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.AlreadyExistsException">
@@ -1567,7 +1567,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -1665,8 +1665,8 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
-        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed keys</a>.</param>
+        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1875,7 +1875,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
             
@@ -2156,7 +2156,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore">REST API Reference for CreateCustomKeyStore Operation</seealso>
         public virtual CreateCustomKeyStoreResponse CreateCustomKeyStore(CreateCustomKeyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
 
@@ -2436,7 +2436,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore">REST API Reference for CreateCustomKeyStore Operation</seealso>
         public virtual Task<CreateCustomKeyStoreResponse> CreateCustomKeyStoreAsync(CreateCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
             
@@ -2596,7 +2596,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public virtual CreateGrantResponse CreateGrant(CreateGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGrantResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public virtual Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGrantResponseUnmarshaller.Instance;
             
@@ -2786,9 +2786,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-        /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-        /// some variations of this term.
+        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+        /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+        /// changes, KMS is keeping some variations of this term.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2834,7 +2834,7 @@ namespace Amazon.KeyManagementService
         /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
         /// operation to download the public key so it can be used outside of KMS. Each KMS key
         /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
-        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-standard
         /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
         /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
         /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
@@ -2865,7 +2865,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
+        ///  </dd> <dt>Multi-Region primary keys</dt> <dd> 
         /// <para>
         /// To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region,
         /// use the <c>MultiRegion</c> parameter with a value of <c>True</c>. To create a multi-Region
@@ -2895,7 +2895,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dd> 
+        ///  </dd> <dt>Imported key material</dt> <dd> 
         /// <para>
         /// To import your own key material into a KMS key, begin by creating a KMS key with no
         /// key material. To do this, use the <c>Origin</c> parameter of <c>CreateKey</c> with
@@ -3168,7 +3168,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
 
@@ -3195,9 +3195,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-        /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-        /// some variations of this term.
+        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+        /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+        /// changes, KMS is keeping some variations of this term.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3243,7 +3243,7 @@ namespace Amazon.KeyManagementService
         /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
         /// operation to download the public key so it can be used outside of KMS. Each KMS key
         /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
-        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-standard
         /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
         /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
         /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
@@ -3274,7 +3274,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
+        ///  </dd> <dt>Multi-Region primary keys</dt> <dd> 
         /// <para>
         /// To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region,
         /// use the <c>MultiRegion</c> parameter with a value of <c>True</c>. To create a multi-Region
@@ -3304,7 +3304,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dd> 
+        ///  </dd> <dt>Imported key material</dt> <dd> 
         /// <para>
         /// To import your own key material into a KMS key, begin by creating a KMS key with no
         /// key material. To do this, use the <c>Origin</c> parameter of <c>CreateKey</c> with
@@ -3580,7 +3580,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
             
@@ -3658,15 +3658,16 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <c>Decrypt</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
-        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves</a> and NitroTPM, which provide attested environments
+        /// in Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave or NitroTPM, use the <a
+        /// href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
-        /// data, the response includes the plaintext data encrypted with the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>). For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of the plaintext data, the response includes the plaintext data encrypted with the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3810,7 +3811,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public virtual DecryptResponse Decrypt(DecryptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecryptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecryptResponseUnmarshaller.Instance;
 
@@ -3884,15 +3885,16 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <c>Decrypt</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
-        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves</a> and NitroTPM, which provide attested environments
+        /// in Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave or NitroTPM, use the <a
+        /// href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
-        /// data, the response includes the plaintext data encrypted with the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>). For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of the plaintext data, the response includes the plaintext data encrypted with the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4039,7 +4041,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public virtual Task<DecryptResponse> DecryptAsync(DecryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecryptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecryptResponseUnmarshaller.Instance;
             
@@ -4279,7 +4281,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -4521,7 +4523,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
             
@@ -4681,7 +4683,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteCustomKeyStore">REST API Reference for DeleteCustomKeyStore Operation</seealso>
         public virtual DeleteCustomKeyStoreResponse DeleteCustomKeyStore(DeleteCustomKeyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
 
@@ -4840,7 +4842,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteCustomKeyStore">REST API Reference for DeleteCustomKeyStore Operation</seealso>
         public virtual Task<DeleteCustomKeyStoreResponse> DeleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
             
@@ -4866,6 +4868,21 @@ namespace Amazon.KeyManagementService
         /// <c>PendingImport</c>.
         /// </para>
         ///  
+        /// <para>
+        ///  <b>Considerations for multi-Region symmetric encryption keys</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete the key material of a primary Region key that is in <c>PENDING_ROTATION</c>
+        /// or <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c>state, you'll also be deleting the
+        /// key materials for the replica Region keys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you delete any key material of a replica Region key, the primary Region key and
+        /// other replica Region keys remain unchanged.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -4954,7 +4971,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public virtual DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportedKeyMaterialRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
 
@@ -4976,6 +4993,21 @@ namespace Amazon.KeyManagementService
         /// <c>PendingImport</c>.
         /// </para>
         ///  
+        /// <para>
+        ///  <b>Considerations for multi-Region symmetric encryption keys</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete the key material of a primary Region key that is in <c>PENDING_ROTATION</c>
+        /// or <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c>state, you'll also be deleting the
+        /// key materials for the replica Region keys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you delete any key material of a replica Region key, the primary Region key and
+        /// other replica Region keys remain unchanged.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -5067,7 +5099,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public virtual Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportedKeyMaterialRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
             
@@ -5084,7 +5116,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  <note> 
         /// <para>
-        /// You must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China Regions
+        /// You must use an asymmetric NIST-standard elliptic curve (ECC) or SM2 (China Regions
         /// only) KMS key pair with a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c> to call DeriveSharedSecret.
         /// </para>
         ///  </note> 
@@ -5111,7 +5143,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// The asymmetric KMS key must use a NIST-recommended elliptic curve (ECC) or SM2 (China
+        /// The asymmetric KMS key must use a NIST-standard elliptic curve (ECC) or SM2 (China
         /// Regions only) key spec.
         /// </para>
         ///  </li> <li> 
@@ -5121,7 +5153,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Bob can call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
-        /// pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic curve
+        /// pair outside of KMS. Bob's key pair must use the same NIST-standard elliptic curve
         /// (ECC) or SM2 (China Regions ony) curve as Alice.
         /// </para>
         ///  </li> <li> 
@@ -5157,9 +5189,9 @@ namespace Amazon.KeyManagementService
         ///  </li> </ol> 
         /// <para>
         /// To derive a shared secret you must provide a key agreement algorithm, the private
-        /// key of the caller's asymmetric NIST-recommended elliptic curve or SM2 (China Regions
-        /// only) KMS key pair, and the public key from your peer's NIST-recommended elliptic
-        /// curve or SM2 (China Regions only) key pair. The public key can be from another asymmetric
+        /// key of the caller's asymmetric NIST-standard elliptic curve or SM2 (China Regions
+        /// only) KMS key pair, and the public key from your peer's NIST-standard elliptic curve
+        /// or SM2 (China Regions only) key pair. The public key can be from another asymmetric
         /// KMS key pair or from a key pair generated outside of KMS, but both key pairs must
         /// be on the same elliptic curve.
         /// </para>
@@ -5285,7 +5317,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeriveSharedSecret">REST API Reference for DeriveSharedSecret Operation</seealso>
         public virtual DeriveSharedSecretResponse DeriveSharedSecret(DeriveSharedSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeriveSharedSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeriveSharedSecretResponseUnmarshaller.Instance;
 
@@ -5298,7 +5330,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  <note> 
         /// <para>
-        /// You must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China Regions
+        /// You must use an asymmetric NIST-standard elliptic curve (ECC) or SM2 (China Regions
         /// only) KMS key pair with a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c> to call DeriveSharedSecret.
         /// </para>
         ///  </note> 
@@ -5325,7 +5357,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// The asymmetric KMS key must use a NIST-recommended elliptic curve (ECC) or SM2 (China
+        /// The asymmetric KMS key must use a NIST-standard elliptic curve (ECC) or SM2 (China
         /// Regions only) key spec.
         /// </para>
         ///  </li> <li> 
@@ -5335,7 +5367,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Bob can call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
-        /// pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic curve
+        /// pair outside of KMS. Bob's key pair must use the same NIST-standard elliptic curve
         /// (ECC) or SM2 (China Regions ony) curve as Alice.
         /// </para>
         ///  </li> <li> 
@@ -5371,9 +5403,9 @@ namespace Amazon.KeyManagementService
         ///  </li> </ol> 
         /// <para>
         /// To derive a shared secret you must provide a key agreement algorithm, the private
-        /// key of the caller's asymmetric NIST-recommended elliptic curve or SM2 (China Regions
-        /// only) KMS key pair, and the public key from your peer's NIST-recommended elliptic
-        /// curve or SM2 (China Regions only) key pair. The public key can be from another asymmetric
+        /// key of the caller's asymmetric NIST-standard elliptic curve or SM2 (China Regions
+        /// only) KMS key pair, and the public key from your peer's NIST-standard elliptic curve
+        /// or SM2 (China Regions only) key pair. The public key can be from another asymmetric
         /// KMS key pair or from a key pair generated outside of KMS, but both key pairs must
         /// be on the same elliptic curve.
         /// </para>
@@ -5502,7 +5534,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeriveSharedSecret">REST API Reference for DeriveSharedSecret Operation</seealso>
         public virtual Task<DeriveSharedSecretResponse> DeriveSharedSecretAsync(DeriveSharedSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeriveSharedSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeriveSharedSecretResponseUnmarshaller.Instance;
             
@@ -5617,7 +5649,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">REST API Reference for DescribeCustomKeyStores Operation</seealso>
         public virtual DescribeCustomKeyStoresResponse DescribeCustomKeyStores(DescribeCustomKeyStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
 
@@ -5731,7 +5763,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">REST API Reference for DescribeCustomKeyStores Operation</seealso>
         public virtual Task<DescribeCustomKeyStoresResponse> DescribeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
             
@@ -5745,8 +5777,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -5794,7 +5826,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -5848,7 +5880,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -5876,8 +5908,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -5925,7 +5957,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -5999,7 +6031,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public virtual DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyResponseUnmarshaller.Instance;
 
@@ -6009,8 +6041,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -6058,7 +6090,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -6112,7 +6144,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6143,8 +6175,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -6192,7 +6224,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -6269,7 +6301,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public virtual Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyResponseUnmarshaller.Instance;
             
@@ -6443,7 +6475,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public virtual DisableKeyResponse DisableKey(DisableKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableKeyResponseUnmarshaller.Instance;
 
@@ -6619,7 +6651,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public virtual Task<DisableKeyResponse> DisableKeyAsync(DisableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableKeyResponseUnmarshaller.Instance;
             
@@ -6648,10 +6680,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -6778,10 +6810,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -6885,7 +6917,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public virtual DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableKeyRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
 
@@ -6910,10 +6942,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -7043,10 +7075,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -7153,7 +7185,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public virtual Task<DisableKeyRotationResponse> DisableKeyRotationAsync(DisableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableKeyRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableKeyRotationResponseUnmarshaller.Instance;
             
@@ -7298,7 +7330,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisconnectCustomKeyStore">REST API Reference for DisconnectCustomKeyStore Operation</seealso>
         public virtual DisconnectCustomKeyStoreResponse DisconnectCustomKeyStore(DisconnectCustomKeyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
 
@@ -7442,7 +7474,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisconnectCustomKeyStore">REST API Reference for DisconnectCustomKeyStore Operation</seealso>
         public virtual Task<DisconnectCustomKeyStoreResponse> DisconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
             
@@ -7626,7 +7658,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public virtual EnableKeyResponse EnableKey(EnableKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableKeyResponseUnmarshaller.Instance;
 
@@ -7812,7 +7844,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public virtual Task<EnableKeyResponse> EnableKeyAsync(EnableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableKeyResponseUnmarshaller.Instance;
             
@@ -7830,7 +7862,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -7857,9 +7889,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -7993,7 +8025,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -8020,9 +8052,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -8144,7 +8176,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public virtual EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableKeyRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
 
@@ -8158,7 +8190,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -8185,9 +8217,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -8324,7 +8356,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -8351,9 +8383,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -8478,7 +8510,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public virtual Task<EnableKeyRotationResponse> EnableKeyRotationAsync(EnableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableKeyRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableKeyRotationResponseUnmarshaller.Instance;
             
@@ -8706,7 +8738,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public virtual EncryptResponse Encrypt(EncryptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EncryptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EncryptResponseUnmarshaller.Instance;
 
@@ -8933,7 +8965,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public virtual Task<EncryptResponse> EncryptAsync(EncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EncryptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EncryptResponseUnmarshaller.Instance;
             
@@ -8990,17 +9022,16 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKey</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKey</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKey</c>
         /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
         /// instead of a plaintext copy of the data key, the response includes a copy of the data
         /// key encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9177,7 +9208,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public virtual GenerateDataKeyResponse GenerateDataKey(GenerateDataKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
 
@@ -9230,17 +9261,16 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKey</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKey</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKey</c>
         /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
         /// instead of a plaintext copy of the data key, the response includes a copy of the data
         /// key encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9420,7 +9450,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public virtual Task<GenerateDataKeyResponse> GenerateDataKeyAsync(GenerateDataKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyResponseUnmarshaller.Instance;
             
@@ -9485,18 +9515,17 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKeyPair</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKeyPair</c>
         /// returns the public data key and a copy of the private data key encrypted under the
         /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
         /// (<c>PrivateKeyPlaintext</c>), the response includes a copy of the private data key
         /// encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9641,7 +9670,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPair">REST API Reference for GenerateDataKeyPair Operation</seealso>
         public virtual GenerateDataKeyPairResponse GenerateDataKeyPair(GenerateDataKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyPairResponseUnmarshaller.Instance;
 
@@ -9702,18 +9731,17 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKeyPair</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKeyPair</c>
         /// returns the public data key and a copy of the private data key encrypted under the
         /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
         /// (<c>PrivateKeyPlaintext</c>), the response includes a copy of the private data key
         /// encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9861,7 +9889,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPair">REST API Reference for GenerateDataKeyPair Operation</seealso>
         public virtual Task<GenerateDataKeyPairResponse> GenerateDataKeyPairAsync(GenerateDataKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyPairResponseUnmarshaller.Instance;
             
@@ -10053,7 +10081,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPairWithoutPlaintext">REST API Reference for GenerateDataKeyPairWithoutPlaintext Operation</seealso>
         public virtual GenerateDataKeyPairWithoutPlaintextResponse GenerateDataKeyPairWithoutPlaintext(GenerateDataKeyPairWithoutPlaintextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyPairWithoutPlaintextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyPairWithoutPlaintextResponseUnmarshaller.Instance;
 
@@ -10244,7 +10272,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPairWithoutPlaintext">REST API Reference for GenerateDataKeyPairWithoutPlaintext Operation</seealso>
         public virtual Task<GenerateDataKeyPairWithoutPlaintextResponse> GenerateDataKeyPairWithoutPlaintextAsync(GenerateDataKeyPairWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyPairWithoutPlaintextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyPairWithoutPlaintextResponseUnmarshaller.Instance;
             
@@ -10451,7 +10479,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public virtual GenerateDataKeyWithoutPlaintextResponse GenerateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyWithoutPlaintextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
 
@@ -10657,7 +10685,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public virtual Task<GenerateDataKeyWithoutPlaintextResponse> GenerateDataKeyWithoutPlaintextAsync(GenerateDataKeyWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataKeyWithoutPlaintextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataKeyWithoutPlaintextResponseUnmarshaller.Instance;
             
@@ -10800,7 +10828,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
         public virtual GenerateMacResponse GenerateMac(GenerateMacRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
 
@@ -10942,7 +10970,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
         public virtual Task<GenerateMacResponse> GenerateMacAsync(GenerateMacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
             
@@ -10972,14 +11000,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11091,14 +11120,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11186,7 +11216,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public virtual GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateRandomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateRandomResponseUnmarshaller.Instance;
 
@@ -11212,14 +11242,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11334,14 +11365,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11432,7 +11464,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public virtual Task<GenerateRandomResponse> GenerateRandomAsync(GenerateRandomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateRandomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateRandomResponseUnmarshaller.Instance;
             
@@ -11594,7 +11626,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public virtual GetKeyPolicyResponse GetKeyPolicy(GetKeyPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
 
@@ -11758,7 +11790,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public virtual Task<GetKeyPolicyResponse> GetKeyPolicyAsync(GetKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyPolicyResponseUnmarshaller.Instance;
             
@@ -11789,7 +11821,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -11941,7 +11973,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -12068,7 +12100,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public virtual GetKeyRotationStatusResponse GetKeyRotationStatus(GetKeyRotationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyRotationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
 
@@ -12095,7 +12127,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -12250,7 +12282,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -12380,7 +12412,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public virtual Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(GetKeyRotationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyRotationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
             
@@ -12551,7 +12583,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public virtual GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParametersForImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
 
@@ -12721,7 +12753,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public virtual Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParametersForImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
             
@@ -12904,7 +12936,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         public virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
@@ -13086,7 +13118,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         public virtual Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
             
@@ -13112,11 +13144,35 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For asymmetric, HMAC and multi-Region keys, you cannot change the key material after
-        /// the initial import. You can import multiple key materials into single-Region, symmetric
-        /// encryption keys and rotate the key material on demand using <c>RotateKeyOnDemand</c>.
+        /// For asymmetric and HMAC keys, you cannot change the key material after the initial
+        /// import. You can import multiple key materials into symmetric encryption keys and rotate
+        /// the key material on demand using <c>RotateKeyOnDemand</c>.
         /// </para>
         ///  
+        /// <para>
+        /// You can import new key materials into multi-Region symmetric encryption keys. To do
+        /// so, you must import the new key material into the primary Region key. Then you can
+        /// import the same key materials into the replica Region keys. You cannot directly import
+        /// new key material into the replica Region keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// To import new key material for a multi-Region symmetric key, you’ll need to complete
+        /// the following:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <c>ImportKeyMaterial</c> on the primary Region key with the <c>ImportType</c>set
+        /// to <c>NEW_KEY_MATERIAL</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>ImportKeyMaterial</c> on the replica Region key with the <c>ImportType</c>
+        /// set to <c>EXISTING_KEY_MATERIAL</c> using the same key material imported to the primary
+        /// Region key. You must do this for every replica Region key before you can perform the
+        /// <a>RotateKeyOnDemand</a> operation on the primary Region key.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// After you import key material, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key or, if the key supports on-demand rotation,
@@ -13165,14 +13221,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Then, in an <c>ImportKeyMaterial</c> request, you submit your encrypted key material
+        /// Then, in an <c>ImportKeyMaterial</c> request, you submit your encrypted key material
         /// and import token. When calling this operation, you must specify the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The key ID or key ARN of the KMS key to associate with the imported key material.
-        /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>.
-        /// You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>
+        /// or <c>Enabled</c>. You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or on a KMS key in a different Amazon Web Services account. To get
         /// the <c>Origin</c> and <c>KeyState</c> of a KMS key, call <a>DescribeKey</a>.
         /// </para>
@@ -13201,12 +13257,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When this operation is successful, the key state of the KMS key changes from <c>PendingImport</c>
-        /// to <c>Enabled</c>, and you can use the KMS key in cryptographic operations. For single-Region,
-        /// symmetric encryption keys, you will need to import all of the key materials associated
-        /// with the KMS key to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c>
-        /// operation to list the ID and import state of each key material associated with a KMS
-        /// key.
+        /// When this operation is successful, the state of the KMS key changes to <c>Enabled</c>,
+        /// and you can use the KMS key in cryptographic operations. For symmetric encryption
+        /// keys, you will need to import all of the key materials associated with the KMS key
+        /// to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c> operation to
+        /// list the ID and import state of each key material associated with a KMS key.
         /// </para>
         ///  
         /// <para>
@@ -13336,7 +13391,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public virtual ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyMaterialRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
 
@@ -13358,11 +13413,35 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For asymmetric, HMAC and multi-Region keys, you cannot change the key material after
-        /// the initial import. You can import multiple key materials into single-Region, symmetric
-        /// encryption keys and rotate the key material on demand using <c>RotateKeyOnDemand</c>.
+        /// For asymmetric and HMAC keys, you cannot change the key material after the initial
+        /// import. You can import multiple key materials into symmetric encryption keys and rotate
+        /// the key material on demand using <c>RotateKeyOnDemand</c>.
         /// </para>
         ///  
+        /// <para>
+        /// You can import new key materials into multi-Region symmetric encryption keys. To do
+        /// so, you must import the new key material into the primary Region key. Then you can
+        /// import the same key materials into the replica Region keys. You cannot directly import
+        /// new key material into the replica Region keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// To import new key material for a multi-Region symmetric key, you’ll need to complete
+        /// the following:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <c>ImportKeyMaterial</c> on the primary Region key with the <c>ImportType</c>set
+        /// to <c>NEW_KEY_MATERIAL</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>ImportKeyMaterial</c> on the replica Region key with the <c>ImportType</c>
+        /// set to <c>EXISTING_KEY_MATERIAL</c> using the same key material imported to the primary
+        /// Region key. You must do this for every replica Region key before you can perform the
+        /// <a>RotateKeyOnDemand</a> operation on the primary Region key.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// After you import key material, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key or, if the key supports on-demand rotation,
@@ -13411,14 +13490,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Then, in an <c>ImportKeyMaterial</c> request, you submit your encrypted key material
+        /// Then, in an <c>ImportKeyMaterial</c> request, you submit your encrypted key material
         /// and import token. When calling this operation, you must specify the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The key ID or key ARN of the KMS key to associate with the imported key material.
-        /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>.
-        /// You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>
+        /// or <c>Enabled</c>. You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or on a KMS key in a different Amazon Web Services account. To get
         /// the <c>Origin</c> and <c>KeyState</c> of a KMS key, call <a>DescribeKey</a>.
         /// </para>
@@ -13447,12 +13526,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When this operation is successful, the key state of the KMS key changes from <c>PendingImport</c>
-        /// to <c>Enabled</c>, and you can use the KMS key in cryptographic operations. For single-Region,
-        /// symmetric encryption keys, you will need to import all of the key materials associated
-        /// with the KMS key to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c>
-        /// operation to list the ID and import state of each key material associated with a KMS
-        /// key.
+        /// When this operation is successful, the state of the KMS key changes to <c>Enabled</c>,
+        /// and you can use the KMS key in cryptographic operations. For symmetric encryption
+        /// keys, you will need to import all of the key materials associated with the KMS key
+        /// to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c> operation to
+        /// list the ID and import state of each key material associated with a KMS key.
         /// </para>
         ///  
         /// <para>
@@ -13585,7 +13663,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public virtual Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyMaterialRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
             
@@ -13685,7 +13763,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -13784,7 +13862,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
             
@@ -13910,7 +13988,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public virtual ListGrantsResponse ListGrants(ListGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGrantsResponseUnmarshaller.Instance;
 
@@ -14035,7 +14113,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public virtual Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGrantsResponseUnmarshaller.Instance;
             
@@ -14128,7 +14206,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public virtual ListKeyPoliciesResponse ListKeyPolicies(ListKeyPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
 
@@ -14220,7 +14298,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public virtual Task<ListKeyPoliciesResponse> ListKeyPoliciesAsync(ListKeyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyPoliciesResponseUnmarshaller.Instance;
             
@@ -14343,7 +14421,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyRotations">REST API Reference for ListKeyRotations Operation</seealso>
         public virtual ListKeyRotationsResponse ListKeyRotations(ListKeyRotationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyRotationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyRotationsResponseUnmarshaller.Instance;
 
@@ -14465,7 +14543,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyRotations">REST API Reference for ListKeyRotations Operation</seealso>
         public virtual Task<ListKeyRotationsResponse> ListKeyRotationsAsync(ListKeyRotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyRotationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyRotationsResponseUnmarshaller.Instance;
             
@@ -14534,7 +14612,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual ListKeysResponse ListKeys(ListKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
@@ -14602,7 +14680,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
             
@@ -14682,7 +14760,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">REST API Reference for ListResourceTags Operation</seealso>
         public virtual ListResourceTagsResponse ListResourceTags(ListResourceTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
 
@@ -14761,7 +14839,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">REST API Reference for ListResourceTags Operation</seealso>
         public virtual Task<ListResourceTagsResponse> ListResourceTagsAsync(ListResourceTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceTagsResponseUnmarshaller.Instance;
             
@@ -15056,7 +15134,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public virtual ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetirableGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
 
@@ -15356,7 +15434,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public virtual Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetirableGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetirableGrantsResponseUnmarshaller.Instance;
             
@@ -15566,7 +15644,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public virtual PutKeyPolicyResponse PutKeyPolicy(PutKeyPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKeyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
 
@@ -15778,7 +15856,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public virtual Task<PutKeyPolicyResponse> PutKeyPolicyAsync(PutKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKeyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKeyPolicyResponseUnmarshaller.Instance;
             
@@ -16015,7 +16093,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public virtual ReEncryptResponse ReEncrypt(ReEncryptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReEncryptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReEncryptResponseUnmarshaller.Instance;
 
@@ -16251,7 +16329,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public virtual Task<ReEncryptResponse> ReEncryptAsync(ReEncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReEncryptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReEncryptResponseUnmarshaller.Instance;
             
@@ -16444,7 +16522,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReplicateKey">REST API Reference for ReplicateKey Operation</seealso>
         public virtual ReplicateKeyResponse ReplicateKey(ReplicateKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplicateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplicateKeyResponseUnmarshaller.Instance;
 
@@ -16636,7 +16714,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReplicateKey">REST API Reference for ReplicateKey Operation</seealso>
         public virtual Task<ReplicateKeyResponse> ReplicateKeyAsync(ReplicateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplicateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplicateKeyResponseUnmarshaller.Instance;
             
@@ -16880,7 +16958,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public virtual RetireGrantResponse RetireGrant(RetireGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetireGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetireGrantResponseUnmarshaller.Instance;
 
@@ -17126,7 +17204,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public virtual Task<RetireGrantResponse> RetireGrantAsync(RetireGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetireGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetireGrantResponseUnmarshaller.Instance;
             
@@ -17364,7 +17442,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public virtual RevokeGrantResponse RevokeGrant(RevokeGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeGrantResponseUnmarshaller.Instance;
 
@@ -17604,7 +17682,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public virtual Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeGrantResponseUnmarshaller.Instance;
             
@@ -17634,7 +17712,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+        /// You can perform on-demand key rotation a <b>maximum of 25 times</b> per KMS key. You
         /// can use the KMS console to view the number of remaining on-demand rotations available
         /// for a KMS key.
         /// </para>
@@ -17650,20 +17728,21 @@ namespace Amazon.KeyManagementService
         /// On-demand key rotation is supported only on symmetric encryption KMS keys. You cannot
         /// perform on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// KMS keys</a>, multi-Region KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// KMS keys</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>. When you initiate on-demand key rotation on a symmetric encryption
         /// KMS key with imported key material, you must have already imported <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html">new
         /// key material</a> and that key material's state should be <c>PENDING_ROTATION</c>.
         /// Use the <c>ListKeyRotations</c> operation to check the state of all key materials
         /// associated with a KMS key. To perform on-demand rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#multi-region-rotate">multi-Region
-        /// keys</a>, invoke the on-demand rotation on the primary key.
+        /// keys</a>, import new key material in the primary Region key, import the same key material
+        /// in each replica Region key, and invoke the on-demand rotation on the primary Region
+        /// key.
         /// </para>
         ///  
         /// <para>
-        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -17776,7 +17855,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RotateKeyOnDemand">REST API Reference for RotateKeyOnDemand Operation</seealso>
         public virtual RotateKeyOnDemandResponse RotateKeyOnDemand(RotateKeyOnDemandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RotateKeyOnDemandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RotateKeyOnDemandResponseUnmarshaller.Instance;
 
@@ -17802,7 +17881,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+        /// You can perform on-demand key rotation a <b>maximum of 25 times</b> per KMS key. You
         /// can use the KMS console to view the number of remaining on-demand rotations available
         /// for a KMS key.
         /// </para>
@@ -17818,20 +17897,21 @@ namespace Amazon.KeyManagementService
         /// On-demand key rotation is supported only on symmetric encryption KMS keys. You cannot
         /// perform on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// KMS keys</a>, multi-Region KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// KMS keys</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>. When you initiate on-demand key rotation on a symmetric encryption
         /// KMS key with imported key material, you must have already imported <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html">new
         /// key material</a> and that key material's state should be <c>PENDING_ROTATION</c>.
         /// Use the <c>ListKeyRotations</c> operation to check the state of all key materials
         /// associated with a KMS key. To perform on-demand rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#multi-region-rotate">multi-Region
-        /// keys</a>, invoke the on-demand rotation on the primary key.
+        /// keys</a>, import new key material in the primary Region key, import the same key material
+        /// in each replica Region key, and invoke the on-demand rotation on the primary Region
+        /// key.
         /// </para>
         ///  
         /// <para>
-        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -17947,7 +18027,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RotateKeyOnDemand">REST API Reference for RotateKeyOnDemand Operation</seealso>
         public virtual Task<RotateKeyOnDemandResponse> RotateKeyOnDemandAsync(RotateKeyOnDemandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RotateKeyOnDemandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RotateKeyOnDemandResponseUnmarshaller.Instance;
             
@@ -18357,7 +18437,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public virtual ScheduleKeyDeletionResponse ScheduleKeyDeletion(ScheduleKeyDeletionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScheduleKeyDeletionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
 
@@ -18772,7 +18852,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public virtual Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScheduleKeyDeletionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScheduleKeyDeletionResponseUnmarshaller.Instance;
             
@@ -18952,7 +19032,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Sign">REST API Reference for Sign Operation</seealso>
         public virtual SignResponse Sign(SignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignResponseUnmarshaller.Instance;
 
@@ -19131,7 +19211,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Sign">REST API Reference for Sign Operation</seealso>
         public virtual Task<SignResponse> SignAsync(SignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignResponseUnmarshaller.Instance;
             
@@ -19144,7 +19224,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>.
         /// 
         ///  <note> 
@@ -19161,9 +19241,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
+        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned key</a>, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">alias</a>.
         /// </para>
@@ -19273,7 +19353,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -19282,7 +19362,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>.
         /// 
         ///  <note> 
@@ -19299,9 +19379,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
+        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned key</a>, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">alias</a>.
         /// </para>
@@ -19414,7 +19494,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -19427,7 +19507,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>. To delete a tag, specify the tag key and the KMS key.
         /// 
         ///  <note> 
@@ -19539,7 +19619,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -19548,7 +19628,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>. To delete a tag, specify the tag key and the KMS key.
         /// 
         ///  <note> 
@@ -19663,7 +19743,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -19766,7 +19846,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <c>alias/</c> followed by the alias name, such as <c>alias/ExampleAlias</c>. You cannot use <c>UpdateAlias</c> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
-        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
+        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -19957,7 +20037,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -20056,7 +20136,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <c>alias/</c> followed by the alias name, such as <c>alias/ExampleAlias</c>. You cannot use <c>UpdateAlias</c> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
-        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
+        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -20253,7 +20333,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
             
@@ -20583,7 +20663,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore">REST API Reference for UpdateCustomKeyStore Operation</seealso>
         public virtual UpdateCustomKeyStoreResponse UpdateCustomKeyStore(UpdateCustomKeyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
 
@@ -20912,7 +20992,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore">REST API Reference for UpdateCustomKeyStore Operation</seealso>
         public virtual Task<UpdateCustomKeyStoreResponse> UpdateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
             
@@ -21102,7 +21182,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public virtual UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
 
@@ -21294,7 +21374,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public virtual Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(UpdateKeyDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyDescriptionResponseUnmarshaller.Instance;
             
@@ -21460,7 +21540,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdatePrimaryRegion">REST API Reference for UpdatePrimaryRegion Operation</seealso>
         public virtual UpdatePrimaryRegionResponse UpdatePrimaryRegion(UpdatePrimaryRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePrimaryRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePrimaryRegionResponseUnmarshaller.Instance;
 
@@ -21625,7 +21705,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdatePrimaryRegion">REST API Reference for UpdatePrimaryRegion Operation</seealso>
         public virtual Task<UpdatePrimaryRegionResponse> UpdatePrimaryRegionAsync(UpdatePrimaryRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePrimaryRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePrimaryRegionResponseUnmarshaller.Instance;
             
@@ -21795,7 +21875,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Verify">REST API Reference for Verify Operation</seealso>
         public virtual VerifyResponse Verify(VerifyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyResponseUnmarshaller.Instance;
 
@@ -21964,7 +22044,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Verify">REST API Reference for Verify Operation</seealso>
         public virtual Task<VerifyResponse> VerifyAsync(VerifyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyResponseUnmarshaller.Instance;
             
@@ -22107,7 +22187,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
         public virtual VerifyMacResponse VerifyMac(VerifyMacRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
 
@@ -22249,7 +22329,7 @@ namespace Amazon.KeyManagementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
         public virtual Task<VerifyMacResponse> VerifyMacAsync(VerifyMacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
             

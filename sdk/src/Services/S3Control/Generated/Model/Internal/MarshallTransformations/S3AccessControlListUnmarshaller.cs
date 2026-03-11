@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3AccessControlList Object
     /// </summary>  
-    public class S3AccessControlListUnmarshaller : IXmlUnmarshaller<S3AccessControlList, XmlUnmarshallerContext>
+    public partial class S3AccessControlListUnmarshaller : IXmlUnmarshaller<S3AccessControlList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3AccessControlList unmarshalledObject, int targetDepth);
+
         private static S3AccessControlListUnmarshaller _instance = new S3AccessControlListUnmarshaller();        
 
         /// <summary>

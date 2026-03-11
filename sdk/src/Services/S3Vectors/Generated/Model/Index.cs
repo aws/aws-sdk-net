@@ -30,16 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// The attributes of a vector index.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class Index
     {
@@ -47,6 +38,7 @@ namespace Amazon.S3Vectors.Model
         private DataType _dataType;
         private int? _dimension;
         private DistanceMetric _distanceMetric;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _indexArn;
         private string _indexName;
         private MetadataConfiguration _metadataConfiguration;
@@ -126,6 +118,26 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetDistanceMetric()
         {
             return this._distanceMetric != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration for a vector index. By default, if you don't specify,
+        /// all new vectors in the vector index will use the encryption configuration of the vector
+        /// bucket.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

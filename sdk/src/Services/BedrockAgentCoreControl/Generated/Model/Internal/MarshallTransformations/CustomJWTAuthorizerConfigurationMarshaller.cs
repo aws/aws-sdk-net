@@ -68,6 +68,33 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetAllowedScopes())
+            {
+                context.Writer.WritePropertyName("allowedScopes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAllowedScopesListValue in requestObject.AllowedScopes)
+                {
+                        context.Writer.WriteStringValue(requestObjectAllowedScopesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetCustomClaims())
+            {
+                context.Writer.WritePropertyName("customClaims");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCustomClaimsListValue in requestObject.CustomClaims)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CustomClaimValidationTypeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomClaimsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetDiscoveryUrl())
             {
                 context.Writer.WritePropertyName("discoveryUrl");

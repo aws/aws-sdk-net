@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for InvalidZipFileException
+        /// message.
+        /// </summary>
+        public InvalidZipFileException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidZipFileException with the specified error
         /// message.
         /// </summary>

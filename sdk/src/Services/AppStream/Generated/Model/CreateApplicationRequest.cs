@@ -35,8 +35,8 @@ namespace Amazon.AppStream.Model
     /// 
     ///  
     /// <para>
-    /// Applications are an Amazon AppStream 2.0 resource that stores the details about how
-    /// to launch applications on Elastic fleet streaming instances. An application consists
+    /// Applications are a WorkSpaces Applications resource that stores the details about
+    /// how to launch applications on Elastic fleet streaming instances. An application consists
     /// of the launch details, icon, and display name. Applications are associated with an
     /// app block that contains the application binaries and other files. The applications
     /// assigned to an Elastic fleet are the applications users can launch. 
@@ -223,8 +223,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platforms. 
         /// <para>
-        /// The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are
-        /// supported for Elastic fleets.
+        /// The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404
+        /// are supported for Elastic fleets.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

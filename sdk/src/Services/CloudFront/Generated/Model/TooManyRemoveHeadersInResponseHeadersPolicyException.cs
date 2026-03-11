@@ -46,6 +46,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyRemoveHeadersInResponseHeadersPolicyException
+        /// message.
+        /// </summary>
+        public TooManyRemoveHeadersInResponseHeadersPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRemoveHeadersInResponseHeadersPolicyException with the specified error
         /// message.
         /// </summary>

@@ -46,6 +46,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAbsoluteBorrowLimits())
+            {
+                context.Writer.WritePropertyName("AbsoluteBorrowLimits");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAbsoluteBorrowLimitsListValue in requestObject.AbsoluteBorrowLimits)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ComputeQuotaResourceConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAbsoluteBorrowLimitsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetBorrowLimit())
             {
                 context.Writer.WritePropertyName("BorrowLimit");

@@ -39,7 +39,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Handshake. 
         /// <para>
-        /// A structure that contains details about the accepted handshake.
+        /// A <c>Handshake</c> object. Contains details for the handshake.
         /// </para>
         /// </summary>
         public Handshake Handshake

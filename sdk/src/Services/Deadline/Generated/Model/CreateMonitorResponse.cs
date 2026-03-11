@@ -40,7 +40,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that IAM Identity Center assigns to the monitor.
+        /// The Amazon Resource Name that IAM Identity Center assigns to the monitor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

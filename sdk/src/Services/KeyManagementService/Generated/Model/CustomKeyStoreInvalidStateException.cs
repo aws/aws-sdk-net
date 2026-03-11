@@ -79,6 +79,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomKeyStoreInvalidStateException
+        /// message.
+        /// </summary>
+        public CustomKeyStoreInvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomKeyStoreInvalidStateException with the specified error
         /// message.
         /// </summary>

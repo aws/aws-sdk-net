@@ -56,6 +56,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("glossaryTermEnforcementDetail", targetDepth))
+                {
+                    var unmarshaller = GlossaryTermEnforcementDetailUnmarshaller.Instance;
+                    unmarshalledObject.GlossaryTermEnforcementDetail = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("metadataFormEnforcementDetail", targetDepth))
                 {
                     var unmarshaller = MetadataFormEnforcementDetailUnmarshaller.Instance;

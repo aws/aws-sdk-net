@@ -62,6 +62,8 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-11";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ConfigurationToken))
+                throw new AmazonAppConfigDataException("Request object does not have required field ConfigurationToken set");
             
             if (publicRequest.IsSetConfigurationToken())
                 request.Parameters.Add("configuration_token", StringUtils.FromString(publicRequest.ConfigurationToken));

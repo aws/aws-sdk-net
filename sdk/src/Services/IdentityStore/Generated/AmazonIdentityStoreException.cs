@@ -36,6 +36,14 @@ namespace Amazon.IdentityStore
         /// <summary>
         /// Construct instance of AmazonIdentityStoreException
         /// </summary>
+        public AmazonIdentityStoreException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIdentityStoreException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIdentityStoreException(string message)
             : base(message)

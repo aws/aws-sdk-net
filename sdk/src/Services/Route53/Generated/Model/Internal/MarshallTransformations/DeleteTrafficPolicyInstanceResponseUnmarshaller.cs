@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteTrafficPolicyInstance operation
     /// </summary>  
-    public class DeleteTrafficPolicyInstanceResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteTrafficPolicyInstanceResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             DeleteTrafficPolicyInstanceResponse response = new DeleteTrafficPolicyInstanceResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -84,6 +85,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteTrafficPolicyInstanceResponse response);
 
         private static DeleteTrafficPolicyInstanceResponseUnmarshaller _instance = new DeleteTrafficPolicyInstanceResponseUnmarshaller();        
 

@@ -66,9 +66,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotName set");
             request.AddPathResource("{botname}", StringUtils.FromString(publicRequest.BotName));
+            if (publicRequest.BotVersions == null)
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotVersions set");
             
             if (publicRequest.IsSetBotVersions())
                 request.ParameterCollection.Add("bot_versions", publicRequest.BotVersions);
+            if (string.IsNullOrEmpty(publicRequest.StatusType))
+                throw new AmazonLexModelBuildingServiceException("Request object does not have required field StatusType set");
             
             if (publicRequest.IsSetStatusType())
                 request.Parameters.Add("status_type", StringUtils.FromString(publicRequest.StatusType));

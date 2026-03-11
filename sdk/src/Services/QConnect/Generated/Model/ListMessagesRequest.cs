@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     public partial class ListMessagesRequest : AmazonQConnectRequest
     {
         private string _assistantId;
+        private MessageFilterType _filter;
         private int? _maxResults;
         private string _nextToken;
         private string _sessionId;
@@ -57,6 +58,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAssistantId()
         {
             return this._assistantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// The filter criteria for listing messages.
+        /// </para>
+        /// </summary>
+        public MessageFilterType Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

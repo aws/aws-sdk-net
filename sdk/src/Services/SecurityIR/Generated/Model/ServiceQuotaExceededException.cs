@@ -43,6 +43,13 @@ namespace Amazon.SecurityIR.Model
         private string _serviceCode;
 
         /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>
@@ -131,7 +138,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Element that provides the quota that was exceeded.
+        /// The code of the quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,7 +157,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Element that provides the ID of the resource affected.
+        /// The ID of the requested resource which lead to the service quota exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,7 +176,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Element that provides the type of the resource affected.
+        /// The type of the requested resource which lead to the service quota exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -188,7 +195,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Element that provides the originating service who made the call.
+        /// The service code of the quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

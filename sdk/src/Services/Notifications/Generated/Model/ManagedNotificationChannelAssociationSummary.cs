@@ -89,7 +89,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Delivers notifications through Chatbot to collaboration platforms (Slack, Chime).
+        /// Delivers notifications through Amazon Q Developer in chat applications to collaboration
+        /// platforms (Slack, Chime).
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

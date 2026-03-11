@@ -136,7 +136,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowBuildVersionArn. 
         /// <para>
-        /// The ARN of the workflow resource that ran.
+        /// The Amazon Resource Name (ARN) of the workflow resource that ran.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

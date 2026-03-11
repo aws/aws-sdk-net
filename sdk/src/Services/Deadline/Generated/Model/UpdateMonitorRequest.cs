@@ -88,7 +88,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.
+        /// The Amazon Resource Name of the new IAM role to use with the monitor.
         /// </para>
         /// </summary>
         public string RoleArn

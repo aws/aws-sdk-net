@@ -34,8 +34,9 @@ namespace Amazon.GroundStation.Model
     /// 
     ///  
     /// <para>
-    /// Parameters from the <c>AntennaUplinkConfig</c>, corresponding to the specified <c>AntennaUplinkConfigArn</c>,
-    /// are used when this <c>UplinkEchoConfig</c> is used in a contact.
+    /// Parameters from the <c>AntennaUplinkConfig</c>, corresponding to the specified <c>
+    /// AntennaUplinkConfigArn</c>, are used when this <c>UplinkEchoConfig</c> is used in
+    /// a contact.
     /// </para>
     /// </summary>
     public partial class UplinkEchoConfig

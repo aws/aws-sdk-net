@@ -42,10 +42,12 @@ namespace Amazon.Mgn.Model
         private ReplicationConfigurationDefaultLargeStagingDiskType _defaultLargeStagingDiskType;
         private ReplicationConfigurationEbsEncryption _ebsEncryption;
         private string _ebsEncryptionKeyArn;
+        private InternetProtocol _internetProtocol;
         private string _replicationServerInstanceType;
         private List<string> _replicationServersSecurityGroupsIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stagingAreaSubnetId;
         private Dictionary<string, string> _stagingAreaTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private bool? _storeSnapshotOnLocalZone;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useDedicatedReplicationServer;
         private bool? _useFipsEndpoint;
@@ -186,6 +188,24 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InternetProtocol. 
+        /// <para>
+        /// Request to configure the internet protocol to IPv4 or IPv6.
+        /// </para>
+        /// </summary>
+        public InternetProtocol InternetProtocol
+        {
+            get { return this._internetProtocol; }
+            set { this._internetProtocol = value; }
+        }
+
+        // Check to see if InternetProtocol property is set
+        internal bool IsSetInternetProtocol()
+        {
+            return this._internetProtocol != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationServerInstanceType. 
         /// <para>
         /// Request to configure the Replication Server instance type during Replication Settings
@@ -272,6 +292,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetStagingAreaTags()
         {
             return this._stagingAreaTags != null && (this._stagingAreaTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoreSnapshotOnLocalZone. 
+        /// <para>
+        /// Request to store snapshot on local zone during Replication Settings template creation.
+        /// </para>
+        /// </summary>
+        public bool? StoreSnapshotOnLocalZone
+        {
+            get { return this._storeSnapshotOnLocalZone; }
+            set { this._storeSnapshotOnLocalZone = value; }
+        }
+
+        // Check to see if StoreSnapshotOnLocalZone property is set
+        internal bool IsSetStoreSnapshotOnLocalZone()
+        {
+            return this._storeSnapshotOnLocalZone.HasValue; 
         }
 
         /// <summary>

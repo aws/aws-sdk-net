@@ -34,7 +34,33 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ReportContext
     {
+        private List<string> _licenseAssetGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _licenseConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DateTime? _reportEndDate;
+        private DateTime? _reportStartDate;
+
+        /// <summary>
+        /// Gets and sets the property LicenseAssetGroupArns. 
+        /// <para>
+        /// Amazon Resource Names (ARNs) of the license asset groups to include in the report.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> LicenseAssetGroupArns
+        {
+            get { return this._licenseAssetGroupArns; }
+            set { this._licenseAssetGroupArns = value; }
+        }
+
+        // Check to see if LicenseAssetGroupArns property is set
+        internal bool IsSetLicenseAssetGroupArns()
+        {
+            return this._licenseAssetGroupArns != null && (this._licenseAssetGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArns. 
@@ -48,7 +74,6 @@ namespace Amazon.LicenseManager.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> LicenseConfigurationArns
         {
             get { return this._licenseConfigurationArns; }
@@ -59,6 +84,42 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetLicenseConfigurationArns()
         {
             return this._licenseConfigurationArns != null && (this._licenseConfigurationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportEndDate. 
+        /// <para>
+        /// End date for the report data collection period.
+        /// </para>
+        /// </summary>
+        public DateTime? ReportEndDate
+        {
+            get { return this._reportEndDate; }
+            set { this._reportEndDate = value; }
+        }
+
+        // Check to see if ReportEndDate property is set
+        internal bool IsSetReportEndDate()
+        {
+            return this._reportEndDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportStartDate. 
+        /// <para>
+        /// Start date for the report data collection period.
+        /// </para>
+        /// </summary>
+        public DateTime? ReportStartDate
+        {
+            get { return this._reportStartDate; }
+            set { this._reportStartDate = value; }
+        }
+
+        // Check to see if ReportStartDate property is set
+        internal bool IsSetReportStartDate()
+        {
+            return this._reportStartDate.HasValue; 
         }
 
     }

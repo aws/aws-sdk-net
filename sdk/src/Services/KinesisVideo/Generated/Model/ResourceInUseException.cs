@@ -59,6 +59,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceInUseException
+        /// message.
+        /// </summary>
+        public ResourceInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceInUseException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for ScanNotFoundException
+        /// message.
+        /// </summary>
+        public ScanNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScanNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -62,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private AlarmConfiguration _alarmConfiguration;
         private bool? _applyOnlyAtCronInterval;
+        private string _associationDispatchAssumeRole;
         private string _associationId;
         private string _associationName;
         private string _associationVersion;
@@ -145,6 +146,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApplyOnlyAtCronInterval()
         {
             return this._applyOnlyAtCronInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationDispatchAssumeRole. 
+        /// <para>
+        /// A role used by association to take actions on your behalf. State Manager will assume
+        /// this role and call required APIs when dispatching configurations to nodes. If not
+        /// specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+        /// service-linked role for Systems Manager</a> will be used by default. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// It is recommended that you define a custom IAM role so that you have full control
+        /// of the permissions that State Manager has when taking actions on your behalf.
+        /// </para>
+        ///  
+        /// <para>
+        /// Service-linked role support in State Manager is being phased out. Associations relying
+        /// on service-linked role may require updates in the future to continue functioning properly.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string AssociationDispatchAssumeRole
+        {
+            get { return this._associationDispatchAssumeRole; }
+            set { this._associationDispatchAssumeRole = value; }
+        }
+
+        // Check to see if AssociationDispatchAssumeRole property is set
+        internal bool IsSetAssociationDispatchAssumeRole()
+        {
+            return this._associationDispatchAssumeRole != null;
         }
 
         /// <summary>
@@ -581,6 +615,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// accounts where you want to run the association. Use this action to update an association
         /// in multiple Regions and multiple accounts.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>IncludeChildOrganizationUnits</c> parameter is not supported by State Manager.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

@@ -38,7 +38,7 @@ namespace Amazon.SQS.Model
     /// <para>
     ///  <c>Name</c>, <c>type</c>, <c>value</c> and the message body must not be empty or
     /// null. All parts of the message attribute, including <c>Name</c>, <c>Type</c>, and
-    /// <c>Value</c>, are part of the message size restriction (256 KiB or 262,144 bytes).
+    /// <c>Value</c>, are part of the message size restriction (1 MiB or 1,048,576 bytes).
     /// </para>
     /// </summary>
     public partial class MessageAttributeValue

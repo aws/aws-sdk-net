@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for BucketNotFoundException
+        /// message.
+        /// </summary>
+        public BucketNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BucketNotFoundException with the specified error
         /// message.
         /// </summary>

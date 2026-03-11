@@ -120,6 +120,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnableTerminationProtection = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LastOperations/member", targetDepth))
+                    {
+                        var unmarshaller = OperationEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.LastOperations == null)
+                        {
+                            unmarshalledObject.LastOperations = new List<OperationEntry>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LastOperations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("LastUpdatedTime", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -40,7 +40,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// <summary>
         /// Gets and sets the property CampaignId.
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string CampaignId
         {
             get { return this._campaignId; }

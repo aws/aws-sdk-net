@@ -93,6 +93,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetOrchestratorUseCase())
+            {
+                context.Writer.WritePropertyName("orchestratorUseCase");
+                context.Writer.WriteStringValue(publicRequest.OrchestratorUseCase);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

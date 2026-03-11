@@ -96,6 +96,23 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetInferenceConfiguration())
+            {
+                context.Writer.WritePropertyName("inferenceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AIPromptInferenceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InferenceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetModelId())
+            {
+                context.Writer.WritePropertyName("modelId");
+                context.Writer.WriteStringValue(publicRequest.ModelId);
+            }
+
             if(publicRequest.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("templateConfiguration");

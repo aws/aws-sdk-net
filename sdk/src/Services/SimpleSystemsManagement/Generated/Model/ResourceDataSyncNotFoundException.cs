@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _syncType;
 
         /// <summary>
+        /// Default constructor for ResourceDataSyncNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceDataSyncNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDataSyncNotFoundException with the specified error
         /// message.
         /// </summary>

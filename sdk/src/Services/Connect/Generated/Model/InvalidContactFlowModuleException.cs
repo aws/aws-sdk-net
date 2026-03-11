@@ -40,6 +40,13 @@ namespace Amazon.Connect.Model
         private List<ProblemDetail> _problems = AWSConfigs.InitializeCollections ? new List<ProblemDetail>() : null;
 
         /// <summary>
+        /// Default constructor for InvalidContactFlowModuleException
+        /// message.
+        /// </summary>
+        public InvalidContactFlowModuleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidContactFlowModuleException with the specified error
         /// message.
         /// </summary>

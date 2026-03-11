@@ -32,6 +32,12 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Container for the parameters to the StartResourceScan operation.
     /// Immediately starts a scan of the policies applied to the specified resource.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action is supported only for external access analyzers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StartResourceScanRequest : AmazonAccessAnalyzerRequest
     {

@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("externalAuthorityConfiguration", targetDepth))
+                    {
+                        var unmarshaller = IpamScopeExternalAuthorityConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.ExternalAuthorityConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipamArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

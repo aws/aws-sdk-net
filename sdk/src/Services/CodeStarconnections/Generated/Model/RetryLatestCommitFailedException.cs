@@ -39,6 +39,13 @@ namespace Amazon.CodeStarconnections.Model
     {
 
         /// <summary>
+        /// Default constructor for RetryLatestCommitFailedException
+        /// message.
+        /// </summary>
+        public RetryLatestCommitFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RetryLatestCommitFailedException with the specified error
         /// message.
         /// </summary>

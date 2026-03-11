@@ -83,6 +83,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZoneRelocation", StringUtils.FromBool(publicRequest.AvailabilityZoneRelocation));
                 }
+                if(publicRequest.IsSetCatalogName())
+                {
+                    request.Parameters.Add("CatalogName", StringUtils.FromString(publicRequest.CatalogName));
+                }
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
@@ -136,6 +140,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnhancedVpcRouting())
                 {
                     request.Parameters.Add("EnhancedVpcRouting", StringUtils.FromBool(publicRequest.EnhancedVpcRouting));
+                }
+                if(publicRequest.IsSetExtraComputeForAutomaticOptimization())
+                {
+                    request.Parameters.Add("ExtraComputeForAutomaticOptimization", StringUtils.FromBool(publicRequest.ExtraComputeForAutomaticOptimization));
                 }
                 if(publicRequest.IsSetHsmClientCertificateIdentifier())
                 {
@@ -263,6 +271,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        

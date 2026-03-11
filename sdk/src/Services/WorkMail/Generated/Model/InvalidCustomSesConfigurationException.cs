@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCustomSesConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidCustomSesConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCustomSesConfigurationException with the specified error
         /// message.
         /// </summary>

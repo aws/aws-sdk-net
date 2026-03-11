@@ -36,6 +36,14 @@ namespace Amazon.CodeGuruReviewer
         /// <summary>
         /// Construct instance of AmazonCodeGuruReviewerException
         /// </summary>
+        public AmazonCodeGuruReviewerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeGuruReviewerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeGuruReviewerException(string message)
             : base(message)

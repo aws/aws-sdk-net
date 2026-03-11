@@ -197,6 +197,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return TenantDatabaseQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("VpcEncryptionControlViolationException"))
+                {
+                    return VpcEncryptionControlViolationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

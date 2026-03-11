@@ -39,6 +39,13 @@ namespace Amazon.Lex.Model
     {
 
         /// <summary>
+        /// Default constructor for LoopDetectedException
+        /// message.
+        /// </summary>
+        public LoopDetectedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LoopDetectedException with the specified error
         /// message.
         /// </summary>

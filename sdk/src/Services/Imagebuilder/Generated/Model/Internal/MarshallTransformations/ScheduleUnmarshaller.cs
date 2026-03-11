@@ -56,6 +56,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("autoDisablePolicy", targetDepth))
+                {
+                    var unmarshaller = AutoDisablePolicyUnmarshaller.Instance;
+                    unmarshalledObject.AutoDisablePolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("pipelineExecutionStartCondition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

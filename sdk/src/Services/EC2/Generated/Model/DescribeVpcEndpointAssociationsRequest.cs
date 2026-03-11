@@ -95,10 +95,6 @@ namespace Amazon.EC2.Model
         ///  <c>resource-configuration-group-arn</c> - The Amazon Resource Name (ARN) of the resource
         /// configuration of type GROUP.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>service-network-resource-association-id</c> - The ID of the association.
-        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

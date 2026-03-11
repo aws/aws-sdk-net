@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public AccountAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

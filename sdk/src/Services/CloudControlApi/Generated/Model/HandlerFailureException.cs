@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for HandlerFailureException
+        /// message.
+        /// </summary>
+        public HandlerFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HandlerFailureException with the specified error
         /// message.
         /// </summary>

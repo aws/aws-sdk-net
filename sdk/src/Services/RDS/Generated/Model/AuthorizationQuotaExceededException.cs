@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthorizationQuotaExceededException
+        /// message.
+        /// </summary>
+        public AuthorizationQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorizationQuotaExceededException with the specified error
         /// message.
         /// </summary>

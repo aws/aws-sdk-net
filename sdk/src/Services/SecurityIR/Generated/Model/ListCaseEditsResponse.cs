@@ -41,7 +41,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Response element for ListCaseEdits that includes the action, eventtimestamp, message,
+        /// Response element for ListCaseEdits that includes the action, event timestamp, message,
         /// and principal for the response. 
         /// </para>
         /// <para />
@@ -65,7 +65,8 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Optional element.
+        /// An optional string that, if supplied on subsequent calls to ListCaseEdits, allows
+        /// the API to fetch the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken

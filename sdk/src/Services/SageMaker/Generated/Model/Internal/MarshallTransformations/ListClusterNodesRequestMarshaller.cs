@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeBefore.Value)));
             }
 
+            if(publicRequest.IsSetIncludeNodeLogicalIds())
+            {
+                context.Writer.WritePropertyName("IncludeNodeLogicalIds");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeNodeLogicalIds.Value);
+            }
+
             if(publicRequest.IsSetInstanceGroupNameContains())
             {
                 context.Writer.WritePropertyName("InstanceGroupNameContains");

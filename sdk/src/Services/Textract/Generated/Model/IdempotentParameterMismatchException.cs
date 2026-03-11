@@ -40,6 +40,13 @@ namespace Amazon.Textract.Model
     {
 
         /// <summary>
+        /// Default constructor for IdempotentParameterMismatchException
+        /// message.
+        /// </summary>
+        public IdempotentParameterMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IdempotentParameterMismatchException with the specified error
         /// message.
         /// </summary>

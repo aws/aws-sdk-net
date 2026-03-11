@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for OptionGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OptionGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OptionGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFAssociatedItemException
+        /// message.
+        /// </summary>
+        public WAFAssociatedItemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFAssociatedItemException with the specified error
         /// message.
         /// </summary>

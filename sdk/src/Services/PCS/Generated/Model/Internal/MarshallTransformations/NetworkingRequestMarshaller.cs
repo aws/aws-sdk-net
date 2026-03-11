@@ -46,6 +46,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("networkType");
+                context.Writer.WriteStringValue(requestObject.NetworkType);
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

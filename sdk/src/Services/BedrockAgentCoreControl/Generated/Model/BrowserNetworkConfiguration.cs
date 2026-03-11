@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class BrowserNetworkConfiguration
     {
         private BrowserNetworkMode _networkMode;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property NetworkMode. 
@@ -55,6 +56,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetNetworkMode()
         {
             return this._networkMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig.
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

@@ -1113,6 +1113,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetCodeRepository())
+            {
+                context.Writer.WritePropertyName("CodeRepository");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CodeRepositoryDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeRepository, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("Container");

@@ -24,14 +24,15 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class OpenStreamCommand : BaseCommand
+    internal partial class OpenStreamCommand : BaseCommand<TransferUtilityOpenStreamResponse>
     {
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityOpenStreamResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
             var getRequest = ConstructRequest();
             var response = await _s3Client.GetObjectAsync(getRequest, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             _responseStream = response.ResponseStream;
+            return new TransferUtilityOpenStreamResponse();
         }
     }
 }

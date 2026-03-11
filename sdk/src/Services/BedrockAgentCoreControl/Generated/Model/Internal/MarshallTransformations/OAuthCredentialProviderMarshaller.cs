@@ -60,6 +60,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDefaultReturnUrl())
+            {
+                context.Writer.WritePropertyName("defaultReturnUrl");
+                context.Writer.WriteStringValue(requestObject.DefaultReturnUrl);
+            }
+
+            if(requestObject.IsSetGrantType())
+            {
+                context.Writer.WritePropertyName("grantType");
+                context.Writer.WriteStringValue(requestObject.GrantType);
+            }
+
             if(requestObject.IsSetProviderArn())
             {
                 context.Writer.WritePropertyName("providerArn");

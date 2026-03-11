@@ -77,6 +77,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.PolicyType))
+                throw new AmazonDataZoneException("Request object does not have required field PolicyType set");
             
             if (publicRequest.IsSetPolicyType())
                 request.Parameters.Add("policyType", StringUtils.FromString(publicRequest.PolicyType));

@@ -67,5 +67,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         {
             return new GetTagValuesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRequiredTags operation
+        ///</summary>
+        public IListRequiredTagsPaginator ListRequiredTags(ListRequiredTagsRequest request) 
+        {
+            return new ListRequiredTagsPaginator(this.client, request);
+        }
     }
 }

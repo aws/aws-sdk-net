@@ -42,6 +42,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EC2UnexpectedException
+        /// message.
+        /// </summary>
+        public EC2UnexpectedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EC2UnexpectedException with the specified error
         /// message.
         /// </summary>

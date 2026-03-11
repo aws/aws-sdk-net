@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyGroupSummary Object
     /// </summary>  
-    public class KeyGroupSummaryUnmarshaller : IXmlUnmarshaller<KeyGroupSummary, XmlUnmarshallerContext>
+    public partial class KeyGroupSummaryUnmarshaller : IXmlUnmarshaller<KeyGroupSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.KeyGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, KeyGroupSummary unmarshalledObject, int targetDepth);
+
         private static KeyGroupSummaryUnmarshaller _instance = new KeyGroupSummaryUnmarshaller();        
 
         /// <summary>

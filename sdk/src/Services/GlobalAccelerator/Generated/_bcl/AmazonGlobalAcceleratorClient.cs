@@ -389,7 +389,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddCustomRoutingEndpoints">REST API Reference for AddCustomRoutingEndpoints Operation</seealso>
         public virtual AddCustomRoutingEndpointsResponse AddCustomRoutingEndpoints(AddCustomRoutingEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddCustomRoutingEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddCustomRoutingEndpointsResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddCustomRoutingEndpoints">REST API Reference for AddCustomRoutingEndpoints Operation</seealso>
         public virtual Task<AddCustomRoutingEndpointsResponse> AddCustomRoutingEndpointsAsync(AddCustomRoutingEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddCustomRoutingEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddCustomRoutingEndpointsResponseUnmarshaller.Instance;
             
@@ -515,7 +515,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">REST API Reference for AddEndpoints Operation</seealso>
         public virtual AddEndpointsResponse AddEndpoints(AddEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddEndpointsResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">REST API Reference for AddEndpoints Operation</seealso>
         public virtual Task<AddEndpointsResponse> AddEndpointsAsync(AddEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddEndpointsResponseUnmarshaller.Instance;
             
@@ -630,7 +630,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
         public virtual AdvertiseByoipCidrResponse AdvertiseByoipCidr(AdvertiseByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
 
@@ -680,7 +680,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
         public virtual Task<AdvertiseByoipCidrResponse> AdvertiseByoipCidrAsync(AdvertiseByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
             
@@ -720,7 +720,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AllowCustomRoutingTraffic">REST API Reference for AllowCustomRoutingTraffic Operation</seealso>
         public virtual AllowCustomRoutingTrafficResponse AllowCustomRoutingTraffic(AllowCustomRoutingTrafficRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllowCustomRoutingTrafficRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllowCustomRoutingTrafficResponseUnmarshaller.Instance;
 
@@ -759,7 +759,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AllowCustomRoutingTraffic">REST API Reference for AllowCustomRoutingTraffic Operation</seealso>
         public virtual Task<AllowCustomRoutingTrafficResponse> AllowCustomRoutingTrafficAsync(AllowCustomRoutingTrafficRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllowCustomRoutingTrafficRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllowCustomRoutingTrafficResponseUnmarshaller.Instance;
             
@@ -806,7 +806,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         public virtual CreateAcceleratorResponse CreateAccelerator(CreateAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAcceleratorResponseUnmarshaller.Instance;
 
@@ -852,7 +852,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         public virtual Task<CreateAcceleratorResponse> CreateAcceleratorAsync(CreateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAcceleratorResponseUnmarshaller.Instance;
             
@@ -918,7 +918,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment">REST API Reference for CreateCrossAccountAttachment Operation</seealso>
         public virtual CreateCrossAccountAttachmentResponse CreateCrossAccountAttachment(CreateCrossAccountAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCrossAccountAttachmentResponseUnmarshaller.Instance;
 
@@ -983,7 +983,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment">REST API Reference for CreateCrossAccountAttachment Operation</seealso>
         public virtual Task<CreateCrossAccountAttachmentResponse> CreateCrossAccountAttachmentAsync(CreateCrossAccountAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCrossAccountAttachmentResponseUnmarshaller.Instance;
             
@@ -1037,7 +1037,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">REST API Reference for CreateCustomRoutingAccelerator Operation</seealso>
         public virtual CreateCustomRoutingAcceleratorResponse CreateCustomRoutingAccelerator(CreateCustomRoutingAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomRoutingAcceleratorResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingAccelerator">REST API Reference for CreateCustomRoutingAccelerator Operation</seealso>
         public virtual Task<CreateCustomRoutingAcceleratorResponse> CreateCustomRoutingAcceleratorAsync(CreateCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomRoutingAcceleratorResponseUnmarshaller.Instance;
             
@@ -1137,7 +1137,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingEndpointGroup">REST API Reference for CreateCustomRoutingEndpointGroup Operation</seealso>
         public virtual CreateCustomRoutingEndpointGroupResponse CreateCustomRoutingEndpointGroup(CreateCustomRoutingEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomRoutingEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomRoutingEndpointGroupResponseUnmarshaller.Instance;
 
@@ -1183,7 +1183,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingEndpointGroup">REST API Reference for CreateCustomRoutingEndpointGroup Operation</seealso>
         public virtual Task<CreateCustomRoutingEndpointGroupResponse> CreateCustomRoutingEndpointGroupAsync(CreateCustomRoutingEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomRoutingEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomRoutingEndpointGroupResponseUnmarshaller.Instance;
             
@@ -1222,7 +1222,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingListener">REST API Reference for CreateCustomRoutingListener Operation</seealso>
         public virtual CreateCustomRoutingListenerResponse CreateCustomRoutingListener(CreateCustomRoutingListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomRoutingListenerResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCustomRoutingListener">REST API Reference for CreateCustomRoutingListener Operation</seealso>
         public virtual Task<CreateCustomRoutingListenerResponse> CreateCustomRoutingListenerAsync(CreateCustomRoutingListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomRoutingListenerResponseUnmarshaller.Instance;
             
@@ -1311,7 +1311,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">REST API Reference for CreateEndpointGroup Operation</seealso>
         public virtual CreateEndpointGroupResponse CreateEndpointGroup(CreateEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointGroupResponseUnmarshaller.Instance;
 
@@ -1361,7 +1361,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">REST API Reference for CreateEndpointGroup Operation</seealso>
         public virtual Task<CreateEndpointGroupResponse> CreateEndpointGroupAsync(CreateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointGroupResponseUnmarshaller.Instance;
             
@@ -1400,7 +1400,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual CreateListenerResponse CreateListener(CreateListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
 
@@ -1438,7 +1438,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
             
@@ -1499,7 +1499,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">REST API Reference for DeleteAccelerator Operation</seealso>
         public virtual DeleteAcceleratorResponse DeleteAccelerator(DeleteAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAcceleratorResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">REST API Reference for DeleteAccelerator Operation</seealso>
         public virtual Task<DeleteAcceleratorResponse> DeleteAcceleratorAsync(DeleteAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAcceleratorResponseUnmarshaller.Instance;
             
@@ -1605,7 +1605,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment">REST API Reference for DeleteCrossAccountAttachment Operation</seealso>
         public virtual DeleteCrossAccountAttachmentResponse DeleteCrossAccountAttachment(DeleteCrossAccountAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrossAccountAttachmentResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment">REST API Reference for DeleteCrossAccountAttachment Operation</seealso>
         public virtual Task<DeleteCrossAccountAttachmentResponse> DeleteCrossAccountAttachmentAsync(DeleteCrossAccountAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrossAccountAttachmentResponseUnmarshaller.Instance;
             
@@ -1710,7 +1710,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingAccelerator">REST API Reference for DeleteCustomRoutingAccelerator Operation</seealso>
         public virtual DeleteCustomRoutingAcceleratorResponse DeleteCustomRoutingAccelerator(DeleteCustomRoutingAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomRoutingAcceleratorResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingAccelerator">REST API Reference for DeleteCustomRoutingAccelerator Operation</seealso>
         public virtual Task<DeleteCustomRoutingAcceleratorResponse> DeleteCustomRoutingAcceleratorAsync(DeleteCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomRoutingAcceleratorResponseUnmarshaller.Instance;
             
@@ -1799,7 +1799,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingEndpointGroup">REST API Reference for DeleteCustomRoutingEndpointGroup Operation</seealso>
         public virtual DeleteCustomRoutingEndpointGroupResponse DeleteCustomRoutingEndpointGroup(DeleteCustomRoutingEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomRoutingEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomRoutingEndpointGroupResponseUnmarshaller.Instance;
 
@@ -1828,7 +1828,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingEndpointGroup">REST API Reference for DeleteCustomRoutingEndpointGroup Operation</seealso>
         public virtual Task<DeleteCustomRoutingEndpointGroupResponse> DeleteCustomRoutingEndpointGroupAsync(DeleteCustomRoutingEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomRoutingEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomRoutingEndpointGroupResponseUnmarshaller.Instance;
             
@@ -1862,7 +1862,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingListener">REST API Reference for DeleteCustomRoutingListener Operation</seealso>
         public virtual DeleteCustomRoutingListenerResponse DeleteCustomRoutingListener(DeleteCustomRoutingListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomRoutingListenerResponseUnmarshaller.Instance;
 
@@ -1895,7 +1895,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCustomRoutingListener">REST API Reference for DeleteCustomRoutingListener Operation</seealso>
         public virtual Task<DeleteCustomRoutingListenerResponse> DeleteCustomRoutingListenerAsync(DeleteCustomRoutingListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomRoutingListenerResponseUnmarshaller.Instance;
             
@@ -1925,7 +1925,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteEndpointGroup">REST API Reference for DeleteEndpointGroup Operation</seealso>
         public virtual DeleteEndpointGroupResponse DeleteEndpointGroup(DeleteEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointGroupResponseUnmarshaller.Instance;
 
@@ -1954,7 +1954,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteEndpointGroup">REST API Reference for DeleteEndpointGroup Operation</seealso>
         public virtual Task<DeleteEndpointGroupResponse> DeleteEndpointGroupAsync(DeleteEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointGroupResponseUnmarshaller.Instance;
             
@@ -1988,7 +1988,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual DeleteListenerResponse DeleteListener(DeleteListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
 
@@ -2021,7 +2021,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
             
@@ -2061,7 +2061,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DenyCustomRoutingTraffic">REST API Reference for DenyCustomRoutingTraffic Operation</seealso>
         public virtual DenyCustomRoutingTrafficResponse DenyCustomRoutingTraffic(DenyCustomRoutingTrafficRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DenyCustomRoutingTrafficRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DenyCustomRoutingTrafficResponseUnmarshaller.Instance;
 
@@ -2100,7 +2100,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DenyCustomRoutingTraffic">REST API Reference for DenyCustomRoutingTraffic Operation</seealso>
         public virtual Task<DenyCustomRoutingTrafficResponse> DenyCustomRoutingTrafficAsync(DenyCustomRoutingTrafficRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DenyCustomRoutingTrafficRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DenyCustomRoutingTrafficResponseUnmarshaller.Instance;
             
@@ -2152,7 +2152,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
         public virtual DeprovisionByoipCidrResponse DeprovisionByoipCidr(DeprovisionByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -2203,7 +2203,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
         public virtual Task<DeprovisionByoipCidrResponse> DeprovisionByoipCidrAsync(DeprovisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
             
@@ -2233,7 +2233,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAccelerator">REST API Reference for DescribeAccelerator Operation</seealso>
         public virtual DescribeAcceleratorResponse DescribeAccelerator(DescribeAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAcceleratorResponseUnmarshaller.Instance;
 
@@ -2262,7 +2262,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAccelerator">REST API Reference for DescribeAccelerator Operation</seealso>
         public virtual Task<DescribeAcceleratorResponse> DescribeAcceleratorAsync(DescribeAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAcceleratorResponseUnmarshaller.Instance;
             
@@ -2292,7 +2292,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAcceleratorAttributes">REST API Reference for DescribeAcceleratorAttributes Operation</seealso>
         public virtual DescribeAcceleratorAttributesResponse DescribeAcceleratorAttributes(DescribeAcceleratorAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAcceleratorAttributesResponseUnmarshaller.Instance;
 
@@ -2321,7 +2321,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAcceleratorAttributes">REST API Reference for DescribeAcceleratorAttributes Operation</seealso>
         public virtual Task<DescribeAcceleratorAttributesResponse> DescribeAcceleratorAttributesAsync(DescribeAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAcceleratorAttributesResponseUnmarshaller.Instance;
             
@@ -2354,7 +2354,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment">REST API Reference for DescribeCrossAccountAttachment Operation</seealso>
         public virtual DescribeCrossAccountAttachmentResponse DescribeCrossAccountAttachment(DescribeCrossAccountAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCrossAccountAttachmentResponseUnmarshaller.Instance;
 
@@ -2386,7 +2386,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment">REST API Reference for DescribeCrossAccountAttachment Operation</seealso>
         public virtual Task<DescribeCrossAccountAttachmentResponse> DescribeCrossAccountAttachmentAsync(DescribeCrossAccountAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCrossAccountAttachmentResponseUnmarshaller.Instance;
             
@@ -2416,7 +2416,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingAccelerator">REST API Reference for DescribeCustomRoutingAccelerator Operation</seealso>
         public virtual DescribeCustomRoutingAcceleratorResponse DescribeCustomRoutingAccelerator(DescribeCustomRoutingAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingAcceleratorResponseUnmarshaller.Instance;
 
@@ -2445,7 +2445,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingAccelerator">REST API Reference for DescribeCustomRoutingAccelerator Operation</seealso>
         public virtual Task<DescribeCustomRoutingAcceleratorResponse> DescribeCustomRoutingAcceleratorAsync(DescribeCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingAcceleratorResponseUnmarshaller.Instance;
             
@@ -2475,7 +2475,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingAcceleratorAttributes">REST API Reference for DescribeCustomRoutingAcceleratorAttributes Operation</seealso>
         public virtual DescribeCustomRoutingAcceleratorAttributesResponse DescribeCustomRoutingAcceleratorAttributes(DescribeCustomRoutingAcceleratorAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingAcceleratorAttributesResponseUnmarshaller.Instance;
 
@@ -2504,7 +2504,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingAcceleratorAttributes">REST API Reference for DescribeCustomRoutingAcceleratorAttributes Operation</seealso>
         public virtual Task<DescribeCustomRoutingAcceleratorAttributesResponse> DescribeCustomRoutingAcceleratorAttributesAsync(DescribeCustomRoutingAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingAcceleratorAttributesResponseUnmarshaller.Instance;
             
@@ -2534,7 +2534,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingEndpointGroup">REST API Reference for DescribeCustomRoutingEndpointGroup Operation</seealso>
         public virtual DescribeCustomRoutingEndpointGroupResponse DescribeCustomRoutingEndpointGroup(DescribeCustomRoutingEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingEndpointGroupResponseUnmarshaller.Instance;
 
@@ -2563,7 +2563,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingEndpointGroup">REST API Reference for DescribeCustomRoutingEndpointGroup Operation</seealso>
         public virtual Task<DescribeCustomRoutingEndpointGroupResponse> DescribeCustomRoutingEndpointGroupAsync(DescribeCustomRoutingEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingEndpointGroupResponseUnmarshaller.Instance;
             
@@ -2593,7 +2593,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingListener">REST API Reference for DescribeCustomRoutingListener Operation</seealso>
         public virtual DescribeCustomRoutingListenerResponse DescribeCustomRoutingListener(DescribeCustomRoutingListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingListenerResponseUnmarshaller.Instance;
 
@@ -2622,7 +2622,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCustomRoutingListener">REST API Reference for DescribeCustomRoutingListener Operation</seealso>
         public virtual Task<DescribeCustomRoutingListenerResponse> DescribeCustomRoutingListenerAsync(DescribeCustomRoutingListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomRoutingListenerResponseUnmarshaller.Instance;
             
@@ -2652,7 +2652,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">REST API Reference for DescribeEndpointGroup Operation</seealso>
         public virtual DescribeEndpointGroupResponse DescribeEndpointGroup(DescribeEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointGroupResponseUnmarshaller.Instance;
 
@@ -2681,7 +2681,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">REST API Reference for DescribeEndpointGroup Operation</seealso>
         public virtual Task<DescribeEndpointGroupResponse> DescribeEndpointGroupAsync(DescribeEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointGroupResponseUnmarshaller.Instance;
             
@@ -2711,7 +2711,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeListener">REST API Reference for DescribeListener Operation</seealso>
         public virtual DescribeListenerResponse DescribeListener(DescribeListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenerResponseUnmarshaller.Instance;
 
@@ -2740,7 +2740,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeListener">REST API Reference for DescribeListener Operation</seealso>
         public virtual Task<DescribeListenerResponse> DescribeListenerAsync(DescribeListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenerResponseUnmarshaller.Instance;
             
@@ -2770,7 +2770,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListAccelerators">REST API Reference for ListAccelerators Operation</seealso>
         public virtual ListAcceleratorsResponse ListAccelerators(ListAcceleratorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAcceleratorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAcceleratorsResponseUnmarshaller.Instance;
 
@@ -2799,7 +2799,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListAccelerators">REST API Reference for ListAccelerators Operation</seealso>
         public virtual Task<ListAcceleratorsResponse> ListAcceleratorsAsync(ListAcceleratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAcceleratorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAcceleratorsResponseUnmarshaller.Instance;
             
@@ -2833,7 +2833,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListByoipCidrs">REST API Reference for ListByoipCidrs Operation</seealso>
         public virtual ListByoipCidrsResponse ListByoipCidrs(ListByoipCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListByoipCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListByoipCidrsResponseUnmarshaller.Instance;
 
@@ -2866,7 +2866,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListByoipCidrs">REST API Reference for ListByoipCidrs Operation</seealso>
         public virtual Task<ListByoipCidrsResponse> ListByoipCidrsAsync(ListByoipCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListByoipCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListByoipCidrsResponseUnmarshaller.Instance;
             
@@ -2899,7 +2899,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments">REST API Reference for ListCrossAccountAttachments Operation</seealso>
         public virtual ListCrossAccountAttachmentsResponse ListCrossAccountAttachments(ListCrossAccountAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountAttachmentsResponseUnmarshaller.Instance;
 
@@ -2931,7 +2931,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments">REST API Reference for ListCrossAccountAttachments Operation</seealso>
         public virtual Task<ListCrossAccountAttachmentsResponse> ListCrossAccountAttachmentsAsync(ListCrossAccountAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountAttachmentsResponseUnmarshaller.Instance;
             
@@ -2965,7 +2965,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts">REST API Reference for ListCrossAccountResourceAccounts Operation</seealso>
         public virtual ListCrossAccountResourceAccountsResponse ListCrossAccountResourceAccounts(ListCrossAccountResourceAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountResourceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountResourceAccountsResponseUnmarshaller.Instance;
 
@@ -2998,7 +2998,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts">REST API Reference for ListCrossAccountResourceAccounts Operation</seealso>
         public virtual Task<ListCrossAccountResourceAccountsResponse> ListCrossAccountResourceAccountsAsync(ListCrossAccountResourceAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountResourceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountResourceAccountsResponseUnmarshaller.Instance;
             
@@ -3034,7 +3034,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources">REST API Reference for ListCrossAccountResources Operation</seealso>
         public virtual ListCrossAccountResourcesResponse ListCrossAccountResources(ListCrossAccountResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountResourcesResponseUnmarshaller.Instance;
 
@@ -3069,7 +3069,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources">REST API Reference for ListCrossAccountResources Operation</seealso>
         public virtual Task<ListCrossAccountResourcesResponse> ListCrossAccountResourcesAsync(ListCrossAccountResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountResourcesResponseUnmarshaller.Instance;
             
@@ -3099,7 +3099,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingAccelerators">REST API Reference for ListCustomRoutingAccelerators Operation</seealso>
         public virtual ListCustomRoutingAcceleratorsResponse ListCustomRoutingAccelerators(ListCustomRoutingAcceleratorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingAcceleratorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingAcceleratorsResponseUnmarshaller.Instance;
 
@@ -3128,7 +3128,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingAccelerators">REST API Reference for ListCustomRoutingAccelerators Operation</seealso>
         public virtual Task<ListCustomRoutingAcceleratorsResponse> ListCustomRoutingAcceleratorsAsync(ListCustomRoutingAcceleratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingAcceleratorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingAcceleratorsResponseUnmarshaller.Instance;
             
@@ -3162,7 +3162,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingEndpointGroups">REST API Reference for ListCustomRoutingEndpointGroups Operation</seealso>
         public virtual ListCustomRoutingEndpointGroupsResponse ListCustomRoutingEndpointGroups(ListCustomRoutingEndpointGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingEndpointGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingEndpointGroupsResponseUnmarshaller.Instance;
 
@@ -3195,7 +3195,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingEndpointGroups">REST API Reference for ListCustomRoutingEndpointGroups Operation</seealso>
         public virtual Task<ListCustomRoutingEndpointGroupsResponse> ListCustomRoutingEndpointGroupsAsync(ListCustomRoutingEndpointGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingEndpointGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingEndpointGroupsResponseUnmarshaller.Instance;
             
@@ -3228,7 +3228,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingListeners">REST API Reference for ListCustomRoutingListeners Operation</seealso>
         public virtual ListCustomRoutingListenersResponse ListCustomRoutingListeners(ListCustomRoutingListenersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingListenersResponseUnmarshaller.Instance;
 
@@ -3260,7 +3260,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingListeners">REST API Reference for ListCustomRoutingListeners Operation</seealso>
         public virtual Task<ListCustomRoutingListenersResponse> ListCustomRoutingListenersAsync(ListCustomRoutingListenersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingListenersResponseUnmarshaller.Instance;
             
@@ -3315,7 +3315,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingPortMappings">REST API Reference for ListCustomRoutingPortMappings Operation</seealso>
         public virtual ListCustomRoutingPortMappingsResponse ListCustomRoutingPortMappings(ListCustomRoutingPortMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingPortMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingPortMappingsResponseUnmarshaller.Instance;
 
@@ -3369,7 +3369,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingPortMappings">REST API Reference for ListCustomRoutingPortMappings Operation</seealso>
         public virtual Task<ListCustomRoutingPortMappingsResponse> ListCustomRoutingPortMappingsAsync(ListCustomRoutingPortMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingPortMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingPortMappingsResponseUnmarshaller.Instance;
             
@@ -3406,7 +3406,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingPortMappingsByDestination">REST API Reference for ListCustomRoutingPortMappingsByDestination Operation</seealso>
         public virtual ListCustomRoutingPortMappingsByDestinationResponse ListCustomRoutingPortMappingsByDestination(ListCustomRoutingPortMappingsByDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingPortMappingsByDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingPortMappingsByDestinationResponseUnmarshaller.Instance;
 
@@ -3442,7 +3442,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCustomRoutingPortMappingsByDestination">REST API Reference for ListCustomRoutingPortMappingsByDestination Operation</seealso>
         public virtual Task<ListCustomRoutingPortMappingsByDestinationResponse> ListCustomRoutingPortMappingsByDestinationAsync(ListCustomRoutingPortMappingsByDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomRoutingPortMappingsByDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomRoutingPortMappingsByDestinationResponseUnmarshaller.Instance;
             
@@ -3475,7 +3475,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListEndpointGroups">REST API Reference for ListEndpointGroups Operation</seealso>
         public virtual ListEndpointGroupsResponse ListEndpointGroups(ListEndpointGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointGroupsResponseUnmarshaller.Instance;
 
@@ -3507,7 +3507,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListEndpointGroups">REST API Reference for ListEndpointGroups Operation</seealso>
         public virtual Task<ListEndpointGroupsResponse> ListEndpointGroupsAsync(ListEndpointGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointGroupsResponseUnmarshaller.Instance;
             
@@ -3540,7 +3540,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListListeners">REST API Reference for ListListeners Operation</seealso>
         public virtual ListListenersResponse ListListeners(ListListenersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListListenersResponseUnmarshaller.Instance;
 
@@ -3572,7 +3572,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListListeners">REST API Reference for ListListeners Operation</seealso>
         public virtual Task<ListListenersResponse> ListListenersAsync(ListListenersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListListenersResponseUnmarshaller.Instance;
             
@@ -3617,7 +3617,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3661,7 +3661,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -3707,7 +3707,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         public virtual ProvisionByoipCidrResponse ProvisionByoipCidr(ProvisionByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -3752,7 +3752,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         public virtual Task<ProvisionByoipCidrResponse> ProvisionByoipCidrAsync(ProvisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
             
@@ -3791,7 +3791,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveCustomRoutingEndpoints">REST API Reference for RemoveCustomRoutingEndpoints Operation</seealso>
         public virtual RemoveCustomRoutingEndpointsResponse RemoveCustomRoutingEndpoints(RemoveCustomRoutingEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveCustomRoutingEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveCustomRoutingEndpointsResponseUnmarshaller.Instance;
 
@@ -3829,7 +3829,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveCustomRoutingEndpoints">REST API Reference for RemoveCustomRoutingEndpoints Operation</seealso>
         public virtual Task<RemoveCustomRoutingEndpointsResponse> RemoveCustomRoutingEndpointsAsync(RemoveCustomRoutingEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveCustomRoutingEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveCustomRoutingEndpointsResponseUnmarshaller.Instance;
             
@@ -3888,7 +3888,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">REST API Reference for RemoveEndpoints Operation</seealso>
         public virtual RemoveEndpointsResponse RemoveEndpoints(RemoveEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveEndpointsResponseUnmarshaller.Instance;
 
@@ -3946,7 +3946,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">REST API Reference for RemoveEndpoints Operation</seealso>
         public virtual Task<RemoveEndpointsResponse> RemoveEndpointsAsync(RemoveEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveEndpointsResponseUnmarshaller.Instance;
             
@@ -3982,7 +3982,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4017,7 +4017,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4055,7 +4055,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4092,7 +4092,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4165,7 +4165,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">REST API Reference for UpdateAccelerator Operation</seealso>
         public virtual UpdateAcceleratorResponse UpdateAccelerator(UpdateAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAcceleratorResponseUnmarshaller.Instance;
 
@@ -4237,7 +4237,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">REST API Reference for UpdateAccelerator Operation</seealso>
         public virtual Task<UpdateAcceleratorResponse> UpdateAcceleratorAsync(UpdateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAcceleratorResponseUnmarshaller.Instance;
             
@@ -4273,7 +4273,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes">REST API Reference for UpdateAcceleratorAttributes Operation</seealso>
         public virtual UpdateAcceleratorAttributesResponse UpdateAcceleratorAttributes(UpdateAcceleratorAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAcceleratorAttributesResponseUnmarshaller.Instance;
 
@@ -4308,7 +4308,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes">REST API Reference for UpdateAcceleratorAttributes Operation</seealso>
         public virtual Task<UpdateAcceleratorAttributesResponse> UpdateAcceleratorAttributesAsync(UpdateAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAcceleratorAttributesResponseUnmarshaller.Instance;
             
@@ -4356,7 +4356,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment">REST API Reference for UpdateCrossAccountAttachment Operation</seealso>
         public virtual UpdateCrossAccountAttachmentResponse UpdateCrossAccountAttachment(UpdateCrossAccountAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrossAccountAttachmentResponseUnmarshaller.Instance;
 
@@ -4403,7 +4403,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment">REST API Reference for UpdateCrossAccountAttachment Operation</seealso>
         public virtual Task<UpdateCrossAccountAttachmentResponse> UpdateCrossAccountAttachmentAsync(UpdateCrossAccountAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrossAccountAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrossAccountAttachmentResponseUnmarshaller.Instance;
             
@@ -4439,7 +4439,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAccelerator">REST API Reference for UpdateCustomRoutingAccelerator Operation</seealso>
         public virtual UpdateCustomRoutingAcceleratorResponse UpdateCustomRoutingAccelerator(UpdateCustomRoutingAcceleratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomRoutingAcceleratorResponseUnmarshaller.Instance;
 
@@ -4474,7 +4474,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAccelerator">REST API Reference for UpdateCustomRoutingAccelerator Operation</seealso>
         public virtual Task<UpdateCustomRoutingAcceleratorResponse> UpdateCustomRoutingAcceleratorAsync(UpdateCustomRoutingAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomRoutingAcceleratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomRoutingAcceleratorResponseUnmarshaller.Instance;
             
@@ -4510,7 +4510,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAcceleratorAttributes">REST API Reference for UpdateCustomRoutingAcceleratorAttributes Operation</seealso>
         public virtual UpdateCustomRoutingAcceleratorAttributesResponse UpdateCustomRoutingAcceleratorAttributes(UpdateCustomRoutingAcceleratorAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomRoutingAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomRoutingAcceleratorAttributesResponseUnmarshaller.Instance;
 
@@ -4545,7 +4545,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingAcceleratorAttributes">REST API Reference for UpdateCustomRoutingAcceleratorAttributes Operation</seealso>
         public virtual Task<UpdateCustomRoutingAcceleratorAttributesResponse> UpdateCustomRoutingAcceleratorAttributesAsync(UpdateCustomRoutingAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomRoutingAcceleratorAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomRoutingAcceleratorAttributesResponseUnmarshaller.Instance;
             
@@ -4582,7 +4582,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingListener">REST API Reference for UpdateCustomRoutingListener Operation</seealso>
         public virtual UpdateCustomRoutingListenerResponse UpdateCustomRoutingListener(UpdateCustomRoutingListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomRoutingListenerResponseUnmarshaller.Instance;
 
@@ -4618,7 +4618,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCustomRoutingListener">REST API Reference for UpdateCustomRoutingListener Operation</seealso>
         public virtual Task<UpdateCustomRoutingListenerResponse> UpdateCustomRoutingListenerAsync(UpdateCustomRoutingListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomRoutingListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomRoutingListenerResponseUnmarshaller.Instance;
             
@@ -4655,7 +4655,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">REST API Reference for UpdateEndpointGroup Operation</seealso>
         public virtual UpdateEndpointGroupResponse UpdateEndpointGroup(UpdateEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointGroupResponseUnmarshaller.Instance;
 
@@ -4691,7 +4691,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">REST API Reference for UpdateEndpointGroup Operation</seealso>
         public virtual Task<UpdateEndpointGroupResponse> UpdateEndpointGroupAsync(UpdateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointGroupResponseUnmarshaller.Instance;
             
@@ -4728,7 +4728,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateListener">REST API Reference for UpdateListener Operation</seealso>
         public virtual UpdateListenerResponse UpdateListener(UpdateListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateListenerResponseUnmarshaller.Instance;
 
@@ -4764,7 +4764,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateListener">REST API Reference for UpdateListener Operation</seealso>
         public virtual Task<UpdateListenerResponse> UpdateListenerAsync(UpdateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateListenerResponseUnmarshaller.Instance;
             
@@ -4814,7 +4814,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
         public virtual WithdrawByoipCidrResponse WithdrawByoipCidr(WithdrawByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WithdrawByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
 
@@ -4863,7 +4863,7 @@ namespace Amazon.GlobalAccelerator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
         public virtual Task<WithdrawByoipCidrResponse> WithdrawByoipCidrAsync(WithdrawByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WithdrawByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
             

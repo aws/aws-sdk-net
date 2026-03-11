@@ -39,6 +39,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for UnauthorizedException
+        /// message.
+        /// </summary>
+        public UnauthorizedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedException with the specified error
         /// message.
         /// </summary>

@@ -31,7 +31,11 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkflows operation.
-    /// Retrieves a list of workflows.
+    /// Retrieves a list of existing workflows. You can filter for specific workflows by their
+    /// name and type. Using the type parameter, specify <c>PRIVATE</c> to retrieve a list
+    /// of private workflows or specify <c>READY2RUN</c> for a list of all Ready2Run workflows.
+    /// If you do not specify the type of workflow, this operation returns a list of existing
+    /// workflows.
     /// </summary>
     public partial class ListWorkflowsRequest : AmazonOmicsRequest
     {

@@ -36,6 +36,14 @@ namespace Amazon.CloudHSMV2
         /// <summary>
         /// Construct instance of AmazonCloudHSMV2Exception
         /// </summary>
+        public AmazonCloudHSMV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudHSMV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudHSMV2Exception(string message)
             : base(message)

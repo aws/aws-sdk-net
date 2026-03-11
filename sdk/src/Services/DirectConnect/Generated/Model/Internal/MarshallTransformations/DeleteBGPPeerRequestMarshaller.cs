@@ -81,6 +81,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.Asn.Value);
             }
 
+            if(publicRequest.IsSetAsnLong())
+            {
+                context.Writer.WritePropertyName("asnLong");
+                context.Writer.WriteNumberValue(publicRequest.AsnLong.Value);
+            }
+
             if(publicRequest.IsSetBgpPeerId())
             {
                 context.Writer.WritePropertyName("bgpPeerId");

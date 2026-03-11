@@ -31,7 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocation operation.
+    /// <b>This API works with the following fleet types:</b> Anywhere
+    /// 
+    ///  
+    /// <para>
     /// Creates a custom location for use in an Anywhere fleet.
+    /// </para>
     /// </summary>
     public partial class CreateLocationRequest : AmazonGameLiftRequest
     {

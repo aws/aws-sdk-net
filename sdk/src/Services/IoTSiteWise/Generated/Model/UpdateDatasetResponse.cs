@@ -64,7 +64,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The ID of the dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=13, Max=139)]
+        [AWSProperty(Min=36, Max=36)]
         public string DatasetId
         {
             get { return this._datasetId; }

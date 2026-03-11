@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CidrCollection Object
     /// </summary>  
-    public class CidrCollectionUnmarshaller : IXmlUnmarshaller<CidrCollection, XmlUnmarshallerContext>
+    public partial class CidrCollectionUnmarshaller : IXmlUnmarshaller<CidrCollection, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CidrCollection unmarshalledObject, int targetDepth);
+
         private static CidrCollectionUnmarshaller _instance = new CidrCollectionUnmarshaller();        
 
         /// <summary>

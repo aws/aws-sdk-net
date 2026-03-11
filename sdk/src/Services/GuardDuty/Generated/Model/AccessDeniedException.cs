@@ -40,6 +40,13 @@ namespace Amazon.GuardDuty.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
         /// message.
         /// </summary>

@@ -40,7 +40,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Time in UTC at which the time range ends.
+        /// Unix epoch timestamp in UTC at which the time range ends.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Time in UTC at which the time range starts.
+        /// Unix epoch timestamp in UTC at which the time range starts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

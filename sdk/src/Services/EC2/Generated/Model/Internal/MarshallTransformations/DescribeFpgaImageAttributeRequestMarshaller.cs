@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("FpgaImageId", StringUtils.FromString(publicRequest.FpgaImageId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeFpgaImageAttributeRequestMarshaller _instance = new DescribeFpgaImageAttributeRequestMarshaller();        

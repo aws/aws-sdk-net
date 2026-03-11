@@ -114,6 +114,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>event.code</c> - The code for the scheduled event (<c>instance-reboot</c> | <c>system-reboot</c>
         /// | <c>system-maintenance</c> | <c>instance-retirement</c> | <c>instance-stop</c>).
         /// </para>

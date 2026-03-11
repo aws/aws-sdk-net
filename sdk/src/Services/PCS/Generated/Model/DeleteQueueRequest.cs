@@ -32,8 +32,7 @@ namespace Amazon.PCS.Model
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
     /// Deletes a job queue. If the compute node group associated with this queue isn't associated
-    /// with any other queues, Amazon Web Services PCS terminates all the compute nodes for
-    /// this queue.
+    /// with any other queues, PCS terminates all the compute nodes for this queue.
     /// </summary>
     public partial class DeleteQueueRequest : AmazonPCSRequest
     {

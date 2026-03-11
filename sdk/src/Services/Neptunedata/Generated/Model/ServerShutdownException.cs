@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for ServerShutdownException
+        /// message.
+        /// </summary>
+        public ServerShutdownException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServerShutdownException with the specified error
         /// message.
         /// </summary>

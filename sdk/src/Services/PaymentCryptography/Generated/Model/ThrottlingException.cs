@@ -31,12 +31,26 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// The request was denied due to request throttling.
+    /// 
+    ///  
+    /// <para>
+    /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+    /// calls. Implement exponential backoff and retry logic in your application to handle
+    /// throttling gracefully.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ThrottlingException : AmazonPaymentCryptographyException
     {
+
+        /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error

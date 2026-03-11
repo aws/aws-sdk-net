@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using
-    /// histograms</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// histograms</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class HistogramVisual

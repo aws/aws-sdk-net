@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for NumberSubmittedAttributesExceededException
+        /// message.
+        /// </summary>
+        public NumberSubmittedAttributesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NumberSubmittedAttributesExceededException with the specified error
         /// message.
         /// </summary>

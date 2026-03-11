@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for OriginAccessControlAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OriginAccessControlAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OriginAccessControlAlreadyExistsException with the specified error
         /// message.
         /// </summary>

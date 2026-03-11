@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAccessGrantsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
         
             if (publicRequest.IsSetAccountId()) 
@@ -86,8 +87,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/grants";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListAccessGrantsRequestMarshaller _instance = new ListAccessGrantsRequestMarshaller();        
@@ -109,5 +110,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListAccessGrantsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListAccessGrantsRequest publicRequest);
     }    
 }

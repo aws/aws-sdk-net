@@ -36,6 +36,14 @@ namespace Amazon.CodeStarNotifications
         /// <summary>
         /// Construct instance of AmazonCodeStarNotificationsException
         /// </summary>
+        public AmazonCodeStarNotificationsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeStarNotificationsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeStarNotificationsException(string message)
             : base(message)

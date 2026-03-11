@@ -59,7 +59,10 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Version. Use Job engine versions to run jobs for your production
         /// workflow on one version, while you test and validate the latest version. Job engine
-        /// versions are in a YYYY-MM-DD format.
+        /// versions represent periodically grouped MediaConvert releases with new features, updates,
+        /// improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that
+        /// the Job engine version feature is not publicly available at this time. To request
+        /// access, contact AWS support.
         /// </summary>
         public string Version
         {

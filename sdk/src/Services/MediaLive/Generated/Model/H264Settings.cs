@@ -57,6 +57,7 @@ namespace Amazon.MediaLive.Model
         private H264Level _level;
         private H264LookAheadRateControl _lookAheadRateControl;
         private int? _maxBitrate;
+        private int? _minBitrate;
         private int? _minIInterval;
         private int? _minQp;
         private int? _numRefFrames;
@@ -79,14 +80,12 @@ namespace Amazon.MediaLive.Model
         private H264TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
-        /// Gets and sets the property AdaptiveQuantization. Enables or disables adaptive quantization,
-        /// which is a technique MediaLive can apply to video on a frame-by-frame basis to produce
-        /// more compression without losing quality. There are three types of adaptive quantization:
-        /// flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended.
-        /// For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate
-        /// strength. Set a strength (a value other than Auto or Disable). This strength will
-        /// apply to any of the AQ fields that you choose to enable. Set to Disabled to disable
-        /// all types of adaptive quantization.
+        /// Gets and sets the property AdaptiveQuantization. Enables or disables adaptive quantization
+        /// (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis
+        /// to produce more compression without losing quality. There are three types of adaptive
+        /// quantization: spatial, temporal, and flicker. We recommend that you set the field
+        /// to Auto. For more information about all the options, see the topic about video adaptive
+        /// quantization in the MediaLive user guide.
         /// </summary>
         public H264AdaptiveQuantization AdaptiveQuantization
         {
@@ -124,7 +123,6 @@ namespace Amazon.MediaLive.Model
         /// each output must have a unique value when its bitrate is rounded down to the nearest
         /// multiple of 1000.
         /// </summary>
-        [AWSProperty(Min=1000)]
         public int? Bitrate
         {
             get { return this._bitrate; }
@@ -141,7 +139,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property BufFillPct. Percentage of the buffer that should initially
         /// be filled (HRD buffer model).
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public int? BufFillPct
         {
             get { return this._bufFillPct; }
@@ -157,7 +154,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? BufSize
         {
             get { return this._bufSize; }
@@ -186,7 +182,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorSpaceSettings. Color Space settings
+        /// Gets and sets the property ColorSpaceSettings. Specify the type of color space to
+        /// apply or choose to pass through. The default is to pass through the color space that
+        /// is in the source.
         /// </summary>
         public H264ColorSpaceSettings ColorSpaceSettings
         {
@@ -258,13 +256,8 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property FlickerAq. Flicker AQ makes adjustments within each frame
         /// to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on
-        /// the value in the Adaptive quantization field: If you have set the Adaptive quantization
-        /// field to Auto, MediaLive ignores any value in this field. MediaLive will determine
-        /// if flicker AQ is appropriate and will apply the appropriate strength. If you have
-        /// set the Adaptive quantization field to a strength, you can set this field to Enabled
-        /// or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength.
-        /// Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization
-        /// to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
+        /// the value in the Adaptive quantization field. For more information, see the topic
+        /// about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H264FlickerAq FlickerAq
         {
@@ -321,7 +314,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property FramerateDenominator. Framerate denominator.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? FramerateDenominator
         {
             get { return this._framerateDenominator; }
@@ -338,7 +330,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateNumerator. Framerate numerator - framerate is
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? FramerateNumerator
         {
             get { return this._framerateNumerator; }
@@ -372,7 +363,6 @@ namespace Amazon.MediaLive.Model
         /// will receive an IDR frame as quickly as possible. Setting this value to 0 will break
         /// output segmenting.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? GopClosedCadence
         {
             get { return this._gopClosedCadence; }
@@ -388,7 +378,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property GopNumBFrames. Number of B-frames between reference frames.
         /// </summary>
-        [AWSProperty(Min=0, Max=7)]
         public int? GopNumBFrames
         {
             get { return this._gopNumBFrames; }
@@ -473,7 +462,6 @@ namespace Amazon.MediaLive.Model
         /// VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
         /// of the video.
         /// </summary>
-        [AWSProperty(Min=1000)]
         public int? MaxBitrate
         {
             get { return this._maxBitrate; }
@@ -487,6 +475,23 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MinBitrate. Used for QVBR rate control mode only.Optional.Enter
+        /// a minimum bitrate if you want to keep the output bitrate about a threshold, in order
+        /// to prevent the downstream system from de-allocating network bandwidth for this output.
+        /// </summary>
+        public int? MinBitrate
+        {
+            get { return this._minBitrate; }
+            set { this._minBitrate = value; }
+        }
+
+        // Check to see if MinBitrate property is set
+        internal bool IsSetMinBitrate()
+        {
+            return this._minBitrate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MinIInterval. Only meaningful if sceneChangeDetect is set
         /// to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation
         /// between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection.
@@ -495,7 +500,6 @@ namespace Amazon.MediaLive.Model
         /// lookahead as well as setting I-interval. The normal cadence resumes for the next GOP.
         /// Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         /// </summary>
-        [AWSProperty(Min=0, Max=30)]
         public int? MinIInterval
         {
             get { return this._minIInterval; }
@@ -513,7 +517,6 @@ namespace Amazon.MediaLive.Model
         /// quantization adjustment, leave the field empty. MediaLive willapply an appropriate
         /// value.
         /// </summary>
-        [AWSProperty(Min=1, Max=51)]
         public int? MinQp
         {
             get { return this._minQp; }
@@ -530,7 +533,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NumRefFrames. Number of reference frames to use. The encoder
         /// may use more than requested if using B-frames and/or interlaced encoding.
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
         public int? NumRefFrames
         {
             get { return this._numRefFrames; }
@@ -565,7 +567,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? ParDenominator
         {
             get { return this._parDenominator; }
@@ -581,7 +582,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? ParNumerator
         {
             get { return this._parNumerator; }
@@ -641,7 +641,6 @@ namespace Amazon.MediaLive.Model
         /// rate you want in the video. For more information, see the section called "Video -
         /// rate control mode" in the MediaLive user guide
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
         public int? QvbrQualityLevel
         {
             get { return this._qvbrQualityLevel; }
@@ -718,7 +717,6 @@ namespace Amazon.MediaLive.Model
         /// is optional; when no value is specified the encoder will choose the number of slices
         /// based on encode resolution.
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
         public int? Slices
         {
             get { return this._slices; }
@@ -736,7 +734,6 @@ namespace Amazon.MediaLive.Model
         /// reduce high-frequency content in the encoded image.  If not set to zero, must be greater
         /// than 15.
         /// </summary>
-        [AWSProperty(Min=0, Max=128)]
         public int? Softness
         {
             get { return this._softness; }
@@ -752,14 +749,8 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SpatialAq. Spatial AQ makes adjustments within each frame
         /// based on spatial variation of content complexity. The value to enter in this field
-        /// depends on the value in the Adaptive quantization field: If you have set the Adaptive
-        /// quantization field to Auto, MediaLive ignores any value in this field. MediaLive will
-        /// determine if spatial AQ is appropriate and will apply the appropriate strength. If
-        /// you have set the Adaptive quantization field to a strength, you can set this field
-        /// to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified
-        /// strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive
-        /// quantization to Disabled, MediaLive ignores any value in this field and doesn't apply
-        /// spatial AQ.
+        /// depends on the value in the Adaptive quantization field. For more information, see
+        /// the topic about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H264SpatialAq SpatialAq
         {
@@ -807,15 +798,9 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property TemporalAq. Temporal makes adjustments within each frame
-        /// based on temporal variation of content complexity. The value to enter in this field
-        /// depends on the value in the Adaptive quantization field: If you have set the Adaptive
-        /// quantization field to Auto, MediaLive ignores any value in this field. MediaLive will
-        /// determine if temporal AQ is appropriate and will apply the appropriate strength. If
-        /// you have set the Adaptive quantization field to a strength, you can set this field
-        /// to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified
-        /// strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive
-        /// quantization to Disabled, MediaLive ignores any value in this field and doesn't apply
-        /// temporal AQ.
+        /// based on variations in content complexity over time. The value to enter in this field
+        /// depends on the value in the Adaptive quantization field. For more information, see
+        /// the topic about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H264TemporalAq TemporalAq
         {

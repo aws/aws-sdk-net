@@ -37,8 +37,12 @@ namespace Amazon.IoTWireless.Model
         private bool? _addGwMetadata;
         private int? _drMax;
         private int? _drMin;
+        private int? _nbTransMax;
+        private int? _nbTransMin;
         private bool? _prAllowed;
         private bool? _raAllowed;
+        private int? _txPowerIndexMax;
+        private int? _txPowerIndexMin;
 
         /// <summary>
         /// Gets and sets the property AddGwMetadata. 
@@ -97,6 +101,52 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NbTransMax. 
+        /// <para>
+        /// The maximum number of transmissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>3</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int? NbTransMax
+        {
+            get { return this._nbTransMax; }
+            set { this._nbTransMax = value; }
+        }
+
+        // Check to see if NbTransMax property is set
+        internal bool IsSetNbTransMax()
+        {
+            return this._nbTransMax.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NbTransMin. 
+        /// <para>
+        /// The minimum number of transmissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>0</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int? NbTransMin
+        {
+            get { return this._nbTransMin; }
+            set { this._nbTransMin = value; }
+        }
+
+        // Check to see if NbTransMin property is set
+        internal bool IsSetNbTransMin()
+        {
+            return this._nbTransMin.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PrAllowed. 
         /// <para>
         /// The PRAllowed value that describes whether passive roaming is allowed.
@@ -130,6 +180,52 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetRaAllowed()
         {
             return this._raAllowed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TxPowerIndexMax. 
+        /// <para>
+        /// The Transmit Power Index maximum.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>15</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int? TxPowerIndexMax
+        {
+            get { return this._txPowerIndexMax; }
+            set { this._txPowerIndexMax = value; }
+        }
+
+        // Check to see if TxPowerIndexMax property is set
+        internal bool IsSetTxPowerIndexMax()
+        {
+            return this._txPowerIndexMax.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TxPowerIndexMin. 
+        /// <para>
+        /// The Transmit Power Index minimum.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>0</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int? TxPowerIndexMin
+        {
+            get { return this._txPowerIndexMin; }
+            set { this._txPowerIndexMin = value; }
+        }
+
+        // Check to see if TxPowerIndexMin property is set
+        internal bool IsSetTxPowerIndexMin()
+        {
+            return this._txPowerIndexMin.HasValue; 
         }
 
     }

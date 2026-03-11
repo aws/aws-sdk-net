@@ -60,6 +60,14 @@ namespace Amazon.SageMaker.Model
     /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
     /// 2.1: (Optional) Customize a Notebook Instance</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Lifecycle configuration scripts execute with root access and the notebook instance's
+    /// IAM execution role privileges. Grant this permission only to trusted principals. See
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+    /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateNotebookInstanceLifecycleConfigRequest : AmazonSageMakerRequest
     {

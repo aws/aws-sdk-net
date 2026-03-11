@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of users
+    /// allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class UserQuotaExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for UserQuotaExceededException
+        /// message.
+        /// </summary>
+        public UserQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new UserQuotaExceededException with the specified error

@@ -238,7 +238,23 @@ namespace SDKDocGenerator
                 HasValue = true,
                 Parse = (arguments, argValue) => arguments.ParsedOptions.OutputFolder = argValue, 
                 HelpText = "The root folder beneath which the generated documentation will be placed."
-            }
+            },
+            new ArgDeclaration
+            {
+                OptionName = "examplemetajson",
+                ShortName = "emj",
+                HasValue = true,
+                Parse = (arguments, argValue) => arguments.ParsedOptions.ExampleMetaJson = argValue,
+                HelpText = "The path to the example_meta.json file."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "exampleserrorfile",
+                ShortName = "eef",
+                HasValue = true,
+                Parse = (arguments, argValue) => arguments.ParsedOptions.ExamplesErrorFile = argValue,
+                HelpText = "The path and filename for the examples error file. Defaults to 'examples_failure.txt'."
+            },
         };
 
         static readonly char[] ArgumentPrefixes = { '-', '/' };

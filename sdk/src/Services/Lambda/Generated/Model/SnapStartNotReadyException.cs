@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for SnapStartNotReadyException
+        /// message.
+        /// </summary>
+        public SnapStartNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapStartNotReadyException with the specified error
         /// message.
         /// </summary>

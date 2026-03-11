@@ -47,7 +47,7 @@ namespace Amazon.Signer.Model
         /// <para>
         /// For cross-account signing. Grant a designated account permission to perform one or
         /// more of the following actions. Each action is associated with a specific API's operations.
-        /// For more information about cross-account signing, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+        /// For more information about cross-account signing, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
         /// cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.
         /// </para>
         ///  

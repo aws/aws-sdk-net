@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateDocumentContentException
+        /// message.
+        /// </summary>
+        public DuplicateDocumentContentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateDocumentContentException with the specified error
         /// message.
         /// </summary>

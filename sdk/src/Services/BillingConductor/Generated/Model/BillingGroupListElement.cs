@@ -36,6 +36,7 @@ namespace Amazon.BillingConductor.Model
     {
         private ListBillingGroupAccountGrouping _accountGrouping;
         private string _arn;
+        private BillingGroupType _billingGroupType;
         private ComputationPreference _computationPreference;
         private long? _creationTime;
         private string _description;
@@ -82,6 +83,24 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingGroupType. 
+        /// <para>
+        ///  The type of billing group. 
+        /// </para>
+        /// </summary>
+        public BillingGroupType BillingGroupType
+        {
+            get { return this._billingGroupType; }
+            set { this._billingGroupType = value; }
+        }
+
+        // Check to see if BillingGroupType property is set
+        internal bool IsSetBillingGroupType()
+        {
+            return this._billingGroupType != null;
         }
 
         /// <summary>

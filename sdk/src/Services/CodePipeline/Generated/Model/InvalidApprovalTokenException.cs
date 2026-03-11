@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidApprovalTokenException
+        /// message.
+        /// </summary>
+        public InvalidApprovalTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidApprovalTokenException with the specified error
         /// message.
         /// </summary>

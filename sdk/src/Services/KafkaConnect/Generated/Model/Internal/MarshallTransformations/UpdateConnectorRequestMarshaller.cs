@@ -66,6 +66,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetConnectorArn())
                 throw new AmazonKafkaConnectException("Request object does not have required field ConnectorArn set");
             request.AddPathResource("{connectorArn}", StringUtils.FromString(publicRequest.ConnectorArn));
+            if (string.IsNullOrEmpty(publicRequest.CurrentVersion))
+                throw new AmazonKafkaConnectException("Request object does not have required field CurrentVersion set");
             
             if (publicRequest.IsSetCurrentVersion())
                 request.Parameters.Add("currentVersion", StringUtils.FromString(publicRequest.CurrentVersion));

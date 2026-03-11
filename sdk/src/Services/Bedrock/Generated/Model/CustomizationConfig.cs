@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     public partial class CustomizationConfig
     {
         private DistillationConfig _distillationConfig;
+        private RFTConfig _rftConfig;
 
         /// <summary>
         /// Gets and sets the property DistillationConfig. 
@@ -52,6 +53,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetDistillationConfig()
         {
             return this._distillationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RftConfig. 
+        /// <para>
+        ///  Configuration settings for reinforcement fine-tuning (RFT) model customization, including
+        /// grader configuration and hyperparameters. 
+        /// </para>
+        /// </summary>
+        public RFTConfig RftConfig
+        {
+            get { return this._rftConfig; }
+            set { this._rftConfig = value; }
+        }
+
+        // Check to see if RftConfig property is set
+        internal bool IsSetRftConfig()
+        {
+            return this._rftConfig != null;
         }
 
     }

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidConflictDetailLevelException
+        /// message.
+        /// </summary>
+        public InvalidConflictDetailLevelException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidConflictDetailLevelException with the specified error
         /// message.
         /// </summary>

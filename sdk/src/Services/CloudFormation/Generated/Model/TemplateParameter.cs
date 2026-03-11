@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The TemplateParameter data type.
+    /// The <c>TemplateParameter</c> data type.
     /// </summary>
     public partial class TemplateParameter
     {

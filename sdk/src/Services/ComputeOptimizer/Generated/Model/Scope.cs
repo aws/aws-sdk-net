@@ -41,14 +41,15 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You cannot create recommendation preferences for Auto Scaling groups at the organization
-    /// and account levels. You can create recommendation preferences for Auto Scaling groups
-    /// only at the resource level by specifying a scope name of <c>ResourceArn</c> and a
-    /// scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure
-    /// the preference for all instances that are part of the specified Auto Scaling group.
-    /// You also cannot create recommendation preferences at the resource level for instances
-    /// that are part of an Auto Scaling group. You can create recommendation preferences
-    /// at the resource level only for standalone instances.
+    /// You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at
+    /// the organization and account levels. You can create recommendation preferences for
+    /// Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name
+    /// of <c>ResourceArn</c> and a scope value of the Amazon EC2 Auto Scaling group Amazon
+    /// Resource Name (ARN). This will configure the preference for all instances that are
+    /// part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation
+    /// preferences at the resource level for instances that are part of an Amazon EC2 Auto
+    /// Scaling group. You can create recommendation preferences at the resource level only
+    /// for standalone instances.
     /// </para>
     ///  </note>
     /// </summary>
@@ -116,11 +117,11 @@ namespace Amazon.ComputeOptimizer.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>ResourceArn</c> - The <c>value</c> must be the Amazon Resource Name (ARN) of an
-        /// EC2 instance or an Auto Scaling group.
+        /// EC2 instance or an Amazon EC2 Auto Scaling group.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Only EC2 instance and Auto Scaling group ARNs are currently supported.
+        /// Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently supported.
         /// </para>
         /// </summary>
         public string Value

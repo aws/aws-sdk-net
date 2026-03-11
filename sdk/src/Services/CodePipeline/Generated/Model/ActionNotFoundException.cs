@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for ActionNotFoundException
+        /// message.
+        /// </summary>
+        public ActionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActionNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -34,10 +34,32 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class PredefinedAttribute
     {
+        private PredefinedAttributeConfiguration _attributeConfiguration;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _name;
+        private List<string> _purposes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PredefinedAttributeValues _values;
+
+        /// <summary>
+        /// Gets and sets the property AttributeConfiguration. 
+        /// <para>
+        /// Custom metadata that is associated to predefined attributes to control behavior in
+        /// upstream services, such as controlling how a predefined attribute should be displayed
+        /// in the Amazon Connect admin website.
+        /// </para>
+        /// </summary>
+        public PredefinedAttributeConfiguration AttributeConfiguration
+        {
+            get { return this._attributeConfiguration; }
+            set { this._attributeConfiguration = value; }
+        }
+
+        // Check to see if AttributeConfiguration property is set
+        internal bool IsSetAttributeConfiguration()
+        {
+            return this._attributeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
@@ -81,7 +103,7 @@ namespace Amazon.Connect.Model
         /// The name of the predefined attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -92,6 +114,31 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Purposes. 
+        /// <para>
+        /// Values that enable you to categorize your predefined attributes. You can use them
+        /// in custom UI elements across the Amazon Connect admin website.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> Purposes
+        {
+            get { return this._purposes; }
+            set { this._purposes = value; }
+        }
+
+        // Check to see if Purposes property is set
+        internal bool IsSetPurposes()
+        {
+            return this._purposes != null && (this._purposes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

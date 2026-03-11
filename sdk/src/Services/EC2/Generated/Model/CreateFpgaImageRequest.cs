@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// The create operation is asynchronous. To verify that the AFI is ready for use, check
-    /// the output logs.
+    /// The create operation is asynchronous. To verify that the AFI was successfully created
+    /// and is ready for use, check the output logs.
     /// </para>
     ///  
     /// <para>

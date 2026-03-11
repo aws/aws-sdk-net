@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCacheClusterStateException
+        /// message.
+        /// </summary>
+        public InvalidCacheClusterStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCacheClusterStateException with the specified error
         /// message.
         /// </summary>

@@ -44,6 +44,7 @@ namespace Amazon.S3Control.Model
         private ActivityMetrics _activityMetrics;
         private AdvancedCostOptimizationMetrics _advancedCostOptimizationMetrics;
         private AdvancedDataProtectionMetrics _advancedDataProtectionMetrics;
+        private AdvancedPerformanceMetrics _advancedPerformanceMetrics;
         private DetailedStatusCodesMetrics _detailedStatusCodesMetrics;
         private PrefixLevel _prefixLevel;
 
@@ -99,6 +100,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAdvancedDataProtectionMetrics()
         {
             return this._advancedDataProtectionMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdvancedPerformanceMetrics. 
+        /// <para>
+        /// A container for bucket-level advanced performance metrics for S3 Storage Lens.
+        /// </para>
+        /// </summary>
+        public AdvancedPerformanceMetrics AdvancedPerformanceMetrics
+        {
+            get { return this._advancedPerformanceMetrics; }
+            set { this._advancedPerformanceMetrics = value; }
+        }
+
+        // Check to see if AdvancedPerformanceMetrics property is set
+        internal bool IsSetAdvancedPerformanceMetrics()
+        {
+            return this._advancedPerformanceMetrics != null;
         }
 
         /// <summary>

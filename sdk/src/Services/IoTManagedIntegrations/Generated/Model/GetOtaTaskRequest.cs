@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOtaTask operation.
-    /// Get the over-the-air (OTA) task.
+    /// Get details of the over-the-air (OTA) task by its task id.
     /// </summary>
     public partial class GetOtaTaskRequest : AmazonIoTManagedIntegrationsRequest
     {

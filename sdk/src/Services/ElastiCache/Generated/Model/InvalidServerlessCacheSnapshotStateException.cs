@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidServerlessCacheSnapshotStateException
+        /// message.
+        /// </summary>
+        public InvalidServerlessCacheSnapshotStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidServerlessCacheSnapshotStateException with the specified error
         /// message.
         /// </summary>

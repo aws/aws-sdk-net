@@ -31,7 +31,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// A list of <c>MatchingWorkflowSummary</c> objects, each of which contain the fields
-    /// <c>WorkflowName</c>, <c>WorkflowArn</c>, <c>CreatedAt</c>, <c>UpdatedAt</c>.
+    /// <c>workflowName</c>, <c>workflowArn</c>, <c>resolutionType</c>, <c>createdAt</c>,
+    /// <c>updatedAt</c>.
     /// </summary>
     public partial class MatchingWorkflowSummary
     {

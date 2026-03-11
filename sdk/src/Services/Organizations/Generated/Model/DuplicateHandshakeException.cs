@@ -43,6 +43,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateHandshakeException
+        /// message.
+        /// </summary>
+        public DuplicateHandshakeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateHandshakeException with the specified error
         /// message.
         /// </summary>

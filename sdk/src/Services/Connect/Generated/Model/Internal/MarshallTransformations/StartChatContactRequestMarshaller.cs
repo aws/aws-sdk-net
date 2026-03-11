@@ -116,6 +116,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CustomerId);
             }
 
+            if(publicRequest.IsSetDisconnectOnCustomerExit())
+            {
+                context.Writer.WritePropertyName("DisconnectOnCustomerExit");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDisconnectOnCustomerExitListValue in publicRequest.DisconnectOnCustomerExit)
+                {
+                        context.Writer.WriteStringValue(publicRequestDisconnectOnCustomerExitListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetInitialMessage())
             {
                 context.Writer.WritePropertyName("InitialMessage");
@@ -131,6 +142,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InstanceId");
                 context.Writer.WriteStringValue(publicRequest.InstanceId);
+            }
+
+            if(publicRequest.IsSetParticipantConfiguration())
+            {
+                context.Writer.WritePropertyName("ParticipantConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParticipantConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ParticipantConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetParticipantDetails())

@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The unique identifier of the deleted memory.
+        /// The unique identifier of the deleted AgentCore Memory resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the memory deletion.
+        /// The current status of the AgentCore Memory resource deletion.
         /// </para>
         /// </summary>
         public MemoryStatus Status

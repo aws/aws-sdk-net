@@ -36,6 +36,14 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Construct instance of AmazonLightsailException
         /// </summary>
+        public AmazonLightsailException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLightsailException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLightsailException(string message)
             : base(message)

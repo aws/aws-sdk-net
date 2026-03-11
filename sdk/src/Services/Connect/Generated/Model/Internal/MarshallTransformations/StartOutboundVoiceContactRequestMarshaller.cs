@@ -145,6 +145,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetOutboundStrategy())
+            {
+                context.Writer.WritePropertyName("OutboundStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutboundStrategyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutboundStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetQueueId())
             {
                 context.Writer.WritePropertyName("QueueId");
@@ -174,6 +185,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RelatedContactId");
                 context.Writer.WriteStringValue(publicRequest.RelatedContactId);
+            }
+
+            if(publicRequest.IsSetRingTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("RingTimeoutInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.RingTimeoutInSeconds.Value);
             }
 
             if(publicRequest.IsSetSourcePhoneNumber())

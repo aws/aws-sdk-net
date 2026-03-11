@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The error info of the create/delete data store operation.
+    /// The error information for <c>CreateFHIRDatastore</c> and <c>DeleteFHIRDatastore</c>
+    /// actions.
     /// </summary>
     public partial class ErrorCause
     {
@@ -40,8 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ErrorCategory. 
         /// <para>
-        /// The error category of the create/delete data store operation. Possible statuses are
-        /// RETRYABLE_ERROR or NON_RETRYABLE_ERROR.
+        /// The error category for <c>ErrorCause</c>.
         /// </para>
         /// </summary>
         public ErrorCategory ErrorCategory
@@ -59,7 +59,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The text of the error message.
+        /// The error message text for <c>ErrorCause</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

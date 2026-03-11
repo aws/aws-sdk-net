@@ -58,6 +58,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MinimumPollers.Value);
             }
 
+            if(requestObject.IsSetPollerGroupName())
+            {
+                context.Writer.WritePropertyName("PollerGroupName");
+                context.Writer.WriteStringValue(requestObject.PollerGroupName);
+            }
+
         }
 
         /// <summary>

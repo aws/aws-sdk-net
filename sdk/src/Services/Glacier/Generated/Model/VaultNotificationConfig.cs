@@ -46,7 +46,7 @@ namespace Amazon.Glacier.Model
         /// Instantiates VaultNotificationConfig with the parameterized properties
         /// </summary>
         /// <param name="snsTopic">The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</param>
-        /// <param name="events">A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</param>
+        /// <param name="events">A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</param>
         public VaultNotificationConfig(string snsTopic, List<string> events)
         {
             _snsTopic = snsTopic;
@@ -56,8 +56,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// A list of one or more events for which Amazon S3 Glacier will send a notification
-        /// to the specified Amazon SNS topic.
+        /// A list of one or more events for which Amazon Glacier will send a notification to
+        /// the specified Amazon SNS topic.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -49,7 +49,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Content));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Content);
             }
 
             if(requestObject.IsSetContentType())

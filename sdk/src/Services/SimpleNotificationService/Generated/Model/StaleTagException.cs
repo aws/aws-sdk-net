@@ -40,6 +40,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for StaleTagException
+        /// message.
+        /// </summary>
+        public StaleTagException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StaleTagException with the specified error
         /// message.
         /// </summary>

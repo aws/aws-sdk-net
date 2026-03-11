@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ChannelExistsForEDSException
+        /// message.
+        /// </summary>
+        public ChannelExistsForEDSException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChannelExistsForEDSException with the specified error
         /// message.
         /// </summary>

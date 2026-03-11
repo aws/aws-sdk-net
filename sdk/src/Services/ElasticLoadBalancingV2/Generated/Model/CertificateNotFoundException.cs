@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateNotFoundException
+        /// message.
+        /// </summary>
+        public CertificateNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateNotFoundException with the specified error
         /// message.
         /// </summary>

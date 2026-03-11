@@ -39,6 +39,13 @@ namespace Amazon.Lex.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedMediaTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedMediaTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedMediaTypeException with the specified error
         /// message.
         /// </summary>

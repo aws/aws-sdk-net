@@ -1,46 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+﻿using Amazon.IoT;
+using Amazon.IoT.Model;
 using Amazon.IotData;
 using Amazon.IotData.Model;
-using Amazon.Runtime;
-
-using System.IO;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon.IoT.Model;
-using Amazon.IoT;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
+    [TestCategory("IoTData")]
     public class IotData
     {
         private const string TopicThatRequiresUrlEncoding = "X$aws/,topic";
-
         private static string THING_NAME = null;
         private static string CREATED_THING_NAME = null;
 
         static AmazonIotDataClient Client = null;
 
         [ClassInitialize]
-        public static void ClassInitialize(TestContext testContext)
+        public static async Task ClassInitialize(TestContext testContext)
         {
             Client = new AmazonIotDataClient("https://data-ats.iot.us-east-1.amazonaws.com/");
 
             using (var iotClient = new AmazonIoTClient())
             {
-                var things = iotClient.ListThings().Things;
+                var listResponse = await iotClient.ListThingsAsync();
+                var things = listResponse.Things;
+
                 var firstThing = things.FirstOrDefault();
                 if (firstThing == null)
                 {
                     THING_NAME = "dotnettest" + DateTime.UtcNow.ToFileTime();
-                    iotClient.CreateThing(new CreateThingRequest
+                    await iotClient.CreateThingAsync(new CreateThingRequest
                     {
                         ThingName = THING_NAME
                     });
+
                     CREATED_THING_NAME = THING_NAME;
                 }
                 else
@@ -51,27 +52,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [ClassCleanup]
-        public static void Cleanup()
+        public static async Task Cleanup()
         {
             if (!string.IsNullOrEmpty(CREATED_THING_NAME))
             {
                 using (var iotClient = new AmazonIoTClient())
                 {
-                    iotClient.DeleteThing(CREATED_THING_NAME);
+                    await iotClient.DeleteThingAsync(CREATED_THING_NAME);
                 }
             }
 
-            if (Client != null)
-            {
-                Client.Dispose();
-            }
+            Client?.Dispose();
         }
 
         [TestMethod]
-        [TestCategory("IoTData")]
-        public void PublishTopicWithUrlEncodedCharacters()
+        public async Task PublishTopicWithUrlEncodedCharacters()
         {
-            var response = Client.Publish(new PublishRequest
+            var response = await Client.PublishAsync(new PublishRequest
             {
                 Topic = TopicThatRequiresUrlEncoding
             });
@@ -79,86 +76,76 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("IotData")]
-        public void IotDataTests()
+        public async Task IotDataTests()
         {
             var topicName = "$aws/things/" + THING_NAME + "/shadow/update";
-            Client.Publish(new PublishRequest
+            await Client.PublishAsync(new PublishRequest
             {
                 Topic = topicName,
                 Qos = 1,
                 Payload = new MemoryStream(new byte[] { 1, 2, 3, 4 })
             });
-            Client.Publish(new PublishRequest
+            await Client.PublishAsync(new PublishRequest
             {
                 Topic = topicName,
                 Qos = 1
             });
 
             topicName = "$aws/things/" + THING_NAME + "/shadow/get";
-            Client.Publish(new PublishRequest
+            await Client.PublishAsync(new PublishRequest
             {
                 Topic = topicName,
                 Qos = 1,
                 Payload = new MemoryStream(new byte[] { 1, 2, 3, 4 })
             });
-            Client.Publish(new PublishRequest
+            await Client.PublishAsync(new PublishRequest
             {
                 Topic = topicName,
                 Qos = 1
             });
 
-
-            var payload = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(
-                   @"{ ""state"": {}}"
-            ));
-            var updateThingShadowResponse = Client.UpdateThingShadow(new UpdateThingShadowRequest
+            var payload = new MemoryStream(Encoding.UTF8.GetBytes(@"{ ""state"": {}}"));
+            var updateThingShadowResponse = await Client.UpdateThingShadowAsync(new UpdateThingShadowRequest
             {
                 ThingName = THING_NAME,
                 Payload = payload
             });
             Assert.IsTrue(payload.Length < updateThingShadowResponse.Payload.Length);
 
-            var getThingShadowResponse = Client.GetThingShadow(new GetThingShadowRequest
+            var getThingShadowResponse = await Client.GetThingShadowAsync(new GetThingShadowRequest
             {
                 ThingName = THING_NAME
             });
             Assert.IsTrue(getThingShadowResponse.Payload.Length > 0);
 
-            var deleteThingShadowResponse = Client.DeleteThingShadow(new DeleteThingShadowRequest
+            var deleteThingShadowResponse = await Client.DeleteThingShadowAsync(new DeleteThingShadowRequest
             {
                 ThingName = THING_NAME
             });
-            Assert.IsTrue(getThingShadowResponse.Payload.Length > 0);
+            Assert.IsTrue(deleteThingShadowResponse.Payload.Length > 0);
         }
 
         [TestMethod]
-        [TestCategory("IotData")]
-        public void IotDataErrorTests()
+        public async Task IotDataErrorTests()
         {
-            var exception = AssertExtensions.ExpectException<AmazonIotDataException>(()=>
-            {
-                Client.UpdateThingShadow(new UpdateThingShadowRequest
+            await Assert.ThrowsExceptionAsync<AmazonIotDataException>(() =>
+                Client.UpdateThingShadowAsync(new UpdateThingShadowRequest
                 {
                     Payload = new MemoryStream(new byte[] { 1, 2, 3, 4 })
-                });
-            });
+                })
+            );
 
-            exception = AssertExtensions.ExpectException<AmazonIotDataException>(() =>
-            {
-                Client.UpdateThingShadow(new UpdateThingShadowRequest());
-            });
+            await Assert.ThrowsExceptionAsync<AmazonIotDataException>(() =>
+                Client.UpdateThingShadowAsync(new UpdateThingShadowRequest())
+            );
 
-            exception = AssertExtensions.ExpectException<Amazon.IotData.Model.InvalidRequestException>(() =>
-            {
-                Client.UpdateThingShadow(new UpdateThingShadowRequest
+            await Assert.ThrowsExceptionAsync<Amazon.IotData.Model.InvalidRequestException>(() =>
+                Client.UpdateThingShadowAsync(new UpdateThingShadowRequest
                 {
-                    ThingName  = THING_NAME,
-                    Payload = new MemoryStream(System.Text.Encoding.UTF8.GetBytes("{}"))
-                });
-            });
-
+                    ThingName = THING_NAME,
+                    Payload = new MemoryStream(Encoding.UTF8.GetBytes("{}"))
+                })
+            );
         }
-
     }
 }

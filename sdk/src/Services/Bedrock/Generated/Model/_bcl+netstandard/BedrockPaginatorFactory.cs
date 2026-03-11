@@ -37,6 +37,38 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicies operation
+        ///</summary>
+        public IListAutomatedReasoningPoliciesPaginator ListAutomatedReasoningPolicies(ListAutomatedReasoningPoliciesRequest request) 
+        {
+            return new ListAutomatedReasoningPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicyBuildWorkflows operation
+        ///</summary>
+        public IListAutomatedReasoningPolicyBuildWorkflowsPaginator ListAutomatedReasoningPolicyBuildWorkflows(ListAutomatedReasoningPolicyBuildWorkflowsRequest request) 
+        {
+            return new ListAutomatedReasoningPolicyBuildWorkflowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicyTestCases operation
+        ///</summary>
+        public IListAutomatedReasoningPolicyTestCasesPaginator ListAutomatedReasoningPolicyTestCases(ListAutomatedReasoningPolicyTestCasesRequest request) 
+        {
+            return new ListAutomatedReasoningPolicyTestCasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicyTestResults operation
+        ///</summary>
+        public IListAutomatedReasoningPolicyTestResultsPaginator ListAutomatedReasoningPolicyTestResults(ListAutomatedReasoningPolicyTestResultsRequest request) 
+        {
+            return new ListAutomatedReasoningPolicyTestResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomModelDeployments operation
         ///</summary>
         public IListCustomModelDeploymentsPaginator ListCustomModelDeployments(ListCustomModelDeploymentsRequest request) 
@@ -50,6 +82,14 @@ namespace Amazon.Bedrock.Model
         public IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request) 
         {
             return new ListCustomModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEnforcedGuardrailsConfiguration operation
+        ///</summary>
+        public IListEnforcedGuardrailsConfigurationPaginator ListEnforcedGuardrailsConfiguration(ListEnforcedGuardrailsConfigurationRequest request) 
+        {
+            return new ListEnforcedGuardrailsConfigurationPaginator(this.client, request);
         }
 
         /// <summary>

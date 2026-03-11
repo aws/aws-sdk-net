@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalTableNotFoundException
+        /// message.
+        /// </summary>
+        public GlobalTableNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalTableNotFoundException with the specified error
         /// message.
         /// </summary>

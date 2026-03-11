@@ -41,6 +41,13 @@ namespace Amazon.MigrationHubOrchestrator.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>

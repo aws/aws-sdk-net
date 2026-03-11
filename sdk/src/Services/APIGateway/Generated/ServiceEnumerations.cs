@@ -167,6 +167,64 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
+    /// Constants used for properties of type ApiStatus.
+    /// </summary>
+    public class ApiStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ApiStatus
+        /// </summary>
+        public static readonly ApiStatus AVAILABLE = new ApiStatus("AVAILABLE");
+        /// <summary>
+        /// Constant FAILED for ApiStatus
+        /// </summary>
+        public static readonly ApiStatus FAILED = new ApiStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ApiStatus
+        /// </summary>
+        public static readonly ApiStatus PENDING = new ApiStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATING for ApiStatus
+        /// </summary>
+        public static readonly ApiStatus UPDATING = new ApiStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiStatus FindValue(string value)
+        {
+            return FindValue<ApiStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthorizerType.
     /// </summary>
     public class AuthorizerType : ConstantClass
@@ -557,6 +615,10 @@ namespace Amazon.APIGateway
         /// </summary>
         public static readonly DomainNameStatus AVAILABLE = new DomainNameStatus("AVAILABLE");
         /// <summary>
+        /// Constant FAILED for DomainNameStatus
+        /// </summary>
+        public static readonly DomainNameStatus FAILED = new DomainNameStatus("FAILED");
+        /// <summary>
         /// Constant PENDING for DomainNameStatus
         /// </summary>
         public static readonly DomainNameStatus PENDING = new DomainNameStatus("PENDING");
@@ -602,6 +664,56 @@ namespace Amazon.APIGateway
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DomainNameStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndpointAccessMode.
+    /// </summary>
+    public class EndpointAccessMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for EndpointAccessMode
+        /// </summary>
+        public static readonly EndpointAccessMode BASIC = new EndpointAccessMode("BASIC");
+        /// <summary>
+        /// Constant STRICT for EndpointAccessMode
+        /// </summary>
+        public static readonly EndpointAccessMode STRICT = new EndpointAccessMode("STRICT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointAccessMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointAccessMode FindValue(string value)
+        {
+            return FindValue<EndpointAccessMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointAccessMode(string value)
         {
             return FindValue(value);
         }
@@ -1171,6 +1283,56 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
+    /// Constants used for properties of type ResponseTransferMode.
+    /// </summary>
+    public class ResponseTransferMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUFFERED for ResponseTransferMode
+        /// </summary>
+        public static readonly ResponseTransferMode BUFFERED = new ResponseTransferMode("BUFFERED");
+        /// <summary>
+        /// Constant STREAM for ResponseTransferMode
+        /// </summary>
+        public static readonly ResponseTransferMode STREAM = new ResponseTransferMode("STREAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseTransferMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseTransferMode FindValue(string value)
+        {
+            return FindValue<ResponseTransferMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseTransferMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RoutingMode.
     /// </summary>
     public class RoutingMode : ConstantClass
@@ -1230,6 +1392,42 @@ namespace Amazon.APIGateway
     public class SecurityPolicy : ConstantClass
     {
 
+        /// <summary>
+        /// Constant SecurityPolicy_TLS12_2018_EDGE for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS12_2018_EDGE = new SecurityPolicy("SecurityPolicy_TLS12_2018_EDGE");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS12_PFS_2025_EDGE for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS12_PFS_2025_EDGE = new SecurityPolicy("SecurityPolicy_TLS12_PFS_2025_EDGE");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_2_2021_06 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_2021_06 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_2021_06");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_2_PQ_2025_09 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_PQ_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_PQ_2025_09");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_3_2025_09 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_3_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_3_2025_09");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_3_FIPS_2025_09 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_3_FIPS_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_3_FIPS_2025_09");
+        /// <summary>
+        /// Constant SecurityPolicy_TLS13_2025_EDGE for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_2025_EDGE = new SecurityPolicy("SecurityPolicy_TLS13_2025_EDGE");
         /// <summary>
         /// Constant TLS_1_0 for SecurityPolicy
         /// </summary>

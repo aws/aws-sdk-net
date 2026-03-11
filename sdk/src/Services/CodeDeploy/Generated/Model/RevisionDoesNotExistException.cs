@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for RevisionDoesNotExistException
+        /// message.
+        /// </summary>
+        public RevisionDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RevisionDoesNotExistException with the specified error
         /// message.
         /// </summary>

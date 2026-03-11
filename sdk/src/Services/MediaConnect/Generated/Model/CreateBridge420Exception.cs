@@ -40,6 +40,13 @@ namespace Amazon.MediaConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for CreateBridge420Exception
+        /// message.
+        /// </summary>
+        public CreateBridge420Exception() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreateBridge420Exception with the specified error
         /// message.
         /// </summary>

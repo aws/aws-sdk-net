@@ -30,12 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Contains data processing unit (DPU) configuration settings and parameter mappings
-    /// for a notebook engine.
+    /// The engine configuration for the workgroup, which includes the minimum/maximum number
+    /// of Data Processing Units (DPU) that queries should use when running in provisioned
+    /// capacity. If not specified, Athena uses default values (Default value for min is 4
+    /// and for max is Minimum of 124 and allocated DPUs).
+    /// 
+    ///  
+    /// <para>
+    /// To specify DPU values for PC queries the WG containing EngineConfiguration should
+    /// have the following values: The name of the Classifications should be <c>athena-query-engine-properties</c>,
+    /// with the only allowed properties as <c>max-dpu-count</c> and <c>min-dpu-count</c>.
+    /// </para>
     /// </summary>
     public partial class EngineConfiguration
     {
         private Dictionary<string, string> _additionalConfigs = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Classification> _classifications = AWSConfigs.InitializeCollections ? new List<Classification>() : null;
         private int? _coordinatorDpuSize;
         private int? _defaultExecutorDpuSize;
         private int? _maxConcurrentDpus;
@@ -66,6 +76,29 @@ namespace Amazon.Athena.Model
         internal bool IsSetAdditionalConfigs()
         {
             return this._additionalConfigs != null && (this._additionalConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Classifications. 
+        /// <para>
+        /// The configuration classifications that can be specified for the engine.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Classification> Classifications
+        {
+            get { return this._classifications; }
+            set { this._classifications = value; }
+        }
+
+        // Check to see if Classifications property is set
+        internal bool IsSetClassifications()
+        {
+            return this._classifications != null && (this._classifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +148,7 @@ namespace Amazon.Athena.Model
         /// The maximum number of DPUs that can run concurrently.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=5000)]
+        [AWSProperty(Min=2, Max=5000)]
         public int? MaxConcurrentDpus
         {
             get { return this._maxConcurrentDpus; }

@@ -282,7 +282,7 @@ namespace Amazon.SupplyChain
 
         internal virtual CreateBillOfMaterialsImportJobResponse CreateBillOfMaterialsImportJob(CreateBillOfMaterialsImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillOfMaterialsImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillOfMaterialsImportJobResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateBillOfMaterialsImportJob">REST API Reference for CreateBillOfMaterialsImportJob Operation</seealso>
         public virtual Task<CreateBillOfMaterialsImportJobResponse> CreateBillOfMaterialsImportJobAsync(CreateBillOfMaterialsImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillOfMaterialsImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillOfMaterialsImportJobResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.SupplyChain
 
         internal virtual CreateDataIntegrationFlowResponse CreateDataIntegrationFlow(CreateDataIntegrationFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -390,7 +390,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">REST API Reference for CreateDataIntegrationFlow Operation</seealso>
         public virtual Task<CreateDataIntegrationFlowResponse> CreateDataIntegrationFlowAsync(CreateDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.SupplyChain
 
         internal virtual CreateDataLakeDatasetResponse CreateDataLakeDataset(CreateDataLakeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">REST API Reference for CreateDataLakeDataset Operation</seealso>
         public virtual Task<CreateDataLakeDatasetResponse> CreateDataLakeDatasetAsync(CreateDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.SupplyChain
 
         internal virtual CreateDataLakeNamespaceResponse CreateDataLakeNamespace(CreateDataLakeNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespace">REST API Reference for CreateDataLakeNamespace Operation</seealso>
         public virtual Task<CreateDataLakeNamespaceResponse> CreateDataLakeNamespaceAsync(CreateDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -513,7 +513,7 @@ namespace Amazon.SupplyChain
 
         internal virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         public virtual Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
@@ -580,7 +580,7 @@ namespace Amazon.SupplyChain
 
         internal virtual DeleteDataIntegrationFlowResponse DeleteDataIntegrationFlow(DeleteDataIntegrationFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -623,7 +623,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">REST API Reference for DeleteDataIntegrationFlow Operation</seealso>
         public virtual Task<DeleteDataIntegrationFlowResponse> DeleteDataIntegrationFlowAsync(DeleteDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.SupplyChain
 
         internal virtual DeleteDataLakeDatasetResponse DeleteDataLakeDataset(DeleteDataLakeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">REST API Reference for DeleteDataLakeDataset Operation</seealso>
         public virtual Task<DeleteDataLakeDatasetResponse> DeleteDataLakeDatasetAsync(DeleteDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.SupplyChain
 
         internal virtual DeleteDataLakeNamespaceResponse DeleteDataLakeNamespace(DeleteDataLakeNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeNamespace">REST API Reference for DeleteDataLakeNamespace Operation</seealso>
         public virtual Task<DeleteDataLakeNamespaceResponse> DeleteDataLakeNamespaceAsync(DeleteDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -747,7 +747,7 @@ namespace Amazon.SupplyChain
 
         internal virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetBillOfMaterialsImportJobResponse GetBillOfMaterialsImportJob(GetBillOfMaterialsImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillOfMaterialsImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillOfMaterialsImportJobResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetBillOfMaterialsImportJob">REST API Reference for GetBillOfMaterialsImportJob Operation</seealso>
         public virtual Task<GetBillOfMaterialsImportJobResponse> GetBillOfMaterialsImportJobAsync(GetBillOfMaterialsImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillOfMaterialsImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillOfMaterialsImportJobResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetDataIntegrationEventResponse GetDataIntegrationEvent(GetDataIntegrationEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationEventResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationEvent">REST API Reference for GetDataIntegrationEvent Operation</seealso>
         public virtual Task<GetDataIntegrationEventResponse> GetDataIntegrationEventAsync(GetDataIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationEventResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetDataIntegrationFlowResponse GetDataIntegrationFlow(GetDataIntegrationFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">REST API Reference for GetDataIntegrationFlow Operation</seealso>
         public virtual Task<GetDataIntegrationFlowResponse> GetDataIntegrationFlowAsync(GetDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -977,7 +977,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetDataIntegrationFlowExecutionResponse GetDataIntegrationFlowExecution(GetDataIntegrationFlowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationFlowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationFlowExecutionResponseUnmarshaller.Instance;
 
@@ -1019,7 +1019,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlowExecution">REST API Reference for GetDataIntegrationFlowExecution Operation</seealso>
         public virtual Task<GetDataIntegrationFlowExecutionResponse> GetDataIntegrationFlowExecutionAsync(GetDataIntegrationFlowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationFlowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationFlowExecutionResponseUnmarshaller.Instance;
 
@@ -1031,7 +1031,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetDataLakeDatasetResponse GetDataLakeDataset(GetDataLakeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -1075,7 +1075,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">REST API Reference for GetDataLakeDataset Operation</seealso>
         public virtual Task<GetDataLakeDatasetResponse> GetDataLakeDatasetAsync(GetDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -1087,7 +1087,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetDataLakeNamespaceResponse GetDataLakeNamespace(GetDataLakeNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -1131,7 +1131,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeNamespace">REST API Reference for GetDataLakeNamespace Operation</seealso>
         public virtual Task<GetDataLakeNamespaceResponse> GetDataLakeNamespaceAsync(GetDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.SupplyChain
 
         internal virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListDataIntegrationEventsResponse ListDataIntegrationEvents(ListDataIntegrationEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationEventsResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationEvents">REST API Reference for ListDataIntegrationEvents Operation</seealso>
         public virtual Task<ListDataIntegrationEventsResponse> ListDataIntegrationEventsAsync(ListDataIntegrationEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationEventsResponseUnmarshaller.Instance;
 
@@ -1253,7 +1253,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListDataIntegrationFlowExecutionsResponse ListDataIntegrationFlowExecutions(ListDataIntegrationFlowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationFlowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationFlowExecutionsResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlowExecutions">REST API Reference for ListDataIntegrationFlowExecutions Operation</seealso>
         public virtual Task<ListDataIntegrationFlowExecutionsResponse> ListDataIntegrationFlowExecutionsAsync(ListDataIntegrationFlowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationFlowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationFlowExecutionsResponseUnmarshaller.Instance;
 
@@ -1307,7 +1307,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListDataIntegrationFlowsResponse ListDataIntegrationFlows(ListDataIntegrationFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationFlowsResponseUnmarshaller.Instance;
 
@@ -1350,7 +1350,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">REST API Reference for ListDataIntegrationFlows Operation</seealso>
         public virtual Task<ListDataIntegrationFlowsResponse> ListDataIntegrationFlowsAsync(ListDataIntegrationFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationFlowsResponseUnmarshaller.Instance;
 
@@ -1362,7 +1362,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListDataLakeDatasetsResponse ListDataLakeDatasets(ListDataLakeDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakeDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakeDatasetsResponseUnmarshaller.Instance;
 
@@ -1406,7 +1406,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
         public virtual Task<ListDataLakeDatasetsResponse> ListDataLakeDatasetsAsync(ListDataLakeDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakeDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakeDatasetsResponseUnmarshaller.Instance;
 
@@ -1418,7 +1418,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListDataLakeNamespacesResponse ListDataLakeNamespaces(ListDataLakeNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakeNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakeNamespacesResponseUnmarshaller.Instance;
 
@@ -1463,7 +1463,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeNamespaces">REST API Reference for ListDataLakeNamespaces Operation</seealso>
         public virtual Task<ListDataLakeNamespacesResponse> ListDataLakeNamespacesAsync(ListDataLakeNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakeNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakeNamespacesResponseUnmarshaller.Instance;
 
@@ -1475,7 +1475,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
@@ -1519,7 +1519,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
@@ -1531,7 +1531,7 @@ namespace Amazon.SupplyChain
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1576,7 +1576,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.SupplyChain
 
         internal virtual SendDataIntegrationEventResponse SendDataIntegrationEvent(SendDataIntegrationEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataIntegrationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataIntegrationEventResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/SendDataIntegrationEvent">REST API Reference for SendDataIntegrationEvent Operation</seealso>
         public virtual Task<SendDataIntegrationEventResponse> SendDataIntegrationEventAsync(SendDataIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataIntegrationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataIntegrationEventResponseUnmarshaller.Instance;
 
@@ -1644,7 +1644,7 @@ namespace Amazon.SupplyChain
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1690,7 +1690,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.SupplyChain
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1747,7 +1747,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1759,7 +1759,7 @@ namespace Amazon.SupplyChain
 
         internal virtual UpdateDataIntegrationFlowResponse UpdateDataIntegrationFlow(UpdateDataIntegrationFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -1804,7 +1804,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">REST API Reference for UpdateDataIntegrationFlow Operation</seealso>
         public virtual Task<UpdateDataIntegrationFlowResponse> UpdateDataIntegrationFlowAsync(UpdateDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataIntegrationFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataIntegrationFlowResponseUnmarshaller.Instance;
 
@@ -1816,7 +1816,7 @@ namespace Amazon.SupplyChain
 
         internal virtual UpdateDataLakeDatasetResponse UpdateDataLakeDataset(UpdateDataLakeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
         public virtual Task<UpdateDataLakeDatasetResponse> UpdateDataLakeDatasetAsync(UpdateDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeDatasetResponseUnmarshaller.Instance;
 
@@ -1872,7 +1872,7 @@ namespace Amazon.SupplyChain
 
         internal virtual UpdateDataLakeNamespaceResponse UpdateDataLakeNamespace(UpdateDataLakeNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -1916,7 +1916,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeNamespace">REST API Reference for UpdateDataLakeNamespace Operation</seealso>
         public virtual Task<UpdateDataLakeNamespaceResponse> UpdateDataLakeNamespaceAsync(UpdateDataLakeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeNamespaceResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.SupplyChain
 
         internal virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
 
@@ -1972,7 +1972,7 @@ namespace Amazon.SupplyChain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         public virtual Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
 

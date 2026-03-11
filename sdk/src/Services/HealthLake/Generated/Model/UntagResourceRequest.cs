@@ -31,7 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from a data store.
+    /// Remove a user-specifed key and value tag from a data store.
     /// </summary>
     public partial class UntagResourceRequest : AmazonHealthLakeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name(ARN) of the data store for which tags are being removed.
+        /// The Amazon Resource Name (ARN) of the data store from which tags are being removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -60,7 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        ///  The keys for the tags to be removed from the HealthLake data store. 
+        /// The keys for the tags to be removed from the data store.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The batch request contains more entries than permissible.
+    /// The batch request contains more entries than permissible (more than 10).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class TooManyEntriesInBatchRequestException : AmazonSimpleNotificationServiceException
     {
+
+        /// <summary>
+        /// Default constructor for TooManyEntriesInBatchRequestException
+        /// message.
+        /// </summary>
+        public TooManyEntriesInBatchRequestException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TooManyEntriesInBatchRequestException with the specified error

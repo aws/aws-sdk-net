@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnrecognizedPublicKeyEncodingException
+        /// message.
+        /// </summary>
+        public UnrecognizedPublicKeyEncodingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnrecognizedPublicKeyEncodingException with the specified error
         /// message.
         /// </summary>

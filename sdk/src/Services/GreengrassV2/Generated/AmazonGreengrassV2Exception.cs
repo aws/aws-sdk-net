@@ -36,6 +36,14 @@ namespace Amazon.GreengrassV2
         /// <summary>
         /// Construct instance of AmazonGreengrassV2Exception
         /// </summary>
+        public AmazonGreengrassV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGreengrassV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGreengrassV2Exception(string message)
             : base(message)

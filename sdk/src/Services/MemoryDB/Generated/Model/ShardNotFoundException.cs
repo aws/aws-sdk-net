@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified shard does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ShardNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ShardNotFoundException
+        /// message.
+        /// </summary>
+        public ShardNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ShardNotFoundException with the specified error

@@ -36,6 +36,14 @@ namespace Amazon.PersonalizeRuntime
         /// <summary>
         /// Construct instance of AmazonPersonalizeRuntimeException
         /// </summary>
+        public AmazonPersonalizeRuntimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPersonalizeRuntimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPersonalizeRuntimeException(string message)
             : base(message)

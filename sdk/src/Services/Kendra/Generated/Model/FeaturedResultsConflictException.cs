@@ -43,6 +43,13 @@ namespace Amazon.Kendra.Model
         private List<ConflictingItem> _conflictingItems = AWSConfigs.InitializeCollections ? new List<ConflictingItem>() : null;
 
         /// <summary>
+        /// Default constructor for FeaturedResultsConflictException
+        /// message.
+        /// </summary>
+        public FeaturedResultsConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FeaturedResultsConflictException with the specified error
         /// message.
         /// </summary>

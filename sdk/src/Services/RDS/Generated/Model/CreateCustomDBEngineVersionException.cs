@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for CreateCustomDBEngineVersionException
+        /// message.
+        /// </summary>
+        public CreateCustomDBEngineVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreateCustomDBEngineVersionException with the specified error
         /// message.
         /// </summary>

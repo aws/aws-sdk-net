@@ -37,6 +37,8 @@ namespace Amazon.IoTSiteWise.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _resolveToResourceId;
+        private ResolveToResourceType _resolveToResourceType;
         private string _targetResourceId;
         private TargetResourceType _targetResourceType;
 
@@ -79,12 +81,49 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResolveToResourceId. 
+        /// <para>
+        /// The ID of the resolved resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string ResolveToResourceId
+        {
+            get { return this._resolveToResourceId; }
+            set { this._resolveToResourceId = value; }
+        }
+
+        // Check to see if ResolveToResourceId property is set
+        internal bool IsSetResolveToResourceId()
+        {
+            return this._resolveToResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolveToResourceType. 
+        /// <para>
+        /// The type of the resolved resource.
+        /// </para>
+        /// </summary>
+        public ResolveToResourceType ResolveToResourceType
+        {
+            get { return this._resolveToResourceType; }
+            set { this._resolveToResourceType = value; }
+        }
+
+        // Check to see if ResolveToResourceType property is set
+        internal bool IsSetResolveToResourceType()
+        {
+            return this._resolveToResourceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetResourceId. 
         /// <para>
         /// The ID of the target resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=13, Max=139)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string TargetResourceId
         {
             get { return this._targetResourceId; }

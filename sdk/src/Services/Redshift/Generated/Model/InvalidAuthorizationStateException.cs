@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAuthorizationStateException
+        /// message.
+        /// </summary>
+        public InvalidAuthorizationStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAuthorizationStateException with the specified error
         /// message.
         /// </summary>

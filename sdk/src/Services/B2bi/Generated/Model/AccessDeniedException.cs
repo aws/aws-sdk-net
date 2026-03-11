@@ -39,6 +39,13 @@ namespace Amazon.B2bi.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
         /// message.
         /// </summary>

@@ -38,34 +38,101 @@ namespace Amazon.S3.Transfer
     public class TransferUtilityUploadDirectoryRequest : BaseUploadRequest
     {
         string _directory;
-        string _bucketname;
         string _searchPattern = "*";
         string _keyPrefix;
-        private string contentType;
         private bool _uploadFilesConcurrently = false;
         SearchOption _searchOption = SearchOption.TopDirectoryOnly;
-        S3CannedACL _cannedACL;
-        S3StorageClass _storageClass;
-        MetadataCollection metadataCollection;
-        ServerSideEncryptionMethod encryption;
-        string serverSideEncryptionKeyManagementServiceKeyId;
-        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
-        private string serverSideEncryptionCustomerProvidedKey;
-        private string serverSideEncryptionCustomerProvidedKeyMD5;
-        private List<Tag> tagset;
-        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
-        private ObjectLockMode objectLockMode;
-        private bool disablePayloadSigning;
-        private DateTime? objectLockRetainUntilDate;
-        private ChecksumAlgorithm checksumAlgorithm;
+        private FailurePolicy failurePolicy = FailurePolicy.AbortOnFailure;
 
         /// <summary>
-        /// Gets or sets whether the payload should be signed or not
+        /// Gets or sets the failure policy for the upload directory operation.
+        /// Determines whether the operation should abort or continue when a failure occurs during upload.
+        /// The default value is <see cref="FailurePolicy.AbortOnFailure"/>.
         /// </summary>
-        public bool DisablePayloadSigning
+        public FailurePolicy FailurePolicy
         {
-            get { return this.disablePayloadSigning;  }
-            set { this.disablePayloadSigning = value;  }
+            get { return this.failurePolicy; }
+            set { this.failurePolicy = value; }
+        }
+        
+        /// <summary>
+        /// Occurs when the upload directory operation is initiated.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised before any files are uploaded, providing information about
+        /// the total number of files and bytes that will be uploaded.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryInitiatedEventArgs> UploadDirectoryInitiatedEvent;
+
+        /// <summary>
+        /// Occurs when the upload directory operation completes successfully.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised after all files have been processed (successfully or with failures),
+        /// providing the final response and statistics.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryCompletedEventArgs> UploadDirectoryCompletedEvent;
+
+        /// <summary>
+        /// Occurs when the upload directory operation fails.
+        /// </summary>
+        /// <remarks>
+        /// This event is raised when the entire operation fails (not individual file failures).
+        /// Individual file failures are reported through <see cref="ObjectUploadFailedEvent"/>.
+        /// </remarks>
+        public event EventHandler<UploadDirectoryFailedEventArgs> UploadDirectoryFailedEvent;
+
+        /// <summary>
+        /// Occurs when an individual object fails to upload during an UploadDirectory operation.
+        /// </summary>
+        /// <remarks>
+        /// Subscribers will receive a <see cref="ObjectUploadFailedEventArgs"/> instance containing
+        /// the original <see cref="TransferUtilityUploadDirectoryRequest"/>, the failed
+        /// <see cref="TransferUtilityUploadRequest"/>, and the exception that caused the failure.
+        /// This event is raised on a background thread by the transfer utility.
+        /// </remarks>
+        /// <example>
+        /// request.ObjectUploadFailedEvent += (sender, args) =>
+        /// {
+        ///     // inspect args.DirectoryRequest, args.ObjectRequest, args.Exception
+        /// };
+        /// </example>
+        public event EventHandler<ObjectUploadFailedEventArgs> ObjectUploadFailedEvent;
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryInitiatedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryInitiatedEvent(UploadDirectoryInitiatedEventArgs args)
+        {
+            UploadDirectoryInitiatedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryCompletedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryCompletedEvent(UploadDirectoryCompletedEventArgs args)
+        {
+            UploadDirectoryCompletedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="UploadDirectoryFailedEvent"/>.
+        /// </summary>
+        /// <param name="args">The event args.</param>
+        internal void OnRaiseUploadDirectoryFailedEvent(UploadDirectoryFailedEventArgs args)
+        {
+            UploadDirectoryFailedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Internal helper used by the transfer implementation to raise the <see cref="ObjectUploadFailedEvent"/>.
+        /// </summary>
+        /// <param name="args">The details of the failed object upload.</param>
+        internal void OnRaiseObjectUploadFailedEvent(ObjectUploadFailedEventArgs args)
+        {
+            ObjectUploadFailedEvent?.Invoke(this, args);
         }
 
         /// <summary>
@@ -152,226 +219,6 @@ namespace Amazon.S3.Transfer
             set { this._searchOption = value; }
         }
 
-
-        /// <summary>
-        /// 	Gets or sets the name of the bucket.
-        /// </summary>
-        /// <value>
-        /// 	The name of the bucket.
-        /// </value>
-        public string BucketName
-        {
-            get { return this._bucketname; }
-            set { this._bucketname = value; }
-        }
-
-        /// <summary>
-        /// Checks if BucketName property is set.
-        /// </summary>
-        /// <returns>true if BucketName property is set.</returns>
-        internal bool IsSetBucketName()
-        {
-            return !System.String.IsNullOrEmpty(this._bucketname);
-        }
-
-
-        /// <summary>
-        /// 	Gets or sets the canned access control list (ACL)
-        /// 	for the uploaded objects.
-        /// 	Please refer to 
-        /// 	<see cref="T:Amazon.S3.S3CannedACL"/> for
-        /// 	information on Amazon S3 canned ACLs.
-        /// </summary>
-        /// <value>
-        /// 	The canned access control list (ACL)
-        /// 	for the uploaded objects.
-        /// </value>
-        public S3CannedACL CannedACL
-        {
-            get { return this._cannedACL; }
-            set { this._cannedACL = value; }
-        }
-
-
-        /// <summary>
-        /// Checks if the CannedACL property is set.
-        /// </summary>
-        /// <returns>true if there is the CannedACL property is set.</returns>
-        internal bool IsSetCannedACL()
-        {
-            return (_cannedACL != null &&_cannedACL != S3CannedACL.NoACL);
-        }
-
-        /// <summary>
-        /// 	Gets or sets the content type for the uploaded Amazon S3 objects.
-        ///     The default behavior when this field is not set is to use the file
-        ///     extension to set the content type. If this field is set to a value it
-        ///     will be applied to all uploaded files in the directory, overriding
-        ///     file extension inspection.
-        /// </summary>
-        /// <value>
-        /// 	The content type for all the uploaded Amazon S3 objects.
-        /// </value>
-        public string ContentType
-        {
-            get { return this.contentType; }
-            set { this.contentType = value; }
-        }
-
-
-        /// <summary>
-        /// 	Gets or sets the storage class for the uploaded Amazon S3 objects.
-        /// 	Please refer to 
-        /// 	<see cref="T:Amazon.S3.S3StorageClass"/> for
-        /// 	information on S3 Storage Classes.
-        /// </summary>
-        /// <value>
-        /// 	The storage class for the uploaded Amazon S3 objects.
-        /// </value>
-        public S3StorageClass StorageClass
-        {
-            get { return this._storageClass; }
-            set
-            {
-                this._storageClass = value;
-            }
-        }
-
-
-        /// <summary>
-        /// The collection of meta data for the request.
-        /// </summary>
-        public MetadataCollection Metadata
-        {
-            get
-            {
-                if (this.metadataCollection == null)
-                    this.metadataCollection = new MetadataCollection();
-                return this.metadataCollection;
-            }
-            internal set { this.metadataCollection = value; }
-        }
-
-        #region ServerSideEncryption
-
-        /// <summary>
-        /// Gets or sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// </summary>
-        public ServerSideEncryptionMethod ServerSideEncryptionMethod
-        {
-            get { return this.encryption; }
-            set { this.encryption = value; }
-        }
-
-        /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
-        /// If a key id is not specified, the default key will be used for encryption and decryption.
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionKeyManagementServiceKeyId
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
-        }
-
-        /// <summary>
-        /// The Server-side encryption algorithm to be used with the customer provided key.
-        /// </summary>
-        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
-        {
-            get { return this.serverSideCustomerEncryption; }
-            set { this.serverSideCustomerEncryption = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
-        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
-        }
-
-        /// <summary>
-        /// The base64-encoded encryption key for Amazon S3 to use to encrypt the object
-        /// <para>
-        /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
-        /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
-        /// thing you do is manage the encryption keys you provide.
-        /// </para>
-        /// <para>
-        /// When you retrieve an object, you must provide the same encryption key as part of your request. Amazon S3 first verifies 
-        /// the encryption key you provided matches, and then decrypts the object before returning the object data to you.
-        /// </para>
-        /// <para>
-        /// Important: Amazon S3 does not store the encryption key you provide.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionCustomerProvidedKey
-        {
-            get { return this.serverSideEncryptionCustomerProvidedKey; }
-            set { this.serverSideEncryptionCustomerProvidedKey = value; }
-        }
-
-        /// <summary>
-        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
-        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
-        /// </summary>
-        public string ServerSideEncryptionCustomerProvidedKeyMD5
-        {
-            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
-            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
-        }
-
-        #endregion
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockLegalHoldStatus. 
-        /// <para>
-        /// Specifies whether a legal hold will be applied to this object. For more information
-        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-        /// Lock</a>.
-        /// </para>
-        /// </summary>
-        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
-        {
-            get { return this.objectLockLegalHoldStatus; }
-            set { this.objectLockLegalHoldStatus = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockMode. 
-        /// <para>
-        /// The Object Lock mode that you want to apply to this object.
-        /// </para>
-        /// </summary>
-        public ObjectLockMode ObjectLockMode
-        {
-            get { return this.objectLockMode; }
-            set { this.objectLockMode = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockRetainUntilDate. 
-        /// <para>
-        /// The date and time when you want this object's Object Lock to expire.
-        /// </para>
-        /// </summary>
-        public DateTime ObjectLockRetainUntilDate
-        {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
-            set { this.objectLockRetainUntilDate = value; }
-        }
-
-        // Check to see if ObjectLockRetainUntilDate property is set
-        internal bool IsSetObjectLockRetainUntilDate()
-        {
-            return this.objectLockRetainUntilDate.HasValue;
-        }
-
         /// <summary>
         /// Gets or sets the UploadFilesConcurrently property.
         /// Specifies if multiple files will be uploaded concurrently.
@@ -443,41 +290,6 @@ namespace Amazon.S3.Transfer
                 var args = new UploadDirectoryFileRequestArgs(request);
                 targetEvent(this, args);
             }
-        }
-
-        /// <summary>
-        /// Tags that will be applied to all objects in the diretory.
-        /// </summary>
-        public List<Tag> TagSet
-        {
-            get { return this.tagset; }
-            set { this.tagset = value; }
-        }
-
-        /// <summary>
-        /// <para><b>WARNING: Setting DisableDefaultChecksumValidation to true disables the default data 
-        /// integrity check on upload requests.</b></para>
-        /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
-        /// performance under high CPU loads. The default value is false.</para>
-        /// <para>Checksums, SigV4 payload signing, and HTTPS each provide some data integrity 
-        /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
-        /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
-        /// source of data integrity verification.</para>
-        /// </summary>
-        public bool? DisableDefaultChecksumValidation { get; set; }
-
-        /// <summary>
-        /// Gets and sets the property ChecksumAlgorithm. 
-        /// <para>
-        /// Indicates the algorithm used to create the checksum for each object in the provided directory.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        /// </summary>
-        public ChecksumAlgorithm ChecksumAlgorithm
-        {
-            get { return this.checksumAlgorithm; }
-            set { this.checksumAlgorithm = value; }
         }
     }
 
@@ -661,5 +473,225 @@ namespace Amazon.S3.Transfer
         /// Gets and sets the UploadRequest property.
         /// </summary>
         public TransferUtilityUploadRequest UploadRequest { get; set; }
+    }
+    
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryInitiatedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryInitiatedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryInitiatedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="totalFiles">The total number of files to upload.</param>
+        /// <param name="totalBytes">The total number of bytes to upload.</param>
+        internal UploadDirectoryInitiatedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            long totalFiles,
+            long totalBytes)
+        {
+            Request = request;
+            TotalFiles = totalFiles;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files to upload.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes to upload.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryCompletedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryCompletedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryCompletedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="response">The upload directory response.</param>
+        /// <param name="transferredFiles">The number of files successfully uploaded.</param>
+        /// <param name="totalFiles">The total number of files attempted.</param>
+        /// <param name="transferredBytes">The number of bytes transferred.</param>
+        /// <param name="totalBytes">The total number of bytes.</param>
+        internal UploadDirectoryCompletedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            TransferUtilityUploadDirectoryResponse response,
+            long transferredFiles,
+            long totalFiles,
+            long transferredBytes,
+            long totalBytes)
+        {
+            Request = request;
+            Response = response;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the upload directory response.
+        /// </summary>
+        public TransferUtilityUploadDirectoryResponse Response { get; private set; }
+
+        /// <summary>
+        /// Gets the number of files successfully uploaded.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files attempted.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes transferred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.UploadDirectoryFailedEvent"/>.
+    /// </summary>
+    public class UploadDirectoryFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDirectoryFailedEventArgs"/> class.
+        /// </summary>
+        /// <param name="request">The upload directory request.</param>
+        /// <param name="transferredFiles">The number of files successfully uploaded before failure.</param>
+        /// <param name="totalFiles">The total number of files attempted.</param>
+        /// <param name="transferredBytes">The number of bytes transferred before failure.</param>
+        /// <param name="totalBytes">The total number of bytes.</param>
+        internal UploadDirectoryFailedEventArgs(
+            TransferUtilityUploadDirectoryRequest request,
+            long transferredFiles,
+            long totalFiles,
+            long transferredBytes,
+            long totalBytes)
+        {
+            Request = request;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// Gets the upload directory request.
+        /// </summary>
+        public TransferUtilityUploadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the number of files successfully uploaded before failure.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files attempted.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes transferred before failure.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityUploadDirectoryRequest.ObjectUploadFailedEvent"/>
+    /// which is raised when an individual object fails to upload during an
+    /// UploadDirectory operation.
+    /// </summary>
+    /// <remarks>
+    /// Instances of this class are created by the transfer implementation and
+    /// passed to event subscribers. The instance contains the original directory
+    /// upload request (<see cref="TransferUtilityUploadDirectoryRequest"/>),
+    /// the per-object upload request that failed (<see cref="TransferUtilityUploadRequest"/>),
+    /// and the exception that caused the failure.
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var request = new TransferUtilityUploadDirectoryRequest { /* ... */ };
+    /// request.ObjectUploadFailedEvent += (sender, args) =>
+    /// {
+    ///     // args.DirectoryRequest: original directory request
+    ///     // args.ObjectRequest: upload request for the failed object
+    ///     // args.Exception: exception thrown during the object upload
+    ///     Console.WriteLine($"Failed to upload {args.ObjectRequest.Key}: {args.Exception}");
+    /// };
+    /// </code>
+    /// </example>
+    public class ObjectUploadFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectUploadFailedEventArgs"/> class.
+        /// </summary>
+        /// <param name="directoryRequest">The original <see cref="TransferUtilityUploadDirectoryRequest"/> that initiated the directory upload.</param>
+        /// <param name="objectRequest">The <see cref="TransferUtilityUploadRequest"/> representing the individual object upload that failed.</param>
+        /// <param name="exception">The <see cref="Exception"/> that caused the object upload to fail.</param>
+        internal ObjectUploadFailedEventArgs(
+            TransferUtilityUploadDirectoryRequest directoryRequest,
+            TransferUtilityUploadRequest objectRequest,
+            Exception exception)
+        {
+            DirectoryRequest = directoryRequest;
+            ObjectRequest = objectRequest;
+            Exception = exception;
+        }
+
+        /// <summary>
+        /// Gets the original <see cref="TransferUtilityUploadDirectoryRequest"/> that initiated the directory upload.
+        /// </summary>
+        /// <value>
+        /// The directory-level request that configured the overall UploadDirectory operation.
+        /// </value>
+        public TransferUtilityUploadDirectoryRequest DirectoryRequest { get; private set; }
+
+        /// <summary>
+        /// Gets the <see cref="TransferUtilityUploadRequest"/> for the individual object that failed to upload.
+        /// </summary>
+        /// <value>
+        /// Contains per-object parameters such as the S3 key and version id (if set).
+        /// </value>
+        public TransferUtilityUploadRequest ObjectRequest { get; private set; }
+
+        /// <summary>
+        /// Gets the <see cref="Exception"/> that caused the object upload to fail.
+        /// </summary>
+        /// <value>
+        /// The exception thrown by the underlying upload operation. Can be an <see cref="Amazon.S3.AmazonS3Exception"/>,
+        /// <see cref="Amazon.Runtime.AmazonClientException"/>, <see cref="IOException"/>, or other exception type depending
+        /// on the failure mode.
+        /// </value>
+        public Exception Exception { get; private set; }
     }
 }

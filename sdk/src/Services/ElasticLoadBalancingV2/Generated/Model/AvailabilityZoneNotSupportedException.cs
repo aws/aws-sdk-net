@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for AvailabilityZoneNotSupportedException
+        /// message.
+        /// </summary>
+        public AvailabilityZoneNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AvailabilityZoneNotSupportedException with the specified error
         /// message.
         /// </summary>

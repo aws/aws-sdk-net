@@ -109,6 +109,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("NetworkType");
+                context.Writer.WriteStringValue(publicRequest.NetworkType);
+            }
+
             if(publicRequest.IsSetOntapConfiguration())
             {
                 context.Writer.WritePropertyName("OntapConfiguration");

@@ -41,6 +41,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for NodeGroupNotFoundException
+        /// message.
+        /// </summary>
+        public NodeGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NodeGroupNotFoundException with the specified error
         /// message.
         /// </summary>

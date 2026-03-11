@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceSettingNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceSettingNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceSettingNotFoundException with the specified error
         /// message.
         /// </summary>

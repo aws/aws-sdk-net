@@ -56,10 +56,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListConflictingAliasesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.Alias))
+                throw new AmazonCloudFrontException("Request object does not have required field Alias set");
             
             if (publicRequest.IsSetAlias())
                 request.Parameters.Add("Alias", StringUtils.FromString(publicRequest.Alias));
+            if (string.IsNullOrEmpty(publicRequest.DistributionId))
+                throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             
             if (publicRequest.IsSetDistributionId())
                 request.Parameters.Add("DistributionId", StringUtils.FromString(publicRequest.DistributionId));
@@ -72,8 +77,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/conflicting-alias";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListConflictingAliasesRequestMarshaller _instance = new ListConflictingAliasesRequestMarshaller();        
@@ -95,5 +100,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListConflictingAliasesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListConflictingAliasesRequest publicRequest);
     }    
 }

@@ -285,7 +285,7 @@ namespace Amazon.Batch
 
         internal virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
@@ -332,7 +332,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.Batch
 
         internal virtual CreateComputeEnvironmentResponse CreateComputeEnvironment(CreateComputeEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputeEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
 
@@ -369,11 +369,7 @@ namespace Amazon.Batch
         /// set a maximum price so that Spot Instances only launch when the Spot Instance price
         /// is less than a specified percentage of the On-Demand price.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Multi-node parallel jobs aren't supported on Spot Instances.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// In an unmanaged compute environment, you can manage your own EC2 compute resources
         /// and have flexibility with how you configure your compute resources. For example, you
@@ -388,80 +384,9 @@ namespace Amazon.Batch
         /// </para>
         ///  <note> 
         /// <para>
-        /// To create a compute environment that uses EKS resources, the caller must have permissions
-        /// to call <c>eks:DescribeCluster</c>.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
         /// Batch doesn't automatically upgrade the AMIs in a compute environment after it's created.
-        /// For example, it also doesn't update the AMIs in your compute environment when a newer
-        /// version of the Amazon ECS optimized AMI is available. You're responsible for the management
-        /// of the guest operating system. This includes any updates and security patches. You're
-        /// also responsible for any additional application software or utilities that you install
-        /// on the compute resources. There are two ways to use a new AMI for your Batch jobs.
-        /// The original method is to complete these steps:
-        /// </para>
-        ///  <ol> <li> 
-        /// <para>
-        /// Create a new compute environment with the new AMI.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Add the compute environment to an existing job queue.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Remove the earlier compute environment from your job queue.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Delete the earlier compute environment.
-        /// </para>
-        ///  </li> </ol> 
-        /// <para>
-        /// In April 2022, Batch added enhanced support for updating compute environments. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-        /// compute environments</a>. To use the enhanced updating of compute environments to
-        /// update AMIs, follow these rules:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Either don't set the service role (<c>serviceRole</c>) parameter or set it to the
-        /// <b>AWSBatchServiceRole</b> service-linked role.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Set the allocation strategy (<c>allocationStrategy</c>) parameter to <c>BEST_FIT_PROGRESSIVE</c>,
-        /// <c>SPOT_CAPACITY_OPTIMIZED</c>, or <c>SPOT_PRICE_CAPACITY_OPTIMIZED</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Set the update to latest image version (<c>updateToLatestImageVersion</c>) parameter
-        /// to <c>true</c>. The <c>updateToLatestImageVersion</c> parameter is used when you update
-        /// a compute environment. This parameter is ignored when you create a compute environment.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Don't specify an AMI ID in <c>imageId</c>, <c>imageIdOverride</c> (in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-        /// <c>ec2Configuration</c> </a>), or in the launch template (<c>launchTemplate</c>).
-        /// In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
-        /// Batch at the time the infrastructure update is initiated. Alternatively, you can specify
-        /// the AMI ID in the <c>imageId</c> or <c>imageIdOverride</c> parameters, or the launch
-        /// template identified by the <c>LaunchTemplate</c> properties. Changing any of these
-        /// properties starts an infrastructure update. If the AMI ID is specified in the launch
-        /// template, it can't be replaced by specifying an AMI ID in either the <c>imageId</c>
-        /// or <c>imageIdOverride</c> parameters. It can only be replaced by specifying a different
-        /// launch template, or if the launch template version is set to <c>$Default</c> or <c>$Latest</c>,
-        /// by setting either a new default version for the launch template (if <c>$Default</c>)
-        /// or by adding a new version to the launch template (if <c>$Latest</c>).
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If these rules are followed, any update that starts an infrastructure update causes
-        /// the AMI ID to be re-selected. If the <c>version</c> setting in the launch template
-        /// (<c>launchTemplate</c>) is set to <c>$Latest</c> or <c>$Default</c>, the latest or
-        /// default version of the launch template is evaluated up at the time of the infrastructure
-        /// update, even if the <c>launchTemplate</c> wasn't updated.
+        /// For more information on how to update a compute environment's AMI, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -482,7 +407,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public virtual Task<CreateComputeEnvironmentResponse> CreateComputeEnvironmentAsync(CreateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputeEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputeEnvironmentResponseUnmarshaller.Instance;
 
@@ -494,7 +419,7 @@ namespace Amazon.Batch
 
         internal virtual CreateConsumableResourceResponse CreateConsumableResource(CreateConsumableResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConsumableResourceResponseUnmarshaller.Instance;
 
@@ -523,7 +448,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateConsumableResource">REST API Reference for CreateConsumableResource Operation</seealso>
         public virtual Task<CreateConsumableResourceResponse> CreateConsumableResourceAsync(CreateConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConsumableResourceResponseUnmarshaller.Instance;
 
@@ -535,7 +460,7 @@ namespace Amazon.Batch
 
         internal virtual CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
 
@@ -574,7 +499,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public virtual Task<CreateJobQueueResponse> CreateJobQueueAsync(CreateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobQueueResponseUnmarshaller.Instance;
 
@@ -586,7 +511,7 @@ namespace Amazon.Batch
 
         internal virtual CreateSchedulingPolicyResponse CreateSchedulingPolicy(CreateSchedulingPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchedulingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchedulingPolicyResponseUnmarshaller.Instance;
 
@@ -615,7 +540,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">REST API Reference for CreateSchedulingPolicy Operation</seealso>
         public virtual Task<CreateSchedulingPolicyResponse> CreateSchedulingPolicyAsync(CreateSchedulingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchedulingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchedulingPolicyResponseUnmarshaller.Instance;
 
@@ -623,11 +548,53 @@ namespace Amazon.Batch
         }
         #endregion
         
+        #region  CreateServiceEnvironment
+
+        internal virtual CreateServiceEnvironmentResponse CreateServiceEnvironment(CreateServiceEnvironmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceEnvironmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a service environment for running service jobs. Service environments define
+        /// capacity limits for specific service types such as SageMaker Training jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateServiceEnvironment">REST API Reference for CreateServiceEnvironment Operation</seealso>
+        public virtual Task<CreateServiceEnvironmentResponse> CreateServiceEnvironmentAsync(CreateServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceEnvironmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteComputeEnvironment
 
         internal virtual DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputeEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
 
@@ -666,7 +633,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public virtual Task<DeleteComputeEnvironmentResponse> DeleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputeEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
 
@@ -678,7 +645,7 @@ namespace Amazon.Batch
 
         internal virtual DeleteConsumableResourceResponse DeleteConsumableResource(DeleteConsumableResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConsumableResourceResponseUnmarshaller.Instance;
 
@@ -707,7 +674,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteConsumableResource">REST API Reference for DeleteConsumableResource Operation</seealso>
         public virtual Task<DeleteConsumableResourceResponse> DeleteConsumableResourceAsync(DeleteConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConsumableResourceResponseUnmarshaller.Instance;
 
@@ -719,7 +686,7 @@ namespace Amazon.Batch
 
         internal virtual DeleteJobQueueResponse DeleteJobQueue(DeleteJobQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
 
@@ -757,7 +724,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public virtual Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobQueueResponseUnmarshaller.Instance;
 
@@ -769,7 +736,7 @@ namespace Amazon.Batch
 
         internal virtual DeleteSchedulingPolicyResponse DeleteSchedulingPolicy(DeleteSchedulingPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchedulingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchedulingPolicyResponseUnmarshaller.Instance;
 
@@ -803,7 +770,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
         public virtual Task<DeleteSchedulingPolicyResponse> DeleteSchedulingPolicyAsync(DeleteSchedulingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchedulingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchedulingPolicyResponseUnmarshaller.Instance;
 
@@ -811,11 +778,55 @@ namespace Amazon.Batch
         }
         #endregion
         
+        #region  DeleteServiceEnvironment
+
+        internal virtual DeleteServiceEnvironmentResponse DeleteServiceEnvironment(DeleteServiceEnvironmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceEnvironmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a Service environment. Before you can delete a service environment, you must
+        /// first set its state to <c>DISABLED</c> with the <c>UpdateServiceEnvironment</c> API
+        /// operation and disassociate it from any job queues with the <c>UpdateJobQueue</c> API
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteServiceEnvironment">REST API Reference for DeleteServiceEnvironment Operation</seealso>
+        public virtual Task<DeleteServiceEnvironmentResponse> DeleteServiceEnvironmentAsync(DeleteServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceEnvironmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeregisterJobDefinition
 
         internal virtual DeregisterJobDefinitionResponse DeregisterJobDefinition(DeregisterJobDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterJobDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
 
@@ -845,7 +856,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public virtual Task<DeregisterJobDefinitionResponse> DeregisterJobDefinitionAsync(DeregisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterJobDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterJobDefinitionResponseUnmarshaller.Instance;
 
@@ -857,7 +868,7 @@ namespace Amazon.Batch
 
         internal virtual DescribeComputeEnvironmentsResponse DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputeEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
 
@@ -893,7 +904,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public virtual Task<DescribeComputeEnvironmentsResponse> DescribeComputeEnvironmentsAsync(DescribeComputeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputeEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
 
@@ -905,7 +916,7 @@ namespace Amazon.Batch
 
         internal virtual DescribeConsumableResourceResponse DescribeConsumableResource(DescribeConsumableResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConsumableResourceResponseUnmarshaller.Instance;
 
@@ -934,7 +945,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeConsumableResource">REST API Reference for DescribeConsumableResource Operation</seealso>
         public virtual Task<DescribeConsumableResourceResponse> DescribeConsumableResourceAsync(DescribeConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConsumableResourceResponseUnmarshaller.Instance;
 
@@ -946,7 +957,7 @@ namespace Amazon.Batch
 
         internal virtual DescribeJobDefinitionsResponse DescribeJobDefinitions(DescribeJobDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
 
@@ -976,7 +987,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public virtual Task<DescribeJobDefinitionsResponse> DescribeJobDefinitionsAsync(DescribeJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobDefinitionsResponseUnmarshaller.Instance;
 
@@ -988,7 +999,7 @@ namespace Amazon.Batch
 
         internal virtual DescribeJobQueuesResponse DescribeJobQueues(DescribeJobQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
 
@@ -1017,7 +1028,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public virtual Task<DescribeJobQueuesResponse> DescribeJobQueuesAsync(DescribeJobQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobQueuesResponseUnmarshaller.Instance;
 
@@ -1029,7 +1040,7 @@ namespace Amazon.Batch
 
         internal virtual DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
@@ -1058,7 +1069,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual Task<DescribeJobsResponse> DescribeJobsAsync(DescribeJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
@@ -1070,7 +1081,7 @@ namespace Amazon.Batch
 
         internal virtual DescribeSchedulingPoliciesResponse DescribeSchedulingPolicies(DescribeSchedulingPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchedulingPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchedulingPoliciesResponseUnmarshaller.Instance;
 
@@ -1099,7 +1110,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">REST API Reference for DescribeSchedulingPolicies Operation</seealso>
         public virtual Task<DescribeSchedulingPoliciesResponse> DescribeSchedulingPoliciesAsync(DescribeSchedulingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchedulingPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchedulingPoliciesResponseUnmarshaller.Instance;
 
@@ -1107,11 +1118,93 @@ namespace Amazon.Batch
         }
         #endregion
         
+        #region  DescribeServiceEnvironments
+
+        internal virtual DescribeServiceEnvironmentsResponse DescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServiceEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceEnvironmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceEnvironmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more of your service environments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceEnvironments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceEnvironments service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceEnvironments">REST API Reference for DescribeServiceEnvironments Operation</seealso>
+        public virtual Task<DescribeServiceEnvironmentsResponse> DescribeServiceEnvironmentsAsync(DescribeServiceEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServiceEnvironmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceEnvironmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServiceEnvironmentsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeServiceJob
+
+        internal virtual DescribeServiceJobResponse DescribeServiceJob(DescribeServiceJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The details of a service job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeServiceJob">REST API Reference for DescribeServiceJob Operation</seealso>
+        public virtual Task<DescribeServiceJobResponse> DescribeServiceJobAsync(DescribeServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServiceJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetJobQueueSnapshot
 
         internal virtual GetJobQueueSnapshotResponse GetJobQueueSnapshot(GetJobQueueSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobQueueSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobQueueSnapshotResponseUnmarshaller.Instance;
 
@@ -1121,7 +1214,9 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue.
+        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue
+        /// and includes capacity utilization, including total usage and breakdown by share for
+        /// fairshare scheduling job queues.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -1140,7 +1235,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">REST API Reference for GetJobQueueSnapshot Operation</seealso>
         public virtual Task<GetJobQueueSnapshotResponse> GetJobQueueSnapshotAsync(GetJobQueueSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobQueueSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobQueueSnapshotResponseUnmarshaller.Instance;
 
@@ -1152,7 +1247,7 @@ namespace Amazon.Batch
 
         internal virtual ListConsumableResourcesResponse ListConsumableResources(ListConsumableResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConsumableResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConsumableResourcesResponseUnmarshaller.Instance;
 
@@ -1181,7 +1276,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListConsumableResources">REST API Reference for ListConsumableResources Operation</seealso>
         public virtual Task<ListConsumableResourcesResponse> ListConsumableResourcesAsync(ListConsumableResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConsumableResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConsumableResourcesResponseUnmarshaller.Instance;
 
@@ -1193,7 +1288,7 @@ namespace Amazon.Batch
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1221,11 +1316,7 @@ namespace Amazon.Batch
         /// <para>
         /// An array job ID to return a list of the children for that job
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can filter the results by job status with the <c>jobStatus</c> parameter. If you
-        /// don't specify a status, only <c>RUNNING</c> jobs are returned.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1244,7 +1335,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1256,7 +1347,7 @@ namespace Amazon.Batch
 
         internal virtual ListJobsByConsumableResourceResponse ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsByConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsByConsumableResourceResponseUnmarshaller.Instance;
 
@@ -1285,7 +1376,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsByConsumableResource">REST API Reference for ListJobsByConsumableResource Operation</seealso>
         public virtual Task<ListJobsByConsumableResourceResponse> ListJobsByConsumableResourceAsync(ListJobsByConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsByConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsByConsumableResourceResponseUnmarshaller.Instance;
 
@@ -1297,7 +1388,7 @@ namespace Amazon.Batch
 
         internal virtual ListSchedulingPoliciesResponse ListSchedulingPolicies(ListSchedulingPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchedulingPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchedulingPoliciesResponseUnmarshaller.Instance;
 
@@ -1326,7 +1417,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">REST API Reference for ListSchedulingPolicies Operation</seealso>
         public virtual Task<ListSchedulingPoliciesResponse> ListSchedulingPoliciesAsync(ListSchedulingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchedulingPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchedulingPoliciesResponseUnmarshaller.Instance;
 
@@ -1334,11 +1425,52 @@ namespace Amazon.Batch
         }
         #endregion
         
+        #region  ListServiceJobs
+
+        internal virtual ListServiceJobsResponse ListServiceJobs(ListServiceJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of service jobs for a specified job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListServiceJobs">REST API Reference for ListServiceJobs Operation</seealso>
+        public virtual Task<ListServiceJobsResponse> ListServiceJobsAsync(ListServiceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceJobsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1369,7 +1501,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1381,7 +1513,7 @@ namespace Amazon.Batch
 
         internal virtual RegisterJobDefinitionResponse RegisterJobDefinition(RegisterJobDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterJobDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
 
@@ -1410,7 +1542,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public virtual Task<RegisterJobDefinitionResponse> RegisterJobDefinitionAsync(RegisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterJobDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterJobDefinitionResponseUnmarshaller.Instance;
 
@@ -1422,7 +1554,7 @@ namespace Amazon.Batch
 
         internal virtual SubmitJobResponse SubmitJob(SubmitJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitJobResponseUnmarshaller.Instance;
 
@@ -1469,7 +1601,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public virtual Task<SubmitJobResponse> SubmitJobAsync(SubmitJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitJobResponseUnmarshaller.Instance;
 
@@ -1477,11 +1609,53 @@ namespace Amazon.Batch
         }
         #endregion
         
+        #region  SubmitServiceJob
+
+        internal virtual SubmitServiceJobResponse SubmitServiceJob(SubmitServiceJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SubmitServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<SubmitServiceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Submits a service job to a specified job queue to run on SageMaker AI. A service job
+        /// is a unit of work that you submit to Batch for execution on SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitServiceJob">REST API Reference for SubmitServiceJob Operation</seealso>
+        public virtual Task<SubmitServiceJobResponse> SubmitServiceJobAsync(SubmitServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SubmitServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitServiceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SubmitServiceJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1515,7 +1689,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1527,7 +1701,7 @@ namespace Amazon.Batch
 
         internal virtual TerminateJobResponse TerminateJob(TerminateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateJobResponseUnmarshaller.Instance;
 
@@ -1558,7 +1732,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public virtual Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateJobResponseUnmarshaller.Instance;
 
@@ -1566,11 +1740,52 @@ namespace Amazon.Batch
         }
         #endregion
         
+        #region  TerminateServiceJob
+
+        internal virtual TerminateServiceJobResponse TerminateServiceJob(TerminateServiceJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateServiceJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Terminates a service job in a job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJob">REST API Reference for TerminateServiceJob Operation</seealso>
+        public virtual Task<TerminateServiceJobResponse> TerminateServiceJobAsync(TerminateServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateServiceJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UntagResource
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1599,7 +1814,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1611,7 +1826,7 @@ namespace Amazon.Batch
 
         internal virtual UpdateComputeEnvironmentResponse UpdateComputeEnvironment(UpdateComputeEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputeEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
 
@@ -1640,7 +1855,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public virtual Task<UpdateComputeEnvironmentResponse> UpdateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputeEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
 
@@ -1652,7 +1867,7 @@ namespace Amazon.Batch
 
         internal virtual UpdateConsumableResourceResponse UpdateConsumableResource(UpdateConsumableResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConsumableResourceResponseUnmarshaller.Instance;
 
@@ -1681,7 +1896,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateConsumableResource">REST API Reference for UpdateConsumableResource Operation</seealso>
         public virtual Task<UpdateConsumableResourceResponse> UpdateConsumableResourceAsync(UpdateConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConsumableResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConsumableResourceResponseUnmarshaller.Instance;
 
@@ -1693,7 +1908,7 @@ namespace Amazon.Batch
 
         internal virtual UpdateJobQueueResponse UpdateJobQueue(UpdateJobQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
 
@@ -1722,7 +1937,7 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public virtual Task<UpdateJobQueueResponse> UpdateJobQueueAsync(UpdateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobQueueResponseUnmarshaller.Instance;
 
@@ -1734,7 +1949,7 @@ namespace Amazon.Batch
 
         internal virtual UpdateSchedulingPolicyResponse UpdateSchedulingPolicy(UpdateSchedulingPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchedulingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchedulingPolicyResponseUnmarshaller.Instance;
 
@@ -1763,11 +1978,54 @@ namespace Amazon.Batch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
         public virtual Task<UpdateSchedulingPolicyResponse> UpdateSchedulingPolicyAsync(UpdateSchedulingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchedulingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchedulingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSchedulingPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateServiceEnvironment
+
+        internal virtual UpdateServiceEnvironmentResponse UpdateServiceEnvironment(UpdateServiceEnvironmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceEnvironmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a service environment. You can update the state of a service environment from
+        /// <c>ENABLED</c> to <c>DISABLED</c> to prevent new service jobs from being placed in
+        /// the service environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceEnvironment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
+        public virtual Task<UpdateServiceEnvironmentResponse> UpdateServiceEnvironmentAsync(UpdateServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateServiceEnvironmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceEnvironmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceEnvironmentResponse>(request, options, cancellationToken);
         }
         #endregion
         

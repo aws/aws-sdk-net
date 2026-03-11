@@ -41,6 +41,13 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalStreamingException
+        /// message.
+        /// </summary>
+        public InternalStreamingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalStreamingException with the specified error
         /// message.
         /// </summary>

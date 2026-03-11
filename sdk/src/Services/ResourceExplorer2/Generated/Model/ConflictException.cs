@@ -54,6 +54,13 @@ namespace Amazon.ResourceExplorer2.Model
     {
 
         /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>

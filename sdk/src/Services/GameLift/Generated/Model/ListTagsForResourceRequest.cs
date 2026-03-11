@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves all tags assigned to a Amazon GameLift Servers resource. Use resource tags
     /// to organize Amazon Web Services resources for a range of purposes. This operation
     /// handles the permissions necessary to manage tags for Amazon GameLift Servers resources
     /// that support tagging.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To list tags for a resource, specify the unique ARN value for the resource.

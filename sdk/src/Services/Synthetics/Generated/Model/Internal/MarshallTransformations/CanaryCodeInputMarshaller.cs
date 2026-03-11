@@ -46,6 +46,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBlueprintTypes())
+            {
+                context.Writer.WritePropertyName("BlueprintTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectBlueprintTypesListValue in requestObject.BlueprintTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectBlueprintTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetDependencies())
             {
                 context.Writer.WritePropertyName("Dependencies");
@@ -89,7 +100,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ZipFile));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.ZipFile);
             }
 
         }

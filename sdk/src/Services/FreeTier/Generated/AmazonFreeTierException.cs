@@ -36,6 +36,14 @@ namespace Amazon.FreeTier
         /// <summary>
         /// Construct instance of AmazonFreeTierException
         /// </summary>
+        public AmazonFreeTierException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonFreeTierException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonFreeTierException(string message)
             : base(message)

@@ -31,26 +31,36 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTypeConfiguration operation.
-    /// Specifies the configuration data for a registered CloudFormation extension, in the
-    /// given account and Region.
+    /// Specifies the configuration data for a CloudFormation extension, such as a resource
+    /// or Hook, in the given account and Region.
     /// 
     ///  
     /// <para>
-    /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
-    /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
     /// configuration data for extensions in your account</a> in the <i>CloudFormation User
     /// Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
+    /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+    /// </para>
     ///  <important> 
     /// <para>
     /// It's strongly recommended that you use dynamic references to restrict sensitive configuration
-    /// definitions, such as third-party credentials. For more details on dynamic references,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
+    /// definitions, such as third-party credentials. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
     /// values stored in other services using dynamic references</a> in the <i>CloudFormation
     /// User Guide</i>.
     /// </para>
-    ///  </important>
+    ///  </important> 
+    /// <para>
+    /// For more information about setting the configuration data for resource types, see
+    /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
+    /// the account-level configuration of an extension</a> in the <i>CloudFormation Command
+    /// Line Interface (CLI) User Guide</i>. For more information about setting the configuration
+    /// data for Hooks, see the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+    /// Hooks User Guide</a>.
+    /// </para>
     /// </summary>
     public partial class SetTypeConfigurationRequest : AmazonCloudFormationRequest
     {
@@ -63,15 +73,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration data for the extension, in this account and Region.
+        /// The configuration data for the extension in this account and Region.
         /// </para>
         ///  
         /// <para>
-        /// The configuration data must be formatted as JSON, and validate against the schema
-        /// returned in the <c>ConfigurationSchema</c> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
-        /// the account-level configuration of an extension</a> in the <i>CloudFormation Command
-        /// Line Interface (CLI) User Guide</i>.
+        /// The configuration data must be formatted as JSON and validate against the extension's
+        /// schema returned in the <c>Schema</c> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=204800)]
@@ -136,7 +143,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the extension, in this account and Region.
+        /// The Amazon Resource Name (ARN) for the extension in this account and Region.
         /// </para>
         ///  
         /// <para>

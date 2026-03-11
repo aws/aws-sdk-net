@@ -65,6 +65,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetLegalHoldId())
                 throw new AmazonBackupException("Request object does not have required field LegalHoldId set");
             request.AddPathResource("{legalHoldId}", StringUtils.FromString(publicRequest.LegalHoldId));
+            if (string.IsNullOrEmpty(publicRequest.CancelDescription))
+                throw new AmazonBackupException("Request object does not have required field CancelDescription set");
             
             if (publicRequest.IsSetCancelDescription())
                 request.Parameters.Add("cancelDescription", StringUtils.FromString(publicRequest.CancelDescription));

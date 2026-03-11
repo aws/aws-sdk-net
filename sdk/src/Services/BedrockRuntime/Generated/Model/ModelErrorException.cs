@@ -41,6 +41,13 @@ namespace Amazon.BedrockRuntime.Model
         private string _resourceName;
 
         /// <summary>
+        /// Default constructor for ModelErrorException
+        /// message.
+        /// </summary>
+        public ModelErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ModelErrorException with the specified error
         /// message.
         /// </summary>

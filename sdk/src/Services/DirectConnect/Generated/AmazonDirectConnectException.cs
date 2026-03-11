@@ -36,6 +36,14 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Construct instance of AmazonDirectConnectException
         /// </summary>
+        public AmazonDirectConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDirectConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDirectConnectException(string message)
             : base(message)

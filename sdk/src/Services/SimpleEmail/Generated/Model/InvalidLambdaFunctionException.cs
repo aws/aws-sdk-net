@@ -43,6 +43,13 @@ namespace Amazon.SimpleEmail.Model
         private string _functionArn;
 
         /// <summary>
+        /// Default constructor for InvalidLambdaFunctionException
+        /// message.
+        /// </summary>
+        public InvalidLambdaFunctionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLambdaFunctionException with the specified error
         /// message.
         /// </summary>

@@ -154,6 +154,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicyStore(Amazon.VerifiedPermissions.Model.CreatePolicyStoreRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicyStore(Amazon.VerifiedPermissions.Model.CreatePolicyStoreRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyStoreRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new policy store with encryption settings based on a provided KMS key.
+                </para>
+                <code
+                    title="To create an encrypted policy store"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicyTemplate(Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicyTemplate(Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest" />
@@ -301,6 +320,25 @@
                     title="GetPolicyStore"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyStore(Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyStore(Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the specified encrypted policy store.
+                </para>
+                <code
+                    title="GetPolicyStore that is encrypted"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>

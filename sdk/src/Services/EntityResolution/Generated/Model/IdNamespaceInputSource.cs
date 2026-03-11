@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputSourceARN</c> and <c>SchemaName</c>.
+    /// An object containing <c>inputSourceARN</c> and <c>schemaName</c>.
     /// </summary>
     public partial class IdNamespaceInputSource
     {

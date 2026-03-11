@@ -46,6 +46,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetLanguageConfiguration())
+            {
+                context.Writer.WritePropertyName("languageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioLanguageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LanguageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetModalityProcessing())
             {
                 context.Writer.WritePropertyName("modalityProcessing");
@@ -53,6 +64,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 
                 var marshaller = ModalityProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModalityProcessing, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSensitiveDataConfiguration())
+            {
+                context.Writer.WritePropertyName("sensitiveDataConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SensitiveDataConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SensitiveDataConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

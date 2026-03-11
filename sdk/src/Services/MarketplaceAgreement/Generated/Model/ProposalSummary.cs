@@ -35,6 +35,7 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class ProposalSummary
     {
         private string _offerId;
+        private string _offerSetId;
         private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetOfferId()
         {
             return this._offerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSetId. 
+        /// <para>
+        /// A unique identifier for the offer set containing this offer. All agreements created
+        /// from offers in this set include this identifier as context.
+        /// </para>
+        /// </summary>
+        public string OfferSetId
+        {
+            get { return this._offerSetId; }
+            set { this._offerSetId = value; }
+        }
+
+        // Check to see if OfferSetId property is set
+        internal bool IsSetOfferSetId()
+        {
+            return this._offerSetId != null;
         }
 
         /// <summary>

@@ -142,6 +142,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.InfrastructureConfigurationArn);
             }
 
+            if(publicRequest.IsSetLoggingConfiguration())
+            {
+                context.Writer.WritePropertyName("loggingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImageLoggingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

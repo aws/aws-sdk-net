@@ -41,6 +41,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for UnmatchedPolicyPermissionException
+        /// message.
+        /// </summary>
+        public UnmatchedPolicyPermissionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnmatchedPolicyPermissionException with the specified error
         /// message.
         /// </summary>

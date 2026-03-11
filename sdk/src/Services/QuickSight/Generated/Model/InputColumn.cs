@@ -34,9 +34,29 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class InputColumn
     {
+        private string _id;
         private string _name;
         private ColumnDataSubType _subType;
         private InputColumnDataType _type;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// A unique identifier for the input column.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -80,6 +100,11 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The data type of the column.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> <c>SEMISTRUCT</c> represents Athena's map, row, and struct data types.
+        /// It is supported when using the new data preparation experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

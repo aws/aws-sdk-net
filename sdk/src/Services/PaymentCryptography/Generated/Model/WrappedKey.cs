@@ -93,7 +93,7 @@ namespace Amazon.PaymentCryptography.Model
         /// method.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=48, Max=16384)]
+        [AWSProperty(Required=true, Sensitive=true, Min=32, Max=16384)]
         public string KeyMaterial
         {
             get { return this._keyMaterial; }

@@ -559,6 +559,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly AssociationErrorCode DeploymentErrorWorkspaceUnreachable = new AssociationErrorCode("DeploymentError.WorkspaceUnreachable");
         /// <summary>
+        /// Constant ValidationErrorApplicationOldVersionExists for AssociationErrorCode
+        /// </summary>
+        public static readonly AssociationErrorCode ValidationErrorApplicationOldVersionExists = new AssociationErrorCode("ValidationError.ApplicationOldVersionExists");
+        /// <summary>
         /// Constant ValidationErrorInsufficientDiskSpace for AssociationErrorCode
         /// </summary>
         public static readonly AssociationErrorCode ValidationErrorInsufficientDiskSpace = new AssociationErrorCode("ValidationError.InsufficientDiskSpace");
@@ -1027,6 +1031,54 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly Compute GRAPHICS_G4DN = new Compute("GRAPHICS_G4DN");
         /// <summary>
+        /// Constant GRAPHICS_G6_16XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_16XLARGE = new Compute("GRAPHICS_G6_16XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_2XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_2XLARGE = new Compute("GRAPHICS_G6_2XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_4XLARGE = new Compute("GRAPHICS_G6_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_8XLARGE = new Compute("GRAPHICS_G6_8XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6_XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6_XLARGE = new Compute("GRAPHICS_G6_XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_2XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_2XLARGE = new Compute("GRAPHICS_G6F_2XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_4XLARGE = new Compute("GRAPHICS_G6F_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_LARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_LARGE = new Compute("GRAPHICS_G6F_LARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G6F_XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G6F_XLARGE = new Compute("GRAPHICS_G6F_XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_GR6_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_GR6_4XLARGE = new Compute("GRAPHICS_GR6_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_GR6_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_GR6_8XLARGE = new Compute("GRAPHICS_GR6_8XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_GR6F_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_GR6F_4XLARGE = new Compute("GRAPHICS_GR6F_4XLARGE");
+        /// <summary>
         /// Constant GRAPHICSPRO for Compute
         /// </summary>
         public static readonly Compute GRAPHICSPRO = new Compute("GRAPHICSPRO");
@@ -1192,6 +1244,158 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomImageProtocol.
+    /// </summary>
+    public class CustomImageProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYOP for CustomImageProtocol
+        /// </summary>
+        public static readonly CustomImageProtocol BYOP = new CustomImageProtocol("BYOP");
+        /// <summary>
+        /// Constant DCV for CustomImageProtocol
+        /// </summary>
+        public static readonly CustomImageProtocol DCV = new CustomImageProtocol("DCV");
+        /// <summary>
+        /// Constant PCOIP for CustomImageProtocol
+        /// </summary>
+        public static readonly CustomImageProtocol PCOIP = new CustomImageProtocol("PCOIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomImageProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomImageProtocol FindValue(string value)
+        {
+            return FindValue<CustomImageProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomImageProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomWorkspaceImageImportState.
+    /// </summary>
+    public class CustomWorkspaceImageImportState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState COMPLETED = new CustomWorkspaceImageImportState("COMPLETED");
+        /// <summary>
+        /// Constant CREATING_TEST_INSTANCE for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState CREATING_TEST_INSTANCE = new CustomWorkspaceImageImportState("CREATING_TEST_INSTANCE");
+        /// <summary>
+        /// Constant ERROR for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState ERROR = new CustomWorkspaceImageImportState("ERROR");
+        /// <summary>
+        /// Constant GENERALIZING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState GENERALIZING = new CustomWorkspaceImageImportState("GENERALIZING");
+        /// <summary>
+        /// Constant IMAGE_COMPATIBILITY_CHECKING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IMAGE_COMPATIBILITY_CHECKING = new CustomWorkspaceImageImportState("IMAGE_COMPATIBILITY_CHECKING");
+        /// <summary>
+        /// Constant IMAGE_TESTING_GENERALIZATION for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IMAGE_TESTING_GENERALIZATION = new CustomWorkspaceImageImportState("IMAGE_TESTING_GENERALIZATION");
+        /// <summary>
+        /// Constant IMAGE_TESTING_START for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IMAGE_TESTING_START = new CustomWorkspaceImageImportState("IMAGE_TESTING_START");
+        /// <summary>
+        /// Constant IN_PROGRESS for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IN_PROGRESS = new CustomWorkspaceImageImportState("IN_PROGRESS");
+        /// <summary>
+        /// Constant INSTALLING_COMPONENTS for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState INSTALLING_COMPONENTS = new CustomWorkspaceImageImportState("INSTALLING_COMPONENTS");
+        /// <summary>
+        /// Constant PENDING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState PENDING = new CustomWorkspaceImageImportState("PENDING");
+        /// <summary>
+        /// Constant PROCESSING_SOURCE_IMAGE for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState PROCESSING_SOURCE_IMAGE = new CustomWorkspaceImageImportState("PROCESSING_SOURCE_IMAGE");
+        /// <summary>
+        /// Constant PUBLISHING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState PUBLISHING = new CustomWorkspaceImageImportState("PUBLISHING");
+        /// <summary>
+        /// Constant UPDATING_OPERATING_SYSTEM for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState UPDATING_OPERATING_SYSTEM = new CustomWorkspaceImageImportState("UPDATING_OPERATING_SYSTEM");
+        /// <summary>
+        /// Constant VALIDATING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState VALIDATING = new CustomWorkspaceImageImportState("VALIDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomWorkspaceImageImportState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomWorkspaceImageImportState FindValue(string value)
+        {
+            return FindValue<CustomWorkspaceImageImportState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomWorkspaceImageImportState(string value)
         {
             return FindValue(value);
         }
@@ -1795,6 +1999,60 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ImageComputeType.
+    /// </summary>
+    public class ImageComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType BASE = new ImageComputeType("BASE");
+        /// <summary>
+        /// Constant GRAPHICS_G4DN for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType GRAPHICS_G4DN = new ImageComputeType("GRAPHICS_G4DN");
+        /// <summary>
+        /// Constant GRAPHICS_G6 for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType GRAPHICS_G6 = new ImageComputeType("GRAPHICS_G6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageComputeType FindValue(string value)
+        {
+            return FindValue<ImageComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageType.
     /// </summary>
     public class ImageType : ConstantClass
@@ -2182,6 +2440,102 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperatingSystemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OSVersion.
+    /// </summary>
+    public class OSVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Windows_10 for OSVersion
+        /// </summary>
+        public static readonly OSVersion Windows_10 = new OSVersion("Windows_10");
+        /// <summary>
+        /// Constant Windows_11 for OSVersion
+        /// </summary>
+        public static readonly OSVersion Windows_11 = new OSVersion("Windows_11");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OSVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OSVersion FindValue(string value)
+        {
+            return FindValue<OSVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OSVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Platform.
+    /// </summary>
+    public class Platform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOWS for Platform
+        /// </summary>
+        public static readonly Platform WINDOWS = new Platform("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Platform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Platform FindValue(string value)
+        {
+            return FindValue<Platform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Platform(string value)
         {
             return FindValue(value);
         }

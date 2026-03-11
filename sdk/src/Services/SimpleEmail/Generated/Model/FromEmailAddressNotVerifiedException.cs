@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _fromEmailAddress;
 
         /// <summary>
+        /// Default constructor for FromEmailAddressNotVerifiedException
+        /// message.
+        /// </summary>
+        public FromEmailAddressNotVerifiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FromEmailAddressNotVerifiedException with the specified error
         /// message.
         /// </summary>

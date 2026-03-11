@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreHasOngoingImportException
+        /// message.
+        /// </summary>
+        public EventDataStoreHasOngoingImportException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreHasOngoingImportException with the specified error
         /// message.
         /// </summary>

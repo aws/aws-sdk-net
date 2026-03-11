@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CNAMEAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CNAMEAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CNAMEAlreadyExistsException with the specified error
         /// message.
         /// </summary>

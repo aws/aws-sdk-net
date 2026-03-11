@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContainerGroupDefinition operation.
-    /// Deletes a container group definition. 
+    /// <b>This API works with the following fleet types:</b> Container
     /// 
     ///  
     /// <para>
     ///  <b>Request options:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Deletes a container group definition. 
     /// </para>
     ///  <ul> <li> 
     /// <para>

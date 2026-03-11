@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of clusters
+    /// allowed for this customer.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ClusterQuotaForCustomerExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ClusterQuotaForCustomerExceededException
+        /// message.
+        /// </summary>
+        public ClusterQuotaForCustomerExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ClusterQuotaForCustomerExceededException with the specified error

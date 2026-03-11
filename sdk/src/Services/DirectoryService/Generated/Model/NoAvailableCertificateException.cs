@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoAvailableCertificateException
+        /// message.
+        /// </summary>
+        public NoAvailableCertificateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoAvailableCertificateException with the specified error
         /// message.
         /// </summary>

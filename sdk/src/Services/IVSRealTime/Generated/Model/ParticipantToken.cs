@@ -51,9 +51,10 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Application-provided attributes to encode into the token and attach to a stage. <i>This
-        /// field is exposed to all stage participants and should not be used for personally identifying,
-        /// confidential, or sensitive information.</i> 
+        /// Application-provided attributes to encode into the token and attach to a stage. Map
+        /// keys and values can contain UTF-8 encoded text. The maximum length of this field is
+        /// 1 KB total. <i>This field is exposed to all stage participants and should not be used
+        /// for personally identifying, confidential, or sensitive information.</i> 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

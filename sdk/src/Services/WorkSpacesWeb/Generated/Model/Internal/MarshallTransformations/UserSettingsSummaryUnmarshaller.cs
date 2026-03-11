@@ -56,6 +56,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("brandingConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrandingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BrandingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cookieSynchronizationConfiguration", targetDepth))
                 {
                     var unmarshaller = CookieSynchronizationConfigurationUnmarshaller.Instance;
@@ -120,6 +126,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserSettingsArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("webAuthnAllowed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WebAuthnAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

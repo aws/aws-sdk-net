@@ -40,6 +40,13 @@ namespace Amazon.ServiceDiscovery.Model
         private string _duplicateOperationId;
 
         /// <summary>
+        /// Default constructor for DuplicateRequestException
+        /// message.
+        /// </summary>
+        public DuplicateRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateRequestException with the specified error
         /// message.
         /// </summary>
@@ -125,7 +132,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the operation that's already in progress.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Max=255)]
         public string DuplicateOperationId
         {
             get { return this._duplicateOperationId; }

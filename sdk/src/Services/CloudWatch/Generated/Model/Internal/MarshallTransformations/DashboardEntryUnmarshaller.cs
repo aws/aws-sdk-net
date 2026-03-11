@@ -29,65 +29,80 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DashboardEntry Object
     /// </summary>  
-    public class DashboardEntryUnmarshaller : IXmlUnmarshaller<DashboardEntry, XmlUnmarshallerContext>
+    public class DashboardEntryUnmarshaller : ICborUnmarshaller<DashboardEntry, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public DashboardEntry Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public DashboardEntry Unmarshall(CborUnmarshallerContext context)
         {
             DashboardEntry unmarshalledObject = new DashboardEntry();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("DashboardArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DashboardArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DashboardName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DashboardName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastModified", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Size", targetDepth))
-                    {
-                        var unmarshaller = NullableLongUnmarshaller.Instance;
-                        unmarshalledObject.Size = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "DashboardArn":
+                        {
+                            context.AddPathSegment("DashboardArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DashboardArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DashboardName":
+                        {
+                            context.AddPathSegment("DashboardName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DashboardName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LastModified":
+                        {
+                            context.AddPathSegment("LastModified");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Size":
+                        {
+                            context.AddPathSegment("Size");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.Size = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static DashboardEntryUnmarshaller _instance = new DashboardEntryUnmarshaller();        
 

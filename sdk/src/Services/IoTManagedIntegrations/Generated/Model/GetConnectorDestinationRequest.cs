@@ -31,8 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConnectorDestination operation.
-    /// Get a connector destination of a cloud-to-cloud (C2C) connector connecting to a customer's
-    /// Amazon Web Services account.
+    /// Get connector destination details linked to a cloud-to-cloud (C2C) connector.
     /// </summary>
     public partial class GetConnectorDestinationRequest : AmazonIoTManagedIntegrationsRequest
     {

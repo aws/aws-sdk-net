@@ -46,6 +46,7 @@ namespace Amazon.Imagebuilder.Model
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
+        private PipelineLoggingConfiguration _loggingConfiguration;
         private string _name;
         private Schedule _schedule;
         private PipelineStatus _status;
@@ -243,6 +244,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInfrastructureConfigurationArn()
         {
             return this._infrastructureConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// Define logging configuration for the image build process.
+        /// </para>
+        /// </summary>
+        public PipelineLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

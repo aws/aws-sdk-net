@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _configurationSetName;
 
         /// <summary>
+        /// Default constructor for TrackingOptionsAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TrackingOptionsAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrackingOptionsAlreadyExistsException with the specified error
         /// message.
         /// </summary>

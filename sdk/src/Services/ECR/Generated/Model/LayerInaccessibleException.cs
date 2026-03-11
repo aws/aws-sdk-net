@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for LayerInaccessibleException
+        /// message.
+        /// </summary>
+        public LayerInaccessibleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LayerInaccessibleException with the specified error
         /// message.
         /// </summary>

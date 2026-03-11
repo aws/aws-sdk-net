@@ -119,8 +119,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property QuickSightConfiguration. 
         /// <para>
-        /// The Amazon QuickSight configuration for an Amazon Q Business application that uses
-        /// QuickSight as the identity provider.
+        /// The Amazon Quick Suite configuration for an Amazon Q Business application that uses
+        /// Quick Suite as the identity provider.
         /// </para>
         /// </summary>
         public QuickSightConfiguration QuickSightConfiguration

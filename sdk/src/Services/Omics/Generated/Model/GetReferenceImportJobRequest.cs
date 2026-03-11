@@ -31,7 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReferenceImportJob operation.
-    /// Gets information about a reference import job.
+    /// Monitors the status of a reference import job. This operation can be called after
+    /// calling the <c>StartReferenceImportJob</c> operation.
     /// </summary>
     public partial class GetReferenceImportJobRequest : AmazonOmicsRequest
     {

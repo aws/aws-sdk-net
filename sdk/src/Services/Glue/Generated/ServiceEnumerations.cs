@@ -31,6 +31,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant CompositeRuleEvaluationMethod for AdditionalOptionKeys
+        /// </summary>
+        public static readonly AdditionalOptionKeys CompositeRuleEvaluationMethod = new AdditionalOptionKeys("compositeRuleEvaluation.method");
+        /// <summary>
         /// Constant ObservationsScope for AdditionalOptionKeys
         /// </summary>
         public static readonly AdditionalOptionKeys ObservationsScope = new AdditionalOptionKeys("observations.scope");
@@ -1043,6 +1047,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationSource.
+    /// </summary>
+    public class ConfigurationSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Catalog for ConfigurationSource
+        /// </summary>
+        public static readonly ConfigurationSource Catalog = new ConfigurationSource("catalog");
+        /// <summary>
+        /// Constant Table for ConfigurationSource
+        /// </summary>
+        public static readonly ConfigurationSource Table = new ConfigurationSource("table");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationSource FindValue(string value)
+        {
+            return FindValue<ConfigurationSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionPropertyKey.
     /// </summary>
     public class ConnectionPropertyKey : ConstantClass
@@ -1341,13 +1395,117 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant ADOBEANALYTICS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ADOBEANALYTICS = new ConnectionType("ADOBEANALYTICS");
+        /// <summary>
+        /// Constant ASANA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ASANA = new ConnectionType("ASANA");
+        /// <summary>
+        /// Constant AZURECOSMOS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType AZURECOSMOS = new ConnectionType("AZURECOSMOS");
+        /// <summary>
+        /// Constant AZURESQL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType AZURESQL = new ConnectionType("AZURESQL");
+        /// <summary>
+        /// Constant BIGQUERY for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType BIGQUERY = new ConnectionType("BIGQUERY");
+        /// <summary>
+        /// Constant BLACKBAUD for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType BLACKBAUD = new ConnectionType("BLACKBAUD");
+        /// <summary>
+        /// Constant BLACKBAUDRAISEREDGENXT for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType BLACKBAUDRAISEREDGENXT = new ConnectionType("BLACKBAUDRAISEREDGENXT");
+        /// <summary>
+        /// Constant CIRCLECI for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CIRCLECI = new ConnectionType("CIRCLECI");
+        /// <summary>
+        /// Constant CLOUDERAHIVE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CLOUDERAHIVE = new ConnectionType("CLOUDERAHIVE");
+        /// <summary>
+        /// Constant CLOUDERAIMPALA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CLOUDERAIMPALA = new ConnectionType("CLOUDERAIMPALA");
+        /// <summary>
+        /// Constant CLOUDWATCH for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CLOUDWATCH = new ConnectionType("CLOUDWATCH");
+        /// <summary>
+        /// Constant CLOUDWATCHMETRICS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CLOUDWATCHMETRICS = new ConnectionType("CLOUDWATCHMETRICS");
+        /// <summary>
+        /// Constant CMDB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CMDB = new ConnectionType("CMDB");
+        /// <summary>
         /// Constant CUSTOM for ConnectionType
         /// </summary>
         public static readonly ConnectionType CUSTOM = new ConnectionType("CUSTOM");
         /// <summary>
+        /// Constant DATADOG for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DATADOG = new ConnectionType("DATADOG");
+        /// <summary>
+        /// Constant DATALAKEGEN2 for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DATALAKEGEN2 = new ConnectionType("DATALAKEGEN2");
+        /// <summary>
+        /// Constant DB2 for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DB2 = new ConnectionType("DB2");
+        /// <summary>
+        /// Constant DB2AS400 for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DB2AS400 = new ConnectionType("DB2AS400");
+        /// <summary>
+        /// Constant DOCUMENTDB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DOCUMENTDB = new ConnectionType("DOCUMENTDB");
+        /// <summary>
+        /// Constant DOCUSIGNMONITOR for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DOCUSIGNMONITOR = new ConnectionType("DOCUSIGNMONITOR");
+        /// <summary>
+        /// Constant DOMO for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DOMO = new ConnectionType("DOMO");
+        /// <summary>
+        /// Constant DYNAMODB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DYNAMODB = new ConnectionType("DYNAMODB");
+        /// <summary>
+        /// Constant DYNATRACE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DYNATRACE = new ConnectionType("DYNATRACE");
+        /// <summary>
         /// Constant FACEBOOKADS for ConnectionType
         /// </summary>
         public static readonly ConnectionType FACEBOOKADS = new ConnectionType("FACEBOOKADS");
+        /// <summary>
+        /// Constant FACEBOOKPAGEINSIGHTS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType FACEBOOKPAGEINSIGHTS = new ConnectionType("FACEBOOKPAGEINSIGHTS");
+        /// <summary>
+        /// Constant FRESHDESK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType FRESHDESK = new ConnectionType("FRESHDESK");
+        /// <summary>
+        /// Constant FRESHSALES for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType FRESHSALES = new ConnectionType("FRESHSALES");
+        /// <summary>
+        /// Constant GITLAB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GITLAB = new ConnectionType("GITLAB");
         /// <summary>
         /// Constant GOOGLEADS for ConnectionType
         /// </summary>
@@ -1357,9 +1515,21 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType GOOGLEANALYTICS4 = new ConnectionType("GOOGLEANALYTICS4");
         /// <summary>
+        /// Constant GOOGLECLOUDSTORAGE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GOOGLECLOUDSTORAGE = new ConnectionType("GOOGLECLOUDSTORAGE");
+        /// <summary>
+        /// Constant GOOGLESEARCHCONSOLE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GOOGLESEARCHCONSOLE = new ConnectionType("GOOGLESEARCHCONSOLE");
+        /// <summary>
         /// Constant GOOGLESHEETS for ConnectionType
         /// </summary>
         public static readonly ConnectionType GOOGLESHEETS = new ConnectionType("GOOGLESHEETS");
+        /// <summary>
+        /// Constant HBASE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType HBASE = new ConnectionType("HBASE");
         /// <summary>
         /// Constant HUBSPOT for ConnectionType
         /// </summary>
@@ -1385,6 +1555,18 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType KAFKA = new ConnectionType("KAFKA");
         /// <summary>
+        /// Constant KUSTOMER for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType KUSTOMER = new ConnectionType("KUSTOMER");
+        /// <summary>
+        /// Constant LINKEDIN for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType LINKEDIN = new ConnectionType("LINKEDIN");
+        /// <summary>
+        /// Constant MAILCHIMP for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MAILCHIMP = new ConnectionType("MAILCHIMP");
+        /// <summary>
         /// Constant MARKETO for ConnectionType
         /// </summary>
         public static readonly ConnectionType MARKETO = new ConnectionType("MARKETO");
@@ -1393,9 +1575,33 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType MARKETPLACE = new ConnectionType("MARKETPLACE");
         /// <summary>
+        /// Constant MICROSOFTDYNAMIC365FINANCEANDOPS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MICROSOFTDYNAMIC365FINANCEANDOPS = new ConnectionType("MICROSOFTDYNAMIC365FINANCEANDOPS");
+        /// <summary>
+        /// Constant MICROSOFTDYNAMICS365CRM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MICROSOFTDYNAMICS365CRM = new ConnectionType("MICROSOFTDYNAMICS365CRM");
+        /// <summary>
+        /// Constant MICROSOFTTEAMS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MICROSOFTTEAMS = new ConnectionType("MICROSOFTTEAMS");
+        /// <summary>
+        /// Constant MIXPANEL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MIXPANEL = new ConnectionType("MIXPANEL");
+        /// <summary>
+        /// Constant MONDAY for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MONDAY = new ConnectionType("MONDAY");
+        /// <summary>
         /// Constant MONGODB for ConnectionType
         /// </summary>
         public static readonly ConnectionType MONGODB = new ConnectionType("MONGODB");
+        /// <summary>
+        /// Constant MYSQL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MYSQL = new ConnectionType("MYSQL");
         /// <summary>
         /// Constant NETSUITEERP for ConnectionType
         /// </summary>
@@ -1405,9 +1611,53 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType NETWORK = new ConnectionType("NETWORK");
         /// <summary>
+        /// Constant OKTA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType OKTA = new ConnectionType("OKTA");
+        /// <summary>
+        /// Constant OPENSEARCH for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType OPENSEARCH = new ConnectionType("OPENSEARCH");
+        /// <summary>
+        /// Constant ORACLE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ORACLE = new ConnectionType("ORACLE");
+        /// <summary>
+        /// Constant PAYPAL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType PAYPAL = new ConnectionType("PAYPAL");
+        /// <summary>
+        /// Constant PENDO for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType PENDO = new ConnectionType("PENDO");
+        /// <summary>
+        /// Constant PIPEDIVE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType PIPEDIVE = new ConnectionType("PIPEDIVE");
+        /// <summary>
+        /// Constant PIPEDRIVE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType PIPEDRIVE = new ConnectionType("PIPEDRIVE");
+        /// <summary>
+        /// Constant POSTGRESQL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType POSTGRESQL = new ConnectionType("POSTGRESQL");
+        /// <summary>
+        /// Constant PRODUCTBOARD for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType PRODUCTBOARD = new ConnectionType("PRODUCTBOARD");
+        /// <summary>
+        /// Constant QUICKBOOKS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType QUICKBOOKS = new ConnectionType("QUICKBOOKS");
+        /// <summary>
         /// Constant SALESFORCE for ConnectionType
         /// </summary>
         public static readonly ConnectionType SALESFORCE = new ConnectionType("SALESFORCE");
+        /// <summary>
+        /// Constant SALESFORCECOMMERCECLOUD for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SALESFORCECOMMERCECLOUD = new ConnectionType("SALESFORCECOMMERCECLOUD");
         /// <summary>
         /// Constant SALESFORCEMARKETINGCLOUD for ConnectionType
         /// </summary>
@@ -1417,9 +1667,21 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType SALESFORCEPARDOT = new ConnectionType("SALESFORCEPARDOT");
         /// <summary>
+        /// Constant SAPCONCUR for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SAPCONCUR = new ConnectionType("SAPCONCUR");
+        /// <summary>
+        /// Constant SAPHANA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SAPHANA = new ConnectionType("SAPHANA");
+        /// <summary>
         /// Constant SAPODATA for ConnectionType
         /// </summary>
         public static readonly ConnectionType SAPODATA = new ConnectionType("SAPODATA");
+        /// <summary>
+        /// Constant SENDGRID for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SENDGRID = new ConnectionType("SENDGRID");
         /// <summary>
         /// Constant SERVICENOW for ConnectionType
         /// </summary>
@@ -1433,13 +1695,49 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType SLACK = new ConnectionType("SLACK");
         /// <summary>
+        /// Constant SMARTSHEET for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SMARTSHEET = new ConnectionType("SMARTSHEET");
+        /// <summary>
         /// Constant SNAPCHATADS for ConnectionType
         /// </summary>
         public static readonly ConnectionType SNAPCHATADS = new ConnectionType("SNAPCHATADS");
         /// <summary>
+        /// Constant SQLSERVER for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SQLSERVER = new ConnectionType("SQLSERVER");
+        /// <summary>
         /// Constant STRIPE for ConnectionType
         /// </summary>
         public static readonly ConnectionType STRIPE = new ConnectionType("STRIPE");
+        /// <summary>
+        /// Constant SYNAPSE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SYNAPSE = new ConnectionType("SYNAPSE");
+        /// <summary>
+        /// Constant TERADATA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType TERADATA = new ConnectionType("TERADATA");
+        /// <summary>
+        /// Constant TERADATANOS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType TERADATANOS = new ConnectionType("TERADATANOS");
+        /// <summary>
+        /// Constant TIMESTREAM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType TIMESTREAM = new ConnectionType("TIMESTREAM");
+        /// <summary>
+        /// Constant TPCDS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType TPCDS = new ConnectionType("TPCDS");
+        /// <summary>
+        /// Constant TWILIO for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType TWILIO = new ConnectionType("TWILIO");
+        /// <summary>
+        /// Constant VERTICA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VERTICA = new ConnectionType("VERTICA");
         /// <summary>
         /// Constant VIEW_VALIDATION_ATHENA for ConnectionType
         /// </summary>
@@ -1449,6 +1747,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionType VIEW_VALIDATION_REDSHIFT = new ConnectionType("VIEW_VALIDATION_REDSHIFT");
         /// <summary>
+        /// Constant WOOCOMMERCE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WOOCOMMERCE = new ConnectionType("WOOCOMMERCE");
+        /// <summary>
         /// Constant ZENDESK for ConnectionType
         /// </summary>
         public static readonly ConnectionType ZENDESK = new ConnectionType("ZENDESK");
@@ -1456,6 +1758,10 @@ namespace Amazon.Glue
         /// Constant ZOHOCRM for ConnectionType
         /// </summary>
         public static readonly ConnectionType ZOHOCRM = new ConnectionType("ZOHOCRM");
+        /// <summary>
+        /// Constant ZOOM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ZOOM = new ConnectionType("ZOOM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1486,6 +1792,110 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorOAuth2GrantType.
+    /// </summary>
+    public class ConnectorOAuth2GrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for ConnectorOAuth2GrantType
+        /// </summary>
+        public static readonly ConnectorOAuth2GrantType AUTHORIZATION_CODE = new ConnectorOAuth2GrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for ConnectorOAuth2GrantType
+        /// </summary>
+        public static readonly ConnectorOAuth2GrantType CLIENT_CREDENTIALS = new ConnectorOAuth2GrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant JWT_BEARER for ConnectorOAuth2GrantType
+        /// </summary>
+        public static readonly ConnectorOAuth2GrantType JWT_BEARER = new ConnectorOAuth2GrantType("JWT_BEARER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorOAuth2GrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorOAuth2GrantType FindValue(string value)
+        {
+            return FindValue<ConnectorOAuth2GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorOAuth2GrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentType.
+    /// </summary>
+    public class ContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION_JSON for ContentType
+        /// </summary>
+        public static readonly ContentType APPLICATION_JSON = new ContentType("APPLICATION_JSON");
+        /// <summary>
+        /// Constant URL_ENCODED for ContentType
+        /// </summary>
+        public static readonly ContentType URL_ENCODED = new ContentType("URL_ENCODED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentType FindValue(string value)
+        {
+            return FindValue<ContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentType(string value)
         {
             return FindValue(value);
         }
@@ -1838,6 +2248,10 @@ namespace Amazon.Glue
         /// Constant NAME for DatabaseAttributes
         /// </summary>
         public static readonly DatabaseAttributes NAME = new DatabaseAttributes("NAME");
+        /// <summary>
+        /// Constant TARGET_DATABASE for DatabaseAttributes
+        /// </summary>
+        public static readonly DatabaseAttributes TARGET_DATABASE = new DatabaseAttributes("TARGET_DATABASE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2130,6 +2544,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataQualityRuleResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DdbExportType.
+    /// </summary>
+    public class DdbExportType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ddb for DdbExportType
+        /// </summary>
+        public static readonly DdbExportType Ddb = new DdbExportType("ddb");
+        /// <summary>
+        /// Constant S3 for DdbExportType
+        /// </summary>
+        public static readonly DdbExportType S3 = new DdbExportType("s3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DdbExportType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DdbExportType FindValue(string value)
+        {
+            return FindValue<DdbExportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DdbExportType(string value)
         {
             return FindValue(value);
         }
@@ -2691,6 +3155,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly FieldDataType BIGINT = new FieldDataType("BIGINT");
         /// <summary>
+        /// Constant BINARY for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType BINARY = new FieldDataType("BINARY");
+        /// <summary>
         /// Constant BOOLEAN for FieldDataType
         /// </summary>
         public static readonly FieldDataType BOOLEAN = new FieldDataType("BOOLEAN");
@@ -2746,6 +3214,10 @@ namespace Amazon.Glue
         /// Constant TIMESTAMP for FieldDataType
         /// </summary>
         public static readonly FieldDataType TIMESTAMP = new FieldDataType("TIMESTAMP");
+        /// <summary>
+        /// Constant UNION for FieldDataType
+        /// </summary>
+        public static readonly FieldDataType UNION = new FieldDataType("UNION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3159,6 +3631,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type FunctionType.
+    /// </summary>
+    public class FunctionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGGREGATE_FUNCTION for FunctionType
+        /// </summary>
+        public static readonly FunctionType AGGREGATE_FUNCTION = new FunctionType("AGGREGATE_FUNCTION");
+        /// <summary>
+        /// Constant REGULAR_FUNCTION for FunctionType
+        /// </summary>
+        public static readonly FunctionType REGULAR_FUNCTION = new FunctionType("REGULAR_FUNCTION");
+        /// <summary>
+        /// Constant STORED_PROCEDURE for FunctionType
+        /// </summary>
+        public static readonly FunctionType STORED_PROCEDURE = new FunctionType("STORED_PROCEDURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionType FindValue(string value)
+        {
+            return FindValue<FunctionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlueRecordType.
     /// </summary>
     public class GlueRecordType : ConstantClass
@@ -3234,6 +3760,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GlueRecordType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HTTPMethod.
+    /// </summary>
+    public class HTTPMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GET for HTTPMethod
+        /// </summary>
+        public static readonly HTTPMethod GET = new HTTPMethod("GET");
+        /// <summary>
+        /// Constant POST for HTTPMethod
+        /// </summary>
+        public static readonly HTTPMethod POST = new HTTPMethod("POST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HTTPMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HTTPMethod FindValue(string value)
+        {
+            return FindValue<HTTPMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HTTPMethod(string value)
         {
             return FindValue(value);
         }
@@ -3549,6 +4125,92 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type IcebergUpdateAction.
+    /// </summary>
+    public class IcebergUpdateAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AddEncryptionKey for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddEncryptionKey = new IcebergUpdateAction("add-encryption-key");
+        /// <summary>
+        /// Constant AddSchema for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddSchema = new IcebergUpdateAction("add-schema");
+        /// <summary>
+        /// Constant AddSortOrder for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddSortOrder = new IcebergUpdateAction("add-sort-order");
+        /// <summary>
+        /// Constant AddSpec for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction AddSpec = new IcebergUpdateAction("add-spec");
+        /// <summary>
+        /// Constant RemoveEncryptionKey for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction RemoveEncryptionKey = new IcebergUpdateAction("remove-encryption-key");
+        /// <summary>
+        /// Constant RemoveProperties for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction RemoveProperties = new IcebergUpdateAction("remove-properties");
+        /// <summary>
+        /// Constant SetCurrentSchema for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetCurrentSchema = new IcebergUpdateAction("set-current-schema");
+        /// <summary>
+        /// Constant SetDefaultSortOrder for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetDefaultSortOrder = new IcebergUpdateAction("set-default-sort-order");
+        /// <summary>
+        /// Constant SetDefaultSpec for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetDefaultSpec = new IcebergUpdateAction("set-default-spec");
+        /// <summary>
+        /// Constant SetLocation for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetLocation = new IcebergUpdateAction("set-location");
+        /// <summary>
+        /// Constant SetProperties for IcebergUpdateAction
+        /// </summary>
+        public static readonly IcebergUpdateAction SetProperties = new IcebergUpdateAction("set-properties");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergUpdateAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergUpdateAction FindValue(string value)
+        {
+            return FindValue<IcebergUpdateAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergUpdateAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InclusionAnnotationValue.
     /// </summary>
     public class InclusionAnnotationValue : ConstantClass
@@ -3662,6 +4324,52 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IntegrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationType.
+    /// </summary>
+    public class IntegrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REST for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType REST = new IntegrationType("REST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationType FindValue(string value)
+        {
+            return FindValue<IntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationType(string value)
         {
             return FindValue(value);
         }
@@ -4335,6 +5043,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type LastRefreshType.
+    /// </summary>
+    public class LastRefreshType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for LastRefreshType
+        /// </summary>
+        public static readonly LastRefreshType FULL = new LastRefreshType("FULL");
+        /// <summary>
+        /// Constant INCREMENTAL for LastRefreshType
+        /// </summary>
+        public static readonly LastRefreshType INCREMENTAL = new LastRefreshType("INCREMENTAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastRefreshType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastRefreshType FindValue(string value)
+        {
+            return FindValue<LastRefreshType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastRefreshType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Logical.
     /// </summary>
     public class Logical : ConstantClass
@@ -4424,6 +5182,118 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogicalOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaterializedViewRefreshState.
+    /// </summary>
+    public class MaterializedViewRefreshState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState FAILED = new MaterializedViewRefreshState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState RUNNING = new MaterializedViewRefreshState("RUNNING");
+        /// <summary>
+        /// Constant STARTING for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState STARTING = new MaterializedViewRefreshState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState STOPPED = new MaterializedViewRefreshState("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for MaterializedViewRefreshState
+        /// </summary>
+        public static readonly MaterializedViewRefreshState SUCCEEDED = new MaterializedViewRefreshState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaterializedViewRefreshState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaterializedViewRefreshState FindValue(string value)
+        {
+            return FindValue<MaterializedViewRefreshState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaterializedViewRefreshState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MaterializedViewRefreshType.
+    /// </summary>
+    public class MaterializedViewRefreshType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for MaterializedViewRefreshType
+        /// </summary>
+        public static readonly MaterializedViewRefreshType FULL = new MaterializedViewRefreshType("FULL");
+        /// <summary>
+        /// Constant INCREMENTAL for MaterializedViewRefreshType
+        /// </summary>
+        public static readonly MaterializedViewRefreshType INCREMENTAL = new MaterializedViewRefreshType("INCREMENTAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaterializedViewRefreshType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaterializedViewRefreshType FindValue(string value)
+        {
+            return FindValue<MaterializedViewRefreshType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaterializedViewRefreshType(string value)
         {
             return FindValue(value);
         }
@@ -4979,6 +5849,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly PiiType ColumnAudit = new PiiType("ColumnAudit");
         /// <summary>
+        /// Constant ColumnHashing for PiiType
+        /// </summary>
+        public static readonly PiiType ColumnHashing = new PiiType("ColumnHashing");
+        /// <summary>
         /// Constant ColumnMasking for PiiType
         /// </summary>
         public static readonly PiiType ColumnMasking = new PiiType("ColumnMasking");
@@ -4987,9 +5861,17 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly PiiType RowAudit = new PiiType("RowAudit");
         /// <summary>
+        /// Constant RowHashing for PiiType
+        /// </summary>
+        public static readonly PiiType RowHashing = new PiiType("RowHashing");
+        /// <summary>
         /// Constant RowMasking for PiiType
         /// </summary>
         public static readonly PiiType RowMasking = new PiiType("RowMasking");
+        /// <summary>
+        /// Constant RowPartialMasking for PiiType
+        /// </summary>
+        public static readonly PiiType RowPartialMasking = new PiiType("RowPartialMasking");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5074,6 +5956,64 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PropertyLocation.
+    /// </summary>
+    public class PropertyLocation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BODY for PropertyLocation
+        /// </summary>
+        public static readonly PropertyLocation BODY = new PropertyLocation("BODY");
+        /// <summary>
+        /// Constant HEADER for PropertyLocation
+        /// </summary>
+        public static readonly PropertyLocation HEADER = new PropertyLocation("HEADER");
+        /// <summary>
+        /// Constant PATH for PropertyLocation
+        /// </summary>
+        public static readonly PropertyLocation PATH = new PropertyLocation("PATH");
+        /// <summary>
+        /// Constant QUERY_PARAM for PropertyLocation
+        /// </summary>
+        public static readonly PropertyLocation QUERY_PARAM = new PropertyLocation("QUERY_PARAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PropertyLocation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PropertyLocation FindValue(string value)
+        {
+            return FindValue<PropertyLocation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PropertyLocation(string value)
         {
             return FindValue(value);
         }

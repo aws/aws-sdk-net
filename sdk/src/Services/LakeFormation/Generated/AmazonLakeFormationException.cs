@@ -36,6 +36,14 @@ namespace Amazon.LakeFormation
         /// <summary>
         /// Construct instance of AmazonLakeFormationException
         /// </summary>
+        public AmazonLakeFormationException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLakeFormationException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLakeFormationException(string message)
             : base(message)

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateMonitoringSubscriptionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
@@ -68,7 +69,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetMonitoringSubscription())
                 {
                     xmlWriter.WriteStartElement("MonitoringSubscription", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                    if (publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig != null)
+                    if (publicRequest.MonitoringSubscription.IsSetRealtimeMetricsSubscriptionConfig())
                     {
                         xmlWriter.WriteStartElement("RealtimeMetricsSubscriptionConfig");
                         if(publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig.IsSetRealtimeMetricsSubscriptionStatus())
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -90,8 +92,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateMonitoringSubscriptionRequestMarshaller _instance = new CreateMonitoringSubscriptionRequestMarshaller();        
@@ -113,5 +113,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateMonitoringSubscriptionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateMonitoringSubscriptionRequest publicRequest);
     }    
 }

@@ -31,7 +31,7 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteField operation.
-    /// Deletes a field from a cases template. You can delete up to 100 fields per domain.
+    /// Deletes a field from a cases template.
     /// 
     ///  
     /// <para>
@@ -52,12 +52,12 @@ namespace Amazon.ConnectCases.Model
     ///  </li> <li> 
     /// <para>
     /// Calling <c>CreateCase</c> with a deleted field throws a <c>ValidationException</c>
-    /// denoting which field IDs in the request have been deleted.
+    /// denoting which field identifiers in the request have been deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Calling <c>GetCase</c> with a deleted field ID returns the deleted field's value if
-    /// one exists.
+    /// Calling <c>GetCase</c> with a deleted field identifier returns the deleted field's
+    /// value if one exists.
     /// </para>
     ///  </li> <li> 
     /// <para>

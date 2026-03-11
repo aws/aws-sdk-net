@@ -46,7 +46,7 @@ namespace Amazon.CleanRooms.Model
         /// user identifier column in both analysis rules.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string Name
         {
             get { return this._name; }

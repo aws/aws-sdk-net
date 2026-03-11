@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationStateException
+        /// message.
+        /// </summary>
+        public OrganizationStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationStateException with the specified error
         /// message.
         /// </summary>

@@ -35,10 +35,30 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class ListResourceConfigurationsRequest : AmazonVPCLatticeRequest
     {
+        private string _domainVerificationIdentifier;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceConfigurationGroupIdentifier;
         private string _resourceGatewayIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationIdentifier. 
+        /// <para>
+        ///  The domain verification ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DomainVerificationIdentifier
+        {
+            get { return this._domainVerificationIdentifier; }
+            set { this._domainVerificationIdentifier = value; }
+        }
+
+        // Check to see if DomainVerificationIdentifier property is set
+        internal bool IsSetDomainVerificationIdentifier()
+        {
+            return this._domainVerificationIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -81,7 +101,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationGroupIdentifier. 
         /// <para>
-        /// The ID of the group resource configuration.
+        /// The ID of the resource configuration of type <c>Group</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

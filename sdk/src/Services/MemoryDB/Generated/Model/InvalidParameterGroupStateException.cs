@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The parameter group is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidParameterGroupStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidParameterGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidParameterGroupStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidParameterGroupStateException with the specified error

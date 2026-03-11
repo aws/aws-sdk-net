@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EC2ThrottledException
+        /// message.
+        /// </summary>
+        public EC2ThrottledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EC2ThrottledException with the specified error
         /// message.
         /// </summary>

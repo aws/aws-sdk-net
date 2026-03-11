@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for TransactionCanceledException
+        /// message.
+        /// </summary>
+        public TransactionCanceledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransactionCanceledException with the specified error
         /// message.
         /// </summary>

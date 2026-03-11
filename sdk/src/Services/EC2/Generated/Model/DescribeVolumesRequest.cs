@@ -131,6 +131,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone in which the volume
+        /// was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>create-time</c> - The time stamp when the volume was created.
         /// </para>
         ///  </li> <li> 

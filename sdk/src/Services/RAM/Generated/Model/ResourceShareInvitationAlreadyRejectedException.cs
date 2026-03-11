@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceShareInvitationAlreadyRejectedException
+        /// message.
+        /// </summary>
+        public ResourceShareInvitationAlreadyRejectedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceShareInvitationAlreadyRejectedException with the specified error
         /// message.
         /// </summary>

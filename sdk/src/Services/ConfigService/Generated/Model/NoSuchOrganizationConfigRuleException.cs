@@ -41,6 +41,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchOrganizationConfigRuleException
+        /// message.
+        /// </summary>
+        public NoSuchOrganizationConfigRuleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchOrganizationConfigRuleException with the specified error
         /// message.
         /// </summary>

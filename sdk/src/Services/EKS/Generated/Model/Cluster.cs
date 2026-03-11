@@ -40,7 +40,9 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private ComputeConfigResponse _computeConfig;
         private ConnectorConfigResponse _connectorConfig;
+        private ControlPlaneScalingConfig _controlPlaneScalingConfig;
         private DateTime? _createdAt;
+        private bool? _deletionProtection;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private string _endpoint;
         private ClusterHealth _health;
@@ -175,6 +177,25 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ControlPlaneScalingConfig. 
+        /// <para>
+        /// The control plane scaling tier configuration. For more information, see EKS Provisioned
+        /// Control Plane in the Amazon EKS User Guide.
+        /// </para>
+        /// </summary>
+        public ControlPlaneScalingConfig ControlPlaneScalingConfig
+        {
+            get { return this._controlPlaneScalingConfig; }
+            set { this._controlPlaneScalingConfig = value; }
+        }
+
+        // Check to see if ControlPlaneScalingConfig property is set
+        internal bool IsSetControlPlaneScalingConfig()
+        {
+            return this._controlPlaneScalingConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix epoch timestamp at object creation.
@@ -190,6 +211,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// The current deletion protection setting for the cluster. When <c>true</c>, deletion
+        /// protection is enabled and the cluster cannot be deleted until protection is disabled.
+        /// When <c>false</c>, the cluster can be deleted normally. This setting only applies
+        /// to clusters in an active state.
+        /// </para>
+        /// </summary>
+        public bool? DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>

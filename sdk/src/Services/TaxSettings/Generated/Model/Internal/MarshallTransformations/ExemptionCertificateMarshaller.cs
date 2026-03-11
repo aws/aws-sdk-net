@@ -49,7 +49,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentFile())
             {
                 context.Writer.WritePropertyName("documentFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.DocumentFile));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.DocumentFile);
             }
 
             if(requestObject.IsSetDocumentName())

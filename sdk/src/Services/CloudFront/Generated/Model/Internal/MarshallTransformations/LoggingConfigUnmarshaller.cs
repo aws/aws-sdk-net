@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoggingConfig Object
     /// </summary>  
-    public class LoggingConfigUnmarshaller : IXmlUnmarshaller<LoggingConfig, XmlUnmarshallerContext>
+    public partial class LoggingConfigUnmarshaller : IXmlUnmarshaller<LoggingConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, LoggingConfig unmarshalledObject, int targetDepth);
+
         private static LoggingConfigUnmarshaller _instance = new LoggingConfigUnmarshaller();        
 
         /// <summary>

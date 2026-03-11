@@ -41,7 +41,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The client token associated with the request.
+        /// The client token associated with the cancellation request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -60,7 +60,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTaskArn. 
         /// <para>
-        /// The ARN of the task to cancel.
+        /// The ARN of the quantum task to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

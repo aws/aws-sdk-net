@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDistributionsByWebACLIdRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetWebACLId())
                 throw new AmazonCloudFrontException("Request object does not have required field WebACLId set");
@@ -69,8 +70,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distributionsByWebACLId/{WebACLId}";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListDistributionsByWebACLIdRequestMarshaller _instance = new ListDistributionsByWebACLIdRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByWebACLIdRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByWebACLIdRequest publicRequest);
     }    
 }

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _syncName;
 
         /// <summary>
+        /// Default constructor for ResourceDataSyncAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ResourceDataSyncAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDataSyncAlreadyExistsException with the specified error
         /// message.
         /// </summary>

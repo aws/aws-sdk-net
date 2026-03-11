@@ -42,6 +42,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for FinalizingOrganizationException
+        /// message.
+        /// </summary>
+        public FinalizingOrganizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FinalizingOrganizationException with the specified error
         /// message.
         /// </summary>

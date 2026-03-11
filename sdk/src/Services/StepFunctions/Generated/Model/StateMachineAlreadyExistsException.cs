@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for StateMachineAlreadyExistsException
+        /// message.
+        /// </summary>
+        public StateMachineAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StateMachineAlreadyExistsException with the specified error
         /// message.
         /// </summary>

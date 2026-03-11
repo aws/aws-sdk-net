@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthorizationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public AuthorizationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthorizationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -84,6 +84,12 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetCoverEntireOrganization())
+            {
+                context.Writer.WritePropertyName("coverEntireOrganization");
+                context.Writer.WriteBooleanValue(publicRequest.CoverEntireOrganization.Value);
+            }
+
             if(publicRequest.IsSetIncidentResponseTeam())
             {
                 context.Writer.WritePropertyName("incidentResponseTeam");

@@ -36,6 +36,7 @@ namespace Amazon.Odb.Model
     {
         private string _existingTenancyActivationLink;
         private string _newTenancyActivationLink;
+        private OciIdentityDomain _ociIdentityDomain;
         private OciOnboardingStatus _status;
 
         /// <summary>
@@ -72,6 +73,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetNewTenancyActivationLink()
         {
             return this._newTenancyActivationLink != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OciIdentityDomain. 
+        /// <para>
+        /// The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding
+        /// status response.
+        /// </para>
+        /// </summary>
+        public OciIdentityDomain OciIdentityDomain
+        {
+            get { return this._ociIdentityDomain; }
+            set { this._ociIdentityDomain = value; }
+        }
+
+        // Check to see if OciIdentityDomain property is set
+        internal bool IsSetOciIdentityDomain()
+        {
+            return this._ociIdentityDomain != null;
         }
 
         /// <summary>

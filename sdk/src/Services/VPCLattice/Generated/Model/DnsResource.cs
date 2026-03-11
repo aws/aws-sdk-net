@@ -59,7 +59,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address.
+        /// The type of IP address. Dualstack is currently not supported.
         /// </para>
         /// </summary>
         public ResourceConfigurationIpAddressType IpAddressType

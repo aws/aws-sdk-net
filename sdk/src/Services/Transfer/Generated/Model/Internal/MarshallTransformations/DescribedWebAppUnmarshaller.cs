@@ -68,10 +68,22 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DescribedEndpointDetails", targetDepth))
+                {
+                    var unmarshaller = DescribedWebAppEndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.DescribedEndpointDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DescribedIdentityProviderDetails", targetDepth))
                 {
                     var unmarshaller = DescribedWebAppIdentityProviderDetailsUnmarshaller.Instance;
                     unmarshalledObject.DescribedIdentityProviderDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EndpointType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

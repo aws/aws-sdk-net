@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FieldLevelEncryptionProfileSummary Object
     /// </summary>  
-    public class FieldLevelEncryptionProfileSummaryUnmarshaller : IXmlUnmarshaller<FieldLevelEncryptionProfileSummary, XmlUnmarshallerContext>
+    public partial class FieldLevelEncryptionProfileSummaryUnmarshaller : IXmlUnmarshaller<FieldLevelEncryptionProfileSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,6 +86,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, FieldLevelEncryptionProfileSummary unmarshalledObject, int targetDepth);
+
         private static FieldLevelEncryptionProfileSummaryUnmarshaller _instance = new FieldLevelEncryptionProfileSummaryUnmarshaller();        
 
         /// <summary>

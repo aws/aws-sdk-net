@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EFSIOException
+        /// message.
+        /// </summary>
+        public EFSIOException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EFSIOException with the specified error
         /// message.
         /// </summary>

@@ -31,6 +31,12 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// An object that contains information on the error that caused the snapshot job to fail.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJobResult.html">DescribeDashboardSnapshotJobResult
+    /// API</a>.
+    /// </para>
     /// </summary>
     public partial class SnapshotJobErrorInfo
     {

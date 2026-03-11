@@ -44,7 +44,7 @@ namespace Amazon.GeoRoutes.Model
         /// is EU.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public string Profile
         {
             get { return this._profile; }

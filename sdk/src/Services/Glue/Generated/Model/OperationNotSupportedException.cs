@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationNotSupportedException
+        /// message.
+        /// </summary>
+        public OperationNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationNotSupportedException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PathDoesNotExistException
+        /// message.
+        /// </summary>
+        public PathDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PathDoesNotExistException with the specified error
         /// message.
         /// </summary>

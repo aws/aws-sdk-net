@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterRoleQuotaExceededException
+        /// message.
+        /// </summary>
+        public DBClusterRoleQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterRoleQuotaExceededException with the specified error
         /// message.
         /// </summary>

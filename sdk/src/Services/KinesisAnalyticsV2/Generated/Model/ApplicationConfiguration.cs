@@ -35,6 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationConfiguration
     {
         private ApplicationCodeConfiguration _applicationCodeConfiguration;
+        private ApplicationEncryptionConfiguration _applicationEncryptionConfiguration;
         private ApplicationSnapshotConfiguration _applicationSnapshotConfiguration;
         private ApplicationSystemRollbackConfiguration _applicationSystemRollbackConfiguration;
         private EnvironmentProperties _environmentProperties;
@@ -62,6 +63,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApplicationEncryptionConfiguration. 
+        /// <para>
+        /// The configuration to manage encryption at rest.
+        /// </para>
+        /// </summary>
+        public ApplicationEncryptionConfiguration ApplicationEncryptionConfiguration
+        {
+            get { return this._applicationEncryptionConfiguration; }
+            set { this._applicationEncryptionConfiguration = value; }
+        }
+
+        // Check to see if ApplicationEncryptionConfiguration property is set
+        internal bool IsSetApplicationEncryptionConfiguration()
+        {
+            return this._applicationEncryptionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfiguration. 
         /// <para>
         /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
@@ -80,7 +99,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationSystemRollbackConfiguration.
+        /// Gets and sets the property ApplicationSystemRollbackConfiguration. 
+        /// <para>
+        /// Describes whether system rollbacks are enabled for a Managed Service for Apache Flink
+        /// application.
+        /// </para>
         /// </summary>
         public ApplicationSystemRollbackConfiguration ApplicationSystemRollbackConfiguration
         {

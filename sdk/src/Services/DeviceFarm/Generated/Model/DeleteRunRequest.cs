@@ -31,12 +31,13 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRun operation.
-    /// Deletes the run, given the run ARN.
+    /// Deletes the run, given the run ARN. You cannot delete a run if it is still active.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    ///  Deleting this resource does not stop an in-progress run.
+    /// You cannot undo this operation.
     /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteRunRequest : AmazonDeviceFarmRequest
     {

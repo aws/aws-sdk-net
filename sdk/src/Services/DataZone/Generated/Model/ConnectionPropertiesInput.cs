@@ -34,14 +34,36 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ConnectionPropertiesInput
     {
+        private AmazonQPropertiesInput _amazonqProperties;
         private AthenaPropertiesInput _athenaProperties;
         private GluePropertiesInput _glueProperties;
         private HyperPodPropertiesInput _hyperPodProperties;
         private IamPropertiesInput _iamProperties;
+        private MlflowPropertiesInput _mlflowProperties;
         private RedshiftPropertiesInput _redshiftProperties;
         private S3PropertiesInput _s3Properties;
         private SparkEmrPropertiesInput _sparkEmrProperties;
         private SparkGluePropertiesInput _sparkGlueProperties;
+        private WorkflowsMwaaPropertiesInput _workflowsMwaaProperties;
+        private WorkflowsServerlessPropertiesInput _workflowsServerlessProperties;
+
+        /// <summary>
+        /// Gets and sets the property AmazonQProperties. 
+        /// <para>
+        /// The Amazon Q properties of the connection.
+        /// </para>
+        /// </summary>
+        public AmazonQPropertiesInput AmazonQProperties
+        {
+            get { return this._amazonqProperties; }
+            set { this._amazonqProperties = value; }
+        }
+
+        // Check to see if AmazonQProperties property is set
+        internal bool IsSetAmazonQProperties()
+        {
+            return this._amazonqProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AthenaProperties. 
@@ -116,6 +138,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MlflowProperties. 
+        /// <para>
+        /// The MLflow properties of a connection.
+        /// </para>
+        /// </summary>
+        public MlflowPropertiesInput MlflowProperties
+        {
+            get { return this._mlflowProperties; }
+            set { this._mlflowProperties = value; }
+        }
+
+        // Check to see if MlflowProperties property is set
+        internal bool IsSetMlflowProperties()
+        {
+            return this._mlflowProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RedshiftProperties. 
         /// <para>
         /// The Amazon Redshift properties of a connection.
@@ -185,6 +225,42 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSparkGlueProperties()
         {
             return this._sparkGlueProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowsMwaaProperties. 
+        /// <para>
+        /// The Amazon MWAA properties of a connection.
+        /// </para>
+        /// </summary>
+        public WorkflowsMwaaPropertiesInput WorkflowsMwaaProperties
+        {
+            get { return this._workflowsMwaaProperties; }
+            set { this._workflowsMwaaProperties = value; }
+        }
+
+        // Check to see if WorkflowsMwaaProperties property is set
+        internal bool IsSetWorkflowsMwaaProperties()
+        {
+            return this._workflowsMwaaProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowsServerlessProperties. 
+        /// <para>
+        /// The MWAA serverless properties of a connection.
+        /// </para>
+        /// </summary>
+        public WorkflowsServerlessPropertiesInput WorkflowsServerlessProperties
+        {
+            get { return this._workflowsServerlessProperties; }
+            set { this._workflowsServerlessProperties = value; }
+        }
+
+        // Check to see if WorkflowsServerlessProperties property is set
+        internal bool IsSetWorkflowsServerlessProperties()
+        {
+            return this._workflowsServerlessProperties != null;
         }
 
     }

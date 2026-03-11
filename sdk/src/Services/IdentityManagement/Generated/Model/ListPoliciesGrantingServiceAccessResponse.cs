@@ -81,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PoliciesGrantingServiceAccess. 
         /// <para>
-        /// A <c>ListPoliciesGrantingServiceAccess</c> object that contains details about the
+        /// A <c>ListPoliciesGrantingServiceAccess</c> object that contains details about the
         /// permissions policies attached to the specified identity (user, group, or role).
         /// </para>
         /// <para />

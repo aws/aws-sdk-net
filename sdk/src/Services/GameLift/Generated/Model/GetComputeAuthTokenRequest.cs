@@ -31,13 +31,17 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComputeAuthToken operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Requests an authentication token from Amazon GameLift Servers for a compute resource
     /// in an Amazon GameLift Servers fleet. Game servers that are running on the compute
     /// use this token to communicate with the Amazon GameLift Servers service, such as when
     /// calling the Amazon GameLift Servers server SDK action <c>InitSDK()</c>. Authentication
     /// tokens are valid for a limited time span, so you need to request a fresh token before
     /// the current token expires.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

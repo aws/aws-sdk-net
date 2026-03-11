@@ -39,6 +39,13 @@ namespace Amazon.SimpleEmailV2.Model
     {
 
         /// <summary>
+        /// Default constructor for MessageRejectedException
+        /// message.
+        /// </summary>
+        public MessageRejectedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MessageRejectedException with the specified error
         /// message.
         /// </summary>

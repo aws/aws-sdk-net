@@ -68,6 +68,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetWorkloadId())
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
             request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
+            if (string.IsNullOrEmpty(publicRequest.ClientRequestToken))
+                throw new AmazonWellArchitectedException("Request object does not have required field ClientRequestToken set");
             
             if (publicRequest.IsSetClientRequestToken())
                 request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));

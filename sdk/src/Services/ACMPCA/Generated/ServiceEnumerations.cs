@@ -607,6 +607,18 @@ namespace Amazon.ACMPCA
         /// </summary>
         public static readonly KeyAlgorithm EC_secp521r1 = new KeyAlgorithm("EC_secp521r1");
         /// <summary>
+        /// Constant ML_DSA_44 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm ML_DSA_44 = new KeyAlgorithm("ML_DSA_44");
+        /// <summary>
+        /// Constant ML_DSA_65 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm ML_DSA_65 = new KeyAlgorithm("ML_DSA_65");
+        /// <summary>
+        /// Constant ML_DSA_87 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm ML_DSA_87 = new KeyAlgorithm("ML_DSA_87");
+        /// <summary>
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_2048 = new KeyAlgorithm("RSA_2048");
@@ -938,6 +950,18 @@ namespace Amazon.ACMPCA
     public class SigningAlgorithm : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ML_DSA_44 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm ML_DSA_44 = new SigningAlgorithm("ML_DSA_44");
+        /// <summary>
+        /// Constant ML_DSA_65 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm ML_DSA_65 = new SigningAlgorithm("ML_DSA_65");
+        /// <summary>
+        /// Constant ML_DSA_87 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm ML_DSA_87 = new SigningAlgorithm("ML_DSA_87");
         /// <summary>
         /// Constant SHA256WITHECDSA for SigningAlgorithm
         /// </summary>

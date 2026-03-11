@@ -41,13 +41,28 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  
     /// <para>
-    ///  <c>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</c>
+    ///  <c>s3://amzn-s3-demo-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</c>
     /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about evaluating resource compliance with tag policies, including
+    /// the required permissions, review <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-permissions-org">Permissions
+    /// for evaluating organization-wide compliance</a> in the <i>Tagging Amazon Web Services
+    /// Resources and Tag Editor</i> user guide. 
     /// </para>
     ///  
     /// <para>
     /// You can call this operation only from the organization's management account and from
     /// the us-east-1 Region.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the account associated with the identity used to call <c>StartReportCreation</c>
+    /// is different from the account that owns the Amazon S3 bucket, there must be a bucket
+    /// policy attached to the bucket to provide access. For more information, review <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+    /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services Resources
+    /// and Tag Editor</i> user guide.
     /// </para>
     /// </summary>
     public partial class StartReportCreationRequest : AmazonResourceGroupsTaggingAPIRequest
@@ -61,12 +76,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>awsexamplebucket</c> 
+        ///  <c>amzn-s3-demo-bucket</c> 
         /// </para>
         ///  
         /// <para>
         /// For more information on S3 bucket requirements, including an example bucket policy,
-        /// see the example S3 bucket policy on this page.
+        /// see the example Amazon S3 bucket policy on this page.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]

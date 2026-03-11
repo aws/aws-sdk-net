@@ -36,6 +36,14 @@ namespace Amazon.ManagedBlockchain
         /// <summary>
         /// Construct instance of AmazonManagedBlockchainException
         /// </summary>
+        public AmazonManagedBlockchainException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonManagedBlockchainException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonManagedBlockchainException(string message)
             : base(message)

@@ -45,10 +45,12 @@ namespace Amazon.Athena.Model
         private CustomerContentEncryptionConfiguration _customerContentEncryptionConfiguration;
         private bool? _enableMinimumEncryptionConfiguration;
         private bool? _enforceWorkGroupConfiguration;
+        private EngineConfiguration _engineConfiguration;
         private EngineVersion _engineVersion;
         private string _executionRole;
         private IdentityCenterConfiguration _identityCenterConfiguration;
         private ManagedQueryResultsConfiguration _managedQueryResultsConfiguration;
+        private MonitoringConfiguration _monitoringConfiguration;
         private bool? _publishCloudWatchMetricsEnabled;
         private QueryResultsS3AccessGrantsConfiguration _queryResultsS3AccessGrantsConfiguration;
         private bool? _requesterPaysEnabled;
@@ -142,7 +144,8 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property EnforceWorkGroupConfiguration. 
         /// <para>
         /// If set to "true", the settings for the workgroup override client-side settings. If
-        /// set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// set to "false", client-side settings are used. This property is not required for Apache
+        /// Spark enabled workgroups. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
@@ -156,6 +159,21 @@ namespace Amazon.Athena.Model
         internal bool IsSetEnforceWorkGroupConfiguration()
         {
             return this._enforceWorkGroupConfiguration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineConfiguration.
+        /// </summary>
+        public EngineConfiguration EngineConfiguration
+        {
+            get { return this._engineConfiguration; }
+            set { this._engineConfiguration = value; }
+        }
+
+        // Check to see if EngineConfiguration property is set
+        internal bool IsSetEngineConfiguration()
+        {
+            return this._engineConfiguration != null;
         }
 
         /// <summary>
@@ -235,6 +253,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetManagedQueryResultsConfiguration()
         {
             return this._managedQueryResultsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// Contains the configuration settings for managed log persistence, delivering logs to
+        /// Amazon S3 buckets, Amazon CloudWatch log groups etc.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
         }
 
         /// <summary>

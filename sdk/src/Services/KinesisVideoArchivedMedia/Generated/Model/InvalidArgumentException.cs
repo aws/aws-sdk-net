@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidArgumentException
+        /// message.
+        /// </summary>
+        public InvalidArgumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidArgumentException with the specified error
         /// message.
         /// </summary>

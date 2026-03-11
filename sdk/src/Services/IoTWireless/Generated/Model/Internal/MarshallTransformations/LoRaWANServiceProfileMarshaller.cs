@@ -64,6 +64,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.DrMin.Value);
             }
 
+            if(requestObject.IsSetNbTransMax())
+            {
+                context.Writer.WritePropertyName("NbTransMax");
+                context.Writer.WriteNumberValue(requestObject.NbTransMax.Value);
+            }
+
+            if(requestObject.IsSetNbTransMin())
+            {
+                context.Writer.WritePropertyName("NbTransMin");
+                context.Writer.WriteNumberValue(requestObject.NbTransMin.Value);
+            }
+
             if(requestObject.IsSetPrAllowed())
             {
                 context.Writer.WritePropertyName("PrAllowed");
@@ -74,6 +86,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RaAllowed");
                 context.Writer.WriteBooleanValue(requestObject.RaAllowed.Value);
+            }
+
+            if(requestObject.IsSetTxPowerIndexMax())
+            {
+                context.Writer.WritePropertyName("TxPowerIndexMax");
+                context.Writer.WriteNumberValue(requestObject.TxPowerIndexMax.Value);
+            }
+
+            if(requestObject.IsSetTxPowerIndexMin())
+            {
+                context.Writer.WritePropertyName("TxPowerIndexMin");
+                context.Writer.WriteNumberValue(requestObject.TxPowerIndexMin.Value);
             }
 
         }

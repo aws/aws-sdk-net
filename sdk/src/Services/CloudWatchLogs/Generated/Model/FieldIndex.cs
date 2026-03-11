@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _lastEventTime;
         private long? _lastScanTime;
         private string _logGroupIdentifier;
+        private IndexType _type;
 
         /// <summary>
         /// Gets and sets the property FieldIndexName. 
@@ -138,6 +139,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupIdentifier()
         {
             return this._logGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of index. Specify <c>FACET</c> for facet-based indexing or <c>FIELD_INDEX</c>
+        /// for field-based indexing. This determines how the field is indexed and can be queried.
+        /// </para>
+        /// </summary>
+        public IndexType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

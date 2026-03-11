@@ -49,6 +49,7 @@ namespace Amazon.IoTSiteWise.Model
         private AssetModelType _assetModelType;
         private string _assetModelVersion;
         private string _eTag;
+        private List<InterfaceRelationship> _interfaceDetails = AWSConfigs.InitializeCollections ? new List<InterfaceRelationship>() : null;
 
         /// <summary>
         /// Gets and sets the property AssetModelArn. 
@@ -383,6 +384,30 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetETag()
         {
             return this._eTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterfaceDetails. 
+        /// <para>
+        /// A list of interface details that describe the interfaces implemented by this asset
+        /// model, including interface asset model IDs and property mappings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<InterfaceRelationship> InterfaceDetails
+        {
+            get { return this._interfaceDetails; }
+            set { this._interfaceDetails = value; }
+        }
+
+        // Check to see if InterfaceDetails property is set
+        internal bool IsSetInterfaceDetails()
+        {
+            return this._interfaceDetails != null && (this._interfaceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

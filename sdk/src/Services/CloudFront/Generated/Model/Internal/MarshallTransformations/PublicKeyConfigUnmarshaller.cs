@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicKeyConfig Object
     /// </summary>  
-    public class PublicKeyConfigUnmarshaller : IXmlUnmarshaller<PublicKeyConfig, XmlUnmarshallerContext>
+    public partial class PublicKeyConfigUnmarshaller : IXmlUnmarshaller<PublicKeyConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, PublicKeyConfig unmarshalledObject, int targetDepth);
+
         private static PublicKeyConfigUnmarshaller _instance = new PublicKeyConfigUnmarshaller();        
 
         /// <summary>

@@ -65,6 +65,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetWorkloadArn())
                 throw new AmazonWellArchitectedException("Request object does not have required field WorkloadArn set");
             request.AddPathResource("{WorkloadArn}", StringUtils.FromString(publicRequest.WorkloadArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonWellArchitectedException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

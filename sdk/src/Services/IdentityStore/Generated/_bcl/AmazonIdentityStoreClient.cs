@@ -42,8 +42,8 @@ namespace Amazon.IdentityStore
     ///
     /// The Identity Store service used by IAM Identity Center provides a single place to
     /// retrieve all of your identities (users and groups). For more information, see the
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
-    /// Identity Center User Guide</a>.
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">
+    /// IAM Identity Center User Guide</a>.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,11 @@ namespace Amazon.IdentityStore
     /// </para>
     ///  <note> 
     /// <para>
-    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
+    ///  IAM Identity Center uses the <c>sso</c>, <c>sso-directory</c>, and <c>identitystore</c>
+    /// API namespaces. The <c>sso-directory</c> and <c>identitystore</c> namespaces authorize
+    /// access to data in the Identity Store. Make sure your policies with IAM actions from
+    /// these two namespaces are consistent to avoid conflicting authorization to the same
+    /// data.
     /// </para>
     ///  </note>
     /// </summary>
@@ -319,7 +323,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -373,7 +377,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
             
@@ -429,7 +433,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
         public virtual CreateGroupMembershipResponse CreateGroupMembership(CreateGroupMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
 
@@ -484,7 +488,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
         public virtual Task<CreateGroupMembershipResponse> CreateGroupMembershipAsync(CreateGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
             
@@ -539,7 +543,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -593,7 +597,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
             
@@ -644,7 +648,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -694,7 +698,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
             
@@ -745,7 +749,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
         public virtual DeleteGroupMembershipResponse DeleteGroupMembership(DeleteGroupMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
 
@@ -795,7 +799,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
         public virtual Task<DeleteGroupMembershipResponse> DeleteGroupMembershipAsync(DeleteGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
             
@@ -846,7 +850,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -896,7 +900,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
             
@@ -913,9 +917,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -941,7 +946,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -954,9 +959,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -985,7 +991,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual Task<DescribeGroupResponse> DescribeGroupAsync(DescribeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
             
@@ -1003,9 +1009,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1031,7 +1038,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
         public virtual DescribeGroupMembershipResponse DescribeGroupMembership(DescribeGroupMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
 
@@ -1045,9 +1052,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1076,7 +1084,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
         public virtual Task<DescribeGroupMembershipResponse> DescribeGroupMembershipAsync(DescribeGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
             
@@ -1093,9 +1101,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1121,7 +1130,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1134,9 +1143,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1165,7 +1175,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
             
@@ -1182,9 +1192,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1210,7 +1221,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupId">REST API Reference for GetGroupId Operation</seealso>
         public virtual GetGroupIdResponse GetGroupId(GetGroupIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupIdResponseUnmarshaller.Instance;
 
@@ -1223,9 +1234,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1254,7 +1266,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupId">REST API Reference for GetGroupId Operation</seealso>
         public virtual Task<GetGroupIdResponse> GetGroupIdAsync(GetGroupIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupIdResponseUnmarshaller.Instance;
             
@@ -1271,9 +1283,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1299,7 +1312,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupMembershipId">REST API Reference for GetGroupMembershipId Operation</seealso>
         public virtual GetGroupMembershipIdResponse GetGroupMembershipId(GetGroupMembershipIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupMembershipIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupMembershipIdResponseUnmarshaller.Instance;
 
@@ -1312,9 +1325,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1343,7 +1357,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetGroupMembershipId">REST API Reference for GetGroupMembershipId Operation</seealso>
         public virtual Task<GetGroupMembershipIdResponse> GetGroupMembershipIdAsync(GetGroupMembershipIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupMembershipIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupMembershipIdResponseUnmarshaller.Instance;
             
@@ -1360,9 +1374,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1388,7 +1403,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetUserId">REST API Reference for GetUserId Operation</seealso>
         public virtual GetUserIdResponse GetUserId(GetUserIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserIdResponseUnmarshaller.Instance;
 
@@ -1401,9 +1416,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1432,7 +1448,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/GetUserId">REST API Reference for GetUserId Operation</seealso>
         public virtual Task<GetUserIdResponse> GetUserIdAsync(GetUserIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserIdResponseUnmarshaller.Instance;
             
@@ -1450,9 +1466,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1478,7 +1495,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/IsMemberInGroups">REST API Reference for IsMemberInGroups Operation</seealso>
         public virtual IsMemberInGroupsResponse IsMemberInGroups(IsMemberInGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsMemberInGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsMemberInGroupsResponseUnmarshaller.Instance;
 
@@ -1492,9 +1509,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1523,7 +1541,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/IsMemberInGroups">REST API Reference for IsMemberInGroups Operation</seealso>
         public virtual Task<IsMemberInGroupsResponse> IsMemberInGroupsAsync(IsMemberInGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsMemberInGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsMemberInGroupsResponseUnmarshaller.Instance;
             
@@ -1536,14 +1554,15 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, returns the list of all <c>GroupMembership</c>
-        /// objects and returns results in paginated form.
+        /// For the specified group in the specified identity store, returns the list of all <c>
+        /// GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1569,7 +1588,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
         public virtual ListGroupMembershipsResponse ListGroupMemberships(ListGroupMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
 
@@ -1578,14 +1597,15 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, returns the list of all <c>GroupMembership</c>
-        /// objects and returns results in paginated form.
+        /// For the specified group in the specified identity store, returns the list of all <c>
+        /// GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1614,7 +1634,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
         public virtual Task<ListGroupMembershipsResponse> ListGroupMembershipsAsync(ListGroupMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
             
@@ -1628,13 +1648,14 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// For the specified member in the specified identity store, returns the list of all
-        /// <c>GroupMembership</c> objects and returns results in paginated form.
+        /// <c> GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1660,7 +1681,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMembershipsForMember">REST API Reference for ListGroupMembershipsForMember Operation</seealso>
         public virtual ListGroupMembershipsForMemberResponse ListGroupMembershipsForMember(ListGroupMembershipsForMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembershipsForMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembershipsForMemberResponseUnmarshaller.Instance;
 
@@ -1670,13 +1691,14 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// For the specified member in the specified identity store, returns the list of all
-        /// <c>GroupMembership</c> objects and returns results in paginated form.
+        /// <c> GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1705,7 +1727,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroupMembershipsForMember">REST API Reference for ListGroupMembershipsForMember Operation</seealso>
         public virtual Task<ListGroupMembershipsForMemberResponse> ListGroupMembershipsForMemberAsync(ListGroupMembershipsForMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembershipsForMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembershipsForMemberResponseUnmarshaller.Instance;
             
@@ -1724,9 +1746,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1752,7 +1775,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -1767,9 +1790,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>. 
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1798,7 +1822,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
             
@@ -1817,9 +1841,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>.
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1845,7 +1870,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1860,9 +1885,10 @@ namespace Amazon.IdentityStore
         /// 
         ///  <note> 
         /// <para>
-        /// If you have administrator access to a member account, you can use this API from the
-        /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-        /// accounts</a> in the <i>Organizations User Guide</i>.
+        /// If you have access to a member account, you can use this API operation from the member
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+        /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+        /// User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1891,7 +1917,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
             
@@ -1904,8 +1930,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, updates the group metadata
-        /// and attributes.
+        /// Updates the specified group metadata and attributes in the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
@@ -1947,7 +1972,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -1956,8 +1981,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, updates the group metadata
-        /// and attributes.
+        /// Updates the specified group metadata and attributes in the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2002,7 +2026,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
             
@@ -2015,8 +2039,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified user in the specified identity store, updates the user metadata
-        /// and attributes.
+        /// Updates the specified user metadata and attributes in the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 
@@ -2058,7 +2081,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -2067,8 +2090,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified user in the specified identity store, updates the user metadata
-        /// and attributes.
+        /// Updates the specified user metadata and attributes in the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// <param name="cancellationToken">
@@ -2113,7 +2135,7 @@ namespace Amazon.IdentityStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
             

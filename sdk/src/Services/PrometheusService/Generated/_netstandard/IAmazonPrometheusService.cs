@@ -110,6 +110,44 @@ namespace Amazon.PrometheusService
 
         #endregion
                 
+        #region  CreateAnomalyDetector
+
+
+
+        /// <summary>
+        /// Creates an anomaly detector within a workspace using the Random Cut Forest algorithm
+        /// for time-series analysis. The anomaly detector analyzes Amazon Managed Service for
+        /// Prometheus metrics to identify unusual patterns and behaviors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
+        Task<CreateAnomalyDetectorResponse> CreateAnomalyDetectorAsync(CreateAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateLoggingConfiguration
 
 
@@ -188,7 +226,12 @@ namespace Amazon.PrometheusService
         /// a workspace. A rule groups namespace is associated with exactly one rules file. A
         /// workspace can have multiple rule groups namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to create new rule groups namespaces. To update an existing
         /// rule groups namespace, use <c>PutRuleGroupsNamespace</c>.
@@ -232,16 +275,18 @@ namespace Amazon.PrometheusService
 
         /// <summary>
         /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-        /// pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and
-        /// sends them to your Amazon Managed Service for Prometheus workspace. Scrapers are flexible,
-        /// and can be configured to control what metrics are collected, the frequency of collection,
-        /// what transformations are applied to the metrics, and more.
+        /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
+        /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
+        /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
+        /// service discovery. Scrapers are flexible, and can be configured to control what metrics
+        /// are collected, the frequency of collection, what transformations are applied to the
+        /// metrics, and more.
         /// 
         ///  
         /// <para>
         /// An IAM role will be created for you that Amazon Managed Service for Prometheus uses
-        /// to access the metrics in your cluster. You must configure this role with a policy
-        /// that allows it to scrape metrics from your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
+        /// to access the metrics in your source. You must configure this role with a policy that
+        /// allows it to scrape metrics from your source. For Amazon EKS sources, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
         /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
         /// </para>
         ///  
@@ -253,8 +298,7 @@ namespace Amazon.PrometheusService
         /// <para>
         /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
         /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
-        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
-        /// metrics.
+        /// interfaces are used to connect to your source within the VPC for scraping metrics.
         /// </para>
         ///  <note> 
         /// <para>
@@ -371,6 +415,42 @@ namespace Amazon.PrometheusService
 
         #endregion
                 
+        #region  DeleteAnomalyDetector
+
+
+
+        /// <summary>
+        /// Removes an anomaly detector from a workspace. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        Task<DeleteAnomalyDetectorResponse> DeleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteLoggingConfiguration
 
 
@@ -440,6 +520,43 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
         Task<DeleteQueryLoggingConfigurationResponse> DeleteQueryLoggingConfigurationAsync(DeleteQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteResourcePolicy
+
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to an Amazon Managed Service for Prometheus
+        /// workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -513,6 +630,39 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
         Task<DeleteScraperResponse> DeleteScraperAsync(DeleteScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteScraperLoggingConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        Task<DeleteScraperLoggingConfigurationResponse> DeleteScraperLoggingConfigurationAsync(DeleteScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -592,6 +742,40 @@ namespace Amazon.PrometheusService
 
         #endregion
                 
+        #region  DescribeAnomalyDetector
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific anomaly detector, including its status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
+        Task<DescribeAnomalyDetectorResponse> DescribeAnomalyDetectorAsync(DescribeAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeLoggingConfiguration
 
 
@@ -659,6 +843,40 @@ namespace Amazon.PrometheusService
 
         #endregion
                 
+        #region  DescribeResourcePolicy
+
+
+
+        /// <summary>
+        /// Returns information about the resource-based policy attached to an Amazon Managed
+        /// Service for Prometheus workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeRuleGroupsNamespace
 
 
@@ -723,6 +941,36 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
         Task<DescribeScraperResponse> DescribeScraperAsync(DescribeScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeScraperLoggingConfiguration
+
+
+
+        /// <summary>
+        /// Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        Task<DescribeScraperLoggingConfigurationResponse> DescribeScraperLoggingConfigurationAsync(DescribeScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -819,6 +1067,40 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
         Task<GetDefaultScraperConfigurationResponse> GetDefaultScraperConfigurationAsync(GetDefaultScraperConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAnomalyDetectors
+
+
+
+        /// <summary>
+        /// Returns a paginated list of anomaly detectors for a workspace with optional filtering
+        /// by alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalyDetectors service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
+        Task<ListAnomalyDetectorsResponse> ListAnomalyDetectorsAsync(ListAnomalyDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -994,6 +1276,107 @@ namespace Amazon.PrometheusService
 
         #endregion
                 
+        #region  PutAnomalyDetector
+
+
+
+        /// <summary>
+        /// When you call <c>PutAnomalyDetector</c>, the operation creates a new anomaly detector
+        /// if one doesn't exist, or updates an existing one. Each call to this operation triggers
+        /// a complete retraining of the detector, which includes querying the minimum required
+        /// samples and backfilling the detector with historical data. This process occurs regardless
+        /// of whether you're making a minor change like updating the evaluation interval or making
+        /// more substantial modifications. The operation serves as the single method for creating,
+        /// updating, and retraining anomaly detectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        Task<PutAnomalyDetectorResponse> PutAnomalyDetectorAsync(PutAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutResourcePolicy
+
+
+
+        /// <summary>
+        /// Creates or updates a resource-based policy for an Amazon Managed Service for Prometheus
+        /// workspace. Use resource-based policies to grant permissions to other AWS accounts
+        /// or services to access your workspace.
+        /// 
+        ///  
+        /// <para>
+        /// Only Prometheus-compatible APIs can be used for workspace sharing. You can add non-Prometheus-compatible
+        /// APIs to the policy, but they will be ignored. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-Prometheus-Compatible-Apis.html">Prometheus-compatible
+        /// APIs</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your workspace uses customer-managed KMS keys for encryption, you must grant the
+        /// principals in your resource-based policy access to those KMS keys. You can do this
+        /// by creating KMS grants. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
+        /// in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption
+        /// at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about working with IAM, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/security_iam_service-with-iam.html">Using
+        /// Amazon Managed Service for Prometheus with IAM</a> in the <i>Amazon Managed Service
+        /// for Prometheus User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutRuleGroupsNamespace
 
 
@@ -1003,7 +1386,12 @@ namespace Amazon.PrometheusService
         /// is associated with exactly one rules file. A workspace can have multiple rule groups
         /// namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to update existing rule groups namespaces. To create a new
         /// rule groups namespace, use <c>CreateRuleGroupsNamespace</c>.
@@ -1238,6 +1626,39 @@ namespace Amazon.PrometheusService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraper">REST API Reference for UpdateScraper Operation</seealso>
         Task<UpdateScraperResponse> UpdateScraperAsync(UpdateScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateScraperLoggingConfiguration
+
+
+
+        /// <summary>
+        /// Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        Task<UpdateScraperLoggingConfigurationResponse> UpdateScraperLoggingConfigurationAsync(UpdateScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -101,6 +101,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetStringListFilter())
+            {
+                context.Writer.WritePropertyName("stringListFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StringListFilterExpressionMarshaller.Instance;
+                marshaller.Marshall(requestObject.StringListFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

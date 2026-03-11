@@ -34,20 +34,88 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterInstanceGroupDetails
     {
+        private Dictionary<string, int> _activeOperations = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private DeploymentConfiguration _activeSoftwareUpdateConfig;
+        private ClusterCapacityRequirements _capacityRequirements;
         private int? _currentCount;
+        private string _currentImageId;
+        private string _desiredImageId;
         private string _executionRole;
         private string _instanceGroupName;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private ClusterKubernetesConfigDetails _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private int? _minCount;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
+        private ClusterSlurmConfigDetails _slurmConfig;
+        private SoftwareUpdateStatus _softwareUpdateStatus;
         private InstanceGroupStatus _status;
         private int? _targetCount;
+        private int? _targetStateCount;
         private int? _threadsPerCore;
         private string _trainingPlanArn;
         private string _trainingPlanStatus;
+
+        /// <summary>
+        /// Gets and sets the property ActiveOperations. 
+        /// <para>
+        /// A map indicating active operations currently in progress for the instance group of
+        /// a SageMaker HyperPod cluster. When there is a scaling operation in progress, this
+        /// map contains a key <c>Scaling</c> with value 1. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, int> ActiveOperations
+        {
+            get { return this._activeOperations; }
+            set { this._activeOperations = value; }
+        }
+
+        // Check to see if ActiveOperations property is set
+        internal bool IsSetActiveOperations()
+        {
+            return this._activeOperations != null && (this._activeOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveSoftwareUpdateConfig.
+        /// </summary>
+        public DeploymentConfiguration ActiveSoftwareUpdateConfig
+        {
+            get { return this._activeSoftwareUpdateConfig; }
+            set { this._activeSoftwareUpdateConfig = value; }
+        }
+
+        // Check to see if ActiveSoftwareUpdateConfig property is set
+        internal bool IsSetActiveSoftwareUpdateConfig()
+        {
+            return this._activeSoftwareUpdateConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityRequirements. 
+        /// <para>
+        /// The instance capacity requirements for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterCapacityRequirements CapacityRequirements
+        {
+            get { return this._capacityRequirements; }
+            set { this._capacityRequirements = value; }
+        }
+
+        // Check to see if CapacityRequirements property is set
+        internal bool IsSetCapacityRequirements()
+        {
+            return this._capacityRequirements != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentCount. 
@@ -67,6 +135,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCurrentCount()
         {
             return this._currentCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) currently in use by the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string CurrentImageId
+        {
+            get { return this._currentImageId; }
+            set { this._currentImageId = value; }
+        }
+
+        // Check to see if CurrentImageId property is set
+        internal bool IsSetCurrentImageId()
+        {
+            return this._currentImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) desired for the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string DesiredImageId
+        {
+            get { return this._desiredImageId; }
+            set { this._desiredImageId = value; }
+        }
+
+        // Check to see if DesiredImageId property is set
+        internal bool IsSetDesiredImageId()
+        {
+            return this._desiredImageId != null;
         }
 
         /// <summary>
@@ -119,7 +225,7 @@ namespace Amazon.SageMaker.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=4)]
         public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
         {
             get { return this._instanceStorageConfigs; }
@@ -151,6 +257,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KubernetesConfig. 
+        /// <para>
+        /// The Kubernetes configuration for the instance group that contains labels and taints
+        /// to be applied for the nodes in this instance group. 
+        /// </para>
+        /// </summary>
+        public ClusterKubernetesConfigDetails KubernetesConfig
+        {
+            get { return this._kubernetesConfig; }
+            set { this._kubernetesConfig = value; }
+        }
+
+        // Check to see if KubernetesConfig property is set
+        internal bool IsSetKubernetesConfig()
+        {
+            return this._kubernetesConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LifeCycleConfig. 
         /// <para>
         /// Details of LifeCycle configuration for the instance group.
@@ -166,6 +291,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinCount. 
+        /// <para>
+        /// The minimum number of instances that must be available in the instance group of a
+        /// SageMaker HyperPod cluster before it transitions to <c>InService</c> status. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=6758)]
+        public int? MinCount
+        {
+            get { return this._minCount; }
+            set { this._minCount = value; }
+        }
+
+        // Check to see if MinCount property is set
+        internal bool IsSetMinCount()
+        {
+            return this._minCount.HasValue; 
         }
 
         /// <summary>
@@ -232,6 +377,59 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SlurmConfig. 
+        /// <para>
+        /// The Slurm configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterSlurmConfigDetails SlurmConfig
+        {
+            get { return this._slurmConfig; }
+            set { this._slurmConfig = value; }
+        }
+
+        // Check to see if SlurmConfig property is set
+        internal bool IsSetSlurmConfig()
+        {
+            return this._slurmConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdateStatus. 
+        /// <para>
+        /// Status of the last software udpate request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Status transitions follow these possible sequences:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending -&gt; InProgress -&gt; Succeeded
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SoftwareUpdateStatus SoftwareUpdateStatus
+        {
+            get { return this._softwareUpdateStatus; }
+            set { this._softwareUpdateStatus = value; }
+        }
+
+        // Check to see if SoftwareUpdateStatus property is set
+        internal bool IsSetSoftwareUpdateStatus()
+        {
+            return this._softwareUpdateStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the cluster instance group.
@@ -293,6 +491,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTargetCount()
         {
             return this._targetCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetStateCount. 
+        /// <para>
+        /// Represents the number of running nodes using the desired Image ID.
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>During software update operations:</b> This count shows the number of nodes running
+        /// on the desired Image ID. If a rollback occurs, the current image ID and desired image
+        /// ID (both included in the describe cluster response) swap values. The TargetStateCount
+        /// then shows the number of nodes running on the newly designated desired image ID (which
+        /// was previously the current image ID).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>During simultaneous scaling and software update operations:</b> This count shows
+        /// the number of instances running on the desired image ID, including any new instances
+        /// created as part of the scaling request. New nodes are always created using the desired
+        /// image ID, so TargetStateCount reflects the total count of nodes running on the desired
+        /// image ID, even during rollback scenarios.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        [AWSProperty(Min=0, Max=6758)]
+        public int? TargetStateCount
+        {
+            get { return this._targetStateCount; }
+            set { this._targetStateCount = value; }
+        }
+
+        // Check to see if TargetStateCount property is set
+        internal bool IsSetTargetStateCount()
+        {
+            return this._targetStateCount.HasValue; 
         }
 
         /// <summary>

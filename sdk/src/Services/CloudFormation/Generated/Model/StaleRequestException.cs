@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Another operation has been performed on this stack set since the specified operation
+    /// Another operation has been performed on this StackSet since the specified operation
     /// was performed.
     /// </summary>
     #if !NETSTANDARD
@@ -38,6 +38,13 @@ namespace Amazon.CloudFormation.Model
     #endif
     public partial class StaleRequestException : AmazonCloudFormationException
     {
+
+        /// <summary>
+        /// Default constructor for StaleRequestException
+        /// message.
+        /// </summary>
+        public StaleRequestException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new StaleRequestException with the specified error

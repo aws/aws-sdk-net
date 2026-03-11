@@ -31,13 +31,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewayTarget operation.
-    /// Updates an existing Gateway Target.
+    /// Updates an existing gateway target.
     /// </summary>
     public partial class UpdateGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
         private string _description;
         private string _gatewayIdentifier;
+        private MetadataConfiguration _metadataConfiguration;
         private string _name;
         private TargetConfiguration _targetConfiguration;
         private string _targetId;
@@ -45,7 +46,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CredentialProviderConfigurations. 
         /// <para>
-        /// The updated credential provider configurations for the Gateway Target.
+        /// The updated credential provider configurations for the gateway target.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -53,7 +54,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<CredentialProviderConfiguration> CredentialProviderConfigurations
         {
             get { return this._credentialProviderConfigurations; }
@@ -69,7 +70,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description for the Gateway Target.
+        /// The updated description for the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
@@ -88,7 +89,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The unique identifier of the Gateway associated with the target.
+        /// The unique identifier of the gateway associated with the target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,9 +106,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// Configuration for HTTP header and query parameter propagation to the gateway target.
+        /// </para>
+        /// </summary>
+        public MetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The updated name for the Gateway Target.
+        /// The updated name for the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -142,7 +161,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier of the Gateway Target to update.
+        /// The unique identifier of the gateway target to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

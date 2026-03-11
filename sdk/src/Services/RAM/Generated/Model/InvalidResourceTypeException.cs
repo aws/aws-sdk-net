@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResourceTypeException
+        /// message.
+        /// </summary>
+        public InvalidResourceTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourceTypeException with the specified error
         /// message.
         /// </summary>

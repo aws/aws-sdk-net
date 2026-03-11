@@ -39,6 +39,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchBucketException
+        /// message.
+        /// </summary>
+        public NoSuchBucketException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchBucketException with the specified error
         /// message.
         /// </summary>

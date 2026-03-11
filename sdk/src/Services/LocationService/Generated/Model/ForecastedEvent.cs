@@ -103,6 +103,7 @@ namespace Amazon.LocationService.Model
         /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime? ForecastedBreachTime
         {
             get { return this._forecastedBreachTime; }

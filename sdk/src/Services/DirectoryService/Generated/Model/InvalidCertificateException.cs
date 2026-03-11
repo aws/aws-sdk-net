@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCertificateException
+        /// message.
+        /// </summary>
+        public InvalidCertificateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCertificateException with the specified error
         /// message.
         /// </summary>

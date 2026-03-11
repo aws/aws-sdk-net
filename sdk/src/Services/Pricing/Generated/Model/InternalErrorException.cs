@@ -41,6 +41,13 @@ namespace Amazon.Pricing.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for InternalErrorException
+        /// message.
+        /// </summary>
+        public InternalErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalErrorException with the specified error
         /// message.
         /// </summary>

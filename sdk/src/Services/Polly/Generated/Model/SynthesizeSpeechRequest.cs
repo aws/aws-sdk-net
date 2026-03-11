@@ -60,19 +60,6 @@ namespace Amazon.Polly.Model
         /// and which voices are available for each engine, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
         /// Voices</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <c>standard</c> | <c>neural</c> | <c>long-form</c> | <c>generative</c>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public Engine Engine
         {
@@ -172,10 +159,10 @@ namespace Amazon.Polly.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000".
-        /// The default value for standard voices is "22050". The default value for neural voices
-        /// is "24000". The default value for long-form voices is "24000". The default value for
-        /// generative voices is "24000".
+        /// The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100"
+        /// and "48000". The default value for standard voices is "22050". The default value for
+        /// neural voices is "24000". The default value for long-form voices is "24000". The default
+        /// value for generative voices is "24000".
         /// </para>
         ///  
         /// <para>

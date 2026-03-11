@@ -44,7 +44,7 @@ namespace Amazon.GroundStation.Model
         /// ARN to a role needed for connecting streams to your instances. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=30, Max=165)]
         public string RoleArn
         {
             get { return this._roleArn; }

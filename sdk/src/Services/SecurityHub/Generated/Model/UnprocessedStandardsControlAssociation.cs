@@ -43,7 +43,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code for the unprocessed standard and control association. 
+        /// The error code for the unprocessed standard and control association. The <c>NOT_FOUND</c>
+        /// value has been deprecated and replaced by the <c>RESOURCE_NOT_FOUND</c> value. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

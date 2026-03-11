@@ -274,7 +274,7 @@ namespace Amazon.Shield
 
         internal virtual AssociateDRTLogBucketResponse AssociateDRTLogBucket(AssociateDRTLogBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDRTLogBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDRTLogBucketResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">REST API Reference for AssociateDRTLogBucket Operation</seealso>
         public virtual Task<AssociateDRTLogBucketResponse> AssociateDRTLogBucketAsync(AssociateDRTLogBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDRTLogBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDRTLogBucketResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.Shield
 
         internal virtual AssociateDRTRoleResponse AssociateDRTRole(AssociateDRTRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDRTRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDRTRoleResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">REST API Reference for AssociateDRTRole Operation</seealso>
         public virtual Task<AssociateDRTRoleResponse> AssociateDRTRoleAsync(AssociateDRTRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDRTRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDRTRoleResponseUnmarshaller.Instance;
 
@@ -447,7 +447,7 @@ namespace Amazon.Shield
 
         internal virtual AssociateHealthCheckResponse AssociateHealthCheck(AssociateHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateHealthCheckResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck">REST API Reference for AssociateHealthCheck Operation</seealso>
         public virtual Task<AssociateHealthCheckResponse> AssociateHealthCheckAsync(AssociateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateHealthCheckResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.Shield
 
         internal virtual AssociateProactiveEngagementDetailsResponse AssociateProactiveEngagementDetails(AssociateProactiveEngagementDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProactiveEngagementDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProactiveEngagementDetailsResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">REST API Reference for AssociateProactiveEngagementDetails Operation</seealso>
         public virtual Task<AssociateProactiveEngagementDetailsResponse> AssociateProactiveEngagementDetailsAsync(AssociateProactiveEngagementDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProactiveEngagementDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProactiveEngagementDetailsResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.Shield
 
         internal virtual CreateProtectionResponse CreateProtection(CreateProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProtectionResponseUnmarshaller.Instance;
 
@@ -650,7 +650,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         public virtual Task<CreateProtectionResponse> CreateProtectionAsync(CreateProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProtectionResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.Shield
 
         internal virtual CreateProtectionGroupResponse CreateProtectionGroup(CreateProtectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProtectionGroupResponseUnmarshaller.Instance;
 
@@ -707,7 +707,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup">REST API Reference for CreateProtectionGroup Operation</seealso>
         public virtual Task<CreateProtectionGroupResponse> CreateProtectionGroupAsync(CreateProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProtectionGroupResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.Shield
 
         internal virtual CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
 
@@ -761,7 +761,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         public virtual Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
 
@@ -773,7 +773,7 @@ namespace Amazon.Shield
 
         internal virtual DeleteProtectionResponse DeleteProtection(DeleteProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectionResponseUnmarshaller.Instance;
 
@@ -806,7 +806,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         public virtual Task<DeleteProtectionResponse> DeleteProtectionAsync(DeleteProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectionResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.Shield
 
         internal virtual DeleteProtectionGroupResponse DeleteProtectionGroup(DeleteProtectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectionGroupResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup">REST API Reference for DeleteProtectionGroup Operation</seealso>
         public virtual Task<DeleteProtectionGroupResponse> DeleteProtectionGroupAsync(DeleteProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectionGroupResponseUnmarshaller.Instance;
 
@@ -864,7 +864,7 @@ namespace Amazon.Shield
         [Obsolete("Use UpdateSubscription operation to disable automatic subscription renewal instead.")]
         internal virtual DeleteSubscriptionResponse DeleteSubscription(DeleteSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.Shield
         [Obsolete("Use UpdateSubscription operation to disable automatic subscription renewal instead.")]
         public virtual Task<DeleteSubscriptionResponse> DeleteSubscriptionAsync(DeleteSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeAttackResponse DescribeAttack(DescribeAttackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAttackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAttackResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         public virtual Task<DescribeAttackResponse> DescribeAttackAsync(DescribeAttackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAttackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAttackResponseUnmarshaller.Instance;
 
@@ -954,7 +954,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeAttackStatisticsResponse DescribeAttackStatistics(DescribeAttackStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAttackStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAttackStatisticsResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics">REST API Reference for DescribeAttackStatistics Operation</seealso>
         public virtual Task<DescribeAttackStatisticsResponse> DescribeAttackStatisticsAsync(DescribeAttackStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAttackStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAttackStatisticsResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeDRTAccessResponse DescribeDRTAccess(DescribeDRTAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDRTAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDRTAccessResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">REST API Reference for DescribeDRTAccess Operation</seealso>
         public virtual Task<DescribeDRTAccessResponse> DescribeDRTAccessAsync(DescribeDRTAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDRTAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDRTAccessResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeEmergencyContactSettingsResponse DescribeEmergencyContactSettings(DescribeEmergencyContactSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEmergencyContactSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEmergencyContactSettingsResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">REST API Reference for DescribeEmergencyContactSettings Operation</seealso>
         public virtual Task<DescribeEmergencyContactSettingsResponse> DescribeEmergencyContactSettingsAsync(DescribeEmergencyContactSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEmergencyContactSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEmergencyContactSettingsResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeProtectionResponse DescribeProtection(DescribeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectionResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         public virtual Task<DescribeProtectionResponse> DescribeProtectionAsync(DescribeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectionResponseUnmarshaller.Instance;
 
@@ -1137,7 +1137,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeProtectionGroupResponse DescribeProtectionGroup(DescribeProtectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectionGroupResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup">REST API Reference for DescribeProtectionGroup Operation</seealso>
         public virtual Task<DescribeProtectionGroupResponse> DescribeProtectionGroupAsync(DescribeProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectionGroupResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeSubscriptionResponse DescribeSubscription(DescribeSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubscriptionResponseUnmarshaller.Instance;
 
@@ -1207,7 +1207,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         public virtual Task<DescribeSubscriptionResponse> DescribeSubscriptionAsync(DescribeSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubscriptionResponseUnmarshaller.Instance;
 
@@ -1219,7 +1219,7 @@ namespace Amazon.Shield
 
         internal virtual DisableApplicationLayerAutomaticResponseResponse DisableApplicationLayerAutomaticResponse(DisableApplicationLayerAutomaticResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableApplicationLayerAutomaticResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableApplicationLayerAutomaticResponseResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">REST API Reference for DisableApplicationLayerAutomaticResponse Operation</seealso>
         public virtual Task<DisableApplicationLayerAutomaticResponseResponse> DisableApplicationLayerAutomaticResponseAsync(DisableApplicationLayerAutomaticResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableApplicationLayerAutomaticResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableApplicationLayerAutomaticResponseResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.Shield
 
         internal virtual DisableProactiveEngagementResponse DisableProactiveEngagement(DisableProactiveEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableProactiveEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableProactiveEngagementResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">REST API Reference for DisableProactiveEngagement Operation</seealso>
         public virtual Task<DisableProactiveEngagementResponse> DisableProactiveEngagementAsync(DisableProactiveEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableProactiveEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableProactiveEngagementResponseUnmarshaller.Instance;
 
@@ -1326,7 +1326,7 @@ namespace Amazon.Shield
 
         internal virtual DisassociateDRTLogBucketResponse DisassociateDRTLogBucket(DisassociateDRTLogBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDRTLogBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDRTLogBucketResponseUnmarshaller.Instance;
 
@@ -1372,7 +1372,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket">REST API Reference for DisassociateDRTLogBucket Operation</seealso>
         public virtual Task<DisassociateDRTLogBucketResponse> DisassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDRTLogBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDRTLogBucketResponseUnmarshaller.Instance;
 
@@ -1384,7 +1384,7 @@ namespace Amazon.Shield
 
         internal virtual DisassociateDRTRoleResponse DisassociateDRTRole(DisassociateDRTRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDRTRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDRTRoleResponseUnmarshaller.Instance;
 
@@ -1420,7 +1420,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">REST API Reference for DisassociateDRTRole Operation</seealso>
         public virtual Task<DisassociateDRTRoleResponse> DisassociateDRTRoleAsync(DisassociateDRTRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDRTRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDRTRoleResponseUnmarshaller.Instance;
 
@@ -1432,7 +1432,7 @@ namespace Amazon.Shield
 
         internal virtual DisassociateHealthCheckResponse DisassociateHealthCheck(DisassociateHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateHealthCheckResponseUnmarshaller.Instance;
 
@@ -1483,7 +1483,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">REST API Reference for DisassociateHealthCheck Operation</seealso>
         public virtual Task<DisassociateHealthCheckResponse> DisassociateHealthCheckAsync(DisassociateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateHealthCheckResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.Shield
 
         internal virtual EnableApplicationLayerAutomaticResponseResponse EnableApplicationLayerAutomaticResponse(EnableApplicationLayerAutomaticResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableApplicationLayerAutomaticResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableApplicationLayerAutomaticResponseResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">REST API Reference for EnableApplicationLayerAutomaticResponse Operation</seealso>
         public virtual Task<EnableApplicationLayerAutomaticResponseResponse> EnableApplicationLayerAutomaticResponseAsync(EnableApplicationLayerAutomaticResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableApplicationLayerAutomaticResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableApplicationLayerAutomaticResponseResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.Shield
 
         internal virtual EnableProactiveEngagementResponse EnableProactiveEngagement(EnableProactiveEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableProactiveEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableProactiveEngagementResponseUnmarshaller.Instance;
 
@@ -1622,7 +1622,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">REST API Reference for EnableProactiveEngagement Operation</seealso>
         public virtual Task<EnableProactiveEngagementResponse> EnableProactiveEngagementAsync(EnableProactiveEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableProactiveEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableProactiveEngagementResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.Shield
 
         internal virtual GetSubscriptionStateResponse GetSubscriptionState(GetSubscriptionStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionStateResponseUnmarshaller.Instance;
 
@@ -1659,7 +1659,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">REST API Reference for GetSubscriptionState Operation</seealso>
         public virtual Task<GetSubscriptionStateResponse> GetSubscriptionStateAsync(GetSubscriptionStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionStateResponseUnmarshaller.Instance;
 
@@ -1671,7 +1671,7 @@ namespace Amazon.Shield
 
         internal virtual ListAttacksResponse ListAttacks(ListAttacksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttacksResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         public virtual Task<ListAttacksResponse> ListAttacksAsync(ListAttacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttacksResponseUnmarshaller.Instance;
 
@@ -1715,7 +1715,7 @@ namespace Amazon.Shield
 
         internal virtual ListProtectionGroupsResponse ListProtectionGroups(ListProtectionGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectionGroupsResponseUnmarshaller.Instance;
 
@@ -1751,7 +1751,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">REST API Reference for ListProtectionGroups Operation</seealso>
         public virtual Task<ListProtectionGroupsResponse> ListProtectionGroupsAsync(ListProtectionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectionGroupsResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.Shield
 
         internal virtual ListProtectionsResponse ListProtections(ListProtectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectionsResponseUnmarshaller.Instance;
 
@@ -1799,7 +1799,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         public virtual Task<ListProtectionsResponse> ListProtectionsAsync(ListProtectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectionsResponseUnmarshaller.Instance;
 
@@ -1811,7 +1811,7 @@ namespace Amazon.Shield
 
         internal virtual ListResourcesInProtectionGroupResponse ListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesInProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesInProtectionGroupResponseUnmarshaller.Instance;
 
@@ -1845,7 +1845,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup">REST API Reference for ListResourcesInProtectionGroup Operation</seealso>
         public virtual Task<ListResourcesInProtectionGroupResponse> ListResourcesInProtectionGroupAsync(ListResourcesInProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesInProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesInProtectionGroupResponseUnmarshaller.Instance;
 
@@ -1857,7 +1857,7 @@ namespace Amazon.Shield
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1891,7 +1891,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.Shield
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1952,7 +1952,7 @@ namespace Amazon.Shield
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2001,7 +2001,7 @@ namespace Amazon.Shield
 
         internal virtual UpdateApplicationLayerAutomaticResponseResponse UpdateApplicationLayerAutomaticResponse(UpdateApplicationLayerAutomaticResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationLayerAutomaticResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationLayerAutomaticResponseResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateApplicationLayerAutomaticResponse">REST API Reference for UpdateApplicationLayerAutomaticResponse Operation</seealso>
         public virtual Task<UpdateApplicationLayerAutomaticResponseResponse> UpdateApplicationLayerAutomaticResponseAsync(UpdateApplicationLayerAutomaticResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationLayerAutomaticResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationLayerAutomaticResponseResponseUnmarshaller.Instance;
 
@@ -2054,7 +2054,7 @@ namespace Amazon.Shield
 
         internal virtual UpdateEmergencyContactSettingsResponse UpdateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmergencyContactSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmergencyContactSettingsResponseUnmarshaller.Instance;
 
@@ -2093,7 +2093,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">REST API Reference for UpdateEmergencyContactSettings Operation</seealso>
         public virtual Task<UpdateEmergencyContactSettingsResponse> UpdateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmergencyContactSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmergencyContactSettingsResponseUnmarshaller.Instance;
 
@@ -2105,7 +2105,7 @@ namespace Amazon.Shield
 
         internal virtual UpdateProtectionGroupResponse UpdateProtectionGroup(UpdateProtectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectionGroupResponseUnmarshaller.Instance;
 
@@ -2144,7 +2144,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup">REST API Reference for UpdateProtectionGroup Operation</seealso>
         public virtual Task<UpdateProtectionGroupResponse> UpdateProtectionGroupAsync(UpdateProtectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectionGroupResponseUnmarshaller.Instance;
 
@@ -2156,7 +2156,7 @@ namespace Amazon.Shield
 
         internal virtual UpdateSubscriptionResponse UpdateSubscription(UpdateSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
 
@@ -2208,7 +2208,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
         public virtual Task<UpdateSubscriptionResponse> UpdateSubscriptionAsync(UpdateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
 

@@ -36,6 +36,14 @@ namespace Amazon.EventBridge
         /// <summary>
         /// Construct instance of AmazonEventBridgeException
         /// </summary>
+        public AmazonEventBridgeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEventBridgeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEventBridgeException(string message)
             : base(message)

@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyHeadersInCachePolicyException
+        /// message.
+        /// </summary>
+        public TooManyHeadersInCachePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyHeadersInCachePolicyException with the specified error
         /// message.
         /// </summary>

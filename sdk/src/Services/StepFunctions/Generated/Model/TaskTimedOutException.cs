@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for TaskTimedOutException
+        /// message.
+        /// </summary>
+        public TaskTimedOutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TaskTimedOutException with the specified error
         /// message.
         /// </summary>

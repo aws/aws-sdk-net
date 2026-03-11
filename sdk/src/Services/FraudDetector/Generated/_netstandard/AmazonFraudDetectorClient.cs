@@ -288,7 +288,7 @@ namespace Amazon.FraudDetector
 
         internal virtual BatchCreateVariableResponse BatchCreateVariable(BatchCreateVariableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateVariableResponseUnmarshaller.Instance;
 
@@ -323,7 +323,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchCreateVariable">REST API Reference for BatchCreateVariable Operation</seealso>
         public virtual Task<BatchCreateVariableResponse> BatchCreateVariableAsync(BatchCreateVariableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateVariableResponseUnmarshaller.Instance;
 
@@ -335,7 +335,7 @@ namespace Amazon.FraudDetector
 
         internal virtual BatchGetVariableResponse BatchGetVariable(BatchGetVariableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetVariableResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchGetVariable">REST API Reference for BatchGetVariable Operation</seealso>
         public virtual Task<BatchGetVariableResponse> BatchGetVariableAsync(BatchGetVariableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetVariableResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CancelBatchImportJobResponse CancelBatchImportJob(CancelBatchImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBatchImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBatchImportJobResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">REST API Reference for CancelBatchImportJob Operation</seealso>
         public virtual Task<CancelBatchImportJobResponse> CancelBatchImportJobAsync(CancelBatchImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBatchImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBatchImportJobResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CancelBatchPredictionJobResponse CancelBatchPredictionJob(CancelBatchPredictionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBatchPredictionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBatchPredictionJobResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob">REST API Reference for CancelBatchPredictionJob Operation</seealso>
         public virtual Task<CancelBatchPredictionJobResponse> CancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBatchPredictionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBatchPredictionJobResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateBatchImportJobResponse CreateBatchImportJob(CreateBatchImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchImportJobResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">REST API Reference for CreateBatchImportJob Operation</seealso>
         public virtual Task<CreateBatchImportJobResponse> CreateBatchImportJobAsync(CreateBatchImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchImportJobResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateBatchPredictionJobResponse CreateBatchPredictionJob(CreateBatchPredictionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchPredictionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchPredictionJobResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob">REST API Reference for CreateBatchPredictionJob Operation</seealso>
         public virtual Task<CreateBatchPredictionJobResponse> CreateBatchPredictionJobAsync(CreateBatchPredictionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchPredictionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchPredictionJobResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateDetectorVersionResponse CreateDetectorVersion(CreateDetectorVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDetectorVersionResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateDetectorVersion">REST API Reference for CreateDetectorVersion Operation</seealso>
         public virtual Task<CreateDetectorVersionResponse> CreateDetectorVersionAsync(CreateDetectorVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDetectorVersionResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateListResponse CreateList(CreateListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList">REST API Reference for CreateList Operation</seealso>
         public virtual Task<CreateListResponse> CreateListAsync(CreateListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -733,7 +733,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateModelVersionResponse CreateModelVersion(CreateModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelVersionResponseUnmarshaller.Instance;
 
@@ -771,7 +771,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModelVersion">REST API Reference for CreateModelVersion Operation</seealso>
         public virtual Task<CreateModelVersionResponse> CreateModelVersionAsync(CreateModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelVersionResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -830,7 +830,7 @@ namespace Amazon.FraudDetector
 
         internal virtual CreateVariableResponse CreateVariable(CreateVariableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVariableResponseUnmarshaller.Instance;
 
@@ -865,7 +865,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateVariable">REST API Reference for CreateVariable Operation</seealso>
         public virtual Task<CreateVariableResponse> CreateVariableAsync(CreateVariableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVariableResponseUnmarshaller.Instance;
 
@@ -877,7 +877,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteBatchImportJobResponse DeleteBatchImportJob(DeleteBatchImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBatchImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBatchImportJobResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">REST API Reference for DeleteBatchImportJob Operation</seealso>
         public virtual Task<DeleteBatchImportJobResponse> DeleteBatchImportJobAsync(DeleteBatchImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBatchImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBatchImportJobResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteBatchPredictionJobResponse DeleteBatchPredictionJob(DeleteBatchPredictionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBatchPredictionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBatchPredictionJobResponseUnmarshaller.Instance;
 
@@ -960,7 +960,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob">REST API Reference for DeleteBatchPredictionJob Operation</seealso>
         public virtual Task<DeleteBatchPredictionJobResponse> DeleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBatchPredictionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBatchPredictionJobResponseUnmarshaller.Instance;
 
@@ -972,7 +972,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteDetectorResponse DeleteDetector(DeleteDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
 
@@ -1017,7 +1017,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
         public virtual Task<DeleteDetectorResponse> DeleteDetectorAsync(DeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
 
@@ -1029,7 +1029,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteDetectorVersionResponse DeleteDetectorVersion(DeleteDetectorVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDetectorVersionResponseUnmarshaller.Instance;
 
@@ -1077,7 +1077,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">REST API Reference for DeleteDetectorVersion Operation</seealso>
         public virtual Task<DeleteDetectorVersionResponse> DeleteDetectorVersionAsync(DeleteDetectorVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDetectorVersionResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteEntityTypeResponse DeleteEntityType(DeleteEntityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEntityTypeResponseUnmarshaller.Instance;
 
@@ -1137,7 +1137,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">REST API Reference for DeleteEntityType Operation</seealso>
         public virtual Task<DeleteEntityTypeResponse> DeleteEntityTypeAsync(DeleteEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEntityTypeResponseUnmarshaller.Instance;
 
@@ -1149,7 +1149,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteEventResponse DeleteEvent(DeleteEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">REST API Reference for DeleteEvent Operation</seealso>
         public virtual Task<DeleteEventResponse> DeleteEventAsync(DeleteEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
@@ -1204,7 +1204,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteEventsByEventTypeResponse DeleteEventsByEventType(DeleteEventsByEventTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventsByEventTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventsByEventTypeResponseUnmarshaller.Instance;
 
@@ -1245,7 +1245,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">REST API Reference for DeleteEventsByEventType Operation</seealso>
         public virtual Task<DeleteEventsByEventTypeResponse> DeleteEventsByEventTypeAsync(DeleteEventsByEventTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventsByEventTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventsByEventTypeResponseUnmarshaller.Instance;
 
@@ -1257,7 +1257,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteEventTypeResponse DeleteEventType(DeleteEventTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTypeResponseUnmarshaller.Instance;
 
@@ -1305,7 +1305,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">REST API Reference for DeleteEventType Operation</seealso>
         public virtual Task<DeleteEventTypeResponse> DeleteEventTypeAsync(DeleteEventTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTypeResponseUnmarshaller.Instance;
 
@@ -1317,7 +1317,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteExternalModelResponse DeleteExternalModel(DeleteExternalModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExternalModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExternalModelResponseUnmarshaller.Instance;
 
@@ -1362,7 +1362,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">REST API Reference for DeleteExternalModel Operation</seealso>
         public virtual Task<DeleteExternalModelResponse> DeleteExternalModelAsync(DeleteExternalModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExternalModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExternalModelResponseUnmarshaller.Instance;
 
@@ -1374,7 +1374,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
 
@@ -1422,7 +1422,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         public virtual Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteListResponse DeleteList(DeleteListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListResponseUnmarshaller.Instance;
 
@@ -1478,7 +1478,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList">REST API Reference for DeleteList Operation</seealso>
         public virtual Task<DeleteListResponse> DeleteListAsync(DeleteListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -1539,7 +1539,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteModelVersionResponse DeleteModelVersion(DeleteModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelVersionResponseUnmarshaller.Instance;
 
@@ -1600,7 +1600,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">REST API Reference for DeleteModelVersion Operation</seealso>
         public virtual Task<DeleteModelVersionResponse> DeleteModelVersionAsync(DeleteModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelVersionResponseUnmarshaller.Instance;
 
@@ -1612,7 +1612,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteOutcomeResponse DeleteOutcome(DeleteOutcomeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutcomeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutcomeResponseUnmarshaller.Instance;
 
@@ -1660,7 +1660,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">REST API Reference for DeleteOutcome Operation</seealso>
         public virtual Task<DeleteOutcomeResponse> DeleteOutcomeAsync(DeleteOutcomeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutcomeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutcomeResponseUnmarshaller.Instance;
 
@@ -1672,7 +1672,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1717,7 +1717,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1729,7 +1729,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DeleteVariableResponse DeleteVariable(DeleteVariableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVariableResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">REST API Reference for DeleteVariable Operation</seealso>
         public virtual Task<DeleteVariableResponse> DeleteVariableAsync(DeleteVariableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVariableResponseUnmarshaller.Instance;
 
@@ -1794,7 +1794,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DescribeDetectorResponse DescribeDetector(DescribeDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorResponseUnmarshaller.Instance;
 
@@ -1832,7 +1832,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DescribeDetector">REST API Reference for DescribeDetector Operation</seealso>
         public virtual Task<DescribeDetectorResponse> DescribeDetectorAsync(DescribeDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.FraudDetector
 
         internal virtual DescribeModelVersionsResponse DescribeModelVersions(DescribeModelVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeModelVersionsResponseUnmarshaller.Instance;
 
@@ -1883,7 +1883,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DescribeModelVersions">REST API Reference for DescribeModelVersions Operation</seealso>
         public virtual Task<DescribeModelVersionsResponse> DescribeModelVersionsAsync(DescribeModelVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeModelVersionsResponseUnmarshaller.Instance;
 
@@ -1895,7 +1895,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetBatchImportJobsResponse GetBatchImportJobs(GetBatchImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBatchImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBatchImportJobsResponseUnmarshaller.Instance;
 
@@ -1937,7 +1937,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">REST API Reference for GetBatchImportJobs Operation</seealso>
         public virtual Task<GetBatchImportJobsResponse> GetBatchImportJobsAsync(GetBatchImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBatchImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBatchImportJobsResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetBatchPredictionJobsResponse GetBatchPredictionJobs(GetBatchPredictionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBatchPredictionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBatchPredictionJobsResponseUnmarshaller.Instance;
 
@@ -1991,7 +1991,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs">REST API Reference for GetBatchPredictionJobs Operation</seealso>
         public virtual Task<GetBatchPredictionJobsResponse> GetBatchPredictionJobsAsync(GetBatchPredictionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBatchPredictionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBatchPredictionJobsResponseUnmarshaller.Instance;
 
@@ -2003,7 +2003,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetDeleteEventsByEventTypeStatusResponse GetDeleteEventsByEventTypeStatus(GetDeleteEventsByEventTypeStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeleteEventsByEventTypeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeleteEventsByEventTypeStatusResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">REST API Reference for GetDeleteEventsByEventTypeStatus Operation</seealso>
         public virtual Task<GetDeleteEventsByEventTypeStatusResponse> GetDeleteEventsByEventTypeStatusAsync(GetDeleteEventsByEventTypeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeleteEventsByEventTypeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeleteEventsByEventTypeStatusResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetDetectorsResponse GetDetectors(GetDetectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDetectorsResponseUnmarshaller.Instance;
 
@@ -2096,7 +2096,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDetectors">REST API Reference for GetDetectors Operation</seealso>
         public virtual Task<GetDetectorsResponse> GetDetectorsAsync(GetDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDetectorsResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetDetectorVersionResponse GetDetectorVersion(GetDetectorVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDetectorVersionResponseUnmarshaller.Instance;
 
@@ -2146,7 +2146,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDetectorVersion">REST API Reference for GetDetectorVersion Operation</seealso>
         public virtual Task<GetDetectorVersionResponse> GetDetectorVersionAsync(GetDetectorVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDetectorVersionResponseUnmarshaller.Instance;
 
@@ -2158,7 +2158,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetEntityTypesResponse GetEntityTypes(GetEntityTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntityTypesResponseUnmarshaller.Instance;
 
@@ -2200,7 +2200,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes">REST API Reference for GetEntityTypes Operation</seealso>
         public virtual Task<GetEntityTypesResponse> GetEntityTypesAsync(GetEntityTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntityTypesResponseUnmarshaller.Instance;
 
@@ -2212,7 +2212,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetEventResponse GetEvent(GetEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
 
@@ -2251,7 +2251,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">REST API Reference for GetEvent Operation</seealso>
         public virtual Task<GetEventResponse> GetEventAsync(GetEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetEventPredictionResponse GetEventPrediction(GetEventPredictionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventPredictionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventPredictionResponseUnmarshaller.Instance;
 
@@ -2309,7 +2309,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction">REST API Reference for GetEventPrediction Operation</seealso>
         public virtual Task<GetEventPredictionResponse> GetEventPredictionAsync(GetEventPredictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventPredictionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventPredictionResponseUnmarshaller.Instance;
 
@@ -2321,7 +2321,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetEventPredictionMetadataResponse GetEventPredictionMetadata(GetEventPredictionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventPredictionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventPredictionMetadataResponseUnmarshaller.Instance;
 
@@ -2360,7 +2360,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
         public virtual Task<GetEventPredictionMetadataResponse> GetEventPredictionMetadataAsync(GetEventPredictionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventPredictionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventPredictionMetadataResponseUnmarshaller.Instance;
 
@@ -2372,7 +2372,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetEventTypesResponse GetEventTypes(GetEventTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventTypesResponseUnmarshaller.Instance;
 
@@ -2414,7 +2414,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes">REST API Reference for GetEventTypes Operation</seealso>
         public virtual Task<GetEventTypesResponse> GetEventTypesAsync(GetEventTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventTypesResponseUnmarshaller.Instance;
 
@@ -2426,7 +2426,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetExternalModelsResponse GetExternalModels(GetExternalModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExternalModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExternalModelsResponseUnmarshaller.Instance;
 
@@ -2469,7 +2469,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetExternalModels">REST API Reference for GetExternalModels Operation</seealso>
         public virtual Task<GetExternalModelsResponse> GetExternalModelsAsync(GetExternalModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExternalModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExternalModelsResponseUnmarshaller.Instance;
 
@@ -2481,7 +2481,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetKMSEncryptionKeyResponse GetKMSEncryptionKey(GetKMSEncryptionKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKMSEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKMSEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -2517,7 +2517,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">REST API Reference for GetKMSEncryptionKey Operation</seealso>
         public virtual Task<GetKMSEncryptionKeyResponse> GetKMSEncryptionKeyAsync(GetKMSEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKMSEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKMSEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -2529,7 +2529,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetLabelsResponse GetLabels(GetLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLabelsResponseUnmarshaller.Instance;
 
@@ -2571,7 +2571,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels">REST API Reference for GetLabels Operation</seealso>
         public virtual Task<GetLabelsResponse> GetLabelsAsync(GetLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLabelsResponseUnmarshaller.Instance;
 
@@ -2583,7 +2583,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetListElementsResponse GetListElements(GetListElementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListElementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListElementsResponseUnmarshaller.Instance;
 
@@ -2621,7 +2621,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements">REST API Reference for GetListElements Operation</seealso>
         public virtual Task<GetListElementsResponse> GetListElementsAsync(GetListElementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListElementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListElementsResponseUnmarshaller.Instance;
 
@@ -2633,7 +2633,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetListsMetadataResponse GetListsMetadata(GetListsMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListsMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListsMetadataResponseUnmarshaller.Instance;
 
@@ -2671,7 +2671,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata">REST API Reference for GetListsMetadata Operation</seealso>
         public virtual Task<GetListsMetadataResponse> GetListsMetadataAsync(GetListsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListsMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListsMetadataResponseUnmarshaller.Instance;
 
@@ -2683,7 +2683,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
 
@@ -2733,7 +2733,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
 
@@ -2745,7 +2745,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetModelVersionResponse GetModelVersion(GetModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelVersionResponseUnmarshaller.Instance;
 
@@ -2783,7 +2783,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetModelVersion">REST API Reference for GetModelVersion Operation</seealso>
         public virtual Task<GetModelVersionResponse> GetModelVersionAsync(GetModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelVersionResponseUnmarshaller.Instance;
 
@@ -2795,7 +2795,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetOutcomesResponse GetOutcomes(GetOutcomesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutcomesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutcomesResponseUnmarshaller.Instance;
 
@@ -2837,7 +2837,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetOutcomes">REST API Reference for GetOutcomes Operation</seealso>
         public virtual Task<GetOutcomesResponse> GetOutcomesAsync(GetOutcomesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutcomesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutcomesResponseUnmarshaller.Instance;
 
@@ -2849,7 +2849,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetRulesResponse GetRules(GetRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRulesResponseUnmarshaller.Instance;
 
@@ -2897,7 +2897,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetRules">REST API Reference for GetRules Operation</seealso>
         public virtual Task<GetRulesResponse> GetRulesAsync(GetRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRulesResponseUnmarshaller.Instance;
 
@@ -2909,7 +2909,7 @@ namespace Amazon.FraudDetector
 
         internal virtual GetVariablesResponse GetVariables(GetVariablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVariablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVariablesResponseUnmarshaller.Instance;
 
@@ -2951,7 +2951,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetVariables">REST API Reference for GetVariables Operation</seealso>
         public virtual Task<GetVariablesResponse> GetVariablesAsync(GetVariablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVariablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVariablesResponseUnmarshaller.Instance;
 
@@ -2963,7 +2963,7 @@ namespace Amazon.FraudDetector
 
         internal virtual ListEventPredictionsResponse ListEventPredictions(ListEventPredictionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventPredictionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventPredictionsResponseUnmarshaller.Instance;
 
@@ -3014,7 +3014,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
         public virtual Task<ListEventPredictionsResponse> ListEventPredictionsAsync(ListEventPredictionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventPredictionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventPredictionsResponseUnmarshaller.Instance;
 
@@ -3026,7 +3026,7 @@ namespace Amazon.FraudDetector
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3063,7 +3063,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3075,7 +3075,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutDetectorResponse PutDetector(PutDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDetectorResponseUnmarshaller.Instance;
 
@@ -3113,7 +3113,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutDetector">REST API Reference for PutDetector Operation</seealso>
         public virtual Task<PutDetectorResponse> PutDetectorAsync(PutDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDetectorResponseUnmarshaller.Instance;
 
@@ -3125,7 +3125,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutEntityTypeResponse PutEntityType(PutEntityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEntityTypeResponseUnmarshaller.Instance;
 
@@ -3166,7 +3166,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType">REST API Reference for PutEntityType Operation</seealso>
         public virtual Task<PutEntityTypeResponse> PutEntityTypeAsync(PutEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEntityTypeResponseUnmarshaller.Instance;
 
@@ -3178,7 +3178,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutEventTypeResponse PutEventType(PutEventTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventTypeResponseUnmarshaller.Instance;
 
@@ -3221,7 +3221,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType">REST API Reference for PutEventType Operation</seealso>
         public virtual Task<PutEventTypeResponse> PutEventTypeAsync(PutEventTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventTypeResponseUnmarshaller.Instance;
 
@@ -3233,7 +3233,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutExternalModelResponse PutExternalModel(PutExternalModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutExternalModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutExternalModelResponseUnmarshaller.Instance;
 
@@ -3273,7 +3273,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutExternalModel">REST API Reference for PutExternalModel Operation</seealso>
         public virtual Task<PutExternalModelResponse> PutExternalModelAsync(PutExternalModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutExternalModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutExternalModelResponseUnmarshaller.Instance;
 
@@ -3285,7 +3285,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutKMSEncryptionKeyResponse PutKMSEncryptionKey(PutKMSEncryptionKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKMSEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKMSEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -3326,7 +3326,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey">REST API Reference for PutKMSEncryptionKey Operation</seealso>
         public virtual Task<PutKMSEncryptionKeyResponse> PutKMSEncryptionKeyAsync(PutKMSEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKMSEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKMSEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -3338,7 +3338,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutLabelResponse PutLabel(PutLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLabelResponseUnmarshaller.Instance;
 
@@ -3378,7 +3378,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel">REST API Reference for PutLabel Operation</seealso>
         public virtual Task<PutLabelResponse> PutLabelAsync(PutLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLabelResponseUnmarshaller.Instance;
 
@@ -3390,7 +3390,7 @@ namespace Amazon.FraudDetector
 
         internal virtual PutOutcomeResponse PutOutcome(PutOutcomeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOutcomeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOutcomeResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutOutcome">REST API Reference for PutOutcome Operation</seealso>
         public virtual Task<PutOutcomeResponse> PutOutcomeAsync(PutOutcomeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOutcomeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOutcomeResponseUnmarshaller.Instance;
 
@@ -3440,7 +3440,7 @@ namespace Amazon.FraudDetector
 
         internal virtual SendEventResponse SendEvent(SendEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
 
@@ -3483,7 +3483,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">REST API Reference for SendEvent Operation</seealso>
         public virtual Task<SendEventResponse> SendEventAsync(SendEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
 
@@ -3495,7 +3495,7 @@ namespace Amazon.FraudDetector
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3530,7 +3530,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3542,7 +3542,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3577,7 +3577,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3589,7 +3589,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateDetectorVersionResponse UpdateDetectorVersion(UpdateDetectorVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorVersionResponseUnmarshaller.Instance;
 
@@ -3632,7 +3632,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateDetectorVersion">REST API Reference for UpdateDetectorVersion Operation</seealso>
         public virtual Task<UpdateDetectorVersionResponse> UpdateDetectorVersionAsync(UpdateDetectorVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorVersionResponseUnmarshaller.Instance;
 
@@ -3644,7 +3644,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateDetectorVersionMetadataResponse UpdateDetectorVersionMetadata(UpdateDetectorVersionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorVersionMetadataResponseUnmarshaller.Instance;
 
@@ -3683,7 +3683,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateDetectorVersionMetadata">REST API Reference for UpdateDetectorVersionMetadata Operation</seealso>
         public virtual Task<UpdateDetectorVersionMetadataResponse> UpdateDetectorVersionMetadataAsync(UpdateDetectorVersionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorVersionMetadataResponseUnmarshaller.Instance;
 
@@ -3695,7 +3695,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateDetectorVersionStatusResponse UpdateDetectorVersionStatus(UpdateDetectorVersionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorVersionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorVersionStatusResponseUnmarshaller.Instance;
 
@@ -3738,7 +3738,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateDetectorVersionStatus">REST API Reference for UpdateDetectorVersionStatus Operation</seealso>
         public virtual Task<UpdateDetectorVersionStatusResponse> UpdateDetectorVersionStatusAsync(UpdateDetectorVersionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorVersionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorVersionStatusResponseUnmarshaller.Instance;
 
@@ -3750,7 +3750,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateEventLabelResponse UpdateEventLabel(UpdateEventLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventLabelResponseUnmarshaller.Instance;
 
@@ -3791,7 +3791,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">REST API Reference for UpdateEventLabel Operation</seealso>
         public virtual Task<UpdateEventLabelResponse> UpdateEventLabelAsync(UpdateEventLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventLabelResponseUnmarshaller.Instance;
 
@@ -3803,7 +3803,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateListResponse UpdateList(UpdateListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateListResponseUnmarshaller.Instance;
 
@@ -3844,7 +3844,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList">REST API Reference for UpdateList Operation</seealso>
         public virtual Task<UpdateListResponse> UpdateListAsync(UpdateListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateListResponseUnmarshaller.Instance;
 
@@ -3856,7 +3856,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -3897,7 +3897,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -3909,7 +3909,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateModelVersionResponse UpdateModelVersion(UpdateModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelVersionResponseUnmarshaller.Instance;
 
@@ -3954,7 +3954,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersion">REST API Reference for UpdateModelVersion Operation</seealso>
         public virtual Task<UpdateModelVersionResponse> UpdateModelVersionAsync(UpdateModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelVersionResponseUnmarshaller.Instance;
 
@@ -3966,7 +3966,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateModelVersionStatusResponse UpdateModelVersionStatus(UpdateModelVersionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelVersionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelVersionStatusResponseUnmarshaller.Instance;
 
@@ -4025,7 +4025,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">REST API Reference for UpdateModelVersionStatus Operation</seealso>
         public virtual Task<UpdateModelVersionStatusResponse> UpdateModelVersionStatusAsync(UpdateModelVersionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelVersionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelVersionStatusResponseUnmarshaller.Instance;
 
@@ -4037,7 +4037,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateRuleMetadataResponse UpdateRuleMetadata(UpdateRuleMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleMetadataResponseUnmarshaller.Instance;
 
@@ -4078,7 +4078,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateRuleMetadata">REST API Reference for UpdateRuleMetadata Operation</seealso>
         public virtual Task<UpdateRuleMetadataResponse> UpdateRuleMetadataAsync(UpdateRuleMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleMetadataResponseUnmarshaller.Instance;
 
@@ -4090,7 +4090,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateRuleVersionResponse UpdateRuleVersion(UpdateRuleVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleVersionResponseUnmarshaller.Instance;
 
@@ -4132,7 +4132,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateRuleVersion">REST API Reference for UpdateRuleVersion Operation</seealso>
         public virtual Task<UpdateRuleVersionResponse> UpdateRuleVersionAsync(UpdateRuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleVersionResponseUnmarshaller.Instance;
 
@@ -4144,7 +4144,7 @@ namespace Amazon.FraudDetector
 
         internal virtual UpdateVariableResponse UpdateVariable(UpdateVariableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVariableResponseUnmarshaller.Instance;
 
@@ -4185,7 +4185,7 @@ namespace Amazon.FraudDetector
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateVariable">REST API Reference for UpdateVariable Operation</seealso>
         public virtual Task<UpdateVariableResponse> UpdateVariableAsync(UpdateVariableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVariableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVariableResponseUnmarshaller.Instance;
 

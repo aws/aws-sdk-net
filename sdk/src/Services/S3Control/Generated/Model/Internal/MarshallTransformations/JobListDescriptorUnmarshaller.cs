@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobListDescriptor Object
     /// </summary>  
-    public class JobListDescriptorUnmarshaller : IXmlUnmarshaller<JobListDescriptor, XmlUnmarshallerContext>
+    public partial class JobListDescriptorUnmarshaller : IXmlUnmarshaller<JobListDescriptor, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,6 +104,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.TerminationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -112,6 +114,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, JobListDescriptor unmarshalledObject, int targetDepth);
+
         private static JobListDescriptorUnmarshaller _instance = new JobListDescriptorUnmarshaller();        
 
         /// <summary>

@@ -36,6 +36,14 @@ namespace Amazon.Route53RecoveryCluster
         /// <summary>
         /// Construct instance of AmazonRoute53RecoveryClusterException
         /// </summary>
+        public AmazonRoute53RecoveryClusterException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRoute53RecoveryClusterException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRoute53RecoveryClusterException(string message)
             : base(message)

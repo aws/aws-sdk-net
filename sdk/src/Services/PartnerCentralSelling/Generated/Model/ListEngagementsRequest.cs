@@ -38,8 +38,10 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class ListEngagementsRequest : AmazonPartnerCentralSellingRequest
     {
         private string _catalog;
+        private List<string> _contextTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _createdBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _engagementIdentifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _excludeContextTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _excludeCreatedBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
@@ -62,6 +64,32 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextTypes. 
+        /// <para>
+        /// Filters engagements to include only those containing the specified context types,
+        /// such as "CustomerProject" or "Lead". Use this to find engagements that have specific
+        /// types of contextual information associated with them.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> ContextTypes
+        {
+            get { return this._contextTypes; }
+            set { this._contextTypes = value; }
+        }
+
+        // Check to see if ContextTypes property is set
+        internal bool IsSetContextTypes()
+        {
+            return this._contextTypes != null && (this._contextTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,6 +140,32 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetEngagementIdentifier()
         {
             return this._engagementIdentifier != null && (this._engagementIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeContextTypes. 
+        /// <para>
+        /// Filters engagements to exclude those containing the specified context types. Use this
+        /// to find engagements that do not have certain types of contextual information, helping
+        /// to narrow results based on context exclusion criteria.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> ExcludeContextTypes
+        {
+            get { return this._excludeContextTypes; }
+            set { this._excludeContextTypes = value; }
+        }
+
+        // Check to see if ExcludeContextTypes property is set
+        internal bool IsSetExcludeContextTypes()
+        {
+            return this._excludeContextTypes != null && (this._excludeContextTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

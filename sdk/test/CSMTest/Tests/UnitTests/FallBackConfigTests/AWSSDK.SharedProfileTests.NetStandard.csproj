@@ -15,8 +15,9 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    
-    <NoWarn>CS1591</NoWarn>
+
+    <NoWarn>CS1591,NU1701</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,13 +38,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-
 </Project>

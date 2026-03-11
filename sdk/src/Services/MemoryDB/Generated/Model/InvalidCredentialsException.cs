@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The provided credentials are not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidCredentialsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidCredentialsException
+        /// message.
+        /// </summary>
+        public InvalidCredentialsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidCredentialsException with the specified error

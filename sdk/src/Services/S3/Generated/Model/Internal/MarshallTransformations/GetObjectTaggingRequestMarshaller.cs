@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("tagging");
         
@@ -75,11 +76,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetVersionId())
-                request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
+                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static GetObjectTaggingRequestMarshaller _instance = new GetObjectTaggingRequestMarshaller();        
@@ -101,5 +102,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetObjectTaggingRequest publicRequest);
     }    
 }

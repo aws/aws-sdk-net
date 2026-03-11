@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UserLambdaValidationException
+        /// message.
+        /// </summary>
+        public UserLambdaValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserLambdaValidationException with the specified error
         /// message.
         /// </summary>

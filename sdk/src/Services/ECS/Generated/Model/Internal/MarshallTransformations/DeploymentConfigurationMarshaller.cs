@@ -63,6 +63,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.BakeTimeInMinutes.Value);
             }
 
+            if(requestObject.IsSetCanaryConfiguration())
+            {
+                context.Writer.WritePropertyName("canaryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CanaryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CanaryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDeploymentCircuitBreaker())
             {
                 context.Writer.WritePropertyName("deploymentCircuitBreaker");
@@ -88,6 +99,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetLinearConfiguration())
+            {
+                context.Writer.WritePropertyName("linearConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LinearConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LinearConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumPercent())

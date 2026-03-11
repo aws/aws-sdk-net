@@ -61,6 +61,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("geographySet/item", targetDepth))
+                    {
+                        var unmarshaller = RegionGeographyUnmarshaller.Instance;
+                        if (unmarshalledObject.Geography == null)
+                        {
+                            unmarshalledObject.Geography = new List<RegionGeography>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Geography.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("optInStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

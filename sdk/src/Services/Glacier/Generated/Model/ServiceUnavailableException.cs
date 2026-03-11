@@ -41,6 +41,13 @@ namespace Amazon.Glacier.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for ServiceUnavailableException
+        /// message.
+        /// </summary>
+        public ServiceUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceUnavailableException with the specified error
         /// message.
         /// </summary>

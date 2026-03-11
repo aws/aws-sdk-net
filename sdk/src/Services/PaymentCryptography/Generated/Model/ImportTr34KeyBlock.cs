@@ -41,6 +41,8 @@ namespace Amazon.PaymentCryptography.Model
         private string _randomNonce;
         private string _signingKeyCertificate;
         private string _wrappedKeyBlock;
+        private string _wrappingKeyCertificate;
+        private string _wrappingKeyIdentifier;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityPublicKeyIdentifier. 
@@ -70,7 +72,6 @@ namespace Amazon.PaymentCryptography.Model
         /// can use the same import token to import multiple keys to the same service account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ImportToken
         {
             get { return this._importToken; }
@@ -130,7 +131,7 @@ namespace Amazon.PaymentCryptography.Model
         /// KDH TR-34 WrappedKeyBlock.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string SigningKeyCertificate
         {
             get { return this._signingKeyCertificate; }
@@ -160,6 +161,44 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetWrappedKeyBlock()
         {
             return this._wrappedKeyBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WrappingKeyCertificate. 
+        /// <para>
+        /// The certificate used to wrap the TR-34 key block.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
+        public string WrappingKeyCertificate
+        {
+            get { return this._wrappingKeyCertificate; }
+            set { this._wrappingKeyCertificate = value; }
+        }
+
+        // Check to see if WrappingKeyCertificate property is set
+        internal bool IsSetWrappingKeyCertificate()
+        {
+            return this._wrappingKeyCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WrappingKeyIdentifier. 
+        /// <para>
+        /// Key Identifier used for unwrapping the import key
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=322)]
+        public string WrappingKeyIdentifier
+        {
+            get { return this._wrappingKeyIdentifier; }
+            set { this._wrappingKeyIdentifier = value; }
+        }
+
+        // Check to see if WrappingKeyIdentifier property is set
+        internal bool IsSetWrappingKeyIdentifier()
+        {
+            return this._wrappingKeyIdentifier != null;
         }
 
     }

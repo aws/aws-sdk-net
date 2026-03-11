@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for XmlEmptyLists operation
     /// </summary>  
-    public class XmlEmptyListsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class XmlEmptyListsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             XmlEmptyListsResponse response = new XmlEmptyListsResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -221,7 +222,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -247,6 +247,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, XmlEmptyListsResponse response);
 
         private static XmlEmptyListsResponseUnmarshaller _instance = new XmlEmptyListsResponseUnmarshaller();        
 

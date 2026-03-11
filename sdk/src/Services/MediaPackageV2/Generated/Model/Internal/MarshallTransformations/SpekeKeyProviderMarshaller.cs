@@ -46,6 +46,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCertificateArn())
+            {
+                context.Writer.WritePropertyName("CertificateArn");
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
+            }
+
             if(requestObject.IsSetDrmSystems())
             {
                 context.Writer.WritePropertyName("DrmSystems");

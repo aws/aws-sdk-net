@@ -42,14 +42,6 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Address of the email recipient.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Length Constraints: Minimum length of 1. Maximum length of 256.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Address
@@ -68,14 +60,6 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property DisplayName. 
         /// <para>
         /// Display name of the email recipient.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Length Constraints: Minimum length of 1. Maximum length of 256.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

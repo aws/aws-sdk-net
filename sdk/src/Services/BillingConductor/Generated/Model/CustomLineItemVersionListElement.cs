@@ -39,12 +39,14 @@ namespace Amazon.BillingConductor.Model
         private long? _associationSize;
         private string _billingGroupArn;
         private ListCustomLineItemChargeDetails _chargeDetails;
+        private ComputationRuleEnum _computationRule;
         private long? _creationTime;
         private CurrencyCode _currencyCode;
         private string _description;
         private string _endBillingPeriod;
         private long? _lastModifiedTime;
         private string _name;
+        private PresentationObject _presentationDetails;
         private string _productCode;
         private string _startBillingPeriod;
         private long? _startTime;
@@ -137,6 +139,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetChargeDetails()
         {
             return this._chargeDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputationRule. 
+        /// <para>
+        ///  The computation rule for a specific version of a custom line item, determining how
+        /// charges are computed and reflected in the bill. 
+        /// </para>
+        /// </summary>
+        public ComputationRuleEnum ComputationRule
+        {
+            get { return this._computationRule; }
+            set { this._computationRule = value; }
+        }
+
+        // Check to see if ComputationRule property is set
+        internal bool IsSetComputationRule()
+        {
+            return this._computationRule != null;
         }
 
         /// <summary>
@@ -247,6 +268,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresentationDetails. 
+        /// <para>
+        ///  Presentation configuration for a specific version of a custom line item, specifying
+        /// how charges are displayed in the bill. 
+        /// </para>
+        /// </summary>
+        public PresentationObject PresentationDetails
+        {
+            get { return this._presentationDetails; }
+            set { this._presentationDetails = value; }
+        }
+
+        // Check to see if PresentationDetails property is set
+        internal bool IsSetPresentationDetails()
+        {
+            return this._presentationDetails != null;
         }
 
         /// <summary>

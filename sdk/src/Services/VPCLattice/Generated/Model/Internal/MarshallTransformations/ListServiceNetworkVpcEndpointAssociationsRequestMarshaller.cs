@@ -68,6 +68,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.ServiceNetworkIdentifier))
+                throw new AmazonVPCLatticeException("Request object does not have required field ServiceNetworkIdentifier set");
             
             if (publicRequest.IsSetServiceNetworkIdentifier())
                 request.Parameters.Add("serviceNetworkIdentifier", StringUtils.FromString(publicRequest.ServiceNetworkIdentifier));

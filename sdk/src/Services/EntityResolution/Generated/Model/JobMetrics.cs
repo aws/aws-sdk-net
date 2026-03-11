@@ -30,15 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputRecords</c>, <c>TotalRecordsProcessed</c>, <c>MatchIDs</c>,
-    /// and <c>RecordsNotProcessed</c>.
+    /// An object containing <c>inputRecords</c>, <c>totalRecordsProcessed</c>, <c>matchIDs</c>,
+    /// and <c>recordsNotProcessed</c>.
     /// </summary>
     public partial class JobMetrics
     {
+        private int? _deleteRecordsProcessed;
         private int? _inputRecords;
         private int? _matchiDs;
         private int? _recordsNotProcessed;
         private int? _totalRecordsProcessed;
+
+        /// <summary>
+        /// Gets and sets the property DeleteRecordsProcessed. 
+        /// <para>
+        /// The number of records processed that were marked for deletion (<c>DELETE</c> = True)
+        /// in the input file. This metric tracks records flagged for removal during the job execution.
+        /// </para>
+        /// </summary>
+        public int? DeleteRecordsProcessed
+        {
+            get { return this._deleteRecordsProcessed; }
+            set { this._deleteRecordsProcessed = value; }
+        }
+
+        // Check to see if DeleteRecordsProcessed property is set
+        internal bool IsSetDeleteRecordsProcessed()
+        {
+            return this._deleteRecordsProcessed.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InputRecords. 

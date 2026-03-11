@@ -43,6 +43,7 @@ namespace Amazon.DataZone.Model
         private List<PhysicalEndpoint> _physicalEndpoints = AWSConfigs.InitializeCollections ? new List<PhysicalEndpoint>() : null;
         private string _projectId;
         private ConnectionPropertiesOutput _props;
+        private ConnectionScope _scope;
         private ConnectionType _type;
 
         /// <summary>
@@ -216,6 +217,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProps()
         {
             return this._props != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope of the connection.
+        /// </para>
+        /// </summary>
+        public ConnectionScope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

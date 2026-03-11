@@ -43,6 +43,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for ClientTimeoutException
+        /// message.
+        /// </summary>
+        public ClientTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClientTimeoutException with the specified error
         /// message.
         /// </summary>

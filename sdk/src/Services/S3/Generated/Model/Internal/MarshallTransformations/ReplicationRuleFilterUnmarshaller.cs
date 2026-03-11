@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationRuleFilter Object
     /// </summary>  
-    public class ReplicationRuleFilterUnmarshaller : IXmlUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>
+    public partial class ReplicationRuleFilterUnmarshaller : IXmlUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tag = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ReplicationRuleFilter unmarshalledObject, int targetDepth);
+
         private static ReplicationRuleFilterUnmarshaller _instance = new ReplicationRuleFilterUnmarshaller();        
 
         /// <summary>

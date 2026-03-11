@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private string _domainIdentifier;
         private string _entityIdentifier;
         private TargetEntityType _entityType;
+        private string _grantIdentifier;
         private ManagedPolicyType _policyType;
         private PolicyGrantPrincipal _principal;
 
@@ -117,6 +118,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEntityType()
         {
             return this._entityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrantIdentifier. 
+        /// <para>
+        /// The ID of the policy grant that is to be removed from a specified entity.
+        /// </para>
+        /// </summary>
+        public string GrantIdentifier
+        {
+            get { return this._grantIdentifier; }
+            set { this._grantIdentifier = value; }
+        }
+
+        // Check to see if GrantIdentifier property is set
+        internal bool IsSetGrantIdentifier()
+        {
+            return this._grantIdentifier != null;
         }
 
         /// <summary>

@@ -100,6 +100,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     response.IsPrimary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("lastAccessedAt", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.LastAccessedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OverridesUnmarshaller.Instance;
                     response.Overrides = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("storageTier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StorageTier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))

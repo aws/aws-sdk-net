@@ -86,6 +86,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DefineAuthChallenge);
             }
 
+            if(requestObject.IsSetInboundFederation())
+            {
+                context.Writer.WritePropertyName("InboundFederation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InboundFederationLambdaTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.InboundFederation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetKMSKeyID())
             {
                 context.Writer.WritePropertyName("KMSKeyID");

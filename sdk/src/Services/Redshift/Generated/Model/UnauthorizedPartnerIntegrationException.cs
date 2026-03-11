@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for UnauthorizedPartnerIntegrationException
+        /// message.
+        /// </summary>
+        public UnauthorizedPartnerIntegrationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedPartnerIntegrationException with the specified error
         /// message.
         /// </summary>

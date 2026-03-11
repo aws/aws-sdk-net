@@ -116,6 +116,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZone));
                                         }
+                                        if(publicRequestlistValuelistValue.IsSetAvailabilityZoneId())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZoneId));
+                                        }
                                         if(publicRequestlistValuelistValue.IsSetBlockDeviceMappings())
                                         {
                                             if (publicRequestlistValuelistValue.BlockDeviceMappings.Count == 0)
@@ -414,6 +418,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             {
                                                 request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestlistValuelistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                                             }
+                                            if(publicRequestlistValuelistValue.InstanceRequirements.IsSetRequireEncryptionInTransit())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "RequireEncryptionInTransit", StringUtils.FromBool(publicRequestlistValuelistValue.InstanceRequirements.RequireEncryptionInTransit));
+                                            }
                                             if(publicRequestlistValuelistValue.InstanceRequirements.IsSetRequireHibernateSupport())
                                             {
                                                 request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestlistValuelistValue.InstanceRequirements.RequireHibernateSupport));
@@ -462,6 +470,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             if(publicRequestlistValuelistValue.Placement.IsSetAvailabilityZone())
                                             {
                                                 request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.Placement.AvailabilityZone));
+                                            }
+                                            if(publicRequestlistValuelistValue.Placement.IsSetAvailabilityZoneId())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValuelistValue.Placement.AvailabilityZoneId));
                                             }
                                             if(publicRequestlistValuelistValue.Placement.IsSetGroupId())
                                             {
@@ -669,6 +681,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidUntil));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateFleetRequestMarshaller _instance = new CreateFleetRequestMarshaller();        

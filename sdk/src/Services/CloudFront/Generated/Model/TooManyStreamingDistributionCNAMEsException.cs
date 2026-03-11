@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyStreamingDistributionCNAMEsException
+        /// message.
+        /// </summary>
+        public TooManyStreamingDistributionCNAMEsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyStreamingDistributionCNAMEsException with the specified error
         /// message.
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.Shield.Model
     {
 
         /// <summary>
+        /// Default constructor for LockedSubscriptionException
+        /// message.
+        /// </summary>
+        public LockedSubscriptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LockedSubscriptionException with the specified error
         /// message.
         /// </summary>

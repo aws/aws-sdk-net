@@ -108,6 +108,16 @@ namespace Amazon.SecurityHub.Model
         IGetFindingsPaginator GetFindings(GetFindingsRequest request);
 
         /// <summary>
+        /// Paginator for GetFindingsTrendsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetFindingsTrendsV2Paginator GetFindingsTrendsV2(GetFindingsTrendsV2Request request);
+
+        /// <summary>
         /// Paginator for GetFindingsV2 operation
         ///</summary>
         [AWSPaginator(
@@ -126,6 +136,16 @@ namespace Amazon.SecurityHub.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetInsightsPaginator GetInsights(GetInsightsRequest request);
+
+        /// <summary>
+        /// Paginator for GetResourcesTrendsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetResourcesTrendsV2Paginator GetResourcesTrendsV2(GetResourcesTrendsV2Request request);
 
         /// <summary>
         /// Paginator for GetResourcesV2 operation

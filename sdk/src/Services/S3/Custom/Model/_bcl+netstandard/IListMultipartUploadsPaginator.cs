@@ -20,22 +20,11 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Paginator for the ListMultipartUploads operation
     ///</summary>
-    public interface IListMultipartUploadsPaginator
+    public partial interface IListMultipartUploadsPaginator
     {
-        /// <summary>
-        /// Enumerable containing all full responses for the operation
-        /// </summary>
-        IPaginatedEnumerable<ListMultipartUploadsResponse> Responses { get; }
-        
         /// <summary>
         /// Enumerable containing all of the Uploads
         /// </summary>
         IPaginatedEnumerable<MultipartUpload> Uploads { get; }
-
-        /// <summary>
-        /// Enumerable containing all of the CommonPrefixes
-        /// </summary>
-        IPaginatedEnumerable<string> CommonPrefixes { get; }
-
     }
 }

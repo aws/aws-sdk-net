@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ApprovalRuleDoesNotExistException
+        /// message.
+        /// </summary>
+        public ApprovalRuleDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApprovalRuleDoesNotExistException with the specified error
         /// message.
         /// </summary>

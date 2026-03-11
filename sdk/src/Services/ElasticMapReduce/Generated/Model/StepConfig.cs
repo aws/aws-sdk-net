@@ -37,6 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ActionOnFailure _actionOnFailure;
         private HadoopJarStepConfig _hadoopJarStep;
         private string _name;
+        private StepMonitoringConfiguration _stepMonitoringConfiguration;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -141,6 +142,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepMonitoringConfiguration. 
+        /// <para>
+        /// Object that holds configuration properties for logging.
+        /// </para>
+        /// </summary>
+        public StepMonitoringConfiguration StepMonitoringConfiguration
+        {
+            get { return this._stepMonitoringConfiguration; }
+            set { this._stepMonitoringConfiguration = value; }
+        }
+
+        // Check to see if StepMonitoringConfiguration property is set
+        internal bool IsSetStepMonitoringConfiguration()
+        {
+            return this._stepMonitoringConfiguration != null;
         }
 
     }

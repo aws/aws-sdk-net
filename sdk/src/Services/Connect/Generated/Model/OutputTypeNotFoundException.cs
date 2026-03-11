@@ -41,6 +41,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for OutputTypeNotFoundException
+        /// message.
+        /// </summary>
+        public OutputTypeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OutputTypeNotFoundException with the specified error
         /// message.
         /// </summary>

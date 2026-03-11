@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgentStatus operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates an agent status for the specified Amazon Connect instance.
-    /// </para>
     /// </summary>
     public partial class CreateAgentStatusRequest : AmazonConnectRequest
     {

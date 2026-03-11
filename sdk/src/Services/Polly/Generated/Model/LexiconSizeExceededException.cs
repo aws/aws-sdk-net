@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for LexiconSizeExceededException
+        /// message.
+        /// </summary>
+        public LexiconSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LexiconSizeExceededException with the specified error
         /// message.
         /// </summary>

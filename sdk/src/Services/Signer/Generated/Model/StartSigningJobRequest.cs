@@ -32,8 +32,7 @@ namespace Amazon.Signer.Model
     /// <summary>
     /// Container for the parameters to the StartSigningJob operation.
     /// Initiates a signing job to be performed on the code provided. Signing jobs are viewable
-    /// by the <c>ListSigningJobs</c> operation for two years after they are performed. Note
-    /// the following requirements: 
+    /// by the <c>ListSigningJobs</c> operation. Note the following requirements: 
     /// 
     ///  <ul> <li> 
     /// <para>

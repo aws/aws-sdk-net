@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheBehavior Object
     /// </summary>  
-    public class CacheBehaviorUnmarshaller : IXmlUnmarshaller<CacheBehavior, XmlUnmarshallerContext>
+    public partial class CacheBehaviorUnmarshaller : IXmlUnmarshaller<CacheBehavior, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -176,6 +176,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ViewerProtocolPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -184,6 +186,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CacheBehavior unmarshalledObject, int targetDepth);
+
         private static CacheBehaviorUnmarshaller _instance = new CacheBehaviorUnmarshaller();        
 
         /// <summary>

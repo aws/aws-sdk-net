@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("audio", targetDepth))
+                {
+                    var unmarshaller = AudioSegmentUnmarshaller.Instance;
+                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("byteContent", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +84,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("video", targetDepth))
+                {
+                    var unmarshaller = VideoSegmentUnmarshaller.Instance;
+                    unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

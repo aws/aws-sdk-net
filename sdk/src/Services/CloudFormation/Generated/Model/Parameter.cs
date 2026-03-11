@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The Parameter data type.
+    /// The <c>Parameter</c> data type.
     /// </summary>
     public partial class Parameter
     {

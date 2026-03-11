@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideoMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for ClientLimitExceededException
+        /// message.
+        /// </summary>
+        public ClientLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClientLimitExceededException with the specified error
         /// message.
         /// </summary>

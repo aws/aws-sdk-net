@@ -45,7 +45,27 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class KnowledgeBaseQuery
     {
+        private InputImage _image;
         private string _text;
+        private KnowledgeBaseQueryType _type;
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// An image to include in the knowledge base query for multimodal retrieval.
+        /// </para>
+        /// </summary>
+        public InputImage Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 
@@ -53,7 +73,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The text of the query made to the knowledge base.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=20000)]
         public string Text
         {
             get { return this._text; }
@@ -64,6 +84,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of query being performed.
+        /// </para>
+        /// </summary>
+        public KnowledgeBaseQueryType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

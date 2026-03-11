@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MultipleRepositoriesInPullRequestException
+        /// message.
+        /// </summary>
+        public MultipleRepositoriesInPullRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MultipleRepositoriesInPullRequestException with the specified error
         /// message.
         /// </summary>

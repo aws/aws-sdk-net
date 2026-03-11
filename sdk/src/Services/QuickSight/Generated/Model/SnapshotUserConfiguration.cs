@@ -32,6 +32,13 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// A structure that contains information about the users that the dashboard snapshot
     /// is generated for.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// When using identity-enhanced session credentials, set the UserConfiguration request
+    /// attribute to null. Otherwise, the request will be invalid.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SnapshotUserConfiguration
     {

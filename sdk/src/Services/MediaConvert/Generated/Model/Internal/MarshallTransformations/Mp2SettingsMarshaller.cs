@@ -46,6 +46,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioDescriptionMix())
+            {
+                context.Writer.WritePropertyName("audioDescriptionMix");
+                context.Writer.WriteStringValue(requestObject.AudioDescriptionMix);
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");

@@ -58,6 +58,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DataStore", targetDepth))
+                {
+                    var unmarshaller = DataStoreResponseUnmarshaller.Instance;
+                    response.DataStore = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DeadLetterQueueUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

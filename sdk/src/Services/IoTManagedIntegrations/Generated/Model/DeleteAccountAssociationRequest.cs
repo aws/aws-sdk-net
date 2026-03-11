@@ -31,7 +31,15 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountAssociation operation.
-    /// Remove a third party account and related devices from an end user.
+    /// Remove a third-party account association for an end user.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You must first call the <c>DeregisterAccountAssociation</c> to remove the connection
+    /// between the managed thing and the third-party account before calling the <c>DeleteAccountAssociation</c>
+    /// API.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteAccountAssociationRequest : AmazonIoTManagedIntegrationsRequest
     {

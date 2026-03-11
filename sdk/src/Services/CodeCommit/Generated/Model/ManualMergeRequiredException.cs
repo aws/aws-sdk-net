@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ManualMergeRequiredException
+        /// message.
+        /// </summary>
+        public ManualMergeRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ManualMergeRequiredException with the specified error
         /// message.
         /// </summary>

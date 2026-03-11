@@ -1,6 +1,0 @@
-{
-  "active": true,
-  "synopsis": "Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.",
-  "generate-client-constructors": true,
-  "legacy-service-id": "QLDB"
-}

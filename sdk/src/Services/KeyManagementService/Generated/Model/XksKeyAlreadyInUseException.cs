@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksKeyAlreadyInUseException
+        /// message.
+        /// </summary>
+        public XksKeyAlreadyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksKeyAlreadyInUseException with the specified error
         /// message.
         /// </summary>

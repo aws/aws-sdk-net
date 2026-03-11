@@ -81,6 +81,17 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetRadiusServersIpv6())
+            {
+                context.Writer.WritePropertyName("RadiusServersIpv6");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectRadiusServersIpv6ListValue in requestObject.RadiusServersIpv6)
+                {
+                        context.Writer.WriteStringValue(requestObjectRadiusServersIpv6ListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetRadiusTimeout())
             {
                 context.Writer.WritePropertyName("RadiusTimeout");

@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private S3AccessPointAttachmentLifecycle _lifecycle;
         private LifecycleTransitionReason _lifecycleTransitionReason;
         private string _name;
+        private S3AccessPointOntapConfiguration _ontapConfiguration;
         private S3AccessPointOpenZFSConfiguration _openZFSConfiguration;
         private S3AccessPoint _s3AccessPoint;
         private S3AccessPointAttachmentType _type;
@@ -131,6 +132,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OntapConfiguration. 
+        /// <para>
+        /// The ONTAP configuration of the S3 access point attachment.
+        /// </para>
+        /// </summary>
+        public S3AccessPointOntapConfiguration OntapConfiguration
+        {
+            get { return this._ontapConfiguration; }
+            set { this._ontapConfiguration = value; }
+        }
+
+        // Check to see if OntapConfiguration property is set
+        internal bool IsSetOntapConfiguration()
+        {
+            return this._ontapConfiguration != null;
         }
 
         /// <summary>

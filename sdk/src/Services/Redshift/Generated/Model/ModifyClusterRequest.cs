@@ -91,6 +91,7 @@ namespace Amazon.Redshift.Model
         private string _elasticIp;
         private bool? _encrypted;
         private bool? _enhancedVpcRouting;
+        private bool? _extraComputeForAutomaticOptimization;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
         private string _ipAddressType;
@@ -450,6 +451,29 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEnhancedVpcRouting()
         {
             return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtraComputeForAutomaticOptimization. 
+        /// <para>
+        /// If <c>true</c>, allocates additional compute resources for running automatic optimization
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool? ExtraComputeForAutomaticOptimization
+        {
+            get { return this._extraComputeForAutomaticOptimization; }
+            set { this._extraComputeForAutomaticOptimization = value; }
+        }
+
+        // Check to see if ExtraComputeForAutomaticOptimization property is set
+        internal bool IsSetExtraComputeForAutomaticOptimization()
+        {
+            return this._extraComputeForAutomaticOptimization.HasValue; 
         }
 
         /// <summary>

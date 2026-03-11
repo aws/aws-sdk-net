@@ -81,6 +81,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DeploymentInstanceType);
             }
 
+            if(publicRequest.IsSetMaxInstanceCount())
+            {
+                context.Writer.WritePropertyName("MaxInstanceCount");
+                context.Writer.WriteNumberValue(publicRequest.MaxInstanceCount.Value);
+            }
+
             if(publicRequest.IsSetModelSource())
             {
                 context.Writer.WritePropertyName("ModelSource");

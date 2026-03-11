@@ -303,6 +303,17 @@ namespace Amazon.Runtime.CredentialManagement
                         awsCredentials.FeatureIdSources.Add(isLegacyFormat ? UserAgentFeatureId.CREDENTIALS_PROFILE_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_PROFILE_SSO);
                         break;
 
+                    case CredentialProfileType.Login:
+                        var loginAWSCredentialsOptions = new LoginAWSCredentialsOptions
+                        {
+                            LoginSession = options.LoginSession,
+                            Region = stsRegion?.SystemName,
+                            ProfileName = profileName
+                        };
+                        awsCredentials = new LoginAWSCredentials(loginAWSCredentialsOptions);
+                        awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_LOGIN);
+
+                        break;
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:
                         if (UserCrypto.IsUserCryptAvailable)

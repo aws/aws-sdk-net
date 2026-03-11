@@ -41,6 +41,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for DatabaseResumingException
+        /// message.
+        /// </summary>
+        public DatabaseResumingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DatabaseResumingException with the specified error
         /// message.
         /// </summary>

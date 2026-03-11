@@ -200,6 +200,25 @@
         <value>
             <example>
                 <para>
+                    Create a TXT record with a value greater than 255 characters. Break the value string up into multiple lines.
+                </para>
+                <code
+                    title="TXT record creation"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="txt-record-creation-1760568065880" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
                     The following example creates four geolocation alias resource record sets that route traffic to ELB load balancers. Traffic is routed to one of four IP addresses, for North America (NA), for South America (SA), for Europe (EU), and for all other locations (*).
                 </para>
                 <code

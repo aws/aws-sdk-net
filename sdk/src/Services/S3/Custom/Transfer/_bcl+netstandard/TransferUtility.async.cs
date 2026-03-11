@@ -54,103 +54,21 @@ namespace Amazon.S3.Transfer
     {
         #region UploadDirectory
 
-        /// <summary>
-        /// 	Uploads files from a specified directory.  
-        /// 	The object key is derived from the file names
-        /// 	inside the directory.
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
-        /// </para>
-        /// </remarks>
-        /// <param name="directory">
-        /// 	The source directory, that is, the directory containing the files to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadDirectoryAsync(string directory, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructUploadDirectoryRequest(directory, bucketName);
             await UploadDirectoryAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// 	Uploads files from a specified directory.  
-        /// 	The object key is derived from the file names
-        /// 	inside the directory.
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
-        /// </para>
-        /// </remarks>
-        /// <param name="directory">
-        /// 	The source directory, that is, the directory containing the files to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
-        /// </param>
-        /// <param name="searchPattern">
-        /// 	A pattern used to identify the files from the source directory to upload.
-        /// </param>                                                                 
-        /// <param name="searchOption">
-        /// 	A search option that specifies whether to recursively search for files to upload
-        /// 	in subdirectories.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadDirectoryAsync(string directory, string bucketName, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructUploadDirectoryRequest(directory, bucketName, searchPattern, searchOption);
             await UploadDirectoryAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// 	Uploads files from a specified directory.  
-        /// 	The object key is derived from the file names
-        /// 	inside the directory.
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">
-        /// 	The request that contains all the parameters required to upload a directory.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task UploadDirectoryAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(UploadDirectoryAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -163,45 +81,44 @@ namespace Amazon.S3.Transfer
             }
         }
 
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadDirectoryResponse> UploadDirectoryWithResponseAsync(string directory, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructUploadDirectoryRequest(directory, bucketName);
+            return await UploadDirectoryWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadDirectoryResponse> UploadDirectoryWithResponseAsync(string directory, string bucketName, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructUploadDirectoryRequest(directory, bucketName, searchPattern, searchOption);
+            return await UploadDirectoryWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityUploadDirectoryResponse> UploadDirectoryWithResponseAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(UploadDirectoryWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "UploadDirectory");
+                validate(request);
+                UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
+                command.UploadFilesConcurrently = request.UploadFilesConcurrently;
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
+
         #endregion
 
         #region DownloadDirectory
-        /// <summary>
-        /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
-        /// 	specified by <c>s3Directory</c>.
-        /// </summary>
-        /// <param name="bucketName">
-        /// 	The name of the bucket containing the Amazon S3 objects to download.
-        /// </param>
-        /// <param name="s3Directory">
-        /// 	The directory in Amazon S3 to download.
-        /// </param>
-        /// <param name="localDirectory">
-        /// 	The local directory to download the objects to.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task DownloadDirectoryAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructDownloadDirectoryRequest(bucketName, s3Directory, localDirectory);
             await DownloadDirectoryAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
-        /// 	specified by the <c>S3Directory</c>
-        /// 	property of the passed in <c>TransferUtilityDownloadDirectoryRequest</c> object.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to download objects from Amazon S3 
-        /// 	into a local directory.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task DownloadDirectoryAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             using(CreateSpan(nameof(DownloadDirectoryAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
@@ -215,22 +132,7 @@ namespace Amazon.S3.Transfer
         #endregion
 
         #region Download
-        /// <summary>
-        /// 	Downloads the content from Amazon S3 and writes it to the specified file.    
-        /// </summary>
-        /// <param name="filePath">
-        /// 	The file path where the content from Amazon S3 will be written to.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The name of the bucket containing the Amazon S3 object to download.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task DownloadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = ConstructDownloadRequest(filePath, bucketName, key);

@@ -1,0 +1,103 @@
+<#@ template language="C#" inherits="BaseResponseUnmarshaller"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+#pragma warning disable CS0612,CS0618
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : ICborUnmarshaller<<#=this.UnmarshallerBaseName #>, CborUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns>The unmarshalled object</returns>
+        public <#=this.UnmarshallerBaseName #> Unmarshall(CborUnmarshallerContext context)
+        {
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+<#
+    Member eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
+    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
+    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers() && eventPayloadMember != null)
+    {
+        if(eventPayloadMember.ModelShape.IsString)
+        {
+#>
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = reader.ReadTextString();
+<#
+        }
+#>
+<#
+        else
+        {
+#>
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = reader.ReadByteString();
+<#
+        }
+#>
+<#
+    }
+#>
+<#
+    if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
+    {
+#>
+            if (reader.PeekState() == CborReaderState.Null)
+            {
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+<#
+        foreach (var member in this.Structure.Members)
+        {
+#>
+                    case "<#=member.MarshallName#>":
+                        {
+                            context.AddPathSegment("<#=member.PropertyName#>");
+                            var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                            unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+<#
+        }
+#>
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+<#
+    }
+#>
+            return unmarshalledObject;
+        }
+
+
+<#
+    this.AddStructureSingletonMethod();
+#>
+    }
+}

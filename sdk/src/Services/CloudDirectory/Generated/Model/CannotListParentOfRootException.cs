@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotListParentOfRootException
+        /// message.
+        /// </summary>
+        public CannotListParentOfRootException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotListParentOfRootException with the specified error
         /// message.
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.FSx.Model
         private string _parameter;
 
         /// <summary>
+        /// Default constructor for IncompatibleParameterErrorException
+        /// message.
+        /// </summary>
+        public IncompatibleParameterErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleParameterErrorException with the specified error
         /// message.
         /// </summary>

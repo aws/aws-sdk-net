@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetAccessGrantsLocationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
         
             if (publicRequest.IsSetAccountId()) 
@@ -90,5 +91,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessGrantsLocationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetAccessGrantsLocationRequest publicRequest);
     }    
 }

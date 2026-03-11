@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClientException
+        /// message.
+        /// </summary>
+        public InvalidClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClientException with the specified error
         /// message.
         /// </summary>

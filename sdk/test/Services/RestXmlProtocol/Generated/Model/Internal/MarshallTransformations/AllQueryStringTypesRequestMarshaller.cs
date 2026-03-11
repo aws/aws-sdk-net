@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(AllQueryStringTypesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (publicRequest.IsSetQueryBoolean())
             {
@@ -196,8 +197,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/AllQueryStringTypesInput";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static AllQueryStringTypesRequestMarshaller _instance = new AllQueryStringTypesRequestMarshaller();        
@@ -219,5 +220,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, AllQueryStringTypesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, AllQueryStringTypesRequest publicRequest);
     }    
 }

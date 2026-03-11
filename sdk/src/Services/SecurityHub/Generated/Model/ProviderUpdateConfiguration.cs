@@ -35,6 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class ProviderUpdateConfiguration
     {
         private JiraCloudUpdateConfiguration _jiraCloud;
+        private ServiceNowUpdateConfiguration _serviceNow;
 
         /// <summary>
         /// Gets and sets the property JiraCloud. 
@@ -52,6 +53,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetJiraCloud()
         {
             return this._jiraCloud != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNow. 
+        /// <para>
+        /// The parameters required to update the configuration for a ServiceNow integration.
+        /// </para>
+        /// </summary>
+        public ServiceNowUpdateConfiguration ServiceNow
+        {
+            get { return this._serviceNow; }
+            set { this._serviceNow = value; }
+        }
+
+        // Check to see if ServiceNow property is set
+        internal bool IsSetServiceNow()
+        {
+            return this._serviceNow != null;
         }
 
     }

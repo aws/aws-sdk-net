@@ -45,6 +45,7 @@ namespace Amazon.Synthetics.Model
     {
         private string _baseCanaryRunId;
         private List<BaseScreenshot> _baseScreenshots = AWSConfigs.InitializeCollections ? new List<BaseScreenshot>() : null;
+        private BrowserType _browserType;
 
         /// <summary>
         /// Gets and sets the property BaseCanaryRunId. 
@@ -88,6 +89,24 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetBaseScreenshots()
         {
             return this._baseScreenshots != null && (this._baseScreenshots.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserType. 
+        /// <para>
+        /// The browser type associated with this visual reference.
+        /// </para>
+        /// </summary>
+        public BrowserType BrowserType
+        {
+            get { return this._browserType; }
+            set { this._browserType = value; }
+        }
+
+        // Check to see if BrowserType property is set
+        internal bool IsSetBrowserType()
+        {
+            return this._browserType != null;
         }
 
     }

@@ -149,11 +149,43 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListReputationEntities operation
+        ///</summary>
+        public IListReputationEntitiesPaginator ListReputationEntities(ListReputationEntitiesRequest request) 
+        {
+            return new ListReputationEntitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceTenants operation
+        ///</summary>
+        public IListResourceTenantsPaginator ListResourceTenants(ListResourceTenantsRequest request) 
+        {
+            return new ListResourceTenantsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSuppressedDestinations operation
         ///</summary>
         public IListSuppressedDestinationsPaginator ListSuppressedDestinations(ListSuppressedDestinationsRequest request) 
         {
             return new ListSuppressedDestinationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTenantResources operation
+        ///</summary>
+        public IListTenantResourcesPaginator ListTenantResources(ListTenantResourcesRequest request) 
+        {
+            return new ListTenantResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTenants operation
+        ///</summary>
+        public IListTenantsPaginator ListTenants(ListTenantsRequest request) 
+        {
+            return new ListTenantsPaginator(this.client, request);
         }
     }
 }

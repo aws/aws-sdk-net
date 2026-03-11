@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTrafficPolicyVersionsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetId())
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
@@ -69,8 +70,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/trafficpolicies/{Id}/versions";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListTrafficPolicyVersionsRequestMarshaller _instance = new ListTrafficPolicyVersionsRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyVersionsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyVersionsRequest publicRequest);
     }    
 }

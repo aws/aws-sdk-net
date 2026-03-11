@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSortByException
+        /// message.
+        /// </summary>
+        public InvalidSortByException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSortByException with the specified error
         /// message.
         /// </summary>

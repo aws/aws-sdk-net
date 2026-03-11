@@ -87,6 +87,44 @@ namespace Amazon.OSIS
 
         #endregion
                 
+        #region  CreatePipelineEndpoint
+
+
+
+        /// <summary>
+        /// Creates a VPC endpoint for an OpenSearch Ingestion pipeline. Pipeline endpoints allow
+        /// you to ingest data from your VPC into pipelines that you have access to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipelineEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePipelineEndpoint service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipelineEndpoint">REST API Reference for CreatePipelineEndpoint Operation</seealso>
+        Task<CreatePipelineEndpointResponse> CreatePipelineEndpointAsync(CreatePipelineEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeletePipeline
 
 
@@ -122,6 +160,74 @@ namespace Amazon.OSIS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeletePipelineEndpoint
+
+
+
+        /// <summary>
+        /// Deletes a VPC endpoint for an OpenSearch Ingestion pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipelineEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePipelineEndpoint service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipelineEndpoint">REST API Reference for DeletePipelineEndpoint Operation</seealso>
+        Task<DeletePipelineEndpointResponse> DeletePipelineEndpointAsync(DeletePipelineEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteResourcePolicy
+
+
+
+        /// <summary>
+        /// Deletes a resource-based policy from an OpenSearch Ingestion resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -238,6 +344,43 @@ namespace Amazon.OSIS
 
         #endregion
                 
+        #region  GetResourcePolicy
+
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to an OpenSearch Ingestion resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPipelineBlueprints
 
 
@@ -271,6 +414,74 @@ namespace Amazon.OSIS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineBlueprints">REST API Reference for ListPipelineBlueprints Operation</seealso>
         Task<ListPipelineBlueprintsResponse> ListPipelineBlueprintsAsync(ListPipelineBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPipelineEndpointConnections
+
+
+
+        /// <summary>
+        /// Lists the pipeline endpoints connected to pipelines in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineEndpointConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineEndpointConnections service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpointConnections">REST API Reference for ListPipelineEndpointConnections Operation</seealso>
+        Task<ListPipelineEndpointConnectionsResponse> ListPipelineEndpointConnectionsAsync(ListPipelineEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPipelineEndpoints
+
+
+
+        /// <summary>
+        /// Lists all pipeline endpoints in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineEndpoints service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpoints">REST API Reference for ListPipelineEndpoints Operation</seealso>
+        Task<ListPipelineEndpointsResponse> ListPipelineEndpointsAsync(ListPipelineEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -343,6 +554,78 @@ namespace Amazon.OSIS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutResourcePolicy
+
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to an OpenSearch Ingestion resource. Resource-based
+        /// policies grant permissions to principals to perform actions on the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RevokePipelineEndpointConnections
+
+
+
+        /// <summary>
+        /// Revokes pipeline endpoints from specified endpoint IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokePipelineEndpointConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokePipelineEndpointConnections service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/RevokePipelineEndpointConnections">REST API Reference for RevokePipelineEndpointConnections Operation</seealso>
+        Task<RevokePipelineEndpointConnectionsResponse> RevokePipelineEndpointConnectionsAsync(RevokePipelineEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

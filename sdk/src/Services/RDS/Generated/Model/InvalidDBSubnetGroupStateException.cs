@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBSubnetGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidDBSubnetGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBSubnetGroupStateException with the specified error
         /// message.
         /// </summary>

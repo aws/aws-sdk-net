@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedJob
     {
+        private ProtectedJobComputeConfiguration _computeConfiguration;
         private DateTime? _createTime;
         private ProtectedJobError _error;
         private string _id;
@@ -44,6 +45,24 @@ namespace Amazon.CleanRooms.Model
         private ProtectedJobResultConfigurationOutput _resultConfiguration;
         private ProtectedJobStatistics _statistics;
         private ProtectedJobStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        /// The compute configuration for the protected job.
+        /// </para>
+        /// </summary>
+        public ProtectedJobComputeConfiguration ComputeConfiguration
+        {
+            get { return this._computeConfiguration; }
+            set { this._computeConfiguration = value; }
+        }
+
+        // Check to see if ComputeConfiguration property is set
+        internal bool IsSetComputeConfiguration()
+        {
+            return this._computeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTime. 

@@ -52,6 +52,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HealthCheckAlreadyExistsException
+        /// message.
+        /// </summary>
+        public HealthCheckAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HealthCheckAlreadyExistsException with the specified error
         /// message.
         /// </summary>

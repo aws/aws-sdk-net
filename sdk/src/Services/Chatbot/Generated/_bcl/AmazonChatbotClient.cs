@@ -314,7 +314,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
         public virtual AssociateToConfigurationResponse AssociateToConfiguration(AssociateToConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateToConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateToConfigurationResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
         public virtual Task<AssociateToConfigurationResponse> AssociateToConfigurationAsync(AssociateToConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateToConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateToConfigurationResponseUnmarshaller.Instance;
             
@@ -380,7 +380,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateChimeWebhookConfiguration">REST API Reference for CreateChimeWebhookConfiguration Operation</seealso>
         public virtual CreateChimeWebhookConfigurationResponse CreateChimeWebhookConfiguration(CreateChimeWebhookConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChimeWebhookConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChimeWebhookConfigurationResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateChimeWebhookConfiguration">REST API Reference for CreateChimeWebhookConfiguration Operation</seealso>
         public virtual Task<CreateChimeWebhookConfigurationResponse> CreateChimeWebhookConfigurationAsync(CreateChimeWebhookConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChimeWebhookConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChimeWebhookConfigurationResponseUnmarshaller.Instance;
             
@@ -452,7 +452,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
         public virtual CreateCustomActionResponse CreateCustomAction(CreateCustomActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomActionResponseUnmarshaller.Instance;
 
@@ -488,7 +488,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
         public virtual Task<CreateCustomActionResponse> CreateCustomActionAsync(CreateCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomActionResponseUnmarshaller.Instance;
             
@@ -524,7 +524,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateMicrosoftTeamsChannelConfiguration">REST API Reference for CreateMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual CreateMicrosoftTeamsChannelConfigurationResponse CreateMicrosoftTeamsChannelConfiguration(CreateMicrosoftTeamsChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateMicrosoftTeamsChannelConfiguration">REST API Reference for CreateMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual Task<CreateMicrosoftTeamsChannelConfigurationResponse> CreateMicrosoftTeamsChannelConfigurationAsync(CreateMicrosoftTeamsChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -595,7 +595,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
         public virtual CreateSlackChannelConfigurationResponse CreateSlackChannelConfiguration(CreateSlackChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSlackChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
         public virtual Task<CreateSlackChannelConfigurationResponse> CreateSlackChannelConfigurationAsync(CreateSlackChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSlackChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -663,7 +663,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteChimeWebhookConfiguration">REST API Reference for DeleteChimeWebhookConfiguration Operation</seealso>
         public virtual DeleteChimeWebhookConfigurationResponse DeleteChimeWebhookConfiguration(DeleteChimeWebhookConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChimeWebhookConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChimeWebhookConfigurationResponseUnmarshaller.Instance;
 
@@ -695,7 +695,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteChimeWebhookConfiguration">REST API Reference for DeleteChimeWebhookConfiguration Operation</seealso>
         public virtual Task<DeleteChimeWebhookConfigurationResponse> DeleteChimeWebhookConfigurationAsync(DeleteChimeWebhookConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChimeWebhookConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChimeWebhookConfigurationResponseUnmarshaller.Instance;
             
@@ -729,7 +729,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
         public virtual DeleteCustomActionResponse DeleteCustomAction(DeleteCustomActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomActionResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
         public virtual Task<DeleteCustomActionResponse> DeleteCustomActionAsync(DeleteCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomActionResponseUnmarshaller.Instance;
             
@@ -795,7 +795,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsChannelConfiguration">REST API Reference for DeleteMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual DeleteMicrosoftTeamsChannelConfigurationResponse DeleteMicrosoftTeamsChannelConfiguration(DeleteMicrosoftTeamsChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -827,7 +827,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsChannelConfiguration">REST API Reference for DeleteMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual Task<DeleteMicrosoftTeamsChannelConfigurationResponse> DeleteMicrosoftTeamsChannelConfigurationAsync(DeleteMicrosoftTeamsChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -856,7 +856,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsConfiguredTeam">REST API Reference for DeleteMicrosoftTeamsConfiguredTeam Operation</seealso>
         public virtual DeleteMicrosoftTeamsConfiguredTeamResponse DeleteMicrosoftTeamsConfiguredTeam(DeleteMicrosoftTeamsConfiguredTeamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMicrosoftTeamsConfiguredTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMicrosoftTeamsConfiguredTeamResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsConfiguredTeam">REST API Reference for DeleteMicrosoftTeamsConfiguredTeam Operation</seealso>
         public virtual Task<DeleteMicrosoftTeamsConfiguredTeamResponse> DeleteMicrosoftTeamsConfiguredTeamAsync(DeleteMicrosoftTeamsConfiguredTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMicrosoftTeamsConfiguredTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMicrosoftTeamsConfiguredTeamResponseUnmarshaller.Instance;
             
@@ -914,7 +914,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsUserIdentity">REST API Reference for DeleteMicrosoftTeamsUserIdentity Operation</seealso>
         public virtual DeleteMicrosoftTeamsUserIdentityResponse DeleteMicrosoftTeamsUserIdentity(DeleteMicrosoftTeamsUserIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMicrosoftTeamsUserIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMicrosoftTeamsUserIdentityResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsUserIdentity">REST API Reference for DeleteMicrosoftTeamsUserIdentity Operation</seealso>
         public virtual Task<DeleteMicrosoftTeamsUserIdentityResponse> DeleteMicrosoftTeamsUserIdentityAsync(DeleteMicrosoftTeamsUserIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMicrosoftTeamsUserIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMicrosoftTeamsUserIdentityResponseUnmarshaller.Instance;
             
@@ -976,7 +976,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         public virtual DeleteSlackChannelConfigurationResponse DeleteSlackChannelConfiguration(DeleteSlackChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -1008,7 +1008,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         public virtual Task<DeleteSlackChannelConfigurationResponse> DeleteSlackChannelConfigurationAsync(DeleteSlackChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -1038,7 +1038,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackUserIdentity">REST API Reference for DeleteSlackUserIdentity Operation</seealso>
         public virtual DeleteSlackUserIdentityResponse DeleteSlackUserIdentity(DeleteSlackUserIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackUserIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackUserIdentityResponseUnmarshaller.Instance;
 
@@ -1067,7 +1067,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackUserIdentity">REST API Reference for DeleteSlackUserIdentity Operation</seealso>
         public virtual Task<DeleteSlackUserIdentityResponse> DeleteSlackUserIdentityAsync(DeleteSlackUserIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackUserIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackUserIdentityResponseUnmarshaller.Instance;
             
@@ -1095,7 +1095,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackWorkspaceAuthorization">REST API Reference for DeleteSlackWorkspaceAuthorization Operation</seealso>
         public virtual DeleteSlackWorkspaceAuthorizationResponse DeleteSlackWorkspaceAuthorization(DeleteSlackWorkspaceAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackWorkspaceAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackWorkspaceAuthorizationResponseUnmarshaller.Instance;
 
@@ -1122,7 +1122,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackWorkspaceAuthorization">REST API Reference for DeleteSlackWorkspaceAuthorization Operation</seealso>
         public virtual Task<DeleteSlackWorkspaceAuthorizationResponse> DeleteSlackWorkspaceAuthorizationAsync(DeleteSlackWorkspaceAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackWorkspaceAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackWorkspaceAuthorizationResponseUnmarshaller.Instance;
             
@@ -1152,7 +1152,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeChimeWebhookConfigurations">REST API Reference for DescribeChimeWebhookConfigurations Operation</seealso>
         public virtual DescribeChimeWebhookConfigurationsResponse DescribeChimeWebhookConfigurations(DescribeChimeWebhookConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChimeWebhookConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChimeWebhookConfigurationsResponseUnmarshaller.Instance;
 
@@ -1181,7 +1181,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeChimeWebhookConfigurations">REST API Reference for DescribeChimeWebhookConfigurations Operation</seealso>
         public virtual Task<DescribeChimeWebhookConfigurationsResponse> DescribeChimeWebhookConfigurationsAsync(DescribeChimeWebhookConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChimeWebhookConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChimeWebhookConfigurationsResponseUnmarshaller.Instance;
             
@@ -1211,7 +1211,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackChannelConfigurations">REST API Reference for DescribeSlackChannelConfigurations Operation</seealso>
         public virtual DescribeSlackChannelConfigurationsResponse DescribeSlackChannelConfigurations(DescribeSlackChannelConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSlackChannelConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSlackChannelConfigurationsResponseUnmarshaller.Instance;
 
@@ -1240,7 +1240,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackChannelConfigurations">REST API Reference for DescribeSlackChannelConfigurations Operation</seealso>
         public virtual Task<DescribeSlackChannelConfigurationsResponse> DescribeSlackChannelConfigurationsAsync(DescribeSlackChannelConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSlackChannelConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSlackChannelConfigurationsResponseUnmarshaller.Instance;
             
@@ -1270,7 +1270,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackUserIdentities">REST API Reference for DescribeSlackUserIdentities Operation</seealso>
         public virtual DescribeSlackUserIdentitiesResponse DescribeSlackUserIdentities(DescribeSlackUserIdentitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSlackUserIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSlackUserIdentitiesResponseUnmarshaller.Instance;
 
@@ -1299,7 +1299,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackUserIdentities">REST API Reference for DescribeSlackUserIdentities Operation</seealso>
         public virtual Task<DescribeSlackUserIdentitiesResponse> DescribeSlackUserIdentitiesAsync(DescribeSlackUserIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSlackUserIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSlackUserIdentitiesResponseUnmarshaller.Instance;
             
@@ -1330,7 +1330,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackWorkspaces">REST API Reference for DescribeSlackWorkspaces Operation</seealso>
         public virtual DescribeSlackWorkspacesResponse DescribeSlackWorkspaces(DescribeSlackWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSlackWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSlackWorkspacesResponseUnmarshaller.Instance;
 
@@ -1360,7 +1360,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackWorkspaces">REST API Reference for DescribeSlackWorkspaces Operation</seealso>
         public virtual Task<DescribeSlackWorkspacesResponse> DescribeSlackWorkspacesAsync(DescribeSlackWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSlackWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSlackWorkspacesResponseUnmarshaller.Instance;
             
@@ -1391,7 +1391,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
         public virtual DisassociateFromConfigurationResponse DisassociateFromConfiguration(DisassociateFromConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFromConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFromConfigurationResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
         public virtual Task<DisassociateFromConfigurationResponse> DisassociateFromConfigurationAsync(DisassociateFromConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFromConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFromConfigurationResponseUnmarshaller.Instance;
             
@@ -1448,7 +1448,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">REST API Reference for GetAccountPreferences Operation</seealso>
         public virtual GetAccountPreferencesResponse GetAccountPreferences(GetAccountPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountPreferencesResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">REST API Reference for GetAccountPreferences Operation</seealso>
         public virtual Task<GetAccountPreferencesResponse> GetAccountPreferencesAsync(GetAccountPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountPreferencesResponseUnmarshaller.Instance;
             
@@ -1508,7 +1508,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
         public virtual GetCustomActionResponse GetCustomAction(GetCustomActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomActionResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
         public virtual Task<GetCustomActionResponse> GetCustomActionAsync(GetCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomActionResponseUnmarshaller.Instance;
             
@@ -1571,7 +1571,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetMicrosoftTeamsChannelConfiguration">REST API Reference for GetMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual GetMicrosoftTeamsChannelConfigurationResponse GetMicrosoftTeamsChannelConfiguration(GetMicrosoftTeamsChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -1600,7 +1600,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetMicrosoftTeamsChannelConfiguration">REST API Reference for GetMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual Task<GetMicrosoftTeamsChannelConfigurationResponse> GetMicrosoftTeamsChannelConfigurationAsync(GetMicrosoftTeamsChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -1621,7 +1621,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public virtual Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
             
@@ -1672,7 +1672,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
         public virtual ListCustomActionsResponse ListCustomActions(ListCustomActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomActionsResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
         public virtual Task<ListCustomActionsResponse> ListCustomActionsAsync(ListCustomActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomActionsResponseUnmarshaller.Instance;
             
@@ -1732,7 +1732,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsChannelConfigurations">REST API Reference for ListMicrosoftTeamsChannelConfigurations Operation</seealso>
         public virtual ListMicrosoftTeamsChannelConfigurationsResponse ListMicrosoftTeamsChannelConfigurations(ListMicrosoftTeamsChannelConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMicrosoftTeamsChannelConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMicrosoftTeamsChannelConfigurationsResponseUnmarshaller.Instance;
 
@@ -1761,7 +1761,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsChannelConfigurations">REST API Reference for ListMicrosoftTeamsChannelConfigurations Operation</seealso>
         public virtual Task<ListMicrosoftTeamsChannelConfigurationsResponse> ListMicrosoftTeamsChannelConfigurationsAsync(ListMicrosoftTeamsChannelConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMicrosoftTeamsChannelConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMicrosoftTeamsChannelConfigurationsResponseUnmarshaller.Instance;
             
@@ -1791,7 +1791,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsConfiguredTeams">REST API Reference for ListMicrosoftTeamsConfiguredTeams Operation</seealso>
         public virtual ListMicrosoftTeamsConfiguredTeamsResponse ListMicrosoftTeamsConfiguredTeams(ListMicrosoftTeamsConfiguredTeamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMicrosoftTeamsConfiguredTeamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMicrosoftTeamsConfiguredTeamsResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsConfiguredTeams">REST API Reference for ListMicrosoftTeamsConfiguredTeams Operation</seealso>
         public virtual Task<ListMicrosoftTeamsConfiguredTeamsResponse> ListMicrosoftTeamsConfiguredTeamsAsync(ListMicrosoftTeamsConfiguredTeamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMicrosoftTeamsConfiguredTeamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMicrosoftTeamsConfiguredTeamsResponseUnmarshaller.Instance;
             
@@ -1850,7 +1850,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsUserIdentities">REST API Reference for ListMicrosoftTeamsUserIdentities Operation</seealso>
         public virtual ListMicrosoftTeamsUserIdentitiesResponse ListMicrosoftTeamsUserIdentities(ListMicrosoftTeamsUserIdentitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMicrosoftTeamsUserIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMicrosoftTeamsUserIdentitiesResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsUserIdentities">REST API Reference for ListMicrosoftTeamsUserIdentities Operation</seealso>
         public virtual Task<ListMicrosoftTeamsUserIdentitiesResponse> ListMicrosoftTeamsUserIdentitiesAsync(ListMicrosoftTeamsUserIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMicrosoftTeamsUserIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMicrosoftTeamsUserIdentitiesResponseUnmarshaller.Instance;
             
@@ -1910,7 +1910,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1974,7 +1974,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2007,7 +2007,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2038,7 +2038,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2098,7 +2098,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateAccountPreferences">REST API Reference for UpdateAccountPreferences Operation</seealso>
         public virtual UpdateAccountPreferencesResponse UpdateAccountPreferences(UpdateAccountPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountPreferencesResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateAccountPreferences">REST API Reference for UpdateAccountPreferences Operation</seealso>
         public virtual Task<UpdateAccountPreferencesResponse> UpdateAccountPreferencesAsync(UpdateAccountPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountPreferencesResponseUnmarshaller.Instance;
             
@@ -2160,7 +2160,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateChimeWebhookConfiguration">REST API Reference for UpdateChimeWebhookConfiguration Operation</seealso>
         public virtual UpdateChimeWebhookConfigurationResponse UpdateChimeWebhookConfiguration(UpdateChimeWebhookConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChimeWebhookConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChimeWebhookConfigurationResponseUnmarshaller.Instance;
 
@@ -2192,7 +2192,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateChimeWebhookConfiguration">REST API Reference for UpdateChimeWebhookConfiguration Operation</seealso>
         public virtual Task<UpdateChimeWebhookConfigurationResponse> UpdateChimeWebhookConfigurationAsync(UpdateChimeWebhookConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChimeWebhookConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChimeWebhookConfigurationResponseUnmarshaller.Instance;
             
@@ -2226,7 +2226,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
         public virtual UpdateCustomActionResponse UpdateCustomAction(UpdateCustomActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomActionResponseUnmarshaller.Instance;
 
@@ -2259,7 +2259,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
         public virtual Task<UpdateCustomActionResponse> UpdateCustomActionAsync(UpdateCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomActionResponseUnmarshaller.Instance;
             
@@ -2292,7 +2292,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateMicrosoftTeamsChannelConfiguration">REST API Reference for UpdateMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual UpdateMicrosoftTeamsChannelConfigurationResponse UpdateMicrosoftTeamsChannelConfiguration(UpdateMicrosoftTeamsChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -2324,7 +2324,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateMicrosoftTeamsChannelConfiguration">REST API Reference for UpdateMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual Task<UpdateMicrosoftTeamsChannelConfigurationResponse> UpdateMicrosoftTeamsChannelConfigurationAsync(UpdateMicrosoftTeamsChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMicrosoftTeamsChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMicrosoftTeamsChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -2357,7 +2357,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
         public virtual UpdateSlackChannelConfigurationResponse UpdateSlackChannelConfiguration(UpdateSlackChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSlackChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -2389,7 +2389,7 @@ namespace Amazon.Chatbot
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
         public virtual Task<UpdateSlackChannelConfigurationResponse> UpdateSlackChannelConfigurationAsync(UpdateSlackChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSlackChannelConfigurationResponseUnmarshaller.Instance;
             

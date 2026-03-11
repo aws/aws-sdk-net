@@ -41,6 +41,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for SerialConsoleAccessDisabledException
+        /// message.
+        /// </summary>
+        public SerialConsoleAccessDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SerialConsoleAccessDisabledException with the specified error
         /// message.
         /// </summary>

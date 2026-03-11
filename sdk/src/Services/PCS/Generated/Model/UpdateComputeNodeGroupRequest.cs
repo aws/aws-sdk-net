@@ -52,9 +52,8 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch
-        /// instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the
-        /// custom launch template.
+        /// The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not
+        /// provided, PCS uses the AMI ID specified in the custom launch template.
         /// </para>
         /// </summary>
         public string AmiId
@@ -151,22 +150,11 @@ namespace Amazon.PCS.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role
         /// when launching EC2 instances. The role contained in your instance profile must have
-        /// the <c>pcs:RegisterComputeNodeGroupInstance</c> permission. The resource identifier
-        /// of the ARN must start with <c>AWSPCS</c> or it must have <c>/aws-pcs/</c> in its path.
+        /// the <c>pcs:RegisterComputeNodeGroupInstance</c> permission and the role name must
+        /// start with <c>AWSPCS</c> or must have the path <c>/aws-pcs/</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM
+        /// instance profiles for PCS</a> in the <i>PCS User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>Examples</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</c> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string IamInstanceProfileArn
         {
@@ -183,9 +171,12 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property PurchaseOption. 
         /// <para>
-        /// Specifies how EC2 instances are purchased on your behalf. Amazon Web Services PCS
-        /// supports On-Demand and Spot instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
-        /// purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If you
+        /// Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances,
+        /// Spot Instances, and Amazon EC2 Capacity Blocks for ML. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon
+        /// EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using
+        /// Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. If you
         /// don't provide this option, it defaults to On-Demand.
         /// </para>
         /// </summary>

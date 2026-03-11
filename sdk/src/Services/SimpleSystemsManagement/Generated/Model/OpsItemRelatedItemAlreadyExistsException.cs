@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _resourceUri;
 
         /// <summary>
+        /// Default constructor for OpsItemRelatedItemAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OpsItemRelatedItemAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemRelatedItemAlreadyExistsException with the specified error
         /// message.
         /// </summary>

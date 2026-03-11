@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreFederationEnabledException
+        /// message.
+        /// </summary>
+        public EventDataStoreFederationEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreFederationEnabledException with the specified error
         /// message.
         /// </summary>

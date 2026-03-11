@@ -39,6 +39,13 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
 
         /// <summary>
+        /// Default constructor for DatabaseConnectionException
+        /// message.
+        /// </summary>
+        public DatabaseConnectionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DatabaseConnectionException with the specified error
         /// message.
         /// </summary>

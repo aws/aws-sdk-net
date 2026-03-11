@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchHostedZoneException
+        /// message.
+        /// </summary>
+        public NoSuchHostedZoneException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchHostedZoneException with the specified error
         /// message.
         /// </summary>

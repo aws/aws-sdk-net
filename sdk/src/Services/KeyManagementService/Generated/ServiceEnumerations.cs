@@ -417,6 +417,10 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant ECC_NIST_EDWARDS25519 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_NIST_EDWARDS25519 = new DataKeyPairSpec("ECC_NIST_EDWARDS25519");
+        /// <summary>
         /// Constant ECC_NIST_P256 for DataKeyPairSpec
         /// </summary>
         public static readonly DataKeyPairSpec ECC_NIST_P256 = new DataKeyPairSpec("ECC_NIST_P256");
@@ -528,6 +532,52 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DryRunModifierType.
+    /// </summary>
+    public class DryRunModifierType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IGNORE_CIPHERTEXT for DryRunModifierType
+        /// </summary>
+        public static readonly DryRunModifierType IGNORE_CIPHERTEXT = new DryRunModifierType("IGNORE_CIPHERTEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DryRunModifierType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DryRunModifierType FindValue(string value)
+        {
+            return FindValue<DryRunModifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DryRunModifierType(string value)
         {
             return FindValue(value);
         }
@@ -1059,6 +1109,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeyMaterialState NON_CURRENT = new KeyMaterialState("NON_CURRENT");
         /// <summary>
+        /// Constant PENDING_MULTI_REGION_IMPORT_AND_ROTATION for KeyMaterialState
+        /// </summary>
+        public static readonly KeyMaterialState PENDING_MULTI_REGION_IMPORT_AND_ROTATION = new KeyMaterialState("PENDING_MULTI_REGION_IMPORT_AND_ROTATION");
+        /// <summary>
         /// Constant PENDING_ROTATION for KeyMaterialState
         /// </summary>
         public static readonly KeyMaterialState PENDING_ROTATION = new KeyMaterialState("PENDING_ROTATION");
@@ -1104,6 +1158,10 @@ namespace Amazon.KeyManagementService
     public class KeySpec : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ECC_NIST_EDWARDS25519 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_NIST_EDWARDS25519 = new KeySpec("ECC_NIST_EDWARDS25519");
         /// <summary>
         /// Constant ECC_NIST_P256 for KeySpec
         /// </summary>
@@ -1624,6 +1682,14 @@ namespace Amazon.KeyManagementService
         /// Constant ECDSA_SHA_512 for SigningAlgorithmSpec
         /// </summary>
         public static readonly SigningAlgorithmSpec ECDSA_SHA_512 = new SigningAlgorithmSpec("ECDSA_SHA_512");
+        /// <summary>
+        /// Constant ED25519_PH_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ED25519_PH_SHA_512 = new SigningAlgorithmSpec("ED25519_PH_SHA_512");
+        /// <summary>
+        /// Constant ED25519_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ED25519_SHA_512 = new SigningAlgorithmSpec("ED25519_SHA_512");
         /// <summary>
         /// Constant ML_DSA_SHAKE_256 for SigningAlgorithmSpec
         /// </summary>

@@ -55,6 +55,13 @@ namespace Amazon.SimpleWorkflow.Model
     {
 
         /// <summary>
+        /// Default constructor for DefaultUndefinedException
+        /// message.
+        /// </summary>
+        public DefaultUndefinedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DefaultUndefinedException with the specified error
         /// message.
         /// </summary>

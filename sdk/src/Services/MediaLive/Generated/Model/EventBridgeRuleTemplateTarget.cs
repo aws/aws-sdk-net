@@ -40,7 +40,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Arn. Target ARNs must be either an SNS topic or CloudWatch
         /// log group.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

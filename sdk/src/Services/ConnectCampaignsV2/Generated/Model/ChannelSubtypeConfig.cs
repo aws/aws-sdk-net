@@ -37,6 +37,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         private EmailChannelSubtypeConfig _email;
         private SmsChannelSubtypeConfig _sms;
         private TelephonyChannelSubtypeConfig _telephony;
+        private WhatsAppChannelSubtypeConfig _whatsApp;
 
         /// <summary>
         /// Gets and sets the property Email.
@@ -81,6 +82,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetTelephony()
         {
             return this._telephony != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WhatsApp.
+        /// </summary>
+        public WhatsAppChannelSubtypeConfig WhatsApp
+        {
+            get { return this._whatsApp; }
+            set { this._whatsApp = value; }
+        }
+
+        // Check to see if WhatsApp property is set
+        internal bool IsSetWhatsApp()
+        {
+            return this._whatsApp != null;
         }
 
     }

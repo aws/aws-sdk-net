@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Information about the data stored in Amazon S3 used by the Amazon Braket job.
+    /// Information about the Amazon S3 storage used by the Amazon Braket hybrid job.
     /// </summary>
     public partial class S3DataSource
     {

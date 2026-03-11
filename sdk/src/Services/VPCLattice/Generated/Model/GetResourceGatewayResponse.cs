@@ -38,6 +38,7 @@ namespace Amazon.VPCLattice.Model
         private DateTime? _createdAt;
         private string _id;
         private ResourceGatewayIpAddressType _ipAddressType;
+        private int? _ipv4AddressesPerEni;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -117,6 +118,25 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4AddressesPerEni. 
+        /// <para>
+        /// The number of IPv4 addresses in each ENI for the resource gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=62)]
+        public int? Ipv4AddressesPerEni
+        {
+            get { return this._ipv4AddressesPerEni; }
+            set { this._ipv4AddressesPerEni = value; }
+        }
+
+        // Check to see if Ipv4AddressesPerEni property is set
+        internal bool IsSetIpv4AddressesPerEni()
+        {
+            return this._ipv4AddressesPerEni.HasValue; 
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.LicenseManager.Model
     {
 
         /// <summary>
+        /// Default constructor for EntitlementNotAllowedException
+        /// message.
+        /// </summary>
+        public EntitlementNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntitlementNotAllowedException with the specified error
         /// message.
         /// </summary>

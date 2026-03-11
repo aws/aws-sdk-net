@@ -40,10 +40,12 @@ namespace Amazon.APIGateway.Model
         private string _cloneFrom;
         private string _description;
         private bool? _disableExecuteApiEndpoint;
+        private EndpointAccessMode _endpointAccessMode;
         private EndpointConfiguration _endpointConfiguration;
         private int? _minimumCompressionSize;
         private string _name;
         private string _policy;
+        private SecurityPolicy _securityPolicy;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
@@ -150,6 +152,25 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndpointAccessMode. 
+        /// <para>
+        ///  The endpoint access mode of the RestApi. Only available for RestApis that use security
+        /// policies that start with <c>SecurityPolicy_</c>.
+        /// </para>
+        /// </summary>
+        public EndpointAccessMode EndpointAccessMode
+        {
+            get { return this._endpointAccessMode; }
+            set { this._endpointAccessMode = value; }
+        }
+
+        // Check to see if EndpointAccessMode property is set
+        internal bool IsSetEndpointAccessMode()
+        {
+            return this._endpointAccessMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
         /// The endpoint configuration of this RestApi showing the endpoint types and IP address
@@ -226,6 +247,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicy. 
+        /// <para>
+        ///  The Transport Layer Security (TLS) version + cipher suite for this RestApi. 
+        /// </para>
+        /// </summary>
+        public SecurityPolicy SecurityPolicy
+        {
+            get { return this._securityPolicy; }
+            set { this._securityPolicy = value; }
+        }
+
+        // Check to see if SecurityPolicy property is set
+        internal bool IsSetSecurityPolicy()
+        {
+            return this._securityPolicy != null;
         }
 
         /// <summary>

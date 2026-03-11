@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for WebAuthnConfigurationMissingException
+        /// message.
+        /// </summary>
+        public WebAuthnConfigurationMissingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebAuthnConfigurationMissingException with the specified error
         /// message.
         /// </summary>

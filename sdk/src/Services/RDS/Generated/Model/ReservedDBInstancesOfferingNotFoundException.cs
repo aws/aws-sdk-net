@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedDBInstancesOfferingNotFoundException
+        /// message.
+        /// </summary>
+        public ReservedDBInstancesOfferingNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedDBInstancesOfferingNotFoundException with the specified error
         /// message.
         /// </summary>

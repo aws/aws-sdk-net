@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleetPortSettings operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Updates permissions that allow inbound traffic to connect to game sessions in the
     /// fleet. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To update settings, specify the fleet ID to be updated and specify the changes to

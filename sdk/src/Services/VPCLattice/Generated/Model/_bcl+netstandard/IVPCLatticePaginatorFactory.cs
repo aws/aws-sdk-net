@@ -38,6 +38,16 @@ namespace Amazon.VPCLattice.Model
         IListAccessLogSubscriptionsPaginator ListAccessLogSubscriptions(ListAccessLogSubscriptionsRequest request);
 
         /// <summary>
+        /// Paginator for ListDomainVerifications operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDomainVerificationsPaginator ListDomainVerifications(ListDomainVerificationsRequest request);
+
+        /// <summary>
         /// Paginator for ListListeners operation
         ///</summary>
         [AWSPaginator(

@@ -72,6 +72,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TemplateStage", StringUtils.FromString(publicRequest.TemplateStage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetTemplateRequestMarshaller _instance = new GetTemplateRequestMarshaller();        

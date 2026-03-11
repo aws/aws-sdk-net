@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TimestampFormatHeaders operation
     /// </summary>  
-    public class TimestampFormatHeadersResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class TimestampFormatHeadersResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -61,6 +61,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-targetHttpDate"))
                 response.TargetHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("X-targetHttpDate"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -86,6 +87,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, TimestampFormatHeadersResponse response);
 
         private static TimestampFormatHeadersResponseUnmarshaller _instance = new TimestampFormatHeadersResponseUnmarshaller();        
 

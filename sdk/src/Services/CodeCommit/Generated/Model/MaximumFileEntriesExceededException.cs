@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumFileEntriesExceededException
+        /// message.
+        /// </summary>
+        public MaximumFileEntriesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumFileEntriesExceededException with the specified error
         /// message.
         /// </summary>

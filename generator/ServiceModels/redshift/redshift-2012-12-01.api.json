@@ -264,7 +264,9 @@
         {"shape":"InvalidRetentionPeriodFault"},
         {"shape":"Ipv6CidrBlockNotFoundFault"},
         {"shape":"UnsupportedOperationFault"},
-        {"shape":"RedshiftIdcApplicationNotExistsFault"}
+        {"shape":"RedshiftIdcApplicationNotExistsFault"},
+        {"shape":"DependentServiceUnavailableFault"},
+        {"shape":"DependentServiceAccessDeniedFault"}
       ]
     },
     "CreateClusterParameterGroup":{
@@ -487,7 +489,9 @@
         {"shape":"DependentServiceUnavailableFault"},
         {"shape":"UnsupportedOperationFault"},
         {"shape":"DependentServiceAccessDeniedFault"},
-        {"shape":"RedshiftIdcApplicationQuotaExceededFault"}
+        {"shape":"RedshiftIdcApplicationQuotaExceededFault"},
+        {"shape":"TagLimitExceededFault"},
+        {"shape":"InvalidTagFault"}
       ]
     },
     "CreateScheduledAction":{
@@ -1678,6 +1682,24 @@
         {"shape":"UnsupportedOperationFault"}
       ]
     },
+    "GetIdentityCenterAuthToken":{
+      "name":"GetIdentityCenterAuthToken",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetIdentityCenterAuthTokenRequest"},
+      "output":{
+        "shape":"GetIdentityCenterAuthTokenResponse",
+        "resultWrapper":"GetIdentityCenterAuthTokenResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"RedshiftInvalidParameterFault"}
+      ]
+    },
     "GetReservedNodeExchangeConfigurationOptions":{
       "name":"GetReservedNodeExchangeConfigurationOptions",
       "http":{
@@ -2019,6 +2041,27 @@
         {"shape":"UnsupportedOperationFault"}
       ]
     },
+    "ModifyLakehouseConfiguration":{
+      "name":"ModifyLakehouseConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyLakehouseConfigurationMessage"},
+      "output":{
+        "shape":"LakehouseConfiguration",
+        "resultWrapper":"ModifyLakehouseConfigurationResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"UnauthorizedOperation"},
+        {"shape":"RedshiftIdcApplicationNotExistsFault"},
+        {"shape":"DependentServiceUnavailableFault"},
+        {"shape":"DependentServiceAccessDeniedFault"}
+      ]
+    },
     "ModifyRedshiftIdcApplication":{
       "name":"ModifyRedshiftIdcApplication",
       "http":{
@@ -2301,6 +2344,8 @@
         {"shape":"DependentServiceUnavailableFault"},
         {"shape":"ReservedNodeAlreadyExistsFault"},
         {"shape":"UnsupportedOperationFault"},
+        {"shape":"RedshiftIdcApplicationNotExistsFault"},
+        {"shape":"DependentServiceAccessDeniedFault"},
         {"shape":"Ipv6CidrBlockNotFoundFault"}
       ]
     },
@@ -2456,8 +2501,7 @@
     },
     "AccessToClusterDeniedFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AccessToClusterDenied",
         "httpStatusCode":400,
@@ -2467,8 +2511,7 @@
     },
     "AccessToSnapshotDeniedFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AccessToSnapshotDenied",
         "httpStatusCode":400,
@@ -2509,6 +2552,13 @@
         "restore-cluster",
         "recommend-node-config",
         "resize-cluster"
+      ]
+    },
+    "ApplicationType":{
+      "type":"string",
+      "enum":[
+        "None",
+        "Lakehouse"
       ]
     },
     "AquaConfiguration":{
@@ -2604,8 +2654,7 @@
     },
     "AuthenticationProfileAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AuthenticationProfileAlreadyExistsFault",
         "httpStatusCode":400,
@@ -2624,8 +2673,7 @@
     },
     "AuthenticationProfileNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AuthenticationProfileNotFoundFault",
         "httpStatusCode":404,
@@ -2635,8 +2683,7 @@
     },
     "AuthenticationProfileQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AuthenticationProfileQuotaExceededFault",
         "httpStatusCode":400,
@@ -2646,8 +2693,7 @@
     },
     "AuthorizationAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AuthorizationAlreadyExists",
         "httpStatusCode":400,
@@ -2657,8 +2703,7 @@
     },
     "AuthorizationNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AuthorizationNotFound",
         "httpStatusCode":404,
@@ -2668,8 +2713,7 @@
     },
     "AuthorizationQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"AuthorizationQuotaExceeded",
         "httpStatusCode":400,
@@ -2783,8 +2827,7 @@
     },
     "BatchDeleteRequestSizeExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"BatchDeleteRequestSizeExceeded",
         "httpStatusCode":400,
@@ -2794,8 +2837,7 @@
     },
     "BatchModifyClusterSnapshotsLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"BatchModifyClusterSnapshotsLimitExceededFault",
         "httpStatusCode":400,
@@ -2837,8 +2879,7 @@
     "BooleanOptional":{"type":"boolean"},
     "BucketNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"BucketNotFoundFault",
         "httpStatusCode":400,
@@ -2852,6 +2893,12 @@
       "members":{
         "ClusterIdentifier":{"shape":"String"}
       }
+    },
+    "CatalogNameString":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$"
     },
     "CertificateAssociation":{
       "type":"structure",
@@ -2929,14 +2976,16 @@
         "MasterPasswordSecretKmsKeyId":{"shape":"String"},
         "IpAddressType":{"shape":"String"},
         "MultiAZ":{"shape":"String"},
-        "MultiAZSecondary":{"shape":"SecondaryClusterInfo"}
+        "MultiAZSecondary":{"shape":"SecondaryClusterInfo"},
+        "LakehouseRegistrationStatus":{"shape":"String"},
+        "CatalogArn":{"shape":"String"},
+        "ExtraComputeForAutomaticOptimization":{"shape":"String"}
       },
       "wrapper":true
     },
     "ClusterAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterAlreadyExists",
         "httpStatusCode":400,
@@ -3005,6 +3054,13 @@
         "locationName":"ClusterIamRole"
       }
     },
+    "ClusterIdentifierList":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"ClusterIdentifier"
+      }
+    },
     "ClusterList":{
       "type":"list",
       "member":{
@@ -3026,8 +3082,7 @@
     },
     "ClusterNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterNotFound",
         "httpStatusCode":404,
@@ -3037,8 +3092,7 @@
     },
     "ClusterOnLatestRevisionFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterOnLatestRevision",
         "httpStatusCode":400,
@@ -3058,8 +3112,7 @@
     },
     "ClusterParameterGroupAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterParameterGroupAlreadyExists",
         "httpStatusCode":400,
@@ -3083,8 +3136,7 @@
     },
     "ClusterParameterGroupNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterParameterGroupNotFound",
         "httpStatusCode":404,
@@ -3094,8 +3146,7 @@
     },
     "ClusterParameterGroupQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterParameterGroupQuotaExceeded",
         "httpStatusCode":400,
@@ -3139,8 +3190,7 @@
     },
     "ClusterQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterQuotaExceeded",
         "httpStatusCode":400,
@@ -3161,8 +3211,7 @@
     },
     "ClusterSecurityGroupAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSecurityGroupAlreadyExists",
         "httpStatusCode":400,
@@ -3200,8 +3249,7 @@
     },
     "ClusterSecurityGroupNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSecurityGroupNotFound",
         "httpStatusCode":404,
@@ -3211,8 +3259,7 @@
     },
     "ClusterSecurityGroupQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"QuotaExceeded.ClusterSecurityGroup",
         "httpStatusCode":400,
@@ -3229,8 +3276,7 @@
     },
     "ClusterSnapshotAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSnapshotAlreadyExists",
         "httpStatusCode":400,
@@ -3249,8 +3295,7 @@
     },
     "ClusterSnapshotNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSnapshotNotFound",
         "httpStatusCode":404,
@@ -3260,8 +3305,7 @@
     },
     "ClusterSnapshotQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSnapshotQuotaExceeded",
         "httpStatusCode":400,
@@ -3284,8 +3328,7 @@
     },
     "ClusterSubnetGroupAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSubnetGroupAlreadyExists",
         "httpStatusCode":400,
@@ -3302,8 +3345,7 @@
     },
     "ClusterSubnetGroupNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSubnetGroupNotFoundFault",
         "httpStatusCode":400,
@@ -3313,8 +3355,7 @@
     },
     "ClusterSubnetGroupQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSubnetGroupQuotaExceeded",
         "httpStatusCode":400,
@@ -3331,8 +3372,7 @@
     },
     "ClusterSubnetQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ClusterSubnetQuotaExceededFault",
         "httpStatusCode":400,
@@ -3371,14 +3411,20 @@
     },
     "ConflictPolicyUpdateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ConflictPolicyUpdateFault",
         "httpStatusCode":409,
         "senderFault":true
       },
       "exception":true
+    },
+    "Connect":{
+      "type":"structure",
+      "required":["Authorization"],
+      "members":{
+        "Authorization":{"shape":"ServiceAuthorization"}
+      }
     },
     "ConsumerIdentifierList":{
       "type":"list",
@@ -3407,8 +3453,7 @@
     },
     "CopyToRegionDisabledFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"CopyToRegionDisabledFault",
         "httpStatusCode":400,
@@ -3480,7 +3525,9 @@
         "MasterPasswordSecretKmsKeyId":{"shape":"String"},
         "IpAddressType":{"shape":"String"},
         "MultiAZ":{"shape":"BooleanOptional"},
-        "RedshiftIdcApplicationArn":{"shape":"String"}
+        "RedshiftIdcApplicationArn":{"shape":"String"},
+        "CatalogName":{"shape":"CatalogNameString"},
+        "ExtraComputeForAutomaticOptimization":{"shape":"BooleanOptional"}
       }
     },
     "CreateClusterParameterGroupMessage":{
@@ -3697,7 +3744,10 @@
         "IdcDisplayName":{"shape":"IdcDisplayNameString"},
         "IamRoleArn":{"shape":"String"},
         "AuthorizedTokenIssuerList":{"shape":"AuthorizedTokenIssuerList"},
-        "ServiceIntegrations":{"shape":"ServiceIntegrationList"}
+        "ServiceIntegrations":{"shape":"ServiceIntegrationList"},
+        "ApplicationType":{"shape":"ApplicationType"},
+        "Tags":{"shape":"TagList"},
+        "SsoTagKeys":{"shape":"TagKeyList"}
       }
     },
     "CreateRedshiftIdcApplicationResult":{
@@ -3782,8 +3832,7 @@
     },
     "CustomCnameAssociationFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"CustomCnameAssociationFault",
         "httpStatusCode":400,
@@ -3793,8 +3842,7 @@
     },
     "CustomDomainAssociationNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"CustomDomainAssociationNotFoundFault",
         "httpStatusCode":404,
@@ -4116,8 +4164,7 @@
     },
     "DependentServiceAccessDeniedFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"DependentServiceAccessDenied",
         "httpStatusCode":403,
@@ -4127,8 +4174,7 @@
     },
     "DependentServiceRequestThrottlingFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"DependentServiceRequestThrottlingFault",
         "httpStatusCode":400,
@@ -4138,8 +4184,7 @@
     },
     "DependentServiceUnavailableFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"DependentServiceUnavailableFault",
         "httpStatusCode":400,
@@ -4786,8 +4831,7 @@
     },
     "EndpointAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointAlreadyExists",
         "httpStatusCode":400,
@@ -4811,8 +4855,7 @@
     },
     "EndpointAuthorizationAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointAuthorizationAlreadyExists",
         "httpStatusCode":400,
@@ -4829,8 +4872,7 @@
     },
     "EndpointAuthorizationNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointAuthorizationNotFound",
         "httpStatusCode":404,
@@ -4844,8 +4886,7 @@
     },
     "EndpointAuthorizationsPerClusterLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointAuthorizationsPerClusterLimitExceeded",
         "httpStatusCode":400,
@@ -4855,8 +4896,7 @@
     },
     "EndpointNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointNotFound",
         "httpStatusCode":404,
@@ -4866,8 +4906,7 @@
     },
     "EndpointsPerAuthorizationLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointsPerAuthorizationLimitExceeded",
         "httpStatusCode":400,
@@ -4877,8 +4916,7 @@
     },
     "EndpointsPerClusterLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EndpointsPerClusterLimitExceeded",
         "httpStatusCode":400,
@@ -4969,8 +5007,7 @@
     },
     "EventSubscriptionQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"EventSubscriptionQuotaExceeded",
         "httpStatusCode":400,
@@ -5034,6 +5071,20 @@
         "CustomDomainName":{"shape":"String"}
       }
     },
+    "GetIdentityCenterAuthTokenRequest":{
+      "type":"structure",
+      "required":["ClusterIds"],
+      "members":{
+        "ClusterIds":{"shape":"ClusterIdentifierList"}
+      }
+    },
+    "GetIdentityCenterAuthTokenResponse":{
+      "type":"structure",
+      "members":{
+        "Token":{"shape":"SensitiveString"},
+        "ExpirationTime":{"shape":"TStamp"}
+      }
+    },
     "GetReservedNodeExchangeConfigurationOptionsInputMessage":{
       "type":"structure",
       "required":["ActionType"],
@@ -5092,8 +5143,7 @@
     },
     "HsmClientCertificateAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"HsmClientCertificateAlreadyExistsFault",
         "httpStatusCode":400,
@@ -5117,8 +5167,7 @@
     },
     "HsmClientCertificateNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"HsmClientCertificateNotFoundFault",
         "httpStatusCode":400,
@@ -5128,8 +5177,7 @@
     },
     "HsmClientCertificateQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"HsmClientCertificateQuotaExceededFault",
         "httpStatusCode":400,
@@ -5150,8 +5198,7 @@
     },
     "HsmConfigurationAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"HsmConfigurationAlreadyExistsFault",
         "httpStatusCode":400,
@@ -5175,8 +5222,7 @@
     },
     "HsmConfigurationNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"HsmConfigurationNotFoundFault",
         "httpStatusCode":400,
@@ -5186,8 +5232,7 @@
     },
     "HsmConfigurationQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"HsmConfigurationQuotaExceededFault",
         "httpStatusCode":400,
@@ -5259,8 +5304,7 @@
     },
     "InProgressTableRestoreQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InProgressTableRestoreQuotaExceededFault",
         "httpStatusCode":400,
@@ -5301,8 +5345,7 @@
     },
     "IncompatibleOrderableOptions":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IncompatibleOrderableOptions",
         "httpStatusCode":400,
@@ -5312,8 +5355,7 @@
     },
     "InsufficientClusterCapacityFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InsufficientClusterCapacity",
         "httpStatusCode":400,
@@ -5323,8 +5365,7 @@
     },
     "InsufficientS3BucketPolicyFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InsufficientS3BucketPolicyFault",
         "httpStatusCode":400,
@@ -5352,8 +5393,7 @@
     },
     "IntegrationAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationAlreadyExistsFault",
         "httpStatusCode":400,
@@ -5369,8 +5409,7 @@
     },
     "IntegrationConflictOperationFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationConflictOperationFault",
         "httpStatusCode":400,
@@ -5380,8 +5419,7 @@
     },
     "IntegrationConflictStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationConflictStateFault",
         "httpStatusCode":400,
@@ -5425,8 +5463,7 @@
     },
     "IntegrationNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationNotFoundFault",
         "httpStatusCode":404,
@@ -5436,8 +5473,7 @@
     },
     "IntegrationQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationQuotaExceededFault",
         "httpStatusCode":400,
@@ -5447,8 +5483,7 @@
     },
     "IntegrationSourceNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationSourceNotFoundFault",
         "httpStatusCode":404,
@@ -5458,8 +5493,7 @@
     },
     "IntegrationTargetNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"IntegrationTargetNotFoundFault",
         "httpStatusCode":404,
@@ -5476,8 +5510,7 @@
     },
     "InvalidAuthenticationProfileRequestFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidAuthenticationProfileRequestFault",
         "httpStatusCode":400,
@@ -5487,8 +5520,7 @@
     },
     "InvalidAuthorizationStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidAuthorizationState",
         "httpStatusCode":400,
@@ -5498,8 +5530,7 @@
     },
     "InvalidClusterParameterGroupStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterParameterGroupState",
         "httpStatusCode":400,
@@ -5509,8 +5540,7 @@
     },
     "InvalidClusterSecurityGroupStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterSecurityGroupState",
         "httpStatusCode":400,
@@ -5520,8 +5550,7 @@
     },
     "InvalidClusterSnapshotScheduleStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterSnapshotScheduleState",
         "httpStatusCode":400,
@@ -5531,8 +5560,7 @@
     },
     "InvalidClusterSnapshotStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterSnapshotState",
         "httpStatusCode":400,
@@ -5542,8 +5570,7 @@
     },
     "InvalidClusterStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterState",
         "httpStatusCode":400,
@@ -5553,8 +5580,7 @@
     },
     "InvalidClusterSubnetGroupStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterSubnetGroupStateFault",
         "httpStatusCode":400,
@@ -5564,8 +5590,7 @@
     },
     "InvalidClusterSubnetStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterSubnetStateFault",
         "httpStatusCode":400,
@@ -5575,8 +5600,7 @@
     },
     "InvalidClusterTrackFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidClusterTrack",
         "httpStatusCode":400,
@@ -5586,8 +5610,7 @@
     },
     "InvalidDataShareFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidDataShareFault",
         "httpStatusCode":400,
@@ -5597,8 +5620,7 @@
     },
     "InvalidElasticIpFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidElasticIpFault",
         "httpStatusCode":400,
@@ -5608,8 +5630,7 @@
     },
     "InvalidEndpointStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidEndpointState",
         "httpStatusCode":400,
@@ -5619,8 +5640,7 @@
     },
     "InvalidHsmClientCertificateStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidHsmClientCertificateStateFault",
         "httpStatusCode":400,
@@ -5630,8 +5650,7 @@
     },
     "InvalidHsmConfigurationStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidHsmConfigurationStateFault",
         "httpStatusCode":400,
@@ -5641,8 +5660,7 @@
     },
     "InvalidNamespaceFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidNamespaceFault",
         "httpStatusCode":400,
@@ -5652,8 +5670,7 @@
     },
     "InvalidPolicyFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidPolicyFault",
         "httpStatusCode":400,
@@ -5663,8 +5680,7 @@
     },
     "InvalidReservedNodeStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidReservedNodeState",
         "httpStatusCode":400,
@@ -5674,8 +5690,7 @@
     },
     "InvalidRestoreFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidRestore",
         "httpStatusCode":406,
@@ -5685,8 +5700,7 @@
     },
     "InvalidRetentionPeriodFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidRetentionPeriodFault",
         "httpStatusCode":400,
@@ -5696,8 +5710,7 @@
     },
     "InvalidS3BucketNameFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidS3BucketNameFault",
         "httpStatusCode":400,
@@ -5707,8 +5720,7 @@
     },
     "InvalidS3KeyPrefixFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidS3KeyPrefixFault",
         "httpStatusCode":400,
@@ -5718,8 +5730,7 @@
     },
     "InvalidScheduleFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidSchedule",
         "httpStatusCode":400,
@@ -5729,8 +5740,7 @@
     },
     "InvalidScheduledActionFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidScheduledAction",
         "httpStatusCode":400,
@@ -5740,8 +5750,7 @@
     },
     "InvalidSnapshotCopyGrantStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidSnapshotCopyGrantStateFault",
         "httpStatusCode":400,
@@ -5751,8 +5760,7 @@
     },
     "InvalidSubnet":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidSubnet",
         "httpStatusCode":400,
@@ -5762,8 +5770,7 @@
     },
     "InvalidSubscriptionStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidSubscriptionStateFault",
         "httpStatusCode":400,
@@ -5773,8 +5780,7 @@
     },
     "InvalidTableRestoreArgumentFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidTableRestoreArgument",
         "httpStatusCode":400,
@@ -5784,8 +5790,7 @@
     },
     "InvalidTagFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidTagFault",
         "httpStatusCode":400,
@@ -5795,8 +5800,7 @@
     },
     "InvalidUsageLimitFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidUsageLimit",
         "httpStatusCode":400,
@@ -5806,8 +5810,7 @@
     },
     "InvalidVPCNetworkStateFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"InvalidVPCNetworkStateFault",
         "httpStatusCode":400,
@@ -5817,8 +5820,7 @@
     },
     "Ipv6CidrBlockNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"Ipv6CidrBlockNotFoundFault",
         "httpStatusCode":400,
@@ -5844,10 +5846,32 @@
       "type":"list",
       "member":{"shape":"LakeFormationScopeUnion"}
     },
-    "LimitExceededFault":{
+    "LakehouseConfiguration":{
       "type":"structure",
       "members":{
-      },
+        "ClusterIdentifier":{"shape":"String"},
+        "LakehouseIdcApplicationArn":{"shape":"String"},
+        "LakehouseRegistrationStatus":{"shape":"String"},
+        "CatalogArn":{"shape":"String"}
+      }
+    },
+    "LakehouseIdcRegistration":{
+      "type":"string",
+      "enum":[
+        "Associate",
+        "Disassociate"
+      ]
+    },
+    "LakehouseRegistration":{
+      "type":"string",
+      "enum":[
+        "Register",
+        "Deregister"
+      ]
+    },
+    "LimitExceededFault":{
+      "type":"structure",
+      "members":{},
       "error":{
         "code":"LimitExceededFault",
         "httpStatusCode":400,
@@ -6027,7 +6051,8 @@
         "ManageMasterPassword":{"shape":"BooleanOptional"},
         "MasterPasswordSecretKmsKeyId":{"shape":"String"},
         "IpAddressType":{"shape":"String"},
-        "MultiAZ":{"shape":"BooleanOptional"}
+        "MultiAZ":{"shape":"BooleanOptional"},
+        "ExtraComputeForAutomaticOptimization":{"shape":"BooleanOptional"}
       }
     },
     "ModifyClusterParameterGroupMessage":{
@@ -6145,6 +6170,18 @@
         "IntegrationArn":{"shape":"IntegrationArn"},
         "Description":{"shape":"IntegrationDescription"},
         "IntegrationName":{"shape":"IntegrationName"}
+      }
+    },
+    "ModifyLakehouseConfigurationMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "ClusterIdentifier":{"shape":"String"},
+        "LakehouseRegistration":{"shape":"LakehouseRegistration"},
+        "CatalogName":{"shape":"CatalogNameString"},
+        "LakehouseIdcRegistration":{"shape":"LakehouseIdcRegistration"},
+        "LakehouseIdcApplicationArn":{"shape":"String"},
+        "DryRun":{"shape":"BooleanOptional"}
       }
     },
     "ModifyRedshiftIdcApplicationMessage":{
@@ -6301,8 +6338,7 @@
     },
     "NumberOfNodesPerClusterLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"NumberOfNodesPerClusterLimitExceeded",
         "httpStatusCode":400,
@@ -6312,8 +6348,7 @@
     },
     "NumberOfNodesQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"NumberOfNodesQuotaExceeded",
         "httpStatusCode":400,
@@ -6469,8 +6504,7 @@
     },
     "PartnerNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"PartnerNotFound",
         "httpStatusCode":404,
@@ -6643,14 +6677,16 @@
         "IdcManagedApplicationArn":{"shape":"String"},
         "IdcOnboardStatus":{"shape":"String"},
         "AuthorizedTokenIssuerList":{"shape":"AuthorizedTokenIssuerList"},
-        "ServiceIntegrations":{"shape":"ServiceIntegrationList"}
+        "ServiceIntegrations":{"shape":"ServiceIntegrationList"},
+        "ApplicationType":{"shape":"ApplicationType"},
+        "Tags":{"shape":"TagList"},
+        "SsoTagKeys":{"shape":"TagKeyList"}
       },
       "wrapper":true
     },
     "RedshiftIdcApplicationAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"RedshiftIdcApplicationAlreadyExists",
         "httpStatusCode":400,
@@ -6670,8 +6706,7 @@
     },
     "RedshiftIdcApplicationNotExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"RedshiftIdcApplicationNotExists",
         "httpStatusCode":404,
@@ -6681,14 +6716,34 @@
     },
     "RedshiftIdcApplicationQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"RedshiftIdcApplicationQuotaExceeded",
         "httpStatusCode":400,
         "senderFault":true
       },
       "exception":true
+    },
+    "RedshiftInvalidParameterFault":{
+      "type":"structure",
+      "members":{},
+      "error":{
+        "code":"RedshiftInvalidParameter",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "RedshiftScopeUnion":{
+      "type":"structure",
+      "members":{
+        "Connect":{"shape":"Connect"}
+      },
+      "union":true
+    },
+    "RedshiftServiceIntegrations":{
+      "type":"list",
+      "member":{"shape":"RedshiftScopeUnion"}
     },
     "ReferenceLink":{
       "type":"structure",
@@ -6749,8 +6804,7 @@
     },
     "ReservedNodeAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ReservedNodeAlreadyExists",
         "httpStatusCode":404,
@@ -6760,8 +6814,7 @@
     },
     "ReservedNodeAlreadyMigratedFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ReservedNodeAlreadyMigrated",
         "httpStatusCode":400,
@@ -6794,8 +6847,7 @@
     },
     "ReservedNodeExchangeNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ReservedNodeExchangeNotFond",
         "httpStatusCode":404,
@@ -6845,8 +6897,7 @@
     },
     "ReservedNodeNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ReservedNodeNotFound",
         "httpStatusCode":404,
@@ -6878,8 +6929,7 @@
     },
     "ReservedNodeOfferingNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ReservedNodeOfferingNotFound",
         "httpStatusCode":404,
@@ -6903,8 +6953,7 @@
     },
     "ReservedNodeQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ReservedNodeQuotaExceeded",
         "httpStatusCode":400,
@@ -6956,8 +7005,7 @@
     },
     "ResizeNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ResizeNotFound",
         "httpStatusCode":404,
@@ -6988,8 +7036,7 @@
     },
     "ResourceNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ResourceNotFoundFault",
         "httpStatusCode":404,
@@ -7051,7 +7098,9 @@
         "ManageMasterPassword":{"shape":"BooleanOptional"},
         "MasterPasswordSecretKmsKeyId":{"shape":"String"},
         "IpAddressType":{"shape":"String"},
-        "MultiAZ":{"shape":"BooleanOptional"}
+        "MultiAZ":{"shape":"BooleanOptional"},
+        "CatalogName":{"shape":"CatalogNameString"},
+        "RedshiftIdcApplicationArn":{"shape":"String"}
       }
     },
     "RestoreFromClusterSnapshotResult":{
@@ -7198,8 +7247,7 @@
     },
     "SNSInvalidTopicFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SNSInvalidTopic",
         "httpStatusCode":400,
@@ -7209,8 +7257,7 @@
     },
     "SNSNoAuthorizationFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SNSNoAuthorization",
         "httpStatusCode":400,
@@ -7220,8 +7267,7 @@
     },
     "SNSTopicArnNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SNSTopicArnNotFound",
         "httpStatusCode":404,
@@ -7238,8 +7284,7 @@
     },
     "ScheduleDefinitionTypeUnsupportedFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ScheduleDefinitionTypeUnsupported",
         "httpStatusCode":400,
@@ -7271,8 +7316,7 @@
     },
     "ScheduledActionAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ScheduledActionAlreadyExists",
         "httpStatusCode":400,
@@ -7314,8 +7358,7 @@
     },
     "ScheduledActionNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ScheduledActionNotFound",
         "httpStatusCode":400,
@@ -7325,8 +7368,7 @@
     },
     "ScheduledActionQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ScheduledActionQuotaExceeded",
         "httpStatusCode":400,
@@ -7358,8 +7400,7 @@
     },
     "ScheduledActionTypeUnsupportedFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"ScheduledActionTypeUnsupported",
         "httpStatusCode":400,
@@ -7426,7 +7467,8 @@
       "type":"structure",
       "members":{
         "LakeFormation":{"shape":"LakeFormationServiceIntegrations"},
-        "S3AccessGrants":{"shape":"S3AccessGrantsServiceIntegrations"}
+        "S3AccessGrants":{"shape":"S3AccessGrantsServiceIntegrations"},
+        "Redshift":{"shape":"RedshiftServiceIntegrations"}
       },
       "union":true
     },
@@ -7483,8 +7525,7 @@
     },
     "SnapshotCopyAlreadyDisabledFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotCopyAlreadyDisabledFault",
         "httpStatusCode":400,
@@ -7494,8 +7535,7 @@
     },
     "SnapshotCopyAlreadyEnabledFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotCopyAlreadyEnabledFault",
         "httpStatusCode":400,
@@ -7505,8 +7545,7 @@
     },
     "SnapshotCopyDisabledFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotCopyDisabledFault",
         "httpStatusCode":400,
@@ -7525,8 +7564,7 @@
     },
     "SnapshotCopyGrantAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotCopyGrantAlreadyExistsFault",
         "httpStatusCode":400,
@@ -7550,8 +7588,7 @@
     },
     "SnapshotCopyGrantNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotCopyGrantNotFoundFault",
         "httpStatusCode":400,
@@ -7561,8 +7598,7 @@
     },
     "SnapshotCopyGrantQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotCopyGrantQuotaExceededFault",
         "httpStatusCode":400,
@@ -7614,8 +7650,7 @@
     },
     "SnapshotScheduleAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotScheduleAlreadyExists",
         "httpStatusCode":400,
@@ -7632,8 +7667,7 @@
     },
     "SnapshotScheduleNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotScheduleNotFound",
         "httpStatusCode":400,
@@ -7643,8 +7677,7 @@
     },
     "SnapshotScheduleQuotaExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotScheduleQuotaExceeded",
         "httpStatusCode":400,
@@ -7654,8 +7687,7 @@
     },
     "SnapshotScheduleUpdateInProgressFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SnapshotScheduleUpdateInProgress",
         "httpStatusCode":400,
@@ -7700,8 +7732,7 @@
     },
     "SourceNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SourceNotFound",
         "httpStatusCode":404,
@@ -7733,8 +7764,7 @@
     },
     "SubnetAlreadyInUse":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SubnetAlreadyInUse",
         "httpStatusCode":400,
@@ -7758,8 +7788,7 @@
     },
     "SubscriptionAlreadyExistFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SubscriptionAlreadyExist",
         "httpStatusCode":400,
@@ -7769,8 +7798,7 @@
     },
     "SubscriptionCategoryNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SubscriptionCategoryNotFound",
         "httpStatusCode":404,
@@ -7780,8 +7808,7 @@
     },
     "SubscriptionEventIdNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SubscriptionEventIdNotFound",
         "httpStatusCode":404,
@@ -7791,8 +7818,7 @@
     },
     "SubscriptionNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SubscriptionNotFound",
         "httpStatusCode":404,
@@ -7802,8 +7828,7 @@
     },
     "SubscriptionSeverityNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"SubscriptionSeverityNotFound",
         "httpStatusCode":404,
@@ -7841,8 +7866,7 @@
     "TStamp":{"type":"timestamp"},
     "TableLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"TableLimitExceeded",
         "httpStatusCode":400,
@@ -7852,8 +7876,7 @@
     },
     "TableRestoreNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"TableRestoreNotFoundFault",
         "httpStatusCode":400,
@@ -7921,8 +7944,7 @@
     },
     "TagLimitExceededFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"TagLimitExceededFault",
         "httpStatusCode":400,
@@ -7988,8 +8010,7 @@
     },
     "UnauthorizedOperation":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UnauthorizedOperation",
         "httpStatusCode":400,
@@ -7999,8 +8020,7 @@
     },
     "UnauthorizedPartnerIntegrationFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UnauthorizedPartnerIntegration",
         "httpStatusCode":401,
@@ -8010,8 +8030,7 @@
     },
     "UnknownSnapshotCopyRegionFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UnknownSnapshotCopyRegionFault",
         "httpStatusCode":404,
@@ -8021,8 +8040,7 @@
     },
     "UnsupportedOperationFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UnsupportedOperation",
         "httpStatusCode":400,
@@ -8032,8 +8050,7 @@
     },
     "UnsupportedOptionFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UnsupportedOptionFault",
         "httpStatusCode":400,
@@ -8082,8 +8099,7 @@
     },
     "UsageLimitAlreadyExistsFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UsageLimitAlreadyExists",
         "httpStatusCode":400,
@@ -8104,7 +8120,8 @@
       "enum":[
         "spectrum",
         "concurrency-scaling",
-        "cross-region-datasharing"
+        "cross-region-datasharing",
+        "extra-compute-for-automatic-optimization"
       ]
     },
     "UsageLimitLimitType":{
@@ -8123,8 +8140,7 @@
     },
     "UsageLimitNotFoundFault":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{
         "code":"UsageLimitNotFound",
         "httpStatusCode":404,

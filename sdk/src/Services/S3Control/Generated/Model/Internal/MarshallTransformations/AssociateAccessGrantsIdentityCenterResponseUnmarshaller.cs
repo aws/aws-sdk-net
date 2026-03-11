@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AssociateAccessGrantsIdentityCenter operation
     /// </summary>  
-    public class AssociateAccessGrantsIdentityCenterResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class AssociateAccessGrantsIdentityCenterResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             AssociateAccessGrantsIdentityCenterResponse response = new AssociateAccessGrantsIdentityCenterResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, AssociateAccessGrantsIdentityCenterResponse response);
 
         private static AssociateAccessGrantsIdentityCenterResponseUnmarshaller _instance = new AssociateAccessGrantsIdentityCenterResponseUnmarshaller();        
 

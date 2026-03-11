@@ -100,6 +100,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("types", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Types = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("typeStats", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MetadataGenerationRunTypeStat, MetadataGenerationRunTypeStatUnmarshaller>(MetadataGenerationRunTypeStatUnmarshaller.Instance);
+                    response.TypeStats = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

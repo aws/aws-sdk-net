@@ -290,7 +290,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
             
@@ -361,7 +361,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
@@ -395,7 +395,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
             
@@ -426,7 +426,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -456,11 +456,66 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDeploymentPatternVersion
+
+
+        /// <summary>
+        /// Returns information about a deployment pattern version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentPatternVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetDeploymentPatternVersion service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeploymentPatternVersion">REST API Reference for GetDeploymentPatternVersion Operation</seealso>
+        public virtual GetDeploymentPatternVersionResponse GetDeploymentPatternVersion(GetDeploymentPatternVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDeploymentPatternVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentPatternVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeploymentPatternVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a deployment pattern version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentPatternVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDeploymentPatternVersion service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeploymentPatternVersion">REST API Reference for GetDeploymentPatternVersion Operation</seealso>
+        public virtual Task<GetDeploymentPatternVersionResponse> GetDeploymentPatternVersionAsync(GetDeploymentPatternVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDeploymentPatternVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeploymentPatternVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDeploymentPatternVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -487,7 +542,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkload">REST API Reference for GetWorkload Operation</seealso>
         public virtual GetWorkloadResponse GetWorkload(GetWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadResponseUnmarshaller.Instance;
 
@@ -517,7 +572,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkload">REST API Reference for GetWorkload Operation</seealso>
         public virtual Task<GetWorkloadResponse> GetWorkloadAsync(GetWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadResponseUnmarshaller.Instance;
             
@@ -551,7 +606,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
         public virtual GetWorkloadDeploymentPatternResponse GetWorkloadDeploymentPattern(GetWorkloadDeploymentPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadDeploymentPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadDeploymentPatternResponseUnmarshaller.Instance;
 
@@ -584,7 +639,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
         public virtual Task<GetWorkloadDeploymentPatternResponse> GetWorkloadDeploymentPatternAsync(GetWorkloadDeploymentPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadDeploymentPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadDeploymentPatternResponseUnmarshaller.Instance;
             
@@ -615,7 +670,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentEvents">REST API Reference for ListDeploymentEvents Operation</seealso>
         public virtual ListDeploymentEventsResponse ListDeploymentEvents(ListDeploymentEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentEventsResponseUnmarshaller.Instance;
 
@@ -645,11 +700,72 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentEvents">REST API Reference for ListDeploymentEvents Operation</seealso>
         public virtual Task<ListDeploymentEventsResponse> ListDeploymentEventsAsync(ListDeploymentEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentEventsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDeploymentEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDeploymentPatternVersions
+
+
+        /// <summary>
+        /// Lists the deployment pattern versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentPatternVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListDeploymentPatternVersions service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentPatternVersions">REST API Reference for ListDeploymentPatternVersions Operation</seealso>
+        public virtual ListDeploymentPatternVersionsResponse ListDeploymentPatternVersions(ListDeploymentPatternVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDeploymentPatternVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentPatternVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeploymentPatternVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the deployment pattern versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentPatternVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeploymentPatternVersions service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentPatternVersions">REST API Reference for ListDeploymentPatternVersions Operation</seealso>
+        public virtual Task<ListDeploymentPatternVersionsResponse> ListDeploymentPatternVersionsAsync(ListDeploymentPatternVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDeploymentPatternVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeploymentPatternVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDeploymentPatternVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -673,7 +789,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -700,7 +816,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
             
@@ -731,7 +847,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -761,7 +877,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -794,7 +910,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListWorkloadDeploymentPatterns">REST API Reference for ListWorkloadDeploymentPatterns Operation</seealso>
         public virtual ListWorkloadDeploymentPatternsResponse ListWorkloadDeploymentPatterns(ListWorkloadDeploymentPatternsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadDeploymentPatternsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadDeploymentPatternsResponseUnmarshaller.Instance;
 
@@ -826,7 +942,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListWorkloadDeploymentPatterns">REST API Reference for ListWorkloadDeploymentPatterns Operation</seealso>
         public virtual Task<ListWorkloadDeploymentPatternsResponse> ListWorkloadDeploymentPatternsAsync(ListWorkloadDeploymentPatternsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadDeploymentPatternsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadDeploymentPatternsResponseUnmarshaller.Instance;
             
@@ -855,7 +971,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
         public virtual ListWorkloadsResponse ListWorkloads(ListWorkloadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
 
@@ -883,7 +999,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
         public virtual Task<ListWorkloadsResponse> ListWorkloadsAsync(ListWorkloadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
             
@@ -914,7 +1030,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -944,7 +1060,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -975,7 +1091,7 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1005,11 +1121,80 @@ namespace Amazon.LaunchWizard
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDeployment
+
+
+        /// <summary>
+        /// Updates a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDeployment service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
+        public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeploymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDeployment service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
+        public virtual Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -109,6 +109,17 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetUpdateActions())
+            {
+                context.Writer.WritePropertyName("UpdateActions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUpdateActionsListValue in publicRequest.UpdateActions)
+                {
+                        context.Writer.WriteStringValue(publicRequestUpdateActionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

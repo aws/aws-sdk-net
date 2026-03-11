@@ -65,6 +65,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSubscribedDomain())
                 throw new AmazonPinpointEmailException("Request object does not have required field SubscribedDomain set");
             request.AddPathResource("{SubscribedDomain}", StringUtils.FromString(publicRequest.SubscribedDomain));
+            if (publicRequest.EndDate == null)
+                throw new AmazonPinpointEmailException("Request object does not have required field EndDate set");
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
@@ -74,6 +76,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
+            if (publicRequest.StartDate == null)
+                throw new AmazonPinpointEmailException("Request object does not have required field StartDate set");
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));

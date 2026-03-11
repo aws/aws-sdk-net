@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalSessionStateException
+        /// message.
+        /// </summary>
+        public IllegalSessionStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalSessionStateException with the specified error
         /// message.
         /// </summary>

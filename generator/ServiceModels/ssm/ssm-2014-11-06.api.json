@@ -151,7 +151,8 @@
         {"shape":"InvalidDocumentContent"},
         {"shape":"DocumentLimitExceeded"},
         {"shape":"InvalidDocumentSchemaVersion"},
-        {"shape":"TooManyUpdates"}
+        {"shape":"TooManyUpdates"},
+        {"shape":"NoLongerSupportedException"}
       ]
     },
     "CreateMaintenanceWindow":{
@@ -1890,7 +1891,8 @@
         {"shape":"AutomationDefinitionVersionNotFoundException"},
         {"shape":"IdempotentParameterMismatch"},
         {"shape":"InternalServerError"},
-        {"shape":"AutomationDefinitionNotApprovedException"}
+        {"shape":"AutomationDefinitionNotApprovedException"},
+        {"shape":"NoLongerSupportedException"}
       ]
     },
     "StartExecutionPreview":{
@@ -2486,12 +2488,22 @@
           "box":true
         },
         "AlarmConfiguration":{"shape":"AlarmConfiguration"},
-        "TriggeredAlarms":{"shape":"AlarmStateInformationList"}
+        "TriggeredAlarms":{"shape":"AlarmStateInformationList"},
+        "AssociationDispatchAssumeRole":{
+          "shape":"AssociationDispatchAssumeRoleArn",
+          "box":true
+        }
       }
     },
     "AssociationDescriptionList":{
       "type":"list",
       "member":{"shape":"AssociationDescription"}
+    },
+    "AssociationDispatchAssumeRoleArn":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+"
     },
     "AssociationDoesNotExist":{
       "type":"structure",
@@ -2756,6 +2768,10 @@
         },
         "TargetMaps":{
           "shape":"TargetMaps",
+          "box":true
+        },
+        "AssociationDispatchAssumeRole":{
+          "shape":"AssociationDispatchAssumeRoleArn",
           "box":true
         }
       }
@@ -3629,7 +3645,11 @@
       "type":"structure",
       "required":["Entries"],
       "members":{
-        "Entries":{"shape":"CreateAssociationBatchRequestEntries"}
+        "Entries":{"shape":"CreateAssociationBatchRequestEntries"},
+        "AssociationDispatchAssumeRole":{
+          "shape":"AssociationDispatchAssumeRoleArn",
+          "box":true
+        }
       }
     },
     "CreateAssociationBatchRequestEntries":{
@@ -3715,7 +3735,11 @@
           "shape":"TagList",
           "box":true
         },
-        "AlarmConfiguration":{"shape":"AlarmConfiguration"}
+        "AlarmConfiguration":{"shape":"AlarmConfiguration"},
+        "AssociationDispatchAssumeRole":{
+          "shape":"AssociationDispatchAssumeRoleArn",
+          "box":true
+        }
       }
     },
     "CreateAssociationResult":{
@@ -5489,7 +5513,8 @@
       "members":{
         "InstanceId":{"shape":"InstanceId"},
         "SnapshotId":{"shape":"SnapshotId"},
-        "BaselineOverride":{"shape":"BaselineOverride"}
+        "BaselineOverride":{"shape":"BaselineOverride"},
+        "UseS3DualStackEndpoint":{"shape":"Boolean"}
       }
     },
     "GetDeployablePatchSnapshotForInstanceResult":{
@@ -8050,6 +8075,13 @@
       "members":{}
     },
     "NextToken":{"type":"string"},
+    "NoLongerSupportedException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "exception":true
+    },
     "Node":{
       "type":"structure",
       "members":{
@@ -11395,7 +11427,11 @@
           "shape":"TargetMaps",
           "box":true
         },
-        "AlarmConfiguration":{"shape":"AlarmConfiguration"}
+        "AlarmConfiguration":{"shape":"AlarmConfiguration"},
+        "AssociationDispatchAssumeRole":{
+          "shape":"AssociationDispatchAssumeRoleArn",
+          "box":true
+        }
       }
     },
     "UpdateAssociationResult":{

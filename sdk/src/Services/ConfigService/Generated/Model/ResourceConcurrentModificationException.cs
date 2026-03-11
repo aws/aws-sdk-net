@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceConcurrentModificationException
+        /// message.
+        /// </summary>
+        public ResourceConcurrentModificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceConcurrentModificationException with the specified error
         /// message.
         /// </summary>

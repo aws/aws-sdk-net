@@ -81,7 +81,8 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// For service-linked configuration recorders, Config automatically assigns a name that
-        /// has the prefix "<c>AWS</c>" to a new service-linked configuration recorder.
+        /// has the prefix "<c>AWSConfigurationRecorderFor</c>" to a new service-linked configuration
+        /// recorder.
         /// </para>
         ///  <note> 
         /// <para>
@@ -256,11 +257,11 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use an Amazon Web Services service that uses Config, such as Security Hub or
-        /// Control Tower, and an IAM role has already been created, make sure that the IAM role
-        /// that you use when setting up Config keeps the same minimum permissions as the pre-existing
-        /// IAM role. You must do this to ensure that the other Amazon Web Services service continues
-        /// to run as expected. 
+        /// If you use an Amazon Web Services service that uses Config, such as Security Hub CSPM
+        /// or Control Tower, and an IAM role has already been created, make sure that the IAM
+        /// role that you use when setting up Config keeps the same minimum permissions as the
+        /// pre-existing IAM role. You must do this to ensure that the other Amazon Web Services
+        /// service continues to run as expected. 
         /// </para>
         ///  
         /// <para>

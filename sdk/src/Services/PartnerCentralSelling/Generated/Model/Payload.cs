@@ -36,7 +36,28 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class Payload
     {
+        private LeadInvitationPayload _leadInvitation;
         private OpportunityInvitationPayload _opportunityInvitation;
+
+        /// <summary>
+        /// Gets and sets the property LeadInvitation. 
+        /// <para>
+        /// Specifies the details of the lead invitation within the Engagement Invitation payload.
+        /// This data helps partners understand the lead context, customer information, and interaction
+        /// history for the lead opportunity from AWS.
+        /// </para>
+        /// </summary>
+        public LeadInvitationPayload LeadInvitation
+        {
+            get { return this._leadInvitation; }
+            set { this._leadInvitation = value; }
+        }
+
+        // Check to see if LeadInvitation property is set
+        internal bool IsSetLeadInvitation()
+        {
+            return this._leadInvitation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OpportunityInvitation. 

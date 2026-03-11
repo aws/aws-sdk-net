@@ -34,15 +34,41 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class HostHeaderConditionConfig
     {
+        private List<string> _regexValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property RegexValues. 
+        /// <para>
+        /// The regular expressions to compare against the host header. The maximum length of
+        /// each string is 128 characters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> RegexValues
+        {
+            get { return this._regexValues; }
+            set { this._regexValues = value; }
+        }
+
+        // Check to see if RegexValues property is set
+        internal bool IsSetRegexValues()
+        {
+            return this._regexValues != null && (this._regexValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The host names. The maximum size of each name is 128 characters. The comparison is
-        /// case insensitive. The following wildcard characters are supported: * (matches 0 or
-        /// more characters) and ? (matches exactly 1 character). You must include at least one
-        /// "." character. You can include only alphabetical characters after the final "." character.
+        /// The host names. The maximum length of each string is 128 characters. The comparison
+        /// is case insensitive. The following wildcard characters are supported: * (matches 0
+        /// or more characters) and ? (matches exactly 1 character). You must include at least
+        /// one "." character. You can include only alphabetical characters after the final "."
+        /// character.
         /// </para>
         ///  
         /// <para>

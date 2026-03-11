@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _customVerificationEmailTemplateName;
 
         /// <summary>
+        /// Default constructor for CustomVerificationEmailTemplateAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CustomVerificationEmailTemplateAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomVerificationEmailTemplateAlreadyExistsException with the specified error
         /// message.
         /// </summary>

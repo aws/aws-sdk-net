@@ -254,7 +254,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
         public virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
 
@@ -275,7 +275,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
         public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
             
@@ -299,7 +299,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual EmptyInputAndEmptyOutputResponse EmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual Task<EmptyInputAndEmptyOutputResponse> EmptyInputAndEmptyOutputAsync(EmptyInputAndEmptyOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
             
@@ -343,7 +343,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual EndpointOperationResponse EndpointOperation(EndpointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -363,7 +363,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual Task<EndpointOperationResponse> EndpointOperationAsync(EndpointOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
             
@@ -384,7 +384,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual EndpointWithHostLabelOperationResponse EndpointWithHostLabelOperation(EndpointWithHostLabelOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual Task<EndpointWithHostLabelOperationResponse> EndpointWithHostLabelOperationAsync(EndpointWithHostLabelOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
             
@@ -442,7 +442,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual GreetingWithErrorsResponse GreetingWithErrors(GreetingWithErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual Task<GreetingWithErrorsResponse> GreetingWithErrorsAsync(GreetingWithErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
             
@@ -500,7 +500,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual HostWithPathOperationResponse HostWithPathOperation(HostWithPathOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual Task<HostWithPathOperationResponse> HostWithPathOperationAsync(HostWithPathOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
             
@@ -541,7 +541,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/JsonUnions">REST API Reference for JsonUnions Operation</seealso>
         public virtual JsonUnionsResponse JsonUnions(JsonUnionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonUnionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonUnionsResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/JsonUnions">REST API Reference for JsonUnions Operation</seealso>
         public virtual Task<JsonUnionsResponse> JsonUnionsAsync(JsonUnionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonUnionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonUnionsResponseUnmarshaller.Instance;
             
@@ -584,7 +584,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/NoInputAndNoOutput">REST API Reference for NoInputAndNoOutput Operation</seealso>
         public virtual NoInputAndNoOutputResponse NoInputAndNoOutput(NoInputAndNoOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndNoOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndNoOutputResponseUnmarshaller.Instance;
 
@@ -606,7 +606,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/NoInputAndNoOutput">REST API Reference for NoInputAndNoOutput Operation</seealso>
         public virtual Task<NoInputAndNoOutputResponse> NoInputAndNoOutputAsync(NoInputAndNoOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndNoOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndNoOutputResponseUnmarshaller.Instance;
             
@@ -629,7 +629,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual NoInputAndOutputResponse NoInputAndOutput(NoInputAndOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual Task<NoInputAndOutputResponse> NoInputAndOutputAsync(NoInputAndOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
             
@@ -672,7 +672,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual PutWithContentEncodingResponse PutWithContentEncoding(PutWithContentEncodingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual Task<PutWithContentEncodingResponse> PutWithContentEncodingAsync(PutWithContentEncodingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
             
@@ -713,7 +713,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/QueryIncompatibleOperation">REST API Reference for QueryIncompatibleOperation Operation</seealso>
         public virtual QueryIncompatibleOperationResponse QueryIncompatibleOperation(QueryIncompatibleOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIncompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIncompatibleOperationResponseUnmarshaller.Instance;
 
@@ -733,7 +733,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/QueryIncompatibleOperation">REST API Reference for QueryIncompatibleOperation Operation</seealso>
         public virtual Task<QueryIncompatibleOperationResponse> QueryIncompatibleOperationAsync(QueryIncompatibleOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIncompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIncompatibleOperationResponseUnmarshaller.Instance;
             
@@ -754,7 +754,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         public virtual SimpleScalarPropertiesResponse SimpleScalarProperties(SimpleScalarPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
@@ -774,7 +774,7 @@ namespace Amazon.JSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         public virtual Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
             

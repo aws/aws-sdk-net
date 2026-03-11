@@ -36,6 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private ConsolidationConfiguration _consolidation;
         private ExtractionConfiguration _extraction;
+        private ReflectionConfiguration _reflection;
+        private SelfManagedConfiguration _selfManagedConfiguration;
         private OverrideType _type;
 
         /// <summary>
@@ -72,6 +74,42 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExtraction()
         {
             return this._extraction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reflection. 
+        /// <para>
+        /// The reflection configuration for the memory strategy.
+        /// </para>
+        /// </summary>
+        public ReflectionConfiguration Reflection
+        {
+            get { return this._reflection; }
+            set { this._reflection = value; }
+        }
+
+        // Check to see if Reflection property is set
+        internal bool IsSetReflection()
+        {
+            return this._reflection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedConfiguration. 
+        /// <para>
+        /// Self-managed configuration settings.
+        /// </para>
+        /// </summary>
+        public SelfManagedConfiguration SelfManagedConfiguration
+        {
+            get { return this._selfManagedConfiguration; }
+            set { this._selfManagedConfiguration = value; }
+        }
+
+        // Check to see if SelfManagedConfiguration property is set
+        internal bool IsSetSelfManagedConfiguration()
+        {
+            return this._selfManagedConfiguration != null;
         }
 
         /// <summary>

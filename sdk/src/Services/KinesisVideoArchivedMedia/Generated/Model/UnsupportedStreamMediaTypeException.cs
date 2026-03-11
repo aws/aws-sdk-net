@@ -42,6 +42,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedStreamMediaTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedStreamMediaTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedStreamMediaTypeException with the specified error
         /// message.
         /// </summary>

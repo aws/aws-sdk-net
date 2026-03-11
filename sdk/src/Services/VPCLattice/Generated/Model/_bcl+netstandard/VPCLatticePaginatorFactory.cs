@@ -45,6 +45,14 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Paginator for ListDomainVerifications operation
+        ///</summary>
+        public IListDomainVerificationsPaginator ListDomainVerifications(ListDomainVerificationsRequest request) 
+        {
+            return new ListDomainVerificationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListListeners operation
         ///</summary>
         public IListListenersPaginator ListListeners(ListListenersRequest request) 

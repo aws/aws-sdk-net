@@ -31,14 +31,20 @@ namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
     /// When creating a resource, thrown when a resource with the same name already exists
-    /// or is being created. When deleting a resource, thrown when the resource is not in
-    /// the ACTIVE or FAILED state.
+    /// or is being created.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ConflictException : AmazonOpenSearchServerlessException
     {
+
+        /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error

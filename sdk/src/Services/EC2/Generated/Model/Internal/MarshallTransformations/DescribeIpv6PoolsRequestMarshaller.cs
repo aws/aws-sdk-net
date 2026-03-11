@@ -117,6 +117,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeIpv6PoolsRequestMarshaller _instance = new DescribeIpv6PoolsRequestMarshaller();        

@@ -183,7 +183,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdateOpenTableFormatInput.
+        /// Gets and sets the property UpdateOpenTableFormatInput. 
+        /// <para>
+        /// Input parameters for updating open table format tables in GlueData Catalog, serving
+        /// as a wrapper for format-specific update operations such as Apache Iceberg.
+        /// </para>
         /// </summary>
         public UpdateOpenTableFormatInput UpdateOpenTableFormatInput
         {

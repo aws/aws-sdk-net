@@ -34,7 +34,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class PrivacyBudgetTemplateParametersOutput
     {
+        private AccessBudgetsPrivacyTemplateParametersOutput _accessBudget;
         private DifferentialPrivacyTemplateParametersOutput _differentialPrivacy;
+
+        /// <summary>
+        /// Gets and sets the property AccessBudget. 
+        /// <para>
+        /// Access budget configuration returned from the privacy budget template, containing
+        /// the configured access budget settings.
+        /// </para>
+        /// </summary>
+        public AccessBudgetsPrivacyTemplateParametersOutput AccessBudget
+        {
+            get { return this._accessBudget; }
+            set { this._accessBudget = value; }
+        }
+
+        // Check to see if AccessBudget property is set
+        internal bool IsSetAccessBudget()
+        {
+            return this._accessBudget != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DifferentialPrivacy. 

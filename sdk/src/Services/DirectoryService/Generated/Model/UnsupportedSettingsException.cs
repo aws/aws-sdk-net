@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedSettingsException
+        /// message.
+        /// </summary>
+        public UnsupportedSettingsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedSettingsException with the specified error
         /// message.
         /// </summary>

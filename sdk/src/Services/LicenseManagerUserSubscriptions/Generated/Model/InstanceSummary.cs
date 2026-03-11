@@ -34,11 +34,31 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     /// </summary>
     public partial class InstanceSummary
     {
+        private IdentityProvider _identityProvider;
         private string _instanceId;
         private string _lastStatusCheckDate;
+        private string _ownerAccountId;
         private List<string> _products = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _status;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property IdentityProvider. 
+        /// <para>
+        /// The <c>IdentityProvider</c> resource specifies details about the identity provider.
+        /// </para>
+        /// </summary>
+        public IdentityProvider IdentityProvider
+        {
+            get { return this._identityProvider; }
+            set { this._identityProvider = value; }
+        }
+
+        // Check to see if IdentityProvider property is set
+        internal bool IsSetIdentityProvider()
+        {
+            return this._identityProvider != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -75,6 +95,24 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetLastStatusCheckDate()
         {
             return this._lastStatusCheckDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The AWS Account ID of the owner of this resource.
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
         /// <summary>

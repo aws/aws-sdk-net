@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for FileCacheNotFoundException
+        /// message.
+        /// </summary>
+        public FileCacheNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileCacheNotFoundException with the specified error
         /// message.
         /// </summary>

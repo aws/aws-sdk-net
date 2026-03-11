@@ -36,6 +36,14 @@ namespace Amazon.FraudDetector
         /// <summary>
         /// Construct instance of AmazonFraudDetectorException
         /// </summary>
+        public AmazonFraudDetectorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonFraudDetectorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonFraudDetectorException(string message)
             : base(message)

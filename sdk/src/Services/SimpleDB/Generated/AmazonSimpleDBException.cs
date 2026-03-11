@@ -36,6 +36,14 @@ namespace Amazon.SimpleDB
         /// <summary>
         /// Construct instance of AmazonSimpleDBException
         /// </summary>
+        public AmazonSimpleDBException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimpleDBException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimpleDBException(string message)
             : base(message)

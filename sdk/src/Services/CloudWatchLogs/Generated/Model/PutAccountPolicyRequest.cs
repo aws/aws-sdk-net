@@ -33,8 +33,17 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutAccountPolicy operation.
     /// Creates an account-level data protection policy, subscription filter policy, field
     /// index policy, transformer policy, or metric extraction policy that applies to all
-    /// log groups or a subset of log groups in the account.
+    /// log groups, a subset of log groups, or a data source name and type combination in
+    /// the account.
     /// 
+    ///  
+    /// <para>
+    /// For field index policies, you can configure indexed fields as <i>facets</i> to enable
+    /// interactive exploration of your logs. Facets provide value distributions and counts
+    /// for indexed fields in the CloudWatch Logs Insights console without requiring query
+    /// execution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+    /// facets to group and explore logs</a>.
+    /// </para>
     ///  
     /// <para>
     /// To use this operation, you must be signed on with the correct permissions depending
@@ -59,6 +68,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// To create a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
     /// permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To configure facets for field index policies, you must have the <c>logs:PutIndexPolicy</c>
+    /// and <c>logs:PutAccountPolicy</c> permissions.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -214,7 +228,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// If you have multiple account-level transformer policies with selection criteria, no
     /// two of them can use the same or overlapping log group name prefixes. For example,
     /// if you have one policy filtered to log groups that start with <c>my-log</c>, you can't
-    /// have another field index policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+    /// have another transformer policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
     /// </para>
     ///  
     /// <para>
@@ -230,18 +244,20 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use field index policies to create indexes on fields found in log events in
-    /// the log group. Creating field indexes can help lower the scan volume for CloudWatch
-    /// Logs Insights queries that reference those fields, because these queries attempt to
-    /// skip the processing of log events that are known to not match the indexed field. Good
-    /// fields to index are fields that you often need to query for and fields or values that
-    /// match only a small fraction of the total log events. Common examples of indexes include
-    /// request ID, session ID, user IDs, or instance IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
+    /// You can use field index policies to create indexes on fields found in log events for
+    /// a log group or data source name and type combination. Creating field indexes can help
+    /// lower the scan volume for CloudWatch Logs Insights queries that reference those fields,
+    /// because these queries attempt to skip the processing of log events that are known
+    /// to not match the indexed field. Good fields to index are fields that you often need
+    /// to query for and fields or values that match only a small fraction of the total log
+    /// events. Common examples of indexes include request ID, session ID, user IDs, or instance
+    /// IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
     /// field indexes to improve query performance and reduce costs</a> 
     /// </para>
     ///  
     /// <para>
     /// To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
+    /// operation. To find the fields for a data source use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html">GetLogFields</a>
     /// operation.
     /// </para>
     ///  
@@ -260,11 +276,18 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// You can have one account-level field index policy that applies to all log groups in
     /// the account. Or you can create as many as 20 account-level field index policies that
-    /// are each scoped to a subset of log groups with the <c>selectionCriteria</c> parameter.
-    /// If you have multiple account-level index policies with selection criteria, no two
-    /// of them can use the same or overlapping log group name prefixes. For example, if you
-    /// have one policy filtered to log groups that start with <c>my-log</c>, you can't have
-    /// another field index policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+    /// are each scoped to a subset of log groups using <c>LogGroupNamePrefix</c> with the
+    /// <c>selectionCriteria</c> parameter. You can have another 20 account-level field index
+    /// policies using <c>DataSourceName</c> and <c>DataSourceType</c> for the <c>selectionCriteria</c>
+    /// parameter. If you have multiple account-level index policies with <c>LogGroupNamePrefix</c>
+    /// selection criteria, no two of them can use the same or overlapping log group name
+    /// prefixes. For example, if you have one policy filtered to log groups that start with
+    /// <i>my-log</i>, you can't have another field index policy filtered to <i>my-logpprod</i>
+    /// or <i>my-logging</i>. Similarly, if you have multiple account-level index policies
+    /// with <c>DataSourceName</c> and <c>DataSourceType</c> selection criteria, no two of
+    /// them can use the same data source name and type combination. For example, if you have
+    /// one policy filtered to the data source name <c>amazon_vpc</c> and data source type
+    /// <c>flow</c> you cannot create another policy with this combination.
     /// </para>
     ///  
     /// <para>
@@ -274,11 +297,162 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
+    /// CloudWatch Logs provides default field indexes for all log groups in the Standard
+    /// log class. Default field indexes are automatically available for the following fields:
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>@logStream</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>@aws.region</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>@aws.account</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>@source.log</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>@data_source_name</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>@data_source_type</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>@data_format</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>traceId</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>severityText</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>attributes.session.id</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// CloudWatch Logs provides default field indexes for certain data source name and type
+    /// combinations as well. Default field indexes are automatically available for the following
+    /// data source name and type combinations as identified in the following list:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>amazon_vpc.flow</c> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>action</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>logStatus</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>region</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>flowDirection</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>type</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <c>amazon_route53.resolver_query</c> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>transport</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>rcode</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <c>aws_waf.access</c> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>action</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>httpRequest.country</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <c>aws_cloudtrail.data</c>, <c>aws_cloudtrail.management</c> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>eventSource</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventName</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>awsRegion</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>userAgent</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>errorCode</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventType</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>managementEvent</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>readOnly</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventCategory</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>requestId</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Default field indexes are in addition to any custom field indexes you define within
+    /// your policy. Default field indexes are not counted towards your <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax">field
+    /// index quota</a>. 
+    /// </para>
+    ///  
+    /// <para>
     /// If you want to create a field index policy for a single log group, you can use <a
     /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>
-    /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use only that
-    /// log-group level policy, and will ignore the account-level policy that you create with
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
+    /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use that log-group
+    /// level policy and any account-level policies that match at the data source level; any
+    /// account-level policy that matches at the log group level (for example, no selection
+    /// criteria or log group name prefix selection criteria) will be ignored.
     /// </para>
     ///  
     /// <para>
@@ -298,11 +472,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
-    /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
-    /// turning off those features by accident, we recommend that you exclude the underlying
-    /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
-    /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+    /// Creating a policy disables metrics for Amazon Web Services features that use EMF to
+    /// create metrics, such as CloudWatch Container Insights and CloudWatch Application Signals.
+    /// To prevent turning off those features by accident, we recommend that you exclude the
+    /// underlying log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT
+    /// IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -504,18 +678,30 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         ///  <b>Fields</b> The array of field indexes to create.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FieldsV2</b> The object of field indexes to create along with it's type.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// It must contain at least one field index.
         /// </para>
         ///  
         /// <para>
-        /// The following is an example of an index policy document that creates two indexes,
-        /// <c>RequestId</c> and <c>TransactionId</c>.
+        /// The following is an example of an index policy document that creates indexes with
+        /// different types.
         /// </para>
         ///  
         /// <para>
-        ///  <c>"policyDocument": "{ \"Fields\": [ \"RequestId\", \"TransactionId\" ] }"</c> 
+        ///  <c>"policyDocument": "{ \"Fields\": [ \"TransactionId\" ], \"FieldsV2\": {\"RequestId\":
+        /// {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\":
+        /// \"FACET\"}}}"</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>FieldsV2</c> to specify the type for each field. Supported types are
+        /// <c>FIELD_INDEX</c> and <c>FACET</c>. Field names within <c>Fields</c> and <c>FieldsV2</c>
+        /// must be mutually exclusive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -534,7 +720,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// A name for the policy. This must be unique within the account.
+        /// A name for the policy. This must be unique within the account and cannot start with
+        /// <c>aws/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -592,24 +779,44 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SelectionCriteria. 
         /// <para>
-        /// Use this parameter to apply the new policy to a subset of log groups in the account.
+        /// Use this parameter to apply the new policy to a subset of log groups in the account
+        /// or a data source name and type combination. 
         /// </para>
         ///  
         /// <para>
         /// Specifying <c>selectionCriteria</c> is valid only when you specify <c>SUBSCRIPTION_FILTER_POLICY</c>,
         /// <c>FIELD_INDEX_POLICY</c> or <c>TRANSFORMER_POLICY</c>for <c>policyType</c>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         /// If <c>policyType</c> is <c>SUBSCRIPTION_FILTER_POLICY</c>, the only supported <c>selectionCriteria</c>
         /// filter is <c>LogGroupName NOT IN []</c> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If <c>policyType</c> is <c>FIELD_INDEX_POLICY</c> or <c>TRANSFORMER_POLICY</c>, the
-        /// only supported <c>selectionCriteria</c> filter is <c>LogGroupNamePrefix</c> 
+        /// If <c>policyType</c> is <c>TRANSFORMER_POLICY</c>, the only supported <c>selectionCriteria</c>
+        /// filter is <c>LogGroupNamePrefix</c> 
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>policyType</c> is <c>FIELD_INDEX_POLICY</c>, the supported <c>selectionCriteria</c>
+        /// filters are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>LogGroupNamePrefix</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DataSourceName</c> AND <c>DataSourceType</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you specify <c>selectionCriteria</c> for a field index policy you can use either
+        /// <c>LogGroupNamePrefix</c> by itself or <c>DataSourceName</c> and <c>DataSourceType</c>
+        /// together.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The <c>selectionCriteria</c> string can be up to 25KB in length. The length is determined
         /// by using its UTF-8 bytes.

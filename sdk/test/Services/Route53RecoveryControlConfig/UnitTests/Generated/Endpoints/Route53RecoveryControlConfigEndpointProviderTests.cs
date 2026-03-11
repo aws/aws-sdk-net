@@ -195,6 +195,156 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53RecoveryControlConfigEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-recovery-control-config.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53RecoveryControlConfig")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
         public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
@@ -249,246 +399,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53-recovery-control-config.us-gov-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "eu-isoe-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "eu-isoe-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "eu-isoe-west-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "eu-isoe-west-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isof-south-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isof-south-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isof-south-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isof-south-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isof-south-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53RecoveryControlConfig")]
-        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53RecoveryControlConfigEndpointParameters();
-            parameters["Region"] = "us-isof-south-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53RecoveryControlConfigEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-recovery-control-config.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
         }
 
         [TestMethod]

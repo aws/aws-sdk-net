@@ -181,4 +181,10 @@
     <max>2048</max>
     <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.RelatedControlMappingDetails.ControlArn</property>
+    <min>34</min>
+    <max>2048</max>
+    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+  </property-value-rule>
 </property-value-rules>

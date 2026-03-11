@@ -39,7 +39,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowconeDeviceConfiguration. 
         /// <para>
-        /// Returns information about the device configuration for an Snowcone job.
+        /// Returns information about the device configuration for an Snowball Edge job.
         /// </para>
         /// </summary>
         public SnowconeDeviceConfiguration SnowconeDeviceConfiguration

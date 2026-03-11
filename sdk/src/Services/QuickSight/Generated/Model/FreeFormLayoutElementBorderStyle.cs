@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _color;
         private Visibility _visibility;
+        private string _width;
 
         /// <summary>
         /// Gets and sets the property Color. 
@@ -71,6 +72,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetVisibility()
         {
             return this._visibility != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Width. 
+        /// <para>
+        /// The border width of a free-form layout element.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public string Width
+        {
+            get { return this._width; }
+            set { this._width = value; }
+        }
+
+        // Check to see if Width property is set
+        internal bool IsSetWidth()
+        {
+            return this._width != null;
         }
 
     }

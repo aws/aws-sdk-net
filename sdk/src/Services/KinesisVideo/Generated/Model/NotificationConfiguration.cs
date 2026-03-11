@@ -30,8 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The structure that contains the notification information for the KVS images delivery.
-    /// If this parameter is null, the configuration will be deleted from the stream.
+    /// Use this API to configure Amazon Simple Notification Service (Amazon SNS) notifications
+    /// for when fragments become available in a stream. If this parameter is null, the configuration
+    /// will be deleted from the stream.
+    /// 
+    ///  
+    /// <para>
+    /// See <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/notifications.html">Notifications
+    /// in Kinesis Video Streams</a> for more information.
+    /// </para>
     /// </summary>
     public partial class NotificationConfiguration
     {

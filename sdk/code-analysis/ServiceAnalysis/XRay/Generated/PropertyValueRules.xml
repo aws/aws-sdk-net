@@ -255,6 +255,36 @@
     <max>35</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingBoostStatisticsDocument.AnomalyCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingBoostStatisticsDocument.RuleName</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingBoostStatisticsDocument.SampledAnomalyCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingBoostStatisticsDocument.ServiceName</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingBoostStatisticsDocument.TotalCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingRateBoost.CooldownWindowMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingRateBoost.MaxRate</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.FixedRate</property>
     <min>0</min>
     <max>1</max>

@@ -34,12 +34,33 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class DescribeContributorInsightsResponse : AmazonWebServiceResponse
     {
+        private ContributorInsightsMode _contributorInsightsMode;
         private List<string> _contributorInsightsRuleList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContributorInsightsStatus _contributorInsightsStatus;
         private FailureException _failureException;
         private string _indexName;
         private DateTime? _lastUpdateDateTime;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property ContributorInsightsMode. 
+        /// <para>
+        /// The mode of CloudWatch Contributor Insights for DynamoDB that determines which events
+        /// are emitted. Can be set to track all access and throttled events or throttled events
+        /// only.
+        /// </para>
+        /// </summary>
+        public ContributorInsightsMode ContributorInsightsMode
+        {
+            get { return this._contributorInsightsMode; }
+            set { this._contributorInsightsMode = value; }
+        }
+
+        // Check to see if ContributorInsightsMode property is set
+        internal bool IsSetContributorInsightsMode()
+        {
+            return this._contributorInsightsMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContributorInsightsRuleList. 

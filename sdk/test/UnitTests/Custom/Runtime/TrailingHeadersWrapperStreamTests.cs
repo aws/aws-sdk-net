@@ -52,6 +52,14 @@ namespace AWSSDK.UnitTests
                 "x-amz-checksum-crc32c:crUfeA==\r\n" +
                 "\r\n";
 
+        private string ExtractChecksum(CoreChecksumAlgorithm algorithm, string expectedContent)
+        {
+            var key = $"x-amz-checksum-{algorithm.ToString().ToLower()}:";
+            int start = expectedContent.IndexOf(key) + key.Length;
+            int end = expectedContent.IndexOf("\r\n", start);
+            return expectedContent.Substring(start, end - start);
+        }
+
         /// <summary>
         /// Tests a given trailing checksum for an unsigned stream
         /// </summary>
@@ -67,7 +75,16 @@ namespace AWSSDK.UnitTests
             {
                 {checksumKey, "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, algorithm);
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(algorithm, expectedContent), value);
+                })
+            };
+            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, algorithm, cachedChecksum);
 
             var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
@@ -86,7 +103,23 @@ namespace AWSSDK.UnitTests
             {
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, CoreChecksumAlgorithm.SHA256);
+
+            var expectedContent =
+               "B\r\n" +
+               "Hello world\r\n" +
+               "0\r\n" +
+               "x-amz-checksum-sha256:ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=\r\n" +
+               "\r\n";
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedContent), value);
+                })
+            };
+            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, CoreChecksumAlgorithm.SHA256, cachedChecksum);
 
             var bytesRead = -1;
             var bufferSize = 1;
@@ -97,13 +130,6 @@ namespace AWSSDK.UnitTests
                 bytesRead = wrappedStream.Read(buffer, 0, bufferSize);
                 outputAsString += Encoding.Default.GetString(buffer, 0, bytesRead);
             }
-
-            var expectedContent =
-               "B\r\n" +
-               "Hello world\r\n" +
-               "0\r\n" +
-               "x-amz-checksum-sha256:ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=\r\n" +
-               "\r\n";
 
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, outputAsString);
@@ -121,9 +147,6 @@ namespace AWSSDK.UnitTests
             {
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, CoreChecksumAlgorithm.SHA256);
-
-            var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
             var expectedContent =
                 "186A0\r\n" +
@@ -131,6 +154,18 @@ namespace AWSSDK.UnitTests
                 "0\r\n" +
                 "x-amz-checksum-sha256:bRzyLXzAmwhd/CXuGh864CZYBMYHvCB0rSU7zIL9ge4=\r\n" +
                 "\r\n";
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedContent), value);
+                })
+            };
+            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, CoreChecksumAlgorithm.SHA256, cachedChecksum);
+
+            var actualContent = new StreamReader(wrappedStream).ReadToEnd();                        
 
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, actualContent);
@@ -179,9 +214,6 @@ namespace AWSSDK.UnitTests
                 {"header-b", "value-b" },
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, CoreChecksumAlgorithm.SHA256);
-
-            var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
             var expectedContent =
                 "B\r\n" +
@@ -191,6 +223,18 @@ namespace AWSSDK.UnitTests
                 "header-b:value-b\r\n" +
                 "x-amz-checksum-sha256:ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=\r\n" +
                 "\r\n";
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedContent), value);
+                })
+            };
+            var wrappedStream = new TrailingHeadersWrapperStream(contentStream, trailingHeaders, CoreChecksumAlgorithm.SHA256, cachedChecksum);
+
+            var actualContent = new StreamReader(wrappedStream).ReadToEnd();                        
 
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, actualContent);

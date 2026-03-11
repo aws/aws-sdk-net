@@ -80,6 +80,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetFsrmConfiguration())
+            {
+                context.Writer.WritePropertyName("FsrmConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WindowsFsrmConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsrmConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSelfManagedActiveDirectoryConfiguration())
             {
                 context.Writer.WritePropertyName("SelfManagedActiveDirectoryConfiguration");

@@ -63,6 +63,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKeyUsageException
+        /// message.
+        /// </summary>
+        public InvalidKeyUsageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKeyUsageException with the specified error
         /// message.
         /// </summary>

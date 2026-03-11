@@ -31,13 +31,15 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEventConfiguration operation.
-    /// Retrieves the current event configuration settings for the specified event data store,
-    /// including details about maximum event size and context key selectors configured for
-    /// the event data store.
+    /// Retrieves the current event configuration settings for the specified event data store
+    /// or trail. The response includes maximum event size configuration, the context key
+    /// selectors configured for the event data store, and any aggregation settings configured
+    /// for the trail.
     /// </summary>
     public partial class GetEventConfigurationRequest : AmazonCloudTrailRequest
     {
         private string _eventDataStore;
+        private string _trailName;
 
         /// <summary>
         /// Gets and sets the property EventDataStore. 
@@ -56,6 +58,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventDataStore()
         {
             return this._eventDataStore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailName. 
+        /// <para>
+        /// The name of the trail for which you want to retrieve event configuration settings.
+        /// </para>
+        /// </summary>
+        public string TrailName
+        {
+            get { return this._trailName; }
+            set { this._trailName = value; }
+        }
+
+        // Check to see if TrailName property is set
+        internal bool IsSetTrailName()
+        {
+            return this._trailName != null;
         }
 
     }

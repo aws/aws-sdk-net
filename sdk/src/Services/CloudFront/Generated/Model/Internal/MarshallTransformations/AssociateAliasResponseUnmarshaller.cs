@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AssociateAlias operation
     /// </summary>  
-    public class AssociateAliasResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class AssociateAliasResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             AssociateAliasResponse response = new AssociateAliasResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -92,6 +93,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, AssociateAliasResponse response);
 
         private static AssociateAliasResponseUnmarshaller _instance = new AssociateAliasResponseUnmarshaller();        
 

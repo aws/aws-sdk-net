@@ -43,6 +43,7 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class GetOperationRequest : AmazonServiceDiscoveryRequest
     {
         private string _operationId;
+        private string _ownerAccount;
 
         /// <summary>
         /// Gets and sets the property OperationId. 
@@ -50,7 +51,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the operation that you want to get more information about.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Max=255)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -61,6 +62,28 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetOperationId()
         {
             return this._operationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the namespace associated with
+        /// the operation, as specified in the namespace <c>ResourceOwner</c> field. For operations
+        /// associated with namespaces that are shared with your account, you must specify an
+        /// <c>OwnerAccount</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
         }
 
     }

@@ -39,6 +39,13 @@ namespace Amazon.AppSync.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalFailureException
+        /// message.
+        /// </summary>
+        public InternalFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalFailureException with the specified error
         /// message.
         /// </summary>

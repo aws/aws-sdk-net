@@ -39,6 +39,13 @@ namespace Amazon.CloudWatch.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFormatException
+        /// message.
+        /// </summary>
+        public InvalidFormatException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFormatException with the specified error
         /// message.
         /// </summary>

@@ -31,17 +31,17 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataflowEndpointGroup operation.
-    /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c>DataflowEndpoint</c>
+    /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c> DataflowEndpoint</c>
     /// objects.
     /// 
     ///  
     /// <para>
-    /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+    /// The <c>name</c> field in each endpoint is used in your mission profile <c> DataflowEndpointConfig</c>
     /// to specify which endpoints to use during a contact.
     /// </para>
     ///  
     /// <para>
-    /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+    /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c> Config</c>
     /// must match a <c>DataflowEndpoint</c> in the same group.
     /// </para>
     /// </summary>
@@ -55,13 +55,13 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
         /// <para>
-        /// Amount of time, in seconds, after a contact ends that the Ground Station Dataflow
-        /// Endpoint Group will be in a <c>POSTPASS</c> state. A Ground Station Dataflow Endpoint
-        /// Group State Change event will be emitted when the Dataflow Endpoint Group enters and
-        /// exits the <c>POSTPASS</c> state.
+        ///  Amount of time, in seconds, after a contact ends that the Ground Station Dataflow
+        /// Endpoint Group will be in a <c>POSTPASS</c> state. A <a href="https://docs.aws.amazon.com/ground-station/latest/ug/monitoring.automating-events.html">Ground
+        /// Station Dataflow Endpoint Group State Change event</a> will be emitted when the Dataflow
+        /// Endpoint Group enters and exits the <c>POSTPASS</c> state. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=120, Max=480)]
+        [AWSProperty(Min=30, Max=480)]
         public int? ContactPostPassDurationSeconds
         {
             get { return this._contactPostPassDurationSeconds; }
@@ -77,13 +77,13 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPrePassDurationSeconds. 
         /// <para>
-        /// Amount of time, in seconds, before a contact starts that the Ground Station Dataflow
-        /// Endpoint Group will be in a <c>PREPASS</c> state. A Ground Station Dataflow Endpoint
-        /// Group State Change event will be emitted when the Dataflow Endpoint Group enters and
-        /// exits the <c>PREPASS</c> state.
+        ///  Amount of time, in seconds, before a contact starts that the Ground Station Dataflow
+        /// Endpoint Group will be in a <c>PREPASS</c> state. A <a href="https://docs.aws.amazon.com/ground-station/latest/ug/monitoring.automating-events.html">Ground
+        /// Station Dataflow Endpoint Group State Change event</a> will be emitted when the Dataflow
+        /// Endpoint Group enters and exits the <c>PREPASS</c> state. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=120, Max=480)]
+        [AWSProperty(Min=30, Max=480)]
         public int? ContactPrePassDurationSeconds
         {
             get { return this._contactPrePassDurationSeconds; }
@@ -99,12 +99,13 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndpointDetails. 
         /// <para>
-        /// Endpoint details of each endpoint in the dataflow endpoint group. <pre><c> All dataflow
-        /// endpoints within a single dataflow endpoint group must be of the same type. You cannot
-        /// mix &lt;a href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html&quot;&gt;
-        /// AWS Ground Station Agent endpoints&lt;/a&gt; with &lt;a href=&quot;https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html&quot;&gt;Dataflow
-        /// endpoints&lt;/a&gt; in the same group. If your use case requires both types of endpoints,
-        /// you must create separate dataflow endpoint groups for each type. &lt;/p&gt; </c></pre>
+        /// Endpoint details of each endpoint in the dataflow endpoint group. All dataflow endpoints
+        /// within a single dataflow endpoint group must be of the same type. You cannot mix <a
+        /// href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html">
+        /// AWS Ground Station Agent endpoints</a> with <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html">Dataflow
+        /// endpoints</a> in the same group. If your use case requires both types of endpoints,
+        /// you must create separate dataflow endpoint groups for each type. 
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

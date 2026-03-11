@@ -43,6 +43,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for FailureByQueryException
+        /// message.
+        /// </summary>
+        public FailureByQueryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FailureByQueryException with the specified error
         /// message.
         /// </summary>

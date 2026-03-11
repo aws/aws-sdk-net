@@ -49,7 +49,15 @@ namespace Amazon.ConnectParticipant.Model
     /// The current supported channel is chat. This API is not supported for Apple Messages
     /// for Business, WhatsApp, or SMS chats.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> <note> 
+    /// <para>
+    ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 authentication</a>.
+    /// </para>
     /// </summary>
     public partial class GetAuthenticationUrlRequest : AmazonConnectParticipantRequest
     {

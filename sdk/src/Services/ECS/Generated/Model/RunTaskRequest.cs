@@ -142,7 +142,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The capacity provider strategy to use for the task.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter and omit the <c>launchType</c> request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
         /// must be omitted. If no <c>capacityProviderStrategy</c> or <c>launchType</c> is specified,
@@ -310,7 +315,12 @@ namespace Amazon.ECS.Model
         /// The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter and omit the <c>launchType</c> request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The <c>FARGATE</c> launch type runs your tasks on Fargate On-Demand infrastructure.
         /// </para>
@@ -660,7 +670,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property VolumeConfigurations. 
         /// <para>
         /// The details of the volume that was <c>configuredAtLaunch</c>. You can configure the
-        /// size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+        /// size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
         /// The <c>name</c> of the volume must match the <c>name</c> from the task definition.
         /// </para>
         /// <para />

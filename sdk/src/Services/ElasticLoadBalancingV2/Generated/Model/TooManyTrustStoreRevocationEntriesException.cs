@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTrustStoreRevocationEntriesException
+        /// message.
+        /// </summary>
+        public TooManyTrustStoreRevocationEntriesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTrustStoreRevocationEntriesException with the specified error
         /// message.
         /// </summary>

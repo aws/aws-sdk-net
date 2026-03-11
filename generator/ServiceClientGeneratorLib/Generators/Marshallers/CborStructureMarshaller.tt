@@ -1,0 +1,276 @@
+<#@ template language="C#" inherits="BaseRequestMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+
+	AddCommonUsingStatements();
+#>
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
+#pragma warning disable CS0612,CS0618
+namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+	/// <summary>
+	/// <#=this.Structure.Name #> Marshaller
+	/// </summary>
+	public class <#=this.Structure.Name #>Marshaller : IRequestMarshaller<<#=this.Structure.Name #>, CborMarshallerContext> 
+	{
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+		public void Marshall(<#=this.Structure.Name #> requestObject, CborMarshallerContext context)
+		{
+			if (requestObject == null)
+				return;
+
+<#
+    ProcessMembers(0, "requestObject", this.Structure.Members);
+#>
+		}
+
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>
+		public readonly static <#=this.Structure.Name #>Marshaller Instance = new <#=this.Structure.Name #>Marshaller();
+
+	}
+}
+
+<#+
+	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
+	{
+		foreach(var member in members)
+		{
+			if (member.ModelShape.IsEventStream)
+				continue;
+#>
+<#=new string(' ', level * 4)#>            if (<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#=new string(' ', level * 4)#>            {
+<#=new string(' ', level * 4)#>                context.Writer.WriteTextString("<#=member.MarshallName#>");
+<#+
+			string memberProperty = variableName + "." + member.PropertyName;
+			// Only append .Value for nullable types that aren't already complex types
+			if (member.IsNullable && !member.IsStructure && !member.IsList && !member.IsMap) 
+			{
+				memberProperty += ".Value";
+			}
+			if (member.IsStructure || member.IsList || member.IsMap)
+			{
+				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
+			}
+			else if (member.IsMemoryStream)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteByteString(<#=variableName + "." + member.PropertyName#>.ToArray());
+<#+
+			}
+			else if (member.IsTimeStamp)
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteDateTime(<#=variableName + "." + member.PropertyName#>.Value);
+<#+
+			}
+			else
+			{
+				DetermineNormalCborWriteMethod(member.Shape, memberProperty, level);
+			}
+#>
+<#=new string(' ', level * 4)#>            }
+<#+
+			if (member.IsIdempotent)
+			{
+#>
+<#=new string(' ', level * 4)#> 		   else if (!(<#=variableName#>.IsSet<#=member.PropertyName#>()))
+<#=new string(' ', level * 4)#> 		   {
+<#=new string(' ', level * 4)#>                context.Writer.WriteTextString("<#=member.MarshallName#>");
+<#=new string(' ', level * 4)#>                context.Writer.WriteTextString(Guid.NewGuid().ToString());
+<#=new string(' ', level * 4)#> 		   }
+<#+					
+			}
+		}
+	}
+protected void ProcessStructure(int level, string variableName, Shape structure)
+	{
+			string flatVariableName = variableName.Replace(".", "");
+
+			if (structure.IsList)
+			{
+#>
+<#=new string(' ', level * 4)#>            context.Writer.WriteStartArray(<#=variableName#>.Count);
+<#=new string(' ', level * 4)#>            foreach(var <#=flatVariableName#>ListValue in <#=variableName#>)
+<#=new string(' ', level * 4)#>            {
+<#+ 
+				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
+#>
+<#=new string(' ', level * 4)#>            }
+<#=new string(' ', level * 4)#>            context.Writer.WriteEndArray();
+<#+
+			}
+			else if (structure.IsMap)
+			{
+				ProcessMap(level, variableName, structure);
+			}
+			else if (structure.IsStructure)
+			{
+#>
+<#=new string(' ', level * 4)#>            context.Writer.WriteStartMap(null);
+
+<#=new string(' ', level * 4)#>            var marshaller = <#=structure.Name#>Marshaller.Instance;
+<#=new string(' ', level * 4)#>            marshaller.Marshall(<#=variableName#>, context);
+
+<#=new string(' ', level * 4)#>            context.Writer.WriteEndMap();
+<#+
+			}
+			else if (structure.IsMemoryStream)
+			{
+#>
+<#=new string(' ', level * 4)#>            context.Writer.WriteByteString(<#=variableName#>.ToArray());
+<#+
+			}
+			else
+			{
+				DetermineNormalCborWriteMethod(structure, variableName, level);
+			}
+	}
+
+	protected void ProcessMap(int level, string variableName, Shape structure)
+	{
+		string flatVariableName = variableName.Replace(".", "");
+		string flatVariableValue = flatVariableName + "Value";
+#>
+<#=new string(' ', level * 4)#>            context.Writer.WriteStartMap(null);
+<#=new string(' ', level * 4)#>            foreach (var <#=flatVariableName#>Kvp in <#=variableName#>)
+<#=new string(' ', level * 4)#>            {
+<#=new string(' ', level * 4)#>                context.Writer.WriteTextString(<#=flatVariableName#>Kvp.Key);
+<#=new string(' ', level * 4)#>                var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
+
+<#+             // Check for null values - only null checks for sparse maps as defined in customizations
+
+                bool isNullableMap = false;
+                if (this.Structure != null)
+                {
+                    var memberWithMap = this.Structure.Members.FirstOrDefault(m => m.PropertyName == variableName.Split('.').Last());
+                    isNullableMap = (memberWithMap != null && memberWithMap.UseNullable);
+                }
+                
+                if (isNullableMap)
+                {
+#>
+<#=new string(' ', level * 4)#>                if (<#=flatVariableName#>Value == null)
+<#=new string(' ', level * 4)#>                {
+<#=new string(' ', level * 4)#>                    context.Writer.WriteNull();
+<#=new string(' ', level * 4)#>                }
+<#=new string(' ', level * 4)#>                else
+<#=new string(' ', level * 4)#>                {
+<#+
+					flatVariableValue = flatVariableValue + ".Value";
+                }
+
+                if (structure.ValueShape.IsBoolean)
+                {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteBoolean(<#=flatVariableValue#>);
+<#+
+                }
+                else if ( structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
+                {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteOptimizedNumber(<#=flatVariableValue#>);
+<#+
+                }
+                else if (structure.ValueShape.IsInt)
+                {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteInt32(<#=flatVariableValue#>);
+<#+
+                }
+                else if (structure.ValueShape.IsLong)
+                {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteInt64(<#=flatVariableValue#>);
+<#+
+                }
+
+                else if (structure.ValueShape.IsTimeStamp)
+                {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteDateTime(<#=flatVariableValue#>);
+<#+
+                }
+                else
+                {
+                    if (isNullableMap)
+                    {
+                            ProcessStructure(level + 2, flatVariableName + "Value", structure.ValueShape);
+                    }
+                    else
+                    {
+                            ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
+                    }
+                }
+
+                // Close the else block for nullable maps
+                if (isNullableMap)
+                {
+#>
+<#=new string(' ', level * 4)#>                }
+<#+
+                }
+#>
+<#=new string(' ', level * 4)#>            }
+<#=new string(' ', level * 4)#>            context.Writer.WriteEndMap();
+<#+
+	}
+
+
+protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty, int level)
+	{
+		if (shape.IsString || shape.IsEnum)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteTextString(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsTimeStamp)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteDateTime(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsFloat || shape.IsDouble)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteOptimizedNumber(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsLong)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteInt64(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsInt)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteInt32(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsBoolean)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteBoolean(<#=memberProperty#>);
+<#+
+		}
+		else
+		{
+			throw new Exception ("Unknown primitive type encountered");
+		}
+	}
+#>

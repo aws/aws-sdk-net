@@ -100,6 +100,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTag())
+            {
+                context.Writer.WritePropertyName("tag");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TagFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.Tag, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

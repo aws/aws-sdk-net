@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateAccessPointRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -77,7 +78,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBucketAccountId())
                     xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequest.BucketAccountId));
 
-                if (publicRequest.PublicAccessBlockConfiguration != null)
+                if (publicRequest.IsSetPublicAccessBlockConfiguration())
                 {
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
@@ -90,11 +91,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
                     xmlWriter.WriteEndElement();
                 }
-                if (publicRequest.Scope != null)
+                if (publicRequest.IsSetScope())
                 {
                     xmlWriter.WriteStartElement("Scope");
                     var publicRequestScopePermissions = publicRequest.Scope.Permissions;
-                    if (publicRequestScopePermissions != null && (publicRequestScopePermissions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPermissions()) 
                     {
                         xmlWriter.WriteStartElement("Permissions");
                         foreach (var publicRequestScopePermissionsValue in publicRequestScopePermissions) 
@@ -106,7 +107,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     var publicRequestScopePrefixes = publicRequest.Scope.Prefixes;
-                    if (publicRequestScopePrefixes != null && (publicRequestScopePrefixes.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPrefixes()) 
                     {
                         xmlWriter.WriteStartElement("Prefixes");
                         foreach (var publicRequestScopePrefixesValue in publicRequestScopePrefixes) 
@@ -119,7 +120,25 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     xmlWriter.WriteEndElement();
                 }
-                if (publicRequest.VpcConfiguration != null)
+                var publicRequestTags = publicRequest.Tags;
+                if (publicRequest.IsSetTags()) 
+                {
+                    xmlWriter.WriteStartElement("Tags");
+                    foreach (var publicRequestTagsValue in publicRequestTags) 
+                    {
+                        if (publicRequestTagsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestTagsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
+                            if(publicRequestTagsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
+                    }            
+                    xmlWriter.WriteEndElement();            
+                }
+                if (publicRequest.IsSetVpcConfiguration())
                 {
                     xmlWriter.WriteStartElement("VpcConfiguration");
                     if(publicRequest.VpcConfiguration.IsSetVpcId())
@@ -129,6 +148,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -140,8 +160,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateAccessPointRequestMarshaller _instance = new CreateAccessPointRequestMarshaller();        
@@ -163,5 +181,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateAccessPointRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateAccessPointRequest publicRequest);
     }    
 }

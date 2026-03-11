@@ -115,6 +115,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("NetworkType");
+                context.Writer.WriteStringValue(publicRequest.NetworkType);
+            }
+
             if(publicRequest.IsSetOpenZFSConfiguration())
             {
                 context.Writer.WritePropertyName("OpenZFSConfiguration");

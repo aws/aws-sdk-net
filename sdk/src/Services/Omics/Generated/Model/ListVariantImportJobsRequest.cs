@@ -31,7 +31,20 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVariantImportJobs operation.
+    /// <important> 
+    /// <para>
+    /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
+    /// be open to new customers starting November 7, 2025. If you would like to use variant
+    /// stores or annotation stores, sign up prior to that date. Existing customers can continue
+    /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+    /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
+    /// 
+    ///  </important> 
+    /// <para>
     /// Retrieves a list of variant import jobs.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class ListVariantImportJobsRequest : AmazonOmicsRequest
     {

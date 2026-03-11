@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The node is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidNodeStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidNodeStateException
+        /// message.
+        /// </summary>
+        public InvalidNodeStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidNodeStateException with the specified error

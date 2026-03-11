@@ -105,6 +105,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ConfigurationValues);
             }
 
+            if(publicRequest.IsSetNamespaceConfig())
+            {
+                context.Writer.WritePropertyName("namespaceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AddonNamespaceConfigRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NamespaceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPodIdentityAssociations())
             {
                 context.Writer.WritePropertyName("podIdentityAssociations");

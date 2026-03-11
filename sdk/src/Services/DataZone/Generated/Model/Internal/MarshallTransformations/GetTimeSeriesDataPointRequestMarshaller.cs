@@ -74,6 +74,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetIdentifier())
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
+            if (string.IsNullOrEmpty(publicRequest.FormName))
+                throw new AmazonDataZoneException("Request object does not have required field FormName set");
             
             if (publicRequest.IsSetFormName())
                 request.Parameters.Add("formName", StringUtils.FromString(publicRequest.FormName));

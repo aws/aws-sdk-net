@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchKeySigningKeyException
+        /// message.
+        /// </summary>
+        public NoSuchKeySigningKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchKeySigningKeyException with the specified error
         /// message.
         /// </summary>

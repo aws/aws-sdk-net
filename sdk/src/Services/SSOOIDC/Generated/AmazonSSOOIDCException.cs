@@ -36,6 +36,14 @@ namespace Amazon.SSOOIDC
         /// <summary>
         /// Construct instance of AmazonSSOOIDCException
         /// </summary>
+        public AmazonSSOOIDCException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSOOIDCException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSOOIDCException(string message)
             : base(message)

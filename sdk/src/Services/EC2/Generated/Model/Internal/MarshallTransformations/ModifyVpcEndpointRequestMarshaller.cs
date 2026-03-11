@@ -111,6 +111,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("DnsOptions" + "." + "PrivateDnsOnlyForInboundResolverEndpoint", StringUtils.FromBool(publicRequest.DnsOptions.PrivateDnsOnlyForInboundResolverEndpoint));
                     }
+                    if(publicRequest.DnsOptions.IsSetPrivateDnsPreference())
+                    {
+                        request.Parameters.Add("DnsOptions" + "." + "PrivateDnsPreference", StringUtils.FromString(publicRequest.DnsOptions.PrivateDnsPreference));
+                    }
+                    if(publicRequest.DnsOptions.IsSetPrivateDnsSpecifiedDomains())
+                    {
+                        if (publicRequest.DnsOptions.PrivateDnsSpecifiedDomains.Count == 0)
+                            request.Parameters.Add("DnsOptions" + "." + "PrivateDnsSpecifiedDomain", "");
+                        else
+                        {
+                             int publicRequestDnsOptionslistValueIndex = 1;
+                             foreach(var publicRequestDnsOptionslistValue in publicRequest.DnsOptions.PrivateDnsSpecifiedDomains)
+                             {
+                                 request.Parameters.Add("DnsOptions" + "." + "PrivateDnsSpecifiedDomain" + "." + publicRequestDnsOptionslistValueIndex, StringUtils.FromString(publicRequestDnsOptionslistValue));
+                                 publicRequestDnsOptionslistValueIndex++;
+                             }
+                        }
+                    }
                 }
                 if(publicRequest.IsSetDryRun())
                 {
@@ -204,6 +222,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpcEndpointId", StringUtils.FromString(publicRequest.VpcEndpointId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyVpcEndpointRequestMarshaller _instance = new ModifyVpcEndpointRequestMarshaller();        

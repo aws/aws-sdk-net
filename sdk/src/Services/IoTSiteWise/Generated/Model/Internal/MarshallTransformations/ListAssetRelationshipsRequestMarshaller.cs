@@ -71,6 +71,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.TraversalType))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field TraversalType set");
             
             if (publicRequest.IsSetTraversalType())
                 request.Parameters.Add("traversalType", StringUtils.FromString(publicRequest.TraversalType));

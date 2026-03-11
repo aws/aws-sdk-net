@@ -38,6 +38,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _nodeName;
         private string _operationName;
+        private Amazon.Runtime.Documents.Document _operationRequest;
+        private Amazon.Runtime.Documents.Document _operationResponse;
         private string _requestId;
         private string _serviceName;
         private DateTime? _timestamp;
@@ -78,6 +80,42 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetOperationName()
         {
             return this._operationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationRequest. 
+        /// <para>
+        /// The request payload sent to the downstream service.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document OperationRequest
+        {
+            get { return this._operationRequest; }
+            set { this._operationRequest = value; }
+        }
+
+        // Check to see if OperationRequest property is set
+        internal bool IsSetOperationRequest()
+        {
+            return !this._operationRequest.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationResponse. 
+        /// <para>
+        /// The response payload received from the downstream service.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document OperationResponse
+        {
+            get { return this._operationResponse; }
+            set { this._operationResponse = value; }
+        }
+
+        // Check to see if OperationResponse property is set
+        internal bool IsSetOperationResponse()
+        {
+            return !this._operationResponse.IsNull();
         }
 
         /// <summary>

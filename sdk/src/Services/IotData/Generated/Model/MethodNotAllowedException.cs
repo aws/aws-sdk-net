@@ -39,6 +39,13 @@ namespace Amazon.IotData.Model
     {
 
         /// <summary>
+        /// Default constructor for MethodNotAllowedException
+        /// message.
+        /// </summary>
+        public MethodNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MethodNotAllowedException with the specified error
         /// message.
         /// </summary>

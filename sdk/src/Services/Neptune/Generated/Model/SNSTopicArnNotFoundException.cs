@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for SNSTopicArnNotFoundException
+        /// message.
+        /// </summary>
+        public SNSTopicArnNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SNSTopicArnNotFoundException with the specified error
         /// message.
         /// </summary>

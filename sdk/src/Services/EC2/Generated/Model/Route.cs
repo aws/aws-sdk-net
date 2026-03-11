@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _gatewayId;
         private string _instanceId;
         private string _instanceOwnerId;
+        private string _ipAddress;
         private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
@@ -215,6 +216,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The next hop IP address for routes propagated by VPC Route Server into VPC route tables.
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocalGatewayId. 
         /// <para>
         /// The ID of the local gateway.
@@ -303,6 +322,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>EnableVgwRoutePropagation</c> - The route was propagated by route propagation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Advertisement</c> - The route was created dynamically by Amazon VPC Route Server.
         /// </para>
         ///  </li> </ul>
         /// </summary>

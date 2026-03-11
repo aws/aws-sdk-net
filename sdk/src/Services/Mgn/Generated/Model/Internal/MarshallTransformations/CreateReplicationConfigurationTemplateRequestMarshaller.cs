@@ -115,6 +115,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EbsEncryptionKeyArn);
             }
 
+            if(publicRequest.IsSetInternetProtocol())
+            {
+                context.Writer.WritePropertyName("internetProtocol");
+                context.Writer.WriteStringValue(publicRequest.InternetProtocol);
+            }
+
             if(publicRequest.IsSetReplicationServerInstanceType())
             {
                 context.Writer.WritePropertyName("replicationServerInstanceType");
@@ -150,6 +156,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestStagingAreaTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStoreSnapshotOnLocalZone())
+            {
+                context.Writer.WritePropertyName("storeSnapshotOnLocalZone");
+                context.Writer.WriteBooleanValue(publicRequest.StoreSnapshotOnLocalZone.Value);
             }
 
             if(publicRequest.IsSetTags())

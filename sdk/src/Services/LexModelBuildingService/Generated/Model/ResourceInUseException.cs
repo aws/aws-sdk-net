@@ -59,6 +59,13 @@ namespace Amazon.LexModelBuildingService.Model
         private ReferenceType _referenceType;
 
         /// <summary>
+        /// Default constructor for ResourceInUseException
+        /// message.
+        /// </summary>
+        public ResourceInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceInUseException with the specified error
         /// message.
         /// </summary>

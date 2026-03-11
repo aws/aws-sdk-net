@@ -42,7 +42,8 @@ namespace Amazon.Evs.Model
         /// Gets and sets the property SolutionKey. 
         /// <para>
         ///  The VCF solution key. This license unlocks VMware VCF product features, including
-        /// vSphere, NSX, SDDC Manager, and vCenter Server.
+        /// vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must cover a
+        /// minimum of 256 cores.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +62,8 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VsanKey. 
         /// <para>
-        ///  The VSAN license key. This license unlocks vSAN features.
+        ///  The VSAN license key. This license unlocks vSAN features. The vSAN license key must
+        /// provide at least 110 TiB of vSAN capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

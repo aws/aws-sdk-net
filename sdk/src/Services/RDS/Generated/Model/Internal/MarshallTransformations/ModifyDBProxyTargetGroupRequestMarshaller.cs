@@ -105,6 +105,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetGroupName", StringUtils.FromString(publicRequest.TargetGroupName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyDBProxyTargetGroupRequestMarshaller _instance = new ModifyDBProxyTargetGroupRequestMarshaller();        

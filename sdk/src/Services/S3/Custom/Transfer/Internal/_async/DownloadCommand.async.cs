@@ -28,17 +28,22 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadCommand : BaseCommand
+    internal partial class DownloadCommand : BaseCommand<TransferUtilityDownloadResponse>
     {
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task<TransferUtilityDownloadResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
+            FireTransferInitiatedEvent();
+
             ValidateRequest();
+                        
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
 
             var maxRetries = _s3Client.Config.MaxErrorRetry;
             var retries = 0;
             bool shouldRetry = false;
             string mostRecentETag = null;
+            TransferUtilityDownloadResponse lastSuccessfulMappedResponse = null;
+            long? totalBytesFromResponse = null; // Track total bytes once we have response headers
             do
             {
                 shouldRetry = false;
@@ -54,12 +59,16 @@ namespace Amazon.S3.Transfer.Internal
                     using (var response = await this._s3Client.GetObjectAsync(getRequest, cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false))
                     {
+                        // Capture total bytes from response headers as soon as we get them
+                        totalBytesFromResponse = response.ContentLength;
+
                         if (!string.IsNullOrEmpty(mostRecentETag) && !string.Equals(mostRecentETag, response.ETag))
                         {
                             //if the eTag changed, we need to retry from the start of the file
                             mostRecentETag = response.ETag;
                             getRequest.ByteRange = null;
                             retries = 0;
+                            Interlocked.Exchange(ref _totalTransferredBytes, 0);
                             shouldRetry = true;
                             WaitBeforeRetry(retries);
                             continue;
@@ -101,6 +110,8 @@ namespace Amazon.S3.Transfer.Internal
                             await response.WriteResponseStreamToFileAsync(this._request.FilePath, true, cancellationToken)
                                 .ConfigureAwait(continueOnCapturedContext: false);
                         }
+
+                        lastSuccessfulMappedResponse = ResponseMapper.MapGetObjectResponse(response);
                     }
                 }
                 catch (Exception exception)
@@ -109,6 +120,9 @@ namespace Amazon.S3.Transfer.Internal
                     shouldRetry = HandleExceptionForHttpClient(exception, retries, maxRetries);
                     if (!shouldRetry)
                     {
+                        // Pass total bytes if we have them from response headers, otherwise -1 for unknown
+                        FireTransferFailedEvent(this._request.FilePath, Interlocked.Read(ref _totalTransferredBytes), totalBytesFromResponse ?? -1);
+
                         if (exception is IOException)
                         {
                             throw;
@@ -130,6 +144,16 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 WaitBeforeRetry(retries);
             } while (shouldRetry);
+            
+            // This should never happen under normal logic flow since we always throw exception on error.
+            if (lastSuccessfulMappedResponse == null)
+            {
+                throw new InvalidOperationException("Download completed without any successful response. This indicates a logical error in the retry handling.");
+            }
+
+            FireTransferCompletedEvent(lastSuccessfulMappedResponse, this._request.FilePath, Interlocked.Read(ref _totalTransferredBytes), totalBytesFromResponse ?? -1);
+
+            return lastSuccessfulMappedResponse;
         }
 
         private static bool HandleExceptionForHttpClient(Exception exception, int retries, int maxRetries)

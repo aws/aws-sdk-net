@@ -77,9 +77,6 @@ namespace Amazon.S3
         /// <li>DeleteBucket</li>
         /// </ol>
         /// </summary>
-        /// <remarks>
-        /// This option cannot be used at the same time as UseDualstackEndpoint.
-        /// </remarks>
         public bool UseAccelerateEndpoint
         {
             get { return useAccelerateEndpoint; }

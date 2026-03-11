@@ -36,7 +36,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// You can only call this operation from the management account.
     /// </para>
     /// </summary>
     public partial class UpdateOrganizationalUnitRequest : AmazonOrganizationsRequest
@@ -71,8 +71,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// The unique identifier (ID) of the OU that you want to rename. You can get the ID from
-        /// the <a>ListOrganizationalUnitsForParent</a> operation.
+        /// ID for the OU that you want to rename. You can get the ID from the <a>ListOrganizationalUnitsForParent</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>

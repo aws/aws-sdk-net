@@ -36,6 +36,14 @@ namespace Amazon.KinesisVideo
         /// <summary>
         /// Construct instance of AmazonKinesisVideoException
         /// </summary>
+        public AmazonKinesisVideoException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKinesisVideoException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKinesisVideoException(string message)
             : base(message)

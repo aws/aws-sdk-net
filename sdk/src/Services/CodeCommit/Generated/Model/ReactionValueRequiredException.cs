@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ReactionValueRequiredException
+        /// message.
+        /// </summary>
+        public ReactionValueRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReactionValueRequiredException with the specified error
         /// message.
         /// </summary>

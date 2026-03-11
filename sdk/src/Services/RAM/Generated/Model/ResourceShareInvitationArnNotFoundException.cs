@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceShareInvitationArnNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceShareInvitationArnNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceShareInvitationArnNotFoundException with the specified error
         /// message.
         /// </summary>

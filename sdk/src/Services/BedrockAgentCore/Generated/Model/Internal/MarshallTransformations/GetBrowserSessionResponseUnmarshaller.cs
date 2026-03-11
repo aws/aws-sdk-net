@@ -64,6 +64,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("extensions", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<BrowserExtension, BrowserExtensionUnmarshaller>(BrowserExtensionUnmarshaller.Instance);
+                    response.Extensions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -74,6 +80,18 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("profileConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrowserProfileConfigurationUnmarshaller.Instance;
+                    response.ProfileConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("proxyConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
+                    response.ProxyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sessionId", targetDepth))

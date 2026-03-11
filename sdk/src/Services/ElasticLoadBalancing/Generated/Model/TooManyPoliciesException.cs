@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyPoliciesException
+        /// message.
+        /// </summary>
+        public TooManyPoliciesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyPoliciesException with the specified error
         /// message.
         /// </summary>

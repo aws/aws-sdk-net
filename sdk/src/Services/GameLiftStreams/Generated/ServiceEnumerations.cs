@@ -100,6 +100,10 @@ namespace Amazon.GameLiftStreams
         /// Constant InternalError for ApplicationStatusReason
         /// </summary>
         public static readonly ApplicationStatusReason InternalError = new ApplicationStatusReason("internalError");
+        /// <summary>
+        /// Constant SourceModified for ApplicationStatusReason
+        /// </summary>
+        public static readonly ApplicationStatusReason SourceModified = new ApplicationStatusReason("sourceModified");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -370,6 +374,50 @@ namespace Amazon.GameLiftStreams
         /// Constant Gen5n_win2022 for StreamClass
         /// </summary>
         public static readonly StreamClass Gen5n_win2022 = new StreamClass("gen5n_win2022");
+        /// <summary>
+        /// Constant Gen6e_pro for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6e_pro = new StreamClass("gen6e_pro");
+        /// <summary>
+        /// Constant Gen6e_pro_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6e_pro_win2022 = new StreamClass("gen6e_pro_win2022");
+        /// <summary>
+        /// Constant Gen6n_high for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_high = new StreamClass("gen6n_high");
+        /// <summary>
+        /// Constant Gen6n_medium for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_medium = new StreamClass("gen6n_medium");
+        /// <summary>
+        /// Constant Gen6n_medium_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_medium_win2022 = new StreamClass("gen6n_medium_win2022");
+        /// <summary>
+        /// Constant Gen6n_pro for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_pro = new StreamClass("gen6n_pro");
+        /// <summary>
+        /// Constant Gen6n_pro_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_pro_win2022 = new StreamClass("gen6n_pro_win2022");
+        /// <summary>
+        /// Constant Gen6n_small for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_small = new StreamClass("gen6n_small");
+        /// <summary>
+        /// Constant Gen6n_small_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_small_win2022 = new StreamClass("gen6n_small_win2022");
+        /// <summary>
+        /// Constant Gen6n_ultra for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_ultra = new StreamClass("gen6n_ultra");
+        /// <summary>
+        /// Constant Gen6n_ultra_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_ultra_win2022 = new StreamClass("gen6n_ultra_win2022");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -490,6 +538,10 @@ namespace Amazon.GameLiftStreams
         /// Constant ERROR for StreamGroupStatus
         /// </summary>
         public static readonly StreamGroupStatus ERROR = new StreamGroupStatus("ERROR");
+        /// <summary>
+        /// Constant EXPIRED for StreamGroupStatus
+        /// </summary>
+        public static readonly StreamGroupStatus EXPIRED = new StreamGroupStatus("EXPIRED");
         /// <summary>
         /// Constant UPDATING_LOCATIONS for StreamGroupStatus
         /// </summary>
@@ -661,9 +713,25 @@ namespace Amazon.GameLiftStreams
     {
 
         /// <summary>
+        /// Constant ApiTerminated for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ApiTerminated = new StreamSessionStatusReason("apiTerminated");
+        /// <summary>
+        /// Constant ApplicationExit for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ApplicationExit = new StreamSessionStatusReason("applicationExit");
+        /// <summary>
         /// Constant ApplicationLogS3DestinationError for StreamSessionStatusReason
         /// </summary>
         public static readonly StreamSessionStatusReason ApplicationLogS3DestinationError = new StreamSessionStatusReason("applicationLogS3DestinationError");
+        /// <summary>
+        /// Constant ConnectionTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ConnectionTimeout = new StreamSessionStatusReason("connectionTimeout");
+        /// <summary>
+        /// Constant IdleTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason IdleTimeout = new StreamSessionStatusReason("idleTimeout");
         /// <summary>
         /// Constant InternalError for StreamSessionStatusReason
         /// </summary>
@@ -673,9 +741,17 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamSessionStatusReason InvalidSignalRequest = new StreamSessionStatusReason("invalidSignalRequest");
         /// <summary>
+        /// Constant MaxSessionLengthTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason MaxSessionLengthTimeout = new StreamSessionStatusReason("maxSessionLengthTimeout");
+        /// <summary>
         /// Constant PlacementTimeout for StreamSessionStatusReason
         /// </summary>
         public static readonly StreamSessionStatusReason PlacementTimeout = new StreamSessionStatusReason("placementTimeout");
+        /// <summary>
+        /// Constant ReconnectionTimeout for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason ReconnectionTimeout = new StreamSessionStatusReason("reconnectionTimeout");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

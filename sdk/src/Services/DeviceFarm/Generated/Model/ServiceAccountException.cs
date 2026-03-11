@@ -39,6 +39,13 @@ namespace Amazon.DeviceFarm.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceAccountException
+        /// message.
+        /// </summary>
+        public ServiceAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceAccountException with the specified error
         /// message.
         /// </summary>

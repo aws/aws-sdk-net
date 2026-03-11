@@ -68,6 +68,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTypeName())
                 throw new AmazonAppSyncException("Request object does not have required field TypeName set");
             request.AddPathResource("{typeName}", StringUtils.FromString(publicRequest.TypeName));
+            if (string.IsNullOrEmpty(publicRequest.Format))
+                throw new AmazonAppSyncException("Request object does not have required field Format set");
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));

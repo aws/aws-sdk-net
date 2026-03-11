@@ -36,6 +36,14 @@ namespace Amazon.NetworkManager
         /// <summary>
         /// Construct instance of AmazonNetworkManagerException
         /// </summary>
+        public AmazonNetworkManagerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNetworkManagerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNetworkManagerException(string message)
             : base(message)

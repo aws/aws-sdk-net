@@ -48,7 +48,6 @@ namespace Amazon.Connect.Model
         /// The instructions of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Instructions
         {
             get { return this._instructions; }
@@ -72,7 +71,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormItem> Items
         {
             get { return this._items; }
@@ -92,7 +91,7 @@ namespace Amazon.Connect.Model
         /// form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string RefId
         {
             get { return this._refId; }
@@ -111,7 +110,7 @@ namespace Amazon.Connect.Model
         /// The title of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=128)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }
@@ -130,7 +129,6 @@ namespace Amazon.Connect.Model
         /// The scoring weight of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public double? Weight
         {
             get { return this._weight; }

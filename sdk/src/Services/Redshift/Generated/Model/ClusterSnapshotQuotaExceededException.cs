@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSnapshotQuotaExceededException
+        /// message.
+        /// </summary>
+        public ClusterSnapshotQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSnapshotQuotaExceededException with the specified error
         /// message.
         /// </summary>

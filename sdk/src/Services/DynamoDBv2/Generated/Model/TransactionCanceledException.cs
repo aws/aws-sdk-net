@@ -92,10 +92,9 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-    /// property. This property is not set for other languages. Transaction cancellation reasons
-    /// are ordered in the order of requested items, if an item has no error it will have
-    /// <c>None</c> code and <c>Null</c> message.
+    /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+    /// Transaction cancellation reasons are ordered in the order of requested items, if an
+    /// item has no error it will have <c>None</c> code and <c>Null</c> message.
     /// </para>
     ///  </note> 
     /// <para>
@@ -277,6 +276,13 @@ namespace Amazon.DynamoDBv2.Model
     public partial class TransactionCanceledException : AmazonDynamoDBException
     {
         private List<CancellationReason> _cancellationReasons = AWSConfigs.InitializeCollections ? new List<CancellationReason>() : null;
+
+        /// <summary>
+        /// Default constructor for TransactionCanceledException
+        /// message.
+        /// </summary>
+        public TransactionCanceledException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TransactionCanceledException with the specified error

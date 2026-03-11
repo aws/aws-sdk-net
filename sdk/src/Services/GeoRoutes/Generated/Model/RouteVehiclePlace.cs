@@ -46,6 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// The name of the place.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }
@@ -112,6 +113,7 @@ namespace Amazon.GeoRoutes.Model
         /// Options to configure matching the provided position to a side of the street.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteSideOfStreet SideOfStreet
         {
             get { return this._sideOfStreet; }
@@ -130,7 +132,7 @@ namespace Amazon.GeoRoutes.Model
         /// Index of the waypoint in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public int? WaypointIndex
         {
             get { return this._waypointIndex; }

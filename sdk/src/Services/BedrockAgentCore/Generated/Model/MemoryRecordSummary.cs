@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCore.Model
         private DateTime? _createdAt;
         private string _memoryRecordId;
         private string _memoryStrategyId;
+        private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _score;
 
@@ -85,7 +86,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The unique identifier of the memory record.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=40, Max=40)]
+        [AWSProperty(Required=true, Min=40, Max=50)]
         public string MemoryRecordId
         {
             get { return this._memoryRecordId; }
@@ -118,6 +119,30 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// A map of metadata key-value pairs associated with a memory record.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public Dictionary<string, MetadataValue> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
         /// The namespaces associated with this memory record.
@@ -128,7 +153,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<string> Namespaces
         {
             get { return this._namespaces; }

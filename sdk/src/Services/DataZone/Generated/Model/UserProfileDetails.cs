@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of the user profile in Amazon DataZone.
+    /// The user profile details.
     /// </summary>
     public partial class UserProfileDetails
     {
@@ -40,7 +40,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Iam. 
         /// <para>
-        /// The IAM details included in the user profile details.
+        /// The IAM details of the user profile.
         /// </para>
         /// </summary>
         public IamUserProfileDetails Iam
@@ -58,7 +58,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Sso. 
         /// <para>
-        /// The single sign-on details included in the user profile details.
+        /// The SSO details of the user profile.
         /// </para>
         /// </summary>
         public SsoUserProfileDetails Sso

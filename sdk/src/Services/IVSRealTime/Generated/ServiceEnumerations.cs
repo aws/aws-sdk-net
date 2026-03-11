@@ -300,6 +300,10 @@ namespace Amazon.IVSRealTime
         /// Constant SUBSCRIBE_STOPPED for EventName
         /// </summary>
         public static readonly EventName SUBSCRIBE_STOPPED = new EventName("SUBSCRIBE_STOPPED");
+        /// <summary>
+        /// Constant TOKEN_EXCHANGED for EventName
+        /// </summary>
+        public static readonly EventName TOKEN_EXCHANGED = new EventName("TOKEN_EXCHANGED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

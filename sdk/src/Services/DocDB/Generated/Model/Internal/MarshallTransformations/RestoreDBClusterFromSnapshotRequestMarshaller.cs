@@ -115,9 +115,24 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
+                }
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetServerlessV2ScalingConfiguration())
+                {
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMaxCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MaxCapacity));
+                    }
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMinCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MinCapacity));
+                    }
                 }
                 if(publicRequest.IsSetSnapshotIdentifier())
                 {
@@ -163,6 +178,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreDBClusterFromSnapshotRequestMarshaller _instance = new RestoreDBClusterFromSnapshotRequestMarshaller();        

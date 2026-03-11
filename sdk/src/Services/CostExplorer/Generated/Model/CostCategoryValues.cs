@@ -95,7 +95,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The specific value of the Cost Category.
+        /// The specific value of the cost category.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

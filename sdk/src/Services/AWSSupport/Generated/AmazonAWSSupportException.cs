@@ -36,6 +36,14 @@ namespace Amazon.AWSSupport
         /// <summary>
         /// Construct instance of AmazonAWSSupportException
         /// </summary>
+        public AmazonAWSSupportException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAWSSupportException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAWSSupportException(string message)
             : base(message)

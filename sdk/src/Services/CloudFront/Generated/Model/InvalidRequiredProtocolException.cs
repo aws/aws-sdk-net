@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRequiredProtocolException
+        /// message.
+        /// </summary>
+        public InvalidRequiredProtocolException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRequiredProtocolException with the specified error
         /// message.
         /// </summary>

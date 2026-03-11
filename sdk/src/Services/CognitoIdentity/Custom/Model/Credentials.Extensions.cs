@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentity.Model
         {
             if (_credentials == null)
                 _credentials = new ImmutableCredentials(AccessKeyId, SecretKey, SessionToken);
-            return _credentials.Copy();
+            return _credentials;
         }
     }
 }

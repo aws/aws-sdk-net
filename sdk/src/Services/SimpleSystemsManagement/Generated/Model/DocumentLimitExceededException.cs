@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DocumentLimitExceededException
+        /// message.
+        /// </summary>
+        public DocumentLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentLimitExceededException with the specified error
         /// message.
         /// </summary>

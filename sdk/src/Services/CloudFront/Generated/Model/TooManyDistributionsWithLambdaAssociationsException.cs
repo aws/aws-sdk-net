@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsWithLambdaAssociationsException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsWithLambdaAssociationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsWithLambdaAssociationsException with the specified error
         /// message.
         /// </summary>

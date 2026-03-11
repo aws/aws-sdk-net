@@ -544,6 +544,12 @@
     <pattern>[a-z0-9]([-a-z0-9]*[a-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.EksInfo.NodeLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.Endpoint.Arn</property>
     <min>60</min>
     <max>1024</max>

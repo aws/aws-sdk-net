@@ -37,8 +37,7 @@ namespace Amazon.PCS.Model
     /// 
     ///  </important> 
     /// <para>
-    /// Amazon Web Services PCS uses this API action to register the compute nodes it launches
-    /// in your account.
+    /// PCS uses this API action to register the compute nodes it launches in your account.
     /// </para>
     /// 
     /// </para>

@@ -83,7 +83,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ModifierPercentage. 
         /// <para>
-        ///  The new modifier to show pricing plan rates as a percentage. 
+        ///  The new modifier to show pricing plan rates as a percentage. Your entry will be rounded
+        /// to the nearest 2 decimal places. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

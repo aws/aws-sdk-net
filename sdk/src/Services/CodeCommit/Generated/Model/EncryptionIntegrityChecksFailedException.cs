@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionIntegrityChecksFailedException
+        /// message.
+        /// </summary>
+        public EncryptionIntegrityChecksFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionIntegrityChecksFailedException with the specified error
         /// message.
         /// </summary>

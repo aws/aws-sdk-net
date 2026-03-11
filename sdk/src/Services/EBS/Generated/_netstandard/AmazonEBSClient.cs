@@ -295,7 +295,7 @@ namespace Amazon.EBS
 
         internal virtual CompleteSnapshotResponse CompleteSnapshot(CompleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteSnapshotResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.EBS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot">REST API Reference for CompleteSnapshot Operation</seealso>
         public virtual Task<CompleteSnapshotResponse> CompleteSnapshotAsync(CompleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteSnapshotResponseUnmarshaller.Instance;
 
@@ -360,7 +360,7 @@ namespace Amazon.EBS
 
         internal virtual GetSnapshotBlockResponse GetSnapshotBlock(GetSnapshotBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotBlockResponseUnmarshaller.Instance;
 
@@ -411,7 +411,7 @@ namespace Amazon.EBS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/GetSnapshotBlock">REST API Reference for GetSnapshotBlock Operation</seealso>
         public virtual Task<GetSnapshotBlockResponse> GetSnapshotBlockAsync(GetSnapshotBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotBlockResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.EBS
 
         internal virtual ListChangedBlocksResponse ListChangedBlocks(ListChangedBlocksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChangedBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChangedBlocksResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.EBS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks">REST API Reference for ListChangedBlocks Operation</seealso>
         public virtual Task<ListChangedBlocksResponse> ListChangedBlocksAsync(ListChangedBlocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChangedBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChangedBlocksResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.EBS
 
         internal virtual ListSnapshotBlocksResponse ListSnapshotBlocks(ListSnapshotBlocksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotBlocksResponseUnmarshaller.Instance;
 
@@ -538,7 +538,7 @@ namespace Amazon.EBS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks">REST API Reference for ListSnapshotBlocks Operation</seealso>
         public virtual Task<ListSnapshotBlocksResponse> ListSnapshotBlocksAsync(ListSnapshotBlocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotBlocksResponseUnmarshaller.Instance;
 
@@ -550,7 +550,7 @@ namespace Amazon.EBS
 
         internal virtual PutSnapshotBlockResponse PutSnapshotBlock(PutSnapshotBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSnapshotBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSnapshotBlockResponseUnmarshaller.Instance;
 
@@ -606,7 +606,7 @@ namespace Amazon.EBS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock">REST API Reference for PutSnapshotBlock Operation</seealso>
         public virtual Task<PutSnapshotBlockResponse> PutSnapshotBlockAsync(PutSnapshotBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSnapshotBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSnapshotBlockResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.EBS
 
         internal virtual StartSnapshotResponse StartSnapshot(StartSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSnapshotResponseUnmarshaller.Instance;
 
@@ -684,7 +684,7 @@ namespace Amazon.EBS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/StartSnapshot">REST API Reference for StartSnapshot Operation</seealso>
         public virtual Task<StartSnapshotResponse> StartSnapshotAsync(StartSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSnapshotResponseUnmarshaller.Instance;
 

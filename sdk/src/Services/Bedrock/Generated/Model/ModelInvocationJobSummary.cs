@@ -43,6 +43,7 @@ namespace Amazon.Bedrock.Model
         private DateTime? _lastModifiedTime;
         private string _message;
         private string _modelId;
+        private ModelInvocationType _modelInvocationType;
         private ModelInvocationJobOutputDataConfig _outputDataConfig;
         private string _roleArn;
         private ModelInvocationJobStatus _status;
@@ -223,6 +224,24 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelInvocationType. 
+        /// <para>
+        /// The invocation endpoint for ModelInvocationJob
+        /// </para>
+        /// </summary>
+        public ModelInvocationType ModelInvocationType
+        {
+            get { return this._modelInvocationType; }
+            set { this._modelInvocationType = value; }
+        }
+
+        // Check to see if ModelInvocationType property is set
+        internal bool IsSetModelInvocationType()
+        {
+            return this._modelInvocationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Details about the location of the output of the batch inference job.
@@ -326,7 +345,7 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Failed – This job has failed. Check the failure message for any further details. For
         /// further assistance, reach out to the <a href="https://console.aws.amazon.com/support/home/">Amazon
-        /// Web ServicesSupport Center</a>.
+        /// Web Services Support Center</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

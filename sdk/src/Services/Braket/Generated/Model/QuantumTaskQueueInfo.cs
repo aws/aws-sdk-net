@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Information about the queue for the specified quantum task.
+    /// The queue information for the specified quantum task.
     /// </summary>
     public partial class QuantumTaskQueueInfo
     {
@@ -43,7 +43,8 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// Optional. Provides more information about the queue position. For example, if the
-        /// task is complete and no longer in the queue, the message field contains that information.
+        /// quantum task is complete and no longer in the queue, the message field contains that
+        /// information.
         /// </para>
         /// </summary>
         public string Message
@@ -61,7 +62,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Current position of the task in the quantum tasks queue.
+        /// Current position of the quantum task in the quantum tasks queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +101,7 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property QueuePriority. 
         /// <para>
         /// Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are
-        /// processed before the tasks in a normal queue.
+        /// processed before the quantum tasks in a normal queue.
         /// </para>
         /// </summary>
         public QueuePriority QueuePriority

@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableConfiguration
     {
+        private DashboardCustomizationVisualOptions _dashboardCustomizationVisualOptions;
         private PivotTableFieldOptions _fieldOptions;
         private PivotTableFieldWells _fieldWells;
         private VisualInteractionOptions _interactions;
@@ -41,6 +42,25 @@ namespace Amazon.QuickSight.Model
         private PivotTableSortConfiguration _sortConfiguration;
         private PivotTableOptions _tableOptions;
         private PivotTableTotalOptions _totalOptions;
+
+        /// <summary>
+        /// Gets and sets the property DashboardCustomizationVisualOptions. 
+        /// <para>
+        /// The options that define customizations available to dashboard readers for a specific
+        /// visual
+        /// </para>
+        /// </summary>
+        public DashboardCustomizationVisualOptions DashboardCustomizationVisualOptions
+        {
+            get { return this._dashboardCustomizationVisualOptions; }
+            set { this._dashboardCustomizationVisualOptions = value; }
+        }
+
+        // Check to see if DashboardCustomizationVisualOptions property is set
+        internal bool IsSetDashboardCustomizationVisualOptions()
+        {
+            return this._dashboardCustomizationVisualOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldOptions. 

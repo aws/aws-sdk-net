@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private FreeFormLayoutCanvasSizeOptions _canvasSizeOptions;
         private List<FreeFormLayoutElement> _elements = AWSConfigs.InitializeCollections ? new List<FreeFormLayoutElement>() : null;
+        private List<SheetLayoutGroup> _groups = AWSConfigs.InitializeCollections ? new List<SheetLayoutGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property CanvasSizeOptions.
@@ -74,6 +75,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetElements()
         {
             return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// The groups that are included in a free-form layout.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=215)]
+        public List<SheetLayoutGroup> Groups
+        {
+            get { return this._groups; }
+            set { this._groups = value; }
+        }
+
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

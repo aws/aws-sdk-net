@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContinuousDeploymentPolicySummary Object
     /// </summary>  
-    public class ContinuousDeploymentPolicySummaryUnmarshaller : IXmlUnmarshaller<ContinuousDeploymentPolicySummary, XmlUnmarshallerContext>
+    public partial class ContinuousDeploymentPolicySummaryUnmarshaller : IXmlUnmarshaller<ContinuousDeploymentPolicySummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ContinuousDeploymentPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ContinuousDeploymentPolicySummary unmarshalledObject, int targetDepth);
+
         private static ContinuousDeploymentPolicySummaryUnmarshaller _instance = new ContinuousDeploymentPolicySummaryUnmarshaller();        
 
         /// <summary>

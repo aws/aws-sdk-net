@@ -74,8 +74,8 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property TargetLkfs. Target LKFS(loudness) to adjust volume to.
         /// If no value is entered, a default value will be used according to the chosen algorithm.
-        ///  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification
-        /// (1770-2) recommends a target of -23 LKFS.
+        ///  The CALM Act recommends a target of -24 LKFS. The EBU R-128 specification recommends
+        /// a target of -23 LKFS.
         /// </summary>
         public double? TargetLkfs
         {

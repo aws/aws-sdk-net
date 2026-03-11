@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for MessageNotInflightException
+        /// message.
+        /// </summary>
+        public MessageNotInflightException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MessageNotInflightException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotQuotaExceededException
+        /// message.
+        /// </summary>
+        public SnapshotQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotQuotaExceededException with the specified error
         /// message.
         /// </summary>

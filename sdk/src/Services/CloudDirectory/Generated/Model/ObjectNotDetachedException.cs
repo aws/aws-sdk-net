@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for ObjectNotDetachedException
+        /// message.
+        /// </summary>
+        public ObjectNotDetachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ObjectNotDetachedException with the specified error
         /// message.
         /// </summary>

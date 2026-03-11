@@ -39,6 +39,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResourceStateException
+        /// message.
+        /// </summary>
+        public InvalidResourceStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourceStateException with the specified error
         /// message.
         /// </summary>

@@ -65,7 +65,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Provides the Amazon Web Services team member's email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Sensitive=true)]
         public string Email
         {
             get { return this._email; }
@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Provides the Amazon Web Services team member's first name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Sensitive=true)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -103,7 +103,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Provides the Amazon Web Services team member's last name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Sensitive=true)]
         public string LastName
         {
             get { return this._lastName; }

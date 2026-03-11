@@ -35,6 +35,8 @@ namespace Amazon.LocationService.Model
     public partial class ApiKeyRestrictions
     {
         private List<string> _allowActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AndroidApp> _allowAndroidApps = AWSConfigs.InitializeCollections ? new List<AndroidApp>() : null;
+        private List<AppleApp> _allowAppleApps = AWSConfigs.InitializeCollections ? new List<AppleApp>() : null;
         private List<string> _allowReferers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -57,6 +59,18 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <c>geo:GetMap*</c> - Allows all actions needed for map rendering.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-maps:GetTile</c> - Allows retrieving map tiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-maps:GetStaticMap</c> - Allows retrieving static map images.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-maps:*</c> - Allows all actions related to map functionalities.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Place actions</b> 
@@ -77,6 +91,40 @@ namespace Amazon.LocationService.Model
         /// <para>
         ///  <c>GetPlace</c> - Allows finding a place by place ID.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:Geocode</c> - Allows geocoding using place information.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:ReverseGeocode</c> - Allows reverse geocoding from location coordinates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:SearchNearby</c> - Allows searching for places near a location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:SearchText</c> - Allows searching for places based on text input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:Autocomplete</c> - Allows auto-completion of place names based on text
+        /// input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:Suggest</c> - Allows generating suggestions for places based on partial
+        /// input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:GetPlace</c> - Allows finding a place by its ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-places:*</c> - Allows all actions related to place services.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Route actions</b> 
@@ -88,6 +136,32 @@ namespace Amazon.LocationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>geo:CalculateRouteMatrix</c> - Allows calculating a matrix of routes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:CalculateRoutes</c> - Allows calculating multiple routes between points.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:CalculateRouteMatrix</c> - Allows calculating a matrix of routes between
+        /// points.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:CalculateIsolines</c> - Allows calculating isolines for a given area.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:OptimizeWaypoints</c> - Allows optimizing the order of waypoints in
+        /// a route.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:SnapToRoads</c> - Allows snapping a route to the nearest roads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>geo-routes:*</c> - Allows all actions related to routing functionalities.
         /// </para>
         ///  </li> </ul> </li> </ul> <note> 
         /// <para>
@@ -114,6 +188,56 @@ namespace Amazon.LocationService.Model
         internal bool IsSetAllowActions()
         {
             return this._allowActions != null && (this._allowActions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowAndroidApps. 
+        /// <para>
+        /// An optional list of allowed Android applications for which requests must originate
+        /// from. Requests using this API key from other sources will not be allowed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<AndroidApp> AllowAndroidApps
+        {
+            get { return this._allowAndroidApps; }
+            set { this._allowAndroidApps = value; }
+        }
+
+        // Check to see if AllowAndroidApps property is set
+        internal bool IsSetAllowAndroidApps()
+        {
+            return this._allowAndroidApps != null && (this._allowAndroidApps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowAppleApps. 
+        /// <para>
+        /// An optional list of allowed Apple applications for which requests must originate from.
+        /// Requests using this API key from other sources will not be allowed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<AppleApp> AllowAppleApps
+        {
+            get { return this._allowAppleApps; }
+            set { this._allowAppleApps = value; }
+        }
+
+        // Check to see if AllowAppleApps property is set
+        internal bool IsSetAllowAppleApps()
+        {
+            return this._allowAppleApps != null && (this._allowAppleApps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +284,7 @@ namespace Amazon.LocationService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> AllowReferers
         {
             get { return this._allowReferers; }

@@ -62,6 +62,8 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ReportId))
+                throw new AmazonArtifactException("Request object does not have required field ReportId set");
             
             if (publicRequest.IsSetReportId())
                 request.Parameters.Add("reportId", StringUtils.FromString(publicRequest.ReportId));

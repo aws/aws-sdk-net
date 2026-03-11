@@ -204,7 +204,8 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ProvisioningStatusFilter. 
         /// <para>
-        /// Filter on the status of the device.
+        /// Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device
+        /// Provisioning</a>.
         /// </para>
         /// </summary>
         public ProvisioningStatus ProvisioningStatusFilter

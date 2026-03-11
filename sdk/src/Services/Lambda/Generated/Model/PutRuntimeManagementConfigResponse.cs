@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the function
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string FunctionArn
         {
             get { return this._functionArn; }

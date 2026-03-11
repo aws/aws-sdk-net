@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
         public IRequest Marshall(SimpleScalarPropertiesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocolNamespace");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetFoo()) 
@@ -86,7 +87,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLongValue())
                     xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue.Value));
 
-                if (publicRequest.Nested != null)
+                if (publicRequest.IsSetNested())
                 {
                     xmlWriter.WriteStartElement("Nested");
                     if(publicRequest.Nested.IsSetAttrField())
@@ -105,6 +106,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -116,8 +118,6 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static SimpleScalarPropertiesRequestMarshaller _instance = new SimpleScalarPropertiesRequestMarshaller();        
@@ -139,5 +139,6 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, SimpleScalarPropertiesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, SimpleScalarPropertiesRequest publicRequest);
     }    
 }

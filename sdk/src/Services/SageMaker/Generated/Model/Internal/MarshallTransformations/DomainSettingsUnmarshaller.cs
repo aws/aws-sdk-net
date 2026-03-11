@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRoleIdentityConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IpAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RStudioServerProDomainSettings", targetDepth))
                 {
                     var unmarshaller = RStudioServerProDomainSettingsUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TrustedIdentityPropagationSettings", targetDepth))
+                {
+                    var unmarshaller = TrustedIdentityPropagationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TrustedIdentityPropagationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UnifiedStudioSettings", targetDepth))

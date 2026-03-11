@@ -39,6 +39,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public ParameterGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterGroupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -54,6 +54,7 @@ namespace Amazon.Connect.Model
         private DisconnectDetails _disconnectDetails;
         private string _disconnectReason;
         private DateTime? _disconnectTimestamp;
+        private GlobalResiliencyMetadata _globalResiliencyMetadata;
         private string _id;
         private string _initialContactId;
         private ContactInitiationMethod _initiationMethod;
@@ -62,6 +63,8 @@ namespace Amazon.Connect.Model
         private DateTime? _lastResumedTimestamp;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
+        private List<NextContactEntry> _nextContacts = AWSConfigs.InitializeCollections ? new List<NextContactEntry>() : null;
+        private OutboundStrategy _outboundStrategy;
         private string _previousContactId;
         private QualityMetrics _qualityMetrics;
         private QueueInfo _queueInfo;
@@ -69,11 +72,13 @@ namespace Amazon.Connect.Model
         private int? _queueTimeAdjustmentSeconds;
         private List<RecordingInfo> _recordings = AWSConfigs.InitializeCollections ? new List<RecordingInfo>() : null;
         private string _relatedContactId;
+        private DateTime? _ringStartTimestamp;
         private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private EndpointInfo _systemEndpoint;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TaskTemplateInfoV2 _taskTemplateInfo;
         private int? _totalPauseCount;
         private int? _totalPauseDurationInSeconds;
         private WisdomInfo _wisdomInfo;
@@ -423,7 +428,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DisconnectReason. 
         /// <para>
-        /// The disconnect reason for the contact.
+        /// The disconnect reason for the contact. For a list and description of all the possible
+        /// disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         /// </summary>
         public string DisconnectReason
@@ -456,6 +463,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetDisconnectTimestamp()
         {
             return this._disconnectTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalResiliencyMetadata. 
+        /// <para>
+        /// Information about the global resiliency configuration for the contact, including traffic
+        /// distribution details.
+        /// </para>
+        /// </summary>
+        public GlobalResiliencyMetadata GlobalResiliencyMetadata
+        {
+            get { return this._globalResiliencyMetadata; }
+            set { this._globalResiliencyMetadata = value; }
+        }
+
+        // Check to see if GlobalResiliencyMetadata property is set
+        internal bool IsSetGlobalResiliencyMetadata()
+        {
+            return this._globalResiliencyMetadata != null;
         }
 
         /// <summary>
@@ -612,6 +638,48 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NextContacts. 
+        /// <para>
+        ///  List of next contact entries for the contact. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=24)]
+        public List<NextContactEntry> NextContacts
+        {
+            get { return this._nextContacts; }
+            set { this._nextContacts = value; }
+        }
+
+        // Check to see if NextContacts property is set
+        internal bool IsSetNextContacts()
+        {
+            return this._nextContacts != null && (this._nextContacts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundStrategy. 
+        /// <para>
+        /// Information about the outbound strategy.
+        /// </para>
+        /// </summary>
+        public OutboundStrategy OutboundStrategy
+        {
+            get { return this._outboundStrategy; }
+            set { this._outboundStrategy = value; }
+        }
+
+        // Check to see if OutboundStrategy property is set
+        internal bool IsSetOutboundStrategy()
+        {
+            return this._outboundStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreviousContactId. 
         /// <para>
         /// If this contact is not the first contact, this is the ID of the previous contact.
@@ -753,6 +821,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RingStartTimestamp. 
+        /// <para>
+        /// The timestamp when ringing started for a campaign call.
+        /// </para>
+        /// </summary>
+        public DateTime? RingStartTimestamp
+        {
+            get { return this._ringStartTimestamp; }
+            set { this._ringStartTimestamp = value; }
+        }
+
+        // Check to see if RingStartTimestamp property is set
+        internal bool IsSetRingStartTimestamp()
+        {
+            return this._ringStartTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoutingCriteria. 
         /// <para>
         /// Latest routing criteria on the contact.
@@ -861,6 +947,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskTemplateInfo. 
+        /// <para>
+        /// If this contact was created using a task template, this contains information about
+        /// the task template.
+        /// </para>
+        /// </summary>
+        public TaskTemplateInfoV2 TaskTemplateInfo
+        {
+            get { return this._taskTemplateInfo; }
+            set { this._taskTemplateInfo = value; }
+        }
+
+        // Check to see if TaskTemplateInfo property is set
+        internal bool IsSetTaskTemplateInfo()
+        {
+            return this._taskTemplateInfo != null;
         }
 
         /// <summary>

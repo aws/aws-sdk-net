@@ -34,9 +34,35 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetEventConfigurationResponse : AmazonWebServiceResponse
     {
+        private List<AggregationConfiguration> _aggregationConfigurations = AWSConfigs.InitializeCollections ? new List<AggregationConfiguration>() : null;
         private List<ContextKeySelector> _contextKeySelectors = AWSConfigs.InitializeCollections ? new List<ContextKeySelector>() : null;
         private string _eventDataStoreArn;
         private MaxEventSize _maxEventSize;
+        private string _trailARN;
+
+        /// <summary>
+        /// Gets and sets the property AggregationConfigurations. 
+        /// <para>
+        /// The list of aggregation configurations that are configured for the trail.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<AggregationConfiguration> AggregationConfigurations
+        {
+            get { return this._aggregationConfigurations; }
+            set { this._aggregationConfigurations = value; }
+        }
+
+        // Check to see if AggregationConfigurations property is set
+        internal bool IsSetAggregationConfigurations()
+        {
+            return this._aggregationConfigurations != null && (this._aggregationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ContextKeySelectors. 
@@ -98,6 +124,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetMaxEventSize()
         {
             return this._maxEventSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the trail for which the event configuration settings
+        /// are returned.
+        /// </para>
+        /// </summary>
+        public string TrailARN
+        {
+            get { return this._trailARN; }
+            set { this._trailARN = value; }
+        }
+
+        // Check to see if TrailARN property is set
+        internal bool IsSetTrailARN()
+        {
+            return this._trailARN != null;
         }
 
     }

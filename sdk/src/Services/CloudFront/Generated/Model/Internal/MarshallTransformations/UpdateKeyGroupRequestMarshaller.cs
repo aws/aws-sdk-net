@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateKeyGroupRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -77,7 +78,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));
 
                     var publicRequestKeyGroupConfigItems = publicRequest.KeyGroupConfig.Items;
-                    if (publicRequestKeyGroupConfigItems != null && (publicRequestKeyGroupConfigItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.KeyGroupConfig.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestKeyGroupConfigItemsValue in publicRequestKeyGroupConfigItems) 
@@ -95,6 +96,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -106,8 +108,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateKeyGroupRequestMarshaller _instance = new UpdateKeyGroupRequestMarshaller();        
@@ -129,5 +129,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateKeyGroupRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateKeyGroupRequest publicRequest);
     }    
 }

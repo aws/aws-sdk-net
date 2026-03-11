@@ -35,12 +35,31 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class ImportKeyMaterial
     {
+        private ImportAs2805KeyCryptogram _as2805KeyCryptogram;
         private ImportDiffieHellmanTr31KeyBlock _diffieHellmanTr31KeyBlock;
         private ImportKeyCryptogram _keyCryptogram;
         private RootCertificatePublicKey _rootCertificatePublicKey;
         private ImportTr31KeyBlock _tr31KeyBlock;
         private ImportTr34KeyBlock _tr34KeyBlock;
         private TrustedCertificatePublicKey _trustedCertificatePublicKey;
+
+        /// <summary>
+        /// Gets and sets the property As2805KeyCryptogram. 
+        /// <para>
+        /// Parameter information for key material import using AS2805 key cryptogram format.
+        /// </para>
+        /// </summary>
+        public ImportAs2805KeyCryptogram As2805KeyCryptogram
+        {
+            get { return this._as2805KeyCryptogram; }
+            set { this._as2805KeyCryptogram = value; }
+        }
+
+        // Check to see if As2805KeyCryptogram property is set
+        internal bool IsSetAs2805KeyCryptogram()
+        {
+            return this._as2805KeyCryptogram != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DiffieHellmanTr31KeyBlock. 

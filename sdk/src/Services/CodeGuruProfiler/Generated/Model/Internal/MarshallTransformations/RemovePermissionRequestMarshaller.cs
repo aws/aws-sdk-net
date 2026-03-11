@@ -68,6 +68,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetProfilingGroupName())
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
+            if (string.IsNullOrEmpty(publicRequest.RevisionId))
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field RevisionId set");
             
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("revisionId", StringUtils.FromString(publicRequest.RevisionId));

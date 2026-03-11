@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnonymousUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RegisteredUsers", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RegisteredUserSnapshotJobResult, RegisteredUserSnapshotJobResultUnmarshaller>(RegisteredUserSnapshotJobResultUnmarshaller.Instance);
+                    unmarshalledObject.RegisteredUsers = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

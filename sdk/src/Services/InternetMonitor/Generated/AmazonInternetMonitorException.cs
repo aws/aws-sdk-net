@@ -36,6 +36,14 @@ namespace Amazon.InternetMonitor
         /// <summary>
         /// Construct instance of AmazonInternetMonitorException
         /// </summary>
+        public AmazonInternetMonitorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonInternetMonitorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonInternetMonitorException(string message)
             : base(message)

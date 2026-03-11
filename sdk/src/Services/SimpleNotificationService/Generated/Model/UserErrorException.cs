@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for UserErrorException
+        /// message.
+        /// </summary>
+        public UserErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UserErrorException with the specified error
         /// message.
         /// </summary>

@@ -31,29 +31,29 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIndex operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Creates a vector index within a vector bucket. To specify the vector bucket, you must
     /// use either the vector bucket name or the vector bucket Amazon Resource Name (ARN).
-    /// </para>
+    /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <c>s3vectors:CreateIndex</c> permission to use this operation. 
+    /// You must have the <c>s3vectors:CreateIndex</c> permission to use this operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must have the <c>s3vectors:TagResource</c> permission in addition to <c>s3vectors:CreateIndex</c>
+    /// permission to create a vector index with tags.
     /// </para>
     ///  </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class CreateIndexRequest : AmazonS3VectorsRequest
     {
         private DataType _dataType;
         private int? _dimension;
         private DistanceMetric _distanceMetric;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _indexName;
         private MetadataConfiguration _metadataConfiguration;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vectorBucketArn;
         private string _vectorBucketName;
 
@@ -115,6 +115,26 @@ namespace Amazon.S3Vectors.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration for a vector index. By default, if you don't specify,
+        /// all new vectors in the vector index will use the encryption configuration of the vector
+        /// bucket.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
         /// The name of the vector index to create. 
@@ -149,6 +169,39 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetMetadataConfiguration()
         {
             return this._metadataConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of user-defined tags that you would like to apply to the vector index that
+        /// you are creating. A tag is a key-value pair that you apply to your resources. Tags
+        /// can help you organize, track costs, and control access to resources. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+        /// for cost allocation or attribute-based access control (ABAC)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must have the <c>s3vectors:TagResource</c> permission in addition to <c>s3vectors:CreateIndex</c>
+        /// permission to create a vector index with tags.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

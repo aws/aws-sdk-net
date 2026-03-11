@@ -57,6 +57,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSageMakerModel())
+            {
+                context.Writer.WritePropertyName("SageMakerModel");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OptimizationSageMakerModelMarshaller.Instance;
+                marshaller.Marshall(requestObject.SageMakerModel, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

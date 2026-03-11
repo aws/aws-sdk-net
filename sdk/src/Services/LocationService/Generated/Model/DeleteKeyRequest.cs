@@ -33,6 +33,12 @@ namespace Amazon.LocationService.Model
     /// Container for the parameters to the DeleteKey operation.
     /// Deletes the specified API key. The API key must have been deactivated more than 90
     /// days previously.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+    /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteKeyRequest : AmazonLocationServiceRequest
     {

@@ -39,6 +39,11 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// For synchronous invocations, the maximum payload size is 6 MB. For asynchronous invocations,
+    /// the maximum payload size is 1 MB.
+    /// </para>
+    ///  
+    /// <para>
     /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
     /// invocation</a>, details about the function response, including errors, are included
     /// in the response body and headers. For either invocation type, you can find more information
@@ -91,11 +96,13 @@ namespace Amazon.Lambda.Model
     public partial class InvokeRequest : AmazonLambdaRequest
     {
         private string _clientContextBase64;
+        private string _durableExecutionName;
         private string _functionName;
         private InvocationType _invocationType;
         private LogType _logType;
         private MemoryStream _payloadStream;
         private string _qualifier;
+        private string _tenantId;
 
         /// <summary>
         /// Gets and sets the property ClientContextBase64. 
@@ -115,6 +122,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetClientContextBase64()
         {
             return this._clientContextBase64 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableExecutionName. 
+        /// <para>
+        /// Optional unique name for the durable execution. When you start your special function,
+        /// you can give it a unique name to identify this specific execution. It's like giving
+        /// a nickname to a task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string DurableExecutionName
+        {
+            get { return this._durableExecutionName; }
+            set { this._durableExecutionName = value; }
+        }
+
+        // Check to see if DurableExecutionName property is set
+        internal bool IsSetDurableExecutionName()
+        {
+            return this._durableExecutionName != null;
         }
 
         /// <summary>
@@ -146,7 +174,7 @@ namespace Amazon.Lambda.Model
         /// to 64 characters in length.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=170)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -217,7 +245,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property PayloadStream. 
         /// <para>
-        /// The JSON that you want to provide to your Lambda function as input.
+        /// The JSON that you want to provide to your Lambda function as input. The maximum payload
+        /// size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.
         /// </para>
         ///  
         /// <para>
@@ -255,6 +284,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetQualifier()
         {
             return this._qualifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantId. 
+        /// <para>
+        /// The identifier of the tenant in a multi-tenant Lambda function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string TenantId
+        {
+            get { return this._tenantId; }
+            set { this._tenantId = value; }
+        }
+
+        // Check to see if TenantId property is set
+        internal bool IsSetTenantId()
+        {
+            return this._tenantId != null;
         }
 
     }

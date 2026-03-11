@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidS3KeyPrefixException
+        /// message.
+        /// </summary>
+        public InvalidS3KeyPrefixException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3KeyPrefixException with the specified error
         /// message.
         /// </summary>

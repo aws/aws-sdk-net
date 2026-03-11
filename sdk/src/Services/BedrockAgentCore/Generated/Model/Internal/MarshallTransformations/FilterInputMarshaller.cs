@@ -57,6 +57,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEventMetadata())
+            {
+                context.Writer.WritePropertyName("eventMetadata");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEventMetadataListValue in requestObject.EventMetadata)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EventMetadataFilterExpressionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEventMetadataListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

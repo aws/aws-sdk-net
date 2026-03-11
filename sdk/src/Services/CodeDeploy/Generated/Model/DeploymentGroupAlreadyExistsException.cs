@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DeploymentGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

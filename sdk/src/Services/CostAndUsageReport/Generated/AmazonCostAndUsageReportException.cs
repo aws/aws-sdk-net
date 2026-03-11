@@ -36,6 +36,14 @@ namespace Amazon.CostAndUsageReport
         /// <summary>
         /// Construct instance of AmazonCostAndUsageReportException
         /// </summary>
+        public AmazonCostAndUsageReportException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCostAndUsageReportException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCostAndUsageReportException(string message)
             : base(message)

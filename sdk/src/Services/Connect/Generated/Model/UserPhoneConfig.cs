@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private int? _afterContactWorkTimeLimit;
         private bool? _autoAccept;
         private string _deskPhoneNumber;
+        private bool? _persistentConnection;
         private PhoneType _phoneType;
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Amazon.Connect.Model
         /// The phone number for the user's desk phone.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeskPhoneNumber
         {
             get { return this._deskPhoneNumber; }
@@ -105,12 +107,29 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PersistentConnection. 
+        /// <para>
+        /// The persistent connection setting for the user.
+        /// </para>
+        /// </summary>
+        public bool? PersistentConnection
+        {
+            get { return this._persistentConnection; }
+            set { this._persistentConnection = value; }
+        }
+
+        // Check to see if PersistentConnection property is set
+        internal bool IsSetPersistentConnection()
+        {
+            return this._persistentConnection.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PhoneType. 
         /// <para>
         /// The phone type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PhoneType PhoneType
         {
             get { return this._phoneType; }

@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKeyIdException
+        /// message.
+        /// </summary>
+        public InvalidKeyIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKeyIdException with the specified error
         /// message.
         /// </summary>

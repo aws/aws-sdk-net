@@ -22,36 +22,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Describes the serialization format of the object.
     /// </summary>
-    public class InputSerialization
+    public partial class InputSerialization
     {
-        /// <summary>
-        /// Describes the serialization of a CSV-encoded object.
-        /// </summary>
-        public CSVInput CSV { get; set; }
-
-        /// <summary>
-        /// Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
-        /// </summary>
-        public CompressionType CompressionType { get; set; } = CompressionType.None;
-
-        /// <summary>
-        /// Specifies JSON as object's input serialization format.
-        /// </summary>
-        public JSONInput JSON { get; set; }
-
-        /// <summary>
-        /// Specifies Parquet as object's input serialization format.
-        /// </summary>
-        public ParquetInput Parquet { get; set; }
-
-        internal bool IsSetCSV() => CSV != null;
-
-        internal bool IsSetCompressionType() => CompressionType != null;
-
-        internal bool IsSetJSON() => JSON != null;
-
-        internal bool IsSetParquet() => Parquet != null;
-
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);

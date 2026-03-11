@@ -79,7 +79,15 @@ namespace Amazon.ConnectParticipant
         /// The current supported channel is chat. This API is not supported for Apple Messages
         /// for Business, WhatsApp, or SMS chats.
         /// </para>
-        ///  </note>
+        ///  </note> <note> 
+        /// <para>
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelParticipantAuthentication service method.</param>
         /// 
@@ -110,7 +118,15 @@ namespace Amazon.ConnectParticipant
         /// The current supported channel is chat. This API is not supported for Apple Messages
         /// for Business, WhatsApp, or SMS chats.
         /// </para>
-        ///  </note>
+        ///  </note> <note> 
+        /// <para>
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelParticipantAuthentication service method.</param>
         /// <param name="cancellationToken">
@@ -146,7 +162,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -193,7 +209,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -244,7 +260,12 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For WebRTC security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-webrtc-security">Amazon
+        /// Connect WebRTC security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -253,13 +274,18 @@ namespace Amazon.ConnectParticipant
         ///  </note> 
         /// <para>
         /// The participant token is valid for the lifetime of the participant – until they are
-        /// part of a contact.
+        /// part of a contact. For WebRTC participants, if they leave or are disconnected for
+        /// 60 seconds, a new participant needs to be created using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateParticipant.html">CreateParticipant</a>
+        /// API. 
         /// </para>
         ///  
         /// <para>
-        /// The response URL for <c>WEBSOCKET</c> Type has a connect expiry timeout of 100s. Clients
-        /// must manually connect to the returned websocket URL and subscribe to the desired topic.
-        /// 
+        ///  <b>For <c>WEBSOCKET</c> Type</b>: 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response URL for has a connect expiry timeout of 100s. Clients must manually connect
+        /// to the returned websocket URL and subscribe to the desired topic. 
         /// </para>
         ///  
         /// <para>
@@ -277,6 +303,29 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
+        /// The expiry time for the connection token is different than the <c>ChatDurationInMinutes</c>.
+        /// Expiry time for the connection token is 1 day.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>For <c>WEBRTC_CONNECTION</c> Type</b>: 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes connection data required for the client application to join
+        /// the call using the Amazon Chime SDK client libraries. The WebRTCConnection response
+        /// contains Meeting and Attendee information needed to establish the media connection.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The attendee join token in WebRTCConnection response is valid for the lifetime of
+        /// the participant in the call. If a participant leaves or is disconnected for 60 seconds,
+        /// their participant credentials will no longer be valid, and a new participant will
+        /// need to be created to rejoin the call. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Message streaming support</b>: This API can also be used together with the <a
         /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
         /// API to create a participant connection for chat contacts that are not using a websocket.
@@ -285,8 +334,22 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
+        ///  <b>Multi-user web, in-app, video calling support</b>: 
+        /// </para>
+        ///  
+        /// <para>
+        /// For WebRTC calls, this API is used in conjunction with the CreateParticipant API to
+        /// enable multi-party calling. The StartWebRTCContact API creates the initial contact
+        /// and routes it to an agent, while CreateParticipant adds additional participants to
+        /// the ongoing call. For more information about multi-party WebRTC calls, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+        /// multi-user web, in-app, and video calling</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Feature specifications</b>: For information about feature specifications, such
-        /// as the allowed number of open websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+        /// as the allowed number of open websocket connections per participant or maximum number
+        /// of WebRTC participants, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
         /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         ///  <note> 
@@ -322,7 +385,12 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For WebRTC security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-webrtc-security">Amazon
+        /// Connect WebRTC security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -331,13 +399,18 @@ namespace Amazon.ConnectParticipant
         ///  </note> 
         /// <para>
         /// The participant token is valid for the lifetime of the participant – until they are
-        /// part of a contact.
+        /// part of a contact. For WebRTC participants, if they leave or are disconnected for
+        /// 60 seconds, a new participant needs to be created using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateParticipant.html">CreateParticipant</a>
+        /// API. 
         /// </para>
         ///  
         /// <para>
-        /// The response URL for <c>WEBSOCKET</c> Type has a connect expiry timeout of 100s. Clients
-        /// must manually connect to the returned websocket URL and subscribe to the desired topic.
-        /// 
+        ///  <b>For <c>WEBSOCKET</c> Type</b>: 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response URL for has a connect expiry timeout of 100s. Clients must manually connect
+        /// to the returned websocket URL and subscribe to the desired topic. 
         /// </para>
         ///  
         /// <para>
@@ -355,6 +428,29 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
+        /// The expiry time for the connection token is different than the <c>ChatDurationInMinutes</c>.
+        /// Expiry time for the connection token is 1 day.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>For <c>WEBRTC_CONNECTION</c> Type</b>: 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response includes connection data required for the client application to join
+        /// the call using the Amazon Chime SDK client libraries. The WebRTCConnection response
+        /// contains Meeting and Attendee information needed to establish the media connection.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The attendee join token in WebRTCConnection response is valid for the lifetime of
+        /// the participant in the call. If a participant leaves or is disconnected for 60 seconds,
+        /// their participant credentials will no longer be valid, and a new participant will
+        /// need to be created to rejoin the call. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Message streaming support</b>: This API can also be used together with the <a
         /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
         /// API to create a participant connection for chat contacts that are not using a websocket.
@@ -363,8 +459,22 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
+        ///  <b>Multi-user web, in-app, video calling support</b>: 
+        /// </para>
+        ///  
+        /// <para>
+        /// For WebRTC calls, this API is used in conjunction with the CreateParticipant API to
+        /// enable multi-party calling. The StartWebRTCContact API creates the initial contact
+        /// and routes it to an agent, while CreateParticipant adds additional participants to
+        /// the ongoing call. For more information about multi-party WebRTC calls, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+        /// multi-user web, in-app, and video calling</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Feature specifications</b>: For information about feature specifications, such
-        /// as the allowed number of open websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+        /// as the allowed number of open websocket connections per participant or maximum number
+        /// of WebRTC participants, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
         /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         ///  <note> 
@@ -406,7 +516,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
@@ -438,7 +548,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
@@ -476,7 +586,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -514,7 +624,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -559,13 +669,19 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The participant role <c>CUSTOM_BOT</c> is not permitted to access attachments customers
+        /// may upload. An <c>AccessDeniedException</c> can indicate that the participant may
+        /// be a CUSTOM_BOT, and it doesn't have access to attachments.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4 authentication</a>.
@@ -598,13 +714,19 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The participant role <c>CUSTOM_BOT</c> is not permitted to access attachments customers
+        /// may upload. An <c>AccessDeniedException</c> can indicate that the participant may
+        /// be a CUSTOM_BOT, and it doesn't have access to attachments.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4 authentication</a>.
@@ -655,7 +777,15 @@ namespace Amazon.ConnectParticipant
         /// The current supported channel is chat. This API is not supported for Apple Messages
         /// for Business, WhatsApp, or SMS chats.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <note> 
+        /// <para>
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthenticationUrl service method.</param>
         /// 
@@ -696,7 +826,15 @@ namespace Amazon.ConnectParticipant
         /// The current supported channel is chat. This API is not supported for Apple Messages
         /// for Business, WhatsApp, or SMS chats.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <note> 
+        /// <para>
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthenticationUrl service method.</param>
         /// <param name="cancellationToken">
@@ -733,7 +871,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  
         /// <para>
@@ -743,11 +881,15 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
+        ///  <c>application/vnd.amazonaws.connect.event.participant.invited</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>application/vnd.amazonaws.connect.event.participant.joined</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -800,7 +942,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  
         /// <para>
@@ -810,11 +952,15 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
+        ///  <c>application/vnd.amazonaws.connect.event.participant.invited</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>application/vnd.amazonaws.connect.event.participant.joined</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -868,8 +1014,8 @@ namespace Amazon.ConnectParticipant
         /// <note> 
         /// <para>
         /// The <c>application/vnd.amazonaws.connect.event.connection.acknowledged</c> ContentType
-        /// will no longer be supported starting December 31, 2024. This event has been migrated
-        /// to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// is no longer maintained since December 31, 2024. This event has been migrated to the
+        /// <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// API using the <c>ConnectParticipant</c> field.
         /// </para>
         ///  </note> 
@@ -881,7 +1027,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -921,8 +1067,8 @@ namespace Amazon.ConnectParticipant
         /// <note> 
         /// <para>
         /// The <c>application/vnd.amazonaws.connect.event.connection.acknowledged</c> ContentType
-        /// will no longer be supported starting December 31, 2024. This event has been migrated
-        /// to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// is no longer maintained since December 31, 2024. This event has been migrated to the
+        /// <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// API using the <c>ConnectParticipant</c> field.
         /// </para>
         ///  </note> 
@@ -934,7 +1080,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -982,7 +1128,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1020,7 +1166,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1065,7 +1211,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1107,7 +1253,7 @@ namespace Amazon.ConnectParticipant
         ///  
         /// <para>
         /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-        /// Connect Chat security best practices</a>.
+        /// Connect Chat security best practices</a>. 
         /// </para>
         ///  <note> 
         /// <para>

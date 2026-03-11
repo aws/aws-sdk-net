@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private OntapDeploymentType _deploymentType;
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _endpointIpAddressRange;
+        private string _endpointIpv6AddressRange;
         private FileSystemEndpoints _endpoints;
         private string _fsxAdminPassword;
         private int? _haPairs;
@@ -149,8 +150,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property EndpointIpAddressRange. 
         /// <para>
-        /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your
-        /// file system will be created. By default in the Amazon FSx API, Amazon FSx selects
+        /// (Multi-AZ only) Specifies the IPv4 address range in which the endpoints to access
+        /// your file system will be created. By default in the Amazon FSx API, Amazon FSx selects
         /// an unused IP address range for you from the 198.19.* range. By default in the Amazon
         /// FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
         /// range to use as the endpoint IP address range for the file system. You can have overlapping
@@ -168,6 +169,29 @@ namespace Amazon.FSx.Model
         internal bool IsSetEndpointIpAddressRange()
         {
             return this._endpointIpAddressRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointIpv6AddressRange. 
+        /// <para>
+        /// (Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access
+        /// your file system will be created. By default in the Amazon FSx API and Amazon FSx
+        /// console, Amazon FSx selects an available /118 IP address range for you from one of
+        /// the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems
+        /// deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=43)]
+        public string EndpointIpv6AddressRange
+        {
+            get { return this._endpointIpv6AddressRange; }
+            set { this._endpointIpv6AddressRange = value; }
+        }
+
+        // Check to see if EndpointIpv6AddressRange property is set
+        internal bool IsSetEndpointIpv6AddressRange()
+        {
+            return this._endpointIpv6AddressRange != null;
         }
 
         /// <summary>

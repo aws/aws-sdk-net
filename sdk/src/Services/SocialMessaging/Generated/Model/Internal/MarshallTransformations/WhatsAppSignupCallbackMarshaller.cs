@@ -52,6 +52,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AccessToken);
             }
 
+            if(requestObject.IsSetCallbackUrl())
+            {
+                context.Writer.WritePropertyName("callbackUrl");
+                context.Writer.WriteStringValue(requestObject.CallbackUrl);
+            }
+
         }
 
         /// <summary>

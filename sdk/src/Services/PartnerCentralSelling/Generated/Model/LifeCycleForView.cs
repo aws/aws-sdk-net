@@ -45,7 +45,7 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Describes the next steps for the opportunity shared through a snapshot. 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string NextSteps
         {
             get { return this._nextSteps; }

@@ -76,6 +76,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ephemeris", targetDepth))
+                {
+                    var unmarshaller = EphemerisResponseDataUnmarshaller.Instance;
+                    response.Ephemeris = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("errorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("trackingOverrides", targetDepth))
+                {
+                    var unmarshaller = TrackingOverridesUnmarshaller.Instance;
+                    response.TrackingOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("visibilityEndTime", targetDepth))

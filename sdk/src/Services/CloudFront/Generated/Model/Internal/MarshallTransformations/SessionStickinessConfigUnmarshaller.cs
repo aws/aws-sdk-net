@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SessionStickinessConfig Object
     /// </summary>  
-    public class SessionStickinessConfigUnmarshaller : IXmlUnmarshaller<SessionStickinessConfig, XmlUnmarshallerContext>
+    public partial class SessionStickinessConfigUnmarshaller : IXmlUnmarshaller<SessionStickinessConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaximumTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SessionStickinessConfig unmarshalledObject, int targetDepth);
+
         private static SessionStickinessConfigUnmarshaller _instance = new SessionStickinessConfigUnmarshaller();        
 
         /// <summary>

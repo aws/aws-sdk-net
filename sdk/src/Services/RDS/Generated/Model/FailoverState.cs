@@ -86,24 +86,24 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// pending &#x96; The service received a request to switch over or fail over the global
+        /// pending &#150; The service received a request to switch over or fail over the global
         /// cluster. The global cluster's primary DB cluster and the specified secondary DB cluster
         /// are being verified before the operation starts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to
+        /// failing-over &#150; Aurora is promoting the chosen secondary Aurora DB cluster to
         /// become the new primary DB cluster to fail over the global cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// cancelling &#x96; The request to switch over or fail over the global cluster was cancelled
+        /// cancelling &#150; The request to switch over or fail over the global cluster was cancelled
         /// and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are
         /// returning to their previous states.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// switching-over &#x96; This status covers the range of Aurora internal operations that
+        /// switching-over &#150; This status covers the range of Aurora internal operations that
         /// take place during the switchover process, such as demoting the primary Aurora DB cluster,
         /// promoting the secondary Aurora DB cluster, and synchronizing replicas.
         /// </para>

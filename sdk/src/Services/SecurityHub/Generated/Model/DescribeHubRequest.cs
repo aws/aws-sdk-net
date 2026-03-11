@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the DescribeHub operation.
     /// Returns details about the Hub resource in your account, including the <c>HubArn</c>
-    /// and the time when you enabled Security Hub.
+    /// and the time when you enabled Security Hub CSPM.
     /// </summary>
     public partial class DescribeHubRequest : AmazonSecurityHubRequest
     {

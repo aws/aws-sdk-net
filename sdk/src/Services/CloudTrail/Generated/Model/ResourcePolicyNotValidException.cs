@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourcePolicyNotValidException
+        /// message.
+        /// </summary>
+        public ResourcePolicyNotValidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourcePolicyNotValidException with the specified error
         /// message.
         /// </summary>

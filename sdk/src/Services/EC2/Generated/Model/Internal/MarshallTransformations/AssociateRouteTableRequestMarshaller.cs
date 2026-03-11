@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
                 }
+                if(publicRequest.IsSetPublicIpv4Pool())
+                {
+                    request.Parameters.Add("PublicIpv4Pool", StringUtils.FromString(publicRequest.PublicIpv4Pool));
+                }
                 if(publicRequest.IsSetRouteTableId())
                 {
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
@@ -76,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AssociateRouteTableRequestMarshaller _instance = new AssociateRouteTableRequestMarshaller();        

@@ -1041,6 +1041,10 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RouteFerryNoticeCode Other = new RouteFerryNoticeCode("Other");
         /// <summary>
+        /// Constant PotentialViolatedVehicleRestrictionUsage for RouteFerryNoticeCode
+        /// </summary>
+        public static readonly RouteFerryNoticeCode PotentialViolatedVehicleRestrictionUsage = new RouteFerryNoticeCode("PotentialViolatedVehicleRestrictionUsage");
+        /// <summary>
         /// Constant SeasonalClosure for RouteFerryNoticeCode
         /// </summary>
         public static readonly RouteFerryNoticeCode SeasonalClosure = new RouteFerryNoticeCode("SeasonalClosure");

@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class LineChartDefaultSeriesSettings
     {
         private AxisBinding _axisBinding;
+        private DecalSettings _decalSettings;
         private LineChartLineStyleSettings _lineStyleSettings;
         private LineChartMarkerStyleSettings _markerStyleSettings;
 
@@ -54,6 +55,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAxisBinding()
         {
             return this._axisBinding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DecalSettings. 
+        /// <para>
+        /// Decal settings options for all line series in the visual.
+        /// </para>
+        /// </summary>
+        public DecalSettings DecalSettings
+        {
+            get { return this._decalSettings; }
+            set { this._decalSettings = value; }
+        }
+
+        // Check to see if DecalSettings property is set
+        internal bool IsSetDecalSettings()
+        {
+            return this._decalSettings != null;
         }
 
         /// <summary>

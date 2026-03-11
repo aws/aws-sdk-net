@@ -42,6 +42,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private List<string> _rawInputRecords = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for UnableToDetectSchemaException
+        /// message.
+        /// </summary>
+        public UnableToDetectSchemaException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToDetectSchemaException with the specified error
         /// message.
         /// </summary>

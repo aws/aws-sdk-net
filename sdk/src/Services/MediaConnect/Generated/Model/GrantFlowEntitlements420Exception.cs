@@ -40,6 +40,13 @@ namespace Amazon.MediaConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for GrantFlowEntitlements420Exception
+        /// message.
+        /// </summary>
+        public GrantFlowEntitlements420Exception() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GrantFlowEntitlements420Exception with the specified error
         /// message.
         /// </summary>

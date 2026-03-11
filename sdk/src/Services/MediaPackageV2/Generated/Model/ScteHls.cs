@@ -50,6 +50,11 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// SCTE35_ENHANCED - Generate industry-standard CUE tag ad markers in HLS manifests based
+        /// on SCTE-35 input messages from the input stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and program transition events
         /// in TS and CMAF manifests. If you use DATERANGE, you must set a programDateTimeIntervalSeconds
         /// value of 1 or higher. To learn more about DATERANGE, see <a href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35

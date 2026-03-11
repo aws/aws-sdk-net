@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedDBEngineVersionException
+        /// message.
+        /// </summary>
+        public UnsupportedDBEngineVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedDBEngineVersionException with the specified error
         /// message.
         /// </summary>

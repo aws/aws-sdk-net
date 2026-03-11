@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SnsNotificationsEnabled", StringUtils.FromBool(publicRequest.SnsNotificationsEnabled));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyRouteServerRequestMarshaller _instance = new ModifyRouteServerRequestMarshaller();        

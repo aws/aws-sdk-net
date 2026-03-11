@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+    /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/previous/developerguide/location-quotas.html">quota</a>
     /// set for Amazon Location Service.
     /// </summary>
     #if !NETSTANDARD
@@ -38,6 +38,13 @@ namespace Amazon.LocationService.Model
     #endif
     public partial class ServiceQuotaExceededException : AmazonLocationServiceException
     {
+
+        /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error

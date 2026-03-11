@@ -62,10 +62,46 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnswerRecommendationAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("caseSummarizationAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = CaseSummarizationAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CaseSummarizationAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("emailGenerativeAnswerAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailGenerativeAnswerAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmailGenerativeAnswerAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("emailOverviewAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailOverviewAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmailOverviewAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("emailResponseAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailResponseAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EmailResponseAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("manualSearchAIAgentConfiguration", targetDepth))
                 {
                     var unmarshaller = ManualSearchAIAgentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManualSearchAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("noteTakingAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = NoteTakingAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NoteTakingAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("orchestrationAIAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = OrchestrationAIAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationAIAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("selfServiceAIAgentConfiguration", targetDepth))

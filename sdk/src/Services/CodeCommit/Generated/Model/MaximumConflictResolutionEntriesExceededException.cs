@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumConflictResolutionEntriesExceededException
+        /// message.
+        /// </summary>
+        public MaximumConflictResolutionEntriesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumConflictResolutionEntriesExceededException with the specified error
         /// message.
         /// </summary>

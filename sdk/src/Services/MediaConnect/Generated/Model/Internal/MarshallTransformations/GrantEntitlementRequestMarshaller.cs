@@ -75,6 +75,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EntitlementStatus);
             }
 
+            if(requestObject.IsSetEntitlementTags())
+            {
+                context.Writer.WritePropertyName("entitlementTags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectEntitlementTagsKvp in requestObject.EntitlementTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectEntitlementTagsKvp.Key);
+                    var requestObjectEntitlementTagsValue = requestObjectEntitlementTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectEntitlementTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

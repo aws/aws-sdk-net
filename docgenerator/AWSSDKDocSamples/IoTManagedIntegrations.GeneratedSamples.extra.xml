@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetManagedThingCertificate(Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetManagedThingCertificate(Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get managed thing certificate"
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
             <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
             <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest" />

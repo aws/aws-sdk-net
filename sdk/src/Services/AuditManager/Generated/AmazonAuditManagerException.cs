@@ -36,6 +36,14 @@ namespace Amazon.AuditManager
         /// <summary>
         /// Construct instance of AmazonAuditManagerException
         /// </summary>
+        public AmazonAuditManagerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAuditManagerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAuditManagerException(string message)
             : base(message)

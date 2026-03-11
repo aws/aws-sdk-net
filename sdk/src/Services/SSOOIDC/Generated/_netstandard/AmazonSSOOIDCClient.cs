@@ -52,7 +52,7 @@ namespace Amazon.SSOOIDC
     ///  
     /// <para>
     /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces. IAM
-    /// Identity Center OpenID Connect uses the <c>sso-oidc</c> namespace.
+    /// Identity Center OpenID Connect uses the <c>sso-oauth</c> namespace.
     /// </para>
     ///  
     /// <para>
@@ -304,7 +304,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual CreateTokenResponse CreateToken(CreateTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual Task<CreateTokenResponse> CreateTokenAsync(CreateTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual CreateTokenWithIAMResponse CreateTokenWithIAM(CreateTokenWithIAMRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenWithIAMRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenWithIAMResponseUnmarshaller.Instance;
 
@@ -389,10 +389,21 @@ namespace Amazon.SSOOIDC
 
 
         /// <summary>
-        /// Creates and returns access and refresh tokens for clients and applications that are
-        /// authenticated using IAM entities. The access token can be used to fetch short-lived
-        /// credentials for the assigned Amazon Web Services accounts or to access application
-        /// APIs using <c>bearer</c> authentication.
+        /// Creates and returns access and refresh tokens for authorized client applications that
+        /// are authenticated using any IAM entity, such as a service role or user. These tokens
+        /// might contain defined scopes that specify permissions such as <c>read:profile</c>
+        /// or <c>write:data</c>. Through downscoping, you can use the scopes parameter to request
+        /// tokens with reduced permissions compared to the original client application's permissions
+        /// or, if applicable, the refresh token's scopes. The access token can be used to fetch
+        /// short-lived credentials for the assigned Amazon Web Services accounts or to access
+        /// application APIs using <c>bearer</c> authentication.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is used with Signature Version 4. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon
+        /// Web Services Signature Version 4 for API Requests</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTokenWithIAM service method.</param>
         /// <param name="cancellationToken">
@@ -447,7 +458,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
         public virtual Task<CreateTokenWithIAMResponse> CreateTokenWithIAMAsync(CreateTokenWithIAMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenWithIAMRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenWithIAMResponseUnmarshaller.Instance;
 
@@ -459,7 +470,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual RegisterClientResponse RegisterClient(RegisterClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterClientResponseUnmarshaller.Instance;
 
@@ -495,13 +506,17 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidScopeException">
         /// Indicates that the scope provided in the request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.SSOOIDC.Model.SlowDownException">
+        /// Indicates that the client is making the request too frequently and is more than the
+        /// service can handle.
+        /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         public virtual Task<RegisterClientResponse> RegisterClientAsync(RegisterClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterClientResponseUnmarshaller.Instance;
 
@@ -513,7 +528,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual StartDeviceAuthorizationResponse StartDeviceAuthorization(StartDeviceAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeviceAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeviceAuthorizationResponseUnmarshaller.Instance;
 
@@ -555,7 +570,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         public virtual Task<StartDeviceAuthorizationResponse> StartDeviceAuthorizationAsync(StartDeviceAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeviceAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeviceAuthorizationResponseUnmarshaller.Instance;
 

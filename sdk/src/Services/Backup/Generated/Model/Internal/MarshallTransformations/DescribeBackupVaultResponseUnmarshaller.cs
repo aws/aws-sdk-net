@@ -82,6 +82,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EncryptionKeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionKeyType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LatestMpaApprovalTeamUpdate", targetDepth))
                 {
                     var unmarshaller = LatestMpaApprovalTeamUpdateUnmarshaller.Instance;

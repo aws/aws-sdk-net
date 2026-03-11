@@ -39,6 +39,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPublicKeyException
+        /// message.
+        /// </summary>
+        public InvalidPublicKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPublicKeyException with the specified error
         /// message.
         /// </summary>

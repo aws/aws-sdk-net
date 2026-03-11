@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for ShareLimitExceededException
+        /// message.
+        /// </summary>
+        public ShareLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ShareLimitExceededException with the specified error
         /// message.
         /// </summary>

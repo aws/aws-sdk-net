@@ -320,7 +320,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/CreateHomeRegionControl">REST API Reference for CreateHomeRegionControl Operation</seealso>
         public virtual CreateHomeRegionControlResponse CreateHomeRegionControl(CreateHomeRegionControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHomeRegionControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHomeRegionControlResponseUnmarshaller.Instance;
 
@@ -360,7 +360,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/CreateHomeRegionControl">REST API Reference for CreateHomeRegionControl Operation</seealso>
         public virtual Task<CreateHomeRegionControlResponse> CreateHomeRegionControlAsync(CreateHomeRegionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHomeRegionControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHomeRegionControlResponseUnmarshaller.Instance;
             
@@ -398,7 +398,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl">REST API Reference for DeleteHomeRegionControl Operation</seealso>
         public virtual DeleteHomeRegionControlResponse DeleteHomeRegionControl(DeleteHomeRegionControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHomeRegionControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHomeRegionControlResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl">REST API Reference for DeleteHomeRegionControl Operation</seealso>
         public virtual Task<DeleteHomeRegionControlResponse> DeleteHomeRegionControlAsync(DeleteHomeRegionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHomeRegionControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHomeRegionControlResponseUnmarshaller.Instance;
             
@@ -472,7 +472,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DescribeHomeRegionControls">REST API Reference for DescribeHomeRegionControls Operation</seealso>
         public virtual DescribeHomeRegionControlsResponse DescribeHomeRegionControls(DescribeHomeRegionControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHomeRegionControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHomeRegionControlsResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DescribeHomeRegionControls">REST API Reference for DescribeHomeRegionControls Operation</seealso>
         public virtual Task<DescribeHomeRegionControlsResponse> DescribeHomeRegionControlsAsync(DescribeHomeRegionControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHomeRegionControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHomeRegionControlsResponseUnmarshaller.Instance;
             
@@ -549,7 +549,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/GetHomeRegion">REST API Reference for GetHomeRegion Operation</seealso>
         public virtual GetHomeRegionResponse GetHomeRegion(GetHomeRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHomeRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHomeRegionResponseUnmarshaller.Instance;
 
@@ -589,7 +589,7 @@ namespace Amazon.MigrationHubConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/GetHomeRegion">REST API Reference for GetHomeRegion Operation</seealso>
         public virtual Task<GetHomeRegionResponse> GetHomeRegionAsync(GetHomeRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHomeRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHomeRegionResponseUnmarshaller.Instance;
             

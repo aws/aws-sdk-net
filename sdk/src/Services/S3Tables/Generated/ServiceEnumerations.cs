@@ -83,6 +83,106 @@ namespace Amazon.S3Tables
 
 
     /// <summary>
+    /// Constants used for properties of type IcebergNullOrder.
+    /// </summary>
+    public class IcebergNullOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NullsFirst for IcebergNullOrder
+        /// </summary>
+        public static readonly IcebergNullOrder NullsFirst = new IcebergNullOrder("nulls-first");
+        /// <summary>
+        /// Constant NullsLast for IcebergNullOrder
+        /// </summary>
+        public static readonly IcebergNullOrder NullsLast = new IcebergNullOrder("nulls-last");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergNullOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergNullOrder FindValue(string value)
+        {
+            return FindValue<IcebergNullOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergNullOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IcebergSortDirection.
+    /// </summary>
+    public class IcebergSortDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Asc for IcebergSortDirection
+        /// </summary>
+        public static readonly IcebergSortDirection Asc = new IcebergSortDirection("asc");
+        /// <summary>
+        /// Constant Desc for IcebergSortDirection
+        /// </summary>
+        public static readonly IcebergSortDirection Desc = new IcebergSortDirection("desc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergSortDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergSortDirection FindValue(string value)
+        {
+            return FindValue<IcebergSortDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergSortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStatus.
     /// </summary>
     public class JobStatus : ConstantClass
@@ -237,6 +337,60 @@ namespace Amazon.S3Tables
 
 
     /// <summary>
+    /// Constants used for properties of type ReplicationStatus.
+    /// </summary>
+    public class ReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus Completed = new ReplicationStatus("completed");
+        /// <summary>
+        /// Constant Failed for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus Failed = new ReplicationStatus("failed");
+        /// <summary>
+        /// Constant Pending for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus Pending = new ReplicationStatus("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SSEAlgorithm.
     /// </summary>
     public class SSEAlgorithm : ConstantClass
@@ -280,6 +434,56 @@ namespace Amazon.S3Tables
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SSEAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageClass.
+    /// </summary>
+    public class StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for StorageClass
+        /// </summary>
+        public static readonly StorageClass INTELLIGENT_TIERING = new StorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant STANDARD for StorageClass
+        /// </summary>
+        public static readonly StorageClass STANDARD = new StorageClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageClass FindValue(string value)
+        {
+            return FindValue<StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageClass(string value)
         {
             return FindValue(value);
         }
@@ -480,6 +684,114 @@ namespace Amazon.S3Tables
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TableMaintenanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TableRecordExpirationJobStatus.
+    /// </summary>
+    public class TableRecordExpirationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for TableRecordExpirationJobStatus
+        /// </summary>
+        public static readonly TableRecordExpirationJobStatus Disabled = new TableRecordExpirationJobStatus("Disabled");
+        /// <summary>
+        /// Constant Failed for TableRecordExpirationJobStatus
+        /// </summary>
+        public static readonly TableRecordExpirationJobStatus Failed = new TableRecordExpirationJobStatus("Failed");
+        /// <summary>
+        /// Constant NotYetRun for TableRecordExpirationJobStatus
+        /// </summary>
+        public static readonly TableRecordExpirationJobStatus NotYetRun = new TableRecordExpirationJobStatus("NotYetRun");
+        /// <summary>
+        /// Constant Successful for TableRecordExpirationJobStatus
+        /// </summary>
+        public static readonly TableRecordExpirationJobStatus Successful = new TableRecordExpirationJobStatus("Successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableRecordExpirationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableRecordExpirationJobStatus FindValue(string value)
+        {
+            return FindValue<TableRecordExpirationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableRecordExpirationJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TableRecordExpirationStatus.
+    /// </summary>
+    public class TableRecordExpirationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for TableRecordExpirationStatus
+        /// </summary>
+        public static readonly TableRecordExpirationStatus Disabled = new TableRecordExpirationStatus("disabled");
+        /// <summary>
+        /// Constant Enabled for TableRecordExpirationStatus
+        /// </summary>
+        public static readonly TableRecordExpirationStatus Enabled = new TableRecordExpirationStatus("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableRecordExpirationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableRecordExpirationStatus FindValue(string value)
+        {
+            return FindValue<TableRecordExpirationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableRecordExpirationStatus(string value)
         {
             return FindValue(value);
         }

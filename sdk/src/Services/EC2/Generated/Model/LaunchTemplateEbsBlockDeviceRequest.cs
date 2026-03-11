@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class LaunchTemplateEbsBlockDeviceRequest
     {
         private bool? _deleteOnTermination;
+        private int? _ebsCardIndex;
         private bool? _encrypted;
         private int? _iops;
         private string _kmsKeyId;
@@ -60,6 +61,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeleteOnTermination()
         {
             return this._deleteOnTermination.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsCardIndex. 
+        /// <para>
+        /// The index of the EBS card. Some instance types support multiple EBS cards. The default
+        /// EBS card index is 0.
+        /// </para>
+        /// </summary>
+        public int? EbsCardIndex
+        {
+            get { return this._ebsCardIndex; }
+            set { this._ebsCardIndex = value; }
+        }
+
+        // Check to see if EbsCardIndex property is set
+        internal bool IsSetEbsCardIndex()
+        {
+            return this._ebsCardIndex.HasValue; 
         }
 
         /// <summary>
@@ -96,7 +116,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
+        ///  <c>gp3</c>: 3,000 - 80,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,11 +189,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput to provision for a <c>gp3</c> volume, with a maximum of 1,000 MiB/s.
+        /// The throughput to provision for a <c>gp3</c> volume, with a maximum of 2,000 MiB/s.
         /// </para>
         ///  
         /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// Valid Range: Minimum value of 125. Maximum value of 2,000.
         /// </para>
         /// </summary>
         public int? Throughput
@@ -248,7 +268,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB
+        ///  <c>gp2</c>: 1 - 16,384 GiB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>gp3</c>: 1 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>

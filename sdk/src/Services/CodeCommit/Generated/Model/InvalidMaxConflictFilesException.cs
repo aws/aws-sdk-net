@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMaxConflictFilesException
+        /// message.
+        /// </summary>
+        public InvalidMaxConflictFilesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMaxConflictFilesException with the specified error
         /// message.
         /// </summary>

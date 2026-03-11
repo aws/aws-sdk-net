@@ -945,6 +945,11 @@
     <max>31536000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.FilterConfiguration.DrmSettings</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.FilterConfiguration.ManifestFilter</property>
     <min>1</min>
     <max>1024</max>
@@ -1044,6 +1049,11 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.InputSwitchConfiguration.PreferredInput</property>
+    <min>1</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.ListDashManifestConfiguration.ManifestName</property>
     <min>1</min>
     <max>256</max>
@@ -1123,6 +1133,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaPackageV2.Model.SpekeKeyProvider.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:([^:\n]+):acm:([^:\n]+):([0-9]+):certificate/[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaPackageV2.Model.SpekeKeyProvider.ResourceId</property>

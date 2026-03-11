@@ -32,16 +32,8 @@ namespace Amazon.BedrockAgentCore
     /// <summary>
     /// <para>Interface for accessing BedrockAgentCore</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Bedrock AgentCore is in preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
-    /// Data plane operations for Amazon Bedrock AgentCore.
-    /// </para>
-    /// 
-    /// </para>
+    /// Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions
+    /// process and handle data or workloads within Amazon Web Services services.
     /// </summary>
     public partial interface IAmazonBedrockAgentCore : IAmazonService, IDisposable
     {
@@ -52,17 +44,201 @@ namespace Amazon.BedrockAgentCore
         IBedrockAgentCorePaginatorFactory Paginators { get; }
 #endif
                 
+        #region  BatchCreateMemoryRecords
+
+
+
+        /// <summary>
+        /// Creates multiple memory records in a single batch operation for the specified memory
+        /// with custom content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateMemoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchCreateMemoryRecords">REST API Reference for BatchCreateMemoryRecords Operation</seealso>
+        Task<BatchCreateMemoryRecordsResponse> BatchCreateMemoryRecordsAsync(BatchCreateMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchDeleteMemoryRecords
+
+
+
+        /// <summary>
+        /// Deletes multiple memory records in a single batch operation from the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteMemoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchDeleteMemoryRecords">REST API Reference for BatchDeleteMemoryRecords Operation</seealso>
+        Task<BatchDeleteMemoryRecordsResponse> BatchDeleteMemoryRecordsAsync(BatchDeleteMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchUpdateMemoryRecords
+
+
+
+        /// <summary>
+        /// Updates multiple memory records with custom content in a single batch operation within
+        /// the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateMemoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchUpdateMemoryRecords">REST API Reference for BatchUpdateMemoryRecords Operation</seealso>
+        Task<BatchUpdateMemoryRecordsResponse> BatchUpdateMemoryRecordsAsync(BatchUpdateMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CompleteResourceTokenAuth
+
+
+
+        /// <summary>
+        /// Confirms the user authentication session for obtaining OAuth2.0 tokens for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteResourceTokenAuth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CompleteResourceTokenAuth service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CompleteResourceTokenAuth">REST API Reference for CompleteResourceTokenAuth Operation</seealso>
+        Task<CompleteResourceTokenAuthResponse> CompleteResourceTokenAuthAsync(CompleteResourceTokenAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEvent
 
 
 
         /// <summary>
-        /// Creates an event in a memory store. Events represent interactions or activities that
-        /// occur within a session and are associated with specific actors.
+        /// Creates an event in an AgentCore Memory resource. Events represent interactions or
+        /// activities that occur within a session and are associated with specific actors.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:CreateEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:CreateEvent</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -88,6 +264,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
         /// The service encountered an internal error. Try your request again later.
@@ -116,12 +297,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Deletes an event from a memory store. When you delete an event, it is permanently
-        /// removed.
+        /// Deletes an event from an AgentCore Memory resource. When you delete an event, it is
+        /// permanently removed.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:DeleteEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:DeleteEvent</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
@@ -171,12 +352,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Deletes a memory record from a memory store. When you delete a memory record, it is
-        /// permanently removed.
+        /// Deletes a memory record from an AgentCore Memory resource. When you delete a memory
+        /// record, it is permanently removed.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:DeleteMemoryRecord</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:DeleteMemoryRecord</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMemoryRecord service method.</param>
@@ -221,14 +403,130 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
                 
+        #region  Evaluate
+
+
+
+        /// <summary>
+        /// Performs on-demand evaluation of agent traces using a specified evaluator. This synchronous
+        /// API accepts traces in OpenTelemetry format and returns immediate scoring results with
+        /// detailed explanations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Evaluate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Evaluate service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.DuplicateIdException">
+        /// An exception thrown when attempting to create a resource with an identifier that
+        /// already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/Evaluate">REST API Reference for Evaluate Operation</seealso>
+        Task<EvaluateResponse> EvaluateAsync(EvaluateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAgentCard
+
+
+
+        /// <summary>
+        /// Retrieves the A2A agent card associated with an AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentCard service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">REST API Reference for GetAgentCard Operation</seealso>
+        Task<GetAgentCardResponse> GetAgentCardAsync(GetAgentCardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetBrowserSession
 
 
 
         /// <summary>
-        /// Retrieves detailed information about a specific browser session in Amazon Bedrock.
-        /// This operation returns the session's configuration, current status, associated streams,
-        /// and metadata.
+        /// Retrieves detailed information about a specific browser session in Amazon Bedrock
+        /// AgentCore. This operation returns the session's configuration, current status, associated
+        /// streams, and metadata.
         /// 
         ///  
         /// <para>
@@ -242,17 +540,17 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_ListBrowserSessions.html">ListBrowserSessions</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListBrowserSessions.html">ListBrowserSessions</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -299,7 +597,8 @@ namespace Amazon.BedrockAgentCore
 
         /// <summary>
         /// Retrieves detailed information about a specific code interpreter session in Amazon
-        /// Bedrock. This operation returns the session's configuration, current status, and metadata.
+        /// Bedrock AgentCore. This operation returns the session's configuration, current status,
+        /// and metadata.
         /// 
         ///  
         /// <para>
@@ -313,17 +612,17 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -369,11 +668,11 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves information about a specific event in a memory store.
+        /// Retrieves information about a specific event in an AgentCore Memory resource.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:GetEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:GetEvent</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvent service method.</param>
@@ -423,11 +722,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves a specific memory record from a memory store.
+        /// Retrieves a specific memory record from an AgentCore Memory resource.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:GetMemoryRecord</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:GetMemoryRecord</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMemoryRecord service method.</param>
@@ -477,7 +777,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves an API Key associated with an API Key Credential Provider
+        /// Retrieves the API key associated with an API key credential provider.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -524,7 +824,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Reaturns the Oauth2Token of the provided resource
+        /// Returns the OAuth 2.0 token of the provided resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceOauth2Token service method.</param>
         /// <param name="cancellationToken">
@@ -571,7 +871,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads not acting on behalf of user.
+        /// Obtains a workload access token for agentic workloads not acting on behalf of a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessToken service method.</param>
         /// <param name="cancellationToken">
@@ -618,8 +918,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// JWT token
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using a JWT token.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForJWT service method.</param>
         /// <param name="cancellationToken">
@@ -666,8 +966,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// User Id.
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using the user's ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForUserId service method.</param>
         /// <param name="cancellationToken">
@@ -714,21 +1014,40 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Sends a request to an agent runtime in Amazon Bedrock and receives responses in real-time.
-        /// The agent processes the request using the configured foundation model and any associated
-        /// knowledge bases or action groups.
+        /// Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime
+        /// and receives responses in real-time. 
         /// 
         ///  
         /// <para>
-        /// To invoke an agent runtime, you must specify the agent runtime ARN and provide a payload
+        /// To invoke an agent you must specify the AgentCore Runtime ARN and provide a payload
         /// containing your request. You can optionally specify a qualifier to target a specific
-        /// version or alias of the agent.
+        /// version or endpoint of the agent.
         /// </para>
         ///  
         /// <para>
         /// This operation supports streaming responses, allowing you to receive partial responses
         /// as they become available. We recommend using pagination to ensure that the operation
         /// returns quickly and successfully when processing large responses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke
+        /// an AgentCore Runtime agent</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're integrating your agent with OAuth, you can't use the Amazon Web Services
+        /// SDK to call <c>InvokeAgentRuntime</c>. Instead, make a HTTPS request to <c>InvokeAgentRuntime</c>.
+        /// For an example, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate
+        /// and authorize with Inbound Auth and Outbound Auth</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntime</c>
+        /// permission. If you are making a call to <c>InvokeAgentRuntime</c> on behalf of a user
+        /// ID with the <c>X-Amzn-Bedrock-AgentCore-Runtime-User-Id</c> header, You require permissions
+        /// to both actions (<c>bedrock-agentcore:InvokeAgentRuntime</c> and <c>bedrock-agentcore:InvokeAgentRuntimeForUser</c>).
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgentRuntime service method.</param>
@@ -782,9 +1101,9 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Executes code within an active code interpreter session in Amazon Bedrock. This operation
-        /// processes the provided code, runs it in a secure environment, and returns the execution
-        /// results including output, errors, and generated visualizations.
+        /// Executes code within an active code interpreter session in Amazon Bedrock AgentCore.
+        /// This operation processes the provided code, runs it in a secure environment, and returns
+        /// the execution results including output, errors, and generated visualizations.
         /// 
         ///  
         /// <para>
@@ -803,12 +1122,12 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -864,12 +1183,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists all actors in a memory store. We recommend using pagination to ensure that the
-        /// operation returns quickly and successfully.
+        /// Lists all actors in an AgentCore Memory resource. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListActors</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListActors</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActors service method.</param>
@@ -919,9 +1238,9 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves a list of browser sessions in Amazon Bedrock that match the specified criteria.
-        /// This operation returns summary information about each session, including identifiers,
-        /// status, and timestamps.
+        /// Retrieves a list of browser sessions in Amazon Bedrock AgentCore that match the specified
+        /// criteria. This operation returns summary information about each session, including
+        /// identifiers, status, and timestamps.
         /// 
         ///  
         /// <para>
@@ -939,12 +1258,12 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -990,9 +1309,9 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves a list of code interpreter sessions in Amazon Bedrock that match the specified
-        /// criteria. This operation returns summary information about each session, including
-        /// identifiers, status, and timestamps.
+        /// Retrieves a list of code interpreter sessions in Amazon Bedrock AgentCore that match
+        /// the specified criteria. This operation returns summary information about each session,
+        /// including identifiers, status, and timestamps.
         /// 
         ///  
         /// <para>
@@ -1010,12 +1329,12 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1061,12 +1380,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists events in a memory store based on specified criteria. We recommend using pagination
-        /// to ensure that the operation returns quickly and successfully.
+        /// Lists events in an AgentCore Memory resource based on specified criteria. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListEvents</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListEvents</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvents service method.</param>
@@ -1111,17 +1430,70 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
                 
+        #region  ListMemoryExtractionJobs
+
+
+
+        /// <summary>
+        /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+        /// filtering.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMemoryExtractionJobs service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        Task<ListMemoryExtractionJobsResponse> ListMemoryExtractionJobsAsync(ListMemoryExtractionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListMemoryRecords
 
 
 
         /// <summary>
-        /// Lists memory records in a memory store based on specified criteria. We recommend using
-        /// pagination to ensure that the operation returns quickly and successfully.
+        /// Lists memory records in an AgentCore Memory resource based on specified criteria.
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListMemoryRecords</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryRecords</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemoryRecords service method.</param>
@@ -1171,12 +1543,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists sessions in a memory store based on specified criteria. We recommend using pagination
-        /// to ensure that the operation returns quickly and successfully.
+        /// Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListSessions</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
@@ -1226,13 +1598,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Searches for and retrieves memory records from a memory store based on specified search
-        /// criteria. We recommend using pagination to ensure that the operation returns quickly
-        /// and successfully.
+        /// Searches for and retrieves memory records from an AgentCore Memory resource based
+        /// on specified search criteria. We recommend using pagination to ensure that the operation
+        /// returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:RetrieveMemoryRecords</c>
+        /// To use this operation, you must have the <c>bedrock-agentcore:RetrieveMemoryRecords</c>
         /// permission.
         /// </para>
         /// </summary>
@@ -1278,14 +1650,94 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
                 
+        #region  SaveBrowserSessionProfile
+
+
+
+        /// <summary>
+        /// Saves the current state of a browser session as a reusable profile in Amazon Bedrock
+        /// AgentCore. A browser profile captures persistent browser data such as cookies and
+        /// local storage from an active session, enabling you to reuse this data in future browser
+        /// sessions.
+        /// 
+        ///  
+        /// <para>
+        /// To save a browser session profile, you must specify the profile identifier, browser
+        /// identifier, and session ID. The session must be active when saving the profile. Once
+        /// saved, the profile can be used with the <c>StartBrowserSession</c> operation to initialize
+        /// new sessions with the stored browser state.
+        /// </para>
+        ///  
+        /// <para>
+        /// Browser profiles are useful for scenarios that require persistent authentication,
+        /// maintaining user preferences across sessions, or continuing tasks that depend on previously
+        /// stored browser data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>SaveBrowserSessionProfile</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SaveBrowserSessionProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SaveBrowserSessionProfile service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SaveBrowserSessionProfile">REST API Reference for SaveBrowserSessionProfile Operation</seealso>
+        Task<SaveBrowserSessionProfileResponse> SaveBrowserSessionProfileAsync(SaveBrowserSessionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartBrowserSession
 
 
 
         /// <summary>
-        /// Creates and initializes a browser session in Amazon Bedrock. The session enables agents
-        /// to navigate and interact with web content, extract information from websites, and
-        /// perform web-based tasks as part of their response generation.
+        /// Creates and initializes a browser session in Amazon Bedrock AgentCore. The session
+        /// enables agents to navigate and interact with web content, extract information from
+        /// websites, and perform web-based tasks as part of their response generation.
         /// 
         ///  
         /// <para>
@@ -1300,17 +1752,22 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1366,9 +1823,10 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Creates and initializes a code interpreter session in Amazon Bedrock. The session
-        /// enables agents to execute code as part of their response generation, supporting programming
-        /// languages such as Python for data analysis, visualization, and computation tasks.
+        /// Creates and initializes a code interpreter session in Amazon Bedrock AgentCore. The
+        /// session enables agents to execute code as part of their response generation, supporting
+        /// programming languages such as Python for data analysis, visualization, and computation
+        /// tasks.
         /// 
         ///  
         /// <para>
@@ -1382,17 +1840,17 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_InvokeCodeInterpreter.html">InvokeCodeInterpreter</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeCodeInterpreter.html">InvokeCodeInterpreter</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1443,13 +1901,68 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
                 
+        #region  StartMemoryExtractionJob
+
+
+
+        /// <summary>
+        /// Starts a memory extraction job that processes events that failed extraction previously
+        /// in an AgentCore Memory resource and produces structured memory records. When earlier
+        /// extraction attempts have left events unprocessed, this job will pick up and extract
+        /// those as well. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:StartMemoryExtractionJob</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMemoryExtractionJob service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        Task<StartMemoryExtractionJobResponse> StartMemoryExtractionJobAsync(StartMemoryExtractionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopBrowserSession
 
 
 
         /// <summary>
-        /// Terminates an active browser session in Amazon Bedrock. This operation stops the session,
-        /// releases associated resources, and makes the session unavailable for further use.
+        /// Terminates an active browser session in Amazon Bedrock AgentCore. This operation stops
+        /// the session, releases associated resources, and makes the session unavailable for
+        /// further use.
         /// 
         ///  
         /// <para>
@@ -1463,12 +1976,12 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1524,9 +2037,9 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Terminates an active code interpreter session in Amazon Bedrock. This operation stops
-        /// the session, releases associated resources, and makes the session unavailable for
-        /// further use.
+        /// Terminates an active code interpreter session in Amazon Bedrock AgentCore. This operation
+        /// stops the session, releases associated resources, and makes the session unavailable
+        /// for further use.
         /// 
         ///  
         /// <para>
@@ -1540,12 +2053,12 @@ namespace Amazon.BedrockAgentCore
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1593,6 +2106,68 @@ namespace Amazon.BedrockAgentCore
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopCodeInterpreterSession">REST API Reference for StopCodeInterpreterSession Operation</seealso>
         Task<StopCodeInterpreterSessionResponse> StopCodeInterpreterSessionAsync(StopCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopRuntimeSession
+
+
+
+        /// <summary>
+        /// Stops a session that is running in an running AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRuntimeSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRuntimeSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopRuntimeSession">REST API Reference for StopRuntimeSession Operation</seealso>
+        Task<StopRuntimeSessionResponse> StopRuntimeSessionAsync(StopRuntimeSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

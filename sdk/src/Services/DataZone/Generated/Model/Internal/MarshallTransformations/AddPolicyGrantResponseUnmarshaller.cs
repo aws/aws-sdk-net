@@ -47,6 +47,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             AddPolicyGrantResponse response = new AddPolicyGrantResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("grantId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GrantId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }

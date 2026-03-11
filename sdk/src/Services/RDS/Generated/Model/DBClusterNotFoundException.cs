@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterNotFoundException
+        /// message.
+        /// </summary>
+        public DBClusterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterNotFoundException with the specified error
         /// message.
         /// </summary>

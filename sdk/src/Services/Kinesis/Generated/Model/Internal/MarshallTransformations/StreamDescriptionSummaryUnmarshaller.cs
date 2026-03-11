@@ -80,6 +80,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MaxRecordSizeInKiB", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxRecordSizeInKiB = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("OpenShardCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("StreamId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("StreamModeDetails", targetDepth))
                 {
                     var unmarshaller = StreamModeDetailsUnmarshaller.Instance;
@@ -120,6 +132,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("WarmThroughput", targetDepth))
+                {
+                    var unmarshaller = WarmThroughputObjectUnmarshaller.Instance;
+                    unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

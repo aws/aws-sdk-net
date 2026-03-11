@@ -42,6 +42,21 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+    /// purpose buckets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+    /// Points for directory buckets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+    /// Points for general purpose buckets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
     /// buckets</a> 
     /// </para>
@@ -57,13 +72,9 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:TagResource</c>
-    /// permission to use this operation. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-    /// account permissions to use S3 Storage Lens groups</a>.
+    /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+    /// groups, and S3 Access Grants, you must have the <c>s3:TagResource</c> permission to
+    /// use this operation. 
     /// </para>
     ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
     /// <para>

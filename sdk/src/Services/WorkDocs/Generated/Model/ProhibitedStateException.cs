@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for ProhibitedStateException
+        /// message.
+        /// </summary>
+        public ProhibitedStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ProhibitedStateException with the specified error
         /// message.
         /// </summary>

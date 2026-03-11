@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified parameter combination is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidParameterCombinationException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidParameterCombinationException
+        /// message.
+        /// </summary>
+        public InvalidParameterCombinationException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidParameterCombinationException with the specified error

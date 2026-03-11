@@ -363,7 +363,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual CreateEncoderConfigurationResponse CreateEncoderConfiguration(CreateEncoderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEncoderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEncoderConfigurationResponseUnmarshaller.Instance;
 
@@ -405,7 +405,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
         public virtual Task<CreateEncoderConfigurationResponse> CreateEncoderConfigurationAsync(CreateEncoderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEncoderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEncoderConfigurationResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual CreateIngestConfigurationResponse CreateIngestConfiguration(CreateIngestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -451,7 +451,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
         public virtual Task<CreateIngestConfigurationResponse> CreateIngestConfigurationAsync(CreateIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual CreateParticipantTokenResponse CreateParticipantToken(CreateParticipantTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParticipantTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParticipantTokenResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateParticipantToken">REST API Reference for CreateParticipantToken Operation</seealso>
         public virtual Task<CreateParticipantTokenResponse> CreateParticipantTokenAsync(CreateParticipantTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParticipantTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParticipantTokenResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
 
@@ -550,7 +550,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual CreateStorageConfigurationResponse CreateStorageConfiguration(CreateStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
         public virtual Task<CreateStorageConfigurationResponse> CreateStorageConfigurationAsync(CreateStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual DeleteEncoderConfigurationResponse DeleteEncoderConfiguration(DeleteEncoderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEncoderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEncoderConfigurationResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
         public virtual Task<DeleteEncoderConfigurationResponse> DeleteEncoderConfigurationAsync(DeleteEncoderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEncoderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEncoderConfigurationResponseUnmarshaller.Instance;
 
@@ -671,7 +671,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual DeleteIngestConfigurationResponse DeleteIngestConfiguration(DeleteIngestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
         public virtual Task<DeleteIngestConfigurationResponse> DeleteIngestConfigurationAsync(DeleteIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         public virtual Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
 
@@ -770,7 +770,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
@@ -820,7 +820,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual DeleteStorageConfigurationResponse DeleteStorageConfiguration(DeleteStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
         public virtual Task<DeleteStorageConfigurationResponse> DeleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual DisconnectParticipantResponse DisconnectParticipant(DisconnectParticipantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectParticipantResponseUnmarshaller.Instance;
 
@@ -914,7 +914,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DisconnectParticipant">REST API Reference for DisconnectParticipant Operation</seealso>
         public virtual Task<DisconnectParticipantResponse> DisconnectParticipantAsync(DisconnectParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectParticipantResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetCompositionResponse GetComposition(GetCompositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompositionResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
         public virtual Task<GetCompositionResponse> GetCompositionAsync(GetCompositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompositionResponseUnmarshaller.Instance;
 
@@ -977,7 +977,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetEncoderConfigurationResponse GetEncoderConfiguration(GetEncoderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncoderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncoderConfigurationResponseUnmarshaller.Instance;
 
@@ -1016,7 +1016,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
         public virtual Task<GetEncoderConfigurationResponse> GetEncoderConfigurationAsync(GetEncoderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncoderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncoderConfigurationResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetIngestConfigurationResponse GetIngestConfiguration(GetIngestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -1058,7 +1058,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
         public virtual Task<GetIngestConfigurationResponse> GetIngestConfigurationAsync(GetIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -1070,7 +1070,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetParticipantResponse GetParticipant(GetParticipantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParticipantResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
         public virtual Task<GetParticipantResponse> GetParticipantAsync(GetParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParticipantResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         public virtual Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
@@ -1154,7 +1154,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetStageResponse GetStage(GetStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
@@ -1184,7 +1184,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetStageSessionResponse GetStageSession(GetStageSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageSessionResponseUnmarshaller.Instance;
 
@@ -1226,7 +1226,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
         public virtual Task<GetStageSessionResponse> GetStageSessionAsync(GetStageSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageSessionResponseUnmarshaller.Instance;
 
@@ -1238,7 +1238,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual GetStorageConfigurationResponse GetStorageConfiguration(GetStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
         public virtual Task<GetStorageConfigurationResponse> GetStorageConfigurationAsync(GetStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -1289,7 +1289,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ImportPublicKeyResponse ImportPublicKey(ImportPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportPublicKeyResponseUnmarshaller.Instance;
 
@@ -1325,7 +1325,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ImportPublicKey">REST API Reference for ImportPublicKey Operation</seealso>
         public virtual Task<ImportPublicKeyResponse> ImportPublicKeyAsync(ImportPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportPublicKeyResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListCompositionsResponse ListCompositions(ListCompositionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCompositionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCompositionsResponseUnmarshaller.Instance;
 
@@ -1374,7 +1374,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
         public virtual Task<ListCompositionsResponse> ListCompositionsAsync(ListCompositionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCompositionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCompositionsResponseUnmarshaller.Instance;
 
@@ -1386,7 +1386,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListEncoderConfigurationsResponse ListEncoderConfigurations(ListEncoderConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEncoderConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEncoderConfigurationsResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
         public virtual Task<ListEncoderConfigurationsResponse> ListEncoderConfigurationsAsync(ListEncoderConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEncoderConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEncoderConfigurationsResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListIngestConfigurationsResponse ListIngestConfigurations(ListIngestConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestConfigurationsResponseUnmarshaller.Instance;
 
@@ -1463,7 +1463,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
         public virtual Task<ListIngestConfigurationsResponse> ListIngestConfigurationsAsync(ListIngestConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestConfigurationsResponseUnmarshaller.Instance;
 
@@ -1475,7 +1475,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListParticipantEventsResponse ListParticipantEvents(ListParticipantEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParticipantEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParticipantEventsResponseUnmarshaller.Instance;
 
@@ -1502,7 +1502,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
         public virtual Task<ListParticipantEventsResponse> ListParticipantEventsAsync(ListParticipantEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParticipantEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParticipantEventsResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListParticipantReplicasResponse ListParticipantReplicas(ListParticipantReplicasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParticipantReplicasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParticipantReplicasResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
         public virtual Task<ListParticipantReplicasResponse> ListParticipantReplicasAsync(ListParticipantReplicasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParticipantReplicasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParticipantReplicasResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListParticipantsResponse ListParticipants(ListParticipantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParticipantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParticipantsResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
         public virtual Task<ListParticipantsResponse> ListParticipantsAsync(ListParticipantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParticipantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParticipantsResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListStagesResponse ListStages(ListStagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStagesResponseUnmarshaller.Instance;
 
@@ -1663,7 +1663,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStages">REST API Reference for ListStages Operation</seealso>
         public virtual Task<ListStagesResponse> ListStagesAsync(ListStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStagesResponseUnmarshaller.Instance;
 
@@ -1675,7 +1675,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListStageSessionsResponse ListStageSessions(ListStageSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStageSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStageSessionsResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
         public virtual Task<ListStageSessionsResponse> ListStageSessionsAsync(ListStageSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStageSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStageSessionsResponseUnmarshaller.Instance;
 
@@ -1714,7 +1714,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListStorageConfigurationsResponse ListStorageConfigurations(ListStorageConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageConfigurationsResponseUnmarshaller.Instance;
 
@@ -1751,7 +1751,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
         public virtual Task<ListStorageConfigurationsResponse> ListStorageConfigurationsAsync(ListStorageConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageConfigurationsResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1805,7 +1805,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual StartCompositionResponse StartComposition(StartCompositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCompositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCompositionResponseUnmarshaller.Instance;
 
@@ -1875,7 +1875,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
         public virtual Task<StartCompositionResponse> StartCompositionAsync(StartCompositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCompositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCompositionResponseUnmarshaller.Instance;
 
@@ -1887,7 +1887,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual StartParticipantReplicationResponse StartParticipantReplication(StartParticipantReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartParticipantReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartParticipantReplicationResponseUnmarshaller.Instance;
 
@@ -1929,7 +1929,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
         public virtual Task<StartParticipantReplicationResponse> StartParticipantReplicationAsync(StartParticipantReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartParticipantReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartParticipantReplicationResponseUnmarshaller.Instance;
 
@@ -1941,7 +1941,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual StopCompositionResponse StopComposition(StopCompositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCompositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCompositionResponseUnmarshaller.Instance;
 
@@ -1981,7 +1981,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
         public virtual Task<StopCompositionResponse> StopCompositionAsync(StopCompositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCompositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCompositionResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual StopParticipantReplicationResponse StopParticipantReplication(StopParticipantReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopParticipantReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopParticipantReplicationResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
         public virtual Task<StopParticipantReplicationResponse> StopParticipantReplicationAsync(StopParticipantReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopParticipantReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopParticipantReplicationResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2110,7 +2110,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2122,7 +2122,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual UpdateIngestConfigurationResponse UpdateIngestConfiguration(UpdateIngestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -2159,7 +2159,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
         public virtual Task<UpdateIngestConfigurationResponse> UpdateIngestConfigurationAsync(UpdateIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIngestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIngestConfigurationResponseUnmarshaller.Instance;
 
@@ -2171,7 +2171,7 @@ namespace Amazon.IVSRealTime
 
         internal virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
@@ -2210,7 +2210,7 @@ namespace Amazon.IVSRealTime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 

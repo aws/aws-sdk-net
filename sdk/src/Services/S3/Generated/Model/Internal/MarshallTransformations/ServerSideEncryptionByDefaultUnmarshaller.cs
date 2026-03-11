@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerSideEncryptionByDefault Object
     /// </summary>  
-    public class ServerSideEncryptionByDefaultUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionByDefault, XmlUnmarshallerContext>
+    public partial class ServerSideEncryptionByDefaultUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionByDefault, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.ServerSideEncryptionKeyManagementServiceKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ServerSideEncryptionByDefault unmarshalledObject, int targetDepth);
+
         private static ServerSideEncryptionByDefaultUnmarshaller _instance = new ServerSideEncryptionByDefaultUnmarshaller();        
 
         /// <summary>

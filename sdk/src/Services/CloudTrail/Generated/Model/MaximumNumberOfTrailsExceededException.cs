@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumNumberOfTrailsExceededException
+        /// message.
+        /// </summary>
+        public MaximumNumberOfTrailsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumNumberOfTrailsExceededException with the specified error
         /// message.
         /// </summary>

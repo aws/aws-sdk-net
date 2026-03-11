@@ -1184,7 +1184,9 @@
         "errorCode":{"shape":"EventErrorCode"},
         "destinationStageArn":{"shape":"StageArn"},
         "destinationSessionId":{"shape":"StageSessionId"},
-        "replica":{"shape":"Replica"}
+        "replica":{"shape":"Replica"},
+        "previousToken":{"shape":"ExchangedParticipantToken"},
+        "newToken":{"shape":"ExchangedParticipantToken"}
       }
     },
     "EventErrorCode":{
@@ -1223,8 +1225,18 @@
         "SUBSCRIBE_ERROR",
         "JOIN_ERROR",
         "REPLICATION_STARTED",
-        "REPLICATION_STOPPED"
+        "REPLICATION_STOPPED",
+        "TOKEN_EXCHANGED"
       ]
+    },
+    "ExchangedParticipantToken":{
+      "type":"structure",
+      "members":{
+        "capabilities":{"shape":"ParticipantTokenCapabilities"},
+        "attributes":{"shape":"ParticipantTokenAttributes"},
+        "userId":{"shape":"ParticipantTokenUserId"},
+        "expirationTime":{"shape":"ParticipantTokenExpirationTime"}
+      }
     },
     "Framerate":{
       "type":"float",
@@ -1353,7 +1365,8 @@
         "omitStoppedVideo":{"shape":"OmitStoppedVideo"},
         "videoAspectRatio":{"shape":"VideoAspectRatio"},
         "videoFillMode":{"shape":"VideoFillMode"},
-        "gridGap":{"shape":"GridGap"}
+        "gridGap":{"shape":"GridGap"},
+        "participantOrderAttribute":{"shape":"AttributeKey"}
       }
     },
     "GridGap":{
@@ -2097,7 +2110,8 @@
         "pipOffset":{"shape":"PipOffset"},
         "pipPosition":{"shape":"PipPosition"},
         "pipWidth":{"shape":"PipWidth"},
-        "pipHeight":{"shape":"PipHeight"}
+        "pipHeight":{"shape":"PipHeight"},
+        "participantOrderAttribute":{"shape":"AttributeKey"}
       }
     },
     "PipHeight":{

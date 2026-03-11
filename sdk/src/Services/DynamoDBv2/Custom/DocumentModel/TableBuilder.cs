@@ -275,6 +275,98 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this;
         }
 
+        /// <inheritdoc/>
+        public ITableBuilder AddGlobalSecondaryIndex(string indexName, List<KeyValuePair<string, DynamoDBEntryType>> hashkeyAttributes, List<KeyValuePair<string, DynamoDBEntryType>> rangeKeyAttributes)
+        {
+
+            if (string.IsNullOrEmpty(indexName))
+            {
+                throw new ArgumentNullException(nameof(indexName), "The name of the global secondary index is required");
+            }
+
+            if (_table.GlobalSecondaryIndexes.ContainsKey(indexName))
+            {
+                throw new ArgumentException($"An global secondary index with name {indexName} has already been defined.");
+            }
+
+            if (hashkeyAttributes==null || hashkeyAttributes.Count==0)
+            {
+                throw new ArgumentNullException(nameof(hashkeyAttributes), "Hash key attributes are required for global secondary index.");
+            }
+
+            if (hashkeyAttributes.Count > 4)
+            {
+                throw new ArgumentException("Maximum of 4 hash key attributes allowed for composite key.", nameof(hashkeyAttributes));
+            }
+            
+            var duplicateHashKeys = new HashSet<string>();
+            foreach (var hashKey in hashkeyAttributes)
+            {
+                if (!duplicateHashKeys.Add(hashKey.Key))
+                {
+                    throw new ArgumentException($"Duplicate hash key attribute name '{hashKey.Key}' found in composite key definition.", nameof(hashkeyAttributes));
+                }
+            }
+            if (rangeKeyAttributes is { Count: > 4 })
+            {
+                throw new ArgumentException("Maximum of 4 range key attributes allowed for composite key.", nameof(rangeKeyAttributes));
+            }
+
+            if (rangeKeyAttributes != null)
+            {
+                var duplicateRangeKeys = new HashSet<string>();
+                foreach (var rangeKey in rangeKeyAttributes)
+                {
+                    if (!duplicateRangeKeys.Add(rangeKey.Key))
+                    {
+                        throw new ArgumentException($"Duplicate range key attribute name '{rangeKey.Key}' found in composite key definition.", nameof(rangeKeyAttributes));
+                    }
+                }
+            }
+
+            var keySchema = new List<KeySchemaElement>();
+
+            foreach (var hashKey in hashkeyAttributes)
+            {
+                if (string.IsNullOrEmpty(hashKey.Key))
+                {
+                    throw new ArgumentNullException(nameof(hashKey.Key), "The attribute name of the hash key within the global secondary index is required.");
+                }
+                keySchema.Add(new KeySchemaElement { AttributeName = hashKey.Key, KeyType = KeyType.HASH });
+                if (!_attributesAlreadyProcessed.Contains(hashKey.Key))
+                {
+                    _table.Attributes.Add(new AttributeDefinition(hashKey.Key, dynamoDBEntryTypeToScalarAttributeType(hashKey.Value)));
+                    _attributesAlreadyProcessed.Add(hashKey.Key);
+                }
+            }
+
+            if (rangeKeyAttributes is { Count: > 0 })
+            {
+                foreach (var rangeKey in rangeKeyAttributes)
+                {
+                    if (string.IsNullOrEmpty(rangeKey.Key))
+                    {
+                        throw new ArgumentNullException(nameof(rangeKey.Key), "The attribute name of the range key within the global secondary index is required.");
+                    }
+                    keySchema.Add(new KeySchemaElement { AttributeName = rangeKey.Key, KeyType = KeyType.RANGE });
+                    if (!_attributesAlreadyProcessed.Contains(rangeKey.Key))
+                    {
+                        _table.Attributes.Add(new AttributeDefinition(rangeKey.Key, dynamoDBEntryTypeToScalarAttributeType(rangeKey.Value)));
+                        _attributesAlreadyProcessed.Add(rangeKey.Key);
+                    }
+                }
+            }
+            _table.GlobalSecondaryIndexNames.Add(indexName);
+
+            _table.GlobalSecondaryIndexes.Add(indexName, new GlobalSecondaryIndexDescription
+            {
+                IndexName = indexName,
+                KeySchema = keySchema
+            });
+
+            return this;
+        }
+
         /// <summary>
         /// Maps the document model's <see cref="DynamoDBEntryType"/> to the corresponding, low-level <see cref="ScalarAttributeType"/>
         /// </summary>

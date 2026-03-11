@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidWebhookAuthenticationParametersException
+        /// message.
+        /// </summary>
+        public InvalidWebhookAuthenticationParametersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidWebhookAuthenticationParametersException with the specified error
         /// message.
         /// </summary>

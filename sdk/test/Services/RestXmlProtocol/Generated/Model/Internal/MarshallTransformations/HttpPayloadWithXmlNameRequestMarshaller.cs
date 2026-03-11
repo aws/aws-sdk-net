@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpPayloadWithXmlNameRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.ResourcePath = "/HttpPayloadWithXmlName";
 
@@ -72,6 +73,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -83,8 +85,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static HttpPayloadWithXmlNameRequestMarshaller _instance = new HttpPayloadWithXmlNameRequestMarshaller();        
@@ -106,5 +106,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpPayloadWithXmlNameRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, HttpPayloadWithXmlNameRequest publicRequest);
     }    
 }

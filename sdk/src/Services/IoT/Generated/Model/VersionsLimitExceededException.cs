@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for VersionsLimitExceededException
+        /// message.
+        /// </summary>
+        public VersionsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VersionsLimitExceededException with the specified error
         /// message.
         /// </summary>

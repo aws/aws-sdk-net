@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// Container for the parameters to the StartConfigurationPolicyAssociation operation.
     /// Associates a target account, organizational unit, or the root with a specified configuration.
     /// The target can be associated with a configuration policy or self-managed behavior.
-    /// Only the Security Hub delegated administrator can invoke this operation from the home
-    /// Region.
+    /// Only the Security Hub CSPM delegated administrator can invoke this operation from
+    /// the home Region.
     /// </summary>
     public partial class StartConfigurationPolicyAssociationRequest : AmazonSecurityHubRequest
     {

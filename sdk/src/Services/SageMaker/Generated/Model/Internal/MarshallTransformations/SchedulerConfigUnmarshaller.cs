@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FairShare = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IdleResourceSharing", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdleResourceSharing = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PriorityClasses", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PriorityClass, PriorityClassUnmarshaller>(PriorityClassUnmarshaller.Instance);

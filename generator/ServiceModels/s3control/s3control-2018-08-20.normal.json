@@ -480,7 +480,7 @@
         "requestUri":"/v20180820/configuration/publicAccessBlock"
       },
       "input":{"shape":"DeletePublicAccessBlockRequest"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html\"> Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html\">GetPublicAccessBlock</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html\">PutPublicAccessBlock</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. This operation might be restricted when the account is managed by organization-level Block Public Access policies. You’ll get an Access Denied (403) error when the account is managed by organization-level Block Public Access policies. Organization-level policies override account-level settings, preventing direct account-level modifications. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html\"> Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html\">GetPublicAccessBlock</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html\">PutPublicAccessBlock</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1014,7 +1014,7 @@
       "errors":[
         {"shape":"NoSuchPublicAccessBlockConfiguration"}
       ],
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html\"> Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html\">DeletePublicAccessBlock</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html\">PutPublicAccessBlock</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. This operation returns the effective account-level configuration, which may inherit from organization-level policies. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html\"> Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html\">DeletePublicAccessBlock</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html\">PutPublicAccessBlock</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1278,7 +1278,7 @@
       },
       "input":{"shape":"ListTagsForResourceRequest"},
       "output":{"shape":"ListTagsForResourceResult"},
-      "documentation":"<p>This operation allows you to list all of the tags for a specified resource. Each tag is a label consisting of a key and value. Tags can help you organize, track costs for, and control access to resources. </p> <note> <p>This operation is only supported for the following Amazon S3 resources:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html\">Directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html\">Storage Lens groups</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html\">S3 Access Grants instances, registered locations, and grants</a>.</p> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <p>For Storage Lens groups and S3 Access Grants, you must have the <code>s3:ListTagsForResource</code> permission to use this operation. </p> <p>For more information about the required Storage Lens Groups permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions\">Setting account permissions to use S3 Storage Lens groups</a>.</p> </dd> <dt>Directory bucket permissions</dt> <dd> <p>For directory buckets, you must have the <code>s3express:ListTagsForResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html\">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>For information about S3 Tagging errors, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList\">List of Amazon S3 Tagging error codes</a>.</p>",
+      "documentation":"<p>This operation allows you to list all of the tags for a specified resource. Each tag is a label consisting of a key and value. Tags can help you organize, track costs for, and control access to resources. </p> <note> <p>This operation is only supported for the following Amazon S3 resources:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html\">General purpose buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html\">Access Points for directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html\">Access Points for general purpose buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html\">Directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html\">S3 Storage Lens groups</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html\">S3 Access Grants instances, registered locations, and grants</a>.</p> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <p>For general purpose buckets, access points for general purpose buckets, Storage Lens groups, and S3 Access Grants, you must have the <code>s3:ListTagsForResource</code> permission to use this operation. </p> </dd> <dt>Directory bucket permissions</dt> <dd> <p>For directory buckets, you must have the <code>s3express:ListTagsForResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html\">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>For information about S3 Tagging errors, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList\">List of Amazon S3 Tagging error codes</a>.</p>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1519,7 +1519,7 @@
         "requestUri":"/v20180820/configuration/publicAccessBlock"
       },
       "input":{"shape":"PutPublicAccessBlockRequest"},
-      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html\"> Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html\">GetPublicAccessBlock</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html\">DeletePublicAccessBlock</a> </p> </li> </ul>",
+      "documentation":"<note> <p>This operation is not supported by directory buckets.</p> </note> <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. This operation may be restricted when the account is managed by organization-level Block Public Access policies. You might get an Access Denied (403) error when the account is managed by organization-level Block Public Access policies. Organization-level policies override account-level settings, preventing direct account-level modifications. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html\"> Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html\">GetPublicAccessBlock</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html\">DeletePublicAccessBlock</a> </p> </li> </ul>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1600,7 +1600,7 @@
         "xmlNamespace":{"uri":"http://awss3control.amazonaws.com/doc/2018-08-20/"}
       },
       "output":{"shape":"TagResourceResult"},
-      "documentation":"<p> Creates a new user-defined tag or updates an existing tag. Each tag is a label consisting of a key and value that is applied to your resource. Tags can help you organize, track costs for, and control access to your resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource. </p> <note> <p>This operation is only supported for the following Amazon S3 resource:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html\">Directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html\">S3 Storage Lens groups</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html\">S3 Access Grants instances, registered locations, or grants</a>.</p> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <p>For Storage Lens groups and S3 Access Grants, you must have the <code>s3:TagResource</code> permission to use this operation. </p> <p>For more information about the required Storage Lens Groups permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions\">Setting account permissions to use S3 Storage Lens groups</a>.</p> </dd> <dt>Directory bucket permissions</dt> <dd> <p>For directory buckets, you must have the <code>s3express:TagResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html\">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>For information about S3 Tagging errors, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList\">List of Amazon S3 Tagging error codes</a>.</p>",
+      "documentation":"<p> Creates a new user-defined tag or updates an existing tag. Each tag is a label consisting of a key and value that is applied to your resource. Tags can help you organize, track costs for, and control access to your resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource. </p> <note> <p>This operation is only supported for the following Amazon S3 resource:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html\">General purpose buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html\">Access Points for directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html\">Access Points for general purpose buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html\">Directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html\">S3 Storage Lens groups</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html\">S3 Access Grants instances, registered locations, or grants</a>.</p> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <p>For general purpose buckets, access points for general purpose buckets, Storage Lens groups, and S3 Access Grants, you must have the <code>s3:TagResource</code> permission to use this operation. </p> </dd> <dt>Directory bucket permissions</dt> <dd> <p>For directory buckets, you must have the <code>s3express:TagResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html\">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>For information about S3 Tagging errors, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList\">List of Amazon S3 Tagging error codes</a>.</p>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1617,7 +1617,7 @@
       },
       "input":{"shape":"UntagResourceRequest"},
       "output":{"shape":"UntagResourceResult"},
-      "documentation":"<p>This operation removes the specified user-defined tags from an S3 resource. You can pass one or more tag keys. </p> <note> <p>This operation is only supported for the following Amazon S3 resources:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html\">Directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html\">Storage Lens groups</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html\">S3 Access Grants instances, registered locations, and grants</a>.</p> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <p>For Storage Lens groups and S3 Access Grants, you must have the <code>s3:UntagResource</code> permission to use this operation. </p> <p>For more information about the required Storage Lens Groups permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions\">Setting account permissions to use S3 Storage Lens groups</a>.</p> </dd> <dt>Directory bucket permissions</dt> <dd> <p>For directory buckets, you must have the <code>s3express:UntagResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html\">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>For information about S3 Tagging errors, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList\">List of Amazon S3 Tagging error codes</a>.</p>",
+      "documentation":"<p>This operation removes the specified user-defined tags from an S3 resource. You can pass one or more tag keys. </p> <note> <p>This operation is only supported for the following Amazon S3 resources:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html\">General purpose buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html\">Access Points for directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html\">Access Points for general purpose buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html\">Directory buckets</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html\">S3 Storage Lens groups</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html\">S3 Access Grants instances, registered locations, and grants</a>.</p> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <p>For general purpose buckets, access points for general purpose buckets, Storage Lens groups, and S3 Access Grants, you must have the <code>s3:UntagResource</code> permission to use this operation. </p> </dd> <dt>Directory bucket permissions</dt> <dd> <p>For directory buckets, you must have the <code>s3express:UntagResource</code> permission to use this operation. For more information about directory buckets policies and permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html\">Identity and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl> <p>For information about S3 Tagging errors, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList\">List of Amazon S3 Tagging error codes</a>.</p>",
       "endpoint":{
         "hostPrefix":"{AccountId}."
       },
@@ -1897,12 +1897,16 @@
           "shape":"DetailedStatusCodesMetrics",
           "documentation":"<p>A container element for detailed status code metrics. </p>"
         },
+        "AdvancedPerformanceMetrics":{
+          "shape":"AdvancedPerformanceMetrics",
+          "documentation":"<p>A container element for S3 Storage Lens advanced performance metrics.</p>"
+        },
         "StorageLensGroupLevel":{
           "shape":"StorageLensGroupLevel",
           "documentation":"<p> A container element for S3 Storage Lens groups metrics. </p>"
         }
       },
-      "documentation":"<p>A container element for the account-level Amazon S3 Storage Lens configuration.</p> <p>For more information about S3 Storage Lens, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html\">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html\">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>"
+      "documentation":"<p>A container element for the account-level Amazon S3 Storage Lens configuration.</p> <note> <p>You must enable Storage Lens metrics consistently at both the account level and bucket level, or your request will fail.</p> </note> <p>For more information about S3 Storage Lens, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html\">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html\">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>"
     },
     "ActivityMetrics":{
       "type":"structure",
@@ -1933,6 +1937,16 @@
         }
       },
       "documentation":"<p>The container element for Amazon S3 Storage Lens advanced data-protection metrics. Advanced data-protection metrics provide insights that you can use to perform audits and protect your data, for example replication rule counts within and across Regions.</p> <p>For more information about S3 Storage Lens, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html\">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html\">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>"
+    },
+    "AdvancedPerformanceMetrics":{
+      "type":"structure",
+      "members":{
+        "IsEnabled":{
+          "shape":"IsEnabled",
+          "documentation":"<p>A container that indicates whether S3 Storage Lens advanced performance metrics are enabled.</p>"
+        }
+      },
+      "documentation":"<p>The container element for S3 Storage Lens advanced performance metrics. Advanced performance metrics provide insights into application performance, such as request efficiency and access patterns. These metrics help you optimize your S3 storage for both cost and performance by providing detailed analytics on how your applications interact with S3 resources.</p> <p>For more information about S3 Storage Lens, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html\">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html\">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>"
     },
     "Alias":{
       "type":"string",
@@ -2135,6 +2149,10 @@
         "DetailedStatusCodesMetrics":{
           "shape":"DetailedStatusCodesMetrics",
           "documentation":"<p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>"
+        },
+        "AdvancedPerformanceMetrics":{
+          "shape":"AdvancedPerformanceMetrics",
+          "documentation":"<p>A container for bucket-level advanced performance metrics for S3 Storage Lens.</p>"
         }
       },
       "documentation":"<p>A container for the bucket-level configuration for Amazon S3 Storage Lens.</p> <p>For more information about S3 Storage Lens, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html\">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>"
@@ -2191,6 +2209,24 @@
         }
       },
       "documentation":"<p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p> <p>For more information about publishing S3 Storage Lens metrics to CloudWatch, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_view_metrics_cloudwatch.html\">Monitor S3 Storage Lens metrics in CloudWatch</a> in the <i>Amazon S3 User Guide</i>.</p>"
+    },
+    "ComputeObjectChecksumAlgorithm":{
+      "type":"string",
+      "enum":[
+        "CRC32",
+        "CRC32C",
+        "CRC64NVME",
+        "MD5",
+        "SHA1",
+        "SHA256"
+      ]
+    },
+    "ComputeObjectChecksumType":{
+      "type":"string",
+      "enum":[
+        "FULL_OBJECT",
+        "COMPOSITE"
+      ]
     },
     "ConfigId":{
       "type":"string",
@@ -2481,6 +2517,10 @@
         "Scope":{
           "shape":"Scope",
           "documentation":"<p>For directory buckets, you can filter access control to specific prefixes, API operations, or a combination of both. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html\">Managing access to shared datasets in directory buckets with access points</a> in the <i>Amazon S3 User Guide</i>.</p> <note> <p>Scope is only supported for access points attached to directory buckets.</p> </note>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>An array of tags that you can apply to an access point. Tags are key-value pairs of metadata used to control access to your access points. For more information about tags, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html\">Using tags with Amazon S3</a>. For information about tagging access points, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#using-tags-for-abac\">Using tags for attribute-based access control (ABAC)</a>.</p>"
         }
       }
     },
@@ -2768,6 +2808,17 @@
       },
       "documentation":"<p>The Amazon Web Services Security Token Service temporary credential that S3 Access Grants vends to grantees and client applications. </p>",
       "sensitive":true
+    },
+    "DSSEKMSFilter":{
+      "type":"structure",
+      "members":{
+        "KmsKeyArn":{
+          "shape":"NonEmptyKmsKeyArnString",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>A filter that returns objects that are encrypted by dual-layer server-side encryption with Amazon Web Services Key Management Service (KMS) keys (DSSE-KMS). You can further refine your filtering by optionally providing a KMS Key ARN to filter objects encrypted by a specific key.</p>"
     },
     "DataSourceId":{
       "type":"string",
@@ -4956,6 +5007,10 @@
         "MatchAnyStorageClass":{
           "shape":"StorageClassList",
           "documentation":"<p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>"
+        },
+        "MatchAnyObjectEncryption":{
+          "shape":"ObjectEncryptionFilterList",
+          "documentation":"<p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).</p>"
         }
       },
       "documentation":"<p>The filter used to describe a set of objects for the job's manifest.</p>"
@@ -5052,6 +5107,16 @@
           "shape":"S3ReplicateObjectOperation",
           "documentation":"<p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p> <note> <p>This functionality is not supported by directory buckets.</p> </note>",
           "box":true
+        },
+        "S3ComputeObjectChecksum":{
+          "shape":"S3ComputeObjectChecksumOperation",
+          "documentation":"<p>Directs the specified job to compute checksum values for every object in the manifest.</p>",
+          "box":true
+        },
+        "S3UpdateObjectEncryption":{
+          "shape":"S3UpdateObjectEncryptionOperation",
+          "documentation":"<p>Updates the server-side encryption type of an existing encrypted object in a general purpose bucket. You can use the <code>UpdateObjectEncryption</code> operation to change encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS key used to encrypt your data so that you can comply with custom key-rotation standards.</p>",
+          "box":true
         }
       },
       "documentation":"<p>The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html\">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>"
@@ -5112,6 +5177,11 @@
         "ReportScope":{
           "shape":"JobReportScope",
           "documentation":"<p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>",
+          "box":true
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "documentation":"<p>Lists the Amazon Web Services account ID that owns the target bucket, where the completion report is received.</p>",
           "box":true
         }
       },
@@ -6155,11 +6225,11 @@
       "members":{
         "BytesGreaterThan":{
           "shape":"ObjectSizeValue",
-          "documentation":"<p> Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 5 TB. </p>"
+          "documentation":"<p> Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 50 TB. </p>"
         },
         "BytesLessThan":{
           "shape":"ObjectSizeValue",
-          "documentation":"<p> Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 5 TB. </p>"
+          "documentation":"<p> Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 50 TB. </p>"
         }
       },
       "documentation":"<p> A filter condition that specifies the object size range of included objects in bytes. Only integers are supported. </p>"
@@ -6347,6 +6417,12 @@
       "exception":true
     },
     "NoSuchPublicAccessBlockConfigurationMessage":{"type":"string"},
+    "NonEmptyKmsKeyArnString":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+"
+    },
     "NonEmptyMaxLength1024String":{
       "type":"string",
       "max":1024,
@@ -6416,8 +6492,65 @@
       "documentation":"<p/>",
       "exception":true
     },
+    "NotSSEFilter":{
+      "type":"structure",
+      "members":{},
+      "documentation":"<p>A filter that returns objects that aren't server-side encrypted.</p>"
+    },
     "ObjectAgeValue":{"type":"integer"},
     "ObjectCreationTime":{"type":"timestamp"},
+    "ObjectEncryption":{
+      "type":"structure",
+      "members":{
+        "SSEKMS":{
+          "shape":"S3UpdateObjectEncryptionSSEKMS",
+          "documentation":"<p>Specifies to update the object encryption type to server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>",
+          "locationName":"SSE-KMS"
+        }
+      },
+      "documentation":"<p>The updated server-side encryption type for this object. The <code>UpdateObjectEncryption</code> operation supports the SSE-KMS encryption type.</p> <p>Valid Values: <code>SSEKMS</code> </p>"
+    },
+    "ObjectEncryptionFilter":{
+      "type":"structure",
+      "members":{
+        "SSES3":{
+          "shape":"SSES3Filter",
+          "documentation":"<p>Filters for objects that are encrypted by server-side encryption with Amazon S3 managed keys (SSE-S3).</p>",
+          "locationName":"SSE-S3"
+        },
+        "SSEKMS":{
+          "shape":"SSEKMSFilter",
+          "documentation":"<p>Filters for objects that are encrypted by server-side encryption with Amazon Web Services Key Management Service (KMS) keys (SSE-KMS).</p>",
+          "locationName":"SSE-KMS"
+        },
+        "DSSEKMS":{
+          "shape":"DSSEKMSFilter",
+          "documentation":"<p>Filters for objects that are encrypted by dual-layer server-side encryption with Amazon Web Services Key Management Service (KMS) keys (DSSE-KMS).</p>",
+          "locationName":"DSSE-KMS"
+        },
+        "SSEC":{
+          "shape":"SSECFilter",
+          "documentation":"<p>Filters for objects that are encrypted by server-side encryption with customer-provided keys (SSE-C).</p>",
+          "locationName":"SSE-C"
+        },
+        "NOTSSE":{
+          "shape":"NotSSEFilter",
+          "documentation":"<p>Filters for objects that are not encrypted by server-side encryption.</p>",
+          "locationName":"NOT-SSE"
+        }
+      },
+      "documentation":"<p>An optional filter for the S3JobManifestGenerator that identifies the subset of objects by encryption type.</p>",
+      "union":true
+    },
+    "ObjectEncryptionFilterList":{
+      "type":"list",
+      "member":{
+        "shape":"ObjectEncryptionFilter",
+        "locationName":"ObjectEncryption"
+      },
+      "max":1,
+      "min":1
+    },
     "ObjectLambdaAccessPoint":{
       "type":"structure",
       "required":["Name"],
@@ -6601,7 +6734,9 @@
         "S3InitiateRestoreObject",
         "S3PutObjectLegalHold",
         "S3PutObjectRetention",
-        "S3ReplicateObject"
+        "S3ReplicateObject",
+        "S3ComputeObjectChecksum",
+        "S3UpdateObjectEncryption"
       ]
     },
     "Organization":{
@@ -7636,6 +7771,20 @@
         "CRC64NVME"
       ]
     },
+    "S3ComputeObjectChecksumOperation":{
+      "type":"structure",
+      "members":{
+        "ChecksumAlgorithm":{
+          "shape":"ComputeObjectChecksumAlgorithm",
+          "documentation":"<p>Indicates the algorithm that you want Amazon S3 to use to create the checksum. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html\">Checking object integrity</a> in the Amazon S3 User Guide.</p>"
+        },
+        "ChecksumType":{
+          "shape":"ComputeObjectChecksumType",
+          "documentation":"<p>Indicates the checksum type that you want Amazon S3 to use to calculate the object's checksum value. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html\">Checking object integrity</a> in the Amazon S3 User Guide.</p>"
+        }
+      },
+      "documentation":"<p>Directs the specified job to invoke the ComputeObjectChecksum operation on every object listed in the job's manifest.</p>"
+    },
     "S3ContentLength":{
       "type":"long",
       "min":0
@@ -8125,11 +8274,43 @@
       "type":"list",
       "member":{"shape":"S3Tag"}
     },
+    "S3UpdateObjectEncryptionOperation":{
+      "type":"structure",
+      "members":{
+        "ObjectEncryption":{
+          "shape":"ObjectEncryption",
+          "documentation":"<p>The updated server-side encryption type for this S3 object. The <code>UpdateObjectEncryption</code> operation supports the SSE-KMS encryption type.</p>"
+        }
+      },
+      "documentation":"<p>With the <code>UpdateObjectEncryption</code> operation, you can atomically update the server-side encryption type of an existing object in a general purpose bucket without any data movement.</p>"
+    },
+    "S3UpdateObjectEncryptionSSEKMS":{
+      "type":"structure",
+      "required":["KMSKeyArn"],
+      "members":{
+        "KMSKeyArn":{
+          "shape":"NonEmptyKmsKeyArnString",
+          "documentation":"<p>Specifies the Amazon Web Services KMS key Amazon Resource Name (ARN) to use for the updated server-side encryption type. Required if <code>UpdateObjectEncryption</code> specifies <code>SSEKMS</code>.</p>"
+        },
+        "BucketKeyEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS). If this value isn't specified, it defaults to <code>false</code>. Setting this value to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for update object encryption with SSE-KMS.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>If <code>SSEKMS</code> is specified for <code>UpdateObjectEncryption</code>, this data type specifies the Amazon Web Services KMS key Amazon Resource Name (ARN) to use and whether to use an S3 Bucket Key for server-side encryption using Key Management Service (KMS) keys (SSE-KMS).</p>",
+      "locationName":"SSE-KMS"
+    },
     "S3UserMetadata":{
       "type":"map",
       "key":{"shape":"NonEmptyMaxLength1024String"},
       "value":{"shape":"MaxLength1024String"},
       "max":8192
+    },
+    "SSECFilter":{
+      "type":"structure",
+      "members":{},
+      "documentation":"<p>A filter that returns objects that are encrypted by server-side encryption with customer-provided keys (SSE-C).</p>"
     },
     "SSEKMS":{
       "type":"structure",
@@ -8155,6 +8336,22 @@
       "documentation":"<p>Configuration for the use of SSE-KMS to encrypt generated manifest objects.</p>",
       "locationName":"SSE-KMS"
     },
+    "SSEKMSFilter":{
+      "type":"structure",
+      "members":{
+        "KmsKeyArn":{
+          "shape":"NonEmptyKmsKeyArnString",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>",
+          "box":true
+        },
+        "BucketKeyEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>A filter that returns objects that are encrypted by server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>"
+    },
     "SSEKMSKeyId":{"type":"string"},
     "SSES3":{
       "type":"structure",
@@ -8167,6 +8364,11 @@
       "members":{},
       "documentation":"<p>Configuration for the use of SSE-S3 to encrypt generated manifest objects.</p>",
       "locationName":"SSE-S3"
+    },
+    "SSES3Filter":{
+      "type":"structure",
+      "members":{},
+      "documentation":"<p>A filter that returns objects that are encrypted by server-side encryption with Amazon S3 managed keys (SSE-S3).</p>"
     },
     "Scope":{
       "type":"structure",
@@ -8312,6 +8514,10 @@
           "shape":"StorageLensDataExport",
           "documentation":"<p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>"
         },
+        "ExpandedPrefixesDataExport":{
+          "shape":"StorageLensExpandedPrefixesDataExport",
+          "documentation":"<p>A container that configures your S3 Storage Lens expanded prefixes metrics report. </p>"
+        },
         "IsEnabled":{
           "shape":"IsEnabled",
           "documentation":"<p>A container for whether the S3 Storage Lens configuration is enabled.</p>"
@@ -8323,6 +8529,10 @@
         "StorageLensArn":{
           "shape":"StorageLensArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>"
+        },
+        "PrefixDelimiter":{
+          "shape":"StorageLensPrefixLevelDelimiter",
+          "documentation":"<p>A container for all prefix delimiters that are used for object keys in this S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix depth, by separating the hierarchical levels in object keys.</p> <note> <ul> <li> <p>If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the delimiter that’s defined.</p> </li> <li> <p>If both the prefix delimiter and existing delimiter are undefined, S3 uses <code>/</code> as the default delimiter.</p> </li> <li> <p>When custom delimiters are used, both the prefix delimiter and existing delimiter must specify the same special character. Otherwise, your request results in an error.</p> </li> </ul> </note>"
         }
       },
       "documentation":"<p>A container for the Amazon S3 Storage Lens configuration.</p>"
@@ -8345,6 +8555,10 @@
         "CloudWatchMetrics":{
           "shape":"CloudWatchMetrics",
           "documentation":"<p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>"
+        },
+        "StorageLensTableDestination":{
+          "shape":"StorageLensTableDestination",
+          "documentation":"<p>A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.</p>"
         }
       },
       "documentation":"<p>A container to specify the properties of your S3 Storage Lens metrics export, including the destination, schema, and format.</p>"
@@ -8364,6 +8578,17 @@
         }
       },
       "documentation":"<p>A container for the encryption of the S3 Storage Lens metrics exports.</p>"
+    },
+    "StorageLensExpandedPrefixesDataExport":{
+      "type":"structure",
+      "members":{
+        "S3BucketDestination":{"shape":"S3BucketDestination"},
+        "StorageLensTableDestination":{
+          "shape":"StorageLensTableDestination",
+          "documentation":"<p>A container for the bucket where the S3 Storage Lens metric export files are located. At least one export destination must be specified.</p>"
+        }
+      },
+      "documentation":"<p>A container for your S3 Storage Lens expanded prefix metrics report configuration. Unlike the default Storage Lens metrics report, the enhanced prefix metrics report includes all S3 Storage Lens storage and activity data related to the full list of prefixes in your Storage Lens configuration.</p>"
     },
     "StorageLensGroup":{
       "type":"structure",
@@ -8539,6 +8764,18 @@
       "type":"integer",
       "max":10,
       "min":1
+    },
+    "StorageLensTableDestination":{
+      "type":"structure",
+      "required":["IsEnabled"],
+      "members":{
+        "IsEnabled":{
+          "shape":"IsEnabled",
+          "documentation":"<p>A container that indicates whether the export to read-only S3 table buckets is enabled for your S3 Storage Lens configuration. When set to true, Storage Lens reports are automatically exported to tables in addition to other configured destinations.</p>"
+        },
+        "Encryption":{"shape":"StorageLensDataExportEncryption"}
+      },
+      "documentation":"<p>A container for configuring your S3 Storage Lens reports to export to read-only S3 table buckets. This parameter enables you to store your Storage Lens metrics in a structured, queryable table format in Apache Iceberg.</p> <p>For more information about S3 Storage Lens, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html\">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>"
     },
     "StorageLensTag":{
       "type":"structure",

@@ -36,6 +36,14 @@ namespace Amazon.SupportApp
         /// <summary>
         /// Construct instance of AmazonSupportAppException
         /// </summary>
+        public AmazonSupportAppException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSupportAppException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSupportAppException(string message)
             : base(message)

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentRuntimeEndpoint operation.
-    /// Deletes an Amazon Secure AgentEndpoint.
+    /// Deletes an AAgentCore Runtime endpoint.
     /// </summary>
     public partial class DeleteAgentRuntimeEndpointRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime associated with the endpoint.
+        /// The unique identifier of the AgentCore Runtime associated with the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the agent runtime endpoint to delete.
+        /// The name of the AgentCore Runtime endpoint to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

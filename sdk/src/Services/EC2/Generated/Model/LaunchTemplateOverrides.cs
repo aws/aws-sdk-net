@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class LaunchTemplateOverrides
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private InstanceRequirements _instanceRequirements;
         private InstanceType _instanceType;
         private double? _priority;
@@ -45,7 +46,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which to launch the instances.
+        /// The Availability Zone in which to launch the instances. For example, <c>us-east-2a</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the
+        /// request, but not both.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -58,6 +64,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone in which to launch the instances. For example, <c>use2-az1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified in the
+        /// request, but not both.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

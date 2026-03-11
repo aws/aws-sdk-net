@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FileModeRequiredException
+        /// message.
+        /// </summary>
+        public FileModeRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileModeRequiredException with the specified error
         /// message.
         /// </summary>

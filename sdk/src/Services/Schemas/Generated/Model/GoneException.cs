@@ -40,6 +40,13 @@ namespace Amazon.Schemas.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for GoneException
+        /// message.
+        /// </summary>
+        public GoneException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GoneException with the specified error
         /// message.
         /// </summary>

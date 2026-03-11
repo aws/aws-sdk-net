@@ -43,9 +43,11 @@ namespace Amazon.CleanRoomsML.Model
         private string _mlInputChannelArn;
         private string _name;
         private long? _numberOfRecords;
+        private PrivacyBudgets _privacyBudgets;
         private int? _retentionInDays;
         private MLInputChannelStatus _status;
         private StatusDetails _statusDetails;
+        private SyntheticDataConfiguration _syntheticDataConfiguration;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -226,6 +228,25 @@ namespace Amazon.CleanRoomsML.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivacyBudgets. 
+        /// <para>
+        /// Returns the privacy budgets that control access to this Clean Rooms ML input channel.
+        /// Use these budgets to monitor and limit resource consumption over specified time periods.
+        /// </para>
+        /// </summary>
+        public PrivacyBudgets PrivacyBudgets
+        {
+            get { return this._privacyBudgets; }
+            set { this._privacyBudgets = value; }
+        }
+
+        // Check to see if PrivacyBudgets property is set
+        internal bool IsSetPrivacyBudgets()
+        {
+            return this._privacyBudgets != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionInDays. 
         /// <para>
         /// The number of days to retain the data for the ML input channel.
@@ -276,6 +297,26 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetStatusDetails()
         {
             return this._statusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyntheticDataConfiguration. 
+        /// <para>
+        /// The synthetic data configuration for this ML input channel, including parameters for
+        /// generating privacy-preserving synthetic data and evaluation scores for measuring the
+        /// privacy of the generated data.
+        /// </para>
+        /// </summary>
+        public SyntheticDataConfiguration SyntheticDataConfiguration
+        {
+            get { return this._syntheticDataConfiguration; }
+            set { this._syntheticDataConfiguration = value; }
+        }
+
+        // Check to see if SyntheticDataConfiguration property is set
+        internal bool IsSetSyntheticDataConfiguration()
+        {
+            return this._syntheticDataConfiguration != null;
         }
 
         /// <summary>

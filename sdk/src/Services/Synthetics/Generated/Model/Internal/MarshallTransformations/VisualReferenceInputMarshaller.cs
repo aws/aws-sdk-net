@@ -68,6 +68,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetBrowserType())
+            {
+                context.Writer.WritePropertyName("BrowserType");
+                context.Writer.WriteStringValue(requestObject.BrowserType);
+            }
+
         }
 
         /// <summary>

@@ -43,7 +43,7 @@ namespace Amazon.Lambda
     /// Lambda 
     /// <para>
     ///  <b>Overview</b> 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Lambda is a compute service that lets you run code without provisioning or managing
@@ -137,6 +137,8 @@ namespace Amazon.Lambda
     /// trust services</a>, but keeping your computer up-to-date is the more straightforward
     /// solution. To learn more about ACM-provided certificates, see <a href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon
     /// Web Services Certificate Manager FAQs.</a> 
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
@@ -364,7 +366,7 @@ namespace Amazon.Lambda
 
         internal virtual AddLayerVersionPermissionResponse AddLayerVersionPermission(AddLayerVersionPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -431,7 +433,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
         public virtual Task<AddLayerVersionPermissionResponse> AddLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -443,7 +445,7 @@ namespace Amazon.Lambda
 
         internal virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -523,7 +525,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -531,11 +533,64 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  CheckpointDurableExecution
+
+        internal virtual CheckpointDurableExecutionResponse CheckpointDurableExecution(CheckpointDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckpointDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckpointDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<CheckpointDurableExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Saves the progress of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// function</a> execution during runtime. This API is used by the Lambda durable functions
+        /// SDK to checkpoint completed steps and schedule asynchronous operations. You typically
+        /// don't need to call this API directly as the SDK handles checkpointing automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Each checkpoint operation consumes the current checkpoint token and returns a new
+        /// one for the next checkpoint. This ensures that checkpoints are applied in the correct
+        /// order and prevents duplicate or out-of-order state updates.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckpointDurableExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckpointDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CheckpointDurableExecution">REST API Reference for CheckpointDurableExecution Operation</seealso>
+        public virtual Task<CheckpointDurableExecutionResponse> CheckpointDurableExecutionAsync(CheckpointDurableExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckpointDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckpointDurableExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CheckpointDurableExecutionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateAlias
 
         internal virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -581,7 +636,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -589,11 +644,62 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  CreateCapacityProvider
+
+        internal virtual CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a capacity provider that manages compute resources for Lambda functions
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CapacityProviderLimitExceededException">
+        /// The maximum number of capacity providers for your account has been exceeded. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        public virtual Task<CreateCapacityProviderResponse> CreateCapacityProviderAsync(CreateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCapacityProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateCodeSigningConfig
 
         internal virtual CreateCodeSigningConfigResponse CreateCodeSigningConfig(CreateCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -623,7 +729,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
         public virtual Task<CreateCodeSigningConfigResponse> CreateCodeSigningConfigAsync(CreateCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -635,7 +741,7 @@ namespace Amazon.Lambda
 
         internal virtual CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -690,8 +796,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -712,18 +818,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -792,7 +897,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public virtual Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -804,7 +909,7 @@ namespace Amazon.Lambda
 
         internal virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
@@ -906,6 +1011,11 @@ namespace Amazon.Lambda
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.FunctionVersionsPerCapacityProviderLimitExceededException">
+        /// The maximum number of function versions that can be associated with a single capacity
+        /// provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
         /// The code signature failed the integrity check. If the integrity check fails, then
         /// Lambda blocks deployment, even if the code signing policy is set to WARN.
@@ -929,7 +1039,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
@@ -941,7 +1051,7 @@ namespace Amazon.Lambda
 
         internal virtual CreateFunctionUrlConfigResponse CreateFunctionUrlConfig(CreateFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -979,7 +1089,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
         public virtual Task<CreateFunctionUrlConfigResponse> CreateFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -991,7 +1101,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1025,7 +1135,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1033,11 +1143,61 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  DeleteCapacityProvider
+
+        internal virtual DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapacityProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a capacity provider. You cannot delete a capacity provider that is currently
+        /// being used by Lambda functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        public virtual Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCapacityProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteCodeSigningConfig
 
         internal virtual DeleteCodeSigningConfigResponse DeleteCodeSigningConfig(DeleteCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1071,7 +1231,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
         public virtual Task<DeleteCodeSigningConfigResponse> DeleteCodeSigningConfigAsync(DeleteCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1083,7 +1243,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1132,7 +1292,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public virtual Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1144,7 +1304,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
@@ -1157,7 +1317,12 @@ namespace Amazon.Lambda
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+        /// function name and version before deleting.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
         /// For Amazon Web Services services and resources that invoke your function directly,
@@ -1201,7 +1366,12 @@ namespace Amazon.Lambda
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+        /// function name and version before deleting.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
         /// For Amazon Web Services services and resources that invoke your function directly,
@@ -1233,7 +1403,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
@@ -1245,7 +1415,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteFunctionCodeSigningConfigResponse DeleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1285,7 +1455,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
         public virtual Task<DeleteFunctionCodeSigningConfigResponse> DeleteFunctionCodeSigningConfigAsync(DeleteFunctionCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1297,7 +1467,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteFunctionConcurrencyResponse DeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -1334,7 +1504,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         public virtual Task<DeleteFunctionConcurrencyResponse> DeleteFunctionConcurrencyAsync(DeleteFunctionConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -1346,7 +1516,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteFunctionEventInvokeConfigResponse DeleteFunctionEventInvokeConfig(DeleteFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -1389,7 +1559,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
         public virtual Task<DeleteFunctionEventInvokeConfigResponse> DeleteFunctionEventInvokeConfigAsync(DeleteFunctionEventInvokeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -1401,7 +1571,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteFunctionUrlConfigResponse DeleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -1436,7 +1606,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
         public virtual Task<DeleteFunctionUrlConfigResponse> DeleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -1448,7 +1618,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteLayerVersionResponse DeleteLayerVersion(DeleteLayerVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
 
@@ -1479,7 +1649,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
         public virtual Task<DeleteLayerVersionResponse> DeleteLayerVersionAsync(DeleteLayerVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
 
@@ -1491,7 +1661,7 @@ namespace Amazon.Lambda
 
         internal virtual DeleteProvisionedConcurrencyConfigResponse DeleteProvisionedConcurrencyConfig(DeleteProvisionedConcurrencyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -1528,7 +1698,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
         public virtual Task<DeleteProvisionedConcurrencyConfigResponse> DeleteProvisionedConcurrencyConfigAsync(DeleteProvisionedConcurrencyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -1540,7 +1710,7 @@ namespace Amazon.Lambda
 
         internal virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1569,7 +1739,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1581,7 +1751,7 @@ namespace Amazon.Lambda
 
         internal virtual GetAliasResponse GetAlias(GetAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
 
@@ -1615,7 +1785,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public virtual Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
 
@@ -1623,11 +1793,58 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  GetCapacityProvider
+
+        internal virtual GetCapacityProviderResponse GetCapacityProvider(GetCapacityProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific capacity provider, including its configuration,
+        /// state, and associated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCapacityProvider">REST API Reference for GetCapacityProvider Operation</seealso>
+        public virtual Task<GetCapacityProviderResponse> GetCapacityProviderAsync(GetCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCapacityProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCodeSigningConfig
 
         internal virtual GetCodeSigningConfigResponse GetCodeSigningConfig(GetCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1657,7 +1874,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
         public virtual Task<GetCodeSigningConfigResponse> GetCodeSigningConfigAsync(GetCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1665,11 +1882,167 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  GetDurableExecution
+
+        internal virtual GetDurableExecutionResponse GetDurableExecution(GetDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDurableExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>, including its current status, input payload, result or error information,
+        /// and execution metadata such as start time and usage statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecution">REST API Reference for GetDurableExecution Operation</seealso>
+        public virtual Task<GetDurableExecutionResponse> GetDurableExecutionAsync(GetDurableExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDurableExecutionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetDurableExecutionHistory
+
+        internal virtual GetDurableExecutionHistoryResponse GetDurableExecutionHistory(GetDurableExecutionHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetDurableExecutionHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the execution history for a <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>, showing all the steps, callbacks, and events that occurred during the
+        /// execution. This provides a detailed audit trail of the execution's progress over time.
+        /// 
+        ///  
+        /// <para>
+        /// The history is available while the execution is running and for a retention period
+        /// after it completes (1-90 days, default 30 days). You can control whether to include
+        /// execution data such as step results and callback payloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecutionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDurableExecutionHistory service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionHistory">REST API Reference for GetDurableExecutionHistory Operation</seealso>
+        public virtual Task<GetDurableExecutionHistoryResponse> GetDurableExecutionHistoryAsync(GetDurableExecutionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDurableExecutionHistoryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetDurableExecutionState
+
+        internal virtual GetDurableExecutionStateResponse GetDurableExecutionState(GetDurableExecutionStateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionStateResponseUnmarshaller.Instance;
+
+            return Invoke<GetDurableExecutionStateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the current execution state required for the replay process during <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// function</a> execution. This API is used by the Lambda durable functions SDK to get
+        /// state information needed for replay. You typically don't need to call this API directly
+        /// as the SDK handles state management automatically.
+        /// 
+        ///  
+        /// <para>
+        /// The response contains operations ordered by start sequence number in ascending order.
+        /// Completed operations with children don't include child operation details since they
+        /// don't need to be replayed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecutionState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDurableExecutionState service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionState">REST API Reference for GetDurableExecutionState Operation</seealso>
+        public virtual Task<GetDurableExecutionStateResponse> GetDurableExecutionStateAsync(GetDurableExecutionStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionStateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDurableExecutionStateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetEventSourceMapping
 
         internal virtual GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1704,7 +2077,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public virtual Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1716,7 +2089,7 @@ namespace Amazon.Lambda
 
         internal virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
@@ -1785,7 +2158,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
@@ -1797,7 +2170,7 @@ namespace Amazon.Lambda
 
         internal virtual GetFunctionCodeSigningConfigResponse GetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1831,7 +2204,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
         public virtual Task<GetFunctionCodeSigningConfigResponse> GetFunctionCodeSigningConfigAsync(GetFunctionCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1843,7 +2216,7 @@ namespace Amazon.Lambda
 
         internal virtual GetFunctionConcurrencyResponse GetFunctionConcurrency(GetFunctionConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -1878,7 +2251,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
         public virtual Task<GetFunctionConcurrencyResponse> GetFunctionConcurrencyAsync(GetFunctionConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -1890,7 +2263,7 @@ namespace Amazon.Lambda
 
         internal virtual GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -1969,7 +2342,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public virtual Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -1981,7 +2354,7 @@ namespace Amazon.Lambda
 
         internal virtual GetFunctionEventInvokeConfigResponse GetFunctionEventInvokeConfig(GetFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -2021,7 +2394,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
         public virtual Task<GetFunctionEventInvokeConfigResponse> GetFunctionEventInvokeConfigAsync(GetFunctionEventInvokeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -2033,7 +2406,7 @@ namespace Amazon.Lambda
 
         internal virtual GetFunctionRecursionConfigResponse GetFunctionRecursionConfig(GetFunctionRecursionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -2068,7 +2441,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionRecursionConfig">REST API Reference for GetFunctionRecursionConfig Operation</seealso>
         public virtual Task<GetFunctionRecursionConfigResponse> GetFunctionRecursionConfigAsync(GetFunctionRecursionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -2076,11 +2449,57 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  GetFunctionScalingConfig
+
+        internal virtual GetFunctionScalingConfigResponse GetFunctionScalingConfig(GetFunctionScalingConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFunctionScalingConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionScalingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFunctionScalingConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the scaling configuration for a Lambda Managed Instances function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionScalingConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunctionScalingConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionScalingConfig">REST API Reference for GetFunctionScalingConfig Operation</seealso>
+        public virtual Task<GetFunctionScalingConfigResponse> GetFunctionScalingConfigAsync(GetFunctionScalingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFunctionScalingConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionScalingConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFunctionScalingConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetFunctionUrlConfig
 
         internal virtual GetFunctionUrlConfigResponse GetFunctionUrlConfig(GetFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -2114,7 +2533,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
         public virtual Task<GetFunctionUrlConfigResponse> GetFunctionUrlConfigAsync(GetFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -2126,7 +2545,7 @@ namespace Amazon.Lambda
 
         internal virtual GetLayerVersionResponse GetLayerVersion(GetLayerVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
 
@@ -2161,7 +2580,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
         public virtual Task<GetLayerVersionResponse> GetLayerVersionAsync(GetLayerVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
 
@@ -2173,7 +2592,7 @@ namespace Amazon.Lambda
 
         internal virtual GetLayerVersionByArnResponse GetLayerVersionByArn(GetLayerVersionByArnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
 
@@ -2208,7 +2627,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
         public virtual Task<GetLayerVersionByArnResponse> GetLayerVersionByArnAsync(GetLayerVersionByArnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
 
@@ -2220,7 +2639,7 @@ namespace Amazon.Lambda
 
         internal virtual GetLayerVersionPolicyResponse GetLayerVersionPolicy(GetLayerVersionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
 
@@ -2255,7 +2674,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
         public virtual Task<GetLayerVersionPolicyResponse> GetLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
 
@@ -2267,7 +2686,7 @@ namespace Amazon.Lambda
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2302,7 +2721,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2314,7 +2733,7 @@ namespace Amazon.Lambda
 
         internal virtual GetProvisionedConcurrencyConfigResponse GetProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -2351,7 +2770,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
         public virtual Task<GetProvisionedConcurrencyConfigResponse> GetProvisionedConcurrencyConfigAsync(GetProvisionedConcurrencyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -2363,7 +2782,7 @@ namespace Amazon.Lambda
 
         internal virtual GetRuntimeManagementConfigResponse GetRuntimeManagementConfig(GetRuntimeManagementConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -2402,7 +2821,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig">REST API Reference for GetRuntimeManagementConfig Operation</seealso>
         public virtual Task<GetRuntimeManagementConfigResponse> GetRuntimeManagementConfigAsync(GetRuntimeManagementConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -2414,7 +2833,7 @@ namespace Amazon.Lambda
 
         internal virtual InvokeResponse Invoke(InvokeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeResponseUnmarshaller.Instance;
 
@@ -2430,6 +2849,11 @@ namespace Amazon.Lambda
         /// set <c>InvocationType</c> to <c>Event</c>. Lambda passes the <c>ClientContext</c>
         /// object to your function for synchronous invocations only.
         /// 
+        ///  
+        /// <para>
+        /// For synchronous invocations, the maximum payload size is 6 MB. For asynchronous invocations,
+        /// the maximum payload size is 1 MB.
+        /// </para>
         ///  
         /// <para>
         /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
@@ -2487,6 +2911,11 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the Invoke service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.DurableExecutionAlreadyStartedException">
+        /// The durable execution with the specified name has already been started. Each durable
+        /// execution name must be unique within the function. Use a different name or check the
+        /// status of the existing execution.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2AccessDeniedException">
         /// Need additional permissions to configure VPC settings.
         /// </exception>
@@ -2553,6 +2982,9 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
+        /// The function has no published versions available.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
         /// Lambda has detected your function being invoked in a recursive loop with other Amazon
         /// Web Services resources and stopped your function's invocation.
@@ -2571,6 +3003,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
+        /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -2600,7 +3035,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public virtual Task<InvokeResponse> InvokeAsync(InvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeResponseUnmarshaller.Instance;
 
@@ -2612,7 +3047,7 @@ namespace Amazon.Lambda
 
         internal virtual InvokeWithResponseStreamResponse InvokeWithResponseStream(InvokeWithResponseStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeWithResponseStreamResponseUnmarshaller.Instance;
 
@@ -2706,6 +3141,9 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
+        /// The function has no published versions available.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
         /// Lambda has detected your function being invoked in a recursive loop with other Amazon
         /// Web Services resources and stopped your function's invocation.
@@ -2724,6 +3162,9 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
+        /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -2753,7 +3194,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">REST API Reference for InvokeWithResponseStream Operation</seealso>
         public virtual Task<InvokeWithResponseStreamResponse> InvokeWithResponseStreamAsync(InvokeWithResponseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeWithResponseStreamResponseUnmarshaller.Instance;
 
@@ -2765,7 +3206,7 @@ namespace Amazon.Lambda
 
         internal virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -2800,7 +3241,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -2808,11 +3249,54 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  ListCapacityProviders
+
+        internal virtual ListCapacityProvidersResponse ListCapacityProviders(ListCapacityProvidersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapacityProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapacityProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListCapacityProvidersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of capacity providers in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCapacityProviders service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCapacityProviders">REST API Reference for ListCapacityProviders Operation</seealso>
+        public virtual Task<ListCapacityProvidersResponse> ListCapacityProvidersAsync(ListCapacityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapacityProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapacityProvidersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCapacityProvidersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListCodeSigningConfigs
 
         internal virtual ListCodeSigningConfigsResponse ListCodeSigningConfigs(ListCodeSigningConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSigningConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSigningConfigsResponseUnmarshaller.Instance;
 
@@ -2841,7 +3325,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
         public virtual Task<ListCodeSigningConfigsResponse> ListCodeSigningConfigsAsync(ListCodeSigningConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSigningConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSigningConfigsResponseUnmarshaller.Instance;
 
@@ -2849,11 +3333,60 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  ListDurableExecutionsByFunction
+
+        internal virtual ListDurableExecutionsByFunctionResponse ListDurableExecutionsByFunction(ListDurableExecutionsByFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDurableExecutionsByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDurableExecutionsByFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<ListDurableExecutionsByFunctionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// executions</a> for a specified Lambda function. You can filter the results by execution
+        /// name, status, and start time range. This API supports pagination for large result
+        /// sets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDurableExecutionsByFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDurableExecutionsByFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListDurableExecutionsByFunction">REST API Reference for ListDurableExecutionsByFunction Operation</seealso>
+        public virtual Task<ListDurableExecutionsByFunctionResponse> ListDurableExecutionsByFunctionAsync(ListDurableExecutionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDurableExecutionsByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDurableExecutionsByFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDurableExecutionsByFunctionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListEventSourceMappings
 
         internal virtual ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
@@ -2888,7 +3421,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public virtual Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
@@ -2900,7 +3433,7 @@ namespace Amazon.Lambda
 
         internal virtual ListFunctionEventInvokeConfigsResponse ListFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionEventInvokeConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionEventInvokeConfigsResponseUnmarshaller.Instance;
 
@@ -2939,7 +3472,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">REST API Reference for ListFunctionEventInvokeConfigs Operation</seealso>
         public virtual Task<ListFunctionEventInvokeConfigsResponse> ListFunctionEventInvokeConfigsAsync(ListFunctionEventInvokeConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionEventInvokeConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionEventInvokeConfigsResponseUnmarshaller.Instance;
 
@@ -2951,7 +3484,7 @@ namespace Amazon.Lambda
 
         internal virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
@@ -3038,7 +3571,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
@@ -3050,7 +3583,7 @@ namespace Amazon.Lambda
 
         internal virtual ListFunctionsByCodeSigningConfigResponse ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsByCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -3082,7 +3615,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
         public virtual Task<ListFunctionsByCodeSigningConfigResponse> ListFunctionsByCodeSigningConfigAsync(ListFunctionsByCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsByCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -3094,7 +3627,7 @@ namespace Amazon.Lambda
 
         internal virtual ListFunctionUrlConfigsResponse ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionUrlConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionUrlConfigsResponseUnmarshaller.Instance;
 
@@ -3128,7 +3661,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
         public virtual Task<ListFunctionUrlConfigsResponse> ListFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionUrlConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionUrlConfigsResponseUnmarshaller.Instance;
 
@@ -3136,11 +3669,58 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  ListFunctionVersionsByCapacityProvider
+
+        internal virtual ListFunctionVersionsByCapacityProviderResponse ListFunctionVersionsByCapacityProvider(ListFunctionVersionsByCapacityProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFunctionVersionsByCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionVersionsByCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<ListFunctionVersionsByCapacityProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of function versions that are configured to use a specific capacity
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionVersionsByCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctionVersionsByCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionVersionsByCapacityProvider">REST API Reference for ListFunctionVersionsByCapacityProvider Operation</seealso>
+        public virtual Task<ListFunctionVersionsByCapacityProviderResponse> ListFunctionVersionsByCapacityProviderAsync(ListFunctionVersionsByCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFunctionVersionsByCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionVersionsByCapacityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFunctionVersionsByCapacityProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListLayers
 
         internal virtual ListLayersResponse ListLayers(ListLayersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayersResponseUnmarshaller.Instance;
 
@@ -3176,7 +3756,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
         public virtual Task<ListLayersResponse> ListLayersAsync(ListLayersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayersResponseUnmarshaller.Instance;
 
@@ -3188,7 +3768,7 @@ namespace Amazon.Lambda
 
         internal virtual ListLayerVersionsResponse ListLayerVersions(ListLayerVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayerVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
 
@@ -3226,7 +3806,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
         public virtual Task<ListLayerVersionsResponse> ListLayerVersionsAsync(ListLayerVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayerVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
 
@@ -3238,7 +3818,7 @@ namespace Amazon.Lambda
 
         internal virtual ListProvisionedConcurrencyConfigsResponse ListProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedConcurrencyConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedConcurrencyConfigsResponseUnmarshaller.Instance;
 
@@ -3272,7 +3852,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
         public virtual Task<ListProvisionedConcurrencyConfigsResponse> ListProvisionedConcurrencyConfigsAsync(ListProvisionedConcurrencyConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedConcurrencyConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedConcurrencyConfigsResponseUnmarshaller.Instance;
 
@@ -3284,7 +3864,7 @@ namespace Amazon.Lambda
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -3319,7 +3899,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -3331,7 +3911,7 @@ namespace Amazon.Lambda
 
         internal virtual ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsByFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
 
@@ -3367,7 +3947,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public virtual Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsByFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
 
@@ -3379,7 +3959,7 @@ namespace Amazon.Lambda
 
         internal virtual PublishLayerVersionResponse PublishLayerVersion(PublishLayerVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
 
@@ -3425,7 +4005,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
         public virtual Task<PublishLayerVersionResponse> PublishLayerVersionAsync(PublishLayerVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
 
@@ -3437,7 +4017,7 @@ namespace Amazon.Lambda
 
         internal virtual PublishVersionResponse PublishVersion(PublishVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishVersionResponseUnmarshaller.Instance;
 
@@ -3471,6 +4051,11 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
         /// Your Amazon Web Services account has exceeded its maximum total code size. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.FunctionVersionsPerCapacityProviderLimitExceededException">
+        /// The maximum number of function versions that can be associated with a single capacity
+        /// provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
         /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -3508,7 +4093,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public virtual Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishVersionResponseUnmarshaller.Instance;
 
@@ -3520,7 +4105,7 @@ namespace Amazon.Lambda
 
         internal virtual PutFunctionCodeSigningConfigResponse PutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -3562,7 +4147,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
         public virtual Task<PutFunctionCodeSigningConfigResponse> PutFunctionCodeSigningConfigAsync(PutFunctionCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -3574,7 +4159,7 @@ namespace Amazon.Lambda
 
         internal virtual PutFunctionConcurrencyResponse PutFunctionConcurrency(PutFunctionConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -3629,7 +4214,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         public virtual Task<PutFunctionConcurrencyResponse> PutFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -3641,7 +4226,7 @@ namespace Amazon.Lambda
 
         internal virtual PutFunctionEventInvokeConfigResponse PutFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -3704,7 +4289,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
         public virtual Task<PutFunctionEventInvokeConfigResponse> PutFunctionEventInvokeConfigAsync(PutFunctionEventInvokeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -3716,7 +4301,7 @@ namespace Amazon.Lambda
 
         internal virtual PutFunctionRecursionConfigResponse PutFunctionRecursionConfig(PutFunctionRecursionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -3769,7 +4354,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">REST API Reference for PutFunctionRecursionConfig Operation</seealso>
         public virtual Task<PutFunctionRecursionConfigResponse> PutFunctionRecursionConfigAsync(PutFunctionRecursionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -3777,11 +4362,63 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  PutFunctionScalingConfig
+
+        internal virtual PutFunctionScalingConfigResponse PutFunctionScalingConfig(PutFunctionScalingConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutFunctionScalingConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFunctionScalingConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutFunctionScalingConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sets the scaling configuration for a Lambda Managed Instances function. The scaling
+        /// configuration defines the minimum and maximum number of execution environments that
+        /// can be provisioned for the function, allowing you to control scaling behavior and
+        /// resource allocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionScalingConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFunctionScalingConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionScalingConfig">REST API Reference for PutFunctionScalingConfig Operation</seealso>
+        public virtual Task<PutFunctionScalingConfigResponse> PutFunctionScalingConfigAsync(PutFunctionScalingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutFunctionScalingConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFunctionScalingConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutFunctionScalingConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  PutProvisionedConcurrencyConfig
 
         internal virtual PutProvisionedConcurrencyConfigResponse PutProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -3818,7 +4455,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
         public virtual Task<PutProvisionedConcurrencyConfigResponse> PutProvisionedConcurrencyConfigAsync(PutProvisionedConcurrencyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -3830,7 +4467,7 @@ namespace Amazon.Lambda
 
         internal virtual PutRuntimeManagementConfigResponse PutRuntimeManagementConfig(PutRuntimeManagementConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -3869,7 +4506,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig">REST API Reference for PutRuntimeManagementConfig Operation</seealso>
         public virtual Task<PutRuntimeManagementConfigResponse> PutRuntimeManagementConfigAsync(PutRuntimeManagementConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -3881,7 +4518,7 @@ namespace Amazon.Lambda
 
         internal virtual RemoveLayerVersionPermissionResponse RemoveLayerVersionPermission(RemoveLayerVersionPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -3932,7 +4569,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
         public virtual Task<RemoveLayerVersionPermissionResponse> RemoveLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -3944,7 +4581,7 @@ namespace Amazon.Lambda
 
         internal virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -3995,7 +4632,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -4003,11 +4640,204 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  SendDurableExecutionCallbackFailure
+
+        internal virtual SendDurableExecutionCallbackFailureResponse SendDurableExecutionCallbackFailure(SendDurableExecutionCallbackFailureRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackFailureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackFailureResponseUnmarshaller.Instance;
+
+            return Invoke<SendDurableExecutionCallbackFailureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends a failure response for a callback operation in a durable execution. Use this
+        /// API when an external system cannot complete a callback operation successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackFailure service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDurableExecutionCallbackFailure service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CallbackTimeoutException">
+        /// The callback ID token has either expired or the callback associated with the token
+        /// has already been closed.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackFailure">REST API Reference for SendDurableExecutionCallbackFailure Operation</seealso>
+        public virtual Task<SendDurableExecutionCallbackFailureResponse> SendDurableExecutionCallbackFailureAsync(SendDurableExecutionCallbackFailureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackFailureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackFailureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendDurableExecutionCallbackFailureResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SendDurableExecutionCallbackHeartbeat
+
+        internal virtual SendDurableExecutionCallbackHeartbeatResponse SendDurableExecutionCallbackHeartbeat(SendDurableExecutionCallbackHeartbeatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackHeartbeatResponseUnmarshaller.Instance;
+
+            return Invoke<SendDurableExecutionCallbackHeartbeatResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends a heartbeat signal for a long-running callback operation to prevent timeout.
+        /// Use this API to extend the callback timeout period while the external operation is
+        /// still in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackHeartbeat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDurableExecutionCallbackHeartbeat service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CallbackTimeoutException">
+        /// The callback ID token has either expired or the callback associated with the token
+        /// has already been closed.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackHeartbeat">REST API Reference for SendDurableExecutionCallbackHeartbeat Operation</seealso>
+        public virtual Task<SendDurableExecutionCallbackHeartbeatResponse> SendDurableExecutionCallbackHeartbeatAsync(SendDurableExecutionCallbackHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackHeartbeatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendDurableExecutionCallbackHeartbeatResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SendDurableExecutionCallbackSuccess
+
+        internal virtual SendDurableExecutionCallbackSuccessResponse SendDurableExecutionCallbackSuccess(SendDurableExecutionCallbackSuccessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackSuccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackSuccessResponseUnmarshaller.Instance;
+
+            return Invoke<SendDurableExecutionCallbackSuccessResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends a successful completion response for a callback operation in a durable execution.
+        /// Use this API when an external system has successfully completed a callback operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackSuccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDurableExecutionCallbackSuccess service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CallbackTimeoutException">
+        /// The callback ID token has either expired or the callback associated with the token
+        /// has already been closed.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackSuccess">REST API Reference for SendDurableExecutionCallbackSuccess Operation</seealso>
+        public virtual Task<SendDurableExecutionCallbackSuccessResponse> SendDurableExecutionCallbackSuccessAsync(SendDurableExecutionCallbackSuccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackSuccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackSuccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendDurableExecutionCallbackSuccessResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StopDurableExecution
+
+        internal virtual StopDurableExecutionResponse StopDurableExecution(StopDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopDurableExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>. The execution transitions to STOPPED status and cannot be resumed.
+        /// Any in-progress operations are terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDurableExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/StopDurableExecution">REST API Reference for StopDurableExecution Operation</seealso>
+        public virtual Task<StopDurableExecutionResponse> StopDurableExecutionAsync(StopDurableExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDurableExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopDurableExecutionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4045,7 +4875,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4057,7 +4887,7 @@ namespace Amazon.Lambda
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4095,7 +4925,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4107,7 +4937,7 @@ namespace Amazon.Lambda
 
         internal virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -4160,7 +4990,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -4168,11 +4998,60 @@ namespace Amazon.Lambda
         }
         #endregion
         
+        #region  UpdateCapacityProvider
+
+        internal virtual UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCapacityProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing capacity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
+        public virtual Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCapacityProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateCodeSigningConfig
 
         internal virtual UpdateCodeSigningConfigResponse UpdateCodeSigningConfig(UpdateCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -4203,7 +5082,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
         public virtual Task<UpdateCodeSigningConfigResponse> UpdateCodeSigningConfigAsync(UpdateCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -4215,7 +5094,7 @@ namespace Amazon.Lambda
 
         internal virtual UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -4270,8 +5149,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4292,18 +5171,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4377,7 +5255,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public virtual Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -4389,7 +5267,7 @@ namespace Amazon.Lambda
 
         internal virtual UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
 
@@ -4491,7 +5369,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public virtual Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
 
@@ -4503,7 +5381,7 @@ namespace Amazon.Lambda
 
         internal virtual UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -4591,7 +5469,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public virtual Task<UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -4603,7 +5481,7 @@ namespace Amazon.Lambda
 
         internal virtual UpdateFunctionEventInvokeConfigResponse UpdateFunctionEventInvokeConfig(UpdateFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -4646,7 +5524,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
         public virtual Task<UpdateFunctionEventInvokeConfigResponse> UpdateFunctionEventInvokeConfigAsync(UpdateFunctionEventInvokeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -4658,7 +5536,7 @@ namespace Amazon.Lambda
 
         internal virtual UpdateFunctionUrlConfigResponse UpdateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -4695,7 +5573,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
         public virtual Task<UpdateFunctionUrlConfigResponse> UpdateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionUrlConfigResponseUnmarshaller.Instance;
 

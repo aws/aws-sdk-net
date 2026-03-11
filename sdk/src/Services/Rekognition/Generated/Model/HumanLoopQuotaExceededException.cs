@@ -42,6 +42,13 @@ namespace Amazon.Rekognition.Model
         private string _serviceCode;
 
         /// <summary>
+        /// Default constructor for HumanLoopQuotaExceededException
+        /// message.
+        /// </summary>
+        public HumanLoopQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HumanLoopQuotaExceededException with the specified error
         /// message.
         /// </summary>

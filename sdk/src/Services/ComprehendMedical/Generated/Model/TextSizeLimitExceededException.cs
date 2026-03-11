@@ -40,6 +40,13 @@ namespace Amazon.ComprehendMedical.Model
     {
 
         /// <summary>
+        /// Default constructor for TextSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public TextSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TextSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

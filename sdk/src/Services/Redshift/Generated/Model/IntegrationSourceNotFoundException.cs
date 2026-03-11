@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for IntegrationSourceNotFoundException
+        /// message.
+        /// </summary>
+        public IntegrationSourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IntegrationSourceNotFoundException with the specified error
         /// message.
         /// </summary>

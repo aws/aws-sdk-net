@@ -39,7 +39,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The HTTP response code.
+        /// The HTTP response code. Only <c>404</c> and <c>500</c> status codes are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=599)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Identifies a participant in a handshake.
+    /// Contains details for a participant in a handshake.
     /// </summary>
     public partial class HandshakeParty
     {
@@ -40,7 +40,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier (ID) for the party.
+        /// ID for the participant: Acccount ID, organization ID, or email address.
         /// </para>
         ///  
         /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of party.
+        /// The type of ID for the participant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

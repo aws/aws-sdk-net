@@ -31,7 +31,7 @@ namespace Amazon.Braket.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// Cancels an Amazon Braket job.
+    /// Cancels an Amazon Braket hybrid job.
     /// </summary>
     public partial class CancelJobRequest : AmazonBraketRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the Amazon Braket job to cancel.
+        /// The ARN of the Amazon Braket hybrid job to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

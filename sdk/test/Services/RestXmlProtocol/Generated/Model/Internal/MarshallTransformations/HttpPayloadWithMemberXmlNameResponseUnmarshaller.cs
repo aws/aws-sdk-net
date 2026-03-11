@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpPayloadWithMemberXmlName operation
     /// </summary>  
-    public class HttpPayloadWithMemberXmlNameResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpPayloadWithMemberXmlNameResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             HttpPayloadWithMemberXmlNameResponse response = new HttpPayloadWithMemberXmlNameResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -81,7 +82,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -107,6 +107,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpPayloadWithMemberXmlNameResponse response);
 
         private static HttpPayloadWithMemberXmlNameResponseUnmarshaller _instance = new HttpPayloadWithMemberXmlNameResponseUnmarshaller();        
 

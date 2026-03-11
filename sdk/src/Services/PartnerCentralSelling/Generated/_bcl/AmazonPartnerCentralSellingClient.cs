@@ -392,7 +392,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitation">REST API Reference for AcceptEngagementInvitation Operation</seealso>
         public virtual AcceptEngagementInvitationResponse AcceptEngagementInvitation(AcceptEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitation">REST API Reference for AcceptEngagementInvitation Operation</seealso>
         public virtual Task<AcceptEngagementInvitationResponse> AcceptEngagementInvitationAsync(AcceptEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -554,7 +554,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssignOpportunity">REST API Reference for AssignOpportunity Operation</seealso>
         public virtual AssignOpportunityResponse AssignOpportunity(AssignOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignOpportunityResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssignOpportunity">REST API Reference for AssignOpportunity Operation</seealso>
         public virtual Task<AssignOpportunityResponse> AssignOpportunityAsync(AssignOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignOpportunityResponseUnmarshaller.Instance;
             
@@ -751,7 +751,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssociateOpportunity">REST API Reference for AssociateOpportunity Operation</seealso>
         public virtual AssociateOpportunityResponse AssociateOpportunity(AssociateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOpportunityResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssociateOpportunity">REST API Reference for AssociateOpportunity Operation</seealso>
         public virtual Task<AssociateOpportunityResponse> AssociateOpportunityAsync(AssociateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOpportunityResponseUnmarshaller.Instance;
             
@@ -905,6 +905,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -951,7 +961,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagement">REST API Reference for CreateEngagement Operation</seealso>
         public virtual CreateEngagementResponse CreateEngagement(CreateEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementResponseUnmarshaller.Instance;
 
@@ -988,6 +998,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1034,11 +1054,196 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagement">REST API Reference for CreateEngagement Operation</seealso>
         public virtual Task<CreateEngagementResponse> CreateEngagementAsync(CreateEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateEngagementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEngagementContext
+
+
+        /// <summary>
+        /// Creates a new context within an existing engagement. This action allows you to add
+        /// contextual information such as customer projects or documents to an engagement, providing
+        /// additional details that help facilitate collaboration between engagement members.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEngagementContext service method.</param>
+        /// 
+        /// <returns>The response from the CreateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementContext">REST API Reference for CreateEngagementContext Operation</seealso>
+        public virtual CreateEngagementContextResponse CreateEngagementContext(CreateEngagementContextRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEngagementContextResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEngagementContextResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new context within an existing engagement. This action allows you to add
+        /// contextual information such as customer projects or documents to an engagement, providing
+        /// additional details that help facilitate collaboration between engagement members.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEngagementContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementContext">REST API Reference for CreateEngagementContext Operation</seealso>
+        public virtual Task<CreateEngagementContextResponse> CreateEngagementContextAsync(CreateEngagementContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEngagementContextResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEngagementContextResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1069,6 +1274,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1115,7 +1330,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">REST API Reference for CreateEngagementInvitation Operation</seealso>
         public virtual CreateEngagementInvitationResponse CreateEngagementInvitation(CreateEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -1149,6 +1364,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1195,7 +1420,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">REST API Reference for CreateEngagementInvitation Operation</seealso>
         public virtual Task<CreateEngagementInvitationResponse> CreateEngagementInvitationAsync(CreateEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -1305,7 +1530,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">REST API Reference for CreateOpportunity Operation</seealso>
         public virtual CreateOpportunityResponse CreateOpportunity(CreateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOpportunityResponseUnmarshaller.Instance;
 
@@ -1414,7 +1639,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">REST API Reference for CreateOpportunity Operation</seealso>
         public virtual Task<CreateOpportunityResponse> CreateOpportunityAsync(CreateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOpportunityResponseUnmarshaller.Instance;
             
@@ -1451,6 +1676,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1497,7 +1732,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshot">REST API Reference for CreateResourceSnapshot Operation</seealso>
         public virtual CreateResourceSnapshotResponse CreateResourceSnapshot(CreateResourceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotResponseUnmarshaller.Instance;
 
@@ -1533,6 +1768,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1579,7 +1824,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshot">REST API Reference for CreateResourceSnapshot Operation</seealso>
         public virtual Task<CreateResourceSnapshotResponse> CreateResourceSnapshotAsync(CreateResourceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotResponseUnmarshaller.Instance;
             
@@ -1617,6 +1862,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1663,7 +1918,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotJob">REST API Reference for CreateResourceSnapshotJob Operation</seealso>
         public virtual CreateResourceSnapshotJobResponse CreateResourceSnapshotJob(CreateResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -1700,6 +1955,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1746,7 +2011,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotJob">REST API Reference for CreateResourceSnapshotJob Operation</seealso>
         public virtual Task<CreateResourceSnapshotJobResponse> CreateResourceSnapshotJobAsync(CreateResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -1784,6 +2049,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -1817,7 +2092,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJob">REST API Reference for DeleteResourceSnapshotJob Operation</seealso>
         public virtual DeleteResourceSnapshotJobResponse DeleteResourceSnapshotJob(DeleteResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -1854,6 +2129,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -1887,7 +2172,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJob">REST API Reference for DeleteResourceSnapshotJob Operation</seealso>
         public virtual Task<DeleteResourceSnapshotJobResponse> DeleteResourceSnapshotJobAsync(DeleteResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -1969,7 +2254,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DisassociateOpportunity">REST API Reference for DisassociateOpportunity Operation</seealso>
         public virtual DisassociateOpportunityResponse DisassociateOpportunity(DisassociateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOpportunityResponseUnmarshaller.Instance;
 
@@ -2050,7 +2335,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DisassociateOpportunity">REST API Reference for DisassociateOpportunity Operation</seealso>
         public virtual Task<DisassociateOpportunityResponse> DisassociateOpportunityAsync(DisassociateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOpportunityResponseUnmarshaller.Instance;
             
@@ -2123,7 +2408,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetAwsOpportunitySummary">REST API Reference for GetAwsOpportunitySummary Operation</seealso>
         public virtual GetAwsOpportunitySummaryResponse GetAwsOpportunitySummary(GetAwsOpportunitySummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsOpportunitySummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsOpportunitySummaryResponseUnmarshaller.Instance;
 
@@ -2195,7 +2480,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetAwsOpportunitySummary">REST API Reference for GetAwsOpportunitySummary Operation</seealso>
         public virtual Task<GetAwsOpportunitySummaryResponse> GetAwsOpportunitySummaryAsync(GetAwsOpportunitySummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsOpportunitySummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsOpportunitySummaryResponseUnmarshaller.Instance;
             
@@ -2220,6 +2505,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2255,7 +2550,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">REST API Reference for GetEngagement Operation</seealso>
         public virtual GetEngagementResponse GetEngagement(GetEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementResponseUnmarshaller.Instance;
 
@@ -2279,6 +2574,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2314,7 +2619,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">REST API Reference for GetEngagement Operation</seealso>
         public virtual Task<GetEngagementResponse> GetEngagementAsync(GetEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementResponseUnmarshaller.Instance;
             
@@ -2387,7 +2692,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagementInvitation">REST API Reference for GetEngagementInvitation Operation</seealso>
         public virtual GetEngagementInvitationResponse GetEngagementInvitation(GetEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -2459,7 +2764,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagementInvitation">REST API Reference for GetEngagementInvitation Operation</seealso>
         public virtual Task<GetEngagementInvitationResponse> GetEngagementInvitationAsync(GetEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -2535,7 +2840,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunity">REST API Reference for GetOpportunity Operation</seealso>
         public virtual GetOpportunityResponse GetOpportunity(GetOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOpportunityResponseUnmarshaller.Instance;
 
@@ -2610,7 +2915,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunity">REST API Reference for GetOpportunity Operation</seealso>
         public virtual Task<GetOpportunityResponse> GetOpportunityAsync(GetOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOpportunityResponseUnmarshaller.Instance;
             
@@ -2635,6 +2940,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2670,7 +2985,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshot">REST API Reference for GetResourceSnapshot Operation</seealso>
         public virtual GetResourceSnapshotResponse GetResourceSnapshot(GetResourceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotResponseUnmarshaller.Instance;
 
@@ -2694,6 +3009,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2729,7 +3054,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshot">REST API Reference for GetResourceSnapshot Operation</seealso>
         public virtual Task<GetResourceSnapshotResponse> GetResourceSnapshotAsync(GetResourceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotResponseUnmarshaller.Instance;
             
@@ -2754,6 +3079,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2789,7 +3124,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotJob">REST API Reference for GetResourceSnapshotJob Operation</seealso>
         public virtual GetResourceSnapshotJobResponse GetResourceSnapshotJob(GetResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -2813,6 +3148,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2848,7 +3193,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotJob">REST API Reference for GetResourceSnapshotJob Operation</seealso>
         public virtual Task<GetResourceSnapshotJobResponse> GetResourceSnapshotJobAsync(GetResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -2874,6 +3219,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2909,7 +3264,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetSellingSystemSettings">REST API Reference for GetSellingSystemSettings Operation</seealso>
         public virtual GetSellingSystemSettingsResponse GetSellingSystemSettings(GetSellingSystemSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSellingSystemSettingsResponseUnmarshaller.Instance;
 
@@ -2934,6 +3289,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2969,7 +3334,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetSellingSystemSettings">REST API Reference for GetSellingSystemSettings Operation</seealso>
         public virtual Task<GetSellingSystemSettingsResponse> GetSellingSystemSettingsAsync(GetSellingSystemSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSellingSystemSettingsResponseUnmarshaller.Instance;
             
@@ -2995,6 +3360,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3030,7 +3405,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasks">REST API Reference for ListEngagementByAcceptingInvitationTasks Operation</seealso>
         public virtual ListEngagementByAcceptingInvitationTasksResponse ListEngagementByAcceptingInvitationTasks(ListEngagementByAcceptingInvitationTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementByAcceptingInvitationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementByAcceptingInvitationTasksResponseUnmarshaller.Instance;
 
@@ -3055,6 +3430,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3090,7 +3475,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasks">REST API Reference for ListEngagementByAcceptingInvitationTasks Operation</seealso>
         public virtual Task<ListEngagementByAcceptingInvitationTasksResponse> ListEngagementByAcceptingInvitationTasksAsync(ListEngagementByAcceptingInvitationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementByAcceptingInvitationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementByAcceptingInvitationTasksResponseUnmarshaller.Instance;
             
@@ -3116,6 +3501,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3151,7 +3546,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">REST API Reference for ListEngagementFromOpportunityTasks Operation</seealso>
         public virtual ListEngagementFromOpportunityTasksResponse ListEngagementFromOpportunityTasks(ListEngagementFromOpportunityTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementFromOpportunityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementFromOpportunityTasksResponseUnmarshaller.Instance;
 
@@ -3176,6 +3571,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3211,7 +3616,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">REST API Reference for ListEngagementFromOpportunityTasks Operation</seealso>
         public virtual Task<ListEngagementFromOpportunityTasksResponse> ListEngagementFromOpportunityTasksAsync(ListEngagementFromOpportunityTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementFromOpportunityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementFromOpportunityTasksResponseUnmarshaller.Instance;
             
@@ -3283,7 +3688,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementInvitations">REST API Reference for ListEngagementInvitations Operation</seealso>
         public virtual ListEngagementInvitationsResponse ListEngagementInvitations(ListEngagementInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementInvitationsResponseUnmarshaller.Instance;
 
@@ -3354,7 +3759,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementInvitations">REST API Reference for ListEngagementInvitations Operation</seealso>
         public virtual Task<ListEngagementInvitationsResponse> ListEngagementInvitationsAsync(ListEngagementInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementInvitationsResponseUnmarshaller.Instance;
             
@@ -3382,6 +3787,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3417,7 +3832,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementMembers">REST API Reference for ListEngagementMembers Operation</seealso>
         public virtual ListEngagementMembersResponse ListEngagementMembers(ListEngagementMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementMembersResponseUnmarshaller.Instance;
 
@@ -3444,6 +3859,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3479,7 +3904,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementMembers">REST API Reference for ListEngagementMembers Operation</seealso>
         public virtual Task<ListEngagementMembersResponse> ListEngagementMembersAsync(ListEngagementMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementMembersResponseUnmarshaller.Instance;
             
@@ -3505,6 +3930,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3540,7 +3975,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementResourceAssociations">REST API Reference for ListEngagementResourceAssociations Operation</seealso>
         public virtual ListEngagementResourceAssociationsResponse ListEngagementResourceAssociations(ListEngagementResourceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementResourceAssociationsResponseUnmarshaller.Instance;
 
@@ -3565,6 +4000,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3600,7 +4045,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementResourceAssociations">REST API Reference for ListEngagementResourceAssociations Operation</seealso>
         public virtual Task<ListEngagementResourceAssociationsResponse> ListEngagementResourceAssociationsAsync(ListEngagementResourceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementResourceAssociationsResponseUnmarshaller.Instance;
             
@@ -3627,6 +4072,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3662,7 +4117,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagements">REST API Reference for ListEngagements Operation</seealso>
         public virtual ListEngagementsResponse ListEngagements(ListEngagementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementsResponseUnmarshaller.Instance;
 
@@ -3688,6 +4143,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3723,7 +4188,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagements">REST API Reference for ListEngagements Operation</seealso>
         public virtual Task<ListEngagementsResponse> ListEngagementsAsync(ListEngagementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementsResponseUnmarshaller.Instance;
             
@@ -3742,9 +4207,9 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// To synchronize your system with Amazon Web Services, only list the opportunities that
+        /// To synchronize your system with Amazon Web Services, list only the opportunities that
         /// were newly created or updated. We recommend you rely on events emitted by the service
-        /// into your Amazon Web Services account’s Amazon EventBridge default event bus, you
+        /// into your Amazon Web Services account’s Amazon EventBridge default event bus. You
         /// can also use the <c>ListOpportunities</c> action.
         /// </para>
         ///  
@@ -3823,7 +4288,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">REST API Reference for ListOpportunities Operation</seealso>
         public virtual ListOpportunitiesResponse ListOpportunities(ListOpportunitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpportunitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpportunitiesResponseUnmarshaller.Instance;
 
@@ -3838,9 +4303,9 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// To synchronize your system with Amazon Web Services, only list the opportunities that
+        /// To synchronize your system with Amazon Web Services, list only the opportunities that
         /// were newly created or updated. We recommend you rely on events emitted by the service
-        /// into your Amazon Web Services account’s Amazon EventBridge default event bus, you
+        /// into your Amazon Web Services account’s Amazon EventBridge default event bus. You
         /// can also use the <c>ListOpportunities</c> action.
         /// </para>
         ///  
@@ -3922,11 +4387,152 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">REST API Reference for ListOpportunities Operation</seealso>
         public virtual Task<ListOpportunitiesResponse> ListOpportunitiesAsync(ListOpportunitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpportunitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpportunitiesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListOpportunitiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOpportunityFromEngagementTasks
+
+
+        /// <summary>
+        /// Lists all in-progress, completed, or failed opportunity creation tasks from engagements
+        /// that were initiated by the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityFromEngagementTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListOpportunityFromEngagementTasks service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasks">REST API Reference for ListOpportunityFromEngagementTasks Operation</seealso>
+        public virtual ListOpportunityFromEngagementTasksResponse ListOpportunityFromEngagementTasks(ListOpportunityFromEngagementTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOpportunityFromEngagementTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpportunityFromEngagementTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListOpportunityFromEngagementTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all in-progress, completed, or failed opportunity creation tasks from engagements
+        /// that were initiated by the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityFromEngagementTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOpportunityFromEngagementTasks service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasks">REST API Reference for ListOpportunityFromEngagementTasks Operation</seealso>
+        public virtual Task<ListOpportunityFromEngagementTasksResponse> ListOpportunityFromEngagementTasksAsync(ListOpportunityFromEngagementTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOpportunityFromEngagementTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpportunityFromEngagementTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListOpportunityFromEngagementTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3949,6 +4555,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3984,7 +4600,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshotJobs">REST API Reference for ListResourceSnapshotJobs Operation</seealso>
         public virtual ListResourceSnapshotJobsResponse ListResourceSnapshotJobs(ListResourceSnapshotJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotJobsResponseUnmarshaller.Instance;
 
@@ -4010,6 +4626,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -4045,7 +4671,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshotJobs">REST API Reference for ListResourceSnapshotJobs Operation</seealso>
         public virtual Task<ListResourceSnapshotJobsResponse> ListResourceSnapshotJobsAsync(ListResourceSnapshotJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotJobsResponseUnmarshaller.Instance;
             
@@ -4095,6 +4721,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -4128,7 +4764,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshots">REST API Reference for ListResourceSnapshots Operation</seealso>
         public virtual ListResourceSnapshotsResponse ListResourceSnapshots(ListResourceSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotsResponseUnmarshaller.Instance;
 
@@ -4177,6 +4813,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -4210,7 +4856,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshots">REST API Reference for ListResourceSnapshots Operation</seealso>
         public virtual Task<ListResourceSnapshotsResponse> ListResourceSnapshotsAsync(ListResourceSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotsResponseUnmarshaller.Instance;
             
@@ -4259,6 +4905,16 @@ namespace Amazon.PartnerCentralSelling
         /// expected AWS region. Check IAM permissions for accessing the resource.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by the service or business validation
         /// rules.
@@ -4272,7 +4928,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListSolutions">REST API Reference for ListSolutions Operation</seealso>
         public virtual ListSolutionsResponse ListSolutions(ListSolutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionsResponseUnmarshaller.Instance;
 
@@ -4320,6 +4976,16 @@ namespace Amazon.PartnerCentralSelling
         /// expected AWS region. Check IAM permissions for accessing the resource.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by the service or business validation
         /// rules.
@@ -4333,7 +4999,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListSolutions">REST API Reference for ListSolutions Operation</seealso>
         public virtual Task<ListSolutionsResponse> ListSolutionsAsync(ListSolutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionsResponseUnmarshaller.Instance;
             
@@ -4403,7 +5069,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4472,7 +5138,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -4498,6 +5164,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -4533,7 +5209,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/PutSellingSystemSettings">REST API Reference for PutSellingSystemSettings Operation</seealso>
         public virtual PutSellingSystemSettingsResponse PutSellingSystemSettings(PutSellingSystemSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSellingSystemSettingsResponseUnmarshaller.Instance;
 
@@ -4558,6 +5234,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -4593,7 +5279,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/PutSellingSystemSettings">REST API Reference for PutSellingSystemSettings Operation</seealso>
         public virtual Task<PutSellingSystemSettingsResponse> PutSellingSystemSettingsAsync(PutSellingSystemSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSellingSystemSettingsResponseUnmarshaller.Instance;
             
@@ -4675,7 +5361,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/RejectEngagementInvitation">REST API Reference for RejectEngagementInvitation Operation</seealso>
         public virtual RejectEngagementInvitationResponse RejectEngagementInvitation(RejectEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -4756,7 +5442,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/RejectEngagementInvitation">REST API Reference for RejectEngagementInvitation Operation</seealso>
         public virtual Task<RejectEngagementInvitationResponse> RejectEngagementInvitationAsync(RejectEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -4851,7 +5537,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementByAcceptingInvitationTask">REST API Reference for StartEngagementByAcceptingInvitationTask Operation</seealso>
         public virtual StartEngagementByAcceptingInvitationTaskResponse StartEngagementByAcceptingInvitationTask(StartEngagementByAcceptingInvitationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementByAcceptingInvitationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementByAcceptingInvitationTaskResponseUnmarshaller.Instance;
 
@@ -4945,7 +5631,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementByAcceptingInvitationTask">REST API Reference for StartEngagementByAcceptingInvitationTask Operation</seealso>
         public virtual Task<StartEngagementByAcceptingInvitationTaskResponse> StartEngagementByAcceptingInvitationTaskAsync(StartEngagementByAcceptingInvitationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementByAcceptingInvitationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementByAcceptingInvitationTaskResponseUnmarshaller.Instance;
             
@@ -4958,10 +5644,13 @@ namespace Amazon.PartnerCentralSelling
 
 
         /// <summary>
-        /// This action initiates the engagement process from an existing opportunity by accepting
-        /// the engagement invitation and creating a corresponding opportunity in the partner’s
-        /// system. Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is
-        /// asynchronous and performs multiple steps before completion.
+        /// Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is asynchronous
+        /// and performs multiple steps before completion. This action orchestrates a comprehensive
+        /// workflow that combines multiple API operations into a single task to create and initiate
+        /// an engagement from an existing opportunity. It automatically executes a sequence of
+        /// operations including <c>GetOpportunity</c>, <c>CreateEngagement</c> (if it doesn't
+        /// exist), <c>CreateResourceSnapshot</c>, <c>CreateResourceSnapshotJob</c>, <c>CreateEngagementInvitation</c>
+        /// (if not already invited/accepted), and <c>SubmitOpportunity</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEngagementFromOpportunityTask service method.</param>
         /// 
@@ -5039,7 +5728,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTask">REST API Reference for StartEngagementFromOpportunityTask Operation</seealso>
         public virtual StartEngagementFromOpportunityTaskResponse StartEngagementFromOpportunityTask(StartEngagementFromOpportunityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementFromOpportunityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementFromOpportunityTaskResponseUnmarshaller.Instance;
 
@@ -5048,10 +5737,13 @@ namespace Amazon.PartnerCentralSelling
 
 
         /// <summary>
-        /// This action initiates the engagement process from an existing opportunity by accepting
-        /// the engagement invitation and creating a corresponding opportunity in the partner’s
-        /// system. Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is
-        /// asynchronous and performs multiple steps before completion.
+        /// Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is asynchronous
+        /// and performs multiple steps before completion. This action orchestrates a comprehensive
+        /// workflow that combines multiple API operations into a single task to create and initiate
+        /// an engagement from an existing opportunity. It automatically executes a sequence of
+        /// operations including <c>GetOpportunity</c>, <c>CreateEngagement</c> (if it doesn't
+        /// exist), <c>CreateResourceSnapshot</c>, <c>CreateResourceSnapshotJob</c>, <c>CreateEngagementInvitation</c>
+        /// (if not already invited/accepted), and <c>SubmitOpportunity</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEngagementFromOpportunityTask service method.</param>
         /// <param name="cancellationToken">
@@ -5132,11 +5824,196 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTask">REST API Reference for StartEngagementFromOpportunityTask Operation</seealso>
         public virtual Task<StartEngagementFromOpportunityTaskResponse> StartEngagementFromOpportunityTaskAsync(StartEngagementFromOpportunityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementFromOpportunityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementFromOpportunityTaskResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartEngagementFromOpportunityTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartOpportunityFromEngagementTask
+
+
+        /// <summary>
+        /// This action creates an opportunity from an existing engagement context. The task is
+        /// asynchronous and orchestrates the process of converting engagement contextual information
+        /// into a structured opportunity record within the partner's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOpportunityFromEngagementTask service method.</param>
+        /// 
+        /// <returns>The response from the StartOpportunityFromEngagementTask service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityFromEngagementTask">REST API Reference for StartOpportunityFromEngagementTask Operation</seealso>
+        public virtual StartOpportunityFromEngagementTaskResponse StartOpportunityFromEngagementTask(StartOpportunityFromEngagementTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOpportunityFromEngagementTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOpportunityFromEngagementTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartOpportunityFromEngagementTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This action creates an opportunity from an existing engagement context. The task is
+        /// asynchronous and orchestrates the process of converting engagement contextual information
+        /// into a structured opportunity record within the partner's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOpportunityFromEngagementTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOpportunityFromEngagementTask service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityFromEngagementTask">REST API Reference for StartOpportunityFromEngagementTask Operation</seealso>
+        public virtual Task<StartOpportunityFromEngagementTaskResponse> StartOpportunityFromEngagementTaskAsync(StartOpportunityFromEngagementTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOpportunityFromEngagementTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOpportunityFromEngagementTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartOpportunityFromEngagementTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5157,6 +6034,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5192,7 +6079,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">REST API Reference for StartResourceSnapshotJob Operation</seealso>
         public virtual StartResourceSnapshotJobResponse StartResourceSnapshotJob(StartResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -5216,6 +6103,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5251,7 +6148,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">REST API Reference for StartResourceSnapshotJob Operation</seealso>
         public virtual Task<StartResourceSnapshotJobResponse> StartResourceSnapshotJobAsync(StartResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -5276,6 +6173,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5311,7 +6218,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJob">REST API Reference for StopResourceSnapshotJob Operation</seealso>
         public virtual StopResourceSnapshotJobResponse StopResourceSnapshotJob(StopResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -5335,6 +6242,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5370,7 +6287,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJob">REST API Reference for StopResourceSnapshotJob Operation</seealso>
         public virtual Task<StopResourceSnapshotJobResponse> StopResourceSnapshotJobAsync(StopResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -5443,7 +6360,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SubmitOpportunity">REST API Reference for SubmitOpportunity Operation</seealso>
         public virtual SubmitOpportunityResponse SubmitOpportunity(SubmitOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitOpportunityResponseUnmarshaller.Instance;
 
@@ -5515,7 +6432,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SubmitOpportunity">REST API Reference for SubmitOpportunity Operation</seealso>
         public virtual Task<SubmitOpportunityResponse> SubmitOpportunityAsync(SubmitOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitOpportunityResponseUnmarshaller.Instance;
             
@@ -5595,7 +6512,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5674,7 +6591,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5754,7 +6671,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5833,11 +6750,192 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEngagementContext
+
+
+        /// <summary>
+        /// Updates the context information for an existing engagement with new or modified data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEngagementContext service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateEngagementContext">REST API Reference for UpdateEngagementContext Operation</seealso>
+        public virtual UpdateEngagementContextResponse UpdateEngagementContext(UpdateEngagementContextRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEngagementContextResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEngagementContextResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the context information for an existing engagement with new or modified data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEngagementContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateEngagementContext">REST API Reference for UpdateEngagementContext Operation</seealso>
+        public virtual Task<UpdateEngagementContextResponse> UpdateEngagementContextAsync(UpdateEngagementContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEngagementContextResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEngagementContextResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5924,7 +7022,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateOpportunity">REST API Reference for UpdateOpportunity Operation</seealso>
         public virtual UpdateOpportunityResponse UpdateOpportunity(UpdateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOpportunityResponseUnmarshaller.Instance;
 
@@ -6014,7 +7112,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateOpportunity">REST API Reference for UpdateOpportunity Operation</seealso>
         public virtual Task<UpdateOpportunityResponse> UpdateOpportunityAsync(UpdateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOpportunityResponseUnmarshaller.Instance;
             

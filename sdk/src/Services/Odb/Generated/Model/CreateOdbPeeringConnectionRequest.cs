@@ -31,8 +31,7 @@ namespace Amazon.Odb.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOdbPeeringConnection operation.
-    /// Creates a peering connection between an ODB network and either another ODB network
-    /// or a customer-owned VPC.
+    /// Creates a peering connection between an ODB network and a VPC.
     /// 
     ///  
     /// <para>
@@ -45,7 +44,9 @@ namespace Amazon.Odb.Model
         private string _clientToken;
         private string _displayName;
         private string _odbNetworkId;
+        private List<string> _peerNetworkCidrsToBeAdded = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _peerNetworkId;
+        private List<string> _peerNetworkRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -115,6 +116,30 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PeerNetworkCidrsToBeAdded. 
+        /// <para>
+        /// A list of CIDR blocks to add to the peering connection. These CIDR blocks define the
+        /// IP address ranges that can communicate through the peering connection.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> PeerNetworkCidrsToBeAdded
+        {
+            get { return this._peerNetworkCidrsToBeAdded; }
+            set { this._peerNetworkCidrsToBeAdded = value; }
+        }
+
+        // Check to see if PeerNetworkCidrsToBeAdded property is set
+        internal bool IsSetPeerNetworkCidrsToBeAdded()
+        {
+            return this._peerNetworkCidrsToBeAdded != null && (this._peerNetworkCidrsToBeAdded.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property PeerNetworkId. 
         /// <para>
         /// The unique identifier of the peer network. This can be either a VPC ID or another
@@ -132,6 +157,31 @@ namespace Amazon.Odb.Model
         internal bool IsSetPeerNetworkId()
         {
             return this._peerNetworkId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerNetworkRouteTableIds. 
+        /// <para>
+        /// The unique identifier of the VPC route table for which a route to the ODB network
+        /// is automatically created during peering connection establishment.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> PeerNetworkRouteTableIds
+        {
+            get { return this._peerNetworkRouteTableIds; }
+            set { this._peerNetworkRouteTableIds = value; }
+        }
+
+        // Check to see if PeerNetworkRouteTableIds property is set
+        internal bool IsSetPeerNetworkRouteTableIds()
+        {
+            return this._peerNetworkRouteTableIds != null && (this._peerNetworkRouteTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

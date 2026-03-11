@@ -139,6 +139,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetTargetControlPort())
+                {
+                    request.Parameters.Add("TargetControlPort", StringUtils.FromInt(publicRequest.TargetControlPort));
+                }
                 if(publicRequest.IsSetTargetType())
                 {
                     request.Parameters.Add("TargetType", StringUtils.FromString(publicRequest.TargetType));
@@ -152,6 +156,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateTargetGroupRequestMarshaller _instance = new CreateTargetGroupRequestMarshaller();        

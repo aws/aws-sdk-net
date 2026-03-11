@@ -1,9 +1,9 @@
 {
   "version": "2.0",
-  "service": "<p>AWS Signer is a fully managed code-signing service to help you ensure the trust and integrity of your code. </p> <p>Signer supports the following applications:</p> <p>With code signing for AWS Lambda, you can sign <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/\">AWS Lambda</a> deployment packages. Integrated support is provided for <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/gsg/\">Amazon S3</a>, <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/\">Amazon CloudWatch</a>, and <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/\">AWS CloudTrail</a>. In order to sign code, you create a signing profile and then use Signer to sign Lambda zip files in S3. </p> <p>With code signing for IoT, you can sign code for any IoT device that is supported by AWS. IoT code signing is available for <a href=\"http://docs.aws.amazon.com/freertos/latest/userguide/\">Amazon FreeRTOS</a> and <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/\">AWS IoT Device Management</a>, and is integrated with <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/\">AWS Certificate Manager (ACM)</a>. In order to sign code, you import a third-party code-signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT Device Management. </p> <p>With Signer and the Notation CLI from the <a href=\"https://notaryproject.dev/\">Notary&#x2028; Project</a>, you can sign container images stored in a container registry such as Amazon Elastic Container Registry (ECR). The signatures are stored in the registry alongside the images, where they are available for verifying image authenticity and integrity.</p> <p>For more information about Signer, see the <a href=\"https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html\">AWS Signer Developer Guide</a>.</p>",
+  "service": "<p>AWS Signer is a fully managed code-signing service to help you ensure the trust and integrity of your code. </p> <p>Signer supports the following applications:</p> <p>With code signing for AWS Lambda, you can sign <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/\">AWS Lambda</a> deployment packages. Integrated support is provided for <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/gsg/\">Amazon S3</a>, <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/\">Amazon CloudWatch</a>, and <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/\">AWS CloudTrail</a>. In order to sign code, you create a signing profile and then use Signer to sign Lambda zip files in S3. </p> <p>With code signing for IoT, you can sign code for any IoT device that is supported by AWS. IoT code signing is available for <a href=\"http://docs.aws.amazon.com/freertos/latest/userguide/\">Amazon FreeRTOS</a> and <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/\">AWS IoT Device Management</a>, and is integrated with <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/\">AWS Certificate Manager (ACM)</a>. In order to sign code, you import a third-party code-signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT Device Management. </p> <p>With Signer and the Notation CLI from the <a href=\"https://notaryproject.dev/\">Notary&#x2028; Project</a>, you can sign container images stored in a container registry such as Amazon Elastic Container Registry (ECR). The signatures are stored in the registry alongside the images, where they are available for verifying image authenticity and integrity.</p> <p>For more information about Signer, see the <a href=\"http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html\">AWS Signer Developer Guide</a>.</p>",
   "operations": {
     "AddProfilePermission": "<p>Adds cross-account permissions to a signing profile.</p>",
-    "CancelSigningProfile": "<p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation.</p>",
+    "CancelSigningProfile": "<p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs. See <a href=\"https://docs.aws.amazon.com/signer/latest/developerguide/retention.html\">Data Retention</a> for more information on scheduled deletion of a canceled signing profile.</p>",
     "DescribeSigningJob": "<p>Returns information about a specific code signing job. You specify the job by using the <code>jobId</code> value that is returned by the <a>StartSigningJob</a> operation. </p>",
     "GetRevocationStatus": "<p>Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate.</p>",
     "GetSigningPlatform": "<p>Returns information on a specific signing platform.</p>",
@@ -15,18 +15,17 @@
     "ListTagsForResource": "<p>Returns a list of the tags associated with a signing profile resource.</p>",
     "PutSigningProfile": "<p>Creates a signing profile. A signing profile is a code-signing template that can be used to carry out a pre-defined signing job. </p>",
     "RemoveProfilePermission": "<p>Removes cross-account permissions from a signing profile.</p>",
-    "RevokeSignature": "<p>Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.</p>",
-    "RevokeSigningProfile": "<p>Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid.</p>",
+    "RevokeSignature": "<p>Changes the state of a signing job to <code>REVOKED</code>. This indicates that the signature is no longer valid.</p>",
+    "RevokeSigningProfile": "<p>Changes the state of a signing profile to <code>REVOKED</code>. This indicates that signatures generated using the signing profile after an effective start date are no longer valid. A revoked profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs. See <a href=\"https://docs.aws.amazon.com/signer/latest/developerguide/retention.html\">Data Retention</a> for more information on scheduled deletion of a revoked signing profile. </p>",
     "SignPayload": "<p>Signs a binary payload and returns a signature envelope.</p>",
-    "StartSigningJob": "<p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements: </p> <ul> <li> <p> You must create an Amazon S3 source bucket. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html\">Creating a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li> <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.</p> </li> <li> <p>You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code> operation.</p> </li> <li> <p>You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region signing isn't supported.</p> </li> <li> <p>You must also specify a request token that identifies your request to Signer.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions after you call <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use this action, see <a href=\"https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html\">StartSigningJob</a>.</p>",
+    "StartSigningJob": "<p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation. Note the following requirements: </p> <ul> <li> <p> You must create an Amazon S3 source bucket. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html\">Creating a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li> <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.</p> </li> <li> <p>You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code> operation.</p> </li> <li> <p>You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region signing isn't supported.</p> </li> <li> <p>You must also specify a request token that identifies your request to Signer.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions after you call <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use this action, see <a href=\"https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html\">StartSigningJob</a>.</p>",
     "TagResource": "<p>Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of a key and an optional value. To specify the signing profile, use its Amazon Resource Name (ARN). To specify the tag, use a key-value pair.</p>",
     "UntagResource": "<p>Removes one or more tags from a signing profile. To remove the tags, specify a list of tag keys.</p>"
   },
   "shapes": {
     "AccessDeniedException": {
       "base": "<p>You do not have sufficient access to perform this action.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AccountId": {
       "base": null,
@@ -46,13 +45,11 @@
     },
     "AddProfilePermissionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AddProfilePermissionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Arn": {
       "base": null,
@@ -66,8 +63,7 @@
     },
     "BadRequestException": {
       "base": "<p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "Blob": {
       "base": null,
@@ -85,8 +81,7 @@
     },
     "CancelSigningProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Category": {
       "base": null,
@@ -115,18 +110,15 @@
     },
     "ConflictException": {
       "base": "<p>The resource encountered a conflicting state.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSigningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSigningJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Destination": {
       "base": "<p>Points to an <code>S3Destination</code> object that contains information about your S3 bucket.</p>",
@@ -196,33 +188,27 @@
     },
     "GetRevocationStatusRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetRevocationStatusResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSigningPlatformRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSigningPlatformResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSigningProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetSigningProfileResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "HashAlgorithm": {
       "base": null,
@@ -266,8 +252,7 @@
     },
     "InternalServiceErrorException": {
       "base": "<p>An internal error occurred.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "JobId": {
       "base": null,
@@ -289,53 +274,43 @@
     },
     "ListProfilePermissionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListProfilePermissionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSigningJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSigningJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSigningPlatformsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSigningPlatformsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSigningProfilesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSigningProfilesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTagsForResourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTagsForResourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "MaxResults": {
       "base": null,
@@ -369,8 +344,7 @@
     },
     "NotFoundException": {
       "base": "<p>The signing profile was not found.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "Payload": {
       "base": null,
@@ -450,23 +424,19 @@
     },
     "PutSigningProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutSigningProfileResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveProfilePermissionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveProfilePermissionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RequestedBy": {
       "base": null,
@@ -477,8 +447,7 @@
     },
     "ResourceNotFoundException": {
       "base": "<p>A specified resource could not be found.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "RevocationReasonString": {
       "base": null,
@@ -489,13 +458,11 @@
     },
     "RevokeSignatureRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RevokeSigningProfileRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RevokedEntities": {
       "base": null,
@@ -523,18 +490,15 @@
     },
     "ServiceLimitExceededException": {
       "base": "<p>The client is making a request that exceeds service limits.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "SignPayloadRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SignPayloadResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SignatureValidityPeriod": {
       "base": "<p>The validity period for a signing job.</p>",
@@ -684,13 +648,11 @@
     },
     "StartSigningJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartSigningJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StatusReason": {
       "base": null,
@@ -707,7 +669,7 @@
     "String": {
       "base": null,
       "refs": {
-        "AddProfilePermissionRequest$action": "<p>For cross-account signing. Grant a designated account permission to perform one or more of the following actions. Each action is associated with a specific API's operations. For more information about cross-account signing, see <a href=\"https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html\">Using cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p> <p>You can designate the following actions to an account.</p> <ul> <li> <p> <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see <a>StartSigningJob</a>.</p> </li> <li> <p> <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see <a>SignPayload</a> </p> </li> <li> <p> <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.</p> </li> <li> <p> <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.</p> </li> </ul>",
+        "AddProfilePermissionRequest$action": "<p>For cross-account signing. Grant a designated account permission to perform one or more of the following actions. Each action is associated with a specific API's operations. For more information about cross-account signing, see <a href=\"http://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html\">Using cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p> <p>You can designate the following actions to an account.</p> <ul> <li> <p> <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see <a>StartSigningJob</a>.</p> </li> <li> <p> <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see <a>SignPayload</a> </p> </li> <li> <p> <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.</p> </li> <li> <p> <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.</p> </li> </ul>",
         "AddProfilePermissionRequest$principal": "<p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>",
         "AddProfilePermissionRequest$revisionId": "<p>A unique identifier for the current profile revision.</p>",
         "AddProfilePermissionRequest$statementId": "<p>A unique identifier for the cross-account permission statement.</p>",
@@ -771,13 +733,11 @@
     },
     "TagResourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "TagResourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "TagValue": {
       "base": null,
@@ -787,8 +747,7 @@
     },
     "ThrottlingException": {
       "base": "<p>The request was denied due to request throttling.</p> <p>Instead of this error, <code>TooManyRequestsException</code> should be used.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "Timestamp": {
       "base": null,
@@ -809,23 +768,19 @@
     },
     "TooManyRequestsException": {
       "base": "<p>The allowed number of job-signing requests has been exceeded.</p> <p>This error supersedes the error <code>ThrottlingException</code>.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "UntagResourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UntagResourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ValidationException": {
       "base": "<p>You signing certificate could not be validated.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ValidityType": {
       "base": null,

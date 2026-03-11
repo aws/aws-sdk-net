@@ -117,6 +117,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetUpdatedBy())
+            {
+                context.Writer.WritePropertyName("UpdatedBy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluatorUserUnionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UpdatedBy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

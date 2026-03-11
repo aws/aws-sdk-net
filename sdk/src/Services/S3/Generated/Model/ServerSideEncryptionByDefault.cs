@@ -71,6 +71,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServerSideEncryptionMethod ServerSideEncryptionAlgorithm
         {
             get { return this._serverSideEncryptionAlgorithm; }

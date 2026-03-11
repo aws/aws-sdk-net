@@ -36,6 +36,14 @@ namespace Amazon.WorkMailMessageFlow
         /// <summary>
         /// Construct instance of AmazonWorkMailMessageFlowException
         /// </summary>
+        public AmazonWorkMailMessageFlowException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWorkMailMessageFlowException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWorkMailMessageFlowException(string message)
             : base(message)

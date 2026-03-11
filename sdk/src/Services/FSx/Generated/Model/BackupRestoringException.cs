@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
         private string _fileSystemId;
 
         /// <summary>
+        /// Default constructor for BackupRestoringException
+        /// message.
+        /// </summary>
+        public BackupRestoringException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BackupRestoringException with the specified error
         /// message.
         /// </summary>

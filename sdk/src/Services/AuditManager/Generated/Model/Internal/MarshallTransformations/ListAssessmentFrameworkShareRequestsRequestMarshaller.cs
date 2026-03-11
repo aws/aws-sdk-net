@@ -68,6 +68,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.RequestType))
+                throw new AmazonAuditManagerException("Request object does not have required field RequestType set");
             
             if (publicRequest.IsSetRequestType())
                 request.Parameters.Add("requestType", StringUtils.FromString(publicRequest.RequestType));

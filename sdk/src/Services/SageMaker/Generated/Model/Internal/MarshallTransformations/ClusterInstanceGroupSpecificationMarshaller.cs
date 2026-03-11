@@ -46,10 +46,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapacityRequirements())
+            {
+                context.Writer.WritePropertyName("CapacityRequirements");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterCapacityRequirementsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CapacityRequirements, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
                 context.Writer.WriteStringValue(requestObject.ExecutionRole);
+            }
+
+            if(requestObject.IsSetImageId())
+            {
+                context.Writer.WritePropertyName("ImageId");
+                context.Writer.WriteStringValue(requestObject.ImageId);
             }
 
             if(requestObject.IsSetInstanceCount())
@@ -86,6 +103,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetKubernetesConfig())
+            {
+                context.Writer.WritePropertyName("KubernetesConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterKubernetesConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.KubernetesConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLifeCycleConfig())
             {
                 context.Writer.WritePropertyName("LifeCycleConfig");
@@ -95,6 +123,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.LifeCycleConfig, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMinInstanceCount())
+            {
+                context.Writer.WritePropertyName("MinInstanceCount");
+                context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
             }
 
             if(requestObject.IsSetOnStartDeepHealthChecks())
@@ -126,6 +160,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = ScheduledUpdateConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduledUpdateConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSlurmConfig())
+            {
+                context.Writer.WritePropertyName("SlurmConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterSlurmConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlurmConfig, context);
 
                 context.Writer.WriteEndObject();
             }

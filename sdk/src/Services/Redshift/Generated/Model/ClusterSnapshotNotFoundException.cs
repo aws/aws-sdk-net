@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSnapshotNotFoundException
+        /// message.
+        /// </summary>
+        public ClusterSnapshotNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSnapshotNotFoundException with the specified error
         /// message.
         /// </summary>

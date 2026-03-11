@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterAutomatedBackupNotFoundException
+        /// message.
+        /// </summary>
+        public DBClusterAutomatedBackupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterAutomatedBackupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSecurityException
+        /// message.
+        /// </summary>
+        public InvalidSecurityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSecurityException with the specified error
         /// message.
         /// </summary>

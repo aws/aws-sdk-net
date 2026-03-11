@@ -35,7 +35,12 @@ namespace Amazon.PrometheusService.Model
     /// a workspace. A rule groups namespace is associated with exactly one rules file. A
     /// workspace can have multiple rule groups namespaces.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// The combined length of a rule group namespace and a rule group name cannot exceed
+    /// 721 UTF-8 bytes.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// Use this operation only to create new rule groups namespaces. To update an existing
     /// rule groups namespace, use <c>PutRuleGroupsNamespace</c>.
@@ -102,7 +107,7 @@ namespace Amazon.PrometheusService.Model
         /// The name for the new rule groups namespace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

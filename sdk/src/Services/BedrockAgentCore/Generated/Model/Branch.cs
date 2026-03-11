@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains information about a branch in a memory store. Branches allow for organizing
-    /// events into different conversation threads or paths.
+    /// Contains information about a branch in an AgentCore Memory resource. Branches allow
+    /// for organizing events into different conversation threads or paths.
     /// </summary>
     public partial class Branch
     {

@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDestination operation.
-    /// Update a destination specified by id.
+    /// Update a destination specified by name.
     /// </summary>
     public partial class UpdateDestinationRequest : AmazonIoTManagedIntegrationsRequest
     {

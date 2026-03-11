@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourcePolicyConflictException
+        /// message.
+        /// </summary>
+        public ResourcePolicyConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourcePolicyConflictException with the specified error
         /// message.
         /// </summary>

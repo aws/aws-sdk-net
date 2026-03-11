@@ -36,6 +36,14 @@ namespace Amazon.IoTEventsData
         /// <summary>
         /// Construct instance of AmazonIoTEventsDataException
         /// </summary>
+        public AmazonIoTEventsDataException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTEventsDataException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTEventsDataException(string message)
             : base(message)

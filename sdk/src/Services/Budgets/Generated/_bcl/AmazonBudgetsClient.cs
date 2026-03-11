@@ -358,6 +358,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
         /// </exception>
@@ -370,8 +374,11 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -380,7 +387,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
@@ -418,6 +425,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
         /// </exception>
@@ -430,8 +441,11 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -440,7 +454,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual Task<CreateBudgetResponse> CreateBudgetAsync(CreateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
             
@@ -477,7 +491,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -486,7 +500,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
         public virtual CreateBudgetActionResponse CreateBudgetAction(CreateBudgetActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetActionResponseUnmarshaller.Instance;
 
@@ -522,7 +536,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -531,7 +545,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
         public virtual Task<CreateBudgetActionResponse> CreateBudgetActionAsync(CreateBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetActionResponseUnmarshaller.Instance;
             
@@ -575,7 +589,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         public virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
 
@@ -618,7 +632,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         public virtual Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
             
@@ -662,7 +676,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
@@ -705,7 +719,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
             
@@ -749,7 +763,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
@@ -792,7 +806,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual Task<DeleteBudgetResponse> DeleteBudgetAsync(DeleteBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
             
@@ -833,7 +847,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
         public virtual DeleteBudgetActionResponse DeleteBudgetAction(DeleteBudgetActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetActionResponseUnmarshaller.Instance;
 
@@ -873,7 +887,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
         public virtual Task<DeleteBudgetActionResponse> DeleteBudgetActionAsync(DeleteBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetActionResponseUnmarshaller.Instance;
             
@@ -917,7 +931,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         public virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
 
@@ -960,7 +974,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         public virtual Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
             
@@ -1003,7 +1017,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
@@ -1045,7 +1059,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
             
@@ -1090,7 +1104,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         public virtual DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
 
@@ -1134,7 +1148,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         public virtual Task<DescribeBudgetResponse> DescribeBudgetAsync(DescribeBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
             
@@ -1171,7 +1185,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
         public virtual DescribeBudgetActionResponse DescribeBudgetAction(DescribeBudgetActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionResponseUnmarshaller.Instance;
 
@@ -1207,7 +1221,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
         public virtual Task<DescribeBudgetActionResponse> DescribeBudgetActionAsync(DescribeBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionResponseUnmarshaller.Instance;
             
@@ -1247,7 +1261,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
         public virtual DescribeBudgetActionHistoriesResponse DescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionHistoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionHistoriesResponseUnmarshaller.Instance;
 
@@ -1286,7 +1300,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
         public virtual Task<DescribeBudgetActionHistoriesResponse> DescribeBudgetActionHistoriesAsync(DescribeBudgetActionHistoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionHistoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionHistoriesResponseUnmarshaller.Instance;
             
@@ -1323,7 +1337,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
         public virtual DescribeBudgetActionsForAccountResponse DescribeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionsForAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionsForAccountResponseUnmarshaller.Instance;
 
@@ -1359,7 +1373,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
         public virtual Task<DescribeBudgetActionsForAccountResponse> DescribeBudgetActionsForAccountAsync(DescribeBudgetActionsForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionsForAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionsForAccountResponseUnmarshaller.Instance;
             
@@ -1399,7 +1413,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
         public virtual DescribeBudgetActionsForBudgetResponse DescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionsForBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionsForBudgetResponseUnmarshaller.Instance;
 
@@ -1438,7 +1452,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
         public virtual Task<DescribeBudgetActionsForBudgetResponse> DescribeBudgetActionsForBudgetAsync(DescribeBudgetActionsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetActionsForBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetActionsForBudgetResponseUnmarshaller.Instance;
             
@@ -1481,7 +1495,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetNotificationsForAccount">REST API Reference for DescribeBudgetNotificationsForAccount Operation</seealso>
         public virtual DescribeBudgetNotificationsForAccountResponse DescribeBudgetNotificationsForAccount(DescribeBudgetNotificationsForAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetNotificationsForAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetNotificationsForAccountResponseUnmarshaller.Instance;
 
@@ -1523,7 +1537,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetNotificationsForAccount">REST API Reference for DescribeBudgetNotificationsForAccount Operation</seealso>
         public virtual Task<DescribeBudgetNotificationsForAccountResponse> DescribeBudgetNotificationsForAccountAsync(DescribeBudgetNotificationsForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetNotificationsForAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetNotificationsForAccountResponseUnmarshaller.Instance;
             
@@ -1544,6 +1558,10 @@ namespace Amazon.Budgets
         /// <returns>The response from the DescribeBudgetPerformanceHistory service method, as returned by Budgets.</returns>
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
@@ -1567,7 +1585,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         public virtual DescribeBudgetPerformanceHistoryResponse DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
 
@@ -1587,6 +1605,10 @@ namespace Amazon.Budgets
         /// <returns>The response from the DescribeBudgetPerformanceHistory service method, as returned by Budgets.</returns>
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ExpiredNextTokenException">
         /// The pagination token expired.
@@ -1610,7 +1632,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         public virtual Task<DescribeBudgetPerformanceHistoryResponse> DescribeBudgetPerformanceHistoryAsync(DescribeBudgetPerformanceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
             
@@ -1661,7 +1683,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         public virtual DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
 
@@ -1711,7 +1733,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         public virtual Task<DescribeBudgetsResponse> DescribeBudgetsAsync(DescribeBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
             
@@ -1754,7 +1776,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         public virtual DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
 
@@ -1796,7 +1818,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         public virtual Task<DescribeNotificationsForBudgetResponse> DescribeNotificationsForBudgetAsync(DescribeNotificationsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
             
@@ -1839,7 +1861,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         public virtual DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
 
@@ -1881,7 +1903,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         public virtual Task<DescribeSubscribersForNotificationResponse> DescribeSubscribersForNotificationAsync(DescribeSubscribersForNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
             
@@ -1922,7 +1944,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
         public virtual ExecuteBudgetActionResponse ExecuteBudgetAction(ExecuteBudgetActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteBudgetActionResponseUnmarshaller.Instance;
 
@@ -1962,7 +1984,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
         public virtual Task<ExecuteBudgetActionResponse> ExecuteBudgetActionAsync(ExecuteBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteBudgetActionResponseUnmarshaller.Instance;
             
@@ -1999,7 +2021,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2035,7 +2057,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2066,7 +2088,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -2075,7 +2097,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2105,7 +2127,7 @@ namespace Amazon.Budgets
         /// We can’t locate the resource that you specified.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
-        /// You've reached the limit on the number of tags you can associate with a resource.
+        /// You've reached a Service Quota limit on this resource.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
@@ -2114,7 +2136,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2151,7 +2173,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2187,7 +2209,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2227,6 +2249,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -2236,6 +2262,9 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
+        /// You've reached a Service Quota limit on this resource.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
         /// limit for the account.
@@ -2243,7 +2272,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
@@ -2282,6 +2311,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -2291,6 +2324,9 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
+        /// You've reached a Service Quota limit on this resource.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
         /// The number of API requests has exceeded the maximum allowed API request throttling
         /// limit for the account.
@@ -2298,7 +2334,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual Task<UpdateBudgetResponse> UpdateBudgetAsync(UpdateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
             
@@ -2339,7 +2375,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
         public virtual UpdateBudgetActionResponse UpdateBudgetAction(UpdateBudgetActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetActionResponseUnmarshaller.Instance;
 
@@ -2379,7 +2415,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
         public virtual Task<UpdateBudgetActionResponse> UpdateBudgetActionAsync(UpdateBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetActionResponseUnmarshaller.Instance;
             
@@ -2419,7 +2455,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         public virtual UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
 
@@ -2458,7 +2494,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         public virtual Task<UpdateNotificationResponse> UpdateNotificationAsync(UpdateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
             
@@ -2498,7 +2534,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
@@ -2537,7 +2573,7 @@ namespace Amazon.Budgets
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
             

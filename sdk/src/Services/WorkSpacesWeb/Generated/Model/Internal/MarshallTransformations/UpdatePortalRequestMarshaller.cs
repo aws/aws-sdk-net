@@ -100,6 +100,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxConcurrentSessions.Value);
             }
 
+            if(publicRequest.IsSetPortalCustomDomain())
+            {
+                context.Writer.WritePropertyName("portalCustomDomain");
+                context.Writer.WriteStringValue(publicRequest.PortalCustomDomain);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

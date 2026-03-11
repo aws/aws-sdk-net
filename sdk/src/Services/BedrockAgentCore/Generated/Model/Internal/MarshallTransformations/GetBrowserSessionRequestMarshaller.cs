@@ -65,6 +65,8 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetBrowserIdentifier())
                 throw new AmazonBedrockAgentCoreException("Request object does not have required field BrowserIdentifier set");
             request.AddPathResource("{browserIdentifier}", StringUtils.FromString(publicRequest.BrowserIdentifier));
+            if (string.IsNullOrEmpty(publicRequest.SessionId))
+                throw new AmazonBedrockAgentCoreException("Request object does not have required field SessionId set");
             
             if (publicRequest.IsSetSessionId())
                 request.Parameters.Add("sessionId", StringUtils.FromString(publicRequest.SessionId));

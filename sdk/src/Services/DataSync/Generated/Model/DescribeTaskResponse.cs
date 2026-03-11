@@ -395,7 +395,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task
+        /// The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task
         /// statuses</a>.
         /// </para>
         /// </summary>

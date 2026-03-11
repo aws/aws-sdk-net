@@ -31,47 +31,68 @@ namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamGroup operation.
-    /// Manage how Amazon GameLift Streams streams your applications by using a stream group.
-    /// A stream group is a collection of resources that Amazon GameLift Streams uses to stream
-    /// your application to end-users. When you create a stream group, you specify an application
-    /// to stream by default and the type of hardware to use, such as the graphical processing
-    /// unit (GPU). You can also link additional applications, which allows you to stream
-    /// those applications using this stream group. Depending on your expected users, you
-    /// also scale the number of concurrent streams you want to support at one time, and in
-    /// what locations. 
+    /// Stream groups manage how Amazon GameLift Streams allocates resources and handles
+    /// concurrent streams, allowing you to effectively manage capacity and costs. Within
+    /// a stream group, you specify an application to stream, streaming locations and their
+    /// capacity, and the stream class you want to use when streaming applications to your
+    /// end-users. A stream class defines the hardware configuration of the compute resources
+    /// that Amazon GameLift Streams will use when streaming, such as the CPU, GPU, and memory.
+    /// 
     /// 
     ///  
     /// <para>
     ///  Stream capacity represents the number of concurrent streams that can be active at
-    /// a time. You set stream capacity per location, per stream group. There are two types
-    /// of capacity, always-on and on-demand: 
+    /// a time. You set stream capacity per location, per stream group. The following capacity
+    /// settings are available: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
-    /// requests without delay. You pay for this capacity whether it's in use or not. Best
-    /// for quickest time from streaming request to streaming session. 
+    ///  <b>Always-on capacity</b>: This setting, if non-zero, indicates minimum streaming
+    /// capacity which is allocated to you and is never released back to the service. You
+    /// pay for this base level of capacity at all times, whether used or idle. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can allocate
-    /// in response to stream requests, and then de-allocate when the session has terminated.
-    /// This offers a cost control measure at the expense of a greater startup time (typically
-    /// under 5 minutes). 
+    ///  <b>Maximum capacity</b>: This indicates the maximum capacity that the service can
+    /// allocate for you. Newly created streams may take a few minutes to start. Capacity
+    /// is released back to the service when idle. You pay for capacity that is allocated
+    /// to you until it is released. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Target-idle capacity</b>: This indicates idle capacity which the service pre-allocates
+    /// and holds for you in anticipation of future activity. This helps to insulate your
+    /// users from capacity-allocation delays. You pay for capacity which is held in this
+    /// intentional idle state. 
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// Values for capacity must be whole number multiples of the tenancy value of the stream
+    /// group's stream class.
+    /// </para>
+    ///  
     /// <para>
     ///  To adjust the capacity of any <c>ACTIVE</c> stream group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
     /// 
     /// </para>
     ///  
     /// <para>
-    ///  If the request is successful, Amazon GameLift Streams begins creating the stream
-    /// group. Amazon GameLift Streams assigns a unique ID to the stream group resource and
-    /// sets the status to <c>ACTIVATING</c>. When the stream group reaches <c>ACTIVE</c>
-    /// status, you can start stream sessions by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>.
+    ///  If the <c>CreateStreamGroup</c> request is successful, Amazon GameLift Streams assigns
+    /// a unique ID to the stream group resource and sets the status to <c>ACTIVATING</c>.
+    /// It can take a few minutes for Amazon GameLift Streams to finish creating the stream
+    /// group while it searches for unallocated compute resources and provisions them. When
+    /// complete, the stream group status will be <c>ACTIVE</c> and you can start stream sessions
+    /// by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>.
     /// To check the stream group's status, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
     /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// Stream groups should be recreated every 3-4 weeks to pick up important service updates
+    /// and fixes. Stream groups that are older than 180 days can no longer be updated with
+    /// new application associations. Stream groups expire when they are 365 days old, at
+    /// which point they can no longer stream sessions. The exact expiration date is indicated
+    /// by the date value in the <c>ExpiresAt</c> field.
     /// </para>
     /// </summary>
     public partial class CreateStreamGroupRequest : AmazonGameLiftStreamsRequest
@@ -108,12 +129,15 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property DefaultApplicationIdentifier. 
         /// <para>
         /// The unique identifier of the Amazon GameLift Streams application that you want to
-        /// associate to a stream group as the default application. The application must be in
-        /// <c>READY</c> status. By setting the default application identifier, you will optimize
-        /// startup performance of this application in your stream group. Once set, this application
-        /// cannot be disassociated from the stream group, unlike applications that are associated
-        /// using AssociateApplications. If not set when creating a stream group, you will need
-        /// to call AssociateApplications later, before you can start streaming.
+        /// set as the default application in a stream group. The application that you specify
+        /// must be in <c>READY</c> status. The default application is pre-cached on always-on
+        /// compute resources, reducing stream startup times. Other applications are automatically
+        /// cached as needed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not link an application when you create a stream group, you will need to
+        /// link one later, before you can start streaming, using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.
         /// </para>
         ///  
         /// <para>
@@ -193,10 +217,205 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b> <c>gen6n_pro_win2022</c> (NVIDIA, pro)</b> Supports applications with extremely
+        /// high 3D scene complexity which require maximum resources. Runs applications on Microsoft
+        /// Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions
+        /// up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA
+        /// L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_pro</c> (NVIDIA, pro)</b> Supports applications with extremely high
+        /// 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor
+        /// Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_ultra_win2022</c> (NVIDIA, ultra)</b> Supports applications with high
+        /// 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports
+        /// DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications,
+        /// and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_ultra</c> (NVIDIA, ultra)</b> Supports applications with high 3D scene
+        /// complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_high</c> (NVIDIA, high)</b> Supports applications with moderate to high
+        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports up to 2 concurrent stream sessions
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_medium</c> (NVIDIA, medium)</b> Supports applications with moderate
+        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 2 vCPUs, 8 GB RAM, 6 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports up to 4 concurrent stream sessions
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_small</c> (NVIDIA, small)</b> Supports applications with lightweight
+        /// 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 1 vCPUs, 4 GB RAM, 2 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports up to 12 concurrent stream sessions
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_medium_win2022</c> (NVIDIA, medium)</b> Supports applications with low
+        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 8 vCPUs, 32 GB RAM, 6 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>gen6n_small_win2022</c> (NVIDIA, small)</b> Supports applications with low
+        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Reference resolution: 1080p
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reference frame rate: 60 fps
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Workload specifications: 2 vCPUs, 8 GB RAM, 3 GB VRAM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy: Supports 1 concurrent stream session
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
         ///  <b> <c>gen5n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
-        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -217,7 +436,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen5n_high</c> (NVIDIA, high)</b> Supports applications with moderate to high
-        /// 3D scene complexity. Uses NVIDIA A10G Tensor GPU.
+        /// 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -238,7 +457,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen5n_ultra</c> (NVIDIA, ultra)</b> Supports applications with extremely high
-        /// 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.
+        /// 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -260,8 +479,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen4n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
-        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -282,7 +501,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen4n_high</c> (NVIDIA, high)</b> Supports applications with moderate to high
-        /// 3D scene complexity. Uses NVIDIA T4 Tensor GPU.
+        /// 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -303,7 +522,7 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>gen4n_ultra</c> (NVIDIA, ultra)</b> Supports applications with high 3D scene
-        /// complexity. Uses dedicated NVIDIA T4 Tensor GPU.
+        /// complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private InstanceMetadataEndpointState _httpEndpoint;
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
+        private HttpTokensEnforcedState _httpTokensEnforced;
         private InstanceMetadataTagsState _instanceMetadataTags;
         private ManagedBy _managedBy;
         private string _managedExceptionMessage;
@@ -109,11 +110,32 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HttpTokensEnforced. 
+        /// <para>
+        /// Indicates whether to enforce the requirement of IMDSv2 on an instance at the time
+        /// of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<c>HttpTokens</c>)
+        /// is set to <c>required</c>.
+        /// </para>
+        /// </summary>
+        public HttpTokensEnforcedState HttpTokensEnforced
+        {
+            get { return this._httpTokensEnforced; }
+            set { this._httpTokensEnforced = value; }
+        }
+
+        // Check to see if HttpTokensEnforced property is set
+        internal bool IsSetHttpTokensEnforced()
+        {
+            return this._httpTokensEnforced != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceMetadataTags. 
         /// <para>
         /// Indicates whether access to instance tags from the instance metadata is enabled or
-        /// disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-        /// with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.
+        /// disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View
+        /// tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public InstanceMetadataTagsState InstanceMetadataTags

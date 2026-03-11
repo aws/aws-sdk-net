@@ -39,6 +39,13 @@ namespace Amazon.CodeStarNotifications.Model
     {
 
         /// <summary>
+        /// Default constructor for ConfigurationException
+        /// message.
+        /// </summary>
+        public ConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConfigurationException with the specified error
         /// message.
         /// </summary>

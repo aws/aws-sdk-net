@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLambdaAccessPoint Object
     /// </summary>  
-    public class ObjectLambdaAccessPointUnmarshaller : IXmlUnmarshaller<ObjectLambdaAccessPoint, XmlUnmarshallerContext>
+    public partial class ObjectLambdaAccessPointUnmarshaller : IXmlUnmarshaller<ObjectLambdaAccessPoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ObjectLambdaAccessPointArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ObjectLambdaAccessPoint unmarshalledObject, int targetDepth);
+
         private static ObjectLambdaAccessPointUnmarshaller _instance = new ObjectLambdaAccessPointUnmarshaller();        
 
         /// <summary>

@@ -40,6 +40,13 @@ namespace Amazon.AWSSupport.Model
     {
 
         /// <summary>
+        /// Default constructor for AttachmentSetSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public AttachmentSetSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttachmentSetSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -76,6 +76,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAsDraft())
+            {
+                context.Writer.WritePropertyName("AsDraft");
+                context.Writer.WriteBooleanValue(publicRequest.AsDraft.Value);
+            }
+
+            if(publicRequest.IsSetAutoEvaluationConfiguration())
+            {
+                context.Writer.WritePropertyName("AutoEvaluationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormAutoEvaluationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoEvaluationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -109,6 +126,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetLanguageConfiguration())
+            {
+                context.Writer.WritePropertyName("LanguageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormLanguageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LanguageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReviewConfiguration())
+            {
+                context.Writer.WritePropertyName("ReviewConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationReviewConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReviewConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetScoringStrategy())
             {
                 context.Writer.WritePropertyName("ScoringStrategy");
@@ -116,6 +155,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
                 var marshaller = EvaluationFormScoringStrategyMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ScoringStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetConfiguration())
+            {
+                context.Writer.WritePropertyName("TargetConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessGrantsLocationConfiguration Object
     /// </summary>  
-    public class AccessGrantsLocationConfigurationUnmarshaller : IXmlUnmarshaller<AccessGrantsLocationConfiguration, XmlUnmarshallerContext>
+    public partial class AccessGrantsLocationConfigurationUnmarshaller : IXmlUnmarshaller<AccessGrantsLocationConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3SubPrefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AccessGrantsLocationConfiguration unmarshalledObject, int targetDepth);
+
         private static AccessGrantsLocationConfigurationUnmarshaller _instance = new AccessGrantsLocationConfigurationUnmarshaller();        
 
         /// <summary>

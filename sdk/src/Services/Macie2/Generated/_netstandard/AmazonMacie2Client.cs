@@ -267,7 +267,7 @@ namespace Amazon.Macie2
 
         internal virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.Macie2
 
         internal virtual BatchGetCustomDataIdentifiersResponse BatchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCustomDataIdentifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCustomDataIdentifiersResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">REST API Reference for BatchGetCustomDataIdentifiers Operation</seealso>
         public virtual Task<BatchGetCustomDataIdentifiersResponse> BatchGetCustomDataIdentifiersAsync(BatchGetCustomDataIdentifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCustomDataIdentifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCustomDataIdentifiersResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.Macie2
 
         internal virtual BatchUpdateAutomatedDiscoveryAccountsResponse BatchUpdateAutomatedDiscoveryAccounts(BatchUpdateAutomatedDiscoveryAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchUpdateAutomatedDiscoveryAccounts">REST API Reference for BatchUpdateAutomatedDiscoveryAccounts Operation</seealso>
         public virtual Task<BatchUpdateAutomatedDiscoveryAccountsResponse> BatchUpdateAutomatedDiscoveryAccountsAsync(BatchUpdateAutomatedDiscoveryAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateAutomatedDiscoveryAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateAllowListResponse CreateAllowList(CreateAllowListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAllowListResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
         public virtual Task<CreateAllowListResponse> CreateAllowListAsync(CreateAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAllowListResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateClassificationJobResponse CreateClassificationJob(CreateClassificationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClassificationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClassificationJobResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">REST API Reference for CreateClassificationJob Operation</seealso>
         public virtual Task<CreateClassificationJobResponse> CreateClassificationJobAsync(CreateClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClassificationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClassificationJobResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateCustomDataIdentifierResponse CreateCustomDataIdentifier(CreateCustomDataIdentifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">REST API Reference for CreateCustomDataIdentifier Operation</seealso>
         public virtual Task<CreateCustomDataIdentifierResponse> CreateCustomDataIdentifierAsync(CreateCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateFindingsFilterResponse CreateFindingsFilter(CreateFindingsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFindingsFilterResponseUnmarshaller.Instance;
 
@@ -667,7 +667,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">REST API Reference for CreateFindingsFilter Operation</seealso>
         public virtual Task<CreateFindingsFilterResponse> CreateFindingsFilterAsync(CreateFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFindingsFilterResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateInvitationsResponse CreateInvitations(CreateInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvitationsResponseUnmarshaller.Instance;
 
@@ -727,7 +727,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">REST API Reference for CreateInvitations Operation</seealso>
         public virtual Task<CreateInvitationsResponse> CreateInvitationsAsync(CreateInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvitationsResponseUnmarshaller.Instance;
 
@@ -739,7 +739,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateMemberResponse CreateMember(CreateMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMemberResponseUnmarshaller.Instance;
 
@@ -787,7 +787,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual Task<CreateMemberResponse> CreateMemberAsync(CreateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMemberResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.Macie2
 
         internal virtual CreateSampleFindingsResponse CreateSampleFindings(CreateSampleFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSampleFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSampleFindingsResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual Task<CreateSampleFindingsResponse> CreateSampleFindingsAsync(CreateSampleFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSampleFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSampleFindingsResponseUnmarshaller.Instance;
 
@@ -859,7 +859,7 @@ namespace Amazon.Macie2
 
         internal virtual DeclineInvitationsResponse DeclineInvitations(DeclineInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeclineInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeclineInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
@@ -919,7 +919,7 @@ namespace Amazon.Macie2
 
         internal virtual DeleteAllowListResponse DeleteAllowList(DeleteAllowListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAllowListResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
         public virtual Task<DeleteAllowListResponse> DeleteAllowListAsync(DeleteAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAllowListResponseUnmarshaller.Instance;
 
@@ -971,7 +971,7 @@ namespace Amazon.Macie2
 
         internal virtual DeleteCustomDataIdentifierResponse DeleteCustomDataIdentifier(DeleteCustomDataIdentifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -1019,7 +1019,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">REST API Reference for DeleteCustomDataIdentifier Operation</seealso>
         public virtual Task<DeleteCustomDataIdentifierResponse> DeleteCustomDataIdentifierAsync(DeleteCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -1031,7 +1031,7 @@ namespace Amazon.Macie2
 
         internal virtual DeleteFindingsFilterResponse DeleteFindingsFilter(DeleteFindingsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFindingsFilterResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">REST API Reference for DeleteFindingsFilter Operation</seealso>
         public virtual Task<DeleteFindingsFilterResponse> DeleteFindingsFilterAsync(DeleteFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFindingsFilterResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.Macie2
 
         internal virtual DeleteInvitationsResponse DeleteInvitations(DeleteInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual Task<DeleteInvitationsResponse> DeleteInvitationsAsync(DeleteInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
 
@@ -1151,7 +1151,7 @@ namespace Amazon.Macie2
 
         internal virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemberResponseUnmarshaller.Instance;
 
@@ -1199,7 +1199,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemberResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.Macie2
 
         internal virtual DescribeBucketsResponse DescribeBuckets(DescribeBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBucketsResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">REST API Reference for DescribeBuckets Operation</seealso>
         public virtual Task<DescribeBucketsResponse> DescribeBucketsAsync(DescribeBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBucketsResponseUnmarshaller.Instance;
 
@@ -1272,7 +1272,7 @@ namespace Amazon.Macie2
 
         internal virtual DescribeClassificationJobResponse DescribeClassificationJob(DescribeClassificationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClassificationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClassificationJobResponseUnmarshaller.Instance;
 
@@ -1320,7 +1320,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">REST API Reference for DescribeClassificationJob Operation</seealso>
         public virtual Task<DescribeClassificationJobResponse> DescribeClassificationJobAsync(DescribeClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClassificationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClassificationJobResponseUnmarshaller.Instance;
 
@@ -1332,7 +1332,7 @@ namespace Amazon.Macie2
 
         internal virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1380,7 +1380,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.Macie2
 
         internal virtual DisableMacieResponse DisableMacie(DisableMacieRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableMacieRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableMacieResponseUnmarshaller.Instance;
 
@@ -1440,7 +1440,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">REST API Reference for DisableMacie Operation</seealso>
         public virtual Task<DisableMacieResponse> DisableMacieAsync(DisableMacieRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableMacieRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableMacieResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.Macie2
 
         internal virtual DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual Task<DisableOrganizationAdminAccountResponse> DisableOrganizationAdminAccountAsync(DisableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1513,7 +1513,7 @@ namespace Amazon.Macie2
 
         internal virtual DisassociateFromAdministratorAccountResponse DisassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFromAdministratorAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFromAdministratorAccountResponseUnmarshaller.Instance;
 
@@ -1561,7 +1561,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
         public virtual Task<DisassociateFromAdministratorAccountResponse> DisassociateFromAdministratorAccountAsync(DisassociateFromAdministratorAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFromAdministratorAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFromAdministratorAccountResponseUnmarshaller.Instance;
 
@@ -1573,7 +1573,7 @@ namespace Amazon.Macie2
 
         internal virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
 
@@ -1635,7 +1635,7 @@ namespace Amazon.Macie2
 
         internal virtual DisassociateMemberResponse DisassociateMember(DisassociateMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual Task<DisassociateMemberResponse> DisassociateMemberAsync(DisassociateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberResponseUnmarshaller.Instance;
 
@@ -1695,7 +1695,7 @@ namespace Amazon.Macie2
 
         internal virtual EnableMacieResponse EnableMacie(EnableMacieRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableMacieRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableMacieResponseUnmarshaller.Instance;
 
@@ -1743,7 +1743,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">REST API Reference for EnableMacie Operation</seealso>
         public virtual Task<EnableMacieResponse> EnableMacieAsync(EnableMacieRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableMacieRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableMacieResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.Macie2
 
         internal virtual EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1804,7 +1804,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1816,7 +1816,7 @@ namespace Amazon.Macie2
 
         internal virtual GetAdministratorAccountResponse GetAdministratorAccount(GetAdministratorAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdministratorAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdministratorAccountResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
         public virtual Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(GetAdministratorAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdministratorAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdministratorAccountResponseUnmarshaller.Instance;
 
@@ -1876,7 +1876,7 @@ namespace Amazon.Macie2
 
         internal virtual GetAllowListResponse GetAllowList(GetAllowListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAllowListResponseUnmarshaller.Instance;
 
@@ -1916,7 +1916,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
         public virtual Task<GetAllowListResponse> GetAllowListAsync(GetAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAllowListResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.Macie2
 
         internal virtual GetAutomatedDiscoveryConfigurationResponse GetAutomatedDiscoveryConfiguration(GetAutomatedDiscoveryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">REST API Reference for GetAutomatedDiscoveryConfiguration Operation</seealso>
         public virtual Task<GetAutomatedDiscoveryConfigurationResponse> GetAutomatedDiscoveryConfigurationAsync(GetAutomatedDiscoveryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
 
@@ -1977,7 +1977,7 @@ namespace Amazon.Macie2
 
         internal virtual GetBucketStatisticsResponse GetBucketStatistics(GetBucketStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketStatisticsResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">REST API Reference for GetBucketStatistics Operation</seealso>
         public virtual Task<GetBucketStatisticsResponse> GetBucketStatisticsAsync(GetBucketStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketStatisticsResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.Macie2
 
         internal virtual GetClassificationExportConfigurationResponse GetClassificationExportConfiguration(GetClassificationExportConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassificationExportConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassificationExportConfigurationResponseUnmarshaller.Instance;
 
@@ -2086,7 +2086,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">REST API Reference for GetClassificationExportConfiguration Operation</seealso>
         public virtual Task<GetClassificationExportConfigurationResponse> GetClassificationExportConfigurationAsync(GetClassificationExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassificationExportConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassificationExportConfigurationResponseUnmarshaller.Instance;
 
@@ -2098,7 +2098,7 @@ namespace Amazon.Macie2
 
         internal virtual GetClassificationScopeResponse GetClassificationScope(GetClassificationScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassificationScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassificationScopeResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope">REST API Reference for GetClassificationScope Operation</seealso>
         public virtual Task<GetClassificationScopeResponse> GetClassificationScopeAsync(GetClassificationScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassificationScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassificationScopeResponseUnmarshaller.Instance;
 
@@ -2150,7 +2150,7 @@ namespace Amazon.Macie2
 
         internal virtual GetCustomDataIdentifierResponse GetCustomDataIdentifier(GetCustomDataIdentifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">REST API Reference for GetCustomDataIdentifier Operation</seealso>
         public virtual Task<GetCustomDataIdentifierResponse> GetCustomDataIdentifierAsync(GetCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -2210,7 +2210,7 @@ namespace Amazon.Macie2
 
         internal virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
@@ -2258,7 +2258,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.Macie2
 
         internal virtual GetFindingsFilterResponse GetFindingsFilter(GetFindingsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsFilterResponseUnmarshaller.Instance;
 
@@ -2318,7 +2318,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">REST API Reference for GetFindingsFilter Operation</seealso>
         public virtual Task<GetFindingsFilterResponse> GetFindingsFilterAsync(GetFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsFilterResponseUnmarshaller.Instance;
 
@@ -2330,7 +2330,7 @@ namespace Amazon.Macie2
 
         internal virtual GetFindingsPublicationConfigurationResponse GetFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsPublicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsPublicationConfigurationResponseUnmarshaller.Instance;
 
@@ -2378,7 +2378,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">REST API Reference for GetFindingsPublicationConfiguration Operation</seealso>
         public virtual Task<GetFindingsPublicationConfigurationResponse> GetFindingsPublicationConfigurationAsync(GetFindingsPublicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsPublicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsPublicationConfigurationResponseUnmarshaller.Instance;
 
@@ -2390,7 +2390,7 @@ namespace Amazon.Macie2
 
         internal virtual GetFindingStatisticsResponse GetFindingStatistics(GetFindingStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingStatisticsResponseUnmarshaller.Instance;
 
@@ -2438,7 +2438,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">REST API Reference for GetFindingStatistics Operation</seealso>
         public virtual Task<GetFindingStatisticsResponse> GetFindingStatisticsAsync(GetFindingStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingStatisticsResponseUnmarshaller.Instance;
 
@@ -2450,7 +2450,7 @@ namespace Amazon.Macie2
 
         internal virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvitationsCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
 
@@ -2499,7 +2499,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvitationsCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
 
@@ -2511,7 +2511,7 @@ namespace Amazon.Macie2
 
         internal virtual GetMacieSessionResponse GetMacieSession(GetMacieSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMacieSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMacieSessionResponseUnmarshaller.Instance;
 
@@ -2559,7 +2559,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">REST API Reference for GetMacieSession Operation</seealso>
         public virtual Task<GetMacieSessionResponse> GetMacieSessionAsync(GetMacieSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMacieSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMacieSessionResponseUnmarshaller.Instance;
 
@@ -2571,7 +2571,7 @@ namespace Amazon.Macie2
 
         internal virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMasterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
 
@@ -2621,7 +2621,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMasterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
 
@@ -2633,7 +2633,7 @@ namespace Amazon.Macie2
 
         internal virtual GetMemberResponse GetMember(GetMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemberResponseUnmarshaller.Instance;
 
@@ -2682,7 +2682,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual Task<GetMemberResponse> GetMemberAsync(GetMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemberResponseUnmarshaller.Instance;
 
@@ -2694,7 +2694,7 @@ namespace Amazon.Macie2
 
         internal virtual GetResourceProfileResponse GetResourceProfile(GetResourceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceProfileResponseUnmarshaller.Instance;
 
@@ -2739,7 +2739,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile">REST API Reference for GetResourceProfile Operation</seealso>
         public virtual Task<GetResourceProfileResponse> GetResourceProfileAsync(GetResourceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceProfileResponseUnmarshaller.Instance;
 
@@ -2751,7 +2751,7 @@ namespace Amazon.Macie2
 
         internal virtual GetRevealConfigurationResponse GetRevealConfiguration(GetRevealConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRevealConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRevealConfigurationResponseUnmarshaller.Instance;
 
@@ -2788,7 +2788,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
         public virtual Task<GetRevealConfigurationResponse> GetRevealConfigurationAsync(GetRevealConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRevealConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRevealConfigurationResponseUnmarshaller.Instance;
 
@@ -2800,7 +2800,7 @@ namespace Amazon.Macie2
 
         internal virtual GetSensitiveDataOccurrencesResponse GetSensitiveDataOccurrences(GetSensitiveDataOccurrencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSensitiveDataOccurrencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSensitiveDataOccurrencesResponseUnmarshaller.Instance;
 
@@ -2844,7 +2844,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
         public virtual Task<GetSensitiveDataOccurrencesResponse> GetSensitiveDataOccurrencesAsync(GetSensitiveDataOccurrencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSensitiveDataOccurrencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSensitiveDataOccurrencesResponseUnmarshaller.Instance;
 
@@ -2856,7 +2856,7 @@ namespace Amazon.Macie2
 
         internal virtual GetSensitiveDataOccurrencesAvailabilityResponse GetSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSensitiveDataOccurrencesAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
 
@@ -2893,7 +2893,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
         public virtual Task<GetSensitiveDataOccurrencesAvailabilityResponse> GetSensitiveDataOccurrencesAvailabilityAsync(GetSensitiveDataOccurrencesAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSensitiveDataOccurrencesAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
 
@@ -2905,7 +2905,7 @@ namespace Amazon.Macie2
 
         internal virtual GetSensitivityInspectionTemplateResponse GetSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSensitivityInspectionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSensitivityInspectionTemplateResponseUnmarshaller.Instance;
 
@@ -2945,7 +2945,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate">REST API Reference for GetSensitivityInspectionTemplate Operation</seealso>
         public virtual Task<GetSensitivityInspectionTemplateResponse> GetSensitivityInspectionTemplateAsync(GetSensitivityInspectionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSensitivityInspectionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSensitivityInspectionTemplateResponseUnmarshaller.Instance;
 
@@ -2957,7 +2957,7 @@ namespace Amazon.Macie2
 
         internal virtual GetUsageStatisticsResponse GetUsageStatistics(GetUsageStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageStatisticsResponseUnmarshaller.Instance;
 
@@ -3005,7 +3005,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">REST API Reference for GetUsageStatistics Operation</seealso>
         public virtual Task<GetUsageStatisticsResponse> GetUsageStatisticsAsync(GetUsageStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageStatisticsResponseUnmarshaller.Instance;
 
@@ -3017,7 +3017,7 @@ namespace Amazon.Macie2
 
         internal virtual GetUsageTotalsResponse GetUsageTotals(GetUsageTotalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageTotalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageTotalsResponseUnmarshaller.Instance;
 
@@ -3065,7 +3065,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         public virtual Task<GetUsageTotalsResponse> GetUsageTotalsAsync(GetUsageTotalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageTotalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageTotalsResponseUnmarshaller.Instance;
 
@@ -3077,7 +3077,7 @@ namespace Amazon.Macie2
 
         internal virtual ListAllowListsResponse ListAllowLists(ListAllowListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowListsResponseUnmarshaller.Instance;
 
@@ -3113,7 +3113,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
         public virtual Task<ListAllowListsResponse> ListAllowListsAsync(ListAllowListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowListsResponseUnmarshaller.Instance;
 
@@ -3125,7 +3125,7 @@ namespace Amazon.Macie2
 
         internal virtual ListAutomatedDiscoveryAccountsResponse ListAutomatedDiscoveryAccounts(ListAutomatedDiscoveryAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutomatedDiscoveryAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
 
@@ -3165,7 +3165,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAutomatedDiscoveryAccounts">REST API Reference for ListAutomatedDiscoveryAccounts Operation</seealso>
         public virtual Task<ListAutomatedDiscoveryAccountsResponse> ListAutomatedDiscoveryAccountsAsync(ListAutomatedDiscoveryAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutomatedDiscoveryAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutomatedDiscoveryAccountsResponseUnmarshaller.Instance;
 
@@ -3177,7 +3177,7 @@ namespace Amazon.Macie2
 
         internal virtual ListClassificationJobsResponse ListClassificationJobs(ListClassificationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClassificationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClassificationJobsResponseUnmarshaller.Instance;
 
@@ -3225,7 +3225,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">REST API Reference for ListClassificationJobs Operation</seealso>
         public virtual Task<ListClassificationJobsResponse> ListClassificationJobsAsync(ListClassificationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClassificationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClassificationJobsResponseUnmarshaller.Instance;
 
@@ -3237,7 +3237,7 @@ namespace Amazon.Macie2
 
         internal virtual ListClassificationScopesResponse ListClassificationScopes(ListClassificationScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClassificationScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClassificationScopesResponseUnmarshaller.Instance;
 
@@ -3273,7 +3273,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes">REST API Reference for ListClassificationScopes Operation</seealso>
         public virtual Task<ListClassificationScopesResponse> ListClassificationScopesAsync(ListClassificationScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClassificationScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClassificationScopesResponseUnmarshaller.Instance;
 
@@ -3285,7 +3285,7 @@ namespace Amazon.Macie2
 
         internal virtual ListCustomDataIdentifiersResponse ListCustomDataIdentifiers(ListCustomDataIdentifiersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomDataIdentifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomDataIdentifiersResponseUnmarshaller.Instance;
 
@@ -3333,7 +3333,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">REST API Reference for ListCustomDataIdentifiers Operation</seealso>
         public virtual Task<ListCustomDataIdentifiersResponse> ListCustomDataIdentifiersAsync(ListCustomDataIdentifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomDataIdentifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomDataIdentifiersResponseUnmarshaller.Instance;
 
@@ -3345,7 +3345,7 @@ namespace Amazon.Macie2
 
         internal virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
@@ -3393,7 +3393,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
@@ -3405,7 +3405,7 @@ namespace Amazon.Macie2
 
         internal virtual ListFindingsFiltersResponse ListFindingsFilters(ListFindingsFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsFiltersResponseUnmarshaller.Instance;
 
@@ -3453,7 +3453,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">REST API Reference for ListFindingsFilters Operation</seealso>
         public virtual Task<ListFindingsFiltersResponse> ListFindingsFiltersAsync(ListFindingsFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsFiltersResponseUnmarshaller.Instance;
 
@@ -3465,7 +3465,7 @@ namespace Amazon.Macie2
 
         internal virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
@@ -3514,7 +3514,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
@@ -3526,7 +3526,7 @@ namespace Amazon.Macie2
 
         internal virtual ListManagedDataIdentifiersResponse ListManagedDataIdentifiers(ListManagedDataIdentifiersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedDataIdentifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedDataIdentifiersResponseUnmarshaller.Instance;
 
@@ -3548,7 +3548,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListManagedDataIdentifiers">REST API Reference for ListManagedDataIdentifiers Operation</seealso>
         public virtual Task<ListManagedDataIdentifiersResponse> ListManagedDataIdentifiersAsync(ListManagedDataIdentifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedDataIdentifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedDataIdentifiersResponseUnmarshaller.Instance;
 
@@ -3560,7 +3560,7 @@ namespace Amazon.Macie2
 
         internal virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -3609,7 +3609,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -3621,7 +3621,7 @@ namespace Amazon.Macie2
 
         internal virtual ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationAdminAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationAdminAccountsResponseUnmarshaller.Instance;
 
@@ -3670,7 +3670,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationAdminAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationAdminAccountsResponseUnmarshaller.Instance;
 
@@ -3682,7 +3682,7 @@ namespace Amazon.Macie2
 
         internal virtual ListResourceProfileArtifactsResponse ListResourceProfileArtifacts(ListResourceProfileArtifactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceProfileArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceProfileArtifactsResponseUnmarshaller.Instance;
 
@@ -3723,7 +3723,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">REST API Reference for ListResourceProfileArtifacts Operation</seealso>
         public virtual Task<ListResourceProfileArtifactsResponse> ListResourceProfileArtifactsAsync(ListResourceProfileArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceProfileArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceProfileArtifactsResponseUnmarshaller.Instance;
 
@@ -3735,7 +3735,7 @@ namespace Amazon.Macie2
 
         internal virtual ListResourceProfileDetectionsResponse ListResourceProfileDetections(ListResourceProfileDetectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceProfileDetectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceProfileDetectionsResponseUnmarshaller.Instance;
 
@@ -3780,7 +3780,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections">REST API Reference for ListResourceProfileDetections Operation</seealso>
         public virtual Task<ListResourceProfileDetectionsResponse> ListResourceProfileDetectionsAsync(ListResourceProfileDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceProfileDetectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceProfileDetectionsResponseUnmarshaller.Instance;
 
@@ -3792,7 +3792,7 @@ namespace Amazon.Macie2
 
         internal virtual ListSensitivityInspectionTemplatesResponse ListSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSensitivityInspectionTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSensitivityInspectionTemplatesResponseUnmarshaller.Instance;
 
@@ -3833,7 +3833,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates">REST API Reference for ListSensitivityInspectionTemplates Operation</seealso>
         public virtual Task<ListSensitivityInspectionTemplatesResponse> ListSensitivityInspectionTemplatesAsync(ListSensitivityInspectionTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSensitivityInspectionTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSensitivityInspectionTemplatesResponseUnmarshaller.Instance;
 
@@ -3845,7 +3845,7 @@ namespace Amazon.Macie2
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3866,7 +3866,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3878,7 +3878,7 @@ namespace Amazon.Macie2
 
         internal virtual PutClassificationExportConfigurationResponse PutClassificationExportConfiguration(PutClassificationExportConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClassificationExportConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClassificationExportConfigurationResponseUnmarshaller.Instance;
 
@@ -3926,7 +3926,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">REST API Reference for PutClassificationExportConfiguration Operation</seealso>
         public virtual Task<PutClassificationExportConfigurationResponse> PutClassificationExportConfigurationAsync(PutClassificationExportConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClassificationExportConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClassificationExportConfigurationResponseUnmarshaller.Instance;
 
@@ -3938,7 +3938,7 @@ namespace Amazon.Macie2
 
         internal virtual PutFindingsPublicationConfigurationResponse PutFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFindingsPublicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFindingsPublicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3986,7 +3986,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">REST API Reference for PutFindingsPublicationConfiguration Operation</seealso>
         public virtual Task<PutFindingsPublicationConfigurationResponse> PutFindingsPublicationConfigurationAsync(PutFindingsPublicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFindingsPublicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFindingsPublicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3998,7 +3998,7 @@ namespace Amazon.Macie2
 
         internal virtual SearchResourcesResponse SearchResources(SearchResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
 
@@ -4047,7 +4047,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">REST API Reference for SearchResources Operation</seealso>
         public virtual Task<SearchResourcesResponse> SearchResourcesAsync(SearchResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
 
@@ -4059,7 +4059,7 @@ namespace Amazon.Macie2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4081,7 +4081,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4093,7 +4093,7 @@ namespace Amazon.Macie2
 
         internal virtual TestCustomDataIdentifierResponse TestCustomDataIdentifier(TestCustomDataIdentifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -4141,7 +4141,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">REST API Reference for TestCustomDataIdentifier Operation</seealso>
         public virtual Task<TestCustomDataIdentifierResponse> TestCustomDataIdentifierAsync(TestCustomDataIdentifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestCustomDataIdentifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestCustomDataIdentifierResponseUnmarshaller.Instance;
 
@@ -4153,7 +4153,7 @@ namespace Amazon.Macie2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4174,7 +4174,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4186,7 +4186,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateAllowListResponse UpdateAllowList(UpdateAllowListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAllowListResponseUnmarshaller.Instance;
 
@@ -4226,7 +4226,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
         public virtual Task<UpdateAllowListResponse> UpdateAllowListAsync(UpdateAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAllowListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAllowListResponseUnmarshaller.Instance;
 
@@ -4238,7 +4238,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateAutomatedDiscoveryConfigurationResponse UpdateAutomatedDiscoveryConfiguration(UpdateAutomatedDiscoveryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
 
@@ -4275,7 +4275,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">REST API Reference for UpdateAutomatedDiscoveryConfiguration Operation</seealso>
         public virtual Task<UpdateAutomatedDiscoveryConfigurationResponse> UpdateAutomatedDiscoveryConfigurationAsync(UpdateAutomatedDiscoveryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAutomatedDiscoveryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAutomatedDiscoveryConfigurationResponseUnmarshaller.Instance;
 
@@ -4287,7 +4287,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateClassificationJobResponse UpdateClassificationJob(UpdateClassificationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClassificationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClassificationJobResponseUnmarshaller.Instance;
 
@@ -4335,7 +4335,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">REST API Reference for UpdateClassificationJob Operation</seealso>
         public virtual Task<UpdateClassificationJobResponse> UpdateClassificationJobAsync(UpdateClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClassificationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClassificationJobResponseUnmarshaller.Instance;
 
@@ -4347,7 +4347,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateClassificationScopeResponse UpdateClassificationScope(UpdateClassificationScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClassificationScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClassificationScopeResponseUnmarshaller.Instance;
 
@@ -4387,7 +4387,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope">REST API Reference for UpdateClassificationScope Operation</seealso>
         public virtual Task<UpdateClassificationScopeResponse> UpdateClassificationScopeAsync(UpdateClassificationScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClassificationScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClassificationScopeResponseUnmarshaller.Instance;
 
@@ -4399,7 +4399,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateFindingsFilterResponse UpdateFindingsFilter(UpdateFindingsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFindingsFilterResponseUnmarshaller.Instance;
 
@@ -4447,7 +4447,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">REST API Reference for UpdateFindingsFilter Operation</seealso>
         public virtual Task<UpdateFindingsFilterResponse> UpdateFindingsFilterAsync(UpdateFindingsFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFindingsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFindingsFilterResponseUnmarshaller.Instance;
 
@@ -4459,7 +4459,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateMacieSessionResponse UpdateMacieSession(UpdateMacieSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMacieSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMacieSessionResponseUnmarshaller.Instance;
 
@@ -4508,7 +4508,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">REST API Reference for UpdateMacieSession Operation</seealso>
         public virtual Task<UpdateMacieSessionResponse> UpdateMacieSessionAsync(UpdateMacieSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMacieSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMacieSessionResponseUnmarshaller.Instance;
 
@@ -4520,7 +4520,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateMemberSessionResponse UpdateMemberSession(UpdateMemberSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMemberSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMemberSessionResponseUnmarshaller.Instance;
 
@@ -4568,7 +4568,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">REST API Reference for UpdateMemberSession Operation</seealso>
         public virtual Task<UpdateMemberSessionResponse> UpdateMemberSessionAsync(UpdateMemberSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMemberSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMemberSessionResponseUnmarshaller.Instance;
 
@@ -4580,7 +4580,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -4628,7 +4628,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -4640,7 +4640,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateResourceProfileResponse UpdateResourceProfile(UpdateResourceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceProfileResponseUnmarshaller.Instance;
 
@@ -4684,7 +4684,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile">REST API Reference for UpdateResourceProfile Operation</seealso>
         public virtual Task<UpdateResourceProfileResponse> UpdateResourceProfileAsync(UpdateResourceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceProfileResponseUnmarshaller.Instance;
 
@@ -4696,7 +4696,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateResourceProfileDetectionsResponse UpdateResourceProfileDetections(UpdateResourceProfileDetectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceProfileDetectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceProfileDetectionsResponseUnmarshaller.Instance;
 
@@ -4740,7 +4740,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections">REST API Reference for UpdateResourceProfileDetections Operation</seealso>
         public virtual Task<UpdateResourceProfileDetectionsResponse> UpdateResourceProfileDetectionsAsync(UpdateResourceProfileDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceProfileDetectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceProfileDetectionsResponseUnmarshaller.Instance;
 
@@ -4752,7 +4752,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateRevealConfigurationResponse UpdateRevealConfiguration(UpdateRevealConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRevealConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
 
@@ -4789,7 +4789,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
         public virtual Task<UpdateRevealConfigurationResponse> UpdateRevealConfigurationAsync(UpdateRevealConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRevealConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
 
@@ -4801,7 +4801,7 @@ namespace Amazon.Macie2
 
         internal virtual UpdateSensitivityInspectionTemplateResponse UpdateSensitivityInspectionTemplate(UpdateSensitivityInspectionTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSensitivityInspectionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSensitivityInspectionTemplateResponseUnmarshaller.Instance;
 
@@ -4841,7 +4841,7 @@ namespace Amazon.Macie2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate">REST API Reference for UpdateSensitivityInspectionTemplate Operation</seealso>
         public virtual Task<UpdateSensitivityInspectionTemplateResponse> UpdateSensitivityInspectionTemplateAsync(UpdateSensitivityInspectionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSensitivityInspectionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSensitivityInspectionTemplateResponseUnmarshaller.Instance;
 

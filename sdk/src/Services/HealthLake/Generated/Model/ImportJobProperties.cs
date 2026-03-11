@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Displays the properties of the import job, including the ID, Arn, Name, the status
-    /// of the job, and the progress report of the job.
+    /// The import job properties.
     /// </summary>
     public partial class ImportJobProperties
     {
@@ -46,11 +45,12 @@ namespace Amazon.HealthLake.Model
         private JobStatus _jobStatus;
         private string _message;
         private DateTime? _submitTime;
+        private ValidationLevel _validationLevel;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.
+        /// The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -69,7 +69,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The datastore id used when the Import job was created. 
+        /// The data store identifier. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -88,7 +88,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time that the Import job was completed.
+        /// The time the import job was completed.
         /// </para>
         /// </summary>
         public DateTime? EndTime
@@ -106,7 +106,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// The input data configuration that was supplied when the Import job was created.
+        /// The input data configuration supplied when the import job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,7 +125,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The AWS-generated id number for the Import job.
+        /// The import job identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -144,7 +144,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The user-generated name for an Import job.
+        /// The import job name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -179,7 +179,7 @@ namespace Amazon.HealthLake.Model
         /// Gets and sets the property JobProgressReport. 
         /// <para>
         /// Displays the progress of the import job, including total resources scanned, total
-        /// resources ingested, and total size of data ingested.
+        /// resources imported, and total size of data imported.
         /// </para>
         /// </summary>
         public JobProgressReport JobProgressReport
@@ -197,8 +197,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS,
-        /// COMPLETED, FAILED.
+        /// The import job status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -217,7 +216,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// An explanation of any errors that may have occurred during the FHIR import job. 
+        /// An explanation of any errors that might have occurred during the FHIR import job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -236,7 +235,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property SubmitTime. 
         /// <para>
-        /// The time that the Import job was submitted for processing.
+        /// The time the import job was submitted for processing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -250,6 +249,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetSubmitTime()
         {
             return this._submitTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationLevel. 
+        /// <para>
+        /// The validation level of the import job.
+        /// </para>
+        /// </summary>
+        public ValidationLevel ValidationLevel
+        {
+            get { return this._validationLevel; }
+            set { this._validationLevel = value; }
+        }
+
+        // Check to see if ValidationLevel property is set
+        internal bool IsSetValidationLevel()
+        {
+            return this._validationLevel != null;
         }
 
     }

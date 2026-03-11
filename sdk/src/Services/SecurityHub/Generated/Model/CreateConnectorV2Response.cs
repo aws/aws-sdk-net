@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private string _authUrl;
         private string _connectorArn;
         private string _connectorId;
+        private ConnectorStatus _connectorStatus;
 
         /// <summary>
         /// Gets and sets the property AuthUrl. 
@@ -62,6 +63,7 @@ namespace Amazon.SecurityHub.Model
         /// The Amazon Resource Name (ARN) of the connectorV2.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorArn
         {
             get { return this._connectorArn; }
@@ -91,6 +93,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetConnectorId()
         {
             return this._connectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorStatus. 
+        /// <para>
+        /// The current status of the connectorV2.
+        /// </para>
+        /// </summary>
+        public ConnectorStatus ConnectorStatus
+        {
+            get { return this._connectorStatus; }
+            set { this._connectorStatus = value; }
+        }
+
+        // Check to see if ConnectorStatus property is set
+        internal bool IsSetConnectorStatus()
+        {
+            return this._connectorStatus != null;
         }
 
     }

@@ -31,12 +31,25 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// The request processing has failed because of an unknown error, exception, or failure.
+    /// 
+    ///  
+    /// <para>
+    /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+    /// service. If this error persists, contact support for assistance.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InternalServerException : AmazonPaymentCryptographyException
     {
+
+        /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error

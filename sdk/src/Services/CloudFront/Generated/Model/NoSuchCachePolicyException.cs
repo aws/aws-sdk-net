@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchCachePolicyException
+        /// message.
+        /// </summary>
+        public NoSuchCachePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchCachePolicyException with the specified error
         /// message.
         /// </summary>

@@ -55,6 +55,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ApplicationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplicationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AuthorizedTokenIssuerList/member", targetDepth))
                     {
                         var unmarshaller = AuthorizedTokenIssuerUnmarshaller.Instance;
@@ -123,6 +129,28 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ServiceIntegrations.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SsoTagKeys/TagKey", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SsoTagKeys == null)
+                        {
+                            unmarshalledObject.SsoTagKeys = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SsoTagKeys.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("Tags/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                 }

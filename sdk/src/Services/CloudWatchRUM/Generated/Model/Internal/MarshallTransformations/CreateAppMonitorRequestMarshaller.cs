@@ -135,6 +135,12 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPlatform())
+            {
+                context.Writer.WritePropertyName("Platform");
+                context.Writer.WriteStringValue(publicRequest.Platform);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

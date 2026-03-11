@@ -36,6 +36,14 @@ namespace Amazon.Tnb
         /// <summary>
         /// Construct instance of AmazonTnbException
         /// </summary>
+        public AmazonTnbException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTnbException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTnbException(string message)
             : base(message)

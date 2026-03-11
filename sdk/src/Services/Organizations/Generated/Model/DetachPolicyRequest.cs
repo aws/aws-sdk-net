@@ -53,8 +53,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator.
+    /// You can only call this operation from the management account or a member account that
+    /// is a delegated administrator.
     /// </para>
     /// </summary>
     public partial class DetachPolicyRequest : AmazonOrganizationsRequest
@@ -65,8 +65,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The unique identifier (ID) of the policy you want to detach. You can get the ID from
-        /// the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.
+        /// ID for the policy you want to detach. You can get the ID from the <a>ListPolicies</a>
+        /// or <a>ListPoliciesForTarget</a> operations.
         /// </para>
         ///  
         /// <para>
@@ -91,9 +91,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier (ID) of the root, OU, or account that you want to detach the
-        /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>,
-        /// or <a>ListAccounts</a> operations.
+        /// ID for the root, OU, or account that you want to detach the policy from. You can get
+        /// the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
+        /// operations.
         /// </para>
         ///  
         /// <para>

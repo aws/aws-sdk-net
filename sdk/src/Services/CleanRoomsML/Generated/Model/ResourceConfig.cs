@@ -79,7 +79,8 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
-        /// The maximum size of the instance that is used to train the model.
+        /// The volume size of the instance that is used to train the model. Please see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2
+        /// volume limit</a> for volume size limitations on different instance types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]

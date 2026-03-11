@@ -40,6 +40,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for PlatformVersionStillReferencedException
+        /// message.
+        /// </summary>
+        public PlatformVersionStillReferencedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PlatformVersionStillReferencedException with the specified error
         /// message.
         /// </summary>

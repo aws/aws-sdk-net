@@ -107,6 +107,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PoolId", StringUtils.FromString(publicRequest.PoolId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetCoipPoolUsageRequestMarshaller _instance = new GetCoipPoolUsageRequestMarshaller();        

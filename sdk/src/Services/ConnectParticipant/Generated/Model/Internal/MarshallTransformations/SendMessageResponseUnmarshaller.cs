@@ -64,6 +64,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MessageMetadata", targetDepth))
+                {
+                    var unmarshaller = MessageProcessingMetadataUnmarshaller.Instance;
+                    response.MessageMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

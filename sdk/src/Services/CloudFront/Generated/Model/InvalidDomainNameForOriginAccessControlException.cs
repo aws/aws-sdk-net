@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDomainNameForOriginAccessControlException
+        /// message.
+        /// </summary>
+        public InvalidDomainNameForOriginAccessControlException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDomainNameForOriginAccessControlException with the specified error
         /// message.
         /// </summary>

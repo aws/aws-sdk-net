@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryNotEnabledException
+        /// message.
+        /// </summary>
+        public DirectoryNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryNotEnabledException with the specified error
         /// message.
         /// </summary>

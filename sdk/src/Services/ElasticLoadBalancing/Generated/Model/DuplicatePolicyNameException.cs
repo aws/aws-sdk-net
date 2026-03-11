@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicatePolicyNameException
+        /// message.
+        /// </summary>
+        public DuplicatePolicyNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicatePolicyNameException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNodeAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ReservedNodeAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNodeAlreadyExistsException with the specified error
         /// message.
         /// </summary>

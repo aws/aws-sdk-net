@@ -42,6 +42,7 @@ namespace Amazon.GeoRoutes.Model
         /// Zone category to be avoided.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteMatrixZoneCategory Category
         {
             get { return this._category; }

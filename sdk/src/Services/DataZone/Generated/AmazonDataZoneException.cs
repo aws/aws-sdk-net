@@ -36,6 +36,14 @@ namespace Amazon.DataZone
         /// <summary>
         /// Construct instance of AmazonDataZoneException
         /// </summary>
+        public AmazonDataZoneException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDataZoneException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDataZoneException(string message)
             : base(message)

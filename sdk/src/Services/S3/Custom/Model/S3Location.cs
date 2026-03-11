@@ -21,92 +21,13 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Describes an S3 location that will receive the results of the restore request.
     /// </summary>
-    public class S3Location
+    public partial class S3Location
     {
-        /// <summary>
-        /// The name of the bucket where the restore results will be placed.
-        /// </summary>
-        public string BucketName { get; set; }
-
-        internal bool IsSetBucketName()
-        {
-            return this.BucketName != null;
-        }
-
-        /// <summary>
-        /// The prefix that is prepended to the restore results for this request.
-        /// </summary>
-        public string Prefix { get; set; }
-
-        internal bool IsSetPrefix()
-        {
-            return this.Prefix != null;
-        }
-
-        /// <summary>
-        /// The server-side encryption that will be applied to the restore results.
-        /// </summary>
-        public S3Encryption Encryption { get; set; }
-
-        internal bool IsSetEncryption()
-        {
-            return this.Encryption != null;
-        }
-
-        /// <summary>
-        /// The canned ACL to apply to the restore results.
-        /// </summary>
-        public S3CannedACL CannedACL { get; set; }
-
-        internal bool IsSetCannedACL()
-        {
-            return this.CannedACL != null;
-        }
-
-        /// <summary>
-        /// A list of grants that control access to the staged results.
-        /// </summary>
-        public S3AccessControlList AccessControlList { get; set; }
-
-        internal bool IsSetAccessControlList()
-        {
-            return this.AccessControlList != null;
-        }
-
-        /// <summary>
-        /// The tag-set that is applied to the restore results.
-        /// </summary>
-        public Tagging Tagging { get; set; }
-
-        internal bool IsSetTagging()
-        {
-            return this.Tagging != null;
-        }
-
-        /// <summary>
-        /// A map of metadata to store with the restore results in S3.
-        /// </summary>
-        public MetadataCollection UserMetadata { get; set; }
-
-        internal bool IsSetUserMetadata()
-        {
-            return this.UserMetadata != null;
-        }
-
-        /// <summary>
-        /// The class of storage used to store the restore results.
-        /// </summary>
-        public S3StorageClass StorageClass { get; set; }
-
-        internal bool IsSetStorageClass()
-        {
-            return this.StorageClass != null;
-        }
 
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
-            if (string.IsNullOrEmpty(BucketName)) throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "S3Location.BucketName");
-            if (string.IsNullOrEmpty(Prefix)) throw new System.ArgumentException("Prefix is a required property and must be set before making this call.", "S3Location.Prefix");
+            if (string.IsNullOrEmpty(_bucketName)) throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "S3Location.BucketName");
+            if (string.IsNullOrEmpty(_prefix)) throw new System.ArgumentException("Prefix is a required property and must be set before making this call.", "S3Location.Prefix");
 
             xmlWriter.WriteStartElement(memberName);
             {

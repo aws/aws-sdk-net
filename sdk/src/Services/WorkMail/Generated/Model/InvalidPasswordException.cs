@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPasswordException
+        /// message.
+        /// </summary>
+        public InvalidPasswordException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPasswordException with the specified error
         /// message.
         /// </summary>

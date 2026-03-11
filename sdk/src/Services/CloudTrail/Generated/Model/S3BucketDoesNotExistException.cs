@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for S3BucketDoesNotExistException
+        /// message.
+        /// </summary>
+        public S3BucketDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3BucketDoesNotExistException with the specified error
         /// message.
         /// </summary>

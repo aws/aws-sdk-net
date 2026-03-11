@@ -308,7 +308,7 @@ namespace Amazon.QConnect
 
         internal virtual ActivateMessageTemplateResponse ActivateMessageTemplate(ActivateMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ActivateMessageTemplate">REST API Reference for ActivateMessageTemplate Operation</seealso>
         public virtual Task<ActivateMessageTemplateResponse> ActivateMessageTemplateAsync(ActivateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAIAgentResponse CreateAIAgent(CreateAIAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIAgentResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIAgent">REST API Reference for CreateAIAgent Operation</seealso>
         public virtual Task<CreateAIAgentResponse> CreateAIAgentAsync(CreateAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIAgentResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAIAgentVersionResponse CreateAIAgentVersion(CreateAIAgentVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIAgentVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIAgentVersionResponseUnmarshaller.Instance;
 
@@ -466,7 +466,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIAgentVersion">REST API Reference for CreateAIAgentVersion Operation</seealso>
         public virtual Task<CreateAIAgentVersionResponse> CreateAIAgentVersionAsync(CreateAIAgentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIAgentVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIAgentVersionResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAIGuardrailResponse CreateAIGuardrail(CreateAIGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIGuardrailResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIGuardrail">REST API Reference for CreateAIGuardrail Operation</seealso>
         public virtual Task<CreateAIGuardrailResponse> CreateAIGuardrailAsync(CreateAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIGuardrailResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAIGuardrailVersionResponse CreateAIGuardrailVersion(CreateAIGuardrailVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIGuardrailVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIGuardrailVersionResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIGuardrailVersion">REST API Reference for CreateAIGuardrailVersion Operation</seealso>
         public virtual Task<CreateAIGuardrailVersionResponse> CreateAIGuardrailVersionAsync(CreateAIGuardrailVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIGuardrailVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIGuardrailVersionResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAIPromptResponse CreateAIPrompt(CreateAIPromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIPromptResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPrompt">REST API Reference for CreateAIPrompt Operation</seealso>
         public virtual Task<CreateAIPromptResponse> CreateAIPromptAsync(CreateAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIPromptResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAIPromptVersionResponse CreateAIPromptVersion(CreateAIPromptVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIPromptVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIPromptVersionResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPromptVersion">REST API Reference for CreateAIPromptVersion Operation</seealso>
         public virtual Task<CreateAIPromptVersionResponse> CreateAIPromptVersionAsync(CreateAIPromptVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAIPromptVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAIPromptVersionResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAssistantResponse CreateAssistant(CreateAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantResponseUnmarshaller.Instance;
 
@@ -750,7 +750,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAssistant">REST API Reference for CreateAssistant Operation</seealso>
         public virtual Task<CreateAssistantResponse> CreateAssistantAsync(CreateAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateAssistantAssociationResponse CreateAssistantAssociation(CreateAssistantAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAssistantAssociation">REST API Reference for CreateAssistantAssociation Operation</seealso>
         public virtual Task<CreateAssistantAssociationResponse> CreateAssistantAssociationAsync(CreateAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateContentResponse CreateContent(CreateContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContentResponseUnmarshaller.Instance;
 
@@ -860,7 +860,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContent">REST API Reference for CreateContent Operation</seealso>
         public virtual Task<CreateContentResponse> CreateContentAsync(CreateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContentResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateContentAssociationResponse CreateContentAssociation(CreateContentAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContentAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContentAssociationResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContentAssociation">REST API Reference for CreateContentAssociation Operation</seealso>
         public virtual Task<CreateContentAssociationResponse> CreateContentAssociationAsync(CreateContentAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContentAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContentAssociationResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateKnowledgeBaseResponse CreateKnowledgeBase(CreateKnowledgeBaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         public virtual Task<CreateKnowledgeBaseResponse> CreateKnowledgeBaseAsync(CreateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateMessageTemplateResponse CreateMessageTemplate(CreateMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplate">REST API Reference for CreateMessageTemplate Operation</seealso>
         public virtual Task<CreateMessageTemplateResponse> CreateMessageTemplateAsync(CreateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1101,7 +1101,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateMessageTemplateAttachmentResponse CreateMessageTemplateAttachment(CreateMessageTemplateAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMessageTemplateAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMessageTemplateAttachmentResponseUnmarshaller.Instance;
 
@@ -1151,7 +1151,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateAttachment">REST API Reference for CreateMessageTemplateAttachment Operation</seealso>
         public virtual Task<CreateMessageTemplateAttachmentResponse> CreateMessageTemplateAttachmentAsync(CreateMessageTemplateAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMessageTemplateAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMessageTemplateAttachmentResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateMessageTemplateVersionResponse CreateMessageTemplateVersion(CreateMessageTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMessageTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMessageTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1215,7 +1215,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateVersion">REST API Reference for CreateMessageTemplateVersion Operation</seealso>
         public virtual Task<CreateMessageTemplateVersionResponse> CreateMessageTemplateVersionAsync(CreateMessageTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMessageTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMessageTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateQuickResponseResponse CreateQuickResponse(CreateQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuickResponseResponseUnmarshaller.Instance;
 
@@ -1270,7 +1270,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateQuickResponse">REST API Reference for CreateQuickResponse Operation</seealso>
         public virtual Task<CreateQuickResponseResponse> CreateQuickResponseAsync(CreateQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuickResponseResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.QConnect
 
         internal virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -1311,6 +1311,9 @@ namespace Amazon.QConnect
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// The request failed because it depends on another request that failed.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -1323,7 +1326,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -1335,7 +1338,7 @@ namespace Amazon.QConnect
 
         internal virtual DeactivateMessageTemplateResponse DeactivateMessageTemplate(DeactivateMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1376,7 +1379,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeactivateMessageTemplate">REST API Reference for DeactivateMessageTemplate Operation</seealso>
         public virtual Task<DeactivateMessageTemplateResponse> DeactivateMessageTemplateAsync(DeactivateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1388,7 +1391,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAIAgentResponse DeleteAIAgent(DeleteAIAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIAgentResponseUnmarshaller.Instance;
 
@@ -1424,7 +1427,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIAgent">REST API Reference for DeleteAIAgent Operation</seealso>
         public virtual Task<DeleteAIAgentResponse> DeleteAIAgentAsync(DeleteAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIAgentResponseUnmarshaller.Instance;
 
@@ -1436,7 +1439,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAIAgentVersionResponse DeleteAIAgentVersion(DeleteAIAgentVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIAgentVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIAgentVersionResponseUnmarshaller.Instance;
 
@@ -1478,7 +1481,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIAgentVersion">REST API Reference for DeleteAIAgentVersion Operation</seealso>
         public virtual Task<DeleteAIAgentVersionResponse> DeleteAIAgentVersionAsync(DeleteAIAgentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIAgentVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIAgentVersionResponseUnmarshaller.Instance;
 
@@ -1490,7 +1493,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAIGuardrailResponse DeleteAIGuardrail(DeleteAIGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIGuardrailResponseUnmarshaller.Instance;
 
@@ -1532,7 +1535,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIGuardrail">REST API Reference for DeleteAIGuardrail Operation</seealso>
         public virtual Task<DeleteAIGuardrailResponse> DeleteAIGuardrailAsync(DeleteAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIGuardrailResponseUnmarshaller.Instance;
 
@@ -1544,7 +1547,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAIGuardrailVersionResponse DeleteAIGuardrailVersion(DeleteAIGuardrailVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIGuardrailVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIGuardrailVersionResponseUnmarshaller.Instance;
 
@@ -1586,7 +1589,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIGuardrailVersion">REST API Reference for DeleteAIGuardrailVersion Operation</seealso>
         public virtual Task<DeleteAIGuardrailVersionResponse> DeleteAIGuardrailVersionAsync(DeleteAIGuardrailVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIGuardrailVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIGuardrailVersionResponseUnmarshaller.Instance;
 
@@ -1598,7 +1601,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAIPromptResponse DeleteAIPrompt(DeleteAIPromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIPromptResponseUnmarshaller.Instance;
 
@@ -1634,7 +1637,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIPrompt">REST API Reference for DeleteAIPrompt Operation</seealso>
         public virtual Task<DeleteAIPromptResponse> DeleteAIPromptAsync(DeleteAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIPromptResponseUnmarshaller.Instance;
 
@@ -1646,7 +1649,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAIPromptVersionResponse DeleteAIPromptVersion(DeleteAIPromptVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIPromptVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIPromptVersionResponseUnmarshaller.Instance;
 
@@ -1688,7 +1691,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIPromptVersion">REST API Reference for DeleteAIPromptVersion Operation</seealso>
         public virtual Task<DeleteAIPromptVersionResponse> DeleteAIPromptVersionAsync(DeleteAIPromptVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAIPromptVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAIPromptVersionResponseUnmarshaller.Instance;
 
@@ -1700,7 +1703,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAssistantResponse DeleteAssistant(DeleteAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantResponseUnmarshaller.Instance;
 
@@ -1733,7 +1736,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAssistant">REST API Reference for DeleteAssistant Operation</seealso>
         public virtual Task<DeleteAssistantResponse> DeleteAssistantAsync(DeleteAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantResponseUnmarshaller.Instance;
 
@@ -1745,7 +1748,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteAssistantAssociationResponse DeleteAssistantAssociation(DeleteAssistantAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -1778,7 +1781,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAssistantAssociation">REST API Reference for DeleteAssistantAssociation Operation</seealso>
         public virtual Task<DeleteAssistantAssociationResponse> DeleteAssistantAssociationAsync(DeleteAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -1790,7 +1793,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteContentResponse DeleteContent(DeleteContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContentResponseUnmarshaller.Instance;
 
@@ -1829,7 +1832,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteContent">REST API Reference for DeleteContent Operation</seealso>
         public virtual Task<DeleteContentResponse> DeleteContentAsync(DeleteContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContentResponseUnmarshaller.Instance;
 
@@ -1841,7 +1844,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteContentAssociationResponse DeleteContentAssociation(DeleteContentAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContentAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContentAssociationResponseUnmarshaller.Instance;
 
@@ -1882,7 +1885,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteContentAssociation">REST API Reference for DeleteContentAssociation Operation</seealso>
         public virtual Task<DeleteContentAssociationResponse> DeleteContentAssociationAsync(DeleteContentAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContentAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContentAssociationResponseUnmarshaller.Instance;
 
@@ -1894,7 +1897,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteImportJobResponse DeleteImportJob(DeleteImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportJobResponseUnmarshaller.Instance;
 
@@ -1933,7 +1936,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteImportJob">REST API Reference for DeleteImportJob Operation</seealso>
         public virtual Task<DeleteImportJobResponse> DeleteImportJobAsync(DeleteImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportJobResponseUnmarshaller.Instance;
 
@@ -1945,7 +1948,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteKnowledgeBaseResponse DeleteKnowledgeBase(DeleteKnowledgeBaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -1996,7 +1999,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         public virtual Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -2008,7 +2011,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteMessageTemplateResponse DeleteMessageTemplate(DeleteMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageTemplateResponseUnmarshaller.Instance;
 
@@ -2051,7 +2054,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplate">REST API Reference for DeleteMessageTemplate Operation</seealso>
         public virtual Task<DeleteMessageTemplateResponse> DeleteMessageTemplateAsync(DeleteMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageTemplateResponseUnmarshaller.Instance;
 
@@ -2063,7 +2066,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteMessageTemplateAttachmentResponse DeleteMessageTemplateAttachment(DeleteMessageTemplateAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageTemplateAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageTemplateAttachmentResponseUnmarshaller.Instance;
 
@@ -2104,7 +2107,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplateAttachment">REST API Reference for DeleteMessageTemplateAttachment Operation</seealso>
         public virtual Task<DeleteMessageTemplateAttachmentResponse> DeleteMessageTemplateAttachmentAsync(DeleteMessageTemplateAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageTemplateAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageTemplateAttachmentResponseUnmarshaller.Instance;
 
@@ -2116,7 +2119,7 @@ namespace Amazon.QConnect
 
         internal virtual DeleteQuickResponseResponse DeleteQuickResponse(DeleteQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
 
@@ -2149,7 +2152,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteQuickResponse">REST API Reference for DeleteQuickResponse Operation</seealso>
         public virtual Task<DeleteQuickResponseResponse> DeleteQuickResponseAsync(DeleteQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
 
@@ -2161,7 +2164,7 @@ namespace Amazon.QConnect
 
         internal virtual GetAIAgentResponse GetAIAgent(GetAIAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAIAgentResponseUnmarshaller.Instance;
 
@@ -2197,7 +2200,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIAgent">REST API Reference for GetAIAgent Operation</seealso>
         public virtual Task<GetAIAgentResponse> GetAIAgentAsync(GetAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAIAgentResponseUnmarshaller.Instance;
 
@@ -2209,7 +2212,7 @@ namespace Amazon.QConnect
 
         internal virtual GetAIGuardrailResponse GetAIGuardrail(GetAIGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAIGuardrailResponseUnmarshaller.Instance;
 
@@ -2245,7 +2248,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIGuardrail">REST API Reference for GetAIGuardrail Operation</seealso>
         public virtual Task<GetAIGuardrailResponse> GetAIGuardrailAsync(GetAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAIGuardrailResponseUnmarshaller.Instance;
 
@@ -2257,7 +2260,7 @@ namespace Amazon.QConnect
 
         internal virtual GetAIPromptResponse GetAIPrompt(GetAIPromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAIPromptResponseUnmarshaller.Instance;
 
@@ -2293,7 +2296,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIPrompt">REST API Reference for GetAIPrompt Operation</seealso>
         public virtual Task<GetAIPromptResponse> GetAIPromptAsync(GetAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAIPromptResponseUnmarshaller.Instance;
 
@@ -2305,7 +2308,7 @@ namespace Amazon.QConnect
 
         internal virtual GetAssistantResponse GetAssistant(GetAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantResponseUnmarshaller.Instance;
 
@@ -2338,7 +2341,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAssistant">REST API Reference for GetAssistant Operation</seealso>
         public virtual Task<GetAssistantResponse> GetAssistantAsync(GetAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantResponseUnmarshaller.Instance;
 
@@ -2350,7 +2353,7 @@ namespace Amazon.QConnect
 
         internal virtual GetAssistantAssociationResponse GetAssistantAssociation(GetAssistantAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -2383,7 +2386,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAssistantAssociation">REST API Reference for GetAssistantAssociation Operation</seealso>
         public virtual Task<GetAssistantAssociationResponse> GetAssistantAssociationAsync(GetAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssistantAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssistantAssociationResponseUnmarshaller.Instance;
 
@@ -2395,7 +2398,7 @@ namespace Amazon.QConnect
 
         internal virtual GetContentResponse GetContent(GetContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentResponseUnmarshaller.Instance;
 
@@ -2428,7 +2431,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContent">REST API Reference for GetContent Operation</seealso>
         public virtual Task<GetContentResponse> GetContentAsync(GetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentResponseUnmarshaller.Instance;
 
@@ -2440,7 +2443,7 @@ namespace Amazon.QConnect
 
         internal virtual GetContentAssociationResponse GetContentAssociation(GetContentAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentAssociationResponseUnmarshaller.Instance;
 
@@ -2481,7 +2484,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentAssociation">REST API Reference for GetContentAssociation Operation</seealso>
         public virtual Task<GetContentAssociationResponse> GetContentAssociationAsync(GetContentAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentAssociationResponseUnmarshaller.Instance;
 
@@ -2493,7 +2496,7 @@ namespace Amazon.QConnect
 
         internal virtual GetContentSummaryResponse GetContentSummary(GetContentSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentSummaryResponseUnmarshaller.Instance;
 
@@ -2526,7 +2529,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentSummary">REST API Reference for GetContentSummary Operation</seealso>
         public virtual Task<GetContentSummaryResponse> GetContentSummaryAsync(GetContentSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentSummaryResponseUnmarshaller.Instance;
 
@@ -2538,7 +2541,7 @@ namespace Amazon.QConnect
 
         internal virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
@@ -2568,7 +2571,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         public virtual Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
@@ -2580,7 +2583,7 @@ namespace Amazon.QConnect
 
         internal virtual GetKnowledgeBaseResponse GetKnowledgeBase(GetKnowledgeBaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -2613,7 +2616,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         public virtual Task<GetKnowledgeBaseResponse> GetKnowledgeBaseAsync(GetKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKnowledgeBaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKnowledgeBaseResponseUnmarshaller.Instance;
 
@@ -2625,7 +2628,7 @@ namespace Amazon.QConnect
 
         internal virtual GetMessageTemplateResponse GetMessageTemplate(GetMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMessageTemplateResponseUnmarshaller.Instance;
 
@@ -2665,7 +2668,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetMessageTemplate">REST API Reference for GetMessageTemplate Operation</seealso>
         public virtual Task<GetMessageTemplateResponse> GetMessageTemplateAsync(GetMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMessageTemplateResponseUnmarshaller.Instance;
 
@@ -2677,7 +2680,7 @@ namespace Amazon.QConnect
 
         internal virtual GetNextMessageResponse GetNextMessage(GetNextMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNextMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNextMessageResponseUnmarshaller.Instance;
 
@@ -2701,13 +2704,16 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnprocessableContentException">
+        /// The server has a failure of processing the message
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetNextMessage">REST API Reference for GetNextMessage Operation</seealso>
         public virtual Task<GetNextMessageResponse> GetNextMessageAsync(GetNextMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNextMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNextMessageResponseUnmarshaller.Instance;
 
@@ -2719,7 +2725,7 @@ namespace Amazon.QConnect
 
         internal virtual GetQuickResponseResponse GetQuickResponse(GetQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQuickResponseResponseUnmarshaller.Instance;
 
@@ -2752,7 +2758,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetQuickResponse">REST API Reference for GetQuickResponse Operation</seealso>
         public virtual Task<GetQuickResponseResponse> GetQuickResponseAsync(GetQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQuickResponseResponseUnmarshaller.Instance;
 
@@ -2765,7 +2771,7 @@ namespace Amazon.QConnect
         [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         internal virtual GetRecommendationsResponse GetRecommendations(GetRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -2812,7 +2818,7 @@ namespace Amazon.QConnect
         [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual Task<GetRecommendationsResponse> GetRecommendationsAsync(GetRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -2824,7 +2830,7 @@ namespace Amazon.QConnect
 
         internal virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -2857,7 +2863,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -2869,7 +2875,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAIAgentsResponse ListAIAgents(ListAIAgentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIAgentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIAgentsResponseUnmarshaller.Instance;
 
@@ -2905,7 +2911,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIAgents">REST API Reference for ListAIAgents Operation</seealso>
         public virtual Task<ListAIAgentsResponse> ListAIAgentsAsync(ListAIAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIAgentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIAgentsResponseUnmarshaller.Instance;
 
@@ -2917,7 +2923,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAIAgentVersionsResponse ListAIAgentVersions(ListAIAgentVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIAgentVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIAgentVersionsResponseUnmarshaller.Instance;
 
@@ -2953,7 +2959,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIAgentVersions">REST API Reference for ListAIAgentVersions Operation</seealso>
         public virtual Task<ListAIAgentVersionsResponse> ListAIAgentVersionsAsync(ListAIAgentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIAgentVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIAgentVersionsResponseUnmarshaller.Instance;
 
@@ -2965,7 +2971,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAIGuardrailsResponse ListAIGuardrails(ListAIGuardrailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIGuardrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIGuardrailsResponseUnmarshaller.Instance;
 
@@ -3001,7 +3007,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIGuardrails">REST API Reference for ListAIGuardrails Operation</seealso>
         public virtual Task<ListAIGuardrailsResponse> ListAIGuardrailsAsync(ListAIGuardrailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIGuardrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIGuardrailsResponseUnmarshaller.Instance;
 
@@ -3013,7 +3019,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAIGuardrailVersionsResponse ListAIGuardrailVersions(ListAIGuardrailVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIGuardrailVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIGuardrailVersionsResponseUnmarshaller.Instance;
 
@@ -3049,7 +3055,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIGuardrailVersions">REST API Reference for ListAIGuardrailVersions Operation</seealso>
         public virtual Task<ListAIGuardrailVersionsResponse> ListAIGuardrailVersionsAsync(ListAIGuardrailVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIGuardrailVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIGuardrailVersionsResponseUnmarshaller.Instance;
 
@@ -3061,7 +3067,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAIPromptsResponse ListAIPrompts(ListAIPromptsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIPromptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIPromptsResponseUnmarshaller.Instance;
 
@@ -3097,7 +3103,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIPrompts">REST API Reference for ListAIPrompts Operation</seealso>
         public virtual Task<ListAIPromptsResponse> ListAIPromptsAsync(ListAIPromptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIPromptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIPromptsResponseUnmarshaller.Instance;
 
@@ -3109,7 +3115,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAIPromptVersionsResponse ListAIPromptVersions(ListAIPromptVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIPromptVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIPromptVersionsResponseUnmarshaller.Instance;
 
@@ -3145,7 +3151,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIPromptVersions">REST API Reference for ListAIPromptVersions Operation</seealso>
         public virtual Task<ListAIPromptVersionsResponse> ListAIPromptVersionsAsync(ListAIPromptVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAIPromptVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAIPromptVersionsResponseUnmarshaller.Instance;
 
@@ -3157,7 +3163,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAssistantAssociationsResponse ListAssistantAssociations(ListAssistantAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantAssociationsResponseUnmarshaller.Instance;
 
@@ -3187,7 +3193,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAssistantAssociations">REST API Reference for ListAssistantAssociations Operation</seealso>
         public virtual Task<ListAssistantAssociationsResponse> ListAssistantAssociationsAsync(ListAssistantAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantAssociationsResponseUnmarshaller.Instance;
 
@@ -3199,7 +3205,7 @@ namespace Amazon.QConnect
 
         internal virtual ListAssistantsResponse ListAssistants(ListAssistantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantsResponseUnmarshaller.Instance;
 
@@ -3229,7 +3235,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAssistants">REST API Reference for ListAssistants Operation</seealso>
         public virtual Task<ListAssistantsResponse> ListAssistantsAsync(ListAssistantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssistantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssistantsResponseUnmarshaller.Instance;
 
@@ -3241,7 +3247,7 @@ namespace Amazon.QConnect
 
         internal virtual ListContentAssociationsResponse ListContentAssociations(ListContentAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContentAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContentAssociationsResponseUnmarshaller.Instance;
 
@@ -3282,7 +3288,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListContentAssociations">REST API Reference for ListContentAssociations Operation</seealso>
         public virtual Task<ListContentAssociationsResponse> ListContentAssociationsAsync(ListContentAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContentAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContentAssociationsResponseUnmarshaller.Instance;
 
@@ -3294,7 +3300,7 @@ namespace Amazon.QConnect
 
         internal virtual ListContentsResponse ListContents(ListContentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContentsResponseUnmarshaller.Instance;
 
@@ -3324,7 +3330,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListContents">REST API Reference for ListContents Operation</seealso>
         public virtual Task<ListContentsResponse> ListContentsAsync(ListContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContentsResponseUnmarshaller.Instance;
 
@@ -3336,7 +3342,7 @@ namespace Amazon.QConnect
 
         internal virtual ListImportJobsResponse ListImportJobs(ListImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
 
@@ -3363,7 +3369,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListImportJobs">REST API Reference for ListImportJobs Operation</seealso>
         public virtual Task<ListImportJobsResponse> ListImportJobsAsync(ListImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportJobsResponseUnmarshaller.Instance;
 
@@ -3375,7 +3381,7 @@ namespace Amazon.QConnect
 
         internal virtual ListKnowledgeBasesResponse ListKnowledgeBases(ListKnowledgeBasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKnowledgeBasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
 
@@ -3402,7 +3408,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         public virtual Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(ListKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKnowledgeBasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
 
@@ -3414,7 +3420,7 @@ namespace Amazon.QConnect
 
         internal virtual ListMessagesResponse ListMessages(ListMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
 
@@ -3444,7 +3450,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessages">REST API Reference for ListMessages Operation</seealso>
         public virtual Task<ListMessagesResponse> ListMessagesAsync(ListMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
 
@@ -3456,7 +3462,7 @@ namespace Amazon.QConnect
 
         internal virtual ListMessageTemplatesResponse ListMessageTemplates(ListMessageTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessageTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessageTemplatesResponseUnmarshaller.Instance;
 
@@ -3490,7 +3496,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplates">REST API Reference for ListMessageTemplates Operation</seealso>
         public virtual Task<ListMessageTemplatesResponse> ListMessageTemplatesAsync(ListMessageTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessageTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessageTemplatesResponseUnmarshaller.Instance;
 
@@ -3502,7 +3508,7 @@ namespace Amazon.QConnect
 
         internal virtual ListMessageTemplateVersionsResponse ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessageTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessageTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -3535,7 +3541,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplateVersions">REST API Reference for ListMessageTemplateVersions Operation</seealso>
         public virtual Task<ListMessageTemplateVersionsResponse> ListMessageTemplateVersionsAsync(ListMessageTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessageTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessageTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -3547,7 +3553,7 @@ namespace Amazon.QConnect
 
         internal virtual ListQuickResponsesResponse ListQuickResponses(ListQuickResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickResponsesResponseUnmarshaller.Instance;
 
@@ -3577,7 +3583,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListQuickResponses">REST API Reference for ListQuickResponses Operation</seealso>
         public virtual Task<ListQuickResponsesResponse> ListQuickResponsesAsync(ListQuickResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickResponsesResponseUnmarshaller.Instance;
 
@@ -3585,11 +3591,54 @@ namespace Amazon.QConnect
         }
         #endregion
         
+        #region  ListSpans
+
+        internal virtual ListSpansResponse ListSpans(ListSpansRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSpansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpansResponseUnmarshaller.Instance;
+
+            return Invoke<ListSpansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves AI agent execution traces for a session, providing granular visibility into
+        /// agent orchestration flows, LLM interactions, and tool invocations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSpans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSpans service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListSpans">REST API Reference for ListSpans Operation</seealso>
+        public virtual Task<ListSpansResponse> ListSpansAsync(ListSpansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSpansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSpansResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3613,7 +3662,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3625,7 +3674,7 @@ namespace Amazon.QConnect
 
         internal virtual NotifyRecommendationsReceivedResponse NotifyRecommendationsReceived(NotifyRecommendationsReceivedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyRecommendationsReceivedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyRecommendationsReceivedResponseUnmarshaller.Instance;
 
@@ -3658,7 +3707,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/NotifyRecommendationsReceived">REST API Reference for NotifyRecommendationsReceived Operation</seealso>
         public virtual Task<NotifyRecommendationsReceivedResponse> NotifyRecommendationsReceivedAsync(NotifyRecommendationsReceivedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyRecommendationsReceivedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyRecommendationsReceivedResponseUnmarshaller.Instance;
 
@@ -3670,7 +3719,7 @@ namespace Amazon.QConnect
 
         internal virtual PutFeedbackResponse PutFeedback(PutFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -3701,7 +3750,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -3714,7 +3763,7 @@ namespace Amazon.QConnect
         [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         internal virtual QueryAssistantResponse QueryAssistant(QueryAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryAssistantResponseUnmarshaller.Instance;
 
@@ -3764,7 +3813,7 @@ namespace Amazon.QConnect
         [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual Task<QueryAssistantResponse> QueryAssistantAsync(QueryAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryAssistantResponseUnmarshaller.Instance;
 
@@ -3776,7 +3825,7 @@ namespace Amazon.QConnect
 
         internal virtual RemoveAssistantAIAgentResponse RemoveAssistantAIAgent(RemoveAssistantAIAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveAssistantAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveAssistantAIAgentResponseUnmarshaller.Instance;
 
@@ -3809,7 +3858,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveAssistantAIAgent">REST API Reference for RemoveAssistantAIAgent Operation</seealso>
         public virtual Task<RemoveAssistantAIAgentResponse> RemoveAssistantAIAgentAsync(RemoveAssistantAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveAssistantAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveAssistantAIAgentResponseUnmarshaller.Instance;
 
@@ -3821,7 +3870,7 @@ namespace Amazon.QConnect
 
         internal virtual RemoveKnowledgeBaseTemplateUriResponse RemoveKnowledgeBaseTemplateUri(RemoveKnowledgeBaseTemplateUriRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -3851,7 +3900,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveKnowledgeBaseTemplateUri">REST API Reference for RemoveKnowledgeBaseTemplateUri Operation</seealso>
         public virtual Task<RemoveKnowledgeBaseTemplateUriResponse> RemoveKnowledgeBaseTemplateUriAsync(RemoveKnowledgeBaseTemplateUriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -3863,7 +3912,7 @@ namespace Amazon.QConnect
 
         internal virtual RenderMessageTemplateResponse RenderMessageTemplate(RenderMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenderMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenderMessageTemplateResponseUnmarshaller.Instance;
 
@@ -3900,7 +3949,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RenderMessageTemplate">REST API Reference for RenderMessageTemplate Operation</seealso>
         public virtual Task<RenderMessageTemplateResponse> RenderMessageTemplateAsync(RenderMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenderMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenderMessageTemplateResponseUnmarshaller.Instance;
 
@@ -3908,11 +3957,74 @@ namespace Amazon.QConnect
         }
         #endregion
         
+        #region  Retrieve
+
+        internal virtual RetrieveResponse Retrieve(RetrieveRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RetrieveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetrieveResponseUnmarshaller.Instance;
+
+            return Invoke<RetrieveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves content from knowledge sources based on a query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Retrieve service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Retrieve service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// The request failed because it depends on another request that failed.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/Retrieve">REST API Reference for Retrieve Operation</seealso>
+        public virtual Task<RetrieveResponse> RetrieveAsync(RetrieveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RetrieveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetrieveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RetrieveResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchContent
 
         internal virtual SearchContentResponse SearchContent(SearchContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContentResponseUnmarshaller.Instance;
 
@@ -3946,7 +4058,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchContent">REST API Reference for SearchContent Operation</seealso>
         public virtual Task<SearchContentResponse> SearchContentAsync(SearchContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContentResponseUnmarshaller.Instance;
 
@@ -3958,7 +4070,7 @@ namespace Amazon.QConnect
 
         internal virtual SearchMessageTemplatesResponse SearchMessageTemplates(SearchMessageTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchMessageTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchMessageTemplatesResponseUnmarshaller.Instance;
 
@@ -3994,7 +4106,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchMessageTemplates">REST API Reference for SearchMessageTemplates Operation</seealso>
         public virtual Task<SearchMessageTemplatesResponse> SearchMessageTemplatesAsync(SearchMessageTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchMessageTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchMessageTemplatesResponseUnmarshaller.Instance;
 
@@ -4006,7 +4118,7 @@ namespace Amazon.QConnect
 
         internal virtual SearchQuickResponsesResponse SearchQuickResponses(SearchQuickResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQuickResponsesResponseUnmarshaller.Instance;
 
@@ -4045,7 +4157,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchQuickResponses">REST API Reference for SearchQuickResponses Operation</seealso>
         public virtual Task<SearchQuickResponsesResponse> SearchQuickResponsesAsync(SearchQuickResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQuickResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQuickResponsesResponseUnmarshaller.Instance;
 
@@ -4057,7 +4169,7 @@ namespace Amazon.QConnect
 
         internal virtual SearchSessionsResponse SearchSessions(SearchSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSessionsResponseUnmarshaller.Instance;
 
@@ -4090,7 +4202,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchSessions">REST API Reference for SearchSessions Operation</seealso>
         public virtual Task<SearchSessionsResponse> SearchSessionsAsync(SearchSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSessionsResponseUnmarshaller.Instance;
 
@@ -4102,7 +4214,7 @@ namespace Amazon.QConnect
 
         internal virtual SendMessageResponse SendMessage(SendMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
@@ -4129,6 +4241,9 @@ namespace Amazon.QConnect
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// The request failed because it depends on another request that failed.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.RequestTimeoutException">
         /// The request reached the service more than 15 minutes after the date stamp on the request
         /// or more than 15 minutes after the request expiration date (such as for pre-signed
@@ -4136,6 +4251,10 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -4146,7 +4265,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public virtual Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
@@ -4158,7 +4277,7 @@ namespace Amazon.QConnect
 
         internal virtual StartContentUploadResponse StartContentUpload(StartContentUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentUploadResponseUnmarshaller.Instance;
 
@@ -4196,7 +4315,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/StartContentUpload">REST API Reference for StartContentUpload Operation</seealso>
         public virtual Task<StartContentUploadResponse> StartContentUploadAsync(StartContentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentUploadResponseUnmarshaller.Instance;
 
@@ -4208,7 +4327,7 @@ namespace Amazon.QConnect
 
         internal virtual StartImportJobResponse StartImportJob(StartImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportJobResponseUnmarshaller.Instance;
 
@@ -4262,7 +4381,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/StartImportJob">REST API Reference for StartImportJob Operation</seealso>
         public virtual Task<StartImportJobResponse> StartImportJobAsync(StartImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportJobResponseUnmarshaller.Instance;
 
@@ -4274,7 +4393,7 @@ namespace Amazon.QConnect
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4301,7 +4420,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4313,7 +4432,7 @@ namespace Amazon.QConnect
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4337,7 +4456,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4349,7 +4468,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateAIAgentResponse UpdateAIAgent(UpdateAIAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAIAgentResponseUnmarshaller.Instance;
 
@@ -4391,7 +4510,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIAgent">REST API Reference for UpdateAIAgent Operation</seealso>
         public virtual Task<UpdateAIAgentResponse> UpdateAIAgentAsync(UpdateAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAIAgentResponseUnmarshaller.Instance;
 
@@ -4403,7 +4522,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateAIGuardrailResponse UpdateAIGuardrail(UpdateAIGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAIGuardrailResponseUnmarshaller.Instance;
 
@@ -4445,7 +4564,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIGuardrail">REST API Reference for UpdateAIGuardrail Operation</seealso>
         public virtual Task<UpdateAIGuardrailResponse> UpdateAIGuardrailAsync(UpdateAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAIGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAIGuardrailResponseUnmarshaller.Instance;
 
@@ -4457,7 +4576,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateAIPromptResponse UpdateAIPrompt(UpdateAIPromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAIPromptResponseUnmarshaller.Instance;
 
@@ -4499,7 +4618,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIPrompt">REST API Reference for UpdateAIPrompt Operation</seealso>
         public virtual Task<UpdateAIPromptResponse> UpdateAIPromptAsync(UpdateAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAIPromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAIPromptResponseUnmarshaller.Instance;
 
@@ -4511,7 +4630,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateAssistantAIAgentResponse UpdateAssistantAIAgent(UpdateAssistantAIAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssistantAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssistantAIAgentResponseUnmarshaller.Instance;
 
@@ -4544,7 +4663,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAssistantAIAgent">REST API Reference for UpdateAssistantAIAgent Operation</seealso>
         public virtual Task<UpdateAssistantAIAgentResponse> UpdateAssistantAIAgentAsync(UpdateAssistantAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssistantAIAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssistantAIAgentResponseUnmarshaller.Instance;
 
@@ -4556,7 +4675,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateContentResponse UpdateContent(UpdateContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContentResponseUnmarshaller.Instance;
 
@@ -4593,7 +4712,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateContent">REST API Reference for UpdateContent Operation</seealso>
         public virtual Task<UpdateContentResponse> UpdateContentAsync(UpdateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContentResponseUnmarshaller.Instance;
 
@@ -4605,7 +4724,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateKnowledgeBaseTemplateUriResponse UpdateKnowledgeBaseTemplateUri(UpdateKnowledgeBaseTemplateUriRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -4639,7 +4758,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateKnowledgeBaseTemplateUri">REST API Reference for UpdateKnowledgeBaseTemplateUri Operation</seealso>
         public virtual Task<UpdateKnowledgeBaseTemplateUriResponse> UpdateKnowledgeBaseTemplateUriAsync(UpdateKnowledgeBaseTemplateUriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKnowledgeBaseTemplateUriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
@@ -4651,7 +4770,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateMessageTemplateResponse UpdateMessageTemplate(UpdateMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -4694,7 +4813,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplate">REST API Reference for UpdateMessageTemplate Operation</seealso>
         public virtual Task<UpdateMessageTemplateResponse> UpdateMessageTemplateAsync(UpdateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMessageTemplateResponseUnmarshaller.Instance;
 
@@ -4706,7 +4825,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateMessageTemplateMetadataResponse UpdateMessageTemplateMetadata(UpdateMessageTemplateMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMessageTemplateMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMessageTemplateMetadataResponseUnmarshaller.Instance;
 
@@ -4749,7 +4868,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplateMetadata">REST API Reference for UpdateMessageTemplateMetadata Operation</seealso>
         public virtual Task<UpdateMessageTemplateMetadataResponse> UpdateMessageTemplateMetadataAsync(UpdateMessageTemplateMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMessageTemplateMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMessageTemplateMetadataResponseUnmarshaller.Instance;
 
@@ -4761,7 +4880,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateQuickResponseResponse UpdateQuickResponse(UpdateQuickResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickResponseResponseUnmarshaller.Instance;
 
@@ -4804,7 +4923,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateQuickResponse">REST API Reference for UpdateQuickResponse Operation</seealso>
         public virtual Task<UpdateQuickResponseResponse> UpdateQuickResponseAsync(UpdateQuickResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickResponseResponseUnmarshaller.Instance;
 
@@ -4816,7 +4935,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateSessionResponse UpdateSession(UpdateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
@@ -4851,7 +4970,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
         public virtual Task<UpdateSessionResponse> UpdateSessionAsync(UpdateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
@@ -4863,7 +4982,7 @@ namespace Amazon.QConnect
 
         internal virtual UpdateSessionDataResponse UpdateSessionData(UpdateSessionDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionDataResponseUnmarshaller.Instance;
 
@@ -4896,7 +5015,7 @@ namespace Amazon.QConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSessionData">REST API Reference for UpdateSessionData Operation</seealso>
         public virtual Task<UpdateSessionDataResponse> UpdateSessionDataAsync(UpdateSessionDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionDataResponseUnmarshaller.Instance;
 

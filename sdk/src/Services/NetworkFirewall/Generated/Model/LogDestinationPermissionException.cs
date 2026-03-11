@@ -39,6 +39,13 @@ namespace Amazon.NetworkFirewall.Model
     {
 
         /// <summary>
+        /// Default constructor for LogDestinationPermissionException
+        /// message.
+        /// </summary>
+        public LogDestinationPermissionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LogDestinationPermissionException with the specified error
         /// message.
         /// </summary>

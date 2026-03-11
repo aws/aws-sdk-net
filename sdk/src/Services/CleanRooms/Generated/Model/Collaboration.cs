@@ -35,14 +35,17 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class Collaboration
     {
+        private List<string> _allowedResultRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalyticsEngine _analyticsEngine;
         private string _arn;
+        private List<string> _autoApprovedChangeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _creatorDisplayName;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
         private string _id;
+        private bool? _isMetricsEnabled;
         private CollaborationJobLogStatus _jobLogStatus;
         private string _membershipArn;
         private string _membershipId;
@@ -52,10 +55,41 @@ namespace Amazon.CleanRooms.Model
         private DateTime? _updateTime;
 
         /// <summary>
+        /// Gets and sets the property AllowedResultRegions. 
+        /// <para>
+        /// The Amazon Web Services Regions where collaboration query results can be stored. Returns
+        /// the list of Region identifiers that were specified when the collaboration was created.
+        /// This list is used to enforce regional storage policies and compliance requirements.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AllowedResultRegions
+        {
+            get { return this._allowedResultRegions; }
+            set { this._allowedResultRegions = value; }
+        }
+
+        // Check to see if AllowedResultRegions property is set
+        internal bool IsSetAllowedResultRegions()
+        {
+            return this._allowedResultRegions != null && (this._allowedResultRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AnalyticsEngine. 
         /// <para>
         ///  The analytics engine for the collaboration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After July 16, 2025, the <c>CLEAN_ROOMS_SQL</c> parameter will no longer be available.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public AnalyticsEngine AnalyticsEngine
         {
@@ -86,6 +120,29 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoApprovedChangeTypes. 
+        /// <para>
+        /// The types of change requests that are automatically approved for this collaboration.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AutoApprovedChangeTypes
+        {
+            get { return this._autoApprovedChangeTypes; }
+            set { this._autoApprovedChangeTypes = value; }
+        }
+
+        // Check to see if AutoApprovedChangeTypes property is set
+        internal bool IsSetAutoApprovedChangeTypes()
+        {
+            return this._autoApprovedChangeTypes != null && (this._autoApprovedChangeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,6 +257,29 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMetricsEnabled. 
+        /// <para>
+        /// An indicator as to whether metrics are enabled for the collaboration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, collaboration members can opt in to Amazon CloudWatch metrics for
+        /// their membership queries.
+        /// </para>
+        /// </summary>
+        public bool? IsMetricsEnabled
+        {
+            get { return this._isMetricsEnabled; }
+            set { this._isMetricsEnabled = value; }
+        }
+
+        // Check to see if IsMetricsEnabled property is set
+        internal bool IsSetIsMetricsEnabled()
+        {
+            return this._isMetricsEnabled.HasValue; 
         }
 
         /// <summary>

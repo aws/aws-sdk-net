@@ -36,6 +36,14 @@ namespace Amazon.Snowball
         /// <summary>
         /// Construct instance of AmazonSnowballException
         /// </summary>
+        public AmazonSnowballException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSnowballException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSnowballException(string message)
             : base(message)

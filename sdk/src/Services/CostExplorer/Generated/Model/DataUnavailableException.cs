@@ -39,6 +39,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for DataUnavailableException
+        /// message.
+        /// </summary>
+        public DataUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DataUnavailableException with the specified error
         /// message.
         /// </summary>

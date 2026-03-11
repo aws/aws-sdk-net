@@ -64,6 +64,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PromoteReadReplicaDBClusterRequestMarshaller _instance = new PromoteReadReplicaDBClusterRequestMarshaller();        

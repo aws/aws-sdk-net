@@ -106,13 +106,6 @@ namespace Amazon.ECS.Model
         /// When additional capacity is required, Amazon ECS will scale up the minimum scaling
         /// step size even if the actual demand is less than the minimum scaling step size.
         /// </para>
-        ///  
-        /// <para>
-        /// If you use a capacity provider with an Auto Scaling group configured with more than
-        /// one Amazon EC2 instance type or Availability Zone, Amazon ECS will scale up by the
-        /// exact minimum scaling step size value and will ignore both the maximum scaling step
-        /// size as well as the capacity demand.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
         public int? MinimumScalingStepSize

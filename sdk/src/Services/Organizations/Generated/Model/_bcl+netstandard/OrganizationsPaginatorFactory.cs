@@ -53,6 +53,14 @@ namespace Amazon.Organizations.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccountsWithInvalidEffectivePolicy operation
+        ///</summary>
+        public IListAccountsWithInvalidEffectivePolicyPaginator ListAccountsWithInvalidEffectivePolicy(ListAccountsWithInvalidEffectivePolicyRequest request) 
+        {
+            return new ListAccountsWithInvalidEffectivePolicyPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAWSServiceAccessForOrganization operation
         ///</summary>
         public IListAWSServiceAccessForOrganizationPaginator ListAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request) 
@@ -90,6 +98,14 @@ namespace Amazon.Organizations.Model
         public IListDelegatedServicesForAccountPaginator ListDelegatedServicesForAccount(ListDelegatedServicesForAccountRequest request) 
         {
             return new ListDelegatedServicesForAccountPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEffectivePolicyValidationErrors operation
+        ///</summary>
+        public IListEffectivePolicyValidationErrorsPaginator ListEffectivePolicyValidationErrors(ListEffectivePolicyValidationErrorsRequest request) 
+        {
+            return new ListEffectivePolicyValidationErrorsPaginator(this.client, request);
         }
 
         /// <summary>

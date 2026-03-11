@@ -35,7 +35,32 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetSamplingTargetsRequest : AmazonXRayRequest
     {
+        private List<SamplingBoostStatisticsDocument> _samplingBoostStatisticsDocuments = AWSConfigs.InitializeCollections ? new List<SamplingBoostStatisticsDocument>() : null;
         private List<SamplingStatisticsDocument> _samplingStatisticsDocuments = AWSConfigs.InitializeCollections ? new List<SamplingStatisticsDocument>() : null;
+
+        /// <summary>
+        /// Gets and sets the property SamplingBoostStatisticsDocuments. 
+        /// <para>
+        /// Information about rules that the service is using to boost sampling rate.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=25)]
+        public List<SamplingBoostStatisticsDocument> SamplingBoostStatisticsDocuments
+        {
+            get { return this._samplingBoostStatisticsDocuments; }
+            set { this._samplingBoostStatisticsDocuments = value; }
+        }
+
+        // Check to see if SamplingBoostStatisticsDocuments property is set
+        internal bool IsSetSamplingBoostStatisticsDocuments()
+        {
+            return this._samplingBoostStatisticsDocuments != null && (this._samplingBoostStatisticsDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property SamplingStatisticsDocuments. 

@@ -36,6 +36,14 @@ namespace Amazon.JsonProtocol
         /// <summary>
         /// Construct instance of AmazonJsonProtocolException
         /// </summary>
+        public AmazonJsonProtocolException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonJsonProtocolException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonJsonProtocolException(string message)
             : base(message)

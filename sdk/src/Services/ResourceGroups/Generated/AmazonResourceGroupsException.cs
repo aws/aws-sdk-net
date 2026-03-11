@@ -36,6 +36,14 @@ namespace Amazon.ResourceGroups
         /// <summary>
         /// Construct instance of AmazonResourceGroupsException
         /// </summary>
+        public AmazonResourceGroupsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonResourceGroupsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonResourceGroupsException(string message)
             : base(message)

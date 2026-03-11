@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPluginNameException
+        /// message.
+        /// </summary>
+        public InvalidPluginNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPluginNameException with the specified error
         /// message.
         /// </summary>

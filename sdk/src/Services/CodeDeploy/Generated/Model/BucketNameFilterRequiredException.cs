@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for BucketNameFilterRequiredException
+        /// message.
+        /// </summary>
+        public BucketNameFilterRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BucketNameFilterRequiredException with the specified error
         /// message.
         /// </summary>

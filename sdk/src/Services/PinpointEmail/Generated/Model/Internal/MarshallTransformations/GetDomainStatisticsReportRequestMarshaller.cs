@@ -65,9 +65,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomain())
                 throw new AmazonPinpointEmailException("Request object does not have required field Domain set");
             request.AddPathResource("{Domain}", StringUtils.FromString(publicRequest.Domain));
+            if (publicRequest.EndDate == null)
+                throw new AmazonPinpointEmailException("Request object does not have required field EndDate set");
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
+            if (publicRequest.StartDate == null)
+                throw new AmazonPinpointEmailException("Request object does not have required field StartDate set");
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));

@@ -76,6 +76,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCapacityProviderConfig())
+            {
+                context.Writer.WritePropertyName("CapacityProviderConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacityProviderConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CapacityProviderConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDeadLetterConfig())
             {
                 context.Writer.WritePropertyName("DeadLetterConfig");
@@ -91,6 +102,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDurableConfig())
+            {
+                context.Writer.WritePropertyName("DurableConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DurableConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DurableConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetEnvironment())

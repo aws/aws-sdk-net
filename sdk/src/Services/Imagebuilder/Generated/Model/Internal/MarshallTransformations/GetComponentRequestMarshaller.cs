@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ComponentBuildVersionArn))
+                throw new AmazonImagebuilderException("Request object does not have required field ComponentBuildVersionArn set");
             
             if (publicRequest.IsSetComponentBuildVersionArn())
                 request.Parameters.Add("componentBuildVersionArn", StringUtils.FromString(publicRequest.ComponentBuildVersionArn));

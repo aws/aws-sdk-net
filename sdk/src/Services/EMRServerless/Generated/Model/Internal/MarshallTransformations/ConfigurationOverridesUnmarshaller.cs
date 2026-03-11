@@ -62,6 +62,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("diskEncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = DiskEncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DiskEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("monitoringConfiguration", targetDepth))
                 {
                     var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;

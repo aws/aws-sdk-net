@@ -42,6 +42,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterContainsServicesException
+        /// message.
+        /// </summary>
+        public ClusterContainsServicesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterContainsServicesException with the specified error
         /// message.
         /// </summary>

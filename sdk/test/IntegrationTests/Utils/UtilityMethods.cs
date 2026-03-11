@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Amazon.Runtime;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -7,13 +9,8 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.SimpleNotificationService;
-using Amazon.SimpleNotificationService.Model;
-using Amazon.Runtime;
-using ThirdParty.MD5;
 using System.Threading.Tasks;
+using ThirdParty.MD5;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -21,43 +18,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
     {
         public const string SDK_TEST_PREFIX = "aws-net-sdk";
 
-        static string _accountId;
-
-        /// <summary>
-        /// There is not a good way to get account id. This hack creates
-        /// a topic gets the account id out of the ARN and then deletes the topic.
-        /// </summary>
-        public static string AccountId
-        {
-            get
-            {
-                if(_accountId == null)
-                {
-                    var createRequest = new CreateTopicRequest
-                    {
-                        Name = "sdk-accountid-lookup" + DateTime.UtcNow.Ticks
-                    };
-                    using(var snsClient = new AmazonSimpleNotificationServiceClient())
-                    {
-                        var response = snsClient.CreateTopic(createRequest);
-                        var tokens = response.TopicArn.Split(':');
-
-                        _accountId = tokens[4];
-
-                        snsClient.DeleteTopic(new DeleteTopicRequest { TopicArn = response.TopicArn });
-                    }
-                }
-
-                return _accountId;
-            }
-        }
-
         public static AWSCredentials CreateTemporaryCredentials()
         {
             using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
             {
-                var creds = sts.GetSessionToken().Credentials;
+                // This helper method is used in another sync method, so we need to block for non .NET Framework targets.
+#if NETFRAMEWORK
+                return sts.GetSessionToken().Credentials;
+#else
+                var creds = sts.GetSessionTokenAsync().GetAwaiter().GetResult().Credentials;
                 return creds;
+#endif
             }
         }
 
@@ -65,9 +36,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             return CreateStreamFromString(s, new MemoryStream());
         }
-        
+
         public static Stream CreateStreamFromString(string s, Stream stream)
-        {        
+        {
             StreamWriter writer = new StreamWriter(stream);
             writer.Write(s);
             writer.Flush();
@@ -127,13 +98,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static byte[] ComputeSHA256(byte[] data)
         {
-            return new SHA256CryptoServiceProvider().ComputeHash(data);
+            return SHA256.Create().ComputeHash(data);
         }
 
         public static void  CompareFiles(string file1, string file2)
         {
-            byte[] file1MD5 = computeHash(file1);
-            byte[] file2MD5 = computeHash(file2);
+            byte[] file1MD5 = ComputeHash(file1);
+            byte[] file2MD5 = ComputeHash(file2);
 
             Assert.AreEqual(file1MD5.Length, file2MD5.Length);
             for (int i = 0; i < file1MD5.Length; i++)
@@ -142,7 +113,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             }
         }
 
-        private static byte[] computeHash(string file)
+        private static byte[] ComputeHash(string file)
         {
             Stream fileStream = File.OpenRead(file);
             byte[] fileMD5 = new MD5Managed().ComputeHash(fileStream);
@@ -150,27 +121,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return fileMD5;
         }
 
+        #region WaitUntil methods syncronous
+
         public static T WaitUntilSuccess<T>(Func<T> loadFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
-            T result = default(T);            
+            T result = default(T);
             WaitUntil(() =>
-            {            
+            {
                 try
                 {
                     result = loadFunction();
                     return result != null;
                 }
                 catch
-                {                
+                {
                     return false;
                 }
             }, sleepSeconds, maxWaitSeconds);
-            
+
             return result;
         }
 
         public static void WaitUntilException(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
-        {        
+        {
             WaitUntil(() =>
             {
                 try
@@ -220,11 +193,96 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
             var endTime = DateTime.UtcNow + maxTime;
 
-            while(DateTime.UtcNow < endTime)
+            while (DateTime.UtcNow < endTime)
             {
                 if (matchFunction())
+                {
                     return;
+                }
+
                 sleeper.Sleep();
+            }
+
+            throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
+        }
+
+        #endregion
+
+        #region WaitUntil methods asyncronous
+
+        public static async Task<T> WaitUntilSuccessAsync<T>(Func<Task<T>> loadFunctionAsync, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            T result = default;
+            await WaitUntilAsync(async () =>
+            {
+                try
+                {
+                    result = await loadFunctionAsync().ConfigureAwait(false);
+                    return result != null;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleepSeconds, maxWaitSeconds).ConfigureAwait(false);
+
+            return result;
+        }
+
+        public static async Task WaitUntilSuccessAsync(Func<Task> asyncAction, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException(nameof(sleepSeconds));
+            await WaitUntilSuccessAsync(asyncAction, new ListSleeper(sleepSeconds * 1000), maxWaitSeconds).ConfigureAwait(false);
+        }
+
+        public static async Task WaitUntilSuccessAsync(Func<Task> asyncAction, ListSleeper sleeper, int maxWaitSeconds = 300)
+        {
+            await WaitUntilAsync(async () =>
+            {
+                try
+                {
+                    await asyncAction().ConfigureAwait(false);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }, sleeper, maxWaitSeconds).ConfigureAwait(false);
+        }
+
+        public static async Task WaitUntilAsync(Func<Task<bool>> matchFunctionAsync, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        {
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException(nameof(sleepSeconds));
+            await WaitUntilAsync(matchFunctionAsync, new ListSleeper(sleepSeconds * 1000), maxWaitSeconds).ConfigureAwait(false);
+        }
+
+        public static async Task WaitUntilAsync(Func<Task<bool>> matchFunctionAsync, ListSleeper sleeper, int maxWaitSeconds = 300)
+        {
+            if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException(nameof(maxWaitSeconds));
+
+            var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
+            var endTime = DateTime.UtcNow + maxTime;
+
+            while (DateTime.UtcNow < endTime)
+            {
+                bool matched;
+                try
+                {
+                    matched = await matchFunctionAsync().ConfigureAwait(false);
+                }
+                catch
+                {
+                    // Mirror the sync WaitUntil behavior: treat exceptions as non-match and keep retrying.
+                    matched = false;
+                }
+
+                if (matched)
+                {
+                    return;
+                }
+
+                await sleeper.SleepAsync().ConfigureAwait(false);
             }
 
             throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
@@ -237,7 +295,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         /// <param name="asyncFunc"> Async function  </param>
         /// <param name="timeout"> Timeout </param>
         /// <exception cref="TimeoutException"> Thrown when the <paramref name="asyncFunc"/> runs out of <paramref name="timeout"/></exception>
-        public static async Task WaitUntilAsync(Func<Task> asyncFunc, TimeSpan timeout)
+        public static async Task WaitForCompletionOrTimeoutAsync(Func<Task> asyncFunc, TimeSpan timeout)
         {
             // Create a CancellationTokenSource with the specified timeout duration
             using (var cts = new CancellationTokenSource(timeout))
@@ -260,6 +318,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 throw new TimeoutException("The operation has timed out.");
             }
         }
+
+        #endregion
 
         public static void WriteFile(string path, string contents)
         {
@@ -292,8 +352,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static string GenerateName(string name)
         {
-            return name + DateTime.UtcNow.Ticks;
+            return name + Guid.NewGuid().ToString("N");
         }
+
         public class ListSleeper
         {
             private int attempt;
@@ -314,6 +375,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 var index = Math.Min(attempt, millisecondsList.Length - 1);
                 Thread.Sleep(millisecondsList[index]);
                 attempt++;
+            }
+
+            public Task SleepAsync()
+            {
+                var index = Math.Min(attempt, millisecondsList.Length - 1);
+                attempt++;
+                return Task.Delay(millisecondsList[index]);
             }
 
             /// <summary>

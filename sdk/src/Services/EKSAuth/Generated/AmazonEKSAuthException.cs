@@ -36,6 +36,14 @@ namespace Amazon.EKSAuth
         /// <summary>
         /// Construct instance of AmazonEKSAuthException
         /// </summary>
+        public AmazonEKSAuthException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEKSAuthException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEKSAuthException(string message)
             : base(message)

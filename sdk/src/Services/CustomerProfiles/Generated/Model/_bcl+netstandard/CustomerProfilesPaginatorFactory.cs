@@ -53,6 +53,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListDomainObjectTypes operation
+        ///</summary>
+        public IListDomainObjectTypesPaginator ListDomainObjectTypes(ListDomainObjectTypesRequest request) 
+        {
+            return new ListDomainObjectTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventStreams operation
         ///</summary>
         public IListEventStreamsPaginator ListEventStreams(ListEventStreamsRequest request) 
@@ -74,6 +82,22 @@ namespace Amazon.CustomerProfiles.Model
         public IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request) 
         {
             return new ListObjectTypeAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecommenderRecipes operation
+        ///</summary>
+        public IListRecommenderRecipesPaginator ListRecommenderRecipes(ListRecommenderRecipesRequest request) 
+        {
+            return new ListRecommenderRecipesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecommenders operation
+        ///</summary>
+        public IListRecommendersPaginator ListRecommenders(ListRecommendersRequest request) 
+        {
+            return new ListRecommendersPaginator(this.client, request);
         }
 
         /// <summary>

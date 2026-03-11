@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for HsmClientCertificateAlreadyExistsException
+        /// message.
+        /// </summary>
+        public HsmClientCertificateAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HsmClientCertificateAlreadyExistsException with the specified error
         /// message.
         /// </summary>

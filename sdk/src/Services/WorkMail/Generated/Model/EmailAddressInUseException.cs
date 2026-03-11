@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for EmailAddressInUseException
+        /// message.
+        /// </summary>
+        public EmailAddressInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EmailAddressInUseException with the specified error
         /// message.
         /// </summary>

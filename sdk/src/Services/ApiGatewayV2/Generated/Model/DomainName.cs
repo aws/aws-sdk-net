@@ -122,6 +122,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The name of the DomainName resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

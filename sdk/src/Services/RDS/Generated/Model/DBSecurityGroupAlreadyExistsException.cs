@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSecurityGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBSecurityGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSecurityGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

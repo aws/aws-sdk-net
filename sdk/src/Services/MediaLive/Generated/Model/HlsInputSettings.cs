@@ -46,7 +46,6 @@ namespace Amazon.MediaLive.Model
         /// bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per
         /// second, as in an HLS manifest.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? Bandwidth
         {
             get { return this._bandwidth; }
@@ -65,7 +64,6 @@ namespace Amazon.MediaLive.Model
         ///  When not specified, the HLS input will begin with the first segment specified in
         /// the m3u8.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? BufferSegments
         {
             get { return this._bufferSegments; }
@@ -82,7 +80,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Retries. The number of consecutive times that attempts
         /// to read a manifest or segment must fail before the input is considered unavailable.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? Retries
         {
             get { return this._retries; }
@@ -99,7 +96,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RetryInterval. The number of seconds between retries when
         /// an attempt to read a manifest or segment fails.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? RetryInterval
         {
             get { return this._retryInterval; }

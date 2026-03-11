@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterVersionLabelLimitExceededException
+        /// message.
+        /// </summary>
+        public ParameterVersionLabelLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterVersionLabelLimitExceededException with the specified error
         /// message.
         /// </summary>

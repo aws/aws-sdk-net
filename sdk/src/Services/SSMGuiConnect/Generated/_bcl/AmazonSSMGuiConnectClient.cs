@@ -303,7 +303,7 @@ namespace Amazon.SSMGuiConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-guiconnect-2021-05-01/DeleteConnectionRecordingPreferences">REST API Reference for DeleteConnectionRecordingPreferences Operation</seealso>
         public virtual DeleteConnectionRecordingPreferencesResponse DeleteConnectionRecordingPreferences(DeleteConnectionRecordingPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRecordingPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionRecordingPreferencesResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.SSMGuiConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-guiconnect-2021-05-01/DeleteConnectionRecordingPreferences">REST API Reference for DeleteConnectionRecordingPreferences Operation</seealso>
         public virtual Task<DeleteConnectionRecordingPreferencesResponse> DeleteConnectionRecordingPreferencesAsync(DeleteConnectionRecordingPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRecordingPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionRecordingPreferencesResponseUnmarshaller.Instance;
             
@@ -387,7 +387,7 @@ namespace Amazon.SSMGuiConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-guiconnect-2021-05-01/GetConnectionRecordingPreferences">REST API Reference for GetConnectionRecordingPreferences Operation</seealso>
         public virtual GetConnectionRecordingPreferencesResponse GetConnectionRecordingPreferences(GetConnectionRecordingPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRecordingPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionRecordingPreferencesResponseUnmarshaller.Instance;
 
@@ -429,7 +429,7 @@ namespace Amazon.SSMGuiConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-guiconnect-2021-05-01/GetConnectionRecordingPreferences">REST API Reference for GetConnectionRecordingPreferences Operation</seealso>
         public virtual Task<GetConnectionRecordingPreferencesResponse> GetConnectionRecordingPreferencesAsync(GetConnectionRecordingPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRecordingPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionRecordingPreferencesResponseUnmarshaller.Instance;
             
@@ -471,7 +471,7 @@ namespace Amazon.SSMGuiConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-guiconnect-2021-05-01/UpdateConnectionRecordingPreferences">REST API Reference for UpdateConnectionRecordingPreferences Operation</seealso>
         public virtual UpdateConnectionRecordingPreferencesResponse UpdateConnectionRecordingPreferences(UpdateConnectionRecordingPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRecordingPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionRecordingPreferencesResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.SSMGuiConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-guiconnect-2021-05-01/UpdateConnectionRecordingPreferences">REST API Reference for UpdateConnectionRecordingPreferences Operation</seealso>
         public virtual Task<UpdateConnectionRecordingPreferencesResponse> UpdateConnectionRecordingPreferencesAsync(UpdateConnectionRecordingPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRecordingPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionRecordingPreferencesResponseUnmarshaller.Instance;
             

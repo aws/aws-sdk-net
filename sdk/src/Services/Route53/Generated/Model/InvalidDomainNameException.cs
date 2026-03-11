@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDomainNameException
+        /// message.
+        /// </summary>
+        public InvalidDomainNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDomainNameException with the specified error
         /// message.
         /// </summary>

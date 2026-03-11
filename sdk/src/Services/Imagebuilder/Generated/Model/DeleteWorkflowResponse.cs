@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowBuildVersionArn. 
         /// <para>
-        /// The ARN of the workflow resource that this request deleted.
+        /// The Amazon Resource Name (ARN) of the workflow resource that this request deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

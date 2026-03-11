@@ -361,6 +361,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribeResponsibilityTransfer(Amazon.Organizations.Model.DescribeResponsibilityTransferRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribeResponsibilityTransfer(Amazon.Organizations.Model.DescribeResponsibilityTransferRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribeResponsibilityTransferRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribeResponsibilityTransferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request information about a transfer:/n/n
+                </para>
+                <code
+                    title="To get information about a transfer"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-information-about-a-transfer" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Organizations.IAmazonOrganizations.DetachPolicy(Amazon.Organizations.Model.DetachPolicyRequest)" />
             <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DetachPolicy(Amazon.Organizations.Model.DetachPolicyRequest)" />
             <member name="T:Amazon.Organizations.Model.DetachPolicyRequest" />
@@ -456,6 +475,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.InviteOrganizationToTransferResponsibility(Amazon.Organizations.Model.InviteOrganizationToTransferResponsibilityRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.InviteOrganizationToTransferResponsibility(Amazon.Organizations.Model.InviteOrganizationToTransferResponsibilityRequest)" />
+            <member name="T:Amazon.Organizations.Model.InviteOrganizationToTransferResponsibilityRequest" />
+            <member name="T:Amazon.Organizations.Model.InviteOrganizationToTransferResponsibilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows the management account owned by diego@example.com inviting the management account owned by juan@example.com to transfer responsibility.
+                </para>
+                <code
+                    title="To invite an organization to transfer responsibility"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-invite-an-organization-to-transfer-responsibility" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Organizations.IAmazonOrganizations.LeaveOrganization(Amazon.Organizations.Model.LeaveOrganizationRequest)" />
             <member name="M:Amazon.Organizations.AmazonOrganizationsClient.LeaveOrganization(Amazon.Organizations.Model.LeaveOrganizationRequest)" />
             <member name="T:Amazon.Organizations.Model.LeaveOrganizationRequest" />
@@ -508,6 +546,25 @@
                     title="To retrieve a list of all of the accounts in a root or OU"
                     source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
                     region="to-retrieve-a-list-of-all-of-the-accounts-in-a-root-or-ou-1472509590974" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListAccountsWithInvalidEffectivePolicy(Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListAccountsWithInvalidEffectivePolicy(Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to request a list of the accounts in an organization having invalid effective policy for a policy type:
+                </para>
+                <code
+                    title="To list all accounts in an organization with invalid effective policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-list-all-accounts-in-an-organization-with-invalid-effective-policy" />
             </example>
         </value>
     </doc>
@@ -570,6 +627,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListEffectivePolicyValidationErrors(Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListEffectivePolicyValidationErrors(Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest" />
+            <member name="T:Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to request a list of effective policy validation errors for an account and policy type:
+                </para>
+                <code
+                    title="To list all effective policy validation errors for an account policy type"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-list-all-effective-policy-validation-errors-for-an-account-policy-type" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Organizations.IAmazonOrganizations.ListHandshakesForAccount(Amazon.Organizations.Model.ListHandshakesForAccountRequest)" />
             <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListHandshakesForAccount(Amazon.Organizations.Model.ListHandshakesForAccountRequest)" />
             <member name="T:Amazon.Organizations.Model.ListHandshakesForAccountRequest" />
@@ -608,6 +684,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListInboundResponsibilityTransfers(Amazon.Organizations.Model.ListInboundResponsibilityTransfersRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListInboundResponsibilityTransfers(Amazon.Organizations.Model.ListInboundResponsibilityTransfersRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListInboundResponsibilityTransfersRequest" />
+            <member name="T:Amazon.Organizations.Model.ListInboundResponsibilityTransfersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get a list of all inbound responsibility transfers that are associated with the account of the credentials that were used to call the operation:
+                </para>
+                <code
+                    title="To get a list of all inbound responsibility transfers"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-a-list-of-all-inbound-responsibility-transfers" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Organizations.IAmazonOrganizations.ListOrganizationalUnitsForParent(Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest)" />
             <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListOrganizationalUnitsForParent(Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest)" />
             <member name="T:Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest" />
@@ -622,6 +717,25 @@
                     title="To retrieve a list of all of the child OUs in a parent root or OU"
                     source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
                     region="to-retrieve-a-list-of-all-of-the-OUs-in-a-parent-container" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListOutboundResponsibilityTransfers(Amazon.Organizations.Model.ListOutboundResponsibilityTransfersRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListOutboundResponsibilityTransfers(Amazon.Organizations.Model.ListOutboundResponsibilityTransfersRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListOutboundResponsibilityTransfersRequest" />
+            <member name="T:Amazon.Organizations.Model.ListOutboundResponsibilityTransfersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get a list of all outbound responsibility transfers that are associated with the account of the credentials that were used to call the operation:
+                </para>
+                <code
+                    title="To get a list of all outbound responsibility transfers"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-a-list-of-all-outbound-responsibility-transfers" />
             </example>
         </value>
     </doc>
@@ -760,6 +874,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.TerminateResponsibilityTransfer(Amazon.Organizations.Model.TerminateResponsibilityTransferRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.TerminateResponsibilityTransfer(Amazon.Organizations.Model.TerminateResponsibilityTransferRequest)" />
+            <member name="T:Amazon.Organizations.Model.TerminateResponsibilityTransferRequest" />
+            <member name="T:Amazon.Organizations.Model.TerminateResponsibilityTransferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to terminate a transfer:/n/n
+                </para>
+                <code
+                    title="To terminate a transfer"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-terminate-a-transfer" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Organizations.IAmazonOrganizations.UpdateOrganizationalUnit(Amazon.Organizations.Model.UpdateOrganizationalUnitRequest)" />
             <member name="M:Amazon.Organizations.AmazonOrganizationsClient.UpdateOrganizationalUnit(Amazon.Organizations.Model.UpdateOrganizationalUnitRequest)" />
             <member name="T:Amazon.Organizations.Model.UpdateOrganizationalUnitRequest" />
@@ -812,6 +945,25 @@
                     title="To update the content of a policy"
                     source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
                     region="to-update-the-content-of-a-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.UpdateResponsibilityTransfer(Amazon.Organizations.Model.UpdateResponsibilityTransferRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.UpdateResponsibilityTransfer(Amazon.Organizations.Model.UpdateResponsibilityTransferRequest)" />
+            <member name="T:Amazon.Organizations.Model.UpdateResponsibilityTransferRequest" />
+            <member name="T:Amazon.Organizations.Model.UpdateResponsibilityTransferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to rename a transfer. The output confirms the new name:/n/n
+                </para>
+                <code
+                    title="To rename a transfer"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-rename-a-transfer" />
             </example>
         </value>
     </doc>

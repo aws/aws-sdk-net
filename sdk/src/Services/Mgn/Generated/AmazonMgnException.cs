@@ -36,6 +36,14 @@ namespace Amazon.Mgn
         /// <summary>
         /// Construct instance of AmazonMgnException
         /// </summary>
+        public AmazonMgnException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMgnException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMgnException(string message)
             : base(message)

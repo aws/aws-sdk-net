@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListConnectionGroupsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/connection-groups";
 
@@ -63,7 +64,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("ListConnectionGroupsRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                if (publicRequest.AssociationFilter != null)
+                if (publicRequest.IsSetAssociationFilter())
                 {
                     xmlWriter.WriteStartElement("AssociationFilter");
                     if(publicRequest.AssociationFilter.IsSetAnycastIpListId())
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -90,8 +92,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListConnectionGroupsRequestMarshaller _instance = new ListConnectionGroupsRequestMarshaller();        
@@ -113,5 +113,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListConnectionGroupsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListConnectionGroupsRequest publicRequest);
     }    
 }

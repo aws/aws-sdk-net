@@ -36,6 +36,14 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <summary>
         /// Construct instance of AmazonChimeSDKMediaPipelinesException
         /// </summary>
+        public AmazonChimeSDKMediaPipelinesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonChimeSDKMediaPipelinesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonChimeSDKMediaPipelinesException(string message)
             : base(message)

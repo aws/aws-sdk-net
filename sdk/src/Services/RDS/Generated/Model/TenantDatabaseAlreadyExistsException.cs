@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for TenantDatabaseAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TenantDatabaseAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TenantDatabaseAlreadyExistsException with the specified error
         /// message.
         /// </summary>

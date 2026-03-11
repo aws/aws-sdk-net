@@ -35,12 +35,45 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ByoipCidr
     {
+        private string _advertisementType;
         private List<AsnAssociation> _asnAssociations = AWSConfigs.InitializeCollections ? new List<AsnAssociation>() : null;
         private string _cidr;
         private string _description;
         private string _networkBorderGroup;
         private ByoipCidrState _state;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property AdvertisementType. 
+        /// <para>
+        /// Specifies the advertisement method for the BYOIP CIDR. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>unicast</c>: IP is advertised from a single location (regional services like EC2)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>anycast</c>: IP is advertised from multiple global locations simultaneously (global
+        /// services like CloudFront)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring
+        /// your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AdvertisementType
+        {
+            get { return this._advertisementType; }
+            set { this._advertisementType = value; }
+        }
+
+        // Check to see if AdvertisementType property is set
+        internal bool IsSetAdvertisementType()
+        {
+            return this._advertisementType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AsnAssociations. 

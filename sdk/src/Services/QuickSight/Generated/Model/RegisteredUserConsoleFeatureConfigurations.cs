@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The feature configurations of an embedded Amazon QuickSight console.
+    /// The feature configurations of an embedded Amazon Quick Sight console.
     /// </summary>
     public partial class RegisteredUserConsoleFeatureConfigurations
     {
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AmazonQInQuickSight. 
         /// <para>
-        /// The Amazon Q configurations of an embedded Amazon QuickSight console.
+        /// The Amazon Q configurations of an embedded Amazon Quick Sight console.
         /// </para>
         /// </summary>
         public AmazonQInQuickSightConsoleConfigurations AmazonQInQuickSight
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RecentSnapshots. 
         /// <para>
-        /// The recent snapshots configuration for an embedded Amazon QuickSight dashboard.
+        /// The recent snapshots configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         public RecentSnapshotsConfigurations RecentSnapshots
@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Schedules. 
         /// <para>
-        /// The schedules configuration for an embedded Amazon QuickSight dashboard.
+        /// The schedules configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         public SchedulesConfigurations Schedules
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property StatePersistence. 
         /// <para>
-        /// The state persistence configurations of an embedded Amazon QuickSight console.
+        /// The state persistence configurations of an embedded Amazon Quick Sight console.
         /// </para>
         /// </summary>
         public StatePersistenceConfigurations StatePersistence
@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ThresholdAlerts. 
         /// <para>
-        /// The threshold alerts configuration for an embedded Amazon QuickSight dashboard.
+        /// The threshold alerts configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         public ThresholdAlertsConfigurations ThresholdAlerts

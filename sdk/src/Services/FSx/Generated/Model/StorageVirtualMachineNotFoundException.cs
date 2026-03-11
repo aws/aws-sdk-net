@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for StorageVirtualMachineNotFoundException
+        /// message.
+        /// </summary>
+        public StorageVirtualMachineNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StorageVirtualMachineNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.AppConfig.Model
         private float? _size;
 
         /// <summary>
+        /// Default constructor for PayloadTooLargeException
+        /// message.
+        /// </summary>
+        public PayloadTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PayloadTooLargeException with the specified error
         /// message.
         /// </summary>

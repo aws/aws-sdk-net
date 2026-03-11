@@ -40,6 +40,13 @@ namespace Amazon.OpenSearchServerless.Model
     {
 
         /// <summary>
+        /// Default constructor for OcuLimitExceededException
+        /// message.
+        /// </summary>
+        public OcuLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OcuLimitExceededException with the specified error
         /// message.
         /// </summary>

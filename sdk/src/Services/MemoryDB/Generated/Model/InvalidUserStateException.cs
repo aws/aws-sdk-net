@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The user is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidUserStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidUserStateException
+        /// message.
+        /// </summary>
+        public InvalidUserStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidUserStateException with the specified error

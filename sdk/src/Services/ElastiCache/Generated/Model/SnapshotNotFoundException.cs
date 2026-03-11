@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotNotFoundException
+        /// message.
+        /// </summary>
+        public SnapshotNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotNotFoundException with the specified error
         /// message.
         /// </summary>

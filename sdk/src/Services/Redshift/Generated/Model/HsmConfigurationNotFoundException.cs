@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for HsmConfigurationNotFoundException
+        /// message.
+        /// </summary>
+        public HsmConfigurationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HsmConfigurationNotFoundException with the specified error
         /// message.
         /// </summary>

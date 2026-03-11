@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterSnapshotNotFoundException
+        /// message.
+        /// </summary>
+        public DBClusterSnapshotNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterSnapshotNotFoundException with the specified error
         /// message.
         /// </summary>

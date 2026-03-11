@@ -31,7 +31,21 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRunGroup operation.
-    /// Deletes a workflow run group.
+    /// Deletes a run group and returns a response with no body if the operation is successful.
+    /// 
+    ///  
+    /// <para>
+    /// To verify that the run group is deleted:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Use <c>ListRunGroups</c> to confirm the workflow no longer appears in the list.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <c>GetRunGroup</c> to verify the workflow cannot be found.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteRunGroupRequest : AmazonOmicsRequest
     {

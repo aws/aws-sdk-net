@@ -27,15 +27,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Specifies JSON as request's output serialization format
     /// </summary>
-    public class JSONOutput
+    public partial class JSONOutput
     {
-        /// <summary>
-        /// The value used to separate individual records in the output.
-        /// </summary>
-        public string RecordDelimiter { get; set; }
-
-        internal bool IsSetRecordDelimiter() => RecordDelimiter != null;
-
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);

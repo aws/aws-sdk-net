@@ -44,7 +44,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The Amazon Resource Name (ARN) of the resource that you want to untag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

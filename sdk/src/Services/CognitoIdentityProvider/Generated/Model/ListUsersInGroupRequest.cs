@@ -87,6 +87,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of groups that you want Amazon Cognito to return in the response.
+        /// In some SDK contexts, this operation might return fewer items than you specify in
+        /// the <c>Limit</c> parameter without having reached the end of the full list. If the
+        /// response contains a <c>PaginationToken</c>, then there are more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

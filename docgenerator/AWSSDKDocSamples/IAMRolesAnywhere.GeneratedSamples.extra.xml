@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.IAMRolesAnywhere.IAmazonIAMRolesAnywhere.DeleteAttributeMapping(Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingRequest)" />
+            <member name="M:Amazon.IAMRolesAnywhere.AmazonIAMRolesAnywhereClient.DeleteAttributeMapping(Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingRequest)" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingRequest" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DeleteAttributeMapping - Deletes a custom attribute mapping rule"
+                    source=".\AWSSDKDocSamples\IAMRolesAnywhere\IAMRolesAnywhere.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IAMRolesAnywhere.IAmazonIAMRolesAnywhere.PutAttributeMapping(Amazon.IAMRolesAnywhere.Model.PutAttributeMappingRequest)" />
+            <member name="M:Amazon.IAMRolesAnywhere.AmazonIAMRolesAnywhereClient.PutAttributeMapping(Amazon.IAMRolesAnywhere.Model.PutAttributeMappingRequest)" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.PutAttributeMappingRequest" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.PutAttributeMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="PutAttributeMapping - Adds a custom attribute mapping rule"
+                    source=".\AWSSDKDocSamples\IAMRolesAnywhere\IAMRolesAnywhere.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IAMRolesAnywhere.IAmazonIAMRolesAnywhere.PutNotificationSettings(Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsRequest)" />
+            <member name="M:Amazon.IAMRolesAnywhere.AmazonIAMRolesAnywhereClient.PutNotificationSettings(Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsRequest)" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsRequest" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="PutNotificationSettings - Adds custom notification settings"
+                    source=".\AWSSDKDocSamples\IAMRolesAnywhere\IAMRolesAnywhere.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IAMRolesAnywhere.IAmazonIAMRolesAnywhere.ResetNotificationSettings(Amazon.IAMRolesAnywhere.Model.ResetNotificationSettingsRequest)" />
+            <member name="M:Amazon.IAMRolesAnywhere.AmazonIAMRolesAnywhereClient.ResetNotificationSettings(Amazon.IAMRolesAnywhere.Model.ResetNotificationSettingsRequest)" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.ResetNotificationSettingsRequest" />
+            <member name="T:Amazon.IAMRolesAnywhere.Model.ResetNotificationSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ResetNotificationSettings - Resets to IAM Roles Anywhere defined default notification settings"
+                    source=".\AWSSDKDocSamples\IAMRolesAnywhere\IAMRolesAnywhere.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

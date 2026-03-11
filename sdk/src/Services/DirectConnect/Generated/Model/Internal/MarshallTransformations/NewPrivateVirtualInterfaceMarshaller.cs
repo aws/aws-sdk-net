@@ -64,6 +64,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Asn.Value);
             }
 
+            if(requestObject.IsSetAsnLong())
+            {
+                context.Writer.WritePropertyName("asnLong");
+                context.Writer.WriteNumberValue(requestObject.AsnLong.Value);
+            }
+
             if(requestObject.IsSetAuthKey())
             {
                 context.Writer.WritePropertyName("authKey");

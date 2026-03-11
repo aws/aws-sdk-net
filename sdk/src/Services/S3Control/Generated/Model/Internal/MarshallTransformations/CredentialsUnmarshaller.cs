@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Credentials Object
     /// </summary>  
-    public class CredentialsUnmarshaller : IXmlUnmarshaller<Credentials, XmlUnmarshallerContext>
+    public partial class CredentialsUnmarshaller : IXmlUnmarshaller<Credentials, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, Credentials unmarshalledObject, int targetDepth);
+
         private static CredentialsUnmarshaller _instance = new CredentialsUnmarshaller();        
 
         /// <summary>

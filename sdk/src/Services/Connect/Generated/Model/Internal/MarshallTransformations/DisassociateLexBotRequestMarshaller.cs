@@ -65,6 +65,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            if (string.IsNullOrEmpty(publicRequest.BotName))
+                throw new AmazonConnectException("Request object does not have required field BotName set");
             
             if (publicRequest.IsSetBotName())
                 request.Parameters.Add("botName", StringUtils.FromString(publicRequest.BotName));
@@ -74,6 +76,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            if (string.IsNullOrEmpty(publicRequest.LexRegion))
+                throw new AmazonConnectException("Request object does not have required field LexRegion set");
             
             if (publicRequest.IsSetLexRegion())
                 request.Parameters.Add("lexRegion", StringUtils.FromString(publicRequest.LexRegion));

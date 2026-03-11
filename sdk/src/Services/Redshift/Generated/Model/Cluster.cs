@@ -39,6 +39,7 @@ namespace Amazon.Redshift.Model
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
         private string _availabilityZoneRelocationStatus;
+        private string _catalogArn;
         private string _clusterAvailabilityStatus;
         private DateTime? _clusterCreateTime;
         private string _clusterIdentifier;
@@ -66,10 +67,12 @@ namespace Amazon.Redshift.Model
         private bool? _enhancedVpcRouting;
         private DateTime? _expectedNextSnapshotScheduleTime;
         private string _expectedNextSnapshotScheduleTimeStatus;
+        private string _extraComputeForAutomaticOptimization;
         private HsmStatus _hsmStatus;
         private List<ClusterIamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<ClusterIamRole>() : null;
         private string _ipAddressType;
         private string _kmsKeyId;
+        private string _lakehouseRegistrationStatus;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterPasswordSecretArn;
@@ -187,6 +190,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvailabilityZoneRelocationStatus()
         {
             return this._availabilityZoneRelocationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster
+        /// enabled with Amazon Redshift federated permissions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string CatalogArn
+        {
+            get { return this._catalogArn; }
+            set { this._catalogArn = value; }
+        }
+
+        // Check to see if CatalogArn property is set
+        internal bool IsSetCatalogArn()
+        {
+            return this._catalogArn != null;
         }
 
         /// <summary>
@@ -848,6 +871,30 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtraComputeForAutomaticOptimization. 
+        /// <para>
+        /// A boolean value that, if <c>true</c>, indicates that the cluster allocates additional
+        /// compute resources to run automatic optimization operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ExtraComputeForAutomaticOptimization
+        {
+            get { return this._extraComputeForAutomaticOptimization; }
+            set { this._extraComputeForAutomaticOptimization = value; }
+        }
+
+        // Check to see if ExtraComputeForAutomaticOptimization property is set
+        internal bool IsSetExtraComputeForAutomaticOptimization()
+        {
+            return this._extraComputeForAutomaticOptimization != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HsmStatus. 
         /// <para>
         /// A value that reports whether the Amazon Redshift cluster has finished applying any
@@ -931,6 +978,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakehouseRegistrationStatus. 
+        /// <para>
+        /// The status of the lakehouse registration for the cluster. Indicates whether the cluster
+        /// is successfully registered with Amazon Redshift federated permissions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string LakehouseRegistrationStatus
+        {
+            get { return this._lakehouseRegistrationStatus; }
+            set { this._lakehouseRegistrationStatus = value; }
+        }
+
+        // Check to see if LakehouseRegistrationStatus property is set
+        internal bool IsSetLakehouseRegistrationStatus()
+        {
+            return this._lakehouseRegistrationStatus != null;
         }
 
         /// <summary>

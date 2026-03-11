@@ -62,6 +62,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationCodeConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ApplicationEncryptionConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = ApplicationEncryptionConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationEncryptionConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ApplicationSnapshotConfigurationDescription", targetDepth))
                 {
                     var unmarshaller = ApplicationSnapshotConfigurationDescriptionUnmarshaller.Instance;

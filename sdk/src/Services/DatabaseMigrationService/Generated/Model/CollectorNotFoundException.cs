@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for CollectorNotFoundException
+        /// message.
+        /// </summary>
+        public CollectorNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CollectorNotFoundException with the specified error
         /// message.
         /// </summary>

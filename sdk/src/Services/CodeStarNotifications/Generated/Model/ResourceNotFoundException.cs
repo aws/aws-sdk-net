@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
+    /// CodeStar Notifications can't find a resource that matches the provided ARN.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ResourceNotFoundException : AmazonCodeStarNotificationsException
     {
+
+        /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error

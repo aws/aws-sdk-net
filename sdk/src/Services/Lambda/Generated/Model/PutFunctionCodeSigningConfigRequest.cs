@@ -46,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// The The Amazon Resource Name (ARN) of the code signing configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string CodeSigningConfigArn
         {
             get { return this._codeSigningConfigArn; }
@@ -86,7 +86,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=140)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FunctionName
         {
             get { return this._functionName; }

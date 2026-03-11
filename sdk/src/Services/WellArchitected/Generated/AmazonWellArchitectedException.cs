@@ -36,6 +36,14 @@ namespace Amazon.WellArchitected
         /// <summary>
         /// Construct instance of AmazonWellArchitectedException
         /// </summary>
+        public AmazonWellArchitectedException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonWellArchitectedException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonWellArchitectedException(string message)
             : base(message)

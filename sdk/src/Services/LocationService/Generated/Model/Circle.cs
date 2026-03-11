@@ -69,7 +69,7 @@ namespace Amazon.LocationService.Model
         /// (100 kilometers).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public double? Radius
         {
             get { return this._radius; }

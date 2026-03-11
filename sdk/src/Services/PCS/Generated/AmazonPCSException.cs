@@ -36,6 +36,14 @@ namespace Amazon.PCS
         /// <summary>
         /// Construct instance of AmazonPCSException
         /// </summary>
+        public AmazonPCSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPCSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPCSException(string message)
             : base(message)

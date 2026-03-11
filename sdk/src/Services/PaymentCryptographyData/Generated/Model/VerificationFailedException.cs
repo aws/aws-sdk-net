@@ -40,6 +40,13 @@ namespace Amazon.PaymentCryptographyData.Model
         private VerificationFailedReason _reason;
 
         /// <summary>
+        /// Default constructor for VerificationFailedException
+        /// message.
+        /// </summary>
+        public VerificationFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VerificationFailedException with the specified error
         /// message.
         /// </summary>

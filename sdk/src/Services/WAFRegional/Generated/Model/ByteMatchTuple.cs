@@ -251,6 +251,7 @@ namespace Amazon.WAFRegional.Model
         /// the value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream TargetStream
         {
             get { return this._targetStream; }

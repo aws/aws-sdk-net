@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FolderContentSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public FolderContentSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FolderContentSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

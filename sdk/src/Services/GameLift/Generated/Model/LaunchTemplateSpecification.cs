@@ -30,15 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift Servers FleetIQ and game server
-    /// groups.</b> 
-    /// 
-    ///  
-    /// <para>
     /// An Amazon Elastic Compute Cloud launch template that contains configuration settings
     /// and game server code to be deployed to all instances in a game server group. The launch
-    /// template is specified when creating a new game server group. 
-    /// </para>
+    /// template is specified when creating a new game server group.
     /// </summary>
     public partial class LaunchTemplateSpecification
     {

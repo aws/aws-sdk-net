@@ -86,6 +86,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeStackResourceDriftsRequestMarshaller _instance = new DescribeStackResourceDriftsRequestMarshaller();        

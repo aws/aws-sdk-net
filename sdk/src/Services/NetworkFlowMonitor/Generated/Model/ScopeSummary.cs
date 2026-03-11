@@ -61,9 +61,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property ScopeId. 
         /// <para>
-        /// The identifier for the scope that includes the resources you want to get data results
-        /// for. A scope ID is an internally-generated identifier that includes all the resources
-        /// for a specific root account.
+        /// The identifier for the scope that includes the resources that you want to get data
+        /// results for. A scope ID is an internally-generated identifier that includes all the
+        /// resources for the accounts in a scope.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

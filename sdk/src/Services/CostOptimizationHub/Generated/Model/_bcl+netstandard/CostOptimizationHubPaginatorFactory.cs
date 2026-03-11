@@ -37,6 +37,14 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListEfficiencyMetrics operation
+        ///</summary>
+        public IListEfficiencyMetricsPaginator ListEfficiencyMetrics(ListEfficiencyMetricsRequest request) 
+        {
+            return new ListEfficiencyMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnrollmentStatuses operation
         ///</summary>
         public IListEnrollmentStatusesPaginator ListEnrollmentStatuses(ListEnrollmentStatusesRequest request) 

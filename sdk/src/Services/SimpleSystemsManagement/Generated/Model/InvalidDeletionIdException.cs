@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeletionIdException
+        /// message.
+        /// </summary>
+        public InvalidDeletionIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeletionIdException with the specified error
         /// message.
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+    /// For more information and a list of supported services/service principals, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
     /// <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
     /// </para>
     ///  

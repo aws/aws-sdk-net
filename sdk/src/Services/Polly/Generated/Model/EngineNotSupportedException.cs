@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for EngineNotSupportedException
+        /// message.
+        /// </summary>
+        public EngineNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EngineNotSupportedException with the specified error
         /// message.
         /// </summary>

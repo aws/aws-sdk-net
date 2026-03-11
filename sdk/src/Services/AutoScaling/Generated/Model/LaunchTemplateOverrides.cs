@@ -60,10 +60,49 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class LaunchTemplateOverrides
     {
+        private string _imageId;
         private InstanceRequirements _instanceRequirements;
         private string _instanceType;
         private LaunchTemplateSpecification _launchTemplateSpecification;
         private string _weightedCapacity;
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        ///  The ID of the Amazon Machine Image (AMI) to use for instances launched with this
+        /// override. When using Instance Refresh with <c>ReplaceRootVolume</c> strategy, this
+        /// specifies the AMI for root volume replacement operations. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For <c>ReplaceRootVolume</c> operations: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// All overrides in the <c>MixedInstancesPolicy</c> must specify an ImageId
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The AMI must contain only a single root volume
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Root volume replacement doesn't support multi-volume AMIs
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=5, Max=21)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceRequirements. 

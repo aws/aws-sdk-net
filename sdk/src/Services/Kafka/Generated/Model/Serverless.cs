@@ -35,6 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class Serverless
     {
         private ServerlessClientAuthentication _clientAuthentication;
+        private ServerlessConnectivityInfo _connectivityInfo;
         private List<VpcConfig> _vpcConfigs = AWSConfigs.InitializeCollections ? new List<VpcConfig>() : null;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.Kafka.Model
         internal bool IsSetClientAuthentication()
         {
             return this._clientAuthentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityInfo.             
+        /// <para>
+        /// Describes the cluster's connectivity information, such as its network type, which
+        /// is IPv4 or DUAL.
+        /// </para>
+        /// </summary>
+        public ServerlessConnectivityInfo ConnectivityInfo
+        {
+            get { return this._connectivityInfo; }
+            set { this._connectivityInfo = value; }
+        }
+
+        // Check to see if ConnectivityInfo property is set
+        internal bool IsSetConnectivityInfo()
+        {
+            return this._connectivityInfo != null;
         }
 
         /// <summary>

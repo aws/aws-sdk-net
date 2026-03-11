@@ -35,20 +35,84 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterNodeDetails
     {
+        private ClusterCapacityType _capacityType;
+        private string _currentImageId;
+        private string _desiredImageId;
         private string _instanceGroupName;
         private string _instanceId;
         private ClusterInstanceStatusDetails _instanceStatus;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private ClusterKubernetesConfigNodeDetails _kubernetesConfig;
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private string _nodeLogicalId;
         private VpcConfig _overrideVpcConfig;
         private ClusterInstancePlacement _placement;
         private string _privateDnsHostname;
         private string _privatePrimaryIp;
         private string _privatePrimaryIpv6;
         private int? _threadsPerCore;
+        private UltraServerInfo _ultraServerInfo;
+
+        /// <summary>
+        /// Gets and sets the property CapacityType. 
+        /// <para>
+        /// The capacity type of the node. Valid values are <c>OnDemand</c> and <c>Spot</c>. When
+        /// set to <c>OnDemand</c>, the node is launched as an On-Demand instance. When set to
+        /// <c>Spot</c>, the node is launched as a Spot instance. 
+        /// </para>
+        /// </summary>
+        public ClusterCapacityType CapacityType
+        {
+            get { return this._capacityType; }
+            set { this._capacityType = value; }
+        }
+
+        // Check to see if CapacityType property is set
+        internal bool IsSetCapacityType()
+        {
+            return this._capacityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) currently in use by the node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string CurrentImageId
+        {
+            get { return this._currentImageId; }
+            set { this._currentImageId = value; }
+        }
+
+        // Check to see if CurrentImageId property is set
+        internal bool IsSetCurrentImageId()
+        {
+            return this._currentImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) desired for the node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string DesiredImageId
+        {
+            get { return this._desiredImageId; }
+            set { this._desiredImageId = value; }
+        }
+
+        // Check to see if DesiredImageId property is set
+        internal bool IsSetDesiredImageId()
+        {
+            return this._desiredImageId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 
@@ -117,7 +181,7 @@ namespace Amazon.SageMaker.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=4)]
         public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
         {
             get { return this._instanceStorageConfigs; }
@@ -146,6 +210,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesConfig. 
+        /// <para>
+        /// The Kubernetes configuration applied to this node, showing both the current and desired
+        /// state of labels and taints. The cluster works to reconcile the actual state with the
+        /// declared state. 
+        /// </para>
+        /// </summary>
+        public ClusterKubernetesConfigNodeDetails KubernetesConfig
+        {
+            get { return this._kubernetesConfig; }
+            set { this._kubernetesConfig = value; }
+        }
+
+        // Check to see if KubernetesConfig property is set
+        internal bool IsSetKubernetesConfig()
+        {
+            return this._kubernetesConfig != null;
         }
 
         /// <summary>
@@ -200,6 +284,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLogicalId. 
+        /// <para>
+        /// A unique identifier for the node that persists throughout its lifecycle, from provisioning
+        /// request to termination. This identifier can be used to track the node even before
+        /// it has an assigned <c>InstanceId</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string NodeLogicalId
+        {
+            get { return this._nodeLogicalId; }
+            set { this._nodeLogicalId = value; }
+        }
+
+        // Check to see if NodeLogicalId property is set
+        internal bool IsSetNodeLogicalId()
+        {
+            return this._nodeLogicalId != null;
         }
 
         /// <summary>
@@ -312,6 +417,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetThreadsPerCore()
         {
             return this._threadsPerCore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerInfo. 
+        /// <para>
+        /// Contains information about the UltraServer.
+        /// </para>
+        /// </summary>
+        public UltraServerInfo UltraServerInfo
+        {
+            get { return this._ultraServerInfo; }
+            set { this._ultraServerInfo = value; }
+        }
+
+        // Check to see if UltraServerInfo property is set
+        internal bool IsSetUltraServerInfo()
+        {
+            return this._ultraServerInfo != null;
         }
 
     }

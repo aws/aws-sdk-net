@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CloudFrontOriginAccessIdentity Object
     /// </summary>  
-    public class CloudFrontOriginAccessIdentityUnmarshaller : IXmlUnmarshaller<CloudFrontOriginAccessIdentity, XmlUnmarshallerContext>
+    public partial class CloudFrontOriginAccessIdentityUnmarshaller : IXmlUnmarshaller<CloudFrontOriginAccessIdentity, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3CanonicalUserId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CloudFrontOriginAccessIdentity unmarshalledObject, int targetDepth);
+
         private static CloudFrontOriginAccessIdentityUnmarshaller _instance = new CloudFrontOriginAccessIdentityUnmarshaller();        
 
         /// <summary>

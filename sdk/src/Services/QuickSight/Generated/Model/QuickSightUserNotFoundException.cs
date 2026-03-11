@@ -41,6 +41,13 @@ namespace Amazon.QuickSight.Model
     {
 
         /// <summary>
+        /// Default constructor for QuickSightUserNotFoundException
+        /// message.
+        /// </summary>
+        public QuickSightUserNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QuickSightUserNotFoundException with the specified error
         /// message.
         /// </summary>

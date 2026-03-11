@@ -65,6 +65,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            if (string.IsNullOrEmpty(publicRequest.LexVersion))
+                throw new AmazonConnectException("Request object does not have required field LexVersion set");
             
             if (publicRequest.IsSetLexVersion())
                 request.Parameters.Add("lexVersion", StringUtils.FromString(publicRequest.LexVersion));

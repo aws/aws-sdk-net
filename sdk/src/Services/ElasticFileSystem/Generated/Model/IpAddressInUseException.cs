@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for IpAddressInUseException
+        /// message.
+        /// </summary>
+        public IpAddressInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IpAddressInUseException with the specified error
         /// message.
         /// </summary>

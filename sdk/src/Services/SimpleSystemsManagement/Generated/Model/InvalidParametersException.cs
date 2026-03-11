@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidParametersException
+        /// message.
+        /// </summary>
+        public InvalidParametersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParametersException with the specified error
         /// message.
         /// </summary>

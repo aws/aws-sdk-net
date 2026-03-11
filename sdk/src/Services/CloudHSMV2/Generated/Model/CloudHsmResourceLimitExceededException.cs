@@ -39,6 +39,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmResourceLimitExceededException
+        /// message.
+        /// </summary>
+        public CloudHsmResourceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmResourceLimitExceededException with the specified error
         /// message.
         /// </summary>

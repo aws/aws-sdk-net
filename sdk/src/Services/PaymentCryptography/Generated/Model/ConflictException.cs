@@ -31,12 +31,26 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// This request can cause an inconsistent state for the resource.
+    /// 
+    ///  
+    /// <para>
+    /// The requested operation conflicts with the current state of the resource. For example,
+    /// attempting to delete a key that is currently being used, or trying to create a resource
+    /// that already exists.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ConflictException : AmazonPaymentCryptographyException
     {
+
+        /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error

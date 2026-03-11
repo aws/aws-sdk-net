@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDataRepositoryTypeException
+        /// message.
+        /// </summary>
+        public InvalidDataRepositoryTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDataRepositoryTypeException with the specified error
         /// message.
         /// </summary>

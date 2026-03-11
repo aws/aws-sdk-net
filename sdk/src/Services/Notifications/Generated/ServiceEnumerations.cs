@@ -39,6 +39,10 @@ namespace Amazon.Notifications
         /// </summary>
         public static readonly AccessStatus ENABLED = new AccessStatus("ENABLED");
         /// <summary>
+        /// Constant FAILED for AccessStatus
+        /// </summary>
+        public static readonly AccessStatus FAILED = new AccessStatus("FAILED");
+        /// <summary>
         /// Constant PENDING for AccessStatus
         /// </summary>
         public static readonly AccessStatus PENDING = new AccessStatus("PENDING");
@@ -613,6 +617,68 @@ namespace Amazon.Notifications
 
 
     /// <summary>
+    /// Constants used for properties of type MemberAccountNotificationConfigurationStatus.
+    /// </summary>
+    public class MemberAccountNotificationConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for MemberAccountNotificationConfigurationStatus
+        /// </summary>
+        public static readonly MemberAccountNotificationConfigurationStatus ACTIVE = new MemberAccountNotificationConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for MemberAccountNotificationConfigurationStatus
+        /// </summary>
+        public static readonly MemberAccountNotificationConfigurationStatus CREATING = new MemberAccountNotificationConfigurationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for MemberAccountNotificationConfigurationStatus
+        /// </summary>
+        public static readonly MemberAccountNotificationConfigurationStatus DELETING = new MemberAccountNotificationConfigurationStatus("DELETING");
+        /// <summary>
+        /// Constant INACTIVE for MemberAccountNotificationConfigurationStatus
+        /// </summary>
+        public static readonly MemberAccountNotificationConfigurationStatus INACTIVE = new MemberAccountNotificationConfigurationStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING for MemberAccountNotificationConfigurationStatus
+        /// </summary>
+        public static readonly MemberAccountNotificationConfigurationStatus PENDING = new MemberAccountNotificationConfigurationStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemberAccountNotificationConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemberAccountNotificationConfigurationStatus FindValue(string value)
+        {
+            return FindValue<MemberAccountNotificationConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemberAccountNotificationConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotificationConfigurationStatus.
     /// </summary>
     public class NotificationConfigurationStatus : ConstantClass
@@ -664,6 +730,56 @@ namespace Amazon.Notifications
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotificationConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotificationConfigurationSubtype.
+    /// </summary>
+    public class NotificationConfigurationSubtype : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for NotificationConfigurationSubtype
+        /// </summary>
+        public static readonly NotificationConfigurationSubtype ACCOUNT = new NotificationConfigurationSubtype("ACCOUNT");
+        /// <summary>
+        /// Constant ADMIN_MANAGED for NotificationConfigurationSubtype
+        /// </summary>
+        public static readonly NotificationConfigurationSubtype ADMIN_MANAGED = new NotificationConfigurationSubtype("ADMIN_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationConfigurationSubtype(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationConfigurationSubtype FindValue(string value)
+        {
+            return FindValue<NotificationConfigurationSubtype>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationConfigurationSubtype(string value)
         {
             return FindValue(value);
         }

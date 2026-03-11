@@ -39,6 +39,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGrantTokenException
+        /// message.
+        /// </summary>
+        public InvalidGrantTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGrantTokenException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyNotAttachableException
+        /// message.
+        /// </summary>
+        public PolicyNotAttachableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyNotAttachableException with the specified error
         /// message.
         /// </summary>

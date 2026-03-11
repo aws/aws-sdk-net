@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedDBInstanceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ReservedDBInstanceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedDBInstanceQuotaExceededException with the specified error
         /// message.
         /// </summary>

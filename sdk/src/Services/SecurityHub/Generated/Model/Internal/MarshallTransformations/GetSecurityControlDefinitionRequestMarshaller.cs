@@ -62,6 +62,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.SecurityControlId))
+                throw new AmazonSecurityHubException("Request object does not have required field SecurityControlId set");
             
             if (publicRequest.IsSetSecurityControlId())
                 request.Parameters.Add("SecurityControlId", StringUtils.FromString(publicRequest.SecurityControlId));

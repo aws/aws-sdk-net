@@ -39,6 +39,13 @@ namespace Amazon.CertificateManager.Model
     {
 
         /// <summary>
+        /// Default constructor for TagPolicyException
+        /// message.
+        /// </summary>
+        public TagPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagPolicyException with the specified error
         /// message.
         /// </summary>

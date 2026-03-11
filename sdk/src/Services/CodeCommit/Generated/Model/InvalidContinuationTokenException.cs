@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidContinuationTokenException
+        /// message.
+        /// </summary>
+        public InvalidContinuationTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidContinuationTokenException with the specified error
         /// message.
         /// </summary>

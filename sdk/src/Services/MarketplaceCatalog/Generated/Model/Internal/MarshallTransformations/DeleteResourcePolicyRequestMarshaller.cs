@@ -62,6 +62,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonMarketplaceCatalogException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));

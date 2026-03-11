@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private ColorSpacePassthroughSettings _colorSpacePassthroughSettings;
         private DolbyVision81Settings _dolbyVision81Settings;
         private Hdr10Settings _hdr10Settings;
+        private Hlg2020Settings _hlg2020Settings;
         private Rec601Settings _rec601Settings;
         private Rec709Settings _rec709Settings;
 
@@ -83,6 +84,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHdr10Settings()
         {
             return this._hdr10Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hlg2020Settings.
+        /// </summary>
+        public Hlg2020Settings Hlg2020Settings
+        {
+            get { return this._hlg2020Settings; }
+            set { this._hlg2020Settings = value; }
+        }
+
+        // Check to see if Hlg2020Settings property is set
+        internal bool IsSetHlg2020Settings()
+        {
+            return this._hlg2020Settings != null;
         }
 
         /// <summary>

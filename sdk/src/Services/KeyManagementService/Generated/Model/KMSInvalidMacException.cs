@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSInvalidMacException
+        /// message.
+        /// </summary>
+        public KMSInvalidMacException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSInvalidMacException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DeleteSlackChannelConfigurationException
+        /// message.
+        /// </summary>
+        public DeleteSlackChannelConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeleteSlackChannelConfigurationException with the specified error
         /// message.
         /// </summary>

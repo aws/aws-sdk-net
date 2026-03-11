@@ -25,6 +25,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Text;
 
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3.Model;
 using Amazon.Util;
@@ -38,20 +39,10 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public partial class TransferUtilityUploadRequest : BaseUploadRequest
     {
-        private string bucketName;
         private string key;
-        private S3CannedACL cannedACL;
-        private string contentType;
-        private S3StorageClass storageClass;
         private long? partSize;
         private bool autoCloseStream = true;
         private bool autoResetStreamPosition = true;
-        private ServerSideEncryptionMethod encryption;
-        private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
-        private string serverSideEncryptionCustomerProvidedKey;
-        private string serverSideEncryptionCustomerProvidedKeyMD5;
-        private string serverSideEncryptionKeyManagementServiceKeyId;
-        private ChecksumAlgorithm checksumAlgorithm;
         private string _checksumCRC32;
         private string _checksumCRC32C;
         private string _checksumCRC64NVME;
@@ -61,41 +52,29 @@ namespace Amazon.S3.Transfer
         private string _ifMatch;
         private long? _mpuObjectSize;
 
-        private HeadersCollection headersCollection = new HeadersCollection();
-        private MetadataCollection metadataCollection = new MetadataCollection();
-
-        private List<Tag> tagset;
-
         private Stream inputStream;
-        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
-        private ObjectLockMode objectLockMode;
-        private DateTime? objectLockRetainUntilDate;
-
-        #region BucketName
-
+        private string _expires;
+        #region Expires
         /// <summary>
-        /// 	Gets or sets the name of the bucket.
+        /// Gets and sets the property Expires. 
+        /// <para>
+        /// The date and time at which the object is no longer cacheable. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
+        /// </para>
         /// </summary>
-        /// <value>
-        /// 	The name of the bucket.
-        /// </value>
-        public string BucketName
+        public string Expires
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._expires; }
+            set { this._expires = value; }
         }
 
-
-        /// <summary>
-        /// Checks if BucketName property is set.
-        /// </summary>
-        /// <returns>true if BucketName property is set.</returns>
-        internal bool IsSetBucketName()
+        // Check to see if Expires property is set
+        internal bool IsSetExpires()
         {
-            return !System.String.IsNullOrEmpty(this.bucketName);
+            return this._expires != null;
         }
-
         #endregion
+
 
         #region Key
         /// <summary>
@@ -118,166 +97,6 @@ namespace Amazon.S3.Transfer
         internal bool IsSetKey()
         {
             return !System.String.IsNullOrEmpty(this.key);
-        }
-
-        #endregion
-
-        #region CannedACL
-
-        /// <summary>
-        /// 	Gets or sets the canned access control list (ACL)
-        /// 	for the uploaded object.
-        /// 	Please refer to 
-        /// 	<see cref="T:Amazon.S3.S3CannedACL"/> for
-        /// 	information on Amazon S3 canned ACLs.
-        /// </summary>
-        /// <value>
-        /// 	The canned access control list (ACL)
-        /// 	for the uploaded object.
-        /// </value>
-        public S3CannedACL CannedACL
-        {
-            get { return this.cannedACL; }
-            set { this.cannedACL = value; }
-        }
-
-        /// <summary>
-        /// Checks if the CannedACL property is set.
-        /// </summary>
-        /// <returns>true if there is the CannedACL property is set.</returns>
-        internal bool IsSetCannedACL()
-        {
-            return (cannedACL != null);
-        }
-
-        /// <summary>
-        /// 	Removes the cannned access control list (ACL)
-        /// 	for the uploaded object.
-        /// </summary>
-        public void RemoveCannedACL()
-        {
-            this.cannedACL = null;
-        }
-
-        #endregion
-
-        #region ContentType
-        /// <summary>
-        /// 	Gets or sets the content type of the uploaded Amazon S3 object.
-        /// </summary>
-        /// <value>
-        /// 	The content type of the uploaded Amazon S3 object.
-        /// </value>
-        public string ContentType
-        {
-            get { return this.contentType; }
-            set { this.contentType = value; }
-        }
-
-
-        /// <summary>
-        /// Checks if ContentType property is set.
-        /// </summary>
-        /// <returns>true if ContentType property is set.</returns>
-        internal bool IsSetContentType()
-        {
-            return !System.String.IsNullOrEmpty(this.contentType);
-        }
-
-        #endregion
-
-        #region StorageClass
-
-        /// <summary>
-        /// 	Gets or sets the storage class for the uploaded Amazon S3 object.
-        /// 	Please refer to 
-        /// 	<see cref="T:Amazon.S3.S3StorageClass"/> for
-        /// 	information on S3 Storage Classes.
-        /// </summary>
-        /// <value>
-        /// 	The storage class for the uploaded Amazon S3 object.
-        /// </value>
-        public S3StorageClass StorageClass
-        {
-            get { return this.storageClass; }
-            set { this.storageClass = value; }
-        }
-
-        #endregion    
-
-        #region ServerSideEncryption
-
-        /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
-        /// Specifies the encryption used on the server to
-        /// store the content.
-        /// </summary>
-        public ServerSideEncryptionMethod ServerSideEncryptionMethod
-        {
-            get { return this.encryption; }
-            set { this.encryption = value; }
-        }
-
-        /// <summary>
-        /// The Server-side encryption algorithm to be used with the customer provided key.
-        ///  
-        /// </summary>
-        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
-        {
-            get { return this.serverSideCustomerEncryption; }
-            set { this.serverSideCustomerEncryption = value; }
-        }
-
-        /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
-        /// If a key id is not specified, the default key will be used for encryption and decryption.
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionKeyManagementServiceKeyId
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
-        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
-        }
-
-        /// <summary>
-        /// The Base64 encoded encryption key for Amazon S3 to use to encrypt the object
-        /// <para>
-        /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
-        /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
-        /// thing you do is manage the encryption keys you provide.
-        /// </para>
-        /// <para>
-        /// When you retrieve an object, you must provide the same encryption key as part of your request. Amazon S3 first verifies 
-        /// the encryption key you provided matches, and then decrypts the object before returning the object data to you.
-        /// </para>
-        /// <para>
-        /// Important: Amazon S3 does not store the encryption key you provide.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionCustomerProvidedKey
-        {
-            get { return this.serverSideEncryptionCustomerProvidedKey; }
-            set { this.serverSideEncryptionCustomerProvidedKey = value; }
-        }
-
-        /// <summary>
-        /// The MD5 of the customer encryption key specified in the ServerSideEncryptionCustomerProvidedKey property. The MD5 is
-        /// base 64 encoded. This field is optional, the SDK will calculate the MD5 if this is not set.
-        /// </summary>
-        public string ServerSideEncryptionCustomerProvidedKeyMD5
-        {
-            get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
-            set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
         }
 
         #endregion
@@ -346,43 +165,6 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
-        /// The collection of headers for the request.
-        /// </summary>
-        public HeadersCollection Headers
-        {
-            get
-            {
-                if (this.headersCollection == null)
-                    this.headersCollection = new HeadersCollection();
-                return this.headersCollection;
-            }
-            internal set { this.headersCollection = value; }
-        }
-
-        /// <summary>
-        /// The collection of meta data for the request.
-        /// </summary>
-        public MetadataCollection Metadata
-        {
-            get
-            {
-                if (this.metadataCollection == null)
-                    this.metadataCollection = new MetadataCollection();
-                return this.metadataCollection;
-            }
-            internal set { this.metadataCollection = value; }
-        }
-
-        /// <summary>
-        /// The tag-set for the object.
-        /// </summary>
-        public List<Tag> TagSet
-        {
-            get { return this.tagset; }
-            set { this.tagset = value; }
-        }
-
-        /// <summary>
         /// The event for UploadProgressEvent notifications. All
         /// subscribers will be notified when a new progress
         /// event is raised.
@@ -410,6 +192,132 @@ namespace Amazon.S3.Transfer
         /// </code>
         /// </remarks>
         public event EventHandler<UploadProgressArgs> UploadProgressEvent;
+
+        /// <summary>
+        /// The event for UploadInitiatedEvent notifications. All
+        /// subscribers will be notified when a transfer operation
+        /// starts.
+        /// <para>
+        /// The UploadInitiatedEvent is fired exactly once when 
+        /// a transfer operation begins. The delegates attached to the event 
+        /// will be passed information about the upload request and 
+        /// total file size, but no progress information.
+        /// </para>
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// UploadInitiatedEvent notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void uploadStarted(object sender, UploadInitiatedEventArgs args)
+        /// {
+        ///     Console.WriteLine($"Upload started: {args.FilePath}");
+        ///     Console.WriteLine($"Total size: {args.TotalBytes} bytes");
+        ///     Console.WriteLine($"Bucket: {args.Request.BucketName}");
+        ///     Console.WriteLine($"Key: {args.Request.Key}");
+        /// }
+        /// </code>
+        /// 2. Add this method to the UploadInitiatedEvent delegate's invocation list
+        /// <code>
+        /// TransferUtilityUploadRequest request = new TransferUtilityUploadRequest();
+        /// request.UploadInitiatedEvent += uploadStarted;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<UploadInitiatedEventArgs> UploadInitiatedEvent;
+
+        /// <summary>
+        /// The event for UploadCompletedEvent notifications. All
+        /// subscribers will be notified when a transfer operation
+        /// completes successfully.
+        /// <para>
+        /// The UploadCompletedEvent is fired exactly once when 
+        /// a transfer operation completes successfully. The delegates attached to the event 
+        /// will be passed information about the completed upload including
+        /// the final response from S3 with ETag, VersionId, and other metadata.
+        /// </para>
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// UploadCompletedEvent notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void uploadCompleted(object sender, UploadCompletedEventArgs args)
+        /// {
+        ///     Console.WriteLine($"Upload completed: {args.FilePath}");
+        ///     Console.WriteLine($"Transferred: {args.TransferredBytes} bytes");
+        ///     Console.WriteLine($"ETag: {args.Response.ETag}");
+        ///     Console.WriteLine($"S3 Key: {args.Response.Key}");
+        ///     Console.WriteLine($"Version ID: {args.Response.VersionId}");
+        /// }
+        /// </code>
+        /// 2. Add this method to the UploadCompletedEvent delegate's invocation list
+        /// <code>
+        /// TransferUtilityUploadRequest request = new TransferUtilityUploadRequest();
+        /// request.UploadCompletedEvent += uploadCompleted;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<UploadCompletedEventArgs> UploadCompletedEvent;
+
+        /// <summary>
+        /// The event for UploadFailedEvent notifications. All
+        /// subscribers will be notified when a transfer operation
+        /// fails.
+        /// <para>
+        /// The UploadFailedEvent is fired exactly once when 
+        /// a transfer operation fails. The delegates attached to the event 
+        /// will be passed information about the failed upload including
+        /// partial progress information, but no response data since the upload failed.
+        /// </para>
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to this event if you want to receive
+        /// UploadFailedEvent notifications. Here is how:<br />
+        /// 1. Define a method with a signature similar to this one:
+        /// <code>
+        /// private void uploadFailed(object sender, UploadFailedEventArgs args)
+        /// {
+        ///     Console.WriteLine($"Upload failed: {args.FilePath}");
+        ///     Console.WriteLine($"Partial progress: {args.TransferredBytes} / {args.TotalBytes} bytes");
+        ///     var percent = (double)args.TransferredBytes / args.TotalBytes * 100;
+        ///     Console.WriteLine($"Completion: {percent:F1}%");
+        ///     Console.WriteLine($"Bucket: {args.Request.BucketName}");
+        ///     Console.WriteLine($"Key: {args.Request.Key}");
+        /// }
+        /// </code>
+        /// 2. Add this method to the UploadFailedEvent delegate's invocation list
+        /// <code>
+        /// TransferUtilityUploadRequest request = new TransferUtilityUploadRequest();
+        /// request.UploadFailedEvent += uploadFailed;
+        /// </code>
+        /// </remarks>
+        public event EventHandler<UploadFailedEventArgs> UploadFailedEvent;
+
+        /// <summary>
+        /// Causes the UploadInitiatedEvent event to be fired.
+        /// </summary>
+        /// <param name="args">UploadInitiatedEventArgs args</param>
+        internal void OnRaiseTransferInitiatedEvent(UploadInitiatedEventArgs args)
+        {
+            UploadInitiatedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Causes the UploadCompletedEvent event to be fired.
+        /// </summary>
+        /// <param name="args">UploadCompletedEventArgs args</param>
+        internal void OnRaiseTransferCompletedEvent(UploadCompletedEventArgs args)
+        {
+            UploadCompletedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Causes the UploadFailedEvent event to be fired.
+        /// </summary>
+        /// <param name="args">UploadFailedEventArgs args</param>
+        internal void OnRaiseTransferFailedEvent(UploadFailedEventArgs args)
+        {
+            UploadFailedEvent?.Invoke(this, args);
+        }
 
 
         /// <summary>
@@ -501,100 +409,6 @@ namespace Amazon.S3.Transfer
             return this;
         }
         #endregion
-
-        /// <summary>
-        /// <para><b>WARNING: Setting DisableDefaultChecksumValidation to true disables the default data 
-        /// integrity check on upload requests.</b></para>
-        /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
-        /// performance under high CPU loads. Setting DisableDefaultChecksumValidation sets the deprecated property
-        /// DisableMD5Stream to the same value. The default value is false.</para>
-        /// <para>Checksums, SigV4 payload signing, and HTTPS each provide some data integrity 
-        /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
-        /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
-        /// source of data integrity verification.</para>
-        /// </summary>
-        public bool? DisableDefaultChecksumValidation { get; set; }
-
-        /// <summary>      
-        /// <para><b>WARNING: Setting DisablePayloadSigning to true disables the SigV4 payload signing 
-        /// data integrity check on this request.</b></para>  
-        /// <para>If using SigV4, the DisablePayloadSigning flag controls if the payload should be 
-        /// signed on a request by request basis. By default this flag is null which will use the 
-        /// default client behavior. The default client behavior is to sign the payload. When 
-        /// DisablePayloadSigning is true, the request will be signed with an UNSIGNED-PAYLOAD value. 
-        /// Setting DisablePayloadSigning to true requires that the request is sent over a HTTPS 
-        /// connection.</para>        
-        /// <para>Under certain circumstances, such as uploading to S3 while using MD5 hashing, it may 
-        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage. This flag only applies 
-        /// to Amazon S3 PutObject and UploadPart requests.</para>
-        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
-        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
-        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
-        /// source of data integrity verification.</para>
-        /// </summary>
-        public bool? DisablePayloadSigning { get; set; }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockLegalHoldStatus. 
-        /// <para>
-        /// Specifies whether a legal hold will be applied to this object. For more information
-        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-        /// Lock</a>.
-        /// </para>
-        /// </summary>
-        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
-        {
-            get { return this.objectLockLegalHoldStatus; }
-            set { this.objectLockLegalHoldStatus = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockMode. 
-        /// <para>
-        /// The Object Lock mode that you want to apply to this object.
-        /// </para>
-        /// </summary>
-        public ObjectLockMode ObjectLockMode
-        {
-            get { return this.objectLockMode; }
-            set { this.objectLockMode = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectLockRetainUntilDate. 
-        /// <para>
-        /// The date and time when you want this object's Object Lock to expire.
-        /// </para>
-        /// </summary>
-        public DateTime ObjectLockRetainUntilDate
-        {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
-            set { this.objectLockRetainUntilDate = value; }
-        }
-
-        // Check to see if ObjectLockRetainUntilDate property is set
-        internal bool IsSetObjectLockRetainUntilDate()
-        {
-            return this.objectLockRetainUntilDate.HasValue;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ChecksumAlgorithm. 
-        /// <para>
-        /// Indicates the algorithm used to create the checksum for the object.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you provide an individual checksum, Amazon S3 will ignore any provided <c>ChecksumAlgorithm</c>.
-        /// </para>
-        /// </summary>
-        public ChecksumAlgorithm ChecksumAlgorithm
-        {
-            get { return this.checksumAlgorithm; }
-            set { this.checksumAlgorithm = value; }
-        }
 
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
@@ -795,7 +609,7 @@ namespace Amazon.S3.Transfer
         /// currently transferred bytes and the
         /// total number of bytes to be transferred
         /// </summary>
-        /// <param name="incrementTransferred">The how many bytes were transferred since last event.</param>
+        /// <param name="incrementTransferred">How many bytes were transferred since last event.</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
         public UploadProgressArgs(long incrementTransferred, long transferred, long total)
@@ -808,7 +622,7 @@ namespace Amazon.S3.Transfer
         /// currently transferred bytes and the
         /// total number of bytes to be transferred
         /// </summary>
-        /// <param name="incrementTransferred">The how many bytes were transferred since last event.</param>
+        /// <param name="incrementTransferred">How many bytes were transferred since last event.</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>        
         /// <param name="filePath">The file being uploaded</param>
@@ -822,7 +636,7 @@ namespace Amazon.S3.Transfer
         /// currently transferred bytes and the
         /// total number of bytes to be transferred
         /// </summary>
-        /// <param name="incrementTransferred">The how many bytes were transferred since last event.</param>
+        /// <param name="incrementTransferred">How many bytes were transferred since last event.</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
         /// <param name="compensationForRetry">A compensation for any upstream aggregators if this event to correct theit totalTransferred count,
@@ -836,10 +650,163 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// Constructor for upload progress with request
+        /// </summary>
+        /// <param name="incrementTransferred">How many bytes were transferred since last event.</param>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>
+        /// <param name="compensationForRetry">A compensation for any upstream aggregators if this event to correct their totalTransferred count,
+        /// in case the underlying request is retried.</param>
+        /// <param name="filePath">The file being uploaded</param>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        internal UploadProgressArgs(long incrementTransferred, long transferred, long total, long compensationForRetry, string filePath, TransferUtilityUploadRequest request)
+            : base(incrementTransferred, transferred, total)
+        {
+            this.FilePath = filePath;
+            this.CompensationForRetry = compensationForRetry;
+            this.Request = request;
+        }
+
+        /// <summary>
         /// Gets the FilePath.
         /// </summary>
         public string FilePath { get; private set; }
 
         internal long CompensationForRetry { get; set; }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; internal set; }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed when a transfer operation is initiated.
+    /// Provides access to the original request and total file size without any progress information.
+    /// </summary>
+    public class UploadInitiatedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the UploadInitiatedEventArgs class.
+        /// </summary>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        /// <param name="filePath">The file being uploaded</param>
+        /// <param name="totalBytes">The total number of bytes to be transferred</param>
+        internal UploadInitiatedEventArgs(TransferUtilityUploadRequest request, string filePath, long totalBytes)
+        {
+            Request = request;
+            FilePath = filePath;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// Contains all the upload parameters and configuration.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the file being uploaded.
+        /// </summary>
+        public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes to be transferred.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed when a transfer operation completes successfully.
+    /// Provides access to the original request, final response, and completion details.
+    /// </summary>
+    public class UploadCompletedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the UploadCompletedEventArgs class.
+        /// </summary>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        /// <param name="response">The unified response from Transfer Utility</param>
+        /// <param name="filePath">The file being uploaded</param>
+        /// <param name="transferredBytes">The total number of bytes transferred</param>
+        /// <param name="totalBytes">The total number of bytes that were transferred (should equal transferredBytes for successful uploads).</param>
+        internal UploadCompletedEventArgs(TransferUtilityUploadRequest request, TransferUtilityUploadResponse response, string filePath, long transferredBytes, long totalBytes)
+        {
+            Request = request;
+            Response = response; 
+            FilePath = filePath;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// Contains all the upload parameters and configuration.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; private set; }
+
+        /// <summary>
+        /// The unified response from Transfer Utility after successful upload completion.
+        /// Contains mapped fields from either PutObjectResponse (simple uploads) or CompleteMultipartUploadResponse (multipart uploads).
+        /// </summary>
+        public TransferUtilityUploadResponse Response { get; private set; }
+
+        /// <summary>
+        /// Gets the file being uploaded.
+        /// </summary>
+        public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that were successfully transferred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that were transferred (should equal TransferredBytes for successful uploads).
+        /// </summary>
+        public long TotalBytes { get; private set; }
+    }
+
+    /// <summary>
+    /// Encapsulates the information needed when a transfer operation fails.
+    /// Provides access to the original request and partial progress information.
+    /// </summary>
+    public class UploadFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the UploadFailedEventArgs class.
+        /// </summary>
+        /// <param name="request">The original TransferUtilityUploadRequest created by the user</param>
+        /// <param name="filePath">The file being uploaded</param>
+        /// <param name="transferredBytes">The number of bytes transferred before failure</param>
+        /// <param name="totalBytes">The total number of bytes that should have been transferred</param>
+        internal UploadFailedEventArgs(TransferUtilityUploadRequest request, string filePath, long transferredBytes, long totalBytes)
+        {
+            Request = request;
+            FilePath = filePath;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+        }
+
+        /// <summary>
+        /// The original TransferUtilityUploadRequest created by the user.
+        /// Contains all the upload parameters and configuration.
+        /// </summary>
+        public TransferUtilityUploadRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the file being uploaded.
+        /// </summary>
+        public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Gets the number of bytes that were transferred before the failure occurred.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that should have been transferred.
+        /// </summary>
+        public long TotalBytes { get; private set; }
     }
 }

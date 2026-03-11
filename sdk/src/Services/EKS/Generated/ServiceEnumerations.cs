@@ -281,6 +281,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_ARM_64_NVIDIA = new AMITypes("BOTTLEROCKET_ARM_64_NVIDIA");
         /// <summary>
+        /// Constant BOTTLEROCKET_ARM_64_NVIDIA_FIPS for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_ARM_64_NVIDIA_FIPS = new AMITypes("BOTTLEROCKET_ARM_64_NVIDIA_FIPS");
+        /// <summary>
         /// Constant BOTTLEROCKET_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_x86_64 = new AMITypes("BOTTLEROCKET_x86_64");
@@ -292,6 +296,10 @@ namespace Amazon.EKS
         /// Constant BOTTLEROCKET_x86_64_NVIDIA for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_x86_64_NVIDIA = new AMITypes("BOTTLEROCKET_x86_64_NVIDIA");
+        /// <summary>
+        /// Constant BOTTLEROCKET_x86_64_NVIDIA_FIPS for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_x86_64_NVIDIA_FIPS = new AMITypes("BOTTLEROCKET_x86_64_NVIDIA_FIPS");
         /// <summary>
         /// Constant CUSTOM for AMITypes
         /// </summary>
@@ -305,6 +313,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes WINDOWS_CORE_2022_x86_64 = new AMITypes("WINDOWS_CORE_2022_x86_64");
         /// <summary>
+        /// Constant WINDOWS_CORE_2025_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_CORE_2025_x86_64 = new AMITypes("WINDOWS_CORE_2025_x86_64");
+        /// <summary>
         /// Constant WINDOWS_FULL_2019_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes WINDOWS_FULL_2019_x86_64 = new AMITypes("WINDOWS_FULL_2019_x86_64");
@@ -312,6 +324,10 @@ namespace Amazon.EKS
         /// Constant WINDOWS_FULL_2022_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes WINDOWS_FULL_2022_x86_64 = new AMITypes("WINDOWS_FULL_2022_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_FULL_2025_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_FULL_2025_x86_64 = new AMITypes("WINDOWS_FULL_2025_x86_64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -342,6 +358,60 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AMITypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ArgoCdRole.
+    /// </summary>
+    public class ArgoCdRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADMIN for ArgoCdRole
+        /// </summary>
+        public static readonly ArgoCdRole ADMIN = new ArgoCdRole("ADMIN");
+        /// <summary>
+        /// Constant EDITOR for ArgoCdRole
+        /// </summary>
+        public static readonly ArgoCdRole EDITOR = new ArgoCdRole("EDITOR");
+        /// <summary>
+        /// Constant VIEWER for ArgoCdRole
+        /// </summary>
+        public static readonly ArgoCdRole VIEWER = new ArgoCdRole("VIEWER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArgoCdRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArgoCdRole FindValue(string value)
+        {
+            return FindValue<ArgoCdRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArgoCdRole(string value)
         {
             return FindValue(value);
         }
@@ -396,6 +466,226 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthenticationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityDeletePropagationPolicy.
+    /// </summary>
+    public class CapabilityDeletePropagationPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RETAIN for CapabilityDeletePropagationPolicy
+        /// </summary>
+        public static readonly CapabilityDeletePropagationPolicy RETAIN = new CapabilityDeletePropagationPolicy("RETAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityDeletePropagationPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityDeletePropagationPolicy FindValue(string value)
+        {
+            return FindValue<CapabilityDeletePropagationPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityDeletePropagationPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityIssueCode.
+    /// </summary>
+    public class CapabilityIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for CapabilityIssueCode
+        /// </summary>
+        public static readonly CapabilityIssueCode AccessDenied = new CapabilityIssueCode("AccessDenied");
+        /// <summary>
+        /// Constant ClusterUnreachable for CapabilityIssueCode
+        /// </summary>
+        public static readonly CapabilityIssueCode ClusterUnreachable = new CapabilityIssueCode("ClusterUnreachable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityIssueCode FindValue(string value)
+        {
+            return FindValue<CapabilityIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityIssueCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityStatus.
+    /// </summary>
+    public class CapabilityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus ACTIVE = new CapabilityStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus CREATE_FAILED = new CapabilityStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus CREATING = new CapabilityStatus("CREATING");
+        /// <summary>
+        /// Constant DEGRADED for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus DEGRADED = new CapabilityStatus("DEGRADED");
+        /// <summary>
+        /// Constant DELETE_FAILED for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus DELETE_FAILED = new CapabilityStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus DELETING = new CapabilityStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus UPDATING = new CapabilityStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityStatus FindValue(string value)
+        {
+            return FindValue<CapabilityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityType.
+    /// </summary>
+    public class CapabilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACK for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType ACK = new CapabilityType("ACK");
+        /// <summary>
+        /// Constant ARGOCD for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType ARGOCD = new CapabilityType("ARGOCD");
+        /// <summary>
+        /// Constant KRO for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType KRO = new CapabilityType("KRO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityType FindValue(string value)
+        {
+            return FindValue<CapabilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityType(string value)
         {
             return FindValue(value);
         }
@@ -1265,6 +1555,60 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type InsightsRefreshStatus.
+    /// </summary>
+    public class InsightsRefreshStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for InsightsRefreshStatus
+        /// </summary>
+        public static readonly InsightsRefreshStatus COMPLETED = new InsightsRefreshStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for InsightsRefreshStatus
+        /// </summary>
+        public static readonly InsightsRefreshStatus FAILED = new InsightsRefreshStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for InsightsRefreshStatus
+        /// </summary>
+        public static readonly InsightsRefreshStatus IN_PROGRESS = new InsightsRefreshStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightsRefreshStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightsRefreshStatus FindValue(string value)
+        {
+            return FindValue<InsightsRefreshStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightsRefreshStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InsightStatusValue.
     /// </summary>
     public class InsightStatusValue : ConstantClass
@@ -1741,6 +2085,118 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ProvisionedControlPlaneTier.
+    /// </summary>
+    public class ProvisionedControlPlaneTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Standard for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Standard = new ProvisionedControlPlaneTier("standard");
+        /// <summary>
+        /// Constant Tier2xl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Tier2xl = new ProvisionedControlPlaneTier("tier-2xl");
+        /// <summary>
+        /// Constant Tier4xl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Tier4xl = new ProvisionedControlPlaneTier("tier-4xl");
+        /// <summary>
+        /// Constant TierXl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier TierXl = new ProvisionedControlPlaneTier("tier-xl");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvisionedControlPlaneTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvisionedControlPlaneTier FindValue(string value)
+        {
+            return FindValue<ProvisionedControlPlaneTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvisionedControlPlaneTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepairAction.
+    /// </summary>
+    public class RepairAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoAction for RepairAction
+        /// </summary>
+        public static readonly RepairAction NoAction = new RepairAction("NoAction");
+        /// <summary>
+        /// Constant Reboot for RepairAction
+        /// </summary>
+        public static readonly RepairAction Reboot = new RepairAction("Reboot");
+        /// <summary>
+        /// Constant Replace for RepairAction
+        /// </summary>
+        public static readonly RepairAction Replace = new RepairAction("Replace");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepairAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepairAction FindValue(string value)
+        {
+            return FindValue<RepairAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepairAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResolveConflicts.
     /// </summary>
     public class ResolveConflicts : ConstantClass
@@ -1788,6 +2244,56 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResolveConflicts(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SsoIdentityType.
+    /// </summary>
+    public class SsoIdentityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSO_GROUP for SsoIdentityType
+        /// </summary>
+        public static readonly SsoIdentityType SSO_GROUP = new SsoIdentityType("SSO_GROUP");
+        /// <summary>
+        /// Constant SSO_USER for SsoIdentityType
+        /// </summary>
+        public static readonly SsoIdentityType SSO_USER = new SsoIdentityType("SSO_USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SsoIdentityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SsoIdentityType FindValue(string value)
+        {
+            return FindValue<SsoIdentityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SsoIdentityType(string value)
         {
             return FindValue(value);
         }
@@ -1925,6 +2431,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
         /// <summary>
+        /// Constant DeletionProtection for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType DeletionProtection = new UpdateParamType("DeletionProtection");
+        /// <summary>
         /// Constant DesiredSize for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType DesiredSize = new UpdateParamType("DesiredSize");
@@ -1981,6 +2491,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
         /// <summary>
+        /// Constant NodeRepairConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType NodeRepairConfig = new UpdateParamType("NodeRepairConfig");
+        /// <summary>
         /// Constant NodeRepairEnabled for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType NodeRepairEnabled = new UpdateParamType("NodeRepairEnabled");
@@ -1992,6 +2506,10 @@ namespace Amazon.EKS
         /// Constant PodIdentityAssociations for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PodIdentityAssociations = new UpdateParamType("PodIdentityAssociations");
+        /// <summary>
+        /// Constant PreviousTier for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType PreviousTier = new UpdateParamType("PreviousTier");
         /// <summary>
         /// Constant PublicAccessCidrs for UpdateParamType
         /// </summary>
@@ -2032,6 +2550,10 @@ namespace Amazon.EKS
         /// Constant TaintsToRemove for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType TaintsToRemove = new UpdateParamType("TaintsToRemove");
+        /// <summary>
+        /// Constant UpdatedTier for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType UpdatedTier = new UpdateParamType("UpdatedTier");
         /// <summary>
         /// Constant UpdateStrategy for UpdateParamType
         /// </summary>
@@ -2173,6 +2695,14 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
         /// <summary>
+        /// Constant ControlPlaneScalingConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ControlPlaneScalingConfigUpdate = new UpdateType("ControlPlaneScalingConfigUpdate");
+        /// <summary>
+        /// Constant DeletionProtectionUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType DeletionProtectionUpdate = new UpdateType("DeletionProtectionUpdate");
+        /// <summary>
         /// Constant DisassociateIdentityProviderConfig for UpdateType
         /// </summary>
         public static readonly UpdateType DisassociateIdentityProviderConfig = new UpdateType("DisassociateIdentityProviderConfig");
@@ -2192,6 +2722,10 @@ namespace Amazon.EKS
         /// Constant UpgradePolicyUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType UpgradePolicyUpdate = new UpdateType("UpgradePolicyUpdate");
+        /// <summary>
+        /// Constant VendedLogsUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType VendedLogsUpdate = new UpdateType("VendedLogsUpdate");
         /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>

@@ -60,6 +60,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetSendQuotaRequestMarshaller _instance = new GetSendQuotaRequestMarshaller();        

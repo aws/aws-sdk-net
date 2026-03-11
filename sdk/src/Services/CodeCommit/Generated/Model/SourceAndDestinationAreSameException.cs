@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for SourceAndDestinationAreSameException
+        /// message.
+        /// </summary>
+        public SourceAndDestinationAreSameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SourceAndDestinationAreSameException with the specified error
         /// message.
         /// </summary>

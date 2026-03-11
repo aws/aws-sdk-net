@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Contains the update operations to be applied to an existing Iceberg table in AWS Glue
-    /// Data Catalog, defining the new state of the table metadata.
+    /// Contains the update operations to be applied to an existing Iceberg table inGlue Data
+    /// Catalog, defining the new state of the table metadata.
     /// </summary>
     public partial class UpdateIcebergTableInput
     {

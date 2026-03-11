@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(QueryIdempotencyTokenAutoFillRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             
             if (publicRequest.IsSetToken())
@@ -66,8 +67,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/QueryIdempotencyTokenAutoFill";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static QueryIdempotencyTokenAutoFillRequestMarshaller _instance = new QueryIdempotencyTokenAutoFillRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, QueryIdempotencyTokenAutoFillRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, QueryIdempotencyTokenAutoFillRequest publicRequest);
     }    
 }

@@ -39,6 +39,13 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Default constructor for DestinationNotAllowedException
+        /// message.
+        /// </summary>
+        public DestinationNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DestinationNotAllowedException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for StreamEdgeConfigurationNotFoundException
+        /// message.
+        /// </summary>
+        public StreamEdgeConfigurationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StreamEdgeConfigurationNotFoundException with the specified error
         /// message.
         /// </summary>

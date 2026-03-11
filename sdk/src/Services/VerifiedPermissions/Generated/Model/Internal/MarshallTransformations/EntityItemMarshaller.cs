@@ -92,6 +92,25 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectTagsKvp in requestObject.Tags)
+                {
+                    context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
+                    var requestObjectTagsValue = requestObjectTagsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CedarTagValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTagsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

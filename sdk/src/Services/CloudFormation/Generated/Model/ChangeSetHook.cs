@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Specifies the resource, the hook, and the hook version to be invoked.
+    /// Specifies the resource, the Hook, and the Hook version to be invoked.
     /// </summary>
     public partial class ChangeSetHook
     {
@@ -44,7 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property FailureMode. 
         /// <para>
-        /// Specify the hook failure mode for non-compliant resources in the followings ways.
+        /// Specify the Hook failure mode for non-compliant resources in the followings ways.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property InvocationPoint. 
         /// <para>
-        /// Specifies the points in provisioning logic where a hook is invoked.
+        /// The specific point in the provisioning process where the Hook is invoked.
         /// </para>
         /// </summary>
         public HookInvocationPoint InvocationPoint
@@ -89,7 +89,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TargetDetails. 
         /// <para>
-        /// Specifies details about the target that the hook will run against.
+        /// Specifies details about the target that the Hook will run against.
         /// </para>
         /// </summary>
         public ChangeSetHookTargetDetails TargetDetails
@@ -126,12 +126,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The unique name for your hook. Specifies a three-part namespace for your hook, with
+        /// The unique name for your Hook. Specifies a three-part namespace for your Hook, with
         /// a recommended pattern of <c>Organization::Service::Hook</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The following organization namespaces are reserved and can't be used in your hook
+        /// The following organization namespaces are reserved and can't be used in your Hook
         /// type names:
         /// </para>
         ///  <ul> <li> 

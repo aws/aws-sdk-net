@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterPatternMismatchException
+        /// message.
+        /// </summary>
+        public ParameterPatternMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterPatternMismatchException with the specified error
         /// message.
         /// </summary>

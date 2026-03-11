@@ -56,13 +56,14 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(EndpointOperationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/EndpointOperation";
 
 
+            PostMarshallCustomization(request, publicRequest);
             
             request.HostPrefix = $"foo.";
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static EndpointOperationRequestMarshaller _instance = new EndpointOperationRequestMarshaller();        
@@ -84,5 +85,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, EndpointOperationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, EndpointOperationRequest publicRequest);
     }    
 }

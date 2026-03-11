@@ -295,7 +295,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ActivateEventSource">REST API Reference for ActivateEventSource Operation</seealso>
         public virtual ActivateEventSourceResponse ActivateEventSource(ActivateEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEventSourceResponseUnmarshaller.Instance;
 
@@ -331,7 +331,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ActivateEventSource">REST API Reference for ActivateEventSource Operation</seealso>
         public virtual Task<ActivateEventSourceResponse> ActivateEventSourceAsync(ActivateEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEventSourceResponseUnmarshaller.Instance;
             
@@ -365,7 +365,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
         public virtual CancelReplayResponse CancelReplay(CancelReplayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
         public virtual Task<CancelReplayResponse> CancelReplayAsync(CancelReplayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
             
@@ -433,7 +433,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
         public virtual CreateApiDestinationResponse CreateApiDestination(CreateApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
         public virtual Task<CreateApiDestinationResponse> CreateApiDestinationAsync(CreateApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
             
@@ -511,7 +511,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
         public virtual CreateArchiveResponse CreateArchive(CreateArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
         public virtual Task<CreateArchiveResponse> CreateArchiveAsync(CreateArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
             
@@ -586,7 +586,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -617,7 +617,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
             
@@ -662,7 +662,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateEventBus">REST API Reference for CreateEventBus Operation</seealso>
         public virtual CreateEventBusResponse CreateEventBus(CreateEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBusResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateEventBus">REST API Reference for CreateEventBus Operation</seealso>
         public virtual Task<CreateEventBusResponse> CreateEventBusAsync(CreateEventBusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBusResponseUnmarshaller.Instance;
             
@@ -781,7 +781,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreatePartnerEventSource">REST API Reference for CreatePartnerEventSource Operation</seealso>
         public virtual CreatePartnerEventSourceResponse CreatePartnerEventSource(CreatePartnerEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -855,7 +855,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreatePartnerEventSource">REST API Reference for CreatePartnerEventSource Operation</seealso>
         public virtual Task<CreatePartnerEventSourceResponse> CreatePartnerEventSourceAsync(CreatePartnerEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnerEventSourceResponseUnmarshaller.Instance;
             
@@ -902,7 +902,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeactivateEventSource">REST API Reference for DeactivateEventSource Operation</seealso>
         public virtual DeactivateEventSourceResponse DeactivateEventSource(DeactivateEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateEventSourceResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeactivateEventSource">REST API Reference for DeactivateEventSource Operation</seealso>
         public virtual Task<DeactivateEventSourceResponse> DeactivateEventSourceAsync(DeactivateEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateEventSourceResponseUnmarshaller.Instance;
             
@@ -979,7 +979,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
         public virtual DeauthorizeConnectionResponse DeauthorizeConnection(DeauthorizeConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
 
@@ -1009,7 +1009,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
         public virtual Task<DeauthorizeConnectionResponse> DeauthorizeConnectionAsync(DeauthorizeConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
             
@@ -1039,7 +1039,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
         public virtual DeleteApiDestinationResponse DeleteApiDestination(DeleteApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
 
@@ -1068,7 +1068,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
         public virtual Task<DeleteApiDestinationResponse> DeleteApiDestinationAsync(DeleteApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
             
@@ -1098,7 +1098,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
             
@@ -1157,7 +1157,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
             
@@ -1215,7 +1215,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteEventBus">REST API Reference for DeleteEventBus Operation</seealso>
         public virtual DeleteEventBusResponse DeleteEventBus(DeleteEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBusResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteEventBus">REST API Reference for DeleteEventBus Operation</seealso>
         public virtual Task<DeleteEventBusResponse> DeleteEventBusAsync(DeleteEventBusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBusResponseUnmarshaller.Instance;
             
@@ -1280,7 +1280,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeletePartnerEventSource">REST API Reference for DeletePartnerEventSource Operation</seealso>
         public virtual DeletePartnerEventSourceResponse DeletePartnerEventSource(DeletePartnerEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -1316,7 +1316,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeletePartnerEventSource">REST API Reference for DeletePartnerEventSource Operation</seealso>
         public virtual Task<DeletePartnerEventSourceResponse> DeletePartnerEventSourceAsync(DeletePartnerEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnerEventSourceResponseUnmarshaller.Instance;
             
@@ -1378,7 +1378,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1439,7 +1439,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
             
@@ -1466,7 +1466,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
         public virtual DescribeApiDestinationResponse DescribeApiDestination(DescribeApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
         public virtual Task<DescribeApiDestinationResponse> DescribeApiDestinationAsync(DescribeApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
             
@@ -1522,7 +1522,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
         public virtual DescribeArchiveResponse DescribeArchive(DescribeArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
         public virtual Task<DescribeArchiveResponse> DescribeArchiveAsync(DescribeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
             
@@ -1578,7 +1578,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
         public virtual DescribeConnectionResponse DescribeConnection(DescribeConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
 
@@ -1604,7 +1604,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
         public virtual Task<DescribeConnectionResponse> DescribeConnectionAsync(DescribeConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
             
@@ -1644,7 +1644,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
         public virtual DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
         public virtual Task<DescribeEventBusResponse> DescribeEventBusAsync(DescribeEventBusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
             
@@ -1714,7 +1714,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventSource">REST API Reference for DescribeEventSource Operation</seealso>
         public virtual DescribeEventSourceResponse DescribeEventSource(DescribeEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourceResponseUnmarshaller.Instance;
 
@@ -1744,7 +1744,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventSource">REST API Reference for DescribeEventSource Operation</seealso>
         public virtual Task<DescribeEventSourceResponse> DescribeEventSourceAsync(DescribeEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourceResponseUnmarshaller.Instance;
             
@@ -1777,7 +1777,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribePartnerEventSource">REST API Reference for DescribePartnerEventSource Operation</seealso>
         public virtual DescribePartnerEventSourceResponse DescribePartnerEventSource(DescribePartnerEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -1809,7 +1809,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribePartnerEventSource">REST API Reference for DescribePartnerEventSource Operation</seealso>
         public virtual Task<DescribePartnerEventSourceResponse> DescribePartnerEventSourceAsync(DescribePartnerEventSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePartnerEventSourceResponseUnmarshaller.Instance;
             
@@ -1844,7 +1844,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
         public virtual DescribeReplayResponse DescribeReplay(DescribeReplayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
 
@@ -1878,7 +1878,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
         public virtual Task<DescribeReplayResponse> DescribeReplayAsync(DescribeReplayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
             
@@ -1911,7 +1911,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         public virtual DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         public virtual Task<DescribeRuleResponse> DescribeRuleAsync(DescribeRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleResponseUnmarshaller.Instance;
             
@@ -1988,7 +1988,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         public virtual DisableRuleResponse DisableRule(DisableRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRuleResponseUnmarshaller.Instance;
 
@@ -2032,7 +2032,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         public virtual Task<DisableRuleResponse> DisableRuleAsync(DisableRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRuleResponseUnmarshaller.Instance;
             
@@ -2076,7 +2076,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         public virtual EnableRuleResponse EnableRule(EnableRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRuleResponseUnmarshaller.Instance;
 
@@ -2119,7 +2119,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         public virtual Task<EnableRuleResponse> EnableRuleAsync(EnableRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRuleResponseUnmarshaller.Instance;
             
@@ -2143,7 +2143,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
         public virtual ListApiDestinationsResponse ListApiDestinations(ListApiDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
 
@@ -2166,7 +2166,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
         public virtual Task<ListApiDestinationsResponse> ListApiDestinationsAsync(ListApiDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
             
@@ -2194,7 +2194,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
         public virtual ListArchivesResponse ListArchives(ListArchivesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
 
@@ -2221,7 +2221,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
         public virtual Task<ListArchivesResponse> ListArchivesAsync(ListArchivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
             
@@ -2245,7 +2245,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -2268,7 +2268,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
             
@@ -2293,7 +2293,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListEventBuses">REST API Reference for ListEventBuses Operation</seealso>
         public virtual ListEventBusesResponse ListEventBuses(ListEventBusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBusesResponseUnmarshaller.Instance;
 
@@ -2317,7 +2317,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListEventBuses">REST API Reference for ListEventBuses Operation</seealso>
         public virtual Task<ListEventBusesResponse> ListEventBusesAsync(ListEventBusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBusesResponseUnmarshaller.Instance;
             
@@ -2346,7 +2346,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListEventSources">REST API Reference for ListEventSources Operation</seealso>
         public virtual ListEventSourcesResponse ListEventSources(ListEventSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
 
@@ -2374,7 +2374,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListEventSources">REST API Reference for ListEventSources Operation</seealso>
         public virtual Task<ListEventSourcesResponse> ListEventSourcesAsync(ListEventSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
             
@@ -2406,7 +2406,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListPartnerEventSourceAccounts">REST API Reference for ListPartnerEventSourceAccounts Operation</seealso>
         public virtual ListPartnerEventSourceAccountsResponse ListPartnerEventSourceAccounts(ListPartnerEventSourceAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourceAccountsResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListPartnerEventSourceAccounts">REST API Reference for ListPartnerEventSourceAccounts Operation</seealso>
         public virtual Task<ListPartnerEventSourceAccountsResponse> ListPartnerEventSourceAccountsAsync(ListPartnerEventSourceAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourceAccountsResponseUnmarshaller.Instance;
             
@@ -2465,7 +2465,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListPartnerEventSources">REST API Reference for ListPartnerEventSources Operation</seealso>
         public virtual ListPartnerEventSourcesResponse ListPartnerEventSources(ListPartnerEventSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourcesResponseUnmarshaller.Instance;
 
@@ -2492,7 +2492,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListPartnerEventSources">REST API Reference for ListPartnerEventSources Operation</seealso>
         public virtual Task<ListPartnerEventSourcesResponse> ListPartnerEventSourcesAsync(ListPartnerEventSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourcesResponseUnmarshaller.Instance;
             
@@ -2517,7 +2517,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
         public virtual ListReplaysResponse ListReplays(ListReplaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
 
@@ -2541,7 +2541,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
         public virtual Task<ListReplaysResponse> ListReplaysAsync(ListReplaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
             
@@ -2569,7 +2569,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
         public virtual ListRuleNamesByTargetResponse ListRuleNamesByTarget(ListRuleNamesByTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleNamesByTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
 
@@ -2596,7 +2596,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
         public virtual Task<ListRuleNamesByTargetResponse> ListRuleNamesByTargetAsync(ListRuleNamesByTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleNamesByTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
             
@@ -2655,7 +2655,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -2715,7 +2715,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
             
@@ -2743,7 +2743,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2770,7 +2770,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2797,7 +2797,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         public virtual ListTargetsByRuleResponse ListTargetsByRule(ListTargetsByRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsByRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
 
@@ -2823,7 +2823,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         public virtual Task<ListTargetsByRuleResponse> ListTargetsByRuleAsync(ListTargetsByRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsByRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
             
@@ -2847,7 +2847,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -2870,7 +2870,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
             
@@ -2898,7 +2898,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPartnerEvents">REST API Reference for PutPartnerEvents Operation</seealso>
         public virtual PutPartnerEventsResponse PutPartnerEvents(PutPartnerEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPartnerEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPartnerEventsResponseUnmarshaller.Instance;
 
@@ -2925,7 +2925,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPartnerEvents">REST API Reference for PutPartnerEvents Operation</seealso>
         public virtual Task<PutPartnerEventsResponse> PutPartnerEventsAsync(PutPartnerEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPartnerEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPartnerEventsResponseUnmarshaller.Instance;
             
@@ -2990,7 +2990,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
         public virtual PutPermissionResponse PutPermission(PutPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
@@ -3054,7 +3054,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
         public virtual Task<PutPermissionResponse> PutPermissionAsync(PutPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionResponseUnmarshaller.Instance;
             
@@ -3170,7 +3170,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         public virtual PutRuleResponse PutRule(PutRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleResponseUnmarshaller.Instance;
 
@@ -3285,7 +3285,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         public virtual Task<PutRuleResponse> PutRuleAsync(PutRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleResponseUnmarshaller.Instance;
             
@@ -3369,7 +3369,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Firehose delivery stream (Kinesis Data Firehose)
+        /// Firehose delivery stream (Firehose)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3538,7 +3538,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         public virtual PutTargetsResponse PutTargets(PutTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTargetsResponseUnmarshaller.Instance;
 
@@ -3618,7 +3618,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Firehose delivery stream (Kinesis Data Firehose)
+        /// Firehose delivery stream (Firehose)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3790,7 +3790,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         public virtual Task<PutTargetsResponse> PutTargetsAsync(PutTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTargetsResponseUnmarshaller.Instance;
             
@@ -3826,7 +3826,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -3861,7 +3861,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             
@@ -3912,7 +3912,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         public virtual RemoveTargetsResponse RemoveTargets(RemoveTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
 
@@ -3962,7 +3962,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         public virtual Task<RemoveTargetsResponse> RemoveTargetsAsync(RemoveTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
             
@@ -4007,7 +4007,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
         public virtual StartReplayResponse StartReplay(StartReplayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
 
@@ -4051,7 +4051,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
         public virtual Task<StartReplayResponse> StartReplayAsync(StartReplayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
             
@@ -4109,7 +4109,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4166,7 +4166,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4201,7 +4201,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         public virtual TestEventPatternResponse TestEventPattern(TestEventPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestEventPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestEventPatternResponseUnmarshaller.Instance;
 
@@ -4235,7 +4235,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         public virtual Task<TestEventPatternResponse> TestEventPatternAsync(TestEventPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestEventPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestEventPatternResponseUnmarshaller.Instance;
             
@@ -4274,7 +4274,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4312,7 +4312,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4346,7 +4346,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
         public virtual UpdateApiDestinationResponse UpdateApiDestination(UpdateApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
 
@@ -4379,7 +4379,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
         public virtual Task<UpdateApiDestinationResponse> UpdateApiDestinationAsync(UpdateApiDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
             
@@ -4416,7 +4416,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
         public virtual UpdateArchiveResponse UpdateArchive(UpdateArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
 
@@ -4452,7 +4452,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
         public virtual Task<UpdateArchiveResponse> UpdateArchiveAsync(UpdateArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
             
@@ -4486,7 +4486,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -4519,7 +4519,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
             

@@ -58,6 +58,7 @@ namespace Amazon.CloudWatchRUM.Model
         private string _domain;
         private List<string> _domainList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private AppMonitorPlatform _platform;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -217,6 +218,26 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The platform type for the app monitor. Valid values are <c>Web</c> for web applications,
+        /// <c>Android</c> for Android applications, and <c>iOS</c> for IOS applications. If you
+        /// omit this parameter, the default is <c>Web</c>.
+        /// </para>
+        /// </summary>
+        public AppMonitorPlatform Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
         }
 
         /// <summary>

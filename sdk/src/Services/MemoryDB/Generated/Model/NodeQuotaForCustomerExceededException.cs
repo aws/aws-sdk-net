@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of nodes
+    /// allowed for this customer.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class NodeQuotaForCustomerExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for NodeQuotaForCustomerExceededException
+        /// message.
+        /// </summary>
+        public NodeQuotaForCustomerExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new NodeQuotaForCustomerExceededException with the specified error

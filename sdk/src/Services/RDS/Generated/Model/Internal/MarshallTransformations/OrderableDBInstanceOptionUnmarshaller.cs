@@ -72,6 +72,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("AvailableAdditionalStorageVolumesOptions/AvailableAdditionalStorageVolumesOption", targetDepth))
+                    {
+                        var unmarshaller = AvailableAdditionalStorageVolumesOptionUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailableAdditionalStorageVolumesOptions == null)
+                        {
+                            unmarshalledObject.AvailableAdditionalStorageVolumesOptions = new List<AvailableAdditionalStorageVolumesOption>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailableAdditionalStorageVolumesOptions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AvailableProcessorFeatures/AvailableProcessorFeature", targetDepth))
                     {
                         var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
@@ -224,6 +235,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedNetworkTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportsAdditionalStorageVolumes", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsAdditionalStorageVolumes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsClusters", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -246,6 +263,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsHttpEndpoint", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsHttpEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIAMDatabaseAuthentication", targetDepth))

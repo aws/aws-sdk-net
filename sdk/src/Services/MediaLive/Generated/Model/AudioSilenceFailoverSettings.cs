@@ -60,7 +60,6 @@ namespace Amazon.MediaLive.Model
         /// that the active input must be silent before automatic input failover occurs. Silence
         /// is defined as audio loss or audio quieter than -50 dBFS.
         /// </summary>
-        [AWSProperty(Min=1000)]
         public int? AudioSilenceThresholdMsec
         {
             get { return this._audioSilenceThresholdMsec; }

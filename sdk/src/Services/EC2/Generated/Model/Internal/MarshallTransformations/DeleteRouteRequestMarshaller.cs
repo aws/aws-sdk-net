@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteRouteRequestMarshaller _instance = new DeleteRouteRequestMarshaller();        

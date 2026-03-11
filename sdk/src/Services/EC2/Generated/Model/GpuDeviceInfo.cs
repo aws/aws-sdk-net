@@ -35,9 +35,12 @@ namespace Amazon.EC2.Model
     public partial class GpuDeviceInfo
     {
         private int? _count;
+        private double? _gpuPartitionSize;
+        private int? _logicalGpuCount;
         private string _manufacturer;
         private GpuDeviceMemoryInfo _memoryInfo;
         private string _name;
+        private List<string> _workloads = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -55,6 +58,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetCount()
         {
             return this._count.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GpuPartitionSize. 
+        /// <para>
+        /// The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1 (included).
+        /// </para>
+        /// </summary>
+        public double? GpuPartitionSize
+        {
+            get { return this._gpuPartitionSize; }
+            set { this._gpuPartitionSize = value; }
+        }
+
+        // Check to see if GpuPartitionSize property is set
+        internal bool IsSetGpuPartitionSize()
+        {
+            return this._gpuPartitionSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogicalGpuCount. 
+        /// <para>
+        /// Total number of GPU devices of this type.
+        /// </para>
+        /// </summary>
+        public int? LogicalGpuCount
+        {
+            get { return this._logicalGpuCount; }
+            set { this._logicalGpuCount = value; }
+        }
+
+        // Check to see if LogicalGpuCount property is set
+        internal bool IsSetLogicalGpuCount()
+        {
+            return this._logicalGpuCount.HasValue; 
         }
 
         /// <summary>
@@ -109,6 +148,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Workloads. 
+        /// <para>
+        /// A list of workload types this GPU supports.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Workloads
+        {
+            get { return this._workloads; }
+            set { this._workloads = value; }
+        }
+
+        // Check to see if Workloads property is set
+        internal bool IsSetWorkloads()
+        {
+            return this._workloads != null && (this._workloads.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

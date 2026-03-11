@@ -88,6 +88,13 @@ namespace Amazon.WAFRegional.Model
         private ParameterExceptionReason _reason;
 
         /// <summary>
+        /// Default constructor for WAFInvalidParameterException
+        /// message.
+        /// </summary>
+        public WAFInvalidParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInvalidParameterException with the specified error
         /// message.
         /// </summary>

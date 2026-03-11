@@ -31,18 +31,18 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplate operation.
-    /// Creates a template either from a <c>TemplateDefinition</c> or from an existing Amazon
-    /// QuickSight analysis or template. You can use the resulting template to create additional
+    /// Creates a template either from a <c>TemplateDefinition</c> or from an existing Quick
+    /// Sight analysis or template. You can use the resulting template to create additional
     /// dashboards, templates, or analyses.
     /// 
     ///  
     /// <para>
-    /// A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata
-    /// required to create an analysis and that you can use to create s dashboard. A template
-    /// adds a layer of abstraction by using placeholders to replace the dataset associated
-    /// with the analysis. You can use templates to create dashboards by replacing dataset
-    /// placeholders with datasets that follow the same schema that was used to create the
-    /// source analysis and template.
+    /// A <i>template</i> is an entity in Quick Sight that encapsulates the metadata required
+    /// to create an analysis and that you can use to create s dashboard. A template adds
+    /// a layer of abstraction by using placeholders to replace the dataset associated with
+    /// the analysis. You can use templates to create dashboards by replacing dataset placeholders
+    /// with datasets that follow the same schema that was used to create the source analysis
+    /// and template.
     /// </para>
     /// </summary>
     public partial class CreateTemplateRequest : AmazonQuickSightRequest
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the group is in. You use the ID for
-        /// the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -155,8 +155,8 @@ namespace Amazon.QuickSight.Model
         /// template or <c>SourceAnalysis</c> for an analysis. Both of these require an Amazon
         /// Resource Name (ARN). For <c>SourceTemplate</c>, specify the ARN of the source template.
         /// For <c>SourceAnalysis</c>, specify the ARN of the source analysis. The <c>SourceTemplate</c>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported
-        /// Amazon Web Services Region. 
+        /// ARN can contain any Amazon Web Services account and any Quick Sight-supported Amazon
+        /// Web Services Region. 
         /// </para>
         ///  
         /// <para>

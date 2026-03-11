@@ -190,6 +190,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateEnvironmentRequestMarshaller _instance = new CreateEnvironmentRequestMarshaller();        

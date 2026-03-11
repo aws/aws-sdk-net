@@ -41,6 +41,13 @@ namespace Amazon.MachineLearning.Model
         private int? _code;
 
         /// <summary>
+        /// Default constructor for LimitExceededException
+        /// message.
+        /// </summary>
+        public LimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
         /// </summary>

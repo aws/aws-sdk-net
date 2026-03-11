@@ -40,6 +40,13 @@ namespace Amazon.Kafka.Model
         private string _invalidParameter;
 
         /// <summary>
+        /// Default constructor for ForbiddenException
+        /// message.
+        /// </summary>
+        public ForbiddenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ForbiddenException with the specified error
         /// message.
         /// </summary>

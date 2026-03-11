@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PersonalizationMode. 
         /// <para>
-        /// An option to allow Amazon QuickSight to customize data stories with user specific
+        /// An option to allow Amazon Quick Sight to customize data stories with user specific
         /// metadata, specifically location and job information, in your IAM Identity Center instance.
         /// </para>
         /// </summary>

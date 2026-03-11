@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SubscriptionAlreadyExistException
+        /// message.
+        /// </summary>
+        public SubscriptionAlreadyExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubscriptionAlreadyExistException with the specified error
         /// message.
         /// </summary>

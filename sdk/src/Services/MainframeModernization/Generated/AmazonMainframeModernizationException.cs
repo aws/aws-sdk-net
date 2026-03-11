@@ -36,6 +36,14 @@ namespace Amazon.MainframeModernization
         /// <summary>
         /// Construct instance of AmazonMainframeModernizationException
         /// </summary>
+        public AmazonMainframeModernizationException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMainframeModernizationException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMainframeModernizationException(string message)
             : base(message)

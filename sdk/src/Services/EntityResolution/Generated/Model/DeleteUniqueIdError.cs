@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The Delete Unique Id error.
+    /// The error information provided when the delete unique ID operation doesn't complete.
     /// </summary>
     public partial class DeleteUniqueIdError
     {
@@ -40,7 +40,17 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ErrorType. 
         /// <para>
-        ///  The error type for the batch delete unique ID operation.
+        ///  The error type for the delete unique ID operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>SERVICE_ERROR</c> value indicates that an internal service-side problem occurred
+        /// during the deletion operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>VALIDATION_ERROR</c> value indicates that the deletion operation couldn't complete
+        /// because of invalid input parameters or data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +69,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property UniqueId. 
         /// <para>
-        /// The unique ID that could not be deleted.
+        /// The unique ID that couldn't be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=780)]

@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for PointInTimeRestoreNotEnabledException
+        /// message.
+        /// </summary>
+        public PointInTimeRestoreNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PointInTimeRestoreNotEnabledException with the specified error
         /// message.
         /// </summary>

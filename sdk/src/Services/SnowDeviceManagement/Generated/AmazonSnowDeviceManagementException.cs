@@ -36,6 +36,14 @@ namespace Amazon.SnowDeviceManagement
         /// <summary>
         /// Construct instance of AmazonSnowDeviceManagementException
         /// </summary>
+        public AmazonSnowDeviceManagementException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSnowDeviceManagementException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSnowDeviceManagementException(string message)
             : base(message)

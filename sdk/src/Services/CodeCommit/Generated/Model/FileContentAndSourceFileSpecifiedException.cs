@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FileContentAndSourceFileSpecifiedException
+        /// message.
+        /// </summary>
+        public FileContentAndSourceFileSpecifiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileContentAndSourceFileSpecifiedException with the specified error
         /// message.
         /// </summary>

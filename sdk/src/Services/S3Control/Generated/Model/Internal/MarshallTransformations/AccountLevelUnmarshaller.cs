@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccountLevel Object
     /// </summary>  
-    public class AccountLevelUnmarshaller : IXmlUnmarshaller<AccountLevel, XmlUnmarshallerContext>
+    public partial class AccountLevelUnmarshaller : IXmlUnmarshaller<AccountLevel, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.AdvancedDataProtectionMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdvancedPerformanceMetrics", targetDepth))
+                    {
+                        var unmarshaller = AdvancedPerformanceMetricsUnmarshaller.Instance;
+                        unmarshalledObject.AdvancedPerformanceMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BucketLevel", targetDepth))
                     {
                         var unmarshaller = BucketLevelUnmarshaller.Instance;
@@ -92,6 +98,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageLensGroupLevel = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +108,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AccountLevel unmarshalledObject, int targetDepth);
+
         private static AccountLevelUnmarshaller _instance = new AccountLevelUnmarshaller();        
 
         /// <summary>

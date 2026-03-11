@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for EFSMountConnectivityException
+        /// message.
+        /// </summary>
+        public EFSMountConnectivityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EFSMountConnectivityException with the specified error
         /// message.
         /// </summary>

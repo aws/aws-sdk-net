@@ -37,6 +37,7 @@ namespace Amazon.Backup.Model
     public partial class GetBackupPlanRequest : AmazonBackupRequest
     {
         private string _backupPlanId;
+        private int? _maxScheduledRunsPreview;
         private string _versionId;
 
         /// <summary>
@@ -56,6 +57,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetBackupPlanId()
         {
             return this._backupPlanId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxScheduledRunsPreview. 
+        /// <para>
+        /// Number of future scheduled backup runs to preview. When set to 0 (default), no scheduled
+        /// runs preview is included in the response. Valid range is 0-10.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public int? MaxScheduledRunsPreview
+        {
+            get { return this._maxScheduledRunsPreview; }
+            set { this._maxScheduledRunsPreview = value; }
+        }
+
+        // Check to see if MaxScheduledRunsPreview property is set
+        internal bool IsSetMaxScheduledRunsPreview()
+        {
+            return this._maxScheduledRunsPreview.HasValue; 
         }
 
         /// <summary>

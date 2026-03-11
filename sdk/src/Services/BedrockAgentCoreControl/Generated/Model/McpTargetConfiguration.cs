@@ -35,9 +35,29 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class McpTargetConfiguration
     {
+        private ApiGatewayTargetConfiguration _apiGateway;
         private McpLambdaTargetConfiguration _lambda;
+        private McpServerTargetConfiguration _mcpServer;
         private ApiSchemaConfiguration _openApiSchema;
         private ApiSchemaConfiguration _smithyModel;
+
+        /// <summary>
+        /// Gets and sets the property ApiGateway. 
+        /// <para>
+        /// The configuration for an Amazon API Gateway target.
+        /// </para>
+        /// </summary>
+        public ApiGatewayTargetConfiguration ApiGateway
+        {
+            get { return this._apiGateway; }
+            set { this._apiGateway = value; }
+        }
+
+        // Check to see if ApiGateway property is set
+        internal bool IsSetApiGateway()
+        {
+            return this._apiGateway != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Lambda. 
@@ -56,6 +76,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLambda()
         {
             return this._lambda != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property McpServer. 
+        /// <para>
+        /// The MCP server specified as the gateway target.
+        /// </para>
+        /// </summary>
+        public McpServerTargetConfiguration McpServer
+        {
+            get { return this._mcpServer; }
+            set { this._mcpServer = value; }
+        }
+
+        // Check to see if McpServer property is set
+        internal bool IsSetMcpServer()
+        {
+            return this._mcpServer != null;
         }
 
         /// <summary>

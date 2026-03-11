@@ -40,6 +40,13 @@ namespace Amazon.Glue.Model
         private FederationSourceErrorCode _federationSourceErrorCode;
 
         /// <summary>
+        /// Default constructor for FederationSourceException
+        /// message.
+        /// </summary>
+        public FederationSourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FederationSourceException with the specified error
         /// message.
         /// </summary>

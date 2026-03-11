@@ -31,8 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAggregatorV2 operation.
-    /// Udpates the configuration for the Aggregator V2. This API is in private preview and
-    /// subject to change.
+    /// Udpates the configuration for the Aggregator V2.
     /// </summary>
     public partial class UpdateAggregatorV2Request : AmazonSecurityHubRequest
     {

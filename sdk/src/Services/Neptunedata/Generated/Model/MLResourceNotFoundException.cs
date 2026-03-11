@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for MLResourceNotFoundException
+        /// message.
+        /// </summary>
+        public MLResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MLResourceNotFoundException with the specified error
         /// message.
         /// </summary>

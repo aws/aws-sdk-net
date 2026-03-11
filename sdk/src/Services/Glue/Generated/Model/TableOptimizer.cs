@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class TableOptimizer
     {
         private TableOptimizerConfiguration _configuration;
+        private ConfigurationSource _configurationSource;
         private TableOptimizerRun _lastRun;
         private TableOptimizerType _type;
 
@@ -55,6 +56,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSource. 
+        /// <para>
+        ///  Specifies the source of the optimizer configuration. This indicates how the table
+        /// optimizer was configured and which entity or service initiated the configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        public ConfigurationSource ConfigurationSource
+        {
+            get { return this._configurationSource; }
+            set { this._configurationSource = value; }
+        }
+
+        // Check to see if ConfigurationSource property is set
+        internal bool IsSetConfigurationSource()
+        {
+            return this._configurationSource != null;
         }
 
         /// <summary>

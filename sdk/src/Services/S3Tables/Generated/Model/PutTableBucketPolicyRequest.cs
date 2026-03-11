@@ -31,8 +31,8 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the PutTableBucketPolicy operation.
-    /// Creates a new maintenance configuration or replaces an existing table bucket policy
-    /// for a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding
+    /// Creates a new table bucket policy or replaces an existing table bucket policy for
+    /// a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding
     /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 

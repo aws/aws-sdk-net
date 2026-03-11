@@ -36,9 +36,30 @@ namespace Amazon.WorkspacesInstances.Model
     /// </summary>
     public partial class CreateWorkspaceInstanceRequest : AmazonWorkspacesInstancesRequest
     {
+        private BillingConfiguration _billingConfiguration;
         private string _clientToken;
         private ManagedInstanceRequest _managedInstance;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BillingConfiguration. 
+        /// <para>
+        /// Optional billing configuration for the WorkSpace Instance. Allows customers to specify
+        /// their preferred billing mode when creating a new instance. Defaults to hourly billing
+        /// if not specified.
+        /// </para>
+        /// </summary>
+        public BillingConfiguration BillingConfiguration
+        {
+            get { return this._billingConfiguration; }
+            set { this._billingConfiguration = value; }
+        }
+
+        // Check to see if BillingConfiguration property is set
+        internal bool IsSetBillingConfiguration()
+        {
+            return this._billingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -91,7 +112,7 @@ namespace Amazon.WorkspacesInstances.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=30)]
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

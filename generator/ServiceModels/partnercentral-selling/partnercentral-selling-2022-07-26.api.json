@@ -2,6 +2,7 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2022-07-26",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"partnercentral-selling",
     "jsonVersion":"1.0",
     "protocol":"json",
@@ -11,8 +12,7 @@
     "signatureVersion":"v4",
     "signingName":"partnercentral-selling",
     "targetPrefix":"AWSPartnerCentralSelling",
-    "uid":"partnercentral-selling-2022-07-26",
-    "auth":["aws.auth#sigv4"]
+    "uid":"partnercentral-selling-2022-07-26"
   },
   "operations":{
     "AcceptEngagementInvitation":{
@@ -73,6 +73,26 @@
         {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
+    "CreateEngagementContext":{
+      "name":"CreateEngagementContext",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateEngagementContextRequest"},
+      "output":{"shape":"CreateEngagementContextResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"}
@@ -91,6 +111,7 @@
         {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"}
@@ -127,6 +148,7 @@
         {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"}
@@ -145,6 +167,7 @@
         {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"}
@@ -162,6 +185,7 @@
         {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
       ],
@@ -196,7 +220,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetEngagement":{
       "name":"GetEngagement",
@@ -209,9 +234,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetEngagementInvitation":{
       "name":"GetEngagementInvitation",
@@ -227,7 +254,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetOpportunity":{
       "name":"GetOpportunity",
@@ -243,7 +271,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetResourceSnapshot":{
       "name":"GetResourceSnapshot",
@@ -256,9 +285,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetResourceSnapshotJob":{
       "name":"GetResourceSnapshotJob",
@@ -271,9 +302,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetSellingSystemSettings":{
       "name":"GetSellingSystemSettings",
@@ -286,9 +319,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEngagementByAcceptingInvitationTasks":{
       "name":"ListEngagementByAcceptingInvitationTasks",
@@ -301,9 +336,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEngagementFromOpportunityTasks":{
       "name":"ListEngagementFromOpportunityTasks",
@@ -316,9 +353,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEngagementInvitations":{
       "name":"ListEngagementInvitations",
@@ -334,7 +373,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEngagementMembers":{
       "name":"ListEngagementMembers",
@@ -347,9 +387,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEngagementResourceAssociations":{
       "name":"ListEngagementResourceAssociations",
@@ -362,9 +404,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEngagements":{
       "name":"ListEngagements",
@@ -377,9 +421,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListOpportunities":{
       "name":"ListOpportunities",
@@ -395,7 +441,25 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "ListOpportunityFromEngagementTasks":{
+      "name":"ListOpportunityFromEngagementTasks",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListOpportunityFromEngagementTasksRequest"},
+      "output":{"shape":"ListOpportunityFromEngagementTasksResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "readonly":true
     },
     "ListResourceSnapshotJobs":{
       "name":"ListResourceSnapshotJobs",
@@ -408,9 +472,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListResourceSnapshots":{
       "name":"ListResourceSnapshots",
@@ -423,9 +489,11 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListSolutions":{
       "name":"ListSolutions",
@@ -436,11 +504,13 @@
       "input":{"shape":"ListSolutionsRequest"},
       "output":{"shape":"ListSolutionsResponse"},
       "errors":[
+        {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -456,7 +526,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "PutSellingSystemSettings":{
       "name":"PutSellingSystemSettings",
@@ -469,6 +540,7 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
       ],
@@ -526,6 +598,24 @@
         {"shape":"ResourceNotFoundException"}
       ]
     },
+    "StartOpportunityFromEngagementTask":{
+      "name":"StartOpportunityFromEngagementTask",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartOpportunityFromEngagementTaskRequest"},
+      "output":{"shape":"StartOpportunityFromEngagementTaskResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "StartResourceSnapshotJob":{
       "name":"StartResourceSnapshotJob",
       "http":{
@@ -536,6 +626,7 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
       ],
@@ -551,6 +642,7 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
       ],
@@ -607,6 +699,24 @@
       ],
       "idempotent":true
     },
+    "UpdateEngagementContext":{
+      "name":"UpdateEngagementContext",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateEngagementContextRequest"},
+      "output":{"shape":"UpdateEngagementContextResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ValidationException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "UpdateOpportunity":{
       "name":"UpdateOpportunity",
       "http":{
@@ -640,33 +750,36 @@
     "AccessDeniedException":{
       "type":"structure",
       "members":{
-        "Message":{"shape":"String"}
+        "Message":{"shape":"String"},
+        "Reason":{"shape":"AccessDeniedExceptionErrorCode"}
       },
       "exception":true
+    },
+    "AccessDeniedExceptionErrorCode":{
+      "type":"string",
+      "enum":["INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE"]
     },
     "Account":{
       "type":"structure",
       "required":["CompanyName"],
       "members":{
-        "Address":{"shape":"Address"},
-        "AwsAccountId":{"shape":"AwsAccount"},
-        "CompanyName":{"shape":"AccountCompanyNameString"},
-        "Duns":{"shape":"DunsNumber"},
         "Industry":{"shape":"Industry"},
         "OtherIndustry":{"shape":"AccountOtherIndustryString"},
-        "WebsiteUrl":{"shape":"WebsiteUrl"}
+        "CompanyName":{"shape":"AccountCompanyNameString"},
+        "WebsiteUrl":{"shape":"WebsiteUrl"},
+        "AwsAccountId":{"shape":"AwsAccount"},
+        "Address":{"shape":"Address"},
+        "Duns":{"shape":"DunsNumber"}
       }
     },
     "AccountCompanyNameString":{
       "type":"string",
-      "max":120,
-      "min":0,
+      "pattern":"(?s).{0,120}",
       "sensitive":true
     },
     "AccountOtherIndustryString":{
       "type":"string",
-      "max":255,
-      "min":0
+      "pattern":"(?s).{0,255}"
     },
     "AccountReceiver":{
       "type":"structure",
@@ -680,38 +793,35 @@
       "type":"structure",
       "required":["CompanyName"],
       "members":{
-        "Address":{"shape":"AddressSummary"},
-        "CompanyName":{"shape":"AccountSummaryCompanyNameString"},
         "Industry":{"shape":"Industry"},
         "OtherIndustry":{"shape":"AccountSummaryOtherIndustryString"},
-        "WebsiteUrl":{"shape":"WebsiteUrl"}
+        "CompanyName":{"shape":"AccountSummaryCompanyNameString"},
+        "WebsiteUrl":{"shape":"WebsiteUrl"},
+        "Address":{"shape":"AddressSummary"}
       }
     },
     "AccountSummaryCompanyNameString":{
       "type":"string",
-      "max":120,
-      "min":0,
+      "pattern":"(?s).{0,120}",
       "sensitive":true
     },
     "AccountSummaryOtherIndustryString":{
       "type":"string",
-      "max":255,
-      "min":0
+      "pattern":"(?s).{0,255}"
     },
     "Address":{
       "type":"structure",
       "members":{
         "City":{"shape":"AddressCityString"},
-        "CountryCode":{"shape":"CountryCode"},
         "PostalCode":{"shape":"AddressPostalCodeString"},
         "StateOrRegion":{"shape":"AddressPart"},
+        "CountryCode":{"shape":"CountryCode"},
         "StreetAddress":{"shape":"AddressStreetAddressString"}
       }
     },
     "AddressCityString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "AddressPart":{
@@ -720,42 +830,47 @@
     },
     "AddressPostalCodeString":{
       "type":"string",
-      "max":20,
-      "min":0,
+      "pattern":"(?s).{0,20}",
       "sensitive":true
     },
     "AddressStreetAddressString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "AddressSummary":{
       "type":"structure",
       "members":{
         "City":{"shape":"AddressSummaryCityString"},
-        "CountryCode":{"shape":"CountryCode"},
         "PostalCode":{"shape":"AddressSummaryPostalCodeString"},
-        "StateOrRegion":{"shape":"AddressPart"}
+        "StateOrRegion":{"shape":"AddressPart"},
+        "CountryCode":{"shape":"CountryCode"}
       }
     },
     "AddressSummaryCityString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "AddressSummaryPostalCodeString":{
       "type":"string",
-      "max":20,
-      "min":0,
+      "pattern":"(?s).{0,20}",
       "sensitive":true
     },
     "Alias":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
+    },
+    "Amount":{
+      "type":"string",
+      "pattern":"((0|([1-9][0-9]{0,30}))(\\.[0-9]{0,2})?)?",
+      "sensitive":true
+    },
+    "AmountMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"MonetaryAmount"}
     },
     "ApnPrograms":{
       "type":"list",
@@ -764,41 +879,40 @@
     "AssignOpportunityRequest":{
       "type":"structure",
       "required":[
-        "Assignee",
         "Catalog",
-        "Identifier"
+        "Identifier",
+        "Assignee"
       ],
       "members":{
-        "Assignee":{"shape":"AssigneeContact"},
         "Catalog":{"shape":"CatalogIdentifier"},
-        "Identifier":{"shape":"OpportunityIdentifier"}
+        "Identifier":{"shape":"OpportunityIdentifier"},
+        "Assignee":{"shape":"AssigneeContact"}
       }
     },
     "AssigneeContact":{
       "type":"structure",
       "required":[
-        "BusinessTitle",
         "Email",
         "FirstName",
-        "LastName"
+        "LastName",
+        "BusinessTitle"
       ],
       "members":{
-        "BusinessTitle":{"shape":"JobTitle"},
         "Email":{"shape":"Email"},
         "FirstName":{"shape":"AssigneeContactFirstNameString"},
-        "LastName":{"shape":"AssigneeContactLastNameString"}
+        "LastName":{"shape":"AssigneeContactLastNameString"},
+        "Phone":{"shape":"PhoneNumber"},
+        "BusinessTitle":{"shape":"JobTitle"}
       }
     },
     "AssigneeContactFirstNameString":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "AssigneeContactLastNameString":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "AssociateOpportunityRequest":{
@@ -806,24 +920,23 @@
       "required":[
         "Catalog",
         "OpportunityIdentifier",
-        "RelatedEntityIdentifier",
-        "RelatedEntityType"
+        "RelatedEntityType",
+        "RelatedEntityIdentifier"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "OpportunityIdentifier":{"shape":"OpportunityIdentifier"},
-        "RelatedEntityIdentifier":{"shape":"AssociateOpportunityRequestRelatedEntityIdentifierString"},
-        "RelatedEntityType":{"shape":"RelatedEntityType"}
+        "RelatedEntityType":{"shape":"RelatedEntityType"},
+        "RelatedEntityIdentifier":{"shape":"AssociateOpportunityRequestRelatedEntityIdentifierString"}
       }
     },
     "AssociateOpportunityRequestRelatedEntityIdentifierString":{
       "type":"string",
-      "max":255,
-      "min":1
+      "pattern":"(?s).{1,255}"
     },
     "AwsAccount":{
       "type":"string",
-      "pattern":"^([0-9]{12}|\\w{1,12})$",
+      "pattern":"([0-9]{12}|\\w{1,12})",
       "sensitive":true
     },
     "AwsAccountIdOrAliasList":{
@@ -900,11 +1013,23 @@
     },
     "AwsMarketplaceOfferIdentifier":{
       "type":"string",
-      "pattern":"^arn:aws:aws-marketplace:[a-z]{1,2}-[a-z]*-\\d+:\\d{12}:AWSMarketplace/Offer/.*$"
+      "pattern":"arn:aws:aws-marketplace:[a-z]{1,2}-[a-z]*-\\d+:\\d{12}:AWSMarketplace/Offer/.*"
     },
     "AwsMarketplaceOfferIdentifiers":{
       "type":"list",
       "member":{"shape":"AwsMarketplaceOfferIdentifier"}
+    },
+    "AwsMarketplaceOfferSetIdentifier":{
+      "type":"string",
+      "pattern":"arn:aws:aws-marketplace:[a-z]{1,2}-[a-z]*-\\d+:\\d{12}:AWSMarketplace/OfferSet/offerset-.*"
+    },
+    "AwsMarketplaceOfferSetIdentifiers":{
+      "type":"list",
+      "member":{"shape":"AwsMarketplaceOfferSetIdentifier"}
+    },
+    "AwsMaturity":{
+      "type":"string",
+      "pattern":"(?s).{1,20}"
     },
     "AwsMemberBusinessTitle":{
       "type":"string",
@@ -926,18 +1051,19 @@
     "AwsOpportunityInsights":{
       "type":"structure",
       "members":{
+        "NextBestActions":{"shape":"String"},
         "EngagementScore":{"shape":"EngagementScore"},
-        "NextBestActions":{"shape":"String"}
+        "AwsProductsSpendInsightsBySource":{"shape":"AwsProductsSpendInsightsBySource"}
       }
     },
     "AwsOpportunityLifeCycle":{
       "type":"structure",
       "members":{
+        "TargetCloseDate":{"shape":"Date"},
         "ClosedLostReason":{"shape":"AwsClosedLostReason"},
-        "NextSteps":{"shape":"AwsOpportunityLifeCycleNextStepsString"},
-        "NextStepsHistory":{"shape":"AwsOpportunityLifeCycleNextStepsHistoryList"},
         "Stage":{"shape":"AwsOpportunityStage"},
-        "TargetCloseDate":{"shape":"Date"}
+        "NextSteps":{"shape":"AwsOpportunityLifeCycleNextStepsString"},
+        "NextStepsHistory":{"shape":"AwsOpportunityLifeCycleNextStepsHistoryList"}
       }
     },
     "AwsOpportunityLifeCycleNextStepsHistoryList":{
@@ -948,14 +1074,14 @@
     },
     "AwsOpportunityLifeCycleNextStepsString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "AwsOpportunityProject":{
       "type":"structure",
       "members":{
-        "ExpectedCustomerSpend":{"shape":"ExpectedCustomerSpendList"}
+        "ExpectedCustomerSpend":{"shape":"ExpectedCustomerSpendList"},
+        "AwsPartition":{"shape":"AwsPartition"}
       }
     },
     "AwsOpportunityRelatedEntities":{
@@ -994,14 +1120,280 @@
         "Closed Incomplete"
       ]
     },
+    "AwsOpportunitySummaryFullView":{
+      "type":"structure",
+      "members":{
+        "RelatedOpportunityId":{"shape":"OpportunityIdentifier"},
+        "Origin":{"shape":"OpportunityOrigin"},
+        "InvolvementType":{"shape":"SalesInvolvementType"},
+        "Visibility":{"shape":"Visibility"},
+        "LifeCycle":{"shape":"AwsOpportunityLifeCycle"},
+        "OpportunityTeam":{"shape":"AwsOpportunityTeamMembersList"},
+        "Insights":{"shape":"AwsOpportunityInsights"},
+        "InvolvementTypeChangeReason":{"shape":"InvolvementTypeChangeReason"},
+        "RelatedEntityIds":{"shape":"AwsOpportunityRelatedEntities"},
+        "Customer":{"shape":"AwsOpportunityCustomer"},
+        "Project":{"shape":"AwsOpportunityProject"}
+      }
+    },
     "AwsOpportunityTeamMembersList":{
       "type":"list",
       "member":{"shape":"AwsTeamMember"}
+    },
+    "AwsPartition":{
+      "type":"string",
+      "enum":["aws-eusc"]
+    },
+    "AwsProductDetails":{
+      "type":"structure",
+      "required":[
+        "ProductCode",
+        "Categories",
+        "Optimizations"
+      ],
+      "members":{
+        "ProductCode":{"shape":"String"},
+        "ServiceCode":{"shape":"String"},
+        "Categories":{"shape":"AwsProductDetailsCategoriesList"},
+        "Amount":{"shape":"MonetaryAmount"},
+        "OptimizedAmount":{"shape":"MonetaryAmount"},
+        "PotentialSavingsAmount":{"shape":"MonetaryAmount"},
+        "Optimizations":{"shape":"AwsProductOptimizationsList"}
+      }
+    },
+    "AwsProductDetailsCategoriesList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":20,
+      "min":0
     },
     "AwsProductIdentifier":{"type":"string"},
     "AwsProductIdentifiers":{
       "type":"list",
       "member":{"shape":"AwsProductIdentifier"}
+    },
+    "AwsProductInsights":{
+      "type":"structure",
+      "required":[
+        "CurrencyCode",
+        "Frequency",
+        "TotalAmountByCategory",
+        "AwsProducts"
+      ],
+      "members":{
+        "CurrencyCode":{"shape":"AwsProductInsightsCurrencyCodeEnum"},
+        "Frequency":{"shape":"PaymentFrequency"},
+        "TotalAmount":{"shape":"MonetaryAmount"},
+        "TotalOptimizedAmount":{"shape":"MonetaryAmount"},
+        "TotalPotentialSavingsAmount":{"shape":"MonetaryAmount"},
+        "TotalAmountByCategory":{"shape":"AmountMap"},
+        "AwsProducts":{"shape":"AwsProductsList"}
+      }
+    },
+    "AwsProductInsightsCurrencyCodeEnum":{
+      "type":"string",
+      "enum":[
+        "USD",
+        "EUR",
+        "GBP",
+        "AUD",
+        "CAD",
+        "CNY",
+        "NZD",
+        "INR",
+        "JPY",
+        "CHF",
+        "SEK",
+        "AED",
+        "AFN",
+        "ALL",
+        "AMD",
+        "ANG",
+        "AOA",
+        "ARS",
+        "AWG",
+        "AZN",
+        "BAM",
+        "BBD",
+        "BDT",
+        "BGN",
+        "BHD",
+        "BIF",
+        "BMD",
+        "BND",
+        "BOB",
+        "BOV",
+        "BRL",
+        "BSD",
+        "BTN",
+        "BWP",
+        "BYN",
+        "BZD",
+        "CDF",
+        "CHE",
+        "CHW",
+        "CLF",
+        "CLP",
+        "COP",
+        "COU",
+        "CRC",
+        "CUC",
+        "CUP",
+        "CVE",
+        "CZK",
+        "DJF",
+        "DKK",
+        "DOP",
+        "DZD",
+        "EGP",
+        "ERN",
+        "ETB",
+        "FJD",
+        "FKP",
+        "GEL",
+        "GHS",
+        "GIP",
+        "GMD",
+        "GNF",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HRK",
+        "HTG",
+        "HUF",
+        "IDR",
+        "ILS",
+        "IQD",
+        "IRR",
+        "ISK",
+        "JMD",
+        "JOD",
+        "KES",
+        "KGS",
+        "KHR",
+        "KMF",
+        "KPW",
+        "KRW",
+        "KWD",
+        "KYD",
+        "KZT",
+        "LAK",
+        "LBP",
+        "LKR",
+        "LRD",
+        "LSL",
+        "LYD",
+        "MAD",
+        "MDL",
+        "MGA",
+        "MKD",
+        "MMK",
+        "MNT",
+        "MOP",
+        "MRU",
+        "MUR",
+        "MVR",
+        "MWK",
+        "MXN",
+        "MXV",
+        "MYR",
+        "MZN",
+        "NAD",
+        "NGN",
+        "NIO",
+        "NOK",
+        "NPR",
+        "OMR",
+        "PAB",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PKR",
+        "PLN",
+        "PYG",
+        "QAR",
+        "RON",
+        "RSD",
+        "RUB",
+        "RWF",
+        "SAR",
+        "SBD",
+        "SCR",
+        "SDG",
+        "SGD",
+        "SHP",
+        "SLL",
+        "SOS",
+        "SRD",
+        "SSP",
+        "STN",
+        "SVC",
+        "SYP",
+        "SZL",
+        "THB",
+        "TJS",
+        "TMT",
+        "TND",
+        "TOP",
+        "TRY",
+        "TTD",
+        "TWD",
+        "TZS",
+        "UAH",
+        "UGX",
+        "USN",
+        "UYI",
+        "UYU",
+        "UZS",
+        "VEF",
+        "VND",
+        "VUV",
+        "WST",
+        "XAF",
+        "XCD",
+        "XDR",
+        "XOF",
+        "XPF",
+        "XSU",
+        "XUA",
+        "YER",
+        "ZAR",
+        "ZMW",
+        "ZWL"
+      ],
+      "pattern":"USD",
+      "sensitive":true
+    },
+    "AwsProductOptimization":{
+      "type":"structure",
+      "required":[
+        "Description",
+        "SavingsAmount"
+      ],
+      "members":{
+        "Description":{"shape":"String"},
+        "SavingsAmount":{"shape":"MonetaryAmount"}
+      }
+    },
+    "AwsProductOptimizationsList":{
+      "type":"list",
+      "member":{"shape":"AwsProductOptimization"},
+      "max":10,
+      "min":0
+    },
+    "AwsProductsList":{
+      "type":"list",
+      "member":{"shape":"AwsProductDetails"},
+      "max":100,
+      "min":0
+    },
+    "AwsProductsSpendInsightsBySource":{
+      "type":"structure",
+      "members":{
+        "Partner":{"shape":"AwsProductInsights"},
+        "AWS":{"shape":"AwsProductInsights"}
+      }
     },
     "AwsSubmission":{
       "type":"structure",
@@ -1014,27 +1406,25 @@
     "AwsTeamMember":{
       "type":"structure",
       "members":{
-        "BusinessTitle":{"shape":"AwsMemberBusinessTitle"},
         "Email":{"shape":"Email"},
         "FirstName":{"shape":"AwsTeamMemberFirstNameString"},
-        "LastName":{"shape":"AwsTeamMemberLastNameString"}
+        "LastName":{"shape":"AwsTeamMemberLastNameString"},
+        "BusinessTitle":{"shape":"AwsMemberBusinessTitle"}
       }
     },
     "AwsTeamMemberFirstNameString":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "AwsTeamMemberLastNameString":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "CatalogIdentifier":{
       "type":"string",
-      "pattern":"^[a-zA-Z]+$"
+      "pattern":"[a-zA-Z]+"
     },
     "Channel":{
       "type":"string",
@@ -1060,7 +1450,7 @@
     },
     "ClientToken":{
       "type":"string",
-      "pattern":"^[!-~]{1,64}$"
+      "pattern":".{1,255}"
     },
     "ClosedLostReason":{
       "type":"string",
@@ -1088,15 +1478,12 @@
     },
     "CompanyName":{
       "type":"string",
-      "max":120,
-      "min":1,
+      "pattern":"(?s).{1,120}",
       "sensitive":true
     },
     "CompanyWebsiteUrl":{
       "type":"string",
-      "max":255,
-      "min":4,
-      "pattern":"^((http|https)://)??(www[.])??([a-zA-Z0-9]|-)+?([.][a-zA-Z0-9(-|/|=|?)??]+?)+?$",
+      "pattern":"(?=.{4,255}$)((http|https)://)??(www[.])??([a-zA-Z0-9]|-)+?([.][a-zA-Z0-9(-|/|=|?)??]+?)+?",
       "sensitive":true
     },
     "CompetitorName":{
@@ -1125,24 +1512,32 @@
     "Contact":{
       "type":"structure",
       "members":{
-        "BusinessTitle":{"shape":"JobTitle"},
         "Email":{"shape":"Email"},
         "FirstName":{"shape":"ContactFirstNameString"},
         "LastName":{"shape":"ContactLastNameString"},
+        "BusinessTitle":{"shape":"JobTitle"},
         "Phone":{"shape":"PhoneNumber"}
       }
     },
     "ContactFirstNameString":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "ContactLastNameString":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
+    },
+    "ContextIdentifier":{
+      "type":"string",
+      "pattern":"[1-9][0-9]*"
+    },
+    "ContextIdentifiers":{
+      "type":"list",
+      "member":{"shape":"ContextIdentifier"},
+      "max":10,
+      "min":1
     },
     "CountryCode":{
       "type":"string",
@@ -1399,6 +1794,35 @@
       ],
       "sensitive":true
     },
+    "CreateEngagementContextRequest":{
+      "type":"structure",
+      "required":[
+        "Catalog",
+        "EngagementIdentifier",
+        "ClientToken",
+        "Type",
+        "Payload"
+      ],
+      "members":{
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "EngagementIdentifier":{"shape":"EngagementArnOrIdentifier"},
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "Type":{"shape":"EngagementContextType"},
+        "Payload":{"shape":"EngagementContextPayload"}
+      }
+    },
+    "CreateEngagementContextResponse":{
+      "type":"structure",
+      "members":{
+        "EngagementId":{"shape":"EngagementIdentifier"},
+        "EngagementArn":{"shape":"EngagementArn"},
+        "EngagementLastModifiedAt":{"shape":"DateTime"},
+        "ContextId":{"shape":"EngagementContextIdentifier"}
+      }
+    },
     "CreateEngagementInvitationRequest":{
       "type":"structure",
       "required":[
@@ -1420,12 +1844,12 @@
     "CreateEngagementInvitationResponse":{
       "type":"structure",
       "required":[
-        "Arn",
-        "Id"
+        "Id",
+        "Arn"
       ],
       "members":{
-        "Arn":{"shape":"EngagementInvitationArn"},
-        "Id":{"shape":"EngagementInvitationIdentifier"}
+        "Id":{"shape":"EngagementInvitationIdentifier"},
+        "Arn":{"shape":"EngagementInvitationArn"}
       }
     },
     "CreateEngagementRequest":{
@@ -1433,29 +1857,26 @@
       "required":[
         "Catalog",
         "ClientToken",
-        "Description",
-        "Title"
+        "Title",
+        "Description"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "ClientToken":{
-          "shape":"CreateEngagementRequestClientTokenString",
+          "shape":"ClientToken",
           "idempotencyToken":true
         },
-        "Contexts":{"shape":"EngagementContexts"},
+        "Title":{"shape":"EngagementTitle"},
         "Description":{"shape":"EngagementDescription"},
-        "Title":{"shape":"EngagementTitle"}
+        "Contexts":{"shape":"EngagementContexts"}
       }
-    },
-    "CreateEngagementRequestClientTokenString":{
-      "type":"string",
-      "pattern":"^[!-~]{1,64}$"
     },
     "CreateEngagementResponse":{
       "type":"structure",
       "members":{
+        "Id":{"shape":"EngagementIdentifier"},
         "Arn":{"shape":"EngagementArn"},
-        "Id":{"shape":"EngagementIdentifier"}
+        "ModifiedAt":{"shape":"DateTime"}
       }
     },
     "CreateOpportunityRequest":{
@@ -1466,39 +1887,35 @@
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
+        "PrimaryNeedsFromAws":{"shape":"PrimaryNeedsFromAws"},
+        "NationalSecurity":{"shape":"NationalSecurity"},
+        "PartnerOpportunityIdentifier":{"shape":"CreateOpportunityRequestPartnerOpportunityIdentifierString"},
+        "Customer":{"shape":"Customer"},
+        "Project":{"shape":"Project"},
+        "OpportunityType":{"shape":"OpportunityType"},
+        "Marketing":{"shape":"Marketing"},
+        "SoftwareRevenue":{"shape":"SoftwareRevenue"},
         "ClientToken":{
-          "shape":"CreateOpportunityRequestClientTokenString",
+          "shape":"ClientToken",
           "idempotencyToken":true
         },
-        "Customer":{"shape":"Customer"},
         "LifeCycle":{"shape":"LifeCycle"},
-        "Marketing":{"shape":"Marketing"},
-        "NationalSecurity":{"shape":"NationalSecurity"},
-        "OpportunityTeam":{"shape":"PartnerOpportunityTeamMembersList"},
-        "OpportunityType":{"shape":"OpportunityType"},
         "Origin":{"shape":"OpportunityOrigin"},
-        "PartnerOpportunityIdentifier":{"shape":"CreateOpportunityRequestPartnerOpportunityIdentifierString"},
-        "PrimaryNeedsFromAws":{"shape":"PrimaryNeedsFromAws"},
-        "Project":{"shape":"Project"},
-        "SoftwareRevenue":{"shape":"SoftwareRevenue"}
+        "OpportunityTeam":{"shape":"PartnerOpportunityTeamMembersList"},
+        "Tags":{"shape":"TagList"}
       }
-    },
-    "CreateOpportunityRequestClientTokenString":{
-      "type":"string",
-      "min":1
     },
     "CreateOpportunityRequestPartnerOpportunityIdentifierString":{
       "type":"string",
-      "max":64,
-      "min":0
+      "pattern":"(?s).{0,64}"
     },
     "CreateOpportunityResponse":{
       "type":"structure",
       "required":["Id"],
       "members":{
         "Id":{"shape":"OpportunityIdentifier"},
-        "LastModifiedDate":{"shape":"DateTime"},
-        "PartnerOpportunityIdentifier":{"shape":"String"}
+        "PartnerOpportunityIdentifier":{"shape":"String"},
+        "LastModifiedDate":{"shape":"DateTime"}
       }
     },
     "CreateResourceSnapshotJobRequest":{
@@ -1507,65 +1924,64 @@
         "Catalog",
         "ClientToken",
         "EngagementIdentifier",
+        "ResourceType",
         "ResourceIdentifier",
-        "ResourceSnapshotTemplateIdentifier",
-        "ResourceType"
+        "ResourceSnapshotTemplateIdentifier"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "ClientToken":{
-          "shape":"CreateResourceSnapshotJobRequestClientTokenString",
+          "shape":"ClientToken",
           "idempotencyToken":true
         },
         "EngagementIdentifier":{"shape":"EngagementIdentifier"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceIdentifier":{"shape":"ResourceIdentifier"},
         "ResourceSnapshotTemplateIdentifier":{"shape":"ResourceTemplateName"},
-        "ResourceType":{"shape":"ResourceType"},
         "Tags":{"shape":"TagList"}
       }
-    },
-    "CreateResourceSnapshotJobRequestClientTokenString":{
-      "type":"string",
-      "pattern":"^[!-~]{1,64}$"
     },
     "CreateResourceSnapshotJobResponse":{
       "type":"structure",
       "members":{
-        "Arn":{"shape":"ResourceSnapshotJobArn"},
-        "Id":{"shape":"ResourceSnapshotJobIdentifier"}
+        "Id":{"shape":"ResourceSnapshotJobIdentifier"},
+        "Arn":{"shape":"ResourceSnapshotJobArn"}
       }
     },
     "CreateResourceSnapshotRequest":{
       "type":"structure",
       "required":[
         "Catalog",
-        "ClientToken",
         "EngagementIdentifier",
+        "ResourceType",
         "ResourceIdentifier",
         "ResourceSnapshotTemplateIdentifier",
-        "ResourceType"
+        "ClientToken"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "ClientToken":{
-          "shape":"CreateResourceSnapshotRequestClientTokenString",
-          "idempotencyToken":true
-        },
         "EngagementIdentifier":{"shape":"EngagementIdentifier"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceIdentifier":{"shape":"ResourceIdentifier"},
         "ResourceSnapshotTemplateIdentifier":{"shape":"ResourceTemplateName"},
-        "ResourceType":{"shape":"ResourceType"}
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
       }
-    },
-    "CreateResourceSnapshotRequestClientTokenString":{
-      "type":"string",
-      "pattern":"^[!-~]{1,64}$"
     },
     "CreateResourceSnapshotResponse":{
       "type":"structure",
       "members":{
         "Arn":{"shape":"ResourceArn"},
         "Revision":{"shape":"ResourceSnapshotRevision"}
+      }
+    },
+    "CreatedDateFilter":{
+      "type":"structure",
+      "members":{
+        "AfterCreatedDate":{"shape":"DateTime"},
+        "BeforeCreatedDate":{"shape":"DateTime"}
       }
     },
     "CurrencyCode":{
@@ -1749,6 +2165,10 @@
         "Contacts":{"shape":"CustomerContactsList"}
       }
     },
+    "CustomerAction":{
+      "type":"string",
+      "pattern":"(?s).{1,255}"
+    },
     "CustomerContactsList":{
       "type":"list",
       "member":{"shape":"Contact"}
@@ -1768,7 +2188,7 @@
     },
     "Date":{
       "type":"string",
-      "pattern":"^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+      "pattern":"[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
     },
     "DateTime":{
       "type":"timestamp",
@@ -1805,59 +2225,71 @@
       "required":[
         "Catalog",
         "OpportunityIdentifier",
-        "RelatedEntityIdentifier",
-        "RelatedEntityType"
+        "RelatedEntityType",
+        "RelatedEntityIdentifier"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "OpportunityIdentifier":{"shape":"OpportunityIdentifier"},
-        "RelatedEntityIdentifier":{"shape":"DisassociateOpportunityRequestRelatedEntityIdentifierString"},
-        "RelatedEntityType":{"shape":"RelatedEntityType"}
+        "RelatedEntityType":{"shape":"RelatedEntityType"},
+        "RelatedEntityIdentifier":{"shape":"DisassociateOpportunityRequestRelatedEntityIdentifierString"}
       }
     },
     "DisassociateOpportunityRequestRelatedEntityIdentifierString":{
       "type":"string",
-      "max":255,
-      "min":1
+      "pattern":"(?s).{1,255}"
     },
     "DunsNumber":{
       "type":"string",
-      "pattern":"^[0-9]{9}$",
+      "pattern":"[0-9]{9}",
       "sensitive":true
     },
     "Email":{
       "type":"string",
-      "max":80,
-      "min":0,
-      "pattern":"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
+      "pattern":"(?=.{0,80}$)[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
       "sensitive":true
     },
     "EngagementArn":{
       "type":"string",
-      "pattern":"^arn:.*"
+      "pattern":"arn:.*"
     },
     "EngagementArnOrIdentifier":{
       "type":"string",
-      "pattern":"^(arn:.*|eng-[0-9a-z]{14})$"
+      "pattern":"(arn:.*|eng-[0-9a-z]{14})"
     },
     "EngagementContextDetails":{
       "type":"structure",
       "required":["Type"],
       "members":{
-        "Payload":{"shape":"EngagementContextPayload"},
-        "Type":{"shape":"EngagementContextType"}
+        "Id":{"shape":"EngagementContextIdentifier"},
+        "Type":{"shape":"EngagementContextType"},
+        "Payload":{"shape":"EngagementContextPayload"}
       }
+    },
+    "EngagementContextIdentifier":{
+      "type":"string",
+      "pattern":"(?s).{1,3}"
     },
     "EngagementContextPayload":{
       "type":"structure",
       "members":{
-        "CustomerProject":{"shape":"CustomerProjectsContext"}
+        "CustomerProject":{"shape":"CustomerProjectsContext"},
+        "Lead":{"shape":"LeadContext"}
       },
       "union":true
     },
     "EngagementContextType":{
       "type":"string",
-      "enum":["CustomerProject"]
+      "enum":[
+        "CustomerProject",
+        "Lead"
+      ]
+    },
+    "EngagementContextTypeList":{
+      "type":"list",
+      "member":{"shape":"EngagementContextType"},
+      "max":5,
+      "min":0
     },
     "EngagementContexts":{
       "type":"list",
@@ -1868,54 +2300,51 @@
     "EngagementCustomer":{
       "type":"structure",
       "required":[
-        "CompanyName",
-        "CountryCode",
         "Industry",
-        "WebsiteUrl"
+        "CompanyName",
+        "WebsiteUrl",
+        "CountryCode"
       ],
       "members":{
-        "CompanyName":{"shape":"CompanyName"},
-        "CountryCode":{"shape":"CountryCode"},
         "Industry":{"shape":"Industry"},
-        "WebsiteUrl":{"shape":"CompanyWebsiteUrl"}
+        "CompanyName":{"shape":"CompanyName"},
+        "WebsiteUrl":{"shape":"CompanyWebsiteUrl"},
+        "CountryCode":{"shape":"CountryCode"}
       }
     },
     "EngagementCustomerBusinessProblem":{
       "type":"string",
-      "max":255,
-      "min":20,
+      "pattern":"(?s).{20,2000}",
       "sensitive":true
     },
     "EngagementCustomerProjectDetails":{
       "type":"structure",
       "required":[
+        "Title",
         "BusinessProblem",
-        "TargetCompletionDate",
-        "Title"
+        "TargetCompletionDate"
       ],
       "members":{
+        "Title":{"shape":"EngagementCustomerProjectTitle"},
         "BusinessProblem":{"shape":"EngagementCustomerBusinessProblem"},
-        "TargetCompletionDate":{"shape":"EngagementCustomerProjectDetailsTargetCompletionDateString"},
-        "Title":{"shape":"EngagementCustomerProjectTitle"}
+        "TargetCompletionDate":{"shape":"EngagementCustomerProjectDetailsTargetCompletionDateString"}
       }
     },
     "EngagementCustomerProjectDetailsTargetCompletionDateString":{
       "type":"string",
-      "pattern":"^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+      "pattern":"[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
     },
     "EngagementCustomerProjectTitle":{
       "type":"string",
-      "max":255,
-      "min":1
+      "pattern":"(?s).{1,255}"
     },
     "EngagementDescription":{
       "type":"string",
-      "max":255,
-      "min":0
+      "pattern":"(?s).{0,255}"
     },
     "EngagementIdentifier":{
       "type":"string",
-      "pattern":"^eng-[0-9a-z]{14}$"
+      "pattern":"eng-[0-9a-z]{14}"
     },
     "EngagementIdentifiers":{
       "type":"list",
@@ -1925,17 +2354,15 @@
     },
     "EngagementInvitationArn":{
       "type":"string",
-      "pattern":"^arn:aws:partnercentral::[0-9]{12}:[a-zA-Z]+/engagement-invitation/engi-[0-9,a-z]{13}$"
+      "pattern":"arn:aws:partnercentral::[0-9]{12}:[a-zA-Z]+/engagement-invitation/engi-[0-9,a-z]{13}"
     },
     "EngagementInvitationArnOrIdentifier":{
       "type":"string",
-      "max":255,
-      "min":1,
-      "pattern":"^(arn:.*|engi-[0-9a-z]{13})$"
+      "pattern":"(?=.{1,255}$)(arn:.*|engi-[0-9a-z]{13})"
     },
     "EngagementInvitationIdentifier":{
       "type":"string",
-      "pattern":"^engi-[0-9,a-z]{13}$"
+      "pattern":"engi-[0-9,a-z]{13}"
     },
     "EngagementInvitationIdentifiers":{
       "type":"list",
@@ -1945,7 +2372,10 @@
     },
     "EngagementInvitationPayloadType":{
       "type":"string",
-      "enum":["OpportunityInvitation"]
+      "enum":[
+        "OpportunityInvitation",
+        "LeadInvitation"
+      ]
     },
     "EngagementInvitationSummaries":{
       "type":"list",
@@ -1954,29 +2384,28 @@
     "EngagementInvitationSummary":{
       "type":"structure",
       "required":[
-        "Catalog",
-        "Id"
+        "Id",
+        "Catalog"
       ],
       "members":{
         "Arn":{"shape":"String"},
-        "Catalog":{"shape":"CatalogIdentifier"},
+        "PayloadType":{"shape":"EngagementInvitationPayloadType"},
+        "Id":{"shape":"EngagementInvitationArnOrIdentifier"},
         "EngagementId":{"shape":"EngagementIdentifier"},
         "EngagementTitle":{"shape":"EngagementTitle"},
-        "ExpirationDate":{"shape":"DateTime"},
-        "Id":{"shape":"EngagementInvitationArnOrIdentifier"},
+        "Status":{"shape":"InvitationStatus"},
         "InvitationDate":{"shape":"DateTime"},
-        "ParticipantType":{"shape":"ParticipantType"},
-        "PayloadType":{"shape":"EngagementInvitationPayloadType"},
-        "Receiver":{"shape":"Receiver"},
+        "ExpirationDate":{"shape":"DateTime"},
         "SenderAwsAccountId":{"shape":"AwsAccount"},
         "SenderCompanyName":{"shape":"EngagementInvitationSummarySenderCompanyNameString"},
-        "Status":{"shape":"InvitationStatus"}
+        "Receiver":{"shape":"Receiver"},
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "ParticipantType":{"shape":"ParticipantType"}
       }
     },
     "EngagementInvitationSummarySenderCompanyNameString":{
       "type":"string",
-      "max":120,
-      "min":0
+      "pattern":"(?s).{0,120}"
     },
     "EngagementInvitationsPayloadType":{
       "type":"list",
@@ -1985,9 +2414,9 @@
     "EngagementMember":{
       "type":"structure",
       "members":{
-        "AccountId":{"shape":"AwsAccount"},
         "CompanyName":{"shape":"MemberCompanyName"},
-        "WebsiteUrl":{"shape":"String"}
+        "WebsiteUrl":{"shape":"String"},
+        "AccountId":{"shape":"AwsAccount"}
       }
     },
     "EngagementMemberSummaries":{
@@ -2018,10 +2447,10 @@
       "required":["Catalog"],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedBy":{"shape":"AwsAccount"},
         "EngagementId":{"shape":"EngagementIdentifier"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceId":{"shape":"ResourceIdentifier"},
-        "ResourceType":{"shape":"ResourceType"}
+        "CreatedBy":{"shape":"AwsAccount"}
       }
     },
     "EngagementResourceAssociationSummaryList":{
@@ -2039,12 +2468,12 @@
     "EngagementSort":{
       "type":"structure",
       "required":[
-        "SortBy",
-        "SortOrder"
+        "SortOrder",
+        "SortBy"
       ],
       "members":{
-        "SortBy":{"shape":"EngagementSortName"},
-        "SortOrder":{"shape":"SortOrder"}
+        "SortOrder":{"shape":"SortOrder"},
+        "SortBy":{"shape":"EngagementSortName"}
       }
     },
     "EngagementSortName":{
@@ -2055,11 +2484,14 @@
       "type":"structure",
       "members":{
         "Arn":{"shape":"EngagementArn"},
+        "Id":{"shape":"EngagementIdentifier"},
+        "Title":{"shape":"EngagementTitle"},
         "CreatedAt":{"shape":"DateTime"},
         "CreatedBy":{"shape":"AwsAccount"},
-        "Id":{"shape":"EngagementIdentifier"},
         "MemberCount":{"shape":"Integer"},
-        "Title":{"shape":"EngagementTitle"}
+        "ModifiedAt":{"shape":"DateTime"},
+        "ModifiedBy":{"shape":"AwsAccount"},
+        "ContextTypes":{"shape":"EngagementContextTypeList"}
       }
     },
     "EngagementSummaryList":{
@@ -2068,23 +2500,29 @@
     },
     "EngagementTitle":{
       "type":"string",
-      "max":40,
-      "min":1
+      "pattern":"(?s).{1,40}"
+    },
+    "EngagementUseCase":{
+      "type":"string",
+      "pattern":"(?s).{1,255}"
+    },
+    "EstimationUrl":{
+      "type":"string",
+      "pattern":"https://calculator\\.aws/#/estimate\\?id=[a-f0-9]{32,64}"
     },
     "ExpectedCustomerSpend":{
       "type":"structure",
       "required":[
-        "Amount",
         "CurrencyCode",
         "Frequency",
         "TargetCompany"
       ],
       "members":{
-        "Amount":{"shape":"String"},
+        "Amount":{"shape":"Amount"},
         "CurrencyCode":{"shape":"ExpectedCustomerSpendCurrencyCodeEnum"},
-        "EstimationUrl":{"shape":"WebsiteUrl"},
         "Frequency":{"shape":"PaymentFrequency"},
-        "TargetCompany":{"shape":"ExpectedCustomerSpendTargetCompanyString"}
+        "TargetCompany":{"shape":"ExpectedCustomerSpendTargetCompanyString"},
+        "EstimationUrl":{"shape":"EstimationUrl"}
       }
     },
     "ExpectedCustomerSpendCurrencyCodeEnum":{
@@ -2259,7 +2697,7 @@
         "ZMW",
         "ZWL"
       ],
-      "pattern":"^USD$",
+      "pattern":"USD",
       "sensitive":true
     },
     "ExpectedCustomerSpendList":{
@@ -2270,8 +2708,7 @@
     },
     "ExpectedCustomerSpendTargetCompanyString":{
       "type":"string",
-      "max":80,
-      "min":1
+      "pattern":"(?s).{1,80}"
     },
     "GetAwsOpportunitySummaryRequest":{
       "type":"structure",
@@ -2288,18 +2725,18 @@
       "type":"structure",
       "required":["Catalog"],
       "members":{
-        "Catalog":{"shape":"CatalogIdentifier"},
-        "Customer":{"shape":"AwsOpportunityCustomer"},
-        "Insights":{"shape":"AwsOpportunityInsights"},
+        "RelatedOpportunityId":{"shape":"OpportunityIdentifier"},
+        "Origin":{"shape":"OpportunityOrigin"},
         "InvolvementType":{"shape":"SalesInvolvementType"},
-        "InvolvementTypeChangeReason":{"shape":"InvolvementTypeChangeReason"},
+        "Visibility":{"shape":"Visibility"},
         "LifeCycle":{"shape":"AwsOpportunityLifeCycle"},
         "OpportunityTeam":{"shape":"AwsOpportunityTeamMembersList"},
-        "Origin":{"shape":"OpportunityOrigin"},
-        "Project":{"shape":"AwsOpportunityProject"},
+        "Insights":{"shape":"AwsOpportunityInsights"},
+        "InvolvementTypeChangeReason":{"shape":"InvolvementTypeChangeReason"},
         "RelatedEntityIds":{"shape":"AwsOpportunityRelatedEntities"},
-        "RelatedOpportunityId":{"shape":"OpportunityIdentifier"},
-        "Visibility":{"shape":"Visibility"}
+        "Customer":{"shape":"AwsOpportunityCustomer"},
+        "Project":{"shape":"AwsOpportunityProject"},
+        "Catalog":{"shape":"CatalogIdentifier"}
       }
     },
     "GetEngagementInvitationRequest":{
@@ -2316,33 +2753,32 @@
     "GetEngagementInvitationResponse":{
       "type":"structure",
       "required":[
-        "Catalog",
-        "Id"
+        "Id",
+        "Catalog"
       ],
       "members":{
         "Arn":{"shape":"String"},
-        "Catalog":{"shape":"CatalogIdentifier"},
-        "EngagementDescription":{"shape":"EngagementDescription"},
+        "PayloadType":{"shape":"EngagementInvitationPayloadType"},
+        "Id":{"shape":"EngagementInvitationArnOrIdentifier"},
         "EngagementId":{"shape":"EngagementIdentifier"},
         "EngagementTitle":{"shape":"EngagementTitle"},
-        "ExistingMembers":{"shape":"EngagementMemberSummaries"},
-        "ExpirationDate":{"shape":"DateTime"},
-        "Id":{"shape":"EngagementInvitationArnOrIdentifier"},
+        "Status":{"shape":"InvitationStatus"},
         "InvitationDate":{"shape":"DateTime"},
-        "InvitationMessage":{"shape":"InvitationMessage"},
-        "Payload":{"shape":"Payload"},
-        "PayloadType":{"shape":"EngagementInvitationPayloadType"},
-        "Receiver":{"shape":"Receiver"},
-        "RejectionReason":{"shape":"RejectionReasonString"},
+        "ExpirationDate":{"shape":"DateTime"},
         "SenderAwsAccountId":{"shape":"AwsAccount"},
         "SenderCompanyName":{"shape":"GetEngagementInvitationResponseSenderCompanyNameString"},
-        "Status":{"shape":"InvitationStatus"}
+        "Receiver":{"shape":"Receiver"},
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "RejectionReason":{"shape":"RejectionReasonString"},
+        "Payload":{"shape":"Payload"},
+        "InvitationMessage":{"shape":"InvitationMessage"},
+        "EngagementDescription":{"shape":"EngagementDescription"},
+        "ExistingMembers":{"shape":"EngagementMemberSummaries"}
       }
     },
     "GetEngagementInvitationResponseSenderCompanyNameString":{
       "type":"string",
-      "max":120,
-      "min":0
+      "pattern":"(?s).{0,120}"
     },
     "GetEngagementRequest":{
       "type":"structure",
@@ -2358,14 +2794,16 @@
     "GetEngagementResponse":{
       "type":"structure",
       "members":{
+        "Id":{"shape":"EngagementIdentifier"},
         "Arn":{"shape":"EngagementArn"},
-        "Contexts":{"shape":"EngagementContexts"},
+        "Title":{"shape":"EngagementTitle"},
+        "Description":{"shape":"EngagementDescription"},
         "CreatedAt":{"shape":"DateTime"},
         "CreatedBy":{"shape":"AwsAccount"},
-        "Description":{"shape":"EngagementDescription"},
-        "Id":{"shape":"EngagementIdentifier"},
         "MemberCount":{"shape":"Integer"},
-        "Title":{"shape":"EngagementTitle"}
+        "ModifiedAt":{"shape":"DateTime"},
+        "ModifiedBy":{"shape":"AwsAccount"},
+        "Contexts":{"shape":"EngagementContexts"}
       }
     },
     "GetOpportunityRequest":{
@@ -2383,34 +2821,33 @@
       "type":"structure",
       "required":[
         "Catalog",
-        "CreatedDate",
         "Id",
         "LastModifiedDate",
+        "CreatedDate",
         "RelatedEntityIdentifiers"
       ],
       "members":{
-        "Arn":{"shape":"OpportunityArn"},
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedDate":{"shape":"DateTime"},
-        "Customer":{"shape":"Customer"},
-        "Id":{"shape":"OpportunityIdentifier"},
-        "LastModifiedDate":{"shape":"DateTime"},
-        "LifeCycle":{"shape":"LifeCycle"},
-        "Marketing":{"shape":"Marketing"},
-        "NationalSecurity":{"shape":"NationalSecurity"},
-        "OpportunityTeam":{"shape":"PartnerOpportunityTeamMembersList"},
-        "OpportunityType":{"shape":"OpportunityType"},
-        "PartnerOpportunityIdentifier":{"shape":"GetOpportunityResponsePartnerOpportunityIdentifierString"},
         "PrimaryNeedsFromAws":{"shape":"PrimaryNeedsFromAws"},
+        "NationalSecurity":{"shape":"NationalSecurity"},
+        "PartnerOpportunityIdentifier":{"shape":"GetOpportunityResponsePartnerOpportunityIdentifierString"},
+        "Customer":{"shape":"Customer"},
         "Project":{"shape":"Project"},
+        "OpportunityType":{"shape":"OpportunityType"},
+        "Marketing":{"shape":"Marketing"},
+        "SoftwareRevenue":{"shape":"SoftwareRevenue"},
+        "Id":{"shape":"OpportunityIdentifier"},
+        "Arn":{"shape":"OpportunityArn"},
+        "LastModifiedDate":{"shape":"DateTime"},
+        "CreatedDate":{"shape":"DateTime"},
         "RelatedEntityIdentifiers":{"shape":"RelatedEntityIdentifiers"},
-        "SoftwareRevenue":{"shape":"SoftwareRevenue"}
+        "LifeCycle":{"shape":"LifeCycle"},
+        "OpportunityTeam":{"shape":"PartnerOpportunityTeamMembersList"}
       }
     },
     "GetOpportunityResponsePartnerOpportunityIdentifierString":{
       "type":"string",
-      "max":64,
-      "min":0
+      "pattern":"(?s).{0,64}"
     },
     "GetResourceSnapshotJobRequest":{
       "type":"structure",
@@ -2427,18 +2864,18 @@
       "type":"structure",
       "required":["Catalog"],
       "members":{
-        "Arn":{"shape":"ResourceSnapshotJobArn"},
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedAt":{"shape":"DateTime"},
-        "EngagementId":{"shape":"EngagementIdentifier"},
         "Id":{"shape":"ResourceSnapshotJobIdentifier"},
-        "LastFailure":{"shape":"String"},
-        "LastSuccessfulExecutionDate":{"shape":"DateTime"},
-        "ResourceArn":{"shape":"ResourceArn"},
-        "ResourceId":{"shape":"ResourceIdentifier"},
-        "ResourceSnapshotTemplateName":{"shape":"ResourceTemplateName"},
+        "Arn":{"shape":"ResourceSnapshotJobArn"},
+        "EngagementId":{"shape":"EngagementIdentifier"},
         "ResourceType":{"shape":"ResourceType"},
-        "Status":{"shape":"ResourceSnapshotJobStatus"}
+        "ResourceId":{"shape":"ResourceIdentifier"},
+        "ResourceArn":{"shape":"ResourceArn"},
+        "ResourceSnapshotTemplateName":{"shape":"ResourceTemplateName"},
+        "CreatedAt":{"shape":"DateTime"},
+        "Status":{"shape":"ResourceSnapshotJobStatus"},
+        "LastSuccessfulExecutionDate":{"shape":"DateTime"},
+        "LastFailure":{"shape":"String"}
       }
     },
     "GetResourceSnapshotRequest":{
@@ -2446,16 +2883,16 @@
       "required":[
         "Catalog",
         "EngagementIdentifier",
+        "ResourceType",
         "ResourceIdentifier",
-        "ResourceSnapshotTemplateIdentifier",
-        "ResourceType"
+        "ResourceSnapshotTemplateIdentifier"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "EngagementIdentifier":{"shape":"EngagementIdentifier"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceIdentifier":{"shape":"ResourceIdentifier"},
         "ResourceSnapshotTemplateIdentifier":{"shape":"ResourceTemplateName"},
-        "ResourceType":{"shape":"ResourceType"},
         "Revision":{"shape":"ResourceSnapshotRevision"}
       }
     },
@@ -2463,16 +2900,17 @@
       "type":"structure",
       "required":["Catalog"],
       "members":{
-        "Arn":{"shape":"ResourceArn"},
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedAt":{"shape":"DateTime"},
+        "Arn":{"shape":"ResourceArn"},
         "CreatedBy":{"shape":"AwsAccount"},
+        "CreatedAt":{"shape":"DateTime"},
         "EngagementId":{"shape":"EngagementIdentifier"},
-        "Payload":{"shape":"ResourceSnapshotPayload"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceId":{"shape":"ResourceIdentifier"},
         "ResourceSnapshotTemplateName":{"shape":"ResourceTemplateName"},
-        "ResourceType":{"shape":"ResourceType"},
-        "Revision":{"shape":"ResourceSnapshotRevision"}
+        "Revision":{"shape":"ResourceSnapshotRevision"},
+        "Payload":{"shape":"ResourceSnapshotPayload"},
+        "TargetMemberAccounts":{"shape":"AwsAccountIdOrAliasList"}
       }
     },
     "GetSellingSystemSettingsRequest":{
@@ -2539,19 +2977,18 @@
       "type":"structure",
       "required":[
         "Message",
-        "Payload",
-        "Receiver"
+        "Receiver",
+        "Payload"
       ],
       "members":{
         "Message":{"shape":"InvitationMessage"},
-        "Payload":{"shape":"Payload"},
-        "Receiver":{"shape":"Receiver"}
+        "Receiver":{"shape":"Receiver"},
+        "Payload":{"shape":"Payload"}
       }
     },
     "InvitationMessage":{
       "type":"string",
-      "max":255,
-      "min":1,
+      "pattern":"(?s).{1,255}",
       "sensitive":true
     },
     "InvitationStatus":{
@@ -2581,8 +3018,7 @@
     },
     "JobTitle":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "LastModifiedDate":{
@@ -2592,32 +3028,158 @@
         "BeforeLastModifiedDate":{"shape":"DateTime"}
       }
     },
+    "LeadContact":{
+      "type":"structure",
+      "required":[
+        "BusinessTitle",
+        "Email",
+        "FirstName",
+        "LastName"
+      ],
+      "members":{
+        "BusinessTitle":{"shape":"JobTitle"},
+        "Email":{"shape":"Email"},
+        "FirstName":{"shape":"Name"},
+        "LastName":{"shape":"Name"},
+        "Phone":{"shape":"PhoneNumber"}
+      }
+    },
+    "LeadContext":{
+      "type":"structure",
+      "required":[
+        "Customer",
+        "Interactions"
+      ],
+      "members":{
+        "QualificationStatus":{"shape":"LeadQualificationStatus"},
+        "Customer":{"shape":"LeadCustomer"},
+        "Interactions":{"shape":"LeadInteractionList"}
+      }
+    },
+    "LeadCustomer":{
+      "type":"structure",
+      "required":[
+        "CompanyName",
+        "Address"
+      ],
+      "members":{
+        "Industry":{"shape":"Industry"},
+        "CompanyName":{"shape":"CompanyName"},
+        "WebsiteUrl":{"shape":"CompanyWebsiteUrl"},
+        "Address":{"shape":"AddressSummary"},
+        "AwsMaturity":{"shape":"AwsMaturity"},
+        "MarketSegment":{"shape":"MarketSegment"}
+      }
+    },
+    "LeadInteraction":{
+      "type":"structure",
+      "required":[
+        "SourceType",
+        "SourceId",
+        "SourceName",
+        "CustomerAction",
+        "Contact"
+      ],
+      "members":{
+        "SourceType":{"shape":"LeadSourceType"},
+        "SourceId":{"shape":"LeadSourceId"},
+        "SourceName":{"shape":"LeadSourceName"},
+        "Usecase":{"shape":"EngagementUseCase"},
+        "InteractionDate":{"shape":"DateTime"},
+        "CustomerAction":{"shape":"CustomerAction"},
+        "BusinessProblem":{"shape":"EngagementCustomerBusinessProblem"},
+        "Contact":{"shape":"LeadContact"}
+      }
+    },
+    "LeadInteractionList":{
+      "type":"list",
+      "member":{"shape":"LeadInteraction"},
+      "max":10,
+      "min":1
+    },
+    "LeadInvitationCustomer":{
+      "type":"structure",
+      "required":[
+        "CompanyName",
+        "CountryCode"
+      ],
+      "members":{
+        "Industry":{"shape":"Industry"},
+        "CompanyName":{"shape":"CompanyName"},
+        "WebsiteUrl":{"shape":"CompanyWebsiteUrl"},
+        "CountryCode":{"shape":"CountryCode"},
+        "AwsMaturity":{"shape":"AwsMaturity"},
+        "MarketSegment":{"shape":"MarketSegment"}
+      }
+    },
+    "LeadInvitationInteraction":{
+      "type":"structure",
+      "required":[
+        "SourceType",
+        "SourceId",
+        "SourceName",
+        "ContactBusinessTitle"
+      ],
+      "members":{
+        "SourceType":{"shape":"LeadSourceType"},
+        "SourceId":{"shape":"LeadSourceId"},
+        "SourceName":{"shape":"LeadSourceName"},
+        "Usecase":{"shape":"EngagementUseCase"},
+        "ContactBusinessTitle":{"shape":"JobTitle"}
+      }
+    },
+    "LeadInvitationPayload":{
+      "type":"structure",
+      "required":[
+        "Customer",
+        "Interaction"
+      ],
+      "members":{
+        "Customer":{"shape":"LeadInvitationCustomer"},
+        "Interaction":{"shape":"LeadInvitationInteraction"}
+      }
+    },
+    "LeadQualificationStatus":{
+      "type":"string",
+      "pattern":"(?s).{1,255}"
+    },
+    "LeadSourceId":{
+      "type":"string",
+      "pattern":"(?s).{1,255}"
+    },
+    "LeadSourceName":{
+      "type":"string",
+      "pattern":"(?s).{1,255}"
+    },
+    "LeadSourceType":{
+      "type":"string",
+      "pattern":"(?s).{1,255}"
+    },
     "LifeCycle":{
       "type":"structure",
       "members":{
+        "Stage":{"shape":"Stage"},
         "ClosedLostReason":{"shape":"ClosedLostReason"},
         "NextSteps":{"shape":"LifeCycleNextStepsString"},
-        "NextStepsHistory":{"shape":"LifeCycleNextStepsHistoryList"},
-        "ReviewComments":{"shape":"String"},
+        "TargetCloseDate":{"shape":"Date"},
         "ReviewStatus":{"shape":"ReviewStatus"},
+        "ReviewComments":{"shape":"String"},
         "ReviewStatusReason":{"shape":"String"},
-        "Stage":{"shape":"Stage"},
-        "TargetCloseDate":{"shape":"Date"}
+        "NextStepsHistory":{"shape":"LifeCycleNextStepsHistoryList"}
       }
     },
     "LifeCycleForView":{
       "type":"structure",
       "members":{
-        "NextSteps":{"shape":"LifeCycleForViewNextStepsString"},
+        "TargetCloseDate":{"shape":"Date"},
         "ReviewStatus":{"shape":"ReviewStatus"},
         "Stage":{"shape":"Stage"},
-        "TargetCloseDate":{"shape":"Date"}
+        "NextSteps":{"shape":"LifeCycleForViewNextStepsString"}
       }
     },
     "LifeCycleForViewNextStepsString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "LifeCycleNextStepsHistoryList":{
@@ -2628,26 +3190,24 @@
     },
     "LifeCycleNextStepsString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "LifeCycleSummary":{
       "type":"structure",
       "members":{
+        "Stage":{"shape":"Stage"},
         "ClosedLostReason":{"shape":"ClosedLostReason"},
         "NextSteps":{"shape":"LifeCycleSummaryNextStepsString"},
-        "ReviewComments":{"shape":"String"},
+        "TargetCloseDate":{"shape":"Date"},
         "ReviewStatus":{"shape":"ReviewStatus"},
-        "ReviewStatusReason":{"shape":"String"},
-        "Stage":{"shape":"Stage"},
-        "TargetCloseDate":{"shape":"Date"}
+        "ReviewComments":{"shape":"String"},
+        "ReviewStatusReason":{"shape":"String"}
       }
     },
     "LifeCycleSummaryNextStepsString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "ListEngagementByAcceptingInvitationTaskSummaries":{
@@ -2657,29 +3217,29 @@
     "ListEngagementByAcceptingInvitationTaskSummary":{
       "type":"structure",
       "members":{
-        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"},
-        "Message":{"shape":"String"},
-        "OpportunityId":{"shape":"OpportunityIdentifier"},
-        "ReasonCode":{"shape":"ReasonCode"},
-        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
-        "StartTime":{"shape":"DateTime"},
-        "TaskArn":{"shape":"TaskArn"},
         "TaskId":{"shape":"TaskIdentifier"},
-        "TaskStatus":{"shape":"TaskStatus"}
+        "TaskArn":{"shape":"TaskArn"},
+        "StartTime":{"shape":"DateTime"},
+        "TaskStatus":{"shape":"TaskStatus"},
+        "Message":{"shape":"String"},
+        "ReasonCode":{"shape":"ReasonCode"},
+        "OpportunityId":{"shape":"OpportunityIdentifier"},
+        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
+        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"}
       }
     },
     "ListEngagementByAcceptingInvitationTasksRequest":{
       "type":"structure",
       "required":["Catalog"],
       "members":{
-        "Catalog":{"shape":"CatalogIdentifier"},
-        "EngagementInvitationIdentifier":{"shape":"EngagementInvitationIdentifiers"},
         "MaxResults":{"shape":"ListEngagementByAcceptingInvitationTasksRequestMaxResultsInteger"},
         "NextToken":{"shape":"ListEngagementByAcceptingInvitationTasksRequestNextTokenString"},
-        "OpportunityIdentifier":{"shape":"OpportunityIdentifiers"},
         "Sort":{"shape":"ListTasksSortBase"},
-        "TaskIdentifier":{"shape":"TaskIdentifiers"},
-        "TaskStatus":{"shape":"TaskStatuses"}
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "TaskStatus":{"shape":"TaskStatuses"},
+        "OpportunityIdentifier":{"shape":"OpportunityIdentifiers"},
+        "EngagementInvitationIdentifier":{"shape":"EngagementInvitationIdentifiers"},
+        "TaskIdentifier":{"shape":"TaskIdentifiers"}
       }
     },
     "ListEngagementByAcceptingInvitationTasksRequestMaxResultsInteger":{
@@ -2690,14 +3250,13 @@
     },
     "ListEngagementByAcceptingInvitationTasksRequestNextTokenString":{
       "type":"string",
-      "max":2048,
-      "min":1
+      "pattern":"(?s).{1,2048}"
     },
     "ListEngagementByAcceptingInvitationTasksResponse":{
       "type":"structure",
       "members":{
-        "NextToken":{"shape":"String"},
-        "TaskSummaries":{"shape":"ListEngagementByAcceptingInvitationTaskSummaries"}
+        "TaskSummaries":{"shape":"ListEngagementByAcceptingInvitationTaskSummaries"},
+        "NextToken":{"shape":"String"}
       }
     },
     "ListEngagementFromOpportunityTaskSummaries":{
@@ -2707,30 +3266,30 @@
     "ListEngagementFromOpportunityTaskSummary":{
       "type":"structure",
       "members":{
-        "EngagementId":{"shape":"EngagementIdentifier"},
-        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"},
-        "Message":{"shape":"String"},
-        "OpportunityId":{"shape":"OpportunityIdentifier"},
-        "ReasonCode":{"shape":"ReasonCode"},
-        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
-        "StartTime":{"shape":"DateTime"},
-        "TaskArn":{"shape":"TaskArn"},
         "TaskId":{"shape":"TaskIdentifier"},
-        "TaskStatus":{"shape":"TaskStatus"}
+        "TaskArn":{"shape":"TaskArn"},
+        "StartTime":{"shape":"DateTime"},
+        "TaskStatus":{"shape":"TaskStatus"},
+        "Message":{"shape":"String"},
+        "ReasonCode":{"shape":"ReasonCode"},
+        "OpportunityId":{"shape":"OpportunityIdentifier"},
+        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
+        "EngagementId":{"shape":"EngagementIdentifier"},
+        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"}
       }
     },
     "ListEngagementFromOpportunityTasksRequest":{
       "type":"structure",
       "required":["Catalog"],
       "members":{
-        "Catalog":{"shape":"CatalogIdentifier"},
-        "EngagementIdentifier":{"shape":"EngagementIdentifiers"},
         "MaxResults":{"shape":"ListEngagementFromOpportunityTasksRequestMaxResultsInteger"},
         "NextToken":{"shape":"ListEngagementFromOpportunityTasksRequestNextTokenString"},
-        "OpportunityIdentifier":{"shape":"OpportunityIdentifiers"},
         "Sort":{"shape":"ListTasksSortBase"},
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "TaskStatus":{"shape":"TaskStatuses"},
         "TaskIdentifier":{"shape":"TaskIdentifiers"},
-        "TaskStatus":{"shape":"TaskStatuses"}
+        "OpportunityIdentifier":{"shape":"OpportunityIdentifiers"},
+        "EngagementIdentifier":{"shape":"EngagementIdentifiers"}
       }
     },
     "ListEngagementFromOpportunityTasksRequestMaxResultsInteger":{
@@ -2741,14 +3300,13 @@
     },
     "ListEngagementFromOpportunityTasksRequestNextTokenString":{
       "type":"string",
-      "max":2048,
-      "min":1
+      "pattern":"(?s).{1,2048}"
     },
     "ListEngagementFromOpportunityTasksResponse":{
       "type":"structure",
       "members":{
-        "NextToken":{"shape":"String"},
-        "TaskSummaries":{"shape":"ListEngagementFromOpportunityTaskSummaries"}
+        "TaskSummaries":{"shape":"ListEngagementFromOpportunityTaskSummaries"},
+        "NextToken":{"shape":"String"}
       }
     },
     "ListEngagementInvitationsRequest":{
@@ -2759,14 +3317,14 @@
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "EngagementIdentifier":{"shape":"EngagementIdentifiers"},
         "MaxResults":{"shape":"PageSize"},
         "NextToken":{"shape":"String"},
-        "ParticipantType":{"shape":"ParticipantType"},
-        "PayloadType":{"shape":"EngagementInvitationsPayloadType"},
-        "SenderAwsAccountId":{"shape":"AwsAccountIdOrAliasList"},
         "Sort":{"shape":"OpportunityEngagementInvitationSort"},
-        "Status":{"shape":"InvitationStatusList"}
+        "PayloadType":{"shape":"EngagementInvitationsPayloadType"},
+        "ParticipantType":{"shape":"ParticipantType"},
+        "Status":{"shape":"InvitationStatusList"},
+        "EngagementIdentifier":{"shape":"EngagementIdentifiers"},
+        "SenderAwsAccountId":{"shape":"AwsAccountIdOrAliasList"}
       }
     },
     "ListEngagementInvitationsResponse":{
@@ -2802,12 +3360,12 @@
       "required":["Catalog"],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedBy":{"shape":"AwsAccount"},
-        "EngagementIdentifier":{"shape":"EngagementIdentifier"},
         "MaxResults":{"shape":"ListEngagementResourceAssociationsRequestMaxResultsInteger"},
         "NextToken":{"shape":"String"},
+        "EngagementIdentifier":{"shape":"EngagementIdentifier"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceIdentifier":{"shape":"ResourceIdentifier"},
-        "ResourceType":{"shape":"ResourceType"}
+        "CreatedBy":{"shape":"AwsAccount"}
       }
     },
     "ListEngagementResourceAssociationsRequestMaxResultsInteger":{
@@ -2830,11 +3388,13 @@
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "CreatedBy":{"shape":"AwsAccountList"},
-        "EngagementIdentifier":{"shape":"EngagementIdentifiers"},
         "ExcludeCreatedBy":{"shape":"AwsAccountList"},
+        "ContextTypes":{"shape":"EngagementContextTypeList"},
+        "ExcludeContextTypes":{"shape":"EngagementContextTypeList"},
+        "Sort":{"shape":"EngagementSort"},
         "MaxResults":{"shape":"EngagementPageSize"},
         "NextToken":{"shape":"String"},
-        "Sort":{"shape":"EngagementSort"}
+        "EngagementIdentifier":{"shape":"EngagementIdentifiers"}
       }
     },
     "ListEngagementsResponse":{
@@ -2850,14 +3410,16 @@
       "required":["Catalog"],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CustomerCompanyName":{"shape":"ListOpportunitiesRequestCustomerCompanyNameList"},
-        "Identifier":{"shape":"ListOpportunitiesRequestIdentifierList"},
-        "LastModifiedDate":{"shape":"LastModifiedDate"},
-        "LifeCycleReviewStatus":{"shape":"ListOpportunitiesRequestLifeCycleReviewStatusList"},
-        "LifeCycleStage":{"shape":"ListOpportunitiesRequestLifeCycleStageList"},
         "MaxResults":{"shape":"PageSize"},
         "NextToken":{"shape":"String"},
-        "Sort":{"shape":"OpportunitySort"}
+        "Sort":{"shape":"OpportunitySort"},
+        "LastModifiedDate":{"shape":"LastModifiedDate"},
+        "Identifier":{"shape":"ListOpportunitiesRequestIdentifierList"},
+        "LifeCycleStage":{"shape":"ListOpportunitiesRequestLifeCycleStageList"},
+        "LifeCycleReviewStatus":{"shape":"ListOpportunitiesRequestLifeCycleReviewStatusList"},
+        "CustomerCompanyName":{"shape":"ListOpportunitiesRequestCustomerCompanyNameList"},
+        "CreatedDate":{"shape":"CreatedDateFilter"},
+        "TargetCloseDate":{"shape":"TargetCloseDateFilter"}
       }
     },
     "ListOpportunitiesRequestCustomerCompanyNameList":{
@@ -2888,8 +3450,59 @@
       "type":"structure",
       "required":["OpportunitySummaries"],
       "members":{
-        "NextToken":{"shape":"String"},
-        "OpportunitySummaries":{"shape":"OpportunitySummaries"}
+        "OpportunitySummaries":{"shape":"OpportunitySummaries"},
+        "NextToken":{"shape":"String"}
+      }
+    },
+    "ListOpportunityFromEngagementTaskSummaries":{
+      "type":"list",
+      "member":{"shape":"ListOpportunityFromEngagementTaskSummary"}
+    },
+    "ListOpportunityFromEngagementTaskSummary":{
+      "type":"structure",
+      "members":{
+        "TaskId":{"shape":"TaskIdentifier"},
+        "TaskArn":{"shape":"TaskArn"},
+        "StartTime":{"shape":"DateTime"},
+        "TaskStatus":{"shape":"TaskStatus"},
+        "Message":{"shape":"String"},
+        "ReasonCode":{"shape":"ReasonCode"},
+        "OpportunityId":{"shape":"OpportunityIdentifier"},
+        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
+        "EngagementId":{"shape":"EngagementIdentifier"},
+        "ContextId":{"shape":"ContextIdentifier"}
+      }
+    },
+    "ListOpportunityFromEngagementTasksRequest":{
+      "type":"structure",
+      "required":["Catalog"],
+      "members":{
+        "MaxResults":{"shape":"ListOpportunityFromEngagementTasksRequestMaxResultsInteger"},
+        "NextToken":{"shape":"ListOpportunityFromEngagementTasksRequestNextTokenString"},
+        "Sort":{"shape":"ListTasksSortBase"},
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "TaskStatus":{"shape":"TaskStatuses"},
+        "TaskIdentifier":{"shape":"TaskIdentifiers"},
+        "OpportunityIdentifier":{"shape":"OpportunityIdentifiers"},
+        "EngagementIdentifier":{"shape":"EngagementIdentifiers"},
+        "ContextIdentifier":{"shape":"ContextIdentifiers"}
+      }
+    },
+    "ListOpportunityFromEngagementTasksRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":1000,
+      "min":1
+    },
+    "ListOpportunityFromEngagementTasksRequestNextTokenString":{
+      "type":"string",
+      "pattern":"(?s).{1,2048}"
+    },
+    "ListOpportunityFromEngagementTasksResponse":{
+      "type":"structure",
+      "members":{
+        "TaskSummaries":{"shape":"ListOpportunityFromEngagementTaskSummaries"},
+        "NextToken":{"shape":"String"}
       }
     },
     "ListResourceSnapshotJobsRequest":{
@@ -2897,11 +3510,11 @@
       "required":["Catalog"],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "EngagementIdentifier":{"shape":"EngagementIdentifier"},
         "MaxResults":{"shape":"ListResourceSnapshotJobsRequestMaxResultsInteger"},
         "NextToken":{"shape":"String"},
-        "Sort":{"shape":"SortObject"},
-        "Status":{"shape":"ResourceSnapshotJobStatus"}
+        "EngagementIdentifier":{"shape":"EngagementIdentifier"},
+        "Status":{"shape":"ResourceSnapshotJobStatus"},
+        "Sort":{"shape":"SortObject"}
       }
     },
     "ListResourceSnapshotJobsRequestMaxResultsInteger":{
@@ -2914,8 +3527,8 @@
       "type":"structure",
       "required":["ResourceSnapshotJobSummaries"],
       "members":{
-        "NextToken":{"shape":"String"},
-        "ResourceSnapshotJobSummaries":{"shape":"ResourceSnapshotJobSummaryList"}
+        "ResourceSnapshotJobSummaries":{"shape":"ResourceSnapshotJobSummaryList"},
+        "NextToken":{"shape":"String"}
       }
     },
     "ListResourceSnapshotsRequest":{
@@ -2926,13 +3539,13 @@
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedBy":{"shape":"AwsAccount"},
-        "EngagementIdentifier":{"shape":"EngagementIdentifier"},
         "MaxResults":{"shape":"ListResourceSnapshotsRequestMaxResultsInteger"},
         "NextToken":{"shape":"String"},
+        "EngagementIdentifier":{"shape":"EngagementIdentifier"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceIdentifier":{"shape":"ResourceIdentifier"},
         "ResourceSnapshotTemplateIdentifier":{"shape":"ResourceTemplateName"},
-        "ResourceType":{"shape":"ResourceType"}
+        "CreatedBy":{"shape":"AwsAccount"}
       }
     },
     "ListResourceSnapshotsRequestMaxResultsInteger":{
@@ -2945,8 +3558,8 @@
       "type":"structure",
       "required":["ResourceSnapshotSummaries"],
       "members":{
-        "NextToken":{"shape":"String"},
-        "ResourceSnapshotSummaries":{"shape":"ResourceSnapshotSummaryList"}
+        "ResourceSnapshotSummaries":{"shape":"ResourceSnapshotSummaryList"},
+        "NextToken":{"shape":"String"}
       }
     },
     "ListSolutionsRequest":{
@@ -2954,12 +3567,12 @@
       "required":["Catalog"],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "Category":{"shape":"ListSolutionsRequestCategoryList"},
-        "Identifier":{"shape":"ListSolutionsRequestIdentifierList"},
         "MaxResults":{"shape":"PageSize"},
         "NextToken":{"shape":"String"},
         "Sort":{"shape":"SolutionSort"},
-        "Status":{"shape":"ListSolutionsRequestStatusList"}
+        "Status":{"shape":"ListSolutionsRequestStatusList"},
+        "Identifier":{"shape":"ListSolutionsRequestIdentifierList"},
+        "Category":{"shape":"ListSolutionsRequestCategoryList"}
       }
     },
     "ListSolutionsRequestCategoryList":{
@@ -2984,8 +3597,8 @@
       "type":"structure",
       "required":["SolutionSummaries"],
       "members":{
-        "NextToken":{"shape":"String"},
-        "SolutionSummaries":{"shape":"SolutionList"}
+        "SolutionSummaries":{"shape":"SolutionList"},
+        "NextToken":{"shape":"String"}
       }
     },
     "ListTagsForResourceRequest":{
@@ -3005,26 +3618,36 @@
     "ListTasksSortBase":{
       "type":"structure",
       "required":[
-        "SortBy",
-        "SortOrder"
+        "SortOrder",
+        "SortBy"
       ],
       "members":{
-        "SortBy":{"shape":"ListTasksSortName"},
-        "SortOrder":{"shape":"SortOrder"}
+        "SortOrder":{"shape":"SortOrder"},
+        "SortBy":{"shape":"ListTasksSortName"}
       }
     },
     "ListTasksSortName":{
       "type":"string",
       "enum":["StartTime"]
     },
+    "MarketSegment":{
+      "type":"string",
+      "enum":[
+        "Enterprise",
+        "Large",
+        "Medium",
+        "Small",
+        "Micro"
+      ]
+    },
     "Marketing":{
       "type":"structure",
       "members":{
-        "AwsFundingUsed":{"shape":"AwsFundingUsed"},
         "CampaignName":{"shape":"String"},
-        "Channels":{"shape":"Channels"},
         "Source":{"shape":"MarketingSource"},
-        "UseCases":{"shape":"UseCases"}
+        "UseCases":{"shape":"UseCases"},
+        "Channels":{"shape":"Channels"},
+        "AwsFundingUsed":{"shape":"AwsFundingUsed"}
       }
     },
     "MarketingSource":{
@@ -3036,8 +3659,7 @@
     },
     "MemberCompanyName":{
       "type":"string",
-      "max":120,
-      "min":1,
+      "pattern":"(?s).{1,120}",
       "sensitive":true
     },
     "MemberPageSize":{
@@ -3045,6 +3667,11 @@
       "box":true,
       "max":10,
       "min":1
+    },
+    "MonetaryAmount":{
+      "type":"string",
+      "pattern":"(0|([1-9][0-9]{0,30}))(\\.[0-9]{0,2})?",
+      "sensitive":true
     },
     "MonetaryValue":{
       "type":"structure",
@@ -3059,12 +3686,11 @@
     },
     "MonetaryValueAmountString":{
       "type":"string",
-      "pattern":"^(0|([1-9][0-9]{0,30}))(\\.[0-9]{0,2})?$"
+      "pattern":"(0|([1-9][0-9]{0,30}))(\\.[0-9]{0,2})?"
     },
     "Name":{
       "type":"string",
-      "max":80,
-      "min":0,
+      "pattern":"(?s).{0,80}",
       "sensitive":true
     },
     "NationalSecurity":{
@@ -3077,27 +3703,27 @@
     "NextStepsHistory":{
       "type":"structure",
       "required":[
-        "Time",
-        "Value"
+        "Value",
+        "Time"
       ],
       "members":{
-        "Time":{"shape":"DateTime"},
-        "Value":{"shape":"String"}
+        "Value":{"shape":"String"},
+        "Time":{"shape":"DateTime"}
       }
     },
     "OpportunityArn":{
       "type":"string",
-      "pattern":"^arn:.*$"
+      "pattern":"arn:.*"
     },
     "OpportunityEngagementInvitationSort":{
       "type":"structure",
       "required":[
-        "SortBy",
-        "SortOrder"
+        "SortOrder",
+        "SortBy"
       ],
       "members":{
-        "SortBy":{"shape":"OpportunityEngagementInvitationSortName"},
-        "SortOrder":{"shape":"SortOrder"}
+        "SortOrder":{"shape":"SortOrder"},
+        "SortBy":{"shape":"OpportunityEngagementInvitationSortName"}
       }
     },
     "OpportunityEngagementInvitationSortName":{
@@ -3106,7 +3732,7 @@
     },
     "OpportunityIdentifier":{
       "type":"string",
-      "pattern":"^O[0-9]{1,19}$"
+      "pattern":"O[0-9]{1,19}"
     },
     "OpportunityIdentifiers":{
       "type":"list",
@@ -3117,15 +3743,15 @@
     "OpportunityInvitationPayload":{
       "type":"structure",
       "required":[
+        "ReceiverResponsibilities",
         "Customer",
-        "Project",
-        "ReceiverResponsibilities"
+        "Project"
       ],
       "members":{
-        "Customer":{"shape":"EngagementCustomer"},
-        "Project":{"shape":"ProjectDetails"},
+        "SenderContacts":{"shape":"SenderContactList"},
         "ReceiverResponsibilities":{"shape":"ReceiverResponsibilityList"},
-        "SenderContacts":{"shape":"SenderContactList"}
+        "Customer":{"shape":"EngagementCustomer"},
+        "Project":{"shape":"ProjectDetails"}
       }
     },
     "OpportunityOrigin":{
@@ -3138,12 +3764,12 @@
     "OpportunitySort":{
       "type":"structure",
       "required":[
-        "SortBy",
-        "SortOrder"
+        "SortOrder",
+        "SortBy"
       ],
       "members":{
-        "SortBy":{"shape":"OpportunitySortName"},
-        "SortOrder":{"shape":"SortOrder"}
+        "SortOrder":{"shape":"SortOrder"},
+        "SortBy":{"shape":"OpportunitySortName"}
       }
     },
     "OpportunitySortName":{
@@ -3151,7 +3777,9 @@
       "enum":[
         "LastModifiedDate",
         "Identifier",
-        "CustomerCompanyName"
+        "CustomerCompanyName",
+        "CreatedDate",
+        "TargetCloseDate"
       ]
     },
     "OpportunitySummaries":{
@@ -3162,26 +3790,26 @@
       "type":"structure",
       "required":["Catalog"],
       "members":{
-        "Arn":{"shape":"OpportunityArn"},
         "Catalog":{"shape":"CatalogIdentifier"},
-        "CreatedDate":{"shape":"DateTime"},
-        "Customer":{"shape":"CustomerSummary"},
         "Id":{"shape":"OpportunityIdentifier"},
-        "LastModifiedDate":{"shape":"DateTime"},
-        "LifeCycle":{"shape":"LifeCycleSummary"},
-        "OpportunityType":{"shape":"OpportunityType"},
+        "Arn":{"shape":"OpportunityArn"},
         "PartnerOpportunityIdentifier":{"shape":"String"},
+        "OpportunityType":{"shape":"OpportunityType"},
+        "LastModifiedDate":{"shape":"DateTime"},
+        "CreatedDate":{"shape":"DateTime"},
+        "LifeCycle":{"shape":"LifeCycleSummary"},
+        "Customer":{"shape":"CustomerSummary"},
         "Project":{"shape":"ProjectSummary"}
       }
     },
     "OpportunitySummaryView":{
       "type":"structure",
       "members":{
-        "Customer":{"shape":"Customer"},
+        "OpportunityType":{"shape":"OpportunityType"},
         "Lifecycle":{"shape":"LifeCycleForView"},
         "OpportunityTeam":{"shape":"PartnerOpportunityTeamMembersList"},
-        "OpportunityType":{"shape":"OpportunityType"},
         "PrimaryNeedsFromAws":{"shape":"PrimaryNeedsFromAws"},
+        "Customer":{"shape":"Customer"},
         "Project":{"shape":"ProjectView"},
         "RelatedEntityIdentifiers":{"shape":"RelatedEntityIdentifiers"}
       }
@@ -3210,13 +3838,14 @@
     "PartnerOpportunityTeamMembersList":{
       "type":"list",
       "member":{"shape":"Contact"},
-      "max":1,
+      "max":10,
       "min":0
     },
     "Payload":{
       "type":"structure",
       "members":{
-        "OpportunityInvitation":{"shape":"OpportunityInvitationPayload"}
+        "OpportunityInvitation":{"shape":"OpportunityInvitationPayload"},
+        "LeadInvitation":{"shape":"LeadInvitationPayload"}
       },
       "union":true
     },
@@ -3226,9 +3855,7 @@
     },
     "PhoneNumber":{
       "type":"string",
-      "max":40,
-      "min":0,
-      "pattern":"^\\+[1-9]\\d{1,14}$",
+      "pattern":"\\+[1-9]\\d{1,14}",
       "sensitive":true
     },
     "PrimaryNeedFromAws":{
@@ -3251,71 +3878,67 @@
     "ProfileNextStepsHistory":{
       "type":"structure",
       "required":[
-        "Time",
-        "Value"
+        "Value",
+        "Time"
       ],
       "members":{
-        "Time":{"shape":"DateTime"},
-        "Value":{"shape":"String"}
+        "Value":{"shape":"String"},
+        "Time":{"shape":"DateTime"}
       }
     },
     "Project":{
       "type":"structure",
       "members":{
-        "AdditionalComments":{"shape":"ProjectAdditionalCommentsString"},
-        "ApnPrograms":{"shape":"ApnPrograms"},
-        "CompetitorName":{"shape":"CompetitorName"},
-        "CustomerBusinessProblem":{"shape":"ProjectCustomerBusinessProblemString"},
-        "CustomerUseCase":{"shape":"String"},
         "DeliveryModels":{"shape":"DeliveryModels"},
         "ExpectedCustomerSpend":{"shape":"ExpectedCustomerSpendList"},
-        "OtherCompetitorNames":{"shape":"ProjectOtherCompetitorNamesString"},
-        "OtherSolutionDescription":{"shape":"ProjectOtherSolutionDescriptionString"},
+        "Title":{"shape":"ProjectTitleString"},
+        "ApnPrograms":{"shape":"ApnPrograms"},
+        "CustomerBusinessProblem":{"shape":"ProjectCustomerBusinessProblemString"},
+        "CustomerUseCase":{"shape":"String"},
         "RelatedOpportunityIdentifier":{"shape":"OpportunityIdentifier"},
         "SalesActivities":{"shape":"SalesActivities"},
-        "Title":{"shape":"ProjectTitleString"}
+        "CompetitorName":{"shape":"CompetitorName"},
+        "OtherCompetitorNames":{"shape":"ProjectOtherCompetitorNamesString"},
+        "OtherSolutionDescription":{"shape":"ProjectOtherSolutionDescriptionString"},
+        "AdditionalComments":{"shape":"ProjectAdditionalCommentsString"},
+        "AwsPartition":{"shape":"AwsPartition"}
       }
     },
     "ProjectAdditionalCommentsString":{
       "type":"string",
-      "max":255,
-      "min":1
+      "pattern":"(?s).{1,255}"
     },
     "ProjectCustomerBusinessProblemString":{
       "type":"string",
-      "max":2000,
-      "min":20,
+      "pattern":"(?s).{20,2000}",
       "sensitive":true
     },
     "ProjectDetails":{
       "type":"structure",
       "required":[
         "BusinessProblem",
-        "ExpectedCustomerSpend",
+        "Title",
         "TargetCompletionDate",
-        "Title"
+        "ExpectedCustomerSpend"
       ],
       "members":{
         "BusinessProblem":{"shape":"EngagementCustomerBusinessProblem"},
-        "ExpectedCustomerSpend":{"shape":"ExpectedCustomerSpendList"},
+        "Title":{"shape":"ProjectDetailsTitleString"},
         "TargetCompletionDate":{"shape":"Date"},
-        "Title":{"shape":"ProjectDetailsTitleString"}
+        "ExpectedCustomerSpend":{"shape":"ExpectedCustomerSpendList"}
       }
     },
     "ProjectDetailsTitleString":{
       "type":"string",
-      "max":255,
-      "min":1
+      "pattern":"(?s).{1,255}"
     },
     "ProjectOtherCompetitorNamesString":{
       "type":"string",
-      "max":255,
-      "min":0
+      "pattern":"(?s).{0,255}"
     },
     "ProjectOtherSolutionDescriptionString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "ProjectSummary":{
@@ -3327,24 +3950,22 @@
     },
     "ProjectTitleString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "ProjectView":{
       "type":"structure",
       "members":{
-        "CustomerUseCase":{"shape":"String"},
         "DeliveryModels":{"shape":"DeliveryModels"},
         "ExpectedCustomerSpend":{"shape":"ExpectedCustomerSpendList"},
-        "OtherSolutionDescription":{"shape":"ProjectViewOtherSolutionDescriptionString"},
-        "SalesActivities":{"shape":"SalesActivities"}
+        "CustomerUseCase":{"shape":"String"},
+        "SalesActivities":{"shape":"SalesActivities"},
+        "OtherSolutionDescription":{"shape":"ProjectViewOtherSolutionDescriptionString"}
       }
     },
     "ProjectViewOtherSolutionDescriptionString":{
       "type":"string",
-      "max":255,
-      "min":0,
+      "pattern":"(?s).{0,255}",
       "sensitive":true
     },
     "PutSellingSystemSettingsRequest":{
@@ -3384,7 +4005,10 @@
         "ResourceSnapshotValidationFailed",
         "ResourceSnapshotConflict",
         "ServiceQuotaExceeded",
-        "RequestThrottled"
+        "RequestThrottled",
+        "ContextNotFound",
+        "CustomerProjectContextNotPermitted",
+        "DisqualifiedLeadNotPermitted"
       ]
     },
     "Receiver":{
@@ -3426,14 +4050,15 @@
     },
     "RejectionReasonString":{
       "type":"string",
-      "pattern":"^[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]{1,80}$"
+      "pattern":"[\\u0020-\\u007E\\u00A0-\\uD7FF\\uE000-\\uFFFD]{1,80}"
     },
     "RelatedEntityIdentifiers":{
       "type":"structure",
       "members":{
         "AwsMarketplaceOffers":{"shape":"AwsMarketplaceOfferIdentifiers"},
-        "AwsProducts":{"shape":"AwsProductIdentifiers"},
-        "Solutions":{"shape":"SolutionIdentifiers"}
+        "AwsMarketplaceOfferSets":{"shape":"AwsMarketplaceOfferSetIdentifiers"},
+        "Solutions":{"shape":"SolutionIdentifiers"},
+        "AwsProducts":{"shape":"AwsProductIdentifiers"}
       }
     },
     "RelatedEntityType":{
@@ -3441,16 +4066,17 @@
       "enum":[
         "Solutions",
         "AwsProducts",
-        "AwsMarketplaceOffers"
+        "AwsMarketplaceOffers",
+        "AwsMarketplaceOfferSets"
       ]
     },
     "ResourceArn":{
       "type":"string",
-      "pattern":"^arn:.*"
+      "pattern":"arn:.*"
     },
     "ResourceIdentifier":{
       "type":"string",
-      "pattern":"^O[0-9]{1,19}$"
+      "pattern":"O[0-9]{1,19}"
     },
     "ResourceNotFoundException":{
       "type":"structure",
@@ -3461,27 +4087,23 @@
     },
     "ResourceSnapshotArn":{
       "type":"string",
-      "pattern":"^arn:.*"
+      "pattern":"arn:.*"
     },
     "ResourceSnapshotJobArn":{
       "type":"string",
-      "pattern":"^arn:.*"
+      "pattern":"arn:.*"
     },
     "ResourceSnapshotJobIdentifier":{
       "type":"string",
-      "pattern":"^job-[0-9a-z]{13}$"
+      "pattern":"job-[0-9a-z]{13}"
     },
     "ResourceSnapshotJobRoleArn":{
       "type":"string",
-      "max":2048,
-      "min":0,
-      "pattern":"^arn:aws:iam::\\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*[-+=,.@_a-zA-Z0-9]{1,64}$"
+      "pattern":"(?=.{0,2048}$)arn:aws:iam::\\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*[-+=,.@_a-zA-Z0-9]{1,64}"
     },
     "ResourceSnapshotJobRoleIdentifier":{
       "type":"string",
-      "max":2048,
-      "min":0,
-      "pattern":"^(arn:aws:iam::\\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*)?[-+=,.@_a-zA-Z0-9]{1,64}$"
+      "pattern":"(?=.{0,2048}$)(arn:aws:iam::\\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*)?[-+=,.@_a-zA-Z0-9]{1,64}"
     },
     "ResourceSnapshotJobStatus":{
       "type":"string",
@@ -3493,9 +4115,9 @@
     "ResourceSnapshotJobSummary":{
       "type":"structure",
       "members":{
+        "Id":{"shape":"ResourceSnapshotJobIdentifier"},
         "Arn":{"shape":"ResourceSnapshotJobArn"},
         "EngagementId":{"shape":"EngagementIdentifier"},
-        "Id":{"shape":"ResourceSnapshotJobIdentifier"},
         "Status":{"shape":"ResourceSnapshotJobStatus"}
       }
     },
@@ -3506,7 +4128,8 @@
     "ResourceSnapshotPayload":{
       "type":"structure",
       "members":{
-        "OpportunitySummary":{"shape":"OpportunitySummaryView"}
+        "OpportunitySummary":{"shape":"OpportunitySummaryView"},
+        "AwsOpportunitySummaryFullView":{"shape":"AwsOpportunitySummaryFullView"}
       },
       "union":true
     },
@@ -3519,11 +4142,11 @@
       "type":"structure",
       "members":{
         "Arn":{"shape":"ResourceSnapshotArn"},
-        "CreatedBy":{"shape":"AwsAccount"},
+        "Revision":{"shape":"ResourceSnapshotRevision"},
+        "ResourceType":{"shape":"ResourceType"},
         "ResourceId":{"shape":"ResourceIdentifier"},
         "ResourceSnapshotTemplateName":{"shape":"ResourceTemplateName"},
-        "ResourceType":{"shape":"ResourceType"},
-        "Revision":{"shape":"ResourceSnapshotRevision"}
+        "CreatedBy":{"shape":"AwsAccount"}
       }
     },
     "ResourceSnapshotSummaryList":{
@@ -3532,7 +4155,7 @@
     },
     "ResourceTemplateName":{
       "type":"string",
-      "pattern":"^[a-zA-Z0-9]{3,80}$"
+      "pattern":"[a-zA-Z0-9]{3,80}"
     },
     "ResourceType":{
       "type":"string",
@@ -3585,18 +4208,16 @@
       "type":"structure",
       "required":["Email"],
       "members":{
-        "BusinessTitle":{"shape":"JobTitle"},
         "Email":{"shape":"SenderContactEmail"},
         "FirstName":{"shape":"Name"},
         "LastName":{"shape":"Name"},
+        "BusinessTitle":{"shape":"JobTitle"},
         "Phone":{"shape":"PhoneNumber"}
       }
     },
     "SenderContactEmail":{
       "type":"string",
-      "max":80,
-      "min":0,
-      "pattern":"^[a-zA-Z0-9.!#$%&'*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
+      "pattern":"(?=.{1,80}$)[a-zA-Z0-9.!#$%&'*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*",
       "sensitive":true
     },
     "SenderContactList":{
@@ -3616,38 +4237,38 @@
       "type":"structure",
       "members":{
         "DeliveryModel":{"shape":"RevenueModel"},
+        "Value":{"shape":"MonetaryValue"},
         "EffectiveDate":{"shape":"Date"},
-        "ExpirationDate":{"shape":"Date"},
-        "Value":{"shape":"MonetaryValue"}
+        "ExpirationDate":{"shape":"Date"}
       }
     },
     "SolutionArn":{
       "type":"string",
-      "pattern":"^S-[0-9]{1,19}$"
+      "pattern":"S-[0-9]{1,19}"
     },
     "SolutionBase":{
       "type":"structure",
       "required":[
         "Catalog",
-        "Category",
-        "CreatedDate",
         "Id",
         "Name",
-        "Status"
+        "Status",
+        "Category",
+        "CreatedDate"
       ],
       "members":{
-        "Arn":{"shape":"SolutionArn"},
         "Catalog":{"shape":"CatalogIdentifier"},
-        "Category":{"shape":"String"},
-        "CreatedDate":{"shape":"DateTime"},
         "Id":{"shape":"SolutionIdentifier"},
+        "Arn":{"shape":"SolutionArn"},
         "Name":{"shape":"String"},
-        "Status":{"shape":"SolutionStatus"}
+        "Status":{"shape":"SolutionStatus"},
+        "Category":{"shape":"String"},
+        "CreatedDate":{"shape":"DateTime"}
       }
     },
     "SolutionIdentifier":{
       "type":"string",
-      "pattern":"^S-[0-9]{1,19}$"
+      "pattern":"S-[0-9]{1,19}"
     },
     "SolutionIdentifiers":{
       "type":"list",
@@ -3660,12 +4281,12 @@
     "SolutionSort":{
       "type":"structure",
       "required":[
-        "SortBy",
-        "SortOrder"
+        "SortOrder",
+        "SortBy"
       ],
       "members":{
-        "SortBy":{"shape":"SolutionSortName"},
-        "SortOrder":{"shape":"SortOrder"}
+        "SortOrder":{"shape":"SortOrder"},
+        "SortBy":{"shape":"SolutionSortName"}
       }
     },
     "SolutionSortName":{
@@ -3726,69 +4347,93 @@
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
         "ClientToken":{
-          "shape":"StartEngagementByAcceptingInvitationTaskRequestClientTokenString",
+          "shape":"ClientToken",
           "idempotencyToken":true
         },
         "Identifier":{"shape":"EngagementInvitationArnOrIdentifier"},
         "Tags":{"shape":"TagList"}
       }
     },
-    "StartEngagementByAcceptingInvitationTaskRequestClientTokenString":{
-      "type":"string",
-      "min":1,
-      "pattern":"^[!-~]{1,64}$"
-    },
     "StartEngagementByAcceptingInvitationTaskResponse":{
       "type":"structure",
       "members":{
-        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"},
-        "Message":{"shape":"String"},
-        "OpportunityId":{"shape":"OpportunityIdentifier"},
-        "ReasonCode":{"shape":"ReasonCode"},
-        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
-        "StartTime":{"shape":"DateTime"},
-        "TaskArn":{"shape":"TaskArn"},
         "TaskId":{"shape":"TaskIdentifier"},
-        "TaskStatus":{"shape":"TaskStatus"}
+        "TaskArn":{"shape":"TaskArn"},
+        "StartTime":{"shape":"DateTime"},
+        "TaskStatus":{"shape":"TaskStatus"},
+        "Message":{"shape":"String"},
+        "ReasonCode":{"shape":"ReasonCode"},
+        "OpportunityId":{"shape":"OpportunityIdentifier"},
+        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
+        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"}
       }
     },
     "StartEngagementFromOpportunityTaskRequest":{
       "type":"structure",
       "required":[
-        "AwsSubmission",
         "Catalog",
         "ClientToken",
-        "Identifier"
+        "Identifier",
+        "AwsSubmission"
       ],
       "members":{
-        "AwsSubmission":{"shape":"AwsSubmission"},
         "Catalog":{"shape":"CatalogIdentifier"},
         "ClientToken":{
-          "shape":"StartEngagementFromOpportunityTaskRequestClientTokenString",
+          "shape":"ClientToken",
           "idempotencyToken":true
         },
         "Identifier":{"shape":"OpportunityIdentifier"},
+        "AwsSubmission":{"shape":"AwsSubmission"},
         "Tags":{"shape":"TagList"}
       }
-    },
-    "StartEngagementFromOpportunityTaskRequestClientTokenString":{
-      "type":"string",
-      "min":1,
-      "pattern":"^[!-~]{1,64}$"
     },
     "StartEngagementFromOpportunityTaskResponse":{
       "type":"structure",
       "members":{
-        "EngagementId":{"shape":"EngagementIdentifier"},
-        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"},
-        "Message":{"shape":"String"},
-        "OpportunityId":{"shape":"OpportunityIdentifier"},
-        "ReasonCode":{"shape":"ReasonCode"},
-        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
-        "StartTime":{"shape":"DateTime"},
-        "TaskArn":{"shape":"TaskArn"},
         "TaskId":{"shape":"TaskIdentifier"},
-        "TaskStatus":{"shape":"TaskStatus"}
+        "TaskArn":{"shape":"TaskArn"},
+        "StartTime":{"shape":"DateTime"},
+        "TaskStatus":{"shape":"TaskStatus"},
+        "Message":{"shape":"String"},
+        "ReasonCode":{"shape":"ReasonCode"},
+        "OpportunityId":{"shape":"OpportunityIdentifier"},
+        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
+        "EngagementId":{"shape":"EngagementIdentifier"},
+        "EngagementInvitationId":{"shape":"EngagementInvitationIdentifier"}
+      }
+    },
+    "StartOpportunityFromEngagementTaskRequest":{
+      "type":"structure",
+      "required":[
+        "Catalog",
+        "ClientToken",
+        "Identifier",
+        "ContextIdentifier"
+      ],
+      "members":{
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "Identifier":{"shape":"EngagementArnOrIdentifier"},
+        "ContextIdentifier":{"shape":"ContextIdentifier"},
+        "Tags":{"shape":"TagList"}
+      }
+    },
+    "StartOpportunityFromEngagementTaskResponse":{
+      "type":"structure",
+      "members":{
+        "TaskId":{"shape":"TaskIdentifier"},
+        "TaskArn":{"shape":"TaskArn"},
+        "StartTime":{"shape":"DateTime"},
+        "TaskStatus":{"shape":"TaskStatus"},
+        "Message":{"shape":"String"},
+        "ReasonCode":{"shape":"ReasonCode"},
+        "OpportunityId":{"shape":"OpportunityIdentifier"},
+        "ResourceSnapshotJobId":{"shape":"ResourceSnapshotJobIdentifier"},
+        "EngagementId":{"shape":"EngagementIdentifier"},
+        "ContextId":{"shape":"ContextIdentifier"}
       }
     },
     "StartResourceSnapshotJobRequest":{
@@ -3841,9 +4486,7 @@
     },
     "TagKey":{
       "type":"string",
-      "max":128,
-      "min":1,
-      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
+      "pattern":"(?=.{1,128}$)([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)"
     },
     "TagKeyList":{
       "type":"list",
@@ -3870,32 +4513,34 @@
     },
     "TagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{
       "type":"string",
-      "max":256,
-      "min":0,
-      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
+      "pattern":"(?=.{0,256}$)([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)"
     },
     "TaggableResourceArn":{
       "type":"string",
-      "max":1000,
-      "min":1,
-      "pattern":"^arn:[\\w+=/,.@-]+:partnercentral:[\\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\\w+=,.@-]+(/[\\w+=,.@-]+)*$"
+      "pattern":"(?=.{1,1000}$)arn:[\\w+=/,.@-]+:partnercentral:[\\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\\w+=,.@-]+(/[\\w+=,.@-]+)*"
+    },
+    "TargetCloseDateFilter":{
+      "type":"structure",
+      "members":{
+        "AfterTargetCloseDate":{"shape":"Date"},
+        "BeforeTargetCloseDate":{"shape":"Date"}
+      }
     },
     "TaskArn":{
       "type":"string",
-      "pattern":"^arn:.*"
+      "pattern":"arn:.*"
     },
     "TaskArnOrIdentifier":{
       "type":"string",
-      "pattern":"^(arn:.*|task-[0-9a-z]{13})$"
+      "pattern":"(arn:.*|task-[0-9a-z]{13})"
     },
     "TaskIdentifier":{
       "type":"string",
-      "pattern":"task-[0-9a-z]{13}$"
+      "pattern":".*task-[0-9a-z]{13}"
     },
     "TaskIdentifiers":{
       "type":"list",
@@ -3937,35 +4582,84 @@
     },
     "UntagResourceResponse":{
       "type":"structure",
+      "members":{}
+    },
+    "UpdateEngagementContextPayload":{
+      "type":"structure",
       "members":{
+        "Lead":{"shape":"UpdateLeadContext"},
+        "CustomerProject":{"shape":"CustomerProjectsContext"}
+      },
+      "union":true
+    },
+    "UpdateEngagementContextRequest":{
+      "type":"structure",
+      "required":[
+        "Catalog",
+        "EngagementIdentifier",
+        "ContextIdentifier",
+        "EngagementLastModifiedAt",
+        "Type",
+        "Payload"
+      ],
+      "members":{
+        "Catalog":{"shape":"CatalogIdentifier"},
+        "EngagementIdentifier":{"shape":"EngagementArnOrIdentifier"},
+        "ContextIdentifier":{"shape":"EngagementContextIdentifier"},
+        "EngagementLastModifiedAt":{"shape":"DateTime"},
+        "Type":{"shape":"EngagementContextType"},
+        "Payload":{"shape":"UpdateEngagementContextPayload"}
+      }
+    },
+    "UpdateEngagementContextResponse":{
+      "type":"structure",
+      "required":[
+        "EngagementId",
+        "EngagementArn",
+        "EngagementLastModifiedAt",
+        "ContextId"
+      ],
+      "members":{
+        "EngagementId":{"shape":"EngagementIdentifier"},
+        "EngagementArn":{"shape":"EngagementArn"},
+        "EngagementLastModifiedAt":{"shape":"DateTime"},
+        "ContextId":{"shape":"EngagementContextIdentifier"}
+      }
+    },
+    "UpdateLeadContext":{
+      "type":"structure",
+      "required":["Customer"],
+      "members":{
+        "QualificationStatus":{"shape":"LeadQualificationStatus"},
+        "Customer":{"shape":"LeadCustomer"},
+        "Interaction":{"shape":"LeadInteraction"}
       }
     },
     "UpdateOpportunityRequest":{
       "type":"structure",
       "required":[
         "Catalog",
-        "Identifier",
-        "LastModifiedDate"
+        "LastModifiedDate",
+        "Identifier"
       ],
       "members":{
         "Catalog":{"shape":"CatalogIdentifier"},
-        "Customer":{"shape":"Customer"},
-        "Identifier":{"shape":"OpportunityIdentifier"},
-        "LastModifiedDate":{"shape":"DateTime"},
-        "LifeCycle":{"shape":"LifeCycle"},
-        "Marketing":{"shape":"Marketing"},
-        "NationalSecurity":{"shape":"NationalSecurity"},
-        "OpportunityType":{"shape":"OpportunityType"},
-        "PartnerOpportunityIdentifier":{"shape":"UpdateOpportunityRequestPartnerOpportunityIdentifierString"},
         "PrimaryNeedsFromAws":{"shape":"PrimaryNeedsFromAws"},
+        "NationalSecurity":{"shape":"NationalSecurity"},
+        "PartnerOpportunityIdentifier":{"shape":"UpdateOpportunityRequestPartnerOpportunityIdentifierString"},
+        "Customer":{"shape":"Customer"},
         "Project":{"shape":"Project"},
-        "SoftwareRevenue":{"shape":"SoftwareRevenue"}
+        "OpportunityType":{"shape":"OpportunityType"},
+        "Marketing":{"shape":"Marketing"},
+        "SoftwareRevenue":{"shape":"SoftwareRevenue"},
+        "LastModifiedDate":{"shape":"DateTime"},
+        "Identifier":{"shape":"OpportunityIdentifier"},
+        "LifeCycle":{"shape":"LifeCycle"}
       }
     },
     "UpdateOpportunityRequestPartnerOpportunityIdentifierString":{
       "type":"string",
-      "max":64,
-      "min":0
+      "pattern":"(?s).{0,64}"
     },
     "UpdateOpportunityResponse":{
       "type":"structure",
@@ -3989,22 +4683,22 @@
         "Reason"
       ],
       "members":{
-        "ErrorList":{"shape":"ValidationExceptionErrorList"},
         "Message":{"shape":"String"},
-        "Reason":{"shape":"ValidationExceptionReason"}
+        "Reason":{"shape":"ValidationExceptionReason"},
+        "ErrorList":{"shape":"ValidationExceptionErrorList"}
       },
       "exception":true
     },
     "ValidationExceptionError":{
       "type":"structure",
       "required":[
-        "Code",
-        "Message"
+        "Message",
+        "Code"
       ],
       "members":{
-        "Code":{"shape":"ValidationExceptionErrorCode"},
         "FieldName":{"shape":"String"},
-        "Message":{"shape":"String"}
+        "Message":{"shape":"String"},
+        "Code":{"shape":"ValidationExceptionErrorCode"}
       }
     },
     "ValidationExceptionErrorCode":{
@@ -4014,6 +4708,7 @@
         "INVALID_ENUM_VALUE",
         "INVALID_STRING_FORMAT",
         "INVALID_VALUE",
+        "NOT_ENOUGH_VALUES",
         "TOO_MANY_VALUES",
         "INVALID_RESOURCE_STATE",
         "DUPLICATE_KEY_VALUE",
@@ -4041,8 +4736,7 @@
     },
     "WebsiteUrl":{
       "type":"string",
-      "max":255,
-      "min":4,
+      "pattern":"(?s).{4,255}",
       "sensitive":true
     }
   }

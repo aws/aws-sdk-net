@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchGameSessions operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves all active game sessions that match a set of search criteria and sorts them
     /// into a specified order. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation is not designed to continually track game session status because that
@@ -107,7 +111,19 @@ namespace Amazon.GameLift.Model
     ///  For examples of searching game sessions, see the ones below, and also see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
     /// game sessions by game property</a>. 
     /// </para>
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// Avoid using periods (".") in property keys if you plan to search for game sessions
+    /// by properties. Property keys containing periods cannot be searched and will be filtered
+    /// out from search results due to search index limitations.
+    /// </para>
     ///  </li> <li> 
+    /// <para>
+    /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+    /// all game sessions and all fleets per region. If the limit is exceeded, there will
+    /// potentially be game session entries missing from SearchGameSessions API results.
+    /// </para>
+    ///  </li> </ul> </note> </li> <li> 
     /// <para>
     ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
     /// </para>

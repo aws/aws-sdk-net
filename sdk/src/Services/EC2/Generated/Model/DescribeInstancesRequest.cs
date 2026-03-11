@@ -44,6 +44,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// The response includes SQL license exemption status information for instances registered
+    /// with the SQL LE service, providing visibility into license exemption configuration
+    /// and status.
+    /// </para>
+    ///  
+    /// <para>
     /// If you specify an instance ID that is not valid, an error is returned. If you specify
     /// an instance that you do not own, it is not included in the output.
     /// </para>
@@ -124,6 +130,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>availability-zone</c> - The Availability Zone of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -622,13 +632,14 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>platform-details</c> - The platform (<c>Linux/UNIX</c> | <c>Red Hat BYOL Linux</c>
         /// | <c> Red Hat Enterprise Linux</c> | <c>Red Hat Enterprise Linux with HA</c> | <c>Red
-        /// Hat Enterprise Linux with SQL Server Standard and HA</c> | <c>Red Hat Enterprise Linux
-        /// with SQL Server Enterprise and HA</c> | <c>Red Hat Enterprise Linux with SQL Server
-        /// Standard</c> | <c>Red Hat Enterprise Linux with SQL Server Web</c> | <c>Red Hat Enterprise
-        /// Linux with SQL Server Enterprise</c> | <c>SQL Server Enterprise</c> | <c>SQL Server
-        /// Standard</c> | <c>SQL Server Web</c> | <c>SUSE Linux</c> | <c>Ubuntu Pro</c> | <c>Windows</c>
-        /// | <c>Windows BYOL</c> | <c>Windows with SQL Server Enterprise</c> | <c>Windows with
-        /// SQL Server Standard</c> | <c>Windows with SQL Server Web</c>).
+        /// Hat Enterprise Linux with High Availability</c> | <c>Red Hat Enterprise Linux with
+        /// SQL Server Standard and HA</c> | <c>Red Hat Enterprise Linux with SQL Server Enterprise
+        /// and HA</c> | <c>Red Hat Enterprise Linux with SQL Server Standard</c> | <c>Red Hat
+        /// Enterprise Linux with SQL Server Web</c> | <c>Red Hat Enterprise Linux with SQL Server
+        /// Enterprise</c> | <c>SQL Server Enterprise</c> | <c>SQL Server Standard</c> | <c>SQL
+        /// Server Web</c> | <c>SUSE Linux</c> | <c>Ubuntu Pro</c> | <c>Windows</c> | <c>Windows
+        /// BYOL</c> | <c>Windows with SQL Server Enterprise</c> | <c>Windows with SQL Server
+        /// Standard</c> | <c>Windows with SQL Server Web</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

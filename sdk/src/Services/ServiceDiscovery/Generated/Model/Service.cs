@@ -36,6 +36,7 @@ namespace Amazon.ServiceDiscovery.Model
     {
         private string _arn;
         private DateTime? _createDate;
+        private string _createdByAccount;
         private string _creatorRequestId;
         private string _description;
         private DnsConfig _dnsConfig;
@@ -45,6 +46,7 @@ namespace Amazon.ServiceDiscovery.Model
         private int? _instanceCount;
         private string _name;
         private string _namespaceId;
+        private string _resourceOwner;
         private ServiceType _type;
 
         /// <summary>
@@ -85,6 +87,29 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedByAccount. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the service. If this isn't
+        /// your account ID, it is the ID of account of the namespace owner or of another account
+        /// with which the namespace has been shared. For more information about shared namespaces,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string CreatedByAccount
+        {
+            get { return this._createdByAccount; }
+            set { this._createdByAccount = value; }
+        }
+
+        // Check to see if CreatedByAccount property is set
+        internal bool IsSetCreatedByAccount()
+        {
+            return this._createdByAccount != null;
         }
 
         /// <summary>
@@ -275,6 +300,29 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetNamespaceId()
         {
             return this._namespaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the namespace with which the
+        /// service is associated. If this isn't your account ID, it is the ID of the account
+        /// that shared the namespace with your account. For more information about shared namespaces,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
         /// <summary>

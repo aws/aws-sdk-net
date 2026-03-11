@@ -30,14 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// The target of the operation is currently being modified by a different request. Try
-    /// again later.
+    /// The request failed because the target of the operation is currently being modified
+    /// by a different request. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ConcurrentModificationException : AmazonResourceGroupsTaggingAPIException
     {
+
+        /// <summary>
+        /// Default constructor for ConcurrentModificationException
+        /// message.
+        /// </summary>
+        public ConcurrentModificationException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ConcurrentModificationException with the specified error

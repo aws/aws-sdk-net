@@ -50,7 +50,6 @@ namespace Amazon.MediaLive.Model
         /// remain on the video. If omitted or set to 0 the duration is unlimited and the image
         /// will remain until it is explicitly deactivated.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? Duration
         {
             get { return this._duration; }
@@ -67,7 +66,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FadeIn. The time in milliseconds for the image to fade
         /// in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? FadeIn
         {
             get { return this._fadeIn; }
@@ -85,7 +83,6 @@ namespace Amazon.MediaLive.Model
         /// in milliseconds for the image to fade out. The fade-out starts when the duration time
         /// is hit, so it effectively extends the duration. Default is 0 (no fade-out).
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? FadeOut
         {
             get { return this._fadeOut; }
@@ -103,7 +100,6 @@ namespace Amazon.MediaLive.Model
         /// video, in pixels. The overlay will be scaled up or down to the specified height. Leave
         /// blank to use the native height of the overlay.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? Height
         {
             get { return this._height; }
@@ -140,7 +136,6 @@ namespace Amazon.MediaLive.Model
         /// the frame. If the placement causes the overlay to extend beyond the right edge of
         /// the underlying video, then the overlay is cropped on the right.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? ImageX
         {
             get { return this._imageX; }
@@ -159,7 +154,6 @@ namespace Amazon.MediaLive.Model
         /// the frame. If the placement causes the overlay to extend beyond the bottom edge of
         /// the underlying video, then the overlay is cropped on the bottom.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? ImageY
         {
             get { return this._imageY; }
@@ -178,7 +172,6 @@ namespace Amazon.MediaLive.Model
         /// in Z order, which means that overlays with higher values of layer are inserted on
         /// top of overlays with lower values of layer. Default is 0.
         /// </summary>
-        [AWSProperty(Min=0, Max=7)]
         public int? Layer
         {
             get { return this._layer; }
@@ -195,7 +188,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Opacity. Opacity of image where 0 is transparent and 100
         /// is fully opaque. Default is 100.
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public int? Opacity
         {
             get { return this._opacity; }
@@ -213,7 +205,6 @@ namespace Amazon.MediaLive.Model
         /// in pixels. The overlay will be scaled up or down to the specified width. Leave blank
         /// to use the native width of the overlay.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? Width
         {
             get { return this._width; }

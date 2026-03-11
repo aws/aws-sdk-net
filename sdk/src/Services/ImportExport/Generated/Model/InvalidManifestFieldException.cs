@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidManifestFieldException
+        /// message.
+        /// </summary>
+        public InvalidManifestFieldException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidManifestFieldException with the specified error
         /// message.
         /// </summary>

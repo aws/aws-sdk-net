@@ -39,6 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EndpointGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

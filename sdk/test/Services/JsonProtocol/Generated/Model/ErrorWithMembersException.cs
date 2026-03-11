@@ -45,6 +45,13 @@ namespace Amazon.JsonProtocol.Model
         private string _stringField;
 
         /// <summary>
+        /// Default constructor for ErrorWithMembersException
+        /// message.
+        /// </summary>
+        public ErrorWithMembersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ErrorWithMembersException with the specified error
         /// message.
         /// </summary>

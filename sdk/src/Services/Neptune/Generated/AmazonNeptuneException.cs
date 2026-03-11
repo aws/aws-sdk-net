@@ -36,6 +36,14 @@ namespace Amazon.Neptune
         /// <summary>
         /// Construct instance of AmazonNeptuneException
         /// </summary>
+        public AmazonNeptuneException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNeptuneException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNeptuneException(string message)
             : base(message)

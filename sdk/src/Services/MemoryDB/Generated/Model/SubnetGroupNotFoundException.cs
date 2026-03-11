@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified subnet group does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SubnetGroupNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SubnetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public SubnetGroupNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SubnetGroupNotFoundException with the specified error

@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTrafficPoliciesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetTrafficPolicyIdMarker())
@@ -66,8 +67,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/trafficpolicies";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListTrafficPoliciesRequestMarshaller _instance = new ListTrafficPoliciesRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPoliciesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPoliciesRequest publicRequest);
     }    
 }

@@ -37,6 +37,38 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListPortalProducts operation
+        ///</summary>
+        public IListPortalProductsPaginator ListPortalProducts(ListPortalProductsRequest request) 
+        {
+            return new ListPortalProductsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPortals operation
+        ///</summary>
+        public IListPortalsPaginator ListPortals(ListPortalsRequest request) 
+        {
+            return new ListPortalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProductPages operation
+        ///</summary>
+        public IListProductPagesPaginator ListProductPages(ListProductPagesRequest request) 
+        {
+            return new ListProductPagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProductRestEndpointPages operation
+        ///</summary>
+        public IListProductRestEndpointPagesPaginator ListProductRestEndpointPages(ListProductRestEndpointPagesRequest request) 
+        {
+            return new ListProductRestEndpointPagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRoutingRules operation
         ///</summary>
         public IListRoutingRulesPaginator ListRoutingRules(ListRoutingRulesRequest request) 

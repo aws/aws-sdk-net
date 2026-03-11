@@ -271,7 +271,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual CreateDbClusterResponse CreateDbCluster(CreateDbClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDbClusterResponseUnmarshaller.Instance;
 
@@ -313,7 +313,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">REST API Reference for CreateDbCluster Operation</seealso>
         public virtual Task<CreateDbClusterResponse> CreateDbClusterAsync(CreateDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDbClusterResponseUnmarshaller.Instance;
 
@@ -325,7 +325,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual CreateDbInstanceResponse CreateDbInstance(CreateDbInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDbInstanceResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbInstance">REST API Reference for CreateDbInstance Operation</seealso>
         public virtual Task<CreateDbInstanceResponse> CreateDbInstanceAsync(CreateDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDbInstanceResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual CreateDbParameterGroupResponse CreateDbParameterGroup(CreateDbParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDbParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDbParameterGroupResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbParameterGroup">REST API Reference for CreateDbParameterGroup Operation</seealso>
         public virtual Task<CreateDbParameterGroupResponse> CreateDbParameterGroupAsync(CreateDbParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDbParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDbParameterGroupResponseUnmarshaller.Instance;
 
@@ -433,7 +433,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual DeleteDbClusterResponse DeleteDbCluster(DeleteDbClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDbClusterResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">REST API Reference for DeleteDbCluster Operation</seealso>
         public virtual Task<DeleteDbClusterResponse> DeleteDbClusterAsync(DeleteDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDbClusterResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual DeleteDbInstanceResponse DeleteDbInstance(DeleteDbInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDbInstanceResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbInstance">REST API Reference for DeleteDbInstance Operation</seealso>
         public virtual Task<DeleteDbInstanceResponse> DeleteDbInstanceAsync(DeleteDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDbInstanceResponseUnmarshaller.Instance;
 
@@ -535,7 +535,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual GetDbClusterResponse GetDbCluster(GetDbClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbClusterResponseUnmarshaller.Instance;
 
@@ -571,7 +571,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">REST API Reference for GetDbCluster Operation</seealso>
         public virtual Task<GetDbClusterResponse> GetDbClusterAsync(GetDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbClusterResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual GetDbInstanceResponse GetDbInstance(GetDbInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbInstanceResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbInstance">REST API Reference for GetDbInstance Operation</seealso>
         public virtual Task<GetDbInstanceResponse> GetDbInstanceAsync(GetDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbInstanceResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual GetDbParameterGroupResponse GetDbParameterGroup(GetDbParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbParameterGroupResponseUnmarshaller.Instance;
 
@@ -667,7 +667,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbParameterGroup">REST API Reference for GetDbParameterGroup Operation</seealso>
         public virtual Task<GetDbParameterGroupResponse> GetDbParameterGroupAsync(GetDbParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbParameterGroupResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual ListDbClustersResponse ListDbClusters(ListDbClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbClustersResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">REST API Reference for ListDbClusters Operation</seealso>
         public virtual Task<ListDbClustersResponse> ListDbClustersAsync(ListDbClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbClustersResponseUnmarshaller.Instance;
 
@@ -727,7 +727,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual ListDbInstancesResponse ListDbInstances(ListDbInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbInstancesResponseUnmarshaller.Instance;
 
@@ -763,7 +763,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstances">REST API Reference for ListDbInstances Operation</seealso>
         public virtual Task<ListDbInstancesResponse> ListDbInstancesAsync(ListDbInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbInstancesResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual ListDbInstancesForClusterResponse ListDbInstancesForCluster(ListDbInstancesForClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbInstancesForClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbInstancesForClusterResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">REST API Reference for ListDbInstancesForCluster Operation</seealso>
         public virtual Task<ListDbInstancesForClusterResponse> ListDbInstancesForClusterAsync(ListDbInstancesForClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbInstancesForClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbInstancesForClusterResponseUnmarshaller.Instance;
 
@@ -823,7 +823,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual ListDbParameterGroupsResponse ListDbParameterGroups(ListDbParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbParameterGroupsResponseUnmarshaller.Instance;
 
@@ -859,7 +859,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbParameterGroups">REST API Reference for ListDbParameterGroups Operation</seealso>
         public virtual Task<ListDbParameterGroupsResponse> ListDbParameterGroupsAsync(ListDbParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbParameterGroupsResponseUnmarshaller.Instance;
 
@@ -871,7 +871,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -903,11 +903,113 @@ namespace Amazon.TimestreamInfluxDB
         }
         #endregion
         
+        #region  RebootDbCluster
+
+        internal virtual RebootDbClusterResponse RebootDbCluster(RebootDbClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RebootDbClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Reboots a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RebootDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbCluster">REST API Reference for RebootDbCluster Operation</seealso>
+        public virtual Task<RebootDbClusterResponse> RebootDbClusterAsync(RebootDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RebootDbClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  RebootDbInstance
+
+        internal virtual RebootDbInstanceResponse RebootDbInstance(RebootDbInstanceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<RebootDbInstanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Reboots a Timestream for InfluxDB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDbInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RebootDbInstance service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbInstance">REST API Reference for RebootDbInstance Operation</seealso>
+        public virtual Task<RebootDbInstanceResponse> RebootDbInstanceAsync(RebootDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RebootDbInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDbInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RebootDbInstanceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -935,7 +1037,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -947,7 +1049,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -971,7 +1073,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -983,7 +1085,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual UpdateDbClusterResponse UpdateDbCluster(UpdateDbClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDbClusterResponseUnmarshaller.Instance;
 
@@ -1022,7 +1124,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">REST API Reference for UpdateDbCluster Operation</seealso>
         public virtual Task<UpdateDbClusterResponse> UpdateDbClusterAsync(UpdateDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDbClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDbClusterResponseUnmarshaller.Instance;
 
@@ -1034,7 +1136,7 @@ namespace Amazon.TimestreamInfluxDB
 
         internal virtual UpdateDbInstanceResponse UpdateDbInstance(UpdateDbInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDbInstanceResponseUnmarshaller.Instance;
 
@@ -1073,7 +1175,7 @@ namespace Amazon.TimestreamInfluxDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbInstance">REST API Reference for UpdateDbInstance Operation</seealso>
         public virtual Task<UpdateDbInstanceResponse> UpdateDbInstanceAsync(UpdateDbInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDbInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDbInstanceResponseUnmarshaller.Instance;
 

@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for NoSuchDomainException
+        /// message.
+        /// </summary>
+        public NoSuchDomainException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchDomainException with the specified error
         /// message.
         /// </summary>

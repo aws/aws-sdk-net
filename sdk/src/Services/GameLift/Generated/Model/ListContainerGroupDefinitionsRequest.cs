@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContainerGroupDefinitions operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves container group definitions for the Amazon Web Services account and Amazon
     /// Web Services Region. Use the pagination parameters to retrieve results in a set of
     /// sequential pages.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation returns only the latest version of each definition. To retrieve all

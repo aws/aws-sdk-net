@@ -36,6 +36,14 @@ namespace Amazon.MediaConvert
         /// <summary>
         /// Construct instance of AmazonMediaConvertException
         /// </summary>
+        public AmazonMediaConvertException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaConvertException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaConvertException(string message)
             : base(message)

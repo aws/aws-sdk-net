@@ -40,6 +40,13 @@ namespace Amazon.NeptuneGraph.Model
         private UnprocessableExceptionReason _reason;
 
         /// <summary>
+        /// Default constructor for UnprocessableException
+        /// message.
+        /// </summary>
+        public UnprocessableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnprocessableException with the specified error
         /// message.
         /// </summary>

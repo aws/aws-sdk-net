@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidQueryException
+        /// message.
+        /// </summary>
+        public InvalidQueryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidQueryException with the specified error
         /// message.
         /// </summary>

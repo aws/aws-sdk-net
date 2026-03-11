@@ -95,6 +95,7 @@ namespace Amazon.S3.Model
         /// results.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketArn
         {
             get { return this._bucketArn; }

@@ -699,6 +699,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type FlowControlNodeType.
+    /// </summary>
+    public class FlowControlNodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Iterator for FlowControlNodeType
+        /// </summary>
+        public static readonly FlowControlNodeType Iterator = new FlowControlNodeType("Iterator");
+        /// <summary>
+        /// Constant Loop for FlowControlNodeType
+        /// </summary>
+        public static readonly FlowControlNodeType Loop = new FlowControlNodeType("Loop");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowControlNodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowControlNodeType FindValue(string value)
+        {
+            return FindValue<FlowControlNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowControlNodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FlowErrorCode.
     /// </summary>
     public class FlowErrorCode : ConstantClass
@@ -904,6 +954,122 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FlowExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowNodeInputCategory.
+    /// </summary>
+    public class FlowNodeInputCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExitLoop for FlowNodeInputCategory
+        /// </summary>
+        public static readonly FlowNodeInputCategory ExitLoop = new FlowNodeInputCategory("ExitLoop");
+        /// <summary>
+        /// Constant LoopCondition for FlowNodeInputCategory
+        /// </summary>
+        public static readonly FlowNodeInputCategory LoopCondition = new FlowNodeInputCategory("LoopCondition");
+        /// <summary>
+        /// Constant ReturnValueToLoopStart for FlowNodeInputCategory
+        /// </summary>
+        public static readonly FlowNodeInputCategory ReturnValueToLoopStart = new FlowNodeInputCategory("ReturnValueToLoopStart");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowNodeInputCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowNodeInputCategory FindValue(string value)
+        {
+            return FindValue<FlowNodeInputCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowNodeInputCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowNodeIODataType.
+    /// </summary>
+    public class FlowNodeIODataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Array for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Array = new FlowNodeIODataType("Array");
+        /// <summary>
+        /// Constant Boolean for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Boolean = new FlowNodeIODataType("Boolean");
+        /// <summary>
+        /// Constant Number for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Number = new FlowNodeIODataType("Number");
+        /// <summary>
+        /// Constant Object for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType Object = new FlowNodeIODataType("Object");
+        /// <summary>
+        /// Constant String for FlowNodeIODataType
+        /// </summary>
+        public static readonly FlowNodeIODataType String = new FlowNodeIODataType("String");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowNodeIODataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowNodeIODataType FindValue(string value)
+        {
+            return FindValue<FlowNodeIODataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowNodeIODataType(string value)
         {
             return FindValue(value);
         }
@@ -1743,6 +1909,64 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type InputImageFormat.
+    /// </summary>
+    public class InputImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gif for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Gif = new InputImageFormat("gif");
+        /// <summary>
+        /// Constant Jpeg for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Jpeg = new InputImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Png = new InputImageFormat("png");
+        /// <summary>
+        /// Constant Webp for InputImageFormat
+        /// </summary>
+        public static readonly InputImageFormat Webp = new InputImageFormat("webp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputImageFormat FindValue(string value)
+        {
+            return FindValue<InputImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputQueryType.
     /// </summary>
     public class InputQueryType : ConstantClass
@@ -1844,6 +2068,56 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KnowledgeBaseQueryType.
+    /// </summary>
+    public class KnowledgeBaseQueryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMAGE for KnowledgeBaseQueryType
+        /// </summary>
+        public static readonly KnowledgeBaseQueryType IMAGE = new KnowledgeBaseQueryType("IMAGE");
+        /// <summary>
+        /// Constant TEXT for KnowledgeBaseQueryType
+        /// </summary>
+        public static readonly KnowledgeBaseQueryType TEXT = new KnowledgeBaseQueryType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KnowledgeBaseQueryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KnowledgeBaseQueryType FindValue(string value)
+        {
+            return FindValue<KnowledgeBaseQueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KnowledgeBaseQueryType(string value)
         {
             return FindValue(value);
         }
@@ -2901,6 +3175,10 @@ namespace Amazon.BedrockAgentRuntime
     {
 
         /// <summary>
+        /// Constant AUDIO for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType AUDIO = new RetrievalResultContentType("AUDIO");
+        /// <summary>
         /// Constant IMAGE for RetrievalResultContentType
         /// </summary>
         public static readonly RetrievalResultContentType IMAGE = new RetrievalResultContentType("IMAGE");
@@ -2912,6 +3190,10 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant TEXT for RetrievalResultContentType
         /// </summary>
         public static readonly RetrievalResultContentType TEXT = new RetrievalResultContentType("TEXT");
+        /// <summary>
+        /// Constant VIDEO for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType VIDEO = new RetrievalResultContentType("VIDEO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

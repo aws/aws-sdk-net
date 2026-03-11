@@ -36,6 +36,14 @@ namespace Amazon.UseServiceIdTestserviceId
         /// <summary>
         /// Construct instance of AmazonUseServiceIdTestserviceIdException
         /// </summary>
+        public AmazonUseServiceIdTestserviceIdException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonUseServiceIdTestserviceIdException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonUseServiceIdTestserviceIdException(string message)
             : base(message)

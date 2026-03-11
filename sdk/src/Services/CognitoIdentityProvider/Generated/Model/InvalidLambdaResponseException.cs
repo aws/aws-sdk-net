@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLambdaResponseException
+        /// message.
+        /// </summary>
+        public InvalidLambdaResponseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLambdaResponseException with the specified error
         /// message.
         /// </summary>

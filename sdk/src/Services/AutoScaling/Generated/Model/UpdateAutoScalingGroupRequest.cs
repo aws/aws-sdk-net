@@ -100,10 +100,12 @@ namespace Amazon.AutoScaling.Model
         private string _context;
         private int? _defaultCooldown;
         private int? _defaultInstanceWarmup;
+        private DeletionProtection _deletionProtection;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
+        private InstanceLifecyclePolicy _instanceLifecyclePolicy;
         private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
@@ -325,6 +327,37 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        ///  The deletion protection setting for the Auto Scaling group. This setting helps safeguard
+        /// your Auto Scaling group and its instances by controlling whether the <c>DeleteAutoScalingGroup</c>
+        /// operation is allowed. When deletion protection is enabled, users cannot delete the
+        /// Auto Scaling group according to the specified protection level until the setting is
+        /// changed back to a less restrictive level. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The valid values are <c>none</c>, <c>prevent-force-deletion</c>, and <c>prevent-all-deletion</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <c>none</c> 
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
         /// The desired capacity is the initial capacity of the Auto Scaling group after this
@@ -429,6 +462,33 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHealthCheckType()
         {
             return this._healthCheckType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceLifecyclePolicy. 
+        /// <para>
+        ///  The instance lifecycle policy for the Auto Scaling group. This policy controls instance
+        /// behavior when an instance transitions through its lifecycle states. Configure retention
+        /// triggers to specify when instances should move to a <c>Retained</c> state instead
+        /// of automatic termination. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html">
+        /// Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2
+        /// Auto Scaling User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public InstanceLifecyclePolicy InstanceLifecyclePolicy
+        {
+            get { return this._instanceLifecyclePolicy; }
+            set { this._instanceLifecyclePolicy = value; }
+        }
+
+        // Check to see if InstanceLifecyclePolicy property is set
+        internal bool IsSetInstanceLifecyclePolicy()
+        {
+            return this._instanceLifecyclePolicy != null;
         }
 
         /// <summary>

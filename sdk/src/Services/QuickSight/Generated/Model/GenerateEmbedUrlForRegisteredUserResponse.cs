@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property EmbedUrl. 
         /// <para>
-        /// The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative
+        /// The embed URL for the Amazon Quick Sight dashboard, visual, Q search bar, Generative
         /// Q&amp;A experience, or console.
         /// </para>
         /// </summary>

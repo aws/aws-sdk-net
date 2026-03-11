@@ -1,0 +1,171 @@
+<#@ template language="C#" inherits="CborStructureMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+
+	AddCommonUsingStatements();
+#>
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
+#pragma warning disable CS0612,CS0618
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+	/// <summary>
+	/// <#=this.Operation.Name #> Request Marshaller
+	/// </summary>       
+	public class <#=this.Operation.Name #>RequestMarshaller : IMarshaller<IRequest, <#=this.Operation.Name #>Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
+	{
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+		public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((<#=this.Operation.Name #>Request)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
+		{
+			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace #>");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+<#
+			if (string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
+			{
+				throw new System.InvalidOperationException("TargetPrefix is required for CBOR based services.");
+			}
+#>
+			request.ResourcePath = "<#=$"service/{this.Config.ServiceModel.TargetPrefix}/operation/{this.Operation.Name}"#>";
+<#
+	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+	{
+#>
+#if NET8_0_OR_GREATER
+            request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
+#endif
+<#
+	}
+
+	if (this.Config.ServiceModel.IsAwsQueryCompatible)
+	{
+#>
+			request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+<#
+	}
+
+	var requestStructure = this.Operation.RequestStructure;
+
+	if (this.Operation.IsEventStreamInput)
+	{
+		var eventStreamMember = this.Operation.RequestEventStreamingMember;
+#>
+            request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
+            request.EventStreamPublisher = new <#=eventStreamMember.Shape.Name#>PublisherMarshaller(publicRequest.<#=eventStreamMember.PropertyName#>);
+<#
+	}
+	else if (requestStructure != null)
+	{
+#>
+			request.Headers["Content-Type"] = "application/cbor";
+<#	
+	}
+
+	if (this.Operation.IsEventStreamOutput)
+	{
+#>
+			request.Headers["Accept"] = "application/vnd.amazon.eventstream";
+<#
+	}
+	else
+	{
+#>
+			request.Headers["Accept"] = "application/cbor";
+<#	
+	}
+
+	SetCompressionAlgorithmEncoding(this.Operation);
+
+	var payload = this.Operation.RequestPayloadMember;
+#>
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "<#=this.Config.ServiceModel.APIVersion #>";
+            request.HttpMethod = "POST";
+
+<#
+    // Generates code to add members of the request to the request being created by the marshaller
+	ProcessRequestUri(this.Operation);
+
+    var shouldMarshallPayload = (payload != null && !payload.Shape.IsEventStream);
+	// Process any members which are marshalled as part of the request body
+	if (requestStructure != null)
+	{
+#>
+            var writer = CborWriterPool.Rent();
+            try
+            {
+<#		
+		if (payload?.Shape.IsString == true) 
+		{
+#>
+				writer.WriteTextString(publicRequest.<#=payload.PropertyName#>);
+<#		
+		}
+		else if (shouldMarshallPayload)
+		{
+#>
+				var context = new CborMarshallerContext(request, writer);
+
+<#		
+				ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
+		}
+		else
+		{
+#>
+				writer.WriteStartMap(null);
+				var context = new CborMarshallerContext(request, writer);
+<#		
+				ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
+#>
+				writer.WriteEndMap();
+<#
+		}
+#>
+				request.Content = writer.Encode();
+			}
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+<#
+			GenerateRequestChecksumHandling(this.Operation, "snippet");
+#>			
+<#
+	}
+
+	if (this.Operation.UnsignedPayload)
+	{
+#>
+			request.DisablePayloadSigning = true;
+<#	}
+
+	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	{
+		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
+	}
+#>
+			return request;
+		}
+<#				
+		this.AddRequestSingletonMethod();
+#>
+	}
+}

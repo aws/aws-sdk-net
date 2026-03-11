@@ -40,6 +40,13 @@ namespace Amazon.MediaConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for CreateGateway420Exception
+        /// message.
+        /// </summary>
+        public CreateGateway420Exception() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreateGateway420Exception with the specified error
         /// message.
         /// </summary>

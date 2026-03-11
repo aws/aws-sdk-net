@@ -34,16 +34,34 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MediaPackageOutputDestinationSettings
     {
+        private string _channelEndpointId;
         private string _channelGroup;
         private string _channelId;
         private string _channelName;
+        private string _mediaPackageRegionName;
+
+        /// <summary>
+        /// Gets and sets the property ChannelEndpointId. Endpoint 1 or 2 of the channel in MediaPackageV2.
+        /// Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
+        /// channel that uses MediaPackage v2.
+        /// </summary>
+        public string ChannelEndpointId
+        {
+            get { return this._channelEndpointId; }
+            set { this._channelEndpointId = value; }
+        }
+
+        // Check to see if ChannelEndpointId property is set
+        internal bool IsSetChannelEndpointId()
+        {
+            return this._channelEndpointId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelGroup. Name of the channel group in MediaPackageV2.
         /// Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
         /// channel that uses MediaPackage v2.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ChannelGroup
         {
             get { return this._channelGroup; }
@@ -63,7 +81,6 @@ namespace Amazon.MediaLive.Model
         /// to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must
         /// be in the same region.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ChannelId
         {
             get { return this._channelId; }
@@ -81,7 +98,6 @@ namespace Amazon.MediaLive.Model
         /// use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
         /// channel that uses MediaPackage v2.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -92,6 +108,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetChannelName()
         {
             return this._channelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaPackageRegionName. Region the channel group and channel
+        /// are located in for MediaPackageV2. Only use if you are sending CMAF Ingest output
+        /// to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+        /// </summary>
+        public string MediaPackageRegionName
+        {
+            get { return this._mediaPackageRegionName; }
+            set { this._mediaPackageRegionName = value; }
+        }
+
+        // Check to see if MediaPackageRegionName property is set
+        internal bool IsSetMediaPackageRegionName()
+        {
+            return this._mediaPackageRegionName != null;
         }
 
     }

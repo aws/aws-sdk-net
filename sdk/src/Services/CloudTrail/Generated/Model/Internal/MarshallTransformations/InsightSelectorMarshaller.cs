@@ -46,6 +46,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEventCategories())
+            {
+                context.Writer.WritePropertyName("EventCategories");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEventCategoriesListValue in requestObject.EventCategories)
+                {
+                        context.Writer.WriteStringValue(requestObjectEventCategoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetInsightType())
             {
                 context.Writer.WritePropertyName("InsightType");

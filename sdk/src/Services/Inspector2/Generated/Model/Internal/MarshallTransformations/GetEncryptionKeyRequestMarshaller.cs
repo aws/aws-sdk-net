@@ -62,9 +62,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-08";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceType))
+                throw new AmazonInspector2Exception("Request object does not have required field ResourceType set");
             
             if (publicRequest.IsSetResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));
+            if (string.IsNullOrEmpty(publicRequest.ScanType))
+                throw new AmazonInspector2Exception("Request object does not have required field ScanType set");
             
             if (publicRequest.IsSetScanType())
                 request.Parameters.Add("scanType", StringUtils.FromString(publicRequest.ScanType));

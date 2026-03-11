@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for RemediationInProgressException
+        /// message.
+        /// </summary>
+        public RemediationInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RemediationInProgressException with the specified error
         /// message.
         /// </summary>

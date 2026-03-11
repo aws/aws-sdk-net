@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryAlreadyExistsException
+        /// message.
+        /// </summary>
+        public RepositoryAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryAlreadyExistsException with the specified error
         /// message.
         /// </summary>

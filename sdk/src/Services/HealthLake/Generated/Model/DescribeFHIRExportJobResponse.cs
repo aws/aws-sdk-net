@@ -39,8 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ExportJobProperties. 
         /// <para>
-        /// Displays the properties of the export job, including the ID, Arn, Name, and the status
-        /// of the job. 
+        /// The export job properties.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,8 +31,8 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// An object that describes the estimated monthly savings possible by adopting Compute
-    /// Optimizer’s Auto Scaling group recommendations. This is based on the Savings Plans
-    /// and Reserved Instances discounts.
+    /// Optimizer’s Amazon EC2 Auto Scaling group recommendations. This is based on the Savings
+    /// Plans and Reserved Instances discounts.
     /// </summary>
     public partial class AutoScalingGroupEstimatedMonthlySavings
     {

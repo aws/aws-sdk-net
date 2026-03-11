@@ -48,6 +48,16 @@ namespace Amazon.BedrockAgentCore.Model
         IListEventsPaginator ListEvents(ListEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListMemoryExtractionJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMemoryExtractionJobsPaginator ListMemoryExtractionJobs(ListMemoryExtractionJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListMemoryRecords operation
         ///</summary>
         [AWSPaginator(

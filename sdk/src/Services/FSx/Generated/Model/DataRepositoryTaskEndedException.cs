@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for DataRepositoryTaskEndedException
+        /// message.
+        /// </summary>
+        public DataRepositoryTaskEndedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DataRepositoryTaskEndedException with the specified error
         /// message.
         /// </summary>

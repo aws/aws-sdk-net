@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceDoesNotExistException
+        /// message.
+        /// </summary>
+        public InstanceDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceDoesNotExistException with the specified error
         /// message.
         /// </summary>

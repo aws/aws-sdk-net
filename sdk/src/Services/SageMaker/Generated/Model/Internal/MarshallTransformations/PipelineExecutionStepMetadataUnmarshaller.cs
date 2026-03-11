@@ -62,6 +62,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoMLJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("BedrockCustomModel", targetDepth))
+                {
+                    var unmarshaller = BedrockCustomModelMetadataUnmarshaller.Instance;
+                    unmarshalledObject.BedrockCustomModel = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("BedrockCustomModelDeployment", targetDepth))
+                {
+                    var unmarshaller = BedrockCustomModelDeploymentMetadataUnmarshaller.Instance;
+                    unmarshalledObject.BedrockCustomModelDeployment = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("BedrockModelImport", targetDepth))
+                {
+                    var unmarshaller = BedrockModelImportMetadataUnmarshaller.Instance;
+                    unmarshalledObject.BedrockModelImport = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("BedrockProvisionedModelThroughput", targetDepth))
+                {
+                    var unmarshaller = BedrockProvisionedModelThroughputMetadataUnmarshaller.Instance;
+                    unmarshalledObject.BedrockProvisionedModelThroughput = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Callback", targetDepth))
                 {
                     var unmarshaller = CallbackStepMetadataUnmarshaller.Instance;
@@ -104,10 +128,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Fail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InferenceComponent", targetDepth))
+                {
+                    var unmarshaller = InferenceComponentMetadataUnmarshaller.Instance;
+                    unmarshalledObject.InferenceComponent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Lambda", targetDepth))
                 {
                     var unmarshaller = LambdaStepMetadataUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Lineage", targetDepth))
+                {
+                    var unmarshaller = LineageMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Lineage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Model", targetDepth))

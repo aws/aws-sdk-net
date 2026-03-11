@@ -62,6 +62,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Citation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("image", targetDepth))
+                {
+                    var unmarshaller = ImageBlockDeltaUnmarshaller.Instance;
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("reasoningContent", targetDepth))
                 {
                     var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
@@ -72,6 +78,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("toolResult", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ToolResultBlockDelta, ToolResultBlockDeltaUnmarshaller>(ToolResultBlockDeltaUnmarshaller.Instance);
+                    unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("toolUse", targetDepth))

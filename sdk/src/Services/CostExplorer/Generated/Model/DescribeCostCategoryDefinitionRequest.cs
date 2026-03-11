@@ -32,13 +32,13 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the DescribeCostCategoryDefinition operation.
     /// Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates
-    /// of a Cost Category that's defined in the account.
+    /// of a cost category that's defined in the account.
     /// 
     ///  
     /// <para>
-    /// You have the option to use <c>EffectiveOn</c> to return a Cost Category that's active
+    /// You have the option to use <c>EffectiveOn</c> to return a cost category that's active
     /// on a specific date. If there's no <c>EffectiveOn</c> specified, you see a Cost Category
-    /// that's effective on the current date. If Cost Category is still effective, <c>EffectiveEnd</c>
+    /// that's effective on the current date. If cost category is still effective, <c>EffectiveEnd</c>
     /// is omitted in the response. 
     /// </para>
     /// </summary>
@@ -50,7 +50,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        /// The unique identifier for your Cost Category. 
+        /// The unique identifier for your cost category. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -69,7 +69,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveOn. 
         /// <para>
-        /// The date when the Cost Category was effective. 
+        /// The date when the cost category was effective. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]

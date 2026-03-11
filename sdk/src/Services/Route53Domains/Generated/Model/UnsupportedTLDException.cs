@@ -39,6 +39,13 @@ namespace Amazon.Route53Domains.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedTLDException
+        /// message.
+        /// </summary>
+        public UnsupportedTLDException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedTLDException with the specified error
         /// message.
         /// </summary>

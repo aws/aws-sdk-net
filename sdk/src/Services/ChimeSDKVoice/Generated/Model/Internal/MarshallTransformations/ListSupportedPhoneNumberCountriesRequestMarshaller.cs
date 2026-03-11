@@ -62,6 +62,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-08-03";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ProductType))
+                throw new AmazonChimeSDKVoiceException("Request object does not have required field ProductType set");
             
             if (publicRequest.IsSetProductType())
                 request.Parameters.Add("product-type", StringUtils.FromString(publicRequest.ProductType));

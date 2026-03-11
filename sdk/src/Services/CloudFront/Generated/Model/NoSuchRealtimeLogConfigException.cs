@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchRealtimeLogConfigException
+        /// message.
+        /// </summary>
+        public NoSuchRealtimeLogConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchRealtimeLogConfigException with the specified error
         /// message.
         /// </summary>

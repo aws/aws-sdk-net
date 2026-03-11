@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUpdateOutdatedInstancesOnlyValueException
+        /// message.
+        /// </summary>
+        public InvalidUpdateOutdatedInstancesOnlyValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUpdateOutdatedInstancesOnlyValueException with the specified error
         /// message.
         /// </summary>

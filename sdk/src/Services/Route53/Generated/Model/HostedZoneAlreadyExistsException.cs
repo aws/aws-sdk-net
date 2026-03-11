@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HostedZoneAlreadyExistsException
+        /// message.
+        /// </summary>
+        public HostedZoneAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HostedZoneAlreadyExistsException with the specified error
         /// message.
         /// </summary>

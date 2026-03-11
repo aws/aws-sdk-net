@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ExportTaskAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ExportTaskAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExportTaskAlreadyExistsException with the specified error
         /// message.
         /// </summary>

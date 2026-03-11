@@ -36,6 +36,14 @@ namespace Amazon.S3Control
         /// <summary>
         /// Construct instance of AmazonS3ControlException
         /// </summary>
+        public AmazonS3ControlException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonS3ControlException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonS3ControlException(string message)
             : base(message)

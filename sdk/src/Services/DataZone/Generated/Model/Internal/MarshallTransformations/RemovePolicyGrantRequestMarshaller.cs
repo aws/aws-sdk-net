@@ -93,6 +93,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetGrantIdentifier())
+            {
+                context.Writer.WritePropertyName("grantIdentifier");
+                context.Writer.WriteStringValue(publicRequest.GrantIdentifier);
+            }
+
             if(publicRequest.IsSetPolicyType())
             {
                 context.Writer.WritePropertyName("policyType");

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDistributionsByResponseHeadersPolicyIdRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetResponseHeadersPolicyId())
                 throw new AmazonCloudFrontException("Request object does not have required field ResponseHeadersPolicyId set");
@@ -69,8 +70,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distributionsByResponseHeadersPolicyId/{ResponseHeadersPolicyId}";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListDistributionsByResponseHeadersPolicyIdRequestMarshaller _instance = new ListDistributionsByResponseHeadersPolicyIdRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByResponseHeadersPolicyIdRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByResponseHeadersPolicyIdRequest publicRequest);
     }    
 }

@@ -82,6 +82,10 @@
     <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DeleteTieringConfigurationRequest.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupJobResponse.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -148,6 +152,11 @@
     <property>Amazon.Backup.Model.DisassociateRecoveryPointFromParentRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.GetBackupPlanRequest.MaxScheduledRunsPreview</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.GetBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -171,6 +180,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.GetRecoveryPointRestoreMetadataResponse.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.GetTieringConfigurationRequest.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupJobsRequest.ByAccountId</property>
@@ -372,7 +385,29 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListScanJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListScanJobSummariesRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListScanJobSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListScanJobSummariesRequest.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListTagsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListTieringConfigurationsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -447,6 +482,14 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateTieringConfigurationRequest.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.UpdateTieringConfigurationResponse.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.AdvancedBackupSetting.ResourceType</property>
@@ -549,6 +592,14 @@
     <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ResourceSelection.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ResourceSelection.TieringDownSettingsInDays</property>
+    <min>60</min>
+    <max>36500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.RestoreJobsListMember.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -561,5 +612,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.RestoreJobSummary.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ScanJobSummary.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ScanJobSummary.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfiguration.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfiguration.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfigurationInputForCreate.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfigurationInputForCreate.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfigurationInputForUpdate.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfigurationsListMember.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.TieringConfigurationsListMember.TieringConfigurationName</property>
+    <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
   </property-value-rule>
 </property-value-rules>

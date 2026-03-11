@@ -34,6 +34,7 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class GetGuardrailResponse : AmazonWebServiceResponse
     {
+        private GuardrailAutomatedReasoningPolicy _automatedReasoningPolicy;
         private string _blockedInputMessaging;
         private string _blockedOutputsMessaging;
         private GuardrailContentPolicy _contentPolicy;
@@ -53,6 +54,25 @@ namespace Amazon.Bedrock.Model
         private DateTime? _updatedAt;
         private string _version;
         private GuardrailWordPolicy _wordPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AutomatedReasoningPolicy. 
+        /// <para>
+        /// The current Automated Reasoning policy configuration for the guardrail, if any is
+        /// configured.
+        /// </para>
+        /// </summary>
+        public GuardrailAutomatedReasoningPolicy AutomatedReasoningPolicy
+        {
+            get { return this._automatedReasoningPolicy; }
+            set { this._automatedReasoningPolicy = value; }
+        }
+
+        // Check to see if AutomatedReasoningPolicy property is set
+        internal bool IsSetAutomatedReasoningPolicy()
+        {
+            return this._automatedReasoningPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BlockedInputMessaging. 

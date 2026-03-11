@@ -95,7 +95,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCsr())
             {
                 context.Writer.WritePropertyName("Csr");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Csr));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Csr);
             }
 
             if(publicRequest.IsSetIdempotencyToken())

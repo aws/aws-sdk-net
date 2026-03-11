@@ -36,8 +36,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator.
+    /// You can only call this operation from the management account or a member account that
+    /// is a delegated administrator.
     /// </para>
     /// </summary>
     public partial class UpdatePolicyRequest : AmazonOrganizationsRequest
@@ -121,7 +121,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The unique identifier (ID) of the policy that you want to update.
+        /// ID for the policy that you want to update.
         /// </para>
         ///  
         /// <para>

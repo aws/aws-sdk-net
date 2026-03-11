@@ -165,6 +165,14 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSpans operation
+        ///</summary>
+        public IListSpansPaginator ListSpans(ListSpansRequest request) 
+        {
+            return new ListSpansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for QueryAssistant operation
         ///</summary>
         public IQueryAssistantPaginator QueryAssistant(QueryAssistantRequest request) 

@@ -40,6 +40,13 @@ namespace Amazon.ConnectWisdomService.Model
     {
 
         /// <summary>
+        /// Default constructor for PreconditionFailedException
+        /// message.
+        /// </summary>
+        public PreconditionFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PreconditionFailedException with the specified error
         /// message.
         /// </summary>

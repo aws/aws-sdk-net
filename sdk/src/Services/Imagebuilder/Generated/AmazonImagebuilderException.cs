@@ -36,6 +36,14 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Construct instance of AmazonImagebuilderException
         /// </summary>
+        public AmazonImagebuilderException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonImagebuilderException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonImagebuilderException(string message)
             : base(message)

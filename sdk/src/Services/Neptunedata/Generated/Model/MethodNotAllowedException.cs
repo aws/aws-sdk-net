@@ -42,6 +42,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for MethodNotAllowedException
+        /// message.
+        /// </summary>
+        public MethodNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MethodNotAllowedException with the specified error
         /// message.
         /// </summary>

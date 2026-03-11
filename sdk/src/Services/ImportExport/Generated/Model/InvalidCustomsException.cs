@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCustomsException
+        /// message.
+        /// </summary>
+        public InvalidCustomsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCustomsException with the specified error
         /// message.
         /// </summary>

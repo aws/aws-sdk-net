@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetNotFoundException
+        /// message.
+        /// </summary>
+        public SubnetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpRequestWithFloatLabelsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetDouble())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field Double set");
@@ -88,5 +89,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithFloatLabelsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithFloatLabelsRequest publicRequest);
     }    
 }

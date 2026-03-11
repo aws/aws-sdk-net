@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNotificationConfiguration operation.
-    /// Get a notification configuration.
+    /// Get a notification configuration for a specified event type.
     /// </summary>
     public partial class GetNotificationConfigurationRequest : AmazonIoTManagedIntegrationsRequest
     {

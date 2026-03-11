@@ -31,22 +31,15 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVectorBuckets operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Returns a list of all the vector buckets that are owned by the authenticated sender
     /// of the request.
-    /// </para>
+    /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You must have the <c>s3vectors:ListVectorBuckets</c> permission to use this operation.
     /// 
     /// </para>
     ///  </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class ListVectorBucketsRequest : AmazonS3VectorsRequest
     {

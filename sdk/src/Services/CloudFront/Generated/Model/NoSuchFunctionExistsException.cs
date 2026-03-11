@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchFunctionExistsException
+        /// message.
+        /// </summary>
+        public NoSuchFunctionExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchFunctionExistsException with the specified error
         /// message.
         /// </summary>

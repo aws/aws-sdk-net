@@ -36,6 +36,14 @@ namespace Amazon.QConnect
         /// <summary>
         /// Construct instance of AmazonQConnectException
         /// </summary>
+        public AmazonQConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQConnectException(string message)
             : base(message)

@@ -270,7 +270,7 @@ namespace Amazon.PersonalizeRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetActionRecommendations">REST API Reference for GetActionRecommendations Operation</seealso>
         public virtual GetActionRecommendationsResponse GetActionRecommendations(GetActionRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActionRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActionRecommendationsResponseUnmarshaller.Instance;
 
@@ -305,7 +305,7 @@ namespace Amazon.PersonalizeRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetActionRecommendations">REST API Reference for GetActionRecommendations Operation</seealso>
         public virtual Task<GetActionRecommendationsResponse> GetActionRecommendationsAsync(GetActionRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActionRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActionRecommendationsResponseUnmarshaller.Instance;
             
@@ -339,7 +339,7 @@ namespace Amazon.PersonalizeRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">REST API Reference for GetPersonalizedRanking Operation</seealso>
         public virtual GetPersonalizedRankingResponse GetPersonalizedRanking(GetPersonalizedRankingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonalizedRankingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonalizedRankingResponseUnmarshaller.Instance;
 
@@ -372,7 +372,7 @@ namespace Amazon.PersonalizeRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">REST API Reference for GetPersonalizedRanking Operation</seealso>
         public virtual Task<GetPersonalizedRankingResponse> GetPersonalizedRankingAsync(GetPersonalizedRankingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonalizedRankingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonalizedRankingResponseUnmarshaller.Instance;
             
@@ -422,7 +422,7 @@ namespace Amazon.PersonalizeRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
         public virtual GetRecommendationsResponse GetRecommendations(GetRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.PersonalizeRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
         public virtual Task<GetRecommendationsResponse> GetRecommendationsAsync(GetRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
             

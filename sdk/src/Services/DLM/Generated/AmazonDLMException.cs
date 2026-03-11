@@ -36,6 +36,14 @@ namespace Amazon.DLM
         /// <summary>
         /// Construct instance of AmazonDLMException
         /// </summary>
+        public AmazonDLMException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDLMException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDLMException(string message)
             : base(message)

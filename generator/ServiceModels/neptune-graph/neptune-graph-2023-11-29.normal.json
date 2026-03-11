@@ -161,7 +161,7 @@
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Create a private graph endpoint to allow private access from to the graph from within a VPC. You can attach security groups to the private graph endpoint.</p> <note> <p>VPC endpoint charges apply.</p> </note>",
+      "documentation":"<p>Create a private graph endpoint to allow private access to the graph from within a VPC. You can attach security groups to the private graph endpoint.</p> <note> <p>VPC endpoint charges apply.</p> </note>",
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -203,7 +203,7 @@
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Deletes the specifed graph snapshot.</p>",
+      "documentation":"<p>Deletes the specified graph snapshot.</p>",
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -239,8 +239,8 @@
       "input":{"shape":"ExecuteQueryInput"},
       "output":{"shape":"ExecuteQueryOutput"},
       "errors":[
-        {"shape":"UnprocessableException"},
         {"shape":"ThrottlingException"},
+        {"shape":"UnprocessableException"},
         {"shape":"ValidationException"},
         {"shape":"ConflictException"},
         {"shape":"AccessDeniedException"},
@@ -270,6 +270,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Retrieves a specified export task.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -290,6 +291,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Gets information about a specified graph.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -310,6 +312,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Retrieves a specified graph snapshot.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -334,6 +337,7 @@
       "endpoint":{
         "hostPrefix":"{graphIdentifier}."
       },
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"DataPlane"}
       }
@@ -354,6 +358,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Retrieves a specified import task.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -374,6 +379,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Retrieves information about a specified private endpoint.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -398,6 +404,7 @@
       "endpoint":{
         "hostPrefix":"{graphIdentifier}."
       },
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"DataPlane"}
       }
@@ -418,6 +425,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Retrieves a list of export tasks.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -438,6 +446,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Lists available snapshots of a specified Neptune Analytics graph.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -457,6 +466,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Lists available Neptune Analytics graphs.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -477,6 +487,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Lists import tasks.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -497,6 +508,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Lists private endpoints for a specified Neptune Analytics graph.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -520,6 +532,7 @@
       "endpoint":{
         "hostPrefix":"{graphIdentifier}."
       },
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"DataPlane"}
       }
@@ -540,6 +553,7 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Lists tags associated with a specified resource.</p>",
+      "readonly":true,
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -608,6 +622,27 @@
         "ApiType":{"value":"ControlPlane"}
       }
     },
+    "StartGraph":{
+      "name":"StartGraph",
+      "http":{
+        "method":"POST",
+        "requestUri":"/graphs/{graphIdentifier}/start",
+        "responseCode":200
+      },
+      "input":{"shape":"StartGraphInput"},
+      "output":{"shape":"StartGraphOutput"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Starts the specific graph.</p>",
+      "staticContextParams":{
+        "ApiType":{"value":"ControlPlane"}
+      }
+    },
     "StartImportTask":{
       "name":"StartImportTask",
       "http":{
@@ -625,6 +660,27 @@
         {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Import data into existing Neptune Analytics graph from Amazon Simple Storage Service (S3). The graph needs to be empty and in the AVAILABLE state.</p>",
+      "staticContextParams":{
+        "ApiType":{"value":"ControlPlane"}
+      }
+    },
+    "StopGraph":{
+      "name":"StopGraph",
+      "http":{
+        "method":"POST",
+        "requestUri":"/graphs/{graphIdentifier}/stop",
+        "responseCode":200
+      },
+      "input":{"shape":"StopGraphInput"},
+      "output":{"shape":"StopGraphOutput"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Stops the specific graph.</p>",
       "staticContextParams":{
         "ApiType":{"value":"ControlPlane"}
       }
@@ -826,7 +882,7 @@
         },
         "format":{
           "shape":"Format",
-          "documentation":"<p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html\">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html\">openCypher load format</a>.</p>"
+          "documentation":"<p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html\">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identifies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html\">openCypher load format</a>.</p>"
         },
         "parquetType":{
           "shape":"ParquetType",
@@ -1195,7 +1251,7 @@
         },
         "vpcSecurityGroupIds":{
           "shape":"SecurityGroupIds",
-          "documentation":"<p>Security groups to be attached to the private graph endpoint..</p>"
+          "documentation":"<p>Security groups to be attached to the private graph endpoint.</p>"
         }
       }
     },
@@ -1221,7 +1277,7 @@
         },
         "vpcEndpointId":{
           "shape":"VpcEndpointId",
-          "documentation":"<p>Endpoint ID of the prviate grpah endpoint.</p>"
+          "documentation":"<p>Endpoint ID of the private graph endpoint.</p>"
         }
       }
     },
@@ -1412,8 +1468,7 @@
     },
     "Document":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "DocumentValuedMap":{
@@ -1530,7 +1585,7 @@
           "documentation":"<p>Each property is defined by a key-value pair, where the key is the desired output property name (e.g. \"name\"), and the value is an object.</p>"
         }
       },
-      "documentation":"<p>Specifies whihc properties of that label should be included in the export.</p>"
+      "documentation":"<p>Specifies which properties of that label should be included in the export.</p>"
     },
     "ExportFilterLabel":{
       "type":"string",
@@ -1978,7 +2033,7 @@
         },
         "format":{
           "shape":"Format",
-          "documentation":"<p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html\">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html\">openCypher load format</a>.</p>"
+          "documentation":"<p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html\">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identifies the <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html\">openCypher load format</a>.</p>"
         },
         "parquetType":{
           "shape":"ParquetType",
@@ -2233,7 +2288,10 @@
         "UPDATING",
         "SNAPSHOTTING",
         "FAILED",
-        "IMPORTING"
+        "IMPORTING",
+        "STARTING",
+        "STOPPING",
+        "STOPPED"
       ]
     },
     "GraphSummary":{
@@ -3276,6 +3334,85 @@
       "max":1024,
       "min":1
     },
+    "StartGraphInput":{
+      "type":"structure",
+      "required":["graphIdentifier"],
+      "members":{
+        "graphIdentifier":{
+          "shape":"GraphIdentifier",
+          "documentation":"<p>The unique identifier of the Neptune Analytics graph.</p>",
+          "location":"uri",
+          "locationName":"graphIdentifier"
+        }
+      }
+    },
+    "StartGraphOutput":{
+      "type":"structure",
+      "required":[
+        "id",
+        "name",
+        "arn"
+      ],
+      "members":{
+        "id":{
+          "shape":"GraphId",
+          "documentation":"<p>The unique identifier of the graph.</p>"
+        },
+        "name":{
+          "shape":"GraphName",
+          "documentation":"<p>The name of the graph.</p>"
+        },
+        "arn":{
+          "shape":"String",
+          "documentation":"<p>The ARN associated with the graph.</p>"
+        },
+        "status":{
+          "shape":"GraphStatus",
+          "documentation":"<p>The status of the graph.</p>"
+        },
+        "statusReason":{
+          "shape":"String",
+          "documentation":"<p>The reason that the graph has this status.</p>"
+        },
+        "createTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time at which the graph was created.</p>"
+        },
+        "provisionedMemory":{
+          "shape":"ProvisionedMemory",
+          "documentation":"<p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>"
+        },
+        "endpoint":{
+          "shape":"String",
+          "documentation":"<p>The graph endpoint.</p>"
+        },
+        "publicConnectivity":{
+          "shape":"Boolean",
+          "documentation":"<p>If <code>true</code>, the graph has a public endpoint, otherwise not.</p>"
+        },
+        "vectorSearchConfiguration":{"shape":"VectorSearchConfiguration"},
+        "replicaCount":{
+          "shape":"ReplicaCount",
+          "documentation":"<p>The number of replicas for the graph.</p>"
+        },
+        "kmsKeyIdentifier":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The ID of the KMS key used to encrypt and decrypt graph data.</p>"
+        },
+        "sourceSnapshotId":{
+          "shape":"SnapshotId",
+          "documentation":"<p>The ID of the snapshot from which the graph was created, if it was created from a snapshot.</p>"
+        },
+        "deletionProtection":{
+          "shape":"Boolean",
+          "documentation":"<p>If <code>true</code>, deletion protection is enabled for the graph.</p>"
+        },
+        "buildNumber":{
+          "shape":"String",
+          "documentation":"<p>The build number of the graph.</p>"
+        }
+      }
+    },
     "StartImportTaskInput":{
       "type":"structure",
       "required":[
@@ -3295,7 +3432,7 @@
         },
         "format":{
           "shape":"Format",
-          "documentation":"<p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>"
+          "documentation":"<p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>"
         },
         "parquetType":{
           "shape":"ParquetType",
@@ -3340,7 +3477,7 @@
         },
         "format":{
           "shape":"Format",
-          "documentation":"<p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>"
+          "documentation":"<p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>"
         },
         "parquetType":{
           "shape":"ParquetType",
@@ -3355,6 +3492,85 @@
           "documentation":"<p>The status of the import task.</p>"
         },
         "importOptions":{"shape":"ImportOptions"}
+      }
+    },
+    "StopGraphInput":{
+      "type":"structure",
+      "required":["graphIdentifier"],
+      "members":{
+        "graphIdentifier":{
+          "shape":"GraphIdentifier",
+          "documentation":"<p>The unique identifier of the Neptune Analytics graph.</p>",
+          "location":"uri",
+          "locationName":"graphIdentifier"
+        }
+      }
+    },
+    "StopGraphOutput":{
+      "type":"structure",
+      "required":[
+        "id",
+        "name",
+        "arn"
+      ],
+      "members":{
+        "id":{
+          "shape":"GraphId",
+          "documentation":"<p>The unique identifier of the graph.</p>"
+        },
+        "name":{
+          "shape":"GraphName",
+          "documentation":"<p>The name of the graph.</p>"
+        },
+        "arn":{
+          "shape":"String",
+          "documentation":"<p>The ARN associated with the graph.</p>"
+        },
+        "status":{
+          "shape":"GraphStatus",
+          "documentation":"<p>The status of the graph.</p>"
+        },
+        "statusReason":{
+          "shape":"String",
+          "documentation":"<p>The reason that the graph has this status.</p>"
+        },
+        "createTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time at which the graph was created.</p>"
+        },
+        "provisionedMemory":{
+          "shape":"ProvisionedMemory",
+          "documentation":"<p>The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.</p>"
+        },
+        "endpoint":{
+          "shape":"String",
+          "documentation":"<p>The graph endpoint.</p>"
+        },
+        "publicConnectivity":{
+          "shape":"Boolean",
+          "documentation":"<p>If true, the graph has a public endpoint, otherwise not.</p>"
+        },
+        "vectorSearchConfiguration":{"shape":"VectorSearchConfiguration"},
+        "replicaCount":{
+          "shape":"ReplicaCount",
+          "documentation":"<p>The number of replicas for the graph.</p>"
+        },
+        "kmsKeyIdentifier":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The ID of the KMS key used to encrypt and decrypt graph data.</p>"
+        },
+        "sourceSnapshotId":{
+          "shape":"SnapshotId",
+          "documentation":"<p>The ID of the snapshot from which the graph was created, if it was created from a snapshot.</p>"
+        },
+        "deletionProtection":{
+          "shape":"Boolean",
+          "documentation":"<p>If <code>true</code>, deletion protection is enabled for the graph.</p>"
+        },
+        "buildNumber":{
+          "shape":"String",
+          "documentation":"<p>The build number of the graph.</p>"
+        }
       }
     },
     "String":{"type":"string"},
@@ -3412,8 +3628,7 @@
     },
     "TagResourceOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{
       "type":"string",
@@ -3495,8 +3710,7 @@
     },
     "UntagResourceOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateGraphInput":{
       "type":"structure",

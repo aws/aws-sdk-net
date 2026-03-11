@@ -40,6 +40,13 @@ namespace Amazon.Athena.Model
         private ThrottleReason _reason;
 
         /// <summary>
+        /// Default constructor for TooManyRequestsException
+        /// message.
+        /// </summary>
+        public TooManyRequestsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
         /// message.
         /// </summary>

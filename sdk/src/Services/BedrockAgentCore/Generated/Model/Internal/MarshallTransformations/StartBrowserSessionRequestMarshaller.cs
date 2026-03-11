@@ -87,10 +87,48 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetExtensions())
+            {
+                context.Writer.WritePropertyName("extensions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExtensionsListValue in publicRequest.Extensions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BrowserExtensionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExtensionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProfileConfiguration())
+            {
+                context.Writer.WritePropertyName("profileConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BrowserProfileConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProfileConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProxyConfiguration())
+            {
+                context.Writer.WritePropertyName("proxyConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProxyConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetSessionTimeoutSeconds())
@@ -120,6 +158,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 #endif
             
 
+        
+            if (publicRequest.IsSetTraceId()) 
+            {
+                request.Headers["X-Amzn-Trace-Id"] = publicRequest.TraceId;
+            }
+        
+            if (publicRequest.IsSetTraceParent()) 
+            {
+                request.Headers["traceparent"] = publicRequest.TraceParent;
+            }
 
             return request;
         }

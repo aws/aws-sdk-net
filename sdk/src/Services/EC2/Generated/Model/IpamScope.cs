@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
     public partial class IpamScope
     {
         private string _description;
+        private IpamScopeExternalAuthorityConfiguration _externalAuthorityConfiguration;
         private string _ipamArn;
         private string _ipamRegion;
         private string _ipamScopeArn;
@@ -72,6 +73,38 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalAuthorityConfiguration. 
+        /// <para>
+        /// The external authority configuration for this IPAM scope, if configured.
+        /// </para>
+        ///  
+        /// <para>
+        /// The configuration that links an Amazon VPC IPAM scope to an external authority system.
+        /// It specifies the type of external system and the external resource identifier that
+        /// identifies your account or instance in that system.
+        /// </para>
+        ///  
+        /// <para>
+        /// In IPAM, an external authority is a third-party IP address management system that
+        /// provides CIDR blocks when you provision address space for top-level IPAM pools. This
+        /// allows you to use your existing IP management system to control which address ranges
+        /// are allocated to Amazon Web Services while using Amazon VPC IPAM to manage subnets
+        /// within those ranges.
+        /// </para>
+        /// </summary>
+        public IpamScopeExternalAuthorityConfiguration ExternalAuthorityConfiguration
+        {
+            get { return this._externalAuthorityConfiguration; }
+            set { this._externalAuthorityConfiguration = value; }
+        }
+
+        // Check to see if ExternalAuthorityConfiguration property is set
+        internal bool IsSetExternalAuthorityConfiguration()
+        {
+            return this._externalAuthorityConfiguration != null;
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
     /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
     /// application or delete your existing standard queue and recreate it as a FIFO queue.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
-    /// From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+    /// From a standard queue to a FIFO queue</a> in the <i>Amazon SQS Developer Guide</i>.
     /// 
     /// </para>
     ///  </note> </li> <li> 
@@ -140,8 +140,8 @@ namespace Amazon.SQS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>MaximumMessageSize</c> – The limit of how many bytes a message can contain before
-        /// Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144
-        /// bytes (256 KiB). Default: 262,144 (256 KiB). 
+        /// Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 1,048,576
+        /// bytes (1 MiB). Default: 1,048,576 bytes (1 MiB). 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -267,7 +267,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual DescribeReportCreationResponse DescribeReportCreation(DescribeReportCreationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportCreationResponseUnmarshaller.Instance;
 
@@ -292,7 +292,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>The response from the DescribeReportCreation service method, as returned by ResourceGroupsTaggingAPI.</returns>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
-        /// The request was denied because performing this operation violates a constraint. 
+        /// The request failed because performing the operation would violate a constraint.
         /// 
         ///  
         /// <para>
@@ -300,9 +300,9 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-        /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
-        /// 
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-prereqs">Prerequisites
+        /// and permissions</a> in the <i>Tagging Amazon Web Services resources and Tag Editor</i>
+        /// user guide. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -320,19 +320,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -341,19 +341,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation">REST API Reference for DescribeReportCreation Operation</seealso>
         public virtual Task<DescribeReportCreationResponse> DescribeReportCreationAsync(DescribeReportCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportCreationResponseUnmarshaller.Instance;
 
@@ -365,7 +371,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual GetComplianceSummaryResponse GetComplianceSummary(GetComplianceSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -405,7 +411,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>The response from the GetComplianceSummary service method, as returned by ResourceGroupsTaggingAPI.</returns>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
-        /// The request was denied because performing this operation violates a constraint. 
+        /// The request failed because performing the operation would violate a constraint.
         /// 
         ///  
         /// <para>
@@ -413,9 +419,9 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-        /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
-        /// 
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-prereqs">Prerequisites
+        /// and permissions</a> in the <i>Tagging Amazon Web Services resources and Tag Editor</i>
+        /// user guide. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -433,19 +439,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -454,19 +460,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">REST API Reference for GetComplianceSummary Operation</seealso>
         public virtual Task<GetComplianceSummaryResponse> GetComplianceSummaryAsync(GetComplianceSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -478,7 +490,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
@@ -489,7 +501,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         /// <summary>
         /// Returns all the tagged or previously tagged resources that are located in the specified
-        /// Amazon Web Services Region for the account.
+        /// Amazon Web Services Region for the account. 
         /// 
         ///  
         /// <para>
@@ -515,6 +527,17 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// value. A null value for <c>PaginationToken</c> indicates that there are no more results
         /// waiting to be returned.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>GetResources</c> does not return untagged resources. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To find untagged resources in your account, use Amazon Web Services Resource Explorer
+        /// with a query that uses <c>tag:none</c>. For more information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">
+        /// Search query syntax reference for Resource Explorer</a>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// <param name="cancellationToken">
@@ -527,19 +550,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -548,23 +571,29 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
-        /// A <c>PaginationToken</c> is valid for a maximum of 15 minutes. Your request was denied
-        /// because the specified <c>PaginationToken</c> has expired.
+        /// The request failed because the specified <c>PaginationToken</c> has expired. A <c>PaginationToken</c>
+        /// is valid for a maximum of 15 minutes.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
@@ -576,7 +605,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual GetTagKeysResponse GetTagKeys(GetTagKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagKeysResponseUnmarshaller.Instance;
 
@@ -610,19 +639,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -631,23 +660,29 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
-        /// A <c>PaginationToken</c> is valid for a maximum of 15 minutes. Your request was denied
-        /// because the specified <c>PaginationToken</c> has expired.
+        /// The request failed because the specified <c>PaginationToken</c> has expired. A <c>PaginationToken</c>
+        /// is valid for a maximum of 15 minutes.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
         public virtual Task<GetTagKeysResponse> GetTagKeysAsync(GetTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagKeysResponseUnmarshaller.Instance;
 
@@ -659,7 +694,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual GetTagValuesResponse GetTagValues(GetTagValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagValuesResponseUnmarshaller.Instance;
 
@@ -693,19 +728,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -714,23 +749,29 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
-        /// A <c>PaginationToken</c> is valid for a maximum of 15 minutes. Your request was denied
-        /// because the specified <c>PaginationToken</c> has expired.
+        /// The request failed because the specified <c>PaginationToken</c> has expired. A <c>PaginationToken</c>
+        /// is valid for a maximum of 15 minutes.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
         public virtual Task<GetTagValuesResponse> GetTagValuesAsync(GetTagValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagValuesResponseUnmarshaller.Instance;
 
@@ -738,11 +779,89 @@ namespace Amazon.ResourceGroupsTaggingAPI
         }
         #endregion
         
+        #region  ListRequiredTags
+
+        internal virtual ListRequiredTagsResponse ListRequiredTags(ListRequiredTagsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRequiredTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRequiredTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRequiredTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the required tags for supported resource types in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRequiredTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRequiredTags service method, as returned by ResourceGroupsTaggingAPI.</returns>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InternalServiceException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
+        /// The request failed because of one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// A required parameter is missing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A provided string parameter is malformed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An provided parameter value is out of range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The target ID is invalid, unsupported, or doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't access the Amazon S3 bucket for report storage. For more information, see
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.PaginationTokenExpiredException">
+        /// The request failed because the specified <c>PaginationToken</c> has expired. A <c>PaginationToken</c>
+        /// is valid for a maximum of 15 minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/ListRequiredTags">REST API Reference for ListRequiredTags Operation</seealso>
+        public virtual Task<ListRequiredTagsResponse> ListRequiredTagsAsync(ListRequiredTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRequiredTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRequiredTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRequiredTagsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartReportCreation
 
         internal virtual StartReportCreationResponse StartReportCreation(StartReportCreationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReportCreationResponseUnmarshaller.Instance;
 
@@ -762,13 +881,28 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  
         /// <para>
-        ///  <c>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</c>
+        ///  <c>s3://amzn-s3-demo-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</c>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about evaluating resource compliance with tag policies, including
+        /// the required permissions, review <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-permissions-org">Permissions
+        /// for evaluating organization-wide compliance</a> in the <i>Tagging Amazon Web Services
+        /// Resources and Tag Editor</i> user guide. 
         /// </para>
         ///  
         /// <para>
         /// You can call this operation only from the organization's management account and from
         /// the us-east-1 Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the account associated with the identity used to call <c>StartReportCreation</c>
+        /// is different from the account that owns the Amazon S3 bucket, there must be a bucket
+        /// policy attached to the bucket to provide access. For more information, review <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services Resources
+        /// and Tag Editor</i> user guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReportCreation service method.</param>
@@ -778,11 +912,11 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// 
         /// <returns>The response from the StartReportCreation service method, as returned by ResourceGroupsTaggingAPI.</returns>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConcurrentModificationException">
-        /// The target of the operation is currently being modified by a different request. Try
-        /// again later.
+        /// The request failed because the target of the operation is currently being modified
+        /// by a different request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ConstraintViolationException">
-        /// The request was denied because performing this operation violates a constraint. 
+        /// The request failed because performing the operation would violate a constraint.
         /// 
         ///  
         /// <para>
@@ -790,9 +924,9 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-        /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
-        /// 
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-prereqs">Prerequisites
+        /// and permissions</a> in the <i>Tagging Amazon Web Services resources and Tag Editor</i>
+        /// user guide. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -810,19 +944,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -831,19 +965,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">REST API Reference for StartReportCreation Operation</seealso>
         public virtual Task<StartReportCreationResponse> StartReportCreationAsync(StartReportCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReportCreationResponseUnmarshaller.Instance;
 
@@ -855,7 +995,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual TagResourcesResponse TagResources(TagResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourcesResponseUnmarshaller.Instance;
 
@@ -892,6 +1032,17 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// the resource belongs to as well as permissions for adding tags. For more information,
         /// see the documentation for each service.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you use the <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html">Amazon
+        /// Web Services Resource Groups Tagging API</a> to update tags for Amazon Web Services
+        /// CloudFormation stack sets, Amazon Web Services calls the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">Amazon
+        /// Web Services CloudFormation <c>UpdateStack</c> </a> operation. This operation may
+        /// initiate additional resource property updates in addition to the desired tag updates.
+        /// To avoid unexpected resource updates, Amazon Web Services recommends that you only
+        /// apply or update tags to your CloudFormation stack sets using Amazon Web Services CloudFormation.
+        /// 
+        /// </para>
         ///  </li> </ul> <important> 
         /// <para>
         /// Do not store personally identifiable information (PII) or other confidential or sensitive
@@ -911,13 +1062,20 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>tag:TagResource</c> 
+        ///  <c>tag:TagResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>ec2:CreateTags</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// In addition, some services might have specific requirements for tagging some types
+        /// of resources. For example, to tag an Amazon S3 bucket, you must also have the <c>s3:GetBucketTagging</c>
+        /// permission. If the expected minimum permissions don't work, check the documentation
+        /// for that service's tagging APIs for more information.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResources service method.</param>
         /// <param name="cancellationToken">
@@ -930,19 +1088,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -951,19 +1109,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
         public virtual Task<TagResourcesResponse> TagResourcesAsync(TagResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourcesResponseUnmarshaller.Instance;
 
@@ -975,7 +1139,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         internal virtual UntagResourcesResponse UntagResources(UntagResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourcesResponseUnmarshaller.Instance;
 
@@ -1014,13 +1178,20 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>tag:UntagResource</c> 
+        ///  <c>tag:UntagResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>ec2:DeleteTags</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// In addition, some services might have specific requirements for untagging some types
+        /// of resources. For example, to untag Amazon Web Services Glue Connection, you must
+        /// also have the <c>glue:GetConnection</c> permission. If the expected minimum permissions
+        /// don't work, check the documentation for that service's tagging APIs for more information.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResources service method.</param>
         /// <param name="cancellationToken">
@@ -1033,19 +1204,19 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.InvalidParameterException">
-        /// This error indicates one of the following:
+        /// The request failed because of one of the following reasons:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// A parameter is missing.
+        /// A required parameter is missing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A malformed string was supplied for the request parameter.
+        /// A provided string parameter is malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An out-of-range value was supplied for the request parameter.
+        /// An provided parameter value is out of range.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1054,19 +1225,25 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
-        /// User Guide.</i> 
+        /// <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon
+        /// S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources
+        /// and Tag Editor</i> user guide. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The partition specified in an ARN parameter in the request doesn't match the partition
+        /// where you invoked the operation. The partition is specified by the second field of
+        /// the ARN.
         /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ResourceGroupsTaggingAPI.Model.ThrottledException">
-        /// The request was denied to limit the frequency of submitted requests.
+        /// The request failed because it exceeded the allowed frequency of submitted requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
         public virtual Task<UntagResourcesResponse> UntagResourcesAsync(UntagResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourcesResponseUnmarshaller.Instance;
 

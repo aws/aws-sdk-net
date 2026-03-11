@@ -58,6 +58,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
+            if(requestObject.IsSetVersionId())
+            {
+                context.Writer.WritePropertyName("versionId");
+                context.Writer.WriteStringValue(requestObject.VersionId);
+            }
+
         }
 
         /// <summary>

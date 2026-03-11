@@ -109,6 +109,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetFsrmConfiguration())
+            {
+                context.Writer.WritePropertyName("FsrmConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WindowsFsrmConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsrmConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPreferredSubnetId())
             {
                 context.Writer.WritePropertyName("PreferredSubnetId");

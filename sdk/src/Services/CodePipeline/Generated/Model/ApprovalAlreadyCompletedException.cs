@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for ApprovalAlreadyCompletedException
+        /// message.
+        /// </summary>
+        public ApprovalAlreadyCompletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApprovalAlreadyCompletedException with the specified error
         /// message.
         /// </summary>

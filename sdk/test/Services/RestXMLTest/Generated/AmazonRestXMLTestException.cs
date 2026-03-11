@@ -36,6 +36,14 @@ namespace Amazon.RestXMLTest
         /// <summary>
         /// Construct instance of AmazonRestXMLTestException
         /// </summary>
+        public AmazonRestXMLTestException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRestXMLTestException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRestXMLTestException(string message)
             : base(message)

@@ -57,6 +57,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMediapackageV2GroupSettings())
+            {
+                context.Writer.WritePropertyName("mediapackageV2GroupSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MediaPackageV2GroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediapackageV2GroupSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

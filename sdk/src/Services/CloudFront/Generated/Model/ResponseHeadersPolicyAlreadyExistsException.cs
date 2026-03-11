@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for ResponseHeadersPolicyAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ResponseHeadersPolicyAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResponseHeadersPolicyAlreadyExistsException with the specified error
         /// message.
         /// </summary>

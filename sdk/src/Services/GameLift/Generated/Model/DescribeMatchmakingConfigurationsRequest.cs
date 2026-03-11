@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMatchmakingConfigurations operation.
-    /// Retrieves the details of FlexMatch matchmaking configurations. 
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
     /// 
+    ///  
+    /// <para>
+    /// Retrieves the details of FlexMatch matchmaking configurations. 
+    /// </para>
     ///  
     /// <para>
     /// This operation offers the following options: (1) retrieve all matchmaking configurations,

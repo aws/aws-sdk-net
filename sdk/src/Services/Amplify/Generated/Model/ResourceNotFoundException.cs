@@ -40,6 +40,13 @@ namespace Amazon.Amplify.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
         /// message.
         /// </summary>

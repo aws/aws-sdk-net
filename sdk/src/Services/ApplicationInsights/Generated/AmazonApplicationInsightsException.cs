@@ -36,6 +36,14 @@ namespace Amazon.ApplicationInsights
         /// <summary>
         /// Construct instance of AmazonApplicationInsightsException
         /// </summary>
+        public AmazonApplicationInsightsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonApplicationInsightsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonApplicationInsightsException(string message)
             : base(message)

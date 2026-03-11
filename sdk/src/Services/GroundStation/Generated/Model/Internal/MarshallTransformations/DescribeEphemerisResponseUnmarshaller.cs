@@ -70,6 +70,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.EphemerisId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("errorReasons", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<EphemerisErrorReason, EphemerisErrorReasonUnmarshaller>(EphemerisErrorReasonUnmarshaller.Instance);
+                    response.ErrorReasons = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("invalidReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

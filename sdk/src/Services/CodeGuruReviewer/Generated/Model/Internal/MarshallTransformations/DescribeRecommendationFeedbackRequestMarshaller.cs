@@ -65,6 +65,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetCodeReviewArn())
                 throw new AmazonCodeGuruReviewerException("Request object does not have required field CodeReviewArn set");
             request.AddPathResource("{CodeReviewArn}", StringUtils.FromString(publicRequest.CodeReviewArn));
+            if (string.IsNullOrEmpty(publicRequest.RecommendationId))
+                throw new AmazonCodeGuruReviewerException("Request object does not have required field RecommendationId set");
             
             if (publicRequest.IsSetRecommendationId())
                 request.Parameters.Add("RecommendationId", StringUtils.FromString(publicRequest.RecommendationId));

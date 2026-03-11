@@ -250,7 +250,7 @@ namespace Amazon.InspectorScan
 
         internal virtual ScanSbomResponse ScanSbom(ScanSbomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScanSbomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScanSbomResponseUnmarshaller.Instance;
 
@@ -261,8 +261,17 @@ namespace Amazon.InspectorScan
 
         /// <summary>
         /// Scans a provided CycloneDX 1.5 SBOM and reports on any vulnerabilities discovered
-        /// in that SBOM. You can generate compatible SBOMs for your resources using the <a href="">Amazon
+        /// in that SBOM. You can generate compatible SBOMs for your resources using the <a href="https://docs.aws.amazon.com/inspector/latest/user/sbom-generator.html">Amazon
         /// Inspector SBOM generator</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  The output of this action reports NVD and CVSS scores when NVD and CVSS scores are
+        /// available. Because the output reports both scores, you might notice a discrepency
+        /// between them. However, you can triage the severity of either score depending on the
+        /// vendor of your choosing. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScanSbom service method.</param>
         /// <param name="cancellationToken">
@@ -286,7 +295,7 @@ namespace Amazon.InspectorScan
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-scan-2023-08-08/ScanSbom">REST API Reference for ScanSbom Operation</seealso>
         public virtual Task<ScanSbomResponse> ScanSbomAsync(ScanSbomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScanSbomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScanSbomResponseUnmarshaller.Instance;
 

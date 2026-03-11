@@ -32,7 +32,8 @@ namespace Amazon.BedrockAgentCore.Model
     /// <summary>
     /// Container for the parameters to the GetCodeInterpreterSession operation.
     /// Retrieves detailed information about a specific code interpreter session in Amazon
-    /// Bedrock. This operation returns the session's configuration, current status, and metadata.
+    /// Bedrock AgentCore. This operation returns the session's configuration, current status,
+    /// and metadata.
     /// 
     ///  
     /// <para>
@@ -46,17 +47,17 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> </ul>

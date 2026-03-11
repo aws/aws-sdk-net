@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The cluster does not have sufficient capacity to perform the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InsufficientClusterCapacityException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InsufficientClusterCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientClusterCapacityException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InsufficientClusterCapacityException with the specified error

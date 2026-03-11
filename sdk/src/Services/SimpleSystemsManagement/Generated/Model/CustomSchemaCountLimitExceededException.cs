@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomSchemaCountLimitExceededException
+        /// message.
+        /// </summary>
+        public CustomSchemaCountLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomSchemaCountLimitExceededException with the specified error
         /// message.
         /// </summary>

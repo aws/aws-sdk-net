@@ -39,6 +39,13 @@ namespace Amazon.WAFRegional.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFInvalidRegexPatternException
+        /// message.
+        /// </summary>
+        public WAFInvalidRegexPatternException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInvalidRegexPatternException with the specified error
         /// message.
         /// </summary>

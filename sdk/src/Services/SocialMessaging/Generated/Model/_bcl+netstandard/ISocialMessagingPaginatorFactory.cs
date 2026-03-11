@@ -36,5 +36,25 @@ namespace Amazon.SocialMessaging.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListLinkedWhatsAppBusinessAccountsPaginator ListLinkedWhatsAppBusinessAccounts(ListLinkedWhatsAppBusinessAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatsAppMessageTemplates operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWhatsAppMessageTemplatesPaginator ListWhatsAppMessageTemplates(ListWhatsAppMessageTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatsAppTemplateLibrary operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWhatsAppTemplateLibraryPaginator ListWhatsAppTemplateLibrary(ListWhatsAppTemplateLibraryRequest request);
     }
 }

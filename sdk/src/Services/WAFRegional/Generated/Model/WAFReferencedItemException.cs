@@ -50,6 +50,13 @@ namespace Amazon.WAFRegional.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFReferencedItemException
+        /// message.
+        /// </summary>
+        public WAFReferencedItemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFReferencedItemException with the specified error
         /// message.
         /// </summary>

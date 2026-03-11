@@ -36,6 +36,14 @@ namespace Amazon.MachineLearning
         /// <summary>
         /// Construct instance of AmazonMachineLearningException
         /// </summary>
+        public AmazonMachineLearningException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMachineLearningException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMachineLearningException(string message)
             : base(message)

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateOriginRequestPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -76,16 +77,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.OriginRequestPolicyConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));
 
-                    if (publicRequest.OriginRequestPolicyConfig.CookiesConfig != null)
+                    if (publicRequest.OriginRequestPolicyConfig.IsSetCookiesConfig())
                     {
                         xmlWriter.WriteStartElement("CookiesConfig");
                         if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.IsSetCookieBehavior())
                             xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.CookiesConfig.CookieBehavior));
-                        if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies != null)
+                        if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.IsSetCookies())
                         {
                             xmlWriter.WriteStartElement("Cookies");
                             var publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems = publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Items;
-                            if (publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems != null && (publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.IsSetItems()) 
                             {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItemsValue in publicRequestOriginRequestPolicyConfigCookiesConfigCookiesItems) 
@@ -102,16 +103,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.OriginRequestPolicyConfig.HeadersConfig != null)
+                    if (publicRequest.OriginRequestPolicyConfig.IsSetHeadersConfig())
                     {
                         xmlWriter.WriteStartElement("HeadersConfig");
                         if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.IsSetHeaderBehavior())
                             xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.HeadersConfig.HeaderBehavior));
-                        if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers != null)
+                        if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.IsSetHeaders())
                         {
                             xmlWriter.WriteStartElement("Headers");
                             var publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems = publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Items;
-                            if (publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems != null && (publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.IsSetItems()) 
                             {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItemsValue in publicRequestOriginRequestPolicyConfigHeadersConfigHeadersItems) 
@@ -131,16 +132,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.OriginRequestPolicyConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));
 
-                    if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig != null)
+                    if (publicRequest.OriginRequestPolicyConfig.IsSetQueryStringsConfig())
                     {
                         xmlWriter.WriteStartElement("QueryStringsConfig");
                         if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.IsSetQueryStringBehavior())
                             xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStringBehavior));
-                        if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings != null)
+                        if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.IsSetQueryStrings())
                         {
                             xmlWriter.WriteStartElement("QueryStrings");
                             var publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems = publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Items;
-                            if (publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems != null && (publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.IsSetItems()) 
                             {
                                 xmlWriter.WriteStartElement("Items");
                                 foreach (var publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItemsValue in publicRequestOriginRequestPolicyConfigQueryStringsConfigQueryStringsItems) 
@@ -161,6 +162,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -172,8 +174,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateOriginRequestPolicyRequestMarshaller _instance = new UpdateOriginRequestPolicyRequestMarshaller();        
@@ -195,5 +195,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateOriginRequestPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateOriginRequestPolicyRequest publicRequest);
     }    
 }

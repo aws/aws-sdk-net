@@ -90,6 +90,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
                                 }
+                                if(publicRequestlistValue.Ebs.IsSetEbsCardIndex())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "EbsCardIndex", StringUtils.FromInt(publicRequestlistValue.Ebs.EbsCardIndex));
+                                }
                                 if(publicRequestlistValue.Ebs.IsSetEncrypted())
                                 {
                                     request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
@@ -174,6 +178,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.CpuOptions.IsSetCoreCount())
                     {
                         request.Parameters.Add("CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.CpuOptions.CoreCount));
+                    }
+                    if(publicRequest.CpuOptions.IsSetNestedVirtualization())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "NestedVirtualization", StringUtils.FromString(publicRequest.CpuOptions.NestedVirtualization));
                     }
                     if(publicRequest.CpuOptions.IsSetThreadsPerCore())
                     {
@@ -639,6 +647,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.Placement.AvailabilityZone));
                     }
+                    if(publicRequest.Placement.IsSetAvailabilityZoneId())
+                    {
+                        request.Parameters.Add("Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequest.Placement.AvailabilityZoneId));
+                    }
                     if(publicRequest.Placement.IsSetGroupId())
                     {
                         request.Parameters.Add("Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.Placement.GroupId));
@@ -690,6 +702,60 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRamdiskId())
                 {
                     request.Parameters.Add("RamdiskId", StringUtils.FromString(publicRequest.RamdiskId));
+                }
+                if(publicRequest.IsSetSecondaryInterfaces())
+                {
+                    if (publicRequest.SecondaryInterfaces.Count == 0)
+                        request.Parameters.Add("SecondaryInterface", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecondaryInterfaces)
+                         {
+                            if(publicRequestlistValue.IsSetDeleteOnTermination())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.DeleteOnTermination));
+                            }
+                            if(publicRequestlistValue.IsSetDeviceIndex())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
+                            }
+                            if(publicRequestlistValue.IsSetInterfaceType())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestlistValue.InterfaceType));
+                            }
+                            if(publicRequestlistValue.IsSetNetworkCardIndex())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestlistValue.NetworkCardIndex));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddressCount())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddressCount", StringUtils.FromInt(publicRequestlistValue.PrivateIpAddressCount));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddresses())
+                            {
+                                if (publicRequestlistValue.PrivateIpAddresses.Count == 0)
+                                    request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrivateIpAddresses)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetPrivateIpAddress())
+                                        {
+                                            request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress" + "." + publicRequestlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValuelistValue.PrivateIpAddress));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetSecondarySubnetId())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "SecondarySubnetId", StringUtils.FromString(publicRequestlistValue.SecondarySubnetId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
                 }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
@@ -766,6 +832,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserData", StringUtils.FromString(publicRequest.UserData));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RunInstancesRequestMarshaller _instance = new RunInstancesRequestMarshaller();        

@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyFunctionsException
+        /// message.
+        /// </summary>
+        public TooManyFunctionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyFunctionsException with the specified error
         /// message.
         /// </summary>

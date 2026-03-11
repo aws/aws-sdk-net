@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleSchemaException
+        /// message.
+        /// </summary>
+        public IncompatibleSchemaException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleSchemaException with the specified error
         /// message.
         /// </summary>

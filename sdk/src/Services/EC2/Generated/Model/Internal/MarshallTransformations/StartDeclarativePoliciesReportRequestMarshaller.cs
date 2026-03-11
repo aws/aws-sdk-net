@@ -114,6 +114,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetId", StringUtils.FromString(publicRequest.TargetId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static StartDeclarativePoliciesReportRequestMarshaller _instance = new StartDeclarativePoliciesReportRequestMarshaller();        

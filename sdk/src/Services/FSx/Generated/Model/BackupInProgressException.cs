@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for BackupInProgressException
+        /// message.
+        /// </summary>
+        public BackupInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BackupInProgressException with the specified error
         /// message.
         /// </summary>

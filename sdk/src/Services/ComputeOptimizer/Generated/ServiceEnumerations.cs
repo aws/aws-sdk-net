@@ -1753,6 +1753,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableIdleField Tags = new ExportableIdleField("Tags");
         /// <summary>
+        /// Constant UtilizationMetricsActiveConnectionCountMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsActiveConnectionCountMaximum = new ExportableIdleField("UtilizationMetricsActiveConnectionCountMaximum");
+        /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsCpuMaximum = new ExportableIdleField("UtilizationMetricsCpuMaximum");
@@ -1780,6 +1784,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsNetworkOutBytesPerSecondMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsNetworkOutBytesPerSecondMaximum = new ExportableIdleField("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsPacketsInFromDestinationMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsPacketsInFromDestinationMaximum = new ExportableIdleField("UtilizationMetricsPacketsInFromDestinationMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsPacketsInFromSourceMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsPacketsInFromSourceMaximum = new ExportableIdleField("UtilizationMetricsPacketsInFromSourceMaximum");
         /// <summary>
         /// Constant UtilizationMetricsVolumeReadOpsPerSecondMaximum for ExportableIdleField
         /// </summary>
@@ -3410,6 +3422,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant Unattached for IdleFinding
         /// </summary>
         public static readonly IdleFinding Unattached = new IdleFinding("Unattached");
+        /// <summary>
+        /// Constant Unused for IdleFinding
+        /// </summary>
+        public static readonly IdleFinding Unused = new IdleFinding("Unused");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3453,6 +3469,10 @@ namespace Amazon.ComputeOptimizer
     {
 
         /// <summary>
+        /// Constant ActiveConnectionCount for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName ActiveConnectionCount = new IdleMetricName("ActiveConnectionCount");
+        /// <summary>
         /// Constant CPU for IdleMetricName
         /// </summary>
         public static readonly IdleMetricName CPU = new IdleMetricName("CPU");
@@ -3480,6 +3500,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant NetworkOutBytesPerSecond for IdleMetricName
         /// </summary>
         public static readonly IdleMetricName NetworkOutBytesPerSecond = new IdleMetricName("NetworkOutBytesPerSecond");
+        /// <summary>
+        /// Constant PacketsInFromDestination for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName PacketsInFromDestination = new IdleMetricName("PacketsInFromDestination");
+        /// <summary>
+        /// Constant PacketsInFromSource for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName PacketsInFromSource = new IdleMetricName("PacketsInFromSource");
         /// <summary>
         /// Constant VolumeReadOpsPerSecond for IdleMetricName
         /// </summary>
@@ -3596,6 +3624,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant ECSService for IdleRecommendationResourceType
         /// </summary>
         public static readonly IdleRecommendationResourceType ECSService = new IdleRecommendationResourceType("ECSService");
+        /// <summary>
+        /// Constant NatGateway for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType NatGateway = new IdleRecommendationResourceType("NatGateway");
         /// <summary>
         /// Constant RDSDBInstance for IdleRecommendationResourceType
         /// </summary>
@@ -6168,6 +6200,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant License for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType License = new RecommendationSourceType("License");
+        /// <summary>
+        /// Constant NatGateway for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType NatGateway = new RecommendationSourceType("NatGateway");
         /// <summary>
         /// Constant RdsDBInstance for RecommendationSourceType
         /// </summary>

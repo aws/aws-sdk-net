@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRestoreException
+        /// message.
+        /// </summary>
+        public InvalidRestoreException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRestoreException with the specified error
         /// message.
         /// </summary>

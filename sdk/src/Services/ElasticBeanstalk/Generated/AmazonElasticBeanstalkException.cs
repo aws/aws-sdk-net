@@ -36,6 +36,14 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Construct instance of AmazonElasticBeanstalkException
         /// </summary>
+        public AmazonElasticBeanstalkException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonElasticBeanstalkException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonElasticBeanstalkException(string message)
             : base(message)

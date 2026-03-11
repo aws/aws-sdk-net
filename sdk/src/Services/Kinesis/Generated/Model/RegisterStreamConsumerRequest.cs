@@ -47,8 +47,10 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// You can register up to 20 consumers per stream. A given consumer can only be registered
-    /// with one stream at a time.
+    /// With On-demand Advantage streams, you can register up to 50 consumers per stream to
+    /// use Enhanced Fan-out. With On-demand Standard and Provisioned streams, you can register
+    /// up to 20 consumers per stream to use Enhanced Fan-out. A given consumer can only be
+    /// registered with one stream at a time.
     /// </para>
     ///  
     /// <para>
@@ -67,6 +69,7 @@ namespace Amazon.Kinesis.Model
     {
         private string _consumerName;
         private string _streamARN;
+        private string _streamId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -108,6 +111,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamARN()
         {
             return this._streamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>

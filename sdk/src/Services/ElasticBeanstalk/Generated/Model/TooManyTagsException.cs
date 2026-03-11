@@ -46,6 +46,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTagsException
+        /// message.
+        /// </summary>
+        public TooManyTagsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTagsException with the specified error
         /// message.
         /// </summary>

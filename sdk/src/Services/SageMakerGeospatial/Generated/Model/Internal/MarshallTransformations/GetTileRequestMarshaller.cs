@@ -71,12 +71,16 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetZ())
                 throw new AmazonSageMakerGeospatialException("Request object does not have required field Z set");
             request.AddPathResource("{z}", StringUtils.FromInt(publicRequest.Z));
+            if (string.IsNullOrEmpty(publicRequest.Arn))
+                throw new AmazonSageMakerGeospatialException("Request object does not have required field Arn set");
             
             if (publicRequest.IsSetArn())
                 request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));
             
             if (publicRequest.IsSetExecutionRoleArn())
                 request.Parameters.Add("ExecutionRoleArn", StringUtils.FromString(publicRequest.ExecutionRoleArn));
+            if (publicRequest.ImageAssets == null)
+                throw new AmazonSageMakerGeospatialException("Request object does not have required field ImageAssets set");
             
             if (publicRequest.IsSetImageAssets())
                 request.ParameterCollection.Add("ImageAssets", publicRequest.ImageAssets);
@@ -92,6 +96,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPropertyFilters())
                 request.Parameters.Add("PropertyFilters", StringUtils.FromString(publicRequest.PropertyFilters));
+            if (string.IsNullOrEmpty(publicRequest.Target))
+                throw new AmazonSageMakerGeospatialException("Request object does not have required field Target set");
             
             if (publicRequest.IsSetTarget())
                 request.Parameters.Add("Target", StringUtils.FromString(publicRequest.Target));

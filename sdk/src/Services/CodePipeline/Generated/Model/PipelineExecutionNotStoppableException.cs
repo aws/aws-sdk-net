@@ -40,6 +40,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for PipelineExecutionNotStoppableException
+        /// message.
+        /// </summary>
+        public PipelineExecutionNotStoppableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PipelineExecutionNotStoppableException with the specified error
         /// message.
         /// </summary>

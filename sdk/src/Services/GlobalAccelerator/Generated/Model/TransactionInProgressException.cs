@@ -39,6 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for TransactionInProgressException
+        /// message.
+        /// </summary>
+        public TransactionInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TransactionInProgressException with the specified error
         /// message.
         /// </summary>

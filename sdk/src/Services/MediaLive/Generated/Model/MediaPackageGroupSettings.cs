@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class MediaPackageGroupSettings
     {
         private OutputLocationRef _destination;
+        private MediaPackageV2GroupSettings _mediapackageV2GroupSettings;
 
         /// <summary>
         /// Gets and sets the property Destination. MediaPackage channel destination.
@@ -50,6 +51,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediapackageV2GroupSettings. Parameters that apply only
+        /// if the destination parameter (for the output group) specifies a channelGroup and channelName.
+        /// Use of these two paramters indicates that the output group is for MediaPackage V2
+        /// (CMAF Ingest).
+        /// </summary>
+        public MediaPackageV2GroupSettings MediapackageV2GroupSettings
+        {
+            get { return this._mediapackageV2GroupSettings; }
+            set { this._mediapackageV2GroupSettings = value; }
+        }
+
+        // Check to see if MediapackageV2GroupSettings property is set
+        internal bool IsSetMediapackageV2GroupSettings()
+        {
+            return this._mediapackageV2GroupSettings != null;
         }
 
     }

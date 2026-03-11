@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for DistributionNotDisabledException
+        /// message.
+        /// </summary>
+        public DistributionNotDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DistributionNotDisabledException with the specified error
         /// message.
         /// </summary>

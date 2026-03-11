@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthenticationProfileQuotaExceededException
+        /// message.
+        /// </summary>
+        public AuthenticationProfileQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthenticationProfileQuotaExceededException with the specified error
         /// message.
         /// </summary>

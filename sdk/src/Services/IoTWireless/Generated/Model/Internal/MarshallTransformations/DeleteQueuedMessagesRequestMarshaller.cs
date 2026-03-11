@@ -65,6 +65,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetId())
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
+            if (string.IsNullOrEmpty(publicRequest.MessageId))
+                throw new AmazonIoTWirelessException("Request object does not have required field MessageId set");
             
             if (publicRequest.IsSetMessageId())
                 request.Parameters.Add("messageId", StringUtils.FromString(publicRequest.MessageId));

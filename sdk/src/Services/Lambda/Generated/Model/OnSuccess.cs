@@ -54,6 +54,15 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the destination resource.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon SNS destinations have a message size limit of 256 KB. If the combined size
+        /// of the function request and response payload exceeds the limit, Lambda will drop the
+        /// payload when sending <c>OnFailure</c> event to the destination. For details on this
+        /// behavior, refer to <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html">Retaining
+        /// records of asynchronous invocations</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=350)]
         public string Destination

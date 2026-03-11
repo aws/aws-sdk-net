@@ -39,6 +39,13 @@ namespace Amazon.Route53Resolver.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPolicyDocumentException
+        /// message.
+        /// </summary>
+        public InvalidPolicyDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPolicyDocumentException with the specified error
         /// message.
         /// </summary>

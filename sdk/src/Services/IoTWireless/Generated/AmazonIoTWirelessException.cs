@@ -36,6 +36,14 @@ namespace Amazon.IoTWireless
         /// <summary>
         /// Construct instance of AmazonIoTWirelessException
         /// </summary>
+        public AmazonIoTWirelessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTWirelessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTWirelessException(string message)
             : base(message)

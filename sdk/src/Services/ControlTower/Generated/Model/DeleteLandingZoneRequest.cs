@@ -34,6 +34,13 @@ namespace Amazon.ControlTower.Model
     /// Decommissions a landing zone. This API call starts an asynchronous operation that
     /// deletes Amazon Web Services Control Tower resources deployed in accounts managed by
     /// Amazon Web Services Control Tower.
+    /// 
+    ///  
+    /// <para>
+    /// Decommissioning a landing zone is a process with significant consequences, and it
+    /// cannot be undone. We strongly recommend that you perform this decommissioning process
+    /// only if you intend to stop using your landing zone.
+    /// </para>
     /// </summary>
     public partial class DeleteLandingZoneRequest : AmazonControlTowerRequest
     {

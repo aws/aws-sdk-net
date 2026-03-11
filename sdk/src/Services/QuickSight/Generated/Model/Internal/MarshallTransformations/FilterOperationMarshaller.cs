@@ -52,6 +52,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ConditionExpression);
             }
 
+            if(requestObject.IsSetDateFilterCondition())
+            {
+                context.Writer.WritePropertyName("DateFilterCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSetDateFilterConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DateFilterCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetNumericFilterCondition())
+            {
+                context.Writer.WritePropertyName("NumericFilterCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSetNumericFilterConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.NumericFilterCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetStringFilterCondition())
+            {
+                context.Writer.WritePropertyName("StringFilterCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSetStringFilterConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.StringFilterCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

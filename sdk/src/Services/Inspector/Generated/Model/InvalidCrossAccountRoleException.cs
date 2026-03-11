@@ -41,6 +41,13 @@ namespace Amazon.Inspector.Model
         private bool? _canRetry;
 
         /// <summary>
+        /// Default constructor for InvalidCrossAccountRoleException
+        /// message.
+        /// </summary>
+        public InvalidCrossAccountRoleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCrossAccountRoleException with the specified error
         /// message.
         /// </summary>

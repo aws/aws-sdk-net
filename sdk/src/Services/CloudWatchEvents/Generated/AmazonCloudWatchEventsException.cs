@@ -36,6 +36,14 @@ namespace Amazon.CloudWatchEvents
         /// <summary>
         /// Construct instance of AmazonCloudWatchEventsException
         /// </summary>
+        public AmazonCloudWatchEventsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudWatchEventsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudWatchEventsException(string message)
             : base(message)

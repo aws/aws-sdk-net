@@ -39,6 +39,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>True if put is successful or false if the condition in the config was not met.</returns>
         bool TryPutItem(Document doc, PutItemOperationConfig config = null);
 
+        /// <summary>
+        /// Puts a document into DynamoDB, using optional configs.
+        /// </summary>
+        /// <param name="request">The PutItemDocumentOperationRequest object containing all parameters for the PutItem operation.</param>
+        /// <returns>Null or updated attributes, depending on request config.</returns>
+        Document PutItem(PutItemDocumentOperationRequest request);
+
+        /// <summary>
+        /// Puts a document into DynamoDB, using optional configs.
+        /// </summary>
+        /// <param name="request">The PutItemDocumentOperationRequest object containing all parameters for the PutItem operation.</param>
+        /// <returns>True if put is successful or false if the condition was not met.</returns>
+        bool TryPutItem(PutItemDocumentOperationRequest request);
+
         #endregion
 
         #region GetItem
@@ -68,6 +82,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <returns>Document from DynamoDB.</returns>
         Document GetItem(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config = null);
+
+        /// <summary>
+        /// Gets a document from DynamoDB using a request object.
+        /// </summary>
+        /// <param name="request">The GetDocumentOperationRequest object containing all parameters for the GetItem operation.</param>
+        /// <returns>Document from DynamoDB.</returns>
+        Document GetItem(GetItemDocumentOperationRequest request);
+
+
 
         #endregion
 
@@ -159,6 +182,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
         bool TryUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config = null);
 
+
+        /// <summary>
+        /// Initiates the execution of the UpdateItem operation using a DocumentUpdateRequest object.
+        /// </summary>
+        /// <param name="request">The UpdateItemDocumentOperationRequest object containing all parameters for the update.</param>
+        /// <returns>Null or updated attributes, depending on request.</returns>
+        Document UpdateItem(UpdateItemDocumentOperationRequest request);
+
+
+        /// <summary>
+        /// Update a document in DynamoDB, with a hash-and-range primary key to identify
+        /// the document, and using the specified config.
+        /// </summary>
+        /// <param name="request">The UpdateItemDocumentOperationRequest object containing all parameters for the update.</param>
+        /// <returns>True if updated or false if the condition in the config was not met.</returns>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemDocumentOperationRequest"/>
+        bool TryUpdateItem(UpdateItemDocumentOperationRequest request);
+
         #endregion
 
         #region DeleteItem
@@ -237,6 +278,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>True if deleted or false if the condition in the config was not met.</returns>
         bool TryDeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config = null);
 
+        /// <summary>
+        /// Delete a document in DynamoDB, identified by a key, using specified configs.
+        /// </summary>
+        /// <exception cref="T:Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">If the condition set on the config fails.</exception>
+        /// <param name="request">The DeleteItemDocumentOperationRequest object containing all parameters for the delete operation.</param>
+        /// <returns>Null or old attributes, depending on config.</returns>
+        Document DeleteItem(DeleteItemDocumentOperationRequest request);
+
+        /// <summary>
+        /// Delete a document in DynamoDB, identified by a key, using specified configs.
+        /// </summary>
+        /// <param name="request">The DeleteItemDocumentOperationRequest object containing all parameters for the delete operation.</param>
+        /// <returns>True if deleted or false if the condition in the config was not met.</returns>
+        bool TryDeleteItem(DeleteItemDocumentOperationRequest request);
+
         #endregion
     }
 
@@ -272,6 +328,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        /// <inheritdoc/>
+        public Document PutItem(PutItemDocumentOperationRequest request)
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(PutItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return PutItemHelper(request);
+            }
+        }
+
+        /// <inheritdoc/>
+        public bool TryPutItem(PutItemDocumentOperationRequest request)
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryPutItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                try
+                {
+                    PutItemHelper(request);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
+            }
+        }
+
+
         #endregion
 
 
@@ -306,6 +391,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return GetItemHelper(MakeKey(key), config);
             }
 
+        }
+
+        /// <inheritdoc/>
+        public Document GetItem(GetItemDocumentOperationRequest request)
+        {
+
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(GetItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetItemHelper(request);
+            }
         }
 
         #endregion
@@ -416,6 +512,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 try
                 {
                     UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, null);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        public Document UpdateItem(UpdateItemDocumentOperationRequest request)
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return UpdateHelper(request);
+            }
+        }
+
+        /// <inheritdoc/>
+        public bool TryUpdateItem(UpdateItemDocumentOperationRequest request)
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryUpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                try
+                { 
+                    UpdateHelper(request);
                     return true;
                 }
                 catch (ConditionalCheckFailedException)
@@ -542,6 +666,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        /// <inheritdoc/>
+        public Document DeleteItem(DeleteItemDocumentOperationRequest request)
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return DeleteHelper(request);
+            }
+        }
+
+        /// <inheritdoc/>
+        public bool TryDeleteItem(DeleteItemDocumentOperationRequest request)
+        {
+
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryDeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                try
+                {
+                    DeleteHelper(request);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
+            }
+        }
         #endregion
 
     }

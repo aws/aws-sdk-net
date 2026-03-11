@@ -46,6 +46,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAgentStatuses())
+            {
+                context.Writer.WritePropertyName("AgentStatuses");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAgentStatusesListValue in requestObject.AgentStatuses)
+                {
+                        context.Writer.WriteStringValue(requestObjectAgentStatusesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");
@@ -86,6 +97,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 foreach(var requestObjectRoutingStepExpressionsListValue in requestObject.RoutingStepExpressions)
                 {
                         context.Writer.WriteStringValue(requestObjectRoutingStepExpressionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetSubtypes())
+            {
+                context.Writer.WritePropertyName("Subtypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSubtypesListValue in requestObject.Subtypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectSubtypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetValidationTestTypes())
+            {
+                context.Writer.WritePropertyName("ValidationTestTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectValidationTestTypesListValue in requestObject.ValidationTestTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectValidationTestTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

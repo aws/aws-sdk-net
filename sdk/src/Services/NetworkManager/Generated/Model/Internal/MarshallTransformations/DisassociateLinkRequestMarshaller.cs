@@ -65,9 +65,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetGlobalNetworkId())
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
+            if (string.IsNullOrEmpty(publicRequest.DeviceId))
+                throw new AmazonNetworkManagerException("Request object does not have required field DeviceId set");
             
             if (publicRequest.IsSetDeviceId())
                 request.Parameters.Add("deviceId", StringUtils.FromString(publicRequest.DeviceId));
+            if (string.IsNullOrEmpty(publicRequest.LinkId))
+                throw new AmazonNetworkManagerException("Request object does not have required field LinkId set");
             
             if (publicRequest.IsSetLinkId())
                 request.Parameters.Add("linkId", StringUtils.FromString(publicRequest.LinkId));

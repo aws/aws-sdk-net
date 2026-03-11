@@ -40,6 +40,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedArnException
+        /// message.
+        /// </summary>
+        public MalformedArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedArnException with the specified error
         /// message.
         /// </summary>

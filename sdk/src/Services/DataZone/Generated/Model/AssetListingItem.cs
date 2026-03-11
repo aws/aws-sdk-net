@@ -41,6 +41,7 @@ namespace Amazon.DataZone.Model
         private string _entityRevision;
         private string _entityType;
         private List<DetailedGlossaryTerm> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
+        private List<DetailedGlossaryTerm> _governedGlossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
         private string _listingCreatedBy;
         private string _listingId;
         private string _listingRevision;
@@ -180,6 +181,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGlossaryTerms()
         {
             return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GovernedGlossaryTerms. 
+        /// <para>
+        /// The restricted glossary terms associated with an asset.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DetailedGlossaryTerm> GovernedGlossaryTerms
+        {
+            get { return this._governedGlossaryTerms; }
+            set { this._governedGlossaryTerms = value; }
+        }
+
+        // Check to see if GovernedGlossaryTerms property is set
+        internal bool IsSetGovernedGlossaryTerms()
+        {
+            return this._governedGlossaryTerms != null && (this._governedGlossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

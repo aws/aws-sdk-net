@@ -31,9 +31,9 @@ namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
     /// Container for the parameters to the Unsubscribe operation.
-    /// Removes an association between a notification rule and an Chatbot topic so that subscribers
-    /// to that topic stop receiving notifications when the events described in the rule are
-    /// triggered.
+    /// Removes an association between a notification rule and an Amazon Q Developer in chat
+    /// applications topic so that subscribers to that topic stop receiving notifications
+    /// when the events described in the rule are triggered.
     /// </summary>
     public partial class UnsubscribeRequest : AmazonCodeStarNotificationsRequest
     {
@@ -62,7 +62,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetAddress. 
         /// <para>
-        /// The ARN of the Chatbot topic to unsubscribe from the notification rule.
+        /// The ARN of the Amazon Q Developer in chat applications topic to unsubscribe from the
+        /// notification rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=320)]

@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ClusterOrchestrator
     {
         private ClusterOrchestratorEksConfig _eks;
+        private ClusterOrchestratorSlurmConfig _slurm;
 
         /// <summary>
         /// Gets and sets the property Eks. 
@@ -42,7 +43,6 @@ namespace Amazon.SageMaker.Model
         /// The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterOrchestratorEksConfig Eks
         {
             get { return this._eks; }
@@ -53,6 +53,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEks()
         {
             return this._eks != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Slurm. 
+        /// <para>
+        /// The Slurm orchestrator configuration for the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        public ClusterOrchestratorSlurmConfig Slurm
+        {
+            get { return this._slurm; }
+            set { this._slurm = value; }
+        }
+
+        // Check to see if Slurm property is set
+        internal bool IsSetSlurm()
+        {
+            return this._slurm != null;
         }
 
     }

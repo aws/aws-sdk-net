@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// Information about the Chatbot topics or Chatbot clients associated with a notification
-    /// rule.
+    /// Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer
+    /// in chat applications clients associated with a notification rule.
     /// </summary>
     public partial class Target
     {
@@ -41,7 +41,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetAddress. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
+        /// The Amazon Resource Name (ARN) of the Amazon Q Developer in chat applications topic
+        /// or Amazon Q Developer in chat applications client.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=320)]
@@ -60,15 +61,16 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The target type. Can be an Chatbot topic or Chatbot client.
+        /// The target type. Can be an Amazon Q Developer in chat applications topic or Amazon
+        /// Q Developer in chat applications client.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Chatbot topics are specified as <c>SNS</c>.
+        /// Amazon Q Developer in chat applications topics are specified as <c>SNS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Chatbot clients are specified as <c>AWSChatbotSlack</c>.
+        /// Amazon Q Developer in chat applications clients are specified as <c>AWSChatbotSlack</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

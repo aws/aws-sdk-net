@@ -42,6 +42,13 @@ namespace Amazon.Athena.Model
     {
 
         /// <summary>
+        /// Default constructor for MetadataException
+        /// message.
+        /// </summary>
+        public MetadataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MetadataException with the specified error
         /// message.
         /// </summary>

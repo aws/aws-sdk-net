@@ -66,6 +66,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPartnerAccountId())
                 throw new AmazonIoTWirelessException("Request object does not have required field PartnerAccountId set");
             request.AddPathResource("{PartnerAccountId}", StringUtils.FromString(publicRequest.PartnerAccountId));
+            if (string.IsNullOrEmpty(publicRequest.PartnerType))
+                throw new AmazonIoTWirelessException("Request object does not have required field PartnerType set");
             
             if (publicRequest.IsSetPartnerType())
                 request.Parameters.Add("partnerType", StringUtils.FromString(publicRequest.PartnerType));

@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private FunctionType _functionType;
         private int? _maxResults;
         private string _nextToken;
         private string _pattern;
@@ -79,6 +80,31 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionType. 
+        /// <para>
+        /// An optional function-type pattern string that filters the function definitions returned
+        /// from Amazon Redshift Federated Permissions Catalog.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a value of <c>REGULAR_FUNCTION</c> or <c>STORED_PROCEDURE</c>. The <c>STORED_PROCEDURE</c>
+        /// function type is only compatible with Amazon Redshift Federated Permissions Catalog.
+        /// 
+        /// </para>
+        /// </summary>
+        public FunctionType FunctionType
+        {
+            get { return this._functionType; }
+            set { this._functionType = value; }
+        }
+
+        // Check to see if FunctionType property is set
+        internal bool IsSetFunctionType()
+        {
+            return this._functionType != null;
         }
 
         /// <summary>

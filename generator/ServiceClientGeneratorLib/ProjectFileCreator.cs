@@ -110,17 +110,45 @@ namespace ServiceClientGenerator
                 if (projectFileConfiguration.Template.Equals("VS2017ProjectFile", StringComparison.InvariantCultureIgnoreCase))
                 {
                     var projectReferenceList = new List<ProjectReference>();
-                    foreach (var dependency in serviceConfiguration.ServiceDependencies.Keys)
+                    foreach (var dependency in serviceConfiguration.SdkDependencies.Keys)
                     {
                         if (string.Equals(dependency, "Core", StringComparison.InvariantCultureIgnoreCase))
                             continue;
 
-                        projectReferenceList.Add(new ProjectReference
+                        if (dependency.StartsWith("Extensions."))
                         {
-                            IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
-                        });
+                            var projectRef = new ProjectReference
+                            {
+                                IncludePath =
+                                Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", $"AWSSDK.{dependency}", $"AWSSDK.{dependency}.{projectType}.csproj")
+                            };
+
+                            if(!File.Exists(projectRef.IncludePath))
+                            {
+                                // These extensions do not have projectType targets in the csproj filename with a NetFramework or NetStandard value. They cannot be
+                                // dependencies of a service at this time. In these cases the extension doesn't support NetFramework. This can be adjusted if we find
+                                // a case where a feature of a service that depends on the extension doesn't need NetFramework support. The other option is to adjust
+                                // the extension to support NetFramework as well.
+                                //
+                                // Extensions:
+                                // * AWSSDK.Extensions.Logging.ILoggerAdaptor
+                                // * AWSSDK.Extensions.Logging.Log4NetAdaptor
+                                // * AWSSDK.Extensions.NETCore.Setup
+
+                                throw new Exception($"Extension project AWSSDK.{dependency} cannot be a dependency at this time as it lacks projectType for both NetFramework and NetStandard. Services support both.");
+                            }
+
+                            projectReferenceList.Add(projectRef);
+                        }
+                        else
+                        {
+                            projectReferenceList.Add(new ProjectReference
+                            {
+                                IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
+                            });
+                        }
                     }
-                                        
+
                     projectReferenceList.Add(new ProjectReference
                     {
                         IncludePath = serviceConfiguration.IsTestService
@@ -130,7 +158,7 @@ namespace ServiceClientGenerator
 
                     GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration, projectReferenceList);
                     continue;
-                }   
+                }
 
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
@@ -175,9 +203,9 @@ namespace ServiceClientGenerator
                 var projectReferences = new List<ProjectReference>();
 
 
-                if (serviceConfiguration.ServiceDependencies != null)
+                if (serviceConfiguration.SdkDependencies != null)
                 {
-                    foreach (var dependency in serviceConfiguration.ServiceDependencies)
+                    foreach (var dependency in serviceConfiguration.SdkDependencies)
                     {
                         var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
                         string dependencyProject;
@@ -273,20 +301,27 @@ namespace ServiceClientGenerator
             projectProperties.CustomRoslynAnalyzersDllDirectory = Utils.PathCombineAlt("..", "..", "..", "..", "buildtools", "CustomRoslynAnalyzers.dll");
 
             List<Dependency> dependencies;
-            List<PackageReference> references = new List<PackageReference>();
-            if (    serviceConfiguration.NugetDependencies != null &&
+            if (serviceConfiguration.NugetDependencies != null &&
                     serviceConfiguration.NugetDependencies.TryGetValue(projectFileConfiguration.Name, out dependencies))
             {
-                foreach(var dependency in dependencies)
+                List<PackageReference> references = new List<PackageReference>();
+
+                foreach (var dependency in dependencies)
                 {
                     references.Add(new PackageReference
                     {
                         Include = dependency.Name,
                         Version = dependency.Version,
+                        Condition = (dependency.Targets?.Count > 0) ? string.Join(" Or ", dependency.Targets.Select(t => $"'$(TargetFramework)'=='{t}'")) : null
                     });
                 }
 
-                projectProperties.PackageReferences = references;
+                if (references.Count > 0)
+                {
+                    // Include the NuGet package references with the existing project PackageReferences populated from _manifest.json
+                    projectProperties.PackageReferences = (projectProperties.PackageReferences != null ? projectProperties.PackageReferences.Concat(references) : references);
+                }
+                
             }
 
             var projectJsonTemplate = new VS2017ProjectFile();
@@ -332,7 +367,7 @@ namespace ServiceClientGenerator
                 var childDirectoryAlt = Utils.ConvertPathAlt(childDirectory);
                 var folder = childDirectoryAlt.Substring(coreRootFolder.Length).TrimStart('/');
 
-                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) ||                    
+                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) || 
                     folder.StartsWith(e + "/", StringComparison.InvariantCulture)))
                     continue;
 
@@ -448,6 +483,8 @@ namespace ServiceClientGenerator
             public string IncludeAssets { get; set; }
             public bool IsAnalyzer { get; set; }
             public bool HasPrivateAssets => PrivateAssets != "" && PrivateAssets != "none";
+            public string Condition { get; set; }
+
             public static PackageReference ParseJson(Json.LitJson.JsonData data)
             {
                 return new PackageReference
@@ -456,7 +493,8 @@ namespace ServiceClientGenerator
                     Version = data.SafeGetString("version"),
                     PrivateAssets = data.SafeGetString("privateAssets"),
                     IncludeAssets = data.SafeGetString("includeAssets"),
-                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool) data.SafeGet("analyzer") : false
+                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool)data.SafeGet("analyzer") : false,
+                    Condition = data.SafeGetString("condition")
                 };
             }
         }

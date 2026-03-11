@@ -1447,6 +1447,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Av1BitDepth.
+    /// </summary>
+    public class Av1BitDepth : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPTH_10 for Av1BitDepth
+        /// </summary>
+        public static readonly Av1BitDepth DEPTH_10 = new Av1BitDepth("DEPTH_10");
+        /// <summary>
+        /// Constant DEPTH_8 for Av1BitDepth
+        /// </summary>
+        public static readonly Av1BitDepth DEPTH_8 = new Av1BitDepth("DEPTH_8");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1BitDepth(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1BitDepth FindValue(string value)
+        {
+            return FindValue<Av1BitDepth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1BitDepth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Av1GopSizeUnits.
     /// </summary>
     public class Av1GopSizeUnits : ConstantClass
@@ -1746,6 +1796,156 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Av1SceneChangeDetect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1SpatialAq.
+    /// </summary>
+    public class Av1SpatialAq : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1SpatialAq
+        /// </summary>
+        public static readonly Av1SpatialAq DISABLED = new Av1SpatialAq("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Av1SpatialAq
+        /// </summary>
+        public static readonly Av1SpatialAq ENABLED = new Av1SpatialAq("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1SpatialAq(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1SpatialAq FindValue(string value)
+        {
+            return FindValue<Av1SpatialAq>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1SpatialAq(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1TemporalAq.
+    /// </summary>
+    public class Av1TemporalAq : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1TemporalAq
+        /// </summary>
+        public static readonly Av1TemporalAq DISABLED = new Av1TemporalAq("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Av1TemporalAq
+        /// </summary>
+        public static readonly Av1TemporalAq ENABLED = new Av1TemporalAq("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1TemporalAq(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1TemporalAq FindValue(string value)
+        {
+            return FindValue<Av1TemporalAq>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1TemporalAq(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1TimecodeInsertionBehavior.
+    /// </summary>
+    public class Av1TimecodeInsertionBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1TimecodeInsertionBehavior
+        /// </summary>
+        public static readonly Av1TimecodeInsertionBehavior DISABLED = new Av1TimecodeInsertionBehavior("DISABLED");
+        /// <summary>
+        /// Constant METADATA_OBU for Av1TimecodeInsertionBehavior
+        /// </summary>
+        public static readonly Av1TimecodeInsertionBehavior METADATA_OBU = new Av1TimecodeInsertionBehavior("METADATA_OBU");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1TimecodeInsertionBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1TimecodeInsertionBehavior FindValue(string value)
+        {
+            return FindValue<Av1TimecodeInsertionBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1TimecodeInsertionBehavior(string value)
         {
             return FindValue(value);
         }
@@ -2131,6 +2331,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type BurnInDestinationSubtitleRows.
+    /// </summary>
+    public class BurnInDestinationSubtitleRows : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROWS_16 for BurnInDestinationSubtitleRows
+        /// </summary>
+        public static readonly BurnInDestinationSubtitleRows ROWS_16 = new BurnInDestinationSubtitleRows("ROWS_16");
+        /// <summary>
+        /// Constant ROWS_20 for BurnInDestinationSubtitleRows
+        /// </summary>
+        public static readonly BurnInDestinationSubtitleRows ROWS_20 = new BurnInDestinationSubtitleRows("ROWS_20");
+        /// <summary>
+        /// Constant ROWS_24 for BurnInDestinationSubtitleRows
+        /// </summary>
+        public static readonly BurnInDestinationSubtitleRows ROWS_24 = new BurnInDestinationSubtitleRows("ROWS_24");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BurnInDestinationSubtitleRows(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BurnInDestinationSubtitleRows FindValue(string value)
+        {
+            return FindValue<BurnInDestinationSubtitleRows>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BurnInDestinationSubtitleRows(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BurnInFontColor.
     /// </summary>
     public class BurnInFontColor : ConstantClass
@@ -2418,6 +2672,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CdiInputResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelAlertState.
+    /// </summary>
+    public class ChannelAlertState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEARED for ChannelAlertState
+        /// </summary>
+        public static readonly ChannelAlertState CLEARED = new ChannelAlertState("CLEARED");
+        /// <summary>
+        /// Constant SET for ChannelAlertState
+        /// </summary>
+        public static readonly ChannelAlertState SET = new ChannelAlertState("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelAlertState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelAlertState FindValue(string value)
+        {
+            return FindValue<ChannelAlertState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelAlertState(string value)
         {
             return FindValue(value);
         }
@@ -2937,6 +3241,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterAlertState.
+    /// </summary>
+    public class ClusterAlertState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEARED for ClusterAlertState
+        /// </summary>
+        public static readonly ClusterAlertState CLEARED = new ClusterAlertState("CLEARED");
+        /// <summary>
+        /// Constant SET for ClusterAlertState
+        /// </summary>
+        public static readonly ClusterAlertState SET = new ClusterAlertState("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterAlertState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterAlertState FindValue(string value)
+        {
+            return FindValue<ClusterAlertState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterAlertState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterState.
     /// </summary>
     public class ClusterState : ConstantClass
@@ -3404,6 +3758,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ColorSpace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionMode.
+    /// </summary>
+    public class ConnectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALLER for ConnectionMode
+        /// </summary>
+        public static readonly ConnectionMode CALLER = new ConnectionMode("CALLER");
+        /// <summary>
+        /// Constant LISTENER for ConnectionMode
+        /// </summary>
+        public static readonly ConnectionMode LISTENER = new ConnectionMode("LISTENER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionMode FindValue(string value)
+        {
+            return FindValue<ConnectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionMode(string value)
         {
             return FindValue(value);
         }
@@ -4226,6 +4630,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DvbSubDestinationShadowColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DvbSubDestinationSubtitleRows.
+    /// </summary>
+    public class DvbSubDestinationSubtitleRows : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROWS_16 for DvbSubDestinationSubtitleRows
+        /// </summary>
+        public static readonly DvbSubDestinationSubtitleRows ROWS_16 = new DvbSubDestinationSubtitleRows("ROWS_16");
+        /// <summary>
+        /// Constant ROWS_20 for DvbSubDestinationSubtitleRows
+        /// </summary>
+        public static readonly DvbSubDestinationSubtitleRows ROWS_20 = new DvbSubDestinationSubtitleRows("ROWS_20");
+        /// <summary>
+        /// Constant ROWS_24 for DvbSubDestinationSubtitleRows
+        /// </summary>
+        public static readonly DvbSubDestinationSubtitleRows ROWS_24 = new DvbSubDestinationSubtitleRows("ROWS_24");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubDestinationSubtitleRows(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubDestinationSubtitleRows FindValue(string value)
+        {
+            return FindValue<DvbSubDestinationSubtitleRows>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubDestinationSubtitleRows(string value)
         {
             return FindValue(value);
         }
@@ -7711,6 +8169,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type H265GopBReference.
+    /// </summary>
+    public class H265GopBReference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265GopBReference
+        /// </summary>
+        public static readonly H265GopBReference DISABLED = new H265GopBReference("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265GopBReference
+        /// </summary>
+        public static readonly H265GopBReference ENABLED = new H265GopBReference("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265GopBReference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265GopBReference FindValue(string value)
+        {
+            return FindValue<H265GopBReference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265GopBReference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265GopSizeUnits.
     /// </summary>
     public class H265GopSizeUnits : ConstantClass
@@ -8217,6 +8725,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type H265SubGopLength.
+    /// </summary>
+    public class H265SubGopLength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for H265SubGopLength
+        /// </summary>
+        public static readonly H265SubGopLength DYNAMIC = new H265SubGopLength("DYNAMIC");
+        /// <summary>
+        /// Constant FIXED for H265SubGopLength
+        /// </summary>
+        public static readonly H265SubGopLength FIXED = new H265SubGopLength("FIXED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265SubGopLength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265SubGopLength FindValue(string value)
+        {
+            return FindValue<H265SubGopLength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265SubGopLength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265Tier.
     /// </summary>
     public class H265Tier : ConstantClass
@@ -8521,6 +9079,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type HlsAutoSelect.
+    /// </summary>
+    public class HlsAutoSelect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for HlsAutoSelect
+        /// </summary>
+        public static readonly HlsAutoSelect NO = new HlsAutoSelect("NO");
+        /// <summary>
+        /// Constant OMIT for HlsAutoSelect
+        /// </summary>
+        public static readonly HlsAutoSelect OMIT = new HlsAutoSelect("OMIT");
+        /// <summary>
+        /// Constant YES for HlsAutoSelect
+        /// </summary>
+        public static readonly HlsAutoSelect YES = new HlsAutoSelect("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsAutoSelect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsAutoSelect FindValue(string value)
+        {
+            return FindValue<HlsAutoSelect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsAutoSelect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsCaptionLanguageSetting.
     /// </summary>
     public class HlsCaptionLanguageSetting : ConstantClass
@@ -8668,6 +9280,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsCodecSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsDefault.
+    /// </summary>
+    public class HlsDefault : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for HlsDefault
+        /// </summary>
+        public static readonly HlsDefault NO = new HlsDefault("NO");
+        /// <summary>
+        /// Constant OMIT for HlsDefault
+        /// </summary>
+        public static readonly HlsDefault OMIT = new HlsDefault("OMIT");
+        /// <summary>
+        /// Constant YES for HlsDefault
+        /// </summary>
+        public static readonly HlsDefault YES = new HlsDefault("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsDefault(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsDefault FindValue(string value)
+        {
+            return FindValue<HlsDefault>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsDefault(string value)
         {
             return FindValue(value);
         }
@@ -11597,6 +12263,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly InputType MEDIACONNECT = new InputType("MEDIACONNECT");
         /// <summary>
+        /// Constant MEDIACONNECT_ROUTER for InputType
+        /// </summary>
+        public static readonly InputType MEDIACONNECT_ROUTER = new InputType("MEDIACONNECT_ROUTER");
+        /// <summary>
         /// Constant MP4_FILE for InputType
         /// </summary>
         public static readonly InputType MP4_FILE = new InputType("MP4_FILE");
@@ -11628,6 +12298,10 @@ namespace Amazon.MediaLive
         /// Constant SRT_CALLER for InputType
         /// </summary>
         public static readonly InputType SRT_CALLER = new InputType("SRT_CALLER");
+        /// <summary>
+        /// Constant SRT_LISTENER for InputType
+        /// </summary>
+        public static readonly InputType SRT_LISTENER = new InputType("SRT_LISTENER");
         /// <summary>
         /// Constant TS_FILE for InputType
         /// </summary>
@@ -11720,6 +12394,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LastFrameClippingBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LinkedChannelType.
+    /// </summary>
+    public class LinkedChannelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOWING_CHANNEL for LinkedChannelType
+        /// </summary>
+        public static readonly LinkedChannelType FOLLOWING_CHANNEL = new LinkedChannelType("FOLLOWING_CHANNEL");
+        /// <summary>
+        /// Constant PRIMARY_CHANNEL for LinkedChannelType
+        /// </summary>
+        public static readonly LinkedChannelType PRIMARY_CHANNEL = new LinkedChannelType("PRIMARY_CHANNEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LinkedChannelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LinkedChannelType FindValue(string value)
+        {
+            return FindValue<LinkedChannelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LinkedChannelType(string value)
         {
             return FindValue(value);
         }
@@ -13637,6 +14361,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type MultiplexAlertState.
+    /// </summary>
+    public class MultiplexAlertState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEARED for MultiplexAlertState
+        /// </summary>
+        public static readonly MultiplexAlertState CLEARED = new MultiplexAlertState("CLEARED");
+        /// <summary>
+        /// Constant SET for MultiplexAlertState
+        /// </summary>
+        public static readonly MultiplexAlertState SET = new MultiplexAlertState("SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiplexAlertState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiplexAlertState FindValue(string value)
+        {
+            return FindValue<MultiplexAlertState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiplexAlertState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MultiplexState.
     /// </summary>
     public class MultiplexState : ConstantClass
@@ -14457,6 +15231,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type PipelineLockingMethod.
+    /// </summary>
+    public class PipelineLockingMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE_TIMECODE for PipelineLockingMethod
+        /// </summary>
+        public static readonly PipelineLockingMethod SOURCE_TIMECODE = new PipelineLockingMethod("SOURCE_TIMECODE");
+        /// <summary>
+        /// Constant VIDEO_ALIGNMENT for PipelineLockingMethod
+        /// </summary>
+        public static readonly PipelineLockingMethod VIDEO_ALIGNMENT = new PipelineLockingMethod("VIDEO_ALIGNMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipelineLockingMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineLockingMethod FindValue(string value)
+        {
+            return FindValue<PipelineLockingMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineLockingMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PreferredChannelPipeline.
     /// </summary>
     public class PreferredChannelPipeline : ConstantClass
@@ -15064,6 +15888,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservationVideoQuality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterEncryptionType.
+    /// </summary>
+    public class RouterEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for RouterEncryptionType
+        /// </summary>
+        public static readonly RouterEncryptionType AUTOMATIC = new RouterEncryptionType("AUTOMATIC");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for RouterEncryptionType
+        /// </summary>
+        public static readonly RouterEncryptionType SECRETS_MANAGER = new RouterEncryptionType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterEncryptionType FindValue(string value)
+        {
+            return FindValue<RouterEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterEncryptionType(string value)
         {
             return FindValue(value);
         }
@@ -17550,6 +18424,10 @@ namespace Amazon.MediaLive
         /// Constant DEFAULT for VideoDescriptionScalingBehavior
         /// </summary>
         public static readonly VideoDescriptionScalingBehavior DEFAULT = new VideoDescriptionScalingBehavior("DEFAULT");
+        /// <summary>
+        /// Constant SMART_CROP for VideoDescriptionScalingBehavior
+        /// </summary>
+        public static readonly VideoDescriptionScalingBehavior SMART_CROP = new VideoDescriptionScalingBehavior("SMART_CROP");
         /// <summary>
         /// Constant STRETCH_TO_OUTPUT for VideoDescriptionScalingBehavior
         /// </summary>

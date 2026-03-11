@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the extension version.
+        /// The ARN of the extension version.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -192,8 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// The ID of a specific version of the extension. The version ID is the value at the
-        /// end of the Amazon Resource Name (ARN) assigned to the extension version when it's
-        /// registered.
+        /// end of the ARN assigned to the extension version when it's registered.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

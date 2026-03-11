@@ -56,10 +56,22 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("assistedNluMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssistedNluMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("intentDisambiguationSettings", targetDepth))
+                {
+                    var unmarshaller = IntentDisambiguationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.IntentDisambiguationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

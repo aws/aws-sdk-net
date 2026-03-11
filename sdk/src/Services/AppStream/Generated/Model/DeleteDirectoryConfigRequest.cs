@@ -31,8 +31,9 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDirectoryConfig operation.
-    /// Deletes the specified Directory Config object from AppStream 2.0. This object includes
-    /// the information required to join streaming instances to an Active Directory domain.
+    /// Deletes the specified Directory Config object from WorkSpaces Applications. This object
+    /// includes the information required to join streaming instances to an Active Directory
+    /// domain.
     /// </summary>
     public partial class DeleteDirectoryConfigRequest : AmazonAppStreamRequest
     {

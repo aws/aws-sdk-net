@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleProtocolsException
+        /// message.
+        /// </summary>
+        public IncompatibleProtocolsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleProtocolsException with the specified error
         /// message.
         /// </summary>

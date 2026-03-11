@@ -51,6 +51,13 @@ namespace Amazon.IdentityStore.Model
         private ConflictExceptionReason _reason;
 
         /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>
@@ -135,18 +142,9 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// This request cannot be completed for one of the following reasons:
+        /// Indicates the reason for a conflict error when the service is unable to access a Customer
+        /// Managed KMS key. For non-KMS permission errors, this field is not included.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Performing the requested operation would violate an existing uniqueness claim in the
-        /// identity store. Resolve the conflict before retrying this request.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The requested resource was being concurrently modified by another request.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public ConflictExceptionReason Reason
         {

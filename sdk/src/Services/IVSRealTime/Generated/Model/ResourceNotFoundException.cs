@@ -48,6 +48,13 @@ namespace Amazon.IVSRealTime.Model
         private string _xFrameOptions;
 
         /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
         /// message.
         /// </summary>

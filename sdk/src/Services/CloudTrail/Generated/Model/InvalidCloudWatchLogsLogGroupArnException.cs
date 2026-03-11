@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCloudWatchLogsLogGroupArnException
+        /// message.
+        /// </summary>
+        public InvalidCloudWatchLogsLogGroupArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCloudWatchLogsLogGroupArnException with the specified error
         /// message.
         /// </summary>

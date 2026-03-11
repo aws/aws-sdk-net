@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCase operation.
-    /// Grant permission to view a designated case.
+    /// Returns the attributes of a case.
     /// </summary>
     public partial class GetCaseRequest : AmazonSecurityIRRequest
     {

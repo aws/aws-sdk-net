@@ -16,7 +16,6 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Credentials.Internal;
 using System;
@@ -125,6 +124,62 @@ namespace Amazon.RDS.Util
 
             var immutableCredentials = credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to an RDS database.
+        /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the RDS database.</param>
+        /// <param name="port">Port of the RDS database.</param>
+        /// <param name="dbUser">Database user for the token.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateAuthTokenAsync(string hostname, int port, string dbUser)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateAuthTokenAsync(region, hostname, port, dbUser).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to an RDS database.
+        /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the RDS database.</param>
+        /// <param name="hostname">Hostname of the RDS database.</param>
+        /// <param name="port">Port of the RDS database.</param>
+        /// <param name="dbUser">Database user for the token.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateAuthTokenAsync(RegionEndpoint region, string hostname, int port, string dbUser)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return await GenerateAuthTokenAsync(credentials, region, hostname, port, dbUser).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to an RDS database.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the RDS database.</param>
+        /// <param name="port">Port of the RDS database.</param>
+        /// <param name="dbUser">Database user for the token.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateAuthTokenAsync(AWSCredentials credentials, string hostname, int port, string dbUser)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateAuthTokenAsync(credentials, region, hostname, port, dbUser).ConfigureAwait(false);
         }
 
         /// <summary>

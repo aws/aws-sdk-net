@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LifecycleExpiration Object
     /// </summary>  
-    public class LifecycleExpirationUnmarshaller : IXmlUnmarshaller<LifecycleExpiration, XmlUnmarshallerContext>
+    public partial class LifecycleExpirationUnmarshaller : IXmlUnmarshaller<LifecycleExpiration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExpiredObjectDeleteMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, LifecycleExpiration unmarshalledObject, int targetDepth);
+
         private static LifecycleExpirationUnmarshaller _instance = new LifecycleExpirationUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryArgProfile Object
     /// </summary>  
-    public class QueryArgProfileUnmarshaller : IXmlUnmarshaller<QueryArgProfile, XmlUnmarshallerContext>
+    public partial class QueryArgProfileUnmarshaller : IXmlUnmarshaller<QueryArgProfile, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.QueryArg = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, QueryArgProfile unmarshalledObject, int targetDepth);
+
         private static QueryArgProfileUnmarshaller _instance = new QueryArgProfileUnmarshaller();        
 
         /// <summary>

@@ -171,6 +171,17 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SerialNumber);
             }
 
+            if(publicRequest.IsSetWiFiSimpleSetupConfiguration())
+            {
+                context.Writer.WritePropertyName("WiFiSimpleSetupConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WiFiSimpleSetupConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WiFiSimpleSetupConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

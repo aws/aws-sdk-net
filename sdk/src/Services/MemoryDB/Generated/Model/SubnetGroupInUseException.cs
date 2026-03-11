@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The subnet group is currently in use and cannot be deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SubnetGroupInUseException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SubnetGroupInUseException
+        /// message.
+        /// </summary>
+        public SubnetGroupInUseException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SubnetGroupInUseException with the specified error

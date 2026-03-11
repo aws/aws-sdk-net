@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for MountTargetConflictException
+        /// message.
+        /// </summary>
+        public MountTargetConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MountTargetConflictException with the specified error
         /// message.
         /// </summary>

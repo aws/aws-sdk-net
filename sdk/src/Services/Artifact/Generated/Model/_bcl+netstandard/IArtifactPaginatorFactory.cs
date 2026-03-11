@@ -46,5 +46,15 @@ namespace Amazon.Artifact.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListReportsPaginator ListReports(ListReportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListReportVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListReportVersionsPaginator ListReportVersions(ListReportVersionsRequest request);
     }
 }

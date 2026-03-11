@@ -80,6 +80,14 @@ namespace Amazon.AutoScalingPlans.Internal
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
+                            if (Equals(refs["Region"], "us-gov-east-1"))
+                            {
+                                return new Endpoint("https://autoscaling-plans.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals(refs["Region"], "us-gov-west-1"))
+                            {
+                                return new Endpoint("https://autoscaling-plans.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://autoscaling-plans-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");

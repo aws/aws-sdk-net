@@ -39,6 +39,13 @@ namespace Amazon.Elasticsearch.Model
     {
 
         /// <summary>
+        /// Default constructor for BaseException
+        /// message.
+        /// </summary>
+        public BaseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BaseException with the specified error
         /// message.
         /// </summary>

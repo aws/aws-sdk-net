@@ -41,6 +41,13 @@ namespace Amazon.Keyspaces.Model
         private string _resourceArn;
 
         /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
         /// message.
         /// </summary>
@@ -124,7 +131,7 @@ namespace Amazon.Keyspaces.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The unique identifier in the format of Amazon Resource Name (ARN) for the resource
-        /// couldn’t be found.
+        /// couldn't be found.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=1000)]

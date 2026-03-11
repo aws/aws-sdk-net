@@ -37,10 +37,13 @@ namespace Amazon.NetworkFirewall.Model
         private int? _capacity;
         private string _description;
         private DateTime? _lastModifiedTime;
+        private string _listingName;
+        private string _productId;
         private string _ruleGroupArn;
         private string _ruleGroupName;
         private StatefulRuleOptions _statefulRuleOptions;
         private RuleGroupType _type;
+        private string _vendorName;
 
         /// <summary>
         /// Gets and sets the property Capacity. 
@@ -104,6 +107,42 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListingName. 
+        /// <para>
+        /// The display name of the product listing for this rule group.
+        /// </para>
+        /// </summary>
+        public string ListingName
+        {
+            get { return this._listingName; }
+            set { this._listingName = value; }
+        }
+
+        // Check to see if ListingName property is set
+        internal bool IsSetListingName()
+        {
+            return this._listingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductId. 
+        /// <para>
+        /// The unique identifier for the product listing associated with this rule group.
+        /// </para>
+        /// </summary>
+        public string ProductId
+        {
+            get { return this._productId; }
+            set { this._productId = value; }
+        }
+
+        // Check to see if ProductId property is set
+        internal bool IsSetProductId()
+        {
+            return this._productId != null;
         }
 
         /// <summary>
@@ -191,6 +230,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendorName. 
+        /// <para>
+        /// The name of the Amazon Web Services Marketplace vendor that provides this rule group.
+        /// </para>
+        /// </summary>
+        public string VendorName
+        {
+            get { return this._vendorName; }
+            set { this._vendorName = value; }
+        }
+
+        // Check to see if VendorName property is set
+        internal bool IsSetVendorName()
+        {
+            return this._vendorName != null;
         }
 
     }

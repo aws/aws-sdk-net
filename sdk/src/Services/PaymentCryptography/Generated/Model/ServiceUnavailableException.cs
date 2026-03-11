@@ -31,12 +31,25 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// The service cannot complete the request.
+    /// 
+    ///  
+    /// <para>
+    /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+    /// is typically a temporary condition - retry your request after a brief delay.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ServiceUnavailableException : AmazonPaymentCryptographyException
     {
+
+        /// <summary>
+        /// Default constructor for ServiceUnavailableException
+        /// message.
+        /// </summary>
+        public ServiceUnavailableException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceUnavailableException with the specified error

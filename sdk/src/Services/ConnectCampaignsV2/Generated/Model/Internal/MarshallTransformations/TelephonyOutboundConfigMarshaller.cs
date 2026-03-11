@@ -69,6 +69,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ConnectSourcePhoneNumber);
             }
 
+            if(requestObject.IsSetRingTimeout())
+            {
+                context.Writer.WritePropertyName("ringTimeout");
+                context.Writer.WriteNumberValue(requestObject.RingTimeout.Value);
+            }
+
         }
 
         /// <summary>

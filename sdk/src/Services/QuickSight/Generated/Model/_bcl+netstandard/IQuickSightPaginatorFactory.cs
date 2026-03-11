@@ -48,6 +48,16 @@ namespace Amazon.QuickSight.Model
         IDescribeFolderResolvedPermissionsPaginator DescribeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request);
 
         /// <summary>
+        /// Paginator for ListActionConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListActionConnectorsPaginator ListActionConnectors(ListActionConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListAnalyses operation
         ///</summary>
         [AWSPaginator(
@@ -136,6 +146,16 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListFlows operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFlowsPaginator ListFlows(ListFlowsRequest request);
 
         /// <summary>
         /// Paginator for ListFolderMembers operation
@@ -328,6 +348,16 @@ namespace Amazon.QuickSight.Model
         IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request);
 
         /// <summary>
+        /// Paginator for SearchActionConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchActionConnectorsPaginator SearchActionConnectors(SearchActionConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for SearchAnalyses operation
         ///</summary>
         [AWSPaginator(
@@ -366,6 +396,16 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchFlows operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchFlowsPaginator SearchFlows(SearchFlowsRequest request);
 
         /// <summary>
         /// Paginator for SearchFolders operation

@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredCodeException
+        /// message.
+        /// </summary>
+        public ExpiredCodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredCodeException with the specified error
         /// message.
         /// </summary>

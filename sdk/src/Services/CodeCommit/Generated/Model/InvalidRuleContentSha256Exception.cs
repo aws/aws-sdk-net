@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRuleContentSha256Exception
+        /// message.
+        /// </summary>
+        public InvalidRuleContentSha256Exception() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRuleContentSha256Exception with the specified error
         /// message.
         /// </summary>

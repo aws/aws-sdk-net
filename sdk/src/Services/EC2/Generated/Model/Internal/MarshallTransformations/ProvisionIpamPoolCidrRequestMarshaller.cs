@@ -103,6 +103,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VerificationMethod", StringUtils.FromString(publicRequest.VerificationMethod));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ProvisionIpamPoolCidrRequestMarshaller _instance = new ProvisionIpamPoolCidrRequestMarshaller();        

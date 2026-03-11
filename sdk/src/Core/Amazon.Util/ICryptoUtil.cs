@@ -13,10 +13,12 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using System.IO;
 
 namespace Amazon.Util
 {
+    [AWSIsBackwardsCompatible]
     public interface ICryptoUtil
     {
         string HMACSign(string data, string key, SigningAlgorithm algorithmName);

@@ -32,6 +32,79 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the Search operation.
     /// Searches for assets in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Search in Amazon DataZone is a powerful capability that enables users to discover
+    /// and explore data assets, glossary terms, and data products across their organization.
+    /// It provides both basic and advanced search functionality, allowing users to find resources
+    /// based on names, descriptions, metadata, and other attributes. Search can be scoped
+    /// to specific types of resources (like assets, glossary terms, or data products) and
+    /// can be filtered using various criteria such as creation date, owner, or status. The
+    /// search functionality is essential for making the wealth of data resources in an organization
+    /// discoverable and usable, helping users find the right data for their needs quickly
+    /// and efficiently.
+    /// </para>
+    ///  
+    /// <para>
+    /// Many search commands in Amazon DataZone are paginated, including <c>search</c> and
+    /// <c>search-types</c>. When the result set is large, Amazon DataZone returns a <c>nextToken</c>
+    /// in the response. This token can be used to retrieve the next page of results. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// --search-scope must be one of: ASSET, GLOSSARY_TERM, DATA_PRODUCT, or GLOSSARY.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The user must have search permissions in the specified domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If using --filters, ensure that the JSON is well-formed and that each filter includes
+    /// valid attribute and value keys. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For paginated results, be prepared to use --next-token to fetch additional pages.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To run a standard free-text search, the <c>searchText</c> parameter must be supplied.
+    /// By default, all searchable fields are indexed for semantic search and will return
+    /// semantic matches for SearchListings queries. To prevent semantic search indexing for
+    /// a custom form attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+    /// API documentation</a>. To run a lexical search query, enclose the query with double
+    /// quotes (""). This will disable semantic search even for fields that have semantic
+    /// search enabled and will only return results that contain the keywords wrapped by double
+    /// quotes (order of tokens in the query is not enforced). Free-text search is supported
+    /// for all attributes annotated with @amazon.datazone#searchable.
+    /// </para>
+    ///  
+    /// <para>
+    /// To run a filtered search, provide filter clause using the <c>filters</c> parameter.
+    /// To filter on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+    /// To filter on an indexed numeric attribute (i.e., a numeric attribute annotated with
+    /// <c>@amazon.datazone#sortable</c>), provide a filter using the <c>intValue</c> parameter.
+    /// The filters parameter can also be used to run more advanced free-text searches that
+    /// target specific attributes (attributes must be annotated with <c>@amazon.datazone#searchable</c>
+    /// for free-text search). Create/update timestamp filtering is supported using the special
+    /// <c>creationTime</c>/<c>lastUpdatedTime</c> attributes. Filter types can be mixed and
+    /// matched to power complex queries.
+    /// </para>
+    ///  
+    /// <para>
+    ///  To find out whether an attribute has been annotated and indexed for a given search
+    /// type, use the GetFormType API to retrieve the form containing the attribute.
+    /// </para>
     /// </summary>
     public partial class SearchRequest : AmazonDataZoneRequest
     {
@@ -218,7 +291,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the text for which to search.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=512)]
         public string SearchText
         {
             get { return this._searchText; }

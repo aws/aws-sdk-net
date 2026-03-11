@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for StackInstanceNotFoundException
+        /// message.
+        /// </summary>
+        public StackInstanceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StackInstanceNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -31,12 +31,12 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEvents operation.
-    /// Lists events in a memory store based on specified criteria. We recommend using pagination
-    /// to ensure that the operation returns quickly and successfully.
+    /// Lists events in an AgentCore Memory resource based on specified criteria. We recommend
+    /// using pagination to ensure that the operation returns quickly and successfully.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:ListEvents</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:ListEvents</c> permission.
     /// </para>
     /// </summary>
     public partial class ListEventsRequest : AmazonBedrockAgentCoreRequest
@@ -52,8 +52,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ActorId. 
         /// <para>
-        /// The identifier of the actor for which to list events. If specified, only events from
-        /// this actor are returned.
+        /// The identifier of the actor for which to list events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -109,8 +108,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Minimum value of 1, maximum
-        /// value of 100. Default is 20.
+        /// The maximum number of results to return in a single call. The default value is 20.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -129,7 +127,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store for which to list events.
+        /// The identifier of the AgentCore Memory resource for which to list events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
@@ -167,8 +165,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The identifier of the session for which to list events. If specified, only events
-        /// from this session are returned.
+        /// The identifier of the session for which to list events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

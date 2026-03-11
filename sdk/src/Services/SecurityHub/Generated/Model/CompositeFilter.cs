@@ -36,7 +36,9 @@ namespace Amazon.SecurityHub.Model
     {
         private List<OcsfBooleanFilter> _booleanFilters = AWSConfigs.InitializeCollections ? new List<OcsfBooleanFilter>() : null;
         private List<OcsfDateFilter> _dateFilters = AWSConfigs.InitializeCollections ? new List<OcsfDateFilter>() : null;
+        private List<OcsfIpFilter> _ipFilters = AWSConfigs.InitializeCollections ? new List<OcsfIpFilter>() : null;
         private List<OcsfMapFilter> _mapFilters = AWSConfigs.InitializeCollections ? new List<OcsfMapFilter>() : null;
+        private List<CompositeFilter> _nestedCompositeFilters = AWSConfigs.InitializeCollections ? new List<CompositeFilter>() : null;
         private List<OcsfNumberFilter> _numberFilters = AWSConfigs.InitializeCollections ? new List<OcsfNumberFilter>() : null;
         private AllowedOperators _operator;
         private List<OcsfStringFilter> _stringFilters = AWSConfigs.InitializeCollections ? new List<OcsfStringFilter>() : null;
@@ -88,6 +90,30 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpFilters. 
+        /// <para>
+        /// A list of IP address filters that allowing you to filter findings based on IP address
+        /// properties.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<OcsfIpFilter> IpFilters
+        {
+            get { return this._ipFilters; }
+            set { this._ipFilters = value; }
+        }
+
+        // Check to see if IpFilters property is set
+        internal bool IsSetIpFilters()
+        {
+            return this._ipFilters != null && (this._ipFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property MapFilters. 
         /// <para>
         /// Enables filtering based on map field values.
@@ -108,6 +134,33 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMapFilters()
         {
             return this._mapFilters != null && (this._mapFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedCompositeFilters. 
+        /// <para>
+        ///  Provides an additional level of filtering, creating a three-layer nested structure.
+        /// The first layer is a <c>CompositeFilters</c> array with a <c>CompositeOperator</c>
+        /// (<c>AND</c>/<c>OR</c>). The second layer is a <c>CompositeFilter</c> object that contains
+        /// direct filters and <c>NestedCompositeFilters</c>. The third layer is <c>NestedCompositeFilters</c>,
+        /// which contains additional filter conditions. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CompositeFilter> NestedCompositeFilters
+        {
+            get { return this._nestedCompositeFilters; }
+            set { this._nestedCompositeFilters = value; }
+        }
+
+        // Check to see if NestedCompositeFilters property is set
+        internal bool IsSetNestedCompositeFilters()
+        {
+            return this._nestedCompositeFilters != null && (this._nestedCompositeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

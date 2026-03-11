@@ -39,6 +39,13 @@ namespace Amazon.SimpleWorkflow.Model
     {
 
         /// <summary>
+        /// Default constructor for DomainDeprecatedException
+        /// message.
+        /// </summary>
+        public DomainDeprecatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DomainDeprecatedException with the specified error
         /// message.
         /// </summary>

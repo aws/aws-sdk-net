@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInstanceAccess operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Requests authorization to remotely connect to an instance in an Amazon GameLift Servers
     /// managed fleet. Use this operation to connect to instances with game servers that use
     /// Amazon GameLift Servers server SDK 4.x or earlier. To connect to instances with game
     /// servers that use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To request access to an instance, specify IDs for the instance and the fleet it belongs

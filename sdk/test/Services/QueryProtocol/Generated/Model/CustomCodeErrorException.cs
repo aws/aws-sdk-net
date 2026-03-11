@@ -39,6 +39,13 @@ namespace Amazon.QueryProtocol.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomCodeErrorException
+        /// message.
+        /// </summary>
+        public CustomCodeErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomCodeErrorException with the specified error
         /// message.
         /// </summary>

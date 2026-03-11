@@ -39,6 +39,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
 
         /// <summary>
+        /// Default constructor for ServerInternalErrorException
+        /// message.
+        /// </summary>
+        public ServerInternalErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServerInternalErrorException with the specified error
         /// message.
         /// </summary>

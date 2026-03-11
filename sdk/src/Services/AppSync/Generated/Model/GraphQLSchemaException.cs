@@ -39,6 +39,13 @@ namespace Amazon.AppSync.Model
     {
 
         /// <summary>
+        /// Default constructor for GraphQLSchemaException
+        /// message.
+        /// </summary>
+        public GraphQLSchemaException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GraphQLSchemaException with the specified error
         /// message.
         /// </summary>

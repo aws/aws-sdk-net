@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumItemsToCompareExceededException
+        /// message.
+        /// </summary>
+        public MaximumItemsToCompareExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumItemsToCompareExceededException with the specified error
         /// message.
         /// </summary>

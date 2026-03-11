@@ -39,6 +39,13 @@ namespace Amazon.Kinesis.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSOptInRequiredException
+        /// message.
+        /// </summary>
+        public KMSOptInRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSOptInRequiredException with the specified error
         /// message.
         /// </summary>

@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The details of the policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Min=1, Max=51200)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

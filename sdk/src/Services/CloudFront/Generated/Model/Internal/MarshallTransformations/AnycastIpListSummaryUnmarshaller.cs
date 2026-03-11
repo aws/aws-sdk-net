@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnycastIpListSummary Object
     /// </summary>  
-    public class AnycastIpListSummaryUnmarshaller : IXmlUnmarshaller<AnycastIpListSummary, XmlUnmarshallerContext>
+    public partial class AnycastIpListSummaryUnmarshaller : IXmlUnmarshaller<AnycastIpListSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,10 +62,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ETag", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ETag = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Id", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IpamConfig", targetDepth))
+                    {
+                        var unmarshaller = IpamConfigUnmarshaller.Instance;
+                        unmarshalledObject.IpamConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IpCount", targetDepth))
@@ -92,6 +110,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +120,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnycastIpListSummary unmarshalledObject, int targetDepth);
+
         private static AnycastIpListSummaryUnmarshaller _instance = new AnycastIpListSummaryUnmarshaller();        
 
         /// <summary>

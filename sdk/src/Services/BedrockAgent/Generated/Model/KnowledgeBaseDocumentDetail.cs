@@ -107,7 +107,7 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// STARTED – You submitted the ingestion job containing the document.
+        /// STARTING – You submitted the ingestion job containing the document.
         /// </para>
         ///  </li> <li> 
         /// <para>

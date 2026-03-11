@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyFailedAttemptsException
+        /// message.
+        /// </summary>
+        public TooManyFailedAttemptsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyFailedAttemptsException with the specified error
         /// message.
         /// </summary>

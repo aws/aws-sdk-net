@@ -46,6 +46,7 @@ namespace Amazon.Budgets.Model
     public partial class Budget
     {
         private AutoAdjustData _autoAdjustData;
+        private string _billingViewArn;
         private Spend _budgetLimit;
         private string _budgetName;
         private BudgetType _budgetType;
@@ -53,6 +54,7 @@ namespace Amazon.Budgets.Model
         private Dictionary<string, List<string>> _costFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CostTypes _costTypes;
         private Expression _filterExpression;
+        private HealthStatus _healthStatus;
         private DateTime? _lastUpdatedTime;
         private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, Spend> _plannedBudgetLimits = AWSConfigs.InitializeCollections ? new Dictionary<string, Spend>() : null;
@@ -75,6 +77,29 @@ namespace Amazon.Budgets.Model
         internal bool IsSetAutoAdjustData()
         {
             return this._autoAdjustData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingViewArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The
+        /// ARN is used to specify which particular billing view you want to interact with or
+        /// retrieve information from when making API calls related to Amazon Web Services Billing
+        /// and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews
+        /// API.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string BillingViewArn
+        {
+            get { return this._billingViewArn; }
+            set { this._billingViewArn = value; }
+        }
+
+        // Check to see if BillingViewArn property is set
+        internal bool IsSetBillingViewArn()
+        {
+            return this._billingViewArn != null;
         }
 
         /// <summary>
@@ -256,6 +281,24 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        /// The current operational state of a Billing View derived resource.
+        /// </para>
+        /// </summary>
+        public HealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
         /// The last time that you updated this budget.
@@ -372,7 +415,7 @@ namespace Amazon.Budgets.Model
         ///  
         /// <para>
         /// If you create your budget and don't specify a start date, Amazon Web Services defaults
-        /// to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY).
+        /// to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, ANNUALLY, or CUSTOM).
         /// For example, if you created your budget on January 24, 2018, chose <c>DAILY</c>, and
         /// didn't set a start date, Amazon Web Services set your start date to <c>01/24/18 00:00
         /// UTC</c>. If you chose <c>MONTHLY</c>, Amazon Web Services set your start date to <c>01/01/18

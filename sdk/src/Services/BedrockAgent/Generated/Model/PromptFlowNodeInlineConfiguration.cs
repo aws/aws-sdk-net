@@ -83,7 +83,7 @@ namespace Amazon.BedrockAgent.Model
         /// profile</a> to run inference with.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ModelId
         {
             get { return this._modelId; }

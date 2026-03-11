@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified service update does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ServiceUpdateNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ServiceUpdateNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceUpdateNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceUpdateNotFoundException with the specified error

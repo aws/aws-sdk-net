@@ -63,10 +63,59 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.AutoAssociate.Value);
             }
 
+            if(requestObject.IsSetBillingGroupTypes())
+            {
+                context.Writer.WritePropertyName("BillingGroupTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectBillingGroupTypesListValue in requestObject.BillingGroupTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectBillingGroupTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetNames())
+            {
+                context.Writer.WritePropertyName("Names");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectNamesListValue in requestObject.Names)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringSearchMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNamesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetPricingPlan())
             {
                 context.Writer.WritePropertyName("PricingPlan");
                 context.Writer.WriteStringValue(requestObject.PricingPlan);
+            }
+
+            if(requestObject.IsSetPrimaryAccountIds())
+            {
+                context.Writer.WritePropertyName("PrimaryAccountIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPrimaryAccountIdsListValue in requestObject.PrimaryAccountIds)
+                {
+                        context.Writer.WriteStringValue(requestObjectPrimaryAccountIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetResponsibilityTransferArns())
+            {
+                context.Writer.WritePropertyName("ResponsibilityTransferArns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectResponsibilityTransferArnsListValue in requestObject.ResponsibilityTransferArns)
+                {
+                        context.Writer.WriteStringValue(requestObjectResponsibilityTransferArnsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatuses())

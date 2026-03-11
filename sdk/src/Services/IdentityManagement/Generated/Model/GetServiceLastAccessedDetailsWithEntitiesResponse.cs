@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EntityDetailsList. 
         /// <para>
-        /// An <c>EntityDetailsList</c> object that contains details about when an IAM entity
+        /// An <c>EntityDetailsList</c> object that contains details about when an IAM entity
         /// (user or role) used group or policy permissions in an attempt to access the specified
         /// Amazon Web Services service.
         /// </para>
@@ -111,7 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property JobCompletionDate. 
         /// <para>
-        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the generated report job was completed or failed.
         /// </para>
         ///  
@@ -136,7 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property JobCreationDate. 
         /// <para>
-        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.
         /// </para>
         /// </summary>

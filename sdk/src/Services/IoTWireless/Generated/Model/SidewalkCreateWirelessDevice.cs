@@ -35,6 +35,8 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkCreateWirelessDevice
     {
         private string _deviceProfileId;
+        private SidewalkPositioning _positioning;
+        private string _sidewalkManufacturingSn;
 
         /// <summary>
         /// Gets and sets the property DeviceProfileId. 
@@ -53,6 +55,43 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceProfileId()
         {
             return this._deviceProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The Positioning object of the Sidewalk device.
+        /// </para>
+        /// </summary>
+        public SidewalkPositioning Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SidewalkManufacturingSn. 
+        /// <para>
+        /// The Sidewalk manufacturing serial number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string SidewalkManufacturingSn
+        {
+            get { return this._sidewalkManufacturingSn; }
+            set { this._sidewalkManufacturingSn = value; }
+        }
+
+        // Check to see if SidewalkManufacturingSn property is set
+        internal bool IsSetSidewalkManufacturingSn()
+        {
+            return this._sidewalkManufacturingSn != null;
         }
 
     }

@@ -39,6 +39,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for UnknownMonitorException
+        /// message.
+        /// </summary>
+        public UnknownMonitorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnknownMonitorException with the specified error
         /// message.
         /// </summary>

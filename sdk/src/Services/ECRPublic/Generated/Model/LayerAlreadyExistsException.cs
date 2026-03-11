@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for LayerAlreadyExistsException
+        /// message.
+        /// </summary>
+        public LayerAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LayerAlreadyExistsException with the specified error
         /// message.
         /// </summary>

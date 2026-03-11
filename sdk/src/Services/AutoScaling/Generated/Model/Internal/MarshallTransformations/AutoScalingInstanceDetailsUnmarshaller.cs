@@ -73,6 +73,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ImageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("InstanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -30,16 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Specifies whether the assisted nlu feature is turned on or off.
+    /// Configures the Assisted Natural Language Understanding (NLU) feature for your bot.
+    /// This specification determines whether enhanced intent recognition and utterance understanding
+    /// capabilities are active.
     /// </summary>
     public partial class NluImprovementSpecification
     {
+        private AssistedNluMode _assistedNluMode;
         private bool? _enabled;
+        private IntentDisambiguationSettings _intentDisambiguationSettings;
+
+        /// <summary>
+        /// Gets and sets the property AssistedNluMode. 
+        /// <para>
+        /// Specifies the mode for Assisted NLU operation. Use <c>Primary</c> to make Assisted
+        /// NLU the primary intent recognition method, or <c>Fallback</c> to use it only when
+        /// standard NLU confidence is low.
+        /// </para>
+        /// </summary>
+        public AssistedNluMode AssistedNluMode
+        {
+            get { return this._assistedNluMode; }
+            set { this._assistedNluMode = value; }
+        }
+
+        // Check to see if AssistedNluMode property is set
+        internal bool IsSetAssistedNluMode()
+        {
+            return this._assistedNluMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether the assisted nlu feature is enabled.
+        /// Determines whether the Assisted NLU feature is enabled for the bot. When set to <c>true</c>,
+        /// Amazon Lex uses advanced models to improve intent recognition and slot resolution,
+        /// with the default being <c>false</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -53,6 +79,26 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntentDisambiguationSettings. 
+        /// <para>
+        /// An object containing specifications for the Intent Disambiguation feature within the
+        /// Assisted NLU settings. These settings determine how the bot handles ambiguous user
+        /// inputs that could match multiple intents.
+        /// </para>
+        /// </summary>
+        public IntentDisambiguationSettings IntentDisambiguationSettings
+        {
+            get { return this._intentDisambiguationSettings; }
+            set { this._intentDisambiguationSettings = value; }
+        }
+
+        // Check to see if IntentDisambiguationSettings property is set
+        internal bool IsSetIntentDisambiguationSettings()
+        {
+            return this._intentDisambiguationSettings != null;
         }
 
     }

@@ -35,11 +35,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class NetworkConfiguration
     {
         private NetworkMode _networkMode;
+        private VpcConfig _networkModeConfig;
 
         /// <summary>
         /// Gets and sets the property NetworkMode. 
         /// <para>
-        /// The network mode for the agent runtime.
+        /// The network mode for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -53,6 +54,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetNetworkMode()
         {
             return this._networkMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkModeConfig. 
+        /// <para>
+        /// The network mode configuration for the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public VpcConfig NetworkModeConfig
+        {
+            get { return this._networkModeConfig; }
+            set { this._networkModeConfig = value; }
+        }
+
+        // Check to see if NetworkModeConfig property is set
+        internal bool IsSetNetworkModeConfig()
+        {
+            return this._networkModeConfig != null;
         }
 
     }

@@ -60,6 +60,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _universalProductCode;
         private DateTime? _updatedAt;
+        private WiFiSimpleSetupConfiguration _wiFiSimpleSetupConfiguration;
 
         /// <summary>
         /// Gets and sets the property ActivatedAt. 
@@ -470,7 +471,8 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Gets and sets the property ProvisioningStatus. 
         /// <para>
         /// The provisioning status of the device in the provisioning workflow for onboarding
-        /// to IoT managed integrations.
+        /// to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device
+        /// Provisioning</a>.
         /// </para>
         /// </summary>
         public ProvisioningStatus ProvisioningStatus
@@ -583,6 +585,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WiFiSimpleSetupConfiguration. 
+        /// <para>
+        /// The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning
+        /// capabilities and timeout settings.
+        /// </para>
+        /// </summary>
+        public WiFiSimpleSetupConfiguration WiFiSimpleSetupConfiguration
+        {
+            get { return this._wiFiSimpleSetupConfiguration; }
+            set { this._wiFiSimpleSetupConfiguration = value; }
+        }
+
+        // Check to see if WiFiSimpleSetupConfiguration property is set
+        internal bool IsSetWiFiSimpleSetupConfiguration()
+        {
+            return this._wiFiSimpleSetupConfiguration != null;
         }
 
     }

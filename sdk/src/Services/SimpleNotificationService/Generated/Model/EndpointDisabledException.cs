@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointDisabledException
+        /// message.
+        /// </summary>
+        public EndpointDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointDisabledException with the specified error
         /// message.
         /// </summary>

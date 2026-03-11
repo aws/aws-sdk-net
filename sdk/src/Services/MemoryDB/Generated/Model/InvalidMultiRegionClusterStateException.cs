@@ -40,6 +40,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMultiRegionClusterStateException
+        /// message.
+        /// </summary>
+        public InvalidMultiRegionClusterStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMultiRegionClusterStateException with the specified error
         /// message.
         /// </summary>

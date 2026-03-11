@@ -42,6 +42,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class FirewallPolicy
     {
+        private bool? _enableTLSSessionHolding;
         private PolicyVariables _policyVariables;
         private List<string> _statefulDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StatefulEngineOptions _statefulEngineOptions;
@@ -51,6 +52,26 @@ namespace Amazon.NetworkFirewall.Model
         private List<string> _statelessFragmentDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<StatelessRuleGroupReference> _statelessRuleGroupReferences = AWSConfigs.InitializeCollections ? new List<StatelessRuleGroupReference>() : null;
         private string _tlsInspectionConfigurationArn;
+
+        /// <summary>
+        /// Gets and sets the property EnableTLSSessionHolding. 
+        /// <para>
+        /// When true, prevents TCP and TLS packets from reaching destination servers until TLS
+        /// Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated
+        /// TLS Inspection configuration.
+        /// </para>
+        /// </summary>
+        public bool? EnableTLSSessionHolding
+        {
+            get { return this._enableTLSSessionHolding; }
+            set { this._enableTLSSessionHolding = value; }
+        }
+
+        // Check to see if EnableTLSSessionHolding property is set
+        internal bool IsSetEnableTLSSessionHolding()
+        {
+            return this._enableTLSSessionHolding.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyVariables. 

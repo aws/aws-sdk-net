@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccountSubscription operation.
-    /// Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
+    /// Creates an Amazon Quick Sight account, or subscribes to Amazon Quick Sight Q.
     /// 
     ///  
     /// <para>
@@ -42,10 +42,10 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// Before you use this operation, make sure that you can connect to an existing Amazon
     /// Web Services account. If you don't have an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign
-    /// up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person
-    /// who signs up for Amazon QuickSight needs to have the correct Identity and Access Management
-    /// (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
-    /// Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// up for Amazon Web Services</a> in the <i>Amazon Quick Sight User Guide</i>. The person
+    /// who signs up for Amazon Quick Sight needs to have the correct Identity and Access
+    /// Management (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
+    /// Policy Examples for Amazon Quick Sight</a> in the <i>Amazon Quick Sight User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -56,17 +56,17 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// You can't pass an existing IAM role to access other Amazon Web Services services using
-    /// this API operation. To pass your existing IAM role to Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
-    /// IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// this API operation. To pass your existing IAM role to Amazon Quick Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
+    /// IAM roles to Amazon Quick Sight</a> in the <i>Amazon Quick Sight User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can't set default resource access on the new account from the Amazon QuickSight
-    /// API. Instead, add default resource access from the Amazon QuickSight console. For
+    /// You can't set default resource access on the new account from the Amazon Quick Sight
+    /// API. Instead, add default resource access from the Amazon Quick Sight console. For
     /// more information about setting default resource access to Amazon Web Services services,
     /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting
-    /// default resource access to Amazon Web Services services</a> in the <i>Amazon QuickSight
-    /// User Guide</i>.
+    /// default resource access to Amazon Web Services services</a> in the <i>Amazon Quick
+    /// Sight User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateAccountSubscriptionRequest : AmazonQuickSightRequest
@@ -94,9 +94,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The name of your Amazon QuickSight account. This name is unique over all of Amazon
+        /// The name of your Amazon Quick Sight account. This name is unique over all of Amazon
         /// Web Services, and it appears only when users sign in. You can't change <c>AccountName</c>
-        /// value after the Amazon QuickSight account is created.
+        /// value after the Amazon Quick Sight account is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=62)]
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ActiveDirectoryName. 
         /// <para>
         /// The name of your Active Directory. This field is required if <c>ACTIVE_DIRECTORY</c>
-        /// is the selected authentication method of the new Amazon QuickSight account.
+        /// is the selected authentication method of the new Quick Sight account.
         /// </para>
         /// </summary>
         public string ActiveDirectoryName
@@ -136,18 +136,18 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The admin group associated with your Active Directory or IAM Identity Center account.
         /// Either this field or the <c>AdminProGroup</c> field is required if <c>ACTIVE_DIRECTORY</c>
-        /// or <c>IAM_IDENTITY_CENTER</c> is the selected authentication method of the new Amazon
-        /// QuickSight account.
+        /// or <c>IAM_IDENTITY_CENTER</c> is the selected authentication method of the new Quick
+        /// Sight account.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// For more information about using IAM Identity Center in Amazon Quick Sight, see <a
         /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide.
+        /// IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide. For more information about using Active Directory in Amazon Quick
+        /// Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -172,18 +172,18 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The admin pro group associated with your Active Directory or IAM Identity Center account.
         /// Either this field or the <c>AdminGroup</c> field is required if <c>ACTIVE_DIRECTORY</c>
-        /// or <c>IAM_IDENTITY_CENTER</c> is the selected authentication method of the new Amazon
-        /// QuickSight account.
+        /// or <c>IAM_IDENTITY_CENTER</c> is the selected authentication method of the new Quick
+        /// Sight account.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// For more information about using IAM Identity Center in Amazon Quick Sight, see <a
         /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide.
+        /// IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide. For more information about using Active Directory in Amazon Quick
+        /// Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -206,7 +206,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthenticationMethod. 
         /// <para>
-        /// The method that you want to use to authenticate your Amazon QuickSight account.
+        /// The method that you want to use to authenticate your Quick Sight account.
         /// </para>
         ///  
         /// <para>
@@ -239,13 +239,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// For more information about using IAM Identity Center in Amazon Quick Sight, see <a
         /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide.
+        /// IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide. For more information about using Active Directory in Amazon Quick
+        /// Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -273,13 +273,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// For more information about using IAM Identity Center in Amazon Quick Sight, see <a
         /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide.
+        /// IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide. For more information about using Active Directory in Amazon Quick
+        /// Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -303,7 +303,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The Amazon Web Services account ID of the account that you're using to create your
-        /// Amazon QuickSight account.
+        /// Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -322,9 +322,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ContactNumber. 
         /// <para>
-        /// A 10-digit phone number for the author of the Amazon QuickSight account to use for
+        /// A 10-digit phone number for the author of the Amazon Quick Sight account to use for
         /// future communications. This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected
-        /// edition of the new Amazon QuickSight account.
+        /// edition of the new Amazon Quick Sight account.
         /// </para>
         /// </summary>
         public string ContactNumber
@@ -342,7 +342,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The ID of the Active Directory that is associated with your Amazon QuickSight account.
+        /// The ID of the Active Directory that is associated with your Quick Sight account.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -360,7 +360,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// The edition of Amazon QuickSight that you want your account to have. Currently, you
+        /// The edition of Amazon Quick Sight that you want your account to have. Currently, you
         /// can choose from <c>ENTERPRISE</c> or <c>ENTERPRISE_AND_Q</c>.
         /// </para>
         ///  
@@ -400,9 +400,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address of the author of the Amazon QuickSight account to use for future
+        /// The email address of the author of the Amazon Quick Sight account to use for future
         /// communications. This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected
-        /// edition of the new Amazon QuickSight account.
+        /// edition of the new Amazon Quick Sight account.
         /// </para>
         /// </summary>
         public string EmailAddress
@@ -420,9 +420,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// The first name of the author of the Amazon QuickSight account to use for future communications.
+        /// The first name of the author of the Amazon Quick Sight account to use for future communications.
         /// This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected edition of the
-        /// new Amazon QuickSight account.
+        /// new Amazon Quick Sight account.
         /// </para>
         /// </summary>
         public string FirstName
@@ -458,9 +458,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// The last name of the author of the Amazon QuickSight account to use for future communications.
+        /// The last name of the author of the Amazon Quick Sight account to use for future communications.
         /// This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected edition of the
-        /// new Amazon QuickSight account.
+        /// new Amazon Quick Sight account.
         /// </para>
         /// </summary>
         public string LastName
@@ -478,8 +478,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The email address that you want Amazon QuickSight to send notifications to regarding
-        /// your Amazon QuickSight account or Amazon QuickSight subscription.
+        /// The email address that you want Quick Sight to send notifications to regarding your
+        /// Quick Sight account or Quick Sight subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -502,13 +502,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// For more information about using IAM Identity Center in Amazon Quick Sight, see <a
         /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide.
+        /// IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide. For more information about using Active Directory in Amazon Quick
+        /// Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -536,13 +536,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about using IAM Identity Center in Amazon QuickSight, see <a
+        /// For more information about using IAM Identity Center in Amazon Quick Sight, see <a
         /// href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
-        /// IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide. For more information about using Active Directory in Amazon QuickSight,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
-        /// Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight
-        /// User Guide.
+        /// IAM Identity Center with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide. For more information about using Active Directory in Amazon Quick
+        /// Sight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+        /// Active Directory with Amazon Quick Sight Enterprise Edition</a> in the Amazon Quick
+        /// Sight User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -565,9 +565,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Realm. 
         /// <para>
-        /// The realm of the Active Directory that is associated with your Amazon QuickSight account.
+        /// The realm of the Active Directory that is associated with your Quick Sight account.
         /// This field is required if <c>ACTIVE_DIRECTORY</c> is the selected authentication method
-        /// of the new Amazon QuickSight account.
+        /// of the new Quick Sight account.
         /// </para>
         /// </summary>
         public string Realm

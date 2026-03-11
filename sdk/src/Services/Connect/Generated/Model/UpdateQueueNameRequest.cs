@@ -31,13 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQueueName operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates the name and description of a queue. At least <c>Name</c> or <c>Description</c>
     /// must be provided.
-    /// </para>
     /// </summary>
     public partial class UpdateQueueNameRequest : AmazonConnectRequest
     {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The recent snapshots configuration for an embedded Amazon QuickSight dashboard.
+    /// The recent snapshots configuration for an embedded Quick Sight dashboard.
     /// </summary>
     public partial class RecentSnapshotsConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The recent snapshots configuration for an embedded Amazon QuickSight dashboard.
+        /// The recent snapshots configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

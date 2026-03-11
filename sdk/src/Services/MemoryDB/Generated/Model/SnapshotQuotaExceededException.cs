@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of snapshots
+    /// allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SnapshotQuotaExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SnapshotQuotaExceededException
+        /// message.
+        /// </summary>
+        public SnapshotQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SnapshotQuotaExceededException with the specified error

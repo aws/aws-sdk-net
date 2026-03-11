@@ -41,6 +41,13 @@ namespace Amazon.Kinesis.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSThrottlingException
+        /// message.
+        /// </summary>
+        public KMSThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSThrottlingException with the specified error
         /// message.
         /// </summary>

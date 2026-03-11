@@ -38,6 +38,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private bool? _anonymousAuthEnabled;
         private bool? _enabled;
+        private IAMFederationOptionsInput _iamFederationOptions;
         private bool? _internalUserDatabaseEnabled;
         private JWTOptionsInput _jwtOptions;
         private MasterUserOptions _masterUserOptions;
@@ -79,6 +80,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMFederationOptions. 
+        /// <para>
+        /// Input configuration for IAM identity federation within advanced security options.
+        /// </para>
+        /// </summary>
+        public IAMFederationOptionsInput IAMFederationOptions
+        {
+            get { return this._iamFederationOptions; }
+            set { this._iamFederationOptions = value; }
+        }
+
+        // Check to see if IAMFederationOptions property is set
+        internal bool IsSetIAMFederationOptions()
+        {
+            return this._iamFederationOptions != null;
         }
 
         /// <summary>

@@ -41,6 +41,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotLimitExceededException
+        /// message.
+        /// </summary>
+        public SnapshotLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotLimitExceededException with the specified error
         /// message.
         /// </summary>

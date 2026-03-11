@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for ObjectAlreadyDetachedException
+        /// message.
+        /// </summary>
+        public ObjectAlreadyDetachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ObjectAlreadyDetachedException with the specified error
         /// message.
         /// </summary>

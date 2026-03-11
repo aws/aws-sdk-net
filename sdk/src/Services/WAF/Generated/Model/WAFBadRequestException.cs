@@ -39,6 +39,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFBadRequestException
+        /// message.
+        /// </summary>
+        public WAFBadRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFBadRequestException with the specified error
         /// message.
         /// </summary>

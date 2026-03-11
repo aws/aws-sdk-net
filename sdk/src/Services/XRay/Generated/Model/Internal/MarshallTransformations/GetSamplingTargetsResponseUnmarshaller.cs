@@ -64,6 +64,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     response.SamplingTargetDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("UnprocessedBoostStatistics", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<UnprocessedStatistics, UnprocessedStatisticsUnmarshaller>(UnprocessedStatisticsUnmarshaller.Instance);
+                    response.UnprocessedBoostStatistics = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("UnprocessedStatistics", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedStatistics, UnprocessedStatisticsUnmarshaller>(UnprocessedStatisticsUnmarshaller.Instance);

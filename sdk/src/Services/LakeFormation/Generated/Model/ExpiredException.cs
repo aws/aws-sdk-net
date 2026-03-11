@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredException
+        /// message.
+        /// </summary>
+        public ExpiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredException with the specified error
         /// message.
         /// </summary>

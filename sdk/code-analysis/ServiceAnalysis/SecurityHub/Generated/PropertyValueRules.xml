@@ -31,22 +31,6 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ConnectorRegistrationsV2Request.AuthCode</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ConnectorRegistrationsV2Request.AuthState</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ConnectorRegistrationsV2Response.ConnectorArn</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ConnectorRegistrationsV2Response.ConnectorId</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.CreateActionTargetRequest.Description</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -483,6 +467,11 @@
     <max>400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetFindingsTrendsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetFindingsV2Request.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -500,6 +489,11 @@
     <property>Amazon.SecurityHub.Model.GetResourcesStatisticsV2Request.MaxStatisticResults</property>
     <min>1</min>
     <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetResourcesTrendsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetResourcesV2Request.MaxResults</property>
@@ -594,6 +588,22 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListTagsForResourceRequest.ResourceArn</property>
     <pattern>^arn:aws:securityhub:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RegisterConnectorV2Request.AuthCode</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RegisterConnectorV2Request.AuthState</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RegisterConnectorV2Response.ConnectorArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RegisterConnectorV2Response.ConnectorId</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.StartConfigurationPolicyAssociationRequest.ConfigurationPolicyIdentifier</property>
@@ -702,10 +712,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UpdateConfigurationPolicyResponse.Name</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.UpdateConnectorV2Request.ClientSecret</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -6194,6 +6200,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CodeRepositoryDetails.CodeSecurityIntegrationArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CodeRepositoryDetails.ProjectName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.CodeRepositoryDetails.ProviderType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.CodeVulnerabilitiesFilePath.FileName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6784,6 +6802,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ProductV2.MarketplaceProductId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ProductV2.MarketplaceUrl</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6868,15 +6890,15 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ResourceResult.ResourceArn</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceResult.ResourceCreationTimeDt</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceResult.ResourceDetailCaptureTimeDt</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ResourceResult.ResourceGuid</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -6890,6 +6912,10 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceResult.ResourceType</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ResourcesCount.AllResources</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ResourceTag.Key</property>
@@ -7080,19 +7106,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ServiceNowDetail.ClientId</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ServiceNowDetail.InstanceName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ServiceNowProviderConfiguration.ClientId</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityHub.Model.ServiceNowProviderConfiguration.ClientSecret</property>
+    <property>Amazon.SecurityHub.Model.ServiceNowDetail.SecretArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -7100,8 +7118,52 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ServiceNowProviderConfiguration.SecretArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ServiceNowUpdateConfiguration.SecretArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ServiceQuotaExceededException.Code</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.Severity.Original</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Critical</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Fatal</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.High</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Informational</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Low</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Medium</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Other</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SeverityTrendsCount.Unknown</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SeverityUpdate.Normalized</property>

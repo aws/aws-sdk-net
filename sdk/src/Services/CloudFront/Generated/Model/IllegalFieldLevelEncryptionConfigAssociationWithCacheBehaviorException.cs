@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+        /// message.
+        /// </summary>
+        public IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException with the specified error
         /// message.
         /// </summary>

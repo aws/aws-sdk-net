@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpcPeeringAuthorization operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Requests authorization to create or delete a peer connection between the VPC for your
     /// Amazon GameLift Servers fleet and a virtual private cloud (VPC) in your Amazon Web
     /// Services account. VPC peering enables the game servers on your fleet to communicate
@@ -38,7 +42,7 @@ namespace Amazon.GameLift.Model
     /// use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a>
     /// to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
     /// Peering with Amazon GameLift Servers Fleets</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can peer with VPCs that are owned by any Amazon Web Services account you have

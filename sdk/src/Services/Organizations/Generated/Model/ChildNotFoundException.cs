@@ -40,6 +40,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for ChildNotFoundException
+        /// message.
+        /// </summary>
+        public ChildNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ChildNotFoundException with the specified error
         /// message.
         /// </summary>

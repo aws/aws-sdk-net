@@ -40,6 +40,13 @@ namespace Amazon.MediaPackageV2.Model
         private ResourceTypeNotFound _resourceTypeNotFound;
 
         /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
         /// message.
         /// </summary>

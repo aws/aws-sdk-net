@@ -60,7 +60,8 @@
                 "Custom\\Runtime\\TestResponses\\*.txt",
                 "Custom\\Runtime\\EventStreams\\test_vectors\\*",
                 "Custom\\Runtime\\TestEndpoints\\*.json",
-                "Custom\\TestTools\\ComparerTest.json"
+                "Custom\\TestTools\\ComparerTest.json",
+                "..\\Services\\S3\\UnitTests\\Custom\\EmbeddedResource\\*"
             ],
             "packageReferences": [
                 {

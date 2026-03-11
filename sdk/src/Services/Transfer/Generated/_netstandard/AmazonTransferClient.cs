@@ -277,7 +277,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateAccessResponse CreateAccess(CreateAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess">REST API Reference for CreateAccess Operation</seealso>
         public virtual Task<CreateAccessResponse> CreateAccessAsync(CreateAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateAgreementResponse CreateAgreement(CreateAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAgreementResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
         public virtual Task<CreateAgreementResponse> CreateAgreementAsync(CreateAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAgreementResponseUnmarshaller.Instance;
 
@@ -403,7 +403,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateServerResponse CreateServer(CreateServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServerResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">REST API Reference for CreateServer Operation</seealso>
         public virtual Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServerResponseUnmarshaller.Instance;
 
@@ -580,7 +580,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -636,7 +636,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateWebAppResponse CreateWebApp(CreateWebAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebAppResponseUnmarshaller.Instance;
 
@@ -647,7 +647,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates a web app based on specified parameters, and returns the ID for the new web
-        /// app.
+        /// app. You can configure the web app to be publicly accessible or hosted within a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -674,7 +680,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">REST API Reference for CreateWebApp Operation</seealso>
         public virtual Task<CreateWebAppResponse> CreateWebAppAsync(CreateWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebAppResponseUnmarshaller.Instance;
 
@@ -686,7 +692,7 @@ namespace Amazon.Transfer
 
         internal virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -730,7 +736,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -742,7 +748,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteAccessResponse DeleteAccess(DeleteAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessResponseUnmarshaller.Instance;
 
@@ -778,7 +784,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess">REST API Reference for DeleteAccess Operation</seealso>
         public virtual Task<DeleteAccessResponse> DeleteAccessAsync(DeleteAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessResponseUnmarshaller.Instance;
 
@@ -790,7 +796,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteAgreementResponse DeleteAgreement(DeleteAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAgreementResponseUnmarshaller.Instance;
 
@@ -825,7 +831,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement">REST API Reference for DeleteAgreement Operation</seealso>
         public virtual Task<DeleteAgreementResponse> DeleteAgreementAsync(DeleteAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAgreementResponseUnmarshaller.Instance;
 
@@ -837,7 +843,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
@@ -872,7 +878,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
@@ -884,7 +890,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -919,7 +925,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -931,7 +937,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteHostKeyResponse DeleteHostKey(DeleteHostKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostKeyResponseUnmarshaller.Instance;
 
@@ -969,7 +975,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteHostKey">REST API Reference for DeleteHostKey Operation</seealso>
         public virtual Task<DeleteHostKeyResponse> DeleteHostKeyAsync(DeleteHostKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostKeyResponseUnmarshaller.Instance;
 
@@ -981,7 +987,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1016,7 +1022,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1028,7 +1034,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteServerResponse DeleteServer(DeleteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServerResponseUnmarshaller.Instance;
 
@@ -1071,7 +1077,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         public virtual Task<DeleteServerResponse> DeleteServerAsync(DeleteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServerResponseUnmarshaller.Instance;
 
@@ -1083,7 +1089,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteSshPublicKeyResponse DeleteSshPublicKey(DeleteSshPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSshPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSshPublicKeyResponseUnmarshaller.Instance;
 
@@ -1121,7 +1127,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         public virtual Task<DeleteSshPublicKeyResponse> DeleteSshPublicKeyAsync(DeleteSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSshPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSshPublicKeyResponseUnmarshaller.Instance;
 
@@ -1133,7 +1139,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -1178,7 +1184,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -1190,7 +1196,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteWebAppResponse DeleteWebApp(DeleteWebAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebAppResponseUnmarshaller.Instance;
 
@@ -1227,7 +1233,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebApp">REST API Reference for DeleteWebApp Operation</seealso>
         public virtual Task<DeleteWebAppResponse> DeleteWebAppAsync(DeleteWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebAppResponseUnmarshaller.Instance;
 
@@ -1239,7 +1245,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteWebAppCustomizationResponse DeleteWebAppCustomization(DeleteWebAppCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebAppCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebAppCustomizationResponseUnmarshaller.Instance;
 
@@ -1281,7 +1287,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebAppCustomization">REST API Reference for DeleteWebAppCustomization Operation</seealso>
         public virtual Task<DeleteWebAppCustomizationResponse> DeleteWebAppCustomizationAsync(DeleteWebAppCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebAppCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebAppCustomizationResponseUnmarshaller.Instance;
 
@@ -1293,7 +1299,7 @@ namespace Amazon.Transfer
 
         internal virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -1331,7 +1337,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -1343,7 +1349,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeAccessResponse DescribeAccess(DescribeAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessResponseUnmarshaller.Instance;
 
@@ -1385,7 +1391,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess">REST API Reference for DescribeAccess Operation</seealso>
         public virtual Task<DescribeAccessResponse> DescribeAccessAsync(DescribeAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessResponseUnmarshaller.Instance;
 
@@ -1397,7 +1403,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeAgreementResponse DescribeAgreement(DescribeAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
 
@@ -1432,7 +1438,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
         public virtual Task<DescribeAgreementResponse> DescribeAgreementAsync(DescribeAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
 
@@ -1444,7 +1450,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
@@ -1455,6 +1461,15 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Describes the certificate that's identified by the <c>CertificateId</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Transfer Family automatically publishes a Amazon CloudWatch metric called <c>DaysUntilExpiry</c>
+        /// for imported certificates. This metric tracks the number of days until the certificate
+        /// expires based on the <c>InactiveDate</c>. The metric is available in the <c>AWS/Transfer</c>
+        /// namespace and includes the <c>CertificateId</c> as a dimension.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1479,7 +1494,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public virtual Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
@@ -1491,7 +1506,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeConnectorResponse DescribeConnector(DescribeConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
 
@@ -1526,7 +1541,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
         public virtual Task<DescribeConnectorResponse> DescribeConnectorAsync(DescribeConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
 
@@ -1538,7 +1553,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
@@ -1585,7 +1600,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public virtual Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
@@ -1597,7 +1612,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeHostKeyResponse DescribeHostKey(DescribeHostKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostKeyResponseUnmarshaller.Instance;
 
@@ -1632,7 +1647,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeHostKey">REST API Reference for DescribeHostKey Operation</seealso>
         public virtual Task<DescribeHostKeyResponse> DescribeHostKeyAsync(DescribeHostKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostKeyResponseUnmarshaller.Instance;
 
@@ -1644,7 +1659,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeProfileResponse DescribeProfile(DescribeProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProfileResponseUnmarshaller.Instance;
 
@@ -1679,7 +1694,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">REST API Reference for DescribeProfile Operation</seealso>
         public virtual Task<DescribeProfileResponse> DescribeProfileAsync(DescribeProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProfileResponseUnmarshaller.Instance;
 
@@ -1691,7 +1706,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeSecurityPolicyResponse DescribeSecurityPolicy(DescribeSecurityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityPolicyResponseUnmarshaller.Instance;
 
@@ -1730,7 +1745,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy">REST API Reference for DescribeSecurityPolicy Operation</seealso>
         public virtual Task<DescribeSecurityPolicyResponse> DescribeSecurityPolicyAsync(DescribeSecurityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityPolicyResponseUnmarshaller.Instance;
 
@@ -1742,7 +1757,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeServerResponse DescribeServer(DescribeServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServerResponseUnmarshaller.Instance;
 
@@ -1784,7 +1799,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">REST API Reference for DescribeServer Operation</seealso>
         public virtual Task<DescribeServerResponse> DescribeServerAsync(DescribeServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServerResponseUnmarshaller.Instance;
 
@@ -1796,7 +1811,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1838,7 +1853,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1850,7 +1865,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeWebAppResponse DescribeWebApp(DescribeWebAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWebAppResponseUnmarshaller.Instance;
 
@@ -1860,7 +1875,15 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the web app that's identified by <c>WebAppId</c>.
+        /// Describes the web app that's identified by <c>WebAppId</c>. The response includes
+        /// endpoint configuration details such as whether the web app is publicly accessible
+        /// or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -1887,7 +1910,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">REST API Reference for DescribeWebApp Operation</seealso>
         public virtual Task<DescribeWebAppResponse> DescribeWebAppAsync(DescribeWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWebAppResponseUnmarshaller.Instance;
 
@@ -1899,7 +1922,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeWebAppCustomizationResponse DescribeWebAppCustomization(DescribeWebAppCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWebAppCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWebAppCustomizationResponseUnmarshaller.Instance;
 
@@ -1936,7 +1959,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebAppCustomization">REST API Reference for DescribeWebAppCustomization Operation</seealso>
         public virtual Task<DescribeWebAppCustomizationResponse> DescribeWebAppCustomizationAsync(DescribeWebAppCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWebAppCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWebAppCustomizationResponseUnmarshaller.Instance;
 
@@ -1948,7 +1971,7 @@ namespace Amazon.Transfer
 
         internal virtual DescribeWorkflowResponse DescribeWorkflow(DescribeWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkflowResponseUnmarshaller.Instance;
 
@@ -1983,7 +2006,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWorkflow">REST API Reference for DescribeWorkflow Operation</seealso>
         public virtual Task<DescribeWorkflowResponse> DescribeWorkflowAsync(DescribeWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkflowResponseUnmarshaller.Instance;
 
@@ -1995,7 +2018,7 @@ namespace Amazon.Transfer
 
         internal virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
@@ -2012,12 +2035,49 @@ namespace Amazon.Transfer
         /// <para>
         /// You can import both the certificate and its chain in the <c>Certificate</c> parameter.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// After importing a certificate, Transfer Family automatically creates a Amazon CloudWatch
+        /// metric called <c>DaysUntilExpiry</c> that tracks the number of days until the certificate
+        /// expires. The metric is based on the <c>InactiveDate</c> parameter and is published
+        /// daily in the <c>AWS/Transfer</c> namespace.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// It can take up to a full day after importing a certificate for Transfer Family to
+        /// emit the <c>DaysUntilExpiry</c> metric to your account.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// If you use the <c>Certificate</c> parameter to upload both the certificate and its
         /// chain, don't use the <c>CertificateChain</c> parameter.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  <b>CloudWatch monitoring</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>DaysUntilExpiry</c> metric includes the following specifications:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Units:</b> Count (days)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dimensions:</b> <c>CertificateId</c> (always present), <c>Description</c> (if
+        /// provided during certificate import)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Statistics:</b> Minimum, Maximum, Average
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Frequency:</b> Published daily
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -2042,7 +2102,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
@@ -2054,7 +2114,7 @@ namespace Amazon.Transfer
 
         internal virtual ImportHostKeyResponse ImportHostKey(ImportHostKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportHostKeyResponseUnmarshaller.Instance;
 
@@ -2096,7 +2156,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey">REST API Reference for ImportHostKey Operation</seealso>
         public virtual Task<ImportHostKeyResponse> ImportHostKeyAsync(ImportHostKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportHostKeyResponseUnmarshaller.Instance;
 
@@ -2108,7 +2168,7 @@ namespace Amazon.Transfer
 
         internal virtual ImportSshPublicKeyResponse ImportSshPublicKey(ImportSshPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSshPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSshPublicKeyResponseUnmarshaller.Instance;
 
@@ -2158,7 +2218,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         public virtual Task<ImportSshPublicKeyResponse> ImportSshPublicKeyAsync(ImportSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSshPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSshPublicKeyResponseUnmarshaller.Instance;
 
@@ -2170,7 +2230,7 @@ namespace Amazon.Transfer
 
         internal virtual ListAccessesResponse ListAccesses(ListAccessesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessesResponseUnmarshaller.Instance;
 
@@ -2208,7 +2268,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses">REST API Reference for ListAccesses Operation</seealso>
         public virtual Task<ListAccessesResponse> ListAccessesAsync(ListAccessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessesResponseUnmarshaller.Instance;
 
@@ -2220,7 +2280,7 @@ namespace Amazon.Transfer
 
         internal virtual ListAgreementsResponse ListAgreements(ListAgreementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAgreementsResponseUnmarshaller.Instance;
 
@@ -2262,7 +2322,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements">REST API Reference for ListAgreements Operation</seealso>
         public virtual Task<ListAgreementsResponse> ListAgreementsAsync(ListAgreementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAgreementsResponseUnmarshaller.Instance;
 
@@ -2274,7 +2334,7 @@ namespace Amazon.Transfer
 
         internal virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
@@ -2316,7 +2376,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
@@ -2328,7 +2388,7 @@ namespace Amazon.Transfer
 
         internal virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -2366,7 +2426,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -2378,7 +2438,7 @@ namespace Amazon.Transfer
 
         internal virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -2423,7 +2483,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public virtual Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -2435,7 +2495,7 @@ namespace Amazon.Transfer
 
         internal virtual ListFileTransferResultsResponse ListFileTransferResults(ListFileTransferResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFileTransferResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFileTransferResultsResponseUnmarshaller.Instance;
 
@@ -2478,7 +2538,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListFileTransferResults">REST API Reference for ListFileTransferResults Operation</seealso>
         public virtual Task<ListFileTransferResultsResponse> ListFileTransferResultsAsync(ListFileTransferResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFileTransferResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFileTransferResultsResponseUnmarshaller.Instance;
 
@@ -2490,7 +2550,7 @@ namespace Amazon.Transfer
 
         internal virtual ListHostKeysResponse ListHostKeys(ListHostKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostKeysResponseUnmarshaller.Instance;
 
@@ -2529,7 +2589,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys">REST API Reference for ListHostKeys Operation</seealso>
         public virtual Task<ListHostKeysResponse> ListHostKeysAsync(ListHostKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostKeysResponseUnmarshaller.Instance;
 
@@ -2541,7 +2601,7 @@ namespace Amazon.Transfer
 
         internal virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -2582,7 +2642,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -2594,7 +2654,7 @@ namespace Amazon.Transfer
 
         internal virtual ListSecurityPoliciesResponse ListSecurityPolicies(ListSecurityPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityPoliciesResponseUnmarshaller.Instance;
 
@@ -2631,7 +2691,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
         public virtual Task<ListSecurityPoliciesResponse> ListSecurityPoliciesAsync(ListSecurityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityPoliciesResponseUnmarshaller.Instance;
 
@@ -2643,7 +2703,7 @@ namespace Amazon.Transfer
 
         internal virtual ListServersResponse ListServers(ListServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServersResponseUnmarshaller.Instance;
 
@@ -2678,7 +2738,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">REST API Reference for ListServers Operation</seealso>
         public virtual Task<ListServersResponse> ListServersAsync(ListServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServersResponseUnmarshaller.Instance;
 
@@ -2690,7 +2750,7 @@ namespace Amazon.Transfer
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2725,7 +2785,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2737,7 +2797,7 @@ namespace Amazon.Transfer
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -2776,7 +2836,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -2788,7 +2848,7 @@ namespace Amazon.Transfer
 
         internal virtual ListWebAppsResponse ListWebApps(ListWebAppsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebAppsResponseUnmarshaller.Instance;
 
@@ -2799,7 +2859,14 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Lists all web apps associated with your Amazon Web Services account for your current
-        /// region.
+        /// region. The response includes the endpoint type for each web app, showing whether
+        /// it is publicly accessible or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebApps service method.</param>
         /// <param name="cancellationToken">
@@ -2822,7 +2889,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">REST API Reference for ListWebApps Operation</seealso>
         public virtual Task<ListWebAppsResponse> ListWebAppsAsync(ListWebAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebAppsResponseUnmarshaller.Instance;
 
@@ -2834,7 +2901,7 @@ namespace Amazon.Transfer
 
         internal virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -2869,7 +2936,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -2881,7 +2948,7 @@ namespace Amazon.Transfer
 
         internal virtual SendWorkflowStepStateResponse SendWorkflowStepState(SendWorkflowStepStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendWorkflowStepStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendWorkflowStepStateResponseUnmarshaller.Instance;
 
@@ -2929,7 +2996,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
         public virtual Task<SendWorkflowStepStateResponse> SendWorkflowStepStateAsync(SendWorkflowStepStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendWorkflowStepStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendWorkflowStepStateResponseUnmarshaller.Instance;
 
@@ -2941,7 +3008,7 @@ namespace Amazon.Transfer
 
         internal virtual StartDirectoryListingResponse StartDirectoryListing(StartDirectoryListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDirectoryListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDirectoryListingResponseUnmarshaller.Instance;
 
@@ -3025,7 +3092,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartDirectoryListing">REST API Reference for StartDirectoryListing Operation</seealso>
         public virtual Task<StartDirectoryListingResponse> StartDirectoryListingAsync(StartDirectoryListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDirectoryListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDirectoryListingResponseUnmarshaller.Instance;
 
@@ -3037,7 +3104,7 @@ namespace Amazon.Transfer
 
         internal virtual StartFileTransferResponse StartFileTransfer(StartFileTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFileTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFileTransferResponseUnmarshaller.Instance;
 
@@ -3101,7 +3168,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">REST API Reference for StartFileTransfer Operation</seealso>
         public virtual Task<StartFileTransferResponse> StartFileTransferAsync(StartFileTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFileTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFileTransferResponseUnmarshaller.Instance;
 
@@ -3113,7 +3180,7 @@ namespace Amazon.Transfer
 
         internal virtual StartRemoteDeleteResponse StartRemoteDelete(StartRemoteDeleteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRemoteDeleteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRemoteDeleteResponseUnmarshaller.Instance;
 
@@ -3151,7 +3218,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartRemoteDelete">REST API Reference for StartRemoteDelete Operation</seealso>
         public virtual Task<StartRemoteDeleteResponse> StartRemoteDeleteAsync(StartRemoteDeleteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRemoteDeleteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRemoteDeleteResponseUnmarshaller.Instance;
 
@@ -3163,7 +3230,7 @@ namespace Amazon.Transfer
 
         internal virtual StartRemoteMoveResponse StartRemoteMove(StartRemoteMoveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRemoteMoveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRemoteMoveResponseUnmarshaller.Instance;
 
@@ -3201,7 +3268,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartRemoteMove">REST API Reference for StartRemoteMove Operation</seealso>
         public virtual Task<StartRemoteMoveResponse> StartRemoteMoveAsync(StartRemoteMoveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRemoteMoveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRemoteMoveResponseUnmarshaller.Instance;
 
@@ -3213,7 +3280,7 @@ namespace Amazon.Transfer
 
         internal virtual StartServerResponse StartServer(StartServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartServerResponseUnmarshaller.Instance;
 
@@ -3264,7 +3331,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         public virtual Task<StartServerResponse> StartServerAsync(StartServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartServerResponseUnmarshaller.Instance;
 
@@ -3276,7 +3343,7 @@ namespace Amazon.Transfer
 
         internal virtual StopServerResponse StopServer(StopServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopServerResponseUnmarshaller.Instance;
 
@@ -3333,7 +3400,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         public virtual Task<StopServerResponse> StopServerAsync(StopServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopServerResponseUnmarshaller.Instance;
 
@@ -3345,7 +3412,7 @@ namespace Amazon.Transfer
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3386,7 +3453,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3398,7 +3465,7 @@ namespace Amazon.Transfer
 
         internal virtual TestConnectionResponse TestConnection(TestConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
@@ -3435,7 +3502,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public virtual Task<TestConnectionResponse> TestConnectionAsync(TestConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
@@ -3447,7 +3514,7 @@ namespace Amazon.Transfer
 
         internal virtual TestIdentityProviderResponse TestIdentityProvider(TestIdentityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestIdentityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestIdentityProviderResponseUnmarshaller.Instance;
 
@@ -3542,7 +3609,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">REST API Reference for TestIdentityProvider Operation</seealso>
         public virtual Task<TestIdentityProviderResponse> TestIdentityProviderAsync(TestIdentityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestIdentityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestIdentityProviderResponseUnmarshaller.Instance;
 
@@ -3554,7 +3621,7 @@ namespace Amazon.Transfer
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3595,7 +3662,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3607,7 +3674,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateAccessResponse UpdateAccess(UpdateAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessResponseUnmarshaller.Instance;
 
@@ -3650,7 +3717,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess">REST API Reference for UpdateAccess Operation</seealso>
         public virtual Task<UpdateAccessResponse> UpdateAccessAsync(UpdateAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessResponseUnmarshaller.Instance;
 
@@ -3662,7 +3729,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateAgreementResponse UpdateAgreement(UpdateAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgreementResponseUnmarshaller.Instance;
 
@@ -3719,7 +3786,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
         public virtual Task<UpdateAgreementResponse> UpdateAgreementAsync(UpdateAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgreementResponseUnmarshaller.Instance;
 
@@ -3731,7 +3798,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
 
@@ -3769,7 +3836,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
         public virtual Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
 
@@ -3781,7 +3848,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
 
@@ -3825,7 +3892,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
         public virtual Task<UpdateConnectorResponse> UpdateConnectorAsync(UpdateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
 
@@ -3837,7 +3904,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateHostKeyResponse UpdateHostKey(UpdateHostKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHostKeyResponseUnmarshaller.Instance;
 
@@ -3876,7 +3943,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">REST API Reference for UpdateHostKey Operation</seealso>
         public virtual Task<UpdateHostKeyResponse> UpdateHostKeyAsync(UpdateHostKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHostKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHostKeyResponseUnmarshaller.Instance;
 
@@ -3888,7 +3955,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -3928,7 +3995,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -3940,7 +4007,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateServerResponse UpdateServer(UpdateServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServerResponseUnmarshaller.Instance;
 
@@ -3996,7 +4063,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public virtual Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServerResponseUnmarshaller.Instance;
 
@@ -4008,7 +4075,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -4073,7 +4140,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -4085,7 +4152,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateWebAppResponse UpdateWebApp(UpdateWebAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebAppResponseUnmarshaller.Instance;
 
@@ -4096,7 +4163,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Assigns new properties to a web app. You can modify the access point, identity provider
-        /// details, and the web app units.
+        /// details, endpoint configuration, and the web app units.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -4128,7 +4201,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">REST API Reference for UpdateWebApp Operation</seealso>
         public virtual Task<UpdateWebAppResponse> UpdateWebAppAsync(UpdateWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebAppResponseUnmarshaller.Instance;
 
@@ -4140,7 +4213,7 @@ namespace Amazon.Transfer
 
         internal virtual UpdateWebAppCustomizationResponse UpdateWebAppCustomization(UpdateWebAppCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebAppCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebAppCustomizationResponseUnmarshaller.Instance;
 
@@ -4183,7 +4256,7 @@ namespace Amazon.Transfer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebAppCustomization">REST API Reference for UpdateWebAppCustomization Operation</seealso>
         public virtual Task<UpdateWebAppCustomizationResponse> UpdateWebAppCustomizationAsync(UpdateWebAppCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebAppCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebAppCustomizationResponseUnmarshaller.Instance;
 

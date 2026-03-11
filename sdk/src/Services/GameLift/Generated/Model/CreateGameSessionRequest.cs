@@ -31,12 +31,16 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGameSession operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Creates a multiplayer game session for players in a specific fleet location. This
     /// operation prompts an available server process to start a game session and retrieves
     /// connection information for the new game session. As an alternative, consider using
     /// the Amazon GameLift Servers game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
     /// which uses the FleetIQ algorithm and queues to optimize the placement process.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// When creating a game session, you specify exactly where you want to place it and provide
@@ -195,6 +199,19 @@ namespace Amazon.GameLift.Model
         /// <c>{"Key": "difficulty", "Value": "novice"}</c>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
         /// a game session with custom properties</a>. 
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

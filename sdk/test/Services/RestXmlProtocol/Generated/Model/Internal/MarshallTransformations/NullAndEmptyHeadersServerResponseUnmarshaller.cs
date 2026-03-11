@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NullAndEmptyHeadersServer operation
     /// </summary>  
-    public class NullAndEmptyHeadersServerResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class NullAndEmptyHeadersServerResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -53,6 +53,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-C"))
                 response.C = MultiValueHeaderParser.ToStringList(context.ResponseData.GetHeaderValue("X-C"));
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -78,6 +79,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, NullAndEmptyHeadersServerResponse response);
 
         private static NullAndEmptyHeadersServerResponseUnmarshaller _instance = new NullAndEmptyHeadersServerResponseUnmarshaller();        
 

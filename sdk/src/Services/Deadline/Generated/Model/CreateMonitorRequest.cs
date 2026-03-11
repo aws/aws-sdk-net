@@ -42,6 +42,7 @@ namespace Amazon.Deadline.Model
         private string _identityCenterInstanceArn;
         private string _roleArn;
         private string _subdomain;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -90,8 +91,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates
-        /// monitor users.
+        /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor
+        /// users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,9 +111,9 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to
-        /// Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center
-        /// uses this role to access Deadline Cloud resources.
+        /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline
+        /// Cloud. Every user that signs in to the monitor using IAM Identity Center uses this
+        /// role to access Deadline Cloud resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,6 +147,30 @@ namespace Amazon.Deadline.Model
         internal bool IsSetSubdomain()
         {
             return this._subdomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag
+        /// keys and values are both required, but tag values can be empty strings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

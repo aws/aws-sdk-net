@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidVersionException
+        /// message.
+        /// </summary>
+        public InvalidVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidVersionException with the specified error
         /// message.
         /// </summary>

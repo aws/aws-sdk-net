@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for PartnerNotFoundException
+        /// message.
+        /// </summary>
+        public PartnerNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PartnerNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -237,6 +237,14 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeEngineDefaultClusterParameters operation
+        ///</summary>
+        public IDescribeEngineDefaultClusterParametersPaginator DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request) 
+        {
+            return new DescribeEngineDefaultClusterParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeEngineDefaultParameters operation
         ///</summary>
         public IDescribeEngineDefaultParametersPaginator DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request) 

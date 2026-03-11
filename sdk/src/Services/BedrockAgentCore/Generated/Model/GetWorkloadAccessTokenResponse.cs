@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadAccessToken. 
         /// <para>
-        /// Opaque token representing both agent and user identity
+        /// An opaque token representing the identity of both the workload and the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=131072)]

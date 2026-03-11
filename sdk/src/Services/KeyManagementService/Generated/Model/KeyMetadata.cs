@@ -151,11 +151,10 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CurrentKeyMaterialId. 
         /// <para>
         /// Identifies the current key material. This value is present for symmetric encryption
-        /// keys with <c>AWS_KMS</c> origin and single-Region, symmetric encryption keys with
-        /// <c>EXTERNAL</c> origin. These KMS keys support automatic or on-demand key rotation
-        /// and can have multiple key materials associated with them. KMS uses the current key
-        /// material for both encryption and decryption, and the non-current key material for
-        /// decryption operations only.
+        /// keys with <c>AWS_KMS</c> or <c>EXTERNAL</c> origin. These KMS keys support automatic
+        /// or on-demand key rotation and can have multiple key materials associated with them.
+        /// KMS uses the current key material for both encryption and decryption, and the non-current
+        /// key material for decryption operations only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=64, Max=64)]

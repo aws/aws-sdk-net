@@ -41,7 +41,10 @@ namespace Amazon.MediaConvert.Model
         private int? _duration;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
+        private int? _height;
+        private string _imageInput;
         private int? _sampleRate;
+        private int? _width;
 
         /// <summary>
         /// Gets and sets the property Channels. Specify the number of audio channels to include
@@ -63,9 +66,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Duration. Specify the duration, in milliseconds, for your
-        /// video generator input.Enter an integer from 50 to 86400000.
+        /// video generator input.Enter an integer from 1 to 86400000.
         /// </summary>
-        [AWSProperty(Min=50, Max=86400000)]
+        [AWSProperty(Min=1, Max=86400000)]
         public int? Duration
         {
             get { return this._duration; }
@@ -117,6 +120,43 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Height. Specify the height, in pixels, for your video generator
+        /// input. This is useful for positioning when you include one or more video overlays
+        /// for this input. To use the default resolution 540x360: Leave both width and height
+        /// blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you
+        /// must also specify a value for width.
+        /// </summary>
+        [AWSProperty(Min=32, Max=8192)]
+        public int? Height
+        {
+            get { return this._height; }
+            set { this._height = value; }
+        }
+
+        // Check to see if Height property is set
+        internal bool IsSetHeight()
+        {
+            return this._height.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageInput. Specify the HTTP, HTTPS, or Amazon S3 location
+        /// of the image that you want to overlay on the video. Use a PNG or TGA file.
+        /// </summary>
+        [AWSProperty(Min=14)]
+        public string ImageInput
+        {
+            get { return this._imageInput; }
+            set { this._imageInput = value; }
+        }
+
+        // Check to see if ImageInput property is set
+        internal bool IsSetImageInput()
+        {
+            return this._imageInput != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SampleRate. Specify the audio sample rate, in Hz, for the
         /// silent audio in your video generator input.Enter an integer from 32000 to 48000.
         /// </summary>
@@ -131,6 +171,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSampleRate()
         {
             return this._sampleRate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Width. Specify the width, in pixels, for your video generator
+        /// input. This is useful for positioning when you include one or more video overlays
+        /// for this input. To use the default resolution 540x360: Leave both width and height
+        /// blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you
+        /// must also specify a value for height.
+        /// </summary>
+        [AWSProperty(Min=32, Max=8192)]
+        public int? Width
+        {
+            get { return this._width; }
+            set { this._width = value; }
+        }
+
+        // Check to see if Width property is set
+        internal bool IsSetWidth()
+        {
+            return this._width.HasValue; 
         }
 
     }

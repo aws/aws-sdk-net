@@ -34,9 +34,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CreateOauth2CredentialProviderResponse : AmazonWebServiceResponse
     {
+        private string _callbackUrl;
         private Secret _clientSecretArn;
         private string _credentialProviderArn;
         private string _name;
+        private Oauth2ProviderConfigOutput _oauth2ProviderConfigOutput;
+
+        /// <summary>
+        /// Gets and sets the property CallbackUrl. 
+        /// <para>
+        /// Callback URL to register on the OAuth2 credential provider as an allowed callback
+        /// URL. This URL is where the OAuth2 authorization server redirects users after they
+        /// complete the authorization flow.
+        /// </para>
+        /// </summary>
+        public string CallbackUrl
+        {
+            get { return this._callbackUrl; }
+            set { this._callbackUrl = value; }
+        }
+
+        // Check to see if CallbackUrl property is set
+        internal bool IsSetCallbackUrl()
+        {
+            return this._callbackUrl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientSecretArn. 
@@ -93,6 +115,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Oauth2ProviderConfigOutput.
+        /// </summary>
+        public Oauth2ProviderConfigOutput Oauth2ProviderConfigOutput
+        {
+            get { return this._oauth2ProviderConfigOutput; }
+            set { this._oauth2ProviderConfigOutput = value; }
+        }
+
+        // Check to see if Oauth2ProviderConfigOutput property is set
+        internal bool IsSetOauth2ProviderConfigOutput()
+        {
+            return this._oauth2ProviderConfigOutput != null;
         }
 
     }

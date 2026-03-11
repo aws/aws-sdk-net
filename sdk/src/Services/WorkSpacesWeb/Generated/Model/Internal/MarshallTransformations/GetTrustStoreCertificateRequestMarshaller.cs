@@ -65,6 +65,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTrustStoreArn())
                 throw new AmazonWorkSpacesWebException("Request object does not have required field TrustStoreArn set");
             request.AddPathResource("{trustStoreArn+}", StringUtils.FromString(publicRequest.TrustStoreArn.TrimStart('/')));
+            if (string.IsNullOrEmpty(publicRequest.Thumbprint))
+                throw new AmazonWorkSpacesWebException("Request object does not have required field Thumbprint set");
             
             if (publicRequest.IsSetThumbprint())
                 request.Parameters.Add("thumbprint", StringUtils.FromString(publicRequest.Thumbprint));

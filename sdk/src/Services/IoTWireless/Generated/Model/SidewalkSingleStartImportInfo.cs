@@ -34,7 +34,26 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class SidewalkSingleStartImportInfo
     {
+        private SidewalkPositioning _positioning;
         private string _sidewalkManufacturingSn;
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The Positioning object of the Sidewalk device.
+        /// </para>
+        /// </summary>
+        public SidewalkPositioning Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SidewalkManufacturingSn. 

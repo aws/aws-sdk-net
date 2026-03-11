@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DistributionConfig Object
     /// </summary>  
-    public class DistributionConfigUnmarshaller : IXmlUnmarshaller<DistributionConfig, XmlUnmarshallerContext>
+    public partial class DistributionConfigUnmarshaller : IXmlUnmarshaller<DistributionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -84,6 +84,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ConnectionFunctionAssociation", targetDepth))
+                    {
+                        var unmarshaller = ConnectionFunctionAssociationUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionFunctionAssociation = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ConnectionMode", targetDepth))
@@ -182,12 +188,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ViewerCertificate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ViewerMtlsConfig", targetDepth))
+                    {
+                        var unmarshaller = ViewerMtlsConfigUnmarshaller.Instance;
+                        unmarshalledObject.ViewerMtlsConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("WebACLId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.WebACLId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -196,6 +210,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DistributionConfig unmarshalledObject, int targetDepth);
+
         private static DistributionConfigUnmarshaller _instance = new DistributionConfigUnmarshaller();        
 
         /// <summary>

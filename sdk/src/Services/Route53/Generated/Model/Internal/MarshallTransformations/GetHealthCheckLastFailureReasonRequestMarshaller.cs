@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetHealthCheckLastFailureReasonRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetHealthCheckId())
                 throw new AmazonRoute53Exception("Request object does not have required field HealthCheckId set");
@@ -85,5 +86,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetHealthCheckLastFailureReasonRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetHealthCheckLastFailureReasonRequest publicRequest);
     }    
 }

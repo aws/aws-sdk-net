@@ -65,6 +65,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field ResourceId set");
             request.AddPathResource("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonElasticFileSystemException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

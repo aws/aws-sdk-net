@@ -128,6 +128,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeScheduledInstancesRequestMarshaller _instance = new DescribeScheduledInstancesRequestMarshaller();        

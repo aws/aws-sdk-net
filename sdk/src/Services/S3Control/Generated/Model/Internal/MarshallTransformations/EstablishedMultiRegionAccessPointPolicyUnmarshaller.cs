@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EstablishedMultiRegionAccessPointPolicy Object
     /// </summary>  
-    public class EstablishedMultiRegionAccessPointPolicyUnmarshaller : IXmlUnmarshaller<EstablishedMultiRegionAccessPointPolicy, XmlUnmarshallerContext>
+    public partial class EstablishedMultiRegionAccessPointPolicyUnmarshaller : IXmlUnmarshaller<EstablishedMultiRegionAccessPointPolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, EstablishedMultiRegionAccessPointPolicy unmarshalledObject, int targetDepth);
+
         private static EstablishedMultiRegionAccessPointPolicyUnmarshaller _instance = new EstablishedMultiRegionAccessPointPolicyUnmarshaller();        
 
         /// <summary>

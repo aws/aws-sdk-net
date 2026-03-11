@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class GlossaryTermItem
     {
+        private GlossaryTermItemAdditionalAttributes _additionalAttributes;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _domainId;
@@ -46,6 +47,25 @@ namespace Amazon.DataZone.Model
         private TermRelations _termRelations;
         private DateTime? _updatedAt;
         private string _updatedBy;
+        private List<string> _usageRestrictions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAttributes. 
+        /// <para>
+        /// The additional attributes of an Amazon DataZone glossary term.
+        /// </para>
+        /// </summary>
+        public GlossaryTermItemAdditionalAttributes AdditionalAttributes
+        {
+            get { return this._additionalAttributes; }
+            set { this._additionalAttributes = value; }
+        }
+
+        // Check to see if AdditionalAttributes property is set
+        internal bool IsSetAdditionalAttributes()
+        {
+            return this._additionalAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -268,6 +288,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetUpdatedBy()
         {
             return this._updatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageRestrictions. 
+        /// <para>
+        /// The usage restrictions associated with a goverened glossary term.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> UsageRestrictions
+        {
+            get { return this._usageRestrictions; }
+            set { this._usageRestrictions = value; }
+        }
+
+        // Check to see if UsageRestrictions property is set
+        internal bool IsSetUsageRestrictions()
+        {
+            return this._usageRestrictions != null && (this._usageRestrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

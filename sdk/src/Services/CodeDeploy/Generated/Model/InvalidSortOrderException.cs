@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSortOrderException
+        /// message.
+        /// </summary>
+        public InvalidSortOrderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSortOrderException with the specified error
         /// message.
         /// </summary>

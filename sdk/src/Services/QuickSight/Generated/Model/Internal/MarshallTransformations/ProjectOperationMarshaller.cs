@@ -46,6 +46,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAlias())
+            {
+                context.Writer.WritePropertyName("Alias");
+                context.Writer.WriteStringValue(requestObject.Alias);
+            }
+
             if(requestObject.IsSetProjectedColumns())
             {
                 context.Writer.WritePropertyName("ProjectedColumns");
@@ -55,6 +61,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectProjectedColumnsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetSource())
+            {
+                context.Writer.WritePropertyName("Source");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TransformOperationSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Source, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNodeExchangeNotFoundException
+        /// message.
+        /// </summary>
+        public ReservedNodeExchangeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNodeExchangeNotFoundException with the specified error
         /// message.
         /// </summary>

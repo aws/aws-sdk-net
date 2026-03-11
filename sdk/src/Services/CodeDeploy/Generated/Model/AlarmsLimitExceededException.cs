@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for AlarmsLimitExceededException
+        /// message.
+        /// </summary>
+        public AlarmsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AlarmsLimitExceededException with the specified error
         /// message.
         /// </summary>

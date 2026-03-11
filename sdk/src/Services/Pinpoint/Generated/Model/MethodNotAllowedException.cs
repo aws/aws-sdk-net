@@ -40,6 +40,13 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
+        /// Default constructor for MethodNotAllowedException
+        /// message.
+        /// </summary>
+        public MethodNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MethodNotAllowedException with the specified error
         /// message.
         /// </summary>

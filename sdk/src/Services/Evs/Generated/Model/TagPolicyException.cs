@@ -30,14 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    ///  <c>TagPolicyException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html">
+    /// <c>ValidationException</c> </a> instead.
+    /// 
+    ///  </note> 
+    /// <para>
     /// The request doesn't comply with IAM tag policy. Correct your request and then retry
     /// it.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class TagPolicyException : AmazonEvsException
     {
+
+        /// <summary>
+        /// Default constructor for TagPolicyException
+        /// message.
+        /// </summary>
+        public TagPolicyException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TagPolicyException with the specified error

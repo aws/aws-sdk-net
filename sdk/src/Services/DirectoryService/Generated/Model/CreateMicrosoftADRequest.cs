@@ -48,6 +48,7 @@ namespace Amazon.DirectoryService.Model
         private string _description;
         private DirectoryEdition _edition;
         private string _name;
+        private NetworkType _networkType;
         private string _password;
         private string _shortName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -110,6 +111,25 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        ///  The network type for your domain. The default value is <c>IPv4</c> or <c>IPv6</c>
+        /// based on the provided subnet capabilities.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudHSM.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmInternalException
+        /// message.
+        /// </summary>
+        public CloudHsmInternalException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmInternalException with the specified error
         /// message.
         /// </summary>

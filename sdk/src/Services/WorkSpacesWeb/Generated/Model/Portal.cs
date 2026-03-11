@@ -47,9 +47,11 @@ namespace Amazon.WorkSpacesWeb.Model
         private int? _maxConcurrentSessions;
         private string _networkSettingsArn;
         private string _portalArn;
+        private string _portalCustomDomain;
         private string _portalEndpoint;
         private PortalStatus _portalStatus;
         private RendererType _rendererType;
+        private string _sessionLoggerArn;
         private string _statusReason;
         private string _trustStoreArn;
         private string _userAccessLoggingSettingsArn;
@@ -317,6 +319,26 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PortalCustomDomain. 
+        /// <para>
+        /// The custom domain of the web portal that users access in order to start streaming
+        /// sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string PortalCustomDomain
+        {
+            get { return this._portalCustomDomain; }
+            set { this._portalCustomDomain = value; }
+        }
+
+        // Check to see if PortalCustomDomain property is set
+        internal bool IsSetPortalCustomDomain()
+        {
+            return this._portalCustomDomain != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PortalEndpoint. 
         /// <para>
         /// The endpoint URL of the web portal that users access in order to start streaming sessions.
@@ -369,6 +391,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetRendererType()
         {
             return this._rendererType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionLoggerArn. 
+        /// <para>
+        /// The ARN of the session logger that is assocaited with the portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string SessionLoggerArn
+        {
+            get { return this._sessionLoggerArn; }
+            set { this._sessionLoggerArn = value; }
+        }
+
+        // Check to see if SessionLoggerArn property is set
+        internal bool IsSetSessionLoggerArn()
+        {
+            return this._sessionLoggerArn != null;
         }
 
         /// <summary>

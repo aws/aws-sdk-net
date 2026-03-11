@@ -144,6 +144,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("sourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MessageTemplateSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

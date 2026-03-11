@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryCatalogDataNotFoundException
+        /// message.
+        /// </summary>
+        public RepositoryCatalogDataNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryCatalogDataNotFoundException with the specified error
         /// message.
         /// </summary>

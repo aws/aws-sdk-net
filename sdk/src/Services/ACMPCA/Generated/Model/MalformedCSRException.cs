@@ -39,6 +39,13 @@ namespace Amazon.ACMPCA.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedCSRException
+        /// message.
+        /// </summary>
+        public MalformedCSRException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedCSRException with the specified error
         /// message.
         /// </summary>

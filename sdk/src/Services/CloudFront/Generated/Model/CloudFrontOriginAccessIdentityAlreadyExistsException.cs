@@ -42,6 +42,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudFrontOriginAccessIdentityAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CloudFrontOriginAccessIdentityAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudFrontOriginAccessIdentityAlreadyExistsException with the specified error
         /// message.
         /// </summary>

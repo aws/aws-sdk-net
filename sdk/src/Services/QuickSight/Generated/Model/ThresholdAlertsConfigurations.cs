@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The threshold alerts configuration for an embedded Amazon QuickSight dashboard.
+    /// The threshold alerts configuration for an embedded Quick Sight dashboard.
     /// </summary>
     public partial class ThresholdAlertsConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The threshold alerts configuration for an embedded Amazon QuickSight dashboard.
+        /// The threshold alerts configuration for an embedded Quick Sight dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

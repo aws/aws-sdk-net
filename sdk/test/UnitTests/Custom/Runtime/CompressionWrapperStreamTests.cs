@@ -21,7 +21,6 @@ using System.Linq;
 using System.Text;
 using System.IO.Compression;
 using Amazon.Runtime.Internal.Compression;
-using Amazon.ElasticTranscoder.Model;
 using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests

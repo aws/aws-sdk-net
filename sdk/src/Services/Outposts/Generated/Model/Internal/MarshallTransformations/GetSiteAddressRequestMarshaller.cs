@@ -65,6 +65,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSiteId())
                 throw new AmazonOutpostsException("Request object does not have required field SiteId set");
             request.AddPathResource("{SiteId}", StringUtils.FromString(publicRequest.SiteId));
+            if (string.IsNullOrEmpty(publicRequest.AddressType))
+                throw new AmazonOutpostsException("Request object does not have required field AddressType set");
             
             if (publicRequest.IsSetAddressType())
                 request.Parameters.Add("AddressType", StringUtils.FromString(publicRequest.AddressType));

@@ -1647,9 +1647,29 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.NbTransMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.NbTransMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.TargetPer</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.TxPowerIndexMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.TxPowerIndexMin</property>
+    <min>0</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.UlBucketSize</property>
@@ -1726,6 +1746,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.DrMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.NbTransMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.NbTransMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.TxPowerIndexMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.TxPowerIndexMin</property>
     <min>0</min>
     <max>15</max>
   </property-value-rule>
@@ -1960,6 +2000,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkCreateWirelessDevice.SidewalkManufacturingSn</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkDevice.AmazonId</property>
     <max>2048</max>
   </property-value-rule>
@@ -2004,6 +2048,11 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkListDevice.SidewalkManufacturingSn</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkPositioning.DestinationName</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkSendDataToDevice.AckModeRetryDurationSecs</property>

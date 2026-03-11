@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Specifies the configuration settings for individual NDI discovery servers. A maximum
+    /// Specifies the configuration settings for individual NDI® discovery servers. A maximum
     /// of 3 servers is allowed.
     /// </summary>
     public partial class NdiDiscoveryServerConfig

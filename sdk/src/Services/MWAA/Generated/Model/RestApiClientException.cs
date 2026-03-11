@@ -42,6 +42,13 @@ namespace Amazon.MWAA.Model
         private int? _restApiStatusCode;
 
         /// <summary>
+        /// Default constructor for RestApiClientException
+        /// message.
+        /// </summary>
+        public RestApiClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RestApiClientException with the specified error
         /// message.
         /// </summary>

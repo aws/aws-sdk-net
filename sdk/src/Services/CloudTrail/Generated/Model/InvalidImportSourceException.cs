@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidImportSourceException
+        /// message.
+        /// </summary>
+        public InvalidImportSourceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidImportSourceException with the specified error
         /// message.
         /// </summary>

@@ -51,7 +51,23 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Cancels a contact with a specified contact ID.
+        /// Cancels or stops a contact with a specified contact ID based on its position in the
+        /// <a href="https://docs.aws.amazon.com/ground-station/latest/ug/contacts.lifecycle.html">contact
+        /// lifecycle</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For contacts that:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have yet to start, the contact will be cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have started but have yet to finish, the contact will be stopped.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelContact service method.</param>
         /// <param name="cancellationToken">
@@ -113,17 +129,17 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c>DataflowEndpoint</c>
+        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c> DataflowEndpoint</c>
         /// objects.
         /// 
         ///  
         /// <para>
-        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c> DataflowEndpointConfig</c>
         /// to specify which endpoints to use during a contact.
         /// </para>
         ///  
         /// <para>
-        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c> Config</c>
         /// must match a <c>DataflowEndpoint</c> in the same group.
         /// </para>
         /// </summary>
@@ -147,12 +163,54 @@ namespace Amazon.GroundStation
 
         #endregion
                 
+        #region  CreateDataflowEndpointGroupV2
+
+
+
+        /// <summary>
+        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of Ground Station
+        /// Agent based endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c> DataflowEndpointConfig</c>
+        /// to specify which endpoints to use during a contact.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c> Config</c>
+        /// must match a <c>DataflowEndpoint</c> in the same group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroupV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataflowEndpointGroupV2 service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">REST API Reference for CreateDataflowEndpointGroupV2 Operation</seealso>
+        Task<CreateDataflowEndpointGroupV2Response> CreateDataflowEndpointGroupV2Async(CreateDataflowEndpointGroupV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEphemeris
 
 
 
         /// <summary>
-        /// Creates an Ephemeris with the specified <c>EphemerisData</c>.
+        /// Create an ephemeris with your specified <a>EphemerisData</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -266,7 +324,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Deletes an ephemeris
+        /// Delete an ephemeris.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -279,6 +337,10 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
         /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceInUseException">
+        /// The specified resource is in use by non-terminal state contacts and cannot be modified
+        /// or deleted.
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
         /// Resource was not found.
@@ -347,7 +409,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Describes an existing ephemeris.
+        /// Retrieve information about an existing ephemeris.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -377,10 +439,12 @@ namespace Amazon.GroundStation
         /// <note> 
         /// <para>
         ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Gets the latest configuration information for a registered agent.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
@@ -400,6 +464,42 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
         Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(GetAgentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAgentTaskResponseUrl
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// 
+        ///  </note> 
+        /// <para>
+        /// Gets a presigned URL for uploading agent task response logs.
+        /// </para>
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentTaskResponseUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentTaskResponseUrl service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentTaskResponseUrl">REST API Reference for GetAgentTaskResponseUrl Operation</seealso>
+        Task<GetAgentTaskResponseUrlResponse> GetAgentTaskResponseUrlAsync(GetAgentTaskResponseUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -579,7 +679,7 @@ namespace Amazon.GroundStation
         /// 
         ///  
         /// <para>
-        /// If <c>statusList</c> contains AVAILABLE, the request must include <c>groundStation</c>,
+        /// If <c>statusList</c> contains AVAILABLE, the request must include <c> groundStation</c>,
         /// <c>missionprofileArn</c>, and <c>satelliteArn</c>. 
         /// </para>
         /// </summary>
@@ -635,7 +735,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// List existing ephemerides.
+        /// List your existing ephemerides.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEphemerides service method.</param>
         /// <param name="cancellationToken">
@@ -773,10 +873,12 @@ namespace Amazon.GroundStation
         /// <note> 
         /// <para>
         ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         ///  Registers a new agent with AWS Ground Station. 
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
@@ -817,6 +919,9 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
         /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceLimitExceededException">
+        /// Account limits for this resource have been exceeded.
         /// </exception>
         /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
         /// Resource was not found.
@@ -888,10 +993,12 @@ namespace Amazon.GroundStation
         /// <note> 
         /// <para>
         ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Update the status of the agent.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
@@ -952,7 +1059,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Updates an existing ephemeris
+        /// Update an existing ephemeris.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEphemeris service method.</param>
         /// <param name="cancellationToken">

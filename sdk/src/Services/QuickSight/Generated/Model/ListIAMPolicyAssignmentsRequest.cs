@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIAMPolicyAssignments operation.
-    /// Lists the IAM policy assignments in the current Amazon QuickSight account.
+    /// Lists the IAM policy assignments in the current Amazon Quick Sight account.
     /// </summary>
     public partial class ListIAMPolicyAssignmentsRequest : AmazonQuickSightRequest
     {

@@ -68,6 +68,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RelatedControl", targetDepth))
+                {
+                    var unmarshaller = RelatedControlMappingDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RelatedControl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

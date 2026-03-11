@@ -35,6 +35,26 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </summary>
     public partial class GetMessagingSessionEndpointRequest : AmazonChimeSDKMessagingRequest
     {
+        private NetworkType _networkType;
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The type of network for the messaging session endpoint. Either IPv4 only or dual-stack
+        /// (IPv4 and IPv6).
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
 
     }
 }

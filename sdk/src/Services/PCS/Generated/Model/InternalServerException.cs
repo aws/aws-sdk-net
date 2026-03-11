@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// Amazon Web Services PCS can't process your request right now. Try again later.
+    /// PCS can't process your request right now. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -39,6 +39,13 @@ namespace Amazon.PCS.Model
     {
 
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
+
+        /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error

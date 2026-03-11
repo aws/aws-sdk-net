@@ -66,6 +66,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
+            if (string.IsNullOrEmpty(publicRequest.Qualifier))
+                throw new AmazonLambdaException("Request object does not have required field Qualifier set");
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));

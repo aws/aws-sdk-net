@@ -32,6 +32,29 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the ListMetadataGenerationRuns operation.
     /// Lists all metadata generation runs.
+    /// 
+    ///  
+    /// <para>
+    /// Metadata generation runs represent automated processes that leverage AI/ML capabilities
+    /// to create or enhance asset metadata at scale. This feature helps organizations maintain
+    /// comprehensive and consistent metadata across large numbers of assets without manual
+    /// intervention. It can automatically generate business descriptions, tags, and other
+    /// metadata elements, significantly reducing the time and effort required for metadata
+    /// management while improving consistency and completeness.
+    /// </para>
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Valid domain identifier. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have access to metadata generation runs in the domain.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListMetadataGenerationRunsRequest : AmazonDataZoneRequest
     {
@@ -39,6 +62,7 @@ namespace Amazon.DataZone.Model
         private int? _maxResults;
         private string _nextToken;
         private MetadataGenerationRunStatus _status;
+        private string _targetIdentifier;
         private MetadataGenerationRunType _type;
 
         /// <summary>
@@ -121,6 +145,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetIdentifier. 
+        /// <para>
+        /// The target ID for which you want to list metadata generation runs.
+        /// </para>
+        /// </summary>
+        public string TargetIdentifier
+        {
+            get { return this._targetIdentifier; }
+            set { this._targetIdentifier = value; }
+        }
+
+        // Check to see if TargetIdentifier property is set
+        internal bool IsSetTargetIdentifier()
+        {
+            return this._targetIdentifier != null;
         }
 
         /// <summary>

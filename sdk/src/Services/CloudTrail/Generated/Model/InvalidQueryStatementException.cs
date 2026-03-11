@@ -41,6 +41,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidQueryStatementException
+        /// message.
+        /// </summary>
+        public InvalidQueryStatementException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidQueryStatementException with the specified error
         /// message.
         /// </summary>

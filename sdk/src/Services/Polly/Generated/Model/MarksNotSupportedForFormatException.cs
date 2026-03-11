@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for MarksNotSupportedForFormatException
+        /// message.
+        /// </summary>
+        public MarksNotSupportedForFormatException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MarksNotSupportedForFormatException with the specified error
         /// message.
         /// </summary>

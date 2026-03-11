@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginCustomHeader Object
     /// </summary>  
-    public class OriginCustomHeaderUnmarshaller : IXmlUnmarshaller<OriginCustomHeader, XmlUnmarshallerContext>
+    public partial class OriginCustomHeaderUnmarshaller : IXmlUnmarshaller<OriginCustomHeader, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.HeaderValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, OriginCustomHeader unmarshalledObject, int targetDepth);
+
         private static OriginCustomHeaderUnmarshaller _instance = new OriginCustomHeaderUnmarshaller();        
 
         /// <summary>

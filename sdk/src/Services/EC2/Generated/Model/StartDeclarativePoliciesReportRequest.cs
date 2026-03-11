@@ -45,11 +45,11 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// The report is saved to your specified S3 bucket, using the following path structure
-    /// (with the <i>italicized placeholders</i> representing your specific values):
+    /// (with the capitalized placeholders representing your specific values):
     /// </para>
     ///  
     /// <para>
-    ///  <c>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</c>
+    ///  <c>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</c>
     /// 
     /// </para>
     ///  

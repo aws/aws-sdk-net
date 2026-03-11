@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for FacetValidationException
+        /// message.
+        /// </summary>
+        public FacetValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FacetValidationException with the specified error
         /// message.
         /// </summary>

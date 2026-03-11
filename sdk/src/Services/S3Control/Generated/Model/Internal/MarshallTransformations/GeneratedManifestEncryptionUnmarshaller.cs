@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GeneratedManifestEncryption Object
     /// </summary>  
-    public class GeneratedManifestEncryptionUnmarshaller : IXmlUnmarshaller<GeneratedManifestEncryption, XmlUnmarshallerContext>
+    public partial class GeneratedManifestEncryptionUnmarshaller : IXmlUnmarshaller<GeneratedManifestEncryption, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.SSES3 = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, GeneratedManifestEncryption unmarshalledObject, int targetDepth);
+
         private static GeneratedManifestEncryptionUnmarshaller _instance = new GeneratedManifestEncryptionUnmarshaller();        
 
         /// <summary>

@@ -34,8 +34,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SheetStyle
     {
+        private SheetBackgroundStyle _background;
         private TileStyle _tile;
         private TileLayoutStyle _tileLayout;
+
+        /// <summary>
+        /// Gets and sets the property Background. 
+        /// <para>
+        /// The background for sheets.
+        /// </para>
+        /// </summary>
+        public SheetBackgroundStyle Background
+        {
+            get { return this._background; }
+            set { this._background = value; }
+        }
+
+        // Check to see if Background property is set
+        internal bool IsSetBackground()
+        {
+            return this._background != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Tile. 

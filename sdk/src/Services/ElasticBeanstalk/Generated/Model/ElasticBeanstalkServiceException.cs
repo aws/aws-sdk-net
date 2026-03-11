@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for ElasticBeanstalkServiceException
+        /// message.
+        /// </summary>
+        public ElasticBeanstalkServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ElasticBeanstalkServiceException with the specified error
         /// message.
         /// </summary>

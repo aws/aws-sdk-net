@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for NoManagementAccountSLRExistsException
+        /// message.
+        /// </summary>
+        public NoManagementAccountSLRExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoManagementAccountSLRExistsException with the specified error
         /// message.
         /// </summary>

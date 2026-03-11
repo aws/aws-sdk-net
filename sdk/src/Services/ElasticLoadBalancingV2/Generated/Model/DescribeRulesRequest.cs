@@ -32,7 +32,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the DescribeRules operation.
     /// Describes the specified rules or the rules for the specified listener. You must specify
-    /// either a listener or one or more rules.
+    /// either a listener or rules.
     /// </summary>
     public partial class DescribeRulesRequest : AmazonElasticLoadBalancingV2Request
     {

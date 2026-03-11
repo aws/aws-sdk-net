@@ -42,6 +42,13 @@ namespace Amazon.DLM.Model
         private List<string> _requiredParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for InvalidRequestException
+        /// message.
+        /// </summary>
+        public InvalidRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
         /// message.
         /// </summary>

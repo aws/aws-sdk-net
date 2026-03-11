@@ -307,7 +307,7 @@ namespace Amazon.QBusiness
 
         internal virtual AssociatePermissionResponse AssociatePermission(AssociatePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePermissionResponseUnmarshaller.Instance;
 
@@ -359,7 +359,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AssociatePermission">REST API Reference for AssociatePermission Operation</seealso>
         public virtual Task<AssociatePermissionResponse> AssociatePermissionAsync(AssociatePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePermissionResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.QBusiness
 
         internal virtual BatchDeleteDocumentResponse BatchDeleteDocument(BatchDeleteDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDocumentResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchDeleteDocument">REST API Reference for BatchDeleteDocument Operation</seealso>
         public virtual Task<BatchDeleteDocumentResponse> BatchDeleteDocumentAsync(BatchDeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDocumentResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.QBusiness
 
         internal virtual BatchPutDocumentResponse BatchPutDocument(BatchPutDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutDocumentResponseUnmarshaller.Instance;
 
@@ -506,7 +506,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchPutDocument">REST API Reference for BatchPutDocument Operation</seealso>
         public virtual Task<BatchPutDocumentResponse> BatchPutDocumentAsync(BatchPutDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutDocumentResponseUnmarshaller.Instance;
 
@@ -518,7 +518,7 @@ namespace Amazon.QBusiness
 
         internal virtual CancelSubscriptionResponse CancelSubscription(CancelSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSubscriptionResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CancelSubscription">REST API Reference for CancelSubscription Operation</seealso>
         public virtual Task<CancelSubscriptionResponse> CancelSubscriptionAsync(CancelSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSubscriptionResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.QBusiness
 #if NET8_0_OR_GREATER
         internal virtual ChatResponse Chat(ChatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChatResponseUnmarshaller.Instance;
 
@@ -627,7 +627,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Chat">REST API Reference for Chat Operation</seealso>
         public virtual Task<ChatResponse> ChatAsync(ChatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChatResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.QBusiness
 
         internal virtual ChatSyncResponse ChatSync(ChatSyncRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChatSyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChatSyncResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatSync">REST API Reference for ChatSync Operation</seealso>
         public virtual Task<ChatSyncResponse> ChatSyncAsync(ChatSyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChatSyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChatSyncResponseUnmarshaller.Instance;
 
@@ -705,7 +705,7 @@ namespace Amazon.QBusiness
 
         internal virtual CheckDocumentAccessResponse CheckDocumentAccess(CheckDocumentAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckDocumentAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckDocumentAccessResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CheckDocumentAccess">REST API Reference for CheckDocumentAccess Operation</seealso>
         public virtual Task<CheckDocumentAccessResponse> CheckDocumentAccessAsync(CheckDocumentAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckDocumentAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckDocumentAccessResponseUnmarshaller.Instance;
 
@@ -760,7 +760,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateAnonymousWebExperienceUrlResponse CreateAnonymousWebExperienceUrl(CreateAnonymousWebExperienceUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnonymousWebExperienceUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnonymousWebExperienceUrlResponseUnmarshaller.Instance;
 
@@ -805,7 +805,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateAnonymousWebExperienceUrl">REST API Reference for CreateAnonymousWebExperienceUrl Operation</seealso>
         public virtual Task<CreateAnonymousWebExperienceUrlResponse> CreateAnonymousWebExperienceUrlAsync(CreateAnonymousWebExperienceUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnonymousWebExperienceUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnonymousWebExperienceUrlResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateChatResponseConfigurationResponse CreateChatResponseConfiguration(CreateChatResponseConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateChatResponseConfiguration">REST API Reference for CreateChatResponseConfiguration Operation</seealso>
         public virtual Task<CreateChatResponseConfigurationResponse> CreateChatResponseConfigurationAsync(CreateChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateDataAccessorResponse CreateDataAccessor(CreateDataAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataAccessorResponseUnmarshaller.Instance;
 
@@ -1017,7 +1017,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataAccessor">REST API Reference for CreateDataAccessor Operation</seealso>
         public virtual Task<CreateDataAccessorResponse> CreateDataAccessorAsync(CreateDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataAccessorResponseUnmarshaller.Instance;
 
@@ -1029,7 +1029,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -1095,7 +1095,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -1156,7 +1156,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreatePluginResponse CreatePlugin(CreatePluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePluginResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreatePlugin">REST API Reference for CreatePlugin Operation</seealso>
         public virtual Task<CreatePluginResponse> CreatePluginAsync(CreatePluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePluginResponseUnmarshaller.Instance;
 
@@ -1228,7 +1228,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateRetrieverResponse CreateRetriever(CreateRetrieverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRetrieverResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateRetriever">REST API Reference for CreateRetriever Operation</seealso>
         public virtual Task<CreateRetrieverResponse> CreateRetrieverAsync(CreateRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRetrieverResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
 
@@ -1308,6 +1308,12 @@ namespace Amazon.QBusiness
         /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
         /// Q Business pricing</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For an example IAM role policy for assigning subscriptions, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/setting-up.html#permissions">Set
+        /// up required permissions</a> in the Amazon Q Business User Guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -1342,7 +1348,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         public virtual Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
 
@@ -1354,7 +1360,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1403,7 +1409,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1415,7 +1421,7 @@ namespace Amazon.QBusiness
 
         internal virtual CreateWebExperienceResponse CreateWebExperience(CreateWebExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebExperienceResponseUnmarshaller.Instance;
 
@@ -1463,7 +1469,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateWebExperience">REST API Reference for CreateWebExperience Operation</seealso>
         public virtual Task<CreateWebExperienceResponse> CreateWebExperienceAsync(CreateWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebExperienceResponseUnmarshaller.Instance;
 
@@ -1475,7 +1481,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1520,7 +1526,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1532,7 +1538,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
 
@@ -1577,7 +1583,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
         public virtual Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
 
@@ -1589,7 +1595,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteChatControlsConfigurationResponse DeleteChatControlsConfiguration(DeleteChatControlsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChatControlsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChatControlsConfigurationResponseUnmarshaller.Instance;
 
@@ -1630,7 +1636,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatControlsConfiguration">REST API Reference for DeleteChatControlsConfiguration Operation</seealso>
         public virtual Task<DeleteChatControlsConfigurationResponse> DeleteChatControlsConfigurationAsync(DeleteChatControlsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChatControlsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChatControlsConfigurationResponseUnmarshaller.Instance;
 
@@ -1642,7 +1648,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteChatResponseConfigurationResponse DeleteChatResponseConfiguration(DeleteChatResponseConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -1687,7 +1693,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteChatResponseConfiguration">REST API Reference for DeleteChatResponseConfiguration Operation</seealso>
         public virtual Task<DeleteChatResponseConfigurationResponse> DeleteChatResponseConfigurationAsync(DeleteChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -1699,7 +1705,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteConversationResponse DeleteConversation(DeleteConversationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConversationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConversationResponseUnmarshaller.Instance;
 
@@ -1720,6 +1726,10 @@ namespace Amazon.QBusiness
         /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1744,7 +1754,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteConversation">REST API Reference for DeleteConversation Operation</seealso>
         public virtual Task<DeleteConversationResponse> DeleteConversationAsync(DeleteConversationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConversationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConversationResponseUnmarshaller.Instance;
 
@@ -1756,7 +1766,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteDataAccessorResponse DeleteDataAccessor(DeleteDataAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataAccessorResponseUnmarshaller.Instance;
 
@@ -1803,7 +1813,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataAccessor">REST API Reference for DeleteDataAccessor Operation</seealso>
         public virtual Task<DeleteDataAccessorResponse> DeleteDataAccessorAsync(DeleteDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataAccessorResponseUnmarshaller.Instance;
 
@@ -1815,7 +1825,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -1862,7 +1872,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -1874,7 +1884,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -1930,7 +1940,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -1942,7 +1952,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteIndexResponse DeleteIndex(DeleteIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -1987,7 +1997,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -1999,7 +2009,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeletePluginResponse DeletePlugin(DeletePluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePluginResponseUnmarshaller.Instance;
 
@@ -2044,7 +2054,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeletePlugin">REST API Reference for DeletePlugin Operation</seealso>
         public virtual Task<DeletePluginResponse> DeletePluginAsync(DeletePluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePluginResponseUnmarshaller.Instance;
 
@@ -2056,7 +2066,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteRetrieverResponse DeleteRetriever(DeleteRetrieverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetrieverResponseUnmarshaller.Instance;
 
@@ -2101,7 +2111,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteRetriever">REST API Reference for DeleteRetriever Operation</seealso>
         public virtual Task<DeleteRetrieverResponse> DeleteRetrieverAsync(DeleteRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetrieverResponseUnmarshaller.Instance;
 
@@ -2113,7 +2123,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2158,7 +2168,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2170,7 +2180,7 @@ namespace Amazon.QBusiness
 
         internal virtual DeleteWebExperienceResponse DeleteWebExperience(DeleteWebExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebExperienceResponseUnmarshaller.Instance;
 
@@ -2215,7 +2225,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteWebExperience">REST API Reference for DeleteWebExperience Operation</seealso>
         public virtual Task<DeleteWebExperienceResponse> DeleteWebExperienceAsync(DeleteWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebExperienceResponseUnmarshaller.Instance;
 
@@ -2227,7 +2237,7 @@ namespace Amazon.QBusiness
 
         internal virtual DisassociatePermissionResponse DisassociatePermission(DisassociatePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePermissionResponseUnmarshaller.Instance;
 
@@ -2274,7 +2284,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DisassociatePermission">REST API Reference for DisassociatePermission Operation</seealso>
         public virtual Task<DisassociatePermissionResponse> DisassociatePermissionAsync(DisassociatePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePermissionResponseUnmarshaller.Instance;
 
@@ -2286,7 +2296,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -2327,7 +2337,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -2339,7 +2349,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetChatControlsConfigurationResponse GetChatControlsConfiguration(GetChatControlsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChatControlsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChatControlsConfigurationResponseUnmarshaller.Instance;
 
@@ -2381,7 +2391,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatControlsConfiguration">REST API Reference for GetChatControlsConfiguration Operation</seealso>
         public virtual Task<GetChatControlsConfigurationResponse> GetChatControlsConfigurationAsync(GetChatControlsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChatControlsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChatControlsConfigurationResponseUnmarshaller.Instance;
 
@@ -2393,7 +2403,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetChatResponseConfigurationResponse GetChatResponseConfiguration(GetChatResponseConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -2436,7 +2446,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetChatResponseConfiguration">REST API Reference for GetChatResponseConfiguration Operation</seealso>
         public virtual Task<GetChatResponseConfigurationResponse> GetChatResponseConfigurationAsync(GetChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -2448,7 +2458,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetDataAccessorResponse GetDataAccessor(GetDataAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAccessorResponseUnmarshaller.Instance;
 
@@ -2493,7 +2503,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataAccessor">REST API Reference for GetDataAccessor Operation</seealso>
         public virtual Task<GetDataAccessorResponse> GetDataAccessorAsync(GetDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAccessorResponseUnmarshaller.Instance;
 
@@ -2505,7 +2515,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
@@ -2546,7 +2556,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
@@ -2554,11 +2564,67 @@ namespace Amazon.QBusiness
         }
         #endregion
         
+        #region  GetDocumentContent
+
+        internal virtual GetDocumentContentResponse GetDocumentContent(GetDocumentContentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentContentResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the content of a document that was ingested into Amazon Q Business. This
+        /// API validates user authorization against document ACLs before returning a pre-signed
+        /// URL for secure document access. You can download or view source documents referenced
+        /// in chat responses through the URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDocumentContent service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDocumentContent">REST API Reference for GetDocumentContent Operation</seealso>
+        public virtual Task<GetDocumentContentResponse> GetDocumentContentAsync(GetDocumentContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentContentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetGroup
 
         internal virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -2603,7 +2669,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -2615,7 +2681,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetIndexResponse GetIndex(GetIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
 
@@ -2656,7 +2722,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetIndex">REST API Reference for GetIndex Operation</seealso>
         public virtual Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
 
@@ -2668,7 +2734,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetMediaResponse GetMedia(GetMediaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
 
@@ -2725,7 +2791,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual Task<GetMediaResponse> GetMediaAsync(GetMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
 
@@ -2737,7 +2803,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetPluginResponse GetPlugin(GetPluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPluginResponseUnmarshaller.Instance;
 
@@ -2778,7 +2844,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPlugin">REST API Reference for GetPlugin Operation</seealso>
         public virtual Task<GetPluginResponse> GetPluginAsync(GetPluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPluginResponseUnmarshaller.Instance;
 
@@ -2790,7 +2856,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2833,7 +2899,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2845,7 +2911,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetRetrieverResponse GetRetriever(GetRetrieverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetrieverResponseUnmarshaller.Instance;
 
@@ -2886,7 +2952,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetRetriever">REST API Reference for GetRetriever Operation</seealso>
         public virtual Task<GetRetrieverResponse> GetRetrieverAsync(GetRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetrieverResponseUnmarshaller.Instance;
 
@@ -2898,7 +2964,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetUserResponse GetUser(GetUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
 
@@ -2944,7 +3010,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetUser">REST API Reference for GetUser Operation</seealso>
         public virtual Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
 
@@ -2956,7 +3022,7 @@ namespace Amazon.QBusiness
 
         internal virtual GetWebExperienceResponse GetWebExperience(GetWebExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebExperienceResponseUnmarshaller.Instance;
 
@@ -2997,7 +3063,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetWebExperience">REST API Reference for GetWebExperience Operation</seealso>
         public virtual Task<GetWebExperienceResponse> GetWebExperienceAsync(GetWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebExperienceResponseUnmarshaller.Instance;
 
@@ -3009,7 +3075,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -3054,7 +3120,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -3066,7 +3132,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
 
@@ -3112,7 +3178,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
         public virtual Task<ListAttachmentsResponse> ListAttachmentsAsync(ListAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
 
@@ -3124,7 +3190,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListChatResponseConfigurationsResponse ListChatResponseConfigurations(ListChatResponseConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChatResponseConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChatResponseConfigurationsResponseUnmarshaller.Instance;
 
@@ -3167,7 +3233,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListChatResponseConfigurations">REST API Reference for ListChatResponseConfigurations Operation</seealso>
         public virtual Task<ListChatResponseConfigurationsResponse> ListChatResponseConfigurationsAsync(ListChatResponseConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChatResponseConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChatResponseConfigurationsResponseUnmarshaller.Instance;
 
@@ -3179,7 +3245,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListConversationsResponse ListConversations(ListConversationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConversationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConversationsResponseUnmarshaller.Instance;
 
@@ -3224,7 +3290,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListConversations">REST API Reference for ListConversations Operation</seealso>
         public virtual Task<ListConversationsResponse> ListConversationsAsync(ListConversationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConversationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConversationsResponseUnmarshaller.Instance;
 
@@ -3236,7 +3302,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListDataAccessorsResponse ListDataAccessors(ListDataAccessorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataAccessorsResponseUnmarshaller.Instance;
 
@@ -3279,7 +3345,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataAccessors">REST API Reference for ListDataAccessors Operation</seealso>
         public virtual Task<ListDataAccessorsResponse> ListDataAccessorsAsync(ListDataAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataAccessorsResponseUnmarshaller.Instance;
 
@@ -3291,7 +3357,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -3332,7 +3398,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -3344,7 +3410,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListDataSourceSyncJobsResponse ListDataSourceSyncJobs(ListDataSourceSyncJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceSyncJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceSyncJobsResponseUnmarshaller.Instance;
 
@@ -3389,7 +3455,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataSourceSyncJobs">REST API Reference for ListDataSourceSyncJobs Operation</seealso>
         public virtual Task<ListDataSourceSyncJobsResponse> ListDataSourceSyncJobsAsync(ListDataSourceSyncJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceSyncJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceSyncJobsResponseUnmarshaller.Instance;
 
@@ -3401,7 +3467,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListDocumentsResponse ListDocuments(ListDocumentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDocumentsResponseUnmarshaller.Instance;
 
@@ -3442,7 +3508,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public virtual Task<ListDocumentsResponse> ListDocumentsAsync(ListDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDocumentsResponseUnmarshaller.Instance;
 
@@ -3454,7 +3520,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -3499,7 +3565,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -3511,7 +3577,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListIndicesResponse ListIndices(ListIndicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndicesResponseUnmarshaller.Instance;
 
@@ -3552,7 +3618,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListIndices">REST API Reference for ListIndices Operation</seealso>
         public virtual Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndicesResponseUnmarshaller.Instance;
 
@@ -3564,7 +3630,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListMessagesResponse ListMessages(ListMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
 
@@ -3609,7 +3675,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListMessages">REST API Reference for ListMessages Operation</seealso>
         public virtual Task<ListMessagesResponse> ListMessagesAsync(ListMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
 
@@ -3621,7 +3687,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListPluginActionsResponse ListPluginActions(ListPluginActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginActionsResponseUnmarshaller.Instance;
 
@@ -3663,7 +3729,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginActions">REST API Reference for ListPluginActions Operation</seealso>
         public virtual Task<ListPluginActionsResponse> ListPluginActionsAsync(ListPluginActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginActionsResponseUnmarshaller.Instance;
 
@@ -3675,7 +3741,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListPluginsResponse ListPlugins(ListPluginsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginsResponseUnmarshaller.Instance;
 
@@ -3716,7 +3782,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPlugins">REST API Reference for ListPlugins Operation</seealso>
         public virtual Task<ListPluginsResponse> ListPluginsAsync(ListPluginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginsResponseUnmarshaller.Instance;
 
@@ -3728,7 +3794,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListPluginTypeActionsResponse ListPluginTypeActions(ListPluginTypeActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginTypeActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginTypeActionsResponseUnmarshaller.Instance;
 
@@ -3765,7 +3831,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeActions">REST API Reference for ListPluginTypeActions Operation</seealso>
         public virtual Task<ListPluginTypeActionsResponse> ListPluginTypeActionsAsync(ListPluginTypeActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginTypeActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginTypeActionsResponseUnmarshaller.Instance;
 
@@ -3777,7 +3843,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListPluginTypeMetadataResponse ListPluginTypeMetadata(ListPluginTypeMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginTypeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginTypeMetadataResponseUnmarshaller.Instance;
 
@@ -3814,7 +3880,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeMetadata">REST API Reference for ListPluginTypeMetadata Operation</seealso>
         public virtual Task<ListPluginTypeMetadataResponse> ListPluginTypeMetadataAsync(ListPluginTypeMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginTypeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginTypeMetadataResponseUnmarshaller.Instance;
 
@@ -3826,7 +3892,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListRetrieversResponse ListRetrievers(ListRetrieversRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetrieversRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetrieversResponseUnmarshaller.Instance;
 
@@ -3867,7 +3933,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListRetrievers">REST API Reference for ListRetrievers Operation</seealso>
         public virtual Task<ListRetrieversResponse> ListRetrieversAsync(ListRetrieversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetrieversRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetrieversResponseUnmarshaller.Instance;
 
@@ -3879,7 +3945,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
@@ -3924,7 +3990,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
@@ -3936,7 +4002,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3978,7 +4044,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3990,7 +4056,7 @@ namespace Amazon.QBusiness
 
         internal virtual ListWebExperiencesResponse ListWebExperiences(ListWebExperiencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebExperiencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebExperiencesResponseUnmarshaller.Instance;
 
@@ -4031,7 +4097,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListWebExperiences">REST API Reference for ListWebExperiences Operation</seealso>
         public virtual Task<ListWebExperiencesResponse> ListWebExperiencesAsync(ListWebExperiencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebExperiencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebExperiencesResponseUnmarshaller.Instance;
 
@@ -4043,7 +4109,7 @@ namespace Amazon.QBusiness
 
         internal virtual PutFeedbackResponse PutFeedback(PutFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -4085,7 +4151,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -4097,7 +4163,7 @@ namespace Amazon.QBusiness
 
         internal virtual PutGroupResponse PutGroup(PutGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGroupResponseUnmarshaller.Instance;
 
@@ -4162,7 +4228,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PutGroup">REST API Reference for PutGroup Operation</seealso>
         public virtual Task<PutGroupResponse> PutGroupAsync(PutGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGroupResponseUnmarshaller.Instance;
 
@@ -4174,7 +4240,7 @@ namespace Amazon.QBusiness
 
         internal virtual SearchRelevantContentResponse SearchRelevantContent(SearchRelevantContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRelevantContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRelevantContentResponseUnmarshaller.Instance;
 
@@ -4224,7 +4290,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SearchRelevantContent">REST API Reference for SearchRelevantContent Operation</seealso>
         public virtual Task<SearchRelevantContentResponse> SearchRelevantContentAsync(SearchRelevantContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRelevantContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRelevantContentResponseUnmarshaller.Instance;
 
@@ -4236,7 +4302,7 @@ namespace Amazon.QBusiness
 
         internal virtual StartDataSourceSyncJobResponse StartDataSourceSyncJob(StartDataSourceSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataSourceSyncJobResponseUnmarshaller.Instance;
 
@@ -4285,7 +4351,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StartDataSourceSyncJob">REST API Reference for StartDataSourceSyncJob Operation</seealso>
         public virtual Task<StartDataSourceSyncJobResponse> StartDataSourceSyncJobAsync(StartDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataSourceSyncJobResponseUnmarshaller.Instance;
 
@@ -4297,7 +4363,7 @@ namespace Amazon.QBusiness
 
         internal virtual StopDataSourceSyncJobResponse StopDataSourceSyncJob(StopDataSourceSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDataSourceSyncJobResponseUnmarshaller.Instance;
 
@@ -4342,7 +4408,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StopDataSourceSyncJob">REST API Reference for StopDataSourceSyncJob Operation</seealso>
         public virtual Task<StopDataSourceSyncJobResponse> StopDataSourceSyncJobAsync(StopDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDataSourceSyncJobResponseUnmarshaller.Instance;
 
@@ -4354,7 +4420,7 @@ namespace Amazon.QBusiness
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4400,7 +4466,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4412,7 +4478,7 @@ namespace Amazon.QBusiness
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4453,7 +4519,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4465,7 +4531,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -4525,7 +4591,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -4537,7 +4603,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateChatControlsConfigurationResponse UpdateChatControlsConfiguration(UpdateChatControlsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChatControlsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChatControlsConfigurationResponseUnmarshaller.Instance;
 
@@ -4585,7 +4651,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatControlsConfiguration">REST API Reference for UpdateChatControlsConfiguration Operation</seealso>
         public virtual Task<UpdateChatControlsConfigurationResponse> UpdateChatControlsConfigurationAsync(UpdateChatControlsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChatControlsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChatControlsConfigurationResponseUnmarshaller.Instance;
 
@@ -4597,7 +4663,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateChatResponseConfigurationResponse UpdateChatResponseConfiguration(UpdateChatResponseConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -4644,7 +4710,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateChatResponseConfiguration">REST API Reference for UpdateChatResponseConfiguration Operation</seealso>
         public virtual Task<UpdateChatResponseConfigurationResponse> UpdateChatResponseConfigurationAsync(UpdateChatResponseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChatResponseConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChatResponseConfigurationResponseUnmarshaller.Instance;
 
@@ -4656,7 +4722,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateDataAccessorResponse UpdateDataAccessor(UpdateDataAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataAccessorResponseUnmarshaller.Instance;
 
@@ -4704,7 +4770,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataAccessor">REST API Reference for UpdateDataAccessor Operation</seealso>
         public virtual Task<UpdateDataAccessorResponse> UpdateDataAccessorAsync(UpdateDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataAccessorResponseUnmarshaller.Instance;
 
@@ -4716,7 +4782,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -4761,7 +4827,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -4773,7 +4839,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateIndexResponse UpdateIndex(UpdateIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
 
@@ -4821,7 +4887,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         public virtual Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
 
@@ -4833,7 +4899,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdatePluginResponse UpdatePlugin(UpdatePluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePluginResponseUnmarshaller.Instance;
 
@@ -4881,7 +4947,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdatePlugin">REST API Reference for UpdatePlugin Operation</seealso>
         public virtual Task<UpdatePluginResponse> UpdatePluginAsync(UpdatePluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePluginResponseUnmarshaller.Instance;
 
@@ -4893,7 +4959,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateRetrieverResponse UpdateRetriever(UpdateRetrieverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRetrieverResponseUnmarshaller.Instance;
 
@@ -4941,7 +5007,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateRetriever">REST API Reference for UpdateRetriever Operation</seealso>
         public virtual Task<UpdateRetrieverResponse> UpdateRetrieverAsync(UpdateRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRetrieverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRetrieverResponseUnmarshaller.Instance;
 
@@ -4953,7 +5019,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateSubscriptionResponse UpdateSubscription(UpdateSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
 
@@ -5001,7 +5067,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
         public virtual Task<UpdateSubscriptionResponse> UpdateSubscriptionAsync(UpdateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
 
@@ -5013,7 +5079,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -5061,7 +5127,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -5073,7 +5139,7 @@ namespace Amazon.QBusiness
 
         internal virtual UpdateWebExperienceResponse UpdateWebExperience(UpdateWebExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebExperienceResponseUnmarshaller.Instance;
 
@@ -5118,7 +5184,7 @@ namespace Amazon.QBusiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateWebExperience">REST API Reference for UpdateWebExperience Operation</seealso>
         public virtual Task<UpdateWebExperienceResponse> UpdateWebExperienceAsync(UpdateWebExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebExperienceResponseUnmarshaller.Instance;
 

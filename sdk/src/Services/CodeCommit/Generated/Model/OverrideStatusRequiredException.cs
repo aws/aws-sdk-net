@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for OverrideStatusRequiredException
+        /// message.
+        /// </summary>
+        public OverrideStatusRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OverrideStatusRequiredException with the specified error
         /// message.
         /// </summary>

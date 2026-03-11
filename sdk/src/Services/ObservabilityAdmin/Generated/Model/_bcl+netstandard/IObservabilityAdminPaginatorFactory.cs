@@ -28,6 +28,16 @@ namespace Amazon.ObservabilityAdmin.Model
     {
 
         /// <summary>
+        /// Paginator for ListCentralizationRulesForOrganization operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCentralizationRulesForOrganizationPaginator ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request);
+
+        /// <summary>
         /// Paginator for ListResourceTelemetry operation
         ///</summary>
         [AWSPaginator(
@@ -46,5 +56,45 @@ namespace Amazon.ObservabilityAdmin.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListResourceTelemetryForOrganizationPaginator ListResourceTelemetryForOrganization(ListResourceTelemetryForOrganizationRequest request);
+
+        /// <summary>
+        /// Paginator for ListS3TableIntegrations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListS3TableIntegrationsPaginator ListS3TableIntegrations(ListS3TableIntegrationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTelemetryPipelines operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTelemetryPipelinesPaginator ListTelemetryPipelines(ListTelemetryPipelinesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTelemetryRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTelemetryRulesPaginator ListTelemetryRules(ListTelemetryRulesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTelemetryRulesForOrganization operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTelemetryRulesForOrganizationPaginator ListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request);
     }
 }

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionKeyNotFoundException
+        /// message.
+        /// </summary>
+        public EncryptionKeyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionKeyNotFoundException with the specified error
         /// message.
         /// </summary>

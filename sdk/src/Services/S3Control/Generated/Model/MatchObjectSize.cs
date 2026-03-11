@@ -42,7 +42,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property BytesGreaterThan. 
         /// <para>
         ///  Specifies the minimum object size in Bytes. The value must be a positive number,
-        /// greater than 0 and less than 5 TB. 
+        /// greater than 0 and less than 50 TB. 
         /// </para>
         /// </summary>
         public long? BytesGreaterThan
@@ -61,7 +61,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property BytesLessThan. 
         /// <para>
         ///  Specifies the maximum object size in Bytes. The value must be a positive number,
-        /// greater than the minimum object size and less than 5 TB. 
+        /// greater than the minimum object size and less than 50 TB. 
         /// </para>
         /// </summary>
         public long? BytesLessThan

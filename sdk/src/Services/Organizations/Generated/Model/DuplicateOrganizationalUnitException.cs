@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateOrganizationalUnitException
+        /// message.
+        /// </summary>
+        public DuplicateOrganizationalUnitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateOrganizationalUnitException with the specified error
         /// message.
         /// </summary>

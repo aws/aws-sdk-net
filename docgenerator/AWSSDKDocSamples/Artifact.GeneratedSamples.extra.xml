@@ -121,6 +121,26 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Artifact.IAmazonArtifact.ListReportVersions(Amazon.Artifact.Model.ListReportVersionsRequest)" />
+            <member name="M:Amazon.Artifact.AmazonArtifactClient.ListReportVersions(Amazon.Artifact.Model.ListReportVersionsRequest)" />
+            <member name="T:Amazon.Artifact.Model.ListReportVersionsRequest" />
+            <member name="T:Amazon.Artifact.Model.ListReportVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The ListReportVersions operation returns a collection of report versions
+                        for a given resource.
+                </para>
+                <code
+                    title="Invoke ListReportVersions operation"
+                    source=".\AWSSDKDocSamples\Artifact\Artifact.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Artifact.IAmazonArtifact.PutAccountSettings(Amazon.Artifact.Model.PutAccountSettingsRequest)" />
             <member name="M:Amazon.Artifact.AmazonArtifactClient.PutAccountSettings(Amazon.Artifact.Model.PutAccountSettingsRequest)" />
             <member name="T:Amazon.Artifact.Model.PutAccountSettingsRequest" />

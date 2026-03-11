@@ -36,7 +36,20 @@ namespace Amazon.ConfigService.Model
     /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
     /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
     /// 
+    ///  <important> 
+    /// <para>
+    /// When you use <c>PutConformancePack</c> to deploy conformance packs in your account,
+    /// the operation can create Config rules and remediation actions without requiring <c>config:PutConfigRule</c>
+    /// or <c>config:PutRemediationConfigurations</c> permissions in your account IAM policies.
+    /// </para>
     ///  
+    /// <para>
+    /// This API uses the <c>AWSServiceRoleForConfigConforms</c> service-linked role in your
+    /// account to create conformance pack resources. This service-linked role includes the
+    /// permissions to create Config rules and remediation configurations, even if your account
+    /// IAM policies explicitly deny these actions.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// This API creates a service-linked role <c>AWSServiceRoleForConfigConforms</c> in your
     /// account. The service-linked role is created only when the role does not exist in your
@@ -47,6 +60,24 @@ namespace Amazon.ConfigService.Model
     /// You must specify only one of the follow parameters: <c>TemplateS3Uri</c>, <c>TemplateBody</c>
     /// or <c>TemplateSSMDocumentDetails</c>.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    ///  <b>Tags are added at creation and cannot be updated with this operation</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>PutConformancePack</c> is an idempotent API. Subsequent requests won't create
+    /// a duplicate resource if one was already created. If a following request has different
+    /// <c>tags</c> values, Config will ignore these differences and treat it as an idempotent
+    /// request of the previous. In this case, <c>tags</c> will not be updated, even if they
+    /// are different.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// to update tags after creation.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class PutConformancePackRequest : AmazonConfigServiceRequest
@@ -55,6 +86,7 @@ namespace Amazon.ConfigService.Model
         private string _conformancePackName;
         private string _deliveryS3Bucket;
         private string _deliveryS3KeyPrefix;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _templateBody;
         private string _templateS3Uri;
         private TemplateSSMDocumentDetails _templateSSMDocumentDetails;
@@ -151,9 +183,34 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the conformance pack. Each tag consists of a key and an optional value,
+        /// both of which you define.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// A string containing the full conformance pack template body. The structure containing
+        /// A string that contains the full conformance pack template body. The structure containing
         /// the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.
         /// </para>
         ///  <note> 

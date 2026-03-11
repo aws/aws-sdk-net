@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The required service-linked role was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ServiceLinkedRoleNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ServiceLinkedRoleNotFoundException
+        /// message.
+        /// </summary>
+        public ServiceLinkedRoleNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceLinkedRoleNotFoundException with the specified error

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryDoesNotExistException
+        /// message.
+        /// </summary>
+        public RepositoryDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryDoesNotExistException with the specified error
         /// message.
         /// </summary>

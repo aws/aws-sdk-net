@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcOriginConfig Object
     /// </summary>  
-    public class VpcOriginConfigUnmarshaller : IXmlUnmarshaller<VpcOriginConfig, XmlUnmarshallerContext>
+    public partial class VpcOriginConfigUnmarshaller : IXmlUnmarshaller<VpcOriginConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,12 +68,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OwnerAccountId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcOriginId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.VpcOriginId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, VpcOriginConfig unmarshalledObject, int targetDepth);
+
         private static VpcOriginConfigUnmarshaller _instance = new VpcOriginConfigUnmarshaller();        
 
         /// <summary>

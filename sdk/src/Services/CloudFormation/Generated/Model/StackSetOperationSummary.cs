@@ -48,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The type of operation: <c>CREATE</c>, <c>UPDATE</c>, or <c>DELETE</c>. Create and
         /// delete operations affect only the specified stack instances that are associated with
-        /// the specified stack set. Update operations affect both the stack set itself and <i>all</i>
-        /// associated stack set instances.
+        /// the specified StackSet. Update operations affect both the StackSet itself and <i>all</i>
+        /// associated StackSet instances.
         /// </para>
         /// </summary>
         public StackSetOperationAction Action
@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property CreationTimestamp. 
         /// <para>
         /// The time at which the operation was initiated. Note that the creation times for the
-        /// stack set operation might differ from the creation time of the individual stacks themselves.
+        /// StackSet operation might differ from the creation time of the individual stacks themselves.
         /// This is because CloudFormation needs to perform preparatory work for the operation,
         /// such as dispatching the work to the requested Regions, before actually creating the
         /// first stacks.
@@ -89,8 +89,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The time at which the stack set operation ended, across all accounts and Regions specified.
-        /// Note that this doesn't necessarily mean that the stack set operation was successful,
+        /// The time at which the StackSet operation ended, across all accounts and Regions specified.
+        /// Note that this doesn't necessarily mean that the StackSet operation was successful,
         /// or even attempted, in each account or Region.
         /// </para>
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique ID of the stack set operation.
+        /// The unique ID of the StackSet operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -128,13 +128,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// The user-specified preferences for how CloudFormation performs a stack set operation.
+        /// The user-specified preferences for how CloudFormation performs a StackSet operation.
         /// </para>
         ///  
         /// <para>
         /// For more information about maximum concurrent accounts and failure tolerance, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-        /// set operation options</a>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+        /// operation options</a>.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -167,8 +167,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <c>QUEUED</c>: [Service-managed permissions] For automatic deployments that require
         /// a sequence of operations, the operation is queued to be performed. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">stack
-        /// set operation status codes</a> in the <i>CloudFormation User Guide</i>.
+        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">StackSet
+        /// status codes</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -204,7 +204,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// Detailed information about the stack set operation.
+        /// Detailed information about the StackSet operation.
         /// </para>
         /// </summary>
         public StackSetOperationStatusDetails StatusDetails

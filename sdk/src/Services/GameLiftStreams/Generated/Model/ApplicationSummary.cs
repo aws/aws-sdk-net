@@ -170,6 +170,10 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Proton 9.0-2 (<c>Type=PROTON, Version=20250516</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Proton 8.0-5 (<c>Type=PROTON, Version=20241007</c>)
         /// </para>
         ///  </li> <li> 
@@ -211,8 +215,8 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ERROR</c>: An error occurred when setting up the application. See <c>StatusReason</c>
-        /// for more information.
+        ///  <c>ERROR</c>: An error occurred when setting up the application. For more information
+        /// about the error, call <c>GetApplication</c> and refer to <c>StatusReason</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

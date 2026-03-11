@@ -39,6 +39,13 @@ namespace Amazon.IoTTwinMaker.Model
     {
 
         /// <summary>
+        /// Default constructor for ConnectorFailureException
+        /// message.
+        /// </summary>
+        public ConnectorFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConnectorFailureException with the specified error
         /// message.
         /// </summary>

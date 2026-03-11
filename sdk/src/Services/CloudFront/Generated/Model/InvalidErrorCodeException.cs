@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidErrorCodeException
+        /// message.
+        /// </summary>
+        public InvalidErrorCodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidErrorCodeException with the specified error
         /// message.
         /// </summary>

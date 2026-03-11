@@ -40,6 +40,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for SnapStartTimeoutException
+        /// message.
+        /// </summary>
+        public SnapStartTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapStartTimeoutException with the specified error
         /// message.
         /// </summary>

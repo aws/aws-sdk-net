@@ -44,6 +44,13 @@ namespace Amazon.CloudWatchEvents.Model
     {
 
         /// <summary>
+        /// Default constructor for ManagedRuleException
+        /// message.
+        /// </summary>
+        public ManagedRuleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ManagedRuleException with the specified error
         /// message.
         /// </summary>

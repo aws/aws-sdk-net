@@ -52,6 +52,17 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Number.Value);
             }
 
+            if(requestObject.IsSetProperties())
+            {
+                context.Writer.WritePropertyName("properties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkerComputeConfigurationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Properties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

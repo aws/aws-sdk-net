@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified subnet is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidSubnetException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidSubnetException
+        /// message.
+        /// </summary>
+        public InvalidSubnetException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidSubnetException with the specified error

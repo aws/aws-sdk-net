@@ -85,6 +85,14 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Paginator for ListSessionLoggers operation
+        ///</summary>
+        public IListSessionLoggersPaginator ListSessionLoggers(ListSessionLoggersRequest request) 
+        {
+            return new ListSessionLoggersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSessions operation
         ///</summary>
         public IListSessionsPaginator ListSessions(ListSessionsRequest request) 

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginAccessControlSummary Object
     /// </summary>  
-    public class OriginAccessControlSummaryUnmarshaller : IXmlUnmarshaller<OriginAccessControlSummary, XmlUnmarshallerContext>
+    public partial class OriginAccessControlSummaryUnmarshaller : IXmlUnmarshaller<OriginAccessControlSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,6 +92,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.SigningProtocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +102,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, OriginAccessControlSummary unmarshalledObject, int targetDepth);
+
         private static OriginAccessControlSummaryUnmarshaller _instance = new OriginAccessControlSummaryUnmarshaller();        
 
         /// <summary>

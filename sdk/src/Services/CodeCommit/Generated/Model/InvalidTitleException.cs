@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTitleException
+        /// message.
+        /// </summary>
+        public InvalidTitleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTitleException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentTargetListSizeExceededException
+        /// message.
+        /// </summary>
+        public DeploymentTargetListSizeExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentTargetListSizeExceededException with the specified error
         /// message.
         /// </summary>

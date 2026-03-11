@@ -38,6 +38,8 @@ namespace Amazon.MedicalImaging.Model
         private DICOMTags _dicomTags;
         private string _imageSetId;
         private bool? _isPrimary;
+        private DateTime? _lastAccessedAt;
+        private StorageTier _storageTier;
         private DateTime? _updatedAt;
         private int? _version;
 
@@ -113,6 +115,42 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetIsPrimary()
         {
             return this._isPrimary.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastAccessedAt. 
+        /// <para>
+        /// When the image set was last accessed.
+        /// </para>
+        /// </summary>
+        public DateTime? LastAccessedAt
+        {
+            get { return this._lastAccessedAt; }
+            set { this._lastAccessedAt = value; }
+        }
+
+        // Check to see if LastAccessedAt property is set
+        internal bool IsSetLastAccessedAt()
+        {
+            return this._lastAccessedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageTier. 
+        /// <para>
+        /// The image set's storage tier.
+        /// </para>
+        /// </summary>
+        public StorageTier StorageTier
+        {
+            get { return this._storageTier; }
+            set { this._storageTier = value; }
+        }
+
+        // Check to see if StorageTier property is set
+        internal bool IsSetStorageTier()
+        {
+            return this._storageTier != null;
         }
 
         /// <summary>

@@ -68,9 +68,13 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             
             if (publicRequest.IsSetDeletionMode())
                 request.Parameters.Add("DeletionMode", StringUtils.FromString(publicRequest.DeletionMode));
+            if (string.IsNullOrEmpty(publicRequest.EventTime))
+                throw new AmazonSageMakerFeatureStoreRuntimeException("Request object does not have required field EventTime set");
             
             if (publicRequest.IsSetEventTime())
                 request.Parameters.Add("EventTime", StringUtils.FromString(publicRequest.EventTime));
+            if (string.IsNullOrEmpty(publicRequest.RecordIdentifierValueAsString))
+                throw new AmazonSageMakerFeatureStoreRuntimeException("Request object does not have required field RecordIdentifierValueAsString set");
             
             if (publicRequest.IsSetRecordIdentifierValueAsString())
                 request.Parameters.Add("RecordIdentifierValueAsString", StringUtils.FromString(publicRequest.RecordIdentifierValueAsString));

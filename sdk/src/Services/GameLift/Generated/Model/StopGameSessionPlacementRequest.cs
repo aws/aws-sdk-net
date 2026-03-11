@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StopGameSessionPlacement operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Cancels a game session placement that's in <c>PENDING</c> status. To stop a placement,
     /// provide the placement ID value. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Results

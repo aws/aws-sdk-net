@@ -39,6 +39,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for NameAvailabilityException
+        /// message.
+        /// </summary>
+        public NameAvailabilityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NameAvailabilityException with the specified error
         /// message.
         /// </summary>

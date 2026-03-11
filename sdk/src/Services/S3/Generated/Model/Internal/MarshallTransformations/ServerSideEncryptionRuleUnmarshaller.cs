@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerSideEncryptionRule Object
     /// </summary>  
-    public class ServerSideEncryptionRuleUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>
+    public partial class ServerSideEncryptionRuleUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,6 +56,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("BlockedEncryptionTypes", targetDepth))
+                    {
+                        var unmarshaller = BlockedEncryptionTypesUnmarshaller.Instance;
+                        unmarshalledObject.BlockedEncryptionTypes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BucketKeyEnabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -68,6 +74,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.ServerSideEncryptionByDefault = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +84,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ServerSideEncryptionRule unmarshalledObject, int targetDepth);
+
         private static ServerSideEncryptionRuleUnmarshaller _instance = new ServerSideEncryptionRuleUnmarshaller();        
 
         /// <summary>

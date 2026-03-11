@@ -355,7 +355,8 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Gets and sets the property ProvisioningStatus. 
         /// <para>
         /// The provisioning status of the device in the provisioning workflow for onboarding
-        /// to IoT managed integrations.
+        /// to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device
+        /// Provisioning</a>.
         /// </para>
         /// </summary>
         public ProvisioningStatus ProvisioningStatus

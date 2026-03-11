@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DirectoryAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryAlreadyExistsException with the specified error
         /// message.
         /// </summary>

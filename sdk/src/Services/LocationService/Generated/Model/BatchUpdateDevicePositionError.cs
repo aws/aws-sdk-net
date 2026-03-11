@@ -83,7 +83,7 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime? SampleTime
         {
             get { return this._sampleTime; }

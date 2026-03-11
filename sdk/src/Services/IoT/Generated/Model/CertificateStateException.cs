@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateStateException
+        /// message.
+        /// </summary>
+        public CertificateStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateStateException with the specified error
         /// message.
         /// </summary>

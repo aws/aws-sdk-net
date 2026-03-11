@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for IntegrationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public IntegrationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IntegrationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

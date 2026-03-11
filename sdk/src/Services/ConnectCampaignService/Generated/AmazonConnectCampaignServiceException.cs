@@ -36,6 +36,14 @@ namespace Amazon.ConnectCampaignService
         /// <summary>
         /// Construct instance of AmazonConnectCampaignServiceException
         /// </summary>
+        public AmazonConnectCampaignServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConnectCampaignServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConnectCampaignServiceException(string message)
             : base(message)

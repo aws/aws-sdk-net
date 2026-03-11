@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInventoryRequestException
+        /// message.
+        /// </summary>
+        public InvalidInventoryRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInventoryRequestException with the specified error
         /// message.
         /// </summary>

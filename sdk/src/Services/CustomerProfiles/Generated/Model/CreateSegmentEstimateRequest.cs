@@ -37,6 +37,7 @@ namespace Amazon.CustomerProfiles.Model
     {
         private string _domainName;
         private SegmentGroupStructure _segmentQuery;
+        private string _segmentSqlQuery;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -63,7 +64,6 @@ namespace Amazon.CustomerProfiles.Model
         /// The segment query for calculating a segment estimate.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SegmentGroupStructure SegmentQuery
         {
             get { return this._segmentQuery; }
@@ -74,6 +74,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetSegmentQuery()
         {
             return this._segmentQuery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentSqlQuery. 
+        /// <para>
+        /// The segment SQL query.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=50000)]
+        public string SegmentSqlQuery
+        {
+            get { return this._segmentSqlQuery; }
+            set { this._segmentSqlQuery = value; }
+        }
+
+        // Check to see if SegmentSqlQuery property is set
+        internal bool IsSetSegmentSqlQuery()
+        {
+            return this._segmentSqlQuery != null;
         }
 
     }

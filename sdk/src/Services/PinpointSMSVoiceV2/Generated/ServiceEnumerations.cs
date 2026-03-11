@@ -1577,6 +1577,64 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type PhoneNumberType.
+    /// </summary>
+    public class PhoneNumberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType INVALID = new PhoneNumberType("INVALID");
+        /// <summary>
+        /// Constant LANDLINE for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType LANDLINE = new PhoneNumberType("LANDLINE");
+        /// <summary>
+        /// Constant MOBILE for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType MOBILE = new PhoneNumberType("MOBILE");
+        /// <summary>
+        /// Constant OTHER for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType OTHER = new PhoneNumberType("OTHER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PhoneNumberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneNumberType FindValue(string value)
+        {
+            return FindValue<PhoneNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PoolFilterName.
     /// </summary>
     public class PoolFilterName : ConstantClass
@@ -2243,6 +2301,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant AWS_REVIEWING for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus AWS_REVIEWING = new RegistrationStatus("AWS_REVIEWING");
+        /// <summary>
         /// Constant CLOSED for RegistrationStatus
         /// </summary>
         public static readonly RegistrationStatus CLOSED = new RegistrationStatus("CLOSED");
@@ -2425,6 +2487,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly RegistrationVersionStatus ARCHIVED = new RegistrationVersionStatus("ARCHIVED");
         /// <summary>
+        /// Constant AWS_REVIEWING for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus AWS_REVIEWING = new RegistrationVersionStatus("AWS_REVIEWING");
+        /// <summary>
         /// Constant DENIED for RegistrationVersionStatus
         /// </summary>
         public static readonly RegistrationVersionStatus DENIED = new RegistrationVersionStatus("DENIED");
@@ -2572,6 +2638,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant Message for ResourceType
         /// </summary>
         public static readonly ResourceType Message = new ResourceType("message");
+        /// <summary>
+        /// Constant MessageTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType MessageTemplate = new ResourceType("message-template");
         /// <summary>
         /// Constant OptedOutNumber for ResourceType
         /// </summary>
@@ -2928,6 +2998,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant FIELD_VALIDATION_FAILED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FIELD_VALIDATION_FAILED = new ValidationExceptionReason("FIELD_VALIDATION_FAILED");
+        /// <summary>
+        /// Constant INTERNATIONAL_SENDING_NOT_SUPPORTED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INTERNATIONAL_SENDING_NOT_SUPPORTED = new ValidationExceptionReason("INTERNATIONAL_SENDING_NOT_SUPPORTED");
         /// <summary>
         /// Constant INVALID_ARN for ValidationExceptionReason
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.ApplicationDiscoveryService
         /// <summary>
         /// Construct instance of AmazonApplicationDiscoveryServiceException
         /// </summary>
+        public AmazonApplicationDiscoveryServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonApplicationDiscoveryServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonApplicationDiscoveryServiceException(string message)
             : base(message)

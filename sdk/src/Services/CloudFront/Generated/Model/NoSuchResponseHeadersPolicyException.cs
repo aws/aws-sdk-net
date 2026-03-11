@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchResponseHeadersPolicyException
+        /// message.
+        /// </summary>
+        public NoSuchResponseHeadersPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchResponseHeadersPolicyException with the specified error
         /// message.
         /// </summary>

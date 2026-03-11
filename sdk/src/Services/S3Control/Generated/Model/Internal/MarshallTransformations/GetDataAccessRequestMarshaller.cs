@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDataAccessRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
         
             if (publicRequest.IsSetAccountId()) 
@@ -65,12 +66,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDurationSeconds())
                 request.Parameters.Add("durationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+            if (string.IsNullOrEmpty(publicRequest.Permission))
+                throw new AmazonS3ControlException("Request object does not have required field Permission set");
             
             if (publicRequest.IsSetPermission())
                 request.Parameters.Add("permission", StringUtils.FromString(publicRequest.Permission));
             
             if (publicRequest.IsSetPrivilege())
                 request.Parameters.Add("privilege", StringUtils.FromString(publicRequest.Privilege));
+            if (string.IsNullOrEmpty(publicRequest.Target))
+                throw new AmazonS3ControlException("Request object does not have required field Target set");
             
             if (publicRequest.IsSetTarget())
                 request.Parameters.Add("target", StringUtils.FromString(publicRequest.Target));
@@ -80,8 +85,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/dataaccess";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static GetDataAccessRequestMarshaller _instance = new GetDataAccessRequestMarshaller();        
@@ -103,5 +108,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDataAccessRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetDataAccessRequest publicRequest);
     }    
 }

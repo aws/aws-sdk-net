@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for NoChangeException
+        /// message.
+        /// </summary>
+        public NoChangeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoChangeException with the specified error
         /// message.
         /// </summary>

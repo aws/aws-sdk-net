@@ -40,7 +40,7 @@ namespace Amazon.Glacier
     /// <summary>
     /// <para>Implementation for accessing Glacier</para>
     ///
-    /// Amazon S3 Glacier (Glacier) is a storage solution for "cold data."
+    /// Amazon Glacier (Glacier) is a storage solution for "cold data."
     /// 
     ///  
     /// <para>
@@ -66,20 +66,20 @@ namespace Amazon.Glacier
     ///  
     /// <para>
     /// If you are a first-time user of Glacier, we recommend that you begin by reading the
-    /// following sections in the <i>Amazon S3 Glacier Developer Guide</i>:
+    /// following sections in the <i>Amazon Glacier Developer Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
-    /// is Amazon S3 Glacier</a> - This section of the Developer Guide describes the underlying
+    /// is Amazon Glacier</a> - This section of the Developer Guide describes the underlying
     /// data model, the operations it supports, and the AWS SDKs that you can use to interact
     /// with the service.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
-    /// Started with Amazon S3 Glacier</a> - The Getting Started section walks you through
-    /// the process of creating a vault, uploading archives, creating jobs to download archives,
+    /// Started with Amazon Glacier</a> - The Getting Started section walks you through the
+    /// process of creating a vault, uploading archives, creating jobs to download archives,
     /// retrieving the job output, and deleting archives.
     /// </para>
     ///  </li> </ul>
@@ -310,7 +310,7 @@ namespace Amazon.Glacier
 
         internal virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-        /// with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
+        /// with Archives in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
         /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -361,6 +361,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -371,7 +376,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -383,7 +388,7 @@ namespace Amazon.Glacier
 
         internal virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
@@ -426,6 +431,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -436,7 +446,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual Task<AbortVaultLockResponse> AbortVaultLockAsync(AbortVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
@@ -448,7 +458,7 @@ namespace Amazon.Glacier
 
         internal virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
@@ -463,7 +473,7 @@ namespace Amazon.Glacier
         /// for the vault to be exceeded, the operation throws the <c>LimitExceededException</c>
         /// error. If a tag already exists on the vault under a specified key, the existing key
         /// value will be overwritten. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-        /// Amazon S3 Glacier Resources</a>.
+        /// Amazon Glacier Resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToVault service method.</param>
         /// <param name="cancellationToken">
@@ -480,6 +490,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -490,7 +505,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
@@ -502,7 +517,7 @@ namespace Amazon.Glacier
 
         internal virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -512,8 +527,8 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// You call this operation to inform Amazon S3 Glacier (Glacier) that all the archive
-        /// parts have been uploaded and that Glacier can now assemble the archive from the uploaded
+        /// You call this operation to inform Amazon Glacier (Glacier) that all the archive parts
+        /// have been uploaded and that Glacier can now assemble the archive from the uploaded
         /// parts. After assembling and saving the archive to the vault, Glacier returns the URI
         /// path of the newly created archive resource. Using the URI path, you can then access
         /// the archive. After you upload an archive, you should save the archive ID returned
@@ -575,6 +590,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -585,7 +605,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -597,7 +617,7 @@ namespace Amazon.Glacier
 
         internal virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
@@ -641,6 +661,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -651,7 +676,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual Task<CompleteVaultLockResponse> CompleteVaultLockAsync(CompleteVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
@@ -663,7 +688,7 @@ namespace Amazon.Glacier
 
         internal virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
@@ -675,7 +700,7 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation creates a new vault with the specified name. The name of the vault
         /// must be unique within a region for an AWS account. You can create up to 1,000 vaults
-        /// per account. If you need to create more vaults, contact Amazon S3 Glacier.
+        /// per account. If you need to create more vaults, contact Amazon Glacier.
         /// 
         ///  
         /// <para>
@@ -723,13 +748,18 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
@@ -741,7 +771,7 @@ namespace Amazon.Glacier
 
         internal virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -758,14 +788,14 @@ namespace Amazon.Glacier
         ///  <ul> <li> 
         /// <para>
         /// If the archive retrieval job is actively preparing the data for download when Amazon
-        /// S3 Glacier receives the delete archive request, the archival retrieval operation might
+        /// Glacier receives the delete archive request, the archival retrieval operation might
         /// fail.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the archive retrieval job has successfully prepared the archive for download when
-        /// Amazon S3 Glacier receives the delete archive request, you will be able to download
-        /// the output.
+        /// Amazon Glacier receives the delete archive request, you will be able to download the
+        /// output.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -799,6 +829,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -809,7 +844,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -821,7 +856,7 @@ namespace Amazon.Glacier
 
         internal virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
@@ -831,12 +866,12 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation deletes a vault. Amazon S3 Glacier will delete a vault only if there
-        /// are no archives in the vault as of the last inventory and there have been no writes
-        /// to the vault since the last inventory. If either of these conditions is not satisfied,
-        /// the vault deletion fails (that is, the vault is not removed) and Amazon S3 Glacier
-        /// returns an error. You can use <a>DescribeVault</a> to return the number of archives
-        /// in a vault, and you can use <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
+        /// This operation deletes a vault. Amazon Glacier will delete a vault only if there are
+        /// no archives in the vault as of the last inventory and there have been no writes to
+        /// the vault since the last inventory. If either of these conditions is not satisfied,
+        /// the vault deletion fails (that is, the vault is not removed) and Amazon Glacier returns
+        /// an error. You can use <a>DescribeVault</a> to return the number of archives in a vault,
+        /// and you can use <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
         /// a Job (POST jobs)</a> to initiate a new inventory retrieval for a vault. The inventory
         /// contains the archive IDs you use to delete archives using <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
         /// Archive (DELETE archive)</a>.
@@ -857,7 +892,7 @@ namespace Amazon.Glacier
         /// <para>
         ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
         /// a Vault in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
-        /// Vault </a> in the <i>Amazon S3 Glacier Developer Guide</i>. 
+        /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVault service method.</param>
@@ -872,6 +907,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -882,7 +922,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
@@ -894,7 +934,7 @@ namespace Amazon.Glacier
 
         internal virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -905,9 +945,9 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation deletes the access policy associated with the specified vault. The
-        /// operation is eventually consistent; that is, it might take some time for Amazon S3
-        /// Glacier to completely remove the access policy, and you might still see the effect
-        /// of the policy for a short time after you send the delete request.
+        /// operation is eventually consistent; that is, it might take some time for Amazon Glacier
+        /// to completely remove the access policy, and you might still see the effect of the
+        /// policy for a short time after you send the delete request.
         /// 
         ///  
         /// <para>
@@ -929,6 +969,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -939,7 +984,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -951,7 +996,7 @@ namespace Amazon.Glacier
 
         internal virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -962,9 +1007,9 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation deletes the notification configuration set for a vault. The operation
-        /// is eventually consistent; that is, it might take some time for Amazon S3 Glacier to
-        /// completely disable the notifications and you might still receive some notifications
-        /// for a short time after you send the delete request.
+        /// is eventually consistent; that is, it might take some time for Amazon Glacier to completely
+        /// disable the notifications and you might still receive some notifications for a short
+        /// time after you send the delete request.
         /// 
         ///  
         /// <para>
@@ -977,8 +1022,8 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         ///  For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-        /// Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
-        /// Vault Notification Configuration </a> in the Amazon S3 Glacier Developer Guide. 
+        /// Vault Notifications in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
+        /// Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVaultNotifications service method.</param>
@@ -993,6 +1038,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1003,7 +1053,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1015,7 +1065,7 @@ namespace Amazon.Glacier
 
         internal virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -1027,8 +1077,8 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation returns information about a job you previously initiated, including
         /// the job initiation date, the user who initiated the job, the job status code/message
-        /// and the Amazon SNS topic to notify after Amazon S3 Glacier (Glacier) completes the
-        /// job. For more information about initiating a job, see <a>InitiateJob</a>. 
+        /// and the Amazon SNS topic to notify after Amazon Glacier (Glacier) completes the job.
+        /// For more information about initiating a job, see <a>InitiateJob</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1067,6 +1117,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1077,7 +1132,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -1089,7 +1144,7 @@ namespace Amazon.Glacier
 
         internal virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
@@ -1105,9 +1160,9 @@ namespace Amazon.Glacier
         /// total size are as of the last inventory generation. This means that if you add or
         /// remove an archive from a vault, and then immediately use Describe Vault, the change
         /// in contents will not be immediately reflected. If you want to retrieve the latest
-        /// inventory of the vault, use <a>InitiateJob</a>. Amazon S3 Glacier generates vault
-        /// inventories approximately daily. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
-        /// a Vault Inventory in Amazon S3 Glacier</a>. 
+        /// inventory of the vault, use <a>InitiateJob</a>. Amazon Glacier generates vault inventories
+        /// approximately daily. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
+        /// a Vault Inventory in Amazon Glacier</a>. 
         /// 
         ///  
         /// <para>
@@ -1120,7 +1175,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
-        /// Vault Metadata in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
+        /// Vault Metadata in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
         /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1136,6 +1191,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1146,7 +1206,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
@@ -1158,7 +1218,7 @@ namespace Amazon.Glacier
 
         internal virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -1185,13 +1245,18 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -1203,7 +1268,7 @@ namespace Amazon.Glacier
 
         internal virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
@@ -1221,7 +1286,7 @@ namespace Amazon.Glacier
         /// <para>
         /// You can download all the job output or download a portion of the output by specifying
         /// a byte range. In the case of an archive retrieval job, depending on the byte range
-        /// you specify, Amazon S3 Glacier (Glacier) returns the checksum for the portion of the
+        /// you specify, Amazon Glacier (Glacier) returns the checksum for the portion of the
         /// data. You can compute the checksum on the client and verify that the values match
         /// to ensure the portion you downloaded is the correct data.
         /// </para>
@@ -1239,7 +1304,7 @@ namespace Amazon.Glacier
         /// bytes you specified. For example, if you specify a range of <c>bytes=0-1048575</c>,
         /// you should verify your download size is 1,048,576 bytes. If you download an entire
         /// archive, the expected size is the size of the archive when you uploaded it to Amazon
-        /// S3 Glacier The expected size is also returned in the headers from the <b>Get Job Output</b>
+        /// Glacier The expected size is also returned in the headers from the <b>Get Job Output</b>
         /// response.
         /// </para>
         ///  
@@ -1283,6 +1348,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1293,7 +1363,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
@@ -1305,7 +1375,7 @@ namespace Amazon.Glacier
 
         internal virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1334,6 +1404,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1344,7 +1419,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1356,7 +1431,7 @@ namespace Amazon.Glacier
 
         internal virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
@@ -1412,6 +1487,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1422,7 +1502,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual Task<GetVaultLockResponse> GetVaultLockAsync(GetVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
@@ -1434,7 +1514,7 @@ namespace Amazon.Glacier
 
         internal virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1452,7 +1532,7 @@ namespace Amazon.Glacier
         /// For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
         /// If a notification configuration for a vault is not set, the operation returns a <c>404
         /// Not Found</c> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-        /// Vault Notifications in Amazon S3 Glacier</a>. 
+        /// Vault Notifications in Amazon Glacier</a>. 
         /// </para>
         ///  
         /// <para>
@@ -1465,7 +1545,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-        /// Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
+        /// Vault Notifications in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
         /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// 
         /// </para>
@@ -1482,6 +1562,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1492,7 +1577,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1504,7 +1589,7 @@ namespace Amazon.Glacier
 
         internal virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
@@ -1535,6 +1620,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.PolicyEnforcedException">
         /// Returned if a retrieval job would exceed the current data policy's retrieval rate
         /// limit. For more information about data retrieval policies,
@@ -1549,7 +1639,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
@@ -1561,7 +1651,7 @@ namespace Amazon.Glacier
 
         internal virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -1571,9 +1661,9 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation initiates a multipart upload. Amazon S3 Glacier creates a multipart
-        /// upload resource and returns its ID in the response. The multipart upload ID is used
-        /// in subsequent requests to upload parts of an archive (see <a>UploadMultipartPart</a>).
+        /// This operation initiates a multipart upload. Amazon Glacier creates a multipart upload
+        /// resource and returns its ID in the response. The multipart upload ID is used in subsequent
+        /// requests to upload parts of an archive (see <a>UploadMultipartPart</a>).
         /// 
         ///  
         /// <para>
@@ -1593,11 +1683,11 @@ namespace Amazon.Glacier
         ///  <note> 
         /// <para>
         /// You don't need to know the size of the archive when you start a multipart upload because
-        /// Amazon S3 Glacier does not require you to specify the overall archive size.
+        /// Amazon Glacier does not require you to specify the overall archive size.
         /// </para>
         ///  </note> 
         /// <para>
-        /// After you complete the multipart upload, Amazon S3 Glacier (Glacier) removes the multipart
+        /// After you complete the multipart upload, Amazon Glacier (Glacier) removes the multipart
         /// upload resource referenced by the ID. Glacier also removes the multipart upload resource
         /// if you cancel the multipart upload or it may be removed if there is no activity for
         /// a period of 24 hours.
@@ -1629,6 +1719,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1639,7 +1734,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -1651,7 +1746,7 @@ namespace Amazon.Glacier
 
         internal virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
@@ -1721,6 +1816,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1731,7 +1831,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual Task<InitiateVaultLockResponse> InitiateVaultLockAsync(InitiateVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
@@ -1743,7 +1843,7 @@ namespace Amazon.Glacier
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1813,6 +1913,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1823,7 +1928,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1835,7 +1940,7 @@ namespace Amazon.Glacier
 
         internal virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -1878,7 +1983,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-        /// with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
+        /// with Archives in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
         /// Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1894,6 +1999,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1904,7 +2014,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -1916,7 +2026,7 @@ namespace Amazon.Glacier
 
         internal virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -1953,7 +2063,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-        /// with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
+        /// with Archives in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
         /// Parts</a> in the <i>Amazon Glacier Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1969,6 +2079,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -1979,7 +2094,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -1991,7 +2106,7 @@ namespace Amazon.Glacier
 
         internal virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2015,13 +2130,18 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual Task<ListProvisionedCapacityResponse> ListProvisionedCapacityAsync(ListProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2033,7 +2153,7 @@ namespace Amazon.Glacier
 
         internal virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
@@ -2045,7 +2165,7 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation lists all the tags attached to a vault. The operation returns an empty
         /// map if there are no tags. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-        /// Amazon S3 Glacier Resources</a>.
+        /// Amazon Glacier Resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForVault service method.</param>
         /// <param name="cancellationToken">
@@ -2059,6 +2179,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -2069,7 +2194,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
@@ -2085,7 +2210,7 @@ namespace Amazon.Glacier
         }
         internal virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
@@ -2118,7 +2243,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
-        /// Vault Metadata in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
+        /// Vault Metadata in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
         /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -2132,6 +2257,11 @@ namespace Amazon.Glacier
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2173,7 +2303,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
-        /// Vault Metadata in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
+        /// Vault Metadata in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
         /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -2189,6 +2319,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -2199,7 +2334,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
@@ -2211,7 +2346,7 @@ namespace Amazon.Glacier
 
         internal virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2238,13 +2373,18 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual Task<PurchaseProvisionedCapacityResponse> PurchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2256,7 +2396,7 @@ namespace Amazon.Glacier
 
         internal virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
@@ -2268,8 +2408,8 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation removes one or more tags from the set of tags attached to a vault.
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-        /// Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation will
-        /// be successful, even if there are no tags attached to the vault.
+        /// Amazon Glacier Resources</a>. This operation is idempotent. The operation will be
+        /// successful, even if there are no tags attached to the vault.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromVault service method.</param>
         /// <param name="cancellationToken">
@@ -2283,6 +2423,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -2293,7 +2438,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
@@ -2305,7 +2450,7 @@ namespace Amazon.Glacier
 
         internal virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -2339,13 +2484,18 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
         /// Returned if the service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -2357,7 +2507,7 @@ namespace Amazon.Glacier
 
         internal virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -2386,6 +2536,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -2396,7 +2551,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -2408,7 +2563,7 @@ namespace Amazon.Glacier
 
         internal virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -2425,7 +2580,7 @@ namespace Amazon.Glacier
         /// <para>
         /// To configure vault notifications, send a PUT request to the <c>notification-configuration</c>
         /// subresource of the vault. The request should include a JSON document that provides
-        /// an Amazon SNS topic and specific events for which you want Amazon S3 Glacier to send
+        /// an Amazon SNS topic and specific events for which you want Amazon Glacier to send
         /// notifications to the topic.
         /// </para>
         ///  
@@ -2459,7 +2614,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-        /// Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
+        /// Vault Notifications in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
         /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// 
         /// </para>
@@ -2476,6 +2631,11 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
@@ -2486,7 +2646,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -2498,7 +2658,7 @@ namespace Amazon.Glacier
 
         internal virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
@@ -2509,12 +2669,12 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation adds an archive to a vault. This is a synchronous operation, and for
-        /// a successful upload, your data is durably persisted. Amazon S3 Glacier returns the
-        /// archive ID in the <c>x-amz-archive-id</c> header of the response. 
+        /// a successful upload, your data is durably persisted. Amazon Glacier returns the archive
+        /// ID in the <c>x-amz-archive-id</c> header of the response. 
         /// 
         ///  
         /// <para>
-        /// You must use the archive ID to access your data in Amazon S3 Glacier. After you upload
+        /// You must use the archive ID to access your data in Amazon Glacier. After you upload
         /// an archive, you should save the archive ID returned so that you can retrieve or delete
         /// the archive later. Besides saving the archive ID, you can also index it and give it
         /// a friendly name to allow for better searching. You can also use the optional archive
@@ -2569,9 +2729,14 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.RequestTimeoutException">
-        /// Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving
-        /// the upload.
+        /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the
+        /// upload.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2583,7 +2748,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
@@ -2595,7 +2760,7 @@ namespace Amazon.Glacier
 
         internal virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadMultipartPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 
@@ -2618,8 +2783,8 @@ namespace Amazon.Glacier
         /// <para>
         ///  <b>SHA256 tree hash does not match</b>To ensure that part data is not corrupted in
         /// transmission, you compute a SHA256 tree hash of the part and include it in your request.
-        /// Upon receiving the part data, Amazon S3 Glacier also computes a SHA256 tree hash.
-        /// If these hash values don't match, the operation fails. For information about computing
+        /// Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If
+        /// these hash values don't match, the operation fails. For information about computing
         /// a SHA256 tree hash, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
         /// Checksums</a>.
         /// </para>
@@ -2677,9 +2842,14 @@ namespace Amazon.Glacier
         /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.NoLongerSupportedException">
+        /// Returned if the request was made by a customer with no Amazon Glacier storage. The
+        /// request is denied as the API is no longer supported for new customers. Please use
+        /// Amazon S3 Glacier storage classes instead.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.RequestTimeoutException">
-        /// Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving
-        /// the upload.
+        /// Returned if, when uploading an archive, Amazon Glacier times out while receiving the
+        /// upload.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
         /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
@@ -2691,7 +2861,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadMultipartPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 

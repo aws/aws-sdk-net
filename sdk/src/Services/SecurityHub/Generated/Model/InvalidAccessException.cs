@@ -40,6 +40,13 @@ namespace Amazon.SecurityHub.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for InvalidAccessException
+        /// message.
+        /// </summary>
+        public InvalidAccessException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAccessException with the specified error
         /// message.
         /// </summary>

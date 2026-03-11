@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DBParameterGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public DBParameterGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBParameterGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

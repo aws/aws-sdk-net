@@ -34,6 +34,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Enumerable containing all of the AgentRuntimes
         /// </summary>
-        IPaginatedEnumerable<Agent> AgentRuntimes { get; }
+        IPaginatedEnumerable<AgentRuntime> AgentRuntimes { get; }
     }
 }

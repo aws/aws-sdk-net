@@ -52,6 +52,38 @@ namespace Amazon.Evs
         IEvsPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AssociateEipToVlan
+
+
+
+        /// <summary>
+        /// Associates an Elastic IP address with a public HCX VLAN. This operation is only allowed
+        /// for public HCX VLANs at this time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEipToVlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEipToVlan service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/AssociateEipToVlan">REST API Reference for AssociateEipToVlan Operation</seealso>
+        Task<AssociateEipToVlanResponse> AssociateEipToVlanAsync(AssociateEipToVlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEnvironment
 
 
@@ -68,18 +100,20 @@ namespace Amazon.Evs
         ///  
         /// <para>
         /// It can take several hours to create an environment. After the deployment completes,
-        /// you can configure VCF according to your unique requirements.
+        /// you can configure VCF in the vSphere user interface according to your needs.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// When creating a new environment, the default ESX version for the selected VCF version
+        /// will be used, you cannot choose a specific ESX version in <c>CreateEnvironment</c>
+        /// action. When a host has been added with a specific ESX version, it can only be upgraded
+        /// using vCenter Lifecycle Manager.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
         /// in the same <c>CreateEnvironment</c> action. This results in a <c>ValidationException</c>
         /// response.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// EC2 instances created through Amazon EVS do not support associating an IAM instance
-        /// profile.
         /// </para>
         ///  </note>
         /// </summary>
@@ -104,19 +138,17 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS supports
+        /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
         /// 4-16 hosts per environment.
         /// 
         ///  
         /// <para>
-        /// This action can only be used after the Amazon EVS environment is deployed. All Amazon
-        /// EVS hosts are created with the latest AMI release version for the respective VCF version
-        /// of the environment.
+        /// This action can only be used after the Amazon EVS environment is deployed.
         /// </para>
         ///  
         /// <para>
         /// You can use the <c>dedicatedHostId</c> parameter to specify an Amazon EC2 Dedicated
-        /// Host for ESXi host creation.
+        /// Host for ESX host creation.
         /// </para>
         ///  
         /// <para>
@@ -125,14 +157,16 @@ namespace Amazon.Evs
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
-        /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>
-        /// response.
+        /// If you don't specify an ESX version when adding hosts using <c>CreateEnvironmentHost</c>
+        /// action, Amazon EVS automatically uses the default ESX version associated with your
+        /// environment's VCF version. To find the default ESX version for a particular VCF version,
+        /// use the <c>GetVersions</c> action.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// EC2 instances created through Amazon EVS do not support associating an IAM instance
-        /// profile.
+        /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
+        /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>
+        /// response.
         /// </para>
         ///  </note>
         /// </summary>
@@ -143,9 +177,8 @@ namespace Amazon.Evs
         /// 
         /// <returns>The response from the CreateEnvironmentHost service method, as returned by Evs.</returns>
         /// <exception cref="Amazon.Evs.Model.ThrottlingException">
-        /// The <c>CreateEnvironmentHost</c> operation couldn't be performed because the service
-        /// is throttling requests. This exception is thrown when the <c>CreateEnvironmentHost</c>
-        /// request exceeds concurrency of 1 transaction per second (TPS).
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ValidationException">
         /// The input fails to satisfy the specified constraints. You will see this exception
@@ -171,9 +204,9 @@ namespace Amazon.Evs
         /// </para>
         ///  
         /// <para>
-        /// Environment deletion also deletes the associated Amazon EVS VLAN subnets. Other associated
-        /// Amazon Web Services resources are not deleted. These resources may continue to incur
-        /// costs.
+        /// Environment deletion also deletes the associated Amazon EVS VLAN subnets and Amazon
+        /// Web Services Secrets Manager secrets that Amazon EVS created. Amazon Web Services
+        /// resources that you create are not deleted. These resources may continue to incur costs.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -231,6 +264,38 @@ namespace Amazon.Evs
 
         #endregion
                 
+        #region  DisassociateEipFromVlan
+
+
+
+        /// <summary>
+        /// Disassociates an Elastic IP address from a public HCX VLAN. This operation is only
+        /// allowed for public HCX VLANs at this time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEipFromVlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEipFromVlan service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DisassociateEipFromVlan">REST API Reference for DisassociateEipFromVlan Operation</seealso>
+        Task<DisassociateEipFromVlanResponse> DisassociateEipFromVlanAsync(DisassociateEipFromVlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetEnvironment
 
 
@@ -255,6 +320,33 @@ namespace Amazon.Evs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVersions
+
+
+
+        /// <summary>
+        /// Returns information about VCF versions, ESX versions and EC2 instance types provided
+        /// by Amazon EVS. For each VCF version, the response also includes the default ESX version
+        /// and provided EC2 instance types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVersions service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetVersions">REST API Reference for GetVersions Operation</seealso>
+        Task<GetVersionsResponse> GetVersionsAsync(GetVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -381,12 +473,39 @@ namespace Amazon.Evs
         /// A service resource associated with the request could not be found. The resource might
         /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
         /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ServiceQuotaExceededException">
+        /// The number of one or more Amazon EVS resources exceeds the maximum allowed. For a
+        /// list of Amazon EVS quotas, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/service-quotas-evs.html">Amazon
+        /// EVS endpoints and quotas</a> in the <i>Amazon EVS User Guide</i>. Delete some resources
+        /// or request an increase in your service quota. To request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+        /// Web Services Service Quotas</a> in the <i>Amazon Web Services General Reference Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Evs.Model.TagPolicyException">
+        /// <note> 
+        /// <para>
+        ///  <c>TagPolicyException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html">
+        /// <c>ValidationException</c> </a> instead.
+        /// 
+        ///  </note> 
+        /// <para>
         /// The request doesn't comply with IAM tag policy. Correct your request and then retry
         /// it.
+        /// </para>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.TooManyTagsException">
+        /// <note> 
+        /// <para>
+        ///  <c>TooManyTagsException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ServiceQuotaExceededException.html">
+        /// <c>ServiceQuotaExceededException</c> </a> instead.
+        /// 
+        ///  </note> 
+        /// <para>
         /// A service resource associated with the request has more than 200 tags.
+        /// </para>
+        /// 
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -411,8 +530,18 @@ namespace Amazon.Evs
         /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.TagPolicyException">
+        /// <note> 
+        /// <para>
+        ///  <c>TagPolicyException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html">
+        /// <c>ValidationException</c> </a> instead.
+        /// 
+        ///  </note> 
+        /// <para>
         /// The request doesn't comply with IAM tag policy. Correct your request and then retry
         /// it.
+        /// </para>
+        /// 
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

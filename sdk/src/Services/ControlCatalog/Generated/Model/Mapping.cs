@@ -37,6 +37,7 @@ namespace Amazon.ControlCatalog.Model
     {
         private CommonControlMappingDetails _commonControl;
         private FrameworkMappingDetails _framework;
+        private RelatedControlMappingDetails _relatedControl;
 
         /// <summary>
         /// Gets and sets the property CommonControl. 
@@ -72,6 +73,24 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetFramework()
         {
             return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedControl. 
+        /// <para>
+        /// Returns information about controls that are related to the specified control.
+        /// </para>
+        /// </summary>
+        public RelatedControlMappingDetails RelatedControl
+        {
+            get { return this._relatedControl; }
+            set { this._relatedControl = value; }
+        }
+
+        // Check to see if RelatedControl property is set
+        internal bool IsSetRelatedControl()
+        {
+            return this._relatedControl != null;
         }
 
     }

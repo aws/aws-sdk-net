@@ -72,7 +72,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()
         {
-            return _lastCredentials.Copy();
+            return _lastCredentials;
         }
 
         #endregion

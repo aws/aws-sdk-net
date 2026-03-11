@@ -81,6 +81,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.EnforceWorkGroupConfiguration.Value);
             }
 
+            if(requestObject.IsSetEngineConfiguration())
+            {
+                context.Writer.WritePropertyName("EngineConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EngineConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EngineConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
@@ -116,6 +127,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
                 var marshaller = ManagedQueryResultsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedQueryResultsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("MonitoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MonitoringConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

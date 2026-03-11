@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDestinationKmsKeyException
+        /// message.
+        /// </summary>
+        public InvalidDestinationKmsKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDestinationKmsKeyException with the specified error
         /// message.
         /// </summary>

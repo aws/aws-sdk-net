@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheSecurityGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CacheSecurityGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheSecurityGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

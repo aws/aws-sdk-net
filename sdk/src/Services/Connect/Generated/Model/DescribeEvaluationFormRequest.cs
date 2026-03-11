@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model
         /// A version of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? EvaluationFormVersion
         {
             get { return this._evaluationFormVersion; }

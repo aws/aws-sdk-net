@@ -42,6 +42,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedNetworkConfigurationException
+        /// message.
+        /// </summary>
+        public UnsupportedNetworkConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedNetworkConfigurationException with the specified error
         /// message.
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Grants permission to view currently configured tags on a resource.
+    /// Returns currently configured tags on a resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonSecurityIRRequest
     {

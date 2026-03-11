@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSampleRateException
+        /// message.
+        /// </summary>
+        public InvalidSampleRateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSampleRateException with the specified error
         /// message.
         /// </summary>

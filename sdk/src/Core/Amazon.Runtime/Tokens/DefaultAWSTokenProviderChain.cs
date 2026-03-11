@@ -23,6 +23,9 @@ namespace Amazon.Runtime
     /// Combines the recommended <see cref="IAWSTokenProvider"/> into a <see cref="AWSTokenProviderChain"/>.
     /// <para />
     /// Configuration parameters for each <see cref="IAWSTokenProvider"/> are exposed here to simplify configuration.
+    /// <para />
+    /// Note: This default chain does not include service specific environment token providers.
+    /// Service specific customizations (like Bedrock Bearer tokens) are applied at the service level.
     /// <example>
     /// Example below demonstrates how to build a custom <see cref="DefaultAWSTokenProviderChain"/> in a
     /// <see cref="ClientConfig.AWSTokenProvider"/>.

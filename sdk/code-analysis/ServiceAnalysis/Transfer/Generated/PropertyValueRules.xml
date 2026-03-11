@@ -57,6 +57,7 @@
     <property>Amazon.Transfer.Model.CreateAgreementRequest.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateAgreementRequest.LocalProfileId</property>
@@ -115,6 +116,7 @@
     <property>Amazon.Transfer.Model.CreateProfileRequest.As2Id</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\u0020-\u007E\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateProfileResponse.ProfileId</property>
@@ -470,24 +472,25 @@
     <property>Amazon.Transfer.Model.ImportCertificateRequest.Certificate</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+    <pattern>[\t\n\r\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportCertificateRequest.CertificateChain</property>
     <min>1</min>
     <max>2097152</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+    <pattern>[\t\n\r\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportCertificateRequest.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportCertificateRequest.PrivateKey</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+    <pattern>[\t\n\r\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportCertificateResponse.CertificateId</property>
@@ -1093,6 +1096,7 @@
     <property>Amazon.Transfer.Model.UpdateAgreementRequest.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateAgreementRequest.LocalProfileId</property>
@@ -1128,6 +1132,7 @@
     <property>Amazon.Transfer.Model.UpdateCertificateRequest.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateCertificateResponse.CertificateId</property>
@@ -1343,6 +1348,11 @@
     <pattern>webapp-[0-9a-f]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.As2AsyncMdnConnectorConfig.Url</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.As2ConnectorConfig.BasicAuthSecretId</property>
     <min>0</min>
     <max>2048</max>
@@ -1357,6 +1367,7 @@
     <property>Amazon.Transfer.Model.As2ConnectorConfig.MessageSubject</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>[\u0020-\u007E\t]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.As2ConnectorConfig.PartnerProfileId</property>
@@ -1369,6 +1380,17 @@
     <min>1</min>
     <max>1024</max>
     <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ConnectorVpcLatticeEgressConfig.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ConnectorVpcLatticeEgressConfig.ResourceConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CopyStepDetails.Name</property>
@@ -1411,6 +1433,18 @@
     <min>0</min>
     <max>1024</max>
     <pattern>(|/.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomHttpHeader.Key</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomHttpHeader.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9 +\-./:=@_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CustomStepDetails.Name</property>
@@ -1510,6 +1544,7 @@
     <property>Amazon.Transfer.Model.DescribedAgreement.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAgreement.LocalProfileId</property>
@@ -1539,13 +1574,13 @@
     <property>Amazon.Transfer.Model.DescribedCertificate.Certificate</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+    <pattern>[\t\n\r\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedCertificate.CertificateChain</property>
     <min>1</min>
     <max>2097152</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+    <pattern>[\t\n\r\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedCertificate.CertificateId</property>
@@ -1557,11 +1592,13 @@
     <property>Amazon.Transfer.Model.DescribedCertificate.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedCertificate.Serial</property>
     <min>0</min>
     <max>48</max>
+    <pattern>[0-9a-fA-F{}:?]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedConnector.AccessRole</property>
@@ -1597,6 +1634,17 @@
     <property>Amazon.Transfer.Model.DescribedConnector.Url</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedConnectorVpcLatticeEgressConfig.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedConnectorVpcLatticeEgressConfig.ResourceConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedExecution.ExecutionId</property>
@@ -1655,6 +1703,7 @@
     <property>Amazon.Transfer.Model.DescribedProfile.As2Id</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\u0020-\u007E\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedProfile.ProfileId</property>
@@ -1788,6 +1837,12 @@
     <pattern>webapp-[0-9a-f]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedWebAppVpcConfig.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>vpce-[0-9a-f]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedWorkflow.Arn</property>
     <min>20</min>
     <max>1600</max>
@@ -1909,6 +1964,7 @@
     <property>Amazon.Transfer.Model.ListedAgreement.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedAgreement.LocalProfileId</property>
@@ -1944,6 +2000,7 @@
     <property>Amazon.Transfer.Model.ListedCertificate.Description</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedConnector.Arn</property>
@@ -1995,6 +2052,7 @@
     <property>Amazon.Transfer.Model.ListedProfile.As2Id</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\u0020-\u007E\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedProfile.ProfileId</property>
@@ -2206,6 +2264,17 @@
     <min>0</min>
     <max>256</max>
     <pattern>\$\{(\w+.)+\w+\}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateConnectorVpcLatticeEgressConfig.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateConnectorVpcLatticeEgressConfig.ResourceConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateWebAppIdentityCenterConfig.Role</property>

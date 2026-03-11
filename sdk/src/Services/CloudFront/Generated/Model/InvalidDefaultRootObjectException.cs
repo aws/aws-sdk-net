@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDefaultRootObjectException
+        /// message.
+        /// </summary>
+        public InvalidDefaultRootObjectException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDefaultRootObjectException with the specified error
         /// message.
         /// </summary>

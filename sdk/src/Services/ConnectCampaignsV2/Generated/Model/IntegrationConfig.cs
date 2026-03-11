@@ -35,6 +35,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     public partial class IntegrationConfig
     {
         private CustomerProfilesIntegrationConfig _customerProfiles;
+        private LambdaIntegrationConfig _lambda;
         private QConnectIntegrationConfig _qConnect;
 
         /// <summary>
@@ -50,6 +51,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetCustomerProfiles()
         {
             return this._customerProfiles != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lambda.
+        /// </summary>
+        public LambdaIntegrationConfig Lambda
+        {
+            get { return this._lambda; }
+            set { this._lambda = value; }
+        }
+
+        // Check to see if Lambda property is set
+        internal bool IsSetLambda()
+        {
+            return this._lambda != null;
         }
 
         /// <summary>

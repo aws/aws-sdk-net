@@ -46,6 +46,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDetectionParameters())
+            {
+                context.Writer.WritePropertyName("DetectionParameters");
+                context.Writer.WriteStringValue(requestObject.DetectionParameters);
+            }
+
+            if(requestObject.IsSetDetectionSensitivity())
+            {
+                context.Writer.WritePropertyName("DetectionSensitivity");
+                context.Writer.WriteStringValue(requestObject.DetectionSensitivity);
+            }
+
             if(requestObject.IsSetEntityTypesToDetect())
             {
                 context.Writer.WritePropertyName("EntityTypesToDetect");
@@ -74,10 +86,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MaskValue);
             }
 
+            if(requestObject.IsSetMatchPattern())
+            {
+                context.Writer.WritePropertyName("MatchPattern");
+                context.Writer.WriteStringValue(requestObject.MatchPattern);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetNumLeftCharsToExclude())
+            {
+                context.Writer.WritePropertyName("NumLeftCharsToExclude");
+                context.Writer.WriteNumberValue(requestObject.NumLeftCharsToExclude.Value);
+            }
+
+            if(requestObject.IsSetNumRightCharsToExclude())
+            {
+                context.Writer.WritePropertyName("NumRightCharsToExclude");
+                context.Writer.WriteNumberValue(requestObject.NumRightCharsToExclude.Value);
             }
 
             if(requestObject.IsSetOutputColumnName())
@@ -90,6 +120,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PiiType");
                 context.Writer.WriteStringValue(requestObject.PiiType);
+            }
+
+            if(requestObject.IsSetRedactChar())
+            {
+                context.Writer.WritePropertyName("RedactChar");
+                context.Writer.WriteStringValue(requestObject.RedactChar);
+            }
+
+            if(requestObject.IsSetRedactText())
+            {
+                context.Writer.WritePropertyName("RedactText");
+                context.Writer.WriteStringValue(requestObject.RedactText);
             }
 
             if(requestObject.IsSetSampleFraction())

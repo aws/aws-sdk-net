@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         /// The cluster identifier of the global database cluster being deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }

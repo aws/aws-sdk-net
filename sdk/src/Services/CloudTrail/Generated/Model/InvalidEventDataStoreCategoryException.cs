@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEventDataStoreCategoryException
+        /// message.
+        /// </summary>
+        public InvalidEventDataStoreCategoryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEventDataStoreCategoryException with the specified error
         /// message.
         /// </summary>

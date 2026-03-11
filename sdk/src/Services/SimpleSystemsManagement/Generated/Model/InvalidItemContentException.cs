@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _typeName;
 
         /// <summary>
+        /// Default constructor for InvalidItemContentException
+        /// message.
+        /// </summary>
+        public InvalidItemContentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidItemContentException with the specified error
         /// message.
         /// </summary>

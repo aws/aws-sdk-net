@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyActionsException
+        /// message.
+        /// </summary>
+        public TooManyActionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyActionsException with the specified error
         /// message.
         /// </summary>

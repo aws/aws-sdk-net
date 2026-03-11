@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DelegationSet Object
     /// </summary>  
-    public class DelegationSetUnmarshaller : IXmlUnmarshaller<DelegationSet, XmlUnmarshallerContext>
+    public partial class DelegationSetUnmarshaller : IXmlUnmarshaller<DelegationSet, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,6 +78,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.NameServers.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -86,6 +88,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DelegationSet unmarshalledObject, int targetDepth);
+
         private static DelegationSetUnmarshaller _instance = new DelegationSetUnmarshaller();        
 
         /// <summary>

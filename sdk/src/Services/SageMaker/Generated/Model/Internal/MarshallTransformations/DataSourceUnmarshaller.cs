@@ -56,6 +56,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DatasetSource", targetDepth))
+                {
+                    var unmarshaller = DatasetSourceUnmarshaller.Instance;
+                    unmarshalledObject.DatasetSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("FileSystemDataSource", targetDepth))
                 {
                     var unmarshaller = FileSystemDataSourceUnmarshaller.Instance;

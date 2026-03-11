@@ -40,6 +40,13 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _resourceId;
 
         /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>

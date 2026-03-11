@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInventoryGroupException
+        /// message.
+        /// </summary>
+        public InvalidInventoryGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInventoryGroupException with the specified error
         /// message.
         /// </summary>

@@ -62,12 +62,16 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCodeArtifactException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
             
             if (publicRequest.IsSetDomainOwner())
                 request.Parameters.Add("domain-owner", StringUtils.FromString(publicRequest.DomainOwner));
+            if (string.IsNullOrEmpty(publicRequest.PackageGroup))
+                throw new AmazonCodeArtifactException("Request object does not have required field PackageGroup set");
             
             if (publicRequest.IsSetPackageGroup())
                 request.Parameters.Add("package-group", StringUtils.FromString(publicRequest.PackageGroup));

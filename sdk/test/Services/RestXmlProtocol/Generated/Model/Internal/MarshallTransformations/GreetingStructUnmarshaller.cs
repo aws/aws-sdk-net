@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GreetingStruct Object
     /// </summary>  
-    public class GreetingStructUnmarshaller : IXmlUnmarshaller<GreetingStruct, XmlUnmarshallerContext>
+    public partial class GreetingStructUnmarshaller : IXmlUnmarshaller<GreetingStruct, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         unmarshalledObject.Hi = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, GreetingStruct unmarshalledObject, int targetDepth);
+
         private static GreetingStructUnmarshaller _instance = new GreetingStructUnmarshaller();        
 
         /// <summary>

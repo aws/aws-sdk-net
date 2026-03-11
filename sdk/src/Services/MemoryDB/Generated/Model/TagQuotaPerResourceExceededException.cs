@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of tags
+    /// allowed per resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class TagQuotaPerResourceExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for TagQuotaPerResourceExceededException
+        /// message.
+        /// </summary>
+        public TagQuotaPerResourceExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TagQuotaPerResourceExceededException with the specified error

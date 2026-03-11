@@ -37,6 +37,22 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccountPools operation
+        ///</summary>
+        public IListAccountPoolsPaginator ListAccountPools(ListAccountPoolsRequest request) 
+        {
+            return new ListAccountPoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAccountsInAccountPool operation
+        ///</summary>
+        public IListAccountsInAccountPoolPaginator ListAccountsInAccountPool(ListAccountsInAccountPoolRequest request) 
+        {
+            return new ListAccountsInAccountPoolPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetFilters operation
         ///</summary>
         public IListAssetFiltersPaginator ListAssetFilters(ListAssetFiltersRequest request) 
@@ -274,6 +290,14 @@ namespace Amazon.DataZone.Model
         public IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request) 
         {
             return new ListTimeSeriesDataPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for QueryGraph operation
+        ///</summary>
+        public IQueryGraphPaginator QueryGraph(QueryGraphRequest request) 
+        {
+            return new QueryGraphPaginator(this.client, request);
         }
 
         /// <summary>

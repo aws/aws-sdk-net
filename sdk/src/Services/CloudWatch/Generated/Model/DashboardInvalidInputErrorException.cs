@@ -40,6 +40,13 @@ namespace Amazon.CloudWatch.Model
         private List<DashboardValidationMessage> _dashboardValidationMessages = AWSConfigs.InitializeCollections ? new List<DashboardValidationMessage>() : null;
 
         /// <summary>
+        /// Default constructor for DashboardInvalidInputErrorException
+        /// message.
+        /// </summary>
+        public DashboardInvalidInputErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DashboardInvalidInputErrorException with the specified error
         /// message.
         /// </summary>

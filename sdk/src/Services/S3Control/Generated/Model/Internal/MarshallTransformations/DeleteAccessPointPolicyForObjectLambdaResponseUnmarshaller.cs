@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteAccessPointPolicyForObjectLambda operation
     /// </summary>  
-    public class DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             DeleteAccessPointPolicyForObjectLambdaResponse response = new DeleteAccessPointPolicyForObjectLambdaResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteAccessPointPolicyForObjectLambdaResponse response);
 
         private static DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller _instance = new DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller();        
 

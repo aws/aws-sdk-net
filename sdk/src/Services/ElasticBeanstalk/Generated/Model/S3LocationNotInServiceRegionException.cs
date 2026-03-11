@@ -54,6 +54,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for S3LocationNotInServiceRegionException
+        /// message.
+        /// </summary>
+        public S3LocationNotInServiceRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3LocationNotInServiceRegionException with the specified error
         /// message.
         /// </summary>

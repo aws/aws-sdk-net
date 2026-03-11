@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidBlueGreenDeploymentStateException
+        /// message.
+        /// </summary>
+        public InvalidBlueGreenDeploymentStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidBlueGreenDeploymentStateException with the specified error
         /// message.
         /// </summary>

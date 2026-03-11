@@ -32,6 +32,12 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Container for the parameters to the GetAnalyzedResource operation.
     /// Retrieves information about a resource that was analyzed.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action is supported only for external access analyzers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetAnalyzedResourceRequest : AmazonAccessAnalyzerRequest
     {

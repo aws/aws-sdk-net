@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private OfferEntityIdFilter _entityId;
         private OfferLastModifiedDateFilter _lastModifiedDate;
         private OfferNameFilter _name;
+        private OfferSetIdFilter _offerSetId;
         private OfferProductIdFilter _productId;
         private OfferReleaseDateFilter _releaseDate;
         private OfferResaleAuthorizationIdFilter _resaleAuthorizationId;
@@ -134,6 +135,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSetId. 
+        /// <para>
+        /// Allows filtering on the <c>OfferSetId</c> of an offer.
+        /// </para>
+        /// </summary>
+        public OfferSetIdFilter OfferSetId
+        {
+            get { return this._offerSetId; }
+            set { this._offerSetId = value; }
+        }
+
+        // Check to see if OfferSetId property is set
+        internal bool IsSetOfferSetId()
+        {
+            return this._offerSetId != null;
         }
 
         /// <summary>

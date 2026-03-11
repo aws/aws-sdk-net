@@ -43,6 +43,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for TimeLimitExceededException
+        /// message.
+        /// </summary>
+        public TimeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TimeLimitExceededException with the specified error
         /// message.
         /// </summary>

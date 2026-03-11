@@ -71,6 +71,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.ParentDomainUnitIdentifier))
+                throw new AmazonDataZoneException("Request object does not have required field ParentDomainUnitIdentifier set");
             
             if (publicRequest.IsSetParentDomainUnitIdentifier())
                 request.Parameters.Add("parentDomainUnitIdentifier", StringUtils.FromString(publicRequest.ParentDomainUnitIdentifier));

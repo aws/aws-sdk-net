@@ -67,6 +67,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientCloudWatchLogsResourcePolicyException
+        /// message.
+        /// </summary>
+        public InsufficientCloudWatchLogsResourcePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientCloudWatchLogsResourcePolicyException with the specified error
         /// message.
         /// </summary>

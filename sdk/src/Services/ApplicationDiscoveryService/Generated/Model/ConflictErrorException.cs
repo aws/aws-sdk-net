@@ -39,6 +39,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
 
         /// <summary>
+        /// Default constructor for ConflictErrorException
+        /// message.
+        /// </summary>
+        public ConflictErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictErrorException with the specified error
         /// message.
         /// </summary>

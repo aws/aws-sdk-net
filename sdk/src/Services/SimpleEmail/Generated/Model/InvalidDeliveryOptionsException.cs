@@ -39,6 +39,13 @@ namespace Amazon.SimpleEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeliveryOptionsException
+        /// message.
+        /// </summary>
+        public InvalidDeliveryOptionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeliveryOptionsException with the specified error
         /// message.
         /// </summary>

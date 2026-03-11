@@ -53,6 +53,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedResultException
+        /// message.
+        /// </summary>
+        public UnsupportedResultException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedResultException with the specified error
         /// message.
         /// </summary>

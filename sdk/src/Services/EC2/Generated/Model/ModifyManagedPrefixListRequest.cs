@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private List<AddPrefixListEntry> _addEntries = AWSConfigs.InitializeCollections ? new List<AddPrefixListEntry>() : null;
         private long? _currentVersion;
         private bool? _dryRun;
+        private bool? _ipamPrefixListResolverSyncEnabled;
         private int? _maxEntries;
         private string _prefixListId;
         private string _prefixListName;
@@ -114,6 +115,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamPrefixListResolverSyncEnabled. 
+        /// <para>
+        /// Indicates whether synchronization with an IPAM prefix list resolver should be enabled
+        /// for this managed prefix list. When enabled, the prefix list CIDRs are automatically
+        /// updated based on the associated resolver's CIDR selection rules.
+        /// </para>
+        /// </summary>
+        public bool? IpamPrefixListResolverSyncEnabled
+        {
+            get { return this._ipamPrefixListResolverSyncEnabled; }
+            set { this._ipamPrefixListResolverSyncEnabled = value; }
+        }
+
+        // Check to see if IpamPrefixListResolverSyncEnabled property is set
+        internal bool IsSetIpamPrefixListResolverSyncEnabled()
+        {
+            return this._ipamPrefixListResolverSyncEnabled.HasValue; 
         }
 
         /// <summary>

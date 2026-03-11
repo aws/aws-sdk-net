@@ -39,6 +39,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private string _clientToken;
         private string _description;
+        private AIPromptInferenceConfiguration _inferenceConfiguration;
         private string _modelId;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -138,10 +139,35 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// The inference configuration for the AI Prompt being created.
+        /// </para>
+        /// </summary>
+        public AIPromptInferenceConfiguration InferenceConfiguration
+        {
+            get { return this._inferenceConfiguration; }
+            set { this._inferenceConfiguration = value; }
+        }
+
+        // Check to see if InferenceConfiguration property is set
+        internal bool IsSetInferenceConfiguration()
+        {
+            return this._inferenceConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
         /// The identifier of the model used for this AI Prompt.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For information about which models are supported in each Amazon Web Services Region,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+        /// models for system/custom prompts</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelId

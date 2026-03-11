@@ -57,6 +57,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetBillingViewArn())
+            {
+                context.Writer.WritePropertyName("BillingViewArn");
+                context.Writer.WriteStringValue(requestObject.BillingViewArn);
+            }
+
             if(requestObject.IsSetBudgetLimit())
             {
                 context.Writer.WritePropertyName("BudgetLimit");
@@ -128,6 +134,17 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterExpression, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetHealthStatus())
+            {
+                context.Writer.WritePropertyName("HealthStatus");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HealthStatusMarshaller.Instance;
+                marshaller.Marshall(requestObject.HealthStatus, context);
 
                 context.Writer.WriteEndObject();
             }

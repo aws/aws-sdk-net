@@ -62,6 +62,30 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApproverId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LastActivity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastActivity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("LastActivityTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastActivityTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MfaMethods", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MfaMethod, MfaMethodUnmarshaller>(MfaMethodUnmarshaller.Instance);
+                    unmarshalledObject.MfaMethods = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PendingBaselineSessionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PendingBaselineSessionArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PrimaryIdentityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

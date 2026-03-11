@@ -84,7 +84,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Parameter information for trusted public key certificate import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string PublicKeyCertificate
         {
             get { return this._publicKeyCertificate; }

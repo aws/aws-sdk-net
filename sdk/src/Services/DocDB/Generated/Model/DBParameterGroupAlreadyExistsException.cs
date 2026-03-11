@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBParameterGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBParameterGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBParameterGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

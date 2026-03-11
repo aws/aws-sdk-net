@@ -68,6 +68,7 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime? ExpireTime
         {
             get { return this._expireTime; }

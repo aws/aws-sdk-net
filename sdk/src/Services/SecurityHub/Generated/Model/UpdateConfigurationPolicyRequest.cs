@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConfigurationPolicy operation.
-    /// Updates a configuration policy. Only the Security Hub delegated administrator can
-    /// invoke this operation from the home Region.
+    /// Updates a configuration policy. Only the Security Hub CSPM delegated administrator
+    /// can invoke this operation from the home Region.
     /// </summary>
     public partial class UpdateConfigurationPolicyRequest : AmazonSecurityHubRequest
     {
@@ -45,13 +45,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ConfigurationPolicy. 
         /// <para>
-        ///  An object that defines how Security Hub is configured. It includes whether Security
-        /// Hub is enabled or disabled, a list of enabled security standards, a list of enabled
+        ///  An object that defines how Security Hub CSPM is configured. It includes whether Security
+        /// Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled
         /// or disabled security controls, and a list of custom parameter values for specified
         /// controls. If you provide a list of security controls that are enabled in the configuration
-        /// policy, Security Hub disables all other controls (including newly released controls).
+        /// policy, Security Hub CSPM disables all other controls (including newly released controls).
         /// If you provide a list of security controls that are disabled in the configuration
-        /// policy, Security Hub enables all other controls (including newly released controls).
+        /// policy, Security Hub CSPM enables all other controls (including newly released controls).
         /// 
         /// </para>
         ///  

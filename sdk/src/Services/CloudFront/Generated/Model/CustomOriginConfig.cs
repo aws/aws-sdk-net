@@ -38,7 +38,9 @@ namespace Amazon.CloudFront.Model
     {
         private int? _httpPort;
         private int? _httpsPort;
+        private IpAddressType _ipAddressType;
         private int? _originKeepaliveTimeout;
+        private OriginMtlsConfig _originMtlsConfig;
         private OriginProtocolPolicy _originProtocolPolicy;
         private int? _originReadTimeout;
         private OriginSslProtocols _originSslProtocols;
@@ -84,6 +86,26 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Specifies which IP protocol CloudFront uses when connecting to your origin. If your
+        /// origin uses both IPv4 and IPv6 protocols, you can choose <c>dualstack</c> to help
+        /// optimize reliability.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OriginKeepaliveTimeout. 
         /// <para>
         /// Specifies how long, in seconds, CloudFront persists its connection to the origin.
@@ -106,6 +128,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginKeepaliveTimeout()
         {
             return this._originKeepaliveTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginMtlsConfig. 
+        /// <para>
+        /// Configures mutual TLS authentication between CloudFront and your origin server.
+        /// </para>
+        /// </summary>
+        public OriginMtlsConfig OriginMtlsConfig
+        {
+            get { return this._originMtlsConfig; }
+            set { this._originMtlsConfig = value; }
+        }
+
+        // Check to see if OriginMtlsConfig property is set
+        internal bool IsSetOriginMtlsConfig()
+        {
+            return this._originMtlsConfig != null;
         }
 
         /// <summary>
@@ -153,7 +193,7 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response
-        /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public int? OriginReadTimeout

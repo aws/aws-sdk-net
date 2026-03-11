@@ -39,6 +39,13 @@ namespace Amazon.Synthetics.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestEntityTooLargeException
+        /// message.
+        /// </summary>
+        public RequestEntityTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestEntityTooLargeException with the specified error
         /// message.
         /// </summary>

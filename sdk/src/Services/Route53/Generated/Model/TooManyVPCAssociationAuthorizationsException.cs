@@ -43,6 +43,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyVPCAssociationAuthorizationsException
+        /// message.
+        /// </summary>
+        public TooManyVPCAssociationAuthorizationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyVPCAssociationAuthorizationsException with the specified error
         /// message.
         /// </summary>

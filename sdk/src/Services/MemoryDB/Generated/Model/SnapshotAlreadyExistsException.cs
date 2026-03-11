@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A snapshot with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SnapshotAlreadyExistsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SnapshotAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SnapshotAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SnapshotAlreadyExistsException with the specified error

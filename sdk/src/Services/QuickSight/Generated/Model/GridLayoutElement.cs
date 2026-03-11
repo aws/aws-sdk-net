@@ -34,12 +34,73 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GridLayoutElement
     {
+        private GridLayoutElementBackgroundStyle _backgroundStyle;
+        private string _borderRadius;
+        private GridLayoutElementBorderStyle _borderStyle;
         private int? _columnIndex;
         private int? _columnSpan;
         private string _elementId;
         private LayoutElementType _elementType;
+        private LoadingAnimation _loadingAnimation;
+        private string _padding;
         private int? _rowIndex;
         private int? _rowSpan;
+        private GridLayoutElementBorderStyle _selectedBorderStyle;
+
+        /// <summary>
+        /// Gets and sets the property BackgroundStyle. 
+        /// <para>
+        /// The background style configuration of a grid layout element.
+        /// </para>
+        /// </summary>
+        public GridLayoutElementBackgroundStyle BackgroundStyle
+        {
+            get { return this._backgroundStyle; }
+            set { this._backgroundStyle = value; }
+        }
+
+        // Check to see if BackgroundStyle property is set
+        internal bool IsSetBackgroundStyle()
+        {
+            return this._backgroundStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BorderRadius. 
+        /// <para>
+        /// The border radius of a grid layout element.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public string BorderRadius
+        {
+            get { return this._borderRadius; }
+            set { this._borderRadius = value; }
+        }
+
+        // Check to see if BorderRadius property is set
+        internal bool IsSetBorderRadius()
+        {
+            return this._borderRadius != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BorderStyle. 
+        /// <para>
+        /// The border style configuration of a grid layout element.
+        /// </para>
+        /// </summary>
+        public GridLayoutElementBorderStyle BorderStyle
+        {
+            get { return this._borderStyle; }
+            set { this._borderStyle = value; }
+        }
+
+        // Check to see if BorderStyle property is set
+        internal bool IsSetBorderStyle()
+        {
+            return this._borderStyle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColumnIndex. 
@@ -118,6 +179,40 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LoadingAnimation.
+        /// </summary>
+        public LoadingAnimation LoadingAnimation
+        {
+            get { return this._loadingAnimation; }
+            set { this._loadingAnimation = value; }
+        }
+
+        // Check to see if LoadingAnimation property is set
+        internal bool IsSetLoadingAnimation()
+        {
+            return this._loadingAnimation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Padding. 
+        /// <para>
+        /// The padding of a grid layout element.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public string Padding
+        {
+            get { return this._padding; }
+            set { this._padding = value; }
+        }
+
+        // Check to see if Padding property is set
+        internal bool IsSetPadding()
+        {
+            return this._padding != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RowIndex. 
         /// <para>
         /// The row index for the upper left corner of an element.
@@ -153,6 +248,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowSpan()
         {
             return this._rowSpan.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectedBorderStyle. 
+        /// <para>
+        /// The border style configuration of a grid layout element. This border style is used
+        /// when the element is selected.
+        /// </para>
+        /// </summary>
+        public GridLayoutElementBorderStyle SelectedBorderStyle
+        {
+            get { return this._selectedBorderStyle; }
+            set { this._selectedBorderStyle = value; }
+        }
+
+        // Check to see if SelectedBorderStyle property is set
+        internal bool IsSetSelectedBorderStyle()
+        {
+            return this._selectedBorderStyle != null;
         }
 
     }

@@ -50,9 +50,9 @@ namespace Amazon.BCMDataExports.Internal
         {
             var config = (AmazonBCMDataExportsConfig)requestContext.ClientConfig;
             var result = new BCMDataExportsEndpointParameters();
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.

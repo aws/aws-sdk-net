@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryDeletedException
+        /// message.
+        /// </summary>
+        public DirectoryDeletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryDeletedException with the specified error
         /// message.
         /// </summary>

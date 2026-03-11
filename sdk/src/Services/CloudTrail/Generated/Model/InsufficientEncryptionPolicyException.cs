@@ -47,6 +47,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientEncryptionPolicyException
+        /// message.
+        /// </summary>
+        public InsufficientEncryptionPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientEncryptionPolicyException with the specified error
         /// message.
         /// </summary>

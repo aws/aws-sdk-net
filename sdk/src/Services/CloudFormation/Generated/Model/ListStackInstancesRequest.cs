@@ -32,8 +32,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the ListStackInstances operation.
     /// Returns summary information about stack instances that are associated with the specified
-    /// stack set. You can filter for stack instances that are associated with a specific
-    /// Amazon Web Services account name or Region, or that have a specific status.
+    /// StackSet. You can filter for stack instances that are associated with a specific Amazon
+    /// Web Services account name or Region, or that have a specific status.
     /// </summary>
     public partial class ListStackInstancesRequest : AmazonCloudFormationRequest
     {
@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -134,11 +134,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous request didn't return all the remaining results, the response's <c>NextToken</c>
-        /// parameter value is set to a token. To retrieve the next set of results, call <c>ListStackInstances</c>
-        /// again and assign that token to the request object's <c>NextToken</c> parameter. If
-        /// there are no remaining results, the previous response object's <c>NextToken</c> parameter
-        /// is set to <c>null</c>.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -194,7 +191,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to list stack instances for.
+        /// The name or unique ID of the StackSet that you want to list stack instances for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

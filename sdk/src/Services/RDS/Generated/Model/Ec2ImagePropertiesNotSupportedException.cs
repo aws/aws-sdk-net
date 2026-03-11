@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for Ec2ImagePropertiesNotSupportedException
+        /// message.
+        /// </summary>
+        public Ec2ImagePropertiesNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new Ec2ImagePropertiesNotSupportedException with the specified error
         /// message.
         /// </summary>

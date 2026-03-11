@@ -39,6 +39,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetInUseException
+        /// message.
+        /// </summary>
+        public SubnetInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetInUseException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.LexRuntimeV2.Model
     {
 
         /// <summary>
+        /// Default constructor for DependencyFailedException
+        /// message.
+        /// </summary>
+        public DependencyFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyFailedException with the specified error
         /// message.
         /// </summary>

@@ -210,6 +210,48 @@ namespace Amazon.LaunchWizard
 
         #endregion
         
+        #region  GetDeploymentPatternVersion
+
+
+        /// <summary>
+        /// Returns information about a deployment pattern version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentPatternVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetDeploymentPatternVersion service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeploymentPatternVersion">REST API Reference for GetDeploymentPatternVersion Operation</seealso>
+        GetDeploymentPatternVersionResponse GetDeploymentPatternVersion(GetDeploymentPatternVersionRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a deployment pattern version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentPatternVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDeploymentPatternVersion service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeploymentPatternVersion">REST API Reference for GetDeploymentPatternVersion Operation</seealso>
+        Task<GetDeploymentPatternVersionResponse> GetDeploymentPatternVersionAsync(GetDeploymentPatternVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetWorkload
 
 
@@ -357,6 +399,54 @@ namespace Amazon.LaunchWizard
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentEvents">REST API Reference for ListDeploymentEvents Operation</seealso>
         Task<ListDeploymentEventsResponse> ListDeploymentEventsAsync(ListDeploymentEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDeploymentPatternVersions
+
+
+        /// <summary>
+        /// Lists the deployment pattern versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentPatternVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListDeploymentPatternVersions service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentPatternVersions">REST API Reference for ListDeploymentPatternVersions Operation</seealso>
+        ListDeploymentPatternVersionsResponse ListDeploymentPatternVersions(ListDeploymentPatternVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the deployment pattern versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentPatternVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeploymentPatternVersions service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentPatternVersions">REST API Reference for ListDeploymentPatternVersions Operation</seealso>
+        Task<ListDeploymentPatternVersionsResponse> ListDeploymentPatternVersionsAsync(ListDeploymentPatternVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -639,6 +729,62 @@ namespace Amazon.LaunchWizard
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDeployment
+
+
+        /// <summary>
+        /// Updates a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDeployment service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
+        UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request);
+
+
+
+        /// <summary>
+        /// Updates a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDeployment service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
+        Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

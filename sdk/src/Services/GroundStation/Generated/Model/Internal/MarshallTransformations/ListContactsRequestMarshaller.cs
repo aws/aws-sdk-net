@@ -79,6 +79,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
             }
 
+            if(publicRequest.IsSetEphemeris())
+            {
+                context.Writer.WritePropertyName("ephemeris");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EphemerisFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Ephemeris, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetGroundStation())
             {
                 context.Writer.WritePropertyName("groundStation");

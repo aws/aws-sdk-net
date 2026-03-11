@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class SearchTransitGatewayRoutesResponse : AmazonWebServiceResponse
     {
         private bool? _additionalRoutesAvailable;
+        private string _nextToken;
         private List<TransitGatewayRoute> _routes = AWSConfigs.InitializeCollections ? new List<TransitGatewayRoute>() : null;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAdditionalRoutesAvailable()
         {
             return this._additionalRoutesAvailable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <c>null</c> when
+        /// there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

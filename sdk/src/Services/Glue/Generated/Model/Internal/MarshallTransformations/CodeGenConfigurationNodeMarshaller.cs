@@ -123,6 +123,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetCatalogIcebergSource())
+            {
+                context.Writer.WritePropertyName("CatalogIcebergSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CatalogIcebergSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.CatalogIcebergSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCatalogKafkaSource())
             {
                 context.Writer.WritePropertyName("CatalogKafkaSource");
@@ -284,6 +295,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = DynamoDBCatalogSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDBCatalogSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetDynamoDBELTConnectorSource())
+            {
+                context.Writer.WritePropertyName("DynamoDBELTConnectorSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DynamoDBELTConnectorSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamoDBELTConnectorSource, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -552,6 +574,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRoute())
+            {
+                context.Writer.WritePropertyName("Route");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteMarshaller.Instance;
+                marshaller.Marshall(requestObject.Route, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetS3CatalogDeltaSource())
             {
                 context.Writer.WritePropertyName("S3CatalogDeltaSource");
@@ -570,6 +603,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = S3CatalogHudiSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3CatalogHudiSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetS3CatalogIcebergSource())
+            {
+                context.Writer.WritePropertyName("S3CatalogIcebergSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3CatalogIcebergSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3CatalogIcebergSource, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -713,6 +757,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                 var marshaller = S3HyperDirectTargetMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3HyperDirectTarget, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetS3IcebergCatalogTarget())
+            {
+                context.Writer.WritePropertyName("S3IcebergCatalogTarget");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3IcebergCatalogTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3IcebergCatalogTarget, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCloudWatchLogsRoleArnException
+        /// message.
+        /// </summary>
+        public InvalidCloudWatchLogsRoleArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCloudWatchLogsRoleArnException with the specified error
         /// message.
         /// </summary>

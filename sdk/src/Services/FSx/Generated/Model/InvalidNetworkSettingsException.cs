@@ -42,6 +42,13 @@ namespace Amazon.FSx.Model
         private string _invalidSubnetId;
 
         /// <summary>
+        /// Default constructor for InvalidNetworkSettingsException
+        /// message.
+        /// </summary>
+        public InvalidNetworkSettingsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNetworkSettingsException with the specified error
         /// message.
         /// </summary>

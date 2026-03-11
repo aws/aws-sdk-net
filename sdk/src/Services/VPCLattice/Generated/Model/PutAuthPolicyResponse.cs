@@ -43,7 +43,7 @@ namespace Amazon.VPCLattice.Model
         /// The auth policy. The policy string in JSON must not contain newlines or blank lines.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
+        [AWSProperty(Min=0, Max=36864)]
         public string Policy
         {
             get { return this._policy; }

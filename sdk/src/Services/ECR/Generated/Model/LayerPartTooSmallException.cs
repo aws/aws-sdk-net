@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for LayerPartTooSmallException
+        /// message.
+        /// </summary>
+        public LayerPartTooSmallException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LayerPartTooSmallException with the specified error
         /// message.
         /// </summary>

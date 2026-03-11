@@ -36,6 +36,14 @@ namespace Amazon.CloudControlApi
         /// <summary>
         /// Construct instance of AmazonCloudControlApiException
         /// </summary>
+        public AmazonCloudControlApiException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudControlApiException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudControlApiException(string message)
             : base(message)

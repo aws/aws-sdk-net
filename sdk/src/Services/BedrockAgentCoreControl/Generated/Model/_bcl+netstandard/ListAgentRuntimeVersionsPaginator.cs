@@ -45,8 +45,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Enumerable containing all of the AgentRuntimes
         /// </summary>
-        public IPaginatedEnumerable<Agent> AgentRuntimes => 
-            new PaginatedResultKeyResponse<ListAgentRuntimeVersionsResponse, Agent>(this, (i) => i.AgentRuntimes ?? new List<Agent>());
+        public IPaginatedEnumerable<AgentRuntime> AgentRuntimes => 
+            new PaginatedResultKeyResponse<ListAgentRuntimeVersionsResponse, AgentRuntime>(this, (i) => i.AgentRuntimes ?? new List<AgentRuntime>());
 
         internal ListAgentRuntimeVersionsPaginator(IAmazonBedrockAgentCoreControl client, ListAgentRuntimeVersionsRequest request)
         {

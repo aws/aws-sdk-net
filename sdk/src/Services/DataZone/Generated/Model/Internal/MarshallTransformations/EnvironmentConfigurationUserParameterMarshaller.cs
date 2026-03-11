@@ -74,6 +74,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetEnvironmentResolvedAccount())
+            {
+                context.Writer.WritePropertyName("environmentResolvedAccount");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EnvironmentResolvedAccountMarshaller.Instance;
+                marshaller.Marshall(requestObject.EnvironmentResolvedAccount, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -50,6 +50,7 @@ namespace Amazon.Keyspaces.Model
         private TableStatus _status;
         private string _tableName;
         private TimeToLive _ttl;
+        private WarmThroughputSpecificationSummary _warmThroughputSpecification;
 
         /// <summary>
         /// Gets and sets the property CapacitySpecification. 
@@ -358,6 +359,25 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetTtl()
         {
             return this._ttl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughputSpecification. 
+        /// <para>
+        /// The warm throughput settings for the table, including the current status and configured
+        /// read and write capacity units.
+        /// </para>
+        /// </summary>
+        public WarmThroughputSpecificationSummary WarmThroughputSpecification
+        {
+            get { return this._warmThroughputSpecification; }
+            set { this._warmThroughputSpecification = value; }
+        }
+
+        // Check to see if WarmThroughputSpecification property is set
+        internal bool IsSetWarmThroughputSpecification()
+        {
+            return this._warmThroughputSpecification != null;
         }
 
     }

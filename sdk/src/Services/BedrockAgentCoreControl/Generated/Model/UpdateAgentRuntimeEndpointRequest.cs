@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgentRuntimeEndpoint operation.
-    /// Updates an existing Amazon Secure AgentEndpoint.
+    /// Updates an existing Amazon Bedrock AgentCore Runtime endpoint.
     /// </summary>
     public partial class UpdateAgentRuntimeEndpointRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime associated with the endpoint.
+        /// The unique identifier of the AgentCore Runtime associated with the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeVersion. 
         /// <para>
-        /// The updated version of the agent runtime for the endpoint.
+        /// The updated version of the AgentCore Runtime for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description of the agent runtime endpoint.
+        /// The updated description of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -120,7 +120,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the agent runtime endpoint to update.
+        /// The name of the AgentCore Runtime endpoint to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

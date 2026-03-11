@@ -56,6 +56,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DashboardCustomizationVisualOptions", targetDepth))
+                {
+                    var unmarshaller = DashboardCustomizationVisualOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DashboardCustomizationVisualOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("FieldOptions", targetDepth))
                 {
                     var unmarshaller = TableFieldOptionsUnmarshaller.Instance;

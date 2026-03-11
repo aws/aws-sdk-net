@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DocumentVersionLimitExceededException
+        /// message.
+        /// </summary>
+        public DocumentVersionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentVersionLimitExceededException with the specified error
         /// message.
         /// </summary>

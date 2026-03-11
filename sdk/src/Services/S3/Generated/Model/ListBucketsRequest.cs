@@ -31,21 +31,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBuckets operation.
-    /// <important> 
-    /// <para>
-    /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-    /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-    /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-    /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-    /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-    /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-    /// Region, and South America (São Paulo) Region.
-    /// </para>
-    ///  </important> <note> 
+    /// <note> 
     /// <para>
     /// This operation is not supported for directory buckets.
     /// </para>
@@ -69,6 +55,12 @@ namespace Amazon.S3.Model
     /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
     /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
     /// than 10,000. 
+    /// </para>
+    ///  </important> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
     /// </para>
     ///  </important>
     /// </summary>

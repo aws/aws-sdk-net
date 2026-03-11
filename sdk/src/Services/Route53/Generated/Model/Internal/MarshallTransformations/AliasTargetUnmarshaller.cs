@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AliasTarget Object
     /// </summary>  
-    public class AliasTargetUnmarshaller : IXmlUnmarshaller<AliasTarget, XmlUnmarshallerContext>
+    public partial class AliasTargetUnmarshaller : IXmlUnmarshaller<AliasTarget, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.EvaluateTargetHealth = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AliasTarget unmarshalledObject, int targetDepth);
+
         private static AliasTargetUnmarshaller _instance = new AliasTargetUnmarshaller();        
 
         /// <summary>

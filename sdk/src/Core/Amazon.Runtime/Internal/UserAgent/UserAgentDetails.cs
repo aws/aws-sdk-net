@@ -27,7 +27,7 @@ namespace Amazon.Runtime.Internal.UserAgent
     {
         private const int MaxSizeBytes = 1024; // 1 KB size limit
         private readonly HashSet<string> _trackedFeatureIds = new HashSet<string>();
-        private readonly StringBuilder _userAgentBuilder = new StringBuilder();
+        private readonly HashSet<string> _userAgentCustomComponents = new HashSet<string>();
 
         /// <summary>
         /// Gets the list of tracked feature IDs.
@@ -40,9 +40,9 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// <param name="component">The user-agent component to append.</param>
         public void AddUserAgentComponent(string component)
         {
-            if (!string.IsNullOrEmpty(component))
+            if (!string.IsNullOrWhiteSpace(component))
             {
-                _userAgentBuilder.Append(' ').Append(component);
+                _userAgentCustomComponents.Add(component.Trim());
             }
         }
 
@@ -62,7 +62,7 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// </summary>
         public string GetCustomUserAgentComponents()
         {
-            return _userAgentBuilder.ToString().Trim();
+            return string.Join(" ", _userAgentCustomComponents);
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace Amazon.Runtime.Internal.UserAgent
             var metricsUserAgent = GenerateMetricsUserAgent();
             if (!string.IsNullOrEmpty(metricsUserAgent))
             {
-                return $"{_userAgentBuilder.ToString().Trim()} {metricsUserAgent}";
+                return $"{string.Join(" ", _userAgentCustomComponents)} {metricsUserAgent}";
             }
-            return _userAgentBuilder.ToString().Trim();
+            return string.Join(" ", _userAgentCustomComponents);
         }
 
         /// <summary>

@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.BillableTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("BillableTokenCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.BillableTokenCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CheckpointConfig", targetDepth))
                 {
                     var unmarshaller = CheckpointConfigUnmarshaller.Instance;
@@ -172,16 +178,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MlflowConfig", targetDepth))
+                {
+                    var unmarshaller = MlflowConfigUnmarshaller.Instance;
+                    response.MlflowConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MlflowDetails", targetDepth))
+                {
+                    var unmarshaller = MlflowDetailsUnmarshaller.Instance;
+                    response.MlflowDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ModelArtifacts", targetDepth))
                 {
                     var unmarshaller = ModelArtifactsUnmarshaller.Instance;
                     response.ModelArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ModelPackageConfig", targetDepth))
+                {
+                    var unmarshaller = ModelPackageConfigUnmarshaller.Instance;
+                    response.ModelPackageConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("OutputDataConfig", targetDepth))
                 {
                     var unmarshaller = OutputDataConfigUnmarshaller.Instance;
                     response.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("OutputModelPackageArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OutputModelPackageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProfilerConfig", targetDepth))
@@ -206,6 +236,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProfilingStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ProgressInfo", targetDepth))
+                {
+                    var unmarshaller = TrainingProgressInfoUnmarshaller.Instance;
+                    response.ProgressInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemoteDebugConfig", targetDepth))
@@ -242,6 +278,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<SecondaryStatusTransition, SecondaryStatusTransitionUnmarshaller>(SecondaryStatusTransitionUnmarshaller.Instance);
                     response.SecondaryStatusTransitions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ServerlessJobConfig", targetDepth))
+                {
+                    var unmarshaller = ServerlessJobConfigUnmarshaller.Instance;
+                    response.ServerlessJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StoppingCondition", targetDepth))

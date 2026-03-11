@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutObjectLockConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("object-lock");
         
@@ -95,10 +96,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if(publicRequest.ObjectLockConfiguration.IsSetObjectLockEnabled())
                         xmlWriter.WriteElementString("ObjectLockEnabled", StringUtils.FromString(publicRequest.ObjectLockConfiguration.ObjectLockEnabled));
 
-                    if (publicRequest.ObjectLockConfiguration.Rule != null)
+                    if (publicRequest.ObjectLockConfiguration.IsSetRule())
                     {
                         xmlWriter.WriteStartElement("Rule");
-                        if (publicRequest.ObjectLockConfiguration.Rule.DefaultRetention != null)
+                        if (publicRequest.ObjectLockConfiguration.Rule.IsSetDefaultRetention())
                         {
                             xmlWriter.WriteStartElement("DefaultRetention");
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetDays())
@@ -115,13 +116,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -135,8 +135,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutObjectLockConfigurationRequestMarshaller _instance = new PutObjectLockConfigurationRequestMarshaller();        
@@ -158,5 +156,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectLockConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutObjectLockConfigurationRequest publicRequest);
     }    
 }

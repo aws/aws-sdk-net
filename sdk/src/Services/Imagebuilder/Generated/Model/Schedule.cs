@@ -35,9 +35,29 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class Schedule
     {
+        private AutoDisablePolicy _autoDisablePolicy;
         private PipelineExecutionStartCondition _pipelineExecutionStartCondition;
         private string _scheduleExpression;
         private string _timezone;
+
+        /// <summary>
+        /// Gets and sets the property AutoDisablePolicy. 
+        /// <para>
+        /// The policy that configures when Image Builder should automatically disable a pipeline
+        /// that is failing.
+        /// </para>
+        /// </summary>
+        public AutoDisablePolicy AutoDisablePolicy
+        {
+            get { return this._autoDisablePolicy; }
+            set { this._autoDisablePolicy = value; }
+        }
+
+        // Check to see if AutoDisablePolicy property is set
+        internal bool IsSetAutoDisablePolicy()
+        {
+            return this._autoDisablePolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionStartCondition. 

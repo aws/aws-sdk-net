@@ -82,6 +82,7 @@ namespace Amazon.SageMaker.Model
         private string _executionRoleArn;
         private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
+        private MetricsConfig _metricsConfig;
         private List<ProductionVariant> _productionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariant>() : null;
         private List<ProductionVariant> _shadowProductionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariant>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -273,6 +274,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// The configuration parameters for utilization metrics.
+        /// </para>
+        /// </summary>
+        public MetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
         }
 
         /// <summary>

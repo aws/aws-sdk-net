@@ -39,6 +39,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceLinkedRoleLockClientException
+        /// message.
+        /// </summary>
+        public ServiceLinkedRoleLockClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLinkedRoleLockClientException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMessageContentsException
+        /// message.
+        /// </summary>
+        public InvalidMessageContentsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMessageContentsException with the specified error
         /// message.
         /// </summary>

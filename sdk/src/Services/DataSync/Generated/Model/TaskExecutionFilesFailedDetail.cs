@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The number of objects that DataSync fails to prepare, transfer, verify, and delete
-    /// during your task execution.
+    /// The number of files or objects that DataSync fails to prepare, transfer, verify, and
+    /// delete during your task execution.
     /// 
     ///  <note> 
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Delete. 
         /// <para>
-        /// The number of objects that DataSync fails to delete during your task execution.
+        /// The number of files or objects that DataSync fails to delete during your task execution.
         /// </para>
         /// </summary>
         public long? Delete
@@ -68,7 +68,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Prepare. 
         /// <para>
-        /// The number of objects that DataSync fails to prepare during your task execution.
+        /// The number of files or objects that DataSync fails to prepare during your task execution.
         /// </para>
         /// </summary>
         public long? Prepare
@@ -86,7 +86,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Transfer. 
         /// <para>
-        /// The number of objects that DataSync fails to transfer during your task execution.
+        /// The number of files or objects that DataSync fails to transfer during your task execution.
         /// </para>
         /// </summary>
         public long? Transfer
@@ -104,7 +104,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Verify. 
         /// <para>
-        /// The number of objects that DataSync fails to verify during your task execution.
+        /// The number of files or objects that DataSync fails to verify during your task execution.
         /// </para>
         /// </summary>
         public long? Verify

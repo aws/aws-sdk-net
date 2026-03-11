@@ -31,13 +31,20 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-    /// Amazon Web ServicesSupport</a>.
+    /// Amazon Web Services Support</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class BlockedException : AmazonECSException
     {
+
+        /// <summary>
+        /// Default constructor for BlockedException
+        /// message.
+        /// </summary>
+        public BlockedException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new BlockedException with the specified error

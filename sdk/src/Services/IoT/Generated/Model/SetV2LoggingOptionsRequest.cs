@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
     {
         private LogLevel _defaultLogLevel;
         private bool? _disableAllLogs;
+        private List<LogEventConfiguration> _eventConfigurations = AWSConfigs.InitializeCollections ? new List<LogEventConfiguration>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -79,6 +80,29 @@ namespace Amazon.IoT.Model
         internal bool IsSetDisableAllLogs()
         {
             return this._disableAllLogs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventConfigurations. 
+        /// <para>
+        ///  The list of event configurations that override account-level logging. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<LogEventConfiguration> EventConfigurations
+        {
+            get { return this._eventConfigurations; }
+            set { this._eventConfigurations = value; }
+        }
+
+        // Check to see if EventConfigurations property is set
+        internal bool IsSetEventConfigurations()
+        {
+            return this._eventConfigurations != null && (this._eventConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

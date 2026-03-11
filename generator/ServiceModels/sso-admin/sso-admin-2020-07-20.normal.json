@@ -16,6 +16,24 @@
     "uid":"sso-admin-2020-07-20"
   },
   "operations":{
+    "AddRegion":{
+      "name":"AddRegion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AddRegionRequest"},
+      "output":{"shape":"AddRegionResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"}
+      ],
+      "documentation":"<p>Adds a Region to an IAM Identity Center instance. This operation initiates an asynchronous workflow to replicate the IAM Identity Center instance to the target Region. The Region status is set to ADDING at first and changes to ACTIVE when the workflow completes.</p> <p>To use this operation, your IAM Identity Center instance and the target Region must meet the requirements described in the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/multi-region-iam-identity-center.html#multi-region-prerequisites\">IAM Identity Center User Guide</a>. </p> <p>The following actions are related to <code>AddRegion</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html\">RemoveRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html\">DescribeRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html\">ListRegions</a> </p> </li> </ul>"
+    },
     "AttachCustomerManagedPolicyReferenceToPermissionSet":{
       "name":"AttachCustomerManagedPolicyReferenceToPermissionSet",
       "http":{
@@ -552,6 +570,23 @@
       ],
       "documentation":"<p>Describes the status for the given permission set provisioning request.</p>"
     },
+    "DescribeRegion":{
+      "name":"DescribeRegion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeRegionRequest"},
+      "output":{"shape":"DescribeRegionResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Retrieves details about a specific Region enabled in an IAM Identity Center instance. Details include the Region name, current status (ACTIVE, ADDING, or REMOVING), the date when the Region was added, and whether it is the primary Region. The request must be made from one of the enabled Regions of the IAM Identity Center instance.</p> <p>The following actions are related to <code>DescribeRegion</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html\"> AddRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html\">RemoveRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html\">ListRegions</a> </p> </li> </ul>"
+    },
     "DescribeTrustedTokenIssuer":{
       "name":"DescribeTrustedTokenIssuer",
       "http":{
@@ -620,7 +655,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Retrieves the authorized targets for an IAM Identity Center access scope for an application.</p>"
+      "documentation":"<p>Retrieves the authorized targets for an IAM Identity Center access scope for an application.</p>",
+      "readonly":true
     },
     "GetApplicationAssignmentConfiguration":{
       "name":"GetApplicationAssignmentConfiguration",
@@ -637,7 +673,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.</p>"
+      "documentation":"<p>Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.</p>",
+      "readonly":true
     },
     "GetApplicationAuthenticationMethod":{
       "name":"GetApplicationAuthenticationMethod",
@@ -654,7 +691,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Retrieves details about an authentication method used by an application.</p>"
+      "documentation":"<p>Retrieves details about an authentication method used by an application.</p>",
+      "readonly":true
     },
     "GetApplicationGrant":{
       "name":"GetApplicationGrant",
@@ -671,7 +709,26 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Retrieves details about an application grant.</p>"
+      "documentation":"<p>Retrieves details about an application grant.</p>",
+      "readonly":true
+    },
+    "GetApplicationSessionConfiguration":{
+      "name":"GetApplicationSessionConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetApplicationSessionConfigurationRequest"},
+      "output":{"shape":"GetApplicationSessionConfigurationResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Retrieves the session configuration for an application in IAM Identity Center.</p> <p>The session configuration determines how users can access an application. This includes whether user background sessions are enabled. User background sessions allow users to start a job on a supported Amazon Web Services managed application without having to remain signed in to an active session while the job runs.</p>",
+      "readonly":true
     },
     "GetInlinePolicyForPermissionSet":{
       "name":"GetInlinePolicyForPermissionSet",
@@ -802,12 +859,13 @@
       "output":{"shape":"ListApplicationAccessScopesResponse"},
       "errors":[
         {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists the access scopes and authorized targets associated with an application.</p>"
+      "documentation":"<p>Lists the access scopes and authorized targets associated with an application.</p>",
+      "readonly":true
     },
     "ListApplicationAssignments":{
       "name":"ListApplicationAssignments",
@@ -824,7 +882,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists Amazon Web Services account users that are assigned to an application.</p>"
+      "documentation":"<p>Lists Amazon Web Services account users that are assigned to an application.</p>",
+      "readonly":true
     },
     "ListApplicationAssignmentsForPrincipal":{
       "name":"ListApplicationAssignmentsForPrincipal",
@@ -841,7 +900,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists the applications to which a specified principal is assigned. You must provide a filter when calling this action from a member account against your organization instance of IAM Identity Center. A filter is not required when called from the management account against an organization instance of IAM Identity Center, or from a member account against an account instance of IAM Identity Center in the same account.</p>"
+      "documentation":"<p>Lists the applications to which a specified principal is assigned. You must provide a filter when calling this action from a member account against your organization instance of IAM Identity Center. A filter is not required when called from the management account against an organization instance of IAM Identity Center, or from a member account against an account instance of IAM Identity Center in the same account.</p>",
+      "readonly":true
     },
     "ListApplicationAuthenticationMethods":{
       "name":"ListApplicationAuthenticationMethods",
@@ -853,12 +913,13 @@
       "output":{"shape":"ListApplicationAuthenticationMethodsResponse"},
       "errors":[
         {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>Lists all of the authentication methods supported by the specified application.</p>"
+      "documentation":"<p>Lists all of the authentication methods supported by the specified application.</p>",
+      "readonly":true
     },
     "ListApplicationGrants":{
       "name":"ListApplicationGrants",
@@ -870,12 +931,13 @@
       "output":{"shape":"ListApplicationGrantsResponse"},
       "errors":[
         {"shape":"ThrottlingException"},
-        {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>List the grants associated with an application.</p>"
+      "documentation":"<p>List the grants associated with an application.</p>",
+      "readonly":true
     },
     "ListApplicationProviders":{
       "name":"ListApplicationProviders",
@@ -1010,6 +1072,22 @@
       ],
       "documentation":"<p>Lists all the permission sets that are provisioned to a specified Amazon Web Services account.</p>"
     },
+    "ListRegions":{
+      "name":"ListRegions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListRegionsRequest"},
+      "output":{"shape":"ListRegionsResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Lists all enabled Regions of an IAM Identity Center instance, including those that are being added or removed. This operation returns Regions with ACTIVE, ADDING, or REMOVING status.</p> <p>The following actions are related to <code>ListRegions</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html\"> AddRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html\">RemoveRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html\">DescribeRegion</a> </p> </li> </ul>"
+    },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
       "http":{
@@ -1134,6 +1212,25 @@
       "documentation":"<p>Creates a configuration for an application to use grants. Conceptually grants are authorization to request actions related to tokens. This configuration will be used when parties are requesting and receiving tokens during the trusted identity propagation process. For more information on the IAM Identity Center supported grant workflows, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/customermanagedapps-saml2-oauth2.html\">SAML 2.0 and OAuth 2.0</a>.</p> <p>A grant is created between your applications and Identity Center instance which enables an application to use specified mechanisms to obtain tokens. These tokens are used by your applications to gain access to Amazon Web Services resources on behalf of users. The following elements are within these exchanges:</p> <ul> <li> <p> <b>Requester</b> - The application requesting access to Amazon Web Services resources.</p> </li> <li> <p> <b>Subject</b> - Typically the user that is requesting access to Amazon Web Services resources.</p> </li> <li> <p> <b>Grant</b> - Conceptually, a grant is authorization to access Amazon Web Services resources. These grants authorize token generation for authenticating access to the requester and for the request to make requests on behalf of the subjects. There are four types of grants:</p> <ul> <li> <p> <b>AuthorizationCode</b> - Allows an application to request authorization through a series of user-agent redirects.</p> </li> <li> <p> <b>JWT bearer </b> - Authorizes an application to exchange a JSON Web Token that came from an external identity provider. To learn more, see <a href=\"https://datatracker.ietf.org/doc/html/rfc6749\">RFC 6479</a>.</p> </li> <li> <p> <b>Refresh token</b> - Enables application to request new access tokens to replace expiring or expired access tokens.</p> </li> <li> <p> <b>Exchange token</b> - A grant that requests tokens from the authorization server by providing a ‘subject’ token with access scope authorizing trusted identity propagation to this application. To learn more, see <a href=\"https://datatracker.ietf.org/doc/html/rfc8693\">RFC 8693</a>.</p> </li> </ul> </li> <li> <p> <b>Authorization server</b> - IAM Identity Center requests tokens.</p> </li> </ul> <p>User credentials are never shared directly within these exchanges. Instead, applications use grants to request access tokens from IAM Identity Center. For more information, see <a href=\"https://datatracker.ietf.org/doc/html/rfc6749\">RFC 6479</a>.</p> <p class=\"title\"> <b>Use cases</b> </p> <ul> <li> <p>Connecting to custom applications.</p> </li> <li> <p>Configuring an Amazon Web Services service to make calls to another Amazon Web Services services using JWT tokens.</p> </li> </ul>",
       "idempotent":true
     },
+    "PutApplicationSessionConfiguration":{
+      "name":"PutApplicationSessionConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutApplicationSessionConfigurationRequest"},
+      "output":{"shape":"PutApplicationSessionConfigurationResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"}
+      ],
+      "documentation":"<p>Updates the session configuration for an application in IAM Identity Center.</p> <p>The session configuration determines how users can access an application. This includes whether user background sessions are enabled. User background sessions allow users to start a job on a supported Amazon Web Services managed application without having to remain signed in to an active session while the job runs.</p>",
+      "idempotent":true
+    },
     "PutInlinePolicyToPermissionSet":{
       "name":"PutInlinePolicyToPermissionSet",
       "http":{
@@ -1170,6 +1267,24 @@
         {"shape":"ConflictException"}
       ],
       "documentation":"<p>Attaches an Amazon Web Services managed or customer managed policy to the specified <a>PermissionSet</a> as a permissions boundary.</p>"
+    },
+    "RemoveRegion":{
+      "name":"RemoveRegion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RemoveRegionRequest"},
+      "output":{"shape":"RemoveRegionResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"}
+      ],
+      "documentation":"<p>Removes an additional Region from an IAM Identity Center instance. This operation initiates an asynchronous workflow to clean up IAM Identity Center resources in the specified additional Region. The Region status is set to REMOVING and the Region record is deleted when the workflow completes. The request must be made from the primary Region. The target Region cannot be the primary Region, and no other add or remove Region workflows can be in progress.</p> <p>The following actions are related to <code>RemoveRegion</code>:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html\"> AddRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html\">DescribeRegion</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html\">ListRegions</a> </p> </li> </ul>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -1237,6 +1352,7 @@
       "errors":[
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"ConflictException"}
@@ -1355,12 +1471,20 @@
     "AccessDeniedException":{
       "type":"structure",
       "members":{
-        "Message":{"shape":"AccessDeniedExceptionMessage"}
+        "Message":{"shape":"AccessDeniedExceptionMessage"},
+        "Reason":{
+          "shape":"AccessDeniedExceptionReason",
+          "documentation":"<p>The reason for the access denied exception.</p>"
+        }
       },
       "documentation":"<p>You do not have sufficient access to perform this action.</p>",
       "exception":true
     },
     "AccessDeniedExceptionMessage":{"type":"string"},
+    "AccessDeniedExceptionReason":{
+      "type":"string",
+      "enum":["KMS_AccessDeniedException"]
+    },
     "AccountAssignment":{
       "type":"structure",
       "members":{
@@ -1489,9 +1613,34 @@
     },
     "ActorPolicyDocument":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
+    },
+    "AddRegionRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceArn",
+        "RegionName"
+      ],
+      "members":{
+        "InstanceArn":{
+          "shape":"InstanceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to replicate to the target Region.</p>"
+        },
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The name of the Amazon Web Services Region to add to the IAM Identity Center instance. The Region name must be 1-32 characters long and follow the pattern of Amazon Web Services Region names (for example, us-east-1).</p>"
+        }
+      }
+    },
+    "AddRegionResponse":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"RegionStatus",
+          "documentation":"<p>The status of the Region after the Add operation. The status is ADDING when the asynchronous workflow is in progress and changes to ACTIVE when complete.</p>"
+        }
+      }
     },
     "Application":{
       "type":"structure",
@@ -1505,7 +1654,7 @@
           "documentation":"<p>The ARN of the application provider for this application.</p>"
         },
         "Name":{
-          "shape":"NameType",
+          "shape":"ApplicationNameType",
           "documentation":"<p>The name of the application.</p>"
         },
         "ApplicationAccount":{
@@ -1531,6 +1680,10 @@
         "CreatedDate":{
           "shape":"Date",
           "documentation":"<p>The date and time when the application was originally created.</p>"
+        },
+        "CreatedFrom":{
+          "shape":"RegionName",
+          "documentation":"<p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>"
         }
       },
       "documentation":"<p>A structure that describes an application that uses IAM Identity Center for access management.</p>"
@@ -1539,7 +1692,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso::\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}"
     },
     "ApplicationAssignment":{
       "type":"structure",
@@ -1629,7 +1782,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::aws:applicationProvider/[a-zA-Z0-9-/]+"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso::aws:applicationProvider/[a-zA-Z0-9-/]+"
     },
     "ApplicationProviderList":{
       "type":"list",
@@ -1683,8 +1836,7 @@
     },
     "AttachCustomerManagedPolicyReferenceToPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "AttachManagedPolicyToPermissionSetRequest":{
       "type":"structure",
@@ -1710,8 +1862,7 @@
     },
     "AttachManagedPolicyToPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "AttachedManagedPolicy":{
       "type":"structure",
@@ -1885,8 +2036,7 @@
     },
     "CreateApplicationAssignmentResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CreateApplicationRequest":{
       "type":"structure",
@@ -1959,8 +2109,7 @@
     },
     "CreateInstanceAccessControlAttributeConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CreateInstanceRequest":{
       "type":"structure",
@@ -2183,8 +2332,7 @@
     },
     "DeleteApplicationAssignmentResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteApplicationAuthenticationMethodRequest":{
       "type":"structure",
@@ -2232,8 +2380,7 @@
     },
     "DeleteApplicationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteInlinePolicyFromPermissionSetRequest":{
       "type":"structure",
@@ -2254,8 +2401,7 @@
     },
     "DeleteInlinePolicyFromPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteInstanceAccessControlAttributeConfigurationRequest":{
       "type":"structure",
@@ -2269,8 +2415,7 @@
     },
     "DeleteInstanceAccessControlAttributeConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteInstanceRequest":{
       "type":"structure",
@@ -2284,8 +2429,7 @@
     },
     "DeleteInstanceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeletePermissionSetRequest":{
       "type":"structure",
@@ -2306,8 +2450,7 @@
     },
     "DeletePermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeletePermissionsBoundaryFromPermissionSetRequest":{
       "type":"structure",
@@ -2328,8 +2471,7 @@
     },
     "DeletePermissionsBoundaryFromPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteTrustedTokenIssuerRequest":{
       "type":"structure",
@@ -2343,8 +2485,7 @@
     },
     "DeleteTrustedTokenIssuerResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DescribeAccountAssignmentCreationStatusRequest":{
       "type":"structure",
@@ -2491,7 +2632,7 @@
           "documentation":"<p>The ARN of the application provider under which the operation will run.</p>"
         },
         "Name":{
-          "shape":"NameType",
+          "shape":"ApplicationNameType",
           "documentation":"<p>The application name.</p>"
         },
         "ApplicationAccount":{
@@ -2517,6 +2658,10 @@
         "CreatedDate":{
           "shape":"Date",
           "documentation":"<p>The date the application was created.</p>"
+        },
+        "CreatedFrom":{
+          "shape":"RegionName",
+          "documentation":"<p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>"
         }
       }
     },
@@ -2583,6 +2728,14 @@
         "Status":{
           "shape":"InstanceStatus",
           "documentation":"<p>The status of the instance. </p>"
+        },
+        "StatusReason":{
+          "shape":"Reason",
+          "documentation":"<p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors. </p>"
+        },
+        "EncryptionConfigurationDetails":{
+          "shape":"EncryptionConfigurationDetails",
+          "documentation":"<p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>"
         }
       }
     },
@@ -2635,6 +2788,44 @@
         "PermissionSet":{
           "shape":"PermissionSet",
           "documentation":"<p>Describes the level of access on an Amazon Web Services account.</p>"
+        }
+      }
+    },
+    "DescribeRegionRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceArn",
+        "RegionName"
+      ],
+      "members":{
+        "InstanceArn":{
+          "shape":"InstanceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>"
+        },
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The name of the Amazon Web Services Region to retrieve information about. The Region name must be 1-32 characters long and follow the pattern of Amazon Web Services Region names (for example, us-east-1).</p>"
+        }
+      }
+    },
+    "DescribeRegionResponse":{
+      "type":"structure",
+      "members":{
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The Amazon Web Services Region name.</p>"
+        },
+        "Status":{
+          "shape":"RegionStatus",
+          "documentation":"<p>The current status of the Region. Valid values are ACTIVE (Region is operational), ADDING (Region replication workflow is in progress), or REMOVING (Region removal workflow is in progress).</p>"
+        },
+        "AddedDate":{
+          "shape":"Date",
+          "documentation":"<p>The timestamp when the Region was added to the IAM Identity Center instance. For the primary Region, this is the IAM Identity Center instance creation time.</p>"
+        },
+        "IsPrimaryRegion":{
+          "shape":"IsPrimaryRegion",
+          "documentation":"<p>Indicates whether this is the primary Region where the IAM Identity Center instance was originally enabled. For more information on the difference between the primary Region and additional Regions, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/multi-region-iam-identity-center.html\">IAM Identity Center User Guide</a> </p>"
         }
       }
     },
@@ -2698,8 +2889,7 @@
     },
     "DetachCustomerManagedPolicyReferenceFromPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DetachManagedPolicyFromPermissionSetRequest":{
       "type":"structure",
@@ -2725,8 +2915,7 @@
     },
     "DetachManagedPolicyFromPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DisplayData":{
       "type":"structure",
@@ -2751,6 +2940,43 @@
       "max":100,
       "min":1,
       "pattern":"(-?)P(?=\\d|T\\d)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?"
+    },
+    "EncryptionConfiguration":{
+      "type":"structure",
+      "required":["KeyType"],
+      "members":{
+        "KeyType":{
+          "shape":"KmsKeyType",
+          "documentation":"<p>The type of KMS key used for encryption.</p>"
+        },
+        "KmsKeyArn":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The ARN of the KMS key used to encrypt data. Required when KeyType is CUSTOMER_MANAGED_KEY. Cannot be specified when KeyType is AWS_OWNED_KMS_KEY.</p>"
+        }
+      },
+      "documentation":"<p> A structure that specifies the KMS key type and KMS key ARN used to encrypt data in your IAM Identity Center instance.</p>"
+    },
+    "EncryptionConfigurationDetails":{
+      "type":"structure",
+      "members":{
+        "KeyType":{
+          "shape":"KmsKeyType",
+          "documentation":"<p>The type of KMS key used for encryption.</p>"
+        },
+        "KmsKeyArn":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The ARN of the KMS key currently used to encrypt data in your IAM Identity Center instance. </p>"
+        },
+        "EncryptionStatus":{
+          "shape":"KmsKeyStatus",
+          "documentation":"<p>The current status of encryption configuration.</p>"
+        },
+        "EncryptionStatusReason":{
+          "shape":"Reason",
+          "documentation":"<p>Provides additional context about the current encryption status. This field is particularly useful when the encryption status is UPDATE_FAILED. When encryption configuration update fails, this field contains information about the cause, which may include KMS key access issues, key not found errors, invalid key configuration, key in an invalid state, or a disabled key. </p>"
+        }
+      },
+      "documentation":"<p>The encryption configuration of your IAM Identity Center instance, including the key type, KMS key ARN, and current encryption status. </p>"
     },
     "FederationProtocol":{
       "type":"string",
@@ -2860,6 +3086,25 @@
         "Grant":{
           "shape":"Grant",
           "documentation":"<p>A structure that describes the requested grant.</p>"
+        }
+      }
+    },
+    "GetApplicationSessionConfigurationRequest":{
+      "type":"structure",
+      "required":["ApplicationArn"],
+      "members":{
+        "ApplicationArn":{
+          "shape":"ApplicationArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the application for which to retrieve the session configuration.</p>"
+        }
+      }
+    },
+    "GetApplicationSessionConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "UserBackgroundSessionApplicationStatus":{
+          "shape":"UserBackgroundSessionApplicationStatus",
+          "documentation":"<p>The status of user background sessions for the application. </p>"
         }
       }
     },
@@ -3016,7 +3261,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}"
     },
     "InstanceList":{
       "type":"list",
@@ -3050,6 +3295,10 @@
         "Status":{
           "shape":"InstanceStatus",
           "documentation":"<p>The current status of this Identity Center instance.</p>"
+        },
+        "StatusReason":{
+          "shape":"Reason",
+          "documentation":"<p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance creation fails, this field contains information about the cause, which may include issues with KMS key configuration or insufficient permissions. </p>"
         }
       },
       "documentation":"<p>Provides information about the IAM Identity Center instance.</p>"
@@ -3058,6 +3307,7 @@
       "type":"string",
       "enum":[
         "CREATE_IN_PROGRESS",
+        "CREATE_FAILED",
         "DELETE_IN_PROGRESS",
         "ACTIVE"
       ]
@@ -3072,6 +3322,7 @@
       "exception":true,
       "fault":true
     },
+    "IsPrimaryRegion":{"type":"boolean"},
     "JMESPath":{
       "type":"string",
       "max":255,
@@ -3091,6 +3342,27 @@
         }
       },
       "documentation":"<p>A structure that defines configuration settings for an application that supports the JWT Bearer Token Authorization Grant. The <code>AuthorizedAudience</code> field is the aud claim. For more information, see <a href=\"https://datatracker.ietf.org/doc/html/rfc7523\">RFC 7523</a>.</p>"
+    },
+    "KmsKeyArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:kms:([a-z]{2,}(-[a-z0-9]+)+){1}:[0-9]{12}:key/(mrk-[a-f0-9]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})"
+    },
+    "KmsKeyStatus":{
+      "type":"string",
+      "enum":[
+        "UPDATING",
+        "ENABLED",
+        "UPDATE_FAILED"
+      ]
+    },
+    "KmsKeyType":{
+      "type":"string",
+      "enum":[
+        "AWS_OWNED_KMS_KEY",
+        "CUSTOMER_MANAGED_KEY"
+      ]
     },
     "ListAccountAssignmentCreationStatusRequest":{
       "type":"structure",
@@ -3770,6 +4042,37 @@
         }
       }
     },
+    "ListRegionsRequest":{
+      "type":"structure",
+      "required":["InstanceArn"],
+      "members":{
+        "InstanceArn":{
+          "shape":"InstanceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to return in a single call. Default is 100.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>"
+        }
+      }
+    },
+    "ListRegionsResponse":{
+      "type":"structure",
+      "members":{
+        "Regions":{
+          "shape":"RegionMetadataList",
+          "documentation":"<p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>The pagination token to be used in subsequent calls. If the value is null, then there are no more entries.</p>"
+        }
+      }
+    },
     "ListTagsForResourceRequest":{
       "type":"structure",
       "required":["ResourceArn"],
@@ -3836,7 +4139,7 @@
       "type":"string",
       "max":2048,
       "min":20,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::aws:policy((/[A-Za-z0-9\\.,\\+@=_-]+)*)/([A-Za-z0-9\\.,\\+=@_-]+)"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:iam::aws:policy((/[A-Za-z0-9\\.,\\+@=_-]+)*)/([A-Za-z0-9\\.,\\+=@_-]+)"
     },
     "ManagedPolicyName":{
       "type":"string",
@@ -3957,7 +4260,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}"
     },
     "PermissionSetDescription":{
       "type":"string",
@@ -4163,8 +4466,7 @@
     },
     "PutApplicationAssignmentConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "PutApplicationAuthenticationMethodRequest":{
       "type":"structure",
@@ -4210,6 +4512,24 @@
         }
       }
     },
+    "PutApplicationSessionConfigurationRequest":{
+      "type":"structure",
+      "required":["ApplicationArn"],
+      "members":{
+        "ApplicationArn":{
+          "shape":"ApplicationArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the application for which to update the session configuration.</p>"
+        },
+        "UserBackgroundSessionApplicationStatus":{
+          "shape":"UserBackgroundSessionApplicationStatus",
+          "documentation":"<p>The status of user background sessions for the application.</p>"
+        }
+      }
+    },
+    "PutApplicationSessionConfigurationResponse":{
+      "type":"structure",
+      "members":{}
+    },
     "PutInlinePolicyToPermissionSetRequest":{
       "type":"structure",
       "required":[
@@ -4234,8 +4554,7 @@
     },
     "PutInlinePolicyToPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "PutPermissionsBoundaryToPermissionSetRequest":{
       "type":"structure",
@@ -4261,8 +4580,7 @@
     },
     "PutPermissionsBoundaryToPermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "Reason":{
       "type":"string",
@@ -4276,9 +4594,48 @@
     },
     "RefreshTokenGrant":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>A structure that defines configuration settings for an application that supports the OAuth 2.0 Refresh Token Grant. For more, see <a href=\"https://datatracker.ietf.org/doc/html/rfc6749#section-1.5\">RFC 6749</a>.</p>"
+    },
+    "RegionMetadata":{
+      "type":"structure",
+      "members":{
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The Amazon Web Services Region name.</p>"
+        },
+        "Status":{
+          "shape":"RegionStatus",
+          "documentation":"<p>The current status of the Region. Valid values are ACTIVE (Region is operational), ADDING (Region extension workflow is in progress), or REMOVING (Region removal workflow is in progress).</p>"
+        },
+        "AddedDate":{
+          "shape":"Date",
+          "documentation":"<p>The timestamp when the Region was added to the IAM Identity Center instance. For the primary Region, this is the instance creation time.</p>"
+        },
+        "IsPrimaryRegion":{
+          "shape":"IsPrimaryRegion",
+          "documentation":"<p>Indicates whether this is the primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about an enabled Region of an IAM Identity Center instance, including the Region name, status, date added, and whether it is the primary Region.</p>"
+    },
+    "RegionMetadataList":{
+      "type":"list",
+      "member":{"shape":"RegionMetadata"}
+    },
+    "RegionName":{
+      "type":"string",
+      "max":32,
+      "min":1,
+      "pattern":"([a-z]+-){2,3}\\d"
+    },
+    "RegionStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "ADDING",
+        "REMOVING"
+      ]
     },
     "RelayState":{
       "type":"string",
@@ -4286,13 +4643,47 @@
       "min":1,
       "pattern":"[a-zA-Z0-9&$@#\\\\\\/%?=~\\-_'\"|!:,.;*+\\[\\]\\ \\(\\)\\{\\}]+"
     },
+    "RemoveRegionRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceArn",
+        "RegionName"
+      ],
+      "members":{
+        "InstanceArn":{
+          "shape":"InstanceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>"
+        },
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The name of the Amazon Web Services Region to remove from the IAM Identity Center instance. The Region name must be 1-32 characters long and follow the pattern of Amazon Web Services Region names (for example, us-east-1). The primary Region cannot be removed.</p>"
+        }
+      }
+    },
+    "RemoveRegionResponse":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"RegionStatus",
+          "documentation":"<p>The status of the Region after the remove operation. The status is REMOVING when the asynchronous workflow is in progress. The Region record is deleted when the workflow completes.</p>"
+        }
+      }
+    },
     "ResourceNotFoundException":{
       "type":"structure",
       "members":{
-        "Message":{"shape":"ResourceNotFoundMessage"}
+        "Message":{"shape":"ResourceNotFoundMessage"},
+        "Reason":{
+          "shape":"ResourceNotFoundExceptionReason",
+          "documentation":"<p>The reason for the resource not found exception.</p>"
+        }
       },
       "documentation":"<p>Indicates that a requested resource is not found.</p>",
       "exception":true
+    },
+    "ResourceNotFoundExceptionReason":{
+      "type":"string",
+      "enum":["KMS_NotFoundException"]
     },
     "ResourceNotFoundMessage":{"type":"string"},
     "ResourceServerConfig":{
@@ -4353,7 +4744,7 @@
       "type":"string",
       "max":100,
       "min":1,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::(\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}|:instance/(sso)?ins-[a-zA-Z0-9-.]{16})"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso::(\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}|:instance/(sso)?ins-[a-zA-Z0-9-.]{16})"
     },
     "ScopeTargets":{
       "type":"list",
@@ -4465,8 +4856,7 @@
     },
     "TagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{
       "type":"string",
@@ -4478,7 +4868,7 @@
       "type":"string",
       "max":2048,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::((:instance/(sso)?ins-[a-zA-Z0-9-.]{16})|(:permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16})|(\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16})|(\\d{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}))"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso::((:instance/(sso)?ins-[a-zA-Z0-9-.]{16})|(:permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16})|(\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16})|(\\d{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}))"
     },
     "TargetId":{
       "type":"string",
@@ -4493,12 +4883,20 @@
     "ThrottlingException":{
       "type":"structure",
       "members":{
-        "Message":{"shape":"ThrottlingExceptionMessage"}
+        "Message":{"shape":"ThrottlingExceptionMessage"},
+        "Reason":{
+          "shape":"ThrottlingExceptionReason",
+          "documentation":"<p>The reason for the throttling exception.</p>"
+        }
       },
       "documentation":"<p>Indicates that the principal has crossed the throttling limits of the API operations.</p>",
       "exception":true
     },
     "ThrottlingExceptionMessage":{"type":"string"},
+    "ThrottlingExceptionReason":{
+      "type":"string",
+      "enum":["KMS_ThrottlingException"]
+    },
     "Token":{
       "type":"string",
       "max":2048,
@@ -4507,8 +4905,7 @@
     },
     "TokenExchangeGrant":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>A structure that defines configuration settings for an application that supports the OAuth 2.0 Token Exchange Grant. For more information, see <a href=\"https://datatracker.ietf.org/doc/html/rfc8693\">RFC 8693</a>.</p>"
     },
     "TokenIssuerAudience":{
@@ -4526,7 +4923,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\\d{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+      "pattern":"arn:aws(-[a-z]{1,5}){0,3}:sso::\\d{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
     },
     "TrustedTokenIssuerConfiguration":{
       "type":"structure",
@@ -4618,8 +5015,7 @@
     },
     "UntagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateApplicationPortalOptions":{
       "type":"structure",
@@ -4656,8 +5052,7 @@
     },
     "UpdateApplicationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateInstanceAccessControlAttributeConfigurationRequest":{
       "type":"structure",
@@ -4678,15 +5073,11 @@
     },
     "UpdateInstanceAccessControlAttributeConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateInstanceRequest":{
       "type":"structure",
-      "required":[
-        "Name",
-        "InstanceArn"
-      ],
+      "required":["InstanceArn"],
       "members":{
         "Name":{
           "shape":"NameType",
@@ -4695,13 +5086,16 @@
         "InstanceArn":{
           "shape":"InstanceArn",
           "documentation":"<p>The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see <a href=\"/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>"
+        },
+        "EncryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys or Amazon Web Services owned KMS keys for encrypting your instance data.</p>"
         }
       }
     },
     "UpdateInstanceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdatePermissionSetRequest":{
       "type":"structure",
@@ -4734,8 +5128,7 @@
     },
     "UpdatePermissionSetResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateTrustedTokenIssuerRequest":{
       "type":"structure",
@@ -4757,18 +5150,36 @@
     },
     "UpdateTrustedTokenIssuerResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
+    },
+    "UserBackgroundSessionApplicationStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
     },
     "ValidationException":{
       "type":"structure",
       "members":{
-        "Message":{"shape":"ValidationExceptionMessage"}
+        "Message":{"shape":"ValidationExceptionMessage"},
+        "Reason":{
+          "shape":"ValidationExceptionReason",
+          "documentation":"<p>The reason for the validation exception.</p>"
+        }
       },
       "documentation":"<p>The request failed because it contains a syntax error.</p>",
       "exception":true
     },
-    "ValidationExceptionMessage":{"type":"string"}
+    "ValidationExceptionMessage":{"type":"string"},
+    "ValidationExceptionReason":{
+      "type":"string",
+      "enum":[
+        "KMS_InvalidKeyUsageException",
+        "KMS_InvalidStateException",
+        "KMS_DisabledException"
+      ]
+    }
   },
   "documentation":"<p>IAM Identity Center is the Amazon Web Services solution for connecting your workforce users to Amazon Web Services managed applications and other Amazon Web Services resources. You can connect your existing identity provider and synchronize users and groups from your directory, or create and manage your users directly in IAM Identity Center. You can then use IAM Identity Center for either or both of the following:</p> <ul> <li> <p>User access to applications</p> </li> <li> <p>User access to Amazon Web Services accounts</p> </li> </ul> <p>This guide provides information about single sign-on operations that you can use for access to applications and Amazon Web Services accounts. For information about IAM Identity Center features, see the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html\">IAM Identity Center User Guide</a>.</p> <note> <p>IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.</p> </note> <p>Many API operations for IAM Identity Center rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the <a href=\"https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html\">Identity Store API Reference</a>.</p> <note> <p>Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other Amazon Web Services services. For more information about the Amazon Web Services SDKs, including how to download and install them, see <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> </note>"
 }

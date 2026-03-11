@@ -62,7 +62,6 @@ namespace Amazon.MediaLive.Model
         /// language, whichever PID that happens to be.  - Omit PID and omit Language: Valid only
         /// if source is DVB-Sub that is being passed through; all languages will be passed through.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? Pid
         {
             get { return this._pid; }

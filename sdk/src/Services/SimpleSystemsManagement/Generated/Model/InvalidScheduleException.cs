@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidScheduleException
+        /// message.
+        /// </summary>
+        public InvalidScheduleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidScheduleException with the specified error
         /// message.
         /// </summary>

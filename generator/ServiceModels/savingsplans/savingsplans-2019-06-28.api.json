@@ -6,11 +6,13 @@
     "globalEndpoint":"savingsplans.amazonaws.com",
     "jsonVersion":"1.0",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceAbbreviation":"AWSSavingsPlans",
     "serviceFullName":"AWS Savings Plans",
     "serviceId":"savingsplans",
     "signatureVersion":"v4",
-    "uid":"savingsplans-2019-06-28"
+    "uid":"savingsplans-2019-06-28",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "CreateSavingsPlan":{
@@ -53,7 +55,8 @@
       "output":{"shape":"DescribeSavingsPlanRatesResponse"},
       "errors":[
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"}
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"}
       ]
     },
     "DescribeSavingsPlans":{
@@ -185,7 +188,8 @@
       "type":"string",
       "enum":[
         "CNY",
-        "USD"
+        "USD",
+        "EUR"
       ]
     },
     "CurrencyList":{
@@ -202,8 +206,7 @@
     },
     "DeleteQueuedSavingsPlanResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DescribeSavingsPlanRatesRequest":{
       "type":"structure",
@@ -564,7 +567,17 @@
         "EC2",
         "Fargate",
         "Lambda",
-        "SageMaker"
+        "SageMaker",
+        "RDS",
+        "DSQL",
+        "DynamoDB",
+        "ElastiCache",
+        "DocDB",
+        "Neptune",
+        "Timestream",
+        "Keyspaces",
+        "DMS",
+        "OpenSearch"
       ]
     },
     "SavingsPlanProductTypeList":{
@@ -661,7 +674,17 @@
         "AmazonECS",
         "AmazonEKS",
         "AWSLambda",
-        "AmazonSageMaker"
+        "AmazonSageMaker",
+        "AmazonRDS",
+        "AuroraDSQL",
+        "AmazonDynamoDB",
+        "AmazonElastiCache",
+        "AmazonDocDB",
+        "AmazonNeptune",
+        "AmazonTimestream",
+        "AmazonMCS",
+        "AWSDatabaseMigrationSvc",
+        "AmazonES"
       ]
     },
     "SavingsPlanRateServiceCodeList":{
@@ -673,7 +696,21 @@
       "enum":[
         "Hrs",
         "Lambda-GB-Second",
-        "Request"
+        "Request",
+        "ACU-Hr",
+        "ReadRequestUnits",
+        "WriteRequestUnits",
+        "ReadCapacityUnit-Hrs",
+        "WriteCapacityUnit-Hrs",
+        "ReplicatedWriteRequestUnits",
+        "ReplicatedWriteCapacityUnit-Hrs",
+        "GB-Hours",
+        "DPU",
+        "ElastiCacheProcessingUnit",
+        "DCU-Hr",
+        "NCU-hr",
+        "OCU-hours",
+        "Jobs"
       ]
     },
     "SavingsPlanRateUsageType":{
@@ -716,7 +753,8 @@
       "enum":[
         "Compute",
         "EC2Instance",
-        "SageMaker"
+        "SageMaker",
+        "Database"
       ]
     },
     "SavingsPlanTypeList":{
@@ -747,7 +785,8 @@
         "savings-plan-type",
         "payment-option",
         "start",
-        "end"
+        "end",
+        "instance-family"
       ]
     },
     "ServiceQuotaExceededException":{
@@ -783,8 +822,7 @@
     },
     "TagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{"type":"string"},
     "TermDurationInSeconds":{"type":"long"},
@@ -809,8 +847,7 @@
     },
     "UntagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ValidationException":{
       "type":"structure",

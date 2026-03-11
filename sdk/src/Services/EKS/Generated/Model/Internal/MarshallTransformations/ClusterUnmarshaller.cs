@@ -92,10 +92,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectorConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("controlPlaneScalingConfig", targetDepth))
+                {
+                    var unmarshaller = ControlPlaneScalingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ControlPlaneScalingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("deletionProtection", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryptionConfig", targetDepth))

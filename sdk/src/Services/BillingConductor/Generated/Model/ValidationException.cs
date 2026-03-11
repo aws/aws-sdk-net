@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The input doesn't match with the constraints specified by Amazon Web Services.
+    /// The input doesn't match with the constraints specified by Amazon Web Services services.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -39,6 +39,13 @@ namespace Amazon.BillingConductor.Model
     {
         private List<ValidationExceptionField> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
+
+        /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error

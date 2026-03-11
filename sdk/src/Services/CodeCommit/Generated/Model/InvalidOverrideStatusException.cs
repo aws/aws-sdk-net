@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOverrideStatusException
+        /// message.
+        /// </summary>
+        public InvalidOverrideStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOverrideStatusException with the specified error
         /// message.
         /// </summary>

@@ -280,6 +280,60 @@ namespace Amazon.ResourceExplorer2
 
         #endregion
                 
+        #region  CreateResourceExplorerSetup
+
+
+
+        /// <summary>
+        /// Creates a Resource Explorer setup configuration across multiple Amazon Web Services
+        /// Regions. This operation sets up indexes and views in the specified Regions. This operation
+        /// can also be used to set an aggregator Region for cross-Region resource search.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceExplorerSetup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResourceExplorerSetup service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
+        /// If you attempted to create a view, then the request failed because either you specified
+        /// parameters that didn’t match the original request, or you attempted to create a view
+        /// with a name that already exists in this Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempted to create an index, then the request failed because either you specified
+        /// parameters that didn't match the original request, or an index already exists in the
+        /// current Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempted to update an index type to <c>AGGREGATOR</c>, then the request failed
+        /// because you already have an <c>AGGREGATOR</c> index in a different Amazon Web Services
+        /// Region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/CreateResourceExplorerSetup">REST API Reference for CreateResourceExplorerSetup Operation</seealso>
+        Task<CreateResourceExplorerSetupResponse> CreateResourceExplorerSetupAsync(CreateResourceExplorerSetupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateView
 
 
@@ -399,6 +453,59 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteResourceExplorerSetup
+
+
+
+        /// <summary>
+        /// Deletes a Resource Explorer setup configuration. This operation removes indexes and
+        /// views from the specified Regions or all Regions where Resource Explorer is configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceExplorerSetup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceExplorerSetup service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ConflictException">
+        /// If you attempted to create a view, then the request failed because either you specified
+        /// parameters that didn’t match the original request, or you attempted to create a view
+        /// with a name that already exists in this Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// If you attempted to create an index, then the request failed because either you specified
+        /// parameters that didn't match the original request, or an index already exists in the
+        /// current Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you attempted to update an index type to <c>AGGREGATOR</c>, then the request failed
+        /// because you already have an <c>AGGREGATOR</c> index in a different Amazon Web Services
+        /// Region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DeleteResourceExplorerSetup">REST API Reference for DeleteResourceExplorerSetup Operation</seealso>
+        Task<DeleteResourceExplorerSetupResponse> DeleteResourceExplorerSetupAsync(DeleteResourceExplorerSetupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -655,6 +762,124 @@ namespace Amazon.ResourceExplorer2
 
         #endregion
                 
+        #region  GetResourceExplorerSetup
+
+
+
+        /// <summary>
+        /// Retrieves the status and details of a Resource Explorer setup operation. This operation
+        /// returns information about the progress of creating or deleting Resource Explorer configurations
+        /// across Regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceExplorerSetup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceExplorerSetup service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetResourceExplorerSetup">REST API Reference for GetResourceExplorerSetup Operation</seealso>
+        Task<GetResourceExplorerSetupResponse> GetResourceExplorerSetupAsync(GetResourceExplorerSetupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetServiceIndex
+
+
+
+        /// <summary>
+        /// Retrieves information about the Resource Explorer index in the current Amazon Web
+        /// Services Region. This operation returns the ARN and type of the index if one exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceIndex service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetServiceIndex">REST API Reference for GetServiceIndex Operation</seealso>
+        Task<GetServiceIndexResponse> GetServiceIndexAsync(GetServiceIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetServiceView
+
+
+
+        /// <summary>
+        /// Retrieves details about a specific Resource Explorer service view. This operation
+        /// returns the configuration and properties of the specified view.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceView service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetServiceView">REST API Reference for GetServiceView Operation</seealso>
+        Task<GetServiceViewResponse> GetServiceViewAsync(GetServiceViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetView
 
 
@@ -847,6 +1072,109 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
         Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListServiceIndexes
+
+
+
+        /// <summary>
+        /// Lists all Resource Explorer indexes across the specified Amazon Web Services Regions.
+        /// This operation returns information about indexes including their ARNs, types, and
+        /// Regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceIndexes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceIndexes service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListServiceIndexes">REST API Reference for ListServiceIndexes Operation</seealso>
+        Task<ListServiceIndexesResponse> ListServiceIndexesAsync(ListServiceIndexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListServiceViews
+
+
+
+        /// <summary>
+        /// Lists all Resource Explorer service views available in the current Amazon Web Services
+        /// account. This operation returns the ARNs of available service views.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceViews service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListServiceViews">REST API Reference for ListServiceViews Operation</seealso>
+        Task<ListServiceViewsResponse> ListServiceViewsAsync(ListServiceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListStreamingAccessForServices
+
+
+
+        /// <summary>
+        /// Returns a list of Amazon Web Services services that have been granted streaming access
+        /// to your Resource Explorer data. Streaming access allows Amazon Web Services services
+        /// to receive real-time updates about your resources as they are indexed by Resource
+        /// Explorer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamingAccessForServices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreamingAccessForServices service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListStreamingAccessForServices">REST API Reference for ListStreamingAccessForServices Operation</seealso>
+        Task<ListStreamingAccessForServicesResponse> ListStreamingAccessForServicesAsync(ListStreamingAccessForServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

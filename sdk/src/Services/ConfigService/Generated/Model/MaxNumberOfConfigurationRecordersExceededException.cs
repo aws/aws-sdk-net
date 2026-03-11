@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxNumberOfConfigurationRecordersExceededException
+        /// message.
+        /// </summary>
+        public MaxNumberOfConfigurationRecordersExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxNumberOfConfigurationRecordersExceededException with the specified error
         /// message.
         /// </summary>

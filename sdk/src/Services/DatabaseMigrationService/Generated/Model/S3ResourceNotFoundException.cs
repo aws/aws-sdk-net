@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for S3ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public S3ResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3ResourceNotFoundException with the specified error
         /// message.
         /// </summary>

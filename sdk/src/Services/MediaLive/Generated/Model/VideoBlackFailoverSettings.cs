@@ -64,7 +64,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property VideoBlackThresholdMsec. The amount of time (in milliseconds)
         /// that the active input must be black before automatic input failover occurs.
         /// </summary>
-        [AWSProperty(Min=1000)]
         public int? VideoBlackThresholdMsec
         {
             get { return this._videoBlackThresholdMsec; }

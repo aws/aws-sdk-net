@@ -16,6 +16,21 @@
     "uid":"evs-2023-07-27"
   },
   "operations":{
+    "AssociateEipToVlan":{
+      "name":"AssociateEipToVlan",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateEipToVlanRequest"},
+      "output":{"shape":"AssociateEipToVlanResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
     "CreateEnvironment":{
       "name":"CreateEnvironment",
       "http":{
@@ -71,6 +86,21 @@
       ],
       "idempotent":true
     },
+    "DisassociateEipFromVlan":{
+      "name":"DisassociateEipFromVlan",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateEipFromVlanRequest"},
+      "output":{"shape":"DisassociateEipFromVlanResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "idempotent":true
+    },
     "GetEnvironment":{
       "name":"GetEnvironment",
       "http":{
@@ -82,7 +112,22 @@
       "errors":[
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "GetVersions":{
+      "name":"GetVersions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetVersionsRequest"},
+      "output":{"shape":"GetVersionsResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "ListEnvironmentHosts":{
       "name":"ListEnvironmentHosts",
@@ -95,7 +140,8 @@
       "errors":[
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEnvironmentVlans":{
       "name":"ListEnvironmentVlans",
@@ -108,7 +154,8 @@
       "errors":[
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListEnvironments":{
       "name":"ListEnvironments",
@@ -120,7 +167,8 @@
       "output":{"shape":"ListEnvironmentsResponse"},
       "errors":[
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -132,7 +180,8 @@
       "output":{"shape":"ListTagsForResourceResponse"},
       "errors":[
         {"shape":"ResourceNotFoundException"}
-      ]
+      ],
+      "readonly":true
     },
     "TagResource":{
       "name":"TagResource",
@@ -143,6 +192,7 @@
       "input":{"shape":"TagResourceRequest"},
       "output":{"shape":"TagResourceResponse"},
       "errors":[
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"TooManyTagsException"},
         {"shape":"TagPolicyException"}
@@ -165,11 +215,51 @@
     }
   },
   "shapes":{
+    "AllocationId":{
+      "type":"string",
+      "max":26,
+      "min":9,
+      "pattern":"eipalloc-[a-zA-Z0-9_-]+"
+    },
     "Arn":{
       "type":"string",
       "max":1011,
       "min":1,
       "pattern":"arn:aws:evs:[a-z]{2}-[a-z]+-[0-9]:[0-9]{12}:environment/[a-zA-Z0-9_-]+"
+    },
+    "AssociateEipToVlanRequest":{
+      "type":"structure",
+      "required":[
+        "environmentId",
+        "vlanName",
+        "allocationId"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "environmentId":{"shape":"EnvironmentId"},
+        "vlanName":{"shape":"AssociateEipToVlanRequestVlanNameString"},
+        "allocationId":{"shape":"AllocationId"}
+      }
+    },
+    "AssociateEipToVlanRequestVlanNameString":{
+      "type":"string",
+      "max":200,
+      "min":1
+    },
+    "AssociateEipToVlanResponse":{
+      "type":"structure",
+      "members":{
+        "vlan":{"shape":"Vlan"}
+      }
+    },
+    "AssociationId":{
+      "type":"string",
+      "max":26,
+      "min":9,
+      "pattern":"eipassoc-[a-zA-Z0-9_-]+"
     },
     "Boolean":{
       "type":"boolean",
@@ -233,7 +323,8 @@
           "idempotencyToken":true
         },
         "environmentId":{"shape":"EnvironmentId"},
-        "host":{"shape":"HostInfoForCreate"}
+        "host":{"shape":"HostInfoForCreate"},
+        "esxVersion":{"shape":"EsxVersion"}
       }
     },
     "CreateEnvironmentHostResponse":{
@@ -329,6 +420,46 @@
         "environment":{"shape":"Environment"}
       }
     },
+    "DisassociateEipFromVlanRequest":{
+      "type":"structure",
+      "required":[
+        "environmentId",
+        "vlanName",
+        "associationId"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "environmentId":{"shape":"EnvironmentId"},
+        "vlanName":{"shape":"DisassociateEipFromVlanRequestVlanNameString"},
+        "associationId":{"shape":"AssociationId"}
+      }
+    },
+    "DisassociateEipFromVlanRequestVlanNameString":{
+      "type":"string",
+      "max":200,
+      "min":1
+    },
+    "DisassociateEipFromVlanResponse":{
+      "type":"structure",
+      "members":{
+        "vlan":{"shape":"Vlan"}
+      }
+    },
+    "EipAssociation":{
+      "type":"structure",
+      "members":{
+        "associationId":{"shape":"AssociationId"},
+        "allocationId":{"shape":"AllocationId"},
+        "ipAddress":{"shape":"IpAddress"}
+      }
+    },
+    "EipAssociationList":{
+      "type":"list",
+      "member":{"shape":"EipAssociation"}
+    },
     "Environment":{
       "type":"structure",
       "members":{
@@ -395,6 +526,15 @@
       "type":"list",
       "member":{"shape":"EnvironmentSummary"}
     },
+    "EsxVersion":{
+      "type":"string",
+      "max":128,
+      "min":0
+    },
+    "EsxVersionList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "GetEnvironmentRequest":{
       "type":"structure",
       "required":["environmentId"],
@@ -406,6 +546,21 @@
       "type":"structure",
       "members":{
         "environment":{"shape":"Environment"}
+      }
+    },
+    "GetVersionsRequest":{
+      "type":"structure",
+      "members":{}
+    },
+    "GetVersionsResponse":{
+      "type":"structure",
+      "required":[
+        "vcfVersions",
+        "instanceTypeEsxVersions"
+      ],
+      "members":{
+        "vcfVersions":{"shape":"VcfVersionList"},
+        "instanceTypeEsxVersions":{"shape":"InstanceTypeEsxVersionsList"}
       }
     },
     "Host":{
@@ -497,16 +652,47 @@
         "nsxUplink":{"shape":"InitialVlanInfo"},
         "hcx":{"shape":"InitialVlanInfo"},
         "expansionVlan1":{"shape":"InitialVlanInfo"},
-        "expansionVlan2":{"shape":"InitialVlanInfo"}
+        "expansionVlan2":{"shape":"InitialVlanInfo"},
+        "isHcxPublic":{"shape":"Boolean"},
+        "hcxNetworkAclId":{"shape":"NetworkAclId"}
       }
     },
     "InstanceType":{
       "type":"string",
       "enum":["i4i.metal"]
     },
+    "InstanceTypeEsxVersionsInfo":{
+      "type":"structure",
+      "required":[
+        "instanceType",
+        "esxVersions"
+      ],
+      "members":{
+        "instanceType":{"shape":"InstanceType"},
+        "esxVersions":{"shape":"EsxVersionList"}
+      }
+    },
+    "InstanceTypeEsxVersionsList":{
+      "type":"list",
+      "member":{"shape":"InstanceTypeEsxVersionsInfo"}
+    },
+    "InstanceTypeList":{
+      "type":"list",
+      "member":{"shape":"InstanceType"}
+    },
     "Integer":{
       "type":"integer",
       "box":true
+    },
+    "InternalServerException":{
+      "type":"structure",
+      "required":["message"],
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "exception":true,
+      "fault":true,
+      "retryable":{"throttling":false}
     },
     "IpAddress":{
       "type":"string",
@@ -601,6 +787,12 @@
       "max":100,
       "min":1
     },
+    "NetworkAclId":{
+      "type":"string",
+      "max":21,
+      "min":4,
+      "pattern":"acl-[a-zA-Z0-9_-]+"
+    },
     "NetworkInterface":{
       "type":"structure",
       "members":{
@@ -690,6 +882,14 @@
         "securityGroups":{"shape":"SecurityGroups"}
       }
     },
+    "ServiceQuotaExceededException":{
+      "type":"structure",
+      "required":["message"],
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "exception":true
+    },
     "SolutionKey":{
       "type":"string",
       "pattern":"[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}"
@@ -735,8 +935,7 @@
     },
     "TagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{
       "type":"string",
@@ -776,8 +975,7 @@
     },
     "UntagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "VSanLicenseKey":{
       "type":"string",
@@ -847,7 +1045,29 @@
     },
     "VcfVersion":{
       "type":"string",
-      "enum":["VCF-5.2.1"]
+      "enum":[
+        "VCF-5.2.1",
+        "VCF-5.2.2"
+      ]
+    },
+    "VcfVersionInfo":{
+      "type":"structure",
+      "required":[
+        "vcfVersion",
+        "status",
+        "defaultEsxVersion",
+        "instanceTypes"
+      ],
+      "members":{
+        "vcfVersion":{"shape":"VcfVersion"},
+        "status":{"shape":"String"},
+        "defaultEsxVersion":{"shape":"String"},
+        "instanceTypes":{"shape":"InstanceTypeList"}
+      }
+    },
+    "VcfVersionList":{
+      "type":"list",
+      "member":{"shape":"VcfVersionInfo"}
     },
     "Vlan":{
       "type":"structure",
@@ -860,7 +1080,10 @@
         "createdAt":{"shape":"Timestamp"},
         "modifiedAt":{"shape":"Timestamp"},
         "vlanState":{"shape":"VlanState"},
-        "stateDetails":{"shape":"StateDetails"}
+        "stateDetails":{"shape":"StateDetails"},
+        "eipAssociations":{"shape":"EipAssociationList"},
+        "isPublic":{"shape":"Boolean"},
+        "networkAclId":{"shape":"NetworkAclId"}
       }
     },
     "VlanId":{

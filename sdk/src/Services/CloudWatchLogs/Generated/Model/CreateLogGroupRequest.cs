@@ -84,6 +84,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class CreateLogGroupRequest : AmazonCloudWatchLogsRequest
     {
+        private bool? _deletionProtectionEnabled;
         private string _kmsKeyId;
         private LogGroupClass _logGroupClass;
         private string _logGroupName;
@@ -101,6 +102,26 @@ namespace Amazon.CloudWatchLogs.Model
         public CreateLogGroupRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Use this parameter to enable deletion protection for the new log group. When enabled
+        /// on a log group, deletion protection blocks all deletion operations until it is explicitly
+        /// disabled. By default log groups are created without deletion protection enabled.
+        /// </para>
+        /// </summary>
+        public bool? DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled; }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>

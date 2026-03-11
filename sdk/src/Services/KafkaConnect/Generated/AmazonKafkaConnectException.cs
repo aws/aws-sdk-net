@@ -36,6 +36,14 @@ namespace Amazon.KafkaConnect
         /// <summary>
         /// Construct instance of AmazonKafkaConnectException
         /// </summary>
+        public AmazonKafkaConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKafkaConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKafkaConnectException(string message)
             : base(message)

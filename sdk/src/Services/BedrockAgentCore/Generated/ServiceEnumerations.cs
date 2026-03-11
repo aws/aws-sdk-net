@@ -233,6 +233,102 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type ExtractionJobStatus.
+    /// </summary>
+    public class ExtractionJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExtractionJobStatus
+        /// </summary>
+        public static readonly ExtractionJobStatus FAILED = new ExtractionJobStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExtractionJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtractionJobStatus FindValue(string value)
+        {
+            return FindValue<ExtractionJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtractionJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MemoryRecordStatus.
+    /// </summary>
+    public class MemoryRecordStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for MemoryRecordStatus
+        /// </summary>
+        public static readonly MemoryRecordStatus FAILED = new MemoryRecordStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for MemoryRecordStatus
+        /// </summary>
+        public static readonly MemoryRecordStatus SUCCEEDED = new MemoryRecordStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemoryRecordStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemoryRecordStatus FindValue(string value)
+        {
+            return FindValue<MemoryRecordStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemoryRecordStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Oauth2FlowType.
     /// </summary>
     public class Oauth2FlowType : ConstantClass
@@ -276,6 +372,60 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Oauth2FlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperatorType.
+    /// </summary>
+    public class OperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS_TO for OperatorType
+        /// </summary>
+        public static readonly OperatorType EQUALS_TO = new OperatorType("EQUALS_TO");
+        /// <summary>
+        /// Constant EXISTS for OperatorType
+        /// </summary>
+        public static readonly OperatorType EXISTS = new OperatorType("EXISTS");
+        /// <summary>
+        /// Constant NOT_EXISTS for OperatorType
+        /// </summary>
+        public static readonly OperatorType NOT_EXISTS = new OperatorType("NOT_EXISTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperatorType FindValue(string value)
+        {
+            return FindValue<OperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperatorType(string value)
         {
             return FindValue(value);
         }
@@ -438,6 +588,56 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Role(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus FAILED = new SessionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus IN_PROGRESS = new SessionStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
         {
             return FindValue(value);
         }

@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRepositoryTriggerBranchNameException
+        /// message.
+        /// </summary>
+        public InvalidRepositoryTriggerBranchNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRepositoryTriggerBranchNameException with the specified error
         /// message.
         /// </summary>

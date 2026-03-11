@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeleteInventoryParametersException
+        /// message.
+        /// </summary>
+        public InvalidDeleteInventoryParametersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeleteInventoryParametersException with the specified error
         /// message.
         /// </summary>

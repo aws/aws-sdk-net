@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalTableAlreadyExistsException
+        /// message.
+        /// </summary>
+        public GlobalTableAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalTableAlreadyExistsException with the specified error
         /// message.
         /// </summary>

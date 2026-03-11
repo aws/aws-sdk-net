@@ -45,6 +45,7 @@ namespace Amazon.Kafka.Model
         private LoggingInfo _loggingInfo;
         private int? _numberOfBrokerNodes;
         private OpenMonitoringInfo _openMonitoring;
+        private Rebalancing _rebalancing;
         private StorageMode _storageMode;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -228,6 +229,26 @@ namespace Amazon.Kafka.Model
         internal bool IsSetOpenMonitoring()
         {
             return this._openMonitoring != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rebalancing.             
+        /// <para>
+        /// Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned
+        /// cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE
+        /// for all new clusters.
+        /// </para>
+        /// </summary>
+        public Rebalancing Rebalancing
+        {
+            get { return this._rebalancing; }
+            set { this._rebalancing = value; }
+        }
+
+        // Check to see if Rebalancing property is set
+        internal bool IsSetRebalancing()
+        {
+            return this._rebalancing != null;
         }
 
         /// <summary>

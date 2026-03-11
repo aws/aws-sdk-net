@@ -36,6 +36,14 @@ namespace Amazon.Ep2hostlabel
         /// <summary>
         /// Construct instance of AmazonEp2hostlabelException
         /// </summary>
+        public AmazonEp2hostlabelException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEp2hostlabelException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEp2hostlabelException(string message)
             : base(message)

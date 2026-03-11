@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for EntityAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EntityAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityAlreadyExistsException with the specified error
         /// message.
         /// </summary>

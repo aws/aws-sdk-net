@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for StatisticsNotReadyYetException
+        /// message.
+        /// </summary>
+        public StatisticsNotReadyYetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StatisticsNotReadyYetException with the specified error
         /// message.
         /// </summary>

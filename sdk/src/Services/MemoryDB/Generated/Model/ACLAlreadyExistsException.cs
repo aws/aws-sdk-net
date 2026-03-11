@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// An ACL with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ACLAlreadyExistsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ACLAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ACLAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ACLAlreadyExistsException with the specified error

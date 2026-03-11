@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotDeleteApprovalRuleFromTemplateException
+        /// message.
+        /// </summary>
+        public CannotDeleteApprovalRuleFromTemplateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotDeleteApprovalRuleFromTemplateException with the specified error
         /// message.
         /// </summary>

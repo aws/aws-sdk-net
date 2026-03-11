@@ -47,7 +47,10 @@ namespace Amazon.SageMaker.Model
         private DateTime? _endTime;
         private int? _instanceCount;
         private ReservedCapacityInstanceType _instanceType;
+        private ReservedCapacityType _reservedCapacityType;
         private DateTime? _startTime;
+        private int? _ultraServerCount;
+        private string _ultraServerType;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -164,6 +167,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReservedCapacityType. 
+        /// <para>
+        /// The type of reserved capacity offering.
+        /// </para>
+        /// </summary>
+        public ReservedCapacityType ReservedCapacityType
+        {
+            get { return this._reservedCapacityType; }
+            set { this._reservedCapacityType = value; }
+        }
+
+        // Check to see if ReservedCapacityType property is set
+        internal bool IsSetReservedCapacityType()
+        {
+            return this._reservedCapacityType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start time of the reserved capacity offering.
@@ -179,6 +200,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerCount. 
+        /// <para>
+        /// The number of UltraServers included in this reserved capacity offering.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? UltraServerCount
+        {
+            get { return this._ultraServerCount; }
+            set { this._ultraServerCount = value; }
+        }
+
+        // Check to see if UltraServerCount property is set
+        internal bool IsSetUltraServerCount()
+        {
+            return this._ultraServerCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerType. 
+        /// <para>
+        /// The type of UltraServer included in this reserved capacity offering, such as ml.u-p6e-gb200x72.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string UltraServerType
+        {
+            get { return this._ultraServerType; }
+            set { this._ultraServerType = value; }
+        }
+
+        // Check to see if UltraServerType property is set
+        internal bool IsSetUltraServerType()
+        {
+            return this._ultraServerType != null;
         }
 
     }

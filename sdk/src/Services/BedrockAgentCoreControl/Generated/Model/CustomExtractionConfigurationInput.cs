@@ -34,8 +34,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomExtractionConfigurationInput
     {
+        private EpisodicOverrideExtractionConfigurationInput _episodicExtractionOverride;
         private SemanticOverrideExtractionConfigurationInput _semanticExtractionOverride;
         private UserPreferenceOverrideExtractionConfigurationInput _userPreferenceExtractionOverride;
+
+        /// <summary>
+        /// Gets and sets the property EpisodicExtractionOverride. 
+        /// <para>
+        /// Configurations to override the extraction step of the episodic strategy.
+        /// </para>
+        /// </summary>
+        public EpisodicOverrideExtractionConfigurationInput EpisodicExtractionOverride
+        {
+            get { return this._episodicExtractionOverride; }
+            set { this._episodicExtractionOverride = value; }
+        }
+
+        // Check to see if EpisodicExtractionOverride property is set
+        internal bool IsSetEpisodicExtractionOverride()
+        {
+            return this._episodicExtractionOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SemanticExtractionOverride. 

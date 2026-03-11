@@ -170,39 +170,57 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AuthParameters. 
         /// <para>
         /// The authentication parameters. These are inputs corresponding to the <c>AuthFlow</c>
-        /// that you're invoking. The required values depend on the value of <c>AuthFlow</c> for
-        /// example:
+        /// that you're invoking.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// For <c>USER_AUTH</c>: <c>USERNAME</c> (required), <c>PREFERRED_CHALLENGE</c>. If you
-        /// don't provide a value for <c>PREFERRED_CHALLENGE</c>, Amazon Cognito responds with
-        /// the <c>AvailableChallenges</c> parameter that specifies the available sign-in methods.
+        /// The following are some authentication flows and their parameters. Add a <c>SECRET_HASH</c>
+        /// parameter if your app client has a client secret. Add <c>DEVICE_KEY</c> if you want
+        /// to bypass multi-factor authentication with a remembered device. 
+        /// </para>
+        ///  <dl> <dt>USER_AUTH</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <c>USERNAME</c> (required)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>USER_SRP_AUTH</c>: <c>USERNAME</c> (required), <c>SRP_A</c> (required), <c>SECRET_HASH</c>
-        /// (required if the app client is configured with a client secret), <c>DEVICE_KEY</c>.
+        ///  <c>PREFERRED_CHALLENGE</c>. If you don't provide a value for <c>PREFERRED_CHALLENGE</c>,
+        /// Amazon Cognito responds with the <c>AvailableChallenges</c> parameter that specifies
+        /// the available sign-in methods.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>USER_SRP_AUTH</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <c>USERNAME</c> (required)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>ADMIN_USER_PASSWORD_AUTH</c>: <c>USERNAME</c> (required), <c>PASSWORD</c> (required),
-        /// <c>SECRET_HASH</c> (required if the app client is configured with a client secret),
-        /// <c>DEVICE_KEY</c>.
+        ///  <c>SRP_A</c> (required)
+        /// </para>
+        ///  </li> </ul> </dd> <dt>ADMIN_USER_PASSWORD_AUTH</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <c>USERNAME</c> (required)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</c>: <c>REFRESH_TOKEN</c> (required), <c>SECRET_HASH</c>
-        /// (required if the app client is configured with a client secret), <c>DEVICE_KEY</c>.
+        ///  <c>PASSWORD</c> (required)
+        /// </para>
+        ///  </li> </ul> </dd> <dt>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <c>REFRESH_TOKEN</c>(required)
+        /// </para>
+        ///  </li> </ul> </dd> <dt>CUSTOM_AUTH</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <c>USERNAME</c> (required)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>CUSTOM_AUTH</c>: <c>USERNAME</c> (required), <c>SECRET_HASH</c> (if app client
-        /// is configured with client secret), <c>DEVICE_KEY</c>. To start the authentication
-        /// flow with password verification, include <c>ChallengeName: SRP_A</c> and <c>SRP_A:
-        /// (The SRP_A Value)</c>.
+        ///  <c>ChallengeName: SRP_A</c> (when preceding custom authentication with SRP authentication)
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SRP_A: (An SRP_A value)</c> (when preceding custom authentication with SRP authentication)
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
         /// <para>
         /// For more information about <c>SECRET_HASH</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
         /// secret hash values</a>. For information about <c>DEVICE_KEY</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
@@ -249,15 +267,28 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientMetadata. 
         /// <para>
-        /// A map of custom key-value pairs that you can provide as input for certain custom workflows
-        /// that this action triggers.
+        /// A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. You create custom workflows by assigning Lambda functions
+        /// to user pool triggers.
         /// </para>
         ///  
         /// <para>
-        /// You create custom workflows by assigning Lambda functions to user pool triggers. When
-        /// you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions
-        /// that are specified for various triggers. The ClientMetadata value is passed as input
-        /// to the functions for only the following triggers:
+        /// When Amazon Cognito invokes any of these functions, it passes a JSON payload, which
+        /// the function receives as input. This payload contains a <c>clientMetadata</c> attribute
+        /// that provides the data that you assigned to the ClientMetadata parameter in your request.
+        /// In your function code, you can process the <c>clientMetadata</c> value to enhance
+        /// your workflow for your specific needs.
+        /// </para>
+        ///  
+        /// <para>
+        /// To review the Lambda trigger types that Amazon Cognito invokes at runtime with API
+        /// requests, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event">
+        /// Connecting API actions to Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ClientMetadata</c> value is passed as input to the functions for only the following
+        /// triggers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -273,16 +304,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload,
-        /// which the function receives as input. This payload contains a <c>validationData</c>
-        /// attribute, which provides the data that you assigned to the ClientMetadata parameter
-        /// in your AdminInitiateAuth request. In your function code in Lambda, you can process
-        /// the <c>validationData</c> value to enhance your workflow for your specific needs.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions
-        /// for the following triggers, but it doesn't provide the ClientMetadata value as input:
+        /// This request also invokes the functions for the following triggers, but doesn't pass
+        /// <c>ClientMetadata</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -312,12 +335,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Custom SMS sender
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
         /// the following:

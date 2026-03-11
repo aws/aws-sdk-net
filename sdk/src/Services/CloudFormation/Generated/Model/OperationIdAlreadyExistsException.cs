@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationIdAlreadyExistsException
+        /// message.
+        /// </summary>
+        public OperationIdAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationIdAlreadyExistsException with the specified error
         /// message.
         /// </summary>

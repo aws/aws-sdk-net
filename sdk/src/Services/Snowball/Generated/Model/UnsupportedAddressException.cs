@@ -41,6 +41,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedAddressException
+        /// message.
+        /// </summary>
+        public UnsupportedAddressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedAddressException with the specified error
         /// message.
         /// </summary>

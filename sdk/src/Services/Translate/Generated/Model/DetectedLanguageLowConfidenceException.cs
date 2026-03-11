@@ -44,6 +44,13 @@ namespace Amazon.Translate.Model
         private string _detectedLanguageCode;
 
         /// <summary>
+        /// Default constructor for DetectedLanguageLowConfidenceException
+        /// message.
+        /// </summary>
+        public DetectedLanguageLowConfidenceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DetectedLanguageLowConfidenceException with the specified error
         /// message.
         /// </summary>

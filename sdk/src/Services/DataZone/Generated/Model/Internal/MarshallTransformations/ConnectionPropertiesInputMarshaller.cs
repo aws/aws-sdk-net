@@ -46,6 +46,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmazonQProperties())
+            {
+                context.Writer.WritePropertyName("amazonQProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AmazonQPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonQProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAthenaProperties())
             {
                 context.Writer.WritePropertyName("athenaProperties");
@@ -90,6 +101,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMlflowProperties())
+            {
+                context.Writer.WritePropertyName("mlflowProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MlflowPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlflowProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRedshiftProperties())
             {
                 context.Writer.WritePropertyName("redshiftProperties");
@@ -130,6 +152,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 var marshaller = SparkGluePropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SparkGlueProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWorkflowsMwaaProperties())
+            {
+                context.Writer.WritePropertyName("workflowsMwaaProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowsMwaaPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkflowsMwaaProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWorkflowsServerlessProperties())
+            {
+                context.Writer.WritePropertyName("workflowsServerlessProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowsServerlessPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkflowsServerlessProperties, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for BucketPermissionException
+        /// message.
+        /// </summary>
+        public BucketPermissionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BucketPermissionException with the specified error
         /// message.
         /// </summary>

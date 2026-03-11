@@ -71,6 +71,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetRecursive())
                 request.Parameters.Add("recursive", StringUtils.FromBool(publicRequest.Recursive));
+            if (string.IsNullOrEmpty(publicRequest.SecurityProfileTargetArn))
+                throw new AmazonIoTException("Request object does not have required field SecurityProfileTargetArn set");
             
             if (publicRequest.IsSetSecurityProfileTargetArn())
                 request.Parameters.Add("securityProfileTargetArn", StringUtils.FromString(publicRequest.SecurityProfileTargetArn));

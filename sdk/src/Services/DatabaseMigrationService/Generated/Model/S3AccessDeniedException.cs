@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for S3AccessDeniedException
+        /// message.
+        /// </summary>
+        public S3AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3AccessDeniedException with the specified error
         /// message.
         /// </summary>

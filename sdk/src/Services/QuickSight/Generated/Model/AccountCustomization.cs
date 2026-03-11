@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The Amazon QuickSight customizations associated with your Amazon Web Services account
-    /// or a QuickSight namespace in a specific Amazon Web Services Region.
+    /// The Quick Sight customizations associated with your Amazon Web Services account or
+    /// a Quick Sight namespace in a specific Amazon Web Services Region.
     /// </summary>
     public partial class AccountCustomization
     {
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultTheme. 
         /// <para>
-        /// The default theme for this Amazon QuickSight subscription.
+        /// The default theme for this Quick Sight subscription.
         /// </para>
         /// </summary>
         public string DefaultTheme

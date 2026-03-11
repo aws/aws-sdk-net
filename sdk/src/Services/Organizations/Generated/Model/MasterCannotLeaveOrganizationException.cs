@@ -41,6 +41,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for MasterCannotLeaveOrganizationException
+        /// message.
+        /// </summary>
+        public MasterCannotLeaveOrganizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MasterCannotLeaveOrganizationException with the specified error
         /// message.
         /// </summary>

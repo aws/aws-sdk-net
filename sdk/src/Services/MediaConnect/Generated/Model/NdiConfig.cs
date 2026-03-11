@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Specifies the configuration settings for NDI outputs. Required when the flow includes
-    /// NDI outputs.
+    /// Specifies the configuration settings for NDI sources and outputs.
     /// </summary>
     public partial class NdiConfig
     {
@@ -85,8 +84,12 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property NdiState. 
         /// <para>
-        /// A setting that controls whether NDI outputs can be used in the flow. Must be ENABLED
-        /// to add NDI outputs. Default is DISABLED. 
+        /// A setting that controls whether NDI® sources or outputs can be used in the flow. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The default value is <c>DISABLED</c>. This value must be set as <c>ENABLED</c> for
+        /// your flow to support NDI sources or outputs. 
         /// </para>
         /// </summary>
         public NdiState NdiState

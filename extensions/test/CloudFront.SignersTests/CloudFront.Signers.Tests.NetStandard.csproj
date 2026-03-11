@@ -19,7 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../src/AWSSDK.Extensions.CloudFront.Signers/AWSSDK.Extensions.CloudFront.Signers.NetStandard.csproj" />
-    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.NetStandard.csproj" />
+    <ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
   </ItemGroup>
   <ItemGroup>
 	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />

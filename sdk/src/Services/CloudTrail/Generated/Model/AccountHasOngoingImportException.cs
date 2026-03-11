@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountHasOngoingImportException
+        /// message.
+        /// </summary>
+        public AccountHasOngoingImportException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountHasOngoingImportException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for StageNotRetryableException
+        /// message.
+        /// </summary>
+        public StageNotRetryableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StageNotRetryableException with the specified error
         /// message.
         /// </summary>

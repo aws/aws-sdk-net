@@ -116,7 +116,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// partners quickly identify and differentiate between multiple engagement opportunities.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string EngagementTitle
         {
             get { return this._engagementTitle; }
@@ -156,7 +155,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// used to track the invitation and to manage responses like acceptance or rejection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -275,7 +274,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// This information is useful for partners to know which part of AWS is requesting engagement.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=120)]
         public string SenderCompanyName
         {
             get { return this._senderCompanyName; }

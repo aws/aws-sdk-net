@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ReportGenerationLimitExceededException
+        /// message.
+        /// </summary>
+        public ReportGenerationLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReportGenerationLimitExceededException with the specified error
         /// message.
         /// </summary>

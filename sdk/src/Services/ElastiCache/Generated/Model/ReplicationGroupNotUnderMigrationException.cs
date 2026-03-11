@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplicationGroupNotUnderMigrationException
+        /// message.
+        /// </summary>
+        public ReplicationGroupNotUnderMigrationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicationGroupNotUnderMigrationException with the specified error
         /// message.
         /// </summary>

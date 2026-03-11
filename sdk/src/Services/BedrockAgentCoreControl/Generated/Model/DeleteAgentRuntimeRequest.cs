@@ -31,16 +31,17 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentRuntime operation.
-    /// Deletes an Amazon Secure Agent.
+    /// Deletes an Amazon Bedrock AgentCore Runtime.
     /// </summary>
     public partial class DeleteAgentRuntimeRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _agentRuntimeId;
+        private string _clientToken;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime to delete.
+        /// The unique identifier of the AgentCore Runtime to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -54,6 +55,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentRuntimeId()
         {
             return this._agentRuntimeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the operation completes no more
+        /// than one time. If this token matches a previous request, the service ignores the request
+        /// but does not return an error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=33, Max=256)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
     }

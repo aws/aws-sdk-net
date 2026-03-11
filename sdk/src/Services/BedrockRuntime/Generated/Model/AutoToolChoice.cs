@@ -31,7 +31,8 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// The Model automatically decides if a tool should be called or whether to generate
-    /// text instead. For example, <c>{"auto" : {}}</c>.
+    /// text instead. For example, <c>{"auto" : {}}</c>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide
     /// </summary>
     public partial class AutoToolChoice
     {

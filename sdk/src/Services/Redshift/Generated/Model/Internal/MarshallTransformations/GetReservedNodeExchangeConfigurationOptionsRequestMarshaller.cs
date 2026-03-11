@@ -80,6 +80,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetReservedNodeExchangeConfigurationOptionsRequestMarshaller _instance = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();        

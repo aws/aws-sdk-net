@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ExecutionNotRedrivableException
+        /// message.
+        /// </summary>
+        public ExecutionNotRedrivableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExecutionNotRedrivableException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.QBusiness.Model
     {
 
         /// <summary>
+        /// Default constructor for LicenseNotFoundException
+        /// message.
+        /// </summary>
+        public LicenseNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LicenseNotFoundException with the specified error
         /// message.
         /// </summary>

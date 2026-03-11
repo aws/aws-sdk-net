@@ -13,9 +13,10 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.SharedInterfaces;
 using System;
 using System.Collections.Generic;
-using Amazon.Runtime.SharedInterfaces;
+using System.Net;
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -66,5 +67,14 @@ namespace Amazon.Runtime.Credentials.Internal
         /// also be set for authorization flow to succeed.
         /// </summary>
         public bool SupportsGettingNewToken { get; set; } = true;
+
+        /// <summary>
+        /// The proxy settings to use when calling SSOOIDC and SSO Services.
+        /// </summary>
+#if BCL
+        public WebProxy ProxySettings { get; set; }
+#elif NETSTANDARD
+        public IWebProxy ProxySettings { get; set; }
+#endif
     }
 }

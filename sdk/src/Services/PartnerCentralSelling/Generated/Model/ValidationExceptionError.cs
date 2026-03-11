@@ -77,6 +77,15 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <i>NOT_ENOUGH_VALUES:</i> There are not enough values in a field that expects more
+    /// entries.
+    /// </para>
+    ///  
+    /// <para>
+    /// Fix: Increase the number of values to match the expected threshold.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <i>ACTION_NOT_PERMITTED:</i> The action isn't permitted due to current state or permissions.
     /// </para>
     ///  

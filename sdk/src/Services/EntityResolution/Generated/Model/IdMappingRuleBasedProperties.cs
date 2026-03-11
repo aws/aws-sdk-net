@@ -47,17 +47,17 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose <c>MANY_TO_MANY</c>, the system can match attributes across the sub-types
-        /// of an attribute type. For example, if the value of the <c>Email</c> field of Profile
-        /// A matches the value of the <c>BusinessEmail</c> field of Profile B, the two profiles
-        /// are matched on the <c>Email</c> attribute type. 
-        /// </para>
-        ///  
-        /// <para>
         /// If you choose <c>ONE_TO_ONE</c>, the system can only match attributes if the sub-types
         /// are an exact match. For example, for the <c>Email</c> attribute type, the system will
         /// only consider it a match if the value of the <c>Email</c> field of Profile A matches
         /// the value of the <c>Email</c> field of Profile B.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>MANY_TO_MANY</c>, the system can match attributes across the sub-types
+        /// of an attribute type. For example, if the value of the <c>Email</c> field of Profile
+        /// A matches the value of the <c>BusinessEmail</c> field of Profile B, the two profiles
+        /// are matched on the <c>Email</c> attribute type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -41,6 +41,13 @@ namespace Amazon.ElasticFileSystem.Model
         private string _fileSystemId;
 
         /// <summary>
+        /// Default constructor for FileSystemAlreadyExistsException
+        /// message.
+        /// </summary>
+        public FileSystemAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileSystemAlreadyExistsException with the specified error
         /// message.
         /// </summary>

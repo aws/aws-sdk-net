@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetReusableDelegationSetLimitRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetType())
                 throw new AmazonRoute53Exception("Request object does not have required field Type set");
@@ -88,5 +89,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetReusableDelegationSetLimitRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetReusableDelegationSetLimitRequest publicRequest);
     }    
 }

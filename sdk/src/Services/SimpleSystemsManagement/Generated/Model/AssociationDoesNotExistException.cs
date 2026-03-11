@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AssociationDoesNotExistException
+        /// message.
+        /// </summary>
+        public AssociationDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AssociationDoesNotExistException with the specified error
         /// message.
         /// </summary>

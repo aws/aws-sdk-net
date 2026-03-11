@@ -274,7 +274,7 @@ namespace Amazon.Polly
 
         internal virtual DeleteLexiconResponse DeleteLexicon(DeleteLexiconRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLexiconRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual Task<DeleteLexiconResponse> DeleteLexiconAsync(DeleteLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLexiconRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.Polly
 
         internal virtual DescribeVoicesResponse DescribeVoices(DescribeVoicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVoicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual Task<DescribeVoicesResponse> DescribeVoicesAsync(DescribeVoicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVoicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.Polly
 
         internal virtual GetLexiconResponse GetLexicon(GetLexiconRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLexiconRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
@@ -429,7 +429,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual Task<GetLexiconResponse> GetLexiconAsync(GetLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLexiconRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.Polly
 
         internal virtual GetSpeechSynthesisTaskResponse GetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
         public virtual Task<GetSpeechSynthesisTaskResponse> GetSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
@@ -485,7 +485,7 @@ namespace Amazon.Polly
 
         internal virtual ListLexiconsResponse ListLexicons(ListLexiconsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLexiconsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
@@ -514,7 +514,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual Task<ListLexiconsResponse> ListLexiconsAsync(ListLexiconsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLexiconsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.Polly
 
         internal virtual ListSpeechSynthesisTasksResponse ListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
 
@@ -555,7 +555,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
         public virtual Task<ListSpeechSynthesisTasksResponse> ListSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
 
@@ -567,7 +567,7 @@ namespace Amazon.Polly
 
         internal virtual PutLexiconResponse PutLexicon(PutLexiconRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLexiconRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual Task<PutLexiconResponse> PutLexiconAsync(PutLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLexiconRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.Polly
 
         internal virtual StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         public virtual Task<StartSpeechSynthesisTaskResponse> StartSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
 
@@ -728,7 +728,7 @@ namespace Amazon.Polly
 
         internal virtual SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SynthesizeSpeechRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual Task<SynthesizeSpeechResponse> SynthesizeSpeechAsync(SynthesizeSpeechRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SynthesizeSpeechRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 

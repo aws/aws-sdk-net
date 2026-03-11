@@ -51,8 +51,12 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// To restrict access to all the workers in public internet, add the <c>SourceIpConfig</c>
-    /// CIDR value as "10.0.0.0/16".
+    /// To restrict public internet access for all workers, configure the <c>SourceIpConfig</c>
+    /// CIDR value. For example, when using <c>SourceIpConfig</c> with an <c>IpAddressType</c>
+    /// of <c>IPv4</c>, you can restrict access to the IPv4 CIDR block "10.0.0.0/16". When
+    /// using an <c>IpAddressType</c> of <c>dualstack</c>, you can specify both the IPv4 and
+    /// IPv6 CIDR blocks, such as "10.0.0.0/16" for IPv4 only, "2001:db8:1234:1a00::/56" for
+    /// IPv6 only, or "10.0.0.0/16" and "2001:db8:1234:1a00::/56" for dual stack.
     /// </para>
     ///  <important> 
     /// <para>
@@ -84,10 +88,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateWorkforceRequest : AmazonSageMakerRequest
     {
+        private WorkforceIpAddressType _ipAddressType;
         private OidcConfig _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
         private string _workforceName;
         private WorkforceVpcConfigRequest _workforceVpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Use this parameter to specify whether you want <c>IPv4</c> only or <c>dualstack</c>
+        /// (<c>IPv4</c> and <c>IPv6</c>) to support your labeling workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OidcConfig. 

@@ -38,6 +38,16 @@ namespace Amazon.OpenSearchServerless.Model
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListCollectionGroups operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCollectionGroupsPaginator ListCollectionGroups(ListCollectionGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListCollections operation
         ///</summary>
         [AWSPaginator(

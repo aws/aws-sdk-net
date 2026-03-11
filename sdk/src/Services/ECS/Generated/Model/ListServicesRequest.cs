@@ -40,6 +40,7 @@ namespace Amazon.ECS.Model
         private LaunchType _launchType;
         private int? _maxResults;
         private string _nextToken;
+        private ResourceManagementType _resourceManagementType;
         private SchedulingStrategy _schedulingStrategy;
 
         /// <summary>
@@ -129,6 +130,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceManagementType. 
+        /// <para>
+        /// The resourceManagementType type to use when filtering the <c>ListServices</c> results.
+        /// </para>
+        /// </summary>
+        public ResourceManagementType ResourceManagementType
+        {
+            get { return this._resourceManagementType; }
+            set { this._resourceManagementType = value; }
+        }
+
+        // Check to see if ResourceManagementType property is set
+        internal bool IsSetResourceManagementType()
+        {
+            return this._resourceManagementType != null;
         }
 
         /// <summary>

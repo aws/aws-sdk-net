@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateKeyGroupRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/key-group";
 
@@ -69,7 +70,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));
 
                     var publicRequestKeyGroupConfigItems = publicRequest.KeyGroupConfig.Items;
-                    if (publicRequestKeyGroupConfigItems != null && (publicRequestKeyGroupConfigItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.KeyGroupConfig.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestKeyGroupConfigItemsValue in publicRequestKeyGroupConfigItems) 
@@ -87,6 +88,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -98,8 +100,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateKeyGroupRequestMarshaller _instance = new CreateKeyGroupRequestMarshaller();        
@@ -121,5 +121,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateKeyGroupRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateKeyGroupRequest publicRequest);
     }    
 }

@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumOpenPullRequestsExceededException
+        /// message.
+        /// </summary>
+        public MaximumOpenPullRequestsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumOpenPullRequestsExceededException with the specified error
         /// message.
         /// </summary>

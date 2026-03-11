@@ -32,7 +32,7 @@ namespace Amazon.MediaPackageV2.Model
     /// <summary>
     /// Container for the parameters to the ListChannels operation.
     /// Retrieves all channels in a specific channel group that are configured in AWS Elemental
-    /// MediaPackage, including the origin endpoints that are associated with it.
+    /// MediaPackage.
     /// </summary>
     public partial class ListChannelsRequest : AmazonMediaPackageV2Request
     {

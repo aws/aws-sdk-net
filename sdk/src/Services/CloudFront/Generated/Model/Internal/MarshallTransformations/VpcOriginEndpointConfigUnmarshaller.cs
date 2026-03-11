@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcOriginEndpointConfig Object
     /// </summary>  
-    public class VpcOriginEndpointConfigUnmarshaller : IXmlUnmarshaller<VpcOriginEndpointConfig, XmlUnmarshallerContext>
+    public partial class VpcOriginEndpointConfigUnmarshaller : IXmlUnmarshaller<VpcOriginEndpointConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,6 +92,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginSslProtocols = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +102,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, VpcOriginEndpointConfig unmarshalledObject, int targetDepth);
+
         private static VpcOriginEndpointConfigUnmarshaller _instance = new VpcOriginEndpointConfigUnmarshaller();        
 
         /// <summary>

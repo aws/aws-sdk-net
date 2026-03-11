@@ -38,6 +38,7 @@ namespace Amazon.DSQL.Model
         private DateTime? _creationTime;
         private bool? _deletionProtectionEnabled;
         private EncryptionDetails _encryptionDetails;
+        private string _endpoint;
         private string _identifier;
         private MultiRegionProperties _multiRegionProperties;
         private ClusterStatus _status;
@@ -116,6 +117,24 @@ namespace Amazon.DSQL.Model
         internal bool IsSetEncryptionDetails()
         {
             return this._encryptionDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// The connection endpoint for the created cluster.
+        /// </para>
+        /// </summary>
+        public string Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
         }
 
         /// <summary>

@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotCopyGrantNotFoundException
+        /// message.
+        /// </summary>
+        public SnapshotCopyGrantNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotCopyGrantNotFoundException with the specified error
         /// message.
         /// </summary>

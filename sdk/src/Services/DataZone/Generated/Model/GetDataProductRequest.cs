@@ -32,6 +32,24 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the GetDataProduct operation.
     /// Gets the data product.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The data product ID must exist. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The domain must be valid and accessible.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have read or discovery permissions for the data product.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetDataProductRequest : AmazonDataZoneRequest
     {

@@ -31,6 +31,10 @@ namespace Amazon.MQ
     {
 
         /// <summary>
+        /// Constant CONFIG_MANAGED for AuthenticationStrategy
+        /// </summary>
+        public static readonly AuthenticationStrategy CONFIG_MANAGED = new AuthenticationStrategy("CONFIG_MANAGED");
+        /// <summary>
         /// Constant LDAP for AuthenticationStrategy
         /// </summary>
         public static readonly AuthenticationStrategy LDAP = new AuthenticationStrategy("LDAP");

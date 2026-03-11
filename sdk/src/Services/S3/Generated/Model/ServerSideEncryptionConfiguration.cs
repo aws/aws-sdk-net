@@ -48,6 +48,7 @@ namespace Amazon.S3.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ServerSideEncryptionRule> ServerSideEncryptionRules
         {
             get { return this._serverSideEncryptionRules; }

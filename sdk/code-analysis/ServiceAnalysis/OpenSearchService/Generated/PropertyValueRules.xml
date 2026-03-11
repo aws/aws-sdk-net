@@ -24,6 +24,12 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddDirectQueryDataSourceRequest.DataSourceAccessPolicy</property>
+    <min>0</min>
+    <max>102400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AddDirectQueryDataSourceRequest.DataSourceName</property>
     <min>3</min>
     <max>80</max>
@@ -84,6 +90,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationRequest.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CreateApplicationRequest.Name</property>
     <min>3</min>
     <max>30</max>
@@ -98,6 +110,12 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CreateApplicationResponse.Id</property>
     <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CreateApplicationResponse.Name</property>
@@ -122,6 +140,18 @@
     <min>14</min>
     <max>18</max>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateIndexRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateIndexRequest.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.\.?$)[^_ ,:"+/*\\|?#&gt;&lt;A-Z-][^ ,:"+/*\\|?#&gt;&lt;A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CreateOutboundConnectionRequest.ConnectionAlias</property>
@@ -197,6 +227,18 @@
     <min>10</min>
     <max>256</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteIndexRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteIndexRequest.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.\.?$)[^_ ,:"+/*\\|?#&gt;&lt;A-Z-][^ ,:"+/*\\|?#&gt;&lt;A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeleteOutboundConnectionRequest.ConnectionId</property>
@@ -375,6 +417,12 @@
     <pattern>[a-z0-9]{3,30}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetApplicationResponse.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetApplicationResponse.Name</property>
     <min>3</min>
     <max>30</max>
@@ -410,10 +458,22 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDefaultApplicationSettingResponse.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetDirectQueryDataSourceRequest.DataSourceName</property>
     <min>3</min>
     <max>80</max>
     <pattern>[a-z][a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDirectQueryDataSourceResponse.DataSourceAccessPolicy</property>
+    <min>0</min>
+    <max>102400</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetDirectQueryDataSourceResponse.DataSourceName</property>
@@ -448,6 +508,18 @@
     <min>0</min>
     <max>1000</max>
     <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetIndexRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetIndexRequest.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.\.?$)[^_ ,:"+/*\\|?#&gt;&lt;A-Z-][^ ,:"+/*\\|?#&gt;&lt;A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetPackageVersionHistoryRequest.MaxResults</property>
@@ -596,6 +668,18 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PutDefaultApplicationSettingRequest.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PutDefaultApplicationSettingResponse.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.RejectInboundConnectionRequest.ConnectionId</property>
     <min>10</min>
     <max>256</max>
@@ -678,6 +762,12 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateDirectQueryDataSourceRequest.DataSourceAccessPolicy</property>
+    <min>0</min>
+    <max>102400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateDirectQueryDataSourceRequest.DataSourceName</property>
     <min>3</min>
     <max>80</max>
@@ -699,6 +789,18 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateIndexRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateIndexRequest.IndexName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.\.?$)[^_ ,:"+/*\\|?#&gt;&lt;A-Z-][^ ,:"+/*\\|?#&gt;&lt;A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdatePackageRequest.CommitMessage</property>
@@ -897,6 +999,12 @@
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSource.IamRoleForDataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DataSourceDetails.Description</property>
     <max>1000</max>
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
@@ -1044,6 +1152,30 @@
     <property>Amazon.OpenSearchService.Model.Filter.Name</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsInput.RolesKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsInput.SubjectKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsOutput.RolesKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsOutput.SubjectKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptions.IamIdentityCenterApplicationArn</property>

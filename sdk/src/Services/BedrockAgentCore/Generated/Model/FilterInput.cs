@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class FilterInput
     {
         private BranchFilter _branch;
+        private List<EventMetadataFilterExpression> _eventMetadata = AWSConfigs.InitializeCollections ? new List<EventMetadataFilterExpression>() : null;
 
         /// <summary>
         /// Gets and sets the property Branch. 
@@ -52,6 +53,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetBranch()
         {
             return this._branch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventMetadata. 
+        /// <para>
+        /// Event metadata filter criteria to apply when retrieving events.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<EventMetadataFilterExpression> EventMetadata
+        {
+            get { return this._eventMetadata; }
+            set { this._eventMetadata = value; }
+        }
+
+        // Check to see if EventMetadata property is set
+        internal bool IsSetEventMetadata()
+        {
+            return this._eventMetadata != null && (this._eventMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

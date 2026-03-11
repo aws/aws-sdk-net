@@ -72,7 +72,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// unique for each request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -92,7 +91,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Providing the correct identifier helps ensure that the correct engagement is processed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Identifier
         {
             get { return this._identifier; }

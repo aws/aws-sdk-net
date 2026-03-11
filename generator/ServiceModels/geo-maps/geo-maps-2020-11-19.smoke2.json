@@ -1,13 +1,13 @@
 {
   "version" : 2,
   "testCases" : [ {
-    "id" : "GetSpritesSuccess",
-    "operationName" : "GetSprites",
+    "id" : "GetTileSuccess",
+    "operationName" : "GetTile",
     "input" : {
-      "Style" : "Standard",
-      "ColorScheme" : "Light",
-      "Variant" : "Default",
-      "FileName" : "sprites.json"
+      "Tileset" : "vector.basemap",
+      "X" : "5190",
+      "Y" : "11218",
+      "Z" : "15"
     },
     "expectation" : {
       "success" : { }
@@ -19,13 +19,11 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetTileSuccess",
-    "operationName" : "GetTile",
+    "id" : "GetGlyphsSuccess",
+    "operationName" : "GetGlyphs",
     "input" : {
-      "Tileset" : "vector.basemap",
-      "X" : "5190",
-      "Y" : "11218",
-      "Z" : "15"
+      "FontStack" : "Amazon Ember Regular",
+      "FontUnicodeRange" : "0-255.pbf"
     },
     "expectation" : {
       "success" : { }
@@ -57,10 +55,13 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetStyleDescriptorSuccess",
-    "operationName" : "GetStyleDescriptor",
+    "id" : "GetSpritesSuccess",
+    "operationName" : "GetSprites",
     "input" : {
-      "Style" : "Standard"
+      "Style" : "Standard",
+      "ColorScheme" : "Light",
+      "Variant" : "Default",
+      "FileName" : "sprites.json"
     },
     "expectation" : {
       "success" : { }
@@ -72,11 +73,10 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetGlyphsSuccess",
-    "operationName" : "GetGlyphs",
+    "id" : "GetStyleDescriptorSuccess",
+    "operationName" : "GetStyleDescriptor",
     "input" : {
-      "FontStack" : "Amazon Ember Regular",
-      "FontUnicodeRange" : "0-255.pbf"
+      "Style" : "Standard"
     },
     "expectation" : {
       "success" : { }

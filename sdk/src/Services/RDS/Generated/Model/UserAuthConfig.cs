@@ -100,6 +100,7 @@ namespace Amazon.RDS.Model
         /// a specific database user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -140,6 +141,7 @@ namespace Amazon.RDS.Model
         /// Secrets Manager.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string SecretArn
         {
             get { return this._secretArn; }
@@ -158,6 +160,7 @@ namespace Amazon.RDS.Model
         /// The name of the database user to which the proxy connects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

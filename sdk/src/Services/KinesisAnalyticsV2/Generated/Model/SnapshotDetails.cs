@@ -34,11 +34,30 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class SnapshotDetails
     {
+        private ApplicationEncryptionConfigurationDescription _applicationEncryptionConfigurationDescription;
         private long? _applicationVersionId;
         private RuntimeEnvironment _runtimeEnvironment;
         private DateTime? _snapshotCreationTimestamp;
         private string _snapshotName;
         private SnapshotStatus _snapshotStatus;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationEncryptionConfigurationDescription. 
+        /// <para>
+        /// Specifies the encryption settings of data at rest for the application snapshot.
+        /// </para>
+        /// </summary>
+        public ApplicationEncryptionConfigurationDescription ApplicationEncryptionConfigurationDescription
+        {
+            get { return this._applicationEncryptionConfigurationDescription; }
+            set { this._applicationEncryptionConfigurationDescription = value; }
+        }
+
+        // Check to see if ApplicationEncryptionConfigurationDescription property is set
+        internal bool IsSetApplicationEncryptionConfigurationDescription()
+        {
+            return this._applicationEncryptionConfigurationDescription != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 

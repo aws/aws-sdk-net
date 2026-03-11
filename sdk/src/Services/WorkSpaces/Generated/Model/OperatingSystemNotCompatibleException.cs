@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for OperatingSystemNotCompatibleException
+        /// message.
+        /// </summary>
+        public OperatingSystemNotCompatibleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperatingSystemNotCompatibleException with the specified error
         /// message.
         /// </summary>

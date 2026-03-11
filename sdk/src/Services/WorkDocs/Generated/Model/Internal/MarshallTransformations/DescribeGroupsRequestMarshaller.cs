@@ -71,6 +71,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOrganizationId())
                 request.Parameters.Add("organizationId", StringUtils.FromString(publicRequest.OrganizationId));
+            if (string.IsNullOrEmpty(publicRequest.SearchQuery))
+                throw new AmazonWorkDocsException("Request object does not have required field SearchQuery set");
             
             if (publicRequest.IsSetSearchQuery())
                 request.Parameters.Add("searchQuery", StringUtils.FromString(publicRequest.SearchQuery));

@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using System.Collections.Generic;
+
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
@@ -65,5 +67,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="rangeKeyAttribute">Name of the attribute used as the sort key in the GSI</param>
         /// <param name="rangeKeyType">Type of the sort key attribute</param>
         ITableBuilder AddGlobalSecondaryIndex(string indexName, string hashkeyAttribute, DynamoDBEntryType hashKeyType, string rangeKeyAttribute, DynamoDBEntryType rangeKeyType);
+
+        /// <summary>
+        /// Adds a global secondary index definition to the table with composite keys (max 4 elements each)
+        /// </summary>
+        /// <param name="indexName">Name of the global secondary index</param>
+        /// <param name="hashkeyAttributes">List of hash key attribute names and their types for composite partition key</param>
+        /// <param name="rangeKeyAttributes">List of range key attribute names and their types for composite sort key</param>
+        /// <returns>The table builder instance for method chaining</returns>
+        ITableBuilder AddGlobalSecondaryIndex(string indexName, List<KeyValuePair<string, DynamoDBEntryType>> hashkeyAttributes, List<KeyValuePair<string, DynamoDBEntryType>> rangeKeyAttributes);
     }
 }

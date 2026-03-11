@@ -86,6 +86,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnforceWorkGroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EngineConfiguration", targetDepth))
+                {
+                    var unmarshaller = EngineConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EngineConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("EngineVersion", targetDepth))
                 {
                     var unmarshaller = EngineVersionUnmarshaller.Instance;
@@ -108,6 +114,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ManagedQueryResultsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedQueryResultsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MonitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PublishCloudWatchMetricsEnabled", targetDepth))

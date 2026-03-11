@@ -69,6 +69,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSpaceName())
                 throw new AmazonCodeCatalystException("Request object does not have required field SpaceName set");
             request.AddPathResource("{spaceName}", StringUtils.FromString(publicRequest.SpaceName));
+            if (string.IsNullOrEmpty(publicRequest.WorkflowId))
+                throw new AmazonCodeCatalystException("Request object does not have required field WorkflowId set");
             
             if (publicRequest.IsSetWorkflowId())
                 request.Parameters.Add("workflowId", StringUtils.FromString(publicRequest.WorkflowId));

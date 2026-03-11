@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for SubnetAlreadyInUseException
+        /// message.
+        /// </summary>
+        public SubnetAlreadyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubnetAlreadyInUseException with the specified error
         /// message.
         /// </summary>

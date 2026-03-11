@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAddressException
+        /// message.
+        /// </summary>
+        public InvalidAddressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAddressException with the specified error
         /// message.
         /// </summary>

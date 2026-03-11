@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContinuousDeploymentSingleWeightConfig Object
     /// </summary>  
-    public class ContinuousDeploymentSingleWeightConfigUnmarshaller : IXmlUnmarshaller<ContinuousDeploymentSingleWeightConfig, XmlUnmarshallerContext>
+    public partial class ContinuousDeploymentSingleWeightConfigUnmarshaller : IXmlUnmarshaller<ContinuousDeploymentSingleWeightConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ContinuousDeploymentSingleWeightConfig unmarshalledObject, int targetDepth);
+
         private static ContinuousDeploymentSingleWeightConfigUnmarshaller _instance = new ContinuousDeploymentSingleWeightConfigUnmarshaller();        
 
         /// <summary>

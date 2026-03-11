@@ -61,8 +61,8 @@ namespace Amazon.ControlCatalog.Model
         /// <summary>
         /// Gets and sets the property Mapping. 
         /// <para>
-        /// The details of the mapping relationship, containing either framework or common control
-        /// information.
+        /// The details of the mapping relationship, for example, containing framework, common
+        /// control, or related control information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,8 +81,7 @@ namespace Amazon.ControlCatalog.Model
         /// <summary>
         /// Gets and sets the property MappingType. 
         /// <para>
-        /// The type of mapping relationship between the control and other entities. Indicates
-        /// whether the mapping is to a framework or common control.
+        /// The type of mapping relationship between the control and other entities.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,11 +40,11 @@ namespace Amazon.PCS
     /// <summary>
     /// <para>Implementation for accessing PCS</para>
     ///
-    /// Amazon Web Services Parallel Computing Service (Amazon Web Services PCS) is a managed
-    /// service that makes it easier for you to run and scale your high performance computing
-    /// (HPC) workloads, and build scientific and engineering models on Amazon Web Services
-    /// using Slurm. For more information, see the <a href="https://docs.aws.amazon.com/pcs/latest/userguide">Amazon
-    /// Web Services Parallel Computing Service User Guide</a>.
+    /// Parallel Computing Service (PCS) is a managed service that makes it easier for you
+    /// to run and scale your high performance computing (HPC) workloads, and build scientific
+    /// and engineering models on Amazon Web Services using Slurm. For more information, see
+    /// the <a href="https://docs.aws.amazon.com/pcs/latest/userguide">Parallel Computing
+    /// Service User Guide</a>.
     /// 
     ///  
     /// <para>
@@ -55,21 +55,20 @@ namespace Amazon.PCS
     /// </para>
     ///  
     /// <para>
-    /// The API actions operate on Amazon Web Services PCS resources. A <i>resource</i> is
-    /// an entity in Amazon Web Services that you can work with. Amazon Web Services services
-    /// create resources when you use the features of the service. Examples of Amazon Web
-    /// Services PCS resources include clusters, compute node groups, and queues. For more
-    /// information about resources in Amazon Web Services, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-resource">Resource</a>
+    /// The API actions operate on PCS resources. A <i>resource</i> is an entity in Amazon
+    /// Web Services that you can work with. Amazon Web Services services create resources
+    /// when you use the features of the service. Examples of PCS resources include clusters,
+    /// compute node groups, and queues. For more information about resources in Amazon Web
+    /// Services, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-resource">Resource</a>
     /// in the <i>Resource Explorer User Guide</i>. 
     /// </para>
     ///  
     /// <para>
-    /// An Amazon Web Services PCS <i>compute node</i> is an Amazon EC2 instance. You don't
-    /// launch compute nodes directly. Amazon Web Services PCS uses configuration information
-    /// that you provide to launch compute nodes in your Amazon Web Services account. You
-    /// receive billing charges for your running compute nodes. Amazon Web Services PCS automatically
-    /// terminates your compute nodes when you delete the Amazon Web Services PCS resources
-    /// related to those compute nodes.
+    /// An PCS <i>compute node</i> is an Amazon EC2 instance. You don't launch compute nodes
+    /// directly. PCS uses configuration information that you provide to launch compute nodes
+    /// in your Amazon Web Services account. You receive billing charges for your running
+    /// compute nodes. PCS automatically terminates your compute nodes when you delete the
+    /// PCS resources related to those compute nodes.
     /// </para>
     /// </summary>
     public partial class AmazonPCSClient : AmazonServiceClient, IAmazonPCS
@@ -297,7 +296,7 @@ namespace Amazon.PCS
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -307,18 +306,18 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Creates a cluster in your account. Amazon Web Services PCS creates the cluster controller
-        /// in a service-owned account. The cluster controller communicates with the cluster resources
-        /// in your account. The subnets and security groups for the cluster must already exist
-        /// before you use this API action.
+        /// Creates a cluster in your account. PCS creates the cluster controller in a service-owned
+        /// account. The cluster controller communicates with the cluster resources in your account.
+        /// The subnets and security groups for the cluster must already exist before you use
+        /// this API action.
         /// 
         ///  <note> 
         /// <para>
-        /// It takes time for Amazon Web Services PCS to create the cluster. The cluster is in
-        /// a <c>Creating</c> state until it is ready to use. There can only be 1 cluster in a
-        /// <c>Creating</c> state per Amazon Web Services Region per Amazon Web Services account.
-        /// <c>CreateCluster</c> fails with a <c>ServiceQuotaExceededException</c> if there is
-        /// already a cluster in a <c>Creating</c> state.
+        /// It takes time for PCS to create the cluster. The cluster is in a <c>Creating</c> state
+        /// until it is ready to use. There can only be 1 cluster in a <c>Creating</c> state per
+        /// Amazon Web Services Region per Amazon Web Services account. <c>CreateCluster</c> fails
+        /// with a <c>ServiceQuotaExceededException</c> if there is already a cluster in a <c>Creating</c>
+        /// state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -381,7 +380,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ServiceQuotaExceededException">
         /// You exceeded your service quota. Service quotas, also referred to as limits, are the
@@ -441,7 +440,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -453,7 +452,7 @@ namespace Amazon.PCS
 
         internal virtual CreateComputeNodeGroupResponse CreateComputeNodeGroup(CreateComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -464,13 +463,13 @@ namespace Amazon.PCS
 
         /// <summary>
         /// Creates a managed set of compute nodes. You associate a compute node group with a
-        /// cluster through 1 or more Amazon Web Services PCS queues or as part of the login fleet.
-        /// A compute node group includes the definition of the compute properties and lifecycle
-        /// management. Amazon Web Services PCS uses the information you provide to this API action
-        /// to launch compute nodes in your account. You can only specify subnets in the same
-        /// Amazon VPC as your cluster. You receive billing charges for the compute nodes that
-        /// Amazon Web Services PCS launches in your account. You must already have a launch template
-        /// before you call this API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
+        /// cluster through 1 or more PCS queues or as part of the login fleet. A compute node
+        /// group includes the definition of the compute properties and lifecycle management.
+        /// PCS uses the information you provide to this API action to launch compute nodes in
+        /// your account. You can only specify subnets in the same Amazon VPC as your cluster.
+        /// You receive billing charges for the compute nodes that PCS launches in your account.
+        /// You must already have a launch template before you call this API. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
         /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide for Linux Instances</i>.
         /// </summary>
@@ -533,7 +532,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -602,7 +601,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateComputeNodeGroup">REST API Reference for CreateComputeNodeGroup Operation</seealso>
         public virtual Task<CreateComputeNodeGroupResponse> CreateComputeNodeGroupAsync(CreateComputeNodeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -614,7 +613,7 @@ namespace Amazon.PCS
 
         internal virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -686,7 +685,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -755,7 +754,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -767,7 +766,7 @@ namespace Amazon.PCS
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -839,7 +838,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -883,7 +882,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -895,7 +894,7 @@ namespace Amazon.PCS
 
         internal virtual DeleteComputeNodeGroupResponse DeleteComputeNodeGroup(DeleteComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -967,7 +966,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1011,7 +1010,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteComputeNodeGroup">REST API Reference for DeleteComputeNodeGroup Operation</seealso>
         public virtual Task<DeleteComputeNodeGroupResponse> DeleteComputeNodeGroupAsync(DeleteComputeNodeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1023,7 +1022,7 @@ namespace Amazon.PCS
 
         internal virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -1034,8 +1033,7 @@ namespace Amazon.PCS
 
         /// <summary>
         /// Deletes a job queue. If the compute node group associated with this queue isn't associated
-        /// with any other queues, Amazon Web Services PCS terminates all the compute nodes for
-        /// this queue.
+        /// with any other queues, PCS terminates all the compute nodes for this queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// <param name="cancellationToken">
@@ -1096,7 +1094,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1140,7 +1138,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -1152,7 +1150,7 @@ namespace Amazon.PCS
 
         internal virtual GetClusterResponse GetCluster(GetClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
@@ -1225,7 +1223,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1269,7 +1267,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetCluster">REST API Reference for GetCluster Operation</seealso>
         public virtual Task<GetClusterResponse> GetClusterAsync(GetClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
@@ -1281,7 +1279,7 @@ namespace Amazon.PCS
 
         internal virtual GetComputeNodeGroupResponse GetComputeNodeGroup(GetComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1354,7 +1352,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1398,7 +1396,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetComputeNodeGroup">REST API Reference for GetComputeNodeGroup Operation</seealso>
         public virtual Task<GetComputeNodeGroupResponse> GetComputeNodeGroupAsync(GetComputeNodeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1410,7 +1408,7 @@ namespace Amazon.PCS
 
         internal virtual GetQueueResponse GetQueue(GetQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -1482,7 +1480,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1526,7 +1524,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual Task<GetQueueResponse> GetQueueAsync(GetQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -1538,7 +1536,7 @@ namespace Amazon.PCS
 
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -1609,7 +1607,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1653,7 +1651,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -1665,7 +1663,7 @@ namespace Amazon.PCS
 
         internal virtual ListComputeNodeGroupsResponse ListComputeNodeGroups(ListComputeNodeGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputeNodeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputeNodeGroupsResponseUnmarshaller.Instance;
 
@@ -1736,7 +1734,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1780,7 +1778,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListComputeNodeGroups">REST API Reference for ListComputeNodeGroups Operation</seealso>
         public virtual Task<ListComputeNodeGroupsResponse> ListComputeNodeGroupsAsync(ListComputeNodeGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputeNodeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputeNodeGroupsResponseUnmarshaller.Instance;
 
@@ -1792,7 +1790,7 @@ namespace Amazon.PCS
 
         internal virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -1863,7 +1861,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1907,7 +1905,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -1919,7 +1917,7 @@ namespace Amazon.PCS
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1929,7 +1927,7 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Returns a list of all tags on an Amazon Web Services PCS resource.
+        /// Returns a list of all tags on an PCS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1949,7 +1947,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1961,7 +1959,7 @@ namespace Amazon.PCS
 
         internal virtual RegisterComputeNodeGroupInstanceResponse RegisterComputeNodeGroupInstance(RegisterComputeNodeGroupInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterComputeNodeGroupInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterComputeNodeGroupInstanceResponseUnmarshaller.Instance;
 
@@ -1977,8 +1975,7 @@ namespace Amazon.PCS
         /// 
         ///  </important> 
         /// <para>
-        /// Amazon Web Services PCS uses this API action to register the compute nodes it launches
-        /// in your account.
+        /// PCS uses this API action to register the compute nodes it launches in your account.
         /// </para>
         /// 
         /// </para>
@@ -2015,12 +2012,12 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">REST API Reference for RegisterComputeNodeGroupInstance Operation</seealso>
         public virtual Task<RegisterComputeNodeGroupInstanceResponse> RegisterComputeNodeGroupInstanceAsync(RegisterComputeNodeGroupInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterComputeNodeGroupInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterComputeNodeGroupInstanceResponseUnmarshaller.Instance;
 
@@ -2032,7 +2029,7 @@ namespace Amazon.PCS
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2042,10 +2039,10 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Adds or edits tags on an Amazon Web Services PCS resource. Each tag consists of a
-        /// tag key and a tag value. The tag key and tag value are case-sensitive strings. The
-        /// tag value can be an empty (null) string. To add a tag, specify a new tag key and a
-        /// tag value. To edit a tag, specify an existing tag key and a new tag value.
+        /// Adds or edits tags on an PCS resource. Each tag consists of a tag key and a tag value.
+        /// The tag key and tag value are case-sensitive strings. The tag value can be an empty
+        /// (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag,
+        /// specify an existing tag key and a new tag value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2090,7 +2087,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2102,7 +2099,7 @@ namespace Amazon.PCS
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2112,8 +2109,8 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Deletes tags from an Amazon Web Services PCS resource. To delete a tag, specify the
-        /// tag key and the Amazon Resource Name (ARN) of the Amazon Web Services PCS resource.
+        /// Deletes tags from an PCS resource. To delete a tag, specify the tag key and the Amazon
+        /// Resource Name (ARN) of the PCS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2133,7 +2130,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2141,11 +2138,147 @@ namespace Amazon.PCS
         }
         #endregion
         
+        #region  UpdateCluster
+
+        internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a cluster configuration. You can modify Slurm scheduler settings, accounting
+        /// configuration, and security groups for an existing cluster. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can only update clusters that are in <c>ACTIVE</c>, <c>UPDATE_FAILED</c>, or <c>SUSPENDED</c>
+        /// state. All associated resources (queues and compute node groups) must be in <c>ACTIVE</c>
+        /// state before you can update the cluster.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by PCS.</returns>
+        /// <exception cref="Amazon.PCS.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The launch template instance profile doesn't pass <c>iam:PassRole</c> verification.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a mismatch between the account ID and cluster ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster ID doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The EC2 instance isn't present.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than 1 operation on the same resource at the same time.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A cluster with the same name already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster isn't in <c>ACTIVE</c> status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster to delete is in an unstable state. For example, because it still has <c>ACTIVE</c>
+        /// node groups or queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A queue already exists in a cluster.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.InternalServerException">
+        /// PCS can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
+        /// The requested resource can't be found. The cluster, node group, or queue you're attempting
+        /// to get, update, list, or delete doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. Check the resource's request rate quota
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ValidationException">
+        /// The request isn't valid.
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your request contains malformed JSON or unsupported characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The scheduler version isn't supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There are networking related errors, such as network validation failure.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AMI type is <c>CUSTOM</c> and the launch template doesn't define the AMI ID, or the
+        /// AMI type is AL2 and the launch template defines the AMI.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateComputeNodeGroup
 
         internal virtual UpdateComputeNodeGroupResponse UpdateComputeNodeGroup(UpdateComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -2218,7 +2351,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2287,7 +2420,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateComputeNodeGroup">REST API Reference for UpdateComputeNodeGroup Operation</seealso>
         public virtual Task<UpdateComputeNodeGroupResponse> UpdateComputeNodeGroupAsync(UpdateComputeNodeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -2299,7 +2432,7 @@ namespace Amazon.PCS
 
         internal virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
@@ -2371,7 +2504,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2440,7 +2573,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual Task<UpdateQueueResponse> UpdateQueueAsync(UpdateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class ClientVpnConnection
     {
         private string _clientIp;
+        private string _clientIpv6Address;
         private string _clientVpnEndpointId;
         private string _commonName;
         private string _connectionEndTime;
@@ -65,6 +66,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientIp()
         {
             return this._clientIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientIpv6Address. 
+        /// <para>
+        /// The IPv6 address assigned to the client connection when using a dual-stack Client
+        /// VPN endpoint. This field is only populated when the endpoint is configured for dual-stack
+        /// addressing, and the client is using IPv6 for connectivity.
+        /// </para>
+        /// </summary>
+        public string ClientIpv6Address
+        {
+            get { return this._clientIpv6Address; }
+            set { this._clientIpv6Address = value; }
+        }
+
+        // Check to see if ClientIpv6Address property is set
+        internal bool IsSetClientIpv6Address()
+        {
+            return this._clientIpv6Address != null;
         }
 
         /// <summary>

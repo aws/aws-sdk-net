@@ -40,6 +40,13 @@ namespace Amazon.Textract.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedDocumentException
+        /// message.
+        /// </summary>
+        public UnsupportedDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedDocumentException with the specified error
         /// message.
         /// </summary>

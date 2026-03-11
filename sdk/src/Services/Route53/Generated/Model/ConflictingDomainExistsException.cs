@@ -60,6 +60,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for ConflictingDomainExistsException
+        /// message.
+        /// </summary>
+        public ConflictingDomainExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictingDomainExistsException with the specified error
         /// message.
         /// </summary>

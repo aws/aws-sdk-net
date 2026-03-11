@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The request could not be processed because of conflict in the current state of the
+    /// The request couldn't be processed because of conflict in the current state of the
     /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
     /// running, etc.
     /// </summary>
@@ -39,6 +39,13 @@ namespace Amazon.EntityResolution.Model
     #endif
     public partial class ConflictException : AmazonEntityResolutionException
     {
+
+        /// <summary>
+        /// Default constructor for ConflictException
+        /// message.
+        /// </summary>
+        public ConflictException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error

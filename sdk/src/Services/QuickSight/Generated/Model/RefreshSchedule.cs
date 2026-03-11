@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing
-        /// SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// SPICE data</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     public partial class SchedulerConfig
     {
         private FairShare _fairShare;
+        private IdleResourceSharing _idleResourceSharing;
         private List<PriorityClass> _priorityClasses = AWSConfigs.InitializeCollections ? new List<PriorityClass>() : null;
 
         /// <summary>
@@ -63,6 +64,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFairShare()
         {
             return this._fairShare != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdleResourceSharing. 
+        /// <para>
+        /// Configuration for sharing idle compute resources across entities in the cluster. When
+        /// enabled, unallocated resources are automatically calculated and made available for
+        /// entities to borrow. 
+        /// </para>
+        /// </summary>
+        public IdleResourceSharing IdleResourceSharing
+        {
+            get { return this._idleResourceSharing; }
+            set { this._idleResourceSharing = value; }
+        }
+
+        // Check to see if IdleResourceSharing property is set
+        internal bool IsSetIdleResourceSharing()
+        {
+            return this._idleResourceSharing != null;
         }
 
         /// <summary>

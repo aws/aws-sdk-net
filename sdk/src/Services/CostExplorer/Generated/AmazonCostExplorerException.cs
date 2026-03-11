@@ -36,6 +36,14 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Construct instance of AmazonCostExplorerException
         /// </summary>
+        public AmazonCostExplorerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCostExplorerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCostExplorerException(string message)
             : base(message)

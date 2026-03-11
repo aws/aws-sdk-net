@@ -42,6 +42,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicatedStopRequestException
+        /// message.
+        /// </summary>
+        public DuplicatedStopRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicatedStopRequestException with the specified error
         /// message.
         /// </summary>

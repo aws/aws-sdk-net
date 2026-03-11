@@ -41,6 +41,13 @@ namespace Amazon.Glacier.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for MissingParameterValueException
+        /// message.
+        /// </summary>
+        public MissingParameterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingParameterValueException with the specified error
         /// message.
         /// </summary>

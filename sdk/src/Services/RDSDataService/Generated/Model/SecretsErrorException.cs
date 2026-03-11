@@ -54,6 +54,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for SecretsErrorException
+        /// message.
+        /// </summary>
+        public SecretsErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SecretsErrorException with the specified error
         /// message.
         /// </summary>

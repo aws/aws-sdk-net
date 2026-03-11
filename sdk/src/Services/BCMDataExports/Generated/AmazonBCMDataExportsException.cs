@@ -36,6 +36,14 @@ namespace Amazon.BCMDataExports
         /// <summary>
         /// Construct instance of AmazonBCMDataExportsException
         /// </summary>
+        public AmazonBCMDataExportsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBCMDataExportsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBCMDataExportsException(string message)
             : base(message)

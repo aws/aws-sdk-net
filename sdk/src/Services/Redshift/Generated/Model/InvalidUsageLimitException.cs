@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUsageLimitException
+        /// message.
+        /// </summary>
+        public InvalidUsageLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUsageLimitException with the specified error
         /// message.
         /// </summary>

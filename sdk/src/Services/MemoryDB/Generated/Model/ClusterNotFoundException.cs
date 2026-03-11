@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified cluster does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ClusterNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ClusterNotFoundException
+        /// message.
+        /// </summary>
+        public ClusterNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ClusterNotFoundException with the specified error

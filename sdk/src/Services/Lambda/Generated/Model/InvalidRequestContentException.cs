@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for InvalidRequestContentException
+        /// message.
+        /// </summary>
+        public InvalidRequestContentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRequestContentException with the specified error
         /// message.
         /// </summary>

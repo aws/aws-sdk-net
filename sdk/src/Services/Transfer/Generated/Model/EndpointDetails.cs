@@ -149,6 +149,15 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <note> 
         /// <para>
+        /// While <c>SecurityGroupIds</c> appears in the response syntax for consistency with
+        /// <c>CreateServer</c> and <c>UpdateServer</c> operations, this field is not populated
+        /// in <c>DescribeServer</c> responses. Security groups are managed at the VPC endpoint
+        /// level and can be modified outside of the Transfer Family service. To retrieve current
+        /// security group information, use the EC2 <c>DescribeVpcEndpoints</c> API with the <c>VpcEndpointId</c>
+        /// returned in the response.
+        /// </para>
+        ///  
+        /// <para>
         /// This property can only be set when <c>EndpointType</c> is set to <c>VPC</c>.
         /// </para>
         ///  

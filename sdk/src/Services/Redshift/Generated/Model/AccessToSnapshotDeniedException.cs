@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessToSnapshotDeniedException
+        /// message.
+        /// </summary>
+        public AccessToSnapshotDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessToSnapshotDeniedException with the specified error
         /// message.
         /// </summary>

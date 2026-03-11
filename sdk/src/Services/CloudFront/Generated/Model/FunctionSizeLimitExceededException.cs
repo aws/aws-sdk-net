@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for FunctionSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public FunctionSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FunctionSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

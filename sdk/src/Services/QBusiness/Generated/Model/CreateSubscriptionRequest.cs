@@ -41,6 +41,12 @@ namespace Amazon.QBusiness.Model
     /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
     /// Q Business pricing</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// For an example IAM role policy for assigning subscriptions, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/setting-up.html#permissions">Set
+    /// up required permissions</a> in the Amazon Q Business User Guide.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateSubscriptionRequest : AmazonQBusinessRequest
     {

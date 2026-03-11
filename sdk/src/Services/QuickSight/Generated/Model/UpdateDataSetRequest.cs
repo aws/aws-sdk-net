@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private List<ColumnGroup> _columnGroups = AWSConfigs.InitializeCollections ? new List<ColumnGroup>() : null;
         private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = AWSConfigs.InitializeCollections ? new List<ColumnLevelPermissionRule>() : null;
+        private DataPrepConfiguration _dataPrepConfiguration;
         private string _dataSetId;
         private List<DatasetParameter> _datasetParameters = AWSConfigs.InitializeCollections ? new List<DatasetParameter>() : null;
         private DataSetUsageConfiguration _dataSetUsageConfiguration;
@@ -50,6 +51,7 @@ namespace Amazon.QuickSight.Model
         private Dictionary<string, PhysicalTable> _physicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, PhysicalTable>() : null;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
+        private SemanticModelConfiguration _semanticModelConfiguration;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -73,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroups. 
         /// <para>
-        /// Groupings of columns that work together in certain Amazon QuickSight features. Currently,
+        /// Groupings of columns that work together in certain Amazon Quick Sight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
         /// <para />
@@ -118,6 +120,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColumnLevelPermissionRules()
         {
             return this._columnLevelPermissionRules != null && (this._columnLevelPermissionRules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPrepConfiguration. 
+        /// <para>
+        /// The data preparation configuration for the dataset. This configuration defines the
+        /// source tables, transformation steps, and destination tables used to prepare the data.
+        /// Required when using the new data preparation experience.
+        /// </para>
+        /// </summary>
+        public DataPrepConfiguration DataPrepConfiguration
+        {
+            get { return this._dataPrepConfiguration; }
+            set { this._dataPrepConfiguration = value; }
+        }
+
+        // Check to see if DataPrepConfiguration property is set
+        internal bool IsSetDataPrepConfiguration()
+        {
+            return this._dataPrepConfiguration != null;
         }
 
         /// <summary>
@@ -225,6 +247,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property LogicalTableMap. 
         /// <para>
         /// Configures the combination and transformation of the data from the physical tables.
+        /// This parameter is used with the legacy data preparation experience.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -232,6 +255,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Only used in the legacy data preparation experience.")]
         [AWSProperty(Min=1, Max=64)]
         public Dictionary<string, LogicalTable> LogicalTableMap
         {
@@ -310,9 +334,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RowLevelPermissionDataSet. 
         /// <para>
-        /// The row-level security configuration for the data you want to create.
+        /// The row-level security configuration for the data you want to create. This parameter
+        /// is used with the legacy data preparation experience.
         /// </para>
         /// </summary>
+        [Obsolete("Only used in the legacy data preparation experience.")]
         public RowLevelPermissionDataSet RowLevelPermissionDataSet
         {
             get { return this._rowLevelPermissionDataSet; }
@@ -329,9 +355,11 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property RowLevelPermissionTagConfiguration. 
         /// <para>
         /// The configuration of tags on a dataset to set row-level security. Row-level security
-        /// tags are currently supported for anonymous embedding only.
+        /// tags are currently supported for anonymous embedding only. This parameter is used
+        /// with the legacy data preparation experience.
         /// </para>
         /// </summary>
+        [Obsolete("Only used in the legacy data preparation experience.")]
         public RowLevelPermissionTagConfiguration RowLevelPermissionTagConfiguration
         {
             get { return this._rowLevelPermissionTagConfiguration; }
@@ -342,6 +370,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionTagConfiguration()
         {
             return this._rowLevelPermissionTagConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SemanticModelConfiguration. 
+        /// <para>
+        /// The semantic model configuration for the dataset. This configuration defines how the
+        /// prepared data is structured for an analysis, including table mappings and row-level
+        /// security configurations. Required when using the new data preparation experience.
+        /// </para>
+        /// </summary>
+        public SemanticModelConfiguration SemanticModelConfiguration
+        {
+            get { return this._semanticModelConfiguration; }
+            set { this._semanticModelConfiguration = value; }
+        }
+
+        // Check to see if SemanticModelConfiguration property is set
+        internal bool IsSetSemanticModelConfiguration()
+        {
+            return this._semanticModelConfiguration != null;
         }
 
     }

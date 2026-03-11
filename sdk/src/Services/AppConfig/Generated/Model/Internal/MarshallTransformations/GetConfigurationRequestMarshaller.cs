@@ -74,6 +74,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetClientConfigurationVersion())
                 request.Parameters.Add("client_configuration_version", StringUtils.FromString(publicRequest.ClientConfigurationVersion));
+            if (string.IsNullOrEmpty(publicRequest.ClientId))
+                throw new AmazonAppConfigException("Request object does not have required field ClientId set");
             
             if (publicRequest.IsSetClientId())
                 request.Parameters.Add("client_id", StringUtils.FromString(publicRequest.ClientId));

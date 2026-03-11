@@ -46,6 +46,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _description;
         private string _name;
+        private NetworkType _networkType;
         private string _password;
         private string _shortName;
         private DirectorySize _size;
@@ -88,6 +89,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type for your directory. Simple AD supports IPv4 and Dual-stack only.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

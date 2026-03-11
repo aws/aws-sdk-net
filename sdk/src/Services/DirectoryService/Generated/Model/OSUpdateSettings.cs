@@ -39,7 +39,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property OSVersion. 
         /// <para>
-        ///  OS version that the directory needs to be updated to. 
+        /// OS version that the directory needs to be updated to.
         /// </para>
         /// </summary>
         public OSVersion OSVersion

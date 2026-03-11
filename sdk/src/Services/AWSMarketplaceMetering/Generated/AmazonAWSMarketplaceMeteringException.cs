@@ -36,6 +36,14 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// Construct instance of AmazonAWSMarketplaceMeteringException
         /// </summary>
+        public AmazonAWSMarketplaceMeteringException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAWSMarketplaceMeteringException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAWSMarketplaceMeteringException(string message)
             : base(message)

@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnscaledValue())
             {
                 context.Writer.WritePropertyName("UnscaledValue");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.UnscaledValue));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.UnscaledValue);
             }
 
         }

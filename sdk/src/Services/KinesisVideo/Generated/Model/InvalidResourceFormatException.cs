@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResourceFormatException
+        /// message.
+        /// </summary>
+        public InvalidResourceFormatException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourceFormatException with the specified error
         /// message.
         /// </summary>

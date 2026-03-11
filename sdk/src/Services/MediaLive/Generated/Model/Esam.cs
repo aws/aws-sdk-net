@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property AcquisitionPointId. Sent as acquisitionPointIdentity to
         /// identify the MediaLive channel to the POIS.
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true)]
         public string AcquisitionPointId
         {
             get { return this._acquisitionPointId; }
@@ -63,7 +63,6 @@ namespace Amazon.MediaLive.Model
         /// is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35
         /// messages and does not apply to OOB messages.
         /// </summary>
-        [AWSProperty(Min=-1000, Max=1000)]
         public int? AdAvailOffset
         {
             get { return this._adAvailOffset; }
@@ -96,7 +95,7 @@ namespace Amazon.MediaLive.Model
         /// on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents
         /// here when SCTE-35 messages are read.
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true)]
         public string PoisEndpoint
         {
             get { return this._poisEndpoint; }
@@ -128,7 +127,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ZoneIdentity. Optional data sent as zoneIdentity to identify
         /// the MediaLive channel to the POIS.
         /// </summary>
-        [AWSProperty(Max=256)]
         public string ZoneIdentity
         {
             get { return this._zoneIdentity; }

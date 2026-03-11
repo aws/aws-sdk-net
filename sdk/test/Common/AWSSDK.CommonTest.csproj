@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' != 'net472'">$(DefineConstants);NETSTANDARD</DefineConstants>
+    <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.CommonTest</AssemblyName>
@@ -17,10 +19,10 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly>True</SignAssembly>
   </PropertyGroup>
-     <Choose>
+  <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
         <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
@@ -32,6 +34,10 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
+  <ItemGroup>
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.3.1" />
   </ItemGroup>

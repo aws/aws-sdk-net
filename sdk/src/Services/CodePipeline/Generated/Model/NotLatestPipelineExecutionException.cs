@@ -40,6 +40,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for NotLatestPipelineExecutionException
+        /// message.
+        /// </summary>
+        public NotLatestPipelineExecutionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotLatestPipelineExecutionException with the specified error
         /// message.
         /// </summary>

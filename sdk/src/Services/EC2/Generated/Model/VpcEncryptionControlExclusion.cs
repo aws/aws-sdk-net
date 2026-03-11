@@ -30,7 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// Describes an exclusion configuration for VPC Encryption Control.
     /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+    /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class VpcEncryptionControlExclusion
     {
@@ -38,7 +44,10 @@ namespace Amazon.EC2.Model
         private string _stateMessage;
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The current state of the exclusion configuration.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusionState State
         {
@@ -53,7 +62,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateMessage.
+        /// Gets and sets the property StateMessage. 
+        /// <para>
+        /// A message providing additional information about the exclusion state.
+        /// </para>
         /// </summary>
         public string StateMessage
         {

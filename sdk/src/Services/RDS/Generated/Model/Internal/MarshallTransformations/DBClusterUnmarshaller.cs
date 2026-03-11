@@ -545,6 +545,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ScalingConfigurationInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ServerlessV2PlatformVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServerlessV2PlatformVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ServerlessV2ScalingConfiguration", targetDepth))
                     {
                         var unmarshaller = ServerlessV2ScalingConfigurationInfoUnmarshaller.Instance;
@@ -574,6 +580,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncryptionType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StorageThroughput", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -595,6 +607,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TagList.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("UpgradeRolloutOrder", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UpgradeRolloutOrder = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))

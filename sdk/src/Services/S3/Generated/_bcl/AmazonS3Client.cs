@@ -369,7 +369,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
@@ -474,7 +480,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// 
@@ -482,7 +494,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -577,7 +589,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
@@ -685,7 +703,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload service method.</param>
         /// <param name="cancellationToken">
@@ -696,7 +720,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
             
@@ -889,7 +913,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// 
@@ -897,7 +927,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -1086,7 +1116,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload service method.</param>
         /// <param name="cancellationToken">
@@ -1097,7 +1133,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
             
@@ -1110,28 +1146,24 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// 
+        ///  <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// Creates a copy of an object that is already stored in Amazon S3.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -1327,7 +1359,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
@@ -1348,28 +1386,24 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// 
+        ///  <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// Creates a copy of an object that is already stored in Amazon S3.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -1565,7 +1599,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
@@ -1588,28 +1628,24 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// 
+        ///  <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// Creates a copy of an object that is already stored in Amazon S3.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -1805,7 +1841,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// 
@@ -1813,7 +1855,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
@@ -1822,28 +1864,24 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// 
+        ///  <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// Creates a copy of an object that is already stored in Amazon S3.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -2039,7 +2077,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
@@ -2063,28 +2107,24 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// 
+        ///  <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// Creates a copy of an object that is already stored in Amazon S3.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -2280,7 +2320,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
@@ -2306,28 +2352,24 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
+        /// Creates a copy of an object that is already stored in Amazon S3.
+        /// 
+        ///  <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
         /// <para>
-        /// Creates a copy of an object that is already stored in Amazon S3.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
+        /// You can store individual objects of up to 50 TB in Amazon S3. You create a copy of
         /// your object up to 5 GB in size in a single atomic action using this API. However,
         /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
         /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
@@ -2523,7 +2565,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
         /// <param name="cancellationToken">
@@ -2534,7 +2582,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyObjectResponseUnmarshaller.Instance;
             
@@ -2686,7 +2734,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -2772,7 +2828,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
@@ -2936,7 +2998,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -3022,7 +3092,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
@@ -3188,7 +3264,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -3274,7 +3358,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// 
@@ -3282,7 +3372,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual CopyPartResponse CopyPart(CopyPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyPartResponseUnmarshaller.Instance;
 
@@ -3430,7 +3520,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -3516,7 +3614,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
@@ -3683,7 +3787,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -3769,7 +3881,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
@@ -3938,7 +4056,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -4024,7 +4150,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyPart service method.</param>
         /// <param name="cancellationToken">
@@ -4035,7 +4167,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyPartResponseUnmarshaller.Instance;
             
@@ -4140,7 +4272,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataConfiguration service method.</param>
         /// 
@@ -4148,7 +4286,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">REST API Reference for CreateBucketMetadataConfiguration Operation</seealso>
         public virtual CreateBucketMetadataConfigurationResponse CreateBucketMetadataConfiguration(CreateBucketMetadataConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -4249,7 +4387,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4260,7 +4404,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">REST API Reference for CreateBucketMetadataConfiguration Operation</seealso>
         public virtual Task<CreateBucketMetadataConfigurationResponse> CreateBucketMetadataConfigurationAsync(CreateBucketMetadataConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataConfigurationResponseUnmarshaller.Instance;
             
@@ -4347,7 +4491,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration service method.</param>
         /// 
@@ -4355,7 +4505,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
         public virtual CreateBucketMetadataTableConfigurationResponse CreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -4438,7 +4588,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4449,7 +4605,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
         public virtual Task<CreateBucketMetadataTableConfigurationResponse> CreateBucketMetadataTableConfigurationAsync(CreateBucketMetadataTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
             
@@ -4607,7 +4763,13 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
         /// 
@@ -4615,7 +4777,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -4769,7 +4931,13 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
         /// <param name="cancellationToken">
@@ -4780,7 +4948,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
             
@@ -4846,7 +5014,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
@@ -4914,7 +5088,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// 
@@ -4922,7 +5102,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -4984,7 +5164,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
@@ -5055,7 +5241,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket service method.</param>
         /// <param name="cancellationToken">
@@ -5066,7 +5258,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
             
@@ -5120,7 +5312,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// 
@@ -5128,7 +5326,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -5178,7 +5376,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5189,7 +5393,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual Task<DeleteBucketAnalyticsConfigurationResponse> DeleteBucketAnalyticsConfigurationAsync(DeleteBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
             
@@ -5256,7 +5460,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
         /// 
@@ -5264,7 +5474,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -5327,7 +5537,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
         /// <param name="cancellationToken">
@@ -5338,7 +5554,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual Task<DeleteBucketEncryptionResponse> DeleteBucketEncryptionAsync(DeleteBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
             
@@ -5401,7 +5617,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketIntelligentTieringConfiguration service method.</param>
         /// 
@@ -5409,7 +5631,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">REST API Reference for DeleteBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual DeleteBucketIntelligentTieringConfigurationResponse DeleteBucketIntelligentTieringConfiguration(DeleteBucketIntelligentTieringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -5468,7 +5690,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketIntelligentTieringConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5479,7 +5707,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">REST API Reference for DeleteBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual Task<DeleteBucketIntelligentTieringConfigurationResponse> DeleteBucketIntelligentTieringConfigurationAsync(DeleteBucketIntelligentTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
             
@@ -5532,7 +5760,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
         /// 
@@ -5540,7 +5774,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -5589,7 +5823,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5600,7 +5840,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual Task<DeleteBucketInventoryConfigurationResponse> DeleteBucketInventoryConfigurationAsync(DeleteBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
             
@@ -5659,7 +5899,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataConfiguration service method.</param>
         /// 
@@ -5667,7 +5913,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">REST API Reference for DeleteBucketMetadataConfiguration Operation</seealso>
         public virtual DeleteBucketMetadataConfigurationResponse DeleteBucketMetadataConfiguration(DeleteBucketMetadataConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -5722,7 +5968,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5733,7 +5985,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">REST API Reference for DeleteBucketMetadataConfiguration Operation</seealso>
         public virtual Task<DeleteBucketMetadataConfigurationResponse> DeleteBucketMetadataConfigurationAsync(DeleteBucketMetadataConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataConfigurationResponseUnmarshaller.Instance;
             
@@ -5798,7 +6050,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration service method.</param>
         /// 
@@ -5806,7 +6064,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
         public virtual DeleteBucketMetadataTableConfigurationResponse DeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -5867,7 +6125,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5878,7 +6142,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
         public virtual Task<DeleteBucketMetadataTableConfigurationResponse> DeleteBucketMetadataTableConfigurationAsync(DeleteBucketMetadataTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
             
@@ -5938,7 +6202,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
         /// Metrics with Amazon CloudWatch</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
         /// 
@@ -5946,7 +6216,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -6002,7 +6272,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
         /// Metrics with Amazon CloudWatch</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -6013,7 +6289,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual Task<DeleteBucketMetricsConfigurationResponse> DeleteBucketMetricsConfigurationAsync(DeleteBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
             
@@ -6054,7 +6330,13 @@ namespace Amazon.S3
         /// <para>
         ///  <a>PutBucketOwnershipControls</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketOwnershipControls service method.</param>
         /// 
@@ -6062,7 +6344,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">REST API Reference for DeleteBucketOwnershipControls Operation</seealso>
         public virtual DeleteBucketOwnershipControlsResponse DeleteBucketOwnershipControls(DeleteBucketOwnershipControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -6099,7 +6381,13 @@ namespace Amazon.S3
         /// <para>
         ///  <a>PutBucketOwnershipControls</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketOwnershipControls service method.</param>
         /// <param name="cancellationToken">
@@ -6110,7 +6398,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">REST API Reference for DeleteBucketOwnershipControls Operation</seealso>
         public virtual Task<DeleteBucketOwnershipControlsResponse> DeleteBucketOwnershipControlsAsync(DeleteBucketOwnershipControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketOwnershipControlsResponseUnmarshaller.Instance;
             
@@ -6195,7 +6483,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
@@ -6282,7 +6576,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
@@ -6290,7 +6590,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -6371,7 +6671,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
@@ -6461,7 +6767,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -6472,7 +6784,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
             
@@ -6524,7 +6836,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
@@ -6532,7 +6850,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -6580,7 +6898,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// <param name="cancellationToken">
@@ -6591,7 +6915,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual Task<DeleteBucketReplicationResponse> DeleteBucketReplicationAsync(DeleteBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
             
@@ -6610,7 +6934,18 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -6632,7 +6967,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket that has the tag set to be removed.</param>
         /// 
@@ -6653,7 +6994,18 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -6675,7 +7027,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
@@ -6683,7 +7041,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -6698,7 +7056,18 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -6720,7 +7089,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket that has the tag set to be removed.</param>
         /// <param name="cancellationToken">
@@ -6744,7 +7119,18 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes the tags from the bucket.
+        /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -6766,7 +7152,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// <param name="cancellationToken">
@@ -6777,7 +7169,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
             
@@ -6829,7 +7221,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which you want to remove the website configuration. </param>
         /// 
@@ -6883,7 +7281,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// 
@@ -6891,7 +7295,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -6939,7 +7343,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which you want to remove the website configuration. </param>
         /// <param name="cancellationToken">
@@ -6996,7 +7406,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite service method.</param>
         /// <param name="cancellationToken">
@@ -7007,7 +7423,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
             
@@ -7053,7 +7469,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket whose <c>cors</c> configuration is being deleted.</param>
         /// 
@@ -7101,7 +7523,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
@@ -7109,7 +7537,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -7151,7 +7579,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket whose <c>cors</c> configuration is being deleted.</param>
         /// <param name="cancellationToken">
@@ -7202,7 +7636,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -7213,7 +7653,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
             
@@ -7292,7 +7732,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name of the lifecycle to delete.</param>
         /// 
@@ -7373,7 +7819,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// 
@@ -7381,7 +7833,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -7456,7 +7908,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name of the lifecycle to delete.</param>
         /// <param name="cancellationToken">
@@ -7540,7 +7998,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -7551,7 +8015,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
             
@@ -7655,7 +8119,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7683,7 +8153,19 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// The <c>If-Match</c> header is supported for both general purpose and directory buckets.
+        /// <c>IfMatchLastModifiedTime</c> and <c>IfMatchSize</c> is only supported for directory
+        /// buckets. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
@@ -7791,7 +8273,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7819,7 +8307,19 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// The <c>If-Match</c> header is supported for both general purpose and directory buckets.
+        /// <c>IfMatchLastModifiedTime</c> and <c>IfMatchSize</c> is only supported for directory
+        /// buckets. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
@@ -7929,7 +8429,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -7957,7 +8463,19 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// The <c>If-Match</c> header is supported for both general purpose and directory buckets.
+        /// <c>IfMatchLastModifiedTime</c> and <c>IfMatchSize</c> is only supported for directory
+        /// buckets. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
@@ -7965,7 +8483,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
@@ -8065,7 +8583,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8093,7 +8617,19 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// The <c>If-Match</c> header is supported for both general purpose and directory buckets.
+        /// <c>IfMatchLastModifiedTime</c> and <c>IfMatchSize</c> is only supported for directory
+        /// buckets. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
@@ -8204,7 +8740,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8232,7 +8774,19 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// The <c>If-Match</c> header is supported for both general purpose and directory buckets.
+        /// <c>IfMatchLastModifiedTime</c> and <c>IfMatchSize</c> is only supported for directory
+        /// buckets. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
@@ -8345,7 +8899,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8373,7 +8933,19 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// The <c>If-Match</c> header is supported for both general purpose and directory buckets.
+        /// <c>IfMatchLastModifiedTime</c> and <c>IfMatchSize</c> is only supported for directory
+        /// buckets. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// <param name="cancellationToken">
@@ -8384,7 +8956,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
             
@@ -8465,7 +9037,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8526,7 +9104,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// 
@@ -8534,7 +9118,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
@@ -8611,7 +9195,13 @@ namespace Amazon.S3
         /// from a versioning-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If the <c>s3:DeleteObject</c> or <c>s3:DeleteObjectVersion</c> permissions are explicitly
+        /// denied in your bucket policy, attempts to delete any unversioned objects result in
+        /// a <c>403 Access Denied</c> error.
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
         /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
@@ -8672,7 +9262,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjects service method.</param>
         /// <param name="cancellationToken">
@@ -8683,7 +9279,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
             
@@ -8731,7 +9327,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
         /// 
@@ -8739,7 +9341,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
@@ -8783,7 +9385,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
         /// <param name="cancellationToken">
@@ -8794,7 +9402,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual Task<DeleteObjectTaggingResponse> DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
             
@@ -8813,9 +9421,11 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-        /// this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c> permission.
-        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This operation
+        /// removes the bucket-level configuration only. The effective public access behavior
+        /// will still be governed by account-level settings (which may inherit from organization-level
+        /// policies). To use this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c>
+        /// permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
@@ -8843,7 +9453,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -8851,7 +9467,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -8866,9 +9482,11 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-        /// this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c> permission.
-        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+        /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This operation
+        /// removes the bucket-level configuration only. The effective public access behavior
+        /// will still be governed by account-level settings (which may inherit from organization-level
+        /// policies). To use this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c>
+        /// permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
         /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
@@ -8896,7 +9514,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -8907,11 +9531,58 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePublicAccessBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketAbac
+
+
+        /// <summary>
+        /// Returns the attribute-based access control (ABAC) property of the general purpose
+        /// bucket. If ABAC is enabled on your bucket, you can use tags on the bucket for access
+        /// control. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAbac service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAbac service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAbac">REST API Reference for GetBucketAbac Operation</seealso>
+        public virtual GetBucketAbacResponse GetBucketAbac(GetBucketAbacRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBucketAbacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAbacResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketAbacResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the attribute-based access control (ABAC) property of the general purpose
+        /// bucket. If ABAC is enabled on your bucket, you can use tags on the bucket for access
+        /// control. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAbac service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketAbac service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAbac">REST API Reference for GetBucketAbac Operation</seealso>
+        public virtual Task<GetBucketAbacResponse> GetBucketAbacAsync(GetBucketAbacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBucketAbacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketAbacResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBucketAbacResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8965,7 +9636,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which the accelerate configuration is retrieved.</param>
         /// 
@@ -9025,7 +9702,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
         /// 
@@ -9033,7 +9716,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
@@ -9087,7 +9770,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which the accelerate configuration is retrieved.</param>
         /// <param name="cancellationToken">
@@ -9150,7 +9839,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -9161,7 +9856,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
             
@@ -9174,21 +9869,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -9222,7 +9903,13 @@ namespace Amazon.S3
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
         /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The following operations are related to <c>GetBucketAcl</c>:
         /// </para>
@@ -9239,7 +9926,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetBucketAcl Operation</seealso>
         public virtual GetBucketAclResponse GetBucketAcl(GetBucketAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAclResponseUnmarshaller.Instance;
 
@@ -9248,21 +9935,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -9296,7 +9969,13 @@ namespace Amazon.S3
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
         /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The following operations are related to <c>GetBucketAcl</c>:
         /// </para>
@@ -9316,7 +9995,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetBucketAcl Operation</seealso>
         public virtual Task<GetBucketAclResponse> GetBucketAclAsync(GetBucketAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAclResponseUnmarshaller.Instance;
             
@@ -9371,7 +10050,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
         /// 
@@ -9379,7 +10064,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -9430,7 +10115,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -9441,7 +10132,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual Task<GetBucketAnalyticsConfigurationResponse> GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
             
@@ -9456,12 +10147,14 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). 
+        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BucketKeyEnabled">BucketKeyEnabled</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BlockedEncryptionTypes">BlockedEncryptionTypes</a>
+        /// statuses. 
         /// 
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>General purpose buckets</b> - For information about the bucket default encryption
-        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
         /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -9509,7 +10202,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
         /// 
@@ -9517,7 +10216,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -9528,12 +10227,14 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). 
+        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BucketKeyEnabled">BucketKeyEnabled</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ServerSideEncryptionRule.html#AmazonS3-Type-ServerSideEncryptionRule-BlockedEncryptionTypes">BlockedEncryptionTypes</a>
+        /// statuses. 
         /// 
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>General purpose buckets</b> - For information about the bucket default encryption
-        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon
         /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -9581,7 +10282,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
         /// <param name="cancellationToken">
@@ -9592,7 +10299,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual Task<GetBucketEncryptionResponse> GetBucketEncryptionAsync(GetBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
             
@@ -9654,7 +10361,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketIntelligentTieringConfiguration service method.</param>
         /// 
@@ -9662,7 +10375,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">REST API Reference for GetBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual GetBucketIntelligentTieringConfigurationResponse GetBucketIntelligentTieringConfiguration(GetBucketIntelligentTieringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -9720,7 +10433,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketIntelligentTieringConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -9731,7 +10450,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">REST API Reference for GetBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual Task<GetBucketIntelligentTieringConfigurationResponse> GetBucketIntelligentTieringConfigurationAsync(GetBucketIntelligentTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
             
@@ -9785,7 +10504,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
         /// 
@@ -9793,7 +10518,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -9843,7 +10568,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -9854,7 +10585,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual Task<GetBucketInventoryConfigurationResponse> GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
             
@@ -9867,16 +10598,29 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
         /// <para>
-        /// This operation is not supported for directory buckets.
+        /// Using the <c>GetBucketLocation</c> operation is no longer a best practice. To return
+        /// the Region that a bucket resides in, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+        /// operation instead. For backward compatibility, Amazon S3 continues to support the
+        /// <c>GetBucketLocation</c> operation.
         /// </para>
-        ///  </note> 
+        ///  </important> 
         /// <para>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <c>LocationConstraint</c>
         /// request parameter in a <c>CreateBucket</c> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// In a bucket's home Region, calls to the <c>GetBucketLocation</c> operation are governed
+        /// by the bucket's policy. In other Regions, the bucket policy doesn't apply, which means
+        /// that cross-account access won't be authorized. However, calls to the <c>HeadBucket</c>
+        /// operation always return the bucket’s location through an HTTP response header, whether
+        /// access to the bucket is authorized or not. Therefore, we recommend using the <c>HeadBucket</c>
+        /// operation for bucket Region discovery and to avoid using the <c>GetBucketLocation</c>
+        /// operation.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you use this API operation with an access point, provide the alias of the access
         /// point in place of the bucket name.
@@ -9892,9 +10636,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
-        /// to return the Region that a bucket resides in. For backward compatibility, Amazon
-        /// S3 continues to support GetBucketLocation.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9910,7 +10652,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the location. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
         /// 
@@ -9925,16 +10673,29 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
         /// <para>
-        /// This operation is not supported for directory buckets.
+        /// Using the <c>GetBucketLocation</c> operation is no longer a best practice. To return
+        /// the Region that a bucket resides in, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+        /// operation instead. For backward compatibility, Amazon S3 continues to support the
+        /// <c>GetBucketLocation</c> operation.
         /// </para>
-        ///  </note> 
+        ///  </important> 
         /// <para>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <c>LocationConstraint</c>
         /// request parameter in a <c>CreateBucket</c> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// In a bucket's home Region, calls to the <c>GetBucketLocation</c> operation are governed
+        /// by the bucket's policy. In other Regions, the bucket policy doesn't apply, which means
+        /// that cross-account access won't be authorized. However, calls to the <c>HeadBucket</c>
+        /// operation always return the bucket’s location through an HTTP response header, whether
+        /// access to the bucket is authorized or not. Therefore, we recommend using the <c>HeadBucket</c>
+        /// operation for bucket Region discovery and to avoid using the <c>GetBucketLocation</c>
+        /// operation.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you use this API operation with an access point, provide the alias of the access
         /// point in place of the bucket name.
@@ -9950,9 +10711,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
-        /// to return the Region that a bucket resides in. For backward compatibility, Amazon
-        /// S3 continues to support GetBucketLocation.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9968,7 +10727,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// 
@@ -9976,7 +10741,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
@@ -9985,16 +10750,29 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
         /// <para>
-        /// This operation is not supported for directory buckets.
+        /// Using the <c>GetBucketLocation</c> operation is no longer a best practice. To return
+        /// the Region that a bucket resides in, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+        /// operation instead. For backward compatibility, Amazon S3 continues to support the
+        /// <c>GetBucketLocation</c> operation.
         /// </para>
-        ///  </note> 
+        ///  </important> 
         /// <para>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <c>LocationConstraint</c>
         /// request parameter in a <c>CreateBucket</c> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// In a bucket's home Region, calls to the <c>GetBucketLocation</c> operation are governed
+        /// by the bucket's policy. In other Regions, the bucket policy doesn't apply, which means
+        /// that cross-account access won't be authorized. However, calls to the <c>HeadBucket</c>
+        /// operation always return the bucket’s location through an HTTP response header, whether
+        /// access to the bucket is authorized or not. Therefore, we recommend using the <c>HeadBucket</c>
+        /// operation for bucket Region discovery and to avoid using the <c>GetBucketLocation</c>
+        /// operation.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you use this API operation with an access point, provide the alias of the access
         /// point in place of the bucket name.
@@ -10010,9 +10788,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
-        /// to return the Region that a bucket resides in. For backward compatibility, Amazon
-        /// S3 continues to support GetBucketLocation.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10028,7 +10804,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the location. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
         /// <param name="cancellationToken">
@@ -10046,16 +10828,29 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
         /// <para>
-        /// This operation is not supported for directory buckets.
+        /// Using the <c>GetBucketLocation</c> operation is no longer a best practice. To return
+        /// the Region that a bucket resides in, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+        /// operation instead. For backward compatibility, Amazon S3 continues to support the
+        /// <c>GetBucketLocation</c> operation.
         /// </para>
-        ///  </note> 
+        ///  </important> 
         /// <para>
         /// Returns the Region the bucket resides in. You set the bucket's Region using the <c>LocationConstraint</c>
         /// request parameter in a <c>CreateBucket</c> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// In a bucket's home Region, calls to the <c>GetBucketLocation</c> operation are governed
+        /// by the bucket's policy. In other Regions, the bucket policy doesn't apply, which means
+        /// that cross-account access won't be authorized. However, calls to the <c>HeadBucket</c>
+        /// operation always return the bucket’s location through an HTTP response header, whether
+        /// access to the bucket is authorized or not. Therefore, we recommend using the <c>HeadBucket</c>
+        /// operation for bucket Region discovery and to avoid using the <c>GetBucketLocation</c>
+        /// operation.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you use this API operation with an access point, provide the alias of the access
         /// point in place of the bucket name.
@@ -10071,9 +10866,7 @@ namespace Amazon.S3
         /// </para>
         ///  <note> 
         /// <para>
-        /// We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
-        /// to return the Region that a bucket resides in. For backward compatibility, Amazon
-        /// S3 continues to support GetBucketLocation.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10089,7 +10882,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLocation service method.</param>
         /// <param name="cancellationToken">
@@ -10100,7 +10899,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
             
@@ -10113,21 +10912,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10150,7 +10935,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which to get the logging information.</param>
         /// 
@@ -10165,21 +10956,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10202,7 +10979,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// 
@@ -10210,7 +10993,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
@@ -10219,21 +11002,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10256,7 +11025,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which to get the logging information.</param>
         /// <param name="cancellationToken">
@@ -10274,21 +11049,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -10311,7 +11072,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLogging service method.</param>
         /// <param name="cancellationToken">
@@ -10322,7 +11089,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
             
@@ -10381,7 +11148,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataConfiguration service method.</param>
         /// 
@@ -10389,7 +11162,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">REST API Reference for GetBucketMetadataConfiguration Operation</seealso>
         public virtual GetBucketMetadataConfigurationResponse GetBucketMetadataConfiguration(GetBucketMetadataConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -10444,7 +11217,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -10455,7 +11234,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">REST API Reference for GetBucketMetadataConfiguration Operation</seealso>
         public virtual Task<GetBucketMetadataConfigurationResponse> GetBucketMetadataConfigurationAsync(GetBucketMetadataConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataConfigurationResponseUnmarshaller.Instance;
             
@@ -10521,7 +11300,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration service method.</param>
         /// 
@@ -10529,7 +11314,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
         public virtual GetBucketMetadataTableConfigurationResponse GetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -10591,7 +11376,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -10602,7 +11393,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
         public virtual Task<GetBucketMetadataTableConfigurationResponse> GetBucketMetadataTableConfigurationAsync(GetBucketMetadataTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
             
@@ -10661,7 +11452,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
         /// Metrics with Amazon CloudWatch</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
         /// 
@@ -10669,7 +11466,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -10724,7 +11521,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html">Monitoring
         /// Metrics with Amazon CloudWatch</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -10735,7 +11538,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual Task<GetBucketMetricsConfigurationResponse> GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
             
@@ -10798,7 +11601,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the notification configuration. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
         /// 
@@ -10863,7 +11672,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// 
@@ -10871,7 +11686,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
@@ -10930,7 +11745,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the notification configuration. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
         /// <param name="cancellationToken">
@@ -10998,7 +11819,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketNotification service method.</param>
         /// <param name="cancellationToken">
@@ -11009,7 +11836,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
             
@@ -11068,7 +11895,13 @@ namespace Amazon.S3
         /// <para>
         ///  <a>DeleteBucketOwnershipControls</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketOwnershipControls service method.</param>
         /// 
@@ -11076,7 +11909,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">REST API Reference for GetBucketOwnershipControls Operation</seealso>
         public virtual GetBucketOwnershipControlsResponse GetBucketOwnershipControls(GetBucketOwnershipControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -11131,7 +11964,13 @@ namespace Amazon.S3
         /// <para>
         ///  <a>DeleteBucketOwnershipControls</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketOwnershipControls service method.</param>
         /// <param name="cancellationToken">
@@ -11142,7 +11981,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">REST API Reference for GetBucketOwnershipControls Operation</seealso>
         public virtual Task<GetBucketOwnershipControlsResponse> GetBucketOwnershipControlsAsync(GetBucketOwnershipControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketOwnershipControlsResponseUnmarshaller.Instance;
             
@@ -11232,7 +12071,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Object Lambda access points are not supported by directory buckets. </note></param>
         /// 
@@ -11324,7 +12169,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
@@ -11332,7 +12183,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -11418,7 +12269,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Object Lambda access points are not supported by directory buckets. </note></param>
         /// <param name="cancellationToken">
@@ -11513,7 +12370,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -11524,7 +12387,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
             
@@ -11577,7 +12440,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
         /// 
@@ -11585,7 +12454,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
 
@@ -11634,7 +12503,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
         /// <param name="cancellationToken">
@@ -11645,7 +12520,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual Task<GetBucketPolicyStatusResponse> GetBucketPolicyStatusAsync(GetBucketPolicyStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
             
@@ -11666,7 +12541,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -11686,7 +12561,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual Task<GetBucketReplicationResponse> GetBucketReplicationAsync(GetBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
             
@@ -11718,7 +12593,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the payment request configuration</param>
         /// 
@@ -11752,7 +12633,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// 
@@ -11760,7 +12647,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
@@ -11788,7 +12675,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the payment request configuration</param>
         /// <param name="cancellationToken">
@@ -11825,7 +12718,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketRequestPayment service method.</param>
         /// <param name="cancellationToken">
@@ -11836,7 +12735,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
             
@@ -11855,7 +12754,14 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns the tag set associated with the bucket.
+        /// Returns the tag set associated with the general purpose bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -11889,7 +12795,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// 
@@ -11897,7 +12809,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -11912,7 +12824,14 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns the tag set associated with the bucket.
+        /// Returns the tag set associated with the general purpose bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -11946,7 +12865,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketTagging service method.</param>
         /// <param name="cancellationToken">
@@ -11957,7 +12882,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
             
@@ -12007,7 +12932,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the versioning information.</param>
         /// 
@@ -12059,7 +12990,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// 
@@ -12067,7 +13004,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -12113,7 +13050,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the versioning information.</param>
         /// <param name="cancellationToken">
@@ -12168,7 +13111,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketVersioning service method.</param>
         /// <param name="cancellationToken">
@@ -12179,7 +13128,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
             
@@ -12224,7 +13173,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which to get the website configuration.</param>
         /// 
@@ -12271,7 +13226,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// 
@@ -12279,7 +13240,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -12320,7 +13281,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which to get the website configuration.</param>
         /// <param name="cancellationToken">
@@ -12370,7 +13337,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketWebsite service method.</param>
         /// <param name="cancellationToken">
@@ -12381,7 +13354,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
             
@@ -12441,7 +13414,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which to get the cors configuration. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
         /// 
@@ -12503,7 +13482,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
@@ -12511,7 +13496,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -12567,7 +13552,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name for which to get the cors configuration. When you use this API operation with an access point, provide the alias of the access point in place of the bucket name. When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</param>
         /// <param name="cancellationToken">
@@ -12632,7 +13623,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -12643,7 +13640,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
             
@@ -12756,7 +13753,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// 
@@ -12871,7 +13874,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// 
@@ -12879,7 +13888,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -12988,7 +13997,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to get the lifecycle information.</param>
         /// <param name="cancellationToken">
@@ -13106,7 +14121,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -13117,7 +14138,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
             
@@ -13325,7 +14346,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
@@ -13537,7 +14564,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
@@ -13751,7 +14784,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// 
@@ -13759,7 +14798,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
 
@@ -13963,7 +15002,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
@@ -14178,7 +15223,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
@@ -14395,7 +15446,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// <param name="cancellationToken">
@@ -14406,7 +15463,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
             
@@ -14472,7 +15529,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectAcl service method.</param>
         /// 
@@ -14480,7 +15543,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">REST API Reference for GetObjectAcl Operation</seealso>
         public virtual GetObjectAclResponse GetObjectAcl(GetObjectAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectAclResponseUnmarshaller.Instance;
 
@@ -14542,7 +15605,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectAcl service method.</param>
         /// <param name="cancellationToken">
@@ -14553,7 +15622,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAcl">REST API Reference for GetObjectAcl Operation</seealso>
         public virtual Task<GetObjectAclResponse> GetObjectAclAsync(GetObjectAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectAclResponseUnmarshaller.Instance;
             
@@ -14797,7 +15866,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes service method.</param>
         /// 
@@ -14805,7 +15880,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
         public virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
 
@@ -15045,7 +16120,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -15056,7 +16137,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
         public virtual Task<GetObjectAttributesResponse> GetObjectAttributesAsync(GetObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
             
@@ -15091,7 +16172,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// 
@@ -15099,7 +16186,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
 
@@ -15130,7 +16217,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
         /// <param name="cancellationToken">
@@ -15141,7 +16234,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual Task<GetObjectLegalHoldResponse> GetObjectLegalHoldAsync(GetObjectLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
             
@@ -15174,7 +16267,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
         /// 
@@ -15182,7 +16281,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
 
@@ -15211,7 +16310,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -15222,7 +16327,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual Task<GetObjectLockConfigurationResponse> GetObjectLockConfigurationAsync(GetObjectLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
             
@@ -15393,7 +16498,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
@@ -15568,7 +16679,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
@@ -15745,7 +16862,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// 
@@ -15753,7 +16876,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
@@ -15920,7 +17043,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
@@ -16098,7 +17227,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
@@ -16278,7 +17413,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -16289,7 +17430,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
             
@@ -16324,7 +17465,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// 
@@ -16332,7 +17479,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
 
@@ -16363,7 +17510,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
         /// <param name="cancellationToken">
@@ -16374,7 +17527,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual Task<GetObjectRetentionResponse> GetObjectRetentionAsync(GetObjectRetentionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
             
@@ -16433,7 +17586,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
         /// 
@@ -16441,7 +17600,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
@@ -16496,7 +17655,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
         /// <param name="cancellationToken">
@@ -16507,7 +17672,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual Task<GetObjectTaggingResponse> GetObjectTaggingAsync(GetObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
             
@@ -16551,7 +17716,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the object for which to get the torrent files.</param>
         /// <param name="key">The object key for which to get the information.</param>
@@ -16599,7 +17770,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// 
@@ -16607,7 +17784,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTorrentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
@@ -16647,7 +17824,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the object for which to get the torrent files.</param>
         /// <param name="key">The object key for which to get the information.</param>
@@ -16698,7 +17881,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObjectTorrent service method.</param>
         /// <param name="cancellationToken">
@@ -16709,7 +17898,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTorrentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
             
@@ -16728,18 +17917,22 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-        /// this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c> permission.
-        /// For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+        /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This
+        /// operation returns the bucket-level configuration only. To understand the effective
+        /// public access behavior, you must also consider account-level settings (which may inherit
+        /// from organization-level policies). To use this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c>
+        /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// </para>
         ///  <important> 
         /// <para>
         /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
         /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
-        /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
-        /// settings are different between the bucket and the account, Amazon S3 uses the most
-        /// restrictive combination of the bucket-level and account-level settings.
+        /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+        /// settings automatically inherit from organization-level policies when present. If the
+        /// <c>PublicAccessBlock</c> settings are different between the bucket and the account,
+        /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+        /// settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -16771,7 +17964,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
@@ -16779,7 +17978,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -16794,18 +17993,22 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-        /// this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c> permission.
-        /// For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+        /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This
+        /// operation returns the bucket-level configuration only. To understand the effective
+        /// public access behavior, you must also consider account-level settings (which may inherit
+        /// from organization-level policies). To use this operation, you must have the <c>s3:GetBucketPublicAccessBlock</c>
+        /// permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
         /// Permissions in a Policy</a>.
         /// </para>
         ///  <important> 
         /// <para>
         /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
         /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
-        /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
-        /// settings are different between the bucket and the account, Amazon S3 uses the most
-        /// restrictive combination of the bucket-level and account-level settings.
+        /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+        /// settings automatically inherit from organization-level policies when present. If the
+        /// <c>PublicAccessBlock</c> settings are different between the bucket and the account,
+        /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+        /// settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -16837,7 +18040,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -16848,7 +18057,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
             
@@ -16862,15 +18071,18 @@ namespace Amazon.S3
 
         /// <summary>
         /// You can use this operation to determine if a bucket exists and if you have permission
-        /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
-        /// permission to access it.
+        /// to access it. The action returns a <c>200 OK</c> HTTP status code if the bucket exists
+        /// and you have permission to access it. You can make a <c>HeadBucket</c> call on any
+        /// bucket name to any Region in the partition, and regardless of the permissions on the
+        /// bucket, you will receive a response header with the correct bucket location so that
+        /// you can then make a proper, signed request to the appropriate Regional endpoint.
         /// 
         ///  <note> 
         /// <para>
-        /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
-        /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
-        /// Found</c> code. A message body is not included, so you cannot determine the exception
-        /// beyond these HTTP response codes.
+        /// If the bucket doesn't exist or you don't have permission to access it, the <c>HEAD</c>
+        /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c>, or <c>404
+        /// Not Found</c> HTTP status code. A message body isn't included, so you can't determine
+        /// the exception beyond these HTTP response codes.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -16927,7 +18139,13 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </dd> </dl>
+        ///  </note> </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// 
@@ -16935,7 +18153,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         public virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
@@ -16945,15 +18163,18 @@ namespace Amazon.S3
 
         /// <summary>
         /// You can use this operation to determine if a bucket exists and if you have permission
-        /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
-        /// permission to access it.
+        /// to access it. The action returns a <c>200 OK</c> HTTP status code if the bucket exists
+        /// and you have permission to access it. You can make a <c>HeadBucket</c> call on any
+        /// bucket name to any Region in the partition, and regardless of the permissions on the
+        /// bucket, you will receive a response header with the correct bucket location so that
+        /// you can then make a proper, signed request to the appropriate Regional endpoint.
         /// 
         ///  <note> 
         /// <para>
-        /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
-        /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
-        /// Found</c> code. A message body is not included, so you cannot determine the exception
-        /// beyond these HTTP response codes.
+        /// If the bucket doesn't exist or you don't have permission to access it, the <c>HEAD</c>
+        /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c>, or <c>404
+        /// Not Found</c> HTTP status code. A message body isn't included, so you can't determine
+        /// the exception beyond these HTTP response codes.
         /// </para>
         ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
         /// <para>
@@ -17010,7 +18231,13 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </dd> </dl>
+        ///  </note> </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
         /// <param name="cancellationToken">
@@ -17021,7 +18248,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         public virtual Task<HeadBucketResponse> HeadBucketAsync(HeadBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HeadBucketResponseUnmarshaller.Instance;
             
@@ -17036,18 +18263,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> 
         /// <para>
@@ -17310,7 +18535,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
@@ -17329,18 +18560,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> 
         /// <para>
@@ -17603,7 +18832,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// 
@@ -17611,7 +18846,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -17622,18 +18857,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> 
         /// <para>
@@ -17896,7 +19129,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
@@ -17918,18 +19157,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> 
         /// <para>
@@ -18192,7 +19429,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload service method.</param>
         /// <param name="cancellationToken">
@@ -18203,7 +19446,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
             
@@ -18267,7 +19510,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
         /// 
@@ -18275,7 +19524,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
@@ -18335,7 +19584,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html">PutBucketAnalyticsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -18346,7 +19601,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual Task<ListBucketAnalyticsConfigurationsResponse> ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
             
@@ -18408,7 +19663,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketIntelligentTieringConfigurations service method.</param>
         /// 
@@ -18416,7 +19677,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">REST API Reference for ListBucketIntelligentTieringConfigurations Operation</seealso>
         public virtual ListBucketIntelligentTieringConfigurationsResponse ListBucketIntelligentTieringConfigurations(ListBucketIntelligentTieringConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketIntelligentTieringConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketIntelligentTieringConfigurationsResponseUnmarshaller.Instance;
 
@@ -18474,7 +19735,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketIntelligentTieringConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -18485,7 +19752,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">REST API Reference for ListBucketIntelligentTieringConfigurations Operation</seealso>
         public virtual Task<ListBucketIntelligentTieringConfigurationsResponse> ListBucketIntelligentTieringConfigurationsAsync(ListBucketIntelligentTieringConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketIntelligentTieringConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketIntelligentTieringConfigurationsResponseUnmarshaller.Instance;
             
@@ -18505,7 +19772,7 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Returns a list of S3 Inventory configurations for the bucket. You can have up to 1,000
-        /// analytics configurations per bucket.
+        /// inventory configurations per bucket.
         /// </para>
         ///  
         /// <para>
@@ -18549,7 +19816,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
         /// 
@@ -18557,7 +19830,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
@@ -18573,7 +19846,7 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Returns a list of S3 Inventory configurations for the bucket. You can have up to 1,000
-        /// analytics configurations per bucket.
+        /// inventory configurations per bucket.
         /// </para>
         ///  
         /// <para>
@@ -18617,7 +19890,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html">PutBucketInventoryConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -18628,7 +19907,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual Task<ListBucketInventoryConfigurationsResponse> ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
             
@@ -18694,7 +19973,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
         /// 
@@ -18702,7 +19987,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
@@ -18764,7 +20049,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetricsConfiguration.html">DeleteBucketMetricsConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -18775,7 +20066,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual Task<ListBucketMetricsConfigurationsResponse> ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
             
@@ -18788,21 +20079,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -18826,6 +20103,12 @@ namespace Amazon.S3
         /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
         /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
         /// than 10,000. 
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -18839,21 +20122,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -18877,6 +20146,12 @@ namespace Amazon.S3
         /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
         /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
         /// than 10,000. 
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -18886,7 +20161,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
@@ -18895,21 +20170,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -18933,6 +20194,12 @@ namespace Amazon.S3
         /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
         /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
         /// than 10,000. 
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -18948,21 +20215,7 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -18987,6 +20240,12 @@ namespace Amazon.S3
         /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
         /// than 10,000. 
         /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
@@ -18998,7 +20257,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketsResponseUnmarshaller.Instance;
             
@@ -19045,7 +20304,13 @@ namespace Amazon.S3
         ///  The <c>BucketRegion</c> response element is not part of the <c>ListDirectoryBuckets</c>
         /// Response Syntax.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDirectoryBuckets service method.</param>
         /// 
@@ -19053,7 +20318,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">REST API Reference for ListDirectoryBuckets Operation</seealso>
         public virtual ListDirectoryBucketsResponse ListDirectoryBuckets(ListDirectoryBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -19096,7 +20361,13 @@ namespace Amazon.S3
         ///  The <c>BucketRegion</c> response element is not part of the <c>ListDirectoryBuckets</c>
         /// Response Syntax.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDirectoryBuckets service method.</param>
         /// <param name="cancellationToken">
@@ -19107,7 +20378,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">REST API Reference for ListDirectoryBuckets Operation</seealso>
         public virtual Task<ListDirectoryBucketsResponse> ListDirectoryBucketsAsync(ListDirectoryBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectoryBucketsResponseUnmarshaller.Instance;
             
@@ -19120,26 +20391,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -19262,7 +20517,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
@@ -19277,26 +20538,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -19419,7 +20664,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) <note>  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<c>/</c>) are supported. </note></param>
@@ -19436,26 +20687,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -19578,7 +20813,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// 
@@ -19586,7 +20827,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -19595,26 +20836,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -19737,7 +20962,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
@@ -19755,26 +20986,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -19897,7 +21112,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) <note>  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<c>/</c>) are supported. </note></param>
@@ -19917,26 +21138,10 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
         /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
         /// request, but has not yet been completed or aborted.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
@@ -20059,7 +21264,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads service method.</param>
         /// <param name="cancellationToken">
@@ -20070,7 +21281,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
             
@@ -20083,21 +21294,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -20143,7 +21340,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
@@ -20158,21 +21361,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -20218,7 +21407,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
@@ -20235,21 +21430,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -20295,7 +21476,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// 
@@ -20303,7 +21490,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
@@ -20312,21 +21499,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -20372,7 +21545,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
@@ -20390,21 +21569,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -20450,7 +21615,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
@@ -20470,21 +21641,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -20530,7 +21687,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjects service method.</param>
         /// <param name="cancellationToken">
@@ -20541,7 +21704,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsResponseUnmarshaller.Instance;
             
@@ -20646,7 +21809,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
         /// 
@@ -20654,7 +21823,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
@@ -20755,7 +21924,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -20766,7 +21941,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual Task<ListObjectsV2Response> ListObjectsV2Async(ListObjectsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
             
@@ -20779,24 +21954,8 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -20895,7 +22054,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
@@ -20914,24 +22079,8 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -21030,7 +22179,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// 
@@ -21038,7 +22193,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -21047,24 +22202,8 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -21163,7 +22302,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>amzn-s3-demo-bucket</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
@@ -21185,24 +22330,8 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Lists the parts that have been uploaded for a specific multipart upload.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// To use this operation, you must provide the <c>upload ID</c> in the request. You obtain
@@ -21301,7 +22430,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListParts service method.</param>
         /// <param name="cancellationToken">
@@ -21312,7 +22447,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
             
@@ -21325,21 +22460,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -21387,7 +22508,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// 
@@ -21402,21 +22529,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -21464,7 +22577,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) You can use <c>prefix</c> with <c>delimiter</c> to roll up numerous objects into a single result under <c>CommonPrefixes</c>. </param>
@@ -21481,21 +22600,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -21543,7 +22648,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// 
@@ -21551,7 +22662,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -21560,21 +22671,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -21622,7 +22719,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// <param name="cancellationToken">
@@ -21640,21 +22743,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -21702,7 +22791,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name that contains the objects. </param>
         /// <param name="prefix">Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) You can use <c>prefix</c> with <c>delimiter</c> to roll up numerous objects into a single result under <c>CommonPrefixes</c>. </param>
@@ -21722,21 +22817,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -21784,7 +22865,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// <param name="cancellationToken">
@@ -21795,7 +22882,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
             
@@ -21808,36 +22895,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -21976,7 +23034,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
@@ -21991,36 +23055,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -22159,7 +23194,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// 
@@ -22167,7 +23208,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual PutBucketResponse PutBucket(PutBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketResponseUnmarshaller.Instance;
 
@@ -22176,36 +23217,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -22344,7 +23356,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
@@ -22362,36 +23380,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <important> 
-        /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will stop returning <c>DisplayName</c>.
-        /// Update your applications to use canonical IDs (unique identifier for Amazon Web Services
-        /// accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full
-        /// resource naming) as a direct replacement of <c>DisplayName</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
-        /// </para>
-        ///  </important> <note> 
+        /// <note> 
         /// <para>
         /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">
@@ -22530,7 +23519,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucket service method.</param>
         /// <param name="cancellationToken">
@@ -22541,11 +23536,68 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutBucketResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutBucketAbac
+
+
+        /// <summary>
+        /// Sets the attribute-based access control (ABAC) property of the general purpose bucket.
+        /// You must have <c>s3:PutBucketABAC</c> permission to perform this action. When you
+        /// enable ABAC, you can use tags for access control on your buckets. Additionally, when
+        /// ABAC is enabled, you must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// actions to manage tags on your buckets. You can nolonger use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// actions to tag your bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAbac service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAbac service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAbac">REST API Reference for PutBucketAbac Operation</seealso>
+        public virtual PutBucketAbacResponse PutBucketAbac(PutBucketAbacRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutBucketAbacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAbacResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketAbacResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets the attribute-based access control (ABAC) property of the general purpose bucket.
+        /// You must have <c>s3:PutBucketABAC</c> permission to perform this action. When you
+        /// enable ABAC, you can use tags for access control on your buckets. Additionally, when
+        /// ABAC is enabled, you must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// actions to manage tags on your buckets. You can nolonger use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// actions to tag your bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAbac service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBucketAbac service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAbac">REST API Reference for PutBucketAbac Operation</seealso>
+        public virtual Task<PutBucketAbacResponse> PutBucketAbacAsync(PutBucketAbacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutBucketAbacRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBucketAbacResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutBucketAbacResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -22619,7 +23671,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
         /// 
@@ -22627,7 +23685,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
@@ -22701,7 +23759,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -22712,7 +23776,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual Task<PutBucketAccelerateConfigurationResponse> PutBucketAccelerateConfigurationAsync(PutBucketAccelerateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
             
@@ -22727,18 +23791,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -22986,7 +24048,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAcl service method.</param>
         /// 
@@ -22994,7 +24062,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutBucketAcl Operation</seealso>
         public virtual PutBucketAclResponse PutBucketAcl(PutBucketAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAclResponseUnmarshaller.Instance;
 
@@ -23005,18 +24073,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -23264,7 +24330,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAcl service method.</param>
         /// <param name="cancellationToken">
@@ -23275,7 +24347,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutBucketAcl Operation</seealso>
         public virtual Task<PutBucketAclResponse> PutBucketAclAsync(PutBucketAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAclResponseUnmarshaller.Instance;
             
@@ -23385,7 +24457,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
         /// 
@@ -23393,7 +24471,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -23499,7 +24577,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -23510,7 +24594,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual Task<PutBucketAnalyticsConfigurationResponse> PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
             
@@ -23524,7 +24608,8 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
-        /// bucket.
+        /// bucket. You can also <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">block
+        /// encryption types</a> using this operation.
         /// 
         ///  <note> 
         /// <para>
@@ -23663,7 +24748,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
         /// 
@@ -23671,7 +24762,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -23681,7 +24772,8 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
-        /// bucket.
+        /// bucket. You can also <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">block
+        /// encryption types</a> using this operation.
         /// 
         ///  <note> 
         /// <para>
@@ -23820,7 +24912,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
         /// <param name="cancellationToken">
@@ -23831,7 +24929,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual Task<PutBucketEncryptionResponse> PutBucketEncryptionAsync(PutBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
             
@@ -23927,7 +25025,13 @@ namespace Amazon.S3
         /// <c>s3:PutIntelligentTieringConfiguration</c> bucket permission to set the configuration
         /// on the bucket. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketIntelligentTieringConfiguration service method.</param>
         /// 
@@ -23935,7 +25039,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">REST API Reference for PutBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual PutBucketIntelligentTieringConfigurationResponse PutBucketIntelligentTieringConfiguration(PutBucketIntelligentTieringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -24027,7 +25131,13 @@ namespace Amazon.S3
         /// <c>s3:PutIntelligentTieringConfiguration</c> bucket permission to set the configuration
         /// on the bucket. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketIntelligentTieringConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -24038,7 +25148,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">REST API Reference for PutBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual Task<PutBucketIntelligentTieringConfigurationResponse> PutBucketIntelligentTieringConfigurationAsync(PutBucketIntelligentTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
             
@@ -24156,7 +25266,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
         /// 
@@ -24164,7 +25280,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -24278,7 +25394,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -24289,7 +25411,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual Task<PutBucketInventoryConfigurationResponse> PutBucketInventoryConfigurationAsync(PutBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
             
@@ -24304,18 +25426,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -24429,7 +25549,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// 
@@ -24437,7 +25563,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
@@ -24448,18 +25574,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> <note> 
         /// <para>
@@ -24573,7 +25697,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html">GetBucketLogging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging service method.</param>
         /// <param name="cancellationToken">
@@ -24584,7 +25714,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
             
@@ -24658,7 +25788,13 @@ namespace Amazon.S3
         /// <para>
         /// HTTP Status Code: HTTP 400 Bad Request
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
         /// 
@@ -24666,7 +25802,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -24736,7 +25872,13 @@ namespace Amazon.S3
         /// <para>
         /// HTTP Status Code: HTTP 400 Bad Request
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -24747,7 +25889,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual Task<PutBucketMetricsConfigurationResponse> PutBucketMetricsConfigurationAsync(PutBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
             
@@ -24845,7 +25987,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// 
@@ -24853,7 +26001,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
@@ -24947,7 +26095,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification service method.</param>
         /// <param name="cancellationToken">
@@ -24958,7 +26112,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
             
@@ -24999,7 +26153,13 @@ namespace Amazon.S3
         /// <para>
         ///  <a>DeleteBucketOwnershipControls</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketOwnershipControls service method.</param>
         /// 
@@ -25007,7 +26167,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">REST API Reference for PutBucketOwnershipControls Operation</seealso>
         public virtual PutBucketOwnershipControlsResponse PutBucketOwnershipControls(PutBucketOwnershipControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -25044,7 +26204,13 @@ namespace Amazon.S3
         /// <para>
         ///  <a>DeleteBucketOwnershipControls</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketOwnershipControls service method.</param>
         /// <param name="cancellationToken">
@@ -25055,7 +26221,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">REST API Reference for PutBucketOwnershipControls Operation</seealso>
         public virtual Task<PutBucketOwnershipControlsResponse> PutBucketOwnershipControlsAsync(PutBucketOwnershipControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketOwnershipControlsResponseUnmarshaller.Instance;
             
@@ -25150,7 +26316,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
@@ -25249,7 +26421,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
@@ -25350,7 +26528,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// 
@@ -25358,7 +26542,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -25449,7 +26633,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
@@ -25551,7 +26741,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
@@ -25655,7 +26851,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -25666,7 +26868,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
             
@@ -25771,7 +26973,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
@@ -25779,7 +26987,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -25880,7 +27088,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// <param name="cancellationToken">
@@ -25891,7 +27105,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual Task<PutBucketReplicationResponse> PutBucketReplicationAsync(PutBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
             
@@ -25930,7 +27144,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
         /// <param name="requestPaymentConfiguration">Container for Payer.</param>
@@ -25973,7 +27193,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// 
@@ -25981,7 +27207,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
@@ -26016,7 +27242,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
         /// <param name="requestPaymentConfiguration">Container for Payer.</param>
@@ -26062,7 +27294,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html">GetBucketRequestPayment</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment service method.</param>
         /// <param name="cancellationToken">
@@ -26073,7 +27311,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
             
@@ -26092,7 +27330,12 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// operations instead.
         /// </para>
         ///  
         /// <para>
@@ -26159,10 +27402,16 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// 
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
@@ -26182,7 +27431,12 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// operations instead.
         /// </para>
         ///  
         /// <para>
@@ -26249,7 +27503,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// 
@@ -26257,7 +27517,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -26272,7 +27532,12 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// operations instead.
         /// </para>
         ///  
         /// <para>
@@ -26339,10 +27604,16 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
-        /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
+        /// <param name="tagSet">A collection for a set of tags</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -26365,7 +27636,12 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a bucket.
+        /// Sets the tags for a general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// operations instead.
         /// </para>
         ///  
         /// <para>
@@ -26432,7 +27708,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging service method.</param>
         /// <param name="cancellationToken">
@@ -26443,7 +27725,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
             
@@ -26529,7 +27811,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
@@ -26537,7 +27825,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -26619,7 +27907,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// <param name="cancellationToken">
@@ -26630,7 +27924,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
             
@@ -26766,6 +28060,13 @@ namespace Amazon.S3
         /// <para>
         /// The maximum request length is limited to 128 KB.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
         /// <param name="websiteConfiguration">Container for the request.</param>
@@ -26905,6 +28206,13 @@ namespace Amazon.S3
         /// <para>
         /// The maximum request length is limited to 128 KB.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// 
@@ -26912,7 +28220,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -27044,6 +28352,13 @@ namespace Amazon.S3
         /// <para>
         /// The maximum request length is limited to 128 KB.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name.</param>
         /// <param name="websiteConfiguration">Container for the request.</param>
@@ -27186,6 +28501,13 @@ namespace Amazon.S3
         /// <para>
         /// The maximum request length is limited to 128 KB.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite service method.</param>
         /// <param name="cancellationToken">
@@ -27196,7 +28518,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
             
@@ -27283,7 +28605,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket impacted by the <c>cors</c>configuration.</param>
         /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</param>
@@ -27374,7 +28702,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
@@ -27382,7 +28716,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -27465,7 +28799,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">Specifies the bucket impacted by the <c>cors</c>configuration.</param>
         /// <param name="configuration">Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</param>
@@ -27559,7 +28899,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -27570,7 +28916,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
             
@@ -27597,8 +28943,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -27647,7 +28992,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -27703,7 +29048,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -27721,10 +29066,16 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul> </dd> </dl>
+        ///  </li> </ul> </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to set the configuration.</param>
-        /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
+        /// <param name="configuration">Container for lifecycle rules. You can add as many as 1,000 rules.</param>
         /// 
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
@@ -27752,8 +29103,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -27802,7 +29152,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -27858,7 +29208,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -27876,7 +29226,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul> </dd> </dl>
+        ///  </li> </ul> </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
@@ -27884,7 +29240,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -27907,8 +29263,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -27957,7 +29312,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -28013,7 +29368,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -28031,10 +29386,16 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul> </dd> </dl>
+        ///  </li> </ul> </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to set the configuration.</param>
-        /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
+        /// <param name="configuration">Container for lifecycle rules. You can add as many as 1,000 rules.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -28065,8 +29426,7 @@ namespace Amazon.S3
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt>
-        /// <dd> 
+        ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -28115,7 +29475,7 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dd> <ul> <li> 
+        ///  </dd> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
         /// private, including buckets, objects, and related subresources (for example, lifecycle
@@ -28171,7 +29531,7 @@ namespace Amazon.S3
         /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
         /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note> </li> </ul> </dd> <dd> 
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
@@ -28189,7 +29549,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul> </dd> </dl>
+        ///  </li> </ul> </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -28200,7 +29566,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
             
@@ -28215,18 +29581,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> 
         /// <para>
@@ -28368,7 +29732,26 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Cannot specify both a write offset value and user-defined object metadata for existing
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type:
+        /// crc32c.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Request body cannot be empty when 'write offset' is specified.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
         /// For more information about related Amazon S3 APIs, see the following:
         /// </para>
@@ -28382,7 +29765,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 
@@ -28390,7 +29779,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
 
@@ -28401,18 +29790,16 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        /// End of support notice: Beginning October 1, 2025, Amazon S3 will discontinue support
-        /// for creating new Email Grantee Access Control Lists (ACL). Email Grantee ACLs created
-        /// prior to this date will continue to work and remain accessible through the Amazon
-        /// Web Services Management Console, Command Line Interface (CLI), SDKs, and REST API.
-        /// However, you will no longer be able to create new Email Grantee ACLs. 
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
         /// </para>
         ///  
         /// <para>
-        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia)
-        /// Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore)
-        /// Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland)
-        /// Region, and South America (São Paulo) Region.
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
         /// </para>
         ///  </important> 
         /// <para>
@@ -28554,7 +29941,26 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Cannot specify both a write offset value and user-defined object metadata for existing
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type:
+        /// crc32c.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Request body cannot be empty when 'write offset' is specified.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
         /// For more information about related Amazon S3 APIs, see the following:
         /// </para>
@@ -28568,7 +29974,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// <param name="cancellationToken">
@@ -28579,7 +29991,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
             
@@ -28592,7 +30004,20 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -28828,7 +30253,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectAcl service method.</param>
         /// 
@@ -28836,7 +30267,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">REST API Reference for PutObjectAcl Operation</seealso>
         public virtual PutObjectAclResponse PutObjectAcl(PutObjectAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectAclResponseUnmarshaller.Instance;
 
@@ -28845,7 +30276,20 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
+        /// <important> 
+        /// <para>
+        /// End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for
+        /// Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee
+        /// ACL in a request after October 1, 2025, the request will receive an <c>HTTP 405</c>
+        /// (Method Not Allowed) error.
+        /// </para>
+        ///  
+        /// <para>
+        /// This change affects the following Amazon Web Services Regions: US East (N. Virginia),
+        /// US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// This operation is not supported for directory buckets.
         /// </para>
@@ -29081,7 +30525,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectAcl service method.</param>
         /// <param name="cancellationToken">
@@ -29092,7 +30542,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectAcl">REST API Reference for PutObjectAcl Operation</seealso>
         public virtual Task<PutObjectAclResponse> PutObjectAclAsync(PutObjectAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectAclResponseUnmarshaller.Instance;
             
@@ -29119,6 +30569,13 @@ namespace Amazon.S3
         /// <para>
         /// This functionality is not supported for Amazon S3 on Outposts.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
         /// 
@@ -29126,7 +30583,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
 
@@ -29149,6 +30606,13 @@ namespace Amazon.S3
         /// <para>
         /// This functionality is not supported for Amazon S3 on Outposts.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
         /// <param name="cancellationToken">
@@ -29159,7 +30623,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual Task<PutObjectLegalHoldResponse> PutObjectLegalHoldAsync(PutObjectLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
             
@@ -29198,7 +30662,13 @@ namespace Amazon.S3
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html">Configuring
         /// Object Lock</a>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
         /// 
@@ -29206,7 +30676,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
 
@@ -29241,7 +30711,13 @@ namespace Amazon.S3
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html">Configuring
         /// Object Lock</a>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -29252,7 +30728,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual Task<PutObjectLockConfigurationResponse> PutObjectLockConfigurationAsync(PutObjectLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
             
@@ -29281,6 +30757,13 @@ namespace Amazon.S3
         /// <para>
         /// This functionality is not supported for Amazon S3 on Outposts.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
         /// 
@@ -29288,7 +30771,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
 
@@ -29313,6 +30796,13 @@ namespace Amazon.S3
         /// <para>
         /// This functionality is not supported for Amazon S3 on Outposts.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
         /// <param name="cancellationToken">
@@ -29323,7 +30813,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual Task<PutObjectRetentionResponse> PutObjectRetentionAsync(PutObjectRetentionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
             
@@ -29408,7 +30898,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
         /// 
@@ -29416,7 +30912,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
@@ -29497,7 +30993,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
         /// <param name="cancellationToken">
@@ -29508,7 +31010,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual Task<PutObjectTaggingResponse> PutObjectTaggingAsync(PutObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
             
@@ -29536,9 +31038,11 @@ namespace Amazon.S3
         /// <para>
         /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
         /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
-        /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
-        /// configurations are different between the bucket and the account, Amazon S3 uses the
-        /// most restrictive combination of the bucket-level and account-level settings.
+        /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+        /// settings automatically inherit from organization-level policies when present. If the
+        /// <c>PublicAccessBlock</c> configurations are different between the bucket and the account,
+        /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+        /// settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -29570,7 +31074,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">Using
         /// Amazon S3 Block Public Access</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
@@ -29578,7 +31088,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -29602,9 +31112,11 @@ namespace Amazon.S3
         /// <para>
         /// When Amazon S3 evaluates the <c>PublicAccessBlock</c> configuration for a bucket or
         /// an object, it checks the <c>PublicAccessBlock</c> configuration for both the bucket
-        /// (or the bucket that contains the object) and the bucket owner's account. If the <c>PublicAccessBlock</c>
-        /// configurations are different between the bucket and the account, Amazon S3 uses the
-        /// most restrictive combination of the bucket-level and account-level settings.
+        /// (or the bucket that contains the object) and the bucket owner's account. Account-level
+        /// settings automatically inherit from organization-level policies when present. If the
+        /// <c>PublicAccessBlock</c> configurations are different between the bucket and the account,
+        /// Amazon S3 uses the most restrictive combination of the bucket-level and account-level
+        /// settings.
         /// </para>
         ///  </important> 
         /// <para>
@@ -29636,7 +31148,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">Using
         /// Amazon S3 Block Public Access</a> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -29647,7 +31165,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
             
@@ -29709,7 +31227,13 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenameObject service method.</param>
         /// 
@@ -29717,7 +31241,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
         public virtual RenameObjectResponse RenameObject(RenameObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenameObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenameObjectResponseUnmarshaller.Instance;
 
@@ -29775,7 +31299,13 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenameObject service method.</param>
         /// <param name="cancellationToken">
@@ -29786,7 +31316,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
         public virtual Task<RenameObjectResponse> RenameObjectAsync(RenameObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenameObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenameObjectResponseUnmarshaller.Instance;
             
@@ -30007,7 +31537,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
@@ -30232,11 +31768,17 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
@@ -30459,7 +32001,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
@@ -30686,12 +32234,18 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
@@ -30915,7 +32469,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// 
@@ -30923,7 +32483,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
@@ -31140,7 +32700,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
@@ -31368,11 +32934,17 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -31598,7 +33170,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
@@ -31828,12 +33406,18 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="bucketName">The bucket name containing the object to restore.   <b>Access points</b> - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>S3 on Outposts</b> - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the action was initiated.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
-        /// <param name="days">A property of RestoreObjectRequest used to execute the RestoreObject service method.</param>
+        /// <param name="days">Lifetime of the active copy in days. Do not use with restores that specify <c>OutputLocation</c>. The Days element is required for regular restores, and must not be provided for select requests.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -32060,7 +33644,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreObject service method.</param>
         /// <param name="cancellationToken">
@@ -32071,7 +33661,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreObjectResponseUnmarshaller.Instance;
             
@@ -32208,7 +33798,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent service method.</param>
         /// 
@@ -32216,7 +33812,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectObjectContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
 
@@ -32349,7 +33945,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent service method.</param>
         /// <param name="cancellationToken">
@@ -32360,7 +33962,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual Task<SelectObjectContentResponse> SelectObjectContentAsync(SelectObjectContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectObjectContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
             
@@ -32447,7 +34049,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataInventoryTableConfiguration service method.</param>
         /// 
@@ -32455,7 +34063,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">REST API Reference for UpdateBucketMetadataInventoryTableConfiguration Operation</seealso>
         public virtual UpdateBucketMetadataInventoryTableConfigurationResponse UpdateBucketMetadataInventoryTableConfiguration(UpdateBucketMetadataInventoryTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataInventoryTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataInventoryTableConfigurationResponseUnmarshaller.Instance;
 
@@ -32538,7 +34146,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataInventoryTableConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -32549,7 +34163,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">REST API Reference for UpdateBucketMetadataInventoryTableConfiguration Operation</seealso>
         public virtual Task<UpdateBucketMetadataInventoryTableConfigurationResponse> UpdateBucketMetadataInventoryTableConfigurationAsync(UpdateBucketMetadataInventoryTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataInventoryTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataInventoryTableConfigurationResponseUnmarshaller.Instance;
             
@@ -32597,7 +34211,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataJournalTableConfiguration service method.</param>
         /// 
@@ -32605,7 +34225,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">REST API Reference for UpdateBucketMetadataJournalTableConfiguration Operation</seealso>
         public virtual UpdateBucketMetadataJournalTableConfigurationResponse UpdateBucketMetadataJournalTableConfiguration(UpdateBucketMetadataJournalTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataJournalTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataJournalTableConfigurationResponseUnmarshaller.Instance;
 
@@ -32649,7 +34269,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataJournalTableConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -32660,11 +34286,384 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">REST API Reference for UpdateBucketMetadataJournalTableConfiguration Operation</seealso>
         public virtual Task<UpdateBucketMetadataJournalTableConfigurationResponse> UpdateBucketMetadataJournalTableConfigurationAsync(UpdateBucketMetadataJournalTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataJournalTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataJournalTableConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBucketMetadataJournalTableConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateObjectEncryption
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported for directory buckets or Amazon S3 on Outposts buckets.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Updates the server-side encryption type of an existing encrypted object in a general
+        /// purpose bucket. You can use the <c>UpdateObjectEncryption</c> operation to change
+        /// encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to
+        /// apply S3 Bucket Keys. You can also use the <c>UpdateObjectEncryption</c> operation
+        /// to change the customer-managed KMS key used to encrypt your data so that you can comply
+        /// with custom key-rotation standards. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Using the <c>UpdateObjectEncryption</c> operation, you can atomically update the server-side
+        /// encryption type of an existing object in a general purpose bucket without any data
+        /// movement. The <c>UpdateObjectEncryption</c> operation uses envelope encryption to
+        /// re-encrypt the data key used to encrypt and decrypt your object with your newly specified
+        /// server-side encryption type. In other words, when you use the <c>UpdateObjectEncryption</c>
+        /// operation, your data isn't copied, archived objects in the S3 Glacier Flexible Retrieval
+        /// and S3 Glacier Deep Archive storage classes aren't restored, and objects in the S3
+        /// Intelligent-Tiering storage class aren't moved between tiers. Additionally, the <c>UpdateObjectEncryption</c>
+        /// operation preserves all object metadata properties, including the storage class, creation
+        /// date, last modified date, ETag, and checksum properties. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/update-sse-encryption.html">
+        /// Updating server-side encryption for existing objects</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, all <c>UpdateObjectEncryption</c> requests that specify a customer-managed
+        /// KMS key are restricted to KMS keys that are owned by the bucket owner's Amazon Web
+        /// Services account. If you're using Organizations, you can request the ability to use
+        /// KMS keys owned by other member accounts within your organization by contacting Amazon
+        /// Web Services Support.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Source objects that are unencrypted, or encrypted with either dual-layer server-side
+        /// encryption with KMS keys (DSSE-KMS) or server-side encryption with customer-provided
+        /// keys (SSE-C) aren't supported by this operation. Additionally, you cannot specify
+        /// SSE-S3 encryption as the requested new encryption type <c>UpdateObjectEncryption</c>
+        /// request.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// To use the <c>UpdateObjectEncryption</c> operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:PutObject</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:UpdateObjectEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Encrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Decrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:GenerateDataKey</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:ReEncrypt*</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If you're using Organizations, to use this operation with customer-managed KMS keys
+        /// from other Amazon Web Services accounts within your organization, you must have the
+        /// <c>organizations:DescribeAccount</c> permission.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't supported unencrypted source objects.
+        /// Only source objects encrypted with SSE-S3 or SSE-KMS are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support source objects with the
+        /// encryption type DSSE-KMS or SSE-C. Only source objects encrypted with SSE-S3 or SSE-KMS
+        /// are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support updating the encryption
+        /// type to DSSE-KMS or SSE-C. Modify the request to specify SSE-KMS for the updated encryption
+        /// type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require Amazon Web Services
+        /// Signature Version 4. Modify the request to use Amazon Web Services Signature Version
+        /// 4, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require a valid new encryption
+        /// type. Valid values are <c>SSEKMS</c>. Modify the request to specify SSE-KMS for the
+        /// updated encryption type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require an Amazon Web
+        /// Services KMS key Amazon Resource Name (ARN). Modify the request to specify a KMS key
+        /// ARN, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require a valid Amazon
+        /// Web Services KMS key Amazon Resource Name (ARN). Confirm that you have a correctly
+        /// formatted KMS key ARN in your request, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>BucketKeyEnabled</c> value isn't valid. Valid values are <c>true</c> or <c>false</c>.
+        /// Modify the request to specify a valid value, and then try again.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You might receive an <c>AccessDenied</c> error for several reasons. Depending on the
+        /// reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon Web Services KMS key in the request must be owned by the same account as
+        /// the bucket. Modify the request to specify a KMS key from the same account, and then
+        /// try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bucket owner's account was approved to make <c>UpdateObjectEncryption</c> requests
+        /// that use any Amazon Web Services KMS key in their organization, but the bucket owner's
+        /// account isn't part of an organization in Organizations. Make sure that the bucket
+        /// owner's account and the specified KMS key belong to the same organization, and then
+        /// try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified Amazon Web Services KMS key must be from the same organization in Organizations
+        /// as the bucket. Specify a KMS key that belongs to the same organization as the bucket,
+        /// and then try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption type for the specified object can’t be updated because that object
+        /// is protected by S3 Object Lock. If the object has a governance-mode retention period
+        /// or a legal hold, you must first remove the Object Lock status on the object before
+        /// you issue your <c>UpdateObjectEncryption</c> request. You can't use the <c>UpdateObjectEncryption</c>
+        /// operation with objects that have an Object Lock compliance mode retention period applied
+        /// to them.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateObjectEncryption service method.</param>
+        /// 
+        /// <returns>The response from the UpdateObjectEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateObjectEncryption">REST API Reference for UpdateObjectEncryption Operation</seealso>
+        public virtual UpdateObjectEncryptionResponse UpdateObjectEncryption(UpdateObjectEncryptionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateObjectEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateObjectEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateObjectEncryptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This operation is not supported for directory buckets or Amazon S3 on Outposts buckets.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Updates the server-side encryption type of an existing encrypted object in a general
+        /// purpose bucket. You can use the <c>UpdateObjectEncryption</c> operation to change
+        /// encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to
+        /// apply S3 Bucket Keys. You can also use the <c>UpdateObjectEncryption</c> operation
+        /// to change the customer-managed KMS key used to encrypt your data so that you can comply
+        /// with custom key-rotation standards. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Using the <c>UpdateObjectEncryption</c> operation, you can atomically update the server-side
+        /// encryption type of an existing object in a general purpose bucket without any data
+        /// movement. The <c>UpdateObjectEncryption</c> operation uses envelope encryption to
+        /// re-encrypt the data key used to encrypt and decrypt your object with your newly specified
+        /// server-side encryption type. In other words, when you use the <c>UpdateObjectEncryption</c>
+        /// operation, your data isn't copied, archived objects in the S3 Glacier Flexible Retrieval
+        /// and S3 Glacier Deep Archive storage classes aren't restored, and objects in the S3
+        /// Intelligent-Tiering storage class aren't moved between tiers. Additionally, the <c>UpdateObjectEncryption</c>
+        /// operation preserves all object metadata properties, including the storage class, creation
+        /// date, last modified date, ETag, and checksum properties. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/update-sse-encryption.html">
+        /// Updating server-side encryption for existing objects</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, all <c>UpdateObjectEncryption</c> requests that specify a customer-managed
+        /// KMS key are restricted to KMS keys that are owned by the bucket owner's Amazon Web
+        /// Services account. If you're using Organizations, you can request the ability to use
+        /// KMS keys owned by other member accounts within your organization by contacting Amazon
+        /// Web Services Support.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Source objects that are unencrypted, or encrypted with either dual-layer server-side
+        /// encryption with KMS keys (DSSE-KMS) or server-side encryption with customer-provided
+        /// keys (SSE-C) aren't supported by this operation. Additionally, you cannot specify
+        /// SSE-S3 encryption as the requested new encryption type <c>UpdateObjectEncryption</c>
+        /// request.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        /// To use the <c>UpdateObjectEncryption</c> operation, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:PutObject</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3:UpdateObjectEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Encrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:Decrypt</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:GenerateDataKey</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:ReEncrypt*</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If you're using Organizations, to use this operation with customer-managed KMS keys
+        /// from other Amazon Web Services accounts within your organization, you must have the
+        /// <c>organizations:DescribeAccount</c> permission.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> 
+        /// <para>
+        /// You might receive an <c>InvalidRequest</c> error for several reasons. Depending on
+        /// the reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't supported unencrypted source objects.
+        /// Only source objects encrypted with SSE-S3 or SSE-KMS are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support source objects with the
+        /// encryption type DSSE-KMS or SSE-C. Only source objects encrypted with SSE-S3 or SSE-KMS
+        /// are supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>UpdateObjectEncryption</c> operation doesn't support updating the encryption
+        /// type to DSSE-KMS or SSE-C. Modify the request to specify SSE-KMS for the updated encryption
+        /// type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require Amazon Web Services
+        /// Signature Version 4. Modify the request to use Amazon Web Services Signature Version
+        /// 4, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object encryption configuration require a valid new encryption
+        /// type. Valid values are <c>SSEKMS</c>. Modify the request to specify SSE-KMS for the
+        /// updated encryption type, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require an Amazon Web
+        /// Services KMS key Amazon Resource Name (ARN). Modify the request to specify a KMS key
+        /// ARN, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Requests that modify an object's encryption type to SSE-KMS require a valid Amazon
+        /// Web Services KMS key Amazon Resource Name (ARN). Confirm that you have a correctly
+        /// formatted KMS key ARN in your request, and then try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>BucketKeyEnabled</c> value isn't valid. Valid values are <c>true</c> or <c>false</c>.
+        /// Modify the request to specify a valid value, and then try again.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// You might receive an <c>AccessDenied</c> error for several reasons. Depending on the
+        /// reason for the error, you might receive one of the following messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The Amazon Web Services KMS key in the request must be owned by the same account as
+        /// the bucket. Modify the request to specify a KMS key from the same account, and then
+        /// try again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bucket owner's account was approved to make <c>UpdateObjectEncryption</c> requests
+        /// that use any Amazon Web Services KMS key in their organization, but the bucket owner's
+        /// account isn't part of an organization in Organizations. Make sure that the bucket
+        /// owner's account and the specified KMS key belong to the same organization, and then
+        /// try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The specified Amazon Web Services KMS key must be from the same organization in Organizations
+        /// as the bucket. Specify a KMS key that belongs to the same organization as the bucket,
+        /// and then try again. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encryption type for the specified object can’t be updated because that object
+        /// is protected by S3 Object Lock. If the object has a governance-mode retention period
+        /// or a legal hold, you must first remove the Object Lock status on the object before
+        /// you issue your <c>UpdateObjectEncryption</c> request. You can't use the <c>UpdateObjectEncryption</c>
+        /// operation with objects that have an Object Lock compliance mode retention period applied
+        /// to them.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateObjectEncryption service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateObjectEncryption service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateObjectEncryption">REST API Reference for UpdateObjectEncryption Operation</seealso>
+        public virtual Task<UpdateObjectEncryptionResponse> UpdateObjectEncryptionAsync(UpdateObjectEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateObjectEncryptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateObjectEncryptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateObjectEncryptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -32803,7 +34802,15 @@ namespace Amazon.S3
         /// the server-side encryption parameters in the initial Initiate Multipart request. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you request server-side encryption using a customer-provided encryption key (SSE-C)
         /// in your initiate multipart upload request, you must provide identical encryption information
@@ -32882,7 +34889,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
         /// 
@@ -32890,7 +34903,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual UploadPartResponse UploadPart(UploadPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadPartResponseUnmarshaller.Instance;
 
@@ -33029,7 +35042,15 @@ namespace Amazon.S3
         /// the server-side encryption parameters in the initial Initiate Multipart request. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you request server-side encryption using a customer-provided encryption key (SSE-C)
         /// in your initiate multipart upload request, you must provide identical encryption information
@@ -33108,7 +35129,13 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadPart service method.</param>
         /// <param name="cancellationToken">
@@ -33119,7 +35146,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadPartResponseUnmarshaller.Instance;
             
@@ -33193,6 +35220,13 @@ namespace Amazon.S3
         /// For information on how to view and use these functions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
         /// Amazon Web Services built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the WriteGetObjectResponse service method.</param>
         /// 
@@ -33200,7 +35234,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">REST API Reference for WriteGetObjectResponse Operation</seealso>
         public virtual WriteGetObjectResponseResponse WriteGetObjectResponse(WriteGetObjectResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WriteGetObjectResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WriteGetObjectResponseResponseUnmarshaller.Instance;
 
@@ -33270,6 +35304,13 @@ namespace Amazon.S3
         /// For information on how to view and use these functions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using
         /// Amazon Web Services built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the WriteGetObjectResponse service method.</param>
         /// <param name="cancellationToken">
@@ -33280,7 +35321,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">REST API Reference for WriteGetObjectResponse Operation</seealso>
         public virtual Task<WriteGetObjectResponseResponse> WriteGetObjectResponseAsync(WriteGetObjectResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WriteGetObjectResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WriteGetObjectResponseResponseUnmarshaller.Instance;
             

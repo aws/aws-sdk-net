@@ -105,6 +105,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.Publish.Value);
             }
 
+            if(publicRequest.IsSetPublishTo())
+            {
+                context.Writer.WritePropertyName("PublishTo");
+                context.Writer.WriteStringValue(publicRequest.PublishTo);
+            }
+
             if(publicRequest.IsSetRevisionId())
             {
                 context.Writer.WritePropertyName("RevisionId");
@@ -138,7 +144,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ZipFile);
             }
 
             writer.WriteEndObject();

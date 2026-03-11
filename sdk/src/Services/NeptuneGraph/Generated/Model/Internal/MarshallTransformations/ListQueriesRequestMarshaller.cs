@@ -62,6 +62,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-11-29";
             request.HttpMethod = "GET";
 
+            if (publicRequest.MaxResults == null)
+                throw new AmazonNeptuneGraphException("Request object does not have required field MaxResults set");
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

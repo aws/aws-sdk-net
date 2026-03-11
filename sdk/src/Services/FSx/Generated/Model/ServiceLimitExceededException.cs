@@ -31,7 +31,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web ServicesSupport.
+    /// some service limits by contacting Amazon Web Services Support.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     public partial class ServiceLimitExceededException : AmazonFSxException
     {
         private ServiceLimit _limit;
+
+        /// <summary>
+        /// Default constructor for ServiceLimitExceededException
+        /// message.
+        /// </summary>
+        public ServiceLimitExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceLimitExceededException with the specified error

@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified parameter group does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ParameterGroupNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public ParameterGroupNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ParameterGroupNotFoundException with the specified error

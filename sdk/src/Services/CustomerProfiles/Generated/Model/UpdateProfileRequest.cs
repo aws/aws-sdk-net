@@ -54,6 +54,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _businessPhoneNumber;
         private string _domainName;
         private string _emailAddress;
+        private EngagementPreferences _engagementPreferences;
         private string _firstName;
         private Gender _gender;
         private string _genderString;
@@ -67,6 +68,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _personalEmailAddress;
         private string _phoneNumber;
         private string _profileId;
+        private ProfileType _profileType;
         private UpdateAddress _shippingAddress;
 
         /// <summary>
@@ -282,6 +284,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetEmailAddress()
         {
             return this._emailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngagementPreferences. 
+        /// <para>
+        /// Object that defines users preferred methods of engagement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public EngagementPreferences EngagementPreferences
+        {
+            get { return this._engagementPreferences; }
+            set { this._engagementPreferences = value; }
+        }
+
+        // Check to see if EngagementPreferences property is set
+        internal bool IsSetEngagementPreferences()
+        {
+            return this._engagementPreferences != null;
         }
 
         /// <summary>
@@ -530,6 +551,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetProfileId()
         {
             return this._profileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileType. 
+        /// <para>
+        /// Determines the type of the profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ProfileType ProfileType
+        {
+            get { return this._profileType; }
+            set { this._profileType = value; }
+        }
+
+        // Check to see if ProfileType property is set
+        internal bool IsSetProfileType()
+        {
+            return this._profileType != null;
         }
 
         /// <summary>

@@ -62,9 +62,13 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AccountId))
+                throw new AmazonSSOException("Request object does not have required field AccountId set");
             
             if (publicRequest.IsSetAccountId())
                 request.Parameters.Add("account_id", StringUtils.FromString(publicRequest.AccountId));
+            if (string.IsNullOrEmpty(publicRequest.RoleName))
+                throw new AmazonSSOException("Request object does not have required field RoleName set");
             
             if (publicRequest.IsSetRoleName())
                 request.Parameters.Add("role_name", StringUtils.FromString(publicRequest.RoleName));

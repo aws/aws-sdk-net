@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for the specified resource.
+    /// Lists the tags for a specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource for which to list tags.
+        /// The Amazon Resource Name (ARN) of the resource for which to list tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

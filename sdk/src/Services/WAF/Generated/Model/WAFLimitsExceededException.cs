@@ -41,6 +41,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFLimitsExceededException
+        /// message.
+        /// </summary>
+        public WAFLimitsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFLimitsExceededException with the specified error
         /// message.
         /// </summary>

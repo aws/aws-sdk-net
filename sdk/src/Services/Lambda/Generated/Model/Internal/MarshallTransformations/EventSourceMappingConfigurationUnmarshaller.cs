@@ -140,6 +140,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastProcessingResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LoggingConfig", targetDepth))
+                {
+                    var unmarshaller = EventSourceMappingLoggingConfigUnmarshaller.Instance;
+                    unmarshalledObject.LoggingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

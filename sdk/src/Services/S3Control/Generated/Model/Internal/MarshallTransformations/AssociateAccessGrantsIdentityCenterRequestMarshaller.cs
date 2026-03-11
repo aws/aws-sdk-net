@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(AssociateAccessGrantsIdentityCenterRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
         
             if (publicRequest.IsSetAccountId()) 
@@ -74,6 +75,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -86,8 +88,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static AssociateAccessGrantsIdentityCenterRequestMarshaller _instance = new AssociateAccessGrantsIdentityCenterRequestMarshaller();        
@@ -109,5 +109,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, AssociateAccessGrantsIdentityCenterRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, AssociateAccessGrantsIdentityCenterRequest publicRequest);
     }    
 }

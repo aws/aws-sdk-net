@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for KeySigningKeyInParentDSRecordException
+        /// message.
+        /// </summary>
+        public KeySigningKeyInParentDSRecordException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeySigningKeyInParentDSRecordException with the specified error
         /// message.
         /// </summary>

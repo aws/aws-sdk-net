@@ -66,7 +66,7 @@ namespace Amazon.SocialMessaging.Model
         /// can't be used when the <c>waba</c> field is present.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=115)]
         public string PhoneNumberParent
         {
             get { return this._phoneNumberParent; }

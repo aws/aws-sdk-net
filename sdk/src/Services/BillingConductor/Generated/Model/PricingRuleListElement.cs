@@ -310,7 +310,8 @@ namespace Amazon.BillingConductor.Model
         /// If the <c>Scope</c> attribute is set to <c>SKU</c>, this attribute indicates which
         /// usage type the <c>PricingRule</c> is modifying. For example, <c>USW2-BoxUsage:m2.2xlarge</c>
         /// describes an<c> M2 High Memory Double Extra Large</c> instance in the US West (Oregon)
-        /// Region. <pre><c>&lt;/p&gt; </c></pre>
+        /// Region. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string UsageType

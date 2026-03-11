@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private MLflowConfiguration _mLflowConfig;
         private ParallelismConfiguration _parallelismConfiguration;
         private string _pipelineArn;
         private string _pipelineExecutionArn;
@@ -132,6 +133,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MLflowConfig. 
+        /// <para>
+        ///  The MLflow configuration of the pipeline execution. 
+        /// </para>
+        /// </summary>
+        public MLflowConfiguration MLflowConfig
+        {
+            get { return this._mLflowConfig; }
+            set { this._mLflowConfig = value; }
+        }
+
+        // Check to see if MLflowConfig property is set
+        internal bool IsSetMLflowConfig()
+        {
+            return this._mLflowConfig != null;
         }
 
         /// <summary>

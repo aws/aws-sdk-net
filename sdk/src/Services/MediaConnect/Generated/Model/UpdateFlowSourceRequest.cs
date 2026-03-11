@@ -32,6 +32,41 @@ namespace Amazon.MediaConnect.Model
     /// <summary>
     /// Container for the parameters to the UpdateFlowSource operation.
     /// Updates the source of a flow.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  Because <c>UpdateFlowSources</c> and <c>UpdateFlow</c> are separate operations, you
+    /// can't change both the source type AND the flow size in a single request. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you have a <c>MEDIUM</c> flow and you want to change the flow source to NDI®:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// First, use the <c>UpdateFlow</c> operation to upgrade the flow size to <c>LARGE</c>.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After that, you can then use the <c>UpdateFlowSource</c> operation to configure the
+    /// NDI source. 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// If you're switching from an NDI source to a transport stream (TS) source and want
+    /// to downgrade the flow size: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// First, use the <c>UpdateFlowSource</c> operation to change the flow source type. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After that, you can then use the <c>UpdateFlow</c> operation to downgrade the flow
+    /// size to <c>MEDIUM</c>.
+    /// </para>
+    ///  </li> </ul> </li> </ul> </note>
     /// </summary>
     public partial class UpdateFlowSourceRequest : AmazonMediaConnectRequest
     {
@@ -46,7 +81,10 @@ namespace Amazon.MediaConnect.Model
         private int? _maxSyncBuffer;
         private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamSourceConfigurationRequest>() : null;
         private int? _minLatency;
+        private NdiSourceSettings _ndiSourceSettings;
         private Protocol _protocol;
+        private State _routerIntegrationState;
+        private FlowTransitEncryption _routerIntegrationTransitDecryption;
         private int? _senderControlPort;
         private string _senderIpAddress;
         private string _sourceArn;
@@ -271,6 +309,25 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NdiSourceSettings. 
+        /// <para>
+        ///  The settings for the NDI source. This includes the exact name of the upstream NDI
+        /// sender that you want to connect to your source. 
+        /// </para>
+        /// </summary>
+        public NdiSourceSettings NdiSourceSettings
+        {
+            get { return this._ndiSourceSettings; }
+            set { this._ndiSourceSettings = value; }
+        }
+
+        // Check to see if NdiSourceSettings property is set
+        internal bool IsSetNdiSourceSettings()
+        {
+            return this._ndiSourceSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol that the source uses to deliver the content to MediaConnect. 
@@ -292,6 +349,42 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationState. 
+        /// <para>
+        /// Indicates whether to enable or disable router integration for this flow source.
+        /// </para>
+        /// </summary>
+        public State RouterIntegrationState
+        {
+            get { return this._routerIntegrationState; }
+            set { this._routerIntegrationState = value; }
+        }
+
+        // Check to see if RouterIntegrationState property is set
+        internal bool IsSetRouterIntegrationState()
+        {
+            return this._routerIntegrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationTransitDecryption. 
+        /// <para>
+        /// The encryption configuration for the flow source when router integration is enabled.
+        /// </para>
+        /// </summary>
+        public FlowTransitEncryption RouterIntegrationTransitDecryption
+        {
+            get { return this._routerIntegrationTransitDecryption; }
+            set { this._routerIntegrationTransitDecryption = value; }
+        }
+
+        // Check to see if RouterIntegrationTransitDecryption property is set
+        internal bool IsSetRouterIntegrationTransitDecryption()
+        {
+            return this._routerIntegrationTransitDecryption != null;
         }
 
         /// <summary>

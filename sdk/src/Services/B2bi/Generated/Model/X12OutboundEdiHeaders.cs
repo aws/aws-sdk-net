@@ -136,6 +136,10 @@ namespace Amazon.B2bi.Model
         /// Gets and sets the property ValidateEdi. 
         /// <para>
         /// Specifies whether or not to validate the EDI for this X12 object: <c>TRUE</c> or <c>FALSE</c>.
+        /// When enabled, this performs both standard EDI validation and applies any configured
+        /// custom validation rules including element length constraints, code list validations,
+        /// and element requirement checks. Validation results are returned in the response validation
+        /// messages.
         /// </para>
         /// </summary>
         public bool? ValidateEdi

@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for CallerIsNotManagementAccountException
+        /// message.
+        /// </summary>
+        public CallerIsNotManagementAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CallerIsNotManagementAccountException with the specified error
         /// message.
         /// </summary>

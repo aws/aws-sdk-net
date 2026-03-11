@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ParentCommitIdRequiredException
+        /// message.
+        /// </summary>
+        public ParentCommitIdRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParentCommitIdRequiredException with the specified error
         /// message.
         /// </summary>

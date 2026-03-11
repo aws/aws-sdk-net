@@ -36,6 +36,14 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Construct instance of AmazonQuickSightException
         /// </summary>
+        public AmazonQuickSightException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonQuickSightException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonQuickSightException(string message)
             : base(message)

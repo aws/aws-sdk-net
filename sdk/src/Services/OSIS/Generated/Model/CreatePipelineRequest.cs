@@ -43,6 +43,7 @@ namespace Amazon.OSIS.Model
         private int? _minUnits;
         private string _pipelineConfigurationBody;
         private string _pipelineName;
+        private string _pipelineRoleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcOptions _vpcOptions;
 
@@ -177,6 +178,26 @@ namespace Amazon.OSIS.Model
         internal bool IsSetPipelineName()
         {
             return this._pipelineName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission
+        /// to access Amazon Web Services resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string PipelineRoleArn
+        {
+            get { return this._pipelineRoleArn; }
+            set { this._pipelineRoleArn = value; }
+        }
+
+        // Check to see if PipelineRoleArn property is set
+        internal bool IsSetPipelineRoleArn()
+        {
+            return this._pipelineRoleArn != null;
         }
 
         /// <summary>

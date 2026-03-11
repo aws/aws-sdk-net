@@ -76,6 +76,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowCustomProjectResourceTags())
+            {
+                context.Writer.WritePropertyName("allowCustomProjectResourceTags");
+                context.Writer.WriteBooleanValue(publicRequest.AllowCustomProjectResourceTags.Value);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -108,6 +114,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProjectResourceTags())
+            {
+                context.Writer.WritePropertyName("projectResourceTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestProjectResourceTagsListValue in publicRequest.ProjectResourceTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceTagParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestProjectResourceTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetProjectResourceTagsDescription())
+            {
+                context.Writer.WritePropertyName("projectResourceTagsDescription");
+                context.Writer.WriteStringValue(publicRequest.ProjectResourceTagsDescription);
             }
 
             if(publicRequest.IsSetStatus())

@@ -35,6 +35,8 @@ namespace Amazon.TimestreamInfluxDB.Model
     public partial class Parameters
     {
         private InfluxDBv2Parameters _influxDBv2;
+        private InfluxDBv3CoreParameters _influxDBv3Core;
+        private InfluxDBv3EnterpriseParameters _influxDBv3Enterprise;
 
         /// <summary>
         /// Gets and sets the property InfluxDBv2. 
@@ -52,6 +54,42 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetInfluxDBv2()
         {
             return this._influxDBv2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxDBv3Core. 
+        /// <para>
+        /// All the customer-modifiable InfluxDB v3 Core parameters in Timestream for InfluxDB.
+        /// </para>
+        /// </summary>
+        public InfluxDBv3CoreParameters InfluxDBv3Core
+        {
+            get { return this._influxDBv3Core; }
+            set { this._influxDBv3Core = value; }
+        }
+
+        // Check to see if InfluxDBv3Core property is set
+        internal bool IsSetInfluxDBv3Core()
+        {
+            return this._influxDBv3Core != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxDBv3Enterprise. 
+        /// <para>
+        /// All the customer-modifiable InfluxDB v3 Enterprise parameters in Timestream for InfluxDB.
+        /// </para>
+        /// </summary>
+        public InfluxDBv3EnterpriseParameters InfluxDBv3Enterprise
+        {
+            get { return this._influxDBv3Enterprise; }
+            set { this._influxDBv3Enterprise = value; }
+        }
+
+        // Check to see if InfluxDBv3Enterprise property is set
+        internal bool IsSetInfluxDBv3Enterprise()
+        {
+            return this._influxDBv3Enterprise != null;
         }
 
     }

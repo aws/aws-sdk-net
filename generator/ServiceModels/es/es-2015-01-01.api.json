@@ -819,8 +819,7 @@
     },
     "AccessDeniedException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":403},
       "exception":true
     },
@@ -1233,8 +1232,7 @@
     },
     "ConflictException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -1261,7 +1259,8 @@
         "DomainEndpointOptions":{"shape":"DomainEndpointOptions"},
         "AdvancedSecurityOptions":{"shape":"AdvancedSecurityOptionsInput"},
         "AutoTuneOptions":{"shape":"AutoTuneOptionsInput"},
-        "TagList":{"shape":"TagList"}
+        "TagList":{"shape":"TagList"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptions"}
       }
     },
     "CreateElasticsearchDomainResponse":{
@@ -1432,6 +1431,31 @@
         "ELIGIBLE"
       ]
     },
+    "DeploymentStrategy":{
+      "type":"string",
+      "enum":[
+        "Default",
+        "CapacityOptimized"
+      ]
+    },
+    "DeploymentStrategyOptions":{
+      "type":"structure",
+      "required":["DeploymentStrategy"],
+      "members":{
+        "DeploymentStrategy":{"shape":"DeploymentStrategy"}
+      }
+    },
+    "DeploymentStrategyOptionsStatus":{
+      "type":"structure",
+      "required":[
+        "Options",
+        "Status"
+      ],
+      "members":{
+        "Options":{"shape":"DeploymentStrategyOptions"},
+        "Status":{"shape":"OptionStatus"}
+      }
+    },
     "DeploymentType":{
       "type":"string",
       "max":128,
@@ -1446,8 +1470,16 @@
           "location":"uri",
           "locationName":"DomainName"
         },
-        "MaxResults":{"shape":"MaxResults"},
-        "NextToken":{"shape":"NextToken"}
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
       }
     },
     "DescribeDomainAutoTunesResponse":{
@@ -1708,8 +1740,7 @@
     "DisableTimestamp":{"type":"timestamp"},
     "DisabledOperationException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -2003,7 +2034,8 @@
         "AdvancedSecurityOptions":{"shape":"AdvancedSecurityOptionsStatus"},
         "AutoTuneOptions":{"shape":"AutoTuneOptionsStatus"},
         "ChangeProgressDetails":{"shape":"ChangeProgressDetails"},
-        "ModifyingProperties":{"shape":"ModifyingPropertiesList"}
+        "ModifyingProperties":{"shape":"ModifyingPropertiesList"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptionsStatus"}
       }
     },
     "ElasticsearchDomainStatus":{
@@ -2041,7 +2073,8 @@
         "AutoTuneOptions":{"shape":"AutoTuneOptionsOutput"},
         "ChangeProgressDetails":{"shape":"ChangeProgressDetails"},
         "DomainProcessingStatus":{"shape":"DomainProcessingStatusType"},
-        "ModifyingProperties":{"shape":"ModifyingPropertiesList"}
+        "ModifyingProperties":{"shape":"ModifyingPropertiesList"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptions"}
       }
     },
     "ElasticsearchDomainStatusList":{
@@ -2291,22 +2324,19 @@
     "IntegerClass":{"type":"integer"},
     "InternalException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":500},
       "exception":true
     },
     "InvalidPaginationTokenException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":400},
       "exception":true
     },
     "InvalidTypeException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -2323,8 +2353,7 @@
     "LastUpdated":{"type":"timestamp"},
     "LimitExceededException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -2919,15 +2948,13 @@
     },
     "ResourceAlreadyExistsException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":409},
       "exception":true
     },
     "ResourceNotFoundException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -2948,8 +2975,7 @@
     },
     "RevokeVpcEndpointAccessResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RoleArn":{
       "type":"string",
@@ -3177,7 +3203,8 @@
         "NodeToNodeEncryptionOptions":{"shape":"NodeToNodeEncryptionOptions"},
         "EncryptionAtRestOptions":{"shape":"EncryptionAtRestOptions"},
         "AutoTuneOptions":{"shape":"AutoTuneOptions"},
-        "DryRun":{"shape":"DryRun"}
+        "DryRun":{"shape":"DryRun"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptions"}
       }
     },
     "UpdateElasticsearchDomainConfigResponse":{
@@ -3331,8 +3358,7 @@
     },
     "ValidationException":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "error":{"httpStatusCode":400},
       "exception":true
     },

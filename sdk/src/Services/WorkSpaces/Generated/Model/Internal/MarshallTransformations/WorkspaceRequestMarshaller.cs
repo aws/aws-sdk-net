@@ -58,6 +58,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DirectoryId);
             }
 
+            if(requestObject.IsSetIpv6Address())
+            {
+                context.Writer.WritePropertyName("Ipv6Address");
+                context.Writer.WriteStringValue(requestObject.Ipv6Address);
+            }
+
             if(requestObject.IsSetRootVolumeEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("RootVolumeEncryptionEnabled");

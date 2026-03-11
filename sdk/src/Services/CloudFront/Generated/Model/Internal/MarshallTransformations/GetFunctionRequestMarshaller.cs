@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetFunctionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetName())
                 throw new AmazonCloudFrontException("Request object does not have required field Name set");
@@ -66,8 +67,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/function/{Name}";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static GetFunctionRequestMarshaller _instance = new GetFunctionRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetFunctionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetFunctionRequest publicRequest);
     }    
 }

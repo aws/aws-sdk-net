@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyFieldLevelEncryptionQueryArgProfilesException
+        /// message.
+        /// </summary>
+        public TooManyFieldLevelEncryptionQueryArgProfilesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyFieldLevelEncryptionQueryArgProfilesException with the specified error
         /// message.
         /// </summary>

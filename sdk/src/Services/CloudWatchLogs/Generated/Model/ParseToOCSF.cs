@@ -35,13 +35,14 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// For more information about this processor including examples, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseToOCSF">
-    /// parseToOSCF</a> in the <i>CloudWatch Logs User Guide</i>.
+    /// For more information about this processor including examples, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-parseToOCSF">parseToOCSF</a>
+    /// in the <i>CloudWatch Logs User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ParseToOCSF
     {
         private EventSource _eventSource;
+        private string _mappingVersion;
         private OCSFVersion _ocsfVersion;
         private string _source;
 
@@ -63,6 +64,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetEventSource()
         {
             return this._eventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MappingVersion. 
+        /// <para>
+        /// The version of the OCSF mapping to use for parsing log data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public string MappingVersion
+        {
+            get { return this._mappingVersion; }
+            set { this._mappingVersion = value; }
+        }
+
+        // Check to see if MappingVersion property is set
+        internal bool IsSetMappingVersion()
+        {
+            return this._mappingVersion != null;
         }
 
         /// <summary>

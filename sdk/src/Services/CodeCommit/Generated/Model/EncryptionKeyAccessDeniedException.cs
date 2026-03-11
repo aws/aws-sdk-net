@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionKeyAccessDeniedException
+        /// message.
+        /// </summary>
+        public EncryptionKeyAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionKeyAccessDeniedException with the specified error
         /// message.
         /// </summary>

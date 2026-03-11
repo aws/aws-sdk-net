@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedIdentityProviderException
+        /// message.
+        /// </summary>
+        public UnsupportedIdentityProviderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedIdentityProviderException with the specified error
         /// message.
         /// </summary>

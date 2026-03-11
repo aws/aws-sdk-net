@@ -67,6 +67,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
+                if(publicRequest.IsSetLinkedGroupId())
+                {
+                    request.Parameters.Add("LinkedGroupId", StringUtils.FromString(publicRequest.LinkedGroupId));
+                }
+                if(publicRequest.IsSetOperator())
+                {
+                    if(publicRequest.Operator.IsSetPrincipal())
+                    {
+                        request.Parameters.Add("Operator" + "." + "Principal", StringUtils.FromString(publicRequest.Operator.Principal));
+                    }
+                }
                 if(publicRequest.IsSetPartitionCount())
                 {
                     request.Parameters.Add("PartitionCount", StringUtils.FromInt(publicRequest.PartitionCount));
@@ -118,6 +129,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreatePlacementGroupRequestMarshaller _instance = new CreatePlacementGroupRequestMarshaller();        

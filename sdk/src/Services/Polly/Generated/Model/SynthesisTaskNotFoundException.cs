@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for SynthesisTaskNotFoundException
+        /// message.
+        /// </summary>
+        public SynthesisTaskNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SynthesisTaskNotFoundException with the specified error
         /// message.
         /// </summary>

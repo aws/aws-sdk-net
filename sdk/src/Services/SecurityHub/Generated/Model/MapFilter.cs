@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A map filter for filtering Security Hub findings. Each map filter provides the field
-    /// to check for, the value to check for, and the comparison operator.
+    /// A map filter for filtering Security Hub CSPM findings. Each map filter provides the
+    /// field to check for, the value to check for, and the comparison operator.
     /// </summary>
     public partial class MapFilter
     {
@@ -42,8 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The condition to apply to the key value when filtering Security Hub findings with
-        /// a map filter.
+        /// The condition to apply to the key value when filtering Security Hub CSPM findings
+        /// with a map filter.
         /// </para>
         ///  
         /// <para>
@@ -111,7 +111,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  <c>CONTAINS</c> and <c>NOT_CONTAINS</c> operators can be used only with automation
         /// rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
-        /// rules</a> in the <i>Security Hub User Guide</i>.
+        /// rules</a> in the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         /// </summary>
         public MapFilterComparison Comparison

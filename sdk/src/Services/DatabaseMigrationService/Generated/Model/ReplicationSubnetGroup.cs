@@ -35,12 +35,34 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class ReplicationSubnetGroup
     {
+        private bool? _isReadOnly;
         private string _replicationSubnetGroupDescription;
         private string _replicationSubnetGroupIdentifier;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
         private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property IsReadOnly. 
+        /// <para>
+        /// Indicates whether the replication subnet group is read-only. When set to <c>true</c>,
+        /// this subnet group is managed by DMS as part of a zero-ETL integration and cannot be
+        /// modified or deleted directly. You can only modify or delete read-only subnet groups
+        /// through their associated zero-ETL integration.
+        /// </para>
+        /// </summary>
+        public bool? IsReadOnly
+        {
+            get { return this._isReadOnly; }
+            set { this._isReadOnly = value; }
+        }
+
+        // Check to see if IsReadOnly property is set
+        internal bool IsSetIsReadOnly()
+        {
+            return this._isReadOnly.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ReplicationSubnetGroupDescription. 

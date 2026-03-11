@@ -36,6 +36,14 @@ namespace Amazon.ServiceQuotas
         /// <summary>
         /// Construct instance of AmazonServiceQuotasException
         /// </summary>
+        public AmazonServiceQuotasException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonServiceQuotasException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonServiceQuotasException(string message)
             : base(message)

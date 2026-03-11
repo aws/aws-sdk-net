@@ -87,6 +87,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterContainsCapacityProviderException"))
+                {
+                    return ClusterContainsCapacityProviderExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterContainsContainerInstancesException"))
                 {
                     return ClusterContainsContainerInstancesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

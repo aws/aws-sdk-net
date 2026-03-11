@@ -43,13 +43,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _lastUpdatedAt;
         private string _liveVersion;
         private string _name;
-        private AgentEndpointStatus _status;
+        private AgentRuntimeEndpointStatus _status;
         private string _targetVersion;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent runtime.
+        /// The Amazon Resource Name (ARN) of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeEndpointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent runtime endpoint.
+        /// The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +87,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime endpoint was created.
+        /// The timestamp when the AgentCore Runtime endpoint was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,7 +106,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the agent runtime endpoint.
+        /// The description of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -125,7 +125,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for failure if the agent runtime endpoint is in a failed state.
+        /// The reason for failure if the AgentCore Runtime endpoint is in a failed state.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -143,7 +143,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the agent runtime endpoint.
+        /// The unique identifier of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -162,7 +162,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime endpoint was last updated.
+        /// The timestamp when the AgentCore Runtime endpoint was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,7 +181,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property LiveVersion. 
         /// <para>
-        /// The currently deployed version of the agent runtime on the endpoint.
+        /// The currently deployed version of the AgentCore Runtime on the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -200,7 +200,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the agent runtime endpoint.
+        /// The name of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -219,11 +219,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the agent runtime endpoint.
+        /// The current status of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentEndpointStatus Status
+        public AgentRuntimeEndpointStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -238,7 +238,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetVersion. 
         /// <para>
-        /// The target version of the agent runtime for the endpoint.
+        /// The target version of the AgentCore Runtime for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

@@ -32,7 +32,14 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the ListWebApps operation.
     /// Lists all web apps associated with your Amazon Web Services account for your current
-    /// region.
+    /// region. The response includes the endpoint type for each web app, showing whether
+    /// it is publicly accessible or VPC hosted.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+    /// a Transfer Family web app in a VPC</a>.
+    /// </para>
     /// </summary>
     public partial class ListWebAppsRequest : AmazonTransferRequest
     {

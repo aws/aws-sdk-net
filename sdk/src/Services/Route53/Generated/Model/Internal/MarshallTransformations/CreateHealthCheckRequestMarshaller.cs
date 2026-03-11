@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateHealthCheckRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/healthcheck";
 
@@ -66,7 +67,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCallerReference())
                     xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
-                if (publicRequest.HealthCheckConfig != null)
+                if (publicRequest.IsSetHealthCheckConfig())
                 {
                     xmlWriter.WriteStartElement("HealthCheckConfig");
                     if(publicRequest.HealthCheckConfig.IsSetIPAddress())
@@ -94,7 +95,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if(publicRequest.HealthCheckConfig.IsSetHealthThreshold())
                         xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold.Value));
                     var publicRequestHealthCheckConfigChildHealthChecks = publicRequest.HealthCheckConfig.ChildHealthChecks;
-                    if (publicRequestHealthCheckConfigChildHealthChecks != null && (publicRequestHealthCheckConfigChildHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.HealthCheckConfig.IsSetChildHealthChecks()) 
                     {
                         xmlWriter.WriteStartElement("ChildHealthChecks");
                         foreach (var publicRequestHealthCheckConfigChildHealthChecksValue in publicRequestHealthCheckConfigChildHealthChecks) 
@@ -108,7 +109,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if(publicRequest.HealthCheckConfig.IsSetEnableSNI())
                         xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI.Value));
                     var publicRequestHealthCheckConfigRegions = publicRequest.HealthCheckConfig.Regions;
-                    if (publicRequestHealthCheckConfigRegions != null && (publicRequestHealthCheckConfigRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.HealthCheckConfig.IsSetRegions()) 
                     {
                         xmlWriter.WriteStartElement("Regions");
                         foreach (var publicRequestHealthCheckConfigRegionsValue in publicRequestHealthCheckConfigRegions) 
@@ -119,7 +120,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-                    if (publicRequest.HealthCheckConfig.AlarmIdentifier != null)
+                    if (publicRequest.HealthCheckConfig.IsSetAlarmIdentifier())
                     {
                         xmlWriter.WriteStartElement("AlarmIdentifier");
                         if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetRegion())
@@ -137,6 +138,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -148,8 +150,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateHealthCheckRequestMarshaller _instance = new CreateHealthCheckRequestMarshaller();        
@@ -171,5 +171,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateHealthCheckRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateHealthCheckRequest publicRequest);
     }    
 }

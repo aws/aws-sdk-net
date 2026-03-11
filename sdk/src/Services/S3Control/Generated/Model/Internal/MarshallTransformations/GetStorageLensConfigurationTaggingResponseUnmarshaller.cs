@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetStorageLensConfigurationTagging operation
     /// </summary>  
-    public class GetStorageLensConfigurationTaggingResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetStorageLensConfigurationTaggingResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             GetStorageLensConfigurationTaggingResponse response = new GetStorageLensConfigurationTaggingResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -81,7 +82,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -107,6 +107,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetStorageLensConfigurationTaggingResponse response);
 
         private static GetStorageLensConfigurationTaggingResponseUnmarshaller _instance = new GetStorageLensConfigurationTaggingResponseUnmarshaller();        
 

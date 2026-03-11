@@ -98,6 +98,10 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
                         LambdaVersion = "V1_0"
                     },
                     DefineAuthChallenge = "arn:aws:lambda:us-east-1:123456789012:function:MyFunction",
+                    InboundFederation = new InboundFederationLambdaType {
+                        LambdaArn = "arn:aws:lambda:us-east-1:123456789012:function:MyFunction",
+                        LambdaVersion = "V1_0"
+                    },
                     KMSKeyID = "arn:aws:kms:us-east-1:123456789012:key/a6c4f8e2-0c45-47db-925f-87854bc9e357",
                     PostAuthentication = "arn:aws:lambda:us-east-1:123456789012:function:MyFunction",
                     PostConfirmation = "arn:aws:lambda:us-east-1:123456789012:function:MyFunction",

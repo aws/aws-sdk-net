@@ -57,6 +57,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetDomainJoinServiceAccountSecret())
+            {
+                context.Writer.WritePropertyName("DomainJoinServiceAccountSecret");
+                context.Writer.WriteStringValue(requestObject.DomainJoinServiceAccountSecret);
+            }
+
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");

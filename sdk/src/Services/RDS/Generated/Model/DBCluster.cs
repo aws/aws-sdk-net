@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster. 
     /// 
     ///  
     /// <para>
@@ -136,13 +136,16 @@ namespace Amazon.RDS.Model
         private List<string> _readReplicaIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationSourceIdentifier;
         private ScalingConfigurationInfo _scalingConfigurationInfo;
+        private string _serverlessV2PlatformVersion;
         private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private List<DBClusterStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBClusterStatusInfo>() : null;
         private bool? _storageEncrypted;
+        private StorageEncryptionType _storageEncryptionType;
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private UpgradeRolloutOrder _upgradeRolloutOrder;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
@@ -1746,6 +1749,26 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerlessV2PlatformVersion. 
+        /// <para>
+        /// The version of the Aurora Serverless V2 platform used by the DB cluster. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using
+        /// Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ServerlessV2PlatformVersion
+        {
+            get { return this._serverlessV2PlatformVersion; }
+            set { this._serverlessV2PlatformVersion = value; }
+        }
+
+        // Check to see if ServerlessV2PlatformVersion property is set
+        internal bool IsSetServerlessV2PlatformVersion()
+        {
+            return this._serverlessV2PlatformVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerlessV2ScalingConfiguration.
         /// </summary>
         public ServerlessV2ScalingConfigurationInfo ServerlessV2ScalingConfiguration
@@ -1820,6 +1843,39 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the DB cluster. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The DB cluster is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The DB cluster is encrypted using an Amazon Web Services owned KMS
+        /// key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The DB cluster is encrypted using a customer managed KMS key or
+        /// Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
         /// The storage throughput for the DB cluster. The throughput is automatically set based
@@ -1878,6 +1934,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetTagList()
         {
             return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeRolloutOrder. 
+        /// <para>
+        /// This data type represents the order in which the clusters are upgraded.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// [first] - Typically used for development or testing environments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [second] - Default order for resources not specifically configured.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [last] - Usually reserved for production environments.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public UpgradeRolloutOrder UpgradeRolloutOrder
+        {
+            get { return this._upgradeRolloutOrder; }
+            set { this._upgradeRolloutOrder = value; }
+        }
+
+        // Check to see if UpgradeRolloutOrder property is set
+        internal bool IsSetUpgradeRolloutOrder()
+        {
+            return this._upgradeRolloutOrder != null;
         }
 
         /// <summary>

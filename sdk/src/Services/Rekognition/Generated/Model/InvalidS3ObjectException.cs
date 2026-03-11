@@ -39,6 +39,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidS3ObjectException
+        /// message.
+        /// </summary>
+        public InvalidS3ObjectException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3ObjectException with the specified error
         /// message.
         /// </summary>

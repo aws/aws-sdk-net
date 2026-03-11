@@ -37,7 +37,11 @@ namespace Amazon.BillingConductor.Model
     {
         private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _autoAssociate;
+        private List<string> _billingGroupTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<StringSearch> _names = AWSConfigs.InitializeCollections ? new List<StringSearch>() : null;
         private string _pricingPlan;
+        private List<string> _primaryAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _responsibilityTransferArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _statuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -84,6 +88,54 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BillingGroupTypes. 
+        /// <para>
+        ///  Filter billing groups by their type. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> BillingGroupTypes
+        {
+            get { return this._billingGroupTypes; }
+            set { this._billingGroupTypes = value; }
+        }
+
+        // Check to see if BillingGroupTypes property is set
+        internal bool IsSetBillingGroupTypes()
+        {
+            return this._billingGroupTypes != null && (this._billingGroupTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Names. 
+        /// <para>
+        ///  Filter billing groups by their names. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<StringSearch> Names
+        {
+            get { return this._names; }
+            set { this._names = value; }
+        }
+
+        // Check to see if Names property is set
+        internal bool IsSetNames()
+        {
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
         /// The pricing plan Amazon Resource Names (ARNs) to retrieve information.
@@ -99,6 +151,54 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetPricingPlan()
         {
             return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryAccountIds. 
+        /// <para>
+        ///  A list of primary account IDs to filter the billing groups. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> PrimaryAccountIds
+        {
+            get { return this._primaryAccountIds; }
+            set { this._primaryAccountIds = value; }
+        }
+
+        // Check to see if PrimaryAccountIds property is set
+        internal bool IsSetPrimaryAccountIds()
+        {
+            return this._primaryAccountIds != null && (this._primaryAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponsibilityTransferArns. 
+        /// <para>
+        ///  Filter billing groups by their responsibility transfer ARNs. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<string> ResponsibilityTransferArns
+        {
+            get { return this._responsibilityTransferArns; }
+            set { this._responsibilityTransferArns = value; }
+        }
+
+        // Check to see if ResponsibilityTransferArns property is set
+        internal bool IsSetResponsibilityTransferArns()
+        {
+            return this._responsibilityTransferArns != null && (this._responsibilityTransferArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

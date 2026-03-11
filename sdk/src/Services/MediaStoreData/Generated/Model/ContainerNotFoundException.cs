@@ -39,6 +39,13 @@ namespace Amazon.MediaStoreData.Model
     {
 
         /// <summary>
+        /// Default constructor for ContainerNotFoundException
+        /// message.
+        /// </summary>
+        public ContainerNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContainerNotFoundException with the specified error
         /// message.
         /// </summary>

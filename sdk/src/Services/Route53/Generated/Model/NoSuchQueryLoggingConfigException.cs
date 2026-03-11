@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchQueryLoggingConfigException
+        /// message.
+        /// </summary>
+        public NoSuchQueryLoggingConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchQueryLoggingConfigException with the specified error
         /// message.
         /// </summary>

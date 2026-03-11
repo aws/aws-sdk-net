@@ -39,6 +39,13 @@ namespace Amazon.LicenseManager.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedDigitalSignatureMethodException
+        /// message.
+        /// </summary>
+        public UnsupportedDigitalSignatureMethodException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedDigitalSignatureMethodException with the specified error
         /// message.
         /// </summary>

@@ -111,6 +111,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.LicenseCountHardLimit.Value);
             }
 
+            if(publicRequest.IsSetLicenseExpiry())
+            {
+                context.Writer.WritePropertyName("LicenseExpiry");
+                context.Writer.WriteNumberValue(publicRequest.LicenseExpiry.Value);
+            }
+
             if(publicRequest.IsSetLicenseRules())
             {
                 context.Writer.WritePropertyName("LicenseRules");

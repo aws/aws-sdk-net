@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private string _domainId;
+        private string _environmentId;
         private GrantedEntity _grantedEntity;
         private string _id;
         private SubscriptionGrantOverallStatus _status;
@@ -124,6 +125,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentId. 
+        /// <para>
+        /// The ID of the environment in which the subscription grant is deleted.
+        /// </para>
+        /// </summary>
+        public string EnvironmentId
+        {
+            get { return this._environmentId; }
+            set { this._environmentId = value; }
+        }
+
+        // Check to see if EnvironmentId property is set
+        internal bool IsSetEnvironmentId()
+        {
+            return this._environmentId != null;
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.LakeFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for WorkUnitsNotReadyYetException
+        /// message.
+        /// </summary>
+        public WorkUnitsNotReadyYetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WorkUnitsNotReadyYetException with the specified error
         /// message.
         /// </summary>

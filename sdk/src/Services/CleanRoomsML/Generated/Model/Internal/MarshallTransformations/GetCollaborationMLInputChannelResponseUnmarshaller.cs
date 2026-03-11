@@ -106,6 +106,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.NumberOfRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("privacyBudgets", targetDepth))
+                {
+                    var unmarshaller = PrivacyBudgetsUnmarshaller.Instance;
+                    response.PrivacyBudgets = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("retentionInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StatusDetailsUnmarshaller.Instance;
                     response.StatusDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("syntheticDataConfiguration", targetDepth))
+                {
+                    var unmarshaller = SyntheticDataConfigurationUnmarshaller.Instance;
+                    response.SyntheticDataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateTime", targetDepth))

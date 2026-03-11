@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidScheduledActionException
+        /// message.
+        /// </summary>
+        public InvalidScheduledActionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidScheduledActionException with the specified error
         /// message.
         /// </summary>

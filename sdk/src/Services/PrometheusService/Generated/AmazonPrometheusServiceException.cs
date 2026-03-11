@@ -36,6 +36,14 @@ namespace Amazon.PrometheusService
         /// <summary>
         /// Construct instance of AmazonPrometheusServiceException
         /// </summary>
+        public AmazonPrometheusServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPrometheusServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPrometheusServiceException(string message)
             : base(message)

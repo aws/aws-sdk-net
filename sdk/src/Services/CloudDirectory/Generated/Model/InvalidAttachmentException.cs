@@ -41,6 +41,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAttachmentException
+        /// message.
+        /// </summary>
+        public InvalidAttachmentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAttachmentException with the specified error
         /// message.
         /// </summary>

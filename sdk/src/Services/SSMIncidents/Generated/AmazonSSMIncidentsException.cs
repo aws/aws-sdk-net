@@ -36,6 +36,14 @@ namespace Amazon.SSMIncidents
         /// <summary>
         /// Construct instance of AmazonSSMIncidentsException
         /// </summary>
+        public AmazonSSMIncidentsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSMIncidentsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSMIncidentsException(string message)
             : base(message)

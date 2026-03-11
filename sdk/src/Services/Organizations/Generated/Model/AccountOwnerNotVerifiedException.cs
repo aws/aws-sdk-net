@@ -42,6 +42,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountOwnerNotVerifiedException
+        /// message.
+        /// </summary>
+        public AccountOwnerNotVerifiedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountOwnerNotVerifiedException with the specified error
         /// message.
         /// </summary>

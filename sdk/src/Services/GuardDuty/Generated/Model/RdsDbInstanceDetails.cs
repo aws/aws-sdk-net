@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private string _dbInstanceIdentifier;
+        private string _dbiResourceId;
         private string _engine;
         private string _engineVersion;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -96,6 +97,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDbInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbiResourceId. 
+        /// <para>
+        /// The unique ID of the database resource involved in the activity that prompted GuardDuty
+        /// to generate the finding.
+        /// </para>
+        /// </summary>
+        public string DbiResourceId
+        {
+            get { return this._dbiResourceId; }
+            set { this._dbiResourceId = value; }
+        }
+
+        // Check to see if DbiResourceId property is set
+        internal bool IsSetDbiResourceId()
+        {
+            return this._dbiResourceId != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.QConnect.Model
     {
         private AIAgentType _aiAgentType;
         private string _assistantId;
+        private string _orchestratorUseCase;
 
         /// <summary>
         /// Gets and sets the property AiAgentType. 
@@ -76,6 +77,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAssistantId()
         {
             return this._assistantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestratorUseCase. 
+        /// <para>
+        /// The orchestrator use case for the AI Agent being removed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string OrchestratorUseCase
+        {
+            get { return this._orchestratorUseCase; }
+            set { this._orchestratorUseCase = value; }
+        }
+
+        // Check to see if OrchestratorUseCase property is set
+        internal bool IsSetOrchestratorUseCase()
+        {
+            return this._orchestratorUseCase != null;
         }
 
     }

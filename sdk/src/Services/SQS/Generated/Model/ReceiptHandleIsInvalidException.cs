@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for ReceiptHandleIsInvalidException
+        /// message.
+        /// </summary>
+        public ReceiptHandleIsInvalidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReceiptHandleIsInvalidException with the specified error
         /// message.
         /// </summary>

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the savings opportunity for Auto Scaling group recommendations after applying
-    /// the Savings Plans and Reserved Instances discounts. 
+    /// Describes the savings opportunity for Amazon EC2 Auto Scaling group recommendations
+    /// after applying the Savings Plans and Reserved Instances discounts. 
     /// 
     ///  
     /// <para>
@@ -48,8 +48,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property EstimatedMonthlySavings. 
         /// <para>
         ///  An object that describes the estimated monthly savings possible by adopting Compute
-        /// Optimizer’s Auto Scaling group recommendations. This is based on the Savings Plans
-        /// and Reserved Instances pricing discounts. 
+        /// Optimizer’s Amazon EC2 Auto Scaling group recommendations. This is based on the Savings
+        /// Plans and Reserved Instances pricing discounts. 
         /// </para>
         /// </summary>
         public AutoScalingGroupEstimatedMonthlySavings EstimatedMonthlySavings
@@ -69,7 +69,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The estimated monthly savings possible as a percentage of monthly cost after applying
         /// the Savings Plans and Reserved Instances discounts. This saving can be achieved by
-        /// adopting Compute Optimizer’s Auto Scaling group recommendations. 
+        /// adopting Compute Optimizer’s Amazon EC2 Auto Scaling group recommendations. 
         /// </para>
         /// </summary>
         public double? SavingsOpportunityPercentage

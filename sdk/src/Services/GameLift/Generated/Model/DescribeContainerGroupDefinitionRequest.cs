@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContainerGroupDefinition operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves the properties of a container group definition, including all container
     /// definitions in the group. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options:</b> 

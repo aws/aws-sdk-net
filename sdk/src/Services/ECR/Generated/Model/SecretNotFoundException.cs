@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for SecretNotFoundException
+        /// message.
+        /// </summary>
+        public SecretNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SecretNotFoundException with the specified error
         /// message.
         /// </summary>

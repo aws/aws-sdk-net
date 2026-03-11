@@ -40,6 +40,13 @@ namespace Amazon.Route53Resolver.Model
         private string _fieldName;
 
         /// <summary>
+        /// Default constructor for InvalidParameterException
+        /// message.
+        /// </summary>
+        public InvalidParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterException with the specified error
         /// message.
         /// </summary>

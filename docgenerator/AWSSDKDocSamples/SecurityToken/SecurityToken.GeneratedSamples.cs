@@ -19,7 +19,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             var response = client.AssumeRole(new AssumeRoleRequest 
             {
                 ExternalId = "123ABC",
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
+                Policy = "escaped-JSON-IAM-POLICY",
                 RoleArn = "arn:aws:iam::123456789012:role/demo",
                 RoleSessionName = "testAssumeRoleSession",
                 Tags = new List<Tag> {
@@ -82,7 +82,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             var response = client.AssumeRoleWithWebIdentity(new AssumeRoleWithWebIdentityRequest 
             {
                 DurationSeconds = 3600,
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
+                Policy = "escaped-JSON-IAM-POLICY",
                 ProviderId = "www.amazon.com",
                 RoleArn = "arn:aws:iam::123456789012:role/FederatedWebIdentityRole",
                 RoleSessionName = "app1",
@@ -189,7 +189,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             {
                 DurationSeconds = 3600,
                 Name = "testFedUserSession",
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
+                Policy = "escaped-JSON-IAM-POLICY",
                 Tags = new List<Tag> {
                     new Tag {
                         Key = "Project",

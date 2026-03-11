@@ -45,7 +45,7 @@ namespace Amazon.PaymentCryptography.Model
         /// in 90 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string KeyCertificate
         {
             get { return this._keyCertificate; }
@@ -65,7 +65,7 @@ namespace Amazon.PaymentCryptography.Model
         /// format (base64 encoded) of the asymmetric key pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string KeyCertificateChain
         {
             get { return this._keyCertificateChain; }

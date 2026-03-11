@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ChangeCidrCollectionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetId())
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
@@ -70,38 +71,39 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("CollectionVersion", StringUtils.FromLong(publicRequest.CollectionVersion.Value));
 
                 var publicRequestChanges = publicRequest.Changes;
-                if (publicRequestChanges != null && (publicRequestChanges.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetChanges()) 
                 {
                     xmlWriter.WriteStartElement("Changes");
                     foreach (var publicRequestChangesValue in publicRequestChanges) 
                     {
-                    if (publicRequestChangesValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if(publicRequestChangesValue.IsSetLocationName())
-                            xmlWriter.WriteElementString("LocationName", StringUtils.FromString(publicRequestChangesValue.LocationName));
-                        if(publicRequestChangesValue.IsSetAction())
-                            xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));
-                        var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
-                        if (publicRequestChangesValueCidrList != null && (publicRequestChangesValueCidrList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequestChangesValue != null)
                         {
-                            xmlWriter.WriteStartElement("CidrList");
-                            foreach (var publicRequestChangesValueCidrListValue in publicRequestChangesValueCidrList) 
+                            xmlWriter.WriteStartElement("member");
+                            if(publicRequestChangesValue.IsSetLocationName())
+                                xmlWriter.WriteElementString("LocationName", StringUtils.FromString(publicRequestChangesValue.LocationName));
+                            if(publicRequestChangesValue.IsSetAction())
+                                xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));
+                            var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
+                            if (publicRequestChangesValue.IsSetCidrList()) 
                             {
-                                xmlWriter.WriteStartElement("Cidr");
-                                xmlWriter.WriteValue(publicRequestChangesValueCidrListValue);
-                                xmlWriter.WriteEndElement();
-                            }            
-                            xmlWriter.WriteEndElement();            
+                                xmlWriter.WriteStartElement("CidrList");
+                                foreach (var publicRequestChangesValueCidrListValue in publicRequestChangesValueCidrList) 
+                                {
+                                    xmlWriter.WriteStartElement("Cidr");
+                                    xmlWriter.WriteValue(publicRequestChangesValueCidrListValue);
+                                    xmlWriter.WriteEndElement();
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
+                            xmlWriter.WriteEndElement();
                         }
-                        xmlWriter.WriteEndElement();
-                    }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -113,8 +115,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ChangeCidrCollectionRequestMarshaller _instance = new ChangeCidrCollectionRequestMarshaller();        
@@ -136,5 +136,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ChangeCidrCollectionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ChangeCidrCollectionRequest publicRequest);
     }    
 }

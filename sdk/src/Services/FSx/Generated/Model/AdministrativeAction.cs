@@ -37,6 +37,7 @@ namespace Amazon.FSx.Model
     {
         private AdministrativeActionType _administrativeActionType;
         private AdministrativeActionFailureDetails _failureDetails;
+        private string _message;
         private int? _progressPercent;
         private long? _remainingTransferBytes;
         private DateTime? _requestTime;
@@ -74,6 +75,22 @@ namespace Amazon.FSx.Model
         internal bool IsSetFailureDetails()
         {
             return this._failureDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
         /// <summary>

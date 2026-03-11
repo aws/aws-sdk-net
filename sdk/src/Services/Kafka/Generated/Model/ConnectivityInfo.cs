@@ -34,8 +34,32 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ConnectivityInfo
     {
+        private NetworkType _networkType;
         private PublicAccess _publicAccess;
         private VpcConnectivity _vpcConnectivity;
+
+        /// <summary>
+        /// Gets and sets the property NetworkType.             
+        /// <para>
+        /// The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses
+        /// both IPv4 and IPv6 addresses for your cluster and its resources.
+        /// </para>
+        /// 
+        /// <para>
+        /// By default, a cluster uses the IPv4 network type.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PublicAccess.             

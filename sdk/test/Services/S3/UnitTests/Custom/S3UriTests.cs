@@ -155,12 +155,84 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void s3expressEndpointAbsoluteRegionalS3ExpressUriWithKeyTest()
+        public void S3ExpressEndpointAbsoluteRegionalS3ExpressUriWithKeyTest()
         {
             var parsed = new AmazonS3Uri("https://my-bucket-name.s3express.us-west-2.amazonaws.com/file-name");
             Assert.AreEqual("my-bucket-name", parsed.Bucket);
             Assert.AreEqual("file-name", parsed.Key);
             Assert.AreEqual(RegionEndpoint.USWest2, parsed.Region);
+        }
+
+        /// <summary>
+        /// <see cref="AmazonS3Uri" /> should properly decode UTF-8 multi-byte characters.
+        /// </summary>
+        /// <remarks>
+        /// Verifies https://github.com/aws/aws-sdk-net/issues/3585 is resolved.
+        /// </remarks>
+        [DataTestMethod]
+        [DataRow("180天OTB+(锦江）1216+-+sample+(1).xlsx")]
+        [DataRow("テスト/ファイル.txt")]
+        [DataRow("test/hello👋world.txt")]
+        public void S3UriWithUTF8MultiByteCharactersTest(string key)
+        {
+            var s3Uri = new AmazonS3Uri($"https://my-bucket.s3.us-east-1.amazonaws.com/{key}");
+            Assert.AreEqual("my-bucket", s3Uri.Bucket);
+            Assert.AreEqual(key, s3Uri.Key);
+        }
+
+        /// <summary>
+        /// Test that various percent-encoded characters are decoded correctly.
+        /// Ensures backward compatibility with existing encoding behavior.
+        /// </summary>
+        [DataTestMethod]
+        [DataRow("my%20file.txt", "my file.txt")]
+        [DataRow("my%20file%21%40%23%24.txt", "my file!@#$.txt")]
+        [DataRow("folder/sub%20folder/file.txt", "folder/sub folder/file.txt")]
+        [DataRow("simple-file-name.txt", "simple-file-name.txt")]
+        [DataRow("folder%2Fwith%2Fencoded%2Fslashes.txt", "folder/with/encoded/slashes.txt")]
+        [DataRow("report%20(2024)%20%5Bfinal%5D.pdf", "report (2024) [final].pdf")]
+        [DataRow("file%FFname.txt", "file\u00FFname.txt")] // Non-UTF-8: should preserve byte value, not replace with �
+        public void S3UriKeyDecodingTest(string encodedKey, string expectedKey)
+        {
+            var s3Uri = new AmazonS3Uri($"https://my-bucket.s3.us-east-1.amazonaws.com/{encodedKey}");
+            Assert.AreEqual("my-bucket", s3Uri.Bucket);
+            Assert.AreEqual(expectedKey, s3Uri.Key);
+        }
+
+        // https://github.com/aws/aws-sdk-net/issues/200 (and 197), 3rd-party
+        // storage providers compatible with S3 should not be included
+        // in the test to use Signature V4
+        [TestMethod]
+        public void TestNonS3EndpointDetection()
+        {
+            string[] thirdPartyProviderUriExamples =
+            {
+                "http://storage.googleapis.com",
+                "http://bucket.storage.googleapis.com",
+                "http://s3.mycompany.com",
+                "http://storage.s3.company.com"
+            };
+
+            string[] s3UriExamples =
+            {
+                "http://s3.amazonaws.com",
+                "http://s3-external-1.amazonaws.com",
+                "http://s3-us-west-2.amazonaws.com",
+                "http://bucketname.s3-us-west-2.amazonaws.com",
+                "http://s3.eu-central-1.amazonaws.com",
+                "http://bucketname.s3.eu-central-1.amazonaws.com",
+                "http://s3.cn-north-1.amazonaws.com.cn",
+            };
+
+            foreach (var uri in thirdPartyProviderUriExamples)
+            {
+                Assert.IsFalse(AmazonS3Uri.IsAmazonS3Endpoint(uri));
+            }
+
+            foreach (var uri in s3UriExamples)
+            {
+                Assert.IsTrue(AmazonS3Uri.IsAmazonS3Endpoint(uri));
+            }
         }
     }
 }

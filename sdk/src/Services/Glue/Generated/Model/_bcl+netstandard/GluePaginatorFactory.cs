@@ -317,6 +317,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListMaterializedViewRefreshTaskRuns operation
+        ///</summary>
+        public IListMaterializedViewRefreshTaskRunsPaginator ListMaterializedViewRefreshTaskRuns(ListMaterializedViewRefreshTaskRunsRequest request) 
+        {
+            return new ListMaterializedViewRefreshTaskRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMLTransforms operation
         ///</summary>
         public IListMLTransformsPaginator ListMLTransforms(ListMLTransformsRequest request) 

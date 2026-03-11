@@ -39,6 +39,13 @@ namespace Amazon.Braket.Model
     {
 
         /// <summary>
+        /// Default constructor for DeviceOfflineException
+        /// message.
+        /// </summary>
+        public DeviceOfflineException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeviceOfflineException with the specified error
         /// message.
         /// </summary>

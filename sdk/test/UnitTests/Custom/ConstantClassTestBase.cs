@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.UnitTests.Generated.Customizations.ConstantClasses
         public void AssertConstantsMatch(IReflect constantClassType, string enumName)
         {
             var constantClassValues = new HashSet<string>(GetConstantClassValues(constantClassType));
-            var serviceModelEnumValues = new HashSet<string>(GetServiceModelEnumValues(enumName));
+            var serviceModelEnumValues = string.IsNullOrEmpty(_serviceModelUnderTest.Customizations.GetOverrideShapeName(enumName)) ? GetServiceModelEnumValues(enumName) : GetServiceModelEnumValues(_serviceModelUnderTest.Customizations.GetOverrideShapeName(enumName));
             Assert.IsTrue(constantClassValues.SetEquals(serviceModelEnumValues));
         }
     }

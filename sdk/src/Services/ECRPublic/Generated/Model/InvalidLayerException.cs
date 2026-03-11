@@ -40,6 +40,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLayerException
+        /// message.
+        /// </summary>
+        public InvalidLayerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLayerException with the specified error
         /// message.
         /// </summary>

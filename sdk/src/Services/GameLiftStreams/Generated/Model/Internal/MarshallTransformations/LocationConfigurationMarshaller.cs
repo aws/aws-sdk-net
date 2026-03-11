@@ -58,10 +58,22 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.LocationName);
             }
 
+            if(requestObject.IsSetMaximumCapacity())
+            {
+                context.Writer.WritePropertyName("MaximumCapacity");
+                context.Writer.WriteNumberValue(requestObject.MaximumCapacity.Value);
+            }
+
             if(requestObject.IsSetOnDemandCapacity())
             {
                 context.Writer.WritePropertyName("OnDemandCapacity");
                 context.Writer.WriteNumberValue(requestObject.OnDemandCapacity.Value);
+            }
+
+            if(requestObject.IsSetTargetIdleCapacity())
+            {
+                context.Writer.WritePropertyName("TargetIdleCapacity");
+                context.Writer.WriteNumberValue(requestObject.TargetIdleCapacity.Value);
             }
 
         }

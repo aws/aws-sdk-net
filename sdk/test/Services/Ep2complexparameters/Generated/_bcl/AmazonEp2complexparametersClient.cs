@@ -255,7 +255,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/EmptyStaticContextOperation">REST API Reference for EmptyStaticContextOperation Operation</seealso>
         public virtual EmptyStaticContextOperationResponse EmptyStaticContextOperation(EmptyStaticContextOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyStaticContextOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyStaticContextOperationResponseUnmarshaller.Instance;
 
@@ -275,7 +275,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/EmptyStaticContextOperation">REST API Reference for EmptyStaticContextOperation Operation</seealso>
         public virtual Task<EmptyStaticContextOperationResponse> EmptyStaticContextOperationAsync(EmptyStaticContextOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyStaticContextOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyStaticContextOperationResponseUnmarshaller.Instance;
             
@@ -296,7 +296,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfObjectsOperation">REST API Reference for ListOfObjectsOperation Operation</seealso>
         public virtual ListOfObjectsOperationResponse ListOfObjectsOperation(ListOfObjectsOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfObjectsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfObjectsOperationResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfObjectsOperation">REST API Reference for ListOfObjectsOperation Operation</seealso>
         public virtual Task<ListOfObjectsOperationResponse> ListOfObjectsOperationAsync(ListOfObjectsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfObjectsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfObjectsOperationResponseUnmarshaller.Instance;
             
@@ -337,7 +337,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
         public virtual ListOfUnionsOperationResponse ListOfUnionsOperation(ListOfUnionsOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfUnionsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfUnionsOperationResponseUnmarshaller.Instance;
 
@@ -357,7 +357,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
         public virtual Task<ListOfUnionsOperationResponse> ListOfUnionsOperationAsync(ListOfUnionsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfUnionsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfUnionsOperationResponseUnmarshaller.Instance;
             
@@ -378,7 +378,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/MapOperation">REST API Reference for MapOperation Operation</seealso>
         public virtual MapOperationResponse MapOperation(MapOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MapOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MapOperationResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/MapOperation">REST API Reference for MapOperation Operation</seealso>
         public virtual Task<MapOperationResponse> MapOperationAsync(MapOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MapOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MapOperationResponseUnmarshaller.Instance;
             
@@ -419,7 +419,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/NoBindingsOperation">REST API Reference for NoBindingsOperation Operation</seealso>
         public virtual NoBindingsOperationResponse NoBindingsOperation(NoBindingsOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoBindingsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoBindingsOperationResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/NoBindingsOperation">REST API Reference for NoBindingsOperation Operation</seealso>
         public virtual Task<NoBindingsOperationResponse> NoBindingsOperationAsync(NoBindingsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoBindingsOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoBindingsOperationResponseUnmarshaller.Instance;
             
@@ -460,7 +460,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/StaticContextOperation">REST API Reference for StaticContextOperation Operation</seealso>
         public virtual StaticContextOperationResponse StaticContextOperation(StaticContextOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticContextOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticContextOperationResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.Ep2complexparameters
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/StaticContextOperation">REST API Reference for StaticContextOperation Operation</seealso>
         public virtual Task<StaticContextOperationResponse> StaticContextOperationAsync(StaticContextOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticContextOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticContextOperationResponseUnmarshaller.Instance;
             

@@ -39,6 +39,13 @@ namespace Amazon.DataPipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for PipelineDeletedException
+        /// message.
+        /// </summary>
+        public PipelineDeletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PipelineDeletedException with the specified error
         /// message.
         /// </summary>

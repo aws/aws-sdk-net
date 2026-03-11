@@ -313,6 +313,10 @@ namespace Amazon.ServiceDiscovery
         /// </summary>
         public static readonly NamespaceFilterName NAME = new NamespaceFilterName("NAME");
         /// <summary>
+        /// Constant RESOURCE_OWNER for NamespaceFilterName
+        /// </summary>
+        public static readonly NamespaceFilterName RESOURCE_OWNER = new NamespaceFilterName("RESOURCE_OWNER");
+        /// <summary>
         /// Constant TYPE for NamespaceFilterName
         /// </summary>
         public static readonly NamespaceFilterName TYPE = new NamespaceFilterName("TYPE");
@@ -764,6 +768,10 @@ namespace Amazon.ServiceDiscovery
         /// Constant NAMESPACE_ID for ServiceFilterName
         /// </summary>
         public static readonly ServiceFilterName NAMESPACE_ID = new ServiceFilterName("NAMESPACE_ID");
+        /// <summary>
+        /// Constant RESOURCE_OWNER for ServiceFilterName
+        /// </summary>
+        public static readonly ServiceFilterName RESOURCE_OWNER = new ServiceFilterName("RESOURCE_OWNER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

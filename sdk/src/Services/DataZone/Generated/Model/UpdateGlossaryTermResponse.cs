@@ -42,6 +42,7 @@ namespace Amazon.DataZone.Model
         private string _shortDescription;
         private GlossaryTermStatus _status;
         private TermRelations _termRelations;
+        private List<string> _usageRestrictions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainId. 
@@ -193,6 +194,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetTermRelations()
         {
             return this._termRelations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageRestrictions. 
+        /// <para>
+        /// The usage restriction of a term within a restricted glossary.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> UsageRestrictions
+        {
+            get { return this._usageRestrictions; }
+            set { this._usageRestrictions = value; }
+        }
+
+        // Check to see if UsageRestrictions property is set
+        internal bool IsSetUsageRestrictions()
+        {
+            return this._usageRestrictions != null && (this._usageRestrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

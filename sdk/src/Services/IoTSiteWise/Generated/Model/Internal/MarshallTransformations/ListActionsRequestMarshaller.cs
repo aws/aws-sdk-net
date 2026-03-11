@@ -69,8 +69,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetResolveToResourceId())
+                request.Parameters.Add("resolveToResourceId", StringUtils.FromString(publicRequest.ResolveToResourceId));
+            
+            if (publicRequest.IsSetResolveToResourceType())
+                request.Parameters.Add("resolveToResourceType", StringUtils.FromString(publicRequest.ResolveToResourceType));
+            if (string.IsNullOrEmpty(publicRequest.TargetResourceId))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field TargetResourceId set");
+            
             if (publicRequest.IsSetTargetResourceId())
                 request.Parameters.Add("targetResourceId", StringUtils.FromString(publicRequest.TargetResourceId));
+            if (string.IsNullOrEmpty(publicRequest.TargetResourceType))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field TargetResourceType set");
             
             if (publicRequest.IsSetTargetResourceType())
                 request.Parameters.Add("targetResourceType", StringUtils.FromString(publicRequest.TargetResourceType));

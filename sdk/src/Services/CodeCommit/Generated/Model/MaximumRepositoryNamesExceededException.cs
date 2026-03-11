@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for MaximumRepositoryNamesExceededException
+        /// message.
+        /// </summary>
+        public MaximumRepositoryNamesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaximumRepositoryNamesExceededException with the specified error
         /// message.
         /// </summary>

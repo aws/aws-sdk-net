@@ -31,7 +31,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRunGroup operation.
-    /// Gets information about a workflow run group.
+    /// Gets information about a run group and returns its metadata.
     /// </summary>
     public partial class GetRunGroupRequest : AmazonOmicsRequest
     {

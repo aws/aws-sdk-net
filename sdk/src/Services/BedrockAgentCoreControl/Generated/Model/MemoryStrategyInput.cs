@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class MemoryStrategyInput
     {
         private CustomMemoryStrategyInput _customMemoryStrategy;
+        private EpisodicMemoryStrategyInput _episodicMemoryStrategy;
         private SemanticMemoryStrategyInput _semanticMemoryStrategy;
         private SummaryMemoryStrategyInput _summaryMemoryStrategy;
         private UserPreferenceMemoryStrategyInput _userPreferenceMemoryStrategy;
@@ -55,6 +56,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCustomMemoryStrategy()
         {
             return this._customMemoryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EpisodicMemoryStrategy. 
+        /// <para>
+        /// Input for creating an episodic memory strategy
+        /// </para>
+        /// </summary>
+        public EpisodicMemoryStrategyInput EpisodicMemoryStrategy
+        {
+            get { return this._episodicMemoryStrategy; }
+            set { this._episodicMemoryStrategy = value; }
+        }
+
+        // Check to see if EpisodicMemoryStrategy property is set
+        internal bool IsSetEpisodicMemoryStrategy()
+        {
+            return this._episodicMemoryStrategy != null;
         }
 
         /// <summary>

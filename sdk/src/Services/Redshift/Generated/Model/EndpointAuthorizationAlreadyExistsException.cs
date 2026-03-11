@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointAuthorizationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EndpointAuthorizationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointAuthorizationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -301,7 +301,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/GetMedicalScribeStream">REST API Reference for GetMedicalScribeStream Operation</seealso>
         public virtual GetMedicalScribeStreamResponse GetMedicalScribeStream(GetMedicalScribeStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalScribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalScribeStreamResponseUnmarshaller.Instance;
 
@@ -341,7 +341,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/GetMedicalScribeStream">REST API Reference for GetMedicalScribeStream Operation</seealso>
         public virtual Task<GetMedicalScribeStreamResponse> GetMedicalScribeStreamAsync(GetMedicalScribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalScribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalScribeStreamResponseUnmarshaller.Instance;
             

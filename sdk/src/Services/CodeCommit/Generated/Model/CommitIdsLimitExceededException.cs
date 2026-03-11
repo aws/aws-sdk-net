@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommitIdsLimitExceededException
+        /// message.
+        /// </summary>
+        public CommitIdsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommitIdsLimitExceededException with the specified error
         /// message.
         /// </summary>

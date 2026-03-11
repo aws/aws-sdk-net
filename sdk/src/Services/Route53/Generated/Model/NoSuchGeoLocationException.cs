@@ -41,6 +41,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchGeoLocationException
+        /// message.
+        /// </summary>
+        public NoSuchGeoLocationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchGeoLocationException with the specified error
         /// message.
         /// </summary>

@@ -52,6 +52,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.AutomaticFail.Value);
             }
 
+            if(requestObject.IsSetAutomaticFailConfiguration())
+            {
+                context.Writer.WritePropertyName("AutomaticFailConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomaticFailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutomaticFailConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");

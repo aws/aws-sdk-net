@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified subnet is not allowed for this operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SubnetNotAllowedException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SubnetNotAllowedException
+        /// message.
+        /// </summary>
+        public SubnetNotAllowedException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SubnetNotAllowedException with the specified error

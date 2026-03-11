@@ -27,6 +27,7 @@ repositories {
 
 dependencies {
     implementation(project(":smithy-dotnet-codegen"))
+    implementation(codegen.protocol.aws.tests)
     implementation(codegen.protocol.tests)
 }
 

@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for SchemaAlreadyPublishedException
+        /// message.
+        /// </summary>
+        public SchemaAlreadyPublishedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SchemaAlreadyPublishedException with the specified error
         /// message.
         /// </summary>

@@ -202,7 +202,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property ExecutablePath. 
         /// <para>
-        /// The path and file name of the executable file that launches the content for streaming.
+        /// The relative path and file name of the executable file that launches the content for
+        /// streaming.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -305,6 +306,10 @@ namespace Amazon.GameLiftStreams.Model
         ///  <ul> <li> 
         /// <para>
         /// Microsoft Windows Server 2022 Base (<c>Type=WINDOWS, Version=2022</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Proton 9.0-2 (<c>Type=PROTON, Version=20250516</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>

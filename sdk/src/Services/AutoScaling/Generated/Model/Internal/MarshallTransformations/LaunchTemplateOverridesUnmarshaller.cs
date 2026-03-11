@@ -55,6 +55,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ImageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("InstanceRequirements", targetDepth))
                     {
                         var unmarshaller = InstanceRequirementsUnmarshaller.Instance;

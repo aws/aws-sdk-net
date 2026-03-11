@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         private DefaultInstanceMetadataEndpointState _httpEndpoint;
         private int? _httpPutResponseHopLimit;
         private MetadataDefaultHttpTokensState _httpTokens;
+        private DefaultHttpTokensEnforcedState _httpTokensEnforced;
         private DefaultInstanceMetadataTagsState _instanceMetadataTags;
 
         /// <summary>
@@ -145,11 +146,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HttpTokensEnforced. 
+        /// <para>
+        /// Specifies whether to enforce the requirement of IMDSv2 on an instance at the time
+        /// of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<c>HttpTokens</c>)
+        /// is set to <c>required</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce
+        /// IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DefaultHttpTokensEnforcedState HttpTokensEnforced
+        {
+            get { return this._httpTokensEnforced; }
+            set { this._httpTokensEnforced = value; }
+        }
+
+        // Check to see if HttpTokensEnforced property is set
+        internal bool IsSetHttpTokensEnforced()
+        {
+            return this._httpTokensEnforced != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceMetadataTags. 
         /// <para>
         /// Enables or disables access to an instance's tags from the instance metadata. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-        /// with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View
+        /// tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public DefaultInstanceMetadataTagsState InstanceMetadataTags

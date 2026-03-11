@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeployedStateFilterException
+        /// message.
+        /// </summary>
+        public InvalidDeployedStateFilterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeployedStateFilterException with the specified error
         /// message.
         /// </summary>

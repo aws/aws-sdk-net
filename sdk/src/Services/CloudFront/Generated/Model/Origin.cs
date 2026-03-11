@@ -89,6 +89,7 @@ namespace Amazon.CloudFront.Model
         private string _originAccessControlId;
         private string _originPath;
         private OriginShield _originShield;
+        private int? _responseCompletionTimeout;
         private S3OriginConfig _s3OriginConfig;
         private VpcOriginConfig _vpcOriginConfig;
 
@@ -309,6 +310,37 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginShield()
         {
             return this._originShield != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseCompletionTimeout. 
+        /// <para>
+        /// The time (in seconds) that a request from CloudFront to the origin can stay open and
+        /// wait for a response. If the complete response isn't received from the origin by this
+        /// time, CloudFront ends the connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value for <c>ResponseCompletionTimeout</c> must be equal to or greater than the
+        /// value for <c>OriginReadTimeout</c>. If you don't set a value for <c>ResponseCompletionTimeout</c>,
+        /// CloudFront doesn't enforce a maximum value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#response-completion-timeout">Response
+        /// completion timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? ResponseCompletionTimeout
+        {
+            get { return this._responseCompletionTimeout; }
+            set { this._responseCompletionTimeout = value; }
+        }
+
+        // Check to see if ResponseCompletionTimeout property is set
+        internal bool IsSetResponseCompletionTimeout()
+        {
+            return this._responseCompletionTimeout.HasValue; 
         }
 
         /// <summary>

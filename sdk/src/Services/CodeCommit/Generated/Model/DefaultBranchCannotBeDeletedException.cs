@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for DefaultBranchCannotBeDeletedException
+        /// message.
+        /// </summary>
+        public DefaultBranchCannotBeDeletedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DefaultBranchCannotBeDeletedException with the specified error
         /// message.
         /// </summary>

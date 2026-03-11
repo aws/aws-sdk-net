@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListParts operation
     /// </summary>  
-    public class ListPartsResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class ListPartsResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -54,6 +54,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -159,32 +160,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
-  
 
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
-        /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
-            errorResponse.InnerException = innerException;
-            errorResponse.StatusCode = statusCode;
-
-            var responseBodyBytes = context.GetResponseBodyBytes();
-
-            using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
-            {
-            }
-            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
-        }
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListPartsResponse response);
 
         private static ListPartsResponseUnmarshaller _instance = new ListPartsResponseUnmarshaller();        
 

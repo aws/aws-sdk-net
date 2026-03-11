@@ -44,7 +44,6 @@ namespace Amazon.MediaLive.Model
         /// all the channels in the ancillary captions), leave this field blank because MediaLive
         /// ignores the field.
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
         public int? SourceAncillaryChannelNumber
         {
             get { return this._sourceAncillaryChannelNumber; }

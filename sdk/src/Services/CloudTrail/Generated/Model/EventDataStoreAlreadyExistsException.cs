@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EventDataStoreAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreAlreadyExistsException with the specified error
         /// message.
         /// </summary>

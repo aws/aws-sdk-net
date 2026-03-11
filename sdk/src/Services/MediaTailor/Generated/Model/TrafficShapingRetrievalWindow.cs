@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The configuration that tells Elemental MediaTailor how to spread out requests to the
-    /// ad decision server (ADS). Instead of sending ADS requests for all sessions at the
-    /// same time, MediaTailor spreads the requests across the amount of time specified in
-    /// the retrieval window.
+    /// The configuration that tells Elemental MediaTailor how many seconds to spread out
+    /// requests to the ad decision server (ADS). Instead of sending ADS requests for all
+    /// sessions at the same time, MediaTailor spreads the requests across the amount of time
+    /// specified in the retrieval window.
     /// </summary>
     public partial class TrafficShapingRetrievalWindow
     {

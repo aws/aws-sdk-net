@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNotDisabledException
+        /// message.
+        /// </summary>
+        public ResourceNotDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotDisabledException with the specified error
         /// message.
         /// </summary>

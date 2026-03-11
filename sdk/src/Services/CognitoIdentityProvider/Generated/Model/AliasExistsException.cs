@@ -43,6 +43,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for AliasExistsException
+        /// message.
+        /// </summary>
+        public AliasExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AliasExistsException with the specified error
         /// message.
         /// </summary>

@@ -22,6 +22,7 @@ using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Credentials;
+using System.Collections.Generic;
 
 #if NETSTANDARD
 using System.Net.Http;
@@ -33,6 +34,7 @@ namespace Amazon.Runtime
     /// This interface is the read only access to the ClientConfig object used when setting up service clients. Once service clients
     /// are initiated the config object should not be changed to avoid issues with using a service client in a multi threaded environment.
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public partial interface IClientConfig
     {
         /// <summary>
@@ -65,15 +67,15 @@ namespace Amazon.Runtime
         /// <summary> 
         /// <para> 
         /// The AWS credentials used for authenticating calls to AWS for services using AWS signature version 4 (SigV4). 
-        /// SigV4 is the most common authentication mechanism used for AWS service calls. If AWSCredentials are used as a 
-        /// parameter to the service client's constructor the value will be set on this property. 
+        /// SigV4 is the most common authentication mechanism used for AWS service calls. 
         /// </para> 
         /// <para> 
         /// Common instances of AWSCredentials are <see cref="Amazon.Runtime.BasicAWSCredentials" /> for static credentials and 
         /// <see cref="Amazon.Runtime.AssumeRoleAWSCredentials" /> for getting credentials by assuming an IAM role. 
         /// </para> 
         /// <para> 
-        /// If null, the SDK will determine which credentials to use at request time using information from the source service model. 
+        /// If null, the SDK will determine which credentials to use at request time using information from the source service model.
+        /// Credentials passed as a parameter to the service client's constructor take precedence over these default credentials.
         /// </para> 
         /// </summary>
         AWSCredentials DefaultAWSCredentials { get; }
@@ -164,6 +166,37 @@ namespace Amazon.Runtime
         string AuthenticationServiceName { get; }
 
         /// <summary>
+        /// List of preferred authentication schemes in priority order. 
+        /// When a service supports multiple authentication schemes, the SDK attempts to use schemes from this list in 
+        /// the specified order, falling back to default behavior if none of the preferred schemes are available.
+        /// 
+        /// <para />
+        /// 
+        /// Valid values are a list of one or more of the following:
+        /// <list type="bullet">
+        /// <item><b>sigv4</b> - Signature Version 4 (fastest performance, single-region)</item>
+        /// <item><b>sigv4a</b> - Signature Version 4a (enhanced availability, cross-region support, has a slower signing performance than SigV4)</item>
+        /// <item><b>httpBearerAuth</b> - HTTP Bearer token authentication</item>
+        /// </list>
+        /// </summary>
+        /// <remarks>
+        /// Space and tab characters in scheme names are ignored.
+        /// </remarks>
+        List<string> AuthSchemePreference { get; }
+
+        /// <summary>
+        /// List of AWS regions for SigV4a multi-region signing.
+        /// This is used as the default region set for the request if SigV4a is the selected authentication scheme.
+        /// </summary>
+        /// <remarks>
+        /// Space and tab characters in region names are ignored.
+        /// <para />
+        /// For backwards compability reasons, the signers in the SDK will attempt to use
+        /// the <see cref="AuthenticationRegion"/> property (if set) over this region set.
+        /// </remarks>
+        List<string> SigV4aSigningRegionSet { get; }
+
+        /// <summary>
         /// Gets the UserAgent property.
         /// </summary>
         string UserAgent { get; }
@@ -211,8 +244,12 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
         /// make for a single SDK operation invocation before giving up. For
-        /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
-        /// addition to the values returned that are dependent on the RetryMode, the
+        /// RetryMode values of "Standard" or "Adaptive" this flag will return 2.
+        /// <para />
+        /// <b>Note</b>: For the <c>DynamoDBv2</c> and <c>DynamoDBStreams</c> service packages, the default 
+        /// value is 10.
+        /// <para />
+        /// In addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
         /// variable, max_attempts in the shared configuration file, or by setting a
         /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts
@@ -227,6 +264,14 @@ namespace Amazon.Runtime
         /// Determines if MaxErrorRetry has been manually set.
         /// </summary>
         bool IsMaxErrorRetrySet { get; }
+
+        /// <summary>
+        /// Returns the maximum number of retries for stale connection errors (e.g., "Broken pipe", 
+        /// "Connection reset") that can occur when the HTTP client reuses a pooled connection that 
+        /// the server has closed. These retries don't count against the MaxErrorRetry limit.
+        /// Default value is 3.
+        /// </summary>
+        int MaxStaleConnectionRetries { get; }
 
         /// <summary>
         /// Gets the interval at which progress update events are raised

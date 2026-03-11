@@ -94,6 +94,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.CustomDBEngineVersionManifest = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DatabaseInstallationFiles/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DatabaseInstallationFiles == null)
+                        {
+                            response.DatabaseInstallationFiles = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.DatabaseInstallationFiles.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseInstallationFilesS3BucketName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -163,6 +174,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExportableLogTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("FailureReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.FailureReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Image", targetDepth))
@@ -370,6 +387,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return CustomDBEngineVersionAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CustomDBEngineVersionNotFoundFault"))
+                {
+                    return CustomDBEngineVersionNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CustomDBEngineVersionQuotaExceededFault"))
                 {
                     return CustomDBEngineVersionQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -377,6 +398,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("Ec2ImagePropertiesNotSupportedFault"))
                 {
                     return Ec2ImagePropertiesNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCustomDBEngineVersionStateFault"))
+                {
+                    return InvalidCustomDBEngineVersionStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
                 {

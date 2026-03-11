@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for KeySigningKeyWithActiveStatusNotFoundException
+        /// message.
+        /// </summary>
+        public KeySigningKeyWithActiveStatusNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeySigningKeyWithActiveStatusNotFoundException with the specified error
         /// message.
         /// </summary>

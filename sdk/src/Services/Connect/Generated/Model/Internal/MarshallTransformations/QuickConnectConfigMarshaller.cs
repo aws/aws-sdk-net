@@ -46,6 +46,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFlowConfig())
+            {
+                context.Writer.WritePropertyName("FlowConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlowQuickConnectConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.FlowConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPhoneConfig())
             {
                 context.Writer.WritePropertyName("PhoneConfig");

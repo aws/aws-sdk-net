@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLambdaTransformationConfiguration Object
     /// </summary>  
-    public class ObjectLambdaTransformationConfigurationUnmarshaller : IXmlUnmarshaller<ObjectLambdaTransformationConfiguration, XmlUnmarshallerContext>
+    public partial class ObjectLambdaTransformationConfigurationUnmarshaller : IXmlUnmarshaller<ObjectLambdaTransformationConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ContentTransformation = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ObjectLambdaTransformationConfiguration unmarshalledObject, int targetDepth);
+
         private static ObjectLambdaTransformationConfigurationUnmarshaller _instance = new ObjectLambdaTransformationConfigurationUnmarshaller();        
 
         /// <summary>

@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlTimestampsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlTimestamps";
 
@@ -87,6 +88,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -98,8 +100,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static XmlTimestampsRequestMarshaller _instance = new XmlTimestampsRequestMarshaller();        
@@ -121,5 +121,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlTimestampsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlTimestampsRequest publicRequest);
     }    
 }

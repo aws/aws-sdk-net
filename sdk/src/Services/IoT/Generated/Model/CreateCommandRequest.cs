@@ -42,6 +42,8 @@ namespace Amazon.IoT.Model
         private List<CommandParameter> _mandatoryParameters = AWSConfigs.InitializeCollections ? new List<CommandParameter>() : null;
         private CommandNamespace _awsNamespace;
         private CommandPayload _payload;
+        private string _payloadTemplate;
+        private CommandPreprocessor _preprocessor;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -107,10 +109,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MandatoryParameters. 
         /// <para>
-        /// A list of parameters that are required by the <c>StartCommandExecution</c> API. These
-        /// parameters need to be specified only when using the <c>AWS-IoT-FleetWise</c> namespace.
-        /// You can either specify them here or when running the command using the <c>StartCommandExecution</c>
-        /// API.
+        /// A list of parameters that are used by <c>StartCommandExecution</c> API for execution
+        /// payload generation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -153,8 +153,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The payload object for the command. You must specify this information when using the
-        /// <c>AWS-IoT</c> namespace.
+        /// The payload object for the static command.
         /// </para>
         ///  
         /// <para>
@@ -177,11 +176,62 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PayloadTemplate. 
+        /// <para>
+        /// The payload template for the dynamic command.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for dynamic commands where the command execution placeholders
+        /// are supplied either from <c>mandatoryParameters</c> or when <c>StartCommandExecution</c>
+        /// is invoked.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public string PayloadTemplate
+        {
+            get { return this._payloadTemplate; }
+            set { this._payloadTemplate = value; }
+        }
+
+        // Check to see if PayloadTemplate property is set
+        internal bool IsSetPayloadTemplate()
+        {
+            return this._payloadTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preprocessor. 
+        /// <para>
+        /// Configuration that determines how <c>payloadTemplate</c> is processed to generate
+        /// command execution payload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is required for dynamic commands, along with <c>payloadTemplate</c>,
+        /// and <c>mandatoryParameters</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CommandPreprocessor Preprocessor
+        {
+            get { return this._preprocessor; }
+            set { this._preprocessor = value; }
+        }
+
+        // Check to see if Preprocessor property is set
+        internal bool IsSetPreprocessor()
+        {
+            return this._preprocessor != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The IAM role that you must provide when using the <c>AWS-IoT-FleetWise</c> namespace.
         /// The role grants IoT Device Management the permission to access IoT FleetWise resources
-        /// for generating the payload for the command. This field is not required when you use
+        /// for generating the payload for the command. This field is not supported when you use
         /// the <c>AWS-IoT</c> namespace.
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A structure that contains the configuration of a shared link to an Amazon QuickSight
+    /// A structure that contains the configuration of a shared link to an Amazon Quick Sight
     /// dashboard.
     /// </summary>
     public partial class AssetBundleResourceLinkSharingConfiguration

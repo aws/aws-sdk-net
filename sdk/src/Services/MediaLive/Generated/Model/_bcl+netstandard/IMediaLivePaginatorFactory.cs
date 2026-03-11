@@ -38,6 +38,16 @@ namespace Amazon.MediaLive.Model
         IDescribeSchedulePaginator DescribeSchedule(DescribeScheduleRequest request);
 
         /// <summary>
+        /// Paginator for ListAlerts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAlertsPaginator ListAlerts(ListAlertsRequest request);
+
+        /// <summary>
         /// Paginator for ListChannelPlacementGroups operation
         ///</summary>
         [AWSPaginator(
@@ -76,6 +86,16 @@ namespace Amazon.MediaLive.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusterAlerts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListClusterAlertsPaginator ListClusterAlerts(ListClusterAlertsRequest request);
 
         /// <summary>
         /// Paginator for ListClusters operation
@@ -146,6 +166,16 @@ namespace Amazon.MediaLive.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListInputSecurityGroupsPaginator ListInputSecurityGroups(ListInputSecurityGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMultiplexAlerts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMultiplexAlertsPaginator ListMultiplexAlerts(ListMultiplexAlertsRequest request);
 
         /// <summary>
         /// Paginator for ListMultiplexes operation

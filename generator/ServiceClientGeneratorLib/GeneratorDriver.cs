@@ -204,19 +204,15 @@ namespace ServiceClientGenerator
             var enumFileName = this.Configuration.IsChildConfig ?
                 string.Format("ServiceEnumerations.{0}.cs", Configuration.ClassName) : "ServiceEnumerations.cs";
 
-            // Any enumerations for the service
-            // skip s3 until we're at the end of s3 client generation
-            if (this.Configuration.ServiceId != "S3")
-            {
-                this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-            }
+            this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
 
             // Any paginators for the service
-            // skip paginators for s3 until we're at the end of s3 client generation
-            if (Configuration.ServiceModel.HasPaginators && Configuration.ServiceId != "S3")
+            if (Configuration.ServiceModel.HasPaginators)
             {
                 foreach (var operation in Configuration.ServiceModel.Operations)
                 {
+                    if (operation.OperationModifiers != null && operation.OperationModifiers.ExcludePaginators)
+                        continue;
                     GeneratePaginator(operation);
                 }
                 ExecuteGenerator(new ServicePaginatorFactoryInterface(), $"I{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
@@ -235,12 +231,14 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
-            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.S3AllowListOperations : Configuration.ServiceModel.Operations;
+            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.Operations.Where(x => !Configuration.ServiceModel.S3ExcludeListOperations.Contains(x.Name)) : Configuration.ServiceModel.Operations;
 
             foreach (var operation in operations)
             {
-                GenerateRequest(operation);
-                GenerateResponse(operation);
+                if (!this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Request"))
+                    GenerateRequest(operation);
+                if (!this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    GenerateResponse(operation);
                 GenerateRequestMarshaller(operation);
                 GenerateResponseUnmarshaller(operation);
                 GenerateEndpointDiscoveryMarshaller(operation);
@@ -286,10 +284,11 @@ namespace ServiceClientGenerator
         /// <param name="operation">The operation object which contains info about what the request needs to contain for the operation</param>
         void GenerateRequest(Operation operation)
         {
+            var baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(operation.Name + "Request");
             var requestGenerator = new StructureGenerator
             {
                 ClassName = operation.Name + "Request",
-                BaseClass = this.Configuration.ServiceId != "S3" ? string.Format("Amazon{0}Request", Configuration.ClassName) : "AmazonWebServiceRequest",
+                BaseClass = baseClassString ?? (this.Configuration.ServiceId != "S3" ? string.Format("Amazon{0}Request", Configuration.ClassName) : "AmazonWebServiceRequest"),
                 StructureType = StructureType.Request,
                 Operation = operation
             };
@@ -459,10 +458,19 @@ namespace ServiceClientGenerator
                 }
                 else
                 {
+                    string baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(operation.Name + "Response");
+                    // S3 response streaming classes all inherit this StreamResponse class. This logic ensures that if a new streaming response operation is added
+                    // we don't have to do an "InheritBaseClass" customization and the operation will be generated successfully.
+                    if (this.Configuration.ServiceId == "S3")
+                    {
+                        if (operation.ResponsePayloadMember != null && operation.ResponsePayloadMember.IsStreaming)
+                            baseClassString = "StreamResponse";
+
+                    }
                     var resultGenerator = new StructureGenerator
                     {
                         ClassName = operation.Name + "Response",
-                        BaseClass = "AmazonWebServiceResponse",
+                        BaseClass = baseClassString ?? "AmazonWebServiceResponse",
                         IsWrapped = operation.IsResponseWrapped,
                         Operation = operation,
                         StructureType = StructureType.Response
@@ -559,6 +567,9 @@ namespace ServiceClientGenerator
             bool hasRequest = operation.RequestStructure != null;
             bool normalizeMarshallers;
 
+            if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Request"))
+                return;
+
             BaseRequestMarshaller generator;
             GetRequestMarshaller(out generator, out normalizeMarshallers);
             generator.Operation = operation;
@@ -625,6 +636,8 @@ namespace ServiceClientGenerator
         void GenerateResponseUnmarshaller(Operation operation)
         {
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    return;
                 var baseException = string.Format("Amazon{0}Exception",
                         this.Configuration.IsChildConfig ?
                         this.Configuration.ParentConfig.ClassName : this.Configuration.ClassName);
@@ -665,6 +678,8 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
+                    if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
+                        continue;
                     // Skip structure unmarshallers that have already been generated for the parent model
                     if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                         continue;
@@ -705,6 +720,8 @@ namespace ServiceClientGenerator
             lookup.SearchForNestedStructures(shape);
             foreach (var nestedStructure in lookup.NestedStructures)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
+                    continue;
                 // Skip structure unmarshallers that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                     continue;
@@ -739,6 +756,8 @@ namespace ServiceClientGenerator
         {
             foreach (var structure in structures)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(structure))
+                    continue;
                 var shape = this.Configuration.ServiceModel.FindShape(structure);
                 GenerateUnmarshaller(shape);
             }
@@ -920,38 +939,6 @@ namespace ServiceClientGenerator
             updater.Execute();
         }
 
-        public static void UpdateNuGetPackagesInReadme(GenerationManifest manifest, GeneratorOptions options)
-        {
-            var nugetPackages = new Dictionary<string, string>();
-            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
-            {
-                if (service.ParentConfig != null || service.IsTestService)
-                    continue;
-
-                if (string.IsNullOrEmpty(service.Synopsis))
-                    throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.ClassName));
-                var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
-                nugetPackages[assemblyName] = service.Synopsis;
-            }
-
-            NuGetPackageReadmeSection generator = new NuGetPackageReadmeSection();
-            var session = new Dictionary<string, object> { { "NugetPackages", nugetPackages } };
-            generator.Session = session;
-            var nugetPackagesText = generator.TransformText();
-
-            var readmePath = Utils.PathCombineAlt(options.SdkRootFolder, "..", "README.md");
-            var originalContent = File.ReadAllText(readmePath);
-
-            int startPos = originalContent.IndexOf('\n', originalContent.IndexOf("### NuGet Packages")) + 1;
-            int endPos = originalContent.IndexOf("### Code Generator");
-
-            var newContent = originalContent.Substring(0, startPos);
-            newContent += nugetPackagesText + "\r\n";
-            newContent += originalContent.Substring(endPos);
-
-            File.WriteAllText(readmePath, newContent);
-        }
-
         /// <summary>
         /// Provides a way to generate the necessary attributes and marshallers/unmarshallers for nested structures to work
         /// </summary>
@@ -1010,6 +997,9 @@ namespace ServiceClientGenerator
 
             foreach (var definition in this._structuresToProcess)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(definition.Name))
+                    continue;
+
                 // Skip structures that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, definition.Name))
                     continue;
@@ -1027,6 +1017,7 @@ namespace ServiceClientGenerator
                 }
                 if (!this._processedStructures.Contains(definition.Name))
                 {
+                    var baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(definition.Name);
                     // if the shape had a substitution, we can skip generation
                     if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(definition.Name))
                         continue;
@@ -1043,6 +1034,7 @@ namespace ServiceClientGenerator
                         Structure = definition,
                         Config = this.Configuration,
                         Operation = operation,
+                        BaseClass = baseClassString ?? ""
                     };
                     //since eventstream operations can attach exceptions to the request or response objects instead of the "error"
                     //list on the operation, we must account for the case where an exception is included as a member of the response
@@ -1117,21 +1109,23 @@ namespace ServiceClientGenerator
             // as a dependency
             var awsDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
 
-            if (Configuration.ServiceDependencies != null)
+            if (Configuration.SdkDependencies != null)
             {
-                var dependencies = Configuration.ServiceDependencies;
+                var dependencies = Configuration.SdkDependencies;
                 foreach (var kvp in dependencies)
                 {
-                    var service = kvp.Key;
+                    var sdkDependency = kvp.Key;
                     var version = kvp.Value;
-                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + service, StringComparison.InvariantCultureIgnoreCase));
+                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + sdkDependency, StringComparison.InvariantCultureIgnoreCase));
+                    var dependentExtension = GenerationManifest.ExtensionConfigurations.FirstOrDefault(x => string.Equals(x.Name, sdkDependency, StringComparison.InvariantCultureIgnoreCase));
 
                     string previewFlag;
-                    if (dependentService != null && dependentService.InPreview)
+                    if ((dependentService != null && dependentService.InPreview) 
+                        || (dependentExtension != null && dependentExtension.InPreview))
                     {
                         previewFlag = GenerationManifest.PreviewLabel;
                     }
-                    else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
+                    else if (string.Equals(sdkDependency, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
                         previewFlag = GenerationManifest.PreviewLabel;
                     }
@@ -1143,10 +1137,9 @@ namespace ServiceClientGenerator
                     var verTokens = version.Split('.');
                     var versionRange = string.Format("[{0}{2}, {1}.0{2})", version, int.Parse(verTokens[0]) + 1, previewFlag);
 
-                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), versionRange);
+                    awsDependencies.Add(string.Format("AWSSDK.{0}", sdkDependency), versionRange);
                 }
             }
-
 
             var nugetAssemblyName = Configuration.AssemblyTitle;
             var nugetAssemblyTitle = Configuration.AssemblyTitle.Replace("AWSSDK.", "AWSSDK - ");
@@ -1378,7 +1371,7 @@ namespace ServiceClientGenerator
         /// Sets the marshaller of the generator based on the service type
         /// </summary>
         /// <param name="marshaller">The marshaller to be set</param>
-        /// <param name="normalizeMarshallers">If the service type is a type of json then normalizeMarshallers is set to true, false otherwise</param>
+        /// <param name="normalizeMarshallers">If the service type is using structure marshallers then normalizeMarshallers is set to true, false otherwise</param>
         void GetRequestMarshaller(out BaseRequestMarshaller marshaller, out bool normalizeMarshallers)
         {
             normalizeMarshallers = false;
@@ -1387,6 +1380,10 @@ namespace ServiceClientGenerator
                 case ServiceType.Rest_Json:
                 case ServiceType.Json:
                     marshaller = new JsonRPCRequestMarshaller();
+                    normalizeMarshallers = true;
+                    break;
+                case ServiceType.Cbor:
+                    marshaller = new CborRequestMarshaller();
                     normalizeMarshallers = true;
                     break;
                 case ServiceType.Query:
@@ -1411,6 +1408,8 @@ namespace ServiceClientGenerator
                 case ServiceType.Rest_Json:
                 case ServiceType.Json:
                     return new JsonRPCStructureMarshaller();
+                case ServiceType.Cbor:
+                    return new CborStructureMarshaller();
                 default:
                     throw new Exception("No structure marshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1432,6 +1431,8 @@ namespace ServiceClientGenerator
                     return new AWSQueryResponseUnmarshaller();
                 case ServiceType.Rest_Xml:
                     return new RestXmlResponseUnmarshaller();
+                case ServiceType.Cbor:
+                    return new CborResponseUnmarshaller();
                 default:
                     throw new Exception("No response unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1452,6 +1453,8 @@ namespace ServiceClientGenerator
                     return new AWSQueryStructureUnmarshaller();
                 case ServiceType.Rest_Xml:
                     return new RestXmlStructureUnmarshaller();
+                case ServiceType.Cbor:
+                    return new CborStructureUnmarshaller();
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }
@@ -1471,6 +1474,8 @@ namespace ServiceClientGenerator
                     return new AWSQueryExceptionUnmarshaller();
                 case ServiceType.Rest_Xml:
                     return new RestXmlExceptionUnmarshaller();
+                case ServiceType.Cbor:
+                    return new CborExceptionUnmarshaller();
                 default:
                     throw new Exception("No structure unmarshaller for service type: " + this.Configuration.ServiceModel.Type);
             }

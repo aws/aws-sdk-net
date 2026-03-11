@@ -44,6 +44,13 @@ namespace Amazon.ECR.Model
         private string _uploadId;
 
         /// <summary>
+        /// Default constructor for InvalidLayerPartException
+        /// message.
+        /// </summary>
+        public InvalidLayerPartException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLayerPartException with the specified error
         /// message.
         /// </summary>

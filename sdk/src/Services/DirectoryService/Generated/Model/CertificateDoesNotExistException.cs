@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateDoesNotExistException
+        /// message.
+        /// </summary>
+        public CertificateDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateDoesNotExistException with the specified error
         /// message.
         /// </summary>

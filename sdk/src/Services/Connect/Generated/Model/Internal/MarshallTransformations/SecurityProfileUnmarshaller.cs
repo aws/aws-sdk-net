@@ -80,6 +80,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("GranularAccessControlConfiguration", targetDepth))
+                {
+                    var unmarshaller = GranularAccessControlConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GranularAccessControlConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("HierarchyRestrictedResources", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

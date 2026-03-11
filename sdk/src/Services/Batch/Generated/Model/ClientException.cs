@@ -41,6 +41,13 @@ namespace Amazon.Batch.Model
     {
 
         /// <summary>
+        /// Default constructor for ClientException
+        /// message.
+        /// </summary>
+        public ClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClientException with the specified error
         /// message.
         /// </summary>

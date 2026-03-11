@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for OriginAccessControlInUseException
+        /// message.
+        /// </summary>
+        public OriginAccessControlInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OriginAccessControlInUseException with the specified error
         /// message.
         /// </summary>

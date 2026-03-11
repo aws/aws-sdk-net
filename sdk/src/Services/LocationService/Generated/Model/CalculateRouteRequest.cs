@@ -31,11 +31,43 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CalculateRoute operation.
-    /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to <a href="/location/latest/APIReference/API_CalculateRoutes.html"> <c>CalculateRoutes</c>
+    /// </a> or <a href="/location/latest/APIReference/API_CalculateIsolines.html"> <c>CalculateIsolines</c>
+    /// </a> unless you require Grab data.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>CalculateRoute</c> is part of a previous Amazon Location Service Routes API (version
+    /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+    /// 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version 2 <c>CalculateRoutes</c> operation gives better results for point-to-point
+    /// routing, while the version 2 <c>CalculateIsolines</c> operation adds support for calculating
+    /// service areas and travel time envelopes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+    /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+    /// under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+    /// using API version 1 when using Grab.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
     /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
     /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
     /// a route calculator resource</a>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// By default, a request that doesn't specify a departure time uses the best time of
@@ -47,7 +79,7 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
+    ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">Specifying
     /// a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>. This calculates
     /// a route based on predictive traffic data at the given time. 
     /// </para>
@@ -58,7 +90,7 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+    ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying
     /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
     /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
     /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
@@ -69,6 +101,7 @@ namespace Amazon.LocationService.Model
     /// the start and destination must be within 40km.
     /// </para>
     ///  </note> </li> </ul>
+    /// </para>
     /// </summary>
     public partial class CalculateRouteRequest : AmazonLocationServiceRequest
     {
@@ -100,6 +133,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime? ArrivalTime
         {
             get { return this._arrivalTime; }
@@ -171,6 +205,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? DepartNow
         {
             get { return this._departNow; }
@@ -195,7 +230,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
+        /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. If Esri is the provider for your route calculator,
         /// specifying a route that is longer than 400 km returns a <c>400 RoutesValidationException</c>
         /// error.
@@ -238,6 +273,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime? DepartureTime
         {
             get { return this._departureTime; }
@@ -262,7 +298,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
+        /// If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. 
         /// </para>
         ///  </note> 
@@ -325,6 +361,7 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? IncludeLegGeometry
         {
             get { return this._includeLegGeometry; }
@@ -340,7 +377,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>
@@ -394,7 +431,7 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// For more details on the using Grab for routing, including areas of coverage, see <a
-        /// href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+        /// href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
         /// in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
         ///  </note> 
@@ -466,7 +503,7 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify a waypoint position that's not located on a road, Amazon Location <a
-        /// href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
+        /// href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. 
         /// </para>
         ///  

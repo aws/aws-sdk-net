@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _bucket;
         private string _prefix;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -64,7 +65,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// keys to organize the data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Prefix
         {
             get { return this._prefix; }
@@ -75,6 +76,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPrefix()
         {
             return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The version ID of the Amazon Amazon S3 object. If not specified, the latest version
+        /// of the object is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=1024)]
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
     }

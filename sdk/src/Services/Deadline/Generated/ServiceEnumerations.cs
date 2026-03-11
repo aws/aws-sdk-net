@@ -339,6 +339,14 @@ namespace Amazon.Deadline
     {
 
         /// <summary>
+        /// Constant ALL_NOT_EQUALS for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator ALL_NOT_EQUALS = new ComparisonOperator("ALL_NOT_EQUALS");
+        /// <summary>
+        /// Constant ANY_EQUALS for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator ANY_EQUALS = new ComparisonOperator("ANY_EQUALS");
+        /// <summary>
         /// Constant EQUAL for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator EQUAL = new ComparisonOperator("EQUAL");
@@ -840,6 +848,10 @@ namespace Amazon.Deadline
         /// Constant Spot for Ec2MarketType
         /// </summary>
         public static readonly Ec2MarketType Spot = new Ec2MarketType("spot");
+        /// <summary>
+        /// Constant WaitAndSave for Ec2MarketType
+        /// </summary>
+        public static readonly Ec2MarketType WaitAndSave = new Ec2MarketType("wait-and-save");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -994,6 +1006,10 @@ namespace Amazon.Deadline
         /// Constant CREATE_IN_PROGRESS for FleetStatus
         /// </summary>
         public static readonly FleetStatus CREATE_IN_PROGRESS = new FleetStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant SUSPENDED for FleetStatus
+        /// </summary>
+        public static readonly FleetStatus SUSPENDED = new FleetStatus("SUSPENDED");
         /// <summary>
         /// Constant UPDATE_FAILED for FleetStatus
         /// </summary>
@@ -1886,6 +1902,56 @@ namespace Amazon.Deadline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueueStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RangeConstraint.
+    /// </summary>
+    public class RangeConstraint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTIGUOUS for RangeConstraint
+        /// </summary>
+        public static readonly RangeConstraint CONTIGUOUS = new RangeConstraint("CONTIGUOUS");
+        /// <summary>
+        /// Constant NONCONTIGUOUS for RangeConstraint
+        /// </summary>
+        public static readonly RangeConstraint NONCONTIGUOUS = new RangeConstraint("NONCONTIGUOUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RangeConstraint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RangeConstraint FindValue(string value)
+        {
+            return FindValue<RangeConstraint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RangeConstraint(string value)
         {
             return FindValue(value);
         }

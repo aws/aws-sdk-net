@@ -46,6 +46,17 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCostCategories())
+            {
+                context.Writer.WritePropertyName("costCategories");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CostCategoryValuesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CostCategories, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("dimensions");
@@ -64,6 +75,17 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
 
                 var marshaller = TagValuesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tags, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTimeRange())
+            {
+                context.Writer.WritePropertyName("timeRange");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeRange, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -64,6 +64,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(publicRequest.CNAMEPrefix));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CheckDNSAvailabilityRequestMarshaller _instance = new CheckDNSAvailabilityRequestMarshaller();        

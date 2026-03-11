@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteKeyValueStore operation
     /// </summary>  
-    public class DeleteKeyValueStoreResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteKeyValueStoreResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteKeyValueStoreResponse response = new DeleteKeyValueStoreResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -96,6 +97,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteKeyValueStoreResponse response);
 
         private static DeleteKeyValueStoreResponseUnmarshaller _instance = new DeleteKeyValueStoreResponseUnmarshaller();        
 

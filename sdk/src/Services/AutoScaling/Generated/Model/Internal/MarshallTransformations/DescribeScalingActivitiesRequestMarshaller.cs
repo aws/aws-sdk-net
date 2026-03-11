@@ -77,6 +77,37 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetFilters())
+                {
+                    if (publicRequest.Filters.Count == 0)
+                        request.Parameters.Add("Filters", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Filters)
+                         {
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                            if(publicRequestlistValue.IsSetValues())
+                            {
+                                if (publicRequestlistValue.Values.Count == 0)
+                                    request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                                     {
+                                         request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetIncludeDeletedGroups())
                 {
                     request.Parameters.Add("IncludeDeletedGroups", StringUtils.FromBool(publicRequest.IncludeDeletedGroups));
@@ -90,6 +121,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeScalingActivitiesRequestMarshaller _instance = new DescribeScalingActivitiesRequestMarshaller();        

@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceInternalErrorException
+        /// message.
+        /// </summary>
+        public ServiceInternalErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceInternalErrorException with the specified error
         /// message.
         /// </summary>

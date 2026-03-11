@@ -32,6 +32,20 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the ListAssetFilters operation.
     /// Lists asset filters.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// A valid domain and asset must exist. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The asset must have at least one filter created to return results. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListAssetFiltersRequest : AmazonDataZoneRequest
     {

@@ -50,7 +50,7 @@ namespace Amazon.Omics.Model
         /// ARN of the workflow version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=150)]
         public string Arn
         {
             get { return this._arn; }

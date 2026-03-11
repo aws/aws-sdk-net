@@ -45,7 +45,7 @@ namespace Amazon.GeoRoutes.Model
         /// Code corresponding to the issue.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RoadSnapNoticeCode Code
         {
             get { return this._code; }
@@ -64,7 +64,7 @@ namespace Amazon.GeoRoutes.Model
         /// The notice title.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Title
         {
             get { return this._title; }
@@ -88,7 +88,7 @@ namespace Amazon.GeoRoutes.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000)]
         public List<int> TracePointIndexes
         {
             get { return this._tracePointIndexes; }

@@ -36,6 +36,14 @@ namespace Amazon.Batch
         /// <summary>
         /// Construct instance of AmazonBatchException
         /// </summary>
+        public AmazonBatchException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBatchException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBatchException(string message)
             : base(message)

@@ -158,7 +158,7 @@ namespace ServiceClientGenerator
             }
             else
             {
-                projectName = $"AWSSDK.UnitTestUtilities.{projectType}";
+                projectName = "AWSSDK.UnitTestUtilities";
                 projectPath = Utils.PathCombineAlt("..", "..", "..", "UnitTests", "Custom", $"{projectName}.csproj");
             }
 

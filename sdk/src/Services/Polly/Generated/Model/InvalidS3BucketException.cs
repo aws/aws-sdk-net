@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidS3BucketException
+        /// message.
+        /// </summary>
+        public InvalidS3BucketException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3BucketException with the specified error
         /// message.
         /// </summary>

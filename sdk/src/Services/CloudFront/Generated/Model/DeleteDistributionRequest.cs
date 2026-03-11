@@ -32,6 +32,13 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Container for the parameters to the DeleteDistribution operation.
     /// Delete a distribution.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Before you can delete a distribution, you must disable it, which requires permission
+    /// to update the distribution. Once deleted, a distribution cannot be recovered.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteDistributionRequest : AmazonCloudFrontRequest
     {

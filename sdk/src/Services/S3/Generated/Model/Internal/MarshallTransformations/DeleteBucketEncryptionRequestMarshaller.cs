@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteBucketEncryptionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "DELETE";
             request.AddSubResource("encryption");
         
@@ -89,5 +90,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketEncryptionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, DeleteBucketEncryptionRequest publicRequest);
     }    
 }

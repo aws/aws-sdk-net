@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetNotFoundException
+        /// message.
+        /// </summary>
+        public TargetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetNotFoundException with the specified error
         /// message.
         /// </summary>

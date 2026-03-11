@@ -36,6 +36,14 @@ namespace Amazon.IoTManagedIntegrations
         /// <summary>
         /// Construct instance of AmazonIoTManagedIntegrationsException
         /// </summary>
+        public AmazonIoTManagedIntegrationsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTManagedIntegrationsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTManagedIntegrationsException(string message)
             : base(message)

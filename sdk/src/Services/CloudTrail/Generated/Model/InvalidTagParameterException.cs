@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagParameterException
+        /// message.
+        /// </summary>
+        public InvalidTagParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagParameterException with the specified error
         /// message.
         /// </summary>

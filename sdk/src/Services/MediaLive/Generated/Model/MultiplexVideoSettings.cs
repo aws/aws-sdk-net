@@ -41,7 +41,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ConstantBitrate. The constant bitrate configuration for
         /// the video encode.When this field is defined, StatmuxSettings must be undefined.
         /// </summary>
-        [AWSProperty(Min=100000, Max=100000000)]
         public int? ConstantBitrate
         {
             get { return this._constantBitrate; }

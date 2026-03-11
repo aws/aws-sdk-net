@@ -36,6 +36,14 @@ namespace Amazon.DataPipeline
         /// <summary>
         /// Construct instance of AmazonDataPipelineException
         /// </summary>
+        public AmazonDataPipelineException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDataPipelineException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDataPipelineException(string message)
             : base(message)

@@ -31,8 +31,43 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRouteCalculator operation.
-    /// Creates a route calculator resource in your Amazon Web Services account.
+    /// <important> 
+    /// <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to the Routes API V2 unless you require Grab data.
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>CreateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+    /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+    /// API (version 2).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Routes API version 2 has a simplified interface that can be used without creating
+    /// or managing route calculator resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+    /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+    /// under <c>location</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+    /// using API version 1 when using Grab.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+    /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+    /// Guide</a>.
+    /// </para>
+    ///  </li> </ul> </important> 
+    /// <para>
+    /// Creates a route calculator resource in your Amazon Web Services account.
+    /// </para>
     ///  
     /// <para>
     /// You can send requests to a route calculator resource to estimate travel time, distance,
@@ -47,6 +82,7 @@ namespace Amazon.LocationService.Model
     /// service terms</a> for more details.
     /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     public partial class CreateRouteCalculatorRequest : AmazonLocationServiceRequest
     {
@@ -109,7 +145,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>Esri</c> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+        ///  <c>Esri</c> – For additional information about <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri</a>'s
         /// coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
         /// details on street networks and traffic coverage</a>.
         /// </para>
@@ -121,20 +157,20 @@ namespace Amazon.LocationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>Grab</c> – Grab provides routing functionality for Southeast Asia. For additional
-        /// information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
-        /// coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+        /// information about <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>'
+        /// coverage, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps
         /// countries and areas covered</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Here</c> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        ///  <c>Here</c> – For additional information about <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
         /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
         /// car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
         /// truck routing coverage</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+        /// For additional information , see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Data
         /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
         /// </summary>

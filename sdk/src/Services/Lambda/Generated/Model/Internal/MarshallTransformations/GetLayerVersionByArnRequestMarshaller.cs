@@ -63,6 +63,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.AddSubResource("find", "LayerVersion");
+            if (string.IsNullOrEmpty(publicRequest.Arn))
+                throw new AmazonLambdaException("Request object does not have required field Arn set");
             
             if (publicRequest.IsSetArn())
                 request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));

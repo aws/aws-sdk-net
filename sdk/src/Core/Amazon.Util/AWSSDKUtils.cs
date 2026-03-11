@@ -70,6 +70,7 @@ namespace Amazon.Util
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
 
         private const int MaxIsSetMethodsCacheSize = 50;
+        private const long TicksPerSecond = 10_000_000;
 
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
@@ -598,7 +599,7 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixEpochSeconds(int seconds)
         {
-            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc);
+            return new DateTime(seconds * TicksPerSecond + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -608,7 +609,18 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixLongEpochSeconds(long seconds)
         {
-            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc);
+            return new DateTime(seconds * TicksPerSecond + EPOCH_START.Ticks, DateTimeKind.Utc);
+        }
+
+        /// <summary>
+        /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// </summary>
+        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixDoubleEpochSeconds(double seconds)
+        {
+            var ticksSinceEpoch = (long)(seconds * TicksPerSecond);
+            return new DateTime(ticksSinceEpoch + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>
@@ -946,6 +958,21 @@ namespace Amazon.Util
 #endif
         }
 
+        /// <summary>
+        /// This method returns true if the variant of the SDK being used is the .NET Framework target. This allows
+        /// libraries using .NET Standard 2.0 like AWSSDK.Extensions.NETCore.Setup to know at runtime if they are
+        /// using the .NET Framework version and if so make decisions on what APIs it should call.
+        /// </summary>
+        /// <returns>True if the version of the SDK is .NET Framework variant.</returns>
+        public static bool IsNETFramework()
+        {
+#if NETFRAMEWORK
+            return true;
+#else
+            return false;
+#endif
+        }
+
         #region The code in this region has been minimally adapted from Microsoft's PathInternal.Windows.cs class as of 11/19/2019.  The logic remains the same.
         /// <summary>
         /// Returns true if the path specified is relative to the current drive or working directory.
@@ -1018,7 +1045,7 @@ namespace Amazon.Util
         /// URL encodes a string per the specified RFC. If the path property is specified,
         /// the accepted path characters {/+:} are not encoded.
         /// </summary>
-        /// <param name="rfcNumber">RFC number determing safe characters</param>
+        /// <param name="rfcNumber">RFC number determining safe characters</param>
         /// <param name="data">The string to encode</param>
         /// <param name="path">Whether the string is a URL path or not</param>
         /// <returns>The encoded string</returns>

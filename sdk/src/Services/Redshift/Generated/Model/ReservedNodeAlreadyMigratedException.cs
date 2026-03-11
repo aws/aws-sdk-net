@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNodeAlreadyMigratedException
+        /// message.
+        /// </summary>
+        public ReservedNodeAlreadyMigratedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNodeAlreadyMigratedException with the specified error
         /// message.
         /// </summary>

@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// The resource the action will be taken on.
+    /// The resource the action will be taken on. This can include asset-based resources and
+    /// computation model resources.
     /// </summary>
     public partial class TargetResource
     {
         private string _assetId;
+        private string _computationModelId;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
@@ -42,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The ID of the asset, in UUID format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=13, Max=139)]
+        [AWSProperty(Min=36, Max=36)]
         public string AssetId
         {
             get { return this._assetId; }
@@ -53,6 +55,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetId()
         {
             return this._assetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputationModelId. 
+        /// <para>
+        /// The ID of the computation model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string ComputationModelId
+        {
+            get { return this._computationModelId; }
+            set { this._computationModelId = value; }
+        }
+
+        // Check to see if ComputationModelId property is set
+        internal bool IsSetComputationModelId()
+        {
+            return this._computationModelId != null;
         }
 
     }

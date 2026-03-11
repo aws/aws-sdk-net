@@ -40,6 +40,8 @@ namespace Amazon.PaymentCryptography.Model
         private Tr34KeyBlockFormat _keyBlockFormat;
         private KeyBlockHeaders _keyBlockHeaders;
         private string _randomNonce;
+        private string _signingKeyCertificate;
+        private string _signingKeyIdentifier;
         private string _wrappingKeyCertificate;
 
         /// <summary>
@@ -72,7 +74,6 @@ namespace Amazon.PaymentCryptography.Model
         /// token to export multiple keys from the same service account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ExportToken
         {
             get { return this._exportToken; }
@@ -146,13 +147,51 @@ namespace Amazon.PaymentCryptography.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SigningKeyCertificate. 
+        /// <para>
+        /// The certificate used to sign the TR-34 key block.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
+        public string SigningKeyCertificate
+        {
+            get { return this._signingKeyCertificate; }
+            set { this._signingKeyCertificate = value; }
+        }
+
+        // Check to see if SigningKeyCertificate property is set
+        internal bool IsSetSigningKeyCertificate()
+        {
+            return this._signingKeyCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningKeyIdentifier. 
+        /// <para>
+        /// Key Identifier used for signing the export key
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=322)]
+        public string SigningKeyIdentifier
+        {
+            get { return this._signingKeyIdentifier; }
+            set { this._signingKeyIdentifier = value; }
+        }
+
+        // Check to see if SigningKeyIdentifier property is set
+        internal bool IsSetSigningKeyIdentifier()
+        {
+            return this._signingKeyIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WrappingKeyCertificate. 
         /// <para>
         /// The <c>KeyARN</c> of the wrapping key certificate. Amazon Web Services Payment Cryptography
         /// uses this certificate to wrap the key under export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string WrappingKeyCertificate
         {
             get { return this._wrappingKeyCertificate; }

@@ -56,7 +56,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTrafficPolicyInstancesByHostedZoneRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.HostedZoneId))
+                throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
             
             if (publicRequest.IsSetHostedZoneId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.HostedZoneId));
@@ -72,8 +75,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/trafficpolicyinstances/hostedzone";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListTrafficPolicyInstancesByHostedZoneRequestMarshaller _instance = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();        
@@ -95,5 +98,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesByHostedZoneRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesByHostedZoneRequest publicRequest);
     }    
 }

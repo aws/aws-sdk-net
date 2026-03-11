@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBProxyTargetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public DBProxyTargetGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBProxyTargetGroupNotFoundException with the specified error
         /// message.
         /// </summary>

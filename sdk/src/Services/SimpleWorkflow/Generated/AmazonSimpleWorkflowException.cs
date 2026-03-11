@@ -36,6 +36,14 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Construct instance of AmazonSimpleWorkflowException
         /// </summary>
+        public AmazonSimpleWorkflowException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimpleWorkflowException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimpleWorkflowException(string message)
             : base(message)

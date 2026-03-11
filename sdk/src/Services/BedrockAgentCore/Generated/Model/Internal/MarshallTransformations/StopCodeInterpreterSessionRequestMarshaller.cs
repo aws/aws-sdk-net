@@ -66,6 +66,8 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetCodeInterpreterIdentifier())
                 throw new AmazonBedrockAgentCoreException("Request object does not have required field CodeInterpreterIdentifier set");
             request.AddPathResource("{codeInterpreterIdentifier}", StringUtils.FromString(publicRequest.CodeInterpreterIdentifier));
+            if (string.IsNullOrEmpty(publicRequest.SessionId))
+                throw new AmazonBedrockAgentCoreException("Request object does not have required field SessionId set");
             
             if (publicRequest.IsSetSessionId())
                 request.Parameters.Add("sessionId", StringUtils.FromString(publicRequest.SessionId));
@@ -100,6 +102,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 #endif
             
 
+        
+            if (publicRequest.IsSetTraceId()) 
+            {
+                request.Headers["X-Amzn-Trace-Id"] = publicRequest.TraceId;
+            }
+        
+            if (publicRequest.IsSetTraceParent()) 
+            {
+                request.Headers["traceparent"] = publicRequest.TraceParent;
+            }
             request.UseQueryString = true;
 
             return request;

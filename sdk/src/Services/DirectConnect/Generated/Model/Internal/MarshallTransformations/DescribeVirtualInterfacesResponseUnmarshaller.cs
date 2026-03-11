@@ -52,6 +52,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("virtualInterfaces", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VirtualInterface, VirtualInterfaceUnmarshaller>(VirtualInterfaceUnmarshaller.Instance);

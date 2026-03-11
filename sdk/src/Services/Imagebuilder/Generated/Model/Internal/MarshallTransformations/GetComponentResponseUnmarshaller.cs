@@ -58,6 +58,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     response.Component = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("latestVersionReferences", targetDepth))
+                {
+                    var unmarshaller = LatestVersionReferencesUnmarshaller.Instance;
+                    response.LatestVersionReferences = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("requestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

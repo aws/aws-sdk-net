@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ImageAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageAlreadyExistsException with the specified error
         /// message.
         /// </summary>

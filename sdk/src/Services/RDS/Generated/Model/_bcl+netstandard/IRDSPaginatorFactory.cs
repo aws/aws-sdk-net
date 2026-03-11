@@ -278,6 +278,16 @@ namespace Amazon.RDS.Model
         IDescribeDBSubnetGroupsPaginator DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeEngineDefaultClusterParameters operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "EngineDefaults.Marker" }
+        )]
+        IDescribeEngineDefaultClusterParametersPaginator DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeEngineDefaultParameters operation
         ///</summary>
         [AWSPaginator(

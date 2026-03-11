@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for RedshiftIdcApplicationAlreadyExistsException
+        /// message.
+        /// </summary>
+        public RedshiftIdcApplicationAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RedshiftIdcApplicationAlreadyExistsException with the specified error
         /// message.
         /// </summary>

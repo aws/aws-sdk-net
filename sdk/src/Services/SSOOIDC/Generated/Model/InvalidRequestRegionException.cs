@@ -44,6 +44,13 @@ namespace Amazon.SSOOIDC.Model
         private string _region;
 
         /// <summary>
+        /// Default constructor for InvalidRequestRegionException
+        /// message.
+        /// </summary>
+        public InvalidRequestRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRequestRegionException with the specified error
         /// message.
         /// </summary>

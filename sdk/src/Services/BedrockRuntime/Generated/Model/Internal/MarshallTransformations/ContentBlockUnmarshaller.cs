@@ -56,6 +56,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("audio", targetDepth))
+                {
+                    var unmarshaller = AudioBlockUnmarshaller.Instance;
+                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cachePoint", targetDepth))
                 {
                     var unmarshaller = CachePointBlockUnmarshaller.Instance;
@@ -90,6 +96,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ReasoningContentBlockUnmarshaller.Instance;
                     unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("searchResult", targetDepth))
+                {
+                    var unmarshaller = SearchResultBlockUnmarshaller.Instance;
+                    unmarshalledObject.SearchResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("text", targetDepth))

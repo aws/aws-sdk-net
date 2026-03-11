@@ -298,7 +298,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">REST API Reference for CancelTaskExecution Operation</seealso>
         public virtual CancelTaskExecutionResponse CancelTaskExecution(CancelTaskExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTaskExecutionResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">REST API Reference for CancelTaskExecution Operation</seealso>
         public virtual Task<CancelTaskExecutionResponse> CancelTaskExecutionAsync(CancelTaskExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTaskExecutionResponseUnmarshaller.Instance;
             
@@ -368,7 +368,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         public virtual CreateAgentResponse CreateAgent(CreateAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAgentResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         public virtual Task<CreateAgentResponse> CreateAgentAsync(CreateAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAgentResponseUnmarshaller.Instance;
             
@@ -439,7 +439,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">REST API Reference for CreateLocationAzureBlob Operation</seealso>
         public virtual CreateLocationAzureBlobResponse CreateLocationAzureBlob(CreateLocationAzureBlobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationAzureBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationAzureBlobResponseUnmarshaller.Instance;
 
@@ -476,7 +476,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">REST API Reference for CreateLocationAzureBlob Operation</seealso>
         public virtual Task<CreateLocationAzureBlobResponse> CreateLocationAzureBlobAsync(CreateLocationAzureBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationAzureBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationAzureBlobResponseUnmarshaller.Instance;
             
@@ -510,7 +510,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">REST API Reference for CreateLocationEfs Operation</seealso>
         public virtual CreateLocationEfsResponse CreateLocationEfs(CreateLocationEfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationEfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationEfsResponseUnmarshaller.Instance;
 
@@ -543,7 +543,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">REST API Reference for CreateLocationEfs Operation</seealso>
         public virtual Task<CreateLocationEfsResponse> CreateLocationEfsAsync(CreateLocationEfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationEfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationEfsResponseUnmarshaller.Instance;
             
@@ -577,7 +577,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">REST API Reference for CreateLocationFsxLustre Operation</seealso>
         public virtual CreateLocationFsxLustreResponse CreateLocationFsxLustre(CreateLocationFsxLustreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxLustreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxLustreResponseUnmarshaller.Instance;
 
@@ -610,7 +610,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">REST API Reference for CreateLocationFsxLustre Operation</seealso>
         public virtual Task<CreateLocationFsxLustreResponse> CreateLocationFsxLustreAsync(CreateLocationFsxLustreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxLustreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxLustreResponseUnmarshaller.Instance;
             
@@ -644,7 +644,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
         public virtual CreateLocationFsxOntapResponse CreateLocationFsxOntap(CreateLocationFsxOntapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxOntapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxOntapResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
         public virtual Task<CreateLocationFsxOntapResponse> CreateLocationFsxOntapAsync(CreateLocationFsxOntapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxOntapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxOntapResponseUnmarshaller.Instance;
             
@@ -717,7 +717,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOpenZfs">REST API Reference for CreateLocationFsxOpenZfs Operation</seealso>
         public virtual CreateLocationFsxOpenZfsResponse CreateLocationFsxOpenZfs(CreateLocationFsxOpenZfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxOpenZfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxOpenZfsResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOpenZfs">REST API Reference for CreateLocationFsxOpenZfs Operation</seealso>
         public virtual Task<CreateLocationFsxOpenZfsResponse> CreateLocationFsxOpenZfsAsync(CreateLocationFsxOpenZfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxOpenZfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxOpenZfsResponseUnmarshaller.Instance;
             
@@ -791,7 +791,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
         public virtual CreateLocationFsxWindowsResponse CreateLocationFsxWindows(CreateLocationFsxWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxWindowsResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">REST API Reference for CreateLocationFsxWindows Operation</seealso>
         public virtual Task<CreateLocationFsxWindowsResponse> CreateLocationFsxWindowsAsync(CreateLocationFsxWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationFsxWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationFsxWindowsResponseUnmarshaller.Instance;
             
@@ -859,7 +859,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
         public virtual CreateLocationHdfsResponse CreateLocationHdfs(CreateLocationHdfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationHdfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationHdfsResponseUnmarshaller.Instance;
 
@@ -892,7 +892,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
         public virtual Task<CreateLocationHdfsResponse> CreateLocationHdfsAsync(CreateLocationHdfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationHdfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationHdfsResponseUnmarshaller.Instance;
             
@@ -926,7 +926,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">REST API Reference for CreateLocationNfs Operation</seealso>
         public virtual CreateLocationNfsResponse CreateLocationNfs(CreateLocationNfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationNfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationNfsResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">REST API Reference for CreateLocationNfs Operation</seealso>
         public virtual Task<CreateLocationNfsResponse> CreateLocationNfsAsync(CreateLocationNfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationNfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationNfsResponseUnmarshaller.Instance;
             
@@ -995,7 +995,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">REST API Reference for CreateLocationObjectStorage Operation</seealso>
         public virtual CreateLocationObjectStorageResponse CreateLocationObjectStorage(CreateLocationObjectStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationObjectStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationObjectStorageResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">REST API Reference for CreateLocationObjectStorage Operation</seealso>
         public virtual Task<CreateLocationObjectStorageResponse> CreateLocationObjectStorageAsync(CreateLocationObjectStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationObjectStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationObjectStorageResponseUnmarshaller.Instance;
             
@@ -1078,7 +1078,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">REST API Reference for CreateLocationS3 Operation</seealso>
         public virtual CreateLocationS3Response CreateLocationS3(CreateLocationS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">REST API Reference for CreateLocationS3 Operation</seealso>
         public virtual Task<CreateLocationS3Response> CreateLocationS3Async(CreateLocationS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationS3ResponseUnmarshaller.Instance;
             
@@ -1160,7 +1160,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">REST API Reference for CreateLocationSmb Operation</seealso>
         public virtual CreateLocationSmbResponse CreateLocationSmb(CreateLocationSmbRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationSmbRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationSmbResponseUnmarshaller.Instance;
 
@@ -1194,7 +1194,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">REST API Reference for CreateLocationSmb Operation</seealso>
         public virtual Task<CreateLocationSmbResponse> CreateLocationSmbAsync(CreateLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationSmbRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationSmbResponseUnmarshaller.Instance;
             
@@ -1234,7 +1234,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">REST API Reference for CreateTask Operation</seealso>
         public virtual CreateTaskResponse CreateTask(CreateTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">REST API Reference for CreateTask Operation</seealso>
         public virtual Task<CreateTaskResponse> CreateTaskAsync(CreateTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskResponseUnmarshaller.Instance;
             
@@ -1309,7 +1309,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         public virtual DeleteAgentResponse DeleteAgent(DeleteAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAgentResponseUnmarshaller.Instance;
 
@@ -1344,7 +1344,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         public virtual Task<DeleteAgentResponse> DeleteAgentAsync(DeleteAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAgentResponseUnmarshaller.Instance;
             
@@ -1371,7 +1371,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         public virtual DeleteLocationResponse DeleteLocation(DeleteLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocationResponseUnmarshaller.Instance;
 
@@ -1397,7 +1397,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         public virtual Task<DeleteLocationResponse> DeleteLocationAsync(DeleteLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocationResponseUnmarshaller.Instance;
             
@@ -1424,7 +1424,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">REST API Reference for DeleteTask Operation</seealso>
         public virtual DeleteTaskResponse DeleteTask(DeleteTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskResponseUnmarshaller.Instance;
 
@@ -1450,7 +1450,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">REST API Reference for DeleteTask Operation</seealso>
         public virtual Task<DeleteTaskResponse> DeleteTaskAsync(DeleteTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskResponseUnmarshaller.Instance;
             
@@ -1478,7 +1478,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">REST API Reference for DescribeAgent Operation</seealso>
         public virtual DescribeAgentResponse DescribeAgent(DescribeAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgentResponseUnmarshaller.Instance;
 
@@ -1505,7 +1505,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">REST API Reference for DescribeAgent Operation</seealso>
         public virtual Task<DescribeAgentResponse> DescribeAgentAsync(DescribeAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgentResponseUnmarshaller.Instance;
             
@@ -1533,7 +1533,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">REST API Reference for DescribeLocationAzureBlob Operation</seealso>
         public virtual DescribeLocationAzureBlobResponse DescribeLocationAzureBlob(DescribeLocationAzureBlobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationAzureBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationAzureBlobResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">REST API Reference for DescribeLocationAzureBlob Operation</seealso>
         public virtual Task<DescribeLocationAzureBlobResponse> DescribeLocationAzureBlobAsync(DescribeLocationAzureBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationAzureBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationAzureBlobResponseUnmarshaller.Instance;
             
@@ -1588,7 +1588,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">REST API Reference for DescribeLocationEfs Operation</seealso>
         public virtual DescribeLocationEfsResponse DescribeLocationEfs(DescribeLocationEfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationEfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
 
@@ -1615,7 +1615,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">REST API Reference for DescribeLocationEfs Operation</seealso>
         public virtual Task<DescribeLocationEfsResponse> DescribeLocationEfsAsync(DescribeLocationEfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationEfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
             
@@ -1643,7 +1643,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">REST API Reference for DescribeLocationFsxLustre Operation</seealso>
         public virtual DescribeLocationFsxLustreResponse DescribeLocationFsxLustre(DescribeLocationFsxLustreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxLustreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxLustreResponseUnmarshaller.Instance;
 
@@ -1670,7 +1670,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">REST API Reference for DescribeLocationFsxLustre Operation</seealso>
         public virtual Task<DescribeLocationFsxLustreResponse> DescribeLocationFsxLustreAsync(DescribeLocationFsxLustreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxLustreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxLustreResponseUnmarshaller.Instance;
             
@@ -1705,7 +1705,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
         public virtual DescribeLocationFsxOntapResponse DescribeLocationFsxOntap(DescribeLocationFsxOntapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxOntapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxOntapResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
         public virtual Task<DescribeLocationFsxOntapResponse> DescribeLocationFsxOntapAsync(DescribeLocationFsxOntapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxOntapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxOntapResponseUnmarshaller.Instance;
             
@@ -1774,7 +1774,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOpenZfs">REST API Reference for DescribeLocationFsxOpenZfs Operation</seealso>
         public virtual DescribeLocationFsxOpenZfsResponse DescribeLocationFsxOpenZfs(DescribeLocationFsxOpenZfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxOpenZfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxOpenZfsResponseUnmarshaller.Instance;
 
@@ -1808,7 +1808,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOpenZfs">REST API Reference for DescribeLocationFsxOpenZfs Operation</seealso>
         public virtual Task<DescribeLocationFsxOpenZfsResponse> DescribeLocationFsxOpenZfsAsync(DescribeLocationFsxOpenZfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxOpenZfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxOpenZfsResponseUnmarshaller.Instance;
             
@@ -1836,7 +1836,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
         public virtual DescribeLocationFsxWindowsResponse DescribeLocationFsxWindows(DescribeLocationFsxWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
         public virtual Task<DescribeLocationFsxWindowsResponse> DescribeLocationFsxWindowsAsync(DescribeLocationFsxWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationFsxWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
             
@@ -1891,7 +1891,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
         public virtual DescribeLocationHdfsResponse DescribeLocationHdfs(DescribeLocationHdfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationHdfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationHdfsResponseUnmarshaller.Instance;
 
@@ -1918,7 +1918,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
         public virtual Task<DescribeLocationHdfsResponse> DescribeLocationHdfsAsync(DescribeLocationHdfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationHdfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationHdfsResponseUnmarshaller.Instance;
             
@@ -1946,7 +1946,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">REST API Reference for DescribeLocationNfs Operation</seealso>
         public virtual DescribeLocationNfsResponse DescribeLocationNfs(DescribeLocationNfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationNfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationNfsResponseUnmarshaller.Instance;
 
@@ -1973,7 +1973,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">REST API Reference for DescribeLocationNfs Operation</seealso>
         public virtual Task<DescribeLocationNfsResponse> DescribeLocationNfsAsync(DescribeLocationNfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationNfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationNfsResponseUnmarshaller.Instance;
             
@@ -2001,7 +2001,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">REST API Reference for DescribeLocationObjectStorage Operation</seealso>
         public virtual DescribeLocationObjectStorageResponse DescribeLocationObjectStorage(DescribeLocationObjectStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationObjectStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationObjectStorageResponseUnmarshaller.Instance;
 
@@ -2028,7 +2028,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">REST API Reference for DescribeLocationObjectStorage Operation</seealso>
         public virtual Task<DescribeLocationObjectStorageResponse> DescribeLocationObjectStorageAsync(DescribeLocationObjectStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationObjectStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationObjectStorageResponseUnmarshaller.Instance;
             
@@ -2055,7 +2055,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationS3">REST API Reference for DescribeLocationS3 Operation</seealso>
         public virtual DescribeLocationS3Response DescribeLocationS3(DescribeLocationS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
 
@@ -2081,7 +2081,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationS3">REST API Reference for DescribeLocationS3 Operation</seealso>
         public virtual Task<DescribeLocationS3Response> DescribeLocationS3Async(DescribeLocationS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationS3ResponseUnmarshaller.Instance;
             
@@ -2109,7 +2109,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">REST API Reference for DescribeLocationSmb Operation</seealso>
         public virtual DescribeLocationSmbResponse DescribeLocationSmb(DescribeLocationSmbRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationSmbRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationSmbResponseUnmarshaller.Instance;
 
@@ -2136,7 +2136,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">REST API Reference for DescribeLocationSmb Operation</seealso>
         public virtual Task<DescribeLocationSmbResponse> DescribeLocationSmbAsync(DescribeLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationSmbRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationSmbResponseUnmarshaller.Instance;
             
@@ -2164,7 +2164,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">REST API Reference for DescribeTask Operation</seealso>
         public virtual DescribeTaskResponse DescribeTask(DescribeTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">REST API Reference for DescribeTask Operation</seealso>
         public virtual Task<DescribeTaskResponse> DescribeTaskAsync(DescribeTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskResponseUnmarshaller.Instance;
             
@@ -2229,7 +2229,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">REST API Reference for DescribeTaskExecution Operation</seealso>
         public virtual DescribeTaskExecutionResponse DescribeTaskExecution(DescribeTaskExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskExecutionResponseUnmarshaller.Instance;
 
@@ -2266,7 +2266,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">REST API Reference for DescribeTaskExecution Operation</seealso>
         public virtual Task<DescribeTaskExecutionResponse> DescribeTaskExecutionAsync(DescribeTaskExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskExecutionResponseUnmarshaller.Instance;
             
@@ -2310,7 +2310,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">REST API Reference for ListAgents Operation</seealso>
         public virtual ListAgentsResponse ListAgents(ListAgentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAgentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAgentsResponseUnmarshaller.Instance;
 
@@ -2353,7 +2353,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">REST API Reference for ListAgents Operation</seealso>
         public virtual Task<ListAgentsResponse> ListAgentsAsync(ListAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAgentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAgentsResponseUnmarshaller.Instance;
             
@@ -2387,7 +2387,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">REST API Reference for ListLocations Operation</seealso>
         public virtual ListLocationsResponse ListLocations(ListLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
 
@@ -2420,7 +2420,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">REST API Reference for ListLocations Operation</seealso>
         public virtual Task<ListLocationsResponse> ListLocationsAsync(ListLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
             
@@ -2447,7 +2447,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2473,7 +2473,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2500,7 +2500,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">REST API Reference for ListTaskExecutions Operation</seealso>
         public virtual ListTaskExecutionsResponse ListTaskExecutions(ListTaskExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskExecutionsResponseUnmarshaller.Instance;
 
@@ -2526,7 +2526,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">REST API Reference for ListTaskExecutions Operation</seealso>
         public virtual Task<ListTaskExecutionsResponse> ListTaskExecutionsAsync(ListTaskExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskExecutionsResponseUnmarshaller.Instance;
             
@@ -2553,7 +2553,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -2579,7 +2579,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
             
@@ -2620,7 +2620,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">REST API Reference for StartTaskExecution Operation</seealso>
         public virtual StartTaskExecutionResponse StartTaskExecution(StartTaskExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
 
@@ -2660,7 +2660,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">REST API Reference for StartTaskExecution Operation</seealso>
         public virtual Task<StartTaskExecutionResponse> StartTaskExecutionAsync(StartTaskExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskExecutionResponseUnmarshaller.Instance;
             
@@ -2693,7 +2693,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2725,7 +2725,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2752,7 +2752,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2778,7 +2778,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2805,7 +2805,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         public virtual UpdateAgentResponse UpdateAgent(UpdateAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgentResponseUnmarshaller.Instance;
 
@@ -2831,7 +2831,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         public virtual Task<UpdateAgentResponse> UpdateAgentAsync(UpdateAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgentResponseUnmarshaller.Instance;
             
@@ -2865,7 +2865,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">REST API Reference for UpdateLocationAzureBlob Operation</seealso>
         public virtual UpdateLocationAzureBlobResponse UpdateLocationAzureBlob(UpdateLocationAzureBlobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationAzureBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationAzureBlobResponseUnmarshaller.Instance;
 
@@ -2898,7 +2898,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">REST API Reference for UpdateLocationAzureBlob Operation</seealso>
         public virtual Task<UpdateLocationAzureBlobResponse> UpdateLocationAzureBlobAsync(UpdateLocationAzureBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationAzureBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationAzureBlobResponseUnmarshaller.Instance;
             
@@ -2932,7 +2932,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationEfs">REST API Reference for UpdateLocationEfs Operation</seealso>
         public virtual UpdateLocationEfsResponse UpdateLocationEfs(UpdateLocationEfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationEfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationEfsResponseUnmarshaller.Instance;
 
@@ -2965,7 +2965,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationEfs">REST API Reference for UpdateLocationEfs Operation</seealso>
         public virtual Task<UpdateLocationEfsResponse> UpdateLocationEfsAsync(UpdateLocationEfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationEfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationEfsResponseUnmarshaller.Instance;
             
@@ -2999,7 +2999,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxLustre">REST API Reference for UpdateLocationFsxLustre Operation</seealso>
         public virtual UpdateLocationFsxLustreResponse UpdateLocationFsxLustre(UpdateLocationFsxLustreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxLustreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxLustreResponseUnmarshaller.Instance;
 
@@ -3032,7 +3032,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxLustre">REST API Reference for UpdateLocationFsxLustre Operation</seealso>
         public virtual Task<UpdateLocationFsxLustreResponse> UpdateLocationFsxLustreAsync(UpdateLocationFsxLustreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxLustreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxLustreResponseUnmarshaller.Instance;
             
@@ -3066,7 +3066,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOntap">REST API Reference for UpdateLocationFsxOntap Operation</seealso>
         public virtual UpdateLocationFsxOntapResponse UpdateLocationFsxOntap(UpdateLocationFsxOntapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxOntapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxOntapResponseUnmarshaller.Instance;
 
@@ -3099,7 +3099,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOntap">REST API Reference for UpdateLocationFsxOntap Operation</seealso>
         public virtual Task<UpdateLocationFsxOntapResponse> UpdateLocationFsxOntapAsync(UpdateLocationFsxOntapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxOntapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxOntapResponseUnmarshaller.Instance;
             
@@ -3139,7 +3139,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOpenZfs">REST API Reference for UpdateLocationFsxOpenZfs Operation</seealso>
         public virtual UpdateLocationFsxOpenZfsResponse UpdateLocationFsxOpenZfs(UpdateLocationFsxOpenZfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxOpenZfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxOpenZfsResponseUnmarshaller.Instance;
 
@@ -3178,7 +3178,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxOpenZfs">REST API Reference for UpdateLocationFsxOpenZfs Operation</seealso>
         public virtual Task<UpdateLocationFsxOpenZfsResponse> UpdateLocationFsxOpenZfsAsync(UpdateLocationFsxOpenZfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxOpenZfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxOpenZfsResponseUnmarshaller.Instance;
             
@@ -3212,7 +3212,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxWindows">REST API Reference for UpdateLocationFsxWindows Operation</seealso>
         public virtual UpdateLocationFsxWindowsResponse UpdateLocationFsxWindows(UpdateLocationFsxWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxWindowsResponseUnmarshaller.Instance;
 
@@ -3245,7 +3245,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationFsxWindows">REST API Reference for UpdateLocationFsxWindows Operation</seealso>
         public virtual Task<UpdateLocationFsxWindowsResponse> UpdateLocationFsxWindowsAsync(UpdateLocationFsxWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationFsxWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationFsxWindowsResponseUnmarshaller.Instance;
             
@@ -3279,7 +3279,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
         public virtual UpdateLocationHdfsResponse UpdateLocationHdfs(UpdateLocationHdfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationHdfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationHdfsResponseUnmarshaller.Instance;
 
@@ -3312,7 +3312,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
         public virtual Task<UpdateLocationHdfsResponse> UpdateLocationHdfsAsync(UpdateLocationHdfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationHdfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationHdfsResponseUnmarshaller.Instance;
             
@@ -3346,7 +3346,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">REST API Reference for UpdateLocationNfs Operation</seealso>
         public virtual UpdateLocationNfsResponse UpdateLocationNfs(UpdateLocationNfsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationNfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationNfsResponseUnmarshaller.Instance;
 
@@ -3379,7 +3379,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">REST API Reference for UpdateLocationNfs Operation</seealso>
         public virtual Task<UpdateLocationNfsResponse> UpdateLocationNfsAsync(UpdateLocationNfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationNfsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationNfsResponseUnmarshaller.Instance;
             
@@ -3413,7 +3413,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">REST API Reference for UpdateLocationObjectStorage Operation</seealso>
         public virtual UpdateLocationObjectStorageResponse UpdateLocationObjectStorage(UpdateLocationObjectStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationObjectStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationObjectStorageResponseUnmarshaller.Instance;
 
@@ -3446,7 +3446,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">REST API Reference for UpdateLocationObjectStorage Operation</seealso>
         public virtual Task<UpdateLocationObjectStorageResponse> UpdateLocationObjectStorageAsync(UpdateLocationObjectStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationObjectStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationObjectStorageResponseUnmarshaller.Instance;
             
@@ -3490,7 +3490,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationS3">REST API Reference for UpdateLocationS3 Operation</seealso>
         public virtual UpdateLocationS3Response UpdateLocationS3(UpdateLocationS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationS3ResponseUnmarshaller.Instance;
 
@@ -3533,7 +3533,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationS3">REST API Reference for UpdateLocationS3 Operation</seealso>
         public virtual Task<UpdateLocationS3Response> UpdateLocationS3Async(UpdateLocationS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationS3ResponseUnmarshaller.Instance;
             
@@ -3567,7 +3567,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">REST API Reference for UpdateLocationSmb Operation</seealso>
         public virtual UpdateLocationSmbResponse UpdateLocationSmb(UpdateLocationSmbRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationSmbRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationSmbResponseUnmarshaller.Instance;
 
@@ -3600,7 +3600,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">REST API Reference for UpdateLocationSmb Operation</seealso>
         public virtual Task<UpdateLocationSmbResponse> UpdateLocationSmbAsync(UpdateLocationSmbRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLocationSmbRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLocationSmbResponseUnmarshaller.Instance;
             
@@ -3628,7 +3628,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual UpdateTaskResponse UpdateTask(UpdateTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
@@ -3655,7 +3655,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual Task<UpdateTaskResponse> UpdateTaskAsync(UpdateTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
             
@@ -3690,7 +3690,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
         public virtual UpdateTaskExecutionResponse UpdateTaskExecution(UpdateTaskExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskExecutionResponseUnmarshaller.Instance;
 
@@ -3724,7 +3724,7 @@ namespace Amazon.DataSync
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
         public virtual Task<UpdateTaskExecutionResponse> UpdateTaskExecutionAsync(UpdateTaskExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskExecutionResponseUnmarshaller.Instance;
             

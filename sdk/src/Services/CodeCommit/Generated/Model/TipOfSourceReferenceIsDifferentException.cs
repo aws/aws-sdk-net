@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for TipOfSourceReferenceIsDifferentException
+        /// message.
+        /// </summary>
+        public TipOfSourceReferenceIsDifferentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TipOfSourceReferenceIsDifferentException with the specified error
         /// message.
         /// </summary>

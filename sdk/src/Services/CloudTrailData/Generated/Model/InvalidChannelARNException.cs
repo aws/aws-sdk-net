@@ -39,6 +39,13 @@ namespace Amazon.CloudTrailData.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidChannelARNException
+        /// message.
+        /// </summary>
+        public InvalidChannelARNException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidChannelARNException with the specified error
         /// message.
         /// </summary>

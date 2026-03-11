@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for MultiRegionParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public MultiRegionParameterGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MultiRegionParameterGroupNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InputAndOutputWithHeaders operation
     /// </summary>  
-    public class InputAndOutputWithHeadersResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class InputAndOutputWithHeadersResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -79,6 +79,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-Boolean1"))
                 response.HeaderTrueBool = bool.Parse(context.ResponseData.GetHeaderValue("X-Boolean1"));
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -104,6 +105,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, InputAndOutputWithHeadersResponse response);
 
         private static InputAndOutputWithHeadersResponseUnmarshaller _instance = new InputAndOutputWithHeadersResponseUnmarshaller();        
 

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains summary information about a session in a memory store.
+    /// Contains summary information about a session in an AgentCore Memory resource.
     /// </summary>
     public partial class SessionSummary
     {

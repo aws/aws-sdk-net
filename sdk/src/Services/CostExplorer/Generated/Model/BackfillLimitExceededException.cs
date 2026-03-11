@@ -40,6 +40,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for BackfillLimitExceededException
+        /// message.
+        /// </summary>
+        public BackfillLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BackfillLimitExceededException with the specified error
         /// message.
         /// </summary>

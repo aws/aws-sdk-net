@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDefinitionException
+        /// message.
+        /// </summary>
+        public InvalidDefinitionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDefinitionException with the specified error
         /// message.
         /// </summary>

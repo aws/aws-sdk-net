@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SNSInvalidTopicException
+        /// message.
+        /// </summary>
+        public SNSInvalidTopicException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SNSInvalidTopicException with the specified error
         /// message.
         /// </summary>

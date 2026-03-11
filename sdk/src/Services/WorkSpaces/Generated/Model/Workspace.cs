@@ -41,6 +41,7 @@ namespace Amazon.WorkSpaces.Model
         private string _errorCode;
         private string _errorMessage;
         private string _ipAddress;
+        private string _ipv6Address;
         private List<ModificationState> _modificationStates = AWSConfigs.InitializeCollections ? new List<ModificationState>() : null;
         private List<RelatedWorkspaceProperties> _relatedWorkspaces = AWSConfigs.InitializeCollections ? new List<RelatedWorkspaceProperties>() : null;
         private bool? _rootVolumeEncryptionEnabled;
@@ -181,6 +182,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// The IPv6 address of the WorkSpace.
+        /// </para>
+        /// </summary>
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
         }
 
         /// <summary>

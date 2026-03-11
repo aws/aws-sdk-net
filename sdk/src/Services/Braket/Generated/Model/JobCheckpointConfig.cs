@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Contains information about the output locations for job checkpoint data.
+    /// Contains information about the output locations for hybrid job checkpoint data.
     /// </summary>
     public partial class JobCheckpointConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// (Optional) The local directory where checkpoints are written. The default directory
+        /// (Optional) The local directory where checkpoint data is stored. The default directory
         /// is <c>/opt/braket/checkpoints/</c>.
         /// </para>
         /// </summary>
@@ -60,8 +60,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// Identifies the S3 path where you want Amazon Braket to store checkpoints. For example,
-        /// <c>s3://bucket-name/key-name-prefix</c>.
+        /// Identifies the S3 path where you want Amazon Braket to store checkpoint data. For
+        /// example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

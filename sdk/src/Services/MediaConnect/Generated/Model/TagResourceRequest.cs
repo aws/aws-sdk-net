@@ -31,10 +31,10 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
-    /// If existing tags on a resource are not specified in the request parameters, they are
-    /// not changed. When a resource is deleted, the tags associated with that resource are
-    /// deleted as well.
+    /// Associates the specified tags to a resource with the specified <c>resourceArn</c>
+    /// in the current region. If existing tags on a resource are not specified in the request
+    /// parameters, they are not changed. When a resource is deleted, the tags associated
+    /// with that resource are deleted as well.
     /// </summary>
     public partial class TagResourceRequest : AmazonMediaConnectRequest
     {

@@ -37,6 +37,8 @@ namespace Amazon.IoTWireless.Model
         private string _destinationName;
         private List<ImportedWirelessDevice> _importedWirelessDeviceList = AWSConfigs.InitializeCollections ? new List<ImportedWirelessDevice>() : null;
         private string _nextToken;
+        private PositioningConfigStatus _positioning;
+        private SidewalkListDevicesForImportInfo _sidewalk;
 
         /// <summary>
         /// Gets and sets the property DestinationName. 
@@ -99,6 +101,42 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The integration status of the Device Location feature for Sidewalk devices.
+        /// </para>
+        /// </summary>
+        public PositioningConfigStatus Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sidewalk. 
+        /// <para>
+        /// The Sidewalk object containing Sidewalk-related device information.
+        /// </para>
+        /// </summary>
+        public SidewalkListDevicesForImportInfo Sidewalk
+        {
+            get { return this._sidewalk; }
+            set { this._sidewalk = value; }
+        }
+
+        // Check to see if Sidewalk property is set
+        internal bool IsSetSidewalk()
+        {
+            return this._sidewalk != null;
         }
 
     }

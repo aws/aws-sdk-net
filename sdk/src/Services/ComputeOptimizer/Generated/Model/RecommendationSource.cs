@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling
-    /// group.
+    /// Describes the source of a recommendation, such as an Amazon EC2 instance or Amazon
+    /// EC2 Auto Scaling group.
     /// </summary>
     public partial class RecommendationSource
     {

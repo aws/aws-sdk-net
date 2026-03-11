@@ -40,6 +40,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for ImageDigestDoesNotMatchException
+        /// message.
+        /// </summary>
+        public ImageDigestDoesNotMatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ImageDigestDoesNotMatchException with the specified error
         /// message.
         /// </summary>

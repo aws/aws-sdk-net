@@ -39,6 +39,13 @@ namespace Amazon.MarketplaceCatalog.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNotSupportedException
+        /// message.
+        /// </summary>
+        public ResourceNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotSupportedException with the specified error
         /// message.
         /// </summary>

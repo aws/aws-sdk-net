@@ -36,6 +36,14 @@ namespace Amazon.MTurk
         /// <summary>
         /// Construct instance of AmazonMTurkException
         /// </summary>
+        public AmazonMTurkException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMTurkException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMTurkException(string message)
             : base(message)

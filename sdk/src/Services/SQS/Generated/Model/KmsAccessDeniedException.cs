@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsAccessDeniedException
+        /// message.
+        /// </summary>
+        public KmsAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsAccessDeniedException with the specified error
         /// message.
         /// </summary>

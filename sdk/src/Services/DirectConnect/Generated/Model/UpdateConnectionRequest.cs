@@ -31,7 +31,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConnection operation.
-    /// Updates the Direct Connect dedicated connection configuration.
+    /// Updates the Direct Connect connection configuration.
     /// 
     ///  
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the dedicated connection.
+        /// The ID of the connection.
         /// </para>
         ///  
         /// <para>

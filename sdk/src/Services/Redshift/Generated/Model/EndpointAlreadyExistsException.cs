@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointAlreadyExistsException
+        /// message.
+        /// </summary>
+        public EndpointAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointAlreadyExistsException with the specified error
         /// message.
         /// </summary>

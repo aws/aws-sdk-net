@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for CreateChimeWebhookConfigurationException
+        /// message.
+        /// </summary>
+        public CreateChimeWebhookConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreateChimeWebhookConfigurationException with the specified error
         /// message.
         /// </summary>

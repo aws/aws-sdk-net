@@ -40,6 +40,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+        /// message.
+        /// </summary>
+        public ReplicationSubnetGroupDoesNotCoverEnoughAZsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicationSubnetGroupDoesNotCoverEnoughAZsException with the specified error
         /// message.
         /// </summary>

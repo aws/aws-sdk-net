@@ -20,9 +20,7 @@
           ]
         },
         "output": {
-          "errors": [
-
-          ],
+          "errors": [],
           "results": [
             {
               "createdDate": "2024-10-18T18:53:39.258153Z",
@@ -91,9 +89,7 @@
                   "entityId": "Alice",
                   "entityType": "PhotoFlash::User"
                 },
-                "parents": [
-
-                ]
+                "parents": []
               },
               {
                 "attributes": {
@@ -111,9 +107,7 @@
                   "entityId": "Annalisa",
                   "entityType": "PhotoFlash::User"
                 },
-                "parents": [
-
-                ]
+                "parents": []
               },
               {
                 "attributes": {
@@ -145,9 +139,7 @@
                   "entityId": "1234",
                   "entityType": "PhotoFlash::Account"
                 },
-                "parents": [
-
-                ]
+                "parents": []
               }
             ]
           },
@@ -186,9 +178,7 @@
         "output": {
           "results": [
             {
-              "errors": [
-
-              ],
+              "errors": [],
               "decision": "ALLOW",
               "determiningPolicies": [
                 {
@@ -211,13 +201,9 @@
               }
             },
             {
-              "errors": [
-
-              ],
+              "errors": [],
               "decision": "DENY",
-              "determiningPolicies": [
-
-              ],
+              "determiningPolicies": [],
               "request": {
                 "action": {
                   "actionId": "DeletePhoto",
@@ -313,9 +299,7 @@
           },
           "results": [
             {
-              "errors": [
-
-              ],
+              "errors": [],
               "decision": "ALLOW",
               "determiningPolicies": [
                 {
@@ -334,9 +318,7 @@
               }
             },
             {
-              "errors": [
-
-              ],
+              "errors": [],
               "decision": "ALLOW",
               "determiningPolicies": [
                 {
@@ -355,13 +337,9 @@
               }
             },
             {
-              "errors": [
-
-              ],
+              "errors": [],
               "decision": "DENY",
-              "determiningPolicies": [
-
-              ],
+              "determiningPolicies": [],
               "request": {
                 "action": {
                   "actionId": "ViewPhoto",
@@ -518,6 +496,31 @@
         "description": "The following example creates a new policy store with strict validation turned on.",
         "id": "example-1",
         "title": "To create policy store"
+      },
+      {
+        "input": {
+          "clientToken": "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
+          "encryptionSettings": {
+            "kmsEncryptionSettings": {
+              "key": "arn:aws:kms:us-east-1:123456789012:key/abcdefgh-ijkl-mnop-qrst-uvwxyz123456",
+              "encryptionContext": {
+                "policy_store_owner": "Tim"
+              }
+            }
+          },
+          "validationSettings": {
+            "mode": "STRICT"
+          }
+        },
+        "output": {
+          "arn": "arn:aws:verifiedpermissions::123456789012:policy-store/C7v5xMplfFH3i3e4Jrzb1a",
+          "createdDate": "2024-08-12T18:20:50.99Z",
+          "lastUpdatedDate": "2024-08-12T18:20:50.99Z",
+          "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a"
+        },
+        "description": "The following example creates a new policy store with encryption settings based on a provided KMS key.",
+        "id": "example-2",
+        "title": "To create an encrypted policy store"
       }
     ],
     "CreatePolicyTemplate": [
@@ -545,8 +548,7 @@
           "identitySourceId": "ISEXAMPLEabcdefg111111",
           "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a"
         },
-        "output": {
-        },
+        "output": {},
         "description": "The following example request deletes the specified identity source.",
         "id": "example-1",
         "title": "To delete an identity source"
@@ -558,8 +560,7 @@
           "policyId": "9wYxMpljbbZQb5fcZHyJhY",
           "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a"
         },
-        "output": {
-        },
+        "output": {},
         "description": "The following example deletes the specified policy from its policy store.",
         "id": "example-1",
         "title": "To delete a policy"
@@ -570,8 +571,7 @@
         "input": {
           "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a"
         },
-        "output": {
-        },
+        "output": {},
         "description": "The following example deletes the specified policy store.",
         "id": "example-1",
         "title": "To delete a policy store"
@@ -583,8 +583,7 @@
           "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a",
           "policyTemplateId": "PTEXAMPLEabcdefg111111"
         },
-        "output": {
-        },
+        "output": {},
         "description": "The following example deletes a policy template. Before you can perform this operation, you must first delete any template-linked policies that were instantiated from this policy template. To delete them, use DeletePolicy.",
         "id": "example-1",
         "title": "To delete a policy template"
@@ -652,6 +651,9 @@
         "output": {
           "arn": "arn:aws:verifiedpermissions::123456789012:policy-store/C7v5xMplfFH3i3e4Jrzb1a",
           "createdDate": "2024-08-12T18:20:50.99Z",
+          "encryptionState": {
+            "default": {}
+          },
           "lastUpdatedDate": "2024-08-12T18:20:50.99Z",
           "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a",
           "validationSettings": {
@@ -661,6 +663,31 @@
         "description": "The following example retrieves details about the specified policy store.",
         "id": "example-1",
         "title": "GetPolicyStore"
+      },
+      {
+        "input": {
+          "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a"
+        },
+        "output": {
+          "arn": "arn:aws:verifiedpermissions::123456789012:policy-store/C7v5xMplfFH3i3e4Jrzb1a",
+          "createdDate": "2024-08-12T18:20:50.99Z",
+          "encryptionState": {
+            "kmsEncryptionState": {
+              "key": "arn:aws:kms:us-east-1:123456789012:key/abcdefgh-ijkl-mnop-qrst-uvwxyz123456",
+              "encryptionContext": {
+                "policy_store_owner": "Tim"
+              }
+            }
+          },
+          "lastUpdatedDate": "2024-08-12T18:20:50.99Z",
+          "policyStoreId": "C7v5xMplfFH3i3e4Jrzb1a",
+          "validationSettings": {
+            "mode": "STRICT"
+          }
+        },
+        "description": "The following example retrieves details about the specified encrypted policy store.",
+        "id": "example-2",
+        "title": "GetPolicyStore that is encrypted"
       }
     ],
     "GetPolicyTemplate": [
@@ -716,9 +743,7 @@
           }
         },
         "output": {
-          "errors": [
-
-          ],
+          "errors": [],
           "decision": "ALLOW",
           "determiningPolicies": [
             {
@@ -747,13 +772,9 @@
           }
         },
         "output": {
-          "errors": [
-
-          ],
+          "errors": [],
           "decision": "DENY",
-          "determiningPolicies": [
-
-          ]
+          "determiningPolicies": []
         },
         "description": "The following example is the same as the previous example, except that the principal is User::\"bob\", and the policy store doesn't contain any policy that allows that user access to Album::\"alice_folder\". The output infers that the Deny was implicit because the list of DeterminingPolicies is empty.",
         "id": "example-2",
@@ -775,9 +796,7 @@
           }
         },
         "output": {
-          "errors": [
-
-          ],
+          "errors": [],
           "decision": "ALLOW",
           "determiningPolicies": [
             {
@@ -905,8 +924,7 @@
             {
               "createdDate": "2022-12-09T23:00:24.66266Z",
               "definition": {
-                "static": {
-                }
+                "static": {}
               },
               "lastUpdatedDate": "2022-12-09T23:00:24.66266Z",
               "policyId": "9wYxMpljbbZQb5fcZHyJhY",
@@ -973,8 +991,7 @@
     ],
     "ListPolicyStores": [
       {
-        "input": {
-        },
+        "input": {},
         "output": {
           "policyStores": [
             {
@@ -1068,8 +1085,7 @@
             "key2": "value2"
           }
         },
-        "output": {
-        },
+        "output": {},
         "description": "The following example tags the resource.",
         "id": "example-1",
         "title": "TagResource"
@@ -1084,8 +1100,7 @@
             "key2"
           ]
         },
-        "output": {
-        },
+        "output": {},
         "description": "The following example removes the listed tags from the resource.",
         "id": "example-1",
         "title": "UntagResource"

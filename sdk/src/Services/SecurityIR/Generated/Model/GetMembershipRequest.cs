@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMembership operation.
-    /// Grants permission to get details of a designated service membership.
+    /// Returns the attributes of a membership.
     /// </summary>
     public partial class GetMembershipRequest : AmazonSecurityIRRequest
     {

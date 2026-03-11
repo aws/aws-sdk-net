@@ -36,6 +36,14 @@ namespace Amazon.DevOpsGuru
         /// <summary>
         /// Construct instance of AmazonDevOpsGuruException
         /// </summary>
+        public AmazonDevOpsGuruException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDevOpsGuruException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDevOpsGuruException(string message)
             : base(message)

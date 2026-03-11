@@ -112,6 +112,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetChannelSecurityGroups())
+            {
+                context.Writer.WritePropertyName("channelSecurityGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestChannelSecurityGroupsListValue in publicRequest.ChannelSecurityGroups)
+                {
+                        context.Writer.WriteStringValue(publicRequestChannelSecurityGroupsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDestinations())
             {
                 context.Writer.WritePropertyName("destinations");
@@ -145,6 +156,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetInferenceSettings())
+            {
+                context.Writer.WritePropertyName("inferenceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InferenceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInputAttachments())
             {
                 context.Writer.WritePropertyName("inputAttachments");
@@ -168,6 +190,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = InputSpecificationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.InputSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLinkedChannelSettings())
+            {
+                context.Writer.WritePropertyName("linkedChannelSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LinkedChannelSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LinkedChannelSettings, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -39,6 +39,13 @@ namespace Amazon.CloudSearchDomain.Model
     {
 
         /// <summary>
+        /// Default constructor for SearchException
+        /// message.
+        /// </summary>
+        public SearchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SearchException with the specified error
         /// message.
         /// </summary>

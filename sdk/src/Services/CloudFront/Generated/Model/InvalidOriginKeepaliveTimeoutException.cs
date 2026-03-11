@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOriginKeepaliveTimeoutException
+        /// message.
+        /// </summary>
+        public InvalidOriginKeepaliveTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOriginKeepaliveTimeoutException with the specified error
         /// message.
         /// </summary>

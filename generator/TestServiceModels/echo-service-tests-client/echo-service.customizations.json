@@ -1,0 +1,11 @@
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            {
+                "operation": "addAfter",
+                "newType": "Amazon.Echo.Internal.EchoCustomHttpHandler",
+                "targetType": "Amazon.Runtime.Internal.Unmarshaller"
+            }
+        ]
+    }
+}

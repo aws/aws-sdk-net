@@ -73,6 +73,17 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMedicalScribeContext())
+            {
+                context.Writer.WritePropertyName("MedicalScribeContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MedicalScribeContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.MedicalScribeContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPostStreamAnalyticsSettings())
             {
                 context.Writer.WritePropertyName("PostStreamAnalyticsSettings");

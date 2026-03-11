@@ -66,6 +66,20 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRankingInfluence())
+            {
+                context.Writer.WritePropertyName("rankingInfluence");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectRankingInfluenceKvp in requestObject.RankingInfluence)
+                {
+                    context.Writer.WritePropertyName(requestObjectRankingInfluenceKvp.Key);
+                    var requestObjectRankingInfluenceValue = requestObjectRankingInfluenceKvp.Value;
+
+                        context.Writer.WriteNumberValue(requestObjectRankingInfluenceValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSyncWithLatestSolutionVersion())
             {
                 context.Writer.WritePropertyName("syncWithLatestSolutionVersion");

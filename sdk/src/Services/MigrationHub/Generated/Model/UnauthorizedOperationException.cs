@@ -40,6 +40,13 @@ namespace Amazon.MigrationHub.Model
     {
 
         /// <summary>
+        /// Default constructor for UnauthorizedOperationException
+        /// message.
+        /// </summary>
+        public UnauthorizedOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedOperationException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthenticationProfileAlreadyExistsException
+        /// message.
+        /// </summary>
+        public AuthenticationProfileAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthenticationProfileAlreadyExistsException with the specified error
         /// message.
         /// </summary>

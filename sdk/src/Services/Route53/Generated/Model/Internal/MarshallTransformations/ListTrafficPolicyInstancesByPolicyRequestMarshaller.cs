@@ -56,10 +56,15 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTrafficPolicyInstancesByPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.TrafficPolicyId))
+                throw new AmazonRoute53Exception("Request object does not have required field TrafficPolicyId set");
             
             if (publicRequest.IsSetTrafficPolicyId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.TrafficPolicyId));
+            if (publicRequest.TrafficPolicyVersion == null)
+                throw new AmazonRoute53Exception("Request object does not have required field TrafficPolicyVersion set");
             
             if (publicRequest.IsSetTrafficPolicyVersion())
                 request.Parameters.Add("version", StringUtils.FromInt(publicRequest.TrafficPolicyVersion));
@@ -78,8 +83,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/trafficpolicyinstances/trafficpolicy";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListTrafficPolicyInstancesByPolicyRequestMarshaller _instance = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();        
@@ -101,5 +106,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesByPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesByPolicyRequest publicRequest);
     }    
 }

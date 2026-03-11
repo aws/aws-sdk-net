@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CachePolicyList Object
     /// </summary>  
-    public class CachePolicyListUnmarshaller : IXmlUnmarshaller<CachePolicyList, XmlUnmarshallerContext>
+    public partial class CachePolicyListUnmarshaller : IXmlUnmarshaller<CachePolicyList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -84,6 +84,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -92,6 +94,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CachePolicyList unmarshalledObject, int targetDepth);
+
         private static CachePolicyListUnmarshaller _instance = new CachePolicyListUnmarshaller();        
 
         /// <summary>

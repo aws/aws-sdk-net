@@ -40,6 +40,13 @@ namespace Amazon.FSx.Model
         private string _resourceARN;
 
         /// <summary>
+        /// Default constructor for ResourceDoesNotSupportTaggingException
+        /// message.
+        /// </summary>
+        public ResourceDoesNotSupportTaggingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDoesNotSupportTaggingException with the specified error
         /// message.
         /// </summary>

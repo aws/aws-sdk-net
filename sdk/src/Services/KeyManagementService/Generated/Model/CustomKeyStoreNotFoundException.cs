@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomKeyStoreNotFoundException
+        /// message.
+        /// </summary>
+        public CustomKeyStoreNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomKeyStoreNotFoundException with the specified error
         /// message.
         /// </summary>

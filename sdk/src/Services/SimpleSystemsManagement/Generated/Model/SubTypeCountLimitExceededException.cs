@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for SubTypeCountLimitExceededException
+        /// message.
+        /// </summary>
+        public SubTypeCountLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubTypeCountLimitExceededException with the specified error
         /// message.
         /// </summary>

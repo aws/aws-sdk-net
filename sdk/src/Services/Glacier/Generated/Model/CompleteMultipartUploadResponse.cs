@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon S3 Glacier response to your request.
+    /// Contains the Amazon Glacier response to your request.
     /// 
     ///  
     /// <para>
     /// For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
     /// Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-    /// with Archives in Amazon S3 Glacier</a>.
+    /// with Archives in Amazon Glacier</a>.
     /// </para>
     /// </summary>
     public partial class CompleteMultipartUploadResponse : AmazonWebServiceResponse
@@ -66,7 +66,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// The checksum of the archive computed by Amazon S3 Glacier.
+        /// The checksum of the archive computed by Amazon Glacier.
         /// </para>
         /// </summary>
         public string Checksum

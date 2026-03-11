@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateRealtimeLogConfigRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.ResourcePath = "/2020-05-31/realtime-log-config";
 
@@ -67,32 +68,32 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("ARN", StringUtils.FromString(publicRequest.ARN));
 
                 var publicRequestEndPoints = publicRequest.EndPoints;
-                if (publicRequestEndPoints != null && (publicRequestEndPoints.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetEndPoints()) 
                 {
                     xmlWriter.WriteStartElement("EndPoints");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
                     {
-                    if (publicRequestEndPointsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("member");
-                        if (publicRequestEndPointsValue.KinesisStreamConfig != null)
+                        if (publicRequestEndPointsValue != null)
                         {
-                            xmlWriter.WriteStartElement("KinesisStreamConfig");
-                            if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
-                                xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
-                            if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
-                                xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
+                            xmlWriter.WriteStartElement("member");
+                            if (publicRequestEndPointsValue.IsSetKinesisStreamConfig())
+                            {
+                                xmlWriter.WriteStartElement("KinesisStreamConfig");
+                                if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
+                                    xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
+                                if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
+                                    xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequestEndPointsValue.IsSetStreamType())
+                                xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
                             xmlWriter.WriteEndElement();
                         }
-                        if(publicRequestEndPointsValue.IsSetStreamType())
-                            xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
-                        xmlWriter.WriteEndElement();
-                    }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestFields = publicRequest.Fields;
-                if (publicRequestFields != null && (publicRequestFields.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFields()) 
                 {
                     xmlWriter.WriteStartElement("Fields");
                     foreach (var publicRequestFieldsValue in publicRequestFields) 
@@ -112,6 +113,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -123,8 +125,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateRealtimeLogConfigRequestMarshaller _instance = new UpdateRealtimeLogConfigRequestMarshaller();        
@@ -146,5 +146,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateRealtimeLogConfigRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateRealtimeLogConfigRequest publicRequest);
     }    
 }

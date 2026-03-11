@@ -62,6 +62,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.Number = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("properties", targetDepth))
+                {
+                    var unmarshaller = WorkerComputeConfigurationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

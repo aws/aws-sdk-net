@@ -126,6 +126,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.DefaultInstanceWarmup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeletionProtection", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -159,6 +165,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.HealthCheckType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceLifecyclePolicy", targetDepth))
+                    {
+                        var unmarshaller = InstanceLifecyclePolicyUnmarshaller.Instance;
+                        unmarshalledObject.InstanceLifecyclePolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("InstanceMaintenancePolicy", targetDepth))

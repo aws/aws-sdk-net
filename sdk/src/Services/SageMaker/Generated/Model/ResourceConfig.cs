@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _instanceCount;
         private List<InstanceGroup> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroup>() : null;
+        private InstancePlacementConfig _instancePlacementConfig;
         private TrainingInstanceType _instanceType;
         private int? _keepAlivePeriodInSeconds;
         private string _trainingPlanArn;
@@ -88,6 +89,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstancePlacementConfig. 
+        /// <para>
+        /// Configuration for how training job instances are placed and allocated within UltraServers.
+        /// Only applicable for UltraServer capacity.
+        /// </para>
+        /// </summary>
+        public InstancePlacementConfig InstancePlacementConfig
+        {
+            get { return this._instancePlacementConfig; }
+            set { this._instancePlacementConfig = value; }
+        }
+
+        // Check to see if InstancePlacementConfig property is set
+        internal bool IsSetInstancePlacementConfig()
+        {
+            return this._instancePlacementConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The ML compute instance type. 
@@ -112,7 +132,7 @@ namespace Amazon.SageMaker.Model
         /// subsequent training jobs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int? KeepAlivePeriodInSeconds
         {
             get { return this._keepAlivePeriodInSeconds; }
@@ -209,6 +229,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
+        /// SageMaker automatically selects the volume size for serverless training jobs. You
+        /// cannot customize this setting.
+        /// </para>
+        ///  
+        /// <para>
         /// ML storage volumes store model artifacts and incremental states. Training algorithms
         /// might also use the ML storage volume for scratch space. If you want to store the training
         /// data in the ML storage volume, choose <c>File</c> as the <c>TrainingInputMode</c>
@@ -244,7 +269,7 @@ namespace Amazon.SageMaker.Model
         /// and Outputs</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=0)]
         public int? VolumeSizeInGB
         {
             get { return this._volumeSizeInGB; }

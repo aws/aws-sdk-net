@@ -71,6 +71,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (publicRequest.ReferenceTypes == null)
+                throw new AmazonConnectException("Request object does not have required field ReferenceTypes set");
             
             if (publicRequest.IsSetReferenceTypes())
                 request.ParameterCollection.Add("referenceTypes", publicRequest.ReferenceTypes);

@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountAlreadyClosedException
+        /// message.
+        /// </summary>
+        public AccountAlreadyClosedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountAlreadyClosedException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,7 @@ namespace Amazon.ECR.Model
         private string _imageDigest;
         private DateTime? _imagePushedAt;
         private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private LifecyclePolicyStorageClass _storageClass;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -135,6 +136,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTags()
         {
             return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageClass. 
+        /// <para>
+        /// The storage class of the image.
+        /// </para>
+        /// </summary>
+        public LifecyclePolicyStorageClass StorageClass
+        {
+            get { return this._storageClass; }
+            set { this._storageClass = value; }
+        }
+
+        // Check to see if StorageClass property is set
+        internal bool IsSetStorageClass()
+        {
+            return this._storageClass != null;
         }
 
     }

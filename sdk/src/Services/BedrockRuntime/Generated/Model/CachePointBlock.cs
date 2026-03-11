@@ -34,7 +34,27 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class CachePointBlock
     {
+        private CacheTTL _ttl;
         private CachePointType _type;
+
+        /// <summary>
+        /// Gets and sets the property Ttl. 
+        /// <para>
+        /// Optional TTL duration for cache entries. When specified, enables extended TTL caching
+        /// with the specified duration. When omitted, uses <c>type</c> value for caching behavior.
+        /// </para>
+        /// </summary>
+        public CacheTTL Ttl
+        {
+            get { return this._ttl; }
+            set { this._ttl = value; }
+        }
+
+        // Check to see if Ttl property is set
+        internal bool IsSetTtl()
+        {
+            return this._ttl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 

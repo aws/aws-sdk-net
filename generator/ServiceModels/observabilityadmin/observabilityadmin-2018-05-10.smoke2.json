@@ -20,9 +20,7 @@
     "operationName" : "GetTelemetryEvaluationStatus",
     "input" : { },
     "expectation" : {
-      "failure" : {
-        "errorId" : "AccessDeniedException"
-      }
+      "success" : { }
     },
     "config" : {
       "region" : "us-east-2",

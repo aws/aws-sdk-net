@@ -515,6 +515,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.TestParsing(Amazon.B2bi.Model.TestParsingRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.TestParsing(Amazon.B2bi.Model.TestParsingRequest)" />
+            <member name="T:Amazon.B2bi.Model.TestParsingRequest" />
+            <member name="T:Amazon.B2bi.Model.TestParsingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample TestParsing call with Validation Options"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.B2bi.IAmazonB2bi.UntagResource(Amazon.B2bi.Model.UntagResourceRequest)" />
             <member name="M:Amazon.B2bi.AmazonB2biClient.UntagResource(Amazon.B2bi.Model.UntagResourceRequest)" />
             <member name="T:Amazon.B2bi.Model.UntagResourceRequest" />

@@ -40,6 +40,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalClusterAlreadyExistsException
+        /// message.
+        /// </summary>
+        public GlobalClusterAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalClusterAlreadyExistsException with the specified error
         /// message.
         /// </summary>

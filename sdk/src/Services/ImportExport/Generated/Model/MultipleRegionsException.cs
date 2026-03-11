@@ -40,6 +40,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for MultipleRegionsException
+        /// message.
+        /// </summary>
+        public MultipleRegionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MultipleRegionsException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.TimestreamInfluxDB
         /// <summary>
         /// Construct instance of AmazonTimestreamInfluxDBException
         /// </summary>
+        public AmazonTimestreamInfluxDBException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTimestreamInfluxDBException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTimestreamInfluxDBException(string message)
             : base(message)

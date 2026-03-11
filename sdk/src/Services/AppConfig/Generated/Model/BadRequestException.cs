@@ -41,6 +41,13 @@ namespace Amazon.AppConfig.Model
         private BadRequestReason _reason;
 
         /// <summary>
+        /// Default constructor for BadRequestException
+        /// message.
+        /// </summary>
+        public BadRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadRequestException with the specified error
         /// message.
         /// </summary>

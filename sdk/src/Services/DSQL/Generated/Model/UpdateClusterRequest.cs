@@ -38,7 +38,7 @@ namespace Amazon.DSQL.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Note that updating multi-region clusters requires additional IAM permissions beyond
+    /// Note that updating multi-Region clusters requires additional IAM permissions beyond
     /// those needed for standard cluster updates, as detailed in the Permissions section.
     /// </para>
     ///  </note> 

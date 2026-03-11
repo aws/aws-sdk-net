@@ -74,6 +74,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeliveryMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Exclusion", targetDepth))
+                {
+                    var unmarshaller = NotificationRecipientTypeUnmarshaller.Instance;
+                    unmarshalledObject.Exclusion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Recipient", targetDepth))
                 {
                     var unmarshaller = NotificationRecipientTypeUnmarshaller.Instance;

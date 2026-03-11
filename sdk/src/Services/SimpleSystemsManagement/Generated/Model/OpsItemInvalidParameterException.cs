@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _parameterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for OpsItemInvalidParameterException
+        /// message.
+        /// </summary>
+        public OpsItemInvalidParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemInvalidParameterException with the specified error
         /// message.
         /// </summary>

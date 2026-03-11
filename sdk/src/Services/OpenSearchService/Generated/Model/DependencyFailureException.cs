@@ -40,6 +40,13 @@ namespace Amazon.OpenSearchService.Model
     {
 
         /// <summary>
+        /// Default constructor for DependencyFailureException
+        /// message.
+        /// </summary>
+        public DependencyFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyFailureException with the specified error
         /// message.
         /// </summary>

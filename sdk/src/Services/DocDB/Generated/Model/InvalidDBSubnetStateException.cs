@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBSubnetStateException
+        /// message.
+        /// </summary>
+        public InvalidDBSubnetStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBSubnetStateException with the specified error
         /// message.
         /// </summary>

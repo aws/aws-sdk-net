@@ -32,10 +32,18 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the UpdateCapacityProvider operation.
     /// Modifies the parameters for a capacity provider.
+    /// 
+    ///  
+    /// <para>
+    /// These changes only apply to new Amazon ECS Managed Instances, or EC2 instances, not
+    /// existing ones.
+    /// </para>
     /// </summary>
     public partial class UpdateCapacityProviderRequest : AmazonECSRequest
     {
         private AutoScalingGroupProviderUpdate _autoScalingGroupProvider;
+        private string _cluster;
+        private UpdateManagedInstancesProviderConfiguration _managedInstancesProvider;
         private string _name;
 
         /// <summary>
@@ -45,7 +53,6 @@ namespace Amazon.ECS.Model
         /// provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AutoScalingGroupProviderUpdate AutoScalingGroupProvider
         {
             get { return this._autoScalingGroupProvider; }
@@ -56,6 +63,46 @@ namespace Amazon.ECS.Model
         internal bool IsSetAutoScalingGroupProvider()
         {
             return this._autoScalingGroupProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// The name of the cluster that contains the capacity provider to update. Managed instances
+        /// capacity providers are cluster-scoped and can only be updated within their associated
+        /// cluster.
+        /// </para>
+        /// </summary>
+        public string Cluster
+        {
+            get { return this._cluster; }
+            set { this._cluster = value; }
+        }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedInstancesProvider. 
+        /// <para>
+        /// The updated configuration for the Amazon ECS Managed Instances provider. You can modify
+        /// the infrastructure role, instance launch template, and tag propagation settings. Changes
+        /// take effect for new instances launched after the update.
+        /// </para>
+        /// </summary>
+        public UpdateManagedInstancesProviderConfiguration ManagedInstancesProvider
+        {
+            get { return this._managedInstancesProvider; }
+            set { this._managedInstancesProvider = value; }
+        }
+
+        // Check to see if ManagedInstancesProvider property is set
+        internal bool IsSetManagedInstancesProvider()
+        {
+            return this._managedInstancesProvider != null;
         }
 
         /// <summary>

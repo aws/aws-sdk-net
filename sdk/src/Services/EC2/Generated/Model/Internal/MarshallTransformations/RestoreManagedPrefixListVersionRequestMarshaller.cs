@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PreviousVersion", StringUtils.FromLong(publicRequest.PreviousVersion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreManagedPrefixListVersionRequestMarshaller _instance = new RestoreManagedPrefixListVersionRequestMarshaller();        

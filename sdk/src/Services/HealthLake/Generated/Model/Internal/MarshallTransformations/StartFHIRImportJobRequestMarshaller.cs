@@ -126,6 +126,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetValidationLevel())
+            {
+                context.Writer.WritePropertyName("ValidationLevel");
+                context.Writer.WriteStringValue(publicRequest.ValidationLevel);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

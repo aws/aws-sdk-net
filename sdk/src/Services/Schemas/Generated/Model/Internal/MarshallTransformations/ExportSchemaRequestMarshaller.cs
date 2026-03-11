@@ -71,6 +71,8 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSchemaVersion())
                 request.Parameters.Add("schemaVersion", StringUtils.FromString(publicRequest.SchemaVersion));
+            if (string.IsNullOrEmpty(publicRequest.Type))
+                throw new AmazonSchemasException("Request object does not have required field Type set");
             
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));

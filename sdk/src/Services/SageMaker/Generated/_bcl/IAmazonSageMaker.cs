@@ -247,6 +247,118 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  AttachClusterNodeVolume
+
+
+        /// <summary>
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachClusterNodeVolume service method.</param>
+        /// 
+        /// <returns>The response from the AttachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">REST API Reference for AttachClusterNodeVolume Operation</seealso>
+        AttachClusterNodeVolumeResponse AttachClusterNodeVolume(AttachClusterNodeVolumeRequest request);
+
+
+
+        /// <summary>
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachClusterNodeVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">REST API Reference for AttachClusterNodeVolume Operation</seealso>
+        Task<AttachClusterNodeVolumeResponse> AttachClusterNodeVolumeAsync(AttachClusterNodeVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchAddClusterNodes
+
+
+        /// <summary>
+        /// Adds nodes to a HyperPod cluster by incrementing the target count for one or more
+        /// instance groups. This operation returns a unique <c>NodeLogicalId</c> for each node
+        /// being added, which can be used to track the provisioning status of the node. This
+        /// API provides a safer alternative to <c>UpdateCluster</c> for scaling operations by
+        /// avoiding unintended configuration changes.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is only supported for clusters using <c>Continuous</c> as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchAddClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        BatchAddClusterNodesResponse BatchAddClusterNodes(BatchAddClusterNodesRequest request);
+
+
+
+        /// <summary>
+        /// Adds nodes to a HyperPod cluster by incrementing the target count for one or more
+        /// instance groups. This operation returns a unique <c>NodeLogicalId</c> for each node
+        /// being added, which can be used to track the provisioning status of the node. This
+        /// API provides a safer alternative to <c>UpdateCluster</c> for scaling operations by
+        /// avoiding unintended configuration changes.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is only supported for clusters using <c>Continuous</c> as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAddClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        Task<BatchAddClusterNodesResponse> BatchAddClusterNodesAsync(BatchAddClusterNodesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchDeleteClusterNodes
 
 
@@ -342,6 +454,194 @@ namespace Amazon.SageMaker
         /// <returns>The response from the BatchDescribeModelPackage service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">REST API Reference for BatchDescribeModelPackage Operation</seealso>
         Task<BatchDescribeModelPackageResponse> BatchDescribeModelPackageAsync(BatchDescribeModelPackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchRebootClusterNodes
+
+
+        /// <summary>
+        /// Reboots specific nodes within a SageMaker HyperPod cluster using a soft recovery mechanism.
+        /// <c>BatchRebootClusterNodes</c> performs a graceful reboot of the specified nodes by
+        /// calling the Amazon Elastic Compute Cloud <c>RebootInstances</c> API, which attempts
+        /// to cleanly shut down the operating system before restarting the instance.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful for recovering from transient issues or applying certain
+        /// configuration changes that require a restart.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Rebooting a node may cause temporary service interruption for workloads running on
+        /// that node. Ensure your workloads can handle node restarts or use appropriate scheduling
+        /// to minimize impact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can reboot up to 25 nodes in a single request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For SageMaker HyperPod clusters using the Slurm workload manager, ensure rebooting
+        /// nodes will not disrupt critical cluster operations.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRebootClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchRebootClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchRebootClusterNodes">REST API Reference for BatchRebootClusterNodes Operation</seealso>
+        BatchRebootClusterNodesResponse BatchRebootClusterNodes(BatchRebootClusterNodesRequest request);
+
+
+
+        /// <summary>
+        /// Reboots specific nodes within a SageMaker HyperPod cluster using a soft recovery mechanism.
+        /// <c>BatchRebootClusterNodes</c> performs a graceful reboot of the specified nodes by
+        /// calling the Amazon Elastic Compute Cloud <c>RebootInstances</c> API, which attempts
+        /// to cleanly shut down the operating system before restarting the instance.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful for recovering from transient issues or applying certain
+        /// configuration changes that require a restart.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Rebooting a node may cause temporary service interruption for workloads running on
+        /// that node. Ensure your workloads can handle node restarts or use appropriate scheduling
+        /// to minimize impact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can reboot up to 25 nodes in a single request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For SageMaker HyperPod clusters using the Slurm workload manager, ensure rebooting
+        /// nodes will not disrupt critical cluster operations.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRebootClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchRebootClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchRebootClusterNodes">REST API Reference for BatchRebootClusterNodes Operation</seealso>
+        Task<BatchRebootClusterNodesResponse> BatchRebootClusterNodesAsync(BatchRebootClusterNodesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchReplaceClusterNodes
+
+
+        /// <summary>
+        /// Replaces specific nodes within a SageMaker HyperPod cluster with new hardware. <c>BatchReplaceClusterNodes</c>
+        /// terminates the specified instances and provisions new replacement instances with the
+        /// same configuration but fresh hardware. The Amazon Machine Image (AMI) and instance
+        /// configuration remain the same.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful for recovering from hardware failures or persistent issues
+        /// that cannot be resolved through a reboot.
+        /// </para>
+        ///  <important> <ul> <li> 
+        /// <para>
+        ///  <b>Data Loss Warning:</b> Replacing nodes destroys all instance volumes, including
+        /// both root and secondary volumes. All data stored on these volumes will be permanently
+        /// lost and cannot be recovered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre file system
+        /// before invoking the API on a worker node group. This will help prevent any potential
+        /// data loss from the instance root volume. For more information about backup, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+        /// the backup script provided by SageMaker HyperPod</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to invoke this API on an existing cluster, you'll first need to patch
+        /// the cluster by running the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+        /// API</a>. For more information about patching a cluster, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can replace up to 25 nodes in a single request.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchReplaceClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchReplaceClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchReplaceClusterNodes">REST API Reference for BatchReplaceClusterNodes Operation</seealso>
+        BatchReplaceClusterNodesResponse BatchReplaceClusterNodes(BatchReplaceClusterNodesRequest request);
+
+
+
+        /// <summary>
+        /// Replaces specific nodes within a SageMaker HyperPod cluster with new hardware. <c>BatchReplaceClusterNodes</c>
+        /// terminates the specified instances and provisions new replacement instances with the
+        /// same configuration but fresh hardware. The Amazon Machine Image (AMI) and instance
+        /// configuration remain the same.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful for recovering from hardware failures or persistent issues
+        /// that cannot be resolved through a reboot.
+        /// </para>
+        ///  <important> <ul> <li> 
+        /// <para>
+        ///  <b>Data Loss Warning:</b> Replacing nodes destroys all instance volumes, including
+        /// both root and secondary volumes. All data stored on these volumes will be permanently
+        /// lost and cannot be recovered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre file system
+        /// before invoking the API on a worker node group. This will help prevent any potential
+        /// data loss from the instance root volume. For more information about backup, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+        /// the backup script provided by SageMaker HyperPod</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to invoke this API on an existing cluster, you'll first need to patch
+        /// the cluster by running the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+        /// API</a>. For more information about patching a cluster, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can replace up to 25 nodes in a single request.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchReplaceClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchReplaceClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchReplaceClusterNodes">REST API Reference for BatchReplaceClusterNodes Operation</seealso>
+        Task<BatchReplaceClusterNodesResponse> BatchReplaceClusterNodesAsync(BatchReplaceClusterNodesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -831,10 +1131,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker
-        /// for creating and managing persistent clusters for developing large machine learning
-        /// models, such as large language models (LLMs) and diffusion models. To learn more,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
+        /// Creates an Amazon SageMaker HyperPod cluster. SageMaker HyperPod is a capability of
+        /// SageMaker for creating and managing persistent clusters for developing large machine
+        /// learning models, such as large language models (LLMs) and diffusion models. To learn
+        /// more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
         /// SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -853,10 +1153,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker
-        /// for creating and managing persistent clusters for developing large machine learning
-        /// models, such as large language models (LLMs) and diffusion models. To learn more,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
+        /// Creates an Amazon SageMaker HyperPod cluster. SageMaker HyperPod is a capability of
+        /// SageMaker for creating and managing persistent clusters for developing large machine
+        /// learning models, such as large language models (LLMs) and diffusion models. To learn
+        /// more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
         /// SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -2837,6 +3137,44 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateMlflowApp
+
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the CreateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">REST API Reference for CreateMlflowApp Operation</seealso>
+        CreateMlflowAppResponse CreateMlflowApp(CreateMlflowAppRequest request);
+
+
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">REST API Reference for CreateMlflowApp Operation</seealso>
+        Task<CreateMlflowAppResponse> CreateMlflowAppAsync(CreateMlflowAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateMlflowTrackingServer
 
 
@@ -3558,6 +3896,14 @@ namespace Amazon.SageMaker
         /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecycle configuration scripts execute with root access and the notebook instance's
+        /// IAM execution role privileges. Grant this permission only to trusted principals. See
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
         /// 
@@ -3601,6 +3947,14 @@ namespace Amazon.SageMaker
         /// For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecycle configuration scripts execute with root access and the notebook instance's
+        /// IAM execution role privileges. Grant this permission only to trusted principals. See
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
         /// <param name="cancellationToken">
@@ -3900,6 +4254,44 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">REST API Reference for CreatePresignedDomainUrl Operation</seealso>
         Task<CreatePresignedDomainUrlResponse> CreatePresignedDomainUrlAsync(CreatePresignedDomainUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreatePresignedMlflowAppUrl
+
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// MLflow App. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowAppUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowAppUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">REST API Reference for CreatePresignedMlflowAppUrl Operation</seealso>
+        CreatePresignedMlflowAppUrlResponse CreatePresignedMlflowAppUrl(CreatePresignedMlflowAppUrlRequest request);
+
+
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// MLflow App. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowAppUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowAppUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">REST API Reference for CreatePresignedMlflowAppUrl Operation</seealso>
+        Task<CreatePresignedMlflowAppUrlResponse> CreatePresignedMlflowAppUrlAsync(CreatePresignedMlflowAppUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6323,6 +6715,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteMlflowApp
+
+
+        /// <summary>
+        /// Deletes an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">REST API Reference for DeleteMlflowApp Operation</seealso>
+        DeleteMlflowAppResponse DeleteMlflowApp(DeleteMlflowAppRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">REST API Reference for DeleteMlflowApp Operation</seealso>
+        Task<DeleteMlflowAppResponse> DeleteMlflowAppAsync(DeleteMlflowAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteMlflowTrackingServer
 
 
@@ -6883,6 +7309,54 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteProcessingJob
+
+
+        /// <summary>
+        /// Deletes a processing job. After Amazon SageMaker deletes a processing job, all of
+        /// the metadata for the processing job is lost. You can delete only processing jobs that
+        /// are in a terminal state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>). You
+        /// cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c> state. After
+        /// deleting the job, you can reuse its name to create another processing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProcessingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        DeleteProcessingJobResponse DeleteProcessingJob(DeleteProcessingJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a processing job. After Amazon SageMaker deletes a processing job, all of
+        /// the metadata for the processing job is lost. You can delete only processing jobs that
+        /// are in a terminal state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>). You
+        /// cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c> state. After
+        /// deleting the job, you can reuse its name to create another processing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcessingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProcessingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProcessingJob">REST API Reference for DeleteProcessingJob Operation</seealso>
+        Task<DeleteProcessingJobResponse> DeleteProcessingJobAsync(DeleteProcessingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteProject
 
 
@@ -7066,6 +7540,56 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DeleteTags service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTrainingJob
+
+
+        /// <summary>
+        /// Deletes a training job. After SageMaker deletes a training job, all of the metadata
+        /// for the training job is lost. You can delete only training jobs that are in a terminal
+        /// state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>) and don't retain an <c>Available</c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+        /// warm pool</a>. You cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c>
+        /// state. After deleting the job, you can reuse its name to create another training job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        DeleteTrainingJobResponse DeleteTrainingJob(DeleteTrainingJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a training job. After SageMaker deletes a training job, all of the metadata
+        /// for the training job is lost. You can delete only training jobs that are in a terminal
+        /// state (<c>Stopped</c>, <c>Failed</c>, or <c>Completed</c>) and don't retain an <c>Available</c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-warm-pools.html">managed
+        /// warm pool</a>. You cannot delete a job that is in the <c>InProgress</c> or <c>Stopping</c>
+        /// state. After deleting the job, you can reuse its name to create another training job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingJob">REST API Reference for DeleteTrainingJob Operation</seealso>
+        Task<DeleteTrainingJobResponse> DeleteTrainingJobAsync(DeleteTrainingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7594,6 +8118,44 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClusterEvent
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific event for a given HyperPod cluster.
+        /// This functionality is only supported when the <c>NodeProvisioningMode</c> is set to
+        /// <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterEvent service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterEvent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        DescribeClusterEventResponse DescribeClusterEvent(DescribeClusterEventRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific event for a given HyperPod cluster.
+        /// This functionality is only supported when the <c>NodeProvisioningMode</c> is set to
+        /// <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterEvent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        Task<DescribeClusterEventResponse> DescribeClusterEventAsync(DescribeClusterEventRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8593,6 +9155,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeMlflowApp
+
+
+        /// <summary>
+        /// Returns information about an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">REST API Reference for DescribeMlflowApp Operation</seealso>
+        DescribeMlflowAppResponse DescribeMlflowApp(DescribeMlflowAppRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">REST API Reference for DescribeMlflowApp Operation</seealso>
+        Task<DescribeMlflowAppResponse> DescribeMlflowAppAsync(DescribeMlflowAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeMlflowTrackingServer
 
 
@@ -9243,6 +9839,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeReservedCapacity
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        DescribeReservedCapacityResponse DescribeReservedCapacity(DescribeReservedCapacityRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        Task<DescribeReservedCapacityResponse> DescribeReservedCapacityAsync(DescribeReservedCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSpace
 
 
@@ -9646,6 +10276,56 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DescribeWorkteam service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkteam">REST API Reference for DescribeWorkteam Operation</seealso>
         Task<DescribeWorkteamResponse> DescribeWorkteamAsync(DescribeWorkteamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DetachClusterNodeVolume
+
+
+        /// <summary>
+        /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
+        /// EKS orchestrated SageMaker HyperPod cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachClusterNodeVolume service method.</param>
+        /// 
+        /// <returns>The response from the DetachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">REST API Reference for DetachClusterNodeVolume Operation</seealso>
+        DetachClusterNodeVolumeResponse DetachClusterNodeVolume(DetachClusterNodeVolumeRequest request);
+
+
+
+        /// <summary>
+        /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
+        /// EKS orchestrated SageMaker HyperPod cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachClusterNodeVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">REST API Reference for DetachClusterNodeVolume Operation</seealso>
+        Task<DetachClusterNodeVolumeResponse> DetachClusterNodeVolumeAsync(DetachClusterNodeVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10290,6 +10970,44 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob">REST API Reference for ListCandidatesForAutoMLJob Operation</seealso>
         Task<ListCandidatesForAutoMLJobResponse> ListCandidatesForAutoMLJobAsync(ListCandidatesForAutoMLJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListClusterEvents
+
+
+        /// <summary>
+        /// Retrieves a list of event summaries for a specified HyperPod cluster. The operation
+        /// supports filtering, sorting, and pagination of results. This functionality is only
+        /// supported when the <c>NodeProvisioningMode</c> is set to <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterEvents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        ListClusterEventsResponse ListClusterEvents(ListClusterEventsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of event summaries for a specified HyperPod cluster. The operation
+        /// supports filtering, sorting, and pagination of results. This functionality is only
+        /// supported when the <c>NodeProvisioningMode</c> is set to <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusterEvents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        Task<ListClusterEventsResponse> ListClusterEventsAsync(ListClusterEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11270,6 +11988,34 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListLineageGroups service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
         Task<ListLineageGroupsResponse> ListLineageGroupsAsync(ListLineageGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMlflowApps
+
+
+        /// <summary>
+        /// Lists all MLflow Apps
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowApps service method.</param>
+        /// 
+        /// <returns>The response from the ListMlflowApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">REST API Reference for ListMlflowApps Operation</seealso>
+        ListMlflowAppsResponse ListMlflowApps(ListMlflowAppsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all MLflow Apps
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowApps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMlflowApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">REST API Reference for ListMlflowApps Operation</seealso>
+        Task<ListMlflowAppsResponse> ListMlflowAppsAsync(ListMlflowAppsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -12522,6 +13268,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">REST API Reference for ListTrials Operation</seealso>
         Task<ListTrialsResponse> ListTrialsAsync(ListTrialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListUltraServersByReservedCapacity
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        ListUltraServersByReservedCapacityResponse ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request);
+
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        Task<ListUltraServersByReservedCapacityResponse> ListUltraServersByReservedCapacityAsync(ListUltraServersByReservedCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -15307,6 +16087,48 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateMlflowApp
+
+
+        /// <summary>
+        /// Updates an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">REST API Reference for UpdateMlflowApp Operation</seealso>
+        UpdateMlflowAppResponse UpdateMlflowApp(UpdateMlflowAppRequest request);
+
+
+
+        /// <summary>
+        /// Updates an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">REST API Reference for UpdateMlflowApp Operation</seealso>
+        Task<UpdateMlflowAppResponse> UpdateMlflowAppAsync(UpdateMlflowAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateMlflowTrackingServer
 
 
@@ -15546,6 +16368,16 @@ namespace Amazon.SageMaker
         /// Updates a notebook instance. NotebookInstance updates include upgrading or downgrading
         /// the ML compute instance used for your notebook instance to accommodate changes in
         /// your workload requirements.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API can attach lifecycle configurations to notebook instances. Lifecycle configuration
+        /// scripts execute with root access and the notebook instance's IAM execution role privileges.
+        /// Principals with this permission and access to lifecycle configurations can execute
+        /// code with the execution role's credentials. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstance service method.</param>
         /// 
@@ -15563,6 +16395,16 @@ namespace Amazon.SageMaker
         /// Updates a notebook instance. NotebookInstance updates include upgrading or downgrading
         /// the ML compute instance used for your notebook instance to accommodate changes in
         /// your workload requirements.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API can attach lifecycle configurations to notebook instances. Lifecycle configuration
+        /// scripts execute with root access and the notebook instance's IAM execution role privileges.
+        /// Principals with this permission and access to lifecycle configurations can execute
+        /// code with the execution role's credentials. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstance service method.</param>
         /// <param name="cancellationToken">
@@ -15585,6 +16427,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates a notebook instance lifecycle configuration created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
         /// API.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Updates to lifecycle configurations affect all notebook instances using that configuration
+        /// upon their next start. Lifecycle configuration scripts execute with root access and
+        /// the notebook instance's IAM execution role privileges. Grant this permission only
+        /// to trusted principals. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
         /// 
@@ -15601,6 +16453,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates a notebook instance lifecycle configuration created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
         /// API.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Updates to lifecycle configurations affect all notebook instances using that configuration
+        /// upon their next start. Lifecycle configuration scripts execute with root access and
+        /// the notebook instance's IAM execution role privileges. Grant this permission only
+        /// to trusted principals. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+        /// a Notebook Instance Using a Lifecycle Configuration Script</a> for security best practices.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
         /// <param name="cancellationToken">
@@ -16099,8 +16961,12 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// To restrict access to all the workers in public internet, add the <c>SourceIpConfig</c>
-        /// CIDR value as "10.0.0.0/16".
+        /// To restrict public internet access for all workers, configure the <c>SourceIpConfig</c>
+        /// CIDR value. For example, when using <c>SourceIpConfig</c> with an <c>IpAddressType</c>
+        /// of <c>IPv4</c>, you can restrict access to the IPv4 CIDR block "10.0.0.0/16". When
+        /// using an <c>IpAddressType</c> of <c>dualstack</c>, you can specify both the IPv4 and
+        /// IPv6 CIDR blocks, such as "10.0.0.0/16" for IPv4 only, "2001:db8:1234:1a00::/56" for
+        /// IPv6 only, or "10.0.0.0/16" and "2001:db8:1234:1a00::/56" for dual stack.
         /// </para>
         ///  <important> 
         /// <para>
@@ -16163,8 +17029,12 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// To restrict access to all the workers in public internet, add the <c>SourceIpConfig</c>
-        /// CIDR value as "10.0.0.0/16".
+        /// To restrict public internet access for all workers, configure the <c>SourceIpConfig</c>
+        /// CIDR value. For example, when using <c>SourceIpConfig</c> with an <c>IpAddressType</c>
+        /// of <c>IPv4</c>, you can restrict access to the IPv4 CIDR block "10.0.0.0/16". When
+        /// using an <c>IpAddressType</c> of <c>dualstack</c>, you can specify both the IPv4 and
+        /// IPv6 CIDR blocks, such as "10.0.0.0/16" for IPv4 only, "2001:db8:1234:1a00::/56" for
+        /// IPv6 only, or "10.0.0.0/16" and "2001:db8:1234:1a00::/56" for dual stack.
         /// </para>
         ///  <important> 
         /// <para>

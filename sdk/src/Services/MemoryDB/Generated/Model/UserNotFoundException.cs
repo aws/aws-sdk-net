@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified user does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class UserNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for UserNotFoundException
+        /// message.
+        /// </summary>
+        public UserNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new UserNotFoundException with the specified error

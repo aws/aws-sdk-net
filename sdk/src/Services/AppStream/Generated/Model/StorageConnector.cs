@@ -86,8 +86,8 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property DomainsRequireAdminConsent. 
         /// <para>
         /// The OneDrive for Business domains where you require admin consent when users try to
-        /// link their OneDrive account to AppStream 2.0. The attribute can only be specified
-        /// when ConnectorType=ONE_DRIVE.
+        /// link their OneDrive account to WorkSpaces Applications. The attribute can only be
+        /// specified when ConnectorType=ONE_DRIVE.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

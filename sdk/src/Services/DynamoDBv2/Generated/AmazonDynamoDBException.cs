@@ -36,6 +36,14 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Construct instance of AmazonDynamoDBException
         /// </summary>
+        public AmazonDynamoDBException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDynamoDBException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDynamoDBException(string message)
             : base(message)

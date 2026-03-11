@@ -277,6 +277,89 @@ namespace Amazon.CloudWatch
         #endregion
 
 
+        #region  DeleteAlarmMuteRule
+
+
+        /// <summary>
+        /// Deletes a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a mute rule, any alarms that are currently being muted by that rule
+        /// are immediately unmuted. If those alarms are in an ALARM state, their configured actions
+        /// will trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. If you delete a mute rule that does not exist, the operation
+        /// succeeds without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a mute rule, you need the <c>cloudwatch:DeleteAlarmMuteRule</c> permission
+        /// on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual DeleteAlarmMuteRuleResponse DeleteAlarmMuteRule(DeleteAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlarmMuteRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a mute rule, any alarms that are currently being muted by that rule
+        /// are immediately unmuted. If those alarms are in an ALARM state, their configured actions
+        /// will trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. If you delete a mute rule that does not exist, the operation
+        /// succeeds without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a mute rule, you need the <c>cloudwatch:DeleteAlarmMuteRule</c> permission
+        /// on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmMuteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual Task<DeleteAlarmMuteRuleResponse> DeleteAlarmMuteRuleAsync(DeleteAlarmMuteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmMuteRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAlarmMuteRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlarms
 
 
@@ -324,7 +407,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public virtual DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmsResponseUnmarshaller.Instance;
 
@@ -379,7 +462,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public virtual Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmsResponseUnmarshaller.Instance;
             
@@ -417,7 +500,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
         public virtual DeleteAnomalyDetectorResponse DeleteAnomalyDetector(DeleteAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -454,7 +537,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
         public virtual Task<DeleteAnomalyDetectorResponse> DeleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
             
@@ -488,7 +571,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
         public virtual DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
 
@@ -521,7 +604,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
         public virtual Task<DeleteDashboardsResponse> DeleteDashboardsAsync(DeleteDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
             
@@ -554,7 +637,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
         public virtual DeleteInsightRulesResponse DeleteInsightRules(DeleteInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightRulesResponseUnmarshaller.Instance;
 
@@ -586,7 +669,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
         public virtual Task<DeleteInsightRulesResponse> DeleteInsightRulesAsync(DeleteInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightRulesResponseUnmarshaller.Instance;
             
@@ -616,7 +699,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
         public virtual DeleteMetricStreamResponse DeleteMetricStream(DeleteMetricStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
 
@@ -645,11 +728,68 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
         public virtual Task<DeleteMetricStreamResponse> DeleteMetricStreamAsync(DeleteMetricStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteMetricStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAlarmContributors
+
+
+        /// <summary>
+        /// Returns the information of the current alarm contributors that are in <c>ALARM</c>
+        /// state. This operation returns details about the individual time series that contribute
+        /// to the alarm's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmContributors service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmContributors service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual DescribeAlarmContributorsResponse DescribeAlarmContributors(DescribeAlarmContributorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlarmContributorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the information of the current alarm contributors that are in <c>ALARM</c>
+        /// state. This operation returns details about the individual time series that contribute
+        /// to the alarm's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmContributors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmContributors service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual Task<DescribeAlarmContributorsResponse> DescribeAlarmContributorsAsync(DescribeAlarmContributorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAlarmContributorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -712,7 +852,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public virtual DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmHistoryResponseUnmarshaller.Instance;
 
@@ -780,7 +920,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public virtual Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmHistoryResponseUnmarshaller.Instance;
             
@@ -837,7 +977,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public virtual DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsResponseUnmarshaller.Instance;
 
@@ -895,7 +1035,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public virtual Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsResponseUnmarshaller.Instance;
             
@@ -924,7 +1064,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public virtual DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsForMetricRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.Instance;
 
@@ -952,7 +1092,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public virtual Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsForMetricRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.Instance;
             
@@ -990,7 +1130,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
         public virtual DescribeAnomalyDetectorsResponse DescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectorsResponseUnmarshaller.Instance;
 
@@ -1027,7 +1167,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
         public virtual Task<DescribeAnomalyDetectorsResponse> DescribeAnomalyDetectorsAsync(DescribeAnomalyDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectorsResponseUnmarshaller.Instance;
             
@@ -1057,7 +1197,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
         public virtual DescribeInsightRulesResponse DescribeInsightRules(DescribeInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightRulesResponseUnmarshaller.Instance;
 
@@ -1086,7 +1226,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
         public virtual Task<DescribeInsightRulesResponse> DescribeInsightRulesAsync(DescribeInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightRulesResponseUnmarshaller.Instance;
             
@@ -1108,7 +1248,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public virtual DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAlarmActionsResponseUnmarshaller.Instance;
 
@@ -1129,7 +1269,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public virtual Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAlarmActionsResponseUnmarshaller.Instance;
             
@@ -1157,7 +1297,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
         public virtual DisableInsightRulesResponse DisableInsightRules(DisableInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableInsightRulesResponseUnmarshaller.Instance;
 
@@ -1184,7 +1324,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
         public virtual Task<DisableInsightRulesResponse> DisableInsightRulesAsync(DisableInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableInsightRulesResponseUnmarshaller.Instance;
             
@@ -1205,7 +1345,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public virtual EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAlarmActionsResponseUnmarshaller.Instance;
 
@@ -1225,7 +1365,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public virtual Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAlarmActionsResponseUnmarshaller.Instance;
             
@@ -1256,7 +1396,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
         public virtual EnableInsightRulesResponse EnableInsightRules(EnableInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableInsightRulesResponseUnmarshaller.Instance;
 
@@ -1286,11 +1426,122 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
         public virtual Task<EnableInsightRulesResponse> EnableInsightRulesAsync(EnableInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableInsightRulesResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableInsightRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAlarmMuteRule
+
+
+        /// <summary>
+        /// Retrieves details for a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns complete information about the mute rule, including its configuration,
+        /// status, targeted alarms, and metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// The returned status indicates the current state of the mute rule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b>: The mute rule is configured and will become active in the future
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b>: The mute rule is currently muting alarm actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EXPIRED</b>: The mute rule has passed its expiration date and will no longer become
+        /// active
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve details for a mute rule, you need the <c>cloudwatch:GetAlarmMuteRule</c>
+        /// permission on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the GetAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual GetAlarmMuteRuleResponse GetAlarmMuteRule(GetAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetAlarmMuteRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details for a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns complete information about the mute rule, including its configuration,
+        /// status, targeted alarms, and metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// The returned status indicates the current state of the mute rule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b>: The mute rule is configured and will become active in the future
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b>: The mute rule is currently muting alarm actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EXPIRED</b>: The mute rule has passed its expiration date and will no longer become
+        /// active
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve details for a mute rule, you need the <c>cloudwatch:GetAlarmMuteRule</c>
+        /// permission on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarmMuteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual Task<GetAlarmMuteRuleResponse> GetAlarmMuteRuleAsync(GetAlarmMuteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmMuteRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAlarmMuteRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1323,7 +1574,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual GetDashboardResponse GetDashboard(GetDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
 
@@ -1359,7 +1610,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
             
@@ -1437,7 +1688,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
         public virtual GetInsightRuleReportResponse GetInsightRuleReport(GetInsightRuleReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightRuleReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightRuleReportResponseUnmarshaller.Instance;
 
@@ -1514,7 +1765,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
         public virtual Task<GetInsightRuleReportResponse> GetInsightRuleReportAsync(GetInsightRuleReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightRuleReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightRuleReportResponseUnmarshaller.Instance;
             
@@ -1621,7 +1872,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
@@ -1727,7 +1978,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
             
@@ -1838,7 +2089,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public virtual GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
 
@@ -1948,7 +2199,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public virtual Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
             
@@ -1984,7 +2235,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
         public virtual GetMetricStreamResponse GetMetricStream(GetMetricStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStreamResponseUnmarshaller.Instance;
 
@@ -2019,7 +2270,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
         public virtual Task<GetMetricStreamResponse> GetMetricStreamAsync(GetMetricStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStreamResponseUnmarshaller.Instance;
             
@@ -2064,7 +2315,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
         public virtual GetMetricWidgetImageResponse GetMetricWidgetImage(GetMetricWidgetImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricWidgetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricWidgetImageResponseUnmarshaller.Instance;
 
@@ -2108,11 +2359,102 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
         public virtual Task<GetMetricWidgetImageResponse> GetMetricWidgetImageAsync(GetMetricWidgetImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricWidgetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricWidgetImageResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetMetricWidgetImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAlarmMuteRules
+
+
+        /// <summary>
+        /// Lists alarm mute rules in your Amazon Web Services account and region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by alarm name to find all mute rules targeting a specific
+        /// alarm, or by status to find rules that are scheduled, active, or expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination for accounts with many mute rules. Use the <c>MaxRecords</c>
+        /// and <c>NextToken</c> parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list mute rules, you need the <c>cloudwatch:ListAlarmMuteRules</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmMuteRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmMuteRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual ListAlarmMuteRulesResponse ListAlarmMuteRules(ListAlarmMuteRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlarmMuteRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmMuteRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlarmMuteRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists alarm mute rules in your Amazon Web Services account and region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by alarm name to find all mute rules targeting a specific
+        /// alarm, or by status to find rules that are scheduled, active, or expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination for accounts with many mute rules. Use the <c>MaxRecords</c>
+        /// and <c>NextToken</c> parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list mute rules, you need the <c>cloudwatch:ListAlarmMuteRules</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmMuteRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarmMuteRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual Task<ListAlarmMuteRulesResponse> ListAlarmMuteRulesAsync(ListAlarmMuteRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlarmMuteRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmMuteRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAlarmMuteRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2144,7 +2486,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -2179,7 +2521,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
             
@@ -2210,7 +2552,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
         public virtual ListManagedInsightRulesResponse ListManagedInsightRules(ListManagedInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedInsightRulesResponseUnmarshaller.Instance;
 
@@ -2240,7 +2582,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
         public virtual Task<ListManagedInsightRulesResponse> ListManagedInsightRulesAsync(ListManagedInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedInsightRulesResponseUnmarshaller.Instance;
             
@@ -2339,7 +2681,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual ListMetricsResponse ListMetrics(ListMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
 
@@ -2439,7 +2781,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
             
@@ -2472,7 +2814,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
         public virtual ListMetricStreamsResponse ListMetricStreams(ListMetricStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricStreamsResponseUnmarshaller.Instance;
 
@@ -2504,7 +2846,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
         public virtual Task<ListMetricStreamsResponse> ListMetricStreamsAsync(ListMetricStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricStreamsResponseUnmarshaller.Instance;
             
@@ -2535,7 +2877,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2565,11 +2907,148 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAlarmMuteRule
+
+
+        /// <summary>
+        /// Creates or updates an alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// Alarm mute rules automatically mute alarm actions during predefined time windows.
+        /// When a mute rule is active, targeted alarms continue to evaluate metrics and transition
+        /// between states, but their configured actions (such as Amazon SNS notifications or
+        /// Auto Scaling actions) are muted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create mute rules with recurring schedules using <c>cron</c> expressions or
+        /// one-time mute windows using <c>at</c> expressions. Each mute rule can target up to
+        /// 100 specific alarms by name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a rule name that already exists, this operation updates the existing
+        /// rule with the new configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a mute rule, you must have the <c>cloudwatch:PutAlarmMuteRule</c>
+        /// permission on two types of resources: the alarm mute rule resource itself, and each
+        /// alarm that the rule targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, If you want to allow a user to create mute rules that target only specific
+        /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
+        /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</c>),
+        /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
+        /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
+        /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use IAM policy conditions to allow targeting alarms based on resource
+        /// tags. For example, you can restrict users to create/update mute rules to only target
+        /// alarms that have a specific tag key-value pair, such as <c>Team=TeamA</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the PutAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual PutAlarmMuteRuleResponse PutAlarmMuteRule(PutAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutAlarmMuteRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates an alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// Alarm mute rules automatically mute alarm actions during predefined time windows.
+        /// When a mute rule is active, targeted alarms continue to evaluate metrics and transition
+        /// between states, but their configured actions (such as Amazon SNS notifications or
+        /// Auto Scaling actions) are muted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create mute rules with recurring schedules using <c>cron</c> expressions or
+        /// one-time mute windows using <c>at</c> expressions. Each mute rule can target up to
+        /// 100 specific alarms by name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a rule name that already exists, this operation updates the existing
+        /// rule with the new configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a mute rule, you must have the <c>cloudwatch:PutAlarmMuteRule</c>
+        /// permission on two types of resources: the alarm mute rule resource itself, and each
+        /// alarm that the rule targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, If you want to allow a user to create mute rules that target only specific
+        /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
+        /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</c>),
+        /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
+        /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
+        /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use IAM policy conditions to allow targeting alarms based on resource
+        /// tags. For example, you can restrict users to create/update mute rules to only target
+        /// alarms that have a specific tag key-value pair, such as <c>Team=TeamA</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarmMuteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual Task<PutAlarmMuteRuleResponse> PutAlarmMuteRuleAsync(PutAlarmMuteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmMuteRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAlarmMuteRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2615,7 +3094,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
         public virtual PutAnomalyDetectorResponse PutAnomalyDetector(PutAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -2664,7 +3143,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
         public virtual Task<PutAnomalyDetectorResponse> PutAnomalyDetectorAsync(PutAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
             
@@ -2769,7 +3248,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
         public virtual PutCompositeAlarmResponse PutCompositeAlarm(PutCompositeAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCompositeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCompositeAlarmResponseUnmarshaller.Instance;
 
@@ -2873,7 +3352,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
         public virtual Task<PutCompositeAlarmResponse> PutCompositeAlarmAsync(PutCompositeAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCompositeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCompositeAlarmResponseUnmarshaller.Instance;
             
@@ -2927,7 +3406,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
         public virtual PutDashboardResponse PutDashboard(PutDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDashboardResponseUnmarshaller.Instance;
 
@@ -2980,7 +3459,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
         public virtual Task<PutDashboardResponse> PutDashboardAsync(PutDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDashboardResponseUnmarshaller.Instance;
             
@@ -3019,7 +3498,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
         public virtual PutInsightRuleResponse PutInsightRule(PutInsightRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInsightRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInsightRuleResponseUnmarshaller.Instance;
 
@@ -3057,7 +3536,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
         public virtual Task<PutInsightRuleResponse> PutInsightRuleAsync(PutInsightRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInsightRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInsightRuleResponseUnmarshaller.Instance;
             
@@ -3090,7 +3569,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
         public virtual PutManagedInsightRulesResponse PutManagedInsightRules(PutManagedInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutManagedInsightRulesResponseUnmarshaller.Instance;
 
@@ -3122,7 +3601,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
         public virtual Task<PutManagedInsightRulesResponse> PutManagedInsightRulesAsync(PutManagedInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutManagedInsightRulesResponseUnmarshaller.Instance;
             
@@ -3220,7 +3699,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public virtual PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricAlarmResponseUnmarshaller.Instance;
 
@@ -3317,7 +3796,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public virtual Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricAlarmResponseUnmarshaller.Instance;
             
@@ -3424,7 +3903,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public virtual PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricDataResponseUnmarshaller.Instance;
 
@@ -3530,7 +4009,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public virtual Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricDataResponseUnmarshaller.Instance;
             
@@ -3618,7 +4097,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
         public virtual PutMetricStreamResponse PutMetricStream(PutMetricStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricStreamResponseUnmarshaller.Instance;
 
@@ -3705,7 +4184,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
         public virtual Task<PutMetricStreamResponse> PutMetricStreamAsync(PutMetricStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricStreamResponseUnmarshaller.Instance;
             
@@ -3755,7 +4234,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public virtual SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetAlarmStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetAlarmStateResponseUnmarshaller.Instance;
 
@@ -3804,7 +4283,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public virtual Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetAlarmStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetAlarmStateResponseUnmarshaller.Instance;
             
@@ -3834,7 +4313,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
         public virtual StartMetricStreamsResponse StartMetricStreams(StartMetricStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetricStreamsResponseUnmarshaller.Instance;
 
@@ -3863,7 +4342,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
         public virtual Task<StartMetricStreamsResponse> StartMetricStreamsAsync(StartMetricStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetricStreamsResponseUnmarshaller.Instance;
             
@@ -3893,7 +4372,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
         public virtual StopMetricStreamsResponse StopMetricStreams(StopMetricStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
 
@@ -3922,7 +4401,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
         public virtual Task<StopMetricStreamsResponse> StopMetricStreamsAsync(StopMetricStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
             
@@ -3984,7 +4463,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4045,7 +4524,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4081,7 +4560,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4116,7 +4595,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

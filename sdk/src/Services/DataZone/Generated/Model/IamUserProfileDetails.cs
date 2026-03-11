@@ -30,16 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of an IAM user profile in Amazon DataZone.
+    /// The details of the IAM user profile.
     /// </summary>
     public partial class IamUserProfileDetails
     {
         private string _arn;
+        private string _principalId;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of an IAM user profile in Amazon DataZone.
+        /// The ARN of the IAM user.
         /// </para>
         /// </summary>
         public string Arn
@@ -52,6 +53,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// The principal ID as part of the IAM user profile details.
+        /// </para>
+        /// </summary>
+        public string PrincipalId
+        {
+            get { return this._principalId; }
+            set { this._principalId = value; }
+        }
+
+        // Check to see if PrincipalId property is set
+        internal bool IsSetPrincipalId()
+        {
+            return this._principalId != null;
         }
 
     }

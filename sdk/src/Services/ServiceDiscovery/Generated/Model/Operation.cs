@@ -38,6 +38,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _errorCode;
         private string _errorMessage;
         private string _id;
+        private string _ownerAccount;
         private OperationStatus _status;
         private Dictionary<string, string> _targets = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private OperationType _type;
@@ -147,6 +148,26 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the namespace associated with
+        /// the operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
         }
 
         /// <summary>

@@ -314,7 +314,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
         public virtual DescribeAgreementResponse DescribeAgreement(DescribeAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
         public virtual Task<DescribeAgreementResponse> DescribeAgreementAsync(DescribeAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
             
@@ -415,7 +415,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementTerms">REST API Reference for GetAgreementTerms Operation</seealso>
         public virtual GetAgreementTermsResponse GetAgreementTerms(GetAgreementTermsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAgreementTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAgreementTermsResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementTerms">REST API Reference for GetAgreementTerms Operation</seealso>
         public virtual Task<GetAgreementTermsResponse> GetAgreementTermsAsync(GetAgreementTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAgreementTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAgreementTermsResponseUnmarshaller.Instance;
             
@@ -492,82 +492,173 @@ namespace Amazon.MarketplaceAgreement
 
 
         /// <summary>
-        /// Searches across all agreements that a proposer or an acceptor has in AWS Marketplace.
-        /// The search returns a list of agreements with basic agreement information.
+        /// Searches across all agreements that a proposer has in AWS Marketplace. The search
+        /// returns a list of agreements with basic agreement information.
         /// 
         ///  
         /// <para>
-        /// The following filter combinations are supported:
+        /// The following filter combinations are supported when the <c>PartyType</c> is <c>Proposer</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
+        ///  <c>AgreementType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>Status</c> + <c>EndTime</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>Status</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>Status</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
-        /// + <c>Status</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>EndTime</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>Status</c>
+        /// + <c>EndTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceType</c>
-        /// + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceType</c> + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>Status</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>OfferId</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>EndTime</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>OfferId</c> + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>Status</c>
+        /// + <c>EndTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceIdentifier</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceIdentifier</c> + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>EndTime</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceType</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>Status</c>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>Status</c>
+        /// + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  To filter by <c>EndTime</c>, you can use either <c>BeforeEndTime</c> or <c>AfterEndTime</c>.
+        /// Only <c>EndTime</c> is supported for sorting.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAgreements service method.</param>
         /// 
@@ -587,7 +678,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SearchAgreements">REST API Reference for SearchAgreements Operation</seealso>
         public virtual SearchAgreementsResponse SearchAgreements(SearchAgreementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAgreementsResponseUnmarshaller.Instance;
 
@@ -596,82 +687,173 @@ namespace Amazon.MarketplaceAgreement
 
 
         /// <summary>
-        /// Searches across all agreements that a proposer or an acceptor has in AWS Marketplace.
-        /// The search returns a list of agreements with basic agreement information.
+        /// Searches across all agreements that a proposer has in AWS Marketplace. The search
+        /// returns a list of agreements with basic agreement information.
         /// 
         ///  
         /// <para>
-        /// The following filter combinations are supported:
+        /// The following filter combinations are supported when the <c>PartyType</c> is <c>Proposer</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
+        ///  <c>AgreementType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>Status</c> + <c>EndTime</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>Status</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>Status</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
-        /// + <c>Status</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>EndTime</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>Status</c>
+        /// + <c>EndTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceType</c>
-        /// + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceType</c> + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>Status</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>OfferId</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>EndTime</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>OfferId</c> + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>Status</c>
+        /// + <c>EndTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceIdentifier</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceIdentifier</c> + <c>Status</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>EndTime</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
-        /// + <c>ResourceType</c> 
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>Status</c>
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>Status</c>
+        /// + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  To filter by <c>EndTime</c>, you can use either <c>BeforeEndTime</c> or <c>AfterEndTime</c>.
+        /// Only <c>EndTime</c> is supported for sorting.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAgreements service method.</param>
         /// <param name="cancellationToken">
@@ -694,7 +876,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SearchAgreements">REST API Reference for SearchAgreements Operation</seealso>
         public virtual Task<SearchAgreementsResponse> SearchAgreementsAsync(SearchAgreementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAgreementsResponseUnmarshaller.Instance;
             

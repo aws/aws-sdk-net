@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for ExpiredStreamException
+        /// message.
+        /// </summary>
+        public ExpiredStreamException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredStreamException with the specified error
         /// message.
         /// </summary>

@@ -9,97 +9,97 @@
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateTrustAnchorRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DeleteCrlRequest.CrlId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DeleteProfileRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DeleteTrustAnchorRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DisableCrlRequest.CrlId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DisableProfileRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DisableTrustAnchorRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.EnableCrlRequest.CrlId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.EnableProfileRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.EnableTrustAnchorRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.GetCrlRequest.CrlId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.GetProfileRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.GetSubjectRequest.SubjectId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.GetTrustAnchorRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ImportCrlRequest.CrlData</property>
@@ -110,13 +110,13 @@
     <property>Amazon.IAMRolesAnywhere.Model.ImportCrlRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ImportCrlRequest.TrustAnchorArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$</pattern>
+    <pattern>arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ListCrlsRequest.NextToken</property>
@@ -147,19 +147,19 @@
     <property>Amazon.IAMRolesAnywhere.Model.PutAttributeMappingRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ResetNotificationSettingsRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.TagResourceRequest.ResourceArn</property>
@@ -180,13 +180,13 @@
     <property>Amazon.IAMRolesAnywhere.Model.UpdateCrlRequest.CrlId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateCrlRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.DurationSeconds</property>
@@ -197,13 +197,13 @@
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.SessionPolicy</property>
@@ -214,19 +214,19 @@
     <property>Amazon.IAMRolesAnywhere.Model.UpdateTrustAnchorRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateTrustAnchorRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CrlDetail.CrlId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.MappingRule.Specifier</property>
@@ -252,59 +252,59 @@
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.ProfileArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:profile.*)$</pattern>
+    <pattern>arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:profile.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.ProfileId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.SourceData.X509CertificateData</property>
     <min>1</min>
-    <max>8000</max>
+    <max>16000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.SubjectDetail.SubjectId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.SubjectSummary.SubjectId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[ a-zA-Z0-9_.:/=+@-]*$</pattern>
+    <pattern>[ a-zA-Z0-9_.:/=+@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^[ a-zA-Z0-9_.:/=+@-]*$</pattern>
+    <pattern>[ a-zA-Z0-9_.:/=+@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.TrustAnchorDetail.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+    <pattern>[ a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.TrustAnchorDetail.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}.*</pattern>
   </property-value-rule>
 </property-value-rules>

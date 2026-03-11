@@ -39,6 +39,13 @@ namespace Amazon.Route53RecoveryCluster.Model
     {
 
         /// <summary>
+        /// Default constructor for EndpointTemporarilyUnavailableException
+        /// message.
+        /// </summary>
+        public EndpointTemporarilyUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EndpointTemporarilyUnavailableException with the specified error
         /// message.
         /// </summary>

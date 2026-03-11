@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMatchmakingRuleSet operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Deletes an existing matchmaking rule set. To delete the rule set, provide the rule
     /// set name. Rule sets cannot be deleted if they are currently being used by a matchmaking
     /// configuration. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 

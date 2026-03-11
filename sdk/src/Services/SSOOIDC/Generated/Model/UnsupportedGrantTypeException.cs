@@ -41,6 +41,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for UnsupportedGrantTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedGrantTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedGrantTypeException with the specified error
         /// message.
         /// </summary>

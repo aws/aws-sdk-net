@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for PlatformApplicationDisabledException
+        /// message.
+        /// </summary>
+        public PlatformApplicationDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PlatformApplicationDisabledException with the specified error
         /// message.
         /// </summary>

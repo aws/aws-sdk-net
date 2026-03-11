@@ -201,6 +201,7 @@ namespace Amazon.Runtime
                 Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken,
                 PkceFlowOptions = Options.PkceFlowOptions,
+                ProxySettings = Options.ProxySettings
             };
 
             var token = _ssoTokenManager.GetToken(ssoTokenManagerGetTokenOptions);
@@ -227,6 +228,7 @@ namespace Amazon.Runtime
                 Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken,
                 PkceFlowOptions = Options.PkceFlowOptions,
+                ProxySettings = Options.ProxySettings,
             };
 
             var token = await _ssoTokenManager.GetTokenAsync(ssoTokenManagerGetTokenOptions).ConfigureAwait(false);

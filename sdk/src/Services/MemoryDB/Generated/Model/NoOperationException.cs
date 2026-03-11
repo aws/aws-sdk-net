@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The requested operation would result in no changes.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class NoOperationException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for NoOperationException
+        /// message.
+        /// </summary>
+        public NoOperationException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new NoOperationException with the specified error

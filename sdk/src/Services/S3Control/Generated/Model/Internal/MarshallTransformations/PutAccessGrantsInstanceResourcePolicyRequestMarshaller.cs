@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutAccessGrantsInstanceResourcePolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -77,6 +78,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -89,8 +91,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutAccessGrantsInstanceResourcePolicyRequestMarshaller _instance = new PutAccessGrantsInstanceResourcePolicyRequestMarshaller();        
@@ -112,5 +112,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutAccessGrantsInstanceResourcePolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutAccessGrantsInstanceResourcePolicyRequest publicRequest);
     }    
 }

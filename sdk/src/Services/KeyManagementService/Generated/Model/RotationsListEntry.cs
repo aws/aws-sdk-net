@@ -148,15 +148,21 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyMaterialState. 
         /// <para>
-        /// There are three possible values for this field: <c>CURRENT</c>, <c>NON_CURRENT</c>
-        /// and <c>PENDING_ROTATION</c>. KMS uses <c>CURRENT</c> key material for both encryption
-        /// and decryption and <c>NON_CURRENT</c> key material only for decryption. <c>PENDING_ROTATION</c>
-        /// identifies key material that has been imported for on-demand key rotation but the
-        /// rotation hasn't completed. Key material in <c>PENDING_ROTATION</c> is not permanently
-        /// associated with the KMS key. You can delete this key material and import different
-        /// key material in its place. The <c>PENDING_ROTATION</c> value is only used in symmetric
-        /// encryption keys with imported key material. The other values, <c>CURRENT</c> and <c>NON_CURRENT</c>,
-        /// are used for all KMS keys that support automatic or on-demand key rotation.
+        /// There are four possible values for this field: <c>CURRENT</c>, <c>NON_CURRENT</c>,
+        /// <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c> and <c>PENDING_ROTATION</c>. KMS uses
+        /// <c>CURRENT</c> key material for both encryption and decryption and <c>NON_CURRENT</c>
+        /// key material only for decryption. <c>PENDING_ROTATION</c> identifies key material
+        /// that has been imported for on-demand key rotation but the rotation hasn't completed.
+        /// The key material state <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c> is unique to
+        /// multi-region, symmetric encryption keys with imported key material. It indicates key
+        /// material that has been imported into the primary Region key but not all of the replica
+        /// Region keys. When this key material is imported in to all of the replica Region keys,
+        /// the key material state will change to <c>PENDING_ROTATION</c>. Key material in <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c>
+        /// or <c>PENDING_ROTATION</c> state is not permanently associated with the KMS key. You
+        /// can delete this key material and import different key material in its place. The <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c>
+        /// and <c>PENDING_ROTATION</c> values are only used in symmetric encryption keys with
+        /// imported key material. The other values, <c>CURRENT</c> and <c>NON_CURRENT</c>, are
+        /// used for all KMS keys that support automatic or on-demand key rotation.
         /// </para>
         /// </summary>
         public KeyMaterialState KeyMaterialState

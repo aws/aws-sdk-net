@@ -41,6 +41,13 @@ namespace Amazon.InternetMonitor.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(true);
 
         /// <summary>
+        /// Default constructor for TooManyRequestsException
+        /// message.
+        /// </summary>
+        public TooManyRequestsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
         /// message.
         /// </summary>

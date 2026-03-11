@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StructureListMember Object
     /// </summary>  
-    public class StructureListMemberUnmarshaller : IXmlUnmarshaller<StructureListMember, XmlUnmarshallerContext>
+    public partial class StructureListMemberUnmarshaller : IXmlUnmarshaller<StructureListMember, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         unmarshalledObject.B = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StructureListMember unmarshalledObject, int targetDepth);
+
         private static StructureListMemberUnmarshaller _instance = new StructureListMemberUnmarshaller();        
 
         /// <summary>

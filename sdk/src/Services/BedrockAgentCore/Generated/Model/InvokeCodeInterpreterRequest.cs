@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeCodeInterpreter operation.
-    /// Executes code within an active code interpreter session in Amazon Bedrock. This operation
-    /// processes the provided code, runs it in a secure environment, and returns the execution
-    /// results including output, errors, and generated visualizations.
+    /// Executes code within an active code interpreter session in Amazon Bedrock AgentCore.
+    /// This operation processes the provided code, runs it in a secure environment, and returns
+    /// the execution results including output, errors, and generated visualizations.
     /// 
     ///  
     /// <para>
@@ -52,12 +52,12 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> </ul>
@@ -68,6 +68,8 @@ namespace Amazon.BedrockAgentCore.Model
         private string _codeInterpreterIdentifier;
         private ToolName _name;
         private string _sessionId;
+        private string _traceId;
+        private string _traceParent;
 
         /// <summary>
         /// Gets and sets the property Arguments. 
@@ -147,6 +149,44 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The trace identifier for request tracking.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceParent. 
+        /// <para>
+        /// The parent trace information for distributed tracing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceParent
+        {
+            get { return this._traceParent; }
+            set { this._traceParent = value; }
+        }
+
+        // Check to see if TraceParent property is set
+        internal bool IsSetTraceParent()
+        {
+            return this._traceParent != null;
         }
 
     }

@@ -40,6 +40,13 @@ namespace Amazon.ServiceDiscovery.Model
     {
 
         /// <summary>
+        /// Default constructor for InstanceNotFoundException
+        /// message.
+        /// </summary>
+        public InstanceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InstanceNotFoundException with the specified error
         /// message.
         /// </summary>

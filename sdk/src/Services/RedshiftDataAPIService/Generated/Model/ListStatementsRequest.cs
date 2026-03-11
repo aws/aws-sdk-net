@@ -173,7 +173,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// to the prefix value you provide. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=2048)]
         public string StatementName
         {
             get { return this._statementName; }

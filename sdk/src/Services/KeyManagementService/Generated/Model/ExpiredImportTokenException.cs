@@ -41,6 +41,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredImportTokenException
+        /// message.
+        /// </summary>
+        public ExpiredImportTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredImportTokenException with the specified error
         /// message.
         /// </summary>

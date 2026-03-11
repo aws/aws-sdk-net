@@ -36,6 +36,14 @@ namespace Amazon.MediaStore
         /// <summary>
         /// Construct instance of AmazonMediaStoreException
         /// </summary>
+        public AmazonMediaStoreException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaStoreException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaStoreException(string message)
             : base(message)

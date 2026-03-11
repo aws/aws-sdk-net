@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GeoLocation Object
     /// </summary>  
-    public class GeoLocationUnmarshaller : IXmlUnmarshaller<GeoLocation, XmlUnmarshallerContext>
+    public partial class GeoLocationUnmarshaller : IXmlUnmarshaller<GeoLocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.SubdivisionCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, GeoLocation unmarshalledObject, int targetDepth);
+
         private static GeoLocationUnmarshaller _instance = new GeoLocationUnmarshaller();        
 
         /// <summary>

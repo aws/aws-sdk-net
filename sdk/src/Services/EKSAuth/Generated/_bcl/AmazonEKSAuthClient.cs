@@ -296,7 +296,7 @@ namespace Amazon.EKSAuth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-auth-2023-11-26/AssumeRoleForPodIdentity">REST API Reference for AssumeRoleForPodIdentity Operation</seealso>
         public virtual AssumeRoleForPodIdentityResponse AssumeRoleForPodIdentity(AssumeRoleForPodIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeRoleForPodIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeRoleForPodIdentityResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.EKSAuth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-auth-2023-11-26/AssumeRoleForPodIdentity">REST API Reference for AssumeRoleForPodIdentity Operation</seealso>
         public virtual Task<AssumeRoleForPodIdentityResponse> AssumeRoleForPodIdentityAsync(AssumeRoleForPodIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeRoleForPodIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeRoleForPodIdentityResponseUnmarshaller.Instance;
             

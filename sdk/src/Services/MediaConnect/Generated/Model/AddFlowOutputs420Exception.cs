@@ -40,6 +40,13 @@ namespace Amazon.MediaConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for AddFlowOutputs420Exception
+        /// message.
+        /// </summary>
+        public AddFlowOutputs420Exception() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AddFlowOutputs420Exception with the specified error
         /// message.
         /// </summary>

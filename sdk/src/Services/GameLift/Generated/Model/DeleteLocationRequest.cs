@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLocation operation.
-    /// Deletes a custom location.
+    /// <b>This API works with the following fleet types:</b> Anywhere
     /// 
+    ///  
+    /// <para>
+    /// Deletes a custom location.
+    /// </para>
     ///  
     /// <para>
     /// Before deleting a custom location, review any fleets currently using the custom location

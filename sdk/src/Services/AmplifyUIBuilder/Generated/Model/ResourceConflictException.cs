@@ -39,6 +39,13 @@ namespace Amazon.AmplifyUIBuilder.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceConflictException
+        /// message.
+        /// </summary>
+        public ResourceConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceConflictException with the specified error
         /// message.
         /// </summary>

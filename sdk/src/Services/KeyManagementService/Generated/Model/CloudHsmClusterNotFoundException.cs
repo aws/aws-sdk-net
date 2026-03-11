@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmClusterNotFoundException
+        /// message.
+        /// </summary>
+        public CloudHsmClusterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmClusterNotFoundException with the specified error
         /// message.
         /// </summary>

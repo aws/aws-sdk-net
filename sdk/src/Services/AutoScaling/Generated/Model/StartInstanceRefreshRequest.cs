@@ -172,7 +172,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Strategy. 
         /// <para>
-        /// The strategy to use for the instance refresh. The only valid value is <c>Rolling</c>.
+        /// The strategy to use for the instance refresh. The default value is <c>Rolling</c>.
         /// </para>
         /// </summary>
         public RefreshStrategy Strategy

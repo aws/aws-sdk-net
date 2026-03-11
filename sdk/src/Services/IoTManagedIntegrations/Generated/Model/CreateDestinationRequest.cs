@@ -31,8 +31,9 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDestination operation.
-    /// Create a destination. IoT managed integrations uses the destination to determine
-    /// where to deliver notifications for a device.
+    /// Create a notification destination such as Kinesis Data Streams that receive events
+    /// and notifications from Managed integrations. Managed integrations uses the destination
+    /// to determine where to deliver notifications.
     /// </summary>
     public partial class CreateDestinationRequest : AmazonIoTManagedIntegrationsRequest
     {

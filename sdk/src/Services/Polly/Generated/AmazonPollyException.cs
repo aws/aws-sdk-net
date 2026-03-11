@@ -36,6 +36,14 @@ namespace Amazon.Polly
         /// <summary>
         /// Construct instance of AmazonPollyException
         /// </summary>
+        public AmazonPollyException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPollyException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPollyException(string message)
             : base(message)

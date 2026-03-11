@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAllowedPatternException
+        /// message.
+        /// </summary>
+        public InvalidAllowedPatternException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAllowedPatternException with the specified error
         /// message.
         /// </summary>

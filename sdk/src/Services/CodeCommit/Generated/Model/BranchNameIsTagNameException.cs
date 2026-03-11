@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for BranchNameIsTagNameException
+        /// message.
+        /// </summary>
+        public BranchNameIsTagNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BranchNameIsTagNameException with the specified error
         /// message.
         /// </summary>

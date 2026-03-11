@@ -342,17 +342,21 @@ THtAmDAtOhds6TGBpAWw";
         {
             string tableName = "aws-sdk-dotnet-truncate-test-" + DateTime.UtcNow.Ticks;
 
-            await dynamoDBClient.CreateTableAsync(
-                tableName,
-                new List<KeySchemaElement>
+            var createTableRequest = new CreateTableRequest
+            {
+                TableName = tableName,
+                KeySchema = new List<KeySchemaElement>
                 {
-                    new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
+                    new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                 },
-                new List<AttributeDefinition>
+                AttributeDefinitions = new List<AttributeDefinition>
                 {
                     new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.S }
                 },
-                new ProvisionedThroughput { ReadCapacityUnits = 10, WriteCapacityUnits = 10 });
+                BillingMode = BillingMode.PAY_PER_REQUEST,
+            };
+
+            await dynamoDBClient.CreateTableAsync(createTableRequest);
 
             DescribeTableResponse response = null;
             do

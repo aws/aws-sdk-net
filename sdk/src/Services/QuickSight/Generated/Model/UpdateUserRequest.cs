@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUser operation.
-    /// Updates an Amazon QuickSight user.
+    /// Updates an Amazon Quick Sight user.
     /// </summary>
     public partial class UpdateUserRequest : AmazonQuickSightRequest
     {
@@ -50,7 +50,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the user is in. Currently, you use
-        /// the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property CustomFederationProviderUrl. 
         /// <para>
         /// The URL of the custom OpenID Connect (OIDC) provider that provides identity to let
-        /// a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM)
+        /// a user federate into Quick Sight with an associated Identity and Access Management(IAM)
         /// role. This parameter should only be used when <c>ExternalLoginFederationProviderType</c>
         /// parameter is set to <c>CUSTOM_OIDC</c>.
         /// </para>
@@ -113,19 +113,19 @@ namespace Amazon.QuickSight.Model
         ///  </li> </ul> 
         /// <para>
         /// A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the Amazon
-        /// QuickSight console. Then, you use the <c>RegisterUser</c> API operation to assign
-        /// the named set of permissions to a Amazon QuickSight user. 
+        /// you need to create the profile names for custom permission sets by using the Quick
+        /// Sight console. Then, you use the <c>RegisterUser</c> API operation to assign the named
+        /// set of permissions to a Quick Sight user. 
         /// </para>
         ///  
         /// <para>
-        /// Amazon QuickSight custom permissions are applied through IAM policies. Therefore,
-        /// they override the permissions typically granted by assigning Amazon QuickSight users
-        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader).
+        /// Quick Sight custom permissions are applied through IAM policies. Therefore, they override
+        /// the permissions typically granted by assigning Quick Sight users to one of the default
+        /// security cohorts in Quick Sight (admin, author, reader).
         /// </para>
         ///  
         /// <para>
-        /// This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
+        /// This feature is available only to Quick Sight Enterprise edition subscriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -164,8 +164,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ExternalLoginFederationProviderType. 
         /// <para>
         /// The type of supported external login provider that provides identity to let a user
-        /// federate into Amazon QuickSight with an associated Identity and Access Management(IAM)
-        /// role. The type of supported external login provider can be one of the following.
+        /// federate into Quick Sight with an associated Identity and Access Management(IAM) role.
+        /// The type of supported external login provider can be one of the following.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -239,7 +239,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The Amazon QuickSight role of the user. The role can be one of the following default
+        /// The Amazon Quick Sight role of the user. The role can be one of the following default
         /// security cohorts:
         /// </para>
         ///  <ul> <li> 
@@ -252,12 +252,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon QuickSight settings.
+        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon Quick Sight settings.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>READER_PRO</c>: Reader Pro adds Generative BI capabilities to the Reader role.
-        /// Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon
+        /// Reader Pros have access to Amazon Q in Quick Sight, can build stories with Amazon
         /// Q, and can generate executive summaries from dashboards.
         /// </para>
         ///  </li> <li> 
@@ -268,13 +268,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ADMIN_PRO</c>: Admin Pros are Author Pros who can also manage Amazon QuickSight
+        ///  <c>ADMIN_PRO</c>: Admin Pros are Author Pros who can also manage Amazon Quick Sight
         /// administrative settings. Admin Pro users are billed at Author Pro pricing.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The name of the Amazon QuickSight role is invisible to the user except for the console
-        /// screens dealing with permissions.
+        /// The name of the Quick Sight role is invisible to the user except for the console screens
+        /// dealing with permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -314,7 +314,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The Amazon QuickSight user name that you want to update.
+        /// The Amazon Quick Sight user name that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

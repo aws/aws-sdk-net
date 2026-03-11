@@ -41,6 +41,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for CreateJobQuotaExceededException
+        /// message.
+        /// </summary>
+        public CreateJobQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CreateJobQuotaExceededException with the specified error
         /// message.
         /// </summary>

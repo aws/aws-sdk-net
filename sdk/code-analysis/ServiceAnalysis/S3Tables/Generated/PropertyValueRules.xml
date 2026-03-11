@@ -85,8 +85,21 @@
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.DeleteTableBucketMetricsConfigurationRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.DeleteTableBucketPolicyRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.DeleteTableBucketReplicationRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.DeleteTableBucketReplicationRequest.VersionToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.DeleteTablePolicyRequest.Name</property>
@@ -103,6 +116,12 @@
   <property-value-rule>
     <property>Amazon.S3Tables.Model.DeleteTablePolicyRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.DeleteTableReplicationRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.GetNamespaceRequest.Namespace</property>
@@ -226,6 +245,14 @@
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketMetricsConfigurationRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketMetricsConfigurationResponse.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.GetTableBucketPolicyRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
@@ -233,6 +260,19 @@
     <property>Amazon.S3Tables.Model.GetTableBucketPolicyResponse.ResourcePolicy</property>
     <min>1</min>
     <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketReplicationRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketReplicationResponse.VersionToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableBucketStorageClassRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.GetTableEncryptionRequest.Name</property>
@@ -347,6 +387,52 @@
     <max>20480</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableRecordExpirationConfigurationRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableRecordExpirationJobStatusRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableReplicationRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableReplicationStatusRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableReplicationStatusResponse.SourceTableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableStorageClassRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-z_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableStorageClassRequest.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[0-9a-z_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.GetTableStorageClassRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.ListNamespacesRequest.ContinuationToken</property>
     <min>1</min>
     <max>2048</max>
@@ -421,11 +507,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.PutTableBucketEncryptionRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.PutTableBucketMaintenanceConfigurationRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketMetricsConfigurationRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -435,6 +531,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.PutTableBucketPolicyRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketReplicationRequest.TableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketReplicationRequest.VersionToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketReplicationResponse.VersionToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableBucketStorageClassRequest.TableBucketARN</property>
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -475,6 +589,18 @@
     <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableRecordExpirationConfigurationRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.PutTableReplicationRequest.TableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.RenameTableRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -506,6 +632,18 @@
     <property>Amazon.S3Tables.Model.RenameTableRequest.VersionToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.UpdateTableMetadataLocationRequest.MetadataLocation</property>
@@ -587,6 +725,11 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Tables.Model.LastSuccessfulReplicatedUpdate.MetadataLocation</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Tables.Model.NamespaceSummary.CreatedBy</property>
     <min>12</min>
     <max>12</max>
@@ -597,6 +740,32 @@
     <min>12</min>
     <max>12</max>
     <pattern>[0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReplicationDestination.DestinationTableBucketARN</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReplicationDestinationStatusModel.DestinationTableArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReplicationDestinationStatusModel.DestinationTableBucketArn</property>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.ReplicationInformation.SourceTableARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-z0-9_-]{3,63}/table/[a-zA-Z0-9-_]{1,255})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.TableBucketReplicationConfiguration.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.TableBucketSummary.Arn</property>
@@ -613,6 +782,17 @@
     <min>12</min>
     <max>12</max>
     <pattern>[0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.TableRecordExpirationSettings.Days</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Tables.Model.TableReplicationConfiguration.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Tables.Model.TableSummary.Name</property>

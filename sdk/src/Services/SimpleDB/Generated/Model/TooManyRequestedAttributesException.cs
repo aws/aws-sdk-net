@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for TooManyRequestedAttributesException
+        /// message.
+        /// </summary>
+        public TooManyRequestedAttributesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRequestedAttributesException with the specified error
         /// message.
         /// </summary>

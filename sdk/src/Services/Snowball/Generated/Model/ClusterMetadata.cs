@@ -323,7 +323,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of Snowcone device to use for this cluster. 
+        /// The type of Snowball Edge device to use for this cluster. 
         /// </para>
         ///  <note> 
         /// <para>

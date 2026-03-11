@@ -60,7 +60,7 @@ namespace Amazon.VerifiedPermissions.Model
         ///  <c>"entityId":"<i>identifier</i>"</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=612)]
         public string EntityId
         {
             get { return this._entityId; }

@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property OAuthParameters. 
         /// <para>
         /// An object that contains information needed to create a data source connection between
-        /// an Amazon QuickSight account and Starburst.
+        /// an Quick Sight account and Starburst.
         /// </para>
         /// </summary>
         public OAuthParameters OAuthParameters

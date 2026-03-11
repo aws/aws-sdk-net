@@ -58,6 +58,18 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                     response.BillInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("costCategoryGroupSharingPreferenceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CostCategoryGroupSharingPreferenceArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("costCategoryGroupSharingPreferenceEffectiveDate", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.CostCategoryGroupSharingPreferenceEffectiveDate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("costSummary", targetDepth))
                 {
                     var unmarshaller = BillEstimateCostSummaryUnmarshaller.Instance;
@@ -80,6 +92,12 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("groupSharingPreference", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GroupSharingPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))

@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameSessions operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves a set of one or more game sessions in a specific fleet location. You can
     /// optionally filter the results by current game session status.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation can be used in the following ways: 

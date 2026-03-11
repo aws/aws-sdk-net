@@ -36,6 +36,14 @@ namespace Amazon.MediaConnect
         /// <summary>
         /// Construct instance of AmazonMediaConnectException
         /// </summary>
+        public AmazonMediaConnectException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaConnectException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaConnectException(string message)
             : base(message)

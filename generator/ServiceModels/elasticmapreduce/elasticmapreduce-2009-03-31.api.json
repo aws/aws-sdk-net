@@ -821,8 +821,7 @@
     },
     "AddTagsOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "AdjustmentType":{
       "type":"string",
@@ -1018,6 +1017,17 @@
         "Dimensions":{"shape":"MetricDimensionList"}
       }
     },
+    "CloudWatchLogConfiguration":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"},
+        "LogGroupName":{"shape":"XmlString"},
+        "LogStreamNamePrefix":{"shape":"XmlString"},
+        "EncryptionKeyArn":{"shape":"XmlString"},
+        "LogTypes":{"shape":"LogTypesMap"}
+      }
+    },
     "Cluster":{
       "type":"structure",
       "members":{
@@ -1054,7 +1064,9 @@
         "PlacementGroups":{"shape":"PlacementGroupConfigList"},
         "OSReleaseLabel":{"shape":"String"},
         "EbsRootVolumeIops":{"shape":"Integer"},
-        "EbsRootVolumeThroughput":{"shape":"Integer"}
+        "EbsRootVolumeThroughput":{"shape":"Integer"},
+        "ExtendedSupport":{"shape":"BooleanObject"},
+        "MonitoringConfiguration":{"shape":"MonitoringConfiguration"}
       }
     },
     "ClusterId":{"type":"string"},
@@ -1293,8 +1305,7 @@
     },
     "DeleteSecurityConfigurationOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteStudioInput":{
       "type":"structure",
@@ -1568,8 +1579,7 @@
     },
     "GetBlockPublicAccessConfigurationInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "GetBlockPublicAccessConfigurationOutput":{
       "type":"structure",
@@ -1801,6 +1811,7 @@
         "BOOTSTRAPPING",
         "RUNNING",
         "RESIZING",
+        "RECONFIGURING",
         "SUSPENDED",
         "TERMINATING",
         "TERMINATED"
@@ -2124,8 +2135,7 @@
     "Integer":{"type":"integer"},
     "InternalServerError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "exception":true
     },
     "InternalServerException":{
@@ -2465,6 +2475,11 @@
         "Marker":{"shape":"String"}
       }
     },
+    "LogTypesMap":{
+      "type":"map",
+      "key":{"shape":"XmlString"},
+      "value":{"shape":"XmlStringList"}
+    },
     "Long":{"type":"long"},
     "ManagedScalingPolicy":{
       "type":"structure",
@@ -2503,13 +2518,15 @@
       "required":["ClusterId"],
       "members":{
         "ClusterId":{"shape":"String"},
-        "StepConcurrencyLevel":{"shape":"Integer"}
+        "StepConcurrencyLevel":{"shape":"Integer"},
+        "ExtendedSupport":{"shape":"BooleanObject"}
       }
     },
     "ModifyClusterOutput":{
       "type":"structure",
       "members":{
-        "StepConcurrencyLevel":{"shape":"Integer"}
+        "StepConcurrencyLevel":{"shape":"Integer"},
+        "ExtendedSupport":{"shape":"BooleanObject"}
       }
     },
     "ModifyInstanceFleetInput":{
@@ -2528,6 +2545,12 @@
       "members":{
         "ClusterId":{"shape":"ClusterId"},
         "InstanceGroups":{"shape":"InstanceGroupModifyConfigList"}
+      }
+    },
+    "MonitoringConfiguration":{
+      "type":"structure",
+      "members":{
+        "CloudWatchLogConfiguration":{"shape":"CloudWatchLogConfiguration"}
       }
     },
     "NewSupportedProductsList":{
@@ -2802,8 +2825,7 @@
     },
     "PutAutoTerminationPolicyOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "PutBlockPublicAccessConfigurationInput":{
       "type":"structure",
@@ -2814,8 +2836,7 @@
     },
     "PutBlockPublicAccessConfigurationOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "PutManagedScalingPolicyInput":{
       "type":"structure",
@@ -2830,8 +2851,7 @@
     },
     "PutManagedScalingPolicyOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ReconfigurationType":{
       "type":"string",
@@ -2860,8 +2880,7 @@
     },
     "RemoveAutoScalingPolicyOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RemoveAutoTerminationPolicyInput":{
       "type":"structure",
@@ -2872,8 +2891,7 @@
     },
     "RemoveAutoTerminationPolicyOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RemoveManagedScalingPolicyInput":{
       "type":"structure",
@@ -2884,8 +2902,7 @@
     },
     "RemoveManagedScalingPolicyOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RemoveTagsInput":{
       "type":"structure",
@@ -2900,8 +2917,7 @@
     },
     "RemoveTagsOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RepoUpgradeOnBoot":{
       "type":"string",
@@ -2948,7 +2964,9 @@
         "AutoTerminationPolicy":{"shape":"AutoTerminationPolicy"},
         "OSReleaseLabel":{"shape":"XmlStringMaxLen256"},
         "EbsRootVolumeIops":{"shape":"Integer"},
-        "EbsRootVolumeThroughput":{"shape":"Integer"}
+        "EbsRootVolumeThroughput":{"shape":"Integer"},
+        "ExtendedSupport":{"shape":"BooleanObject"},
+        "MonitoringConfiguration":{"shape":"MonitoringConfiguration"}
       }
     },
     "RunJobFlowOutput":{
@@ -2956,6 +2974,13 @@
       "members":{
         "JobFlowId":{"shape":"XmlStringMaxLen256"},
         "ClusterArn":{"shape":"ArnType"}
+      }
+    },
+    "S3MonitoringConfiguration":{
+      "type":"structure",
+      "members":{
+        "LogUri":{"shape":"XmlString"},
+        "EncryptionKeyArn":{"shape":"XmlString"}
       }
     },
     "ScaleDownBehavior":{
@@ -3219,7 +3244,9 @@
         "Config":{"shape":"HadoopStepConfig"},
         "ActionOnFailure":{"shape":"ActionOnFailure"},
         "Status":{"shape":"StepStatus"},
-        "ExecutionRoleArn":{"shape":"OptionalArnType"}
+        "ExecutionRoleArn":{"shape":"OptionalArnType"},
+        "LogUri":{"shape":"String"},
+        "EncryptionKeyArn":{"shape":"String"}
       }
     },
     "StepCancellationOption":{
@@ -3238,7 +3265,8 @@
       "members":{
         "Name":{"shape":"XmlStringMaxLen256"},
         "ActionOnFailure":{"shape":"ActionOnFailure"},
-        "HadoopJarStep":{"shape":"HadoopJarStepConfig"}
+        "HadoopJarStep":{"shape":"HadoopJarStepConfig"},
+        "StepMonitoringConfiguration":{"shape":"StepMonitoringConfiguration"}
       }
     },
     "StepConfigList":{
@@ -3291,6 +3319,12 @@
       "type":"list",
       "member":{"shape":"XmlStringMaxLen256"}
     },
+    "StepMonitoringConfiguration":{
+      "type":"structure",
+      "members":{
+        "S3MonitoringConfiguration":{"shape":"S3MonitoringConfiguration"}
+      }
+    },
     "StepState":{
       "type":"string",
       "enum":[
@@ -3334,7 +3368,9 @@
         "Name":{"shape":"String"},
         "Config":{"shape":"HadoopStepConfig"},
         "ActionOnFailure":{"shape":"ActionOnFailure"},
-        "Status":{"shape":"StepStatus"}
+        "Status":{"shape":"StepStatus"},
+        "LogUri":{"shape":"String"},
+        "EncryptionKeyArn":{"shape":"String"}
       }
     },
     "StepSummaryList":{

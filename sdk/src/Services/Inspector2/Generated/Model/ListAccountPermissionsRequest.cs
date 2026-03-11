@@ -31,7 +31,9 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountPermissions operation.
-    /// Lists the permissions an account has to configure Amazon Inspector.
+    /// Lists the permissions an account has to configure Amazon Inspector. If the account
+    /// is a member account or standalone account with resources managed by an Organizations
+    /// policy, the operation returns fewer permissions.
     /// </summary>
     public partial class ListAccountPermissionsRequest : AmazonInspector2Request
     {

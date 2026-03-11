@@ -31,8 +31,8 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkloadAccessTokenForUserId operation.
-    /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-    /// User Id.
+    /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+    /// using the user's ID.
     /// </summary>
     public partial class GetWorkloadAccessTokenForUserIdRequest : AmazonBedrockAgentCoreRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user id of the user you are retrieving the access token for.
+        /// The ID of the user for whom you are retrieving the access token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadName. 
         /// <para>
-        /// The name of the worklaod you want to get the access token of.
+        /// The name of the workload from which you want to retrieve the access token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]

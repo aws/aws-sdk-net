@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The single sign-on details of the user profile.
+    /// The SSO user profile detail.
     /// </summary>
     public partial class SsoUserProfileDetails
     {
@@ -41,7 +41,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// The first name included in the single sign-on details of the user profile.
+        /// The first name as part of the SSO user profile detail.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -60,7 +60,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// The last name included in the single sign-on details of the user profile.
+        /// The last name as part of the SSO user profile detail.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -79,7 +79,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username included in the single sign-on details of the user profile.
+        /// The username as part of the SSO user profile detail. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

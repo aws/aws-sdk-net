@@ -39,6 +39,13 @@ namespace Amazon.CodeStarconnections.Model
     {
 
         /// <summary>
+        /// Default constructor for SyncBlockerDoesNotExistException
+        /// message.
+        /// </summary>
+        public SyncBlockerDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SyncBlockerDoesNotExistException with the specified error
         /// message.
         /// </summary>

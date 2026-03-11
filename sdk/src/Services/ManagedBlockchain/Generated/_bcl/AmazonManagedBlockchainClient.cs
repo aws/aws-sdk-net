@@ -315,7 +315,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">REST API Reference for CreateAccessor Operation</seealso>
         public virtual CreateAccessorResponse CreateAccessor(CreateAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessorResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">REST API Reference for CreateAccessor Operation</seealso>
         public virtual Task<CreateAccessorResponse> CreateAccessorAsync(CreateAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessorResponseUnmarshaller.Instance;
             
@@ -418,7 +418,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual CreateMemberResponse CreateMember(CreateMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMemberResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual Task<CreateMemberResponse> CreateMemberAsync(CreateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMemberResponseUnmarshaller.Instance;
             
@@ -525,7 +525,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNetwork">REST API Reference for CreateNetwork Operation</seealso>
         public virtual CreateNetworkResponse CreateNetwork(CreateNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNetwork">REST API Reference for CreateNetwork Operation</seealso>
         public virtual Task<CreateNetworkResponse> CreateNetworkAsync(CreateNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkResponseUnmarshaller.Instance;
             
@@ -632,7 +632,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNode">REST API Reference for CreateNode Operation</seealso>
         public virtual CreateNodeResponse CreateNode(CreateNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeResponseUnmarshaller.Instance;
 
@@ -688,7 +688,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNode">REST API Reference for CreateNode Operation</seealso>
         public virtual Task<CreateNodeResponse> CreateNodeAsync(CreateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeResponseUnmarshaller.Instance;
             
@@ -740,7 +740,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateProposal">REST API Reference for CreateProposal Operation</seealso>
         public virtual CreateProposalResponse CreateProposal(CreateProposalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProposalResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateProposal">REST API Reference for CreateProposal Operation</seealso>
         public virtual Task<CreateProposalResponse> CreateProposalAsync(CreateProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProposalResponseUnmarshaller.Instance;
             
@@ -836,7 +836,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor">REST API Reference for DeleteAccessor Operation</seealso>
         public virtual DeleteAccessorResponse DeleteAccessor(DeleteAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessorResponseUnmarshaller.Instance;
 
@@ -880,7 +880,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor">REST API Reference for DeleteAccessor Operation</seealso>
         public virtual Task<DeleteAccessorResponse> DeleteAccessorAsync(DeleteAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessorResponseUnmarshaller.Instance;
             
@@ -933,7 +933,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemberResponseUnmarshaller.Instance;
 
@@ -985,7 +985,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemberResponseUnmarshaller.Instance;
             
@@ -1033,7 +1033,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteNode">REST API Reference for DeleteNode Operation</seealso>
         public virtual DeleteNodeResponse DeleteNode(DeleteNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNodeResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteNode">REST API Reference for DeleteNode Operation</seealso>
         public virtual Task<DeleteNodeResponse> DeleteNodeAsync(DeleteNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNodeResponseUnmarshaller.Instance;
             
@@ -1120,7 +1120,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor">REST API Reference for GetAccessor Operation</seealso>
         public virtual GetAccessorResponse GetAccessor(GetAccessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessorResponseUnmarshaller.Instance;
 
@@ -1159,7 +1159,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor">REST API Reference for GetAccessor Operation</seealso>
         public virtual Task<GetAccessorResponse> GetAccessorAsync(GetAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessorResponseUnmarshaller.Instance;
             
@@ -1203,7 +1203,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual GetMemberResponse GetMember(GetMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemberResponseUnmarshaller.Instance;
 
@@ -1246,7 +1246,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual Task<GetMemberResponse> GetMemberAsync(GetMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemberResponseUnmarshaller.Instance;
             
@@ -1290,7 +1290,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNetwork">REST API Reference for GetNetwork Operation</seealso>
         public virtual GetNetworkResponse GetNetwork(GetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResponseUnmarshaller.Instance;
 
@@ -1333,7 +1333,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNetwork">REST API Reference for GetNetwork Operation</seealso>
         public virtual Task<GetNetworkResponse> GetNetworkAsync(GetNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResponseUnmarshaller.Instance;
             
@@ -1377,7 +1377,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNode">REST API Reference for GetNode Operation</seealso>
         public virtual GetNodeResponse GetNode(GetNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNodeResponseUnmarshaller.Instance;
 
@@ -1420,7 +1420,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetNode">REST API Reference for GetNode Operation</seealso>
         public virtual Task<GetNodeResponse> GetNodeAsync(GetNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNodeResponseUnmarshaller.Instance;
             
@@ -1464,7 +1464,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetProposal">REST API Reference for GetProposal Operation</seealso>
         public virtual GetProposalResponse GetProposal(GetProposalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProposalResponseUnmarshaller.Instance;
 
@@ -1507,7 +1507,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetProposal">REST API Reference for GetProposal Operation</seealso>
         public virtual Task<GetProposalResponse> GetProposalAsync(GetProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProposalResponseUnmarshaller.Instance;
             
@@ -1544,7 +1544,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors">REST API Reference for ListAccessors Operation</seealso>
         public virtual ListAccessorsResponse ListAccessors(ListAccessorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessorsResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors">REST API Reference for ListAccessors Operation</seealso>
         public virtual Task<ListAccessorsResponse> ListAccessorsAsync(ListAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessorsResponseUnmarshaller.Instance;
             
@@ -1628,7 +1628,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
@@ -1675,7 +1675,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
             
@@ -1716,7 +1716,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -1756,7 +1756,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
             
@@ -1798,7 +1798,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNetworks">REST API Reference for ListNetworks Operation</seealso>
         public virtual ListNetworksResponse ListNetworks(ListNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworksResponseUnmarshaller.Instance;
 
@@ -1839,7 +1839,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNetworks">REST API Reference for ListNetworks Operation</seealso>
         public virtual Task<ListNetworksResponse> ListNetworksAsync(ListNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworksResponseUnmarshaller.Instance;
             
@@ -1880,7 +1880,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual ListNodesResponse ListNodes(ListNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -1920,7 +1920,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual Task<ListNodesResponse> ListNodesAsync(ListNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
             
@@ -1964,7 +1964,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposals">REST API Reference for ListProposals Operation</seealso>
         public virtual ListProposalsResponse ListProposals(ListProposalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProposalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProposalsResponseUnmarshaller.Instance;
 
@@ -2007,7 +2007,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposals">REST API Reference for ListProposals Operation</seealso>
         public virtual Task<ListProposalsResponse> ListProposalsAsync(ListProposalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProposalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProposalsResponseUnmarshaller.Instance;
             
@@ -2049,7 +2049,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposalVotes">REST API Reference for ListProposalVotes Operation</seealso>
         public virtual ListProposalVotesResponse ListProposalVotes(ListProposalVotesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProposalVotesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProposalVotesResponseUnmarshaller.Instance;
 
@@ -2090,7 +2090,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListProposalVotes">REST API Reference for ListProposalVotes Operation</seealso>
         public virtual Task<ListProposalVotesResponse> ListProposalVotesAsync(ListProposalVotesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProposalVotesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProposalVotesResponseUnmarshaller.Instance;
             
@@ -2132,7 +2132,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2173,7 +2173,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2222,7 +2222,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RejectInvitation">REST API Reference for RejectInvitation Operation</seealso>
         public virtual RejectInvitationResponse RejectInvitation(RejectInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInvitationResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RejectInvitation">REST API Reference for RejectInvitation Operation</seealso>
         public virtual Task<RejectInvitationResponse> RejectInvitationAsync(RejectInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInvitationResponseUnmarshaller.Instance;
             
@@ -2325,7 +2325,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2420,7 +2420,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2460,7 +2460,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2504,7 +2504,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
         public virtual UpdateMemberResponse UpdateMember(UpdateMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMemberResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">REST API Reference for UpdateMember Operation</seealso>
         public virtual Task<UpdateMemberResponse> UpdateMemberAsync(UpdateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMemberResponseUnmarshaller.Instance;
             
@@ -2591,7 +2591,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
         public virtual UpdateNodeResponse UpdateNode(UpdateNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodeResponseUnmarshaller.Instance;
 
@@ -2634,7 +2634,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
         public virtual Task<UpdateNodeResponse> UpdateNodeAsync(UpdateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodeResponseUnmarshaller.Instance;
             
@@ -2683,7 +2683,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VoteOnProposal">REST API Reference for VoteOnProposal Operation</seealso>
         public virtual VoteOnProposalResponse VoteOnProposal(VoteOnProposalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VoteOnProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VoteOnProposalResponseUnmarshaller.Instance;
 
@@ -2731,7 +2731,7 @@ namespace Amazon.ManagedBlockchain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VoteOnProposal">REST API Reference for VoteOnProposal Operation</seealso>
         public virtual Task<VoteOnProposalResponse> VoteOnProposalAsync(VoteOnProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VoteOnProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VoteOnProposalResponseUnmarshaller.Instance;
             

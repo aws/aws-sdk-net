@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSKeyNotAccessibleException
+        /// message.
+        /// </summary>
+        public KMSKeyNotAccessibleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSKeyNotAccessibleException with the specified error
         /// message.
         /// </summary>

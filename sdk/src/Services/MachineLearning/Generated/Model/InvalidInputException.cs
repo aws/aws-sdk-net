@@ -40,6 +40,13 @@ namespace Amazon.MachineLearning.Model
         private int? _code;
 
         /// <summary>
+        /// Default constructor for InvalidInputException
+        /// message.
+        /// </summary>
+        public InvalidInputException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInputException with the specified error
         /// message.
         /// </summary>

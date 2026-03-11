@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The resource could not be found.
+    /// The resource couldn't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ResourceNotFoundException : AmazonEntityResolutionException
     {
+
+        /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error

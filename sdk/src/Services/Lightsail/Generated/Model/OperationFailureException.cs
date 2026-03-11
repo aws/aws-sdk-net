@@ -42,6 +42,13 @@ namespace Amazon.Lightsail.Model
         private string _tip;
 
         /// <summary>
+        /// Default constructor for OperationFailureException
+        /// message.
+        /// </summary>
+        public OperationFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationFailureException with the specified error
         /// message.
         /// </summary>

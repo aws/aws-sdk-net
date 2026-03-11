@@ -71,6 +71,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFInvalidPermissionPolicyException
+        /// message.
+        /// </summary>
+        public WAFInvalidPermissionPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInvalidPermissionPolicyException with the specified error
         /// message.
         /// </summary>

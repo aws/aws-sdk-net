@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredJobIdException
+        /// message.
+        /// </summary>
+        public ExpiredJobIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredJobIdException with the specified error
         /// message.
         /// </summary>

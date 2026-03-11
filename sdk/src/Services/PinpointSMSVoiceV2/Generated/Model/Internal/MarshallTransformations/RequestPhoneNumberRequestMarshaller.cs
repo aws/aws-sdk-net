@@ -92,6 +92,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
             }
 
+            if(publicRequest.IsSetInternationalSendingEnabled())
+            {
+                context.Writer.WritePropertyName("InternationalSendingEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.InternationalSendingEnabled.Value);
+            }
+
             if(publicRequest.IsSetIsoCountryCode())
             {
                 context.Writer.WritePropertyName("IsoCountryCode");

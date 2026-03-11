@@ -31,7 +31,9 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReadSetExportJobs operation.
-    /// Retrieves a list of read set export jobs.
+    /// Retrieves a list of read set export jobs in a JSON formatted response. This API operation
+    /// is used to check the status of a read set export job initiated by the <c>StartReadSetExportJob</c>
+    /// API operation.
     /// </summary>
     public partial class ListReadSetExportJobsRequest : AmazonOmicsRequest
     {

@@ -56,15 +56,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDistributionTenantByDomainRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCloudFrontException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
             request.ResourcePath = "/2020-05-31/distribution-tenant";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static GetDistributionTenantByDomainRequestMarshaller _instance = new GetDistributionTenantByDomainRequestMarshaller();        
@@ -86,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantByDomainRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetDistributionTenantByDomainRequest publicRequest);
     }    
 }

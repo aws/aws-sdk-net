@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountChannelLimitExceededException
+        /// message.
+        /// </summary>
+        public AccountChannelLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountChannelLimitExceededException with the specified error
         /// message.
         /// </summary>

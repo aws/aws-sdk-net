@@ -47,6 +47,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private string _clusterName;
         private string _configurationValues;
+        private AddonNamespaceConfigRequest _namespaceConfig;
         private List<AddonPodIdentityAssociations> _podIdentityAssociations = AWSConfigs.InitializeCollections ? new List<AddonPodIdentityAssociations>() : null;
         private ResolveConflicts _resolveConflicts;
         private string _serviceAccountRoleArn;
@@ -146,6 +147,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetConfigurationValues()
         {
             return this._configurationValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceConfig. 
+        /// <para>
+        /// The namespace configuration for the addon. If specified, this will override the default
+        /// namespace for the addon.
+        /// </para>
+        /// </summary>
+        public AddonNamespaceConfigRequest NamespaceConfig
+        {
+            get { return this._namespaceConfig; }
+            set { this._namespaceConfig = value; }
+        }
+
+        // Check to see if NamespaceConfig property is set
+        internal bool IsSetNamespaceConfig()
+        {
+            return this._namespaceConfig != null;
         }
 
         /// <summary>

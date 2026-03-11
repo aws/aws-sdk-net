@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UnexpectedLambdaException
+        /// message.
+        /// </summary>
+        public UnexpectedLambdaException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnexpectedLambdaException with the specified error
         /// message.
         /// </summary>

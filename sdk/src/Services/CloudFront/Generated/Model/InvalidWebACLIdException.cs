@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidWebACLIdException
+        /// message.
+        /// </summary>
+        public InvalidWebACLIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidWebACLIdException with the specified error
         /// message.
         /// </summary>

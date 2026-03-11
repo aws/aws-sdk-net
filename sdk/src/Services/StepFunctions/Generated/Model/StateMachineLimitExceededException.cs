@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for StateMachineLimitExceededException
+        /// message.
+        /// </summary>
+        public StateMachineLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StateMachineLimitExceededException with the specified error
         /// message.
         /// </summary>

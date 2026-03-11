@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains summary information about an actor in a memory store.
+    /// Contains summary information about an actor in an AgentCore Memory resource.
     /// </summary>
     public partial class ActorSummary
     {

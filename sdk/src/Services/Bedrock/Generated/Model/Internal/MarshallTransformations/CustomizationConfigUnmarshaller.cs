@@ -62,6 +62,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.DistillationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("rftConfig", targetDepth))
+                {
+                    var unmarshaller = RFTConfigUnmarshaller.Instance;
+                    unmarshalledObject.RftConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

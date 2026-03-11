@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for NumberOfRulesExceededException
+        /// message.
+        /// </summary>
+        public NumberOfRulesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NumberOfRulesExceededException with the specified error
         /// message.
         /// </summary>

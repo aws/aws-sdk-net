@@ -41,9 +41,9 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-    /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-    /// some variations of this term.
+    /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+    /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+    /// changes, KMS is keeping some variations of this term.
     /// </para>
     ///  
     /// <para>
@@ -697,8 +697,8 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
-        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <c>AliasName</c> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed keys</a>.</param>
+        /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html">Find the key ID and key ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1361,9 +1361,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and
-        /// <i>KMS key</i>. The concept has not changed. To prevent breaking changes, KMS is keeping
-        /// some variations of this term.
+        /// KMS has replaced the term <i>customer master key (CMK)</i> with <i>Key Management
+        /// Service key</i> and <i>KMS key</i>. The concept has not changed. To prevent breaking
+        /// changes, KMS is keeping some variations of this term.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1409,7 +1409,7 @@ namespace Amazon.KeyManagementService
         /// KMS key never leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a>
         /// operation to download the public key so it can be used outside of KMS. Each KMS key
         /// can have only one key usage. KMS keys with RSA key pairs can be used to encrypt and
-        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-recommended
+        /// decrypt data or sign and verify messages (but not both). KMS keys with NIST-standard
         /// ECC key pairs can be used to sign and verify messages or derive shared secrets (but
         /// not both). KMS keys with <c>ECC_SECG_P256K1</c> can be used only to sign and verify
         /// messages. KMS keys with ML-DSA key pairs can be used to sign and verify messages.
@@ -1440,7 +1440,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
+        ///  </dd> <dt>Multi-Region primary keys</dt> <dd> 
         /// <para>
         /// To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region,
         /// use the <c>MultiRegion</c> parameter with a value of <c>True</c>. To create a multi-Region
@@ -1470,7 +1470,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dd> 
+        ///  </dd> <dt>Imported key material</dt> <dd> 
         /// <para>
         /// To import your own key material into a KMS key, begin by creating a KMS key with no
         /// key material. To do this, use the <c>Origin</c> parameter of <c>CreateKey</c> with
@@ -1818,15 +1818,16 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <c>Decrypt</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
-        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves</a> and NitroTPM, which provide attested environments
+        /// in Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave or NitroTPM, use the <a
+        /// href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
-        /// data, the response includes the plaintext data encrypted with the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>). For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of the plaintext data, the response includes the plaintext data encrypted with the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2385,6 +2386,21 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        ///  <b>Considerations for multi-Region symmetric encryption keys</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete the key material of a primary Region key that is in <c>PENDING_ROTATION</c>
+        /// or <c>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</c>state, you'll also be deleting the
+        /// key materials for the replica Region keys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you delete any key material of a replica Region key, the primary Region key and
+        /// other replica Region keys remain unchanged.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
         /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
@@ -2486,7 +2502,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  <note> 
         /// <para>
-        /// You must use an asymmetric NIST-recommended elliptic curve (ECC) or SM2 (China Regions
+        /// You must use an asymmetric NIST-standard elliptic curve (ECC) or SM2 (China Regions
         /// only) KMS key pair with a <c>KeyUsage</c> value of <c>KEY_AGREEMENT</c> to call DeriveSharedSecret.
         /// </para>
         ///  </note> 
@@ -2513,7 +2529,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// The asymmetric KMS key must use a NIST-recommended elliptic curve (ECC) or SM2 (China
+        /// The asymmetric KMS key must use a NIST-standard elliptic curve (ECC) or SM2 (China
         /// Regions only) key spec.
         /// </para>
         ///  </li> <li> 
@@ -2523,7 +2539,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Bob can call <a>CreateKey</a> to create an asymmetric KMS key pair or generate a key
-        /// pair outside of KMS. Bob's key pair must use the same NIST-recommended elliptic curve
+        /// pair outside of KMS. Bob's key pair must use the same NIST-standard elliptic curve
         /// (ECC) or SM2 (China Regions ony) curve as Alice.
         /// </para>
         ///  </li> <li> 
@@ -2559,9 +2575,9 @@ namespace Amazon.KeyManagementService
         ///  </li> </ol> 
         /// <para>
         /// To derive a shared secret you must provide a key agreement algorithm, the private
-        /// key of the caller's asymmetric NIST-recommended elliptic curve or SM2 (China Regions
-        /// only) KMS key pair, and the public key from your peer's NIST-recommended elliptic
-        /// curve or SM2 (China Regions only) key pair. The public key can be from another asymmetric
+        /// key of the caller's asymmetric NIST-standard elliptic curve or SM2 (China Regions
+        /// only) KMS key pair, and the public key from your peer's NIST-standard elliptic curve
+        /// or SM2 (China Regions only) key pair. The public key can be from another asymmetric
         /// KMS key pair or from a key pair generated outside of KMS, but both key pairs must
         /// be on the same elliptic curve.
         /// </para>
@@ -2809,8 +2825,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -2858,7 +2874,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -2912,7 +2928,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified KMS key.  If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a> and returns its <c>KeyId</c> and <c>Arn</c> in the response. To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Alias name: <c>alias/ExampleAlias</c>  </li> <li> Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2938,8 +2954,8 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Provides detailed information about a KMS key. You can run <c>DescribeKey</c> on a
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed key</a>.
         /// 
         ///  
@@ -2987,7 +3003,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// In general, <c>DescribeKey</c> is a non-mutating operation. It returns data about
         /// KMS keys, but doesn't change them. However, Amazon Web Services services use <c>DescribeKey</c>
-        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// to create <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed keys</a> from a <i>predefined Amazon Web Services alias</i> with
         /// no key ID.
         /// </para>
@@ -3254,10 +3270,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -3382,10 +3398,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
-        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
-        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> varies.
         /// </para>
         ///  <note> 
@@ -3823,7 +3839,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -3850,9 +3866,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -3984,7 +4000,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
         /// 365 days) from the enable date and every year thereafter. You can use the optional
         /// <c>RotationPeriodInDays</c> parameter to specify a custom rotation period when you
@@ -4011,9 +4027,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -4414,17 +4430,16 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKey</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKey</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKey</c>
         /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
         /// instead of a plaintext copy of the data key, the response includes a copy of the data
         /// key encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4663,18 +4678,17 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKeyPair</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKeyPair</c>
         /// returns the public data key and a copy of the private data key encrypted under the
         /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
         /// (<c>PrivateKeyPlaintext</c>), the response includes a copy of the private data key
         /// encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5378,14 +5392,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5495,14 +5510,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5772,7 +5788,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -5922,7 +5938,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
-        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
         /// material in Amazon Web Services managed KMS keys every year. The key rotation status
         /// for Amazon Web Services managed KMS keys is always <c>true</c>.
@@ -6420,11 +6436,35 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For asymmetric, HMAC and multi-Region keys, you cannot change the key material after
-        /// the initial import. You can import multiple key materials into single-Region, symmetric
-        /// encryption keys and rotate the key material on demand using <c>RotateKeyOnDemand</c>.
+        /// For asymmetric and HMAC keys, you cannot change the key material after the initial
+        /// import. You can import multiple key materials into symmetric encryption keys and rotate
+        /// the key material on demand using <c>RotateKeyOnDemand</c>.
         /// </para>
         ///  
+        /// <para>
+        /// You can import new key materials into multi-Region symmetric encryption keys. To do
+        /// so, you must import the new key material into the primary Region key. Then you can
+        /// import the same key materials into the replica Region keys. You cannot directly import
+        /// new key material into the replica Region keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// To import new key material for a multi-Region symmetric key, you’ll need to complete
+        /// the following:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Call <c>ImportKeyMaterial</c> on the primary Region key with the <c>ImportType</c>set
+        /// to <c>NEW_KEY_MATERIAL</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <c>ImportKeyMaterial</c> on the replica Region key with the <c>ImportType</c>
+        /// set to <c>EXISTING_KEY_MATERIAL</c> using the same key material imported to the primary
+        /// Region key. You must do this for every replica Region key before you can perform the
+        /// <a>RotateKeyOnDemand</a> operation on the primary Region key.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// After you import key material, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key or, if the key supports on-demand rotation,
@@ -6473,14 +6513,14 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Then, in an <c>ImportKeyMaterial</c> request, you submit your encrypted key material
+        /// Then, in an <c>ImportKeyMaterial</c> request, you submit your encrypted key material
         /// and import token. When calling this operation, you must specify the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The key ID or key ARN of the KMS key to associate with the imported key material.
-        /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>.
-        /// You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Its <c>Origin</c> must be <c>EXTERNAL</c> and its <c>KeyState</c> must be <c>PendingImport</c>
+        /// or <c>Enabled</c>. You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or on a KMS key in a different Amazon Web Services account. To get
         /// the <c>Origin</c> and <c>KeyState</c> of a KMS key, call <a>DescribeKey</a>.
         /// </para>
@@ -6509,12 +6549,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When this operation is successful, the key state of the KMS key changes from <c>PendingImport</c>
-        /// to <c>Enabled</c>, and you can use the KMS key in cryptographic operations. For single-Region,
-        /// symmetric encryption keys, you will need to import all of the key materials associated
-        /// with the KMS key to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c>
-        /// operation to list the ID and import state of each key material associated with a KMS
-        /// key.
+        /// When this operation is successful, the state of the KMS key changes to <c>Enabled</c>,
+        /// and you can use the KMS key in cryptographic operations. For symmetric encryption
+        /// keys, you will need to import all of the key materials associated with the KMS key
+        /// to change its state to <c>Enabled</c>. Use the <c>ListKeyRotations</c> operation to
+        /// list the ID and import state of each key material associated with a KMS key.
         /// </para>
         ///  
         /// <para>
@@ -8626,7 +8665,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+        /// You can perform on-demand key rotation a <b>maximum of 25 times</b> per KMS key. You
         /// can use the KMS console to view the number of remaining on-demand rotations available
         /// for a KMS key.
         /// </para>
@@ -8642,20 +8681,21 @@ namespace Amazon.KeyManagementService
         /// On-demand key rotation is supported only on symmetric encryption KMS keys. You cannot
         /// perform on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// KMS keys</a>, multi-Region KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
-        /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// KMS keys</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>. When you initiate on-demand key rotation on a symmetric encryption
         /// KMS key with imported key material, you must have already imported <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html">new
         /// key material</a> and that key material's state should be <c>PENDING_ROTATION</c>.
         /// Use the <c>ListKeyRotations</c> operation to check the state of all key materials
         /// associated with a KMS key. To perform on-demand rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#multi-region-rotate">multi-Region
-        /// keys</a>, invoke the on-demand rotation on the primary key.
+        /// keys</a>, import new key material in the primary Region key, import the same key material
+        /// in each replica Region key, and invoke the on-demand rotation on the primary Region
+        /// key.
         /// </para>
         ///  
         /// <para>
-        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// You cannot initiate on-demand rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
         /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
-        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned KMS keys</a> is managed by the Amazon Web Services service that
         /// owns the key.
         /// </para>
@@ -9355,7 +9395,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Adds or edits tags on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>.
         /// 
         ///  <note> 
@@ -9372,9 +9412,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
-        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// You can use this operation to tag a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
+        /// managed key</a>, but you cannot tag an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon
+        /// Web Services managed key</a>, an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-key">Amazon
         /// Web Services owned key</a>, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
         /// key store</a>, or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">alias</a>.
         /// </para>
@@ -9494,7 +9534,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// Deletes tags from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer
         /// managed key</a>. To delete a tag, specify the tag key and the KMS key.
         /// 
         ///  <note> 
@@ -9705,7 +9745,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <c>alias/</c> followed by the alias name, such as <c>alias/ExampleAlias</c>. You cannot use <c>UpdateAlias</c> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
-        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
+        /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-mgn-key">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-key">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

@@ -57,8 +57,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationId. Operation ID for tracking UpdateApplication
-        /// request
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The operation ID that can be used to track the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string OperationId

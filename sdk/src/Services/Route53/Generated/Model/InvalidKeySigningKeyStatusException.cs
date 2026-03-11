@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKeySigningKeyStatusException
+        /// message.
+        /// </summary>
+        public InvalidKeySigningKeyStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKeySigningKeyStatusException with the specified error
         /// message.
         /// </summary>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Information about tasks and jobs queued on a device.
+    /// Information about quantum tasks and hybrid jobs queued on a device.
     /// </summary>
     public partial class DeviceQueueInfo
     {
@@ -60,8 +60,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QueuePriority. 
         /// <para>
-        /// Optional. Specifies the priority of the queue. Tasks in a priority queue are processed
-        /// before the tasks in a normal queue.
+        /// Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are
+        /// processed before the quantum tasks in a normal queue.
         /// </para>
         /// </summary>
         public QueuePriority QueuePriority
@@ -79,7 +79,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QueueSize. 
         /// <para>
-        /// The number of jobs or tasks in the queue for a given device. 
+        /// The number of hybrid jobs or quantum tasks in the queue for a given device. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

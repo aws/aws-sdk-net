@@ -298,7 +298,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-signaling-2019-12-04/GetIceServerConfig">REST API Reference for GetIceServerConfig Operation</seealso>
         public virtual GetIceServerConfigResponse GetIceServerConfig(GetIceServerConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIceServerConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIceServerConfigResponseUnmarshaller.Instance;
 
@@ -359,7 +359,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-signaling-2019-12-04/GetIceServerConfig">REST API Reference for GetIceServerConfig Operation</seealso>
         public virtual Task<GetIceServerConfigResponse> GetIceServerConfigAsync(GetIceServerConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIceServerConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIceServerConfigResponseUnmarshaller.Instance;
             
@@ -398,7 +398,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-signaling-2019-12-04/SendAlexaOfferToMaster">REST API Reference for SendAlexaOfferToMaster Operation</seealso>
         public virtual SendAlexaOfferToMasterResponse SendAlexaOfferToMaster(SendAlexaOfferToMasterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendAlexaOfferToMasterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendAlexaOfferToMasterResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-signaling-2019-12-04/SendAlexaOfferToMaster">REST API Reference for SendAlexaOfferToMaster Operation</seealso>
         public virtual Task<SendAlexaOfferToMasterResponse> SendAlexaOfferToMasterAsync(SendAlexaOfferToMasterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendAlexaOfferToMasterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendAlexaOfferToMasterResponseUnmarshaller.Instance;
             

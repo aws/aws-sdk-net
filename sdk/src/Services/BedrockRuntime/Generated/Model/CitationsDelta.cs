@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     public partial class CitationsDelta
     {
         private CitationLocation _location;
+        private string _source;
         private List<CitationSourceContentDelta> _sourceContent = AWSConfigs.InitializeCollections ? new List<CitationSourceContentDelta>() : null;
         private string _title;
 
@@ -57,6 +58,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The source from the original search result that provided the cited content.
+        /// </para>
+        /// </summary>
+        public string Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
         }
 
         /// <summary>

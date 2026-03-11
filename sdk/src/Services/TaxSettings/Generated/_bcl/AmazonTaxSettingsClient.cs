@@ -308,7 +308,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchDeleteTaxRegistration">REST API Reference for BatchDeleteTaxRegistration Operation</seealso>
         public virtual BatchDeleteTaxRegistrationResponse BatchDeleteTaxRegistration(BatchDeleteTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchDeleteTaxRegistration">REST API Reference for BatchDeleteTaxRegistration Operation</seealso>
         public virtual Task<BatchDeleteTaxRegistrationResponse> BatchDeleteTaxRegistrationAsync(BatchDeleteTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTaxRegistrationResponseUnmarshaller.Instance;
             
@@ -378,7 +378,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
         public virtual BatchGetTaxExemptionsResponse BatchGetTaxExemptions(BatchGetTaxExemptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
         public virtual Task<BatchGetTaxExemptionsResponse> BatchGetTaxExemptionsAsync(BatchGetTaxExemptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
             
@@ -711,7 +711,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchPutTaxRegistration">REST API Reference for BatchPutTaxRegistration Operation</seealso>
         public virtual BatchPutTaxRegistrationResponse BatchPutTaxRegistration(BatchPutTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -1013,7 +1013,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchPutTaxRegistration">REST API Reference for BatchPutTaxRegistration Operation</seealso>
         public virtual Task<BatchPutTaxRegistrationResponse> BatchPutTaxRegistrationAsync(BatchPutTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutTaxRegistrationResponseUnmarshaller.Instance;
             
@@ -1047,7 +1047,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteSupplementalTaxRegistration">REST API Reference for DeleteSupplementalTaxRegistration Operation</seealso>
         public virtual DeleteSupplementalTaxRegistrationResponse DeleteSupplementalTaxRegistration(DeleteSupplementalTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSupplementalTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSupplementalTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteSupplementalTaxRegistration">REST API Reference for DeleteSupplementalTaxRegistration Operation</seealso>
         public virtual Task<DeleteSupplementalTaxRegistrationResponse> DeleteSupplementalTaxRegistrationAsync(DeleteSupplementalTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSupplementalTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSupplementalTaxRegistrationResponseUnmarshaller.Instance;
             
@@ -1122,7 +1122,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteTaxRegistration">REST API Reference for DeleteTaxRegistration Operation</seealso>
         public virtual DeleteTaxRegistrationResponse DeleteTaxRegistration(DeleteTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteTaxRegistration">REST API Reference for DeleteTaxRegistration Operation</seealso>
         public virtual Task<DeleteTaxRegistrationResponse> DeleteTaxRegistrationAsync(DeleteTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaxRegistrationResponseUnmarshaller.Instance;
             
@@ -1194,7 +1194,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
         public virtual GetTaxExemptionTypesResponse GetTaxExemptionTypes(GetTaxExemptionTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
 
@@ -1224,7 +1224,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
         public virtual Task<GetTaxExemptionTypesResponse> GetTaxExemptionTypesAsync(GetTaxExemptionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
             
@@ -1255,7 +1255,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
         public virtual GetTaxInheritanceResponse GetTaxInheritance(GetTaxInheritanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
 
@@ -1285,7 +1285,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
         public virtual Task<GetTaxInheritanceResponse> GetTaxInheritanceAsync(GetTaxInheritanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
             
@@ -1316,7 +1316,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxRegistration">REST API Reference for GetTaxRegistration Operation</seealso>
         public virtual GetTaxRegistrationResponse GetTaxRegistration(GetTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxRegistration">REST API Reference for GetTaxRegistration Operation</seealso>
         public virtual Task<GetTaxRegistrationResponse> GetTaxRegistrationAsync(GetTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxRegistrationResponseUnmarshaller.Instance;
             
@@ -1374,7 +1374,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxRegistrationDocument">REST API Reference for GetTaxRegistrationDocument Operation</seealso>
         public virtual GetTaxRegistrationDocumentResponse GetTaxRegistrationDocument(GetTaxRegistrationDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxRegistrationDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxRegistrationDocumentResponseUnmarshaller.Instance;
 
@@ -1401,7 +1401,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxRegistrationDocument">REST API Reference for GetTaxRegistrationDocument Operation</seealso>
         public virtual Task<GetTaxRegistrationDocumentResponse> GetTaxRegistrationDocumentAsync(GetTaxRegistrationDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaxRegistrationDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaxRegistrationDocumentResponseUnmarshaller.Instance;
             
@@ -1432,7 +1432,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListSupplementalTaxRegistrations">REST API Reference for ListSupplementalTaxRegistrations Operation</seealso>
         public virtual ListSupplementalTaxRegistrationsResponse ListSupplementalTaxRegistrations(ListSupplementalTaxRegistrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSupplementalTaxRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSupplementalTaxRegistrationsResponseUnmarshaller.Instance;
 
@@ -1462,7 +1462,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListSupplementalTaxRegistrations">REST API Reference for ListSupplementalTaxRegistrations Operation</seealso>
         public virtual Task<ListSupplementalTaxRegistrationsResponse> ListSupplementalTaxRegistrationsAsync(ListSupplementalTaxRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSupplementalTaxRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSupplementalTaxRegistrationsResponseUnmarshaller.Instance;
             
@@ -1494,7 +1494,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
         public virtual ListTaxExemptionsResponse ListTaxExemptions(ListTaxExemptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
 
@@ -1525,7 +1525,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
         public virtual Task<ListTaxExemptionsResponse> ListTaxExemptionsAsync(ListTaxExemptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
             
@@ -1558,7 +1558,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxRegistrations">REST API Reference for ListTaxRegistrations Operation</seealso>
         public virtual ListTaxRegistrationsResponse ListTaxRegistrations(ListTaxRegistrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaxRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaxRegistrationsResponseUnmarshaller.Instance;
 
@@ -1590,7 +1590,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxRegistrations">REST API Reference for ListTaxRegistrations Operation</seealso>
         public virtual Task<ListTaxRegistrationsResponse> ListTaxRegistrationsAsync(ListTaxRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaxRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaxRegistrationsResponseUnmarshaller.Instance;
             
@@ -1621,7 +1621,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutSupplementalTaxRegistration">REST API Reference for PutSupplementalTaxRegistration Operation</seealso>
         public virtual PutSupplementalTaxRegistrationResponse PutSupplementalTaxRegistration(PutSupplementalTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSupplementalTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutSupplementalTaxRegistration">REST API Reference for PutSupplementalTaxRegistration Operation</seealso>
         public virtual Task<PutSupplementalTaxRegistrationResponse> PutSupplementalTaxRegistrationAsync(PutSupplementalTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSupplementalTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
             
@@ -1692,7 +1692,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
         public virtual PutTaxExemptionResponse PutTaxExemption(PutTaxExemptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
         public virtual Task<PutTaxExemptionResponse> PutTaxExemptionAsync(PutTaxExemptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
             
@@ -1766,7 +1766,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
         public virtual PutTaxInheritanceResponse PutTaxInheritance(PutTaxInheritanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
 
@@ -1799,7 +1799,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
         public virtual Task<PutTaxInheritanceResponse> PutTaxInheritanceAsync(PutTaxInheritanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
             
@@ -2101,7 +2101,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxRegistration">REST API Reference for PutTaxRegistration Operation</seealso>
         public virtual PutTaxRegistrationResponse PutTaxRegistration(PutTaxRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTaxRegistrationResponseUnmarshaller.Instance;
 
@@ -2402,7 +2402,7 @@ namespace Amazon.TaxSettings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxRegistration">REST API Reference for PutTaxRegistration Operation</seealso>
         public virtual Task<PutTaxRegistrationResponse> PutTaxRegistrationAsync(PutTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTaxRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTaxRegistrationResponseUnmarshaller.Instance;
             

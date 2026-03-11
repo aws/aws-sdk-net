@@ -68,9 +68,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            if (string.IsNullOrEmpty(publicRequest.FromDate))
+                throw new AmazonConnectException("Request object does not have required field FromDate set");
             
             if (publicRequest.IsSetFromDate())
                 request.Parameters.Add("fromDate", StringUtils.FromString(publicRequest.FromDate));
+            if (string.IsNullOrEmpty(publicRequest.ToDate))
+                throw new AmazonConnectException("Request object does not have required field ToDate set");
             
             if (publicRequest.IsSetToDate())
                 request.Parameters.Add("toDate", StringUtils.FromString(publicRequest.ToDate));

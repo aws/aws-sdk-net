@@ -41,6 +41,13 @@ namespace Amazon.Omics.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for RangeNotSatisfiableException
+        /// message.
+        /// </summary>
+        public RangeNotSatisfiableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RangeNotSatisfiableException with the specified error
         /// message.
         /// </summary>

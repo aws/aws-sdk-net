@@ -166,6 +166,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZone));
                         }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetAvailabilityZoneId())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.AvailabilityZoneId));
+                        }
                         if(publicRequest.LaunchSpecification.Placement.IsSetGroupId())
                         {
                             request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.GroupId));
@@ -216,6 +220,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Platform", StringUtils.FromString(publicRequest.Platform));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ImportInstanceRequestMarshaller _instance = new ImportInstanceRequestMarshaller();        

@@ -31,7 +31,8 @@ namespace Amazon.SocialMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLinkedWhatsAppBusinessAccountPhoneNumber operation.
-    /// Use your WhatsApp phone number id to get the WABA account id and phone number details.
+    /// Retrieve the WABA account id and phone number details of a WhatsApp business account
+    /// phone number.
     /// </summary>
     public partial class GetLinkedWhatsAppBusinessAccountPhoneNumberRequest : AmazonSocialMessagingRequest
     {
@@ -41,11 +42,11 @@ namespace Amazon.SocialMessaging.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier of the phone number. Phone number identifiers are formatted
-        /// as <c>phone-number-id-01234567890123456789012345678901</c>. Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
+        /// as <c>phone-number-id-01234567890123456789012345678901</c>. Use <a href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccount.html">GetLinkedWhatsAppBusinessAccount</a>
         /// to find a phone number's id.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string Id
         {
             get { return this._id; }

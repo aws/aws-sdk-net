@@ -36,6 +36,14 @@ namespace Amazon.NetworkMonitor
         /// <summary>
         /// Construct instance of AmazonNetworkMonitorException
         /// </summary>
+        public AmazonNetworkMonitorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNetworkMonitorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNetworkMonitorException(string message)
             : base(message)

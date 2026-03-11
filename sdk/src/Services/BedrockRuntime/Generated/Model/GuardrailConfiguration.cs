@@ -45,7 +45,7 @@ namespace Amazon.BedrockRuntime.Model
         /// The identifier for the guardrail.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string GuardrailIdentifier
         {
             get { return this._guardrailIdentifier; }
@@ -64,7 +64,6 @@ namespace Amazon.BedrockRuntime.Model
         /// The version of the guardrail.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string GuardrailVersion
         {
             get { return this._guardrailVersion; }

@@ -37,6 +37,7 @@ namespace Amazon.Invoicing.Model
     public partial class Filters
     {
         private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _billSourceAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _invoiceReceivers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -66,6 +67,32 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetAccounts()
         {
             return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillSourceAccounts. 
+        /// <para>
+        ///  A list of Amazon Web Services account account IDs used to filter invoice units. These
+        /// are payer accounts from other Organizations that have delegated their billing responsibility
+        /// to the receiver account through the billing transfer feature. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public List<string> BillSourceAccounts
+        {
+            get { return this._billSourceAccounts; }
+            set { this._billSourceAccounts = value; }
+        }
+
+        // Check to see if BillSourceAccounts property is set
+        internal bool IsSetBillSourceAccounts()
+        {
+            return this._billSourceAccounts != null && (this._billSourceAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

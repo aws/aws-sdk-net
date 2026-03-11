@@ -37,7 +37,11 @@ namespace Amazon.CloudWatchLogs.Model
         private GetLogObjectResponseStream _fieldStream;
 
         /// <summary>
-        /// Gets and sets the property FieldStream.
+        /// Gets and sets the property FieldStream. 
+        /// <para>
+        /// A stream of structured log data returned by the GetLogObject operation. This stream
+        /// contains log events with their associated metadata and extracted fields.
+        /// </para>
         /// </summary>
         public GetLogObjectResponseStream FieldStream
         {

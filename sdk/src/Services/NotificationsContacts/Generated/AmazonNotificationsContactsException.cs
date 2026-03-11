@@ -36,6 +36,14 @@ namespace Amazon.NotificationsContacts
         /// <summary>
         /// Construct instance of AmazonNotificationsContactsException
         /// </summary>
+        public AmazonNotificationsContactsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNotificationsContactsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNotificationsContactsException(string message)
             : base(message)

@@ -70,6 +70,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationAccessDeniedException
+        /// message.
+        /// </summary>
+        public OrganizationAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationAccessDeniedException with the specified error
         /// message.
         /// </summary>

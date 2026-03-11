@@ -28,11 +28,19 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public bool? IgnoreNullValues { get; set; }
 
+        /// <summary>
+        /// Property that directs <see cref="DynamoDBContext"/> to skip version checks
+        /// when saving or deleting an object with a version attribute.
+        /// If property is not set, version checks are performed.
+        /// </summary>
+        public bool? SkipVersionCheck { get; set; }
+
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
         {
             var config = base.ToDynamoDBOperationConfig();
             config.IgnoreNullValues = IgnoreNullValues;
+            config.SkipVersionCheck = SkipVersionCheck;
 
             return config;
         }

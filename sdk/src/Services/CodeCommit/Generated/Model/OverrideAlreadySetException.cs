@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for OverrideAlreadySetException
+        /// message.
+        /// </summary>
+        public OverrideAlreadySetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OverrideAlreadySetException with the specified error
         /// message.
         /// </summary>

@@ -35,8 +35,8 @@ namespace Amazon.ComputeOptimizer.Model
     ///  
     /// <para>
     /// For example, an error is returned if you request recommendations for an unsupported
-    /// Auto Scaling group, or if you request recommendations for an instance of an unsupported
-    /// instance family.
+    /// Amazon EC2 Auto Scaling group, or if you request recommendations for an instance of
+    /// an unsupported instance family.
     /// </para>
     /// </summary>
     public partial class GetRecommendationError

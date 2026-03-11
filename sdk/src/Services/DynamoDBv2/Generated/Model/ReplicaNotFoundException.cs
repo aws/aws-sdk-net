@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ReplicaNotFoundException
+        /// message.
+        /// </summary>
+        public ReplicaNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReplicaNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -44,6 +44,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private string _customerAWSAccountId;
         private string _customerIdentifier;
         private string _dimension;
+        private string _licenseArn;
         private int? _quantity;
         private DateTime? _timestamp;
         private List<UsageAllocation> _usageAllocations = AWSConfigs.InitializeCollections ? new List<UsageAllocation>() : null;
@@ -51,9 +52,15 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property CustomerAWSAccountId. 
         /// <para>
-        ///  The <c>CustomerAWSAccountID</c> parameter specifies the AWS account ID of the buyer.
-        /// 
+        /// The <c>CustomerAWSAccountId</c> parameter specifies the AWS account ID of the buyer.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For existing integrations, to access your <c>CustomerIdentifier</c> to <c>CustomerAWSAccountId</c>
+        /// mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account
+        /// Feeds</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string CustomerAWSAccountId
@@ -109,6 +116,32 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LicenseArn. 
+        /// <para>
+        /// The <c>LicenseArn</c> is a unique identifier for a specific granted license. These
+        /// are used for software purchased through Amazon Web Services Marketplace.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To access your <c>CustomerAWSAccountId</c> and <c>LicenseArn</c> mapping, visit <a
+        /// href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements
+        /// Feeds</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LicenseArn
+        {
+            get { return this._licenseArn; }
+            set { this._licenseArn = value; }
+        }
+
+        // Check to see if LicenseArn property is set
+        internal bool IsSetLicenseArn()
+        {
+            return this._licenseArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The quantity of usage consumed by the customer for the given dimension and time. Defaults
@@ -135,7 +168,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  
         /// <para>
-        /// Your application can meter usage for up to one hour in the past. Make sure the <c>timestamp</c>
+        /// Your application can meter usage for up to six hours in the past. Make sure the <c>timestamp</c>
         /// value is not before the start of the software usage.
         /// </para>
         /// </summary>

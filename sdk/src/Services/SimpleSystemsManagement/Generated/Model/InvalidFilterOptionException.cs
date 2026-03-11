@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFilterOptionException
+        /// message.
+        /// </summary>
+        public InvalidFilterOptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFilterOptionException with the specified error
         /// message.
         /// </summary>

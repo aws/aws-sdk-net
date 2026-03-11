@@ -36,6 +36,14 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Construct instance of AmazonCloudFrontException
         /// </summary>
+        public AmazonCloudFrontException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudFrontException(string message)
             : base(message)

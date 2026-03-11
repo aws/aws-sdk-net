@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContainerGroupDefinitionVersions operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves all versions of a container group definition. Use the pagination parameters
     /// to retrieve results in a set of sequential pages.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options:</b> 

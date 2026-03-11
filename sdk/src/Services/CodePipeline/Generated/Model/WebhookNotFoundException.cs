@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for WebhookNotFoundException
+        /// message.
+        /// </summary>
+        public WebhookNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebhookNotFoundException with the specified error
         /// message.
         /// </summary>

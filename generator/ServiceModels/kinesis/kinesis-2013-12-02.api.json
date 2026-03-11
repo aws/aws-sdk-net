@@ -44,7 +44,8 @@
       "errors":[
         {"shape":"ResourceInUseException"},
         {"shape":"LimitExceededException"},
-        {"shape":"InvalidArgumentException"}
+        {"shape":"InvalidArgumentException"},
+        {"shape":"ValidationException"}
       ]
     },
     "DecreaseStreamRetentionPeriod":{
@@ -116,6 +117,18 @@
       "staticContextParams":{
         "OperationType":{"value":"control"}
       }
+    },
+    "DescribeAccountSettings":{
+      "name":"DescribeAccountSettings",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeAccountSettingsInput"},
+      "output":{"shape":"DescribeAccountSettingsOutput"},
+      "errors":[
+        {"shape":"LimitExceededException"}
+      ]
     },
     "DescribeLimits":{
       "name":"DescribeLimits",
@@ -631,6 +644,39 @@
         "OperationType":{"value":"control"}
       }
     },
+    "UpdateAccountSettings":{
+      "name":"UpdateAccountSettings",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateAccountSettingsInput"},
+      "output":{"shape":"UpdateAccountSettingsOutput"},
+      "errors":[
+        {"shape":"InvalidArgumentException"},
+        {"shape":"ValidationException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
+    "UpdateMaxRecordSize":{
+      "name":"UpdateMaxRecordSize",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateMaxRecordSizeInput"},
+      "errors":[
+        {"shape":"ResourceInUseException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidArgumentException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"}
+      ],
+      "staticContextParams":{
+        "OperationType":{"value":"control"}
+      }
+    },
     "UpdateShardCount":{
       "name":"UpdateShardCount",
       "http":{
@@ -662,7 +708,28 @@
         {"shape":"InvalidArgumentException"},
         {"shape":"LimitExceededException"},
         {"shape":"ResourceInUseException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"}
+      ],
+      "staticContextParams":{
+        "OperationType":{"value":"control"}
+      }
+    },
+    "UpdateStreamWarmThroughput":{
+      "name":"UpdateStreamWarmThroughput",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateStreamWarmThroughputInput"},
+      "output":{"shape":"UpdateStreamWarmThroughputOutput"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidArgumentException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"ValidationException"}
       ],
       "staticContextParams":{
         "OperationType":{"value":"control"}
@@ -686,6 +753,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -775,12 +846,14 @@
         "StreamName":{"shape":"StreamName"},
         "ShardCount":{"shape":"PositiveIntegerObject"},
         "StreamModeDetails":{"shape":"StreamModeDetails"},
-        "Tags":{"shape":"TagMap"}
+        "Tags":{"shape":"TagMap"},
+        "WarmThroughputMiBps":{"shape":"NaturalIntegerObject"},
+        "MaxRecordSizeInKiB":{"shape":"MaxRecordSizeInKiB"}
       }
     },
     "Data":{
       "type":"blob",
-      "max":1048576,
+      "max":10485760,
       "min":0
     },
     "DecreaseStreamRetentionPeriodInput":{
@@ -792,6 +865,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -802,6 +879,10 @@
         "ResourceARN":{
           "shape":"ResourceARN",
           "contextParam":{"name":"ResourceARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -813,6 +894,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -827,7 +912,21 @@
         "ConsumerARN":{
           "shape":"ConsumerARN",
           "contextParam":{"name":"ConsumerARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
+      }
+    },
+    "DescribeAccountSettingsInput":{
+      "type":"structure",
+      "members":{}
+    },
+    "DescribeAccountSettingsOutput":{
+      "type":"structure",
+      "members":{
+        "MinimumThroughputBillingCommitment":{"shape":"MinimumThroughputBillingCommitmentOutput"}
       }
     },
     "DescribeLimitsInput":{
@@ -860,6 +959,10 @@
         "ConsumerARN":{
           "shape":"ConsumerARN",
           "contextParam":{"name":"ConsumerARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -879,6 +982,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -901,6 +1008,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -920,6 +1031,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -932,6 +1047,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -986,6 +1105,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1011,6 +1134,10 @@
         "ResourceARN":{
           "shape":"ResourceARN",
           "contextParam":{"name":"ResourceARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1036,6 +1163,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1069,6 +1200,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1153,6 +1288,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1178,7 +1317,11 @@
         },
         "NextToken":{"shape":"NextToken"},
         "MaxResults":{"shape":"ListStreamConsumersInputLimit"},
-        "StreamCreationTimestamp":{"shape":"Timestamp"}
+        "StreamCreationTimestamp":{"shape":"Timestamp"},
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        }
       }
     },
     "ListStreamConsumersInputLimit":{
@@ -1226,6 +1369,10 @@
         "ResourceARN":{
           "shape":"ResourceARN",
           "contextParam":{"name":"ResourceARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1244,6 +1391,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1263,6 +1414,11 @@
         "HasMoreTags":{"shape":"BooleanObject"}
       }
     },
+    "MaxRecordSizeInKiB":{
+      "type":"integer",
+      "max":10240,
+      "min":1024
+    },
     "MergeShardsInput":{
       "type":"structure",
       "required":[
@@ -1276,6 +1432,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1300,6 +1460,42 @@
     },
     "MillisBehindLatest":{
       "type":"long",
+      "min":0
+    },
+    "MinimumThroughputBillingCommitmentInput":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{"shape":"MinimumThroughputBillingCommitmentInputStatus"}
+      }
+    },
+    "MinimumThroughputBillingCommitmentInputStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "MinimumThroughputBillingCommitmentOutput":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{"shape":"MinimumThroughputBillingCommitmentOutputStatus"},
+        "StartedAt":{"shape":"Timestamp"},
+        "EndedAt":{"shape":"Timestamp"},
+        "EarliestAllowedEndAt":{"shape":"Timestamp"}
+      }
+    },
+    "MinimumThroughputBillingCommitmentOutputStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED",
+        "ENABLED_UNTIL_EARLIEST_ALLOWED_END"
+      ]
+    },
+    "NaturalIntegerObject":{
+      "type":"integer",
       "min":0
     },
     "NextToken":{
@@ -1349,6 +1545,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1373,6 +1573,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1429,6 +1633,10 @@
           "shape":"ResourceARN",
           "contextParam":{"name":"ResourceARN"}
         },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        },
         "Policy":{"shape":"Policy"}
       }
     },
@@ -1463,6 +1671,10 @@
           "contextParam":{"name":"StreamARN"}
         },
         "ConsumerName":{"shape":"ConsumerName"},
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        },
         "Tags":{"shape":"TagMap"}
       }
     },
@@ -1482,6 +1694,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1604,6 +1820,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1620,6 +1840,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1645,6 +1869,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1694,6 +1922,7 @@
       "members":{
         "StreamName":{"shape":"StreamName"},
         "StreamARN":{"shape":"StreamARN"},
+        "StreamId":{"shape":"StreamId"},
         "StreamStatus":{"shape":"StreamStatus"},
         "StreamModeDetails":{"shape":"StreamModeDetails"},
         "RetentionPeriodHours":{"shape":"RetentionPeriodHours"},
@@ -1702,8 +1931,16 @@
         "EncryptionType":{"shape":"EncryptionType"},
         "KeyId":{"shape":"KeyId"},
         "OpenShardCount":{"shape":"ShardCountObject"},
-        "ConsumerCount":{"shape":"ConsumerCountObject"}
+        "ConsumerCount":{"shape":"ConsumerCountObject"},
+        "WarmThroughput":{"shape":"WarmThroughputObject"},
+        "MaxRecordSizeInKiB":{"shape":"MaxRecordSizeInKiB"}
       }
+    },
+    "StreamId":{
+      "type":"string",
+      "max":24,
+      "min":1,
+      "pattern":"[a-z0-9]{20}-[a-z0-9]{3}"
     },
     "StreamMode":{
       "type":"string",
@@ -1801,6 +2038,10 @@
           "shape":"ConsumerARN",
           "contextParam":{"name":"ConsumerARN"}
         },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        },
         "ShardId":{"shape":"ShardId"},
         "StartingPosition":{"shape":"StartingPosition"}
       }
@@ -1855,6 +2096,10 @@
         "ResourceARN":{
           "shape":"ResourceARN",
           "contextParam":{"name":"ResourceARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1875,7 +2120,39 @@
         "ResourceARN":{
           "shape":"ResourceARN",
           "contextParam":{"name":"ResourceARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
+      }
+    },
+    "UpdateAccountSettingsInput":{
+      "type":"structure",
+      "required":["MinimumThroughputBillingCommitment"],
+      "members":{
+        "MinimumThroughputBillingCommitment":{"shape":"MinimumThroughputBillingCommitmentInput"}
+      }
+    },
+    "UpdateAccountSettingsOutput":{
+      "type":"structure",
+      "members":{
+        "MinimumThroughputBillingCommitment":{"shape":"MinimumThroughputBillingCommitmentOutput"}
+      }
+    },
+    "UpdateMaxRecordSizeInput":{
+      "type":"structure",
+      "required":["MaxRecordSizeInKiB"],
+      "members":{
+        "StreamARN":{
+          "shape":"StreamARN",
+          "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        },
+        "MaxRecordSizeInKiB":{"shape":"MaxRecordSizeInKiB"}
       }
     },
     "UpdateShardCountInput":{
@@ -1891,6 +2168,10 @@
         "StreamARN":{
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
+        },
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
         }
       }
     },
@@ -1914,7 +2195,36 @@
           "shape":"StreamARN",
           "contextParam":{"name":"StreamARN"}
         },
-        "StreamModeDetails":{"shape":"StreamModeDetails"}
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        },
+        "StreamModeDetails":{"shape":"StreamModeDetails"},
+        "WarmThroughputMiBps":{"shape":"NaturalIntegerObject"}
+      }
+    },
+    "UpdateStreamWarmThroughputInput":{
+      "type":"structure",
+      "required":["WarmThroughputMiBps"],
+      "members":{
+        "StreamARN":{
+          "shape":"StreamARN",
+          "contextParam":{"name":"StreamARN"}
+        },
+        "StreamName":{"shape":"StreamName"},
+        "StreamId":{
+          "shape":"StreamId",
+          "contextParam":{"name":"StreamId"}
+        },
+        "WarmThroughputMiBps":{"shape":"NaturalIntegerObject"}
+      }
+    },
+    "UpdateStreamWarmThroughputOutput":{
+      "type":"structure",
+      "members":{
+        "StreamARN":{"shape":"StreamARN"},
+        "StreamName":{"shape":"StreamName"},
+        "WarmThroughput":{"shape":"WarmThroughputObject"}
       }
     },
     "ValidationException":{
@@ -1923,6 +2233,13 @@
         "message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "WarmThroughputObject":{
+      "type":"structure",
+      "members":{
+        "TargetMiBps":{"shape":"NaturalIntegerObject"},
+        "CurrentMiBps":{"shape":"NaturalIntegerObject"}
+      }
     }
   }
 }

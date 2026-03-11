@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for MissingParameterException
+        /// message.
+        /// </summary>
+        public MissingParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingParameterException with the specified error
         /// message.
         /// </summary>

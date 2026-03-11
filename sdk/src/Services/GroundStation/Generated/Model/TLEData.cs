@@ -79,7 +79,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ValidTimeRange. 
         /// <para>
-        /// The valid time range for the TLE. Gaps or overlap are not permitted.
+        /// The valid time range for the TLE. Time ranges must be continuous without gaps or overlaps.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTagsErrorException
+        /// message.
+        /// </summary>
+        public TooManyTagsErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTagsErrorException with the specified error
         /// message.
         /// </summary>

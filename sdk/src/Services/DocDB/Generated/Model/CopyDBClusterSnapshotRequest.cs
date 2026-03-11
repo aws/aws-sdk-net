@@ -184,17 +184,17 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must specify a valid system snapshot in the <i>available</i> state.
+        /// Must specify a valid cluster snapshot in the <i>available</i> state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source snapshot is in the same Amazon Web Services Region as the copy, specify
-        /// a valid snapshot identifier.
+        /// If the source cluster snapshot is in the same Amazon Web Services Region as the copy,
+        /// specify a valid snapshot identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source snapshot is in a different Amazon Web Services Region than the copy,
-        /// specify a valid cluster snapshot ARN.
+        /// If the source cluster snapshot is in a different Amazon Web Services Region or owned
+        /// by another Amazon Web Services account, specify the snapshot ARN.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -39,6 +39,7 @@ namespace Amazon.VerifiedPermissions.Model
         private DateTime? _createdDate;
         private DeletionProtection _deletionProtection;
         private string _description;
+        private EncryptionState _encryptionState;
         private DateTime? _lastUpdatedDate;
         private string _policyStoreId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -143,6 +144,24 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionState. 
+        /// <para>
+        /// A structure that contains the encryption configuration for the policy store.
+        /// </para>
+        /// </summary>
+        public EncryptionState EncryptionState
+        {
+            get { return this._encryptionState; }
+            set { this._encryptionState = value; }
+        }
+
+        // Check to see if EncryptionState property is set
+        internal bool IsSetEncryptionState()
+        {
+            return this._encryptionState != null;
         }
 
         /// <summary>

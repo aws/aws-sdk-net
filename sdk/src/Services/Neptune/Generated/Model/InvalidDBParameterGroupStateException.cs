@@ -41,6 +41,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBParameterGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidDBParameterGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBParameterGroupStateException with the specified error
         /// message.
         /// </summary>

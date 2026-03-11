@@ -36,6 +36,14 @@ namespace Amazon.InspectorScan
         /// <summary>
         /// Construct instance of AmazonInspectorScanException
         /// </summary>
+        public AmazonInspectorScanException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonInspectorScanException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonInspectorScanException(string message)
             : base(message)

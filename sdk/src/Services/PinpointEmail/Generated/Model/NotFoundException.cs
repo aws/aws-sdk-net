@@ -39,6 +39,13 @@ namespace Amazon.PinpointEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for NotFoundException
+        /// message.
+        /// </summary>
+        public NotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotFoundException with the specified error
         /// message.
         /// </summary>

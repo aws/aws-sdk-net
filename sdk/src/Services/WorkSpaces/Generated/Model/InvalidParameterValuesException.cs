@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidParameterValuesException
+        /// message.
+        /// </summary>
+        public InvalidParameterValuesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterValuesException with the specified error
         /// message.
         /// </summary>

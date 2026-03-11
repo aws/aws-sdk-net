@@ -317,6 +317,30 @@
     <pattern>^([\p{L}\p{N}_.:\/=+\-@()']+[\p{L}\p{Z}\p{N}_.:\/=+\-@()']*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.WebRTCMediaPlacement.AudioFallbackUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.WebRTCMediaPlacement.AudioHostUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.WebRTCMediaPlacement.EventIngestionUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.WebRTCMediaPlacement.SignalingUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.WebRTCMeeting.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Websocket.Url</property>
     <min>1</min>
     <max>2000</max>

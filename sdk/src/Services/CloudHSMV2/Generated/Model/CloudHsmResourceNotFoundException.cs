@@ -39,6 +39,13 @@ namespace Amazon.CloudHSMV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmResourceNotFoundException
+        /// message.
+        /// </summary>
+        public CloudHsmResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmResourceNotFoundException with the specified error
         /// message.
         /// </summary>

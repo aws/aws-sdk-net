@@ -593,6 +593,114 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionCheckResultType.
+    /// </summary>
+    public class PermissionCheckResultType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOWED for PermissionCheckResultType
+        /// </summary>
+        public static readonly PermissionCheckResultType ALLOWED = new PermissionCheckResultType("ALLOWED");
+        /// <summary>
+        /// Constant DENIED for PermissionCheckResultType
+        /// </summary>
+        public static readonly PermissionCheckResultType DENIED = new PermissionCheckResultType("DENIED");
+        /// <summary>
+        /// Constant UNSURE for PermissionCheckResultType
+        /// </summary>
+        public static readonly PermissionCheckResultType UNSURE = new PermissionCheckResultType("UNSURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionCheckResultType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionCheckResultType FindValue(string value)
+        {
+            return FindValue<PermissionCheckResultType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionCheckResultType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PermissionCheckStatusType.
+    /// </summary>
+    public class PermissionCheckStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for PermissionCheckStatusType
+        /// </summary>
+        public static readonly PermissionCheckStatusType COMPLETE = new PermissionCheckStatusType("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for PermissionCheckStatusType
+        /// </summary>
+        public static readonly PermissionCheckStatusType FAILED = new PermissionCheckStatusType("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for PermissionCheckStatusType
+        /// </summary>
+        public static readonly PermissionCheckStatusType IN_PROGRESS = new PermissionCheckStatusType("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionCheckStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionCheckStatusType FindValue(string value)
+        {
+            return FindValue<PermissionCheckStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionCheckStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionsBoundaryAttachmentType.
     /// </summary>
     public class PermissionsBoundaryAttachmentType : ConstantClass
@@ -740,6 +848,56 @@ namespace Amazon.IdentityManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyOwnerEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyParameterTypeEnum.
+    /// </summary>
+    public class PolicyParameterTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant String for PolicyParameterTypeEnum
+        /// </summary>
+        public static readonly PolicyParameterTypeEnum String = new PolicyParameterTypeEnum("string");
+        /// <summary>
+        /// Constant StringList for PolicyParameterTypeEnum
+        /// </summary>
+        public static readonly PolicyParameterTypeEnum StringList = new PolicyParameterTypeEnum("stringList");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyParameterTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyParameterTypeEnum FindValue(string value)
+        {
+            return FindValue<PolicyParameterTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyParameterTypeEnum(string value)
         {
             return FindValue(value);
         }
@@ -1129,6 +1287,76 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type StateType.
+    /// </summary>
+    public class StateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPTED for StateType
+        /// </summary>
+        public static readonly StateType ACCEPTED = new StateType("ACCEPTED");
+        /// <summary>
+        /// Constant ASSIGNED for StateType
+        /// </summary>
+        public static readonly StateType ASSIGNED = new StateType("ASSIGNED");
+        /// <summary>
+        /// Constant EXPIRED for StateType
+        /// </summary>
+        public static readonly StateType EXPIRED = new StateType("EXPIRED");
+        /// <summary>
+        /// Constant FINALIZED for StateType
+        /// </summary>
+        public static readonly StateType FINALIZED = new StateType("FINALIZED");
+        /// <summary>
+        /// Constant PENDING_APPROVAL for StateType
+        /// </summary>
+        public static readonly StateType PENDING_APPROVAL = new StateType("PENDING_APPROVAL");
+        /// <summary>
+        /// Constant REJECTED for StateType
+        /// </summary>
+        public static readonly StateType REJECTED = new StateType("REJECTED");
+        /// <summary>
+        /// Constant UNASSIGNED for StateType
+        /// </summary>
+        public static readonly StateType UNASSIGNED = new StateType("UNASSIGNED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StateType FindValue(string value)
+        {
+            return FindValue<StateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatusType.
     /// </summary>
     public class StatusType : ConstantClass
@@ -1209,6 +1437,10 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly SummaryKeyType AccountSigningCertificatesPresent = new SummaryKeyType("AccountSigningCertificatesPresent");
         /// <summary>
+        /// Constant AssumeRolePolicySizeQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AssumeRolePolicySizeQuota = new SummaryKeyType("AssumeRolePolicySizeQuota");
+        /// <summary>
         /// Constant AttachedPoliciesPerGroupQuota for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType AttachedPoliciesPerGroupQuota = new SummaryKeyType("AttachedPoliciesPerGroupQuota");
@@ -1241,6 +1473,14 @@ namespace Amazon.IdentityManagement
         /// </summary>
         public static readonly SummaryKeyType GroupsQuota = new SummaryKeyType("GroupsQuota");
         /// <summary>
+        /// Constant InstanceProfiles for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType InstanceProfiles = new SummaryKeyType("InstanceProfiles");
+        /// <summary>
+        /// Constant InstanceProfilesQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType InstanceProfilesQuota = new SummaryKeyType("InstanceProfilesQuota");
+        /// <summary>
         /// Constant MFADevices for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType MFADevices = new SummaryKeyType("MFADevices");
@@ -1268,6 +1508,22 @@ namespace Amazon.IdentityManagement
         /// Constant PolicyVersionsInUseQuota for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType PolicyVersionsInUseQuota = new SummaryKeyType("PolicyVersionsInUseQuota");
+        /// <summary>
+        /// Constant Providers for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType Providers = new SummaryKeyType("Providers");
+        /// <summary>
+        /// Constant RolePolicySizeQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType RolePolicySizeQuota = new SummaryKeyType("RolePolicySizeQuota");
+        /// <summary>
+        /// Constant Roles for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType Roles = new SummaryKeyType("Roles");
+        /// <summary>
+        /// Constant RolesQuota for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType RolesQuota = new SummaryKeyType("RolesQuota");
         /// <summary>
         /// Constant ServerCertificates for SummaryKeyType
         /// </summary>
@@ -1326,6 +1582,64 @@ namespace Amazon.IdentityManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SummaryKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SummaryStateType.
+    /// </summary>
+    public class SummaryStateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for SummaryStateType
+        /// </summary>
+        public static readonly SummaryStateType AVAILABLE = new SummaryStateType("AVAILABLE");
+        /// <summary>
+        /// Constant FAILED for SummaryStateType
+        /// </summary>
+        public static readonly SummaryStateType FAILED = new SummaryStateType("FAILED");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for SummaryStateType
+        /// </summary>
+        public static readonly SummaryStateType NOT_AVAILABLE = new SummaryStateType("NOT_AVAILABLE");
+        /// <summary>
+        /// Constant NOT_SUPPORTED for SummaryStateType
+        /// </summary>
+        public static readonly SummaryStateType NOT_SUPPORTED = new SummaryStateType("NOT_SUPPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SummaryStateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SummaryStateType FindValue(string value)
+        {
+            return FindValue<SummaryStateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SummaryStateType(string value)
         {
             return FindValue(value);
         }

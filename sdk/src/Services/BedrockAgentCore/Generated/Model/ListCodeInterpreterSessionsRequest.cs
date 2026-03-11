@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCodeInterpreterSessions operation.
-    /// Retrieves a list of code interpreter sessions in Amazon Bedrock that match the specified
-    /// criteria. This operation returns summary information about each session, including
-    /// identifiers, status, and timestamps.
+    /// Retrieves a list of code interpreter sessions in Amazon Bedrock AgentCore that match
+    /// the specified criteria. This operation returns summary information about each session,
+    /// including identifiers, status, and timestamps.
     /// 
     ///  
     /// <para>
@@ -51,12 +51,12 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> </ul>
@@ -115,7 +115,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <para>
         /// The token for the next set of results. Use the value returned in the previous response
         /// in the next request to retrieve the next set of results. If not specified, Amazon
-        /// Bedrock returns the first page of results.
+        /// Bedrock AgentCore returns the first page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

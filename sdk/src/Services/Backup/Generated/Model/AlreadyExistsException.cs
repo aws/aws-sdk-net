@@ -44,6 +44,13 @@ namespace Amazon.Backup.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for AlreadyExistsException
+        /// message.
+        /// </summary>
+        public AlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AlreadyExistsException with the specified error
         /// message.
         /// </summary>

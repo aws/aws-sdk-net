@@ -134,10 +134,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
+            if(requestObject.IsSetGopBReference())
+            {
+                context.Writer.WritePropertyName("gopBReference");
+                context.Writer.WriteStringValue(requestObject.GopBReference);
+            }
+
             if(requestObject.IsSetGopClosedCadence())
             {
                 context.Writer.WritePropertyName("gopClosedCadence");
                 context.Writer.WriteNumberValue(requestObject.GopClosedCadence.Value);
+            }
+
+            if(requestObject.IsSetGopNumBFrames())
+            {
+                context.Writer.WritePropertyName("gopNumBFrames");
+                context.Writer.WriteNumberValue(requestObject.GopNumBFrames.Value);
             }
 
             if(requestObject.IsSetGopSize())
@@ -175,6 +187,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("maxBitrate");
                 context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
+            }
+
+            if(requestObject.IsSetMinBitrate())
+            {
+                context.Writer.WritePropertyName("minBitrate");
+                context.Writer.WriteNumberValue(requestObject.MinBitrate.Value);
             }
 
             if(requestObject.IsSetMinIInterval())
@@ -247,6 +265,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("slices");
                 context.Writer.WriteNumberValue(requestObject.Slices.Value);
+            }
+
+            if(requestObject.IsSetSubgopLength())
+            {
+                context.Writer.WritePropertyName("subgopLength");
+                context.Writer.WriteStringValue(requestObject.SubgopLength);
             }
 
             if(requestObject.IsSetTier())

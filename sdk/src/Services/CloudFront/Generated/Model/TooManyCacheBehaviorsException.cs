@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCacheBehaviorsException
+        /// message.
+        /// </summary>
+        public TooManyCacheBehaviorsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCacheBehaviorsException with the specified error
         /// message.
         /// </summary>

@@ -202,8 +202,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property GovCloudAccountId. 
         /// <para>
-        /// If the account was created successfully, the unique identifier (ID) of the new account
-        /// in the Amazon Web Services GovCloud (US) Region.
+        /// If the account was created successfully, the ID for the new account in the Amazon
+        /// Web Services GovCloud (US) Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]

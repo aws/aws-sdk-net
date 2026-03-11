@@ -46,22 +46,16 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetClientId())
-            {
-                context.Writer.WritePropertyName("ClientId");
-                context.Writer.WriteStringValue(requestObject.ClientId);
-            }
-
-            if(requestObject.IsSetClientSecret())
-            {
-                context.Writer.WritePropertyName("ClientSecret");
-                context.Writer.WriteStringValue(requestObject.ClientSecret);
-            }
-
             if(requestObject.IsSetInstanceName())
             {
                 context.Writer.WritePropertyName("InstanceName");
                 context.Writer.WriteStringValue(requestObject.InstanceName);
+            }
+
+            if(requestObject.IsSetSecretArn())
+            {
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }

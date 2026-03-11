@@ -70,6 +70,7 @@ namespace Amazon.DirectConnect.Model
         private string _lagId;
         private string _location;
         private string _providerName;
+        private bool? _requestmacSec;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -163,6 +164,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetProviderName()
         {
             return this._providerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestMACSec. 
+        /// <para>
+        /// Indicates whether you want the interconnect to support MAC Security (MACsec).
+        /// </para>
+        /// </summary>
+        public bool? RequestMACSec
+        {
+            get { return this._requestmacSec; }
+            set { this._requestmacSec = value; }
+        }
+
+        // Check to see if RequestMACSec property is set
+        internal bool IsSetRequestMACSec()
+        {
+            return this._requestmacSec.HasValue; 
         }
 
         /// <summary>

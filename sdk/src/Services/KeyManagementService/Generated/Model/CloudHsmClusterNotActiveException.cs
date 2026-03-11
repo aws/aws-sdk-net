@@ -42,6 +42,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudHsmClusterNotActiveException
+        /// message.
+        /// </summary>
+        public CloudHsmClusterNotActiveException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmClusterNotActiveException with the specified error
         /// message.
         /// </summary>

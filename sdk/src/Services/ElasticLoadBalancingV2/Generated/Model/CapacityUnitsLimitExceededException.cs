@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CapacityUnitsLimitExceededException
+        /// message.
+        /// </summary>
+        public CapacityUnitsLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CapacityUnitsLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -42,10 +42,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the namespace being updated.
+        /// The ID or Amazon Resource Name (ARN) of the namespace being updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Max=255)]
         public string Id
         {
             get { return this._id; }

@@ -25,6 +25,64 @@ namespace Amazon.CloudWatchLogs
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionStatus.
+    /// </summary>
+    public class ActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIENT_ERROR for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus CLIENT_ERROR = new ActionStatus("CLIENT_ERROR");
+        /// <summary>
+        /// Constant COMPLETE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus COMPLETE = new ActionStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus FAILED = new ActionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus IN_PROGRESS = new ActionStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionStatus FindValue(string value)
+        {
+            return FindValue<ActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnomalyDetectorStatus.
     /// </summary>
     public class AnomalyDetectorStatus : ConstantClass
@@ -455,6 +513,68 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Complete for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Complete = new ExecutionStatus("Complete");
+        /// <summary>
+        /// Constant Failed for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Failed = new ExecutionStatus("Failed");
+        /// <summary>
+        /// Constant InvalidQuery for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus InvalidQuery = new ExecutionStatus("InvalidQuery");
+        /// <summary>
+        /// Constant Running for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Running = new ExecutionStatus("Running");
+        /// <summary>
+        /// Constant Timeout for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Timeout = new ExecutionStatus("Timeout");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportTaskStatusCode.
     /// </summary>
     public class ExportTaskStatusCode : ConstantClass
@@ -571,6 +691,64 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus CANCELLED = new ImportStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus COMPLETED = new ImportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IN_PROGRESS = new ImportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IndexSource.
     /// </summary>
     public class IndexSource : ConstantClass
@@ -614,6 +792,56 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IndexSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IndexType.
+    /// </summary>
+    public class IndexType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FACET for IndexType
+        /// </summary>
+        public static readonly IndexType FACET = new IndexType("FACET");
+        /// <summary>
+        /// Constant FIELD_INDEX for IndexType
+        /// </summary>
+        public static readonly IndexType FIELD_INDEX = new IndexType("FIELD_INDEX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndexType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexType FindValue(string value)
+        {
+            return FindValue<IndexType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexType(string value)
         {
             return FindValue(value);
         }
@@ -767,6 +995,56 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type ListAggregateLogGroupSummariesGroupBy.
+    /// </summary>
+    public class ListAggregateLogGroupSummariesGroupBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATA_SOURCE_NAME_AND_TYPE for ListAggregateLogGroupSummariesGroupBy
+        /// </summary>
+        public static readonly ListAggregateLogGroupSummariesGroupBy DATA_SOURCE_NAME_AND_TYPE = new ListAggregateLogGroupSummariesGroupBy("DATA_SOURCE_NAME_AND_TYPE");
+        /// <summary>
+        /// Constant DATA_SOURCE_NAME_TYPE_AND_FORMAT for ListAggregateLogGroupSummariesGroupBy
+        /// </summary>
+        public static readonly ListAggregateLogGroupSummariesGroupBy DATA_SOURCE_NAME_TYPE_AND_FORMAT = new ListAggregateLogGroupSummariesGroupBy("DATA_SOURCE_NAME_TYPE_AND_FORMAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListAggregateLogGroupSummariesGroupBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListAggregateLogGroupSummariesGroupBy FindValue(string value)
+        {
+            return FindValue<ListAggregateLogGroupSummariesGroupBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListAggregateLogGroupSummariesGroupBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogGroupClass.
     /// </summary>
     public class LogGroupClass : ConstantClass
@@ -830,6 +1108,10 @@ namespace Amazon.CloudWatchLogs
         /// Constant V11 for OCSFVersion
         /// </summary>
         public static readonly OCSFVersion V11 = new OCSFVersion("V1.1");
+        /// <summary>
+        /// Constant V15 for OCSFVersion
+        /// </summary>
+        public static readonly OCSFVersion V15 = new OCSFVersion("V1.5");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1262,6 +1544,160 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3TableIntegrationSourceStatus.
+    /// </summary>
+    public class S3TableIntegrationSourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for S3TableIntegrationSourceStatus
+        /// </summary>
+        public static readonly S3TableIntegrationSourceStatus ACTIVE = new S3TableIntegrationSourceStatus("ACTIVE");
+        /// <summary>
+        /// Constant DATA_SOURCE_DELETE_IN_PROGRESS for S3TableIntegrationSourceStatus
+        /// </summary>
+        public static readonly S3TableIntegrationSourceStatus DATA_SOURCE_DELETE_IN_PROGRESS = new S3TableIntegrationSourceStatus("DATA_SOURCE_DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant FAILED for S3TableIntegrationSourceStatus
+        /// </summary>
+        public static readonly S3TableIntegrationSourceStatus FAILED = new S3TableIntegrationSourceStatus("FAILED");
+        /// <summary>
+        /// Constant UNHEALTHY for S3TableIntegrationSourceStatus
+        /// </summary>
+        public static readonly S3TableIntegrationSourceStatus UNHEALTHY = new S3TableIntegrationSourceStatus("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3TableIntegrationSourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3TableIntegrationSourceStatus FindValue(string value)
+        {
+            return FindValue<S3TableIntegrationSourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3TableIntegrationSourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledQueryDestinationType.
+    /// </summary>
+    public class ScheduledQueryDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3 for ScheduledQueryDestinationType
+        /// </summary>
+        public static readonly ScheduledQueryDestinationType S3 = new ScheduledQueryDestinationType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledQueryDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledQueryDestinationType FindValue(string value)
+        {
+            return FindValue<ScheduledQueryDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledQueryDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledQueryState.
+    /// </summary>
+    public class ScheduledQueryState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ScheduledQueryState
+        /// </summary>
+        public static readonly ScheduledQueryState DISABLED = new ScheduledQueryState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ScheduledQueryState
+        /// </summary>
+        public static readonly ScheduledQueryState ENABLED = new ScheduledQueryState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledQueryState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledQueryState FindValue(string value)
+        {
+            return FindValue<ScheduledQueryState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledQueryState(string value)
         {
             return FindValue(value);
         }

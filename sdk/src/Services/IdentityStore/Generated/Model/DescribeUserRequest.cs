@@ -35,16 +35,44 @@ namespace Amazon.IdentityStore.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If you have administrator access to a member account, you can use this API from the
-    /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-    /// accounts</a> in the <i>Organizations User Guide</i>. 
+    /// If you have access to a member account, you can use this API operation from the member
+    /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+    /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+    /// User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class DescribeUserRequest : AmazonIdentityStoreRequest
     {
+        private List<string> _extensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identityStoreId;
         private string _userId;
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A collection of extension names indicating what extensions the service should retrieve
+        /// alongside other user attributes. <c>aws:identitystore:enterprise</c> is the only supported
+        /// extension name.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 

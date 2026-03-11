@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the CreateIAMPolicyAssignment operation.
     /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
     /// Name (ARN). This policy assignment is attached to the specified groups or users of
-    /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To
+    /// Amazon Quick Sight. Assignment names are unique per Amazon Web Services account. To
     /// avoid overwriting rules in other namespaces, use assignment names that are unique.
     /// </summary>
     public partial class CreateIAMPolicyAssignmentRequest : AmazonQuickSightRequest
@@ -103,7 +103,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID of the Amazon Web Services account where you want to assign an IAM policy to
-        /// Amazon QuickSight users or groups.
+        /// Amazon Quick Sight users or groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// The Amazon QuickSight users, groups, or both that you want to assign the policy to.
+        /// The Amazon Quick Sight users, groups, or both that you want to assign the policy to.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -164,7 +164,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified
+        /// The ARN for the IAM policy to apply to the Amazon Quick Sight users and groups specified
         /// in this assignment.
         /// </para>
         /// </summary>

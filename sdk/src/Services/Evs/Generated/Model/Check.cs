@@ -99,8 +99,7 @@ namespace Amazon.Evs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>HOST_COUNT</c>: Checks that your environment has a minimum of 4 hosts, which is
-        /// a requirement for VCF 5.2.1.
+        ///  <c>HOST_COUNT</c>: Checks that your environment has a minimum of 4 hosts.
         /// </para>
         ///  
         /// <para>

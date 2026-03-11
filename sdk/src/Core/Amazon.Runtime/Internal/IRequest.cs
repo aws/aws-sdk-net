@@ -401,5 +401,10 @@ namespace Amazon.Runtime.Internal
         /// The version of the HTTP protocol to use. The default is HTTP 1.1.
         /// </summary>
         Version HttpProtocolVersion { get; set; }
+
+        /// <summary>
+        /// Auth scheme chosen for the current request.
+        /// </summary>
+        IAuthSchemeOption ChosenAuthScheme { get; set; }
     }
 }

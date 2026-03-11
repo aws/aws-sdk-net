@@ -73,6 +73,22 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSamplingBoostStatisticsDocuments())
+            {
+                context.Writer.WritePropertyName("SamplingBoostStatisticsDocuments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSamplingBoostStatisticsDocumentsListValue in publicRequest.SamplingBoostStatisticsDocuments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SamplingBoostStatisticsDocumentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSamplingBoostStatisticsDocumentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetSamplingStatisticsDocuments())
             {
                 context.Writer.WritePropertyName("SamplingStatisticsDocuments");

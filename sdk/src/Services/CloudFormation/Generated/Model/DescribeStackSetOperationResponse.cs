@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetOperation. 
         /// <para>
-        /// The specified stack set operation.
+        /// The specified StackSet operation.
         /// </para>
         /// </summary>
         public StackSetOperation StackSetOperation

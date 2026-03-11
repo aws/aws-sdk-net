@@ -51,6 +51,7 @@ namespace Amazon.SimpleEmailV2.Model
         private DkimSigningKeyLength _nextSigningKeyLength;
         private DkimSigningAttributesOrigin _signingAttributesOrigin;
         private bool? _signingEnabled;
+        private string _signingHostedZone;
         private DkimStatus _status;
         private List<string> _tokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -223,6 +224,12 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS_SES_CA_WEST_1</c> – Indicates that DKIM was configured for the identity by
+        /// replicating signing attributes from a parent identity in Canada (Calgary) region using
+        /// Deterministic Easy-DKIM (DEED). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS_SES_AP_SOUTHEAST_1</c> – Indicates that DKIM was configured for the identity
         /// by replicating signing attributes from a parent identity in Asia Pacific (Singapore)
         /// region using Deterministic Easy-DKIM (DEED). 
@@ -237,6 +244,12 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         ///  <c>AWS_SES_AP_SOUTHEAST_3</c> – Indicates that DKIM was configured for the identity
         /// by replicating signing attributes from a parent identity in Asia Pacific (Jakarta)
+        /// region using Deterministic Easy-DKIM (DEED). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_SES_AP_SOUTHEAST_5</c> – Indicates that DKIM was configured for the identity
+        /// by replicating signing attributes from a parent identity in Asia Pacific (Malaysia)
         /// region using Deterministic Easy-DKIM (DEED). 
         /// </para>
         ///  </li> <li> 
@@ -307,6 +320,46 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSigningEnabled()
         {
             return this._signingEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningHostedZone. 
+        /// <para>
+        /// The hosted zone where Amazon SES publishes the DKIM public key TXT records for this
+        /// email identity. This value indicates the DNS zone that customers must reference when
+        /// configuring their CNAME records for DKIM authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// When configuring DKIM for your domain, create CNAME records in your DNS that point
+        /// to the selectors in this hosted zone. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> selector1._domainkey.yourdomain.com CNAME selector1.&lt;SigningHostedZone&gt;
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> selector2._domainkey.yourdomain.com CNAME selector2.&lt;SigningHostedZone&gt;
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> selector3._domainkey.yourdomain.com CNAME selector3.&lt;SigningHostedZone&gt;
+        /// </c> 
+        /// </para>
+        /// </summary>
+        public string SigningHostedZone
+        {
+            get { return this._signingHostedZone; }
+            set { this._signingHostedZone = value; }
+        }
+
+        // Check to see if SigningHostedZone property is set
+        internal bool IsSetSigningHostedZone()
+        {
+            return this._signingHostedZone != null;
         }
 
         /// <summary>

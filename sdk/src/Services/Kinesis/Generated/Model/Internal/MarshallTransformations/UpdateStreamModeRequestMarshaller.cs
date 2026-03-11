@@ -81,6 +81,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StreamARN);
             }
 
+            if(publicRequest.IsSetStreamId())
+            {
+                context.Writer.WritePropertyName("StreamId");
+                context.Writer.WriteStringValue(publicRequest.StreamId);
+            }
+
             if(publicRequest.IsSetStreamModeDetails())
             {
                 context.Writer.WritePropertyName("StreamModeDetails");
@@ -90,6 +96,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.StreamModeDetails, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWarmThroughputMiBps())
+            {
+                context.Writer.WritePropertyName("WarmThroughputMiBps");
+                context.Writer.WriteNumberValue(publicRequest.WarmThroughputMiBps.Value);
             }
 
             writer.WriteEndObject();

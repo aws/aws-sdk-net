@@ -88,7 +88,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// <summary>
         /// Gets and sets the property ShardIteratorType. 
         /// <para>
-        ///  Determines how the shard iterator is positioned. Must be one of the following:
+        ///  Determines how the shard iterator is positioned. Must be one of the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -102,11 +102,12 @@ namespace Amazon.KeyspacesStreams.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>AFTER_SEQUENCE_NUMBER</c> - Start reading right after the specified sequence number.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>LATEST</c> - Start reading just after the most recent record in the shard, so
-        /// that you always read the most recent data.
+        /// that you always read the most recent data. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

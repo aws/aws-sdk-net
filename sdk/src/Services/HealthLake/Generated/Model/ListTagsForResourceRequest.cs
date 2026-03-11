@@ -40,7 +40,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        ///  The Amazon Resource Name(ARN) of the data store for which tags are being added. 
+        /// The Amazon Resource Name (ARN) of the data store to which tags are being added.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

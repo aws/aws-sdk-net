@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoRunningConfigurationRecorderException
+        /// message.
+        /// </summary>
+        public NoRunningConfigurationRecorderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoRunningConfigurationRecorderException with the specified error
         /// message.
         /// </summary>

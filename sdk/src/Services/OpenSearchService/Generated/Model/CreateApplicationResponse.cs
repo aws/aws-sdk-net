@@ -40,6 +40,7 @@ namespace Amazon.OpenSearchService.Model
         private List<DataSource> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSource>() : null;
         private IamIdentityCenterOptions _iamIdentityCenterOptions;
         private string _id;
+        private string _kmsKeyArn;
         private string _name;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -158,6 +159,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data
+        /// at rest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

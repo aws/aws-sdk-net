@@ -30,16 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift Servers FleetIQ and game server
-    /// groups.</b> 
-    /// 
-    ///  
-    /// <para>
-    ///  Additional properties, including status, that describe an EC2 instance in a game
+    /// Additional properties, including status, that describe an EC2 instance in a game
     /// server group. Instance configurations are set with game server group properties (see
     /// <c>DescribeGameServerGroup</c> and with the EC2 launch template that was used when
     /// creating the game server group. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Retrieve game server instances for a game server group by calling <c>DescribeGameServerInstances</c>.

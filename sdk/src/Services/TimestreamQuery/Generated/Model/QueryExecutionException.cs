@@ -39,6 +39,13 @@ namespace Amazon.TimestreamQuery.Model
     {
 
         /// <summary>
+        /// Default constructor for QueryExecutionException
+        /// message.
+        /// </summary>
+        public QueryExecutionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new QueryExecutionException with the specified error
         /// message.
         /// </summary>

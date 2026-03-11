@@ -44,6 +44,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for RetryableConflictException
+        /// message.
+        /// </summary>
+        public RetryableConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RetryableConflictException with the specified error
         /// message.
         /// </summary>

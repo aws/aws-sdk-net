@@ -41,6 +41,13 @@ namespace Amazon.MigrationHubOrchestrator.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
         /// message.
         /// </summary>

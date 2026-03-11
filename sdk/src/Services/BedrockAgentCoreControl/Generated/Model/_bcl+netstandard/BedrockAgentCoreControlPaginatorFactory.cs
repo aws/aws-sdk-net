@@ -69,6 +69,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListBrowserProfiles operation
+        ///</summary>
+        public IListBrowserProfilesPaginator ListBrowserProfiles(ListBrowserProfilesRequest request) 
+        {
+            return new ListBrowserProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBrowsers operation
         ///</summary>
         public IListBrowsersPaginator ListBrowsers(ListBrowsersRequest request) 
@@ -82,6 +90,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListCodeInterpretersPaginator ListCodeInterpreters(ListCodeInterpretersRequest request) 
         {
             return new ListCodeInterpretersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluators operation
+        ///</summary>
+        public IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request) 
+        {
+            return new ListEvaluatorsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -114,6 +130,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListOauth2CredentialProvidersPaginator ListOauth2CredentialProviders(ListOauth2CredentialProvidersRequest request) 
         {
             return new ListOauth2CredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOnlineEvaluationConfigs operation
+        ///</summary>
+        public IListOnlineEvaluationConfigsPaginator ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request) 
+        {
+            return new ListOnlineEvaluationConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicies operation
+        ///</summary>
+        public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request) 
+        {
+            return new ListPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyEngines operation
+        ///</summary>
+        public IListPolicyEnginesPaginator ListPolicyEngines(ListPolicyEnginesRequest request) 
+        {
+            return new ListPolicyEnginesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationAssets operation
+        ///</summary>
+        public IListPolicyGenerationAssetsPaginator ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request) 
+        {
+            return new ListPolicyGenerationAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerations operation
+        ///</summary>
+        public IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request) 
+        {
+            return new ListPolicyGenerationsPaginator(this.client, request);
         }
 
         /// <summary>

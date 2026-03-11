@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneLimit Object
     /// </summary>  
-    public class HostedZoneLimitUnmarshaller : IXmlUnmarshaller<HostedZoneLimit, XmlUnmarshallerContext>
+    public partial class HostedZoneLimitUnmarshaller : IXmlUnmarshaller<HostedZoneLimit, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, HostedZoneLimit unmarshalledObject, int targetDepth);
+
         private static HostedZoneLimitUnmarshaller _instance = new HostedZoneLimitUnmarshaller();        
 
         /// <summary>

@@ -208,30 +208,29 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 {
                     TableName = hashTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
-                },
-                    KeySchema = new List<KeySchemaElement>
-                {
-                    new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
-                },
-                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-                {
-                    new GlobalSecondaryIndex
                     {
-                        IndexName = "GlobalIndex",
-                        KeySchema = new List<KeySchemaElement>
+                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
+                        new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
+                    },
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
+                    },
+                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                    {
+                        new GlobalSecondaryIndex
                         {
-                            new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
-                        },
-                        ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
-                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
-                    }
-                },
-                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                            IndexName = "GlobalIndex",
+                            KeySchema = new List<KeySchemaElement>
+                            {
+                                new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
+                                new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
+                            },
+                            Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                        }
+                    },
+                    BillingMode = BillingMode.PAY_PER_REQUEST,
                 });
                 CreatedTables.Add(hashTableName);
 
@@ -246,50 +245,49 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 {
                     TableName = hashRangeTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Age", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Score", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
-                },
+                    {
+                        new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
+                        new AttributeDefinition { AttributeName = "Age", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
+                        new AttributeDefinition { AttributeName = "Score", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
+                    },
                     KeySchema = new List<KeySchemaElement>
-                {
-                    new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
-                    new KeySchemaElement { AttributeName = "Age", KeyType = KeyType.RANGE }
-                },
+                    {
+                        new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
+                        new KeySchemaElement { AttributeName = "Age", KeyType = KeyType.RANGE }
+                    },
                     GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-                {
-                    new GlobalSecondaryIndex
                     {
-                        IndexName = "GlobalIndex",
-                        KeySchema = new List<KeySchemaElement>
+                        new GlobalSecondaryIndex
                         {
-                            new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Score", KeyType = KeyType.RANGE }
-                        },
-                        ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
-                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
-                    }
-                },
-                    LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
-                {
-                    new LocalSecondaryIndex
-                    {
-                        IndexName = "LocalIndex",
-                        KeySchema = new List<KeySchemaElement>
-                        {
-                            new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Manager", KeyType = KeyType.RANGE }
-                        },
-                        Projection = new Projection
-                        {
-                            ProjectionType = ProjectionType.INCLUDE,
-                            NonKeyAttributes = new List<string> { "Company", "Score" }
+                            IndexName = "GlobalIndex",
+                            KeySchema = new List<KeySchemaElement>
+                            {
+                                new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
+                                new KeySchemaElement { AttributeName = "Score", KeyType = KeyType.RANGE }
+                            },
+                            Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
-                    }
-                },
-                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                    },
+                    LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
+                    {
+                        new LocalSecondaryIndex
+                        {
+                            IndexName = "LocalIndex",
+                            KeySchema = new List<KeySchemaElement>
+                            {
+                                new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
+                                new KeySchemaElement { AttributeName = "Manager", KeyType = KeyType.RANGE }
+                            },
+                            Projection = new Projection
+                            {
+                                ProjectionType = ProjectionType.INCLUDE,
+                                NonKeyAttributes = new List<string> { "Company", "Score" }
+                            }
+                        }
+                    },
+                    BillingMode = BillingMode.PAY_PER_REQUEST,
                 });
                 CreatedTables.Add(hashRangeTableName);
 

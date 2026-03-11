@@ -86,6 +86,8 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetGeoJsonOverlay())
                 request.Parameters.Add("geojson-overlay", StringUtils.FromString(publicRequest.GeoJsonOverlay));
+            if (publicRequest.Height == null)
+                throw new AmazonGeoMapsException("Request object does not have required field Height set");
             
             if (publicRequest.IsSetHeight())
                 request.Parameters.Add("height", StringUtils.FromInt(publicRequest.Height));
@@ -116,6 +118,8 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStyle())
                 request.Parameters.Add("style", StringUtils.FromString(publicRequest.Style));
+            if (publicRequest.Width == null)
+                throw new AmazonGeoMapsException("Request object does not have required field Width set");
             
             if (publicRequest.IsSetWidth())
                 request.Parameters.Add("width", StringUtils.FromInt(publicRequest.Width));

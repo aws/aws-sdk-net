@@ -121,6 +121,206 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type Category.
+    /// </summary>
+    public class Category : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Chat for Category
+        /// </summary>
+        public static readonly Category Chat = new Category("Chat");
+        /// <summary>
+        /// Constant CriminalActivity for Category
+        /// </summary>
+        public static readonly Category CriminalActivity = new Category("CriminalActivity");
+        /// <summary>
+        /// Constant Cults for Category
+        /// </summary>
+        public static readonly Category Cults = new Category("Cults");
+        /// <summary>
+        /// Constant DownloadSites for Category
+        /// </summary>
+        public static readonly Category DownloadSites = new Category("DownloadSites");
+        /// <summary>
+        /// Constant Gambling for Category
+        /// </summary>
+        public static readonly Category Gambling = new Category("Gambling");
+        /// <summary>
+        /// Constant Games for Category
+        /// </summary>
+        public static readonly Category Games = new Category("Games");
+        /// <summary>
+        /// Constant GenerativeAI for Category
+        /// </summary>
+        public static readonly Category GenerativeAI = new Category("GenerativeAI");
+        /// <summary>
+        /// Constant Hacking for Category
+        /// </summary>
+        public static readonly Category Hacking = new Category("Hacking");
+        /// <summary>
+        /// Constant HateAndIntolerance for Category
+        /// </summary>
+        public static readonly Category HateAndIntolerance = new Category("HateAndIntolerance");
+        /// <summary>
+        /// Constant IllegalDrug for Category
+        /// </summary>
+        public static readonly Category IllegalDrug = new Category("IllegalDrug");
+        /// <summary>
+        /// Constant IllegalSoftware for Category
+        /// </summary>
+        public static readonly Category IllegalSoftware = new Category("IllegalSoftware");
+        /// <summary>
+        /// Constant ImageSharing for Category
+        /// </summary>
+        public static readonly Category ImageSharing = new Category("ImageSharing");
+        /// <summary>
+        /// Constant InstantMessaging for Category
+        /// </summary>
+        public static readonly Category InstantMessaging = new Category("InstantMessaging");
+        /// <summary>
+        /// Constant Nudity for Category
+        /// </summary>
+        public static readonly Category Nudity = new Category("Nudity");
+        /// <summary>
+        /// Constant ParkedDomains for Category
+        /// </summary>
+        public static readonly Category ParkedDomains = new Category("ParkedDomains");
+        /// <summary>
+        /// Constant PeerToPeer for Category
+        /// </summary>
+        public static readonly Category PeerToPeer = new Category("PeerToPeer");
+        /// <summary>
+        /// Constant Pornography for Category
+        /// </summary>
+        public static readonly Category Pornography = new Category("Pornography");
+        /// <summary>
+        /// Constant ProfessionalNetwork for Category
+        /// </summary>
+        public static readonly Category ProfessionalNetwork = new Category("ProfessionalNetwork");
+        /// <summary>
+        /// Constant SchoolCheating for Category
+        /// </summary>
+        public static readonly Category SchoolCheating = new Category("SchoolCheating");
+        /// <summary>
+        /// Constant SelfHarm for Category
+        /// </summary>
+        public static readonly Category SelfHarm = new Category("SelfHarm");
+        /// <summary>
+        /// Constant SexEducation for Category
+        /// </summary>
+        public static readonly Category SexEducation = new Category("SexEducation");
+        /// <summary>
+        /// Constant SocialNetworking for Category
+        /// </summary>
+        public static readonly Category SocialNetworking = new Category("SocialNetworking");
+        /// <summary>
+        /// Constant StreamingMediaAndDownloads for Category
+        /// </summary>
+        public static readonly Category StreamingMediaAndDownloads = new Category("StreamingMediaAndDownloads");
+        /// <summary>
+        /// Constant Tasteless for Category
+        /// </summary>
+        public static readonly Category Tasteless = new Category("Tasteless");
+        /// <summary>
+        /// Constant Violence for Category
+        /// </summary>
+        public static readonly Category Violence = new Category("Violence");
+        /// <summary>
+        /// Constant Weapons for Category
+        /// </summary>
+        public static readonly Category Weapons = new Category("Weapons");
+        /// <summary>
+        /// Constant WebBasedEmail for Category
+        /// </summary>
+        public static readonly Category WebBasedEmail = new Category("WebBasedEmail");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Category(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Category FindValue(string value)
+        {
+            return FindValue<Category>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Category(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ColorTheme.
+    /// </summary>
+    public class ColorTheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dark for ColorTheme
+        /// </summary>
+        public static readonly ColorTheme Dark = new ColorTheme("Dark");
+        /// <summary>
+        /// Constant Light for ColorTheme
+        /// </summary>
+        public static readonly ColorTheme Light = new ColorTheme("Light");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColorTheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColorTheme FindValue(string value)
+        {
+            return FindValue<ColorTheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColorTheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnabledType.
     /// </summary>
     public class EnabledType : ConstantClass
@@ -164,6 +364,166 @@ namespace Amazon.WorkSpacesWeb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnabledType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Event.
+    /// </summary>
+    public class Event : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContentCopyFromWebsite for Event
+        /// </summary>
+        public static readonly Event ContentCopyFromWebsite = new Event("ContentCopyFromWebsite");
+        /// <summary>
+        /// Constant ContentPasteToWebsite for Event
+        /// </summary>
+        public static readonly Event ContentPasteToWebsite = new Event("ContentPasteToWebsite");
+        /// <summary>
+        /// Constant ContentTransferFromLocalToRemoteClipboard for Event
+        /// </summary>
+        public static readonly Event ContentTransferFromLocalToRemoteClipboard = new Event("ContentTransferFromLocalToRemoteClipboard");
+        /// <summary>
+        /// Constant FileDownloadFromSecureBrowserToRemoteDisk for Event
+        /// </summary>
+        public static readonly Event FileDownloadFromSecureBrowserToRemoteDisk = new Event("FileDownloadFromSecureBrowserToRemoteDisk");
+        /// <summary>
+        /// Constant FileTransferFromLocalToRemoteDisk for Event
+        /// </summary>
+        public static readonly Event FileTransferFromLocalToRemoteDisk = new Event("FileTransferFromLocalToRemoteDisk");
+        /// <summary>
+        /// Constant FileTransferFromRemoteToLocalDisk for Event
+        /// </summary>
+        public static readonly Event FileTransferFromRemoteToLocalDisk = new Event("FileTransferFromRemoteToLocalDisk");
+        /// <summary>
+        /// Constant FileUploadFromRemoteDiskToSecureBrowser for Event
+        /// </summary>
+        public static readonly Event FileUploadFromRemoteDiskToSecureBrowser = new Event("FileUploadFromRemoteDiskToSecureBrowser");
+        /// <summary>
+        /// Constant PrintJobSubmit for Event
+        /// </summary>
+        public static readonly Event PrintJobSubmit = new Event("PrintJobSubmit");
+        /// <summary>
+        /// Constant SessionConnect for Event
+        /// </summary>
+        public static readonly Event SessionConnect = new Event("SessionConnect");
+        /// <summary>
+        /// Constant SessionDisconnect for Event
+        /// </summary>
+        public static readonly Event SessionDisconnect = new Event("SessionDisconnect");
+        /// <summary>
+        /// Constant SessionEnd for Event
+        /// </summary>
+        public static readonly Event SessionEnd = new Event("SessionEnd");
+        /// <summary>
+        /// Constant SessionStart for Event
+        /// </summary>
+        public static readonly Event SessionStart = new Event("SessionStart");
+        /// <summary>
+        /// Constant TabClose for Event
+        /// </summary>
+        public static readonly Event TabClose = new Event("TabClose");
+        /// <summary>
+        /// Constant TabOpen for Event
+        /// </summary>
+        public static readonly Event TabOpen = new Event("TabOpen");
+        /// <summary>
+        /// Constant UrlBlockByContentFilter for Event
+        /// </summary>
+        public static readonly Event UrlBlockByContentFilter = new Event("UrlBlockByContentFilter");
+        /// <summary>
+        /// Constant UrlLoad for Event
+        /// </summary>
+        public static readonly Event UrlLoad = new Event("UrlLoad");
+        /// <summary>
+        /// Constant WebsiteInteract for Event
+        /// </summary>
+        public static readonly Event WebsiteInteract = new Event("WebsiteInteract");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Event(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Event FindValue(string value)
+        {
+            return FindValue<Event>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Event(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FolderStructure.
+    /// </summary>
+    public class FolderStructure : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Flat for FolderStructure
+        /// </summary>
+        public static readonly FolderStructure Flat = new FolderStructure("Flat");
+        /// <summary>
+        /// Constant NestedByDate for FolderStructure
+        /// </summary>
+        public static readonly FolderStructure NestedByDate = new FolderStructure("NestedByDate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FolderStructure(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FolderStructure FindValue(string value)
+        {
+            return FindValue<FolderStructure>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FolderStructure(string value)
         {
             return FindValue(value);
         }
@@ -291,6 +651,142 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type Locale.
+    /// </summary>
+    public class Locale : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeDE for Locale
+        /// </summary>
+        public static readonly Locale DeDE = new Locale("de-DE");
+        /// <summary>
+        /// Constant EnUS for Locale
+        /// </summary>
+        public static readonly Locale EnUS = new Locale("en-US");
+        /// <summary>
+        /// Constant EsES for Locale
+        /// </summary>
+        public static readonly Locale EsES = new Locale("es-ES");
+        /// <summary>
+        /// Constant FrFR for Locale
+        /// </summary>
+        public static readonly Locale FrFR = new Locale("fr-FR");
+        /// <summary>
+        /// Constant IdID for Locale
+        /// </summary>
+        public static readonly Locale IdID = new Locale("id-ID");
+        /// <summary>
+        /// Constant ItIT for Locale
+        /// </summary>
+        public static readonly Locale ItIT = new Locale("it-IT");
+        /// <summary>
+        /// Constant JaJP for Locale
+        /// </summary>
+        public static readonly Locale JaJP = new Locale("ja-JP");
+        /// <summary>
+        /// Constant KoKR for Locale
+        /// </summary>
+        public static readonly Locale KoKR = new Locale("ko-KR");
+        /// <summary>
+        /// Constant PtBR for Locale
+        /// </summary>
+        public static readonly Locale PtBR = new Locale("pt-BR");
+        /// <summary>
+        /// Constant ZhCN for Locale
+        /// </summary>
+        public static readonly Locale ZhCN = new Locale("zh-CN");
+        /// <summary>
+        /// Constant ZhTW for Locale
+        /// </summary>
+        public static readonly Locale ZhTW = new Locale("zh-TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Locale(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Locale FindValue(string value)
+        {
+            return FindValue<Locale>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Locale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogFileFormat.
+    /// </summary>
+    public class LogFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json for LogFileFormat
+        /// </summary>
+        public static readonly LogFileFormat Json = new LogFileFormat("Json");
+        /// <summary>
+        /// Constant JSONLines for LogFileFormat
+        /// </summary>
+        public static readonly LogFileFormat JSONLines = new LogFileFormat("JSONLines");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogFileFormat FindValue(string value)
+        {
+            return FindValue<LogFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MaxDisplayResolution.
     /// </summary>
     public class MaxDisplayResolution : ConstantClass
@@ -358,6 +854,60 @@ namespace Amazon.WorkSpacesWeb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaxDisplayResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MimeType.
+    /// </summary>
+    public class MimeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ImageJpeg for MimeType
+        /// </summary>
+        public static readonly MimeType ImageJpeg = new MimeType("image/jpeg");
+        /// <summary>
+        /// Constant ImagePng for MimeType
+        /// </summary>
+        public static readonly MimeType ImagePng = new MimeType("image/png");
+        /// <summary>
+        /// Constant ImageXIcon for MimeType
+        /// </summary>
+        public static readonly MimeType ImageXIcon = new MimeType("image/x-icon");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MimeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MimeType FindValue(string value)
+        {
+            return FindValue<MimeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MimeType(string value)
         {
             return FindValue(value);
         }

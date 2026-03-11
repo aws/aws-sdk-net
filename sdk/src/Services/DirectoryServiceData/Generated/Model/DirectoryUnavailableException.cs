@@ -43,6 +43,13 @@ namespace Amazon.DirectoryServiceData.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for DirectoryUnavailableException
+        /// message.
+        /// </summary>
+        public DirectoryUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryUnavailableException with the specified error
         /// message.
         /// </summary>

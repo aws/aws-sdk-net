@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceRecord Object
     /// </summary>  
-    public class ResourceRecordUnmarshaller : IXmlUnmarshaller<ResourceRecord, XmlUnmarshallerContext>
+    public partial class ResourceRecordUnmarshaller : IXmlUnmarshaller<ResourceRecord, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ResourceRecord unmarshalledObject, int targetDepth);
+
         private static ResourceRecordUnmarshaller _instance = new ResourceRecordUnmarshaller();        
 
         /// <summary>

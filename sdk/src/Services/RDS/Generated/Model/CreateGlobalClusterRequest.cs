@@ -223,6 +223,7 @@ namespace Amazon.RDS.Model
         /// as a lowercase string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }

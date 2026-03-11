@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateKeySigningKeyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/keysigningkey";
 
@@ -81,6 +82,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -92,8 +94,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateKeySigningKeyRequestMarshaller _instance = new CreateKeySigningKeyRequestMarshaller();        
@@ -115,5 +115,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateKeySigningKeyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateKeySigningKeyRequest publicRequest);
     }    
 }

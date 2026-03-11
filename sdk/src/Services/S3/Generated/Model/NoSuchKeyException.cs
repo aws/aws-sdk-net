@@ -39,6 +39,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchKeyException
+        /// message.
+        /// </summary>
+        public NoSuchKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchKeyException with the specified error
         /// message.
         /// </summary>

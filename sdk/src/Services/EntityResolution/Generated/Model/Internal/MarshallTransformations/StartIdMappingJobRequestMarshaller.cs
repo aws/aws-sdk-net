@@ -76,6 +76,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetJobType())
+            {
+                context.Writer.WritePropertyName("jobType");
+                context.Writer.WriteStringValue(publicRequest.JobType);
+            }
+
             if(publicRequest.IsSetOutputSourceConfig())
             {
                 context.Writer.WritePropertyName("outputSourceConfig");

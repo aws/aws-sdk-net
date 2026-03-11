@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBuild operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Retrieves properties for a custom game build. To request a build resource, specify
     /// a build ID. If successful, an object containing the build properties is returned.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 

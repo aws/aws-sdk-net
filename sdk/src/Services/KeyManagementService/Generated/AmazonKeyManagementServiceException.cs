@@ -36,6 +36,14 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Construct instance of AmazonKeyManagementServiceException
         /// </summary>
+        public AmazonKeyManagementServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKeyManagementServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKeyManagementServiceException(string message)
             : base(message)

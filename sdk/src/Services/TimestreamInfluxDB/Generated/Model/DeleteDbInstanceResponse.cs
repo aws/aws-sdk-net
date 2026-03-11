@@ -46,6 +46,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _id;
         private string _influxAuthParametersSecretArn;
         private InstanceMode _instanceMode;
+        private List<string> _instanceModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
         private NetworkType _networkType;
@@ -281,6 +282,29 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceModes. 
+        /// <para>
+        /// Specifies the DbInstance's roles in the cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> InstanceModes
+        {
+            get { return this._instanceModes; }
+            set { this._instanceModes = value; }
+        }
+
+        // Check to see if InstanceModes property is set
+        internal bool IsSetInstanceModes()
+        {
+            return this._instanceModes != null && (this._instanceModes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryConfiguration. 
         /// <para>
         /// Configuration for sending InfluxDB engine logs to send to specified S3 bucket.
@@ -447,7 +471,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Required=true, Min=1, Max=6)]
         public List<string> VpcSubnetIds
         {
             get { return this._vpcSubnetIds; }

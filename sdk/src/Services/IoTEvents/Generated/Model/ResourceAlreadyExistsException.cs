@@ -41,6 +41,13 @@ namespace Amazon.IoTEvents.Model
         private string _resourceId;
 
         /// <summary>
+        /// Default constructor for ResourceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ResourceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
@@ -12,10 +8,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK.UnitTests
 {
     [TestClass]
+    [TestCategory("UnitTest")]
+    [TestCategory("Runtime")]
     public class ClientConfigTests
     {
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
         [TestMethod]
         //| Configured "use_fips_endpoint" | Configured Region | Expected("use_fips_endpoint", Resolved Region) |
         //| --- | ---| --- |
@@ -40,8 +36,6 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(config.RegionEndpoint.SystemName, expectedResolvedRegion, "config.RegionEndpoint.SystemName");
         }
 
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
         [TestMethod]
         [DataRow(0, true)]
         [DataRow(10485760, true)]
@@ -63,6 +57,59 @@ namespace AWSSDK.UnitTests
                     RequestMinCompressionSizeBytes = requestMinCompression
                 };
             }
+        }
+
+        [DataTestMethod]
+        [DataRow("@external.com#")]
+        [DataRow("us-east-1-")]
+        [DataRow("-us-east-1")]
+        [DataRow("+-*/")]
+        [DataRow("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")] // Over 63 characters
+        public void TestThrowsForInvalidRegion(string region)
+        {
+            Assert.ThrowsException<AmazonClientException>(() => new TestClientConfig
+            {
+                RegionEndpoint = RegionEndpoint.GetBySystemName(region),
+            });
+
+            // The endpoint resolvers will check the AuthenticationRegion property as well,
+            // so we validate it too.
+            Assert.ThrowsException<AmazonClientException>(() => new TestClientConfig
+            {
+                AuthenticationRegion = region,
+            });
+
+            // Value set via environment variable should also be validated.
+            var currentRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", region);
+                var config = new TestClientConfig();
+                
+                // Throws as expected here.
+                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+
+                // This verifies a second get (which could happen in another component) also fails.
+                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", currentRegion);
+            }
+        }
+
+        [TestMethod]
+        public void TestDoesNotThrowForCustomServiceUrl()
+        {
+            // A customer may set this config when interacting with LocalStack.
+            var config = new TestClientConfig
+            {
+                ServiceURL = "http://localhost:4566",
+                AuthenticationRegion = "eu-west-1",
+            };
+
+            Assert.IsNotNull(config.AuthenticationRegion);
+            Assert.IsNotNull(config.ServiceURL);
         }
     }
 

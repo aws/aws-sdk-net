@@ -31,16 +31,29 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketLocation operation.
-    /// <note> 
+    /// <important> 
     /// <para>
-    /// This operation is not supported for directory buckets.
+    /// Using the <c>GetBucketLocation</c> operation is no longer a best practice. To return
+    /// the Region that a bucket resides in, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+    /// operation instead. For backward compatibility, Amazon S3 continues to support the
+    /// <c>GetBucketLocation</c> operation.
     /// </para>
-    ///  </note> 
+    ///  </important> 
     /// <para>
     /// Returns the Region the bucket resides in. You set the bucket's Region using the <c>LocationConstraint</c>
     /// request parameter in a <c>CreateBucket</c> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// In a bucket's home Region, calls to the <c>GetBucketLocation</c> operation are governed
+    /// by the bucket's policy. In other Regions, the bucket policy doesn't apply, which means
+    /// that cross-account access won't be authorized. However, calls to the <c>HeadBucket</c>
+    /// operation always return the bucket’s location through an HTTP response header, whether
+    /// access to the bucket is authorized or not. Therefore, we recommend using the <c>HeadBucket</c>
+    /// operation for bucket Region discovery and to avoid using the <c>GetBucketLocation</c>
+    /// operation.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// When you use this API operation with an access point, provide the alias of the access
     /// point in place of the bucket name.
@@ -56,9 +69,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
-    /// to return the Region that a bucket resides in. For backward compatibility, Amazon
-    /// S3 continues to support GetBucketLocation.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -74,7 +85,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetBucketLocationRequest : AmazonWebServiceRequest
     {
@@ -101,6 +118,7 @@ namespace Amazon.S3.Model
         /// of Error Codes</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

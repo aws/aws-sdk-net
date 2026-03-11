@@ -298,7 +298,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual BatchGetServiceLevelObjectiveBudgetReportResponse BatchGetServiceLevelObjectiveBudgetReport(BatchGetServiceLevelObjectiveBudgetReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetServiceLevelObjectiveBudgetReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetServiceLevelObjectiveBudgetReportResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchGetServiceLevelObjectiveBudgetReport">REST API Reference for BatchGetServiceLevelObjectiveBudgetReport Operation</seealso>
         public virtual Task<BatchGetServiceLevelObjectiveBudgetReportResponse> BatchGetServiceLevelObjectiveBudgetReportAsync(BatchGetServiceLevelObjectiveBudgetReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetServiceLevelObjectiveBudgetReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetServiceLevelObjectiveBudgetReportResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual BatchUpdateExclusionWindowsResponse BatchUpdateExclusionWindows(BatchUpdateExclusionWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateExclusionWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateExclusionWindowsResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">REST API Reference for BatchUpdateExclusionWindows Operation</seealso>
         public virtual Task<BatchUpdateExclusionWindowsResponse> BatchUpdateExclusionWindowsAsync(BatchUpdateExclusionWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateExclusionWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateExclusionWindowsResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual CreateServiceLevelObjectiveResponse CreateServiceLevelObjective(CreateServiceLevelObjectiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/CreateServiceLevelObjective">REST API Reference for CreateServiceLevelObjective Operation</seealso>
         public virtual Task<CreateServiceLevelObjectiveResponse> CreateServiceLevelObjectiveAsync(CreateServiceLevelObjectiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -559,11 +559,54 @@ namespace Amazon.ApplicationSignals
         }
         #endregion
         
+        #region  DeleteGroupingConfiguration
+
+        internal virtual DeleteGroupingConfigurationResponse DeleteGroupingConfiguration(DeleteGroupingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the grouping configuration for this account. This removes all custom grouping
+        /// attribute definitions that were previously configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        public virtual Task<DeleteGroupingConfigurationResponse> DeleteGroupingConfigurationAsync(DeleteGroupingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGroupingConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteServiceLevelObjective
 
         internal virtual DeleteServiceLevelObjectiveResponse DeleteServiceLevelObjective(DeleteServiceLevelObjectiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -593,7 +636,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteServiceLevelObjective">REST API Reference for DeleteServiceLevelObjective Operation</seealso>
         public virtual Task<DeleteServiceLevelObjectiveResponse> DeleteServiceLevelObjectiveAsync(DeleteServiceLevelObjectiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -605,7 +648,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual GetServiceResponse GetService(GetServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -632,7 +675,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetService">REST API Reference for GetService Operation</seealso>
         public virtual Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -644,7 +687,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual GetServiceLevelObjectiveResponse GetServiceLevelObjective(GetServiceLevelObjectiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -674,7 +717,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetServiceLevelObjective">REST API Reference for GetServiceLevelObjective Operation</seealso>
         public virtual Task<GetServiceLevelObjectiveResponse> GetServiceLevelObjectiveAsync(GetServiceLevelObjectiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -682,11 +725,140 @@ namespace Amazon.ApplicationSignals
         }
         #endregion
         
+        #region  ListAuditFindings
+
+        internal virtual ListAuditFindingsResponse ListAuditFindings(ListAuditFindingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAuditFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditFindingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of audit findings that provide automated analysis of service behavior
+        /// and root cause analysis. These findings help identify the most significant observations
+        /// about your services, including performance issues, anomalies, and potential problems.
+        /// The findings are generated using heuristic algorithms based on established troubleshooting
+        /// patterns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuditFindings service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        public virtual Task<ListAuditFindingsResponse> ListAuditFindingsAsync(ListAuditFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAuditFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAuditFindingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListEntityEvents
+
+        internal virtual ListEntityEventsResponse ListEntityEvents(ListEntityEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntityEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntityEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of change events for a specific entity, such as deployments, configuration
+        /// changes, or other state-changing activities. This operation helps track the history
+        /// of changes that may have affected service performance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityEvents service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListEntityEvents">REST API Reference for ListEntityEvents Operation</seealso>
+        public virtual Task<ListEntityEventsResponse> ListEntityEventsAsync(ListEntityEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntityEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntityEventsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListGroupingAttributeDefinitions
+
+        internal virtual ListGroupingAttributeDefinitionsResponse ListGroupingAttributeDefinitions(ListGroupingAttributeDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGroupingAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupingAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupingAttributeDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the current grouping configuration for this account, including all custom
+        /// grouping attribute definitions that have been configured. These definitions determine
+        /// how services are logically grouped based on telemetry attributes, Amazon Web Services
+        /// tags, or predefined mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroupingAttributeDefinitions service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        public virtual Task<ListGroupingAttributeDefinitionsResponse> ListGroupingAttributeDefinitionsAsync(ListGroupingAttributeDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGroupingAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGroupingAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGroupingAttributeDefinitionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListServiceDependencies
 
         internal virtual ListServiceDependenciesResponse ListServiceDependencies(ListServiceDependenciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDependenciesResponseUnmarshaller.Instance;
 
@@ -716,7 +888,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceDependencies">REST API Reference for ListServiceDependencies Operation</seealso>
         public virtual Task<ListServiceDependenciesResponse> ListServiceDependenciesAsync(ListServiceDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDependenciesResponseUnmarshaller.Instance;
 
@@ -728,7 +900,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual ListServiceDependentsResponse ListServiceDependents(ListServiceDependentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDependentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDependentsResponseUnmarshaller.Instance;
 
@@ -757,7 +929,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceDependents">REST API Reference for ListServiceDependents Operation</seealso>
         public virtual Task<ListServiceDependentsResponse> ListServiceDependentsAsync(ListServiceDependentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDependentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDependentsResponseUnmarshaller.Instance;
 
@@ -769,7 +941,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual ListServiceLevelObjectiveExclusionWindowsResponse ListServiceLevelObjectiveExclusionWindows(ListServiceLevelObjectiveExclusionWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceLevelObjectiveExclusionWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceLevelObjectiveExclusionWindowsResponseUnmarshaller.Instance;
 
@@ -799,7 +971,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectiveExclusionWindows">REST API Reference for ListServiceLevelObjectiveExclusionWindows Operation</seealso>
         public virtual Task<ListServiceLevelObjectiveExclusionWindowsResponse> ListServiceLevelObjectiveExclusionWindowsAsync(ListServiceLevelObjectiveExclusionWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceLevelObjectiveExclusionWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceLevelObjectiveExclusionWindowsResponseUnmarshaller.Instance;
 
@@ -811,7 +983,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual ListServiceLevelObjectivesResponse ListServiceLevelObjectives(ListServiceLevelObjectivesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceLevelObjectivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceLevelObjectivesResponseUnmarshaller.Instance;
 
@@ -838,7 +1010,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectives">REST API Reference for ListServiceLevelObjectives Operation</seealso>
         public virtual Task<ListServiceLevelObjectivesResponse> ListServiceLevelObjectivesAsync(ListServiceLevelObjectivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceLevelObjectivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceLevelObjectivesResponseUnmarshaller.Instance;
 
@@ -850,7 +1022,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual ListServiceOperationsResponse ListServiceOperations(ListServiceOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceOperationsResponseUnmarshaller.Instance;
 
@@ -879,7 +1051,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceOperations">REST API Reference for ListServiceOperations Operation</seealso>
         public virtual Task<ListServiceOperationsResponse> ListServiceOperationsAsync(ListServiceOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceOperationsResponseUnmarshaller.Instance;
 
@@ -891,7 +1063,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -920,7 +1092,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -928,11 +1100,52 @@ namespace Amazon.ApplicationSignals
         }
         #endregion
         
+        #region  ListServiceStates
+
+        internal virtual ListServiceStatesResponse ListServiceStates(ListServiceStatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListServiceStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceStatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceStatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the last deployment and other change states of services.
+        /// This API provides visibility into recent changes that may have affected service performance,
+        /// helping with troubleshooting and change correlation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceStates service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        public virtual Task<ListServiceStatesResponse> ListServiceStatesAsync(ListServiceStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListServiceStatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceStatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceStatesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -960,7 +1173,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -968,11 +1181,57 @@ namespace Amazon.ApplicationSignals
         }
         #endregion
         
+        #region  PutGroupingConfiguration
+
+        internal virtual PutGroupingConfigurationResponse PutGroupingConfiguration(PutGroupingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutGroupingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates the grouping configuration for this account. This operation allows
+        /// you to define custom grouping attributes that determine how services are logically
+        /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
+        /// These grouping attributes can then be used to organize and filter services in the
+        /// Application Signals console and APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        public virtual Task<PutGroupingConfigurationResponse> PutGroupingConfigurationAsync(PutGroupingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutGroupingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGroupingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutGroupingConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartDiscovery
 
         internal virtual StartDiscoveryResponse StartDiscovery(StartDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDiscoveryResponseUnmarshaller.Instance;
 
@@ -1016,6 +1275,12 @@ namespace Amazon.ApplicationSignals
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// A service-linked CloudTrail event channel is created to process CloudTrail events
+        /// and return change event information. This includes last deployment time, userName,
+        /// eventName, and other event metadata.
+        /// </para>
+        ///  
+        /// <para>
         /// After completing this step, you still need to instrument your Java and Python applications
         /// to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html">
         /// Enabling Application Signals</a>.
@@ -1039,7 +1304,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/StartDiscovery">REST API Reference for StartDiscovery Operation</seealso>
         public virtual Task<StartDiscoveryResponse> StartDiscoveryAsync(StartDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDiscoveryResponseUnmarshaller.Instance;
 
@@ -1051,7 +1316,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1106,7 +1371,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1118,7 +1383,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1145,7 +1410,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1157,7 +1422,7 @@ namespace Amazon.ApplicationSignals
 
         internal virtual UpdateServiceLevelObjectiveResponse UpdateServiceLevelObjective(UpdateServiceLevelObjectiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceLevelObjectiveResponseUnmarshaller.Instance;
 
@@ -1194,7 +1459,7 @@ namespace Amazon.ApplicationSignals
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/UpdateServiceLevelObjective">REST API Reference for UpdateServiceLevelObjective Operation</seealso>
         public virtual Task<UpdateServiceLevelObjectiveResponse> UpdateServiceLevelObjectiveAsync(UpdateServiceLevelObjectiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceLevelObjectiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceLevelObjectiveResponseUnmarshaller.Instance;
 

@@ -52,6 +52,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CidrIp);
             }
 
+            if(requestObject.IsSetCidrIpv6())
+            {
+                context.Writer.WritePropertyName("CidrIpv6");
+                context.Writer.WriteStringValue(requestObject.CidrIpv6);
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

@@ -35,6 +35,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class As2ConnectorConfig
     {
+        private As2AsyncMdnConnectorConfig _asyncMdnConfig;
         private string _basicAuthSecretId;
         private CompressionEnum _compression;
         private EncryptionAlg _encryptionAlgorithm;
@@ -45,6 +46,26 @@ namespace Amazon.Transfer.Model
         private string _partnerProfileId;
         private PreserveContentType _preserveContentType;
         private SigningAlg _signingAlgorithm;
+
+        /// <summary>
+        /// Gets and sets the property AsyncMdnConfig. 
+        /// <para>
+        /// Configuration settings for asynchronous Message Disposition Notification (MDN) responses.
+        /// This allows you to configure where asynchronous MDN responses should be sent and which
+        /// servers should handle them.
+        /// </para>
+        /// </summary>
+        public As2AsyncMdnConnectorConfig AsyncMdnConfig
+        {
+            get { return this._asyncMdnConfig; }
+            set { this._asyncMdnConfig = value; }
+        }
+
+        // Check to see if AsyncMdnConfig property is set
+        internal bool IsSetAsyncMdnConfig()
+        {
+            return this._asyncMdnConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BasicAuthSecretId. 
@@ -191,6 +212,11 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>ASYNC</c>: The system expects an asynchronous MDN response, confirming that the
+        /// file was transferred successfully (or not).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>SYNC</c>: The system expects a synchronous MDN response, confirming that the file
         /// was transferred successfully (or not).
         /// </para>
@@ -242,7 +268,7 @@ namespace Amazon.Transfer.Model
         /// with the connector.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string MessageSubject
         {
             get { return this._messageSubject; }

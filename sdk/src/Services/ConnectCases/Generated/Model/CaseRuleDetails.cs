@@ -37,7 +37,46 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class CaseRuleDetails
     {
+        private FieldOptionsCaseRule _fieldOptions;
+        private HiddenCaseRule _hidden;
         private RequiredCaseRule _required;
+
+        /// <summary>
+        /// Gets and sets the property FieldOptions. 
+        /// <para>
+        /// Which options are available in a child field based on the selected value in a parent
+        /// field.
+        /// </para>
+        /// </summary>
+        public FieldOptionsCaseRule FieldOptions
+        {
+            get { return this._fieldOptions; }
+            set { this._fieldOptions = value; }
+        }
+
+        // Check to see if FieldOptions property is set
+        internal bool IsSetFieldOptions()
+        {
+            return this._fieldOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hidden. 
+        /// <para>
+        /// Whether a field is visible, based on values in other fields.
+        /// </para>
+        /// </summary>
+        public HiddenCaseRule Hidden
+        {
+            get { return this._hidden; }
+            set { this._hidden = value; }
+        }
+
+        // Check to see if Hidden property is set
+        internal bool IsSetHidden()
+        {
+            return this._hidden != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Required. 

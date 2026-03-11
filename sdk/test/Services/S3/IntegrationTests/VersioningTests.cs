@@ -1,39 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Tests for versioned S3 buckets
-    /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class VersioningTests : TestBase<AmazonS3Client>
     {
         private const string content = "Test content";
         private const string key = "test.txt";
-
         private static string bucketName;
 
-        [ClassInitialize()]
-        public static void Initialize(TestContext tc)
+        [ClassInitialize]
+        public static async Task Initialize(TestContext tc)
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
-            Client.PutBucketVersioning(new PutBucketVersioningRequest
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            await Client.PutBucketVersioningAsync(new PutBucketVersioningRequest
             {
                 BucketName = bucketName,
                 VersioningConfig = new S3BucketVersioningConfig
@@ -42,9 +27,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            S3TestUtils.WaitForConsistency(() =>
+            await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.GetBucketVersioning(new GetBucketVersioningRequest
+                var res = await Client.GetBucketVersioningAsync(new GetBucketVersioningRequest
                 {
                     BucketName = bucketName
                 });
@@ -53,21 +38,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             BaseClean();
         }
 
-
         [TestMethod]
-        [TestCategory("S3")]
-        public void TestVersionBucketName()
+        public async Task TestVersionBucketName()
         {
             var count = 5;
             for (int i = 0; i < count; i++)
             {
-                Client.PutObject(new PutObjectRequest
+                await Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
                     Key = key,
@@ -75,16 +58,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 });
             }
                         
-            var response = S3TestUtils.WaitForConsistency(() =>
+            var response = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = Client.ListVersions(bucketName);                
+                var res = await Client.ListVersionsAsync(bucketName);                
                 return res.Versions?.Count == count ? res : null;
             });
 
-            var versions = response.Versions;
-            Assert.AreEqual(count, versions.Count);
-
-            foreach(var version in versions)
+            Assert.AreEqual(count, response.Versions.Count);
+            foreach (var version in response.Versions)
             {
                 Assert.AreEqual(bucketName, version.BucketName);
                 Assert.AreEqual(key, version.Key);

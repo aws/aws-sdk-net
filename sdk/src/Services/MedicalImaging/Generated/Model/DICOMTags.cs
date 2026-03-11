@@ -77,7 +77,7 @@ namespace Amazon.MedicalImaging.Model
         /// The total number of instances in the DICOM study.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
+        [AWSProperty(Min=0, Max=1000000)]
         public int? DICOMNumberOfStudyRelatedInstances
         {
             get { return this._dicomNumberOfStudyRelatedInstances; }
@@ -286,7 +286,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided Study Description.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMStudyDescription
         {
             get { return this._dicomStudyDescription; }
@@ -305,7 +305,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the Study ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=16)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMStudyId
         {
             get { return this._dicomStudyId; }

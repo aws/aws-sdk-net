@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateOptimizationJobRequest : AmazonSageMakerRequest
     {
         private OptimizationJobDeploymentInstanceType _deploymentInstanceType;
+        private int? _maxInstanceCount;
         private OptimizationJobModelSource _modelSource;
         private List<OptimizationConfig> _optimizationConfigs = AWSConfigs.InitializeCollections ? new List<OptimizationConfig>() : null;
         private Dictionary<string, string> _optimizationEnvironment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -74,6 +75,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDeploymentInstanceType()
         {
             return this._deploymentInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInstanceCount. 
+        /// <para>
+        /// The maximum number of instances to use for the optimization job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MaxInstanceCount
+        {
+            get { return this._maxInstanceCount; }
+            set { this._maxInstanceCount = value; }
+        }
+
+        // Check to see if MaxInstanceCount property is set
+        internal bool IsSetMaxInstanceCount()
+        {
+            return this._maxInstanceCount.HasValue; 
         }
 
         /// <summary>

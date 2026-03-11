@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified snapshot does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SnapshotNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SnapshotNotFoundException
+        /// message.
+        /// </summary>
+        public SnapshotNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SnapshotNotFoundException with the specified error

@@ -31,9 +31,9 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTraceSegmentDestination operation.
-    /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry</i>
-    /// API. The Transaction Search feature requires a CloudWatchLogs destination. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+    /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry
+    /// protocol (OTLP)</i> endpoint. The Transaction Search feature requires a CloudWatchLogs
+    /// destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
     /// Search</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html">OpenTelemetry</a>.
     /// </summary>
     public partial class GetTraceSegmentDestinationRequest : AmazonXRayRequest

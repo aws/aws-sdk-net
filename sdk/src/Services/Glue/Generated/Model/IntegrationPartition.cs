@@ -123,11 +123,30 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FunctionSpec. 
         /// <para>
-        /// Specifies the function used to partition data on the target. The only accepted value
-        /// for this parameter is `'identity'` (string). The `'identity'` function ensures that
-        /// the data partitioning on the target follows the same scheme as the source. In other
-        /// words, the partitioning structure of the source data is preserved in the target destination.
+        /// Specifies the function used to partition data on the target. The accepted values for
+        /// this parameter are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>identity</c> - Uses source values directly without transformation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>year</c> - Extracts the year from timestamp values (e.g., 2023)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>month</c> - Extracts the month from timestamp values (e.g., 2023-01)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>day</c> - Extracts the day from timestamp values (e.g., 2023-01-15)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>hour</c> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string FunctionSpec

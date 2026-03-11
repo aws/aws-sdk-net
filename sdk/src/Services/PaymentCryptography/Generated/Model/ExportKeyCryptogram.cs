@@ -66,7 +66,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Cryptography uses this certificate to wrap the key under export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string WrappingKeyCertificate
         {
             get { return this._wrappingKeyCertificate; }

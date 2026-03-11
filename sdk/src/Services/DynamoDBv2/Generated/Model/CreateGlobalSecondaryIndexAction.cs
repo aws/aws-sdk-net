@@ -63,7 +63,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KeySchema. 
         /// <para>
-        /// The key schema for the global secondary index.
+        /// The key schema for the global secondary index. Global secondary index supports up
+        /// to 4 partition and up to 4 sort keys.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -71,7 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Required=true, Min=1)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }

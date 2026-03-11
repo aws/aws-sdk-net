@@ -79,6 +79,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetModelSpeculativeDecodingConfig())
+            {
+                context.Writer.WritePropertyName("ModelSpeculativeDecodingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelSpeculativeDecodingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelSpeculativeDecodingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.EventBridge.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidStateException
+        /// message.
+        /// </summary>
+        public InvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidStateException with the specified error
         /// message.
         /// </summary>

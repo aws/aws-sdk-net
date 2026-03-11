@@ -96,5 +96,35 @@ namespace Amazon.MediaConnect.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListReservationsPaginator ListReservations(ListReservationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRouterInputs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRouterInputsPaginator ListRouterInputs(ListRouterInputsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRouterNetworkInterfaces operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRouterNetworkInterfacesPaginator ListRouterNetworkInterfaces(ListRouterNetworkInterfacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRouterOutputs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRouterOutputsPaginator ListRouterOutputs(ListRouterOutputsRequest request);
     }
 }

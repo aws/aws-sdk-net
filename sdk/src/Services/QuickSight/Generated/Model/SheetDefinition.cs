@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding
-        /// filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -175,7 +175,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
-        /// of layout</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// of layout</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -199,8 +199,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
-        /// console.
+        /// The name of the sheet. This name is displayed on the sheet's tab in the Quick console.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -224,8 +223,8 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using
-        /// a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User
-        /// Guide</i>.
+        /// a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite
+        /// User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -344,7 +343,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Max=75)]
         public List<Visual> Visuals
         {
             get { return this._visuals; }

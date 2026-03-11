@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlEnumsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.ResourcePath = "/XmlEnums";
 
@@ -73,7 +74,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("fooEnum3", StringUtils.FromString(publicRequest.FooEnum3));
 
                 var publicRequestFooEnumList = publicRequest.FooEnumList;
-                if (publicRequestFooEnumList != null && (publicRequestFooEnumList.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFooEnumList()) 
                 {
                     xmlWriter.WriteStartElement("fooEnumList");
                     foreach (var publicRequestFooEnumListValue in publicRequestFooEnumList) 
@@ -98,7 +99,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 var publicRequestFooEnumSet = publicRequest.FooEnumSet;
-                if (publicRequestFooEnumSet != null && (publicRequestFooEnumSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetFooEnumSet()) 
                 {
                     xmlWriter.WriteStartElement("fooEnumSet");
                     foreach (var publicRequestFooEnumSetValue in publicRequestFooEnumSet) 
@@ -112,6 +113,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -123,8 +125,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static XmlEnumsRequestMarshaller _instance = new XmlEnumsRequestMarshaller();        
@@ -146,5 +146,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlEnumsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlEnumsRequest publicRequest);
     }    
 }

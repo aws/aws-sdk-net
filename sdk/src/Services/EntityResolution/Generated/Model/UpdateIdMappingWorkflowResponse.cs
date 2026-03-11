@@ -36,6 +36,7 @@ namespace Amazon.EntityResolution.Model
     {
         private string _description;
         private IdMappingTechniques _idMappingTechniques;
+        private IdMappingIncrementalRunConfig _incrementalRunConfig;
         private List<IdMappingWorkflowInputSource> _inputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowInputSource>() : null;
         private List<IdMappingWorkflowOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowOutputSource>() : null;
         private string _roleArn;
@@ -81,6 +82,24 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncrementalRunConfig. 
+        /// <para>
+        ///  The incremental run configuration for the update ID mapping workflow output.
+        /// </para>
+        /// </summary>
+        public IdMappingIncrementalRunConfig IncrementalRunConfig
+        {
+            get { return this._incrementalRunConfig; }
+            set { this._incrementalRunConfig = value; }
+        }
+
+        // Check to see if IncrementalRunConfig property is set
+        internal bool IsSetIncrementalRunConfig()
+        {
+            return this._incrementalRunConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputSourceConfig. 
         /// <para>
         /// A list of <c>InputSource</c> objects, which have the fields <c>InputSourceARN</c>
@@ -108,7 +127,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
-        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>
+        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>outputS3Path</c>
         /// and <c>KMSArn</c>.
         /// </para>
         /// <para />

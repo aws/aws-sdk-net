@@ -52,6 +52,7 @@ namespace Amazon.VerifiedPermissions.Model
         private string _clientToken;
         private DeletionProtection _deletionProtection;
         private string _description;
+        private EncryptionSettings _encryptionSettings;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ValidationSettings _validationSettings;
 
@@ -136,6 +137,31 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionSettings. 
+        /// <para>
+        /// Specifies the encryption settings used to encrypt the policy store and their child
+        /// resources. Allows for the ability to use a customer owned KMS key for encryption of
+        /// data.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an optional field to be used when providing a customer-managed KMS key for
+        /// encryption.
+        /// </para>
+        /// </summary>
+        public EncryptionSettings EncryptionSettings
+        {
+            get { return this._encryptionSettings; }
+            set { this._encryptionSettings = value; }
+        }
+
+        // Check to see if EncryptionSettings property is set
+        internal bool IsSetEncryptionSettings()
+        {
+            return this._encryptionSettings != null;
         }
 
         /// <summary>

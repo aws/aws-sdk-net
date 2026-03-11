@@ -40,6 +40,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryPolicyNotFoundException
+        /// message.
+        /// </summary>
+        public RepositoryPolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryPolicyNotFoundException with the specified error
         /// message.
         /// </summary>

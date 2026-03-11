@@ -81,6 +81,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetProjectIdentifier())
                 request.Parameters.Add("projectIdentifier", StringUtils.FromString(publicRequest.ProjectIdentifier));
             
+            if (publicRequest.IsSetScope())
+                request.Parameters.Add("scope", StringUtils.FromString(publicRequest.Scope));
+            
             if (publicRequest.IsSetSortBy())
                 request.Parameters.Add("sortBy", StringUtils.FromString(publicRequest.SortBy));
             

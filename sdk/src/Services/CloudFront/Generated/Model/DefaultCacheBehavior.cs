@@ -33,6 +33,15 @@ namespace Amazon.CloudFront.Model
     /// A complex type that describes the default cache behavior if you don't specify a <c>CacheBehavior</c>
     /// element or if request URLs don't match any of the values of <c>PathPattern</c> in
     /// <c>CacheBehavior</c> elements. You must create exactly one default cache behavior.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+    /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+    /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+    /// headers.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DefaultCacheBehavior
     {

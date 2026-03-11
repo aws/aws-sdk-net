@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for MalformedResourcePolicyDocumentException
+        /// message.
+        /// </summary>
+        public MalformedResourcePolicyDocumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MalformedResourcePolicyDocumentException with the specified error
         /// message.
         /// </summary>

@@ -95,6 +95,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RuleArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Transforms/member", targetDepth))
+                    {
+                        var unmarshaller = RuleTransformUnmarshaller.Instance;
+                        if (unmarshalledObject.Transforms == null)
+                        {
+                            unmarshalledObject.Transforms = new List<RuleTransform>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Transforms.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

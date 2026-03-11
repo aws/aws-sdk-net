@@ -36,6 +36,14 @@ namespace Amazon.MediaLive
         /// <summary>
         /// Construct instance of AmazonMediaLiveException
         /// </summary>
+        public AmazonMediaLiveException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaLiveException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaLiveException(string message)
             : base(message)

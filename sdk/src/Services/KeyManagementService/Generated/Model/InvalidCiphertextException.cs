@@ -47,6 +47,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidCiphertextException
+        /// message.
+        /// </summary>
+        public InvalidCiphertextException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidCiphertextException with the specified error
         /// message.
         /// </summary>

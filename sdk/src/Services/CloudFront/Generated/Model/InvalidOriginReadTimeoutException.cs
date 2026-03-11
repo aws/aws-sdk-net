@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOriginReadTimeoutException
+        /// message.
+        /// </summary>
+        public InvalidOriginReadTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOriginReadTimeoutException with the specified error
         /// message.
         /// </summary>

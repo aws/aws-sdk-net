@@ -39,7 +39,11 @@ namespace Amazon.VPCLattice.Model
         private string _arn;
         private DateTime? _createdAt;
         private string _customDomainName;
+        private string _domainVerificationArn;
+        private string _domainVerificationId;
+        private VerificationStatus _domainVerificationStatus;
         private string _failureReason;
+        private string _groupDomain;
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
@@ -145,6 +149,62 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainVerificationArn. 
+        /// <para>
+        ///  The ARN of the domain verification. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DomainVerificationArn
+        {
+            get { return this._domainVerificationArn; }
+            set { this._domainVerificationArn = value; }
+        }
+
+        // Check to see if DomainVerificationArn property is set
+        internal bool IsSetDomainVerificationArn()
+        {
+            return this._domainVerificationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationId. 
+        /// <para>
+        ///  The domain verification ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=20)]
+        public string DomainVerificationId
+        {
+            get { return this._domainVerificationId; }
+            set { this._domainVerificationId = value; }
+        }
+
+        // Check to see if DomainVerificationId property is set
+        internal bool IsSetDomainVerificationId()
+        {
+            return this._domainVerificationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationStatus. 
+        /// <para>
+        ///  The domain verification status. 
+        /// </para>
+        /// </summary>
+        public VerificationStatus DomainVerificationStatus
+        {
+            get { return this._domainVerificationStatus; }
+            set { this._domainVerificationStatus = value; }
+        }
+
+        // Check to see if DomainVerificationStatus property is set
+        internal bool IsSetDomainVerificationStatus()
+        {
+            return this._domainVerificationStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The reason the create-resource-configuration request failed.
@@ -160,6 +220,27 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupDomain. 
+        /// <para>
+        ///  (GROUP) The group domain for a group resource configuration. Any domains that you
+        /// create for the child resource are subdomains of the group domain. Child resources
+        /// inherit the verification status of the domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string GroupDomain
+        {
+            get { return this._groupDomain; }
+            set { this._groupDomain = value; }
+        }
+
+        // Check to see if GroupDomain property is set
+        internal bool IsSetGroupDomain()
+        {
+            return this._groupDomain != null;
         }
 
         /// <summary>

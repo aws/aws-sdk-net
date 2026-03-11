@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for SoftwareTokenMFANotFoundException
+        /// message.
+        /// </summary>
+        public SoftwareTokenMFANotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SoftwareTokenMFANotFoundException with the specified error
         /// message.
         /// </summary>

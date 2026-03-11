@@ -55,7 +55,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property BidPrice. 
         /// <para>
         /// The bid price for each Amazon EC2 Spot Instance type as defined by <c>InstanceType</c>.
-        /// Expressed in USD.
+        /// Expressed in USD. If neither <c>BidPrice</c> nor <c>BidPriceAsPercentageOfOnDemandPrice</c>
+        /// is provided, <c>BidPriceAsPercentageOfOnDemandPrice</c> defaults to 100%.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

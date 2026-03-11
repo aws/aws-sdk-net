@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CachePolicyAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CachePolicyAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CachePolicyAlreadyExistsException with the specified error
         /// message.
         /// </summary>

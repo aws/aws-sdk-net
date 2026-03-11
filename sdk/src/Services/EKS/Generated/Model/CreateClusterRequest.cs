@@ -93,6 +93,8 @@ namespace Amazon.EKS.Model
         private bool? _bootstrapSelfManagedAddons;
         private string _clientRequestToken;
         private ComputeConfigRequest _computeConfig;
+        private ControlPlaneScalingConfig _controlPlaneScalingConfig;
+        private bool? _deletionProtection;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
@@ -190,6 +192,45 @@ namespace Amazon.EKS.Model
         internal bool IsSetComputeConfig()
         {
             return this._computeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneScalingConfig. 
+        /// <para>
+        /// The control plane scaling tier configuration. For more information, see EKS Provisioned
+        /// Control Plane in the Amazon EKS User Guide.
+        /// </para>
+        /// </summary>
+        public ControlPlaneScalingConfig ControlPlaneScalingConfig
+        {
+            get { return this._controlPlaneScalingConfig; }
+            set { this._controlPlaneScalingConfig = value; }
+        }
+
+        // Check to see if ControlPlaneScalingConfig property is set
+        internal bool IsSetControlPlaneScalingConfig()
+        {
+            return this._controlPlaneScalingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates whether to enable deletion protection for the cluster. When enabled, the
+        /// cluster cannot be deleted unless deletion protection is first disabled. This helps
+        /// prevent accidental cluster deletion. Default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>

@@ -314,7 +314,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/CancelPracticeRun">REST API Reference for CancelPracticeRun Operation</seealso>
         public virtual CancelPracticeRunResponse CancelPracticeRun(CancelPracticeRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelPracticeRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelPracticeRunResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/CancelPracticeRun">REST API Reference for CancelPracticeRun Operation</seealso>
         public virtual Task<CancelPracticeRunResponse> CancelPracticeRunAsync(CancelPracticeRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelPracticeRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelPracticeRunResponseUnmarshaller.Instance;
             
@@ -401,7 +401,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/CancelZonalShift">REST API Reference for CancelZonalShift Operation</seealso>
         public virtual CancelZonalShiftResponse CancelZonalShift(CancelZonalShiftRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelZonalShiftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelZonalShiftResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/CancelZonalShift">REST API Reference for CancelZonalShift Operation</seealso>
         public virtual Task<CancelZonalShiftResponse> CancelZonalShiftAsync(CancelZonalShiftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelZonalShiftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelZonalShiftResponseUnmarshaller.Instance;
             
@@ -507,7 +507,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/CreatePracticeRunConfiguration">REST API Reference for CreatePracticeRunConfiguration Operation</seealso>
         public virtual CreatePracticeRunConfigurationResponse CreatePracticeRunConfiguration(CreatePracticeRunConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePracticeRunConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePracticeRunConfigurationResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/CreatePracticeRunConfiguration">REST API Reference for CreatePracticeRunConfiguration Operation</seealso>
         public virtual Task<CreatePracticeRunConfigurationResponse> CreatePracticeRunConfigurationAsync(CreatePracticeRunConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePracticeRunConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePracticeRunConfigurationResponseUnmarshaller.Instance;
             
@@ -607,7 +607,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/DeletePracticeRunConfiguration">REST API Reference for DeletePracticeRunConfiguration Operation</seealso>
         public virtual DeletePracticeRunConfigurationResponse DeletePracticeRunConfiguration(DeletePracticeRunConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePracticeRunConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePracticeRunConfigurationResponseUnmarshaller.Instance;
 
@@ -648,7 +648,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/DeletePracticeRunConfiguration">REST API Reference for DeletePracticeRunConfiguration Operation</seealso>
         public virtual Task<DeletePracticeRunConfigurationResponse> DeletePracticeRunConfigurationAsync(DeletePracticeRunConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePracticeRunConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePracticeRunConfigurationResponseUnmarshaller.Instance;
             
@@ -682,7 +682,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetAutoshiftObserverNotificationStatus">REST API Reference for GetAutoshiftObserverNotificationStatus Operation</seealso>
         public virtual GetAutoshiftObserverNotificationStatusResponse GetAutoshiftObserverNotificationStatus(GetAutoshiftObserverNotificationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoshiftObserverNotificationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoshiftObserverNotificationStatusResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetAutoshiftObserverNotificationStatus">REST API Reference for GetAutoshiftObserverNotificationStatus Operation</seealso>
         public virtual Task<GetAutoshiftObserverNotificationStatusResponse> GetAutoshiftObserverNotificationStatusAsync(GetAutoshiftObserverNotificationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoshiftObserverNotificationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoshiftObserverNotificationStatusResponseUnmarshaller.Instance;
             
@@ -754,7 +754,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetManagedResource">REST API Reference for GetManagedResource Operation</seealso>
         public virtual GetManagedResourceResponse GetManagedResource(GetManagedResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedResourceResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/GetManagedResource">REST API Reference for GetManagedResource Operation</seealso>
         public virtual Task<GetManagedResourceResponse> GetManagedResourceAsync(GetManagedResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedResourceResponseUnmarshaller.Instance;
             
@@ -827,7 +827,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListAutoshifts">REST API Reference for ListAutoshifts Operation</seealso>
         public virtual ListAutoshiftsResponse ListAutoshifts(ListAutoshiftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutoshiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutoshiftsResponseUnmarshaller.Instance;
 
@@ -861,7 +861,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListAutoshifts">REST API Reference for ListAutoshifts Operation</seealso>
         public virtual Task<ListAutoshiftsResponse> ListAutoshiftsAsync(ListAutoshiftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutoshiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutoshiftsResponseUnmarshaller.Instance;
             
@@ -898,7 +898,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListManagedResources">REST API Reference for ListManagedResources Operation</seealso>
         public virtual ListManagedResourcesResponse ListManagedResources(ListManagedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedResourcesResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListManagedResources">REST API Reference for ListManagedResources Operation</seealso>
         public virtual Task<ListManagedResourcesResponse> ListManagedResourcesAsync(ListManagedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedResourcesResponseUnmarshaller.Instance;
             
@@ -975,7 +975,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListZonalShifts">REST API Reference for ListZonalShifts Operation</seealso>
         public virtual ListZonalShiftsResponse ListZonalShifts(ListZonalShiftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListZonalShiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListZonalShiftsResponseUnmarshaller.Instance;
 
@@ -1015,7 +1015,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListZonalShifts">REST API Reference for ListZonalShifts Operation</seealso>
         public virtual Task<ListZonalShiftsResponse> ListZonalShiftsAsync(ListZonalShiftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListZonalShiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListZonalShiftsResponseUnmarshaller.Instance;
             
@@ -1065,7 +1065,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/StartPracticeRun">REST API Reference for StartPracticeRun Operation</seealso>
         public virtual StartPracticeRunResponse StartPracticeRun(StartPracticeRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPracticeRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPracticeRunResponseUnmarshaller.Instance;
 
@@ -1114,7 +1114,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/StartPracticeRun">REST API Reference for StartPracticeRun Operation</seealso>
         public virtual Task<StartPracticeRunResponse> StartPracticeRunAsync(StartPracticeRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPracticeRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPracticeRunResponseUnmarshaller.Instance;
             
@@ -1198,7 +1198,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/StartZonalShift">REST API Reference for StartZonalShift Operation</seealso>
         public virtual StartZonalShiftResponse StartZonalShift(StartZonalShiftRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartZonalShiftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartZonalShiftResponseUnmarshaller.Instance;
 
@@ -1281,7 +1281,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/StartZonalShift">REST API Reference for StartZonalShift Operation</seealso>
         public virtual Task<StartZonalShiftResponse> StartZonalShiftAsync(StartZonalShiftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartZonalShiftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartZonalShiftResponseUnmarshaller.Instance;
             
@@ -1330,7 +1330,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateAutoshiftObserverNotificationStatus">REST API Reference for UpdateAutoshiftObserverNotificationStatus Operation</seealso>
         public virtual UpdateAutoshiftObserverNotificationStatusResponse UpdateAutoshiftObserverNotificationStatus(UpdateAutoshiftObserverNotificationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAutoshiftObserverNotificationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAutoshiftObserverNotificationStatusResponseUnmarshaller.Instance;
 
@@ -1378,7 +1378,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateAutoshiftObserverNotificationStatus">REST API Reference for UpdateAutoshiftObserverNotificationStatus Operation</seealso>
         public virtual Task<UpdateAutoshiftObserverNotificationStatusResponse> UpdateAutoshiftObserverNotificationStatusAsync(UpdateAutoshiftObserverNotificationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAutoshiftObserverNotificationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAutoshiftObserverNotificationStatusResponseUnmarshaller.Instance;
             
@@ -1420,7 +1420,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdatePracticeRunConfiguration">REST API Reference for UpdatePracticeRunConfiguration Operation</seealso>
         public virtual UpdatePracticeRunConfigurationResponse UpdatePracticeRunConfiguration(UpdatePracticeRunConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePracticeRunConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePracticeRunConfigurationResponseUnmarshaller.Instance;
 
@@ -1461,7 +1461,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdatePracticeRunConfiguration">REST API Reference for UpdatePracticeRunConfiguration Operation</seealso>
         public virtual Task<UpdatePracticeRunConfigurationResponse> UpdatePracticeRunConfigurationAsync(UpdatePracticeRunConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePracticeRunConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePracticeRunConfigurationResponseUnmarshaller.Instance;
             
@@ -1476,18 +1476,18 @@ namespace Amazon.ARCZonalShift
         /// <summary>
         /// The zonal autoshift configuration for a resource includes the practice run configuration
         /// and the status for running autoshifts, zonal autoshift status. When a resource has
-        /// a practice run configuation, ARC starts weekly zonal shifts for the resource, to shift
-        /// traffic away from an Availability Zone. Weekly practice runs help you to make sure
-        /// that your application can continue to operate normally with the loss of one Availability
+        /// a practice run configuration, ARC starts weekly zonal shifts for the resource, to
+        /// shift traffic away from an Availability Zone. Weekly practice runs help you to make
+        /// sure that your application can continue to operate normally with the loss of one Availability
         /// Zone.
         /// 
         ///  
         /// <para>
-        /// You can update the zonal autoshift autoshift status to enable or disable zonal autoshift.
-        /// When zonal autoshift is <c>ENABLED</c>, you authorize Amazon Web Services to shift
-        /// away resource traffic for an application from an Availability Zone during events,
-        /// on your behalf, to help reduce time to recovery. Traffic is also shifted away for
-        /// the required weekly practice runs.
+        /// You can update the zonal autoshift status to enable or disable zonal autoshift. When
+        /// zonal autoshift is <c>ENABLED</c>, you authorize Amazon Web Services to shift away
+        /// resource traffic for an application from an Availability Zone during events, on your
+        /// behalf, to help reduce time to recovery. Traffic is also shifted away for the required
+        /// weekly practice runs.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateZonalAutoshiftConfiguration service method.</param>
@@ -1515,7 +1515,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateZonalAutoshiftConfiguration">REST API Reference for UpdateZonalAutoshiftConfiguration Operation</seealso>
         public virtual UpdateZonalAutoshiftConfigurationResponse UpdateZonalAutoshiftConfiguration(UpdateZonalAutoshiftConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateZonalAutoshiftConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateZonalAutoshiftConfigurationResponseUnmarshaller.Instance;
 
@@ -1526,18 +1526,18 @@ namespace Amazon.ARCZonalShift
         /// <summary>
         /// The zonal autoshift configuration for a resource includes the practice run configuration
         /// and the status for running autoshifts, zonal autoshift status. When a resource has
-        /// a practice run configuation, ARC starts weekly zonal shifts for the resource, to shift
-        /// traffic away from an Availability Zone. Weekly practice runs help you to make sure
-        /// that your application can continue to operate normally with the loss of one Availability
+        /// a practice run configuration, ARC starts weekly zonal shifts for the resource, to
+        /// shift traffic away from an Availability Zone. Weekly practice runs help you to make
+        /// sure that your application can continue to operate normally with the loss of one Availability
         /// Zone.
         /// 
         ///  
         /// <para>
-        /// You can update the zonal autoshift autoshift status to enable or disable zonal autoshift.
-        /// When zonal autoshift is <c>ENABLED</c>, you authorize Amazon Web Services to shift
-        /// away resource traffic for an application from an Availability Zone during events,
-        /// on your behalf, to help reduce time to recovery. Traffic is also shifted away for
-        /// the required weekly practice runs.
+        /// You can update the zonal autoshift status to enable or disable zonal autoshift. When
+        /// zonal autoshift is <c>ENABLED</c>, you authorize Amazon Web Services to shift away
+        /// resource traffic for an application from an Availability Zone during events, on your
+        /// behalf, to help reduce time to recovery. Traffic is also shifted away for the required
+        /// weekly practice runs.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateZonalAutoshiftConfiguration service method.</param>
@@ -1568,7 +1568,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateZonalAutoshiftConfiguration">REST API Reference for UpdateZonalAutoshiftConfiguration Operation</seealso>
         public virtual Task<UpdateZonalAutoshiftConfigurationResponse> UpdateZonalAutoshiftConfigurationAsync(UpdateZonalAutoshiftConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateZonalAutoshiftConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateZonalAutoshiftConfigurationResponseUnmarshaller.Instance;
             
@@ -1610,7 +1610,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateZonalShift">REST API Reference for UpdateZonalShift Operation</seealso>
         public virtual UpdateZonalShiftResponse UpdateZonalShift(UpdateZonalShiftRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateZonalShiftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateZonalShiftResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.ARCZonalShift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/UpdateZonalShift">REST API Reference for UpdateZonalShift Operation</seealso>
         public virtual Task<UpdateZonalShiftResponse> UpdateZonalShiftAsync(UpdateZonalShiftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateZonalShiftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateZonalShiftResponseUnmarshaller.Instance;
             

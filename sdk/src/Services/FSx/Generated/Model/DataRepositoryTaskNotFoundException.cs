@@ -39,6 +39,13 @@ namespace Amazon.FSx.Model
     {
 
         /// <summary>
+        /// Default constructor for DataRepositoryTaskNotFoundException
+        /// message.
+        /// </summary>
+        public DataRepositoryTaskNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DataRepositoryTaskNotFoundException with the specified error
         /// message.
         /// </summary>

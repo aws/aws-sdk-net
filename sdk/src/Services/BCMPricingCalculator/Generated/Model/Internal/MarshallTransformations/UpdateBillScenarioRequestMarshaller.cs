@@ -75,10 +75,22 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCostCategoryGroupSharingPreferenceArn())
+            {
+                context.Writer.WritePropertyName("costCategoryGroupSharingPreferenceArn");
+                context.Writer.WriteStringValue(publicRequest.CostCategoryGroupSharingPreferenceArn);
+            }
+
             if(publicRequest.IsSetExpiresAt())
             {
                 context.Writer.WritePropertyName("expiresAt");
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpiresAt.Value)));
+            }
+
+            if(publicRequest.IsSetGroupSharingPreference())
+            {
+                context.Writer.WritePropertyName("groupSharingPreference");
+                context.Writer.WriteStringValue(publicRequest.GroupSharingPreference);
             }
 
             if(publicRequest.IsSetIdentifier())

@@ -74,6 +74,18 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentPage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("searchResultLocation", targetDepth))
+                {
+                    var unmarshaller = SearchResultLocationUnmarshaller.Instance;
+                    unmarshalledObject.SearchResultLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("web", targetDepth))
+                {
+                    var unmarshaller = WebLocationUnmarshaller.Instance;
+                    unmarshalledObject.Web = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

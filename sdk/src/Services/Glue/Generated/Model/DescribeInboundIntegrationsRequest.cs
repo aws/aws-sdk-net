@@ -103,7 +103,7 @@ namespace Amazon.Glue.Model
         /// The Amazon Resource Name (ARN) of the target resource in the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=512)]
         public string TargetArn
         {
             get { return this._targetArn; }

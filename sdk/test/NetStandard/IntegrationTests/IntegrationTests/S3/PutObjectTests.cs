@@ -1,13 +1,15 @@
-using System;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
-using System.Net;
-using System.Threading;
-using System.IO;
 using Amazon.S3.Util;
+using System;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace Amazon.DNXCore.IntegrationTests.S3
 {
@@ -187,6 +189,66 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         }
 
         /// <summary>
+        /// Reported in https://github.com/aws/aws-sdk-net/issues/3941
+        /// </summary>
+        [Fact]
+        public async Task HandlesFileStreamWithoutAutoReset()
+        {
+            var tempFilePath = Path.GetTempFileName();
+            try
+            {
+                using (var writeFs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                {
+                    var data = new byte[]
+                    {
+                        0x01, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x01, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                    };
+
+                    await writeFs.WriteAsync(data, 0, data.Length);
+                }
+
+                using var fileStream = File.Open(tempFilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                using var reader = new BinaryReader(fileStream);
+
+                fileStream.Position = 10;
+                var compression = reader.ReadInt16();
+                
+                fileStream.Seek(8, SeekOrigin.Current);
+                var bIsLast = reader.ReadBoolean();
+                
+                fileStream.Seek(4, SeekOrigin.Current);
+
+                var putRequest = new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = "upload-test/0D-0",
+                    ContentType = "application/octet-stream",
+                    InputStream = fileStream,
+                    AutoResetStreamPosition = false,
+                };
+                putRequest.Metadata.Add("compression", compression.ToString());
+                putRequest.Metadata.Add("islast", bIsLast ? "T" : "F");
+
+                var putResponse = await Client.PutObjectAsync(putRequest);
+                Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
+
+                var getResponse = await Client.GetObjectMetadataAsync(bucketName, putRequest.Key);
+                Assert.Equal(HttpStatusCode.OK, getResponse.HttpStatusCode);
+                Assert.NotNull(getResponse.Metadata);
+                Assert.True(getResponse.Metadata.Count > 0);
+            }
+            finally
+            {
+                if (File.Exists(tempFilePath))
+                {
+                    File.Delete(tempFilePath);
+                }
+            }
+        }
+
+        /// <summary>
         /// Reported in https://github.com/aws/aws-sdk-net/issues/3629
         /// </summary>
         [Theory]
@@ -230,6 +292,47 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             }
         }
 
+        [Theory]
+        [InlineData(true, true, true, false)]
+        [InlineData(true, true, false, true)]
+        [InlineData(true, false, true, true)]
+        [InlineData(true, false, false, true)]
+        [InlineData(false, true, true, false)]
+        [InlineData(false, true, false, true)]
+        [InlineData(false, false, true, false)]
+        [InlineData(false, false, false, false)]
+        public async Task PutObjectAddsAwsChunkedWhenNeeded(
+            bool useChunkedEncoding, 
+            bool disablePayloadSigning,
+            bool disableDefaultChecksumValidation,
+            bool isContentEncodingHeaderExpected
+        )
+        {
+            // S3 stores the resulting object without the aws-chunked value in the content-encoding header,
+            // so we'll use a custom HTTP client to actually inspect the headers before the request is sent.
+            var customHttpClientFactory = new CustomHttpClientFactory
+            {
+                ShouldHaveContentEncoding = isContentEncodingHeaderExpected,
+            };
+
+            var customClient = new AmazonS3Client(new AmazonS3Config
+            {
+                RegionEndpoint = Client.Config.RegionEndpoint,
+                HttpClientFactory = customHttpClientFactory,
+            });
+
+            var putRequest = CreatePutObjectRequest();
+            putRequest.UseChunkEncoding = useChunkedEncoding;
+            putRequest.DisablePayloadSigning = disablePayloadSigning;
+            putRequest.DisableDefaultChecksumValidation = disableDefaultChecksumValidation;
+
+            // If the request succeeded, we can assume S3 handled the Content-Encoding correctly.
+            // There are other tests in this class that verify custom values set by customers are returned
+            // on future GetObject calls.
+            var putResponse = await customClient.PutObjectAsync(putRequest);
+            Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
+        }
+
         private async Task<HeadersCollection> TestPutAndGet(PutObjectRequest request)
         {
             await Client.PutObjectAsync(request);
@@ -262,6 +365,51 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 ContentBody = testContent
             };
             return request;
+        }
+
+        private class CustomHttpClientFactory : HttpClientFactory
+        {
+            public bool ShouldHaveContentEncoding { get; set; }
+
+            public override HttpClient CreateHttpClient(IClientConfig clientConfig)
+            {
+                var handler = new InspectingHandler(new HttpClientHandler())
+                {
+                    ShouldHaveContentEncoding = ShouldHaveContentEncoding,
+                };
+
+                return new HttpClient(handler);
+            }
+        }
+
+        private class InspectingHandler : DelegatingHandler
+        {
+            public bool ShouldHaveContentEncoding { get; set; }
+
+            public InspectingHandler(HttpMessageHandler innerHandler) : base(innerHandler) { }
+
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                // Regardless of whether chunked encoding was used, the SDK will always set Content-Length.
+                Assert.True(request.Content?.Headers.ContentLength.HasValue);
+
+                // Content-Length and Transfer-Encoding are mutually exclusive, so also check the SDK is not
+                // setting both headers as that would cause S3 to throw an error.
+                Assert.False(request.Headers.TransferEncodingChunked.GetValueOrDefault());
+
+                if (ShouldHaveContentEncoding)
+                {
+                    Assert.True(request.Content?.Headers.ContentEncoding.Contains("aws-chunked"));
+                    Assert.True(request.Headers.Contains("x-amz-decoded-content-length"));
+                }
+                else
+                {
+                    Assert.False(request.Content?.Headers.ContentEncoding.Contains("aws-chunked"));
+                    Assert.False(request.Headers.Contains("x-amz-decoded-content-length"));
+                }
+
+                return base.SendAsync(request, cancellationToken);
+            }
         }
     }
 }

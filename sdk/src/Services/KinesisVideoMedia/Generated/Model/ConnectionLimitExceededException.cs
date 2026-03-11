@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideoMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for ConnectionLimitExceededException
+        /// message.
+        /// </summary>
+        public ConnectionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConnectionLimitExceededException with the specified error
         /// message.
         /// </summary>

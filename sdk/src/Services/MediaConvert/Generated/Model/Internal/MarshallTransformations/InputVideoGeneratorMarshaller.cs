@@ -70,10 +70,28 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
+            if(requestObject.IsSetHeight())
+            {
+                context.Writer.WritePropertyName("height");
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
+            }
+
+            if(requestObject.IsSetImageInput())
+            {
+                context.Writer.WritePropertyName("imageInput");
+                context.Writer.WriteStringValue(requestObject.ImageInput);
+            }
+
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
                 context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
+            }
+
+            if(requestObject.IsSetWidth())
+            {
+                context.Writer.WritePropertyName("width");
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

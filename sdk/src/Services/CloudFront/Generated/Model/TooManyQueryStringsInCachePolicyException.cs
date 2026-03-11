@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyQueryStringsInCachePolicyException
+        /// message.
+        /// </summary>
+        public TooManyQueryStringsInCachePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyQueryStringsInCachePolicyException with the specified error
         /// message.
         /// </summary>

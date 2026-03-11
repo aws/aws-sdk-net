@@ -36,6 +36,14 @@ namespace Amazon.DataExchange
         /// <summary>
         /// Construct instance of AmazonDataExchangeException
         /// </summary>
+        public AmazonDataExchangeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDataExchangeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDataExchangeException(string message)
             : base(message)

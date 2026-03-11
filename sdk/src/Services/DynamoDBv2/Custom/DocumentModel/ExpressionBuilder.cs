@@ -96,6 +96,300 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
+    /// The <see cref="KeyExpressionBuilder"/> class is used to construct key expressions for DynamoDB operations.
+    /// </summary>
+    public class KeyExpressionBuilder : ExpressionBuilder
+    {
+        /// <summary>
+        /// The list of conditions that will be used in the expression.
+        /// </summary>
+        internal List<ExpressionBuilder> Conditions { get; set; }
+
+        /// <summary>
+        /// The list of operands that will be used in the expression.
+        /// </summary>
+        internal List<OperandBuilder> Operands { get; set; }
+
+
+        private ConditionMode _conditionMode;
+
+
+        private KeyExpressionBuilder()
+        {
+            Conditions = new List<ExpressionBuilder>();
+            Operands = new List<OperandBuilder>();
+        }
+
+        private KeyExpressionBuilder(List<ExpressionBuilder> allConditions, ConditionMode mode): this()
+        {
+            Conditions= allConditions;
+            _conditionMode = mode;
+        }
+
+        private KeyExpressionBuilder(List<OperandBuilder> allOperands, ConditionMode mode): this()
+        {
+            Operands= allOperands;
+            _conditionMode = mode;
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="KeyExpressionBuilder"/> class.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="KeyExpressionBuilder"/> initialized with empty Conditions and Operands
+        /// </returns>
+        public static KeyExpressionBuilder New()
+        {
+            return new KeyExpressionBuilder();
+        }
+
+        /// <summary>
+        /// Adds a condition to the current key expression builder.
+        /// </summary>
+        /// <param name="path">The attribute name or path for the key.</param>
+        /// <returns>A <see cref="NameBuilder"/> for further configuration.</returns>
+        public NameBuilder WithKey(string path)
+        {
+            return new NameBuilder(path);
+        }
+
+        /// <summary>
+        /// Adds an attribute name to the condition.
+        /// </summary>
+        /// <param name="path">The attribute name or path.</param>
+        /// <returns>A <see cref="NameBuilder"/> for further configuration.</returns>
+        public NameBuilder WithName(string path)
+        {
+            return new NameBuilder(path);
+        }
+
+        /// <summary>
+        /// Combines multiple key expression conditions into a single composite key condition using the logical "AND" operator.
+        /// </summary>
+        /// <param name="left">The first <see cref="KeyExpressionBuilder"/> to include in the conjunction</param>
+        /// <param name="right">The second <see cref="KeyExpressionBuilder"/> to include in the conjunction</param>
+        /// <param name="others">Optional additional <see cref="KeyExpressionBuilder"/> instances to include in the conjunction.</param>
+        /// <returns>
+        /// A new <see cref="KeyExpressionBuilder"/> that represents the logical AND of all provided key conditions.
+        /// </returns>
+        public static KeyExpressionBuilder And(KeyExpressionBuilder left, KeyExpressionBuilder right,
+            params KeyExpressionBuilder[] others)
+        {
+            var allConditions = new List<ExpressionBuilder> { left, right };
+            if (others is { Length: > 0 })
+            {
+                allConditions.AddRange(others);
+            }
+
+            return new KeyExpressionBuilder(allConditions, ConditionMode.And);
+        }
+
+        /// <summary>
+        /// Combines the current condition with additional conditions using the logical "AND" operator.
+        /// </summary>
+        /// <param name="right">The <see cref="ConditionExpressionBuilder"/> instance to combine with the current condition.</param>
+        /// <param name="others">Additional <see cref="ConditionExpressionBuilder"/> instances to include in the combination.</param>
+        /// <returns>A new <see cref="ConditionExpressionBuilder"/> instance representing the combined "AND" condition.</returns>
+        public KeyExpressionBuilder And(KeyExpressionBuilder right, params KeyExpressionBuilder[] others)
+        {
+            var allConditions = new List<ExpressionBuilder> { this, right };
+            if (others is { Length: > 0 })
+            {
+                allConditions.AddRange(others);
+            }
+
+            return new KeyExpressionBuilder(allConditions, ConditionMode.And);
+        }
+
+        /// <summary>
+        /// Creates a <see cref="KeyExpressionBuilder"/> configured to represent an equality condition between a
+        /// specified name and value.
+        /// </summary>
+        /// <param name="nameBuilder">The <see cref="NameBuilder"/> representing the name part of the equality condition.</param>
+        /// <param name="rightOperand">The <see cref="ValueBuilder"/> representing the value part of the equality condition.</param>
+        /// <returns>A <see cref="KeyExpressionBuilder"/> that defines an equality condition using the specified operands.</returns>
+        public static KeyExpressionBuilder Equal(NameBuilder nameBuilder, ValueBuilder rightOperand)
+        {
+            return new KeyExpressionBuilder
+            {
+                _conditionMode = ConditionMode.Equal,
+                Operands = new List<OperandBuilder> { nameBuilder, rightOperand }
+            };
+        }
+
+        internal static KeyExpressionBuilder LessThan(OperandBuilder left, OperandBuilder right)
+        {
+            var condition = new KeyExpressionBuilder(new List<OperandBuilder> { left, right }, ConditionMode.LessThan);
+            return condition;
+        }
+
+        internal static KeyExpressionBuilder LessThanOrEqual(OperandBuilder left, OperandBuilder right)
+        {
+            var condition = new KeyExpressionBuilder(new List<OperandBuilder> { left, right }, ConditionMode.LessThanOrEqual);
+            return condition;
+        }
+
+        internal static KeyExpressionBuilder GreaterThan(OperandBuilder left, OperandBuilder right)
+        {
+            var condition = new KeyExpressionBuilder(new List<OperandBuilder> { left, right }, ConditionMode.GreaterThan);
+            return condition;
+        }
+
+        internal static KeyExpressionBuilder GreaterThanOrEqual(OperandBuilder left, OperandBuilder right)
+        {
+            var condition = new KeyExpressionBuilder(new List<OperandBuilder> { left, right }, ConditionMode.GreaterThanOrEqual);
+            return condition;
+        }
+
+        internal static KeyExpressionBuilder Between(OperandBuilder left, OperandBuilder lowerOperand, OperandBuilder upperOperand)
+        {
+            var condition = new KeyExpressionBuilder(new List<OperandBuilder> { left, lowerOperand, upperOperand }, ConditionMode.Between);
+            return condition;
+        }
+
+        internal static KeyExpressionBuilder BeginsWith(OperandBuilder left, OperandBuilder right)
+        {
+            var condition = new KeyExpressionBuilder(new List<OperandBuilder> { left, right }, ConditionMode.BeginsWith);
+            return condition;
+        }
+
+        internal override ExpressionNode BuildExpressionTree(out string s)
+        {
+            s = "K";
+            var childNodes = BuildChildNodes();
+
+            var node = new ExpressionNode
+            {
+                Children = childNodes,
+            };
+
+            return _conditionMode switch
+            {
+                ConditionMode.Equal or
+                    ConditionMode.LessThan or
+                    ConditionMode.LessThanOrEqual or
+                    ConditionMode.GreaterThan or
+                    ConditionMode.GreaterThanOrEqual =>
+                    CompareBuildCondition(_conditionMode, node),
+
+                ConditionMode.And =>
+                    CompoundBuildCondition(this, node),
+
+                ConditionMode.Between =>
+                    BetweenBuildCondition(node),
+
+                ConditionMode.BeginsWith =>
+                    BeginsWithBuildCondition(node),
+
+                ConditionMode.Unset =>
+                    throw new InvalidOperationException("ConditionBuilder"),
+
+                _ =>
+                    throw new InvalidOperationException($"Build condition error: unsupported mode: {_conditionMode}")
+            };
+        }
+
+        private ExpressionNode BeginsWithBuildCondition(ExpressionNode node)
+        {
+            node.FormatedExpression = ExpressionFormatConstants.BeginsWith;
+            return node;
+        }
+
+        private ExpressionNode BetweenBuildCondition(ExpressionNode node)
+        {
+            node.FormatedExpression = ExpressionFormatConstants.Between;
+            return node;
+        }
+
+        private ExpressionNode CompoundBuildCondition(KeyExpressionBuilder keyExpressionBuilder, ExpressionNode node)
+        {
+            if ((keyExpressionBuilder.Conditions == null || keyExpressionBuilder.Conditions.Count == 0) &&
+                (keyExpressionBuilder.Operands == null || keyExpressionBuilder.Operands.Count == 0))
+            {
+                throw new ArgumentException("andBuildKeyCondition: KeyConditionBuilder has no conditions or operands.");
+            }
+
+            node.FormatedExpression = "(#c) AND (#c)";
+            return node;
+        }
+
+        private ExpressionNode CompareBuildCondition(ConditionMode conditionMode, ExpressionNode node)
+        {
+
+            switch (conditionMode)
+            {
+                case ConditionMode.Equal:
+                    node.FormatedExpression = 
+                        ExpressionFormatConstants.Equal;
+                    break;
+
+                case ConditionMode.LessThan:
+                    node.FormatedExpression =
+                        ExpressionFormatConstants.LessThan;
+                    break;
+
+                case ConditionMode.LessThanOrEqual:
+                    node.FormatedExpression =
+                        ExpressionFormatConstants.LessThanOrEqual;
+                    break;
+
+                case ConditionMode.GreaterThan:
+                    node.FormatedExpression =
+                        ExpressionFormatConstants.GreaterThan;
+                    break;
+
+                case ConditionMode.GreaterThanOrEqual:
+                    node.FormatedExpression = 
+                        ExpressionFormatConstants.GreaterThanOrEqual;
+                    break;
+
+                default:
+                    throw new InvalidOperationException(
+                        $"Build compare key condition error: unsupported mode: {conditionMode}");
+            }
+
+            return node;
+        }
+
+        private Queue<ExpressionNode> BuildChildNodes()
+        {
+            var childNodes = new Queue<ExpressionNode>();
+
+            foreach (var condition in Conditions)
+            {
+                ExpressionNode node;
+                try
+                {
+                    node = condition.BuildExpressionTree(out _);
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Failed to build condition tree", ex);
+                }
+
+                childNodes.Enqueue(node);
+            }
+
+            foreach (var operand in Operands)
+            {
+                ExpressionNode node;
+                try
+                {
+                    node = operand.Build();
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Failed to build operand", ex);
+                }
+
+                childNodes.Enqueue(node);
+            }
+
+            return childNodes;
+        }
+    }
+
+    /// <summary>
     /// The <see cref="UpdateExpressionBuilder"/> class is used to construct update expressions for DynamoDB operations.
     /// An update expression consists of one or more clauses. Each clause begins with a SET, REMOVE, ADD, or DELETE keyword. 
     /// You can include any of these clauses in an update expression, in any order.
@@ -1002,6 +1296,91 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var rightOperand = new ValueBuilder(setValue);
             return SetValueBuilder.IfNotExists(this, rightOperand);
+        }
+
+        #endregion
+
+        #region KeyExpressionBuilder
+
+
+        /// <summary>
+        /// Creates a key equality condition between the current attribute and the specified value.
+        /// </summary>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public KeyExpressionBuilder KeyEqual(DynamoDBEntry right)
+        {
+            var rightOperand = new ValueBuilder(right);
+            return KeyExpressionBuilder.Equal(this, rightOperand);
+        }
+
+        /// <summary>
+        /// Creates a less-than condition between the current attribute and the specified value.
+        /// </summary>
+        /// <param name="right">The value to compare against.</param>
+        /// <returns>A <see cref="KeyExpressionBuilder"/> representing the less-than condition.</returns>
+        public KeyExpressionBuilder KeyLessThan(DynamoDBEntry right)
+        {
+            var rightOperand = new ValueBuilder(right);
+            return KeyExpressionBuilder.LessThan(this, rightOperand);
+        }
+
+        /// <summary>
+        /// Creates a less-than-or-equal condition between the current key attribute and the specified value.
+        /// </summary>
+        /// <param name="right">The value to compare against.</param>
+        /// <returns>A <see cref="KeyExpressionBuilder"/> representing the less-than-or-equal condition.</returns>
+        public KeyExpressionBuilder KeyLessThanOrEqual(DynamoDBEntry right)
+        {
+            var rightOperand = new ValueBuilder(right);
+            return KeyExpressionBuilder.LessThanOrEqual(this, rightOperand);
+        }
+
+        /// <summary>
+        /// Creates a greater-than condition between the current key attribute and the specified value.
+        /// </summary>
+        /// <param name="right">The value to compare against.</param>
+        /// <returns>A <see cref="KeyExpressionBuilder"/> representing the greater-than condition.</returns>
+        public KeyExpressionBuilder KeyGreaterThan(DynamoDBEntry right)
+        {
+            var rightOperand = new ValueBuilder(right);
+            return KeyExpressionBuilder.GreaterThan(this, rightOperand);
+        }
+
+        /// <summary>
+        /// Creates a greater-than-or-equal condition between the current key attribute and the specified value.
+        /// </summary>
+        /// <param name="right">The value to compare against.</param>
+        /// <returns>A <see cref="KeyExpressionBuilder"/> representing the greater-than-or-equal condition.</returns>
+        public KeyExpressionBuilder KeyGreaterThanOrEqual(DynamoDBEntry right)
+        {
+            var rightOperand = new ValueBuilder(right);
+            return KeyExpressionBuilder.GreaterThanOrEqual(this, rightOperand);
+        }
+
+        /// <summary>
+        /// Creates a condition to check if the current key attribute's value is between two specified values.
+        /// </summary>
+        /// <param name="lower">The lower bound of the range.</param>
+        /// <param name="upper">The upper bound of the range.</param>
+        /// <returns>A <see cref="KeyExpressionBuilder"/> representing the between condition.</returns>
+        public KeyExpressionBuilder KeyBetween(DynamoDBEntry lower, DynamoDBEntry upper)
+        {
+            var lowerOperand = new ValueBuilder(lower);
+            var upperOperand = new ValueBuilder(upper);
+            return KeyExpressionBuilder.Between(this, lowerOperand, upperOperand);
+        }
+
+
+        /// <summary>
+        /// Creates a condition to check if the current key attribute's value begins with a specified prefix.
+        /// </summary>
+        /// <param name="right">The prefix to check for.</param>
+        /// <returns>A <see cref="ConditionExpressionBuilder"/> representing the begins with condition.</returns>
+        public KeyExpressionBuilder KeyBeginsWith(DynamoDBEntry right)
+        {
+            var rightOperand = new ValueBuilder(right);
+            return KeyExpressionBuilder.BeginsWith(this, rightOperand);
         }
 
         #endregion

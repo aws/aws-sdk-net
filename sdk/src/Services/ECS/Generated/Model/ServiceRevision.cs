@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private string _clusterArn;
         private List<ContainerImage> _containerImages = AWSConfigs.InitializeCollections ? new List<ContainerImage>() : null;
         private DateTime? _createdAt;
+        private ECSManagedResources _ecsManagedResources;
         private DeploymentEphemeralStorage _fargateEphemeralStorage;
         private bool? _guardDutyEnabled;
         private LaunchType _launchType;
@@ -144,6 +145,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsManagedResources. 
+        /// <para>
+        /// The resources created and managed by Amazon ECS when you create an Express service
+        /// for Amazon ECS.
+        /// </para>
+        /// </summary>
+        public ECSManagedResources EcsManagedResources
+        {
+            get { return this._ecsManagedResources; }
+            set { this._ecsManagedResources = value; }
+        }
+
+        // Check to see if EcsManagedResources property is set
+        internal bool IsSetEcsManagedResources()
+        {
+            return this._ecsManagedResources != null;
         }
 
         /// <summary>

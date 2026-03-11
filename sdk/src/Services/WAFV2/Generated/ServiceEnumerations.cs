@@ -1899,6 +1899,10 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant CLOUDWATCH_TELEMETRY_RULE_MANAGED for LogScope
+        /// </summary>
+        public static readonly LogScope CLOUDWATCH_TELEMETRY_RULE_MANAGED = new LogScope("CLOUDWATCH_TELEMETRY_RULE_MANAGED");
+        /// <summary>
         /// Constant CUSTOMER for LogScope
         /// </summary>
         public static readonly LogScope CUSTOMER = new LogScope("CUSTOMER");

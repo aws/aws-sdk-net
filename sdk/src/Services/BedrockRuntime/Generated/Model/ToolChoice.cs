@@ -31,8 +31,8 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// Determines which tools the model should request in a call to <c>Converse</c> or <c>ConverseStream</c>.
-    /// <c>ToolChoice</c> is only supported by Anthropic Claude 3 models and by Mistral AI
-    /// Mistral Large.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ToolChoice
     {
@@ -80,8 +80,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Tool. 
         /// <para>
-        /// The Model must request the specified tool. Only supported by Anthropic Claude 3 models.
-        /// 
+        /// The Model must request the specified tool. Only supported by Anthropic Claude 3 and
+        /// Amazon Nova models. 
         /// </para>
         /// </summary>
         public SpecificToolChoice Tool

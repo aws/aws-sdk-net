@@ -43,6 +43,13 @@ namespace Amazon.SimpleEmail.Model
         private string _bucket;
 
         /// <summary>
+        /// Default constructor for InvalidS3ConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidS3ConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3ConfigurationException with the specified error
         /// message.
         /// </summary>

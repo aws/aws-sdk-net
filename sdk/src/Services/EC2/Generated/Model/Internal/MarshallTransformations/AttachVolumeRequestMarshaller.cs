@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetEbsCardIndex())
+                {
+                    request.Parameters.Add("EbsCardIndex", StringUtils.FromInt(publicRequest.EbsCardIndex));
+                }
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
@@ -76,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AttachVolumeRequestMarshaller _instance = new AttachVolumeRequestMarshaller();        

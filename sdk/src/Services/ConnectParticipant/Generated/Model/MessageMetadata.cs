@@ -35,6 +35,7 @@ namespace Amazon.ConnectParticipant.Model
     public partial class MessageMetadata
     {
         private string _messageId;
+        private MessageProcessingStatus _messageProcessingStatus;
         private List<Receipt> _receipts = AWSConfigs.InitializeCollections ? new List<Receipt>() : null;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetMessageId()
         {
             return this._messageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageProcessingStatus. 
+        /// <para>
+        /// The status of Message Processing for the message.
+        /// </para>
+        /// </summary>
+        public MessageProcessingStatus MessageProcessingStatus
+        {
+            get { return this._messageProcessingStatus; }
+            set { this._messageProcessingStatus = value; }
+        }
+
+        // Check to see if MessageProcessingStatus property is set
+        internal bool IsSetMessageProcessingStatus()
+        {
+            return this._messageProcessingStatus != null;
         }
 
         /// <summary>

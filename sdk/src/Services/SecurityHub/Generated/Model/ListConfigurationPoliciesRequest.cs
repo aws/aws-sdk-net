@@ -31,9 +31,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigurationPolicies operation.
-    /// Lists the configuration policies that the Security Hub delegated administrator has
-    /// created for your organization. Only the delegated administrator can invoke this operation
-    /// from the home Region.
+    /// Lists the configuration policies that the Security Hub CSPM delegated administrator
+    /// has created for your organization. Only the delegated administrator can invoke this
+    /// operation from the home Region.
     /// </summary>
     public partial class ListConfigurationPoliciesRequest : AmazonSecurityHubRequest
     {

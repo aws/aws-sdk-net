@@ -36,6 +36,14 @@ namespace Amazon.GameLiftStreams
         /// <summary>
         /// Construct instance of AmazonGameLiftStreamsException
         /// </summary>
+        public AmazonGameLiftStreamsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGameLiftStreamsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGameLiftStreamsException(string message)
             : base(message)

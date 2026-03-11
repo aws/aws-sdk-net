@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private AxisDisplayOptions _categoryAxis;
         private ChartAxisLabelOptions _categoryLabelOptions;
         private ChartAxisLabelOptions _colorLabelOptions;
+        private ComboChartDefaultSeriesSettings _defaultSeriesSettings;
         private ComboChartFieldWells _fieldWells;
         private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
@@ -48,6 +49,7 @@ namespace Amazon.QuickSight.Model
         private List<ReferenceLine> _referenceLines = AWSConfigs.InitializeCollections ? new List<ReferenceLine>() : null;
         private AxisDisplayOptions _secondaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _secondaryYAxisLabelOptions;
+        private List<ComboSeriesItem> _series = AWSConfigs.InitializeCollections ? new List<ComboSeriesItem>() : null;
         private SingleAxisOptions _singleAxisOptions;
         private ComboChartSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
@@ -162,6 +164,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColorLabelOptions()
         {
             return this._colorLabelOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultSeriesSettings. 
+        /// <para>
+        /// The options that determine the default presentation of all series in <c>ComboChartVisual</c>.
+        /// </para>
+        /// </summary>
+        public ComboChartDefaultSeriesSettings DefaultSeriesSettings
+        {
+            get { return this._defaultSeriesSettings; }
+            set { this._defaultSeriesSettings = value; }
+        }
+
+        // Check to see if DefaultSeriesSettings property is set
+        internal bool IsSetDefaultSeriesSettings()
+        {
+            return this._defaultSeriesSettings != null;
         }
 
         /// <summary>
@@ -338,6 +358,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSecondaryYAxisLabelOptions()
         {
             return this._secondaryYAxisLabelOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Series. 
+        /// <para>
+        /// The series item configuration of a <c>ComboChartVisual</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=2000)]
+        public List<ComboSeriesItem> Series
+        {
+            get { return this._series; }
+            set { this._series = value; }
+        }
+
+        // Check to see if Series property is set
+        internal bool IsSetSeries()
+        {
+            return this._series != null && (this._series.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

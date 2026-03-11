@@ -379,6 +379,18 @@ namespace Amazon.NeptuneGraph
         /// </summary>
         public static readonly GraphStatus SNAPSHOTTING = new GraphStatus("SNAPSHOTTING");
         /// <summary>
+        /// Constant STARTING for GraphStatus
+        /// </summary>
+        public static readonly GraphStatus STARTING = new GraphStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for GraphStatus
+        /// </summary>
+        public static readonly GraphStatus STOPPED = new GraphStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for GraphStatus
+        /// </summary>
+        public static readonly GraphStatus STOPPING = new GraphStatus("STOPPING");
+        /// <summary>
         /// Constant UPDATING for GraphStatus
         /// </summary>
         public static readonly GraphStatus UPDATING = new GraphStatus("UPDATING");

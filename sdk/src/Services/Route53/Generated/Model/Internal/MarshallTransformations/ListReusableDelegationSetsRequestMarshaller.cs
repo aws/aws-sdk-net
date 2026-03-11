@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListReusableDelegationSetsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetMarker())
@@ -66,8 +67,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/delegationset";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListReusableDelegationSetsRequestMarshaller _instance = new ListReusableDelegationSetsRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListReusableDelegationSetsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListReusableDelegationSetsRequest publicRequest);
     }    
 }

@@ -55,6 +55,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFConfigurationWarningException
+        /// message.
+        /// </summary>
+        public WAFConfigurationWarningException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFConfigurationWarningException with the specified error
         /// message.
         /// </summary>

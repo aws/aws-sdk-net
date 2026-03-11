@@ -62,9 +62,13 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.EndpointId))
+                throw new AmazonS3OutpostsException("Request object does not have required field EndpointId set");
             
             if (publicRequest.IsSetEndpointId())
                 request.Parameters.Add("endpointId", StringUtils.FromString(publicRequest.EndpointId));
+            if (string.IsNullOrEmpty(publicRequest.OutpostId))
+                throw new AmazonS3OutpostsException("Request object does not have required field OutpostId set");
             
             if (publicRequest.IsSetOutpostId())
                 request.Parameters.Add("outpostId", StringUtils.FromString(publicRequest.OutpostId));

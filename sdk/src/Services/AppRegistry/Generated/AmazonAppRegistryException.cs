@@ -36,6 +36,14 @@ namespace Amazon.AppRegistry
         /// <summary>
         /// Construct instance of AmazonAppRegistryException
         /// </summary>
+        public AmazonAppRegistryException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppRegistryException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppRegistryException(string message)
             : base(message)

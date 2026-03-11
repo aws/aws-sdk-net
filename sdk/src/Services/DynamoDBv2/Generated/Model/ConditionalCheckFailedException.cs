@@ -40,6 +40,13 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string, AttributeValue> _item = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
 
         /// <summary>
+        /// Default constructor for ConditionalCheckFailedException
+        /// message.
+        /// </summary>
+        public ConditionalCheckFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConditionalCheckFailedException with the specified error
         /// message.
         /// </summary>

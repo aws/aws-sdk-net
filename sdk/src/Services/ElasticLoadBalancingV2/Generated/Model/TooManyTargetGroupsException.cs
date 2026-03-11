@@ -40,6 +40,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTargetGroupsException
+        /// message.
+        /// </summary>
+        public TooManyTargetGroupsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTargetGroupsException with the specified error
         /// message.
         /// </summary>

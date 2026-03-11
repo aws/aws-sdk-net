@@ -29,64 +29,72 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Metric Object
     /// </summary>  
-    public class MetricUnmarshaller : IXmlUnmarshaller<Metric, XmlUnmarshallerContext>
+    public class MetricUnmarshaller : ICborUnmarshaller<Metric, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public Metric Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public Metric Unmarshall(CborUnmarshallerContext context)
         {
             Metric unmarshalledObject = new Metric();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Dimensions/member", targetDepth))
-                    {
-                        var unmarshaller = DimensionUnmarshaller.Instance;
-                        if (unmarshalledObject.Dimensions == null)
-                        {
-                            unmarshalledObject.Dimensions = new List<Dimension>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Dimensions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Namespace", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "Dimensions":
+                        {
+                            context.AddPathSegment("Dimensions");
+                            var unmarshaller = new CborListUnmarshaller<Dimension, DimensionUnmarshaller>(DimensionUnmarshaller.Instance);
+                            unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MetricName":
+                        {
+                            context.AddPathSegment("MetricName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Namespace":
+                        {
+                            context.AddPathSegment("Namespace");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static MetricUnmarshaller _instance = new MetricUnmarshaller();        
 

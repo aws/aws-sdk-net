@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The user-specified preferences for how CloudFormation performs a stack set operation.
+    /// The user-specified preferences for how CloudFormation performs a StackSet operation.
     /// 
     ///  
     /// <para>
     /// For more information about maximum concurrent accounts and failure tolerance, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-    /// set operation options</a>.
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+    /// operation options</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>SOFT_FAILURE_TOLERANCE</c>: This option decouples <c>FailureToleranceCount</c>
-        /// from the actual concurrency. This allows stack set operations to run at the concurrency
+        /// from the actual concurrency. This allows StackSet operations to run at the concurrency
         /// level set by the <c>MaxConcurrentCount</c> value, or <c>MaxConcurrentPercentage</c>,
         /// regardless of the number of failures.
         /// </para>
@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property FailureToleranceCount. 
         /// <para>
-        /// The number of accounts, per Region, for which this operation can fail before CloudFormation
+        /// The number of accounts per Region this operation can fail in before CloudFormation
         /// stops the operation in that Region. If the operation is stopped in a Region, CloudFormation
         /// doesn't attempt the operation in any subsequent Regions.
         /// </para>
@@ -128,9 +128,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property FailureTolerancePercentage. 
         /// <para>
-        /// The percentage of accounts, per Region, for which this stack operation can fail before
-        /// CloudFormation stops the operation in that Region. If the operation is stopped in
-        /// a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.
+        /// The percentage of accounts per Region this stack operation can fail in before CloudFormation
+        /// stops the operation in that Region. If the operation is stopped in a Region, CloudFormation
+        /// doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
         /// <para>

@@ -36,6 +36,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Construct instance of AmazonRDSException
         /// </summary>
+        public AmazonRDSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRDSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRDSException(string message)
             : base(message)

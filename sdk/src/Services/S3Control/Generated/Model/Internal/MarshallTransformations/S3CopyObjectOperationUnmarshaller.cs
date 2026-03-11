@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3CopyObjectOperation Object
     /// </summary>  
-    public class S3CopyObjectOperationUnmarshaller : IXmlUnmarshaller<S3CopyObjectOperation, XmlUnmarshallerContext>
+    public partial class S3CopyObjectOperationUnmarshaller : IXmlUnmarshaller<S3CopyObjectOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -172,6 +172,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.UnModifiedSinceConstraint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -180,6 +182,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3CopyObjectOperation unmarshalledObject, int targetDepth);
+
         private static S3CopyObjectOperationUnmarshaller _instance = new S3CopyObjectOperationUnmarshaller();        
 
         /// <summary>

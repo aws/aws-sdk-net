@@ -36,6 +36,14 @@ namespace Amazon.Notifications
         /// <summary>
         /// Construct instance of AmazonNotificationsException
         /// </summary>
+        public AmazonNotificationsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonNotificationsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonNotificationsException(string message)
             : base(message)

@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for UpgradeDependencyFailureException
+        /// message.
+        /// </summary>
+        public UpgradeDependencyFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UpgradeDependencyFailureException with the specified error
         /// message.
         /// </summary>

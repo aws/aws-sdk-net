@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginGroupFailoverCriteria Object
     /// </summary>  
-    public class OriginGroupFailoverCriteriaUnmarshaller : IXmlUnmarshaller<OriginGroupFailoverCriteria, XmlUnmarshallerContext>
+    public partial class OriginGroupFailoverCriteriaUnmarshaller : IXmlUnmarshaller<OriginGroupFailoverCriteria, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.StatusCodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, OriginGroupFailoverCriteria unmarshalledObject, int targetDepth);
+
         private static OriginGroupFailoverCriteriaUnmarshaller _instance = new OriginGroupFailoverCriteriaUnmarshaller();        
 
         /// <summary>

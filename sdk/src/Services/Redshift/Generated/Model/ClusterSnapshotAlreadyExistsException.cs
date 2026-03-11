@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSnapshotAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ClusterSnapshotAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSnapshotAlreadyExistsException with the specified error
         /// message.
         /// </summary>

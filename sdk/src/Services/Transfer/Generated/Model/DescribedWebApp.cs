@@ -36,7 +36,9 @@ namespace Amazon.Transfer.Model
     {
         private string _accessEndpoint;
         private string _arn;
+        private DescribedWebAppEndpointDetails _describedEndpointDetails;
         private DescribedWebAppIdentityProviderDetails _describedIdentityProviderDetails;
+        private WebAppEndpointType _endpointType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _webAppEndpoint;
         private WebAppEndpointPolicy _webAppEndpointPolicy;
@@ -84,6 +86,25 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DescribedEndpointDetails. 
+        /// <para>
+        /// The endpoint configuration details for the web app, including VPC settings if the
+        /// endpoint is hosted within a VPC.
+        /// </para>
+        /// </summary>
+        public DescribedWebAppEndpointDetails DescribedEndpointDetails
+        {
+            get { return this._describedEndpointDetails; }
+            set { this._describedEndpointDetails = value; }
+        }
+
+        // Check to see if DescribedEndpointDetails property is set
+        internal bool IsSetDescribedEndpointDetails()
+        {
+            return this._describedEndpointDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DescribedIdentityProviderDetails. 
         /// <para>
         /// A structure that contains the details for the identity provider used by the web app.
@@ -99,6 +120,26 @@ namespace Amazon.Transfer.Model
         internal bool IsSetDescribedIdentityProviderDetails()
         {
             return this._describedIdentityProviderDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of endpoint hosting the web app. Valid values are <c>PUBLIC</c> for publicly
+        /// accessible endpoints and <c>VPC</c> for VPC-hosted endpoints that provide network
+        /// isolation.
+        /// </para>
+        /// </summary>
+        public WebAppEndpointType EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
         }
 
         /// <summary>

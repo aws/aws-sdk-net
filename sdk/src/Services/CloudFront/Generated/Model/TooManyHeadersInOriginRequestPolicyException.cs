@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyHeadersInOriginRequestPolicyException
+        /// message.
+        /// </summary>
+        public TooManyHeadersInOriginRequestPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyHeadersInOriginRequestPolicyException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AutomationDefinitionVersionNotFoundException
+        /// message.
+        /// </summary>
+        public AutomationDefinitionVersionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AutomationDefinitionVersionNotFoundException with the specified error
         /// message.
         /// </summary>

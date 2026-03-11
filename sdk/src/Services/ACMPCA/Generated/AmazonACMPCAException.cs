@@ -36,6 +36,14 @@ namespace Amazon.ACMPCA
         /// <summary>
         /// Construct instance of AmazonACMPCAException
         /// </summary>
+        public AmazonACMPCAException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonACMPCAException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonACMPCAException(string message)
             : base(message)

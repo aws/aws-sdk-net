@@ -36,6 +36,14 @@ namespace Amazon.IoTSiteWise
         /// <summary>
         /// Construct instance of AmazonIoTSiteWiseException
         /// </summary>
+        public AmazonIoTSiteWiseException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTSiteWiseException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTSiteWiseException(string message)
             : base(message)

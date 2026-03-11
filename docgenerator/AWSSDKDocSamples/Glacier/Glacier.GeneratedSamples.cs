@@ -458,7 +458,6 @@ namespace AWSSDKDocSamples.Amazon.Glacier.Generated
             var response = client.ListVaults(new ListVaultsRequest 
             {
                 AccountId = "-",
-                Limit = "",
                 Marker = ""
             });
 

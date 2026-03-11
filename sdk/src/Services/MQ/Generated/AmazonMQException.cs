@@ -36,6 +36,14 @@ namespace Amazon.MQ
         /// <summary>
         /// Construct instance of AmazonMQException
         /// </summary>
+        public AmazonMQException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMQException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMQException(string message)
             : base(message)

@@ -36,7 +36,7 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// 1 Paginated PDF
+    /// 1 PDF
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -46,7 +46,11 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// 5 CSVs from table or pivot table visuals
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// Exporting CSV, Excel, or Pixel Perfect PDF reports requires Pixel Perfect Report Add-on.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The status of a submitted job can be polled with the <c>DescribeDashboardSnapshotJob</c>
     /// API. When you call the <c>DescribeDashboardSnapshotJob</c> API, check the <c>JobStatus</c>
@@ -61,13 +65,13 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon QuickSight utilizes API throttling to create a more consistent user experience
-    /// within a time span for customers when they call the <c>StartDashboardSnapshotJob</c>.
-    /// By default, 12 jobs can run simlutaneously in one Amazon Web Services account and
-    /// users can submit up 10 API requests per second before an account is throttled. If
-    /// an overwhelming number of API requests are made by the same user in a short period
-    /// of time, Amazon QuickSight throttles the API calls to maintin an optimal experience
-    /// and reliability for all Amazon QuickSight users.
+    /// Quick Sight utilizes API throttling to create a more consistent user experience within
+    /// a time span for customers when they call the <c>StartDashboardSnapshotJob</c>. By
+    /// default, 12 jobs can run simlutaneously in one Amazon Web Services account and users
+    /// can submit up 10 API requests per second before an account is throttled. If an overwhelming
+    /// number of API requests are made by the same user in a short period of time, Quick
+    /// Sight throttles the API calls to maintin an optimal experience and reliability for
+    /// all Quick Sight users.
     /// </para>
     ///  
     /// <para>
@@ -89,8 +93,8 @@ namespace Amazon.QuickSight.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>A large number of API requests are submitted on an Amazon Web Services account.</b>
-    /// When a user makes more than 10 API calls to the Amazon QuickSight API in one second,
-    /// a <c>ThrottlingException</c> is returned.
+    /// When a user makes more than 10 API calls to the Quick Sight API in one second, a <c>ThrottlingException</c>
+    /// is returned.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -107,7 +111,7 @@ namespace Amazon.QuickSight.Model
     /// If your use case projects high levels of API traffic, try to reduce the degree of
     /// frequency and parallelism of API calls as much as you can to avoid throttling. You
     /// can also perform a timing test to calculate an estimate for the total processing time
-    /// of your projected load that stays within the throttling limits of the Amazon QuickSight
+    /// of your projected load that stays within the throttling limits of the Quick Sight
     /// APIs. For example, if your projected traffic is 100 snapshot jobs before 12:00 PM
     /// per day, start 12 jobs in parallel and measure the amount of time it takes to proccess
     /// all 12 jobs. Once you obtain the result, multiply the duration by 9, for example <c>(12
@@ -145,6 +149,120 @@ namespace Amazon.QuickSight.Model
     ///  </li> <li> 
     /// <para>
     /// The size of the generated snapshots.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Registered user support</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can generate snapshots for registered Quick Sight users by using the Snapshot
+    /// Job APIs with <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">identity-enhanced
+    /// IAM role session credentials</a>. This approach allows you to create snapshots on
+    /// behalf of specific Quick Sight users while respecting their row-level security (RLS),
+    /// column-level security (CLS), dynamic default parameters and dashboard parameter/filter
+    /// settings.
+    /// </para>
+    ///  
+    /// <para>
+    /// To generate snapshots for registered Quick Sight users, you need to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Obtain identity-enhanced IAM role session credentials from Amazon Web Services Security
+    /// Token Service (STS).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use these credentials to call the Snapshot Job APIs.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Identity-enhanced credentials are credentials that contain information about the end
+    /// user (e.g., registered Quick Sight user).
+    /// </para>
+    ///  
+    /// <para>
+    /// If your Quick Sight users are backed by <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+    /// Web Services Identity Center</a>, then you need to set up a <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
+    /// token issuer</a>. Then, getting identity-enhanced IAM credentials for a Quick Sight
+    /// user will look like the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Authenticate user with your OIDC compliant Identity Provider. You should get auth
+    /// tokens back.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use the OIDC API, <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html">CreateTokenWithIAM</a>,
+    /// to exchange auth tokens to IAM tokens. One of the resulted tokens will be identity
+    /// token.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call STS AssumeRole API as you normally would, but provide an extra <c>ProvidedContexts</c>
+    /// parameter in the API request. The list of contexts must have a single trusted context
+    /// assertion. The <c>ProviderArn</c> should be <c>arn:aws:iam::aws:contextProvider/IdentityCenter</c>
+    /// while <c>ContextAssertion</c> will be the identity token you received in response
+    /// from CreateTokenWithIAM
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more details, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">IdC
+    /// documentation on Identity-enhanced IAM role sessions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To obtain Identity-enhanced credentials for Quick Sight native users, IAM federated
+    /// users, or Active Directory users, follow the steps below:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Call Quick Sight <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html">GetIdentityContext
+    /// API</a> to get identity token.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call STS AssumeRole API as you normally would, but provide extra <c>ProvidedContexts</c>
+    /// parameter in the API request. The list of contexts must have a single trusted context
+    /// assertion. The <c>ProviderArn</c> should be <c>arn:aws:iam::aws:contextProvider/QuickSight</c>
+    /// while <c>ContextAssertion</c> will be the identity token you received in response
+    /// from GetIdentityContext
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// After obtaining the identity-enhanced IAM role session credentials, you can use them
+    /// to start a job, describe the job and describe job result. You can use the same credentials
+    /// as long as they haven't expired. All API requests made with these credentials are
+    /// considered to be made by the impersonated Quick Sight user.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// When using identity-enhanced session credentials, set the UserConfiguration request
+    /// attribute to null. Otherwise, the request will be invalid.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    ///  <b>Possible error scenarios</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The request fails with an Access Denied error in the following scenarios:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The credentials have expired.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The impersonated Quick Sight user doesn't have access to the specified dashboard.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The impersonated Quick Sight user is restricted from exporting data in the selected
+    /// formats. For more information about export restrictions, see <a href="https://docs.aws.amazon.com/quicksuite/latest/userguide/create-custom-permisions-profile.html">Customizing
+    /// access to Amazon Quick Sight capabilities</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -239,11 +357,17 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserConfiguration. 
         /// <para>
-        ///  A structure that contains information about the anonymous users that the generated
-        /// snapshot is for. This API will not return information about registered Amazon QuickSight.
+        /// A structure that contains information about the users that the dashboard snapshot
+        /// is generated for. The users can be either anonymous users or registered users. Anonymous
+        /// users cannot be used together with registered users.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When using identity-enhanced session credentials, set the UserConfiguration request
+        /// attribute to null. Otherwise, the request will be invalid.
+        /// </para>
+        ///  </important>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SnapshotUserConfiguration UserConfiguration
         {
             get { return this._userConfiguration; }

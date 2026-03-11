@@ -36,6 +36,14 @@ namespace Amazon.AugmentedAIRuntime
         /// <summary>
         /// Construct instance of AmazonAugmentedAIRuntimeException
         /// </summary>
+        public AmazonAugmentedAIRuntimeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAugmentedAIRuntimeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAugmentedAIRuntimeException(string message)
             : base(message)

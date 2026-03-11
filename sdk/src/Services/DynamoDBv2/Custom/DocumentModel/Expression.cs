@@ -1,17 +1,17 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -86,11 +86,41 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void ApplyExpression(ScanRequest request, Table table)
         {
             request.FilterExpression = this.ExpressionStatement;
-            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+
+            if (this.ExpressionAttributeValues?.Count > 0)
+            {
+                if (request.ExpressionAttributeValues == null)
+                {
+                    request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+                }
+                else
+                {
+                    var reqEav = request.ExpressionAttributeValues;
+                    var feav = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+                    var combinedEav = Common.Combine(reqEav, feav, null);
+
+
+                    if (combinedEav?.Count > 0)
+                    {
+                        request.ExpressionAttributeValues = combinedEav;
+                    }
+                }
+
+            }
 
             if (this.ExpressionAttributeNames?.Count > 0)
             {
-                request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+                if (request.ExpressionAttributeNames==null)
+                {
+                    request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+                }
+                else
+                {
+                    var combinedEan= Common.Combine(request.ExpressionAttributeNames,
+                        this.ExpressionAttributeNames, StringComparer.Ordinal);
+
+                    request.ExpressionAttributeNames = combinedEan;
+                }
             }
         }
 
@@ -109,7 +139,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             request.ConditionExpression = this.ExpressionStatement;
             request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
-        
+
             if (this.ExpressionAttributeNames?.Count > 0)
             {
                 request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
@@ -125,6 +155,47 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             }
+        }
+
+        internal void ApplyConditionalExpression(UpdateItemRequest request, Table table)
+        {
+            request.ConditionExpression = this.ExpressionStatement;
+            MergeAttributes(request, table);
+        }
+
+        internal void ApplyUpdateExpression(UpdateItemRequest request, Table table)
+        {
+            request.UpdateExpression = this.ExpressionStatement;
+            MergeAttributes(request, table);
+        }
+
+        private void MergeAttributes(UpdateItemRequest request, Table table)
+        {
+            var convertToAttributeValues  = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+            request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+            foreach (var kvp in convertToAttributeValues)
+            {
+                request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+            }
+
+
+            if (this.ExpressionAttributeNames?.Count > 0)
+            {
+                request.ExpressionAttributeNames ??= new Dictionary<string, string>(StringComparer.Ordinal);
+                foreach (var kvp in this.ExpressionAttributeNames)
+                {
+                    if (!request.ExpressionAttributeNames.ContainsKey(kvp.Key))
+                    {
+                        request.ExpressionAttributeNames[kvp.Key] = kvp.Value;
+                    }
+                }
+            }
+        }
+
+        internal void ApplyExpression(GetItemRequest request, Table table)
+        {
+            request.ProjectionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
         }
 
         internal void ApplyExpression(Get request, Table table)
@@ -198,7 +269,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var fean = filterExpression.ExpressionAttributeNames;
             var combinedEan = Common.Combine(kean, fean, StringComparer.Ordinal);
 
-            if(combinedEan?.Count > 0)
+            if (combinedEan?.Count > 0)
             {
                 request.ExpressionAttributeNames = combinedEan;
             }

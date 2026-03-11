@@ -41,6 +41,13 @@ namespace Amazon.SocialMessaging.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for DependencyException
+        /// message.
+        /// </summary>
+        public DependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyException with the specified error
         /// message.
         /// </summary>

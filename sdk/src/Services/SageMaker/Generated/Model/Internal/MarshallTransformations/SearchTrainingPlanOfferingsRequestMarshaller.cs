@@ -116,6 +116,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetUltraServerCount())
+            {
+                context.Writer.WritePropertyName("UltraServerCount");
+                context.Writer.WriteNumberValue(publicRequest.UltraServerCount.Value);
+            }
+
+            if(publicRequest.IsSetUltraServerType())
+            {
+                context.Writer.WritePropertyName("UltraServerType");
+                context.Writer.WriteStringValue(publicRequest.UltraServerType);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

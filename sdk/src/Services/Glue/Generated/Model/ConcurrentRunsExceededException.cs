@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentRunsExceededException
+        /// message.
+        /// </summary>
+        public ConcurrentRunsExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentRunsExceededException with the specified error
         /// message.
         /// </summary>

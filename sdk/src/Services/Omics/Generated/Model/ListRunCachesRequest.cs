@@ -31,7 +31,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRunCaches operation.
-    /// Retrieves a list of your run caches.
+    /// Retrieves a list of your run caches and the metadata for each cache.
     /// </summary>
     public partial class ListRunCachesRequest : AmazonOmicsRequest
     {

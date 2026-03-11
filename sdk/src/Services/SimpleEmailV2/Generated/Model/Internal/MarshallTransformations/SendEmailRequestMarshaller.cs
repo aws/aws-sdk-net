@@ -169,6 +169,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetTenantName())
+            {
+                context.Writer.WritePropertyName("TenantName");
+                context.Writer.WriteStringValue(publicRequest.TenantName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormQuestion
     {
+        private EvaluationFormItemEnablementConfiguration _enablement;
         private string _instructions;
         private bool? _notApplicableEnabled;
         private EvaluationFormQuestionType _questionType;
@@ -43,12 +44,29 @@ namespace Amazon.Connect.Model
         private double? _weight;
 
         /// <summary>
+        /// Gets and sets the property Enablement. 
+        /// <para>
+        /// A question conditional enablement.
+        /// </para>
+        /// </summary>
+        public EvaluationFormItemEnablementConfiguration Enablement
+        {
+            get { return this._enablement; }
+            set { this._enablement = value; }
+        }
+
+        // Check to see if Enablement property is set
+        internal bool IsSetEnablement()
+        {
+            return this._enablement != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Instructions. 
         /// <para>
         /// The instructions of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Instructions
         {
             get { return this._instructions; }
@@ -124,7 +142,7 @@ namespace Amazon.Connect.Model
         /// form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string RefId
         {
             get { return this._refId; }
@@ -143,7 +161,7 @@ namespace Amazon.Connect.Model
         /// The title of the question.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=350)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }
@@ -162,7 +180,6 @@ namespace Amazon.Connect.Model
         /// The scoring weight of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public double? Weight
         {
             get { return this._weight; }

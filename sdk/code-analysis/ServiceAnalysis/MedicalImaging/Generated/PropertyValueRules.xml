@@ -31,6 +31,10 @@
     <pattern>arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})|(alias/[a-zA-Z0-9:/_-]{1,256}))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.CreateDatastoreRequest.LambdaAuthorizerArn</property>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MedicalImaging.Model.CreateDatastoreResponse.DatastoreId</property>
     <pattern>[0-9a-z]{32}</pattern>
   </property-value-rule>
@@ -351,6 +355,10 @@
     <pattern>arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})|(alias/[a-zA-Z0-9:/_-]{1,256}))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DatastoreProperties.LambdaAuthorizerArn</property>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DatastoreSummary.DatastoreArn</property>
     <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:medical-imaging:[a-z0-9-]+:[0-9]{12}:datastore/[0-9a-z]{32}(/imageset/[0-9a-z]{32})?</pattern>
   </property-value-rule>
@@ -450,7 +458,7 @@
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMNumberOfStudyRelatedInstances</property>
     <min>0</min>
-    <max>10000</max>
+    <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMNumberOfStudyRelatedSeries</property>
@@ -486,7 +494,7 @@
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMSeriesInstanceUID</property>
     <min>0</min>
     <max>256</max>
-    <pattern>(?:[0-9][0-9]*|0)(\.(?:[1-9][0-9]*|0))*</pattern>
+    <pattern>(?:[0-9][0-9]*|0)(\.(?:[0-9][0-9]*|0))*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMSeriesModality</property>
@@ -506,18 +514,18 @@
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMStudyDescription</property>
     <min>0</min>
-    <max>64</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMStudyId</property>
     <min>0</min>
-    <max>16</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMStudyInstanceUID</property>
     <min>0</min>
     <max>256</max>
-    <pattern>(?:[0-9][0-9]*|0)(\.(?:[1-9][0-9]*|0))*</pattern>
+    <pattern>(?:[0-9][0-9]*|0)(\.(?:[0-9][0-9]*|0))*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMStudyTime</property>
@@ -579,17 +587,17 @@
     <property>Amazon.MedicalImaging.Model.SearchByAttributeValue.DICOMSeriesInstanceUID</property>
     <min>0</min>
     <max>256</max>
-    <pattern>(?:[0-9][0-9]*|0)(\.(?:[1-9][0-9]*|0))*</pattern>
+    <pattern>(?:[0-9][0-9]*|0)(\.(?:[0-9][0-9]*|0))*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.SearchByAttributeValue.DICOMStudyId</property>
     <min>0</min>
-    <max>16</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.SearchByAttributeValue.DICOMStudyInstanceUID</property>
     <min>0</min>
     <max>256</max>
-    <pattern>(?:[0-9][0-9]*|0)(\.(?:[1-9][0-9]*|0))*</pattern>
+    <pattern>(?:[0-9][0-9]*|0)(\.(?:[0-9][0-9]*|0))*</pattern>
   </property-value-rule>
 </property-value-rules>

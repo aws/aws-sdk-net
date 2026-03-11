@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeviceException
+        /// message.
+        /// </summary>
+        public InvalidDeviceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeviceException with the specified error
         /// message.
         /// </summary>

@@ -4,25 +4,25 @@
     <property>Amazon.MarketplaceAgreement.Model.DescribeAgreementRequest.AgreementId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+    <pattern>[A-Za-z0-9_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.DescribeAgreementResponse.AgreementId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+    <pattern>[A-Za-z0-9_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.DescribeAgreementResponse.AgreementType</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementTermsRequest.AgreementId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+    <pattern>[A-Za-z0-9_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementTermsRequest.MaxResults</property>
@@ -33,19 +33,19 @@
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementTermsRequest.NextToken</property>
     <min>0</min>
     <max>8192</max>
-    <pattern>^[a-zA-Z0-9+/=]+$</pattern>
+    <pattern>[a-zA-Z0-9+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GetAgreementTermsResponse.NextToken</property>
     <min>0</min>
     <max>8192</max>
-    <pattern>^[a-zA-Z0-9+/=]+$</pattern>
+    <pattern>[a-zA-Z0-9+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.SearchAgreementsRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.SearchAgreementsRequest.MaxResults</property>
@@ -56,79 +56,79 @@
     <property>Amazon.MarketplaceAgreement.Model.SearchAgreementsRequest.NextToken</property>
     <min>0</min>
     <max>8192</max>
-    <pattern>^[a-zA-Z0-9+/=]+$</pattern>
+    <pattern>[a-zA-Z0-9+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.SearchAgreementsResponse.NextToken</property>
     <min>0</min>
     <max>8192</max>
-    <pattern>^[a-zA-Z0-9+/=]+$</pattern>
+    <pattern>[a-zA-Z0-9+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Acceptor.AccountId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.AccessDeniedException.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.AgreementViewSummary.AgreementId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+    <pattern>[A-Za-z0-9_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.AgreementViewSummary.AgreementType</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ByolPricingTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ConfigurableUpfrontPricingTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>^[A-Z]+$</pattern>
+    <pattern>[A-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ConfigurableUpfrontPricingTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ConfigurableUpfrontPricingTermConfiguration.SelectorValue</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Constraints.MultipleDimensionSelection</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Constraints.QuantityConfiguration</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Dimension.DimensionKey</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Dimension.DimensionValue</property>
@@ -138,79 +138,79 @@
     <property>Amazon.MarketplaceAgreement.Model.DocumentItem.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.DocumentItem.Url</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.DocumentItem.Version</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.EstimatedCharges.AgreementValue</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.EstimatedCharges.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>^[A-Z]+$</pattern>
+    <pattern>[A-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Filter.Name</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z_]+$</pattern>
+    <pattern>[A-Za-z_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.FixedUpfrontPricingTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>^[A-Z]+$</pattern>
+    <pattern>[A-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.FixedUpfrontPricingTerm.Duration</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.FixedUpfrontPricingTerm.Price</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.FixedUpfrontPricingTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.FreeTrialPricingTerm.Duration</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.FreeTrialPricingTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GrantItem.DimensionKey</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.GrantItem.MaxQuantity</property>
@@ -220,186 +220,212 @@
     <property>Amazon.MarketplaceAgreement.Model.InternalServerException.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.LegalTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.PaymentScheduleTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>^[A-Z]+$</pattern>
+    <pattern>[A-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.PaymentScheduleTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ProposalSummary.OfferId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^\S{1,64}$</pattern>
+    <pattern>\S{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.ProposalSummary.OfferSetId</property>
+    <pattern>\S{1,50}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Proposer.AccountId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RateCardItem.DimensionKey</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RateCardItem.Price</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RecurringPaymentTerm.BillingPeriod</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RecurringPaymentTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>^[A-Z]+$</pattern>
+    <pattern>[A-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RecurringPaymentTerm.Price</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RecurringPaymentTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RenewalTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Resource.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+    <pattern>[A-Za-z0-9_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Resource.Type</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ResourceNotFoundException.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ResourceNotFoundException.ResourceId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+    <pattern>[A-Za-z0-9_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ScheduleItem.ChargeAmount</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Selector.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Selector.Value</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.Sort.SortBy</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z_]+$</pattern>
+    <pattern>[A-Za-z_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.SupportTerm.RefundPolicy</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.SupportTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ThrottlingException.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.UsageBasedPricingTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>^[A-Z]+$</pattern>
+    <pattern>[A-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.UsageBasedPricingTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ValidationException.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ValidationExceptionField.Message</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ValidationExceptionField.Name</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ValidityTerm.AgreementDuration</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^(.)+$</pattern>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.ValidityTerm.Type</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[A-Za-z]+$</pattern>
+    <pattern>[A-Za-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.VariablePaymentTerm.CurrencyCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>[A-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.VariablePaymentTerm.MaxTotalChargeAmount</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.VariablePaymentTerm.Type</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[A-Za-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.VariablePaymentTermConfiguration.ExpirationDuration</property>
+    <pattern>([-+]?)P(?:([-+]?[0-9]+)D)?(T(?:([-+]?[0-9]+)H)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)(?:[.,]([0-9]{0,9}))?S)?)?</pattern>
   </property-value-rule>
 </property-value-rules>

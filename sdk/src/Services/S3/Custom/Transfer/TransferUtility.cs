@@ -71,14 +71,7 @@ namespace Amazon.S3.Transfer
         {
             "s3-object-lambda"
         };
-        private static Logger Logger
-        {
-            get
-            {
-
-                return Logger.GetLogger(typeof(ITransferUtility));
-            }
-        }
+        private readonly Logger _logger = Logger.GetLogger(typeof(TransferUtility));
         #region Constructors
 
         /// <summary>
@@ -386,7 +379,7 @@ namespace Amazon.S3.Transfer
             };
         }
 
-        internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request)
+        internal BaseCommand<TransferUtilityUploadResponse> GetUploadCommand(TransferUtilityUploadRequest request)
         {
             validate(request);
 

@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for PreconditionsFailedException
+        /// message.
+        /// </summary>
+        public PreconditionsFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PreconditionsFailedException with the specified error
         /// message.
         /// </summary>

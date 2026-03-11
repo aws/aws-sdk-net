@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for NumberDomainAttributesExceededException
+        /// message.
+        /// </summary>
+        public NumberDomainAttributesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NumberDomainAttributesExceededException with the specified error
         /// message.
         /// </summary>

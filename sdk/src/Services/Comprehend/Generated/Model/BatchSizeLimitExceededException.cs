@@ -40,6 +40,13 @@ namespace Amazon.Comprehend.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public BatchSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

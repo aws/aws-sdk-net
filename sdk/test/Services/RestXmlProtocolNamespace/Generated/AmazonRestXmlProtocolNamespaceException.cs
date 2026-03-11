@@ -36,6 +36,14 @@ namespace Amazon.RestXmlProtocolNamespace
         /// <summary>
         /// Construct instance of AmazonRestXmlProtocolNamespaceException
         /// </summary>
+        public AmazonRestXmlProtocolNamespaceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRestXmlProtocolNamespaceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRestXmlProtocolNamespaceException(string message)
             : base(message)

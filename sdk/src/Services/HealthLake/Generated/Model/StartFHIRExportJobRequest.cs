@@ -31,7 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the StartFHIRExportJob operation.
-    /// Begins a FHIR export job.
+    /// Start a FHIR export job.
     /// </summary>
     public partial class StartFHIRExportJobRequest : AmazonHealthLakeRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// An optional user provided token used for ensuring idempotency.
+        /// An optional user provided token used for ensuring API idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -63,7 +63,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name used during the initiation of the job.
+        /// The Amazon Resource Name (ARN) used during initiation of the export job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -82,8 +82,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS generated ID for the data store from which files are being exported for an
-        /// export job.
+        /// The data store identifier from which files are being exported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -102,7 +101,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The user generated name for an export job.
+        /// The export job name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -121,7 +120,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// The output data configuration that was supplied when the export job was created.
+        /// The output data configuration supplied when the export job was started.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

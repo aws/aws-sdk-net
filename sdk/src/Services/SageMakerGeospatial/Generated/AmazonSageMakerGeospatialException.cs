@@ -36,6 +36,14 @@ namespace Amazon.SageMakerGeospatial
         /// <summary>
         /// Construct instance of AmazonSageMakerGeospatialException
         /// </summary>
+        public AmazonSageMakerGeospatialException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSageMakerGeospatialException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSageMakerGeospatialException(string message)
             : base(message)

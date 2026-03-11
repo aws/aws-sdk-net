@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _clientId;
         private string _clientSecret;
+        private string _tenantId;
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -73,6 +74,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetClientSecret()
         {
             return this._clientSecret != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantId. 
+        /// <para>
+        /// The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies
+        /// the specific tenant within Microsoft's identity platform where your application is
+        /// registered.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string TenantId
+        {
+            get { return this._tenantId; }
+            set { this._tenantId = value; }
+        }
+
+        // Check to see if TenantId property is set
+        internal bool IsSetTenantId()
+        {
+            return this._tenantId != null;
         }
 
     }

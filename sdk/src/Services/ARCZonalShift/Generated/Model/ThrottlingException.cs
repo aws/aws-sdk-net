@@ -39,6 +39,13 @@ namespace Amazon.ARCZonalShift.Model
     {
 
         /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>

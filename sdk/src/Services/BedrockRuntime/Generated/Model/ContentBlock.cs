@@ -37,16 +37,36 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlock
     {
+        private AudioBlock _audio;
         private CachePointBlock _cachePoint;
         private CitationsContentBlock _citationsContent;
         private DocumentBlock _document;
         private GuardrailConverseContentBlock _guardContent;
         private ImageBlock _image;
         private ReasoningContentBlock _reasoningContent;
+        private SearchResultBlock _searchResult;
         private string _text;
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
         private VideoBlock _video;
+
+        /// <summary>
+        /// Gets and sets the property Audio. 
+        /// <para>
+        /// An audio content block containing audio data in the conversation.
+        /// </para>
+        /// </summary>
+        public AudioBlock Audio
+        {
+            get { return this._audio; }
+            set { this._audio = value; }
+        }
+
+        // Check to see if Audio property is set
+        internal bool IsSetAudio()
+        {
+            return this._audio != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CachePoint. 
@@ -113,7 +133,7 @@ namespace Amazon.BedrockRuntime.Model
         ///  
         /// <para>
         /// For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
-        /// Bedrock User Guide</i>. 
+        /// Bedrock User Guide</i>.
         /// </para>
         /// </summary>
         public GuardrailConverseContentBlock GuardContent
@@ -170,6 +190,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetReasoningContent()
         {
             return this._reasoningContent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchResult. 
+        /// <para>
+        /// Search result to include in the message.
+        /// </para>
+        /// </summary>
+        public SearchResultBlock SearchResult
+        {
+            get { return this._searchResult; }
+            set { this._searchResult = value; }
+        }
+
+        // Check to see if SearchResult property is set
+        internal bool IsSetSearchResult()
+        {
+            return this._searchResult != null;
         }
 
         /// <summary>

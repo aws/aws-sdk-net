@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBProxyTargetNotFoundException
+        /// message.
+        /// </summary>
+        public DBProxyTargetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBProxyTargetNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -75,6 +75,56 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type AttributeEntityType.
+    /// </summary>
+    public class AttributeEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for AttributeEntityType
+        /// </summary>
+        public static readonly AttributeEntityType ASSET = new AttributeEntityType("ASSET");
+        /// <summary>
+        /// Constant LISTING for AttributeEntityType
+        /// </summary>
+        public static readonly AttributeEntityType LISTING = new AttributeEntityType("LISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeEntityType FindValue(string value)
+        {
+            return FindValue<AttributeEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -333,6 +383,106 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationStatus.
+    /// </summary>
+    public class ConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus COMPLETED = new ConfigurationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus FAILED = new ConfigurationStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionScope.
+    /// </summary>
+    public class ConnectionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN for ConnectionScope
+        /// </summary>
+        public static readonly ConnectionScope DOMAIN = new ConnectionScope("DOMAIN");
+        /// <summary>
+        /// Constant PROJECT for ConnectionScope
+        /// </summary>
+        public static readonly ConnectionScope PROJECT = new ConnectionScope("PROJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionScope FindValue(string value)
+        {
+            return FindValue<ConnectionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionStatus.
     /// </summary>
     public class ConnectionStatus : ConstantClass
@@ -413,6 +563,10 @@ namespace Amazon.DataZone
     {
 
         /// <summary>
+        /// Constant AMAZON_Q for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType AMAZON_Q = new ConnectionType("AMAZON_Q");
+        /// <summary>
         /// Constant ATHENA for ConnectionType
         /// </summary>
         public static readonly ConnectionType ATHENA = new ConnectionType("ATHENA");
@@ -440,6 +594,10 @@ namespace Amazon.DataZone
         /// Constant IAM for ConnectionType
         /// </summary>
         public static readonly ConnectionType IAM = new ConnectionType("IAM");
+        /// <summary>
+        /// Constant MLFLOW for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MLFLOW = new ConnectionType("MLFLOW");
         /// <summary>
         /// Constant MYSQL for ConnectionType
         /// </summary>
@@ -1623,6 +1781,72 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type FilterOperator.
+    /// </summary>
+    public class FilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQ for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator EQ = new FilterOperator("EQ");
+        /// <summary>
+        /// Constant GE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator GE = new FilterOperator("GE");
+        /// <summary>
+        /// Constant GT for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator GT = new FilterOperator("GT");
+        /// <summary>
+        /// Constant LE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator LE = new FilterOperator("LE");
+        /// <summary>
+        /// Constant LT for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator LT = new FilterOperator("LT");
+        /// <summary>
+        /// Constant TEXT_SEARCH for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator TEXT_SEARCH = new FilterOperator("TEXT_SEARCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterOperator FindValue(string value)
+        {
+            return FindValue<FilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterStatus.
     /// </summary>
     public class FilterStatus : ConstantClass
@@ -1823,6 +2047,52 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type GlossaryUsageRestriction.
+    /// </summary>
+    public class GlossaryUsageRestriction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET_GOVERNED_TERMS for GlossaryUsageRestriction
+        /// </summary>
+        public static readonly GlossaryUsageRestriction ASSET_GOVERNED_TERMS = new GlossaryUsageRestriction("ASSET_GOVERNED_TERMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlossaryUsageRestriction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlossaryUsageRestriction FindValue(string value)
+        {
+            return FindValue<GlossaryUsageRestriction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlossaryUsageRestriction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlueConnectionType.
     /// </summary>
     public class GlueConnectionType : ConstantClass
@@ -1960,6 +2230,98 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GovernanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GovernedEntityType.
+    /// </summary>
+    public class GovernedEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for GovernedEntityType
+        /// </summary>
+        public static readonly GovernedEntityType ASSET = new GovernedEntityType("ASSET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GovernedEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GovernedEntityType FindValue(string value)
+        {
+            return FindValue<GovernedEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GovernedEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GraphEntityType.
+    /// </summary>
+    public class GraphEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINEAGE_NODE for GraphEntityType
+        /// </summary>
+        public static readonly GraphEntityType LINEAGE_NODE = new GraphEntityType("LINEAGE_NODE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GraphEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GraphEntityType FindValue(string value)
+        {
+            return FindValue<GraphEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GraphEntityType(string value)
         {
             return FindValue(value);
         }
@@ -2631,6 +2993,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly MetadataGenerationRunStatus IN_PROGRESS = new MetadataGenerationRunStatus("IN_PROGRESS");
         /// <summary>
+        /// Constant PARTIALLY_SUCCEEDED for MetadataGenerationRunStatus
+        /// </summary>
+        public static readonly MetadataGenerationRunStatus PARTIALLY_SUCCEEDED = new MetadataGenerationRunStatus("PARTIALLY_SUCCEEDED");
+        /// <summary>
         /// Constant SUBMITTED for MetadataGenerationRunStatus
         /// </summary>
         public static readonly MetadataGenerationRunStatus SUBMITTED = new MetadataGenerationRunStatus("SUBMITTED");
@@ -2684,6 +3050,14 @@ namespace Amazon.DataZone
         /// Constant BUSINESS_DESCRIPTIONS for MetadataGenerationRunType
         /// </summary>
         public static readonly MetadataGenerationRunType BUSINESS_DESCRIPTIONS = new MetadataGenerationRunType("BUSINESS_DESCRIPTIONS");
+        /// <summary>
+        /// Constant BUSINESS_GLOSSARY_ASSOCIATIONS for MetadataGenerationRunType
+        /// </summary>
+        public static readonly MetadataGenerationRunType BUSINESS_GLOSSARY_ASSOCIATIONS = new MetadataGenerationRunType("BUSINESS_GLOSSARY_ASSOCIATIONS");
+        /// <summary>
+        /// Constant BUSINESS_NAMES for MetadataGenerationRunType
+        /// </summary>
+        public static readonly MetadataGenerationRunType BUSINESS_NAMES = new MetadataGenerationRunType("BUSINESS_NAMES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3179,6 +3553,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ProjectStatus DELETING = new ProjectStatus("DELETING");
         /// <summary>
+        /// Constant MOVING for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus MOVING = new ProjectStatus("MOVING");
+        /// <summary>
         /// Constant UPDATE_FAILED for ProjectStatus
         /// </summary>
         public static readonly ProjectStatus UPDATE_FAILED = new ProjectStatus("UPDATE_FAILED");
@@ -3343,6 +3721,198 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type RelationDirection.
+    /// </summary>
+    public class RelationDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN for RelationDirection
+        /// </summary>
+        public static readonly RelationDirection IN = new RelationDirection("IN");
+        /// <summary>
+        /// Constant OUT for RelationDirection
+        /// </summary>
+        public static readonly RelationDirection OUT = new RelationDirection("OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationDirection FindValue(string value)
+        {
+            return FindValue<RelationDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationType.
+    /// </summary>
+    public class RelationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINEAGE for RelationType
+        /// </summary>
+        public static readonly RelationType LINEAGE = new RelationType("LINEAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationType FindValue(string value)
+        {
+            return FindValue<RelationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolutionStrategy.
+    /// </summary>
+    public class ResolutionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANUAL for ResolutionStrategy
+        /// </summary>
+        public static readonly ResolutionStrategy MANUAL = new ResolutionStrategy("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolutionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolutionStrategy FindValue(string value)
+        {
+            return FindValue<ResolutionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolutionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceTagSource.
+    /// </summary>
+    public class ResourceTagSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROJECT for ResourceTagSource
+        /// </summary>
+        public static readonly ResourceTagSource PROJECT = new ResourceTagSource("PROJECT");
+        /// <summary>
+        /// Constant PROJECT_PROFILE for ResourceTagSource
+        /// </summary>
+        public static readonly ResourceTagSource PROJECT_PROFILE = new ResourceTagSource("PROJECT_PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceTagSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceTagSource FindValue(string value)
+        {
+            return FindValue<ResourceTagSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceTagSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleAction.
     /// </summary>
     public class RuleAction : ConstantClass
@@ -3495,6 +4065,10 @@ namespace Amazon.DataZone
     {
 
         /// <summary>
+        /// Constant GLOSSARY_TERM_ENFORCEMENT for RuleType
+        /// </summary>
+        public static readonly RuleType GLOSSARY_TERM_ENFORCEMENT = new RuleType("GLOSSARY_TERM_ENFORCEMENT");
+        /// <summary>
         /// Constant METADATA_FORM_ENFORCEMENT for RuleType
         /// </summary>
         public static readonly RuleType METADATA_FORM_ENFORCEMENT = new RuleType("METADATA_FORM_ENFORCEMENT");
@@ -3535,6 +4109,56 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type S3Permission.
+    /// </summary>
+    public class S3Permission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ for S3Permission
+        /// </summary>
+        public static readonly S3Permission READ = new S3Permission("READ");
+        /// <summary>
+        /// Constant WRITE for S3Permission
+        /// </summary>
+        public static readonly S3Permission WRITE = new S3Permission("WRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3Permission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3Permission FindValue(string value)
+        {
+            return FindValue<S3Permission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3Permission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SearchOutputAdditionalAttribute.
     /// </summary>
     public class SearchOutputAdditionalAttribute : ConstantClass
@@ -3544,6 +4168,10 @@ namespace Amazon.DataZone
         /// Constant FORMS for SearchOutputAdditionalAttribute
         /// </summary>
         public static readonly SearchOutputAdditionalAttribute FORMS = new SearchOutputAdditionalAttribute("FORMS");
+        /// <summary>
+        /// Constant TEXT_MATCH_RATIONALE for SearchOutputAdditionalAttribute
+        /// </summary>
+        public static readonly SearchOutputAdditionalAttribute TEXT_MATCH_RATIONALE = new SearchOutputAdditionalAttribute("TEXT_MATCH_RATIONALE");
         /// <summary>
         /// Constant TIME_SERIES_DATA_POINT_FORMS for SearchOutputAdditionalAttribute
         /// </summary>
@@ -3648,6 +4276,52 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelfGrantStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortFieldAccountPool.
+    /// </summary>
+    public class SortFieldAccountPool : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAME for SortFieldAccountPool
+        /// </summary>
+        public static readonly SortFieldAccountPool NAME = new SortFieldAccountPool("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortFieldAccountPool(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortFieldAccountPool FindValue(string value)
+        {
+            return FindValue<SortFieldAccountPool>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortFieldAccountPool(string value)
         {
             return FindValue(value);
         }
@@ -3890,6 +4564,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionGrantCreationMode.
+    /// </summary>
+    public class SubscriptionGrantCreationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for SubscriptionGrantCreationMode
+        /// </summary>
+        public static readonly SubscriptionGrantCreationMode AUTOMATIC = new SubscriptionGrantCreationMode("AUTOMATIC");
+        /// <summary>
+        /// Constant MANUAL for SubscriptionGrantCreationMode
+        /// </summary>
+        public static readonly SubscriptionGrantCreationMode MANUAL = new SubscriptionGrantCreationMode("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionGrantCreationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionGrantCreationMode FindValue(string value)
+        {
+            return FindValue<SubscriptionGrantCreationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionGrantCreationMode(string value)
         {
             return FindValue(value);
         }

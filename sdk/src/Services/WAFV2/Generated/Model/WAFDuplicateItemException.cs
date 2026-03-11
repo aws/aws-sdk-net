@@ -40,6 +40,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFDuplicateItemException
+        /// message.
+        /// </summary>
+        public WAFDuplicateItemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFDuplicateItemException with the specified error
         /// message.
         /// </summary>

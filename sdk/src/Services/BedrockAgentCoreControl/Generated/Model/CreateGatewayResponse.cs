@@ -42,8 +42,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _gatewayArn;
         private string _gatewayId;
         private string _gatewayUrl;
+        private List<GatewayInterceptorConfiguration> _interceptorConfigurations = AWSConfigs.InitializeCollections ? new List<GatewayInterceptorConfiguration>() : null;
         private string _kmsKeyArn;
         private string _name;
+        private GatewayPolicyEngineConfiguration _policyEngineConfiguration;
         private GatewayProtocolConfiguration _protocolConfiguration;
         private GatewayProtocolType _protocolType;
         private string _roleArn;
@@ -55,7 +57,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the created Gateway.
+        /// The authorizer configuration for the created gateway.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -130,10 +132,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExceptionLevel. 
         /// <para>
-        /// The verbosity of exception messages. Use DEBUG mode to see granular exception messages
-        /// from a Gateway. If this parameter is not set, exception messages are by default sanitized
-        /// for presentation to end users.
+        /// The level of detail in error messages returned when invoking the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <c>DEBUG</c>, granular exception messages are returned to help a user
+        /// debug the gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is omitted, a generic error message is returned to the end user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExceptionLevel ExceptionLevel
         {
@@ -205,6 +215,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InterceptorConfigurations. 
+        /// <para>
+        /// The list of interceptor configurations for the created gateway.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<GatewayInterceptorConfiguration> InterceptorConfigurations
+        {
+            get { return this._interceptorConfigurations; }
+            set { this._interceptorConfigurations = value; }
+        }
+
+        // Check to see if InterceptorConfigurations property is set
+        internal bool IsSetInterceptorConfigurations()
+        {
+            return this._interceptorConfigurations != null && (this._interceptorConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with
@@ -241,6 +275,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyEngineConfiguration. 
+        /// <para>
+        /// The policy engine configuration for the created gateway.
+        /// </para>
+        /// </summary>
+        public GatewayPolicyEngineConfiguration PolicyEngineConfiguration
+        {
+            get { return this._policyEngineConfiguration; }
+            set { this._policyEngineConfiguration = value; }
+        }
+
+        // Check to see if PolicyEngineConfiguration property is set
+        internal bool IsSetPolicyEngineConfiguration()
+        {
+            return this._policyEngineConfiguration != null;
         }
 
         /// <summary>
@@ -364,7 +416,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityDetails. 
         /// <para>
-        /// The workload identity details for the created Gateway.
+        /// The workload identity details for the created gateway.
         /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails

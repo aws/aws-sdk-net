@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidS3BucketNameException
+        /// message.
+        /// </summary>
+        public InvalidS3BucketNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3BucketNameException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <summary>
         /// Construct instance of AmazonRoute53RecoveryControlConfigException
         /// </summary>
+        public AmazonRoute53RecoveryControlConfigException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRoute53RecoveryControlConfigException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRoute53RecoveryControlConfigException(string message)
             : base(message)

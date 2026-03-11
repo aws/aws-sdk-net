@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A Top level guardrail trace object. For more information, see <a>ConverseTrace</a>.
+    /// A Top level guardrail trace object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseTrace.html">ConverseTrace</a>.
     /// </summary>
     public partial class GuardrailTraceAssessment
     {

@@ -36,6 +36,14 @@ namespace Amazon.VPCLattice
         /// <summary>
         /// Construct instance of AmazonVPCLatticeException
         /// </summary>
+        public AmazonVPCLatticeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonVPCLatticeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonVPCLatticeException(string message)
             : base(message)

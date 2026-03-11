@@ -34,6 +34,25 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class AddPolicyGrantResponse : AmazonWebServiceResponse
     {
+        private string _grantId;
+
+        /// <summary>
+        /// Gets and sets the property GrantId. 
+        /// <para>
+        /// The ID of the policy grant that was added to a specified entity.
+        /// </para>
+        /// </summary>
+        public string GrantId
+        {
+            get { return this._grantId; }
+            set { this._grantId = value; }
+        }
+
+        // Check to see if GrantId property is set
+        internal bool IsSetGrantId()
+        {
+            return this._grantId != null;
+        }
 
     }
 }

@@ -79,6 +79,60 @@ namespace Amazon.CloudWatch
 
 
     /// <summary>
+    /// Constants used for properties of type AlarmMuteRuleStatus.
+    /// </summary>
+    public class AlarmMuteRuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AlarmMuteRuleStatus
+        /// </summary>
+        public static readonly AlarmMuteRuleStatus ACTIVE = new AlarmMuteRuleStatus("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for AlarmMuteRuleStatus
+        /// </summary>
+        public static readonly AlarmMuteRuleStatus EXPIRED = new AlarmMuteRuleStatus("EXPIRED");
+        /// <summary>
+        /// Constant SCHEDULED for AlarmMuteRuleStatus
+        /// </summary>
+        public static readonly AlarmMuteRuleStatus SCHEDULED = new AlarmMuteRuleStatus("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlarmMuteRuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlarmMuteRuleStatus FindValue(string value)
+        {
+            return FindValue<AlarmMuteRuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlarmMuteRuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AlarmType.
     /// </summary>
     public class AlarmType : ConstantClass
@@ -309,6 +363,14 @@ namespace Amazon.CloudWatch
     {
 
         /// <summary>
+        /// Constant EVALUATION_ERROR for EvaluationState
+        /// </summary>
+        public static readonly EvaluationState EVALUATION_ERROR = new EvaluationState("EVALUATION_ERROR");
+        /// <summary>
+        /// Constant EVALUATION_FAILURE for EvaluationState
+        /// </summary>
+        public static readonly EvaluationState EVALUATION_FAILURE = new EvaluationState("EVALUATION_FAILURE");
+        /// <summary>
         /// Constant PARTIAL_DATA for EvaluationState
         /// </summary>
         public static readonly EvaluationState PARTIAL_DATA = new EvaluationState("PARTIAL_DATA");
@@ -358,6 +420,14 @@ namespace Amazon.CloudWatch
         /// Constant Action for HistoryItemType
         /// </summary>
         public static readonly HistoryItemType Action = new HistoryItemType("Action");
+        /// <summary>
+        /// Constant AlarmContributorAction for HistoryItemType
+        /// </summary>
+        public static readonly HistoryItemType AlarmContributorAction = new HistoryItemType("AlarmContributorAction");
+        /// <summary>
+        /// Constant AlarmContributorStateUpdate for HistoryItemType
+        /// </summary>
+        public static readonly HistoryItemType AlarmContributorStateUpdate = new HistoryItemType("AlarmContributorStateUpdate");
         /// <summary>
         /// Constant ConfigurationUpdate for HistoryItemType
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIgnoreApplicationStopFailuresValueException
+        /// message.
+        /// </summary>
+        public InvalidIgnoreApplicationStopFailuresValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIgnoreApplicationStopFailuresValueException with the specified error
         /// message.
         /// </summary>

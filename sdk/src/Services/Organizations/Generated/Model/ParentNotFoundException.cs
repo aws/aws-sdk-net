@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for ParentNotFoundException
+        /// message.
+        /// </summary>
+        public ParentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParentNotFoundException with the specified error
         /// message.
         /// </summary>

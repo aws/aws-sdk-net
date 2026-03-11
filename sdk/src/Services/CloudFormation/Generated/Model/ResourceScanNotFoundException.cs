@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceScanNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceScanNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceScanNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRelativePathException
+        /// message.
+        /// </summary>
+        public InvalidRelativePathException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRelativePathException with the specified error
         /// message.
         /// </summary>

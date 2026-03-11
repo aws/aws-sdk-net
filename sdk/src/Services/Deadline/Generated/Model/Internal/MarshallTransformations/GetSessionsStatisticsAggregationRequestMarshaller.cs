@@ -65,6 +65,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFarmId())
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
+            if (string.IsNullOrEmpty(publicRequest.AggregationId))
+                throw new AmazonDeadlineException("Request object does not have required field AggregationId set");
             
             if (publicRequest.IsSetAggregationId())
                 request.Parameters.Add("aggregationId", StringUtils.FromString(publicRequest.AggregationId));

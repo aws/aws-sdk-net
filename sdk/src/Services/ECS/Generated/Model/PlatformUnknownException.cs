@@ -39,6 +39,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for PlatformUnknownException
+        /// message.
+        /// </summary>
+        public PlatformUnknownException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PlatformUnknownException with the specified error
         /// message.
         /// </summary>

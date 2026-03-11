@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A success entry that occurs when a <c>KeyRegistration</c> job is successfully applied
-    /// to the Amazon QuickSight account.
+    /// to the Quick Sight account.
     /// </summary>
     public partial class SuccessfulKeyRegistrationEntry
     {

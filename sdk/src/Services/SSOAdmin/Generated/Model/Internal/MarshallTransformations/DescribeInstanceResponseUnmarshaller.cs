@@ -58,6 +58,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EncryptionConfigurationDetails", targetDepth))
+                {
+                    var unmarshaller = EncryptionConfigurationDetailsUnmarshaller.Instance;
+                    response.EncryptionConfigurationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IdentityStoreId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("StatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

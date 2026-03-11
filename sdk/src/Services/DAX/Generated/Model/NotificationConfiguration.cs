@@ -41,7 +41,7 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property TopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the topic. 
+        /// The Amazon Resource Name (ARN) that identifies the topic.
         /// </para>
         /// </summary>
         public string TopicArn

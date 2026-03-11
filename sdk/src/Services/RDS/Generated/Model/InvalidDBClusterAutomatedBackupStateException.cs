@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBClusterAutomatedBackupStateException
+        /// message.
+        /// </summary>
+        public InvalidDBClusterAutomatedBackupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBClusterAutomatedBackupStateException with the specified error
         /// message.
         /// </summary>

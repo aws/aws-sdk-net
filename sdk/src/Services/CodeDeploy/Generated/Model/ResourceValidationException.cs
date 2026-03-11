@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceValidationException
+        /// message.
+        /// </summary>
+        public ResourceValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceValidationException with the specified error
         /// message.
         /// </summary>

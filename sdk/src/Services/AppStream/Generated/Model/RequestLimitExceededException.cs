@@ -30,14 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// AppStream 2.0 can’t process the request right now because the Describe calls from
-    /// your AWS account are being throttled by Amazon EC2. Try again later.
+    /// WorkSpaces Applications can’t process the request right now because the Describe calls
+    /// from your AWS account are being throttled by Amazon EC2. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class RequestLimitExceededException : AmazonAppStreamException
     {
+
+        /// <summary>
+        /// Default constructor for RequestLimitExceededException
+        /// message.
+        /// </summary>
+        public RequestLimitExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new RequestLimitExceededException with the specified error

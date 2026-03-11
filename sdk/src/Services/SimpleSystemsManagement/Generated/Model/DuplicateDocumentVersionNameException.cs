@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateDocumentVersionNameException
+        /// message.
+        /// </summary>
+        public DuplicateDocumentVersionNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateDocumentVersionNameException with the specified error
         /// message.
         /// </summary>

@@ -57,6 +57,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetValidationOptions())
+            {
+                context.Writer.WritePropertyName("ValidationOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SuppressionValidationOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ValidationOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

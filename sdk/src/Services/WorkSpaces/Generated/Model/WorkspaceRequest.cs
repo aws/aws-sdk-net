@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
     {
         private string _bundleId;
         private string _directoryId;
+        private string _ipv6Address;
         private bool? _rootVolumeEncryptionEnabled;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _userName;
@@ -82,6 +83,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDirectoryId()
         {
             return this._directoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// The IPv6 address for the WorkSpace.
+        /// </para>
+        /// </summary>
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
         }
 
         /// <summary>

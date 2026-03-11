@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _className;
         private string _functionName;
+        private FunctionType _functionType;
         private string _ownerName;
         private PrincipalType _ownerType;
         private List<ResourceUri> _resourceUris = AWSConfigs.InitializeCollections ? new List<ResourceUri>() : null;
@@ -76,6 +77,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionType. 
+        /// <para>
+        /// The type of the function.
+        /// </para>
+        /// </summary>
+        public FunctionType FunctionType
+        {
+            get { return this._functionType; }
+            set { this._functionType = value; }
+        }
+
+        // Check to see if FunctionType property is set
+        internal bool IsSetFunctionType()
+        {
+            return this._functionType != null;
         }
 
         /// <summary>

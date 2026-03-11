@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterParameterGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public ClusterParameterGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterParameterGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

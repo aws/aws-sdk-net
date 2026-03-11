@@ -56,8 +56,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.AddSubResource("Operation", "Untag");
+            if (string.IsNullOrEmpty(publicRequest.Resource))
+                throw new AmazonCloudFrontException("Request object does not have required field Resource set");
             
             if (publicRequest.IsSetResource())
                 request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));
@@ -70,7 +73,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
-                    if (publicRequestTagKeysItems != null && (publicRequestTagKeysItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.TagKeys.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 
@@ -85,6 +88,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -96,9 +100,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
             request.UseQueryString = true;
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
@@ -120,5 +122,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UntagResourceRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UntagResourceRequest publicRequest);
     }    
 }

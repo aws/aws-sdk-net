@@ -36,6 +36,14 @@ namespace Amazon.SSOAdmin
         /// <summary>
         /// Construct instance of AmazonSSOAdminException
         /// </summary>
+        public AmazonSSOAdminException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSSOAdminException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSSOAdminException(string message)
             : base(message)

@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private DefaultRouteTableAssociationValue _defaultRouteTableAssociation;
         private DefaultRouteTablePropagationValue _defaultRouteTablePropagation;
         private DnsSupportValue _dnsSupport;
+        private EncryptionSupportOptionValue _encryptionSupport;
         private string _propagationDefaultRouteTableId;
         private List<string> _removeTransitGatewayCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SecurityGroupReferencingSupportValue _securityGroupReferencingSupport;
@@ -172,8 +173,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DefaultRouteTablePropagation. 
         /// <para>
-        /// Enable or disable automatic propagation of routes to the default propagation route
-        /// table.
+        /// Indicates whether resource attachments automatically propagate routes to the default
+        /// propagation route table. Enabled by default. If <c>defaultRouteTablePropagation</c>
+        /// is set to <c>enable</c>, Amazon Web Services Transit Gateway will create the default
+        /// transit gateway route table.
         /// </para>
         /// </summary>
         public DefaultRouteTablePropagationValue DefaultRouteTablePropagation
@@ -204,6 +207,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsSupport()
         {
             return this._dnsSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionSupport. 
+        /// <para>
+        /// Enable or disable encryption support for VPC Encryption Control.
+        /// </para>
+        /// </summary>
+        public EncryptionSupportOptionValue EncryptionSupport
+        {
+            get { return this._encryptionSupport; }
+            set { this._encryptionSupport = value; }
+        }
+
+        // Check to see if EncryptionSupport property is set
+        internal bool IsSetEncryptionSupport()
+        {
+            return this._encryptionSupport != null;
         }
 
         /// <summary>

@@ -62,6 +62,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.Format))
+                throw new AmazonWellArchitectedException("Request object does not have required field Format set");
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("Format", StringUtils.FromString(publicRequest.Format));

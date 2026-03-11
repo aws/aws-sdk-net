@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// An Amazon EC2 launch template Amazon Web Services PCS uses to launch compute nodes.
+    /// An Amazon EC2 launch template PCS uses to launch compute nodes.
     /// </summary>
     public partial class CustomLaunchTemplate
     {

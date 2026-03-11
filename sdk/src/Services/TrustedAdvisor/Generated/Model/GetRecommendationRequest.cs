@@ -31,11 +31,31 @@ namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRecommendation operation.
-    /// Get a specific Recommendation
+    /// Get a specific Recommendation. This API provides global recommendations, eliminating
+    /// the need to call the API in each AWS Region.
     /// </summary>
     public partial class GetRecommendationRequest : AmazonTrustedAdvisorRequest
     {
+        private RecommendationLanguage _language;
         private string _recommendationIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The ISO 639-1 code for the language that you want your recommendations to appear in.
+        /// </para>
+        /// </summary>
+        public RecommendationLanguage Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RecommendationIdentifier. 

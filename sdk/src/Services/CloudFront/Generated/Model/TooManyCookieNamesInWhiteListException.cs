@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyCookieNamesInWhiteListException
+        /// message.
+        /// </summary>
+        public TooManyCookieNamesInWhiteListException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyCookieNamesInWhiteListException with the specified error
         /// message.
         /// </summary>

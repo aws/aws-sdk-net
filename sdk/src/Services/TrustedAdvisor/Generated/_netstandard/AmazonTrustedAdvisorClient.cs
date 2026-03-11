@@ -267,7 +267,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual BatchUpdateRecommendationResourceExclusionResponse BatchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateRecommendationResourceExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateRecommendationResourceExclusionResponseUnmarshaller.Instance;
 
@@ -277,7 +277,12 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update one or more exclusion status for a list of recommendation resources
+        /// Update one or more exclusion statuses for a list of recommendation resources. This
+        /// API supports up to 25 unique recommendation resource ARNs per request. This API currently
+        /// doesn't support prioritized recommendation resources. This API updates global recommendations,
+        /// eliminating the need to call the API in each AWS Region. After submitting an exclusion
+        /// update, note that it might take a few minutes for the changes to be reflected in the
+        /// system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
         /// <param name="cancellationToken">
@@ -304,7 +309,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
         public virtual Task<BatchUpdateRecommendationResourceExclusionResponse> BatchUpdateRecommendationResourceExclusionAsync(BatchUpdateRecommendationResourceExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateRecommendationResourceExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateRecommendationResourceExclusionResponseUnmarshaller.Instance;
 
@@ -316,7 +321,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual GetOrganizationRecommendationResponse GetOrganizationRecommendation(GetOrganizationRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationRecommendationResponseUnmarshaller.Instance;
 
@@ -327,7 +332,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Get a specific recommendation within an AWS Organizations organization. This API supports
-        /// only prioritized recommendations.
+        /// only prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -354,7 +360,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetOrganizationRecommendation">REST API Reference for GetOrganizationRecommendation Operation</seealso>
         public virtual Task<GetOrganizationRecommendationResponse> GetOrganizationRecommendationAsync(GetOrganizationRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationRecommendationResponseUnmarshaller.Instance;
 
@@ -366,7 +372,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual GetRecommendationResponse GetRecommendation(GetRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationResponseUnmarshaller.Instance;
 
@@ -376,7 +382,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Get a specific Recommendation
+        /// Get a specific Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -403,7 +410,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
         public virtual Task<GetRecommendationResponse> GetRecommendationAsync(GetRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationResponseUnmarshaller.Instance;
 
@@ -415,7 +422,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual ListChecksResponse ListChecks(ListChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChecksResponseUnmarshaller.Instance;
 
@@ -425,7 +432,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List a filterable set of Checks
+        /// List a filterable set of Checks. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChecks service method.</param>
         /// <param name="cancellationToken">
@@ -449,7 +457,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListChecks">REST API Reference for ListChecks Operation</seealso>
         public virtual Task<ListChecksResponse> ListChecksAsync(ListChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChecksResponseUnmarshaller.Instance;
 
@@ -461,7 +469,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual ListOrganizationRecommendationAccountsResponse ListOrganizationRecommendationAccounts(ListOrganizationRecommendationAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationRecommendationAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationRecommendationAccountsResponseUnmarshaller.Instance;
 
@@ -472,7 +480,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Lists the accounts that own the resources for an organization aggregate recommendation.
-        /// This API only supports prioritized recommendations.
+        /// This API only supports prioritized recommendations and provides global priority recommendations,
+        /// eliminating the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -499,7 +508,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationAccounts">REST API Reference for ListOrganizationRecommendationAccounts Operation</seealso>
         public virtual Task<ListOrganizationRecommendationAccountsResponse> ListOrganizationRecommendationAccountsAsync(ListOrganizationRecommendationAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationRecommendationAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationRecommendationAccountsResponseUnmarshaller.Instance;
 
@@ -511,7 +520,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual ListOrganizationRecommendationResourcesResponse ListOrganizationRecommendationResources(ListOrganizationRecommendationResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationRecommendationResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationRecommendationResourcesResponseUnmarshaller.Instance;
 
@@ -522,7 +531,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// List Resources of a Recommendation within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationResources service method.</param>
         /// <param name="cancellationToken">
@@ -549,7 +559,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationResources">REST API Reference for ListOrganizationRecommendationResources Operation</seealso>
         public virtual Task<ListOrganizationRecommendationResourcesResponse> ListOrganizationRecommendationResourcesAsync(ListOrganizationRecommendationResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationRecommendationResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationRecommendationResourcesResponseUnmarshaller.Instance;
 
@@ -561,7 +571,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual ListOrganizationRecommendationsResponse ListOrganizationRecommendations(ListOrganizationRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationRecommendationsResponseUnmarshaller.Instance;
 
@@ -572,7 +582,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// List a filterable set of Recommendations within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -596,7 +607,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendations">REST API Reference for ListOrganizationRecommendations Operation</seealso>
         public virtual Task<ListOrganizationRecommendationsResponse> ListOrganizationRecommendationsAsync(ListOrganizationRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationRecommendationsResponseUnmarshaller.Instance;
 
@@ -608,7 +619,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual ListRecommendationResourcesResponse ListRecommendationResources(ListRecommendationResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationResourcesResponseUnmarshaller.Instance;
 
@@ -618,7 +629,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List Resources of a Recommendation
+        /// List Resources of a Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationResources service method.</param>
         /// <param name="cancellationToken">
@@ -645,7 +657,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationResources">REST API Reference for ListRecommendationResources Operation</seealso>
         public virtual Task<ListRecommendationResourcesResponse> ListRecommendationResourcesAsync(ListRecommendationResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationResourcesResponseUnmarshaller.Instance;
 
@@ -657,7 +669,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -667,7 +679,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List a filterable set of Recommendations
+        /// List a filterable set of Recommendations. This API provides global recommendations,
+        /// eliminating the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -691,7 +704,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -703,7 +716,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual UpdateOrganizationRecommendationLifecycleResponse UpdateOrganizationRecommendationLifecycle(UpdateOrganizationRecommendationLifecycleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationRecommendationLifecycleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationRecommendationLifecycleResponseUnmarshaller.Instance;
 
@@ -714,7 +727,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Update the lifecycle of a Recommendation within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and updates global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>
         /// <param name="cancellationToken">
@@ -744,7 +758,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateOrganizationRecommendationLifecycle">REST API Reference for UpdateOrganizationRecommendationLifecycle Operation</seealso>
         public virtual Task<UpdateOrganizationRecommendationLifecycleResponse> UpdateOrganizationRecommendationLifecycleAsync(UpdateOrganizationRecommendationLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationRecommendationLifecycleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationRecommendationLifecycleResponseUnmarshaller.Instance;
 
@@ -756,7 +770,7 @@ namespace Amazon.TrustedAdvisor
 
         internal virtual UpdateRecommendationLifecycleResponse UpdateRecommendationLifecycle(UpdateRecommendationLifecycleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecommendationLifecycleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecommendationLifecycleResponseUnmarshaller.Instance;
 
@@ -766,7 +780,9 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations.
+        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+        /// and updates global priority recommendations, eliminating the need to call the API
+        /// in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommendationLifecycle service method.</param>
         /// <param name="cancellationToken">
@@ -796,7 +812,7 @@ namespace Amazon.TrustedAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateRecommendationLifecycle">REST API Reference for UpdateRecommendationLifecycle Operation</seealso>
         public virtual Task<UpdateRecommendationLifecycleResponse> UpdateRecommendationLifecycleAsync(UpdateRecommendationLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecommendationLifecycleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecommendationLifecycleResponseUnmarshaller.Instance;
 

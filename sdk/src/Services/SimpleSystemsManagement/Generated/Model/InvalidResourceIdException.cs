@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResourceIdException
+        /// message.
+        /// </summary>
+        public InvalidResourceIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourceIdException with the specified error
         /// message.
         /// </summary>

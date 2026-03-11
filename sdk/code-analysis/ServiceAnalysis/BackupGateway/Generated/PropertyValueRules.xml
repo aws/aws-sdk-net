@@ -3,158 +3,158 @@
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.AssociateGatewayToServerRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.AssociateGatewayToServerRequest.ServerArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.AssociateGatewayToServerResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.CreateGatewayRequest.ActivationKey</property>
     <min>1</min>
     <max>50</max>
-    <pattern>^[0-9a-zA-Z\-]+$</pattern>
+    <pattern>[0-9a-zA-Z\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.CreateGatewayRequest.GatewayDisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.CreateGatewayResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.DeleteGatewayRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.DeleteGatewayResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.DeleteHypervisorRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.DeleteHypervisorResponse.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.DisassociateGatewayFromServerRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.DisassociateGatewayFromServerResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetBandwidthRateLimitScheduleRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetBandwidthRateLimitScheduleResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetGatewayRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetHypervisorRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetHypervisorPropertyMappingsRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetHypervisorPropertyMappingsResponse.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetHypervisorPropertyMappingsResponse.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GetVirtualMachineRequest.ResourceArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ImportHypervisorConfigurationRequest.Host</property>
     <min>3</min>
     <max>128</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ImportHypervisorConfigurationRequest.KmsKeyArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ImportHypervisorConfigurationRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ImportHypervisorConfigurationRequest.Password</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[ -~]+$</pattern>
+    <pattern>[ -~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ImportHypervisorConfigurationRequest.Username</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$</pattern>
+    <pattern>[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ImportHypervisorConfigurationResponse.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListGatewaysRequest.MaxResults</property>
@@ -164,13 +164,13 @@
     <property>Amazon.BackupGateway.Model.ListGatewaysRequest.NextToken</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListGatewaysResponse.NextToken</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListHypervisorsRequest.MaxResults</property>
@@ -180,31 +180,31 @@
     <property>Amazon.BackupGateway.Model.ListHypervisorsRequest.NextToken</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListHypervisorsResponse.NextToken</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListTagsForResourceResponse.ResourceArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListVirtualMachinesRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListVirtualMachinesRequest.MaxResults</property>
@@ -214,43 +214,43 @@
     <property>Amazon.BackupGateway.Model.ListVirtualMachinesRequest.NextToken</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.ListVirtualMachinesResponse.NextToken</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutBandwidthRateLimitScheduleRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutBandwidthRateLimitScheduleResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutHypervisorPropertyMappingsRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutHypervisorPropertyMappingsRequest.IamRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutHypervisorPropertyMappingsResponse.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutMaintenanceStartTimeRequest.DayOfMonth</property>
@@ -265,8 +265,8 @@
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutMaintenanceStartTimeRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutMaintenanceStartTimeRequest.HourOfDay</property>
@@ -281,140 +281,140 @@
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.PutMaintenanceStartTimeResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.StartVirtualMachinesMetadataSyncRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.StartVirtualMachinesMetadataSyncResponse.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.TagResourceRequest.ResourceARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.TagResourceResponse.ResourceARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.TestHypervisorConfigurationRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.TestHypervisorConfigurationRequest.Host</property>
     <min>3</min>
     <max>128</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.TestHypervisorConfigurationRequest.Password</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[ -~]+$</pattern>
+    <pattern>[ -~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.TestHypervisorConfigurationRequest.Username</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$</pattern>
+    <pattern>[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UntagResourceRequest.ResourceARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UntagResourceResponse.ResourceARN</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateGatewayInformationRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateGatewayInformationRequest.GatewayDisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateGatewayInformationResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateGatewaySoftwareNowRequest.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateGatewaySoftwareNowResponse.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorRequest.Host</property>
     <min>3</min>
     <max>128</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorRequest.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorRequest.LogGroupArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^$|^arn:(aws|aws-cn|aws-us-gov):logs:([a-zA-Z0-9-]+):([0-9]+):log-group:[a-zA-Z0-9_\-\/\.]+:\*$</pattern>
+    <pattern>$|^arn:(aws|aws-cn|aws-us-gov):logs:([a-zA-Z0-9-]+):([0-9]+):log-group:[a-zA-Z0-9_\-\/\.]+:\*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorRequest.Password</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[ -~]+$</pattern>
+    <pattern>[ -~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorRequest.Username</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$</pattern>
+    <pattern>[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.UpdateHypervisorResponse.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.BandwidthRateLimitInterval.AverageUploadRateLimitInBitsPerSec</property>
@@ -444,14 +444,14 @@
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Gateway.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Gateway.GatewayDisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Gateway.HypervisorId</property>
@@ -461,19 +461,25 @@
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GatewayDetails.GatewayArn</property>
     <min>50</min>
-    <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <max>180</max>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GatewayDetails.GatewayDisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GatewayDetails.HypervisorId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BackupGateway.Model.GatewayDetails.SoftwareVersion</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.GatewayDetails.VpcEndpoint</property>
@@ -484,55 +490,55 @@
     <property>Amazon.BackupGateway.Model.Hypervisor.Host</property>
     <min>3</min>
     <max>128</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Hypervisor.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Hypervisor.KmsKeyArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Hypervisor.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.HypervisorDetails.Host</property>
     <min>3</min>
     <max>128</max>
-    <pattern>^.+$</pattern>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.HypervisorDetails.HypervisorArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.HypervisorDetails.KmsKeyArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)$</pattern>
+    <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.HypervisorDetails.LogGroupArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^$|^arn:(aws|aws-cn|aws-us-gov):logs:([a-zA-Z0-9-]+):([0-9]+):log-group:[a-zA-Z0-9_\-\/\.]+:\*$</pattern>
+    <pattern>$|^arn:(aws|aws-cn|aws-us-gov):logs:([a-zA-Z0-9-]+):([0-9]+):log-group:[a-zA-Z0-9_\-\/\.]+:\*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.HypervisorDetails.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.MaintenanceStartTime.DayOfMonth</property>
@@ -558,61 +564,61 @@
     <property>Amazon.BackupGateway.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^[^\x00]*$</pattern>
+    <pattern>[^\x00]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachine.HostName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachine.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachine.Path</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[^\x00]+$</pattern>
+    <pattern>[^\x00]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachine.ResourceArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachineDetails.HostName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachineDetails.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachineDetails.Path</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>^[^\x00]+$</pattern>
+    <pattern>[^\x00]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VirtualMachineDetails.ResourceArn</property>
     <min>50</min>
     <max>500</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+$</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov):backup-gateway(:[a-zA-Z-0-9]+){3}\/[a-zA-Z-0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VmwareTag.VmwareCategory</property>
@@ -628,13 +634,13 @@
     <property>Amazon.BackupGateway.Model.VmwareToAwsTagMapping.AwsTagKey</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VmwareToAwsTagMapping.AwsTagValue</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^[^\x00]*$</pattern>
+    <pattern>[^\x00]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupGateway.Model.VmwareToAwsTagMapping.VmwareCategory</property>

@@ -39,6 +39,13 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessForbiddenException
+        /// message.
+        /// </summary>
+        public AccessForbiddenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessForbiddenException with the specified error
         /// message.
         /// </summary>

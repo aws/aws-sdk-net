@@ -36,6 +36,14 @@ namespace Amazon.Signer
         /// <summary>
         /// Construct instance of AmazonSignerException
         /// </summary>
+        public AmazonSignerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSignerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSignerException(string message)
             : base(message)

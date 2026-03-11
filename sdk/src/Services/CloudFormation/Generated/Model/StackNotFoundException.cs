@@ -40,6 +40,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for StackNotFoundException
+        /// message.
+        /// </summary>
+        public StackNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StackNotFoundException with the specified error
         /// message.
         /// </summary>

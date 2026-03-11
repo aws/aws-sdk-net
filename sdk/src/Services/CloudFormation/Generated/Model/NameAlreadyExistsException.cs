@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for NameAlreadyExistsException
+        /// message.
+        /// </summary>
+        public NameAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NameAlreadyExistsException with the specified error
         /// message.
         /// </summary>

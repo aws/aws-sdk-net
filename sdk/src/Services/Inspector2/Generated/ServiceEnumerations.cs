@@ -150,6 +150,10 @@ namespace Amazon.Inspector2
         /// Constant AWS_LAMBDA_FUNCTION for AggregationResourceType
         /// </summary>
         public static readonly AggregationResourceType AWS_LAMBDA_FUNCTION = new AggregationResourceType("AWS_LAMBDA_FUNCTION");
+        /// <summary>
+        /// Constant CODE_REPOSITORY for AggregationResourceType
+        /// </summary>
+        public static readonly AggregationResourceType CODE_REPOSITORY = new AggregationResourceType("CODE_REPOSITORY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2787,6 +2791,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ErrorCode ALREADY_ENABLED = new ErrorCode("ALREADY_ENABLED");
         /// <summary>
+        /// Constant BLOCKED_BY_ORGANIZATION_POLICY for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode BLOCKED_BY_ORGANIZATION_POLICY = new ErrorCode("BLOCKED_BY_ORGANIZATION_POLICY");
+        /// <summary>
         /// Constant DISABLE_IN_PROGRESS for ErrorCode
         /// </summary>
         public static readonly ErrorCode DISABLE_IN_PROGRESS = new ErrorCode("DISABLE_IN_PROGRESS");
@@ -4929,6 +4937,10 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant DOTNET_10 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNET_10 = new Runtime("DOTNET_10");
+        /// <summary>
         /// Constant DOTNET_6 for Runtime
         /// </summary>
         public static readonly Runtime DOTNET_6 = new Runtime("DOTNET_6");
@@ -4980,6 +4992,10 @@ namespace Amazon.Inspector2
         /// Constant NODEJS_18_X for Runtime
         /// </summary>
         public static readonly Runtime NODEJS_18_X = new Runtime("NODEJS_18_X");
+        /// <summary>
+        /// Constant NODEJS_24_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_24_X = new Runtime("NODEJS_24_X");
         /// <summary>
         /// Constant PYTHON_3_10 for Runtime
         /// </summary>
@@ -5245,6 +5261,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanStatusReason EXCLUDED_BY_TAG = new ScanStatusReason("EXCLUDED_BY_TAG");
         /// <summary>
+        /// Constant IMAGE_ARCHIVED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason IMAGE_ARCHIVED = new ScanStatusReason("IMAGE_ARCHIVED");
+        /// <summary>
         /// Constant IMAGE_SIZE_EXCEEDED for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason IMAGE_SIZE_EXCEEDED = new ScanStatusReason("IMAGE_SIZE_EXCEEDED");
@@ -5312,6 +5332,10 @@ namespace Amazon.Inspector2
         /// Constant UNMANAGED_EC2_INSTANCE for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason UNMANAGED_EC2_INSTANCE = new ScanStatusReason("UNMANAGED_EC2_INSTANCE");
+        /// <summary>
+        /// Constant UNSUPPORTED_CODE_ARTIFACTS for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_CODE_ARTIFACTS = new ScanStatusReason("UNSUPPORTED_CODE_ARTIFACTS");
         /// <summary>
         /// Constant UNSUPPORTED_CONFIG_FILE for ScanStatusReason
         /// </summary>
@@ -5998,6 +6022,10 @@ namespace Amazon.Inspector2
         /// Constant CODE_REPOSITORY_SCA for UsageType
         /// </summary>
         public static readonly UsageType CODE_REPOSITORY_SCA = new UsageType("CODE_REPOSITORY_SCA");
+        /// <summary>
+        /// Constant EC2_AGENTLESS_INSTANCE_HOURS for UsageType
+        /// </summary>
+        public static readonly UsageType EC2_AGENTLESS_INSTANCE_HOURS = new UsageType("EC2_AGENTLESS_INSTANCE_HOURS");
         /// <summary>
         /// Constant EC2_INSTANCE_HOURS for UsageType
         /// </summary>

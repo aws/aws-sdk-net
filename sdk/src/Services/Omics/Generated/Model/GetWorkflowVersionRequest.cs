@@ -32,8 +32,8 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Container for the parameters to the GetWorkflowVersion operation.
     /// Gets information about a workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-    /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-    /// User Guide.
+    /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+    /// User Guide</i>.
     /// </summary>
     public partial class GetWorkflowVersionRequest : AmazonOmicsRequest
     {
@@ -108,7 +108,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The workflow's ID.
+        /// The workflow's ID. The <c>workflowId</c> is not the UUID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=18)]
@@ -127,7 +127,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property WorkflowOwnerId. 
         /// <para>
-        /// Amazon Web Services Id of the owner of the workflow.
+        /// The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved
+        /// using the <c>GetShare</c> API operation. If you are the workflow owner, you do not
+        /// need to include this ID.
         /// </para>
         /// </summary>
         public string WorkflowOwnerId

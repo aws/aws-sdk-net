@@ -113,7 +113,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Required. The Availability Zones where you want to create firewall endpoints for a
         /// transit gateway-attached firewall. You must specify at least one Availability Zone.
         /// Consider enabling the firewall in every Availability Zone where you have workloads
-        /// to maintain Availability Zone independence.
+        /// to maintain Availability Zone isolation.
         /// </para>
         ///  
         /// <para>

@@ -85,14 +85,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The logical ID of the target the operation is acting on by the Hook. If the target
-        /// is a change set, it's the ARN of the change set.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the target is a Cloud Control API operation, this will be the <c>HooksRequestToken</c>
-        /// returned by the Cloud Control API operation request. For more information on the <c>HooksRequestToken</c>,
-        /// see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.
+        /// The unique identifier of the Hook invocation target.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -111,7 +104,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of operation being targeted by the Hook.
+        /// The target type.
         /// </para>
         /// </summary>
         public ListHookResultsTargetType TargetType

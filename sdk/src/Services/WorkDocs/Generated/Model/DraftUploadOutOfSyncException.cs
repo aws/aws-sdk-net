@@ -40,6 +40,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for DraftUploadOutOfSyncException
+        /// message.
+        /// </summary>
+        public DraftUploadOutOfSyncException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DraftUploadOutOfSyncException with the specified error
         /// message.
         /// </summary>

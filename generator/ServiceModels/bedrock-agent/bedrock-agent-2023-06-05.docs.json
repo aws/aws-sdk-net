@@ -38,7 +38,7 @@
     "GetFlowAlias": "<p>Retrieves information about a flow. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html\">Deploy a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p>",
     "GetFlowVersion": "<p>Retrieves information about a version of a flow. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html\">Deploy a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p>",
     "GetIngestionJob": "<p>Gets information about a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data.</p>",
-    "GetKnowledgeBase": "<p>Gets information about a knoweldge base.</p>",
+    "GetKnowledgeBase": "<p>Gets information about a knowledge base.</p>",
     "GetKnowledgeBaseDocuments": "<p>Retrieves specific documents from a data source that is connected to a knowledge base. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html\">Ingest changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.</p>",
     "GetPrompt": "<p>Retrieves information about the working draft (<code>DRAFT</code> version) of a prompt or a version of it, depending on whether you include the <code>promptVersion</code> field or not. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html\">View information about prompts using Prompt management</a> and <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html\">View information about a version of your prompt</a> in the Amazon Bedrock User Guide.</p>",
     "IngestKnowledgeBaseDocuments": "<p>Ingests documents directly into the knowledge base that is connected to the data source. The <code>dataSourceType</code> specified in the content for each document must match the type of the data source that you specify in the header. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html\">Ingest changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.</p>",
@@ -86,8 +86,7 @@
     },
     "AccessDeniedException": {
       "base": "<p>The request is denied because of missing access permissions.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ActionGroupExecutor": {
       "base": "<p>Contains details about the Lambda function containing the business logic that is carried out upon invoking the action or the custom control method for handling the information elicited from the user.</p>",
@@ -194,7 +193,6 @@
       "refs": {
         "AgentAlias$agentAliasArn": "<p>The Amazon Resource Name (ARN) of the alias of the agent.</p>",
         "AgentDescriptor$aliasArn": "<p>The agent's alias ARN.</p>",
-        "AgentFlowNodeConfiguration$agentAliasArn": "<p>The Amazon Resource Name (ARN) of the alias of the agent to invoke.</p>",
         "PromptAgentResource$agentIdentifier": "<p>The ARN of the agent with which to use the prompt.</p>"
       }
     },
@@ -395,22 +393,42 @@
     },
     "AssociateAgentCollaboratorRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AssociateAgentCollaboratorResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AssociateAgentKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AssociateAgentKnowledgeBaseResponse": {
       "base": null,
+      "refs": {}
+    },
+    "AudioConfiguration": {
+      "base": "<p>Configuration settings for processing audio content in multimodal knowledge bases.</p>",
       "refs": {
+        "AudioConfigurations$member": "<p>Audio configuration for multi modal ingestion.</p>"
+      }
+    },
+    "AudioConfigurations": {
+      "base": null,
+      "refs": {
+        "BedrockEmbeddingModelConfiguration$audio": "<p>Configuration settings for processing audio content in multimodal knowledge bases.</p>"
+      }
+    },
+    "AudioSegmentationConfiguration": {
+      "base": "<p>Configuration for segmenting audio content during multimodal knowledge base ingestion. Determines how audio files are divided into chunks for processing.</p>",
+      "refs": {
+        "AudioConfiguration$segmentationConfiguration": "<p>Configuration for segmenting audio content during processing.</p>"
+      }
+    },
+    "AudioSegmentationConfigurationFixedLengthDurationInteger": {
+      "base": null,
+      "refs": {
+        "AudioSegmentationConfiguration$fixedLengthDuration": "<p>The duration in seconds for each audio segment. Audio files will be divided into chunks of this length for processing.</p>"
       }
     },
     "AutoToolChoice": {
@@ -591,11 +609,11 @@
     "ColumnName": {
       "base": null,
       "refs": {
-        "RdsFieldMapping$customMetadataField": "<p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>",
-        "RdsFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
         "RdsFieldMapping$primaryKeyField": "<p>The name of the field in which Amazon Bedrock stores the ID for each entry.</p>",
+        "RdsFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>",
         "RdsFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
-        "RdsFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>"
+        "RdsFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
+        "RdsFieldMapping$customMetadataField": "<p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>"
       }
     },
     "ConcurrencyType": {
@@ -612,8 +630,7 @@
     },
     "ConflictException": {
       "base": "<p>There was a conflict performing an operation.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ConfluenceAuthType": {
       "base": null,
@@ -698,109 +715,89 @@
     },
     "CreateAgentActionGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAgentActionGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAgentAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAgentAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAgentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateAgentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDataSourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateDataSourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateFlowVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePromptRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePromptResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePromptVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePromptVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreationMode": {
       "base": null,
       "refs": {
-        "PromptConfiguration$parserMode": "<p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>. If you set the field as <code>OVERRIDDEN</code>, the <code>overrideLambda</code> field in the <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html\">PromptOverrideConfiguration</a> must be specified with the ARN of a Lambda function.</p>",
-        "PromptConfiguration$promptCreationMode": "<p>Specifies whether to override the default prompt template for this <code>promptType</code>. Set this value to <code>OVERRIDDEN</code> to use the prompt that you provide in the <code>basePromptTemplate</code>. If you leave it as <code>DEFAULT</code>, the agent uses a default prompt template.</p>"
+        "PromptConfiguration$promptCreationMode": "<p>Specifies whether to override the default prompt template for this <code>promptType</code>. Set this value to <code>OVERRIDDEN</code> to use the prompt that you provide in the <code>basePromptTemplate</code>. If you leave it as <code>DEFAULT</code>, the agent uses a default prompt template.</p>",
+        "PromptConfiguration$parserMode": "<p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>. If you set the field as <code>OVERRIDDEN</code>, the <code>overrideLambda</code> field in the <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html\">PromptOverrideConfiguration</a> must be specified with the ARN of a Lambda function.</p>"
       }
     },
     "CuratedQueries": {
@@ -934,8 +931,8 @@
       "refs": {
         "ActionGroupSummary$updatedAt": "<p>The time at which the action group was last updated.</p>",
         "Agent$createdAt": "<p>The time at which the agent was created.</p>",
-        "Agent$preparedAt": "<p>The time at which the agent was last prepared.</p>",
         "Agent$updatedAt": "<p>The time at which the agent was last updated.</p>",
+        "Agent$preparedAt": "<p>The time at which the agent was last prepared.</p>",
         "AgentActionGroup$createdAt": "<p>The time at which the action group was created.</p>",
         "AgentActionGroup$updatedAt": "<p>The time at which the action group was last updated.</p>",
         "AgentAlias$createdAt": "<p>The time at which the alias of the agent was created.</p>",
@@ -1001,113 +998,91 @@
     },
     "DeleteAgentActionGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentActionGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteAgentVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteDataSourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteDataSourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteFlowVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteKnowledgeBaseDocumentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteKnowledgeBaseDocumentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeletePromptRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeletePromptResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Description": {
       "base": null,
@@ -1164,23 +1139,19 @@
     },
     "DisassociateAgentCollaboratorRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DisassociateAgentCollaboratorResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DisassociateAgentKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DisassociateAgentKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Document": {
       "base": null,
@@ -1226,7 +1197,7 @@
     "DocumentStatus": {
       "base": null,
       "refs": {
-        "KnowledgeBaseDocumentDetail$status": "<p>The ingestion status of the document. The following statuses are possible:</p> <ul> <li> <p>STARTED – You submitted the ingestion job containing the document.</p> </li> <li> <p>PENDING – The document is waiting to be ingested.</p> </li> <li> <p>IN_PROGRESS – The document is being ingested.</p> </li> <li> <p>INDEXED – The document was successfully indexed.</p> </li> <li> <p>PARTIALLY_INDEXED – The document was partially indexed.</p> </li> <li> <p>METADATA_PARTIALLY_INDEXED – You submitted metadata for an existing document and it was partially indexed.</p> </li> <li> <p>METADATA_UPDATE_FAILED – You submitted a metadata update for an existing document but it failed.</p> </li> <li> <p>FAILED – The document failed to be ingested.</p> </li> <li> <p>NOT_FOUND – The document wasn't found.</p> </li> <li> <p>IGNORED – The document was ignored during ingestion.</p> </li> <li> <p>DELETING – You submitted the delete job containing the document.</p> </li> <li> <p>DELETE_IN_PROGRESS – The document is being deleted.</p> </li> </ul>"
+        "KnowledgeBaseDocumentDetail$status": "<p>The ingestion status of the document. The following statuses are possible:</p> <ul> <li> <p>STARTING – You submitted the ingestion job containing the document.</p> </li> <li> <p>PENDING – The document is waiting to be ingested.</p> </li> <li> <p>IN_PROGRESS – The document is being ingested.</p> </li> <li> <p>INDEXED – The document was successfully indexed.</p> </li> <li> <p>PARTIALLY_INDEXED – The document was partially indexed.</p> </li> <li> <p>METADATA_PARTIALLY_INDEXED – You submitted metadata for an existing document and it was partially indexed.</p> </li> <li> <p>METADATA_UPDATE_FAILED – You submitted a metadata update for an existing document but it failed.</p> </li> <li> <p>FAILED – The document failed to be ingested.</p> </li> <li> <p>NOT_FOUND – The document wasn't found.</p> </li> <li> <p>IGNORED – The document was ignored during ingestion.</p> </li> <li> <p>DELETING – You submitted the delete job containing the document.</p> </li> <li> <p>DELETE_IN_PROGRESS – The document is being deleted.</p> </li> </ul>"
       }
     },
     "DraftVersion": {
@@ -1329,38 +1300,38 @@
     "FieldName": {
       "base": null,
       "refs": {
-        "MongoDbAtlasFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
-        "MongoDbAtlasFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
         "MongoDbAtlasFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>",
-        "NeptuneAnalyticsFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
+        "MongoDbAtlasFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
+        "MongoDbAtlasFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
         "NeptuneAnalyticsFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
-        "OpenSearchManagedClusterFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
-        "OpenSearchManagedClusterFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
+        "NeptuneAnalyticsFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
         "OpenSearchManagedClusterFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>",
-        "OpenSearchServerlessFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
-        "OpenSearchServerlessFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
+        "OpenSearchManagedClusterFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
+        "OpenSearchManagedClusterFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
         "OpenSearchServerlessFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>",
-        "PineconeFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
+        "OpenSearchServerlessFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
+        "OpenSearchServerlessFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
         "PineconeFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
-        "RedisEnterpriseCloudFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
+        "PineconeFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>",
+        "RedisEnterpriseCloudFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>",
         "RedisEnterpriseCloudFieldMapping$textField": "<p>The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.</p>",
-        "RedisEnterpriseCloudFieldMapping$vectorField": "<p>The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.</p>"
+        "RedisEnterpriseCloudFieldMapping$metadataField": "<p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>"
       }
     },
     "FieldsForReranking": {
       "base": null,
       "refs": {
-        "RerankingMetadataSelectiveModeConfiguration$fieldsToExclude": "<p>Specifies the metadata fields to exclude from the reranking process.</p>",
-        "RerankingMetadataSelectiveModeConfiguration$fieldsToInclude": "<p>Specifies the metadata fields to include in the reranking process.</p>"
+        "RerankingMetadataSelectiveModeConfiguration$fieldsToInclude": "<p>Specifies the metadata fields to include in the reranking process.</p>",
+        "RerankingMetadataSelectiveModeConfiguration$fieldsToExclude": "<p>Specifies the metadata fields to exclude from the reranking process.</p>"
       }
     },
     "FilterList": {
       "base": null,
       "refs": {
-        "PatternObjectFilter$exclusionFilters": "<p>A list of one or more exclusion regular expression patterns to exclude certain object types that adhere to the pattern. If you specify an inclusion and exclusion filter/pattern and both match a document, the exclusion filter takes precedence and the document isn’t crawled.</p>",
         "PatternObjectFilter$inclusionFilters": "<p>A list of one or more inclusion regular expression patterns to include certain object types that adhere to the pattern. If you specify an inclusion and exclusion filter/pattern and both match a document, the exclusion filter takes precedence and the document isn’t crawled.</p>",
-        "WebCrawlerConfiguration$exclusionFilters": "<p>A list of one or more exclusion regular expression patterns to exclude certain URLs. If you specify an inclusion and exclusion filter/pattern and both match a URL, the exclusion filter takes precedence and the web content of the URL isn’t crawled.</p>",
-        "WebCrawlerConfiguration$inclusionFilters": "<p>A list of one or more inclusion regular expression patterns to include certain URLs. If you specify an inclusion and exclusion filter/pattern and both match a URL, the exclusion filter takes precedence and the web content of the URL isn’t crawled.</p>"
+        "PatternObjectFilter$exclusionFilters": "<p>A list of one or more exclusion regular expression patterns to exclude certain object types that adhere to the pattern. If you specify an inclusion and exclusion filter/pattern and both match a document, the exclusion filter takes precedence and the document isn’t crawled.</p>",
+        "WebCrawlerConfiguration$inclusionFilters": "<p>A list of one or more inclusion regular expression patterns to include certain URLs. If you specify an inclusion and exclusion filter/pattern and both match a URL, the exclusion filter takes precedence and the web content of the URL isn’t crawled.</p>",
+        "WebCrawlerConfiguration$exclusionFilters": "<p>A list of one or more exclusion regular expression patterns to exclude certain URLs. If you specify an inclusion and exclusion filter/pattern and both match a URL, the exclusion filter takes precedence and the web content of the URL isn’t crawled.</p>"
       }
     },
     "FilterPattern": {
@@ -1391,6 +1362,12 @@
       "base": null,
       "refs": {
         "FixedSizeChunkingConfiguration$overlapPercentage": "<p>The percentage of overlap between adjacent chunks of a data source.</p>"
+      }
+    },
+    "FlowAgentAliasArn": {
+      "base": null,
+      "refs": {
+        "AgentFlowNodeConfiguration$agentAliasArn": "<p>The Amazon Resource Name (ARN) of the alias of the agent to invoke.</p>"
       }
     },
     "FlowAliasArn": {
@@ -1635,6 +1612,30 @@
         "UpdateFlowRequest$flowIdentifier": "<p>The unique identifier of the flow.</p>"
       }
     },
+    "FlowKnowledgeBaseId": {
+      "base": null,
+      "refs": {
+        "KnowledgeBaseFlowNodeConfiguration$knowledgeBaseId": "<p>The unique identifier of the knowledge base to query.</p>"
+      }
+    },
+    "FlowLambdaArn": {
+      "base": null,
+      "refs": {
+        "LambdaFunctionFlowNodeConfiguration$lambdaArn": "<p>The Amazon Resource Name (ARN) of the Lambda function to invoke.</p>"
+      }
+    },
+    "FlowLexBotAliasArn": {
+      "base": null,
+      "refs": {
+        "LexFlowNodeConfiguration$botAliasArn": "<p>The Amazon Resource Name (ARN) of the Amazon Lex bot alias to invoke.</p>"
+      }
+    },
+    "FlowLexBotLocaleId": {
+      "base": null,
+      "refs": {
+        "LexFlowNodeConfiguration$localeId": "<p>The Region to invoke the Amazon Lex bot in.</p>"
+      }
+    },
     "FlowName": {
       "base": null,
       "refs": {
@@ -1717,8 +1718,8 @@
         "FlowNode$name": "<p>A name for the node.</p>",
         "InvalidLoopBoundaryFlowValidationDetails$source": "<p>The source node of the connection that violates DoWhile loop boundary rules.</p>",
         "InvalidLoopBoundaryFlowValidationDetails$target": "<p>The target node of the connection that violates DoWhile loop boundary rules.</p>",
-        "LoopIncompatibleNodeTypeFlowValidationDetails$incompatibleNodeName": "<p>The node that's incompatible in the DoWhile loop.</p>",
         "LoopIncompatibleNodeTypeFlowValidationDetails$node": "<p>The <code>Loop</code> container node that contains an incompatible node.</p>",
+        "LoopIncompatibleNodeTypeFlowValidationDetails$incompatibleNodeName": "<p>The node that's incompatible in the DoWhile loop.</p>",
         "MalformedConditionExpressionFlowValidationDetails$node": "<p>The name of the node containing the malformed condition expression.</p>",
         "MalformedNodeInputExpressionFlowValidationDetails$node": "<p>The name of the node containing the malformed input expression.</p>",
         "MismatchedNodeInputTypeFlowValidationDetails$node": "<p>The name of the node containing the input with the mismatched data type.</p>",
@@ -1770,6 +1771,25 @@
       "base": null,
       "refs": {
         "FlowDefinition$nodes": "<p>An array of node definitions in the flow.</p>"
+      }
+    },
+    "FlowPromptArn": {
+      "base": null,
+      "refs": {
+        "PromptFlowNodeResourceConfiguration$promptArn": "<p>The Amazon Resource Name (ARN) of the prompt from Prompt management.</p>"
+      }
+    },
+    "FlowPromptModelIdentifier": {
+      "base": null,
+      "refs": {
+        "PromptFlowNodeInlineConfiguration$modelId": "<p>The unique identifier of the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> to run inference with.</p>"
+      }
+    },
+    "FlowS3BucketName": {
+      "base": null,
+      "refs": {
+        "RetrievalFlowNodeS3Configuration$bucketName": "<p>The name of the Amazon S3 bucket from which to retrieve data.</p>",
+        "StorageFlowNodeS3Configuration$bucketName": "<p>The name of the Amazon S3 bucket in which to store the input into the node.</p>"
       }
     },
     "FlowStatus": {
@@ -1868,143 +1888,115 @@
     },
     "GetAgentActionGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentActionGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentCollaboratorRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentCollaboratorResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAgentVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetDataSourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetDataSourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetFlowAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetFlowAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetFlowRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetFlowResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetFlowVersionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetFlowVersionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetIngestionJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetIngestionJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetKnowledgeBaseDocumentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetKnowledgeBaseDocumentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetPromptRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetPromptResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GraphArn": {
       "base": "<p>ARN for Neptune Analytics graph database</p>",
@@ -2080,8 +2072,8 @@
       "refs": {
         "ActionGroupSummary$actionGroupId": "<p>The unique identifier of the action group.</p>",
         "Agent$agentId": "<p>The unique identifier of the agent.</p>",
-        "AgentActionGroup$actionGroupId": "<p>The unique identifier of the action group.</p>",
         "AgentActionGroup$agentId": "<p>The unique identifier of the agent to which the action group belongs.</p>",
+        "AgentActionGroup$actionGroupId": "<p>The unique identifier of the action group.</p>",
         "AgentAlias$agentId": "<p>The unique identifier of the agent.</p>",
         "AgentCollaborator$agentId": "<p>The collaborator's agent ID.</p>",
         "AgentCollaborator$collaboratorId": "<p>The collaborator's collaborator ID.</p>",
@@ -2098,33 +2090,33 @@
         "CreateAgentActionGroupRequest$agentId": "<p>The unique identifier of the agent for which to create the action group.</p>",
         "CreateAgentAliasRequest$agentId": "<p>The unique identifier of the agent.</p>",
         "CreateDataSourceRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base to which to add the data source.</p>",
-        "DataSource$dataSourceId": "<p>The unique identifier of the data source.</p>",
         "DataSource$knowledgeBaseId": "<p>The unique identifier of the knowledge base to which the data source belongs.</p>",
-        "DataSourceSummary$dataSourceId": "<p>The unique identifier of the data source.</p>",
+        "DataSource$dataSourceId": "<p>The unique identifier of the data source.</p>",
         "DataSourceSummary$knowledgeBaseId": "<p>The unique identifier of the knowledge base to which the data source belongs.</p>",
-        "DeleteAgentActionGroupRequest$actionGroupId": "<p>The unique identifier of the action group to delete.</p>",
+        "DataSourceSummary$dataSourceId": "<p>The unique identifier of the data source.</p>",
         "DeleteAgentActionGroupRequest$agentId": "<p>The unique identifier of the agent that the action group belongs to.</p>",
+        "DeleteAgentActionGroupRequest$actionGroupId": "<p>The unique identifier of the action group to delete.</p>",
         "DeleteAgentAliasRequest$agentId": "<p>The unique identifier of the agent that the alias belongs to.</p>",
         "DeleteAgentAliasResponse$agentId": "<p>The unique identifier of the agent that the alias belongs to.</p>",
         "DeleteAgentRequest$agentId": "<p>The unique identifier of the agent to delete.</p>",
         "DeleteAgentResponse$agentId": "<p>The unique identifier of the agent that was deleted.</p>",
         "DeleteAgentVersionRequest$agentId": "<p>The unique identifier of the agent that the version belongs to.</p>",
         "DeleteAgentVersionResponse$agentId": "<p>The unique identifier of the agent that the version belongs to.</p>",
-        "DeleteDataSourceRequest$dataSourceId": "<p>The unique identifier of the data source to delete.</p>",
         "DeleteDataSourceRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base from which to delete the data source.</p>",
-        "DeleteDataSourceResponse$dataSourceId": "<p>The unique identifier of the data source that was deleted.</p>",
+        "DeleteDataSourceRequest$dataSourceId": "<p>The unique identifier of the data source to delete.</p>",
         "DeleteDataSourceResponse$knowledgeBaseId": "<p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>",
+        "DeleteDataSourceResponse$dataSourceId": "<p>The unique identifier of the data source that was deleted.</p>",
         "DeleteFlowVersionResponse$id": "<p>The unique identifier of the flow.</p>",
-        "DeleteKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source that contains the documents.</p>",
         "DeleteKnowledgeBaseDocumentsRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base that is connected to the data source.</p>",
+        "DeleteKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source that contains the documents.</p>",
         "DeleteKnowledgeBaseRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base to delete.</p>",
         "DeleteKnowledgeBaseResponse$knowledgeBaseId": "<p>The unique identifier of the knowledge base that was deleted.</p>",
         "DisassociateAgentCollaboratorRequest$agentId": "<p>An agent ID.</p>",
         "DisassociateAgentCollaboratorRequest$collaboratorId": "<p>The collaborator's ID.</p>",
         "DisassociateAgentKnowledgeBaseRequest$agentId": "<p>The unique identifier of the agent from which to disassociate the knowledge base.</p>",
         "DisassociateAgentKnowledgeBaseRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base to disassociate.</p>",
-        "GetAgentActionGroupRequest$actionGroupId": "<p>The unique identifier of the action group for which to get information.</p>",
         "GetAgentActionGroupRequest$agentId": "<p>The unique identifier of the agent that the action group belongs to.</p>",
+        "GetAgentActionGroupRequest$actionGroupId": "<p>The unique identifier of the action group for which to get information.</p>",
         "GetAgentAliasRequest$agentId": "<p>The unique identifier of the agent to which the alias to get information belongs.</p>",
         "GetAgentCollaboratorRequest$agentId": "<p>The agent's ID.</p>",
         "GetAgentCollaboratorRequest$collaboratorId": "<p>The collaborator's ID.</p>",
@@ -2132,25 +2124,25 @@
         "GetAgentKnowledgeBaseRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base associated with the agent.</p>",
         "GetAgentRequest$agentId": "<p>The unique identifier of the agent.</p>",
         "GetAgentVersionRequest$agentId": "<p>The unique identifier of the agent.</p>",
-        "GetDataSourceRequest$dataSourceId": "<p>The unique identifier of the data source.</p>",
         "GetDataSourceRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data source.</p>",
+        "GetDataSourceRequest$dataSourceId": "<p>The unique identifier of the data source.</p>",
+        "GetIngestionJobRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>",
         "GetIngestionJobRequest$dataSourceId": "<p>The unique identifier of the data source for the data ingestion job you want to get information on.</p>",
         "GetIngestionJobRequest$ingestionJobId": "<p>The unique identifier of the data ingestion job you want to get information on.</p>",
-        "GetIngestionJobRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job you want to get information on.</p>",
-        "GetKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source that contains the documents.</p>",
         "GetKnowledgeBaseDocumentsRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base that is connected to the data source.</p>",
+        "GetKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source that contains the documents.</p>",
         "GetKnowledgeBaseRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base you want to get information on.</p>",
-        "IngestKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source connected to the knowledge base that you're adding documents to.</p>",
         "IngestKnowledgeBaseDocumentsRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base to ingest the documents into.</p>",
+        "IngestKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source connected to the knowledge base that you're adding documents to.</p>",
+        "IngestionJob$knowledgeBaseId": "<p>The unique identifier of the knowledge for the data ingestion job.</p>",
         "IngestionJob$dataSourceId": "<p>The unique identifier of the data source for the data ingestion job.</p>",
         "IngestionJob$ingestionJobId": "<p>The unique identifier of the data ingestion job.</p>",
-        "IngestionJob$knowledgeBaseId": "<p>The unique identifier of the knowledge for the data ingestion job.</p>",
+        "IngestionJobSummary$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job.</p>",
         "IngestionJobSummary$dataSourceId": "<p>The unique identifier of the data source for the data ingestion job.</p>",
         "IngestionJobSummary$ingestionJobId": "<p>The unique identifier of the data ingestion job.</p>",
-        "IngestionJobSummary$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job.</p>",
         "KnowledgeBase$knowledgeBaseId": "<p>The unique identifier of the knowledge base.</p>",
-        "KnowledgeBaseDocumentDetail$dataSourceId": "<p>The identifier of the data source connected to the knowledge base that the document was ingested into or deleted from.</p>",
         "KnowledgeBaseDocumentDetail$knowledgeBaseId": "<p>The identifier of the knowledge base that the document was ingested into or deleted from.</p>",
+        "KnowledgeBaseDocumentDetail$dataSourceId": "<p>The identifier of the data source connected to the knowledge base that the document was ingested into or deleted from.</p>",
         "KnowledgeBaseSummary$knowledgeBaseId": "<p>The unique identifier of the knowledge base.</p>",
         "ListAgentActionGroupsRequest$agentId": "<p>The unique identifier of the agent.</p>",
         "ListAgentAliasesRequest$agentId": "<p>The unique identifier of the agent.</p>",
@@ -2158,27 +2150,27 @@
         "ListAgentKnowledgeBasesRequest$agentId": "<p>The unique identifier of the agent for which to return information about knowledge bases associated with it.</p>",
         "ListAgentVersionsRequest$agentId": "<p>The unique identifier of the agent.</p>",
         "ListDataSourcesRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for which to return a list of information.</p>",
-        "ListIngestionJobsRequest$dataSourceId": "<p>The unique identifier of the data source for the list of data ingestion jobs.</p>",
         "ListIngestionJobsRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the list of data ingestion jobs.</p>",
-        "ListKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source that contains the documents.</p>",
+        "ListIngestionJobsRequest$dataSourceId": "<p>The unique identifier of the data source for the list of data ingestion jobs.</p>",
         "ListKnowledgeBaseDocumentsRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base that is connected to the data source.</p>",
+        "ListKnowledgeBaseDocumentsRequest$dataSourceId": "<p>The unique identifier of the data source that contains the documents.</p>",
         "PrepareAgentRequest$agentId": "<p>The unique identifier of the agent for which to create a <code>DRAFT</code> version.</p>",
         "PrepareAgentResponse$agentId": "<p>The unique identifier of the agent for which the <code>DRAFT</code> version was created.</p>",
-        "StartIngestionJobRequest$dataSourceId": "<p>The unique identifier of the data source you want to ingest into your knowledge base.</p>",
         "StartIngestionJobRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job.</p>",
+        "StartIngestionJobRequest$dataSourceId": "<p>The unique identifier of the data source you want to ingest into your knowledge base.</p>",
+        "StopIngestionJobRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>",
         "StopIngestionJobRequest$dataSourceId": "<p>The unique identifier of the data source for the data ingestion job you want to stop.</p>",
         "StopIngestionJobRequest$ingestionJobId": "<p>The unique identifier of the data ingestion job you want to stop.</p>",
-        "StopIngestionJobRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data ingestion job you want to stop.</p>",
-        "UpdateAgentActionGroupRequest$actionGroupId": "<p>The unique identifier of the action group.</p>",
         "UpdateAgentActionGroupRequest$agentId": "<p>The unique identifier of the agent for which to update the action group.</p>",
+        "UpdateAgentActionGroupRequest$actionGroupId": "<p>The unique identifier of the action group.</p>",
         "UpdateAgentAliasRequest$agentId": "<p>The unique identifier of the agent.</p>",
         "UpdateAgentCollaboratorRequest$agentId": "<p>The agent's ID.</p>",
         "UpdateAgentCollaboratorRequest$collaboratorId": "<p>The collaborator's ID.</p>",
         "UpdateAgentKnowledgeBaseRequest$agentId": "<p>The unique identifier of the agent associated with the knowledge base that you want to update.</p>",
         "UpdateAgentKnowledgeBaseRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base that has been associated with an agent.</p>",
         "UpdateAgentRequest$agentId": "<p>The unique identifier of the agent.</p>",
-        "UpdateDataSourceRequest$dataSourceId": "<p>The unique identifier of the data source.</p>",
         "UpdateDataSourceRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base for the data source.</p>",
+        "UpdateDataSourceRequest$dataSourceId": "<p>The unique identifier of the data source.</p>",
         "UpdateKnowledgeBaseRequest$knowledgeBaseId": "<p>The unique identifier of the knowledge base to update.</p>"
       }
     },
@@ -2221,13 +2213,11 @@
     },
     "IngestKnowledgeBaseDocumentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "IngestKnowledgeBaseDocumentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "IngestionJob": {
       "base": "<p>Contains details about a data ingestion job. Data sources are ingested into a knowledge base so that Large Language Models (LLMs) can use your data.</p> <p>This data type is used in the following API operations:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html#API_agent_StartIngestionJob_ResponseSyntax\">StartIngestionJob response</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetIngestionJob.html#API_agent_GetIngestionJob_ResponseSyntax\">GetIngestionJob response</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJobs.html#API_agent_ListIngestionJobs_ResponseSyntax\">ListIngestionJob response</a> </p> </li> </ul>",
@@ -2358,8 +2348,7 @@
     },
     "InternalServerException": {
       "base": "<p>An internal server error occurred. Retry your request.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "InvalidLoopBoundaryFlowValidationDetails": {
       "base": "<p>Details about a flow that contains connections that violate loop boundary rules.</p>",
@@ -2475,12 +2464,6 @@
         "KnowledgeBaseFlowNodeConfiguration$numberOfResults": "<p>The number of results to retrieve from the knowledge base.</p>"
       }
     },
-    "KnowledgeBaseId": {
-      "base": null,
-      "refs": {
-        "KnowledgeBaseFlowNodeConfiguration$knowledgeBaseId": "<p>The unique identifier of the knowledge base to query.</p>"
-      }
-    },
     "KnowledgeBaseModelIdentifier": {
       "base": null,
       "refs": {
@@ -2559,7 +2542,6 @@
       "base": null,
       "refs": {
         "ActionGroupExecutor$lambda": "<p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>",
-        "LambdaFunctionFlowNodeConfiguration$lambdaArn": "<p>The Amazon Resource Name (ARN) of the Lambda function to invoke.</p>",
         "OrchestrationExecutor$lambda": "<p> The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action. </p>",
         "PromptOverrideConfiguration$overrideLambda": "<p>The ARN of the Lambda function to use when parsing the raw foundation model output in parts of the agent sequence. If you specify this field, at least one of the <code>promptConfigurations</code> must contain a <code>parserMode</code> value that is set to <code>OVERRIDDEN</code>. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html\">Parser Lambda function in Amazon Bedrock Agents</a>.</p>",
         "TransformationLambdaConfiguration$lambdaArn": "<p>The function's ARN identifier.</p>"
@@ -2571,18 +2553,6 @@
         "FlowNodeConfiguration$lambdaFunction": "<p>Contains configurations for a Lambda function node in your flow. Invokes an Lambda function.</p>"
       }
     },
-    "LexBotAliasArn": {
-      "base": null,
-      "refs": {
-        "LexFlowNodeConfiguration$botAliasArn": "<p>The Amazon Resource Name (ARN) of the Amazon Lex bot alias to invoke.</p>"
-      }
-    },
-    "LexBotLocaleId": {
-      "base": null,
-      "refs": {
-        "LexFlowNodeConfiguration$localeId": "<p>The Region to invoke the Amazon Lex bot in.</p>"
-      }
-    },
     "LexFlowNodeConfiguration": {
       "base": "<p>Contains configurations for a Lex node in the flow. You specify a Amazon Lex bot to invoke. This node takes an utterance as the input and returns as the output the intent identified by the Amazon Lex bot. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/flows-nodes.html\">Node types in a flow</a> in the Amazon Bedrock User Guide.</p>",
       "refs": {
@@ -2591,153 +2561,123 @@
     },
     "ListAgentActionGroupsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentActionGroupsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentAliasesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentAliasesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentCollaboratorsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentCollaboratorsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentKnowledgeBasesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentKnowledgeBasesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentVersionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentVersionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListAgentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDataSourcesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListDataSourcesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowAliasesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowAliasesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowVersionsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowVersionsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListFlowsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListIngestionJobsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListIngestionJobsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListKnowledgeBaseDocumentsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListKnowledgeBaseDocumentsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListKnowledgeBasesRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListKnowledgeBasesResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPromptsRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListPromptsResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTagsForResourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListTagsForResourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "LoopControllerFlowNodeConfiguration": {
       "base": "<p>Contains configurations for the controller node of a DoWhile loop in the flow.</p>",
@@ -2997,8 +2937,8 @@
     "MongoDbAtlasIndexName": {
       "base": null,
       "refs": {
-        "MongoDbAtlasConfiguration$textIndexName": "<p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>",
-        "MongoDbAtlasConfiguration$vectorIndexName": "<p>The name of the MongoDB Atlas vector search index.</p>"
+        "MongoDbAtlasConfiguration$vectorIndexName": "<p>The name of the MongoDB Atlas vector search index.</p>",
+        "MongoDbAtlasConfiguration$textIndexName": "<p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>"
       }
     },
     "MultipleLoopControllerNodesFlowValidationDetails": {
@@ -3119,8 +3059,8 @@
         "ServiceQuotaExceededException$message": null,
         "ThrottlingException$message": null,
         "ValidationException$message": null,
-        "ValidationExceptionField$message": "<p>A message describing why this field failed validation.</p>",
-        "ValidationExceptionField$name": "<p>The name of the field.</p>"
+        "ValidationExceptionField$name": "<p>The name of the field.</p>",
+        "ValidationExceptionField$message": "<p>A message describing why this field failed validation.</p>"
       }
     },
     "NonEmptyString": {
@@ -3338,34 +3278,30 @@
     },
     "PrepareAgentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PrepareAgentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PrepareFlowRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PrepareFlowResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PrimitiveLong": {
       "base": null,
       "refs": {
-        "IngestionJobStatistics$numberOfDocumentsDeleted": "<p>The number of source documents that were deleted.</p>",
-        "IngestionJobStatistics$numberOfDocumentsFailed": "<p>The number of source documents that failed to be ingested.</p>",
         "IngestionJobStatistics$numberOfDocumentsScanned": "<p>The total number of source documents that were scanned. Includes new, updated, and unchanged documents.</p>",
-        "IngestionJobStatistics$numberOfMetadataDocumentsModified": "<p>The number of metadata files that were updated or deleted.</p>",
         "IngestionJobStatistics$numberOfMetadataDocumentsScanned": "<p>The total number of metadata files that were scanned. Includes new, updated, and unchanged files.</p>",
+        "IngestionJobStatistics$numberOfNewDocumentsIndexed": "<p>The number of new source documents in the data source that were successfully indexed.</p>",
         "IngestionJobStatistics$numberOfModifiedDocumentsIndexed": "<p>The number of modified source documents in the data source that were successfully indexed.</p>",
-        "IngestionJobStatistics$numberOfNewDocumentsIndexed": "<p>The number of new source documents in the data source that were successfully indexed.</p>"
+        "IngestionJobStatistics$numberOfMetadataDocumentsModified": "<p>The number of metadata files that were updated or deleted.</p>",
+        "IngestionJobStatistics$numberOfDocumentsDeleted": "<p>The number of source documents that were deleted.</p>",
+        "IngestionJobStatistics$numberOfDocumentsFailed": "<p>The number of source documents that failed to be ingested.</p>"
       }
     },
     "PromptAgentResource": {
@@ -3380,7 +3316,6 @@
         "CreatePromptResponse$arn": "<p>The Amazon Resource Name (ARN) of the prompt.</p>",
         "CreatePromptVersionResponse$arn": "<p>The Amazon Resource Name (ARN) of the version of the prompt.</p>",
         "GetPromptResponse$arn": "<p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>",
-        "PromptFlowNodeResourceConfiguration$promptArn": "<p>The Amazon Resource Name (ARN) of the prompt from Prompt management.</p>",
         "PromptSummary$arn": "<p>The Amazon Resource Name (ARN) of the prompt or the prompt version (if you specified a version in the request).</p>",
         "UpdatePromptResponse$arn": "<p>The Amazon Resource Name (ARN) of the prompt.</p>"
       }
@@ -3516,7 +3451,6 @@
     "PromptModelIdentifier": {
       "base": null,
       "refs": {
-        "PromptFlowNodeInlineConfiguration$modelId": "<p>The unique identifier of the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> to run inference with.</p>",
         "PromptVariant$modelId": "<p>The unique identifier of the model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a> with which to run inference on the prompt.</p>"
       }
     },
@@ -3872,8 +3806,7 @@
     },
     "ResourceNotFoundException": {
       "base": "<p>The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and try your request again.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "RetrievalFlowNodeConfiguration": {
       "base": "<p>Contains configurations for a Retrieval node in a flow. This node retrieves data from the Amazon S3 location that you specify and returns it as the output.</p>",
@@ -3902,9 +3835,7 @@
     "S3BucketName": {
       "base": null,
       "refs": {
-        "RetrievalFlowNodeS3Configuration$bucketName": "<p>The name of the Amazon S3 bucket from which to retrieve data.</p>",
-        "S3Identifier$s3BucketName": "<p>The name of the S3 bucket.</p>",
-        "StorageFlowNodeS3Configuration$bucketName": "<p>The name of the Amazon S3 bucket in which to store the input into the node.</p>"
+        "S3Identifier$s3BucketName": "<p>The name of the S3 bucket.</p>"
       }
     },
     "S3BucketUri": {
@@ -4054,8 +3985,7 @@
     },
     "ServiceQuotaExceededException": {
       "base": "<p>The number of requests exceeds the service quota. Resubmit your request later.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "SessionSummaryConfiguration": {
       "base": "<p>Configuration for SESSION_SUMMARY memory type enabled for the agent.</p>",
@@ -4140,13 +4070,11 @@
     },
     "StartIngestionJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartIngestionJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StepType": {
       "base": null,
@@ -4156,13 +4084,11 @@
     },
     "StopIngestionJobRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopIngestionJobResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StopSequences": {
       "base": null,
@@ -4277,13 +4203,11 @@
     },
     "TagResourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "TagResourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "TagValue": {
       "base": null,
@@ -4340,8 +4264,7 @@
     },
     "ThrottlingException": {
       "base": "<p>The number of requests exceeds the limit. Resubmit your request later.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "Tool": {
       "base": "<p>Contains configurations for a tool that a model can use when generating a response. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html\">Use a tool to complete an Amazon Bedrock model response</a>.</p>",
@@ -4497,113 +4420,91 @@
     },
     "UntagResourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UntagResourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentActionGroupRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentActionGroupResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentCollaboratorRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentCollaboratorResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateAgentResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateDataSourceRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateDataSourceResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFlowAliasRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFlowAliasResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFlowRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateFlowResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateKnowledgeBaseRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateKnowledgeBaseResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePromptRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdatePromptResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Url": {
       "base": null,
@@ -4631,18 +4532,15 @@
     },
     "ValidateFlowDefinitionRequest": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ValidateFlowDefinitionResponse": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ValidationException": {
       "base": "<p>Input validation failed. Check your request parameters and retry the request.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ValidationExceptionField": {
       "base": "<p>Stores information about a field passed inside a request that resulted in an validation error.</p>",
@@ -4730,6 +4628,30 @@
         "PrepareAgentResponse$agentVersion": "<p>The version of the agent.</p>",
         "PromptSummary$version": "<p>The version of the prompt that this summary applies to.</p>",
         "UpdatePromptResponse$version": "<p>The version of the prompt. When you update a prompt, the version updated is the <code>DRAFT</code> version.</p>"
+      }
+    },
+    "VideoConfiguration": {
+      "base": "<p>Configuration settings for processing video content in multimodal knowledge bases.</p>",
+      "refs": {
+        "VideoConfigurations$member": "<p>Video configuration for multi modal ingestion.</p>"
+      }
+    },
+    "VideoConfigurations": {
+      "base": null,
+      "refs": {
+        "BedrockEmbeddingModelConfiguration$video": "<p>Configuration settings for processing video content in multimodal knowledge bases.</p>"
+      }
+    },
+    "VideoSegmentationConfiguration": {
+      "base": "<p>Configuration for segmenting video content during multimodal knowledge base ingestion. Determines how video files are divided into chunks for processing.</p>",
+      "refs": {
+        "VideoConfiguration$segmentationConfiguration": "<p>Configuration for segmenting video content during processing.</p>"
+      }
+    },
+    "VideoSegmentationConfigurationFixedLengthDurationInteger": {
+      "base": null,
+      "refs": {
+        "VideoSegmentationConfiguration$fixedLengthDuration": "<p>The duration in seconds for each video segment. Video files will be divided into chunks of this length for processing.</p>"
       }
     },
     "WebCrawlerConfiguration": {

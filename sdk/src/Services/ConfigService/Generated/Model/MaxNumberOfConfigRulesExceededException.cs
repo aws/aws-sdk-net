@@ -40,6 +40,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxNumberOfConfigRulesExceededException
+        /// message.
+        /// </summary>
+        public MaxNumberOfConfigRulesExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxNumberOfConfigRulesExceededException with the specified error
         /// message.
         /// </summary>

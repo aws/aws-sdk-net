@@ -40,6 +40,13 @@ namespace Amazon.ChimeSDKMessaging.Model
         private ErrorCode _code;
 
         /// <summary>
+        /// Default constructor for UnauthorizedClientException
+        /// message.
+        /// </summary>
+        public UnauthorizedClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthorizedClientException with the specified error
         /// message.
         /// </summary>

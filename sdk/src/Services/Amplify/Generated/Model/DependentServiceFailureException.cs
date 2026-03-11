@@ -39,6 +39,13 @@ namespace Amazon.Amplify.Model
     {
 
         /// <summary>
+        /// Default constructor for DependentServiceFailureException
+        /// message.
+        /// </summary>
+        public DependentServiceFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependentServiceFailureException with the specified error
         /// message.
         /// </summary>

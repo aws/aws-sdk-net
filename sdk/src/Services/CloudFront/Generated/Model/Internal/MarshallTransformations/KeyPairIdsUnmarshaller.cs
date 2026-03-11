@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyPairIds Object
     /// </summary>  
-    public class KeyPairIdsUnmarshaller : IXmlUnmarshaller<KeyPairIds, XmlUnmarshallerContext>
+    public partial class KeyPairIdsUnmarshaller : IXmlUnmarshaller<KeyPairIds, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, KeyPairIds unmarshalledObject, int targetDepth);
+
         private static KeyPairIdsUnmarshaller _instance = new KeyPairIdsUnmarshaller();        
 
         /// <summary>

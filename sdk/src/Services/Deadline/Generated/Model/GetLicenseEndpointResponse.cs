@@ -168,7 +168,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The VCP(virtual private cloud) ID associated with the license endpoint.
+        /// The VPC (virtual private cloud) ID associated with the license endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

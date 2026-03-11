@@ -260,7 +260,7 @@ namespace Amazon.MobileAnalytics
         /// </exception>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -284,7 +284,7 @@ namespace Amazon.MobileAnalytics
         /// </exception>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
             

@@ -46,7 +46,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property InitialAudioGain. Value to set the initial audio gain for
         /// the Live Event.
         /// </summary>
-        [AWSProperty(Min=-60, Max=60)]
         public int? InitialAudioGain
         {
             get { return this._initialAudioGain; }

@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchTrafficPolicyInstanceException
+        /// message.
+        /// </summary>
+        public NoSuchTrafficPolicyInstanceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchTrafficPolicyInstanceException with the specified error
         /// message.
         /// </summary>

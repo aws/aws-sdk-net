@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of shards
+    /// allowed per cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ShardsPerClusterQuotaExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ShardsPerClusterQuotaExceededException
+        /// message.
+        /// </summary>
+        public ShardsPerClusterQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ShardsPerClusterQuotaExceededException with the specified error

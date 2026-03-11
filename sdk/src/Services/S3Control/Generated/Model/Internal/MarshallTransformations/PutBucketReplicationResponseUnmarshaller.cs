@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutBucketReplication operation
     /// </summary>  
-    public class PutBucketReplicationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class PutBucketReplicationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             PutBucketReplicationResponse response = new PutBucketReplicationResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutBucketReplicationResponse response);
 
         private static PutBucketReplicationResponseUnmarshaller _instance = new PutBucketReplicationResponseUnmarshaller();        
 

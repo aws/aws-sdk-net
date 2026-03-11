@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Represents a variant of a connection type in Glue Data Catalog. Connection type variants
-    /// provide specific configurations and behaviors for different implementations of the
-    /// same general connection type.
+    /// Represents a variant of a connection type in Glue. Connection type variants provide
+    /// specific configurations and behaviors for different implementations of the same general
+    /// connection type.
     /// </summary>
     public partial class ConnectionTypeVariant
     {

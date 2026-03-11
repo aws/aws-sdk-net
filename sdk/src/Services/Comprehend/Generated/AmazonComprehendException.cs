@@ -36,6 +36,14 @@ namespace Amazon.Comprehend
         /// <summary>
         /// Construct instance of AmazonComprehendException
         /// </summary>
+        public AmazonComprehendException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonComprehendException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonComprehendException(string message)
             : base(message)

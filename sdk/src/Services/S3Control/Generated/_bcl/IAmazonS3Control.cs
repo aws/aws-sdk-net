@@ -2512,6 +2512,10 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon Web Services account.
+        /// This operation might be restricted when the account is managed by organization-level
+        /// Block Public Access policies. You’ll get an Access Denied (403) error when the account
+        /// is managed by organization-level Block Public Access policies. Organization-level
+        /// policies override account-level settings, preventing direct account-level modifications.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// </para>
@@ -2547,6 +2551,10 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon Web Services account.
+        /// This operation might be restricted when the account is managed by organization-level
+        /// Block Public Access policies. You’ll get an Access Denied (403) error when the account
+        /// is managed by organization-level Block Public Access policies. Organization-level
+        /// policies override account-level settings, preventing direct account-level modifications.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// </para>
@@ -5164,7 +5172,8 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon Web Services account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// This operation returns the effective account-level configuration, which may inherit
+        /// from organization-level policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// </para>
         ///  
@@ -5203,7 +5212,8 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon Web Services account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// This operation returns the effective account-level configuration, which may inherit
+        /// from organization-level policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// </para>
         ///  
@@ -6285,13 +6295,28 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+        /// purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
-        /// Lens groups</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6300,13 +6325,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c>
-        /// permission to use this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-        /// account permissions to use S3 Storage Lens groups</a>.
+        /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+        /// groups, and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c> permission
+        /// to use this operation. 
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
@@ -6344,13 +6365,28 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+        /// purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
-        /// Lens groups</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6359,13 +6395,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c>
-        /// permission to use this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-        /// account permissions to use S3 Storage Lens groups</a>.
+        /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+        /// groups, and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c> permission
+        /// to use this operation. 
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
@@ -7958,8 +7990,12 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Creates or modifies the <c>PublicAccessBlock</c> configuration for an Amazon Web Services
-        /// account. For this operation, users must have the <c>s3:PutAccountPublicAccessBlock</c>
-        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// account. This operation may be restricted when the account is managed by organization-level
+        /// Block Public Access policies. You might get an Access Denied (403) error when the
+        /// account is managed by organization-level Block Public Access policies. Organization-level
+        /// policies override account-level settings, preventing direct account-level modifications.
+        /// For this operation, users must have the <c>s3:PutAccountPublicAccessBlock</c> permission.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// </para>
         ///  
@@ -7994,8 +8030,12 @@ namespace Amazon.S3Control
         ///  </note> 
         /// <para>
         /// Creates or modifies the <c>PublicAccessBlock</c> configuration for an Amazon Web Services
-        /// account. For this operation, users must have the <c>s3:PutAccountPublicAccessBlock</c>
-        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// account. This operation may be restricted when the account is managed by organization-level
+        /// Block Public Access policies. You might get an Access Denied (403) error when the
+        /// account is managed by organization-level Block Public Access policies. Organization-level
+        /// policies override account-level settings, preventing direct account-level modifications.
+        /// For this operation, users must have the <c>s3:PutAccountPublicAccessBlock</c> permission.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// </para>
         ///  
@@ -8294,6 +8334,21 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+        /// purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
@@ -8309,13 +8364,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:TagResource</c>
-        /// permission to use this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-        /// account permissions to use S3 Storage Lens groups</a>.
+        /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+        /// groups, and S3 Access Grants, you must have the <c>s3:TagResource</c> permission to
+        /// use this operation. 
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
@@ -8354,6 +8405,21 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+        /// purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
@@ -8369,13 +8435,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:TagResource</c>
-        /// permission to use this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-        /// account permissions to use S3 Storage Lens groups</a>.
+        /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+        /// groups, and S3 Access Grants, you must have the <c>s3:TagResource</c> permission to
+        /// use this operation. 
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
@@ -8418,13 +8480,28 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+        /// purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
-        /// Lens groups</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8433,13 +8510,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:UntagResource</c>
-        /// permission to use this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-        /// account permissions to use S3 Storage Lens groups</a>.
+        /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+        /// groups, and S3 Access Grants, you must have the <c>s3:UntagResource</c> permission
+        /// to use this operation. 
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
@@ -8476,13 +8549,28 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+        /// purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
-        /// Lens groups</a> 
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8491,13 +8579,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
-        /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:UntagResource</c>
-        /// permission to use this operation. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-        /// account permissions to use S3 Storage Lens groups</a>.
+        /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+        /// groups, and S3 Access Grants, you must have the <c>s3:UntagResource</c> permission
+        /// to use this operation. 
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>

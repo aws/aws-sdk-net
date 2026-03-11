@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for TaskDoesNotExistException
+        /// message.
+        /// </summary>
+        public TaskDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TaskDoesNotExistException with the specified error
         /// message.
         /// </summary>

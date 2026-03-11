@@ -31,7 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReadSets operation.
-    /// Retrieves a list of read sets.
+    /// Retrieves a list of read sets from a sequence store ID and returns the metadata in
+    /// JSON format.
     /// </summary>
     public partial class ListReadSetsRequest : AmazonOmicsRequest
     {

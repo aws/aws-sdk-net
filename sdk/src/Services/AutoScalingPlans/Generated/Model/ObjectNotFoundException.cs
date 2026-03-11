@@ -39,6 +39,13 @@ namespace Amazon.AutoScalingPlans.Model
     {
 
         /// <summary>
+        /// Default constructor for ObjectNotFoundException
+        /// message.
+        /// </summary>
+        public ObjectNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ObjectNotFoundException with the specified error
         /// message.
         /// </summary>

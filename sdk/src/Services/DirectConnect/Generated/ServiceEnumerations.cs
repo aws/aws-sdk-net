@@ -929,6 +929,10 @@ namespace Amazon.DirectConnect
         /// </summary>
         public static readonly VirtualInterfaceState Rejected = new VirtualInterfaceState("rejected");
         /// <summary>
+        /// Constant Testing for VirtualInterfaceState
+        /// </summary>
+        public static readonly VirtualInterfaceState Testing = new VirtualInterfaceState("testing");
+        /// <summary>
         /// Constant Unknown for VirtualInterfaceState
         /// </summary>
         public static readonly VirtualInterfaceState Unknown = new VirtualInterfaceState("unknown");

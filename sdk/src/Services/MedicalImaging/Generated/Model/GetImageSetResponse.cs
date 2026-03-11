@@ -42,8 +42,10 @@ namespace Amazon.MedicalImaging.Model
         private ImageSetState _imageSetState;
         private ImageSetWorkflowStatus _imageSetWorkflowStatus;
         private bool? _isPrimary;
+        private DateTime? _lastAccessedAt;
         private string _message;
         private Overrides _overrides;
+        private StorageTier _storageTier;
         private DateTime? _updatedAt;
         private string _versionId;
 
@@ -195,6 +197,24 @@ namespace Amazon.MedicalImaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastAccessedAt. 
+        /// <para>
+        /// When the image set was last accessed.
+        /// </para>
+        /// </summary>
+        public DateTime? LastAccessedAt
+        {
+            get { return this._lastAccessedAt; }
+            set { this._lastAccessedAt = value; }
+        }
+
+        // Check to see if LastAccessedAt property is set
+        internal bool IsSetLastAccessedAt()
+        {
+            return this._lastAccessedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
         /// The error message thrown if an image set action fails.
@@ -231,6 +251,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageTier. 
+        /// <para>
+        /// The storage tier of the image set.
+        /// </para>
+        /// </summary>
+        public StorageTier StorageTier
+        {
+            get { return this._storageTier; }
+            set { this._storageTier = value; }
+        }
+
+        // Check to see if StorageTier property is set
+        internal bool IsSetStorageTier()
+        {
+            return this._storageTier != null;
         }
 
         /// <summary>

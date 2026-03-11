@@ -36,6 +36,14 @@ namespace Amazon.GeoRoutes
         /// <summary>
         /// Construct instance of AmazonGeoRoutesException
         /// </summary>
+        public AmazonGeoRoutesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGeoRoutesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGeoRoutesException(string message)
             : base(message)

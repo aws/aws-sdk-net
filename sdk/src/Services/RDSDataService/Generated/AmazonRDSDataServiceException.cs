@@ -36,6 +36,14 @@ namespace Amazon.RDSDataService
         /// <summary>
         /// Construct instance of AmazonRDSDataServiceException
         /// </summary>
+        public AmazonRDSDataServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRDSDataServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRDSDataServiceException(string message)
             : base(message)

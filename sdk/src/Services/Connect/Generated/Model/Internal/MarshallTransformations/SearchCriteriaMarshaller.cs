@@ -46,6 +46,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActiveRegions())
+            {
+                context.Writer.WritePropertyName("ActiveRegions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectActiveRegionsListValue in requestObject.ActiveRegions)
+                {
+                        context.Writer.WriteStringValue(requestObjectActiveRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetAdditionalTimeRange())
+            {
+                context.Writer.WritePropertyName("AdditionalTimeRange");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SearchContactsAdditionalTimeRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdditionalTimeRange, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAgentHierarchyGroups())
             {
                 context.Writer.WritePropertyName("AgentHierarchyGroups");
@@ -90,6 +112,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetContactTags())
+            {
+                context.Writer.WritePropertyName("ContactTags");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ControlPlaneTagFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContactTags, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetInitiationMethods())
             {
                 context.Writer.WritePropertyName("InitiationMethods");
@@ -101,6 +134,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NameCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.Name, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetQueueIds())
             {
                 context.Writer.WritePropertyName("QueueIds");
@@ -110,6 +154,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectQueueIdsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetRoutingCriteria())
+            {
+                context.Writer.WritePropertyName("RoutingCriteria");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SearchableRoutingCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.RoutingCriteria, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSearchableContactAttributes())

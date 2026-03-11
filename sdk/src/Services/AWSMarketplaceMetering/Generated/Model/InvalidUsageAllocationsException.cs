@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUsageAllocationsException
+        /// message.
+        /// </summary>
+        public InvalidUsageAllocationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUsageAllocationsException with the specified error
         /// message.
         /// </summary>

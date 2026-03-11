@@ -1,3 +1,3990 @@
+### 4.0.207.0 (2026-03-10 18:16 UTC)
+* BedrockAgentCoreControl (4.0.19.0)
+	* Adding first class support for AG-UI protocol in AgentCore Runtime.
+* ConnectCases (4.0.11.0)
+	* Added functionality for the Required and Hidden case rule types to be conditionally evaluated on up to 5 conditions.
+* DatabaseMigrationService (4.0.7.12)
+	* Not need to include to any release notes. The only change is to correct LoadTimeout unit from milliseconds to seconds in RedshiftSettings
+* Kafka (4.0.7.0)
+	* Add dual stack endpoint to SDK
+* LexModelsV2 (4.0.6.0)
+	* This release introduces a new generative AI feature called Lex Bot Analyzer. This feature leverage AI to analyze the bot configuration against AWS Lex best practices to identify configuration issues and provides recommendations.
+
+### 4.0.206.0 (2026-03-09 18:30 UTC)
+* IdentityManagement (4.0.9.9)
+	* Added support for CloudWatch Logs long-term API keys, currently available in Preview
+* Mgn (4.0.4.0)
+	* Adds support for new storeSnapshotOnLocalZone field in ReplicationConfiguration and updateReplicationConfiguration
+* OpenSearchService (4.0.12.0)
+	* This change enables cross-account and cross-region access for DataSources. Customers can now define access policies on their datasources to allow other AWS accounts to access and query their data.
+* Route53GlobalResolver (4.0.1.0)
+	* Adds support for dual stack Global Resolvers and Dictionary-based Domain Generation Firewall Advanced Protection.
+* Core 4.0.3.16
+	* Enable deterministic builds and embed untracked sources in NuGet packages (https://github.com/aws/aws-sdk-net/pull/4337)
+	* Set request.Content in AWSQuery marshallers to avoid redundant parameter serialization (Fix: https://github.com/aws/aws-sdk-net/issues/1922).
+	* All service and extension packages updated to require new Core
+
+### 4.0.205.0 (2026-03-06 21:45 UTC)
+* AppIntegrationsService (4.0.5.0)
+	* This release adds support for webhooks, allowing customers to create an Event Integration with a webhook source.
+* BCMDataExports (4.0.2.0)
+	* Fixed wrong endpoint resolutions in few regions. Added AWS CFN resource schema for BCM Data Exports. Added max value validation for pagination parameter. Fixed ARN format validation for BCM Data Exports resources. Updated size constraints for table properties. Added AccessDeniedException error.
+* Bedrock (4.0.22.0)
+	* Amazon Bedrock Guardrails account-level enforcement APIs now support lists for model inclusion and exclusion from guardrail enforcement.
+* BedrockAgentCoreControl (4.0.18.0)
+	* Adds support for streaming memory records in AgentCore Memory
+* Connect (4.0.36.0)
+	* Amazon Connect now supports the ability to programmatically configure and run automated tests for contact center experiences for Chat. Integrate testing into CICD pipelines, run multiple tests at scale, and retrieve results via API to automate validation of chat interactions and workflows.
+* Deadline (4.0.14.0)
+	* AWS Deadline Cloud now supports cost scale factors for farms, enabling studios to adjust reported costs to reflect their actual rendering economics. Adjusted costs are reflected in Deadline Cloud's Usage Explorer and Budgets.
+* GameLiftStreams (4.0.6.0)
+	* Added new Gen6 stream classes based on the EC2 G6f instance family. These stream classes provide cost-optimized options for streaming well-optimized or lower-fidelity games on Windows environments.
+* SimpleEmailV2 (4.0.12.0)
+	* Adds support for longer email message header values, increasing the maximum length from 870 to 995 characters for RFC 5322 compliance.
+
+### 4.0.204.0 (2026-03-05 21:02 UTC)
+* ConnectHealth (4.0.0.0)
+	* Connect-Health SDK is AWS's unified SDK for the Amazon Connect Health offering. It allows healthcare developers to integrate purpose-built agents - such as patient insights, ambient documentation, and medical coding - into their existing applications, including EHRs, telehealth, and revenue cycle.
+* EC2 (4.0.80.0)
+	* Added metadata field to CapacityAllocation.
+* GuardDuty (4.0.17.0)
+	* Added MALICIOUS FILE to IndicatorType enum in MDC Sequence
+* MPA (4.0.4.0)
+	* Updates to multi-party approval (MPA) service to add support for approval team baseline operations.
+* SageMaker (4.0.45.0)
+	* Adds support for S3 Bucket Ownership validation for SageMaker Managed MLflow.
+* SavingsPlans (4.0.5.0)
+	* Added support for OpenSearch and Neptune Analytics to Database Savings Plans.
+
+### 4.0.203.0 (2026-03-04 19:19 UTC)
+* Connect (4.0.35.0)
+	* Added support for configuring additional email addresses on queues in Amazon Connect. Agents can now select an outbound email address and associate additional email addresses for replying to or initiating emails.
+* ElasticBeanstalk (4.0.3.0)
+	* As part of this release, Beanstalk introduce a new info type - analyze for request environment info and retrieve environment info operations. When customers request an Al analysis, Elastic Beanstalk runs a script on an instance in their environment and returns an analysis of events, health and logs.
+* Elasticsearch (4.0.4.0)
+	* Adds support for DeploymentStrategyOptions.
+* GameLift (4.0.7.0)
+	* Amazon GameLift Servers now offers DDoS protection for Linux-based EC2 and Container Fleets on SDKv5. The player gateway proxy relay network provides traffic validation, per-player rate limiting, and game server IP address obfuscation all with negligible added latency and no additional cost.
+* OpenSearchService (4.0.11.0)
+	* Adding support for DeploymentStrategyOptions
+* QuickSight (4.0.16.0)
+	* Added several new values for Capabilities, increased visual limit per sheet from previous limit to 75, renamed Quick Suite to Quick in several places.
+
+### 4.0.202.0 (2026-03-03 20:07 UTC)
+* BedrockAgentCoreControl (4.0.17.0)
+	* Support for AgentCore Policy GA
+* CloudWatchLogs (4.0.15.0)
+	* CloudWatch Logs updates- Added support for the PutBearerTokenAuthentication API to enable or disable bearer token authentication on a log group. For more information, see CloudWatch Logs API documentation.
+* DataZone (4.0.22.0)
+	* Adding QueryGraph operation to DataZone SDK
+* PartnerCentralChannel (4.0.1.0)
+	* Adds the Resold Unified Operations support plan and removes the Resold Business support plan in the CreateRelationship and UpdateRelationship APIs
+* SageMaker (4.0.44.0)
+	* This release adds b300 and g7e instance types for SageMaker inference endpoints.
+
+### 4.0.201.0 (2026-02-27 19:15 UTC)
+* ARCRegionswitch (4.0.5.0)
+	* Post-Recovery Workflows enable customers to maintain comprehensive disaster recovery automation. This allows customer SREs and leadership to have complete recovery orchestration from failover through post-recovery preparation, ensuring Regions remain ready for subsequent recovery events.
+* AWSHealth (4.0.5.0)
+	* Updates the regex for validating availabilityZone strings used in the describe events filters.
+* Batch (4.0.6.0)
+	* This feature allows customers to specify the minimum time (in minutes) that AWS Batch keeps instances running in a compute environment after all jobs on the instance complete
+* Bedrock (4.0.21.0)
+	* Added four new model lifecycle date fields, startOfLifeTime, endOfLifeTime, legacyTime, and publicExtendedAccessTime. Adds support for using the Converse API with Bedrock Batch inference jobs.
+* CognitoIdentityProvider (4.0.6.0)
+	* Cognito is introducing a two-secret rotation model for app clients, enabling seamless credential rotation without downtime. Dedicated APIs support passing in a custom secret. Custom secrets need to be at least 24 characters. This eliminates reconfiguration needs and reduces security risks.
+* Connect (4.0.34.0)
+	* Deprecate EvaluationReviewMetadata's CreatedBy and CreatedTime, add EvaluationReviewMetadata's RequestedBy and RequestedTime
+* CustomerProfiles (4.0.8.0)
+	* This release introduces an optional SourcePriority parameter to the ProfileObjectType APIs, allowing you to control the precedence of object types when ingesting data from multiple sources. Additionally, WebAnalytics and Device have been added as new StandardIdentifier values.
+* KeyspacesStreams (4.0.3.0)
+	* Added support for Change Data Capture (CDC) streams with Duration DataType.
+* Odb (4.0.5.0)
+	* ODB Networking Route Management is a feature improvement which allows for implicit creation and deletion of EC2 Routes in the Peer Network Route Table designated by the customer via new optional input. This feature release is combined with Multiple App-VPC functionality for ODB Network Peering(s).
+* RAM (4.0.4.0)
+	* Resource owners can now specify ResourceShareConfiguration request parameter for CreateResourceShare API including RetainSharingOnAccountLeaveOrganization boolean parameter
+* TranscribeStreaming (4.0.6.0)
+	* AWS Transcribe Streaming now supports specifying a resumption window for the stream through the SessionResumeWindow parameter, allowing customers to reconnect to their streams for a longer duration beyond stream start time.
+
+### 4.0.200.0 (2026-02-26 19:15 UTC)
+* AWSMarketplaceMetering (4.0.4.0)
+	* Added LicenseArn to ResolveCustomer response and BatchMeterUsage usage records. BatchMeterUsage now accepts LicenseArn in each UsageRecord to report usage at the license level. Added InvalidLicenseException error response for invalid license parameters.
+* BackupGateway (4.0.3.0)
+	* This release updates GetGateway API to include deprecationDate and softwareVersion in the response, enabling customers to track gateway software versions and upcoming deprecation dates.
+* EC2 (4.0.79.0)
+	* Add c8id, m8id and hpc8a instance types.
+* ECS (4.0.14.0)
+	* Adding support for Capacity Reservations for ECS Managed Instances by introducing a new "capacityOptionType" value of "RESERVED" and new field "capacityReservations" for CreateCapacityProvider and UpdateCapacityProvider APIs.
+* MarketplaceEntitlementService (4.0.4.0)
+	* Added License Arn as a new optional filter for GetEntitlements and LicenseArn field in each entitlement in the response.
+* SecurityHub (4.0.8.0)
+	* Security Hub added EXTENDED PLAN integration type to DescribeProductsV2 and added metadata.product.vendor name GroupBy support to GetFindingStatisticsV2
+
+### 4.0.199.0 (2026-02-25 21:00 UTC)
+* Batch (4.0.5.2)
+	* AWS Batch documentation update for service job capacity units.
+* EC2 (4.0.78.0)
+	* Add support for EC2 Capacity Blocks in Local Zones.
+* ECR (4.0.11.0)
+	* Update repository name regex to comply with OCI Distribution Specification
+* Neptune (4.0.5.0)
+	* Neptune global clusters now supports tags
+* WAFV2 (4.0.8.0)
+	* AWS WAF now supports GetTopPathStatisticsByTraffic that provides aggregated statistics on the top URI paths accessed by bot traffic. Use this operation to see which paths receive the most bot traffic, identify the specific bots accessing them, and filter by category, organization, or bot name.
+* Extensions.CloudFront.Signers (4.0.0.26)
+	* Fixed JSON injection vulnerability in Cloudfront signed URL and cookie policy generation
+
+### 4.0.198.0 (2026-02-24 19:17 UTC)
+* CloudWatch (4.0.8.0)
+	* This release adds the APIs (PutAlarmMuteRule, ListAlarmMuteRules, GetAlarmMuteRule and DeleteAlarmMuteRule) to manage a new Cloudwatch resource, AlarmMuteRules. AlarmMuteRules allow customers to temporarily mute alarm notifications during expected downtime periods.
+* EC2 (4.0.77.0)
+	* Adds httpTokensEnforced property to ModifyInstanceMetadataDefaults API. Set per account or manage organization-wide using declarative policies to prevent IMDSv1-enabled instance launch and block attempts to enable IMDSv1 on existing IMDSv2-only instances.
+* Elasticsearch (4.0.3.0)
+	* Fixed HTTP binding for DescribeDomainAutoTunes API to correctly pass request parameters as query parameters in the HTTP request.
+* ElementalInference (4.0.0.0)
+	* Initial GA launch for AWS Elemental Inference including capabilities of Smart Crop and Live Event Clipping
+* MediaLive (4.0.17.0)
+	* AWS Elemental MediaLive - Added support for Elemental Inference for Smart Cropping and Clipping features for MediaLive.
+* ObservabilityAdmin (4.0.6.0)
+	* Adding a new field in the CreateCentralizationRuleForOrganization, UpdateCentralizationRuleForOrganization API and updating the GetCentralizationRuleForOrganization API response to include the new field
+* OpenSearchService (4.0.10.0)
+	* Fixed HTTP binding for DescribeDomainAutoTunes API to correctly pass request parameters as query parameters in the HTTP request.
+* PartnerCentralSelling (4.0.9.0)
+	* Added support for filtering opportunities by target close date in the ListOpportunities API. You can now filter results to return opportunities with a target close date before or after a specified date, enabling more precise opportunity searches based on expected closure timelines.
+
+### 4.0.197.0 (2026-02-23 19:15 UTC)
+* Bedrock (4.0.20.0)
+	* Automated Reasoning checks in Amazon Bedrock Guardrails now support fidelity report generation. The new workflow type assesses policy coverage and accuracy against customer documents. The GetAutomatedReasoningPolicyBuildWorkflowResultAssets API adds support for the three new asset types.
+* ConnectCases (4.0.10.0)
+	* SearchCases API can now accept 25 fields in the request and response as opposed to the previous limit of 10. DeleteField's hard limit of 100 fields per domain has been lifted.
+* ControlCatalog (4.0.4.11)
+	* Updated ExemptedPrincipalArns parameter documentation for improved accuracy
+* DataZone (4.0.21.0)
+	* Add workflow properties support to connections APIs
+* DynamoDBv2 (4.0.15.0)
+	* This change supports the creation of multi-account global tables. It adds one new arguments to UpdateTable, GlobalTableSettingsReplicationMode.
+* MediaTailor (4.0.6.0)
+	* Updated endpoint rule set for dualstack endpoints. Added a new opt-in option to log raw ad decision server requests for Playback Configurations.
+* QuickSight (4.0.15.0)
+	* Adds support for SEMISTRUCT to InputColumn Type
+* Wickr (4.0.1.0)
+	* AWS Wickr now provides APIs to manage your Wickr OpenTDF integration. These APIs enable you to test and save your OpenTDF configuration allowing you to manage rooms based on Trusted Data Format attributes.
+* Core 4.0.3.15
+	* Optimize MemoryStream Base64 serialization in JSON marshallers (Fix: https://github.com/aws/aws-sdk-net/issues/1922).
+	* All service and extension packages updated to require new Core
+
+### 4.0.196.0 (2026-02-20 20:48 UTC)
+* AppStream (4.0.6.0)
+	* Adding new attribute to disable IMDS v1 APIs for fleet, Image Builder and AppBlockBuilder instances.
+* DynamoDBv2 (4.0.14.1)
+	* Fix regression in V4 where `Scan` operation could not be invoked with a `FilterExpression` (https://github.com/aws/aws-sdk-net/issues/4324)
+* ECS (4.0.13.0)
+	* Migrated to Smithy. No functional changes
+* SageMakerRuntime (4.0.2.0)
+	* Added support for S3OutputPathExtension and Filename parameters to the InvokeEndpointAsync API to allow users to customize the S3 output path and file name for async inference response payloads.
+* SignerData (4.0.0.0)
+	* This release introduces AWS Signer Data Plane SDK client supporting GetRevocationStatus API. The new client enables AWS PrivateLink connectivity with both private DNS and VPC endpoint URLs.
+* SimpleSystemsManagement (4.0.7.0)
+	* Add support for AssociationDispatchAssumeRole in AWS SSM State Manager.
+* TrustedAdvisor (4.0.3.0)
+	* Adding a new enum attribute(statusReason) to TrustedAdvisorAPI response. This attribute explains reasoning behind check status for certain specific scenarios.
+
+### 4.0.195.0 (2026-02-19 19:31 UTC)
+* BCMDashboards (4.0.2.0)
+	* The Billing and Cost Management GetDashboard API now returns identifier for each widget, enabling users to uniquely identify widgets within their dashboards.
+* ECR (4.0.10.0)
+	* Adds multiple artifact types filter support in ListImageReferrers API.
+* PcaConnectorScep (4.0.3.0)
+	* AWS Private CA Connector for SCEP now supports AWS PrivateLink, allowing your clients to request certificates from within your Amazon Virtual Private Cloud (VPC) without traversing the public internet. With this launch, you can create VPC endpoints to connect to your SCEP connector privately.
+
+### 4.0.194.0 (2026-02-18 19:27 UTC)
+* CleanRooms (4.0.15.0)
+	* This release adds support for federated catalogs in Athena-sourced configured tables.
+* CloudWatchEvidently (Removed)
+	* Amazon CloudWatch Evidently has been removed from the SDK because it has been discontinued.
+* Connect (4.0.33.1)
+	* Correcting in-app notifications API documentation.
+* IoTAnalytics (Removed)
+	* Amazon IoT Analytics has been removed from the SDK because it has been discontinued.
+
+### 4.0.193.0 (2026-02-17 19:55 UTC)
+* EC2 (4.0.76.0)
+	* Add Operator field to CreatePlacementGroup and DescribePlacementGroup APIs.
+* ManagedGrafana (4.0.3.0)
+	* This release updates Amazon Managed Grafana's APIs to support customer managed KMS keys.
+* RDS (4.0.18.0)
+	* Adds support for the StorageEncryptionType field to specify encryption type for DB clusters, DB instances, snapshots, automated backups, and global clusters.
+* WorkSpacesWeb (4.0.8.0)
+	* Adds support for branding customization without requiring a custom wallpaper.
+
+### 4.0.192.0 (2026-02-16 19:35 UTC)
+* ARCRegionswitch (4.0.4.1)
+	* Clarify documentation on ARC Region Switch start-plan-execution operation
+* EC2 (4.0.75.1)
+	* Documentation updates for EC2 Secondary Networks
+* ECR (4.0.9.6)
+	* Adds support for enabling blob mounting, and removes support for Clair based image scanning
+* Kafka (4.0.6.0)
+	* Amazon MSK now supports dual-stack connectivity (IPv4 and IPv6) for existing MSK clusters. You can enable dual-stack on existing clusters by specifying the NetworkType parameter in updateConnectivity API.
+* KeyManagementService (4.0.9.0)
+	* Added support for Decrypt and ReEncrypt API's to use dry run feature without ciphertext for authorization validation
+* QConnect (4.0.8.0)
+	* Update MessageType enum to include missing types.
+
+### 4.0.191.0 (2026-02-13 19:18 UTC)
+* CloudWatch (4.0.7.0)
+	* Adding new evaluation states that provides information about the alarm evaluation process. Evaluation error Indicates configuration errors in alarm setup that require review and correction. Evaluation failure Indicates temporary CloudWatch issues.
+* Connect (4.0.33.0)
+	* API release for headerr notifications in the admin website. APIs allow customers to publish brief messages (including URLs) to a specified audience, and a new header icon will indicate when unread messages are available.
+* EC2 (4.0.75.0)
+	* This release adds geography information to EC2 region and availability zone APIs. DescribeRegions now includes a Geography field, while DescribeAvailabilityZones includes both Geography and SubGeography fields, enabling better geographic classification for AWS regions and zones.
+* Inspector2 (4.0.9.0)
+	* Added .Net 10 (dotnet10) and Node 24.x (node24.x) runtime support for lambda package scanning
+* S3 (4.0.18.6)
+	* Fix AmazonS3Uri class to correctly handle UTF-8 encoded characters
+* SageMaker (4.0.43.0)
+	* Enable g7e instance type support for SageMaker Processing, and enable single file configuration provisioning for HyperPod Slurm, where customers have the option to use HyperPod API to provide the provisioning parameters.
+
+### 4.0.190.0 (2026-02-12 19:17 UTC)
+* EC2 (4.0.74.0)
+	* Launching nested virtualization. This feature allows you to run nested VMs inside virtual (non-bare metal) EC2 instances.
+
+### 4.0.189.0 (2026-02-11 19:38 UTC)
+* Batch (4.0.5.0)
+	* Add support for listing jobs by share identifier and getting snapshots of active capacity utilization by job queue and share.
+* EC2 (4.0.73.0)
+	* R8i instances powered by custom Intel Xeon 6 processors available only on AWS with sustained all-core 3.9 GHz turbo frequency
+* EKS (4.0.13.0)
+	* This release adds support for Windows Server 2025 in Amazon EKS Managed Node Groups.
+* KafkaConnect (4.0.5.0)
+	* Support configurable upper limits on task count during autoscaling operations via maxAutoscalingTaskCount parameter.
+* S3 (4.0.18.5)
+	* Fix MPU in transfer utility for objects larger than 80GB
+* S3Tables (4.0.9.0)
+	* S3 Tables now supports setting partition specifications and sort orders on tables. Partition specs allow users to define how data is organized using transform functions. Sort order configurations enable users to specify sort directions and null ordering preferences for optimized data layout.
+* Core 4.0.3.14
+	* Update documentation for `MaxErrorRetry` to call out different default value for `DynamoDB`
+
+### 4.0.188.0 (2026-02-10 19:23 UTC)
+* BedrockAgentCore (4.0.11.0)
+	* Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules.
+* Connect (4.0.32.0)
+	* Amazon Connect now supports per-channel auto-accept and After Contact Work (ACW) timeouts. Configure agents with auto-accept and ACW timeout settings for chat, tasks, emails, and callbacks. Use the new UpdateUserConfig API to manage these settings.
+* EKS (4.0.12.0)
+	* Introducing an optional policy field, an IAM policy applied to pod identity associations in addition to IAM role policies. When specified, pod permissions are the intersection of IAM role policies and the policy field, ensuring the principle of least privilege.
+* Kafka (4.0.5.0)
+	* Amazon MSK adds three new APIs, CreateTopic, UpdateTopic, and DeleteTopic for managing Kafka topics in your MSK clusters.
+* RDS (4.0.17.0)
+	* This release adds backup configuration for RDS and Aurora restores, letting customers set backup retention period and preferred backup window during restore. It also enables viewing backup settings when describing snapshots or automated backups for instances and clusters.
+* S3 (4.0.18.4)
+	* Cleanup S3 code generation infrastructure after completing the S3 generation.
+* Core 4.0.3.13
+	* Add internal attribute to mark interfaces in `Core` that can be updated without backwards incompatibility issues
+
+### 4.0.187.0 (2026-02-09 20:25 UTC)
+* ConnectCampaignsV2 (4.0.6.0)
+	* Add the missing event type for WhatsApp
+* EC2 (4.0.72.0)
+	* Amazon Secondary Networks is a networking feature that provides high-performance, low-latency connectivity for specialized workloads.
+* EKS (4.0.11.0)
+	* Amazon EKS adds a new DescribeUpdate update type, VendedLogsUpdate, to support an integration between EKS Auto Mode and Amazon CloudWatch Vended Logs.
+* Imagebuilder (4.0.7.0)
+	* EC2 Image Builder now supports wildcard patterns in lifecycle policies with recipes and enhances the experience of tag-scoped policies.
+* LakeFormation (4.0.4.3)
+	* Allow cross account v5 in put data lake settings
+* Neptunedata (4.0.4.0)
+	* Added edgeOnlyLoad boolean parameter to Neptune bulk load request. When TRUE, files are loaded in order without scanning. When FALSE (default), the loader scans files first, then loads vertex files before edge files automatically.
+* PCS (4.0.12.0)
+	* Introduces RESUMING state for clusters, compute node groups, and queues.
+* Transfer (4.0.6.1)
+	* This release adds a documentation update for MdnResponse of type "ASYNC"
+
+### 4.0.186.0 (2026-02-06 19:18 UTC)
+* BedrockDataAutomationRuntime (4.0.5.0)
+	* Add OutputConfiguration to InvokeDataAutomation input and output to support S3 output
+* Deadline (4.0.13.0)
+	* Adds support for tagging jobs during job creation
+* IoTManagedIntegrations (4.0.6.0)
+	* Adding support for Custom(General) Authorization in managed integrations for AWS IoT Device Management cloud connectors.
+* PartnerCentralSelling (4.0.8.0)
+	* Releasing AWS Opportunity Snapshots for SDK release.
+* S3 (4.0.18.3)
+	* Generate S3 Enumerations.
+* SageMaker (4.0.42.0)
+	* Adding g7e instance support in Sagemaker Training
+
+### 4.0.185.0 (2026-02-05 19:17 UTC)
+* ARCRegionswitch (4.0.4.0)
+	* Updates documentation for ARC Region switch and provides stronger validation for Amazon Aurora Global Database execution block parameters.
+* Athena (4.0.4.0)
+	* Reduces the minimum TargetDpus to create or update capacity reservations from 24 to 4.
+* BedrockAgentCore (4.0.10.0)
+	* Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser.
+* BedrockAgentCoreControl (4.0.16.0)
+	* Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser.
+* Glue (4.0.25.0)
+	* This release adds the capability to easily create custom AWS Glue connections to data sources with REST APIs.
+* MediaLive (4.0.16.0)
+	* Outputs using the AV1 codec in CMAF Ingest output groups in MediaLive now have the ability to specify a target bit depth of 8 or 10.
+* NeptuneGraph (4.0.2.14)
+	* Minor neptune-graph documentation changes
+* RAM (4.0.3.0)
+	* Added ListSourceAssociations API. Allows RAM resource share owners to list source associations that determine which sources can access resources through service principal associations. Supports filtering by resource share ARN, source ID, source type, or status, with pagination.
+* Transfer (4.0.6.0)
+	* Adds support for the customer to send custom HTTP headers and configure an AS2 Connector to receive Asynchronous MDNs from their trading partner
+* WorkSpaces (4.0.9.0)
+	* Added support for 12 new graphics-optimized compute types - Graphics.g6 (xlarge, 2xlarge, 4xlarge, 8xlarge, 16xlarge), Graphics.gr6 (4xlarge, 8xlarge), Graphics.g6f (large, xlarge, 2xlarge, 4xlarge), and Graphics.gr6f (4xlarge).
+
+### 4.0.184.0 (2026-02-04 19:16 UTC)
+* BedrockRuntime (4.0.16.0)
+	* Added support for structured outputs to Converse and ConverseStream APIs.
+* ConnectCases (4.0.9.0)
+	* Amazon Connect Cases now supports larger, multi-line text fields with up to 4,100 characters. Administrators can use the Admin UI to select the appropriate configuration (single-line or multi-line) on a per-field basis, improving case documentation capabilities.
+* EKS (4.0.10.4)
+	* Update delete cluster description
+* MediaLive (4.0.15.0)
+	* AWS Elemental MediaLive now supports SRT listener mode for inputs and outputs, in addition to the existing SRT caller mode.
+* Redshift (4.0.6.4)
+	* We have increased the maximum duration for a deferred maintenance window from 45 days to 60 days for Amazon Redshift provisioned clusters. This enhancement provides customers with greater flexibility in scheduling patching and maintenance activities while also maintaining security compliance.
+* WorkSpacesWeb (4.0.7.0)
+	* Support for configuring and managing custom domain names for WorkSpaces Secure Browser portals.
+
+### 4.0.183.0 (2026-02-03 19:25 UTC)
+* Batch (4.0.4.0)
+	* AWS Batch Array Job Visibility feature support. Includes new statusSummaryLastUpdatedAt for array job parent DescribeJobs responses for the last time the statusSummary was updated. Includes both statusSummary and statusSummaryLastUpdatedAt in ListJobs responses for array job parents.
+* DynamoDBv2 (4.0.14.0)
+	* This change supports the creation of multi-account global tables. It adds two new arguments to CreateTable, GlobalTableSourceArn and GlobalTableSettingsReplicationMode. DescribeTable is also updated to include information about GlobalTableSettingsReplicationMode.
+* GeoMaps (4.0.4.0)
+	* Added support for optional style parameters in maps, including 3D terrain and 3D Buildings
+* Kinesis (4.0.8.0)
+	* Adds StreamId parameter to AWS Kinesis Data Streams APIs that is reserved for future use.
+* MarketplaceCatalog (4.0.5.0)
+	* Adds support for Catalog API us-east-1 dualstack endpoint catalog-marketplace.us-east-1.api.aws
+* Organizations (4.0.10.7)
+	* Updated the CloseAccount description.
+* S3 (4.0.18.2)
+	* Generate PutBucketVersioning, GetBucketVersioning, and UpdateBucketMetadataInventoryTableConfiguration
+* SSOAdmin (4.0.5.0)
+	* Added new Region management APIs to support multi-Region replication in IAM Identity Center.
+
+### 4.0.182.0 (2026-02-02 19:17 UTC)
+* BedrockAgentCoreControl (4.0.15.0)
+	* Adds tagging support for AgentCore Evaluations (evaluator and online evaluation config)
+* CloudFront (4.0.12.0)
+	* Add OriginMTLS support to CloudFront Distribution APIs
+* MPA (4.0.3.0)
+	* Updates to multi-party approval (MPA) service to add support for multi-factor authentication (MFA) for voting operations.
+
+### 4.0.181.0 (2026-01-30 19:23 UTC)
+* Connect (4.0.31.0)
+	* This release adds Estimated Wait Time support to the GetContactMetrics API for Amazon Connect.
+* DynamoDBv2 (4.0.13.0)
+	* Add support for DynamoDbUpdateBehavior for operations.
+* QuickSight (4.0.14.0)
+	* Improve SessionTag usage guidelines in the GenerateEmbedURLForAnonymousUser API documentation. Update the GetIdentityContext document with the region support context.
+
+### 4.0.180.0 (2026-01-29 19:38 UTC)
+* EC2 (4.0.71.0)
+	* G7e instances feature up to 8 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs with 768 GB of memory and 5th generation Intel Xeon Scalable processors. Supporting up to 192 vCPUs, 1600 Gbps networking bandwidth with EFA, up to 2 TiB of system memory, and up to 15.2 TB of local NVMe SSD storage.
+* GameLift (4.0.6.0)
+	* Amazon GameLift Servers now supports automatic scaling to and from zero instances based on game session activity. Fleets scale down to zero following a defined period of no game session activity and scale up from zero when game sessions are requested, providing an option for cost optimization.
+* S3 (4.0.18.1)
+	* Generate PutObject, GetObject, UploadPart, WriteGetObjectResponse, GetObjectTorrent.
+	* [Breaking Change] WriteOffsetBytes on PutObjectRequest changed from int to int? to be consistent with the nullability changes in V4.
+	* [Breaking Change] TagCount on GetObjectResponse changed from int to int? to be consistent with the nullability changes in V4.
+	* SSEKMSKeyId, SSECustomerAlgorithm, SSECustomerKeyMD5 properties were added to UploadPartResponse.
+	* Expires was added to both PutObjectRequest and InitiateMultipartUploadRequest.
+* Core 4.0.3.12
+	* Update `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials` to dynamically use a 5-minute preempt expiry if the requested role session duration is less than 20 minutes (to prevent the SDK from refreshing credentials unnecessarily) - https://github.com/aws/aws-sdk-net/issues/4313
+	* All service and extension packages updated to require new Core
+
+### 4.0.179.0 (2026-01-28 19:27 UTC)
+* CognitoIdentityProvider (4.0.5.0)
+	* This release adds support for a new lambda trigger to transform federated user attributes during the authentication with external identity providers on Cognito Managed Login.
+* Connect (4.0.30.0)
+	* Adds support for filtering search results based on tags assigned to contacts.
+* DynamoDBv2 (4.0.12.0)
+	* Add Request Object Pattern and Expression-Based for DynamoDB Document Model.
+* EC2 (4.0.70.0)
+	* SearchTransitGatewayRoutes API response now includes a NextToken field, enabling pagination when retrieving large sets of transit gateway routes. Pass the returned NextToken value in subsequent requests to retrieve the next page of results.
+* Lambda (4.0.13.0)
+	* We are launching ESM Metrics and logging for Kafka ESM to allow customers to monitor Kafka event processing using CloudWatch Metrics and Logs.
+* MediaConnect (4.0.6.0)
+	* This release adds support for NDI flow sources in AWS Elemental MediaConnect. You can now send content to your MediaConnect transport streams directly from your NDI environment using the new NDI source type. Also adds support for LARGE 4X flow size, which can be used when creating CDI JPEG-XS flows.
+* MediaConvert (4.0.13.0)
+	* This release adds a follow source mode for audio output channel count, an AES audio frame wrapping option for MXF outputs, and an option to signal DolbyVision compatibility using the SUPPLEMENTAL-CODECS tag in HLS manifests.
+* S3 (4.0.18.0)
+	* Adds support for the UpdateObjectEncryption API to change the server-side encryption type of objects in general purpose buckets.
+* S3Control (4.0.9.0)
+	* Adds support for the UpdateObjectEncryption API to change the server-side encryption type of objects in general purpose buckets.
+
+### 4.0.178.0 (2026-01-27 19:24 UTC)
+* Connect (4.0.29.0)
+	* Added support for task attachments. The StartTaskContact API now accepts file attachments, enabling customers to include files (.csv, .doc, .docx, .heic, .jfif, .jpeg, .jpg, .mov, .mp4, .pdf, .png, .ppt, .pptx, .rtf, .txt, etc.) when creating Task contacts. Supports up to 5 attachments per task.
+* Deadline (4.0.12.0)
+	* AWS Deadline Cloud now supports editing job names and descriptions after submission.
+* EC2 (4.0.69.0)
+	* Releasing new EC2 instances. C8gb and M8gb with highest EBS performance, M8gn with 600 Gbps network bandwidth, X8aedz and M8azn with 5GHz AMD processors, X8i with Intel Xeon 6 processors and up to 6TB memory, and Mac-m4max with Apple M4 Max chip for 25 percent faster builds.
+* MediaLive (4.0.14.0)
+	* AWS Elemental MediaLive released two new features that allows customers 1) to set Output Timecode for AV1 encoder, 2) to set a Custom Epoch for CMAF Ingest and MediaPackage V2 output groups when using Pipeline Locking or Disabled Locking modes.
+* SageMaker (4.0.41.0)
+	* Idle resource sharing enables teams to borrow unused compute resources in your SageMaker HyperPod cluster. This capability maximizes resource utilization by allowing teams to borrow idle compute capacity beyond their allocated compute quotas.
+* Extensions.Bedrock.MEAI (4.0.5.6)
+	* Fixed AOT compilation issue where Dictionary<string, object?> type was not registered in BedrockJsonContext, causing GetTypeInfo lookups to fail at runtime.
+
+### 4.0.177.0 (2026-01-26 19:40 UTC)
+* CloudWatchEvidently (4.0.3.0)
+	* Deprecate all Evidently API for AWS CloudWatch Evidently deprecation
+* ConnectCases (4.0.8.0)
+	* Amazon Connect now enables you to use tag-based access controls to define who can access specific cases. You can associate tags with case templates and configure security profiles to determine which users can access cases with those tags.
+* EC2 (4.0.68.0)
+	* DescribeInstanceTypes API response now includes an additionalFlexibleNetworkInterfaces field, the number of interfaces attachable to an instance when using flexible Elastic Network Adapter (ENA) queues in addition to the base number specified by maximumNetworkInterfaces.
+* GroundStation (4.0.3.0)
+	* Adds support for AWS Ground Station Telemetry.
+* Core 4.0.3.11
+	* Remove `InternalsVisibleTo` reference to renamed project in `AssemblyInfo` file
+
+### 4.0.176.0 (2026-01-23 19:25 UTC)
+* Connect (4.0.28.0)
+	* Amazon Connect now offers public APIs to programmatically configure and run automated tests for contact center experiences. Integrate testing into CICD pipelines, run multiple tests at scale, and retrieve results via API to automate validation of voice interactions and workflows.
+* DataZone (4.0.20.0)
+	* Added api for deleting data export configuration for a domain
+* QConnect (4.0.7.0)
+	* Fixes incorrect types in the UpdateAssistantAIAgent API request, adds MESSAGE to TargetType enum, and other minor changes.
+
+### 4.0.175.0 (2026-01-22 19:21 UTC)
+* AutoScaling (4.0.8.0)
+	* This release adds support for Amazon EC2 Auto Scaling group deletion protection
+* AWSHealth (4.0.4.0)
+	* Updates the lower range for the maxResults request property for DescribeAffectedEntities, DescribeAffectedEntitiesForOrganization, DescribeEvents, and DescribeEventsForOrganization API request properties.
+* AWSMarketplaceMetering (4.0.3.8)
+	* Customer Identifier parameter deprecation date has been removed. For new implementations, we recommend using the CustomerAWSAccountID. Your current integration will continue to work. When updating your implementation, consider migrating to CustomerAWSAccountID for improved integration.
+* Budgets (4.0.9.0)
+	* Add Budget FilterExpression and Metrics fields to DescribeBudgetPerformanceHistory to support more granular filtering options.
+* DynamoDBv2 (4.0.11.0)
+	* Adds additional waiters to Amazon DynamoDB.
+* EC2 (4.0.67.0)
+	* Add better support for fractional GPU instances in DescribeInstanceTypes API. The new fields, logicalGpuCount, gpuPartitionSize, and workload array enable better GPU resource selection and filtering for both full and fractional GPU instance types.
+* GameLift (4.0.5.0)
+	* Amazon GameLift Servers Realtime now supports Node.js 24.x runtime on the Amazon Linux 2023 operating system.
+* GuardDuty (4.0.16.0)
+	* Adding new enum value for ScanStatusReason
+* VerifiedPermissions (4.0.6.1)
+	* Adding documentation to user guide and API documentation for how customers can create new encrypted policy stores by passing in their customer managed key during policy store creation.
+
+### 4.0.174.0 (2026-01-21 19:19 UTC)
+* BedrockAgentCore (4.0.9.0)
+	* Supports custom browser extensions for AgentCore Browser and increased message payloads up to 100KB per message in an Event for AgentCore Memory
+* ConfigService (4.0.6.0)
+	* AWS Config Conformance Packs now support tag-on-create through PutConformancePack API.
+* EC2 (4.0.66.0)
+	* Added support of multiple EBS cards. New EbsCardIndex parameter enables attaching volumes to specific EBS cards on supported instance types for improved storage performance.
+* QuickSight (4.0.13.0)
+	* Added documentation and model for sheet layout groups - allows sheet elements to be grouped, Added documentation and the feature enables admins to have granular control over connectors under actions, Updated API documentation for PDF Export in Snapshot Export APIs
+
+### 4.0.173.0 (2026-01-20 19:53 UTC)
+* AutoScaling (4.0.7.0)
+	* This release adds support for three new filters when describing scaling activities, StartTimeLowerBound, StartTimeUpperBound, and Status.
+* BedrockRuntime (4.0.15.0)
+	* Added support for extended prompt caching with one hour TTL.
+* Keyspaces (4.0.3.0)
+	* Adds support for managing table pre-warming in Amazon Keyspaces (for Apache Cassandra)
+* Odb (4.0.4.0)
+	* Adds support for associating and disassociating IAM roles with Autonomous VM cluster resources through the AssociateIamRoleToResource and DisassociateIamRoleFromResource APIs. The GetCloudAutonomousVmCluster and ListCloudAutonomousVmClusters API responses now include the iamRoles field.
+* VerifiedPermissions (4.0.6.0)
+	* Amazon Verified Permissions now supports encryption of resources by a customer managed KMS key. Customers can now create new encrypted policy stores by passing in their customer managed key during policy store creation.
+* WorkspacesInstances (4.0.3.0)
+	* Added billing configuration support for WorkSpaces Instances with monthly and hourly billing modes, including new filtering capabilities for instance type searches.
+* Core 4.0.3.10
+	* Add MaxStaleConnectionRetries to Amazon.Runtime.ClientConfig to allow users to customize the amount of retries available for stale connections.
+	* Update the retry behavior of the SDK to automatically retry on stale connections (e.g Broken pipe), which do not count against the standard retry amount.
+	* All service and extension packages updated to require new Core
+
+### 4.0.172.0 (2026-01-16 19:27 UTC)
+* Connect (4.0.27.0)
+	* Adds support to allow customers to create form with Dispute configuration
+* DataZone (4.0.19.0)
+	* This release adds support for numeric filtering and complex free-text searches cases for the Search and SearchListings APIs.
+* Glacier (4.0.3.4)
+	* Documentation updates for Amazon Glacier's maintenance mode
+* LaunchWizard (4.0.3.0)
+	* Added UpdateDeployment, ListDeploymentPatternVersions and GetDeploymentPatternVersion APIs for Launch Wizard
+* ResourceExplorer2 (4.0.3.0)
+	* Added ViewName to View-related responses and ServiceViewName to GetServiceView response.
+* SageMaker (4.0.40.2)
+	* Adding security consideration comments for lcc accessing execution role under root access
+
+### 4.0.171.0 (2026-01-15 19:19 UTC)
+* CleanRooms (4.0.14.0)
+	* This release adds support for parameters in PySpark analysis templates.
+* Deadline (4.0.11.0)
+	* AWS Deadline Cloud now supports tagging Budget resources with ABAC for permissions management and selecting up to 16 filter values in the monitor and Search API.
+* EC2 (4.0.65.3)
+	* This release includes documentation updates to support up to four Elastic Volume modifications per Amazon EBS volume within a rolling 24-hour period.
+* ECS (4.0.12.0)
+	* Adds support for configuring FIPS in AWS GovCloud (US) Regions via a new ECS Capacity Provider field fipsEnabled. When enabled, instances launched by the capacity provider will use a FIPS-140 enabled AMI. Instances will use FIPS-140 compliant cryptographic modules and AWS FIPS endpoints.
+* Evs (4.0.5.0)
+	* A new GetVersions API has been added to retrieve VCF, ESX versions, and EC2 instances provided by Amazon EVS. The CreateEnvironment API now allows you to select a VCF version and the CreateEnvironmentHost API introduces a optional esxVersion parameter.
+* LakeFormation (4.0.4.0)
+	* API Changes for GTCForLocation feature. Includes a new API, GetTemporaryDataLocationCredentials and updates to the APIs RegisterResource and UpdateResource
+* OpenSearchServerless (4.0.6.0)
+	* Collection groups in Amazon OpenSearch Serverless enables to organize multiple collections and enable compute resource sharing across collections with different KMS keys. This shared compute model reduces costs by eliminating the need for separate OpenSearch Compute Units (OCUs) for each KMS key.
+* QConnect (4.0.6.0)
+	* Fix inference configuration shapes for the CreateAIPrompt and UpdateAIPrompt APIs, Modify Text Length Limit for SendMessage API
+* S3 (4.0.17.2)
+	* Generate paginators for S3
+* Core 4.0.3.9
+	* Add default constructors for all generated service exceptions
+	* For .NET 8+ targets use ExceptionDispatchInfo.Throw when rethrowing inner HTTP exceptions to preserve original exception context
+	* Updating partitions.json file.
+	* All service and extension packages updated to require new Core
+
+### 4.0.170.0 (2026-01-14 19:21 UTC)
+* Connect (4.0.26.0)
+	* Amazon Connect makes it easier to manage contact center operating hours by enabling automated scheduling for recurring events like holidays and maintenance windows. Set up recurring patterns (weekly, monthly, etc.) or link to another hours of operation to inherit overrides.
+* CostExplorer (4.0.11.2)
+	* Cost Categories added support to BillingView data filter expressions through the new costCategories parameter, enabling users to filter billing views by AWS Cost Categories for more granular cost management and allocation.
+* EKS (4.0.10.0)
+	* Added support for BOTTLEROCKET NVIDIA FIPS AMIs to AMI types in US regions.
+* RDS (4.0.16.0)
+	* no feature changes. model migrated to Smithy
+* Redshift (4.0.6.0)
+	* Adds support for enabling extra compute resources for automatic optimization during create and modify operations in Amazon Redshift clusters.
+* RedshiftServerless (4.0.4.0)
+	* Adds support for enabling extra compute resources for automatic optimization during create and update operations in Amazon Redshift Serverless workgroups.
+* SocialMessaging (4.0.4.0)
+	* This release clarifies WhatsApp template operations as a resource-authenticated operation via the parent WhatsApp Business Account. It also introduces new parameters for parameter format, CTA URL link tracking, and template body examples, and increases the phone number ID length.
+
+### 4.0.169.0 (2026-01-13 19:20 UTC)
+* Bedrock (4.0.19.0)
+	* This change will increase TestCase guardContent input size from 1024 to 2028 characters and PolicyBuildDocumentDescription from 2000 to 4000 characters
+* DataZone (4.0.18.0)
+	* Adds support for IAM role subscriptions to Glue table listings via CreateSubscriptionRequest API. Also adds owningIamPrincipalArn filter to List APIs and subscriptionGrantCreationMode parameter to subscription target APIs for controlling grant creation behavior.
+
+### 4.0.168.0 (2026-01-12 19:24 UTC)
+* Billing (4.0.6.0)
+	* Cost Categories filtering support to BillingView data filter expressions through the new costCategories parameter, enabling users to filter billing views by AWS Cost Categories for more granular cost management and allocation.
+* IoTManagedIntegrations (4.0.5.0)
+	* This release introduces WiFi Simple Setup (WSS) enabling device provisioning via barcode scanning with automated network discovery, authentication, and credential provisioning. Additionally, it introduces 2P Device Capability Rediscovery for updating hub-managed device capabilities post-onboarding.
+* S3 (4.0.17.1)
+	* Generate GetBucketWebsite, PutBucketWebsite, and DeleteBucketWebsite
+* SageMaker (4.0.40.0)
+	* Added ultraServerType to the UltraServerInfo structure to support server type identification for SageMaker HyperPod
+
+### 4.0.167.0 (2026-01-09 19:18 UTC)
+* BedrockAgentCoreControl (4.0.14.0)
+	* Adds optional field "view" to GetMemory API input to give customers control over whether CMK encrypted data such as strategy decryption or override prompts is returned or not.
+* CloudFront (4.0.11.0)
+	* Added EntityLimitExceeded exception handling to the following API operations AssociateDistributionWebACL, AssociateDistributionTenantWebACL, UpdateDistributionWithStagingConfig
+* Glue (4.0.24.0)
+	* Adding MaterializedViews task run APIs
+* MediaLive (4.0.13.0)
+	* MediaPackage v2 output groups in MediaLive can now accept one additional destination for single pipeline channels and up to two additional destinations for standard channels. MediaPackage v2 destinations now support sending to cross region MediaPackage channels.
+* S3 (4.0.17.0)
+	* Added MaxInMemoryParts property to the Amazon.S3.Transfer.TransferUtilityOpenStreamRequest class for controlling memory usage during multipart downloads
+	* Added PartSize property to the Amazon.S3.Transfer.BaseDownloadRequest class for configuring multipart download part sizes
+	* Added MultipartDownloadType enum and property to the Amazon.S3.Transfer.BaseDownloadRequest class for selecting download strategy
+	* Fix signature calculation error when using the Content-Language header in S3 requests (e.g., PutObjectRequest)
+	* Added UploadInitiatedEvent, UploadCompletedEvent, and UploadFailedEvent events to the Amazon.S3.Transfer.TransferUtility.Upload operation for non-multipart uploads.
+	* Added UploadInitiatedEvent, UploadCompletedEvent, and UploadFailedEvent events to the Amazon.S3.Transfer.TransferUtility.Upload operation for multipart uploads.
+	* Generate PutBucketLogging and GetBucketLogging.
+	* Added DownloadDirectoryWithResponse methods to the Amazon.S3.Transfer.ITransferUtility interface. The new operations support downloading directories using multipart download for files and return response metadata.
+	* Added UploadWithResponse and UploadWithResponseAsync methods to the Amazon.S3.Transfer.ITransferUtility interface that return response metadata information.
+	* Added DownloadDirectoryInitiatedEvent, DownloadDirectoryCompletedEvent, and DownloadDirectoryFailedEvent events to the Amazon.S3.Transfer.ITransferUtility.DownloadDirectory operation.
+	* BREAKING CHANGE: A security fix has been applied to the Transfer Utility Download Directory command which now checks if the directory is case-sensitive before proceeding with the download. This prevents potential overwriting of files in case-insensitive file systems. If you would like to revert to the previous behavior, you can set the 'SkipDirectoryCaseSensitivityCheck' property on the 'TransferUtilityConfig' to true.
+	* Added OpenStreamWithResponse method to the Amazon.S3.Transfer.ITransferUtility interface. The new operation supports downloading in parallel parts of the S3 object in the background while reading from the stream for improved performance.
+	* Added DownloadWithResponse method to the Amazon.S3.Transfer.ITransferUtility interface. The new operation supports downloading in parallel parts of the S3 object to a file for improved performance.
+	* Added UploadDirectoryWithResponse method to the Amazon.S3.Transfer.ITransferUtility interface.
+	* Added DownloadInitiatedEvent, DownloadCompletedEvent, and DownloadFailedEvent events to the Amazon.S3.Transfer.TransferUtility.Download operation.
+	* Added UploadDirectoryInitiatedEvent, UploadDirectoryCompletedEvent, and UploadDirectoryFailedEvent events to the Amazon.S3.Transfer.ITransferUtility.UploadDirectory operation.
+	* Fixed recursive property definition in the Amazon.S3.Transfer.TransferUtility internal Logger implementation
+	* Added ContentLanguage property to the header collection of the Amazon.S3.Model.GetObjectResponse class.
+	* Added FailurePolicy property to the Amazon.S3.Transfer.TransferUtilityDownloadDirectoryRequest class to allow configuration of failure handling behavior during directory downloads. The default behavior is set to abort on failure. Users can now choose to either abort the entire operation or continue downloading remaining files when a failure occurs.
+	* Added ObjectDownloadFailedEvent event to the Amazon.S3.Transfer.TransferUtility.DownloadDirectory operation to notify users when an individual file download fails during a directory download operation. This event provides details about the failed download, including the original request, the specific file request and the exception encountered.
+	* Added FailurePolicy property to the Amazon.S3.Transfer.TransferUtilityUploadDirectoryRequest class to allow configuration of failure handling behavior during directory uploads. The default behavior is set to abort on failure. Users can now choose to either abort the entire operation or continue uploading remaining files when a failure occurs.
+	* Added ObjectUploadFailedEvent event to the Amazon.S3.Transfer.TransferUtility.UploadDirectory operation to notify users when an individual file upload fails during a directory upload operation. This event provides details about the failed upload, including the original request, the specific file request and the exception encountered.
+* TranscribeService (4.0.5.0)
+	* Adds waiters to Amazon Transcribe.
+
+### 4.0.166.0 (2026-01-07 19:16 UTC)
+* WorkSpaces (4.0.8.0)
+	* Add StateMessage and ProgressPercentage fields to DescribeCustomWorkspaceImageImport API response.
+* Core 4.0.3.8
+	* Revert [Added ServiceFullName to IServiceMetadata](https://github.com/aws/aws-sdk-net/pull/4266/changes/00ec2fca1e84da1a42bc815f0a1de0b4c912b323) as it caused other service packages to throw an exception.
+	* All service and extension packages updated to require new Core
+
+### 4.0.165.0 (2026-01-06 19:15 UTC)
+* CostExplorer (4.0.11.0)
+	* This release updates existing reservation recommendations API to support deployment model.
+* EMRServerless (4.0.8.0)
+	* Added support for enabling disk encryption using customer managed AWS KMS keys to CreateApplication, UpdateApplication and StartJobRun APIs.
+
+### 4.0.164.0 (2026-01-05 19:15 UTC)
+* CleanRoomsML (4.0.8.0)
+	* AWS Clean Rooms ML now supports advanced Spark configurations to optimize SQL performance when creating an MLInputChannel or an audience generation job.
+* Core 4.0.3.7
+	* Added ServiceFullName to IServiceMetadata
+	* All service and extension packages updated to require new Core
+
+### 4.0.163.0 (2026-01-02 19:19 UTC)
+* CleanRooms (4.0.13.0)
+	* Added support for publishing detailed metrics to CloudWatch for operational monitoring of collaborations, including query performance and resource utilization.
+* DSQL (4.0.8.5)
+	* Add missing overloads to the async versions of the `GenerateDbConnect` and `GenerateDbConnectAdmin` methods (https://github.com/aws/aws-sdk-net/issues/3123)
+* IdentityStore (4.0.5.0)
+	* This change introduces "Roles" attribute for User entities supported by AWS Identity Store SDK.
+* RDS (4.0.15.3)
+	* Add missing overloads to the async versions of the `GenerateAuthToken` method (https://github.com/aws/aws-sdk-net/issues/3123)
+* S3 (4.0.16.2)
+	* Generate DeleteObjects, DeleteObject and DeleteObjectTagging operations
+	* [Breaking Change] IfMatchSize in Amazon.S3.Model.DeleteObjectRequest has been changed to nullable to be consistent with the nullability changes in V4.
+* SimpleNotificationService (4.0.2.11)
+	* Update `Amazon.SimpleNotificationService.Util.Message.ParseMessage` method not to throw an exception when handling FIFO topics (https://github.com/aws/aws-sdk-net/issues/3000)
+
+### 4.0.162.0 (2025-12-30 19:16 UTC)
+* CloudWatch (4.0.6.2)
+	* Improve AWS Query compatible error handling in unmarshallers.
+* Connect (4.0.25.0)
+	* Adds support for searching global contacts using the ActiveRegions filter, and pagination support for ListSecurityProfileFlowModules and ListEntitySecurityProfiles.
+* KafkaConnect (4.0.4.0)
+	* This change sets the KafkaConnect GovCloud FIPS and FIPS DualStack endpoints to use kafkaconnect instead of kafkaconnect-fips as the service name. This is done to match the Kafka endpoints.
+* S3 (4.0.16.1)
+	* Generate CompleteMultipartUpload and RestoreObject operations
+	* [Breaking Change] MpuObjectSize in Amazon.S3.Model.CompleteMultipartUploadRequest has been changed to nullable to be consistent with the nullability changes in V4.
+* SQS (4.0.2.9)
+	* Improve AWS Query compatible error handling in unmarshallers.
+
+### 4.0.161.0 (2025-12-29 19:16 UTC)
+* Connect (4.0.24.0)
+	* Changes for Contact for Global Search
+* DynamoDBv2 (4.0.10.5)
+	* Add missing `SkipVersionCheck` property to the `TransactWriteConfig` class (https://github.com/aws/aws-sdk-net/issues/4243)
+* QuickSight (4.0.12.0)
+	* This release adds support for quick users to be able to perform role upgrades on their own. Additionally it allows admins to make this feature admin or auto approval along with new self upgrade capability that can be restricted by Admins.
+
+### 4.0.160.0 (2025-12-26 19:19 UTC)
+* ElasticTranscoder (Removed)
+	* Amazon Elastic Transcoder has been removed from the SDK because it has been discontinued.
+* MediaLive (4.0.12.0)
+	* AWS Elemental MediaLive now supports Pipeline Locking using Video Alignment as well as linked single pipeline channels to enable cross-channel and cross-region Pipeline Locking workflows.
+
+### 4.0.159.0 (2025-12-23 19:31 UTC)
+* CloudFront (4.0.10.5)
+	* Fix spacing in request marshallers.
+* GeoPlaces (4.0.4.0)
+	* Adds support for InferredSecondaryAddress place type, Designator in SecondaryAddressComponent and Heading in ReverseGeocode.
+* PinpointSMSVoiceV2 (4.0.6.0)
+	* This release adds support for the Registration Reviewer feature, which provides generative AI feedback on a phone number or sender ID registration to ensure completeness before sending to downstream (carrier) review.
+* Route53 (4.0.8.4)
+	* Fix spacing in request marshallers.
+* S3 (4.0.16.0)
+	* Add additional validation to Outpost bucket names.
+	* Generate RenameObject, PutBucketOwnershipControls, PutBucketTagging, and CopyObject
+	* [Breaking Change] SourceIfUnmodifiedSince, DestinationIfUnmodifiedSince, DestinationIfModifiedSince and SourceIfModifiedSince in Amazon.S3.Model.RenameObjectRequest has been changed to nullable to be consistent with the nullability changes in V4.
+	* Fix spacing in request marshallers.
+* S3Control (4.0.8.5)
+	* Fix spacing in request marshallers.
+
+### 4.0.158.0 (2025-12-22 19:25 UTC)
+* ConfigService (4.0.5.0)
+	* Added supported resourceTypes for Config from July to November 2025
+* EC2 (4.0.65.0)
+	* Adds support for linkedGroupId on the CreatePlacementGroup and DescribePlacementGroups APIs. The linkedGroupId parameter is reserved for future use.
+* GuardDuty (4.0.15.0)
+	* Make accountIds a required field in GetRemainingFreeTrialDays API to reflect service behavior.
+* PCS (4.0.11.6)
+	* Change API Reference Documentation for default Mode in Accounting and SlurmRest
+
+### 4.0.157.0 (2025-12-19 19:17 UTC)
+* ARCRegionswitch (4.0.3.0)
+	* Automatic Plan Execution Reports allow customers to maintain a concise record of their Region switch Plan executions.  This enables customer SREs and leadership to have a clear view of their recovery posture based on the generated reports for their Plan executions.
+* CloudFront (4.0.10.4)
+	* Update request marshallers to use IsSet methods
+* Connect (4.0.23.0)
+	* Adding support for Custom Metrics and Pre-Defined Attributes to GetCurrentMetricData API.
+* EMRServerless (4.0.7.0)
+	* Added JobLevelCostAllocationConfiguration field to enable cost allocation reporting at the job level, providing more granular visibility into EMR Serverless charges
+* IoT (4.0.6.0)
+	* This release adds event-based logging feature that enables granular event logging controls for AWS IoT logs.
+* QBusiness (4.0.7.0)
+	* It is a internal bug fix for region expansion
+* Route53 (4.0.8.3)
+	* Update request marshallers to use IsSet methods.
+* S3 (4.0.15.2)
+	* Update request marshallers to use IsSet methods.
+* S3Control (4.0.8.4)
+	* Update request marshallers to use IsSet methods.
+* Wickr (4.0.0.0)
+	* AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.
+* WorkSpacesWeb (4.0.6.0)
+	* Add support for WebAuthn under user settings.
+
+### 4.0.156.0 (2025-12-18 19:17 UTC)
+* AppStream (4.0.5.0)
+	* Added support for new operating systems (1) Ubuntu 24.04 Pro LTS on Elastic fleets, and (2) Microsoft Server 2025 on Always-On and On-Demand fleets
+* ARCRegionswitch (4.0.2.0)
+	* New API to list Route 53 health checks created by ARC region switch for a plan in a specific AWS Region using the Region switch Regional data plane.
+* Artifact (4.0.3.0)
+	* Add support for ListReportVersions API  for the calling AWS account.
+* BedrockAgentCoreControl (4.0.13.0)
+	* Feature to support header exchanges between Bedrock AgentCore Gateway Targets and client, along with propagating query parameter to the configured targets.
+* BedrockDataAutomation (4.0.7.0)
+	* Blueprint Optimization (BPO) is a new Amazon Bedrock Data Automation (BDA) capability that improves blueprint inference accuracy using example content assets and ground truth data. BPO works by generating better instructions for fields in the Blueprint using provided data.
+* CleanRooms (4.0.12.0)
+	* Adding support for collaboration change requests requiring an approval workflow. Adding support for change requests that grant or revoke results receiver ability and modifying auto approved change types in an existing collaboration.
+* EC2 (4.0.64.0)
+	* This release adds AvailabilityZoneId support for CreateFleet, ModifyFleet, DescribeFleets, RequestSpotFleet, ModifySpotFleetRequests and DescribeSpotFleetRequests APIs.
+* ECR (4.0.9.0)
+	* Adds support for ECR Create On Push
+* ECS (4.0.11.0)
+	* Adding support for Event Windows via a new ECS account setting "fargateEventWindows". When enabled, ECS Fargate will use the configured event window for patching tasks. Introducing "CapacityOptionType" for CreateCapacityProvider API, allowing support for Spot capacity for ECS Managed Instances.
+* IoT (4.0.5.0)
+	* This release adds message batching for the IoT Rules Engine HTTP action.
+* OpenSearchService (4.0.9.0)
+	* Amazon OpenSearch Service adds support for warm nodes, enabling new multi-tier architecture.
+* SimpleEmailV2 (4.0.11.0)
+	* Amazon SES introduces Email Validation feature which checks email addresses for syntax errors, domain validity, and risky addresses to help maintain deliverability and protect sender reputation. SES also adds resource tagging and ABAC support for EmailTemplates and CustomVerificationEmailTemplates.
+* SsmSap (4.0.4.0)
+	* Added "Stopping" for the HANA Database Status.
+
+### 4.0.155.0 (2025-12-17 19:16 UTC)
+* GameLiftStreams (4.0.5.0)
+	* Added new stream group operation parameters for scale-on-demand capacity with automatic prewarming. Added new Gen6 stream classes based on the EC2 G6 instance family. Added new StartStreamSession parameter for exposure of real-time performance stats to clients.
+* GuardDuty (4.0.14.0)
+	* Add support for dbiResourceId in finding.
+* InspectorScan (4.0.3.0)
+	* Adds an additional OutputFormat
+* KafkaConnect (4.0.3.0)
+	* Support dual-stack network connectivity for connectors via NetworkType field.
+* MediaConvert (4.0.12.0)
+	* Adds support for tile encoding in HEVC and audio for video overlays.
+* MediaPackageV2 (4.0.10.0)
+	* This release adds support for SPEKE V2 content key encryption in MediaPackage v2 Origin Endpoints.
+* PaymentCryptography (4.0.7.0)
+	* Support for AS2805 standard.  Modifications to import-key and export-key to support AS2805 variants.
+* PaymentCryptographyData (4.0.6.0)
+	* Support for AS2805 standard.  New API GenerateAs2805KekValidation and changes to translate pin, GenerateMac and VerifyMac to support AS2805 key variants.
+* SageMaker (4.0.39.0)
+	* Adding the newly launched p6-b300.48xlarge ec2  instance support in Sagemaker(Hyperpod,Training and Sceptor)
+
+### 4.0.154.0 (2025-12-16 20:08 UTC)
+* IoT (4.0.4.0)
+	* Add support for dynamic payloads in IoT Device Management Commands
+* S3 (4.0.15.1)
+	* Generate DeleteBucketMetadataConfiguration, ListObjects, UpdateBucketMetadataJournalTableConfiguration, and ListMultipartUploads
+	* [Breaking Change] UpdateBucketMetadataJournalTableConfiguration was not functioning when called and is now fixed. As part of the fix there are breaking changes where incorrect properties are being replaced with the correct properties
+* TimestreamInfluxDB (4.0.5.0)
+	* This release adds support for rebooting InfluxDB DbInstances and DbClusters
+* Extensions.Bedrock.MEAI (4.0.5.1)
+	* Remove `CreateAdditionalModelRequestFields` from `BedrockChatClient`
+
+### 4.0.153.0 (2025-12-15 19:15 UTC)
+* AWSHealth (4.0.3.0)
+	* Updating Health API endpoint generation for dualstack only regions
+* BedrockAgentCoreControl (4.0.12.4)
+	* This release updates broken links for AgentCore Policy APIs in the AWS CLI and SDK resources.
+* CloudWatchLogs (4.0.14.0)
+	* This release allows you to import your historical CloudTrail Lake data into CloudWatch with a few steps, enabling you to easily consolidate operational, security, and compliance data in one place.
+* Connect (4.0.22.0)
+	* Amazon Connect now supports outbound WhatsApp contacts via the Send message block or StartOutboundChatContact API. Send proactive messages for surveys, reminders, and updates. Offer customers the option to switch to WhatsApp while in queue, eliminating hold time.
+* EC2 (4.0.63.0)
+	* EC2 Capacity Manager now supports SpotTotalCount, SpotTotalInterruptions and SpotInterruptionRate metrics for both vCPU and instance units.
+* EntityResolution (4.0.6.0)
+	* Support Customer Profiles Integration for AWS Entity Resolution
+* Glacier (4.0.3.0)
+	* Documentation updates for Amazon Glacier's maintenance mode
+* MediaTailor (4.0.5.0)
+	* Added support for Ad Decision Server Configuration enabling HTTP POST requests with custom bodies, headers, GZIP compression, and dynamic variables. No changes required for existing GET request configurations.
+* Route53Resolver (4.0.5.0)
+	* Adds support for enabling detailed metrics on Route 53 Resolver endpoints using RniEnhancedMetricsEnabled and TargetNameServerMetricsEnabled in the CreateResolverEndpoint and UpdateResolverEndpoint APIs, providing enhanced visibility into Resolver endpoint and target name server performance.
+* S3 (4.0.15.0)
+	* This release adds support for the new optional field 'LifecycleExpirationDate' in S3 Inventory configurations.
+* ServiceQuotas (4.0.4.0)
+	* Add support for SQ Dashboard Api
+
+### 4.0.152.0 (2025-12-12 19:23 UTC)
+* BCMRecommendedActions (4.0.2.0)
+	* Added new freetier action types to RecommendedAction.type.
+* Connect (4.0.21.0)
+	* Amazon Connect now offers automated post-chat surveys triggered when customers end conversations. This captures timely feedback while experience is fresh, using either a no-code form builder or Amazon Lex-powered interactive surveys.
+* DataSync (4.0.8.0)
+	* Adds Enhanced mode support for NFS and SMB locations. SMB credentials are now managed via Secrets Manager, and may be encrypted with service or customer managed keys. Increases AgentArns maximum count to 8 (max 4 per TaskMode). Adds folder counters to DescribeTaskExecution for Enhanced mode tasks.
+* WorkSpacesWeb (4.0.5.0)
+	* Adds support for portal branding customization, enabling administrators to personalize end-user portals with custom assets.
+* Extensions.Bedrock.MEAI (4.0.5.0)
+	* Add support for ChatOptions.ResponseFormat to enable structured JSON responses using JSON Schema.
+* Core 4.0.3.6
+	* Reduce object allocations in UserCrypto.Decrypt by 98%+ for .NET8+.
+	* All service and extension packages updated to require new Core
+
+### 4.0.151.0 (2025-12-11 19:29 UTC)
+* Lambda (4.0.12.0)
+	* Add Dotnet 10 (dotnet10) support to AWS Lambda.
+* Organizations (4.0.10.0)
+	* Add support for policy operations on the NETWORK SECURITY DIRECTOR POLICY policy type.
+* QuickSight (4.0.11.0)
+	* This release adds new GetIdentityContext API, Dashboard customization options for tables and pivot tables, Visual styling options- borders and decals, map GeocodingPreferences, KeyPairCredentials for DataSourceCredentials. Snapshot APIs now support registered users. Parameters limit increased to 400
+* SecretsManager (4.0.4.0)
+	* Add SortBy parameter to ListSecrets
+* SimpleEmailV2 (4.0.10.0)
+	* Update GetEmailIdentity and CreateEmailIdentity response to include SigningHostedZone in DkimAttributes. Updated PutEmailIdentityDkimSigningAttributes Response to include SigningHostedZone.
+
+### 4.0.150.0 (2025-12-10 19:21 UTC)
+* Bedrock (4.0.18.0)
+	* Automated Reasoning checks in Amazon Bedrock Guardrails is capable of generating policy scenarios to validate policies. The GetAutomatedReasoningPolicyBuildWorkflowResultAssets API now adds POLICY SCENARIO asset type, allowing customers to retrieve scenarios generated by the build workflow.
+* BillingConductor (4.0.4.0)
+	* Launch itemized custom line item and service line item filter
+* CloudWatch (4.0.6.0)
+	* This release introduces two additional protocols AWS JSON 1.1 and Smithy RPC v2 CBOR, replacing the currently utilized one, AWSQuery. AWS SDKs will prioritize the protocol that is the most performant for each language.
+* Odb (4.0.3.0)
+	* The following APIs now return CloudExadataInfrastructureArn and OdbNetworkArn fields for improved resource identification and AWS service integration - GetCloudVmCluster, ListCloudVmClusters, GetCloudAutonomousVmCluster, and ListCloudAutonomousVmClusters.
+* OpenSearchService (4.0.8.0)
+	* The CreateApplication API now supports an optional kms key arn parameter to allow customers to specify a CMK for application encryption.
+* PartnerCentralSelling (4.0.7.0)
+	* Adds support for the new Project.AwsPartition field on Opportunity and AWS Opportunity Summary. Use this field to specify the AWS partition where the opportunity will be deployed.
+* Signer (4.0.3.0)
+	* Adds support for Signer GetRevocationStatus with updated endpoints
+* Core 4.0.3.5
+	* Fix SynchronizationLockException exception when using IMDS for credentials (https://github.com/aws/aws-sdk-net/issues/4199)
+	* All service and extension packages updated to require new Core
+
+### 4.0.149.0 (2025-12-09 19:28 UTC)
+* Account (4.0.3.0)
+	* This release adds a new API (GetGovCloudAccountInformation) used to retrieve information about a linked GovCloud account from the standard AWS partition.
+* AppSync (4.0.3.0)
+	* Update Event API to require EventConfig parameter in creation and update requests.
+* GuardDuty (4.0.13.0)
+	* Adding support for Ec2LaunchTemplate Version field
+* IVSRealTime (4.0.5.0)
+	* Token Exchange introduces seamless token exchange capabilities for IVS RTX, enabling customers to upgrade or downgrade token capabilities and update token attributes within the IVS client SDK without forcing clients to disconnect and reconnect.
+* Mgn (4.0.3.0)
+	* Added parameters encryption, IPv4/IPv6 protocol configuration, and enhanced tagging support for replication operations.
+* Route53 (4.0.8.0)
+	* Amazon Route 53 now supports the EU (Germany) Region (eusc-de-east-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region
+
+### 4.0.148.0 (2025-12-08 19:39 UTC)
+* CostExplorer (4.0.10.0)
+	* Add support for Cost Category resource associations including filtering by resource type on ListCostCategoryDefinitions and new ListCostCategoryResourceAssociations API.
+* EC2 (4.0.62.0)
+	* Amazon EC2 P6-B300 instances provide 8x NVIDIA Blackwell Ultra GPUs with 2.1 TB high bandwidth GPU memory, 6.4 Tbps EFA networking, 300 Gbps dedicated ENA throughput, and 4 TB of system memory. Amazon EC2 C8a instances are powered by 5th Gen AMD EPYC processors with a maximum frequency of 4.5 GHz.
+* IAMRolesAnywhere (4.0.3.0)
+	* Increases certificate string length for trust anchor source data to support ML-DSA certificates.
+* IdentityStore (4.0.4.0)
+	* Updating AWS Identity Store APIs to support Attribute Extensions capability, with the first release adding Enterprise Attributes. This launch aligns Identity Store APIs with SCIM for enterprise attributes, reducing cases when customers are forced to use SCIM due to lack of SigV4 API support.
+* PartnerCentralSelling (4.0.6.0)
+	* Deal Sizing Service for AI-based deal size estimation with AWS service-level breakdown, supporting Expansion and Migration deals across Technology, and Reseller partner cohorts, including Pricing Calculator AddOn for MAP deals and funding incentives.
+* RDS (4.0.15.0)
+	* Adding support for tagging RDS Instance/Cluster Automated Backups
+* RedshiftServerless (4.0.3.0)
+	* Added GetIdentityCenterAuthToken API to retrieve encrypted authentication tokens for Identity Center integrated serverless workgroups. This API enables programmatic access to secure Identity Center tokens with proper error handling and parameter validation across supported SDK languages.
+* SimpleEmailV2 (4.0.9.0)
+	* Update Mail Manager Archive ARN validation
+
+### 4.0.147.0 (2025-12-05 19:23 UTC)
+* DynamoDBv2 (4.0.10.2)
+	* Fix `UpdateItem` not to throw an error when `ExpressionAttributeValues` is empty (https://github.com/aws/aws-sdk-net/issues/4144)
+* ECS (4.0.10.2)
+	* Updating stop-task API to encapsulate containers with custom stop signal
+* IdentityManagement (4.0.9.0)
+	* Adding the ExpirationTime attribute to the delegation request resource.
+* Inspector2 (4.0.8.0)
+	* This release adds a new ScanStatus called "Unsupported Code Artifacts". This ScanStatus will be returned when a Lambda function was not code scanned because it has unsupported code artifacts.
+* PartnerCentralAccount (4.0.1.0)
+	* Adding Verification API's to Partner Central Account SDK.
+* S3 (4.0.14.1)
+	* The following changes are a result of moving S3 from custom code to generated code based on the model provided by S3:
+	* [Breaking Change] The method isSetS3BucketDestination() in Amazon.S3.Model.InventoryDestination has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The method isSetAccountId() in Amazon.S3.Model.InventoryS3BucketDestination has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The method IsSetInventoryConfigurationList() in Amazon.S3.Model.ListBucketInventoryConfigurationsResponse has been changed from public to internal to be consistent with all other services.
+	* [Breaking Change] The setter for Days in Amazon.S3.Model.RecordExpiration has been changed from int to int? to be consistent with the nullability changes in V4.
+	* Generates Put, Get, Delete, and ListBucketInventoryConfiguration. Generate PutBucketAccelerateConfiguration, PutBucketRequestPayment, CreateBucketMetadataTableConfiguration, GetBucketMetadataConfiguration.
+* SimpleEmailV2 (4.0.8.0)
+	* Updating the desired url for `PutEmailIdentityDkimSigningAttributes` from v1 to v2
+* Core 4.0.3.4
+	* Add user agent header to ResponseMetadata
+	* All service and extension packages updated to require new Core
+
+### 4.0.146.0 (2025-12-04 17:01 UTC)
+* Lambda (4.0.11.0)
+	* Add DisallowedByVpcEncryptionControl to the LastUpdateStatusReasonCode and StateReasonCode enums to represent failures caused by VPC Encryption Controls.
+
+### 4.0.145.0 (2025-12-03 16:47 UTC)
+* Bedrock (4.0.17.0)
+	* Adding support in Amazon Bedrock to customize models with reinforcement fine-tuning (RFT) and support for updating the existing Custom Model Deployments.
+* SageMaker (4.0.38.0)
+	* Introduces Serverless training: A fully managed compute infrastructure that abstracts away all infrastructure complexity, allowing you to focus purely on model development.
+
+Added AI model customization assets used to train, refine, and evaluate custom models during the model customization process.
+
+### 4.0.144.0 (2025-12-02 16:43 UTC)
+* Bedrock (4.0.16.0)
+	* Adds the audioDataDeliveryEnabled boolean field to the Model Invocation Logging Configuration.
+* BedrockAgentCore (4.0.8.0)
+	* Support for AgentCore Evaluations and Episodic memory strategy for AgentCore Memory.
+* BedrockAgentCoreControl (4.0.12.0)
+	* Supports AgentCore Evaluations, Policy, Episodic Memory Strategy, Resource Based Policy for Runtime and Gateway APIs, API Gateway Rest API Targets and enhances JWT authorizer.
+* BedrockRuntime (4.0.14.0)
+	* Adds support for Audio Blocks and Streaming Image Output plus new Stop Reasons of malformed_model_output and malformed_tool_use.
+* CloudWatchLogs (4.0.13.0)
+	* CloudWatch Logs adds managed S3 Tables integration to access logs using other analytical tools, as well as facets and field indexing to simplify log analytics in CloudWatch Logs Insights.
+* CostExplorer (4.0.9.0)
+	* This release updates existing Savings Plans Purchase Analyzer and Recommendations APIs to support Database Savings Plans.
+* DataZone (4.0.17.0)
+	* Amazon DataZone now supports exporting Catalog datasets as Amazon S3 tables, and provides automatic business glossary term suggestions for data assets.
+* FSx (4.0.9.0)
+	* S3 Access Points support for FSx for NetApp ONTAP
+* GuardDuty (4.0.12.0)
+	* Adding support for extended threat detection for Amazon EC2 and Amazon ECS. Adding support for wild card suppression rules.
+* Lambda (4.0.10.0)
+	* Launching Lambda durable functions - a new feature to build reliable multi-step applications and AI workflows natively within the Lambda developer experience.
+* NovaAct (4.0.0.0)
+	* Initial release of Nova Act SDK. The Nova Act service enables customers to build and manage fleets of agents for automating production UI workflows with high reliability, fastest time-to-value, and ease of implementation at scale.
+* ObservabilityAdmin (4.0.5.0)
+	* CloudWatch Observability Admin adds pipelines configuration for third party log ingestion and transformation of all logs ingested, integration of CloudWatch logs with S3 Tables, and AWS account or organization level enablement for 7 AWS services.
+* OpenSearchServerless (4.0.5.0)
+	* GPU-acceleration helps you build large-scale vector databases faster and more efficiently. You can enable this feature on new OpenSearch domains and OpenSearch Serverless collections. This feature uses GPU-acceleration to reduce the time needed to index data into vector indexes.
+* OpenSearchService (4.0.7.0)
+	* GPU-acceleration helps you build large-scale vector databases faster and more efficiently. You can enable this feature on new OpenSearch domains and OpenSearch Serverless collections. This feature uses GPU-acceleration to reduce the time needed to index data into vector indexes.
+* RDS (4.0.14.0)
+	* RDS Oracle and SQL Server: Add support for adding, modifying, and removing additional storage volumes, offering up to 256TiB storage; RDS SQL Server: Support Developer Edition via custom engine versions for development and testing purposes; M7i/R7i instances with Optimize CPU for cost savings.
+* S3 (4.0.14.0)
+	* New S3 Storage Class FSX_ONTAP
+* S3Control (4.0.8.0)
+	* Add support for S3 Storage Lens Advanced Performance Metrics, Expanded Prefixes metrics report, and export to S3 Tables.
+* S3Tables (4.0.8.0)
+	* Add storage class, replication, and table record expiration features to S3 Tables.
+* S3Vectors (4.0.4.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.37.0)
+	* Added support for serverless MLflow Apps.
+
+Added support for new HubContentTypes (DataSet and JsonDoc) in Private Hub for AI model customization assets, enabling tracking and management of training datasets and evaluators (reward functions/prompts) throughout the ML lifecycle.
+* SavingsPlans (4.0.4.0)
+	* Added support for Amazon Database Savings Plans
+* SecurityHub (4.0.7.0)
+	* ITSM enhancements: DRYRUN mode for testing ticket creation, ServiceNow now uses AWS Secrets Manager for credentials, ConnectorRegistrationsV2 renamed to RegisterConnectorV2, added ServiceQuotaExceededException error, and ConnectorStatus visibility in CreateConnectorV2.
+
+### 4.0.143.0 (2025-12-01 01:44 UTC)
+* AppIntegrationsService (4.0.4.0)
+	* This release adds support for MCP servers via the ApplicationType field, allowing customers to register their Bedrock AgentCore gateways as third party applications.
+* BedrockAgent (4.0.7.0)
+	* Support audio and video ingestion on Bedrock Knowledge Bases.
+* BedrockAgentRuntime (4.0.8.0)
+	* Support audio and video content retrieval on Bedrock Knowledge Bases.
+* CleanRooms (4.0.11.0)
+	* AWS Clean Rooms now supports privacy-enhancing synthetic dataset generation for custom ML training.
+* CleanRoomsML (4.0.7.0)
+	* AWS Clean Rooms ML now supports privacy-enhancing synthetic dataset generation for custom ML training.
+* Connect (4.0.20.0)
+	* This is a combined re:Invent release for Amazon Connect.
+* ConnectCampaignsV2 (4.0.5.0)
+	* This release added support for new WhatsApp channel and Journey type outbound campaign
+* ConnectParticipant (4.0.4.0)
+	* Amazon Connect now supports message processing that intercepts and processes chat messages before they reach any participant.
+* CustomerProfiles (4.0.7.0)
+	* This release introduces, CRUD APIs for the DomainObjectType and Recommender resources, APIs to offer statistical insights on Object Type Attributes, Changes to SegmentDefinition APIs to support SQL queries to create Segments, and Changes to Domain APIs to support Data Store.
+* EKS (4.0.9.0)
+	* This release adds support for EKS Capabilities
+* Glue (4.0.23.0)
+	* feature: Glue: Add support for Iceberg materialized view in Glue Data Catalog, including updated CreateTable API to support materialized views and new APIs for managing data refresh for materialized views.
+feature: Glue: Add support for Iceberg table encryption keys and struct field defaults.
+* Lambda (4.0.9.0)
+	* Launching Lambda Managed Instances - a new feature to run Lambda on EC2.
+* LexModelsV2 (4.0.5.0)
+	* Adds support for speech-to-speech models for human-like, adaptive, and expressive voice interactions. Also adds support for speech model preference, allowing customers to select which speech model they want to use for speech-to-text requests.
+* MarketplaceAgreement (4.0.3.0)
+	* This release supports 1/multi-product transactions via offer sets. DescribeAgreement and SearchAgreements APIs now return offer set IDs. SearchAgreements also supports filtering by offer set ID and 2/variable payment pricing terms will be returned through GetAgreementTerms.
+* MarketplaceCatalog (4.0.4.0)
+	* This release introduces offer set entity in AWS Marketplace Catalog API to enable multi-product transaction. Offer set enables sellers to group multiple private offers into a single-click purchase experience, simplifying procurement for customers purchasing multi-product solutions.
+* PartnerCentralAccount (4.0.0.0)
+	* Initial GA launch of Partner Central Account
+* PartnerCentralBenefits (4.0.0.0)
+	* Initial GA launch of Partner Central Benefits
+* PartnerCentralSelling (4.0.5.0)
+	* New Features:
+Lead Management APIs for capturing and nurturing leads
+Lead invitation support for partner collaboration
+Lead-to-opportunity conversion operations
+AWS Marketplace OfferSets support for opportunities
+* Personalize (4.0.3.0)
+	* This release adds support for includedDatasetColumns and performIncrementalUpdate in solution APIs, and rankingInfluence in campaign and batch inference APIs.
+* QConnect (4.0.5.0)
+	* New AIAgent types: Orchestration for ModelContextProtocol tool integration, CaseSummary for Amazon Connect Case summaries, NoteTaker for Agent Assistance notes. Added ListSpans and Retrieve APIs. Enhanced Q in Connect AssistantAssociationType to support Bring Your Own Bedrock Knowledge Bases.
+* Route53GlobalResolver (4.0.0.0)
+	* Add SDK for Amazon Route 53 Global Resolver, a fully managed DNS resolver service that offers broad DNS-filtering security controls.
+
+### 4.0.142.0 (2025-11-26 19:16 UTC)
+* BedrockRuntime (4.0.13.0)
+	* Bedrock Runtime Reserved Service Support
+* ComputeOptimizer (4.0.4.0)
+	* Compute Optimizer now identifies idle NAT Gateway resources for cost optimization based on traffic patterns and backup configuration analysis. Access recommendations via the GetIdleRecommendations API.
+* CostOptimizationHub (4.0.6.0)
+	* This release enables AWS Cost Optimization Hub to show cost optimization recommendations for NAT Gateway.
+
+### 4.0.141.0 (2025-11-25 19:21 UTC)
+* EC2 (4.0.61.0)
+	* This release adds support to view Network firewall proxy appliances attached to an existing NAT Gateway via DescribeNatGateways API NatGatewayAttachedAppliance structure.
+* NetworkFirewall (4.0.10.0)
+	* Network Firewall release of the Proxy feature.
+* Organizations (4.0.9.0)
+	* Add support for policy operations on the S3_POLICY and BEDROCK_POLICY policy type.
+* Route53 (4.0.7.0)
+	* Adds support for new route53 feature: accelerated recovery.
+
+### 4.0.140.0 (2025-11-24 19:14 UTC)
+* CloudFront (4.0.10.0)
+	* Add TrustStore, ConnectionFunction APIs to CloudFront SDK
+* CloudWatchLogs (4.0.12.0)
+	* New CloudWatch Logs feature - LogGroup Deletion Protection, a capability that allows customers to safeguard their critical CloudWatch log groups from accidental or unintended deletion.
+
+### 4.0.139.0 (2025-11-21 21:17 UTC)
+* APIGateway (4.0.5.0)
+	* API Gateway supports VPC link V2 for REST APIs.
+* Athena (4.0.3.0)
+	* Introduces Spark workgroup features including log persistence, S3/CloudWatch delivery, UI and History Server APIs, and SparkConnect 3.5.6 support. Adds DPU usage limits at workgroup and query levels as well as DPU usage tracking for Capacity Reservation queries to optimize performance and costs.
+* AWSMarketplaceMetering (4.0.3.0)
+	* Endpoint update for new region
+* Bedrock (4.0.15.0)
+	* Add support to automatically enforce safeguards across accounts within an AWS Organization.
+* BedrockAgentCoreControl (4.0.11.0)
+	* Support for agentcore gateway interceptor configurations and NONE authorizer type
+* BedrockDataAutomationRuntime (4.0.4.0)
+	* Adding new fields to GetDataAutomationStatus: jobSubmissionTime, jobCompletionTime, and jobDurationInSeconds
+* BedrockRuntime (4.0.12.0)
+	* Add support to automatically enforce safeguards across accounts within an AWS Organization.
+* CloudFormation (4.0.8.0)
+	* Adds the DependsOn field to the AutoDeployment configuration parameter for CreateStackSet, UpdateStackSet, and DescribeStackSet APIs, allowing users to set and read auto-deployment dependencies between StackSets
+* ComputeOptimizerAutomation (4.0.0.0)
+	* Initial release of AWS Compute Optimizer Automation. Create automation rules to implement recommended actions on a recurring schedule based on your specified criteria. Supported actions include: snapshot and delete unattached EBS volumes and upgrade volume types to the latest generation.
+* Connect (4.0.19.0)
+	* New APIs to support aliases and versions for ContactFlowModule. Updated ContactFlowModule APIs to support custom blocks.
+* ControlTower (4.0.4.0)
+	* The manifest field is now optional for the AWS Control Tower CreateLandingZone and UpdateLandingZone APIs for Landing Zone version 4.0
+* EC2 (4.0.60.0)
+	* This release adds a new capability to create and manage interruptible EC2 Capacity Reservations.
+* ECR (4.0.8.0)
+	* Add support for ECR managed signing
+* EKS (4.0.8.0)
+	* Adds support for controlPlaneScalingConfig on EKS Clusters.
+* ElasticLoadBalancingV2 (4.0.6.1)
+	* This release adds the health check log feature in ALB, allowing customers to send detailed target health check log data directly to their designated Amazon S3 bucket.
+* Invoicing (4.0.6.0)
+	* Added the CreateProcurementPortalPreference, GetProcurementPortalPreference, PutProcurementPortalPreference, UpdateProcurementPortalPreferenceStatus, ListProcurementPortalPreferences and DeleteProcurementPortalPreference APIs for procurement portal preference management.
+* KeyManagementService (4.0.8.0)
+	* Support for on-demand rotation of AWS KMS Multi-Region keys with imported key material
+* KinesisVideo (4.0.3.0)
+	* This release adds support for Tiered Storage
+* Lambda (4.0.8.0)
+	* Launching Enhanced Error Handling and ESM Grouping capabilities for Kafka ESMs
+* LexModelsV2 (4.0.4.0)
+	* Adds support for Intent Disambiguation, allowing resolution of ambiguous user inputs when multiple intents match by presenting clarifying questions to users. Also adds Speech Detection Sensitivity configuration for optimizing voice activity detection sensitivity levels in various noise environments.
+* MailManager (4.0.4.0)
+	* Add support for resources in the aws-eusc partition.
+* MarketplaceEntitlementService (4.0.3.0)
+	* Endpoint update for new region
+* MediaPackageV2 (4.0.9.0)
+	* Adds support for excluding session key tags from HLS multivariant playlists
+* Odb (4.0.2.0)
+	* Adds AssociateIamRoleToResource and DisassociateIamRoleFromResource APIs for managing IAM roles. Enhances CreateOdbNetwork and UpdateOdbNetwork APIs with KMS, STS, and cross-region S3 parameters. Adds OCI identity domain support to InitializeService API.
+* Organizations (4.0.8.0)
+	* Add support for policy operations on the UPGRADE_ROLLOUT_POLICY policy type.
+* QConnect (4.0.4.0)
+	* This release introduces two new messaging channel subtypes: Push, WhatsApp, under MessageTemplate which is a resource in Amazon Q in Connect.
+* QuickSight (4.0.10.0)
+	* Amazon Quick Suite now supports QuickChat as an embedding type when calling the GenerateEmbedUrlForRegisteredUser API, enabling developers to embed conversational AI agents directly into their applications.
+* RDS (4.0.13.0)
+	* Add support for Upgrade Rollout Order
+* Redshift (4.0.5.0)
+	* Added support for Amazon Redshift Federated Permissions and AWS IAM Identity Center trusted identity propagation.
+* RedshiftServerless (4.0.2.0)
+	* Added UpdateLakehouseConfiguration API to manage Amazon Redshift Federated Permissions and AWS IAM Identity Center trusted identity propagation for namespaces.
+* S3 (4.0.13.1)
+	* Generate 4 more S3 operations: PutBucketIntelligentTieringConfiguration, GetBucketIntelligentTieringConfiguration, ListBucketIntelligentTieringConfigurations, and DeleteBucketIntelligentTieringConfiguration.
+	* Fix a bug where calling GetBucketIntelligentTiering with no IntelligentTieringId would call ListBucketIntelligentTieringConfigurations. Now, calling GetBucketIntelligentTiering with no IntelligentTieringId will throw an exception.
+	* [Breaking Change] IsSetIntelligentTieringConfigurationList() on ListBucketIntelligentTieringConfigurationsResponse changed from public to internal to follow other IsSet methods.
+* SageMaker (4.0.36.0)
+	* Enhanced SageMaker HyperPod instance groups with support for MinInstanceCount, CapacityRequirements (Spot/On-Demand), and KubernetesConfig (labels and taints). Also Added speculative decoding and MaxInstanceCount for model optimization jobs.
+* SecurityIR (4.0.6.0)
+	* Add ListInvestigations and SendFeedback APIs to support SecurityIR AI agents
+* SimpleEmailV2 (4.0.7.0)
+	* Added support for new SES regions - Asia Pacific (Malaysia) and Canada (Calgary)
+* Transfer (4.0.5.0)
+	* Adds support for creating Webapps accessible from a VPC.
+* Core 4.0.3.3
+	* Update the SDK to throw an error when the resolved AWS region is not a valid host label
+	* All service and extension packages updated to require new Core
+
+### 4.0.138.0 (2025-11-20 21:25 UTC)
+* ApplicationSignals (4.0.5.0)
+	* Amazon CloudWatch Application Signals now supports un-instrumented services discovery, cross-account views, and change history, helping SRE and DevOps teams monitor and troubleshoot their large-scale distributed applications.
+* AutoScaling (4.0.6.0)
+	* This release adds support for three new features: 1) Image ID overrides in mixed instances policy, 2) Replace Root Volume - a new strategy for Instance Refresh, and 3) Instance Lifecycle Policy for enhanced instance lifecycle management.
+* BedrockAgentCore (4.0.7.0)
+	* Bedrock AgentCore Memory release for redriving memory extraction jobs (StartMemoryExtractionJob and ListMemoryExtractionJob)
+* BedrockDataAutomation (4.0.6.0)
+	* Added support for Synchronous project type and PII Detection and Redaction
+* BedrockDataAutomationRuntime (4.0.3.0)
+	* Bedrock Data Automation Runtime Sync API
+* Braket (4.0.4.0)
+	* Add support for Braket spending limits.
+* Budgets (4.0.8.0)
+	* Add BillingViewHealthStatusException to DescribeBudgetPerformanceHistory and ServiceQuotaExceededException to UpdateBudget for improved error handling with Billing Views.
+* CloudFront (4.0.9.0)
+	* This release adds support for bring your own IP (BYOIP) to CloudFront's CreateAnycastIpList API through an optional IpamCidrConfigs field.
+* CloudTrail (4.0.5.0)
+	* AWS launches CloudTrail aggregated events to simplify monitoring of data events at scale. This feature delivers both granular and summarized data events for resources like S3/Lambda, helping security teams identify patterns without custom aggregation logic.
+* Connect (4.0.18.0)
+	* Add optional ability to exclude users from send notification actions for Contact Lens Rules.
+* DatabaseMigrationService (4.0.7.0)
+	* Added support for customer-managed KMS key (CMK) for encryption for import private key certificate. Additionally added Amazon SageMaker Lakehouse endpoint used for zero-ETL integrations with data warehouses.
+* DataSync (4.0.7.0)
+	* The partition value "aws-eusc" is now permitted for ARN (Amazon Resource Name) fields.
+* DeviceFarm (4.0.4.0)
+	* Add support for environment variables and an IAM execution role.
+* DSQL (4.0.8.0)
+	* Added clusterVpcEndpoint field to GetVpcEndpointServiceName API response, returning the VPC connection endpoint for the cluster
+* EC2 (4.0.59.0)
+	* This release adds support for multiple features including: VPC Encryption Control for the status of traffic flow; S2S VPN BGP Logging; TGW Flexible Costs; IPAM allocation of static IPs from IPAM pools to CF Anycast IP lists used on CloudFront distribution; and EBS Volume Integration with Recycle Bin
+* ECS (4.0.10.0)
+	* Launching Amazon ECS Express Mode - a new feature that enables developers to quickly launch highly available, scalable containerized applications with a single command.
+* ElasticLoadBalancingV2 (4.0.6.0)
+	* This release adds the target optimizer feature in ALB, enabling strict concurrency enforcement on targets.
+* ElasticMapReduce (4.0.7.0)
+	* Add support for configuring S3 destination for step logs on a per-step basis.
+* Glue (4.0.22.0)
+	* Added FunctionType parameter to Glue GetuserDefinedFunctions.
+* Imagebuilder (4.0.6.0)
+	* EC2 Image Builder now enables the distribution of existing AMIs, retry distribution, and define distribution workflows. It also supports automatic versioning for recipes and components, allowing automatic version increments and dynamic referencing in pipelines.
+* Kinesis (4.0.7.5)
+	* Kinesis Data Streams now supports up to 50 Enhance Fan-out consumers for On-demand Advantage Streams. On-demand Standard and Provisioned streams will continue with the existing limit of 20 consumers for Enhanced Fan-out.
+* LakeFormation (4.0.3.0)
+	* Added ServiceIntegrations as a request parameter for CreateLakeFormationIdentityCenterConfigurationRequest and UpdateLakeFormationIdentityCenterConfigurationRequest and response parameter for DescribeLakeFormationIdentityCenterConfigurationResponse
+* LicenseManager (4.0.4.0)
+	* Added cross-account resource aggregation via license asset groups and expiry tracking for Self-Managed Licenses. Extended Org-Wide View to Self-Managed Licenses, added reporting for license asset groups, and removed Athena/Glue dependencies for cross-account resource discovery in commercial regions.
+* NetworkManager (4.0.4.0)
+	* This release adds support for Cloud WAN Routing Policy providing customers sophisticated routing controls to better manage their global networks
+* Organizations (4.0.7.0)
+	* Added new APIs for Billing Transfer, new policy type INSPECTOR_POLICY, and allow an account to transfer between organizations
+* QuickSight (4.0.9.0)
+	* Introducing comprehensive theme styling controls. New features include border customization (radius, width, color), flexible padding controls, background styling for cards and sheets, centralized typography management, and visual-level override support across layouts.
+* RDS (4.0.12.0)
+	* Add support for VPC Encryption Controls.
+* RecycleBin (4.0.3.0)
+	* Add support for EBS volume in Recycle Bin
+* RedshiftDataAPIService (4.0.3.0)
+	* Increasing the length limit of Statement Name from 500 to 2048.
+* S3 (4.0.13.0)
+	* Enable / Disable ABAC on a general purpose bucket.
+	* Add unit tests for Transfer Utility ConvertToGetObjectRequest method in BaseCommand
+	* Setting both ResponseExpires and ResponseHeadersOverrides.Expires on GetObjectRequest now gives priority to ResponseExpires. Previously, ResponseHeadersOverrides.Expires was not being used even if it was set.
+* SageMaker (4.0.35.0)
+	* Added training plan support for inference endpoints. Added HyperPod task governance with accelerator partition-based quota allocation. Added BatchRebootClusterNodes and BatchReplaceClusterNodes APIs. Updated ListClusterNodes to include privateDnsHostName.
+* SecurityHub (4.0.6.0)
+	* Release Findings and Resources Trends APIs- GetFindingsTrendsV2 and GetResourcesTrendsV2. This supports time-series aggregated counts with composite filtering for 1-year of historical data analysis of Findings and Resources.
+
+### 4.0.137.0 (2025-11-19 20:10 UTC)
+* APIGateway (4.0.4.0)
+	* API Gateway now supports response streaming and new security policies for REST APIs and custom domain names.
+* ApiGatewayV2 (4.0.4.0)
+	* Support for API Gateway portals and portal products.
+* AWSHealth (4.0.2.0)
+	* Adds actionability and personas properties to Health events exposed through DescribeEvents, DescribeEventsForOrganization, DescribeEventDetails, and DescribeEventTypes APIs. Adds filtering by actionabilities and personas in EventFilter, OrganizationEventFilter, EventTypeFilter.
+* Backup (4.0.10.0)
+	* Amazon GuardDuty Malware Protection now supports AWS Backup, extending malware detection capabilities to EC2, EBS, and S3 backups.
+* BCMPricingCalculator (4.0.5.0)
+	* Add GroupSharingPreference, CostCategoryGroupSharingPreferenceArn, and CostCategoryGroupSharingPreferenceEffectiveDate to Bill Estimate. Add GroupSharingPreference and CostCategoryGroupSharingPreferenceArn to Bill Scenario.
+* BedrockRuntime (4.0.11.0)
+	* This release includes support for Search Results.
+* Billing (4.0.5.0)
+	* Added name filtering support to ListBillingViews API through the new names parameter to efficiently filter billing views by name.
+* BillingConductor (4.0.3.0)
+	* This release adds support for Billing Transfers, enabling management of billing transfers with billing groups on AWS Billing Conductor.
+* CloudTrail (4.0.4.0)
+	* AWS CloudTrail now supports Insights for data events, expanding beyond management events to automatically detect unusual activity on data plane operations.
+* CloudWatchLogs (4.0.11.0)
+	* Adding support for ocsf version 1.5, add optional parameter MappingVersion
+* CloudWatchRUM (4.0.3.0)
+	* CloudWatch RUM now supports mobile application monitoring for Android and iOS platforms
+* ConnectCampaignsV2 (4.0.4.0)
+	* This release added support for ring timer configuration for campaign calls.
+* CostExplorer (4.0.8.0)
+	* Add support for COST_CATEGORY, TAG, and LINKED_ACCOUNT AWS managed cost anomaly detection monitors
+* CostOptimizationHub (4.0.5.0)
+	* Release ListEfficiencyMetrics API
+* DataZone (4.0.16.0)
+	* Amazon DataZone now supports business metadata (readme and metadata forms) at the individual attribute (column) level, a new rule type for glossary terms, and the ability to update the owner of the root domain unit.
+* DynamoDBv2 (4.0.10.0)
+	* Extended Global Secondary Index (GSI) composite keys to support up to 8 attributes.
+	* Add support for composite keys in Query operation for high-level libraries (Document Model and DataModel).
+* EC2 (4.0.58.0)
+	* This launch adds support for two new features: Regional NAT Gateway and IPAM Policies. IPAM policies offers customers central control for public IPv4 assignments across AWS services. Regional NAT is a single NAT Gateway that automatically expands across AZs in a VPC to maintain high availability.
+* ECR (4.0.7.0)
+	* Add support for ECR archival storage class and Inspector org policy for scanning
+* ECS (4.0.9.0)
+	* Added support for Amazon ECS Managed Instances infrastructure optimization configuration.
+* ElasticMapReduce (4.0.6.0)
+	* Add CloudWatch Logs integration for Spark driver, executor and step logs
+* FSx (4.0.8.0)
+	* Adding File Server Resource Manager configuration to FSx Windows
+* GuardDuty (4.0.11.0)
+	* Add support for scanning and viewing scan results for backup resource types
+* IdentityManagement (4.0.8.0)
+	* Added the EnableOutboundWebIdentityFederation, DisableOutboundWebIdentityFederation and GetOutboundWebIdentityFederationInfo APIs for the IAM outbound federation feature.
+* Inspector2 (4.0.7.0)
+	* This release introduces BLOCKED_BY_ORGANIZATION_POLICY error code and IMAGE_ARCHIVED scanStatusReason. BLOCKED_BY_ORGANIZATION_POLICY error code is returned when an operation is blocked by an AWS Organizations policy. IMAGE_ARCHIVED scanStatusReason is returned when an Image is archived in ECR.
+* Invoicing (4.0.5.0)
+	* Add support for adding Billing transfers in Invoice configuration
+* Lambda (4.0.7.0)
+	* Added support for creating and invoking Tenant Isolated functions in AWS Lambda APIs.
+* MediaConnect (4.0.5.0)
+	* This release adds support for global routing in AWS Elemental MediaConnect. You can now use router inputs and router outputs to manage global video and audio routing workflows both within the AWS-Cloud and over the public internet.
+* MediaLive (4.0.11.0)
+	* MediaLive is adding support for MediaConnect Router by supporting a new input type called MEDIACONNECT_ROUTER. This new input type will provide seamless encrypted transport between MediaConnect Router and your MediaLive channel.
+* NetworkFirewall (4.0.9.0)
+	* Partner Managed Rulegroup feature support
+* NetworkFlowMonitor (4.0.6.0)
+	* Added new enum value (AWS::EKS::Cluster) for type field under MonitorLocalResource
+* PartnerCentralChannel (4.0.0.0)
+	* Initial GA launch of Partner Central Channel
+* Route53 (4.0.6.0)
+	* Add dual-stack endpoint support for Route53
+* S3 (4.0.12.0)
+	* Adds support for blocking SSE-C writes to general purpose buckets.
+	* Generate CreateSession, PutBucketAnalyticsConfiguration, GetBucketAnalyticsConfiguration, ListBucketAnalyticsConfiguration, and DeleteBucketAnalyticsConfiguration.
+* SageMaker (4.0.34.0)
+	* Added support for enhanced metrics for SageMaker AI Endpoints. This features provides Utilization Metrics at instance and container granularity and also provides easy configuration of metric publish frequency from 10 sec -> 5 mins
+* SecretsManager (4.0.3.0)
+	* Adds support to create, update, retrieve, rotate, and delete managed external secrets.
+* SecurityToken (4.0.5.0)
+	* IAM now supports outbound identity federation via the STS GetWebIdentityToken API, enabling AWS workloads to securely authenticate with external services using short-lived JSON Web Tokens.
+* Signin (4.0.0.0)
+	* AWS Sign-In manages authentication for AWS services. This service provides secure authentication flows for accessing AWS resources from the console and developer tools. This release adds the CreateOAuth2Token API, which can be used to fetch OAuth2 access tokens and refresh tokens from Sign-In.
+* StepFunctions (4.0.2.0)
+	* Adds support to TestState for mocked results and exceptions, along with additional inspection data.
+* TranscribeStreaming (4.0.5.0)
+	* This release adds support for additional locales in AWS transcribe streaming.
+* Core 4.0.3.2
+	* Added support for LoginAWSCredentials.
+	* Updated generator to support TFM based conditions in ItemGroup while adding project package references defined for various targets in service model metadata.json.
+	* All service and extension packages updated to require new Core
+
+### 4.0.136.0 (2025-11-18 19:29 UTC)
+* AutoScaling (4.0.5.0)
+	* This release adds the new LaunchInstances API, which can launch instances synchronously in an AutoScaling group. The API also returns instances info and launch error back immediately.
+* Backup (4.0.9.0)
+	* AWS Backup now supports a low-cost warm storage tier for Amazon S3 backup data.
+* BedrockRuntime (4.0.10.0)
+	* Amazon Bedrock Runtime Service Tier Support Launch
+* CloudFormation (4.0.7.0)
+	* New CloudFormation DescribeEvents API with operation ID tracking and failure filtering capabilities to quickly identify root causes of deployment failures. Also, a DeploymentMode parameter for the CreateChangeSet API that enables creation of drift-aware change sets for safe drift management.
+* CloudWatchLogs (4.0.10.0)
+	* CloudWatch Logs updates: Added capability to setup a recurring schedule for log insights queries. Logs introduced Scheduled Queries (managed through Create/Update/Get/Delete/List/History Scheduled Query APIs). For more information, see CloudWatch Logs API documentation.
+* Connect (4.0.17.0)
+	* This release added support for ring timer configuration for campaign calls.
+* EC2 (4.0.57.0)
+	* AWS Site-to-Site VPN now supports VPN Concentrator, a new feature that enables customers to connect multiple low-bandwidth sites connections through a single attachment, simplifying multi-site connectivity for distributed enterprises.
+* IdentityManagement (4.0.7.0)
+	* Added the AssociateDelegationRequest, GetDelegationRequest, AcceptDelegationRequest, RejectDelegatonRequest, ListDelegationRequests, UpdateDelegationRequest, SendDelegationToken and GetHumanReadableSummary APIs for the IAM temporary delegation feature.
+* Kafka (4.0.4.0)
+	* Amazon MSK adds three new APIs, ListTopics, DescribeTopic, and DescribeTopicPartitions for viewing Kafka topics in your MSK clusters.
+* ResourceGroupsTaggingAPI (4.0.2.0)
+	* Add support for new ListRequiredTags API used to retrieve the required tags specified in a customer's effective tag policy.
+* StorageGateway (4.0.3.0)
+	* Adds support for European Sovereign Cloud ARNs in Storage Gateway API parameters.
+* WAFV2 (4.0.7.0)
+	* AssociateWebACL, UpdateWebACL and PutLoggingConfiguration will now throw WAFFeatureNotIncludedInPricingPlanException when the request contains a feature that is not included in the CloudFront pricing plan of the WebACL.
+
+### 4.0.135.0 (2025-11-17 20:13 UTC)
+* AppStream (4.0.4.0)
+	* Adding support for additional instances and extended storage
+* Backup (4.0.8.0)
+	* AWS Backup now supports specifying a logically air-gapped backup vault as a primary backup target in backup plans and on-demand backup jobs.
+* Bedrock (4.0.14.0)
+	* Automated Reasoning checks in Amazon Bedrock Guardrails now automatically generate Q&A tests for new Automated Reasoning policies. The GetAutomatedReasoningPolicyBuildWorkflowResultAssets API adds GENERATED_TEST_CASES asset type, allowing customers to retrieve tests generated by the build workflow.
+* DatabaseMigrationService (4.0.6.0)
+	* This release introduces the SAP ASE(Sybase) Data Provider for AWS Data Migration Service (DMS). In addition, DMS Schema Conversion now supports this provider, enabling customers to migrate SAP ASE(Sybase) databases to Amazon RDS for PostgreSQL or Aurora PostgreSQL seamlessly.
+* DeviceFarm (4.0.3.0)
+	* This release adds support for interacting with devices during a remote access session using the remoteDriverEndpoint interface
+* EC2 (4.0.56.0)
+	* This release introduces new APIs: DescribeInstanceSqlHaStates, DescribeInstanceSqlHaHistoryStates, EnableInstanceSqlHaStandbyDetections and DisableInstanceSqlHaStandbyDetections on Amazon EC2, allowing customers to enroll and monitor SQL Server licensing fee savings for their SQL HA EC2 instances.
+* Glue (4.0.21.0)
+	* Amazon Glue Releasing 2 the new API ListIntegrationResourceProperties and DeleteIntegrationResourceProperty along with minor improvement on existing API(s).
+* GuardDuty (4.0.10.0)
+	* Add S3 On-Demand Object Scanning
+* LexModelsV2 (4.0.3.0)
+	* Adds support for LLM as Primary, allowing usage of LLMs as the default NLU system.
+* MediaLive (4.0.10.0)
+	* Adds configurations for spatial/temporal adaptive quantization in AV1 codec, and conversion to HLG output color space in H265 codec.
+* MediaPackageV2 (4.0.8.0)
+	* Add support for SCTE messages in Segment file output
+* MWAAServerless (4.0.0.0)
+	* Amazon MWAA now offers serverless deployment, eliminating operational overhead while optimizing costs. The service supports YAML and Python-based workflows, with 80+ AWS Operators. It provides isolated execution, IAM permissions, and automatic scaling with pay-per-use pricing.
+* OpenSearchService (4.0.6.0)
+	* This release adds index operation APIs to support Automatic Semantic Enrichment feature
+* PCS (4.0.11.0)
+	* Added support for the managed Slurm REST API endpoint
+* Route53Resolver (4.0.4.0)
+	* Adding DICTIONARY_DGA to dns-threat-protection as a new enum type. Customers can now set rules for dictionary dga protection
+
+### 4.0.134.0 (2025-11-14 19:25 UTC)
+* DataZone (4.0.15.0)
+	* Adds support for granting read and write access to Amazon S3 general purpose buckets using CreateSubscriptionRequest and AcceptSubscriptionRequest APIs. Also adds search filters for SSOUser and SSOGroup to ListSubscriptions APIs and deprecates "sortBy" parameter for ListSubscriptions APIs.
+* EC2 (4.0.55.0)
+	* This release adds AvailabilityZoneId support for CreateInstanceConnectEndpoint, DescribeInstanceConnectEndpoints, and DeleteInstanceConnectEndpoint APIs.
+* Imagebuilder (4.0.5.0)
+	* EC2 Image Builder now supports invoking Lambda functions and executing Step Functions state machine through image workflows.
+* MediaLive (4.0.9.0)
+	* Removed all the value constraint (min/max) for the shape definitions (e.g. integerMin0Max3600) on the C2j models to get rid of the need to request an exemption from the SDK team whenever a shape definition (e.g. integerMin0Max3600) is changed.
+
+### 4.0.133.0 (2025-11-13 21:18 UTC)
+* CloudFormation (4.0.6.0)
+	* CloudFormation now supports GetHookResult API with annotations to retrieve structured compliance check results and remediation guidance for each evaluated resource, replacing the previous single-message limitation with detailed validation outcomes.
+* ControlCatalog (4.0.4.0)
+	* Added support for related control mappings with new RELATED_CONTROL mapping type in ListControlMappings API.
+* EC2 (4.0.54.0)
+	* Added support for new accelerator types ("media") and accelerator names ("L4", "L40s", "GAUDI_HL_205", "INFERENTIA2", "TRAINIUM", "TRAINIUM2", "U30") in Attributes Based Instance Type Selection for launched instance types.
+* ECR (4.0.6.0)
+	* Add Amazon ECR FIPS PrivateLink endpoint support
+* ElasticLoadBalancingV2 (4.0.5.0)
+	* QUIC and TCP_QUIC protocol support for Network Load Balancer (NLB). This capability enables customers to forward QUIC traffic to their targets with ultra-low latency while maintaining session stickiness using QUIC Connection IDs.
+* IoTWireless (4.0.5.0)
+	* Integration of Device Location with Amazon Sidewalk network for Amazon Sidewalk enabled devices
+* MediaConvert (4.0.11.0)
+	* Lowers minimum duration for black video generator. Adds support for embedding and signing C2PA content credentials in DASH and CMAF HLS outputs.
+* RDS (4.0.11.0)
+	* Updated endpoint and service metadata
+* S3 (4.0.11.3)
+	* Fix the service name sent as metrics for s3 from AmazonS3 to Amazon.S3 to be consistent with all other services. 
+* SageMaker (4.0.33.0)
+	* Added support for minor version upgrades and AWS Identity Center integration for SageMaker Hadron Partner Apps, enabling automated version management and IdC group-based access control.
+* WorkSpacesWeb (4.0.4.0)
+	* Support for managing web content filtering for defining, tracking and regulating type of content accessed with WorkSpaces Secure Browser as part of browser settings.
+
+### 4.0.132.0 (2025-11-12 19:39 UTC)
+* Connect (4.0.16.0)
+	* Updated Authentication Profile APIs to add support for automatic logout on user inactivity
+* DatabaseMigrationService (4.0.5.0)
+	* Added support of SQL statements creation, metadata model discovery and selection rules transformation.
+* EC2 (4.0.53.0)
+	* Adds complete AMI ancestry tracing from immediate parent through each preceding generation back to the root AMI
+* ElasticLoadBalancingV2 (4.0.4.0)
+	* This release expands ALB Authentication to support JWT verification and adds support for a new JWT validation action in listener rule.
+* PrometheusService (4.0.7.0)
+	* Add VPC source configuration support enabling Amazon Managed Service for Prometheus Collector to collect metrics from MSK clusters.
+* Redshift (4.0.4.0)
+	* Added GetIdentityCenterAuthToken API to retrieve encrypted authentication tokens for Identity Center integrated applications. This API enables programmatic access to secure Identity Center tokens with proper error handling and parameter validation across supported SDK languages.
+* S3 (4.0.11.2)
+	* Generate ListBucketMetricsConfigurations.
+	* Generate DeleteBucketMetricsConfiguration.
+	* Generate PutBucketMetricsConfiguration, and add check in marshallers for required query strings. If required members for query strings are not set, the SDK will throw the base service-level exception. This is not a breaking change.
+	* Generate GetBucketMetricsConfiguration.
+* S3Tables (4.0.7.0)
+	* Adds support for request metrics metrics APIs for S3 Tables
+* SageMaker (4.0.32.0)
+	* Add support for trn2.3xlarge instance type for SageMaker Hyperpod
+* Core 4.0.3.1
+	* Add check to see if required query string parameters are set. If not set, then the SDK will throw the generic service level exception.
+	* All service and extension packages updated to require new Core
+
+### 4.0.131.0 (2025-11-11 19:24 UTC)
+* Batch (4.0.3.5)
+	* Documentation-only update: update API and doc descriptions per EKS ImageType default value switch from AL2 to AL2023.
+* BedrockDataAutomation (4.0.5.0)
+	* Added support for Language Expansion feature for BDA Audio modality.
+* EC2 (4.0.52.0)
+	* AWS Site-to-Site VPN now supports VPN connections with up to 5 Gbps bandwidth per tunnel, a 4x improvement from existing limit of 1.25 Gbps.
+* MedicalImaging (4.0.5.0)
+	* Added new fields in existing APIs.
+* RTBFabric (4.0.2.0)
+	* Added LogSettings and LinkAttribute fields to external links
+* SecurityIR (4.0.5.0)
+	* Added support for configuring communication preferences as well as clearly displaying case comment author identities.
+
+### 4.0.130.0 (2025-11-10 19:39 UTC)
+* ACMPCA (4.0.3.0)
+	* Private Certificate Authority service now supports ML-DSA key algorithms.
+* AppStream (4.0.3.0)
+	* AWS Appstream support for IPv6
+* Backup (4.0.7.0)
+	* AWS Backup supports backups of Amazon EKS clusters, including Kubernetes cluster state and persistent storage attached to the EKS cluster via a persistent volume claim (EBS volumes, EFS file systems, and S3 buckets).
+* Braket (4.0.3.0)
+	* Adds ExperimentalCapabilities field to CreateQuantumTask request and GetQuantumTask response objects. Enables use of experimental software capabilities when creating quantum tasks.
+* DataZone (4.0.14.0)
+	* Remove trackingServerName from DataZone Connection MLflowProperties
+* DSQL (4.0.7.0)
+	* Cluster endpoint added to CreateCluster and GetCluster API responses
+* EC2 (4.0.51.0)
+	* Amazon EC2 Fleet customers can now filter instance types based on encryption-in-transit support using Attribute-Based Instance Type Selection (ABIS), eliminating the manual effort of identifying and selecting compatible instance types for security-sensitive workloads.
+* GuardDuty (4.0.9.0)
+	* Include tags filed in CreatePublishingDestinationRequest and DescribePublishingDestinationResponse.
+* IdentityManagement (4.0.6.0)
+	* Added CreateDelegationRequest API, which is not available for general use at this time.
+* Invoicing (4.0.4.0)
+	* Added new invoicing get-invoice-pdf API Operation
+* Kafka (4.0.3.0)
+	* Amazon MSK now supports intelligent rebalancing for MSK Express brokers.
+* SecurityToken (4.0.4.0)
+	* Added GetDelegatedAccessToken API, which is not available for general use at this time.
+* VerifiedPermissions (4.0.5.0)
+	* Amazon Verified Permissions / Features : Adds support for entity Cedar tags.
+* WAFV2 (4.0.6.0)
+	* AWS WAF now supports CLOUDWATCH_TELEMETRY_RULE_MANAGED as a LogScope option, enabling automated logging configuration through Amazon CloudWatch Logs for telemetry data collection and analysis.
+
+### 4.0.129.0 (2025-11-07 19:49 UTC)
+* ControlTower (4.0.3.0)
+	* Added Parent Identifier support to ListEnabledControls and GetEnabledControl API. Implemented RemediationType support for Landing Zone operations: CreateLandingZone, UpdateLandingZone and GetLandingZone APIs
+* EC2 (4.0.50.0)
+	* Adds PrivateDnsPreference and PrivateDnsSpecifiedDomains to control private DNS resolution for resource and service network VPC endpoints and IpamScopeExternalAuthorityConfiguration to integrate Amazon VPC IPAM with a third-party IPAM service
+* KeyManagementService (4.0.7.0)
+	* Added support for new ECC_NIST_EDWARDS25519 AWS KMS key spec
+* OpenSearchService (4.0.5.0)
+	* This release introduces the Default Application feature, allowing users to set, change, or unset a preferred OpenSearch UI application on a per-region basis for a streamlined and consistent user experience.
+* S3 (4.0.11.1)
+	* Fix an issue with Transfer Utility's UploadDirectory where the content type of 1 file was persisting for all the files in the directory.
+* VPCLattice (4.0.4.0)
+	* Amazon VPC Lattice now supports custom domain name for resource configurations
+* Core 4.0.3.0
+	* Re-introduce background refresh of credentials during their preempt expiry period (https://github.com/aws/aws-sdk-net/issues/4024)
+	* All service and extension packages updated to require new Core
+
+### 4.0.128.0 (2025-11-06 19:55 UTC)
+* AccessAnalyzer (4.0.4.0)
+	* New field totalActiveErrors added to getFindingsStatistics response.
+* Backup (4.0.6.0)
+	* AWS Backup now supports customer-managed keys (CMK) for logically air-gapped vaults, enabling customers to maintain full control over their encryption key lifecycle. This feature helps organizations meet specific internal governance requirements or external regulatory compliance standards.
+* Connect (4.0.15.0)
+	* Added support for Conditional Questions in Evaluation Forms. Introduced Auto Evaluation capability for Evaluation Forms and Contact Evaluations. Added new API operations: SearchEvaluationForms and SearchContactEvaluations.
+* EC2 (4.0.49.0)
+	* Add Amazon EC2 R8a instance types
+* GameLift (4.0.4.0)
+	* Amazon GameLift Servers now supports game builds that use the Windows 2022 operating system.
+* IdentityStore (4.0.3.0)
+	* IdentityStore API: added new KMSExceptionReason fields to the Exception object; added multiple new fields to the User APIs - UserStatus, Birthdate, Website and Photos; added multiple new metadata fields for User, Groups and Membership APIs - CreatedAt, CreatedBy, UpdatedAt and UpdatedBy.
+* QuickSight (4.0.8.0)
+	* Support for New Data Prep Experience
+* S3 (4.0.11.0)
+	* Increasing the default part size for S3 multipart upload from 5MB to 8MB when no part size is specified. This will reduce the number of API calls for multipart uploads.
+	* Update AssemblyInfo to give S3 Unit Test project access to internals.
+	* Fixed issue where PartSize and IsLastPart fields were not properly set on Transfer Utility Upload Part Request.
+	* Add additional validations for Transfer Utility requests to ensure Upload Parts have the proper Content Length and File Offsets.
+	* Create AbortMultipartUploads api that takes in TransferUtilityAbortMultipartUploadRequest.
+	* Add missing fields to Transfer Utility request objects. ContentType on TransferUtilityUploadRequest and TransferUtilityUploadDirectoryRequest now directly updates the ContentType header, instead of being a separate field on those objects.
+* S3Tables (4.0.6.0)
+	* Adds support for tagging APIs for S3 Tables
+* S3Vectors (4.0.3.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.31.0)
+	* Added NodeProvisioningMode parameter to UpdateCluster API to determine how instance provisioning is handled during cluster operations; in Continuous mode. Added VpcId field in UpdateDomain request for SageMaker Unified Studio domains with no VPC to add a customer VPC.
+* SimpleSystemsManagement (4.0.6.0)
+	* Provides NoLongerSupportedException error message
+
+### 4.0.127.0 (2025-11-05 19:35 UTC)
+* CloudFront (4.0.8.0)
+	* This release adds new and updated API operations. You can now use the IpAddressType field to specify either ipv4 or dualstack for your Anycast static IP list. You can also enable cross-account resource sharing to share your VPC origins with other AWS accounts
+* DataZone (4.0.13.0)
+	* Added support for Project Resource Tags
+* EC2 (4.0.48.0)
+	* This release adds AvailabilityZoneId support for DescribeFastSnapshotRestores, DisableFastSnapshotRestores, and EnableFastSnapshotRestores APIs.
+* FSx (4.0.7.0)
+	* Amazon FSx now enables secure management of Active Directory credentials through AWS Secrets Manager integration. Customers can use Secret ARNs instead of direct credentials when joining resources to Active Directory domains.
+* GroundStation (4.0.2.0)
+	* Introduce CreateDataflowEndpointGroupV2 action
+* S3 (4.0.10.0)
+	* Launch IPv6 dual-stack support for S3 Express
+* SageMaker (4.0.30.0)
+	* Add new fields in SageMaker Hyperpod DescribeCluster API response: TargetStateCount, SoftwareUpdateStatus and ActiveSoftwareDeploymentConfig to provide AMI update progress visibility .
+* Core 4.0.2.0
+	* Added support for Bedrock Environment Token Provider specification. Bedrock API keys user guide: https://docs.aws.amazon.com/bedrock/latest/userguide/api-keys.html
+	* All service and extension packages updated to require new Core
+
+### 4.0.126.0 (2025-11-04 19:19 UTC)
+* PinpointSMSVoiceV2 (4.0.5.0)
+	* This release adds support for the CarrierLookup API, which returns information about a destination phone number including if the number is valid, the carrier, and more.
+
+### 4.0.125.0 (2025-11-03 19:32 UTC)
+* Account (4.0.2.2)
+	* Rename internal exception property to avoid hiding inherited AmazonServiceException member.
+* BedrockAgentCoreControl (4.0.10.0)
+	* Adds support for direct code deploy with CreateAgentRuntime and UpdateAgentRuntime
+* Budgets (4.0.7.0)
+	* Fix the AWS Budgets endpoint for the aws-eusc partition.
+* EC2 (4.0.47.0)
+	* Add Amazon EC2 trn2.3xlarge instance type.
+* ECS (4.0.8.1)
+	* Documentation-only update for LINEAR and CANARY deployment strategies.
+* Kinesis (4.0.7.0)
+	* Adds support for MinimumThroughputBillingCommitment with new UpdateAccountSettings API. Adds support to configure warm throughput for on-demand streams in new UpdateStreamWarmThroughput API and existing CreateStream API and UpdateStreamMode API.
+
+### 4.0.124.0 (2025-10-31 18:54 UTC)
+* AWSHealth (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchLogs (4.0.9.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCases (4.0.7.0)
+	* Added two new case rule types: Parent Child Field Options (restricts child field options based on parent field value) and Hidden (controls child field visibility based on parent field value). Both enable dynamic field behavior within templates.
+* EC2 (4.0.46.0)
+	* Amazon VPC IP Address Manager (IPAM) now supports automated prefix list management, allowing you to create rules that automatically populate customer-managed prefix lists with CIDRs from your IPAM pools or AWS resources based on tags, Regions, or other criteria.
+* ElasticMapReduce (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* FMS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* FSx (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Kinesis (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Lambda (4.0.6.0)
+	* Add Python3.14 (python3.14) and Java 25 (java25) support to AWS Lambda
+* MarketplaceCatalog (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* MediaConvert (4.0.10.0)
+	* Adds SlowPalPitchCorrection to audio pitch correction settings. Enables opacity for VideoOverlays. Adds REMUX_ALL option to enable multi-rendition passthrough to VideoSelector for allow listed accounts.
+* Omics (4.0.5.0)
+	* Added WDL_LENIENT engine type that enables implicit typecasting of variable values to its compatible declared types
+* PaymentCryptography (4.0.6.0)
+	* Allow additional characters in the CertificateSubject for GetCertificateSigningRequest API.
+* Redshift (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ResourceGroupsTaggingAPI (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (4.0.29.0)
+	* Allow update of platform identifier via UpdateNotebookInstance operation.
+* SavingsPlans (4.0.3.0)
+	* Add dual-stack endpoint support for Savings Plans
+* Snowball (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SSMQuickSetup (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Textract (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* WAF (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+
+### 4.0.123.0 (2025-10-30 19:37 UTC)
+* APIGateway (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* AppConfig (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Appflow (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationCostProfiler (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppMesh (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppSync (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Artifact (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AuditManager (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgent (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentCoreControl (4.0.9.0)
+	* Web-Bot-Auth support for AgentCore Browser tool to help reduce captcha challenges.
+* Chime (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CleanRooms (4.0.10.0)
+	* Added support for advanced Spark configurations to optimize SQL performance
+* CloudControlApi (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudDirectory (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudSearch (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatch (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* CodeCatalyst (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeCommit (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeDeploy (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CognitoSync (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ComputeOptimizer (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCases (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Deadline (4.0.10.0)
+	* Update endpoint ruleset parameters casing
+* DevOpsGuru (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* DocDB (4.0.5.0)
+	* Adding FailoverState and TagList to GlobalCluster and SynchronizationStatus to GlobalClusterMember.
+* ECS (4.0.8.0)
+	* Amazon ECS Service Connect now supports Envoy access logs, providing deeper observability into request-level traffic patterns and service interactions.
+* EKSAuth (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ElastiCache (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EMRServerless (4.0.6.0)
+	* This release adds the capability to enable User Background Sessions for customers running Trusted Identity Propagation enabled Interactive Sessions on EMR Serverless Applications.
+* FraudDetector (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GeoPlaces (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Glue (4.0.20.0)
+	* This release adds the capability to enable User Background Sessions for customers running Trusted Identity Propagation enabled Interactive Sessions on AWS Glue.
+* GreengrassV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTEventsData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTManagedIntegrations (4.0.4.0)
+	* Add a new GetManagedThingCertificate API to expose Iot ManagedIntegrations (MI) device certificate, and add  "-"  support for name, properties, actions and events in the CapabilityReportCapability object.
+* KeyManagementService (4.0.6.0)
+	* Add cross account VPC endpoint service connectivity support to CustomKeyStore.
+* KeyspacesStreams (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KinesisFirehose (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManagerLinuxSubscriptions (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceReporting (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Neptune (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* PrometheusService (4.0.6.0)
+	* Add Anomaly Detection APIs for Amazon Managed Prometheus
+* RTBFabric (4.0.1.2)
+	* RTB Fabric documentation update.
+* S3Outposts (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SageMakerRuntime (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Schemas (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SecurityToken (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ServerlessApplicationRepository (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ServiceCatalog (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SSO (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+
+### 4.0.122.0 (2025-10-29 20:21 UTC)
+* BedrockRuntime (4.0.9.0)
+	* Add support for system tool and web citation response.
+* CloudFront (4.0.7.3)
+	* Add PreMarshallCustomization custom partial method.
+* DynamoDBv2 (4.0.9.3)
+	* Fixes issue #4071. Allow null expression attribute values for update and conditional expression for transact writes.
+* Route53 (4.0.5.3)
+	* Add PreMarshallCustomization custom partial method.
+* S3 (4.0.9.1)
+	* Add PreMarshallCustomization custom partial method. Move postmarshall customization logic for PutBucket to PreMarshallCustomization partial method.
+	* The IsSet method for CannedACL returns false if set to NoACL. This logic was in the marshaller but has been moved back to the setter.
+* S3Control (4.0.7.1)
+	* Add PreMarshallCustomization custom partial method.
+
+### 4.0.121.0 (2025-10-28 19:32 UTC)
+* ApiGatewayV2 (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationSignals (4.0.4.0)
+	* Added support for CloudWatch Synthetics Canary resources in ListAuditFindings API. This enhancement allows customers to retrieve audit findings specifically for CloudWatch Synthetics canaries and enables service-canary correlation analysis.
+* AppRegistry (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppTest (Removed)
+	* AWS AppTest has been removed from the SDK because it has been discontinued.
+* BackupSearch (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* BCMPricingCalculator (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentRuntime (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* BedrockRuntime (4.0.8.0)
+	* Update endpoint ruleset parameters casing
+* CleanRoomsML (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Cloud9 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudSearchDomain (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchEvents (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeConnections (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruSecurity (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Detective (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (4.0.45.0)
+	* This released the DescribeCapacityReservationTopology API.
+* ECS (4.0.7.0)
+	* Amazon ECS supports native linear and canary service deployments, allowing you to shift traffic in increments for more control.
+* ElasticFileSystem (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ElasticTranscoder (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EMRContainers (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (4.0.4.0)
+	* Add stream group expiration date and expired status
+* Glacier (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GroundStation (4.0.1.0)
+	* Enable use of AzEl ephemerides
+* InspectorScan (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTFleetHub (Removed)
+	* AWS IoTFleetHub has been removed from the SDK because it has been discontinued.
+* KafkaConnect (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Kendra (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideo (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Lambda (4.0.5.0)
+	* Added SerializedRequestEntityTooLargeException to Lambda Invoke API
+* LookoutforVision (Removed)
+	* AWS LookoutforVision has been removed from the SDK because it has been discontinued.
+* LookoutMetrics (Removed)
+	* AWS LookoutMetrics has been removed from the SDK because it has been discontinued.
+* MarketplaceDeployment (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackageVod (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubOrchestrator (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Notifications (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* OpenSearchService (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Organizations (4.0.6.0)
+	* Added Account State field to the ListDelegatedAdministrators API response.
+* PartnerCentralSelling (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Pipes (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* QLDB (Removed)
+	* AWS QLDB has been removed from the SDK because it has been discontinued.
+* QLDBSession (Removed)
+	* AWS QLDBSession has been removed from the SDK because it has been discontinued.
+* RAM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ResourceGroups (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RoboMaker (Removed)
+	* AWS RoboMaker has been removed from the SDK because it has been discontinued.
+* S3 (4.0.9.0)
+	* Amazon Simple Storage Service / Features: Add conditional writes in CopyObject on destination key to prevent unintended object modifications.
+	* Remove trailing slash in x-amz-credential for presigned post
+* S3Control (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (4.0.28.0)
+	* Amazon SageMaker now supports deleting training and processing jobs in a terminal status.
+* SageMakerFeatureStoreRuntime (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SecurityIR (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* SQS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SupportApp (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* TaxSettings (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* TranscribeStreaming (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* TrustedAdvisor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpaces (4.0.7.0)
+	* Added IPv6 address support for WorkSpaces using Dual-Stack subnets
+* WorkspacesInstances (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* XRay (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Extensions.Bedrock.MEAI (4.0.4.4)
+	* Fix reading/writing ReasoningContent for tool use.
+
+### 4.0.120.0 (2025-10-27 19:42 UTC)
+* AccessAnalyzer (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* AIOps (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Athena (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* BackupGateway (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* BedrockDataAutomation (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Braket (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKIdentity (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMediaPipelines (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeArtifact (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruProfiler (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CognitoIdentityProvider (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Comprehend (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ConnectCampaignService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ControlTower (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CostExplorer (4.0.7.0)
+	* Updated endpoint for eusc-de-east-1 region.
+* CostOptimizationHub (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DAX (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ElasticBeanstalk (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EntityResolution (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* ForecastService (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Greengrass (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IdentityManagement (4.0.5.0)
+	* Fixed missing SummaryMap keys in GetAccountSummary response that were being filtered out during deserialization in AWS Java SDK v2
+* Invoicing (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Kinesis (4.0.5.0)
+	* Adds support for record sizes up to 10MiB and introduces new UpdateMaxRecordSize API to modify stream record size limits. Adds record size parameters to existing CreateStream and DescribeStreamSummary APIs for request and response payloads respectively.
+* LaunchWizard (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Lex (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ManagedBlockchain (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MTurk (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* NeptuneGraph (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Outposts (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Pinpoint (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RDSDataService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RecycleBin (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RedshiftServerless (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Rekognition (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Repostspace (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53Profiles (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53Resolver (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* S3 (4.0.8.0)
+	* Update `PutObject` and `UploadPart` requests to include the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)
+* S3Vectors (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Scheduler (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SecretsManager (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Shield (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SimpleEmail (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimSpaceWeaver (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SocialMessaging (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SsmSap (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SSOAdmin (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* StepFunctions (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* WAFRegional (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkMailMessageFlow (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Core 4.0.1.3
+	* Update SDK to include `aws-chunked` in the `Content-Encoding` header when the [request payload is transferred in multiple chunks](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html)
+	* All service and extension packages updated to require new Core
+
+### 4.0.119.0 (2025-10-24 19:27 UTC)
+* AmplifyUIBuilder (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationSignals (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Billing (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Budgets (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* CertificateManager (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMessaging (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudTrail (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CodePipeline (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* ConnectWisdomService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* DataPipeline (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* DataZone (4.0.12.0)
+	* This release adds support for MLflow connections Creation in DataZone
+* DocDB (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DynamoDBStreams (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* EKS (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* ElasticLoadBalancing (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Evs (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* FIS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (4.0.3.0)
+	* Add status reasons for TERMINATED stream sessions
+* GeoMaps (4.0.3.0)
+	* Added support for optional AdditionalFeatures parameter in the V2 GetTile API.
+* Inspector (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTManagedIntegrations (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* IoTWireless (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* KinesisAnalytics (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoSignalingChannels (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LocationService (4.0.3.0)
+	* Added support for mobile app restrictions in Amazon Location API keys.
+* LookoutforVision (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackage (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaStore (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MediaStoreData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubStrategyRecommendations (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MQ (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Panorama (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PaymentCryptography (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* PaymentCryptographyData (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* PcaConnectorAd (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* QBusiness (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* RoboMaker (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53Domains (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* RTBFabric (4.0.1.0)
+	* Add support for custom rate limits.
+* S3Tables (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (4.0.27.0)
+	* Added inference components model data caching feature
+* SageMakerMetrics (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SecurityHub (4.0.5.0)
+	* Release 3 layer filter support in GetFindingsV2, GetFindingStatisticsV2, GetResourcesV2,GetResourcesStatisticsV2, AutomationRule V2 APIs. Update filter casing in GetResourcesV2, GetResourcesStatisticsV2 APIs. Add new filters in GetFindingsV2, GetFindingStatisticsV2, AutomationRule V2 APIs.
+* ServiceDiscovery (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SnowDeviceManagement (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SSOOIDC (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* SupplyChain (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Translate (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* VerifiedPermissions (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* VPCLattice (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpacesThinClient (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+
+### 4.0.118.0 (2025-10-23 19:18 UTC)
+* Account (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationAutoScaling (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationDiscoveryService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AWSMarketplaceCommerceAnalytics (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* BedrockAgentCore (4.0.6.0)
+	* Fixing the service documentation name
+* BedrockAgentCoreControl (4.0.8.0)
+	* Fixing the service documentation name
+* ChimeSDKVoice (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CloudTrailData (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchRUM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeBuild (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* CodeStarconnections (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ConfigService (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* ConnectContactLens (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CostAndUsageReport (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* DatabaseMigrationService (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DocDBElastic (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Drs (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* DSQL (4.0.6.0)
+	* Add support for resource-based policies for Aurora DSQL clusters. This will enable you to implement Block Public Access (BPA) which will help restrict access to your Aurora DSQL public or VPC endpoints.
+* EBS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ECR (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* ECRPublic (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* HealthLake (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* InternetMonitor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTEvents (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTJobsDataPlane (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoArchivedMedia (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoWebRTCStorage (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Lambda (4.0.4.0)
+	* Add NodeJs 24 (nodejs24.x) support to AWS Lambda.
+* Macie2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ManagedBlockchainQuery (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaTailor (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Mgn (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHub (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MPA (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Neptunedata (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* NetworkMonitor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Odb (4.0.1.2)
+	* Doc-only update that removes duplicate values from descriptions of ODB peering APIs.
+* Omics (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* OpenSearchServerless (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* PcaConnectorScep (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PersonalizeEvents (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PinpointEmail (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ResilienceHub (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SageMaker (4.0.26.0)
+	* Update endpoint ruleset parameters casing
+* SagemakerEdgeManager (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SavingsPlans (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SecurityLake (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimpleEmailV2 (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* StorageGateway (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Synthetics (4.0.8.0)
+	* Update endpoint ruleset parameters casing
+* Core 4.0.1.2
+	* Updating partitions.json file.
+	* All service and extension packages updated to require new Core
+
+### 4.0.117.0 (2025-10-22 20:20 UTC)
+* AppFabric (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AugmentedAIRuntime (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AutoScaling (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* B2bi (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* BCMDashboards (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* Chatbot (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudFormation (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* CloudHSM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CloudHSMV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeGuruReviewer (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CognitoIdentity (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ComprehendMedical (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Connect (4.0.14.0)
+	* This release added support for email address alias configuration and outbound campaign preview mode.
+* ConnectCampaignsV2 (4.0.3.0)
+	* Updated Amazon Connect Outbound Campaigns V2 SDK to support Preview Outbound Mode
+* ConnectParticipant (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CostExplorer (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* DeviceFarm (4.0.2.0)
+	* This release adds support for optionally including an app as part of a CreateRemoteAccessSession request
+* DirectConnect (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* DirectoryServiceData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (4.0.44.0)
+	* This release adds AvailabilityZoneId support for CreateNetworkInterface and DescribeNetworkInterfaces APIs.
+* EC2InstanceConnect (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ForecastQueryService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IdentityManagement (4.0.4.0)
+	* Updated OIDC and SAML apis to reject multiple simultaneous requests to change a unique object.
+* Inspector2 (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* IoT (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* IoTAnalytics (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTFleetWise (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* IoTSecureTunneling (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTSiteWise (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Ivschat (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KinesisAnalyticsV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LexModelsV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MailManager (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceAgreement (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaLive (4.0.8.0)
+	* Add 3 API operations for fetching alerts: ListAlerts (Channels), ListClusterAlerts (MediaLive Anywhere), and ListMultiplexAlerts
+* MWAA (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* NotificationsContacts (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* OAM (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* PCS (4.0.10.0)
+	* Update endpoint ruleset parameters casing
+* PinpointSMSVoiceV2 (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* RedshiftDataAPIService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53 (4.0.5.0)
+	* Amazon Route 53 now supports the ISOB West Region for private DNS for Amazon VPCs and cloudwatch healthchecks.
+* Route53RecoveryCluster (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* RTBFabric (4.0.0.0)
+	* Update for general availability of AWS RTB Fabric service.
+* SimpleNotificationService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SSMIncidents (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkDocs (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkMail (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpaces (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* Extensions.CloudFront.Signers (4.0.0.9)
+	* Updated the version of BouncyCastle.Cryptography package dependency to version 2.6.2.
+* Extensions.EC2.DecryptPassword (4.0.0.9)
+	* Updated the version of BouncyCastle.Cryptography package dependency to version 2.6.2.
+
+### 4.0.116.0 (2025-10-21 19:25 UTC)
+* AWSMarketplaceMetering (4.0.2.0)
+	* Added ClientToken parameter to MeterUsage API for specifying idempotent requests.
+* DynamoDBv2 (4.0.9.0)
+	* Add AccountID based endpoint metric to endpoint rules.
+* ElasticMapReduce (4.0.4.0)
+	* Added RECONFIGURING to the InstanceFleetState convenience enum.
+* MediaConvert (4.0.9.0)
+	* This release adds the ability to set resolution for the black video generator and also adds the StartJobsQuery and GetJobsQueryResults APIs which allow asynchronous search of job history using new filters.
+* S3 (4.0.7.13)
+	* For PutBucket: Add back exact custom logic for bucket region and BucketRegionName handling in PutBucketRequestMarshaller, where BucketRegion took precedence over BucketRegionName if both are set.
+	* For PutBucketNotification: For configurations, any Filter's FilterRule's Name and Value can be empty/null and the SDK will send empty xml elements. The request will still fail but with a better exception message.
+	* For PutLifecycleConfiguration: Add back custom logic for LifecycleRules where even if the user explicitly sets the status to null the request will succeed by setting status to disabled.
+
+### 4.0.115.0 (2025-10-17 20:18 UTC)
+* AmplifyBackend (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppConfigData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppIntegrationsService (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ApplicationInsights (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ARCZonalShift (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* BCMRecommendedActions (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* BedrockDataAutomationRuntime (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ChimeSDKMeetings (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* CloudFront (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* CloudFrontKeyValueStore (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* CloudWatchEvidently (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* CodeStarNotifications (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* ControlCatalog (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* DataSync (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* DirectoryService (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* DSQL (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* EC2 (4.0.43.2)
+	* Documentation updates for Amazon EC2.
+* Elasticsearch (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* EventBridge (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* Finspace (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* FinSpaceData (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* GameLiftStreams (4.0.2.10)
+	* Updates documentation to clarify valid application binaries for an Amazon GameLift Streams application and provide descriptions of stream session error status reasons
+* GeoMaps (4.0.2.0)
+	* Added support for optional style parameters in maps, including Terrain, ContourDensity, Traffic, and TravelModes.
+* IAMRolesAnywhere (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Imagebuilder (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* IotData (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTDeviceAdvisor (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTThingsGraph (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IoTTwinMaker (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KendraRanking (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* KinesisVideoMedia (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LakeFormation (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManager (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* LicenseManagerUserSubscriptions (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceCatalog (4.0.2.0)
+	* The ListEntities API now supports two new CAPI filters: DeliveryOptionTypes for SaaS products and CompatibleAWSServices for Container products.
+* MediaConnect (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubRefactorSpaces (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* NetworkFirewall (4.0.8.0)
+	* Update endpoint ruleset parameters casing
+* NetworkManager (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Organizations (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* PI (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PrometheusService (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* QApps (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53RecoveryReadiness (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SageMakerGeospatial (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Signer (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimpleWorkflow (4.0.2.0)
+	* Releasing minor endpoint updates.
+* TimestreamWrite (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Tnb (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WellArchitected (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+
+### 4.0.114.0 (2025-10-16 19:34 UTC)
+* ACMPCA (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Amplify (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* ApiGatewayManagementApi (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppRunner (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AppTest (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* AutoScalingPlans (4.0.2.0)
+	* Updated FIPS endpoints for US GovCloud regions
+* Batch (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* BCMDataExports (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* BillingConductor (4.0.2.0)
+	* New feature: service flat CLI and first AWS managed pricing plan (BasicPricingPlan)
+* CustomerProfiles (4.0.6.0)
+	* Update endpoint ruleset parameters casing
+* DataExchange (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* DLM (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* FreeTier (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GameLift (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* GeoRoutes (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GlobalAccelerator (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* GlueDataBrew (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IdentityStore (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IVS (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* IVSRealTime (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Kafka (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* KeyManagementService (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* Keyspaces (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LexModelBuildingService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LexRuntimeV2 (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* LookoutEquipment (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* MachineLearning (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MainframeModernization (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* ManagedGrafana (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MarketplaceEntitlementService (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* MediaPackageV2 (4.0.7.0)
+	* Update endpoint ruleset parameters casing
+* MedicalImaging (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* MemoryDB (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* MigrationHubConfig (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* NetworkFlowMonitor (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* OSIS (4.0.4.0)
+	* Update endpoint ruleset parameters casing
+* Personalize (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* PersonalizeRuntime (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* PinpointSMSVoice (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Polly (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Pricing (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* QLDB (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* QLDBSession (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* Route53RecoveryControlConfig (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* SimpleSystemsManagement (4.0.5.0)
+	* Update endpoint ruleset parameters casing
+* SSMContacts (4.0.1.0)
+	* Update endpoint ruleset parameters casing
+* SSMGuiConnect (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* TimestreamQuery (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* VoiceID (4.0.2.0)
+	* Update endpoint ruleset parameters casing
+* WorkSpacesWeb (4.0.3.0)
+	* Update endpoint ruleset parameters casing
+* Extensions.CrtIntegration (4.0.0.8)
+	* Fix issue with signature mismatch during retries
+* Core 4.0.1.1
+	* Added checksum caching support for trailing and header checksums.
+	* Fix issue with signature mismatch during retries
+	* Prevent duplicate entries in User Agent custom components
+	* All service and extension packages updated to require new Core
+
+### 4.0.113.0 (2025-10-15 18:28 UTC)
+* Bedrock (4.0.13.0)
+	* Amazon Bedrock Automated Reasoning Policy now offers enhanced AWS KMS integration. The CreateAutomatedReasoningPolicy API includes a new kmsKeyId field, allowing customers to specify their preferred KMS key for encryption, improving control and compliance with AWS encryption mandates.
+* DocDB (4.0.3.0)
+	* Add support for NetworkType field in CreateDbCluster, ModifyDbCluster, RestoreDbClusterFromSnapshot and RestoreDbClusterToPointInTime for DocumentDB.
+* EC2 (4.0.43.0)
+	* Introducing EC2 Capacity Manager for monitoring and analyzing capacity usage across On-Demand Instances, Spot Instances, and Capacity Reservations.
+* ElasticLoadBalancingV2 (4.0.3.0)
+	* This release expands Listener Rule Conditions to support RegexValues and adds support for a new Transforms field in Listener Rules.
+* GuardDuty (4.0.8.0)
+	* Added default pagination value for ListMalwareProtectionPlans API and updated UpdateFindingsFeedback API
+* Lightsail (4.0.4.0)
+	* Add support for manage Lightsail Bucket CORS configuration
+* S3 (4.0.7.11)
+	* Added ServerSideEncryptionCustomerProvidedKeyMD5 property to GetObjectResponse
+	* Added ContentLanguage support to GetObjectResponse
+* TimestreamInfluxDB (4.0.4.0)
+	* This release adds support for creating and managing InfluxDB 3 Core and Enterprise DbClusters.
+
+### 4.0.112.0 (2025-10-14 18:34 UTC)
+* AppStream (4.0.2.0)
+	* This release introduces support for Microsoft license included applications streaming.
+* Backup (4.0.5.0)
+	* The AWS Backup job attribute extension enhancement helps customers better understand the plan that initiated each job, and the properties of the resource each job creates.
+* Connect (4.0.13.0)
+	* SDK release for TaskTemplateInfo in Contact for DescribeContact response.
+* DataZone (4.0.11.0)
+	* Support creating scoped and trustedIdentityPropagation enabled connections.
+* DynamoDBv2 (4.0.8.0)
+	* Add support for DynamoDBAutoGeneratedTimestampAttribute that sets current timestamp during persistence operations.
+* EC2 (4.0.42.0)
+	* This release adds support for creating instant, point-in-time copies of EBS volumes within the same Availability Zone
+* S3 (4.0.7.10)
+	* Only add static query parameters to the subresources collection. Do not add members modeled as query parameters to the subresources collection
+* TranscribeService (4.0.4.0)
+	* Move UntagResource API body member to query parameter
+* Transfer (4.0.4.0)
+	* SFTP connectors now support routing connections via customers' VPC. This enables connections to remote servers that are only accessible in a customer's VPC environment, and to servers that are accessible over the internet but need connections coming from an IP address in a customer VPC's CIDR range.
+* Extensions.Bedrock.MEAI (4.0.4.0)
+	* Add support for prompt caching in BedrockChatClient for MEAI
+
+### 4.0.111.0 (2025-10-13 18:18 UTC)
+* BedrockAgentCore (4.0.5.0)
+	* Updated InvokeAgentRuntime API to accept account id optionally and added CompleteResourceTokenAuth API.
+* BedrockAgentCoreControl (4.0.7.0)
+	* Updated http status code in control plane apis of agentcore runtime, tools and identity. Additional included provider types for AgentCore Identity
+* EC2 (4.0.41.0)
+	* Release Amazon EC2 c8i, c8i-flex, m8a, and r8gb
+* ObservabilityAdmin (4.0.4.0)
+	* CloudWatch Observability Admin adds the ability to enable Resource tags for telemetry in a customer account. The release introduces new APIs to enable, disable and describe the status of Resource tags for telemetry feature. This new capability simplifies monitoring AWS resources using tags.
+
+### 4.0.110.0 (2025-10-10 19:05 UTC)
+* BedrockAgentCore (4.0.4.0)
+	* Bedrock AgentCore release for Runtime, and Memory.
+* BedrockAgentCoreControl (4.0.6.0)
+	* Bedrock AgentCore release for Gateway, and Memory including Self-Managed Strategies support for Memory.
+* CloudFront (4.0.6.0)
+	* Added new viewer security policy, TLSv1.2_2025, for CloudFront.
+* Glue (4.0.19.0)
+	* Addition of AuditContext in GetTable/GetTables Request
+* Lambda (4.0.3.0)
+	* Add InvokedViaFunctionUrl context key to limit invocations to only FURL invokes.
+* Odb (4.0.1.0)
+	* This release adds APIs that allow you to specify CIDR ranges in your ODB peering connection.
+* RDS (4.0.10.4)
+	* Updated the text in the Important section of the ModifyDBClusterParameterGroup page.
+* Extensions.CborProtocol (4.0.0.8)
+	* Improve performance of CBOR deserialization for large strings by preemptively expanding the buffer to fit the string.
+* Core 4.0.1.0
+	* Added ability to configure authentication scheme preferences (e.g., to prioritize SigV4a over SigV4 when both are supported): https://docs.aws.amazon.com/sdkref/latest/guide/feature-auth-scheme.html
+	* Fix issue #4027. Pass in proxy settings when generating new token for SSO.
+	* All service and extension packages updated to require new Core
+
+### 4.0.109.0 (2025-10-09 18:18 UTC)
+* QuickSight (4.0.7.0)
+	* This release adds support for ActionConnector and Flow, which are new resources associated with Amazon Quick Suite. Additional updates include expanded Data Source options, further branding customization, and new capabilities that can be restricted by Admins.
+* WAFV2 (4.0.5.0)
+	* This release adds the ability to throw WafLimitsExceededException when the maximum number of Application Load Balancer (ALB) associations per AWS WAF v2 WebACL is exceeded.
+* Core 4.0.0.33
+	* Fix regression in V4 where the credentials resolver would attempt to fetch a profile even when its name was empty or null (https://github.com/aws/aws-sdk-net/issues/4028)
+	* All service and extension packages updated to require new Core
+
+### 4.0.108.0 (2025-10-08 18:18 UTC)
+* BedrockAgentCoreControl (4.0.5.0)
+	* Adding support for authorizer type AWS_IAM to AgentCore Control Gateway.
+* LicenseManagerUserSubscriptions (4.0.3.0)
+	* Released support for IPv6 and dual-stack active directories
+* Outposts (4.0.3.0)
+	* This release adds the new StartOutpostDecommission API, which starts the decommission process to return Outposts racks or servers.
+* ServiceQuotas (4.0.3.0)
+	* introduces Service Quotas Automatic Management. Users can opt-in to monitoring and managing service quotas, receive notifications when quota usage reaches thresholds, configure notification channels, subscribe to EventBridge events for automation, and view notifications in the AWS Health dashboard.
+* Extensions.Bedrock.MEAI (4.0.3.6)
+	* Tweak BedrockChatClient to compensate for missing content
+
+### 4.0.107.0 (2025-10-07 18:14 UTC)
+* Proton (4.0.2.0)
+	* Deprecating APIs in AWS Proton namespace.
+
+### 4.0.106.0 (2025-10-06 19:23 UTC)
+* Backup (4.0.4.0)
+	* Adds optional MaxScheduledRunsPreview input to GetBackupPlan API to provide a preview of up to 10 next scheduled backup plan runs in the GetBackupPlan response.
+* BedrockAgentCore (4.0.3.0)
+	* Add support for batch memory management, agent card retrieval and session termination
+* BedrockAgentCoreControl (4.0.4.0)
+	* Add support for VM lifecycle configuration parameters and A2A protocol
+* Glue (4.0.18.0)
+	* Adds labeling for DataQualityRuleResult for GetDataQualityResult and PublishDataQualityResult APIs
+* MediaConnect (4.0.3.0)
+	* Enabling Tag-on-Create for AWS Elemental MediaConnect flow-based resource types
+* MemoryDB (4.0.2.0)
+	* Support for DescribeMultiRegionParameterGroups and DescribeMultiRegionParameters API.
+* QuickSight (4.0.6.6)
+	* Documentation improvements for QuickSight API documentation to clarify that delete operation APIs are global.
+* RDS (4.0.10.2)
+	* Documentation updates to the CreateDBClusterMessage$PubliclyAccessible and CreateDBInstanceMessage$PubliclyAccessible properties.
+* ResourceExplorer2 (4.0.2.0)
+	* Add new AWS Resource Explorer APIs
+
+### 4.0.105.0 (2025-10-03 18:25 UTC)
+* CleanRooms (4.0.9.0)
+	* Added support for reading data sources across regions, and results delivery to allowedlisted regions.
+* MediaLive (4.0.7.0)
+	* AWS Elemental MediaLive enables Mediapackage V2 users to configure ID3, KLV, Nielsen ID3, and Segment Length related parameters through the Mediapackage output group.
+* PaymentCryptographyData (4.0.4.0)
+	* Added a new API - translateKeyMaterial; allows keys wrapped by ECDH derived keys to be rewrapped under a static AES keyblock without first importing the key into the service.
+* QConnect (4.0.3.0)
+	* Updated Amazon Q in Connect APIs to support Email Contact Recommendations.
+
+### 4.0.104.0 (2025-10-02 19:09 UTC)
+* CloudFormation (4.0.4.0)
+	* Add new warning type 'EXCLUDED_RESOURCES'
+* ConnectCases (4.0.5.0)
+	* New Search All Related Items API enables searching related items across cases
+* DynamoDBv2 (4.0.7.0)
+	* Add support for dual-stack account endpoint generation
+* GuardDuty (4.0.7.6)
+	* Updated descriptions for the Location parameter in CreateTrustedEntitySet and CreateThreatEntitySet.
+* Synthetics (4.0.7.0)
+	* Adds support to configure canaries with pre-configured blueprint code on supported runtime versions.  This behavior can be controlled via the new BlueprintTypes property exposed in the CreateCanary and UpdateCanary APIs.
+
+### 4.0.103.0 (2025-10-01 18:35 UTC)
+* ChimeSDKMeetings (4.0.2.0)
+	* Add support to receive dual stack MediaPlacement URLs in Chime Meetings SDK
+* CleanRooms (4.0.8.0)
+	* This release introduces data access budgets to control how many times a table can be used for queries and jobs in a collaboration.
+* CleanRoomsML (4.0.5.0)
+	* This release introduces data access budgets to view how many times an input channel can be used for ML jobs in a collaboration.
+* DatabaseMigrationService (4.0.3.6)
+	* This is a doc-only update, revising text for kms-key-arns.
+* ECS (4.0.6.1)
+	* This is a documentation only Amazon ECS release that adds additional information for health checks.
+* PCS (4.0.9.0)
+	* Added the UpdateCluster API action to modify cluster configurations, and Slurm custom settings for queues.
+* Core 4.0.0.32
+	* Fix issue with computing the x-amzn-trace-id header value
+	* Moving copying UserAgentDetails from the OriginalRequest to HttpHandler
+	* Revert [background refresh of credentials during preempt expiry period](https://github.com/aws/aws-sdk-net/commit/ab7f535b92fcfb07c92bf7a0aa91853f3114e46d) as it has caused the SDK to return expired credentials in some scenarios
+	* All services packages updated to require new Core
+
+### 4.0.102.0 (2025-09-30 18:38 UTC)
+* ApplicationSignals (4.0.2.0)
+	* Amazon CloudWatch Application Signals is introducing the Application Map to give users a more comprehensive view of their service health. Users will now be able to group services, track their latest deployments, and view automated audit findings concerning service performance.
+* BedrockAgentCoreControl (4.0.3.0)
+	* Tagging support for AgentCore Gateway
+* ChimeSDKVoice (4.0.2.0)
+	* Added support for IPv4-only and dual-stack network configurations for VoiceConnector and CreateVoiceConnector API.
+* ConnectCases (4.0.4.0)
+	* This release adds support for two new related item types: ConnectCase for linking Amazon Connect cases and Custom for user-defined related items with configurable fields.
+* CustomerProfiles (4.0.5.0)
+	* This release introduces ListProfileHistoryRecords and GetProfileHistoryRecord APIs for comprehensive profile history tracking with complete audit trails of creation, updates, merges, deletions, and data ingestion events.
+* DataSync (4.0.5.0)
+	* Added support for FIPS VPC endpoints in FIPS-enabled AWS Regions.
+* DataZone (4.0.10.0)
+	* This release adds support for creation of EMR on EKS Connections in Amazon DataZone.
+* DirectoryService (4.0.4.0)
+	* AWS Directory service now supports IPv6-native and dual-stack configurations for AWS Managed Microsoft AD, AD Connector, and Simple AD (dual-stack only). Additionally, AWS Managed Microsoft AD Standard Edition directories can be upgraded to Enterprise Edition directories through a single API call.
+* ECS (4.0.6.0)
+	* This release adds support for Managed Instances on Amazon ECS.
+* FSx (4.0.5.0)
+	* Add Dual-Stack support for Amazon FSx for NetApp ONTAP and Windows File Server
+* MediaTailor (4.0.3.0)
+	* Adding TPS Traffic Shaping to Prefetch Schedules
+* QuickSight (4.0.6.4)
+	* added warnings to a few CLI pages
+* RDS (4.0.10.0)
+	* Enhanced RDS error handling: Added DBProxyEndpointNotFoundFault, DBShardGroupNotFoundFault, KMSKeyNotAccessibleFault for snapshots/restores/backups, NetworkTypeNotSupported, StorageTypeNotSupportedFault for restores, and granular state validation faults. Changed DBInstanceNotReadyFault to HTTP 400.
+* Transfer (4.0.3.0)
+	* Add support for updating server identity provider type
+* Core 4.0.0.31
+	* Update code generator to use fully qualified name for InvokeOptions to avoid name collisions
+	* All services packages updated to require new Core
+
+### 4.0.101.0 (2025-09-29 18:18 UTC)
+* Bedrock (4.0.12.0)
+	* Release for fixing GetFoundationModel API behavior. Imported and custom models have their own exclusive API and GetFM should not accept those ARNS as input
+* BedrockRuntime (4.0.7.0)
+	* New stop reason for Converse and ConverseStream
+* Imagebuilder (4.0.3.0)
+	* This release introduces several new features and improvements to enhance pipeline management, logging, and resource configuration.
+* VPCLattice (4.0.2.0)
+	* Adds support for specifying the number of IPv4 addresses in each ENI for the resource gateway for VPC Lattice.
+* Core 4.0.0.30
+	* Expand sso profile types to allow more combinations of credential profile options. It is valid to have a profile contain only the SsoSession option and point to an sso-session section.
+	* All services packages updated to require new Core
+
+### 4.0.100.0 (2025-09-26 18:36 UTC)
+* BedrockAgentRuntime (4.0.6.0)
+	* This release enhances the information provided through Flow Traces. New information includes source/next node tracking, execution chains for complex nodes, dependency action (operation) details, and dependency traces.
+* BedrockDataAutomation (4.0.3.0)
+	* Added support for configurable Speaker Labeling and Channel Labeling features for Audio modality.
+* Billing (4.0.3.0)
+	* Add ability to combine custom billing views to create new consolidated views.
+* Connect (4.0.12.0)
+	* Adds supports for manual contact picking (WorkList) operations on Routing Profiles, Agent Management and SearchContacts APIs.
+* CostExplorer (4.0.5.0)
+	* Support for payer account dimension and billing view health status.
+* DynamoDBStreams (4.0.3.0)
+	* Added support for IPv6 compatible endpoints for DynamoDB Streams.
+* EC2 (4.0.40.1)
+	* This release includes documentation updates for Amazon EBS General Purpose SSD (gp3) volumes with larger size and higher IOPS and throughput.
+* Redshift (4.0.2.0)
+	* Support tagging and tag propagation to IAM Identity Center for Redshift Idc Applications
+
+### 4.0.99.0 (2025-09-25 18:20 UTC)
+* Glue (4.0.17.0)
+	* Update GetConnection(s) API to return KmsKeyArn & Add 63 missing connection types
+* Lightsail (4.0.3.0)
+	* Attribute HTTP binding update for Get/Delete operations
+* NetworkFirewall (4.0.7.0)
+	* Network Firewall now introduces Reject and Alert action support for stateful domain list rule groups, providing customers with more granular control over their network traffic.
+
+### 4.0.98.0 (2025-09-24 18:25 UTC)
+* AppStream (4.0.1.4)
+	* G6f instance support for AppStream 2.0
+* CloudWatch (4.0.4.0)
+	* Fix default dualstack FIPS endpoints in AWS GovCloud(US) regions
+* DAX (4.0.1.0)
+	* This release adds support for IPv6-only, DUAL_STACK DAX instances
+* KeyManagementService (4.0.4.4)
+	* Documentation only updates for KMS.
+* Neptune (4.0.3.3)
+	* Doc-only update to address customer use.
+
+### 4.0.97.0 (2025-09-23 18:23 UTC)
+* CleanRooms (4.0.7.0)
+	* Added support for running incremental ID mapping for rule-based workflows.
+* EC2 (4.0.40.0)
+	* Add Amazon EC2 R8gn instance types
+* EntityResolution (4.0.4.0)
+	* Support incremental id mapping workflow for AWS Entity Resolution
+* SimpleSystemsManagement (4.0.4.0)
+	* Added Dualstack support to GetDeployablePatchSnapshotForInstance
+* SSOAdmin (4.0.3.0)
+	* Add support for encryption at rest with Customer Managed KMS Key in AWS IAM Identity Center
+* SSOOIDC (4.0.2.0)
+	* This release includes exception definition and documentation updates.
+* Extension Extensions.Bedrock.MEAI (4.0.3.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.CborProtocol (4.0.0.3)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.CloudFront.Signers (4.0.0.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.CrtIntegration (4.0.0.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.EC2.DecryptPassword (4.0.0.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.NETCore.Setup (4.0.3.1)
+	* Updating AssemblyFileVersion.
+* Core 4.0.0.29
+	* Skip adding extra empty chunk for empty streams in TrailingHeadersWrapperStream.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
+### 4.0.96.0 (2025-09-22 18:22 UTC)
+* Batch (4.0.2.11)
+	* Starting in JAN 2026, AWS Batch will change the default AMI for new Amazon ECS compute environments from Amazon Linux 2 to Amazon Linux 2023. We recommend migrating AWS Batch Amazon ECS compute environments to Amazon Linux 2023 to maintain optimal performance and security.
+* EKS (4.0.6.0)
+	* Adds support for RepairConfig overrides and configurations in EKS Managed Node Groups.
+* Imagebuilder (4.0.2.0)
+	* Version ARNs are no longer required for the EC2 Image Builder list-image-build-version, list-component-build-version, and list-workflow-build-version APIs. Calling these APIs without the ARN returns all build versions for the given resource type in the requesting account.
+* S3 (4.0.7.3)
+	* Fixed a bug where PutObject was failing when sending zero-byte InputStream with DisablePayloadSigning set to true.
+
+### 4.0.95.0 (2025-09-19 18:45 UTC)
+* BedrockAgentCoreControl (4.0.2.0)
+	* Add tagging and VPC support to AgentCore Runtime, Code Interpreter, and Browser resources. Add support for configuring request headers in Runtime. Fix AgentCore Runtime shape names.
+* ConfigService (4.0.3.0)
+	* Add UNKNOWN state to RemediationExecutionState and add IN_PROGRESS/EXITED/UNKNOWN states to RemediationExecutionStepState.
+* Connect (4.0.11.0)
+	* This release adds a persistent connection field to UserPhoneConfig that maintains agent's softphone media connection for faster call connections.
+* KendraRanking (4.0.0.23)
+	* Model whitespace change - no client difference
+* LicenseManagerUserSubscriptions (4.0.2.0)
+	* Added support for cross-account Active Directories.
+* MediaLive (4.0.6.0)
+	* Add MinBitrate for QVBR mode under H264/H265/AV1 output codec. Add GopBReference, GopNumBFrames, SubGopLength fields under H265 output codec.
+* SQS (4.0.1.4)
+	* Update invalid character handling documentation for SQS SendMessage API
+
+### 4.0.94.0 (2025-09-18 18:27 UTC)
+* Bedrock (4.0.11.0)
+	* Release includes an increase to the maximum policy build document size, an update to DeleteAutomatedReasoningPolicyBuildWorkflow to add ResourceInUseException, and corrections to UpdateAutomatedReasoningPolicyTestCaseRequest.
+* Budgets (4.0.5.0)
+	* Added BillingViewHealthStatus Exception which is thrown when a Budget is created or updated with a Billing View that is not in the HEALTHY status
+* ChimeSDKMessaging (4.0.1.0)
+	* Amazon Chime SDK Messaging GetMessagingSessionEndpoint API now returns dual-stack WebSocket endpoints supporting IPv4/IPv6.
+* EC2 (4.0.39.0)
+	* Allowed AMIs adds support for four new parameters - marketplaceProductCodes, deprecationTimeCondition, creationDateCondition and imageNames
+
+### 4.0.93.0 (2025-09-17 18:36 UTC)
+* EC2 (4.0.38.0)
+	* Add mac-m4.metal and mac-m4pro.metal instance types.
+* NetworkFirewall (4.0.6.0)
+	* Network Firewall now prevents TLS handshakes with the target server until after the Server Name Indication (SNI) has been seen and verified. The monitoring dashboard now provides deeper insights into PrivateLink endpoint candidates and offers filters based on IP addresses and protocol.
+* PCS (4.0.8.0)
+	* Add support for Amazon EC2 Capacity Blocks for ML
+
+### 4.0.92.0 (2025-09-16 18:29 UTC)
+* Budgets (4.0.4.0)
+	* Add support for custom time periods in budget configuration
+* CloudWatchLogs (4.0.8.0)
+	* Cloudwatch Logs added support for 2 new API parameters in metric and subscription filter APIs to filter log events based on system field values and emit system field values as dimensions and send them to customer destination as additional metadata.
+* IVSRealTime (4.0.3.0)
+	* IVS now offers customers the ability to control the positioning of participants in both grid and PiP layouts based on custom attribute values in participant tokens.
+* OSIS (4.0.3.0)
+	* Adds support for cross-account ingestion for push-based sources. This includes resource policies for sharing pipelines across accounts and features for managing pipeline endpoints which enable accessing pipelines across different VPCs, including VPCs in other accounts.
+* Core 4.0.0.28
+	* Fix: Update SSO credential profile type to include smaller subset of CredentialProfileOptions for token auth services which do not use accountId or SsoRoleName.
+	* All services packages updated to require new Core
+
+### 4.0.91.0 (2025-09-15 18:39 UTC)
+* CostExplorer (4.0.4.0)
+	* Added endpoint support for eusc-de-east-1 region.
+* MedicalImaging (4.0.3.0)
+	* Added support for OpenID Connect (OIDC) custom authorizer
+* ObservabilityAdmin (4.0.3.0)
+	* CloudWatch Observability Admin adds the ability to enable telemetry centralization in customers' Organizations. The release introduces new APIs to manage centralization rules, which define settings to replicate telemetry data to a central destination in the customers' Organization.
+* S3Control (4.0.6.0)
+	* Introduce three new encryption filters: EncryptionType (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, NOT-SSE), KmsKeyArn (for SSE-KMS and DSSE-KMS), and BucketKeyEnabled (for SSE-KMS).
+* ServerMigrationService (Removed)
+	* AWS Server Migration Service has been removed from the SDK because it has been discontinued.
+
+### 4.0.90.0 (2025-09-12 18:15 UTC)
+* PaymentCryptography (4.0.4.0)
+	* Add support for certificates to be signed by 3rd party certificate authorities.  New API GetCertificateSigningRequest API and support for providing certificates at run-time for tr-34 import/export
+* S3 (4.0.7.1)
+	* Fix NullReferenceException creating a presigned URL with a service url
+* Core 4.0.0.27
+	* Added support in AWSSDK.Extensions.NETCore.Setup package to set the MaxConnectionsPerServer property on service client config objects.
+
+### 4.0.89.0 (2025-09-11 18:24 UTC)
+* DataZone (4.0.9.0)
+	* adding IAM principal id to IAM user profile details
+* ECS (4.0.5.0)
+	* This release supports hook details for Amazon ECS lifecycle hooks.
+* EMRContainers (4.0.1.0)
+	* Added nodeLabel support in container provider to aid hardware isolation support for virtual cluster and security configuration.
+* Evs (4.0.3.0)
+	* CreateEnvironment API now supports parameters (isHcxPublic & hcxNetworkAclId) for HCX migration via public internet, adding flexibility for migration scenarios. New APIs have been added for associating (AssociateEipToVlan) & disassociating (DisassociateEipFromVlan) Elastic IP (EIP) addresses.
+* GuardDuty (4.0.7.0)
+	* Updated Java SDK implementation of entity set status in GuardDuty API.
+* MediaLive (4.0.5.0)
+	* AWS Elemental MediaLive adds a new feature in MediaPackage output group that enables MediaPackage V2 users to control HLS-related parameters directly in MediaLive. These parameter settings are then reflected in MediaPackage outputs, providing more streamlined control over HLS configurations.
+* PrometheusService (4.0.4.0)
+	* Add Vended Logs APIs for Amazon Prometheus Managed Collector
+* QuickSight (4.0.6.0)
+	* This release adds support for Account level custom permissions, additional Dashboard Options, and Null support for Q&A.
+* RDS (4.0.9.0)
+	* Adds support for end-to-end IAM authentication in RDS Proxy for MySQL, MariaDB, and PostgreSQL engines.
+
+### 4.0.88.0 (2025-09-10 18:15 UTC)
+* NetworkFlowMonitor (4.0.4.0)
+	* Added new enum value (AWS::Region) for type field under MonitorLocalResource and MonitorRemoteResource. Workload Insights and Monitor top contributors queries now support a new DestinationCategory (INTER_REGION).
+* PaymentCryptography (4.0.3.0)
+	* AWS Payment Cryptography Service now supports Multi-Region key replication. Customers can choose to automatically distribute keys across AWS Regions.
+
+### 4.0.87.0 (2025-09-09 18:25 UTC)
+* AutoScaling (4.0.3.0)
+	* Added WaitForTransitioningInstances parameter to the CancelInstanceRefresh API, allowing the caller to cancel an instance refresh without waiting for on-going launches and terminations.
+* CloudWatch (4.0.3.0)
+	* Added a new API - DescribeAlarmContributors API, to retrieve alarm contributors in ALARM state. Added support in DescribeAlarmHistory API to query alarm contributor history
+* Connect (4.0.10.0)
+	* SDK release for user defined predefined attributes.
+* DataZone (4.0.8.0)
+	* Adds support for custom blueprints
+* MediaPackageV2 (4.0.6.0)
+	* Added CUE tag SCTE output to MediaPackageV2 HLS and LL-HLS manifests.
+* Organizations (4.0.4.0)
+	* Documentation updates for AWS Organizations APIs.
+* SageMaker (4.0.25.0)
+	* Released IPv6 support with dual-stack domain options on SageMaker Studio and introduced support for p6-b200.48xlarge instance type on SageMaker Studio for JupyterLab and CodeEditor applications.
+
+### 4.0.86.0 (2025-09-08 18:49 UTC)
+* IoTSiteWise (4.0.3.0)
+	* Add ComputationModelVersion support in IoT SiteWise APIs
+* S3 (4.0.7.0)
+	* This release includes backward compatibility work on the "Expires" parameter.
+* SecurityHub (4.0.4.0)
+	* This release adds the RESOURCE_NOT_FOUND error code as a possible value in responses to the following operations: BatchGetStandardsControlAssociations, BatchUpdateStandardsControlAssociations, and BatchGetSecurityControls.
+
+### 4.0.85.0 (2025-09-05 18:25 UTC)
+* ECS (4.0.4.8)
+	* This is a documentation only release that adds additional information for Amazon ECS Availability Zone rebalancing.
+* PCS (4.0.7.2)
+	* Documentation-only update to add AccountingStorageEnforce to SlurmCustomSetting.
+* SageMaker (4.0.24.0)
+	* Release IPv6 support with dualstack in SageMaker Notebooks, Tiered Storage Checkpointing Support in SageMaker HyperPod and P5.4xlarge instance type for SageMaker Hosting.
+
+### 4.0.84.0 (2025-09-04 18:22 UTC)
+* CleanRooms (4.0.6.0)
+	* Add support for configurable compute sizes for PySpark jobs.
+* CloudFormation (4.0.3.0)
+	* ListHookResults API now supports retrieving invocation results for all CloudFormation Hooks (previously limited to create change set and Cloud Control operations) with new optional parameters for filtering by Hook status and ARN.
+* EC2 (4.0.37.0)
+	* Add m8i, m8i-flex and i8ge instance types.
+* OpenSearchServerless (4.0.3.0)
+	* Add support for Federal Information Processing Standards (FIPS) and Federal Risk and Authorization Management Program (FedRAMP) compliance
+* RDS (4.0.8.0)
+	* Added new EndpointNetworkType and TargetConnectionNetworkType fields in Proxy APIs to support IPv6
+* VerifiedPermissions (4.0.3.0)
+	* Amazon Verified Permissions / Features : Adds support for datetime and duration attribute values.
+
+### 4.0.83.0 (2025-09-03 18:33 UTC)
+* CleanRooms (4.0.5.0)
+	* Added support for adding new data provider members to an existing collaboration.
+* CleanRoomsML (4.0.4.0)
+	* AWS Clean Rooms ML adds log sanitization for privacy-enhanced error summaries, supports new instance types for custom models providing better performance and lower costs, and deprecates P3-series instances.
+* CloudFront (4.0.5.0)
+	* Adding an optional field IpAddressType in CustomOriginConfig
+* MQ (4.0.2.0)
+	* Add CONFIG_MANAGED as a supported AuthenticationStrategy for Amazon MQ for RabbitMQ brokers. Make username and password optional on broker creation for CONFIG_MANAGED brokers.
+* RDS (4.0.7.0)
+	* This release adds support for MasterUserAuthenticationType parameter on CreateDBInstance, ModifyDBInstance, CreateDBCluster, and ModifyDBCluster operations.
+* Route53 (4.0.4.0)
+	* Amazon Route 53 now supports the Asia Pacific (New Zealand) Region (ap-southeast-6) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Route53Domains (4.0.2.0)
+	* Added new ExtraParams AU_ELIGIBILITY_TYPE, AU_POLICY_REASON, and AU_REGISTRANT_NAME
+* TranscribeStreaming (4.0.3.0)
+	* This release adds support for automatic language identification in AWS Transcribe Call Analytics
+
+### 4.0.82.0 (2025-09-02 18:32 UTC)
+* EC2 (4.0.36.0)
+	* MaximumEbsAttachments and AttachmentLimitType fields added to DescribeInstanceTypesResponse. G6f, Gr6f, R8i, R8i-flex and p5.4xlarge instance types added to InstanceTypes enum.
+* Neptune (4.0.3.0)
+	* Removed the deprecated marker from publiclyAccessible parameter from DbInstance, CreateDbInstance and ModifyDbInstance and added relevant usage information for the parameter.
+* Notifications (4.0.2.0)
+	* Added Org support for notifications:  - `ListMemberAccounts` gets member accounts list, `AssociateOrganizationalUnit` links OU to notification configuration, `DisassociateOrganizationalUnit` removes OU from notification configuration, `ListOrganizationalUnits` shows OUs configured for notifications.
+* S3 (4.0.6.13)
+	* Fix issue #3993. PutObjectAcl was failing when Grantee's Type member was set because  the xml attribute not being written first leading to invalid xml. PutBucketAcl would also fail with the same issue if Type is set. This change writes the attributes first if they are present.
+* WorkMail (4.0.2.0)
+	* Make RoleArn an optional parameter for the PutEmailMonitoringConfiguration API, and add UnsupportedOperationException to RegisterToWorkMail.
+
+### 4.0.81.1 (2025-08-29 21:31 UTC)
+* S3 (4.0.6.12)
+	* Fix issue #3989. If an empty filter was specified, GetLifecycleConfiguration was failing. This fix allows an empty filter to be specified when retrieving lifecycle configurations via GetLifecycleConfiguration.
+
+### 4.0.81.0 (2025-08-29 18:19 UTC)
+* BedrockRuntime (4.0.6.0)
+	* Fixed stop sequence limit for converse API.
+* EC2 (4.0.35.0)
+	* Release shows new route types such as filtered and advertisement.
+* S3 (4.0.6.11)
+	* Remove unused custom partials
+* XRay (4.0.2.0)
+	* AWS X-Ray Features: Support Sampling Rate Boost On Anomaly
+* Core 4.0.0.26
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
+### 4.0.80.0 (2025-08-28 19:41 UTC)
+* Amplify (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ApplicationAutoScaling (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ApplicationCostProfiler (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppRunner (4.0.1.1)
+	* Doc only updates for APIs and and datatypes related to IPAddressType and Subnets for IPv6 dualstack support.
+* AutoScalingPlans (4.0.1.0)
+	* Remove incorrect endpoint tests
+* BedrockRuntime (4.0.5.0)
+	* Remove incorrect endpoint tests
+* Cloud9 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudHSMV2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudSearchDomain (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeDeploy (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeGuruReviewer (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Connect (4.0.9.0)
+	* AgentStatusDrillDown feature in GetCurrentMetricData API. Adding AGENT_STATUS as filter and grouping in GetCurrentMetricData API
+* ConnectCampaignService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DynamoDBv2 (4.0.6.0)
+	* Remove incorrect endpoint tests
+* EC2 (4.0.34.0)
+	* This release adds support for copying Amazon EBS snapshot and AMIs to and from Local Zones.
+* EC2InstanceConnect (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ECR (4.0.4.0)
+	* Remove incorrect endpoint tests
+* ElasticMapReduce (4.0.3.0)
+	* Remove incorrect endpoint tests
+* EntityResolution (4.0.3.0)
+	* Remove incorrect endpoint tests
+* EventBridge (4.0.4.0)
+	* Remove incorrect endpoint tests
+* FIS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* FMS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GeoMaps (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GeoPlaces (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Glue (4.0.16.0)
+	* Adding support to fetch TargetDatabase field during GetDatabases with AttributesToGet
+* GlueDataBrew (4.0.1.0)
+	* Remove incorrect endpoint tests
+* HealthLake (4.0.2.0)
+	* Add ValidationLevel parameter to StartFHIRImportJob API, allowing users to specify a FHIR validation level for their asynchronous import jobs.
+* InspectorScan (4.0.1.0)
+	* Remove incorrect endpoint tests
+* InternetMonitor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Kinesis (4.0.4.0)
+	* Remove incorrect endpoint tests
+* LicenseManagerUserSubscriptions (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MachineLearning (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ManagedBlockchainQuery (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MarketplaceDeployment (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaStoreData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MTurk (4.0.1.0)
+	* Remove incorrect endpoint tests
+* NetworkFirewall (4.0.5.0)
+	* Remove incorrect endpoint tests
+* OAM (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Omics (4.0.3.0)
+	* Adds Amazon ECR pull through cache support to AWS HealthOmics, so you can more easily use container images from external sources.
+* OpenSearchService (4.0.3.0)
+	* Remove incorrect endpoint tests
+* OSIS (4.0.2.0)
+	* Remove incorrect endpoint tests
+* PCS (4.0.7.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoice (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoiceV2 (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Pipes (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QuickSight (4.0.5.0)
+	* Remove incorrect endpoint tests
+* RDS (4.0.6.0)
+	* Added RDS HTTP Endpoint feature support flag to DescribeOrderableDBInstanceOptions API
+* Rekognition (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Route53Domains (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SavingsPlans (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Scheduler (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ServiceQuotas (4.0.2.0)
+	* Remove incorrect endpoint tests
+* SimpleEmail (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SimpleEmailV2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* SimpleWorkflow (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SSMGuiConnect (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SSMIncidents (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SsmSap (4.0.2.0)
+	* Added support for Configuration Checks on SAP HANA Applications.
+* SSO (4.0.1.0)
+	* Remove incorrect endpoint tests
+* TimestreamQuery (4.0.2.0)
+	* Remove incorrect endpoint tests
+* WAF (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkMailMessageFlow (4.0.1.0)
+	* Remove incorrect endpoint tests
+* XRay (4.0.1.0)
+	* Remove incorrect endpoint tests
+
+### 4.0.79.0 (2025-08-27 19:34 UTC)
+* ACMPCA (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AmplifyBackend (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AmplifyUIBuilder (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppConfigData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ApplicationDiscoveryService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ApplicationInsights (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppTest (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Batch (4.0.2.8)
+	* Added ECS_AL2023_NVIDIA as an option for Ec2Configuration.imageType.
+* BedrockAgentCore (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Chime (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKIdentity (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKMeetings (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKVoice (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CleanRoomsML (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CloudWatchEvidently (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeBuild (4.0.4.0)
+	* Remove incorrect endpoint tests
+* CodeConnections (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CodeGuruProfiler (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ComputeOptimizer (4.0.2.0)
+	* Remove incorrect endpoint tests
+* DataPipeline (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DirectoryService (4.0.3.0)
+	* Add APIs for CA AutoEnrollment support: DescribeCAEnrollmentPolicy, EnableCAEnrollmentPolicy and DisableCAEnrollmentPolicy.
+* EKS (4.0.5.0)
+	* Add support for on-demand refresh of EKS cluster insights
+* ElastiCache (4.0.1.0)
+	* Remove incorrect endpoint tests
+* FraudDetector (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Inspector (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoT (4.0.2.0)
+	* Remove incorrect endpoint tests
+* IoTFleetWise (4.0.2.0)
+	* Remove incorrect endpoint tests
+* IoTWireless (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Ivschat (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IVSRealTime (4.0.2.0)
+	* Remove incorrect endpoint tests
+* KafkaConnect (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KeyManagementService (4.0.4.0)
+	* Remove incorrect endpoint tests
+* KinesisVideo (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoMedia (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LakeFormation (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LexModelBuildingService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MarketplaceReporting (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MedicalImaging (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Mgn (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHubConfig (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Neptune (4.0.2.0)
+	* Remove incorrect endpoint tests
+* NeptuneGraph (4.0.1.0)
+	* Add StartGraph and StopGraph operations to Neptune Analytics
+* Omics (4.0.2.0)
+	* Remove incorrect endpoint tests
+* OpsWorks (Removed)
+	* AWS OpsWorks has been removed from the SDK because it has been discontinued.
+* OpsWorksCM (Removed)
+	* AWS OpsWorksCM has been removed from the SDK because it has been discontinued.
+* PaymentCryptographyData (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Personalize (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PI (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QApps (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QLDBSession (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Redshift (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RoboMaker (4.0.1.0)
+	* Remove incorrect endpoint tests
+* S3 (4.0.6.10)
+	* set IsDeleteMarker to true for DeleteMarkers in ListVersionsResponse
+* S3Tables (4.0.4.0)
+	* Remove incorrect endpoint tests
+* SageMaker (4.0.23.0)
+	* This release adds support for AutoScaling on SageMaker HyperPod.
+* Schemas (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SimpleNotificationService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SnowDeviceManagement (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SupplyChain (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Textract (4.0.2.0)
+	* Remove incorrect endpoint tests
+* TimestreamWrite (4.0.2.0)
+	* Remove incorrect endpoint tests
+* VoiceID (4.0.1.0)
+	* Remove incorrect endpoint tests
+* VPCLattice (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkDocs (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkMail (4.0.1.0)
+	* Remove incorrect endpoint tests
+
+### 4.0.78.0 (2025-08-26 19:34 UTC)
+* AppConfig (4.0.2.0)
+	* Remove incorrect endpoint tests
+* AppMesh (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppRegistry (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppRunner (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ARCZonalShift (4.0.2.0)
+	* This release adds new API options to enable allowed windows and multiple alarms for practice runs.
+* BedrockAgentCoreControl (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CleanRooms (4.0.4.0)
+	* Remove incorrect endpoint tests
+* CloudWatch (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CodeCommit (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeStarconnections (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ComprehendMedical (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ConnectContactLens (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ConnectParticipant (4.0.2.0)
+	* Amazon Connect Participant Service: Remove unused fields from WebRTCConnection
+* ControlCatalog (4.0.2.0)
+	* Remove incorrect endpoint tests
+* DataSync (4.0.4.0)
+	* Remove incorrect endpoint tests
+* DLM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Drs (4.0.1.0)
+	* Remove incorrect endpoint tests
+* EC2 (4.0.33.0)
+	* Add new APIs for viewing how your shared AMIs are used by other accounts, and identify resources in your account that are dependent on particular AMIs
+* ElasticTranscoder (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Evs (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Finspace (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GameLift (4.0.2.0)
+	* Remove incorrect endpoint tests
+* GeoRoutes (4.0.1.0)
+	* Added RouteFerryNotice PotentialViolatedVehicleRestrictionUsage value for CalculateRoutes. This value indicates when the Route is potentially forbidden for the given vehicle profile.
+* Glacier (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GlobalAccelerator (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Greengrass (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IdentityStore (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Imagebuilder (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTJobsDataPlane (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTSecureTunneling (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTTwinMaker (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Kafka (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LicenseManagerLinuxSubscriptions (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LookoutforVision (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MainframeModernization (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHub (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHubRefactorSpaces (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MQ (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Neptunedata (4.0.2.0)
+	* Remove incorrect endpoint tests
+* PcaConnectorScep (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PersonalizeEvents (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Pinpoint (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Polly (4.0.2.0)
+	* Remove incorrect endpoint tests
+* RAM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RDSDataService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RecycleBin (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ResourceExplorer2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53 (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Route53RecoveryCluster (4.0.1.0)
+	* Remove incorrect endpoint tests
+* S3 (4.0.6.9)
+	* Fixes issue #3971. For initiateMultipartUpload, if CannedACL was set to NoACL, request was failing with bad request error.
+* SageMakerGeospatial (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecretsManager (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecurityHub (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Signer (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SimpleSystemsManagement (4.0.3.0)
+	* Remove incorrect endpoint tests
+* SocialMessaging (4.0.2.0)
+	* Remove incorrect endpoint tests
+* SsmSap (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SSOOIDC (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Tnb (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Transfer (4.0.2.0)
+	* Remove incorrect endpoint tests
+* TrustedAdvisor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WAFRegional (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkSpaces (4.0.5.0)
+	* Remove incorrect endpoint tests
+
+### 4.0.77.0 (2025-08-25 20:57 UTC)
+* B2bi (4.0.3.0)
+	* Updated APIs to support custom validation rules.
+* CodeGuruSecurity (4.0.0.21)
+	* Documentation update to notify users of the discontinuation of Amazon CodeGuru Security.
+* DataZone (4.0.7.0)
+	* Releasing the following features - Asset classification that lets users use restricted terms for classifying assets if they have the right permissions. Also adding a new enum value "Moving" to project status.
+* EC2 (4.0.32.0)
+	* Added IPv6 support for AWS Client VPN.
+* MediaConvert (4.0.8.0)
+	* This release adds support for input rendition selection for HLS input, adds new Share API to enable sharing jobs with AWS Support for support investigations, and adds INCLUDE_AS_TS to iFrameOnlyManifest setting for HLS outputs.
+* QBusiness (4.0.5.0)
+	* The Amazon Q Business GetDocumentContent operation now supports retrieval of the extracted text content in JSON format.
+* SQS (4.0.1.1)
+	* Documentation update for Amazon SQS Supports Large Payload Message feature
+* TimestreamInfluxDB (4.0.3.0)
+	* Add MAINTENANCE status for DbInstance and DbCluster
+
+### 4.0.76.0 (2025-08-22 19:15 UTC)
+* Account (4.0.1.0)
+	* Remove incorrect endpoint tests
+* APIGateway (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ApiGatewayV2 (4.0.2.0)
+	* Remove incorrect endpoint tests
+* AugmentedAIRuntime (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AWSMarketplaceCommerceAnalytics (4.0.1.0)
+	* Remove incorrect endpoint tests
+* B2bi (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CloudDirectory (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudWatchRUM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodePipeline (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CognitoSync (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DataExchange (4.0.3.0)
+	* Remove incorrect endpoint tests
+* DocDB (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ElasticLoadBalancing (4.0.1.0)
+	* Remove incorrect endpoint tests
+* EMRServerless (4.0.5.0)
+	* Remove incorrect endpoint tests
+* HealthLake (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IAMRolesAnywhere (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTAnalytics (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisFirehose (4.0.2.0)
+	* Remove incorrect endpoint tests
+* LaunchWizard (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LocationService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Macie2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaLive (4.0.4.0)
+	* AWS Elemental MediaLive now has a field called "SubtitleRows" for controlling subtitle row count for DVB-Sub and Burn-In captions outputs
+* MemoryDB (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHubOrchestrator (4.0.1.0)
+	* Remove incorrect endpoint tests
+* NetworkMonitor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Organizations (4.0.3.0)
+	* Remove incorrect endpoint tests
+* PaymentCryptography (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Pricing (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Proton (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QConnect (4.0.2.0)
+	* Releasing model ID support for UpdateAIPrompt
+* QLDB (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RDS (4.0.5.5)
+	* Updates Amazon RDS documentation for Db2 read-only replicas.
+* RedshiftDataAPIService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53RecoveryReadiness (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SageMaker (4.0.22.0)
+	* Launch SageMaker Notebook Instances support for AL2023 along with P6-B200 instance type and Rootless Docker support for SageMaker Studio.
+* SageMakerMetrics (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ServiceDiscovery (4.0.1.3)
+	* Updating SDK examples after launch of shared AWS Cloud Map namespaces
+* SimSpaceWeaver (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SQS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Synthetics (4.0.6.0)
+	* Added multi browser support for synthetics canaries, Increased ephemeral storage limit from 5GB to 10GB
+* WAFV2 (4.0.4.0)
+	* test and verified, safe to release
+* Core 4.0.0.25
+	* Add support for RPCv2 CBOR protocol.
+
+### 4.0.75.0 (2025-08-21 19:51 UTC)
+* AccessAnalyzer (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ApiGatewayManagementApi (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppFabric (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppIntegrationsService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* AppStream (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Artifact (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AuditManager (4.0.4.0)
+	* Remove incorrect endpoint tests
+* Backup (4.0.3.0)
+	* Remove incorrect endpoint tests
+* BackupGateway (4.0.1.0)
+	* Remove incorrect endpoint tests
+* BedrockAgentRuntime (4.0.5.0)
+	* Remove incorrect endpoint tests
+* BillingConductor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudFront (4.0.4.0)
+	* Remove incorrect endpoint tests
+* CloudHSM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudTrail (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CognitoIdentity (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Comprehend (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ConfigService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Connect (4.0.8.0)
+	* Remove incorrect endpoint tests
+* ConnectCampaignsV2 (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ConnectCases (4.0.3.0)
+	* Remove incorrect endpoint tests
+* ConnectWisdomService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CostOptimizationHub (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CustomerProfiles (4.0.4.0)
+	* Remove incorrect endpoint tests
+* DatabaseMigrationService (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Deadline (4.0.9.0)
+	* Remove incorrect endpoint tests
+* DirectoryService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* DirectoryServiceData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DynamoDBStreams (4.0.2.0)
+	* Remove incorrect endpoint tests
+* EBS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ECRPublic (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ECS (4.0.4.6)
+	* This is a documentation only release that adds additional information for the update-service request parameters.
+* ElasticBeanstalk (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ElasticLoadBalancingV2 (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Elasticsearch (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ForecastQueryService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GameLiftStreams (4.0.2.0)
+	* The default application in a stream group can now be changed at any time using UpdateStreamGroup to update the DefaultApplicationIdentifier.
+* Glue (4.0.15.0)
+	* Added support for preprocessing queries in Data Quality operations through new DataQualityGlueTable structure.
+* GreengrassV2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GuardDuty (4.0.6.0)
+	* Remove Pattern trait from email field
+* Inspector2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* IoTDeviceAdvisor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTEvents (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTEventsData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTThingsGraph (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IVS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoSignalingChannels (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoWebRTCStorage (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LexRuntimeV2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Lightsail (4.0.2.0)
+	* Remove incorrect endpoint tests
+* LookoutMetrics (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ManagedBlockchain (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ManagedGrafana (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MarketplaceAgreement (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaConnect (4.0.2.0)
+	* Remove incorrect endpoint tests
+* MediaConvert (4.0.7.0)
+	* Remove incorrect endpoint tests
+* MediaPackage (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaPackageV2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* MediaTailor (4.0.2.0)
+	* Remove incorrect endpoint tests
+* MWAA (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ObservabilityAdmin (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Panorama (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PinpointEmail (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PrometheusService (4.0.3.0)
+	* Remove incorrect endpoint tests
+* ResourceGroups (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53Profiles (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53Resolver (4.0.2.0)
+	* Remove incorrect endpoint tests
+* S3 (4.0.6.8)
+	* Fix issue of not passing in the explicit credentials when an internal instance of the S3 client is created for detecting bucket region.
+* S3Outposts (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecurityLake (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecurityToken (4.0.2.0)
+	* Remove incorrect endpoint tests
+* SSMContacts (4.0.0.20)
+	* Doc-only updates for Incident Manager Contacts August 2025
+* SSMQuickSetup (4.0.1.0)
+	* Remove incorrect endpoint tests
+* TimestreamInfluxDB (4.0.2.0)
+	* Remove incorrect endpoint tests
+* VerifiedPermissions (4.0.2.0)
+	* Remove incorrect endpoint tests
+* WorkSpacesWeb (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Core 4.0.0.24
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
+### 4.0.74.0 (2025-08-20 18:47 UTC)
+* AWSMarketplaceMetering (4.0.1.0)
+	* Remove incorrect endpoint tests
+* BedrockRuntime (4.0.4.0)
+	* Launch CountTokens API to allow token counting
+* Billing (4.0.2.0)
+	* Clarify IPv4 and IPv6 endpoints
+* Budgets (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CognitoIdentityProvider (4.0.3.0)
+	* This release adds support for the new Terms APIs which allow displaying Terms of Use and Privacy Policy on the Managed Login user-registration page.
+* CostExplorer (4.0.3.0)
+	* Remove incorrect endpoint tests
+* DataZone (4.0.6.0)
+	* This release supports policy grant identifier for cloud formation integration
+* Detective (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DynamoDBv2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* EKS (4.0.4.0)
+	* EKS Add-ons Custom Namespace Support
+* ElasticFileSystem (4.0.2.0)
+	* Remove incorrect endpoint tests
+* IdentityManagement (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Kinesis (4.0.3.0)
+	* Remove incorrect endpoint tests
+* KinesisAnalyticsV2 (4.0.1.0)
+	* Adds Key Management Service (KMS) support allowing customer-managed key (CMK) encryption for Flink application data.
+* MarketplaceEntitlementService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* NetworkManager (4.0.2.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoiceV2 (4.0.2.0)
+	* This change added InternationalSendingEnbaled as part of describe/Update/Request phone number API response, and as part of update/Request phone number API request
+* Route53RecoveryControlConfig (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SageMaker (4.0.21.0)
+	* This release adds 1/ Launch ml.p5.4xlarge instance in Processing jobs, Training jobs and Training Plan 2/ Makes S3Uri to be required for S3FileSystem and S3FileSystemConfig.
+* SimpleEmailV2 (4.0.4.0)
+	* Remove incorrect endpoint tests
+
+### 4.0.73.0 (2025-08-19 18:18 UTC)
+* CleanRooms (4.0.3.0)
+	* Support error message configuration for analysis templates
+* EC2 (4.0.31.0)
+	* Add support for "warning" volume status.
+* Polly (4.0.1.0)
+	* Added support for new output format - Opus.
+
+### 4.0.72.0 (2025-08-18 18:31 UTC)
+* Batch (4.0.2.6)
+	* Added default_x86_64 and default_arm64 as values to the instanceTypes field.
+* BCMDashboards (4.0.0.0)
+	* Billing and Cost Management Dashboards enables users to create dashboards that combine multiple visualizations of cost and usage data. Users can create, manage, and share dashboards. Tags are also available for dashboards.
+* Connect (4.0.7.0)
+	* Amazon Connect Service Feature: Add support to enable multi-user in-app, web, and video calling.
+* ConnectParticipant (4.0.1.0)
+	* Amazon Connect Service Feature: Add support to enable multi-user in-app, web, and video calling.
+* S3 (4.0.6.7)
+	* Generate CopyPart.
+	* [Breaking Change] Amazon.S3.Model.CopyPartResponse's BucketKeyEnabled will now return bool? instead of bool, in line with other S3 nullable types.
+* S3Control (4.0.5.0)
+	* Adds support for Compute checksum functionality in Amazon S3 Batch Operations. You can now calculate checksums for a list of objects using supported algorithms in Amazon S3, without requiring a restore or download
+* SageMaker (4.0.20.0)
+	* Customer managed keys now available for volume encryption of SageMaker HyperPod clusters.
+
+### 4.0.71.0 (2025-08-15 18:17 UTC)
+* ApiGatewayV2 (4.0.1.15)
+	* Add required attributes to properties that have been renamed
+* BedrockAgent (4.0.5.0)
+	* This release adds support for saving Bedrock Flows while node configuration is still in progress, even if the Flow is not yet able to be invoked
+* Glue (4.0.14.0)
+	* AWS Glue Zero ETL now supports On-demand snapshot load
+* PrometheusService (4.0.2.0)
+	* Add Resource-based Policy APIs for Amazon Prometheus
+* S3 (4.0.6.6)
+	* Fixes issue #3959. Do not send empty lists for headers. ListObjectsV2 calls were failing if AWSConfigs.InitializeCollections was set to true. This was causing the SDK to send the `x-amz-optional-attributes` as an empty string which is not a valid value.
+	* Add required attributes to properties that have been renamed
+* SimpleWorkflow (4.0.0.19)
+	* Add required attributes to properties that have been renamed
+* WAF (4.0.0.19)
+	* Add required attributes to properties that have been renamed
+* WAFRegional (4.0.0.19)
+	* Add required attributes to properties that have been renamed
+* Core 4.0.0.23
+	* Update SDK not to mutate credentials in provided config object (https://github.com/aws/aws-sdk-net/issues/3950)
+	* All services packages updated to require new Core
+
+### 4.0.70.0 (2025-08-14 18:35 UTC)
+* ARCRegionswitch (4.0.1.0)
+	* Endpoint rule test and documentation update.
+* BCMRecommendedActions (4.0.0.0)
+	* Initial SDK release for AWS Billing and Cost Management Recommended Actions.
+* DirectConnect (4.0.2.0)
+	* Added pagination support for DescribeHostedConnections, DescribeVirtualInterfaces, DescribeConnections, DescribeInterconnects, DescribeLags. Added asnLong support for BGP peer operations which supports a large range.
+* DynamoDBv2 (4.0.4.0)
+	* This release 1/ Adds support for throttled keys mode for CloudWatch Contributor Insights, 2/ Adds throttling reasons to exceptions across dataplane APIs. 3/ Explicitly models ThrottlingException as a class in statically typed languages. Refer to the launch day blog post for more details.
+* EC2 (4.0.30.0)
+	* This release adds ModifyInstanceConnectEndpoint API to update configurations on existing EC2 Instance Connect Endpoints and improves IPv6 support through dualstack DNS names for EC2 Instance Connect Endpoints.
+* FSx (4.0.4.0)
+	* Amazon FSx for NetApp ONTAP 2nd generation file systems now support decreasing SSD storage capacity.
+* Glue (4.0.13.0)
+	* AWS Glue now supports Trusted Identity Propagation.
+* GuardDuty (4.0.5.0)
+	* Added support for entity lists.
+* MediaLive (4.0.3.0)
+	* CMAF Ingest output groups in MediaLive can now accept one additional destination url for single pipeline channels and up to two additional destination urls for standard channels.
+* PCS (4.0.6.0)
+	* Updated the regex pattern and description of iamInstanceProfileArn in the CreateComputeNodeGroup and UpdateComputeNodeGroup API actions. Name and path requirements apply to the ARN of the IAM role associated with the instance profile and not the ARN of the instance profile.
+* QApps (4.0.0.19)
+	* Documentation update for Amazon Q Apps API Reference
+* ServiceDiscovery (4.0.1.0)
+	* Added support for cross account through Id parameter overloading with ARN and allow owner account for some APIs instead of ARN
+* WorkSpaces (4.0.4.0)
+	* New APIs introduced to import WorkSpaces BYOL image using a new process that leveraged EC2 Image Builder. WorkSpaces tests and fixes your image's compatibility issues and supports customized VM images.
+
+### 4.0.69.0 (2025-08-13 18:21 UTC)
+* Braket (4.0.1.0)
+	* Add support for Braket program sets.
+* DataZone (4.0.5.0)
+	* Adds support for account pools and project profile account decoupling
+* FSx (4.0.3.0)
+	* Add Dual-Stack support for Amazon FSx for OpenZFS file systems
+* PartnerCentralSelling (4.0.3.0)
+	* Add Tagging Support for Opportunity resources
+* S3 (4.0.6.5)
+	* Generate PutBucketAcl PutBucketCors,PutObjectAcl, GetObjectAcl, ListObjectsV2, ListVersions, HeadObject.
+	* As part of generating S3, all response unmarshallers will implement UnmarshallException. GetObjectACL will now throw NoSuchKeyException if no such key exists. This is not a breaking change.
+* SageMaker (4.0.19.0)
+	* This release introduces compute quota for GPU, Trainium accelerators, vCPU, and vCPU memory utilization across teams in HyperPod clusters
+* SecurityIR (4.0.3.0)
+	* Added support for Organizational Unit-level Membership configuration and the ability to resume a cancelled membership.
+* Core 4.0.0.22
+	* Remove extra Content MD5 setting in BaseMarshaller. Minor Xml namespace logic updates. Update all rest-xml service response unmarshallers to generate partial method PostUnmarshallCustomization. Generator updates.
+	* All services packages updated to require new Core
+
+### 4.0.68.0 (2025-08-12 19:48 UTC)
+* BackupSearch (4.0.2.0)
+	* Using recommended smithy trait to generate regional endpoints for Backup Search
+* CodeBuild (4.0.3.0)
+	* AWS CodeBuild now supports PullRequestBuildPolicy in webhook object.
+* EC2 (4.0.29.0)
+	* Release to allow route table association with a PublicIpv4Pool.
+* Organizations (4.0.2.0)
+	* This release introduces 2 new APIs in Organizations: 1. ListAccountsWithInvalidEffectivePolicy 2. ListEffectivePolicyValidationErrors
+* SageMaker (4.0.18.0)
+	* IAM Identity Center trusted identity propagation is now supported in SageMaker Studio.
+* TranscribeService (4.0.3.0)
+	* AWS HealthScribe now supports specifying preferred patient pronouns through the MedicalScribeContext parameter for use in the generated clinical notes.
+* TranscribeStreaming (4.0.2.0)
+	* AWS HealthScribe now supports specifying preferred patient pronouns through the MedicalScribeContext parameter for use in the generated clinical notes.
+
+### 4.0.67.0 (2025-08-11 18:26 UTC)
+* Bedrock (4.0.10.0)
+	* This release includes model updates and enhanced SDK documentation for union fields in automated reasoning policy components. Added docs cover policy definitions, mutations (add/update for rules/types/variables), build assets, workflow sources, test results, and tag exception handling.
+* CognitoIdentityProvider (4.0.2.0)
+	* Remove SigV4 auth requirement for GetTokensFromRefreshToken
+* Connect (4.0.6.0)
+	* Updating SearchUserHierarchyGroups API
+* Deadline (4.0.8.0)
+	* Adds support for Wait and Save feature in service-managed fleets
+* EC2 (4.0.28.0)
+	* This release adds AvailabilityZoneId support for CreateVolume, DescribeVolume, LaunchTemplates, RunInstances, DescribeInstances, CreateDefaultSubnet, SpotInstances, and CreateDefaultSubnet APIs.
+* Evs (4.0.1.2)
+	* Update for general availability of Amazon Elastic VMware Service (EVS).
+* Lambda (4.0.2.4)
+	* Doc-only update for Lambda that updates the maximum payload size for response streaming invocations to 200 MB.
+* QuickSight (4.0.4.0)
+	* Add RowAxisDisplayOptions and ColumnAxisDisplayOptions to HeatMapConfiguration, add Actions to PluginVisual, increase limit for CalculatedFields list
+* SSOAdmin (4.0.2.0)
+	* Added support for managing user background session for applications
+
+### 4.0.66.0 (2025-08-08 18:44 UTC)
+* ApplicationSignals (4.0.1.0)
+	* Removed incorrect endpoint tests
+* BackupSearch (4.0.1.0)
+	* Removed incorrect endpoint tests
+* BCMPricingCalculator (4.0.3.0)
+	* Removed incorrect endpoint tests
+* Billing (4.0.1.0)
+	* Removed incorrect endpoint tests
+* Connect (4.0.5.0)
+	* This release adds a new API GetContactMetrics for Amazon Connect.
+* DSQL (4.0.4.0)
+	* Removed incorrect endpoint tests
+* GameLiftStreams (4.0.1.0)
+	* Removed incorrect endpoint tests
+* Inspector2 (4.0.4.0)
+	* Add CVSSV4 to Vulnerability Search API and update enable/disable account id list length to 5
+* Invoicing (4.0.2.0)
+	* Removed incorrect endpoint tests
+* IotData (4.0.1.0)
+	* Adding DeleteConnection API to IoT Data Plane
+* IoTManagedIntegrations (4.0.2.0)
+	* Removed incorrect endpoint tests
+* KeyspacesStreams (4.0.1.0)
+	* Removed incorrect endpoint tests
+* MPA (4.0.1.0)
+	* Removed incorrect endpoint tests
+* NetworkFlowMonitor (4.0.3.0)
+	* Removed incorrect endpoint tests
+* Notifications (4.0.1.0)
+	* Removed incorrect endpoint tests
+* NotificationsContacts (4.0.1.0)
+	* Removed incorrect endpoint tests
+* PartnerCentralSelling (4.0.2.0)
+	* Removed incorrect endpoint tests
+* S3Vectors (4.0.1.0)
+	* Removed incorrect endpoint tests
+* SageMaker (4.0.17.0)
+	* Adds support for GB200 UltraServers in Amazon SageMaker training jobs, training plans, and HyperPod clusters
+* SecurityIR (4.0.2.0)
+	* Removed incorrect endpoint tests
+* TranscribeService (4.0.2.7)
+	* Update documentation to use key ARN only in OutputEncryptionKMSKeyId request parameter
+* WorkspacesInstances (4.0.1.0)
+	* Removed incorrect endpoint tests
+
+### 4.0.65.0 (2025-08-07 18:32 UTC)
+* Batch (4.0.2.3)
+	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture with Fargate Spot compute support.
+* CloudFront (4.0.3.0)
+	* Added new viewer security policy, TLSv1.3_2025, for CloudFront.
+* CodeBuild (4.0.2.0)
+	* AWS CodeBuild now supports comment-based pull request control.
+* GameLiftStreams (4.0.0.18)
+	* Adds Proton 9.0-2 to the list of runtime environment options available when creating an Amazon GameLift Streams application
+* Glue (4.0.12.0)
+	* AWS Glue Data Catalog now supports Iceberg Optimization settings at the Catalog level, and supports new options to control the optimization job run rate.
+* GuardDuty (4.0.4.0)
+	* Added support for VPC owner account ID associated with DNS request in the GuardDuty finding.
+
+### 4.0.64.0 (2025-08-06 18:29 UTC)
+* AppStream (4.0.0.17)
+	* Added support for G6 instances
+* Budgets (4.0.2.0)
+	* Adds support for billing views. Billing views let you control access to cost and usage data through an AWS resource, streamlining the process of sharing cost and usage data across account boundaries. With this release, you can now create and view budgets based on billing views.
+* EC2 (4.0.27.0)
+	* Mark Elastic Inference Accelerators and Elastic Graphics Processor parameters as deprecated on the RunInstances and LaunchTemplate APIs.
+* OpenSearchServerless (4.0.2.0)
+	* Features: add Index APIs in OpenSearchServerless to support managed semantic enrichment
+* QBusiness (4.0.4.0)
+	* Amazon Q Business now supports the GetDocumentContent() API that enables customers to securely access the source documents through clickable citation links at query time
+* S3 (4.0.6.4)
+	* Generate Get and PutLifecycleConfiguration. Generate Put and GetBucketConfiguration
+	* Generate InitiateMultipartUpload, DeleteBucketCors,DeleteBucketLifecycle, GetBucketAcl and GetBucketCors
+* Core 4.0.0.21
+	* Add XmlStructureUnmarshallCustomization hook for all xml structures
+	* All services packages updated to require new Core
+
+### 4.0.63.0 (2025-08-05 18:40 UTC)
+* Bedrock (4.0.9.0)
+	* This release introduces Automated Reasoning checks for Amazon Bedrock Guardrails. The feature adds new APIs for policy building, refinement, version management, and testing. Guardrail APIs now support Automated Reasoning policy configuration and validation output.
+* BedrockRuntime (4.0.3.0)
+	* This release adds support for Automated Reasoning checks output models for the Amazon Bedrock Guardrails ApplyGuardrail API.
+* DynamoDBv2 (4.0.3.3)
+	* Update exception message for native aot error handling for dynamodb deserialization.
+* EKS (4.0.3.0)
+	* Add support for deletion protection on EKS clusters
+* RDS (4.0.5.0)
+	* Adds a new Aurora Serverless v2 attribute to the DBCluster resource to expose the platform version. Also updates the attribute to be part of both the engine version and platform version descriptions.
+* SageMaker (4.0.16.0)
+	* Add support for SageMaker Hyperpod continuous scaling and custom AMI; Introduce new APIs: ListClusterEvents, DescribeClusterEvent, BatchAddClusterNodes
+
+### 4.0.62.0 (2025-08-04 21:40 UTC)
+* BedrockAgentCore (4.0.1.0)
+	* Remove superfluous field from API
+* CodeConnections (4.0.1.0)
+	* New integration with Azure DevOps provider type.
+* Evs (4.0.1.0)
+	* TagResource API now throws ServiceQuotaExceededException when the number of tags on the Amazon EVS resource exceeds the maximum allowed. TooManyTagsException is deprecated.
+* IoTSiteWise (4.0.2.0)
+	* Support Interface for IoT SiteWise Asset Modeling
+* SageMaker (4.0.15.0)
+	* This release adds the ability for customers to attach and detach their EBS volumes to EKS-orchestrated HyperPod cluster nodes.
+* Core 4.0.0.20
+	* Update HTTP handler to handle scenario where content stream position is not zero (https://github.com/aws/aws-sdk-net/issues/3941)
+	* All services packages updated to require new Core
+
+### 4.0.61.0 (2025-08-01 18:25 UTC)
+* ACMPCA (4.0.0.16)
+	* Doc-only update to add more information to GetCertificate action.
+* AIOps (4.0.2.0)
+	* This release includes fix for InvestigationGroup timestamp conversion issue.
+* ARCRegionswitch (4.0.0.0)
+	* This is the initial SDK release for Region switch
+* AuditManager (4.0.3.0)
+	* Added a note to Framework APIs (CreateAssessmentFramework, GetAssessmentFramework, UpdateAssessmentFramework) clarifying that the Controls object returns a partial response when called through Framework APIs. Added documentation that the Framework's controlSources parameter is no longer supported.
+* Lightsail (4.0.1.0)
+	* This release adds support for the Asia Pacific (Jakarta) (ap-southeast-3) Region.
+* ObservabilityAdmin (4.0.1.0)
+	* CloudWatch Observability Admin adds the ability to enable telemetry on AWS resources such as Amazon VPCs (Flow Logs) in customers AWS Accounts and Organizations. The release introduces new APIs to manage telemetry rules, which define telemetry settings to be applied on AWS resources.
+* PCS (4.0.5.0)
+	* Add support for IPv6 Networking for Clusters.
+* SecurityHub (4.0.2.0)
+	* Release new resource detail type CodeRepository
+* SimpleNotificationService (4.0.0.16)
+	* Amazon SNS support for Amazon SQS fair queues
+
+### 4.0.60.0 (2025-07-31 18:26 UTC)
+* CognitoIdentity (4.0.0.16)
+	* Avoid cloning `ImmutableCredentials` objects.
+* CustomerProfiles (4.0.3.0)
+	* The release updates standard profile with 2 new fields that supports account-level engagement. Updated APIs include CreateProfile, UpdateProfile, MergeProfiles, SearchProfiles, BatchGetProfile, GetSegmentMembership, CreateSegmentDefinition, CreateSegmentEstimate.
+* EC2 (4.0.26.0)
+	* Added support for the force option for the EC2 instance terminate command. This feature enables customers to recover resources associated with an instance stuck in the shutting-down state as a result of rare issues caused by a frozen operating system or an underlying hardware problem.
+* ElasticLoadBalancingV2 (4.0.1.5)
+	* This release enables secondary IP addresses for Network Load Balancers.
+* EntityResolution (4.0.2.0)
+	* Add support for creating advanced rule-based matching workflows in AWS Entity Resolution.
+* GameLift (4.0.1.5)
+	* Avoid cloning `ImmutableCredentials` objects.
+* Glue (4.0.11.0)
+	* Added support for Route node, S3 Iceberg sources/targets, catalog Iceberg sources, DynamoDB ELT connector, AutoDataQuality evaluation, enhanced PII detection with redaction, Kinesis fan-out support, and new R-series worker types.
+* Inspector2 (4.0.3.0)
+	* Extend usage to include agentless hours and add CODE_REPOSITORY to aggregation resource type
+* IoT (4.0.1.0)
+	* This release allows AWS IoT Core users to use their own AWS KMS keys for data protection
+* OpenSearchService (4.0.2.0)
+	* Granular access control support for NEO-SAML with IAMFederation for AOS data source
+* QuickSight (4.0.3.0)
+	* Added Impala connector support
+* S3Control (4.0.4.0)
+	* Add Tags field to CreateAccessPoint
+* SecurityToken (4.0.1.7)
+	* Avoid cloning `ImmutableCredentials` objects.
+* SimpleEmailV2 (4.0.3.0)
+	* This release introduces support for Multi-tenant management
+* WorkSpacesWeb (4.0.1.0)
+	* Added ability to log session activity on a portal to an S3 bucket.
+* Core 4.0.0.19
+	* Avoid cloning `ImmutableCredentials` objects.
+
+### 4.0.59.0 (2025-07-30 18:24 UTC)
+* CloudFront (4.0.2.0)
+	* This release adds new origin timeout options: 1) ResponseCompletionTimeout and 2) OriginReadTimeout (for S3 origins)
+* DirectoryService (4.0.1.0)
+	* This release adds support for AWS Managed Microsoft AD Hybrid Edition, introducing new operations: StartADAssessment, DescribeADAssessment, ListADAssessments, DeleteADAssessment, CreateHybridAD, UpdateHybridAD, and DescribeHybridADUpdate; and updated existing operation: DescribeDirectories.
+* DocDB (4.0.1.0)
+	* Add support for setting Serverless Scaling Configuration on clusters.
+* EC2 (4.0.25.0)
+	* Release to show the next hop IP address for routes propagated by VPC Route Server into VPC route tables.
+* IoTWireless (4.0.2.0)
+	* Added TxPowerIndexMin, TxPowerIndexMax, NbTransMin and NbTransMax params to ServiceProfile.
+
+### 4.0.58.0 (2025-07-29 18:20 UTC)
+* Batch (4.0.2.0)
+	* AWS Batch for SageMaker Training jobs feature support.  Includes new APIs for service job submission (e.g., SubmitServiceJob) and managing service environments (e.g., CreateServiceEnvironment) that enable queueing SageMaker Training jobs.
+* CleanRooms (4.0.2.0)
+	* This feature provides the ability to update the table reference and allowed columns on an existing configured table.
+* Deadline (4.0.7.0)
+	* Adds support for tag management on monitors.
+* LocationService (4.0.1.0)
+	* This release 1) adds support for multi-polygon geofences with disconnected territories, and 2) enables polygon exclusion zones within geofences for more accurate representation of real-world boundaries.
+* OpenSearchServerless (4.0.1.0)
+	* This is to support Granular access control support for SAML with IAMFedraton in AOSS
+
+### 4.0.57.0 (2025-07-28 18:50 UTC)
+* DirectConnect (4.0.1.0)
+	* Enable MACSec support and features on Interconnects.
+* IoTSiteWise (4.0.1.0)
+	* Add support for native anomaly detection in IoT SiteWise using new Computation Model APIs
+* OSIS (4.0.1.0)
+	* Add Pipeline Role Arn as an optional parameter to the create / update pipeline APIs as an alternative to passing in the pipeline configuration body
+
+### 4.0.56.0 (2025-07-25 18:25 UTC)
+* AppIntegrationsService (4.0.1.0)
+	* Amazon AppIntegrations introduces new configuration capabilities to enable customers to manage iframe permissions, control application refresh behavior (per contact or per browser/cross-contact), and run background applications (service).
+* Budgets (4.0.1.0)
+	* Adds IPv6 and PrivateLink support for AWS Budgets in IAD.
+* ConfigService (4.0.1.5)
+	* Documentation improvements have been made to the EvaluationModel and DescribeConfigurationRecorders APIs.
+* EC2 (4.0.24.0)
+	* Transit Gateway native integration with AWS Network Firewall. Adding new enum value for the new Transit Gateway Attachment type.
+* KeyManagementService (4.0.3.9)
+	* Doc only update: fixed grammatical errors.
+* MediaPackageV2 (4.0.4.0)
+	* This release adds support for specifying a preferred input for channels using CMAF ingest.
+* SocialMessaging (4.0.1.0)
+	* This release introduces new WhatsApp template management APIs that enable customers to programmatically create and submit templates for approval, monitor approval status, and manage the complete template lifecycle
+* SQS (4.0.0.17)
+	* Documentation updates for Amazon SQS fair queues feature.
+* Core 4.0.0.18
+	* Add utility method for allowing .NET Standard 2.0 libraries using the SDK to know whether they are using the .NET Framework version of the SDK.
+
+### 4.0.55.0 (2025-07-24 18:14 UTC)
+* DataZone (4.0.4.0)
+	* This release adds support for 1) highlighting relevant text in returned results for Search and SearchListings APIs and 2) returning aggregated counts of values for specified attributes for SearchListings API.
+* Omics (4.0.1.0)
+	* Add Git integration and README support for HealthOmics workflows
+
+### 4.0.54.0 (2025-07-23 18:16 UTC)
+* EC2 (4.0.23.0)
+	* Added support for skip-os-shutdown option for the EC2 instance stop and terminate operations. This feature enables customers to bypass the graceful OS shutdown, supporting faster state transitions when instance data preservation isn't critical.
+* Glue (4.0.10.0)
+	* AWS Glue now supports dynamic session policies for job executions. This feature allows you to specify custom, fine-grained permissions for each job run without creating multiple IAM roles.
+* S3 (4.0.6.2)
+	* Generate PutBucket operation.
+* WorkSpacesThinClient (4.0.3.0)
+	* Added the lastUserId parameter to the ListDevices and GetDevice API.
+* Core 4.0.0.17
+	* Move PostMarshallCustomization for restXml services to right before setting request.Content
+	* All services packages updated to require new Core
+
+### 4.0.53.0 (2025-07-22 18:25 UTC)
+* ECR (4.0.3.0)
+	* Add support for Image Tag Mutability Exception feature, allowing repositories to define wildcard-based patterns that override the default image tag mutability settings.
+* ElasticMapReduce (4.0.2.0)
+	* This release adds new parameter 'ExtendedSupport' in AWS EMR RunJobFlow, ModifyCluster and DescribeCluster API.
+* Lambda (4.0.2.0)
+	* This release migrated the model to Smithy keeping all features unchanged.
+* Neptunedata (4.0.1.0)
+	* This release updates the supported regions for Neptune API to include current AWS regions.
+* S3 (4.0.6.1)
+	* Add CreatePresignedPost to interface
+
+### 4.0.52.0 (2025-07-21 18:18 UTC)
+* CloudFront (4.0.1.0)
+	* Add dualstack endpoint support
+* Deadline (4.0.6.0)
+	* Add support for VPC resource endpoints in Service Managed Fleets
+* EC2 (4.0.22.0)
+	* This release adds support for C8gn, F2 and P6e-GB200 Instance types
+* SageMaker (4.0.14.0)
+	* This release adds 1/ Support for S3FileSystem in CustomFileSystems 2/ The ability for a customer to select their preferred IpAddressType for use with private Workforces 3/ Support for p4de instance type in SageMaker Training Plans
+* TimestreamInfluxDB (4.0.1.0)
+	* Timestream for InfluxDB adds support for db.influx.24xlarge instance type. This enhancement enables higher compute capacity for demanding workloads through CreateDbInstance, CreateDbCluster, UpdateDbInstance, and UpdateDbCluster APIs.
+
 ### 4.0.51.0 (2025-07-18 18:20 UTC)
 * AuditManager (4.0.2.0)
 	* Updated error handling for RegisterOrganizationAdminAccount API to properly translate TooManyExceptions to HTTP 429 status code. This enhancement improves error handling consistency and provides clearer feedback when request limits are exceeded.

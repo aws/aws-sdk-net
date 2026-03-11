@@ -39,6 +39,13 @@ namespace Amazon.SSMContacts.Model
     {
 
         /// <summary>
+        /// Default constructor for DataEncryptionException
+        /// message.
+        /// </summary>
+        public DataEncryptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DataEncryptionException with the specified error
         /// message.
         /// </summary>

@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMatchmakingRuleSets operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing
     /// rule sets for the Region, or provide a list of one or more rule set names. When requesting
     /// multiple items, use the pagination parameters to retrieve results as a set of sequential
     /// pages. If successful, a rule set is returned for each requested name. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 

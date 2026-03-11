@@ -40,6 +40,13 @@ namespace Amazon.Translate.Model
         private string _displayLanguageCode;
 
         /// <summary>
+        /// Default constructor for UnsupportedDisplayLanguageCodeException
+        /// message.
+        /// </summary>
+        public UnsupportedDisplayLanguageCodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedDisplayLanguageCodeException with the specified error
         /// message.
         /// </summary>

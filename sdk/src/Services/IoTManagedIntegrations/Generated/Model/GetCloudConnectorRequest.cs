@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCloudConnector operation.
-    /// Gets all the information about a connector for a connector developer.
+    /// Get configuration details for a cloud connector.
     /// </summary>
     public partial class GetCloudConnectorRequest : AmazonIoTManagedIntegrationsRequest
     {

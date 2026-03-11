@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateGameSession operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Ends a game session that's currently in progress. Use this action to terminate any
     /// game session that isn't in <c>ERROR</c> status. Terminating a game session is the
     /// most efficient way to free up a server process when it's hosting a game session that's
@@ -38,7 +42,7 @@ namespace Amazon.GameLift.Model
     /// session that's being hosted on any type of Amazon GameLift Servers fleet compute,
     /// including computes for managed EC2, managed container, and Anywhere fleets. The game
     /// server must be integrated with Amazon GameLift Servers server SDK 5.x or greater.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

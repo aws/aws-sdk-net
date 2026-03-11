@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Returns a list of all of the Amazon QuickSight users belonging to this account.
+    /// Returns a list of all of the Amazon Quick Sight users belonging to this account.
     /// </summary>
     public partial class ListUsersRequest : AmazonQuickSightRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that the user is in. Currently, you use
-        /// the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
+        /// the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

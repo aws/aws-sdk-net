@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The request processing has failed because of an unknown error, exception, or failure.
+    /// The request failed because of an unknown error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InternalServiceException : AmazonBraketException
     {
+
+        /// <summary>
+        /// Default constructor for InternalServiceException
+        /// message.
+        /// </summary>
+        public InternalServiceException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InternalServiceException with the specified error

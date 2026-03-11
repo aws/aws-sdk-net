@@ -40,6 +40,13 @@ namespace Amazon.Textract.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKMSKeyException
+        /// message.
+        /// </summary>
+        public InvalidKMSKeyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKMSKeyException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSnapshotAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBSnapshotAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSnapshotAlreadyExistsException with the specified error
         /// message.
         /// </summary>

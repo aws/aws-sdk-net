@@ -36,12 +36,13 @@ namespace Amazon.MediaPackageV2.Model
     public partial class InputSwitchConfiguration
     {
         private bool? _mqcsInputSwitching;
+        private int? _preferredInput;
 
         /// <summary>
         /// Gets and sets the property MQCSInputSwitching. 
         /// <para>
         /// When true, AWS Elemental MediaPackage performs input switching based on the MQCS.
-        /// Default is true. This setting is valid only when <c>InputType</c> is <c>CMAF</c>.
+        /// Default is false. This setting is valid only when <c>InputType</c> is <c>CMAF</c>.
         /// </para>
         /// </summary>
         public bool? MQCSInputSwitching
@@ -54,6 +55,28 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetMQCSInputSwitching()
         {
             return this._mqcsInputSwitching.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredInput. 
+        /// <para>
+        /// For CMAF inputs, indicates which input MediaPackage should prefer when both inputs
+        /// have equal MQCS scores. Select <c>1</c> to prefer the first ingest endpoint, or <c>2</c>
+        /// to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage
+        /// uses its default switching behavior when MQCS scores are equal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public int? PreferredInput
+        {
+            get { return this._preferredInput; }
+            set { this._preferredInput = value; }
+        }
+
+        // Check to see if PreferredInput property is set
+        internal bool IsSetPreferredInput()
+        {
+            return this._preferredInput.HasValue; 
         }
 
     }

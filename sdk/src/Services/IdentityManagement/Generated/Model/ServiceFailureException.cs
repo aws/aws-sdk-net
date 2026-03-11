@@ -39,6 +39,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceFailureException
+        /// message.
+        /// </summary>
+        public ServiceFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceFailureException with the specified error
         /// message.
         /// </summary>

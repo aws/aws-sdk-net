@@ -56,12 +56,12 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpStringPayloadRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/StringPayload";
 
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
             request.Headers["Content-Type"] = "text/plain";
-
             PostMarshallCustomization(request, publicRequest);
             return request;
         }
@@ -84,5 +84,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpStringPayloadRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, HttpStringPayloadRequest publicRequest);
     }    
 }

@@ -39,6 +39,13 @@ namespace Amazon.SimpleEmail.Model
     {
 
         /// <summary>
+        /// Default constructor for ProductionAccessNotGrantedException
+        /// message.
+        /// </summary>
+        public ProductionAccessNotGrantedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ProductionAccessNotGrantedException with the specified error
         /// message.
         /// </summary>

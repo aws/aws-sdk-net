@@ -40,6 +40,13 @@ namespace Amazon.StepFunctions.Model
         private KmsKeyState _kmsKeyState;
 
         /// <summary>
+        /// Default constructor for KmsInvalidStateException
+        /// message.
+        /// </summary>
+        public KmsInvalidStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsInvalidStateException with the specified error
         /// message.
         /// </summary>

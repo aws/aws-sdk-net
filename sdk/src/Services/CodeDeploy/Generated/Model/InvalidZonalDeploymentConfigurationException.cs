@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidZonalDeploymentConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidZonalDeploymentConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidZonalDeploymentConfigurationException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyRealtimeLogConfigsException
+        /// message.
+        /// </summary>
+        public TooManyRealtimeLogConfigsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyRealtimeLogConfigsException with the specified error
         /// message.
         /// </summary>

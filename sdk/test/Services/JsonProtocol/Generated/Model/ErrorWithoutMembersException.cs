@@ -39,6 +39,13 @@ namespace Amazon.JsonProtocol.Model
     {
 
         /// <summary>
+        /// Default constructor for ErrorWithoutMembersException
+        /// message.
+        /// </summary>
+        public ErrorWithoutMembersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ErrorWithoutMembersException with the specified error
         /// message.
         /// </summary>

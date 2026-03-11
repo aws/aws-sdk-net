@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-#if BCL
+#if NETFRAMEWORK
         public static async Task<Exception> AssertExceptionExpectedAsync(Func<Task> func, Type expectedExceptionType, string expectedExceptionMessage = null)
         {
             try

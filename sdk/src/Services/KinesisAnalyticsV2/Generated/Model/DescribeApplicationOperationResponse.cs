@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Provides details of the operation corresponding to the operation-ID on a Managed Service
-    /// for Apache Flink application
+    /// Provides details of the operation that corresponds to the operation ID on a Managed
+    /// Service for Apache Flink application.
     /// </summary>
     public partial class DescribeApplicationOperationResponse : AmazonWebServiceResponse
     {

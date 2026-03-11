@@ -125,6 +125,20 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ProjectProfileVersion);
             }
 
+            if(publicRequest.IsSetResourceTags())
+            {
+                context.Writer.WritePropertyName("resourceTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestResourceTagsKvp.Key);
+                    var publicRequestResourceTagsValue = publicRequestResourceTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestResourceTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetUserParameters())
             {
                 context.Writer.WritePropertyName("userParameters");

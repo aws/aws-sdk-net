@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyLambdaFunctionAssociationsException
+        /// message.
+        /// </summary>
+        public TooManyLambdaFunctionAssociationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyLambdaFunctionAssociationsException with the specified error
         /// message.
         /// </summary>

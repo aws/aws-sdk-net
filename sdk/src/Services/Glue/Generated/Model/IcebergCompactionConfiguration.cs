@@ -35,7 +35,52 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IcebergCompactionConfiguration
     {
+        private int? _deleteFileThreshold;
+        private int? _minInputFiles;
         private CompactionStrategy _strategy;
+
+        /// <summary>
+        /// Gets and sets the property DeleteFileThreshold. 
+        /// <para>
+        /// The minimum number of deletes that must be present in a data file to make it eligible
+        /// for compaction. This parameter helps optimize compaction by focusing on files that
+        /// contain a significant number of delete operations, which can improve query performance
+        /// by removing deleted records. If an input is not provided, the default value 1 will
+        /// be used.
+        /// </para>
+        /// </summary>
+        public int? DeleteFileThreshold
+        {
+            get { return this._deleteFileThreshold; }
+            set { this._deleteFileThreshold = value; }
+        }
+
+        // Check to see if DeleteFileThreshold property is set
+        internal bool IsSetDeleteFileThreshold()
+        {
+            return this._deleteFileThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinInputFiles. 
+        /// <para>
+        /// The minimum number of data files that must be present in a partition before compaction
+        /// will actually compact files. This parameter helps control when compaction is triggered,
+        /// preventing unnecessary compaction operations on partitions with few files. If an input
+        /// is not provided, the default value 100 will be used.
+        /// </para>
+        /// </summary>
+        public int? MinInputFiles
+        {
+            get { return this._minInputFiles; }
+            set { this._minInputFiles = value; }
+        }
+
+        // Check to see if MinInputFiles property is set
+        internal bool IsSetMinInputFiles()
+        {
+            return this._minInputFiles.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Strategy. 

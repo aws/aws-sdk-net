@@ -36,6 +36,14 @@ namespace Amazon.Shield
         /// <summary>
         /// Construct instance of AmazonShieldException
         /// </summary>
+        public AmazonShieldException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonShieldException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonShieldException(string message)
             : base(message)

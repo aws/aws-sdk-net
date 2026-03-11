@@ -63,6 +63,8 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-11";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.ChannelArn))
+                throw new AmazonCloudTrailDataException("Request object does not have required field ChannelArn set");
             
             if (publicRequest.IsSetChannelArn())
                 request.Parameters.Add("channelArn", StringUtils.FromString(publicRequest.ChannelArn));

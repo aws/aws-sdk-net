@@ -36,10 +36,18 @@ namespace Amazon.GuardDuty.Model
     public partial class ResourceData
     {
         private AccessKey _accessKey;
+        private AutoscalingAutoScalingGroup _autoscalingAutoScalingGroup;
+        private CloudformationStack _cloudformationStack;
         private ContainerFindingResource _container;
+        private Ec2Image _ec2Image;
         private Ec2Instance _ec2Instance;
+        private Ec2LaunchTemplate _ec2LaunchTemplate;
         private Ec2NetworkInterface _ec2NetworkInterface;
+        private Ec2Vpc _ec2Vpc;
+        private EcsCluster _ecsCluster;
+        private EcsTask _ecsTask;
         private EksCluster _eksCluster;
+        private IamInstanceProfileV2 _iamInstanceProfile;
         private KubernetesWorkload _kubernetesWorkload;
         private S3Bucket _s3Bucket;
         private S3Object _s3Object;
@@ -64,6 +72,44 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoscalingAutoScalingGroup. 
+        /// <para>
+        /// Contains detailed information about the Auto Scaling Group associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public AutoscalingAutoScalingGroup AutoscalingAutoScalingGroup
+        {
+            get { return this._autoscalingAutoScalingGroup; }
+            set { this._autoscalingAutoScalingGroup = value; }
+        }
+
+        // Check to see if AutoscalingAutoScalingGroup property is set
+        internal bool IsSetAutoscalingAutoScalingGroup()
+        {
+            return this._autoscalingAutoScalingGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudformationStack. 
+        /// <para>
+        /// Contains detailed information about the CloudFormation stack associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public CloudformationStack CloudformationStack
+        {
+            get { return this._cloudformationStack; }
+            set { this._cloudformationStack = value; }
+        }
+
+        // Check to see if CloudformationStack property is set
+        internal bool IsSetCloudformationStack()
+        {
+            return this._cloudformationStack != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
         /// Contains detailed information about the container associated with the activity that
@@ -80,6 +126,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetContainer()
         {
             return this._container != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2Image. 
+        /// <para>
+        /// Contains detailed information about the EC2 Image associated with the activity that
+        /// prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public Ec2Image Ec2Image
+        {
+            get { return this._ec2Image; }
+            set { this._ec2Image = value; }
+        }
+
+        // Check to see if Ec2Image property is set
+        internal bool IsSetEc2Image()
+        {
+            return this._ec2Image != null;
         }
 
         /// <summary>
@@ -101,6 +166,25 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ec2LaunchTemplate. 
+        /// <para>
+        /// Contains detailed information about the EC2 launch template associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public Ec2LaunchTemplate Ec2LaunchTemplate
+        {
+            get { return this._ec2LaunchTemplate; }
+            set { this._ec2LaunchTemplate = value; }
+        }
+
+        // Check to see if Ec2LaunchTemplate property is set
+        internal bool IsSetEc2LaunchTemplate()
+        {
+            return this._ec2LaunchTemplate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ec2NetworkInterface. 
         /// <para>
         /// Contains information about the elastic network interface of the Amazon EC2 instance.
@@ -116,6 +200,63 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEc2NetworkInterface()
         {
             return this._ec2NetworkInterface != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2Vpc. 
+        /// <para>
+        /// Contains detailed information about the EC2 VPC associated with the activity that
+        /// prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public Ec2Vpc Ec2Vpc
+        {
+            get { return this._ec2Vpc; }
+            set { this._ec2Vpc = value; }
+        }
+
+        // Check to see if Ec2Vpc property is set
+        internal bool IsSetEc2Vpc()
+        {
+            return this._ec2Vpc != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsCluster. 
+        /// <para>
+        /// Contains detailed information about the Amazon ECS cluster associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public EcsCluster EcsCluster
+        {
+            get { return this._ecsCluster; }
+            set { this._ecsCluster = value; }
+        }
+
+        // Check to see if EcsCluster property is set
+        internal bool IsSetEcsCluster()
+        {
+            return this._ecsCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsTask. 
+        /// <para>
+        /// Contains detailed information about the Amazon ECS task associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public EcsTask EcsTask
+        {
+            get { return this._ecsTask; }
+            set { this._ecsTask = value; }
+        }
+
+        // Check to see if EcsTask property is set
+        internal bool IsSetEcsTask()
+        {
+            return this._ecsTask != null;
         }
 
         /// <summary>
@@ -135,6 +276,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEksCluster()
         {
             return this._eksCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamInstanceProfile. 
+        /// <para>
+        /// Contains detailed information about the IAM instance profile associated with the activity
+        /// that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public IamInstanceProfileV2 IamInstanceProfile
+        {
+            get { return this._iamInstanceProfile; }
+            set { this._iamInstanceProfile = value; }
+        }
+
+        // Check to see if IamInstanceProfile property is set
+        internal bool IsSetIamInstanceProfile()
+        {
+            return this._iamInstanceProfile != null;
         }
 
         /// <summary>

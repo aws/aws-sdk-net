@@ -35,6 +35,7 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class GetInstanceResponse : AmazonWebServiceResponse
     {
         private Instance _instance;
+        private string _resourceOwner;
 
         /// <summary>
         /// Gets and sets the property Instance. 
@@ -52,6 +53,27 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetInstance()
         {
             return this._instance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the namespace that contains
+        /// the service that the instance is associated with. If this isn't your account ID, it's
+        /// the ID of the account that shared the namespace with your account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
     }

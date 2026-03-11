@@ -45,11 +45,13 @@ namespace Amazon.AutoScaling.Model
         private DateTime? _createdTime;
         private int? _defaultCooldown;
         private int? _defaultInstanceWarmup;
+        private DeletionProtection _deletionProtection;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private List<EnabledMetric> _enabledMetrics = AWSConfigs.InitializeCollections ? new List<EnabledMetric>() : null;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
+        private InstanceLifecyclePolicy _instanceLifecyclePolicy;
         private InstanceMaintenancePolicy _instanceMaintenancePolicy;
         private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _launchConfigurationName;
@@ -114,7 +116,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneDistribution. 
         /// <para>
-        ///  The instance capacity distribution across Availability Zones. 
+        /// The EC2 instance capacity distribution across Availability Zones for the Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public AvailabilityZoneDistribution AvailabilityZoneDistribution
@@ -132,7 +135,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneImpairmentPolicy. 
         /// <para>
-        ///  The Availability Zone impairment policy. 
+        /// The Availability Zone impairment policy for the Auto Scaling group.
         /// </para>
         /// </summary>
         public AvailabilityZoneImpairmentPolicy AvailabilityZoneImpairmentPolicy
@@ -150,7 +153,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// One or more Availability Zones for the group.
+        /// One or more Availability Zones for the Auto Scaling group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -192,7 +195,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationSpecification. 
         /// <para>
-        ///  The capacity reservation specification. 
+        /// The capacity reservation specification for the Auto Scaling group.
         /// </para>
         /// </summary>
         public CapacityReservationSpecification CapacityReservationSpecification
@@ -228,7 +231,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The date and time the group was created.
+        /// The date and time the Auto Scaling group was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -247,7 +250,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// The duration of the default cooldown period, in seconds.
+        /// The duration of the default cooldown period, in seconds, for the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -266,7 +269,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultInstanceWarmup. 
         /// <para>
-        /// The duration of the default instance warmup, in seconds.
+        /// The duration of the default EC2 instance warmup time, in seconds, for the Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public int? DefaultInstanceWarmup
@@ -282,9 +286,27 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// The deletion protection setting for the Auto Scaling group.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The desired size of the group.
+        /// The desired size of the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -324,7 +346,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EnabledMetrics. 
         /// <para>
-        /// The metrics enabled for the group.
+        /// The metrics enabled for the Auto Scaling group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -347,7 +369,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// The duration of the health check grace period, in seconds.
+        /// The duration of the health check grace period, in seconds, for the Auto Scaling group.
         /// </para>
         /// </summary>
         public int? HealthCheckGracePeriod
@@ -365,7 +387,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// A comma-separated value string of one or more health check types.
+        /// One or more comma-separated health check types for the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -379,6 +401,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetHealthCheckType()
         {
             return this._healthCheckType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceLifecyclePolicy. 
+        /// <para>
+        /// The instance lifecycle policy for the Auto Scaling group.
+        /// </para>
+        /// </summary>
+        public InstanceLifecyclePolicy InstanceLifecyclePolicy
+        {
+            get { return this._instanceLifecyclePolicy; }
+            set { this._instanceLifecyclePolicy = value; }
+        }
+
+        // Check to see if InstanceLifecyclePolicy property is set
+        internal bool IsSetInstanceLifecyclePolicy()
+        {
+            return this._instanceLifecyclePolicy != null;
         }
 
         /// <summary>
@@ -402,7 +442,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// The EC2 instances associated with the group.
+        /// The EC2 instances associated with the Auto Scaling group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -425,7 +465,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the associated launch configuration.
+        /// The name of the associated launch configuration for the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -444,7 +484,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template for the group.
+        /// The launch template for the Auto Scaling group.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -485,11 +525,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxInstanceLifetime. 
         /// <para>
-        /// The maximum amount of time, in seconds, that an instance can be in service.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 0.
+        /// The maximum amount of time, in seconds, that an EC2 instance can be in service for
+        /// the Auto Scaling group.
         /// </para>
         /// </summary>
         public int? MaxInstanceLifetime
@@ -507,7 +544,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum size of the group.
+        /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -526,7 +563,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum size of the group.
+        /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -563,9 +600,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
         /// <para>
-        /// Indicates whether newly launched instances are protected from termination by Amazon
-        /// EC2 Auto Scaling when scaling in. For more information about preventing instances
-        /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
+        /// Indicates whether newly launched EC2 instances are protected from termination when
+        /// scaling in for the Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about preventing instances from terminating on scale in, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
         /// instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// 
         /// </para>
@@ -585,7 +626,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of the placement group into which to launch your instances, if any.
+        /// The name of the placement group into which to launch EC2 instances for the Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -642,7 +684,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a>
+        /// The current state of the Auto Scaling group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a>
         /// operation is in progress.
         /// </para>
         /// </summary>
@@ -662,7 +704,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SuspendedProcesses. 
         /// <para>
-        /// The suspended processes associated with the group.
+        /// The suspended processes associated with the Auto Scaling group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -685,7 +727,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the group.
+        /// The tags for the Auto Scaling group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -731,7 +773,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TerminationPolicies. 
         /// <para>
-        /// The termination policies for the group.
+        /// The termination policies for the Auto Scaling group.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -777,7 +819,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VPCZoneIdentifier. 
         /// <para>
-        /// One or more subnet IDs, if applicable, separated by commas.
+        /// One or more comma-separated subnet IDs for the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]

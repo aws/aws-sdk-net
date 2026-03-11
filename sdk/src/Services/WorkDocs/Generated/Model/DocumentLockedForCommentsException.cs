@@ -40,6 +40,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for DocumentLockedForCommentsException
+        /// message.
+        /// </summary>
+        public DocumentLockedForCommentsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DocumentLockedForCommentsException with the specified error
         /// message.
         /// </summary>

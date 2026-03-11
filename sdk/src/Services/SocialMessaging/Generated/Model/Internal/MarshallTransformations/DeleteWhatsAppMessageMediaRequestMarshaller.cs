@@ -62,9 +62,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-01-01";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.MediaId))
+                throw new AmazonSocialMessagingException("Request object does not have required field MediaId set");
             
             if (publicRequest.IsSetMediaId())
                 request.Parameters.Add("mediaId", StringUtils.FromString(publicRequest.MediaId));
+            if (string.IsNullOrEmpty(publicRequest.OriginationPhoneNumberId))
+                throw new AmazonSocialMessagingException("Request object does not have required field OriginationPhoneNumberId set");
             
             if (publicRequest.IsSetOriginationPhoneNumberId())
                 request.Parameters.Add("originationPhoneNumberId", StringUtils.FromString(publicRequest.OriginationPhoneNumberId));

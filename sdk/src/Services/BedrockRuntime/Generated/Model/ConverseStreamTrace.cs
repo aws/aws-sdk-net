@@ -31,7 +31,6 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// The trace object in a response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>.
-    /// Currently, you can only trace guardrails.
     /// </summary>
     public partial class ConverseStreamTrace
     {

@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceDataSyncInvalidConfigurationException
+        /// message.
+        /// </summary>
+        public ResourceDataSyncInvalidConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDataSyncInvalidConfigurationException with the specified error
         /// message.
         /// </summary>

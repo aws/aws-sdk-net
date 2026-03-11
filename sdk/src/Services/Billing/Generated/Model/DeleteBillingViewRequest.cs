@@ -36,6 +36,7 @@ namespace Amazon.Billing.Model
     public partial class DeleteBillingViewRequest : AmazonBillingRequest
     {
         private string _arn;
+        private bool? _force;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -55,6 +56,26 @@ namespace Amazon.Billing.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        ///  If set to true, forces deletion of the billing view even if it has derived resources
+        /// (e.g. other billing views or budgets). Use with caution as this may break dependent
+        /// resources. 
+        /// </para>
+        /// </summary>
+        public bool? Force
+        {
+            get { return this._force; }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
     }

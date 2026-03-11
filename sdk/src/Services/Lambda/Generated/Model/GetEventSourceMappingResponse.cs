@@ -49,6 +49,7 @@ namespace Amazon.Lambda.Model
         private string _kmsKeyArn;
         private DateTime? _lastModified;
         private string _lastProcessingResult;
+        private EventSourceMappingLoggingConfig _loggingConfig;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
@@ -122,8 +123,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch
-        /// in two and retry. The default value is false.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) If the function
+        /// returns an error, split the batch in two and retry. The default value is false.
         /// </para>
         /// </summary>
         public bool? BisectBatchOnFunctionError
@@ -141,9 +142,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources
-        /// only) A configuration object that specifies the destination of an event after Lambda
-        /// processes it.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) A configuration
+        /// object that specifies the destination of an event after Lambda processes it.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -264,6 +264,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string FunctionArn
         {
             get { return this._functionArn; }
@@ -279,8 +280,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums
-        /// applied to the event source mapping.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, self-managed Apache Kafka, and Amazon SQS)
+        /// A list of current response type enums applied to the event source mapping.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -358,6 +359,26 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LoggingConfig. 
+        /// <para>
+        /// (Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your
+        /// event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event
+        /// source mapping logging</a>.
+        /// </para>
+        /// </summary>
+        public EventSourceMappingLoggingConfig LoggingConfig
+        {
+            get { return this._loggingConfig; }
+            set { this._loggingConfig = value; }
+        }
+
+        // Check to see if LoggingConfig property is set
+        internal bool IsSetLoggingConfig()
+        {
+            return this._loggingConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
         /// The maximum amount of time, in seconds, that Lambda spends gathering records before
@@ -396,9 +417,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) Discard records older than the specified age.
-        /// The default value is -1, which sets the maximum age to infinite. When the value is
-        /// set to infinite, Lambda never discards old records.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
+        /// older than the specified age. The default value is -1, which sets the maximum age
+        /// to infinite. When the value is set to infinite, Lambda never discards old records.
         /// </para>
         ///  <note> 
         /// <para>
@@ -423,10 +444,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) Discard records after the specified number of
-        /// retries. The default value is -1, which sets the maximum number of retries to infinite.
-        /// When MaximumRetryAttempts is infinite, Lambda retries failed records until the record
-        /// expires in the event source.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
+        /// after the specified number of retries. The default value is -1, which sets the maximum
+        /// number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries
+        /// failed records until the record expires in the event source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -484,8 +505,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ProvisionedPollerConfig. 
         /// <para>
-        /// (Amazon MSK and self-managed Apache Kafka only) The provisioned mode configuration
-        /// for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
+        /// (Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode
+        /// configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
         /// mode</a>.
         /// </para>
         /// </summary>

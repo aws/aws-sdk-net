@@ -36,6 +36,14 @@ namespace Amazon.Finspace
         /// <summary>
         /// Construct instance of AmazonFinspaceException
         /// </summary>
+        public AmazonFinspaceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonFinspaceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonFinspaceException(string message)
             : base(message)

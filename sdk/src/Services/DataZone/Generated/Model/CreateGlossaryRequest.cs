@@ -32,6 +32,37 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the CreateGlossary operation.
     /// Creates an Amazon DataZone business glossary.
+    /// 
+    ///  
+    /// <para>
+    /// Specifies that this is a create glossary policy.
+    /// </para>
+    ///  
+    /// <para>
+    /// A glossary serves as the central repository for business terminology and definitions
+    /// within an organization. It helps establish and maintain a common language across different
+    /// departments and teams, reducing miscommunication and ensuring consistent interpretation
+    /// of business concepts. Glossaries can include hierarchical relationships between terms,
+    /// cross-references, and links to actual data assets, making them invaluable for both
+    /// business users and technical teams trying to understand and use data correctly.
+    /// </para>
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Domain must exist and be in an active state. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Owning project must exist and be accessible by the caller.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The glossary name must be unique within the domain.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateGlossaryRequest : AmazonDataZoneRequest
     {
@@ -41,6 +72,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _owningProjectIdentifier;
         private GlossaryStatus _status;
+        private List<string> _usageRestrictions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -154,6 +186,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageRestrictions. 
+        /// <para>
+        /// The usage restriction of the restricted glossary.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> UsageRestrictions
+        {
+            get { return this._usageRestrictions; }
+            set { this._usageRestrictions = value; }
+        }
+
+        // Check to see if UsageRestrictions property is set
+        internal bool IsSetUsageRestrictions()
+        {
+            return this._usageRestrictions != null && (this._usageRestrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -41,12 +41,14 @@ namespace Amazon.CleanRooms.Model
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _description;
+        private ErrorMessageConfiguration _errorMessageConfiguration;
         private AnalysisFormat _format;
         private string _id;
         private string _name;
         private AnalysisSchema _schema;
         private AnalysisSource _source;
         private AnalysisSourceMetadata _sourceMetadata;
+        private SyntheticDataParameters _syntheticDataParameters;
         private DateTime? _updateTime;
         private List<AnalysisTemplateValidationStatusDetail> _validations = AWSConfigs.InitializeCollections ? new List<AnalysisTemplateValidationStatusDetail>() : null;
 
@@ -61,7 +63,7 @@ namespace Amazon.CleanRooms.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=50)]
         public List<AnalysisParameter> AnalysisParameters
         {
             get { return this._analysisParameters; }
@@ -191,6 +193,28 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorMessageConfiguration. 
+        /// <para>
+        /// The configuration that specifies the level of detail in error messages returned by
+        /// analyses using this template. When set to <c>DETAILED</c>, error messages include
+        /// more information to help troubleshoot issues with PySpark jobs. Detailed error messages
+        /// may expose underlying data, including sensitive information. Recommended for faster
+        /// troubleshooting in development and testing environments.
+        /// </para>
+        /// </summary>
+        public ErrorMessageConfiguration ErrorMessageConfiguration
+        {
+            get { return this._errorMessageConfiguration; }
+            set { this._errorMessageConfiguration = value; }
+        }
+
+        // Check to see if ErrorMessageConfiguration property is set
+        internal bool IsSetErrorMessageConfiguration()
+        {
+            return this._errorMessageConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
         /// The format of the analysis template in the collaboration.
@@ -300,6 +324,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSourceMetadata()
         {
             return this._sourceMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyntheticDataParameters. 
+        /// <para>
+        /// The synthetic data generation parameters configured for this collaboration analysis
+        /// template.
+        /// </para>
+        /// </summary>
+        public SyntheticDataParameters SyntheticDataParameters
+        {
+            get { return this._syntheticDataParameters; }
+            set { this._syntheticDataParameters = value; }
+        }
+
+        // Check to see if SyntheticDataParameters property is set
+        internal bool IsSetSyntheticDataParameters()
+        {
+            return this._syntheticDataParameters != null;
         }
 
         /// <summary>

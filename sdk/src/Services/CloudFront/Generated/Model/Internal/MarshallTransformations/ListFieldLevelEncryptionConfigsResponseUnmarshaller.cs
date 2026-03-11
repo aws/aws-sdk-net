@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListFieldLevelEncryptionConfigs operation
     /// </summary>  
-    public class ListFieldLevelEncryptionConfigsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListFieldLevelEncryptionConfigsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListFieldLevelEncryptionConfigsResponse response = new ListFieldLevelEncryptionConfigsResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -105,6 +105,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListFieldLevelEncryptionConfigsResponse response);
 
         private static ListFieldLevelEncryptionConfigsResponseUnmarshaller _instance = new ListFieldLevelEncryptionConfigsResponseUnmarshaller();        
 

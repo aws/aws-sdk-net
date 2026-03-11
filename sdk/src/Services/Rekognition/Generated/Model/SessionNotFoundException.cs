@@ -39,6 +39,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for SessionNotFoundException
+        /// message.
+        /// </summary>
+        public SessionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SessionNotFoundException with the specified error
         /// message.
         /// </summary>

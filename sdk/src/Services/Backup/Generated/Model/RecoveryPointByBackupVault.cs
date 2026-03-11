@@ -34,6 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class RecoveryPointByBackupVault
     {
+        private AggregatedScanResult _aggregatedScanResult;
         private long? _backupSizeInBytes;
         private string _backupVaultArn;
         private string _backupVaultName;
@@ -43,6 +44,7 @@ namespace Amazon.Backup.Model
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
         private string _encryptionKeyArn;
+        private EncryptionKeyType _encryptionKeyType;
         private string _iamRoleArn;
         private IndexStatus _indexStatus;
         private string _indexStatusMessage;
@@ -60,6 +62,25 @@ namespace Amazon.Backup.Model
         private RecoveryPointStatus _status;
         private string _statusMessage;
         private VaultType _vaultType;
+
+        /// <summary>
+        /// Gets and sets the property AggregatedScanResult. 
+        /// <para>
+        /// Contains the latest scanning results against the recovery point and currently include
+        /// <c>FailedScan</c>, <c>Findings</c>, <c>LastComputed</c>.
+        /// </para>
+        /// </summary>
+        public AggregatedScanResult AggregatedScanResult
+        {
+            get { return this._aggregatedScanResult; }
+            set { this._aggregatedScanResult = value; }
+        }
+
+        // Check to see if AggregatedScanResult property is set
+        internal bool IsSetAggregatedScanResult()
+        {
+            return this._aggregatedScanResult != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
@@ -234,6 +255,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyType. 
+        /// <para>
+        /// The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY
+        /// for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned
+        /// keys.
+        /// </para>
+        /// </summary>
+        public EncryptionKeyType EncryptionKeyType
+        {
+            get { return this._encryptionKeyType; }
+            set { this._encryptionKeyType = value; }
+        }
+
+        // Check to see if EncryptionKeyType property is set
+        internal bool IsSetEncryptionKeyType()
+        {
+            return this._encryptionKeyType != null;
         }
 
         /// <summary>

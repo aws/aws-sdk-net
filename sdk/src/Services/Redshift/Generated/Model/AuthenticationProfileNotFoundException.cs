@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthenticationProfileNotFoundException
+        /// message.
+        /// </summary>
+        public AuthenticationProfileNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthenticationProfileNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -21,48 +21,8 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Describes the parameters for Select job types.
     /// </summary>
-    public class SelectParameters
-    {
-        /// <summary>
-        /// Describes the serialization format of the object.
-        /// </summary>
-        public InputSerialization InputSerialization { get; set; }
-
-        internal bool IsSetInputSerialization()
-        {
-            return this.InputSerialization != null;
-        }
-
-        /// <summary>
-        /// The type of the provided expression (e.g., SQL).
-        /// </summary>
-        public ExpressionType ExpressionType { get; set; }
-
-        internal bool IsSetExpressionType()
-        {
-            return this.ExpressionType != null;
-        }
-
-        /// <summary>
-        /// The expression that is used to query the object.
-        /// </summary>
-        public string Expression { get; set; } 
-
-        internal bool IsSetExpression()
-        {
-            return this.Expression != null;
-        }
-
-        /// <summary>
-        /// Describes how the results of the Select job are serialized.
-        /// </summary>
-        public OutputSerialization OutputSerialization { get; set; }
-
-        internal bool IsSetOutputSerialization()
-        {
-            return this.OutputSerialization != null;
-        }
-        
+    public partial class SelectParameters
+    {   
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             if (!IsSetInputSerialization()) throw new System.ArgumentException("SelectParameters.InputSerialization is a required property and must be set before making this call.");

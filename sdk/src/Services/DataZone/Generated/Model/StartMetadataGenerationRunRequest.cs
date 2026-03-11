@@ -32,6 +32,33 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the StartMetadataGenerationRun operation.
     /// Starts the metadata generation run.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Asset must be created and belong to the specified domain and project. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asset type must be supported for metadata generation (e.g., Amazon Web Services Glue
+    /// table).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asset must have a structured schema with valid rows and columns.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The user must have permission to run metadata generation in the domain/project.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class StartMetadataGenerationRunRequest : AmazonDataZoneRequest
     {
@@ -40,6 +67,7 @@ namespace Amazon.DataZone.Model
         private string _owningProjectIdentifier;
         private MetadataGenerationRunTarget _target;
         private MetadataGenerationRunType _type;
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -126,7 +154,7 @@ namespace Amazon.DataZone.Model
         /// The type of the metadata generation run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types")]
         public MetadataGenerationRunType Type
         {
             get { return this._type; }
@@ -137,6 +165,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Types. 
+        /// <para>
+        /// The types of the metadata generation run.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Types
+        {
+            get { return this._types; }
+            set { this._types = value; }
+        }
+
+        // Check to see if Types property is set
+        internal bool IsSetTypes()
+        {
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

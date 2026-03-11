@@ -39,6 +39,13 @@ namespace Amazon.LicenseManager.Model
     {
 
         /// <summary>
+        /// Default constructor for LicenseUsageException
+        /// message.
+        /// </summary>
+        public LicenseUsageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LicenseUsageException with the specified error
         /// message.
         /// </summary>

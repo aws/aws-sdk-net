@@ -127,6 +127,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PipelineConfigurationBody);
             }
 
+            if(publicRequest.IsSetPipelineRoleArn())
+            {
+                context.Writer.WritePropertyName("PipelineRoleArn");
+                context.Writer.WriteStringValue(publicRequest.PipelineRoleArn);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

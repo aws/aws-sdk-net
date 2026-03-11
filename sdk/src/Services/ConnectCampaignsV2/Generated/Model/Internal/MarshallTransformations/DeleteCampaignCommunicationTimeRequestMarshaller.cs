@@ -65,6 +65,8 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetId())
                 throw new AmazonConnectCampaignsV2Exception("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            if (string.IsNullOrEmpty(publicRequest.Config))
+                throw new AmazonConnectCampaignsV2Exception("Request object does not have required field Config set");
             
             if (publicRequest.IsSetConfig())
                 request.Parameters.Add("config", StringUtils.FromString(publicRequest.Config));

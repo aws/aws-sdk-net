@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmail.Model
         private string _name;
 
         /// <summary>
+        /// Default constructor for RuleSetDoesNotExistException
+        /// message.
+        /// </summary>
+        public RuleSetDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RuleSetDoesNotExistException with the specified error
         /// message.
         /// </summary>

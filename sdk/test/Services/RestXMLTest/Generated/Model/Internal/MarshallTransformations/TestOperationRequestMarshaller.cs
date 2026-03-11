@@ -56,6 +56,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         public IRequest Marshall(TestOperationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXMLTest");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
         
             if (publicRequest.IsSetContentLanguage()) 
@@ -92,5 +93,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, TestOperationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, TestOperationRequest publicRequest);
     }    
 }

@@ -75,10 +75,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoScaling())
+            {
+                context.Writer.WritePropertyName("AutoScaling");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterAutoScalingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoScaling, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClusterName())
             {
                 context.Writer.WritePropertyName("ClusterName");
                 context.Writer.WriteStringValue(publicRequest.ClusterName);
+            }
+
+            if(publicRequest.IsSetClusterRole())
+            {
+                context.Writer.WritePropertyName("ClusterRole");
+                context.Writer.WriteStringValue(publicRequest.ClusterRole);
             }
 
             if(publicRequest.IsSetInstanceGroups())
@@ -108,10 +125,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetNodeProvisioningMode())
+            {
+                context.Writer.WritePropertyName("NodeProvisioningMode");
+                context.Writer.WriteStringValue(publicRequest.NodeProvisioningMode);
+            }
+
             if(publicRequest.IsSetNodeRecovery())
             {
                 context.Writer.WritePropertyName("NodeRecovery");
                 context.Writer.WriteStringValue(publicRequest.NodeRecovery);
+            }
+
+            if(publicRequest.IsSetOrchestrator())
+            {
+                context.Writer.WritePropertyName("Orchestrator");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterOrchestratorMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Orchestrator, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetRestrictedInstanceGroups())
@@ -128,6 +162,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTieredStorageConfig())
+            {
+                context.Writer.WritePropertyName("TieredStorageConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterTieredStorageConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TieredStorageConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

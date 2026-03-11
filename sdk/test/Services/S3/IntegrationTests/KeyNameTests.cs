@@ -1,17 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
-
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
+﻿using Amazon.S3;
 using Amazon.S3.Util;
-
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using System.Net;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -20,6 +11,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// will be fully satisifed and leave us alone :-)
     /// </summary>
     [TestClass]
+    [TestCategory("S3")]
     public class KeyNameTests
     {
         private static readonly string[] AwkwardKeyNameBases =
@@ -31,35 +23,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             @"ObjectWith/InKeynÄme",
             @"ObjectWith$InKeynÄme",
             @"ObjectWith%2FInKeyname.Ext",
-            @"!@#$%^&*()_+_+!(@#*$)_@[]\/.txt"
+            @"!@#$%^&*()_+_+!(@#*$)_@[]\/.txt",
+            "b204a53f-781a-4cdd-a29c-3626818eb199:115740.pdf",
+            "46dbc16e-5f55-4bda-b275-75e2a8ab243c:115740.pdf"
         };
 
-        static string bucketName;
+        private static string bucketName;
 
         [ClassInitialize]
-        public static void Initialize(TestContext a)
+        public static async Task Initialize(TestContext a)
         {
             IAmazonS3 s3Client = new AmazonS3Client();
-            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(s3Client);
         }
 
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             IAmazonS3 s3Client = new AmazonS3Client();
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
         }
                 
-        [TestCategory("S3")]
         [TestMethod]
-        public void TestKeyNameWithAwkwardChars_AWS4Signing()
+        public async Task TestKeyNameWithAwkwardChars_AWS4Signing()
         {
             IAmazonS3 s3Client = new AmazonS3Client();
 
             foreach (var k in AwkwardKeyNameBases)
             {
                 var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
-                S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
+                await S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
             }
         }
     }

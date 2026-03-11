@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for RootNotFoundException
+        /// message.
+        /// </summary>
+        public RootNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RootNotFoundException with the specified error
         /// message.
         /// </summary>

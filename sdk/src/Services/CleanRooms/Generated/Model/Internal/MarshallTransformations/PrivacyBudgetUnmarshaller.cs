@@ -56,6 +56,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("accessBudget", targetDepth))
+                {
+                    var unmarshaller = AccessBudgetUnmarshaller.Instance;
+                    unmarshalledObject.AccessBudget = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("differentialPrivacy", targetDepth))
                 {
                     var unmarshaller = DifferentialPrivacyPrivacyBudgetUnmarshaller.Instance;

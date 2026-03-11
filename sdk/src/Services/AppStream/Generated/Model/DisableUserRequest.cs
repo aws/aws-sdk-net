@@ -31,7 +31,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableUser operation.
-    /// Disables the specified user in the user pool. Users can't sign in to AppStream 2.0
+    /// Disables the specified user in the user pool. Users can't sign in to WorkSpaces Applications
     /// until they are re-enabled. This action does not delete the user.
     /// </summary>
     public partial class DisableUserRequest : AmazonAppStreamRequest

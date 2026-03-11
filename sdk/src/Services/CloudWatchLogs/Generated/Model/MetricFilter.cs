@@ -37,6 +37,8 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private bool? _applyOnTransformedLogs;
         private DateTime? _creationTime;
+        private List<string> _emitSystemFieldDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _fieldSelectionCriteria;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
@@ -84,6 +86,52 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmitSystemFieldDimensions. 
+        /// <para>
+        /// The list of system fields that are emitted as additional dimensions in the generated
+        /// metrics. Returns the <c>emitSystemFieldDimensions</c> value if it was specified when
+        /// the metric filter was created.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EmitSystemFieldDimensions
+        {
+            get { return this._emitSystemFieldDimensions; }
+            set { this._emitSystemFieldDimensions = value; }
+        }
+
+        // Check to see if EmitSystemFieldDimensions property is set
+        internal bool IsSetEmitSystemFieldDimensions()
+        {
+            return this._emitSystemFieldDimensions != null && (this._emitSystemFieldDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldSelectionCriteria. 
+        /// <para>
+        /// The filter expression that specifies which log events are processed by this metric
+        /// filter based on system fields. Returns the <c>fieldSelectionCriteria</c> value if
+        /// it was specified when the metric filter was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public string FieldSelectionCriteria
+        {
+            get { return this._fieldSelectionCriteria; }
+            set { this._fieldSelectionCriteria = value; }
+        }
+
+        // Check to see if FieldSelectionCriteria property is set
+        internal bool IsSetFieldSelectionCriteria()
+        {
+            return this._fieldSelectionCriteria != null;
         }
 
         /// <summary>

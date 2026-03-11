@@ -38,10 +38,14 @@ namespace Amazon.Transfer.Model
         private string _arn;
         private As2ConnectorConfig _as2Config;
         private string _connectorId;
+        private DescribedConnectorEgressConfig _egressConfig;
+        private ConnectorEgressType _egressType;
+        private string _errorMessage;
         private string _loggingRole;
         private string _securityPolicyName;
         private List<string> _serviceManagedEgressIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SftpConnectorConfig _sftpConfig;
+        private ConnectorStatus _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _url;
 
@@ -158,6 +162,70 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EgressConfig. 
+        /// <para>
+        /// Current egress configuration of the connector, showing how traffic is routed to the
+        /// SFTP server. Contains VPC Lattice settings when using VPC_LATTICE egress type.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using the VPC_LATTICE egress type, Transfer Family uses a managed Service Network
+        /// to simplify the resource sharing process.
+        /// </para>
+        /// </summary>
+        public DescribedConnectorEgressConfig EgressConfig
+        {
+            get { return this._egressConfig; }
+            set { this._egressConfig = value; }
+        }
+
+        // Check to see if EgressConfig property is set
+        internal bool IsSetEgressConfig()
+        {
+            return this._egressConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgressType. 
+        /// <para>
+        /// Type of egress configuration for the connector. SERVICE_MANAGED uses Transfer Family
+        /// managed NAT gateways, while VPC_LATTICE routes traffic through customer VPCs using
+        /// VPC Lattice.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ConnectorEgressType EgressType
+        {
+            get { return this._egressType; }
+            set { this._egressType = value; }
+        }
+
+        // Check to see if EgressType property is set
+        internal bool IsSetEgressType()
+        {
+            return this._egressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// Error message providing details when the connector is in ERRORED status. Contains
+        /// information to help troubleshoot connector creation or operation failures.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
@@ -240,6 +308,26 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Current status of the connector. PENDING indicates creation/update in progress, ACTIVE
+        /// means ready for operations, and ERRORED indicates a failure requiring attention.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ConnectorStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pairs that can be used to group and search for connectors.
@@ -267,6 +355,12 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Url. 
         /// <para>
         /// The URL of the partner's AS2 or SFTP endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating AS2 connectors or service-managed SFTP connectors (connectors without
+        /// egress configuration), you must provide a URL to specify the remote server endpoint.
+        /// For VPC Lattice type connectors, the URL must be null.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

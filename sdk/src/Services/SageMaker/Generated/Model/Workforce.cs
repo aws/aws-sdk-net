@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private CognitoConfig _cognitoConfig;
         private DateTime? _createDate;
         private string _failureReason;
+        private WorkforceIpAddressType _ipAddressType;
         private DateTime? _lastUpdatedDate;
         private OidcConfigForResponse _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
@@ -106,6 +107,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type you specify - either <c>IPv4</c> only or <c>dualstack</c> (<c>IPv4</c>
+        /// and <c>IPv6</c>) - to support your labeling workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

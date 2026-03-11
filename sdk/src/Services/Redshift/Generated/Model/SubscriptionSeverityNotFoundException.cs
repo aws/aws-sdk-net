@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SubscriptionSeverityNotFoundException
+        /// message.
+        /// </summary>
+        public SubscriptionSeverityNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubscriptionSeverityNotFoundException with the specified error
         /// message.
         /// </summary>

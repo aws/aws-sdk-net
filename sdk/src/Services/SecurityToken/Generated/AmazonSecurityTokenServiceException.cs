@@ -36,6 +36,14 @@ namespace Amazon.SecurityToken
         /// <summary>
         /// Construct instance of AmazonSecurityTokenServiceException
         /// </summary>
+        public AmazonSecurityTokenServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSecurityTokenServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSecurityTokenServiceException(string message)
             : base(message)

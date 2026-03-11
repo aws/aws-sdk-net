@@ -257,7 +257,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchAcknowledgeAlarmResponse BatchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAcknowledgeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAcknowledgeAlarmResponseUnmarshaller.Instance;
 
@@ -291,7 +291,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm">REST API Reference for BatchAcknowledgeAlarm Operation</seealso>
         public virtual Task<BatchAcknowledgeAlarmResponse> BatchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAcknowledgeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAcknowledgeAlarmResponseUnmarshaller.Instance;
 
@@ -303,7 +303,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchDeleteDetectorResponse BatchDeleteDetector(BatchDeleteDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDetectorResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
         public virtual Task<BatchDeleteDetectorResponse> BatchDeleteDetectorAsync(BatchDeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDetectorResponseUnmarshaller.Instance;
 
@@ -351,7 +351,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchDisableAlarmResponse BatchDisableAlarm(BatchDisableAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisableAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisableAlarmResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm">REST API Reference for BatchDisableAlarm Operation</seealso>
         public virtual Task<BatchDisableAlarmResponse> BatchDisableAlarmAsync(BatchDisableAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisableAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisableAlarmResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchEnableAlarmResponse BatchEnableAlarm(BatchEnableAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchEnableAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchEnableAlarmResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm">REST API Reference for BatchEnableAlarm Operation</seealso>
         public virtual Task<BatchEnableAlarmResponse> BatchEnableAlarmAsync(BatchEnableAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchEnableAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchEnableAlarmResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchPutMessageResponse BatchPutMessage(BatchPutMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchPutMessage">REST API Reference for BatchPutMessage Operation</seealso>
         public virtual Task<BatchPutMessageResponse> BatchPutMessageAsync(BatchPutMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
 
@@ -492,7 +492,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchResetAlarmResponse BatchResetAlarm(BatchResetAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchResetAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchResetAlarmResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm">REST API Reference for BatchResetAlarm Operation</seealso>
         public virtual Task<BatchResetAlarmResponse> BatchResetAlarmAsync(BatchResetAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchResetAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchResetAlarmResponseUnmarshaller.Instance;
 
@@ -538,7 +538,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchSnoozeAlarmResponse BatchSnoozeAlarm(BatchSnoozeAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchSnoozeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchSnoozeAlarmResponseUnmarshaller.Instance;
 
@@ -572,7 +572,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm">REST API Reference for BatchSnoozeAlarm Operation</seealso>
         public virtual Task<BatchSnoozeAlarmResponse> BatchSnoozeAlarmAsync(BatchSnoozeAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchSnoozeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchSnoozeAlarmResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual BatchUpdateDetectorResponse BatchUpdateDetector(BatchUpdateDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateDetectorResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchUpdateDetector">REST API Reference for BatchUpdateDetector Operation</seealso>
         public virtual Task<BatchUpdateDetectorResponse> BatchUpdateDetectorAsync(BatchUpdateDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateDetectorResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual DescribeAlarmResponse DescribeAlarm(DescribeAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm">REST API Reference for DescribeAlarm Operation</seealso>
         public virtual Task<DescribeAlarmResponse> DescribeAlarmAsync(DescribeAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual DescribeDetectorResponse DescribeDetector(DescribeDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeDetector">REST API Reference for DescribeDetector Operation</seealso>
         public virtual Task<DescribeDetectorResponse> DescribeDetectorAsync(DescribeDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorResponseUnmarshaller.Instance;
 
@@ -726,7 +726,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual ListAlarmsResponse ListAlarms(ListAlarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmsResponseUnmarshaller.Instance;
 
@@ -763,7 +763,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms">REST API Reference for ListAlarms Operation</seealso>
         public virtual Task<ListAlarmsResponse> ListAlarmsAsync(ListAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmsResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.IoTEventsData
 
         internal virtual ListDetectorsResponse ListDetectors(ListDetectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDetectorsResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.IoTEventsData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListDetectors">REST API Reference for ListDetectors Operation</seealso>
         public virtual Task<ListDetectorsResponse> ListDetectorsAsync(ListDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDetectorsResponseUnmarshaller.Instance;
 

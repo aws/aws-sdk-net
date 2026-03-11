@@ -44,7 +44,7 @@ namespace Amazon.Lightsail
     /// <para>
     /// You can manage your Lightsail resources using the Lightsail console, Lightsail API,
     /// Command Line Interface (CLI), or SDKs. For more information about Lightsail concepts
-    /// and tasks, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Amazon
+    /// and tasks, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-set-up-and-configure-aws-cli">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     ///  
@@ -96,6 +96,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -141,6 +145,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -321,6 +329,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -375,6 +387,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -435,6 +451,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -493,6 +513,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -556,6 +580,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -618,6 +646,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -664,6 +696,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -709,6 +745,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -764,6 +804,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -817,6 +861,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -879,6 +927,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -940,6 +992,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -984,6 +1040,10 @@ namespace Amazon.Lightsail
         /// </para>
         ///  </note>
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1027,6 +1087,10 @@ namespace Amazon.Lightsail
         /// to <c>us-east-1</c> to create, view, or edit these resources.
         /// </para>
         ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -1086,6 +1150,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1144,6 +1212,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1199,6 +1271,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1253,6 +1329,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -1311,6 +1391,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1368,6 +1452,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1419,6 +1507,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -1472,6 +1564,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1518,6 +1614,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1563,6 +1663,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -1620,6 +1724,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1675,6 +1783,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -1742,6 +1854,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1808,6 +1924,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1862,6 +1982,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -1915,6 +2039,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -1972,6 +2100,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2027,6 +2159,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2105,6 +2241,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2181,6 +2321,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2335,6 +2479,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2387,6 +2535,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2444,6 +2596,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2500,6 +2656,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2547,6 +2707,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2593,6 +2757,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2647,6 +2815,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2699,6 +2871,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2754,6 +2930,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2807,6 +2987,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2862,6 +3046,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -2915,6 +3103,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -2975,6 +3167,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3034,6 +3230,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3051,7 +3251,7 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Creates a Lightsail load balancer. To learn more about deciding whether to load balance
         /// your application, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-lightsail-instances-for-load-balancing">Configure
-        /// your Lightsail instances for load balancing</a>. You can create up to 5 load balancers
+        /// your Lightsail instances for load balancing</a>. You can create up to 10 load balancers
         /// per AWS Region in your account.
         /// 
         ///  
@@ -3096,6 +3296,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3110,7 +3314,7 @@ namespace Amazon.Lightsail
         /// <summary>
         /// Creates a Lightsail load balancer. To learn more about deciding whether to load balance
         /// your application, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-lightsail-instances-for-load-balancing">Configure
-        /// your Lightsail instances for load balancing</a>. You can create up to 5 load balancers
+        /// your Lightsail instances for load balancing</a>. You can create up to 10 load balancers
         /// per AWS Region in your account.
         /// 
         ///  
@@ -3157,6 +3361,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -3216,6 +3424,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3274,6 +3486,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3327,6 +3543,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3379,6 +3599,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -3440,6 +3664,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3500,6 +3728,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3553,6 +3785,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -3608,6 +3844,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3657,6 +3897,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -3708,6 +3952,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3752,6 +4000,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3795,6 +4047,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -3842,6 +4098,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3887,6 +4147,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -3938,6 +4202,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -3988,6 +4256,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4035,6 +4307,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4081,6 +4357,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4134,6 +4414,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4186,6 +4470,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4224,6 +4512,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4264,6 +4556,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4303,6 +4599,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4341,6 +4641,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4401,6 +4705,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4459,6 +4767,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4522,6 +4834,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4583,6 +4899,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4722,6 +5042,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4775,6 +5099,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4830,6 +5158,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4883,6 +5215,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -4938,6 +5274,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -4991,6 +5331,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5046,6 +5390,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5099,6 +5447,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5163,6 +5515,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5226,6 +5582,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5282,6 +5642,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5340,6 +5704,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5395,6 +5763,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5452,6 +5824,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5505,6 +5881,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5560,6 +5940,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5613,6 +5997,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5668,6 +6056,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5722,6 +6114,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5775,6 +6171,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -5930,6 +6330,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -5985,6 +6389,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -6045,6 +6453,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6104,6 +6516,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6149,6 +6565,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -6196,6 +6616,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6240,6 +6664,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6283,6 +6711,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -6336,6 +6768,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6388,6 +6824,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6432,6 +6872,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6475,6 +6919,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -6547,6 +6995,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6618,6 +7070,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6664,6 +7120,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6709,6 +7169,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -6762,6 +7226,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6814,6 +7282,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6858,6 +7330,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -6901,6 +7377,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -6960,6 +7440,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7018,6 +7502,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7064,6 +7552,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7112,6 +7604,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7158,6 +7654,10 @@ namespace Amazon.Lightsail
         /// to <c>us-east-1</c> to create, view, or edit these resources.
         /// </para>
         ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7206,6 +7706,10 @@ namespace Amazon.Lightsail
         /// </para>
         ///  </note>
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7252,6 +7756,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7297,6 +7805,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7345,6 +7857,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7391,6 +7907,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7451,6 +7971,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7510,6 +8034,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7557,6 +8085,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7603,6 +8135,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7657,6 +8193,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7709,6 +8249,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7763,6 +8307,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7816,6 +8364,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7841,6 +8393,10 @@ namespace Amazon.Lightsail
         /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
         /// credentials to access a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7865,6 +8421,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
         /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
         /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -7914,6 +8474,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -7961,6 +8525,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8015,6 +8583,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8067,6 +8639,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8125,6 +8701,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8182,6 +8762,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8227,6 +8811,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8271,6 +8859,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8318,6 +8910,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8364,6 +8960,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8403,6 +9003,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8441,6 +9045,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8482,6 +9090,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8521,6 +9133,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8568,6 +9184,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8613,6 +9233,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8660,6 +9284,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8705,6 +9333,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8752,6 +9384,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8797,6 +9433,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -8845,6 +9485,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -8891,6 +9535,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -9308,6 +9956,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9353,6 +10005,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -9400,6 +10056,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9445,6 +10105,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -9500,6 +10164,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9554,6 +10222,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9601,6 +10273,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9647,6 +10323,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -9703,6 +10383,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9758,6 +10442,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9811,6 +10499,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -9866,6 +10558,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -9912,6 +10608,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -9960,6 +10660,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10005,6 +10709,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10052,6 +10760,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10097,6 +10809,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10144,6 +10860,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10189,6 +10909,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10236,6 +10960,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10281,6 +11009,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10328,6 +11060,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10373,6 +11109,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10420,6 +11160,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10465,6 +11209,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10512,6 +11260,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10558,6 +11310,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10603,6 +11359,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10657,6 +11417,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10710,6 +11474,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10756,6 +11524,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10801,6 +11573,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -10859,6 +11635,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10916,6 +11696,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -10962,6 +11746,10 @@ namespace Amazon.Lightsail
         /// to <c>us-east-1</c> to create, view, or edit these resources.
         /// </para>
         ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11010,6 +11798,10 @@ namespace Amazon.Lightsail
         /// </para>
         ///  </note>
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11057,6 +11849,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11103,6 +11899,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11157,6 +11957,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11210,6 +12014,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11256,6 +12064,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11301,6 +12113,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11349,6 +12165,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11396,6 +12216,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11442,6 +12266,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11487,6 +12315,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11541,6 +12373,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11594,6 +12430,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11645,6 +12485,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11698,6 +12542,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11743,6 +12591,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11790,6 +12642,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11835,6 +12691,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -11882,6 +12742,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11928,6 +12792,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -11973,6 +12841,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12027,6 +12899,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12079,6 +12955,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12133,6 +13013,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12185,6 +13069,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12240,6 +13128,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12294,6 +13186,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12339,6 +13235,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12386,6 +13286,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12431,6 +13335,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12478,6 +13386,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12523,6 +13435,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12570,6 +13486,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12610,6 +13530,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12649,6 +13573,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12696,6 +13624,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12741,6 +13673,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12788,6 +13724,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12833,6 +13773,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12880,6 +13824,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -12925,6 +13873,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -12972,6 +13924,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13017,6 +13973,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -13073,6 +14033,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13128,6 +14092,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13174,6 +14142,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13219,6 +14191,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -13282,6 +14258,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13344,6 +14324,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13402,6 +14386,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -13462,6 +14450,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13515,6 +14507,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -13570,6 +14566,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13623,6 +14623,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -13678,6 +14682,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13726,6 +14734,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -13776,6 +14788,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13822,6 +14838,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -13867,6 +14887,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -14031,6 +15055,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14096,6 +15124,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14148,6 +15180,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -14202,6 +15238,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14247,6 +15287,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14291,6 +15335,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -14338,6 +15386,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14384,6 +15436,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14425,6 +15481,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14465,6 +15525,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -14529,6 +15593,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14592,6 +15660,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14646,6 +15718,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -14702,6 +15778,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14743,6 +15823,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14783,6 +15867,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -14846,6 +15934,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14908,6 +16000,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -14968,6 +16064,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -15030,6 +16130,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15086,6 +16190,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -15144,6 +16252,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15195,6 +16307,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -15248,6 +16364,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15294,6 +16414,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15339,6 +16463,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -15395,6 +16523,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15450,6 +16582,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15495,6 +16631,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15539,6 +16679,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -15599,6 +16743,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15658,6 +16806,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15698,6 +16850,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -15737,6 +16893,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
         /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -16006,6 +17166,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -16060,6 +17224,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -16113,6 +17281,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -16165,6 +17337,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -16221,6 +17397,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -16275,6 +17455,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -16335,6 +17519,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -16393,6 +17581,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
@@ -16457,6 +17649,10 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
         /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
+        /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.
         /// </exception>
@@ -16519,6 +17715,10 @@ namespace Amazon.Lightsail
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
         /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.RegionSetupInProgressException">
+        /// Lightsail throws this exception when an operation is performed on resources in an
+        /// opt-in Region that is currently being set up.
         /// </exception>
         /// <exception cref="Amazon.Lightsail.Model.ServiceException">
         /// A general service exception.

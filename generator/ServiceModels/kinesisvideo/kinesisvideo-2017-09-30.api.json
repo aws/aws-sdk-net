@@ -4,11 +4,13 @@
     "apiVersion":"2017-09-30",
     "endpointPrefix":"kinesisvideo",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceAbbreviation":"Kinesis Video",
     "serviceFullName":"Amazon Kinesis Video Streams",
     "serviceId":"Kinesis Video",
     "signatureVersion":"v4",
-    "uid":"kinesisvideo-2017-09-30"
+    "uid":"kinesisvideo-2017-09-30",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "CreateSignalingChannel":{
@@ -200,6 +202,21 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ClientLimitExceededException"},
         {"shape":"NotAuthorizedException"}
+      ]
+    },
+    "DescribeStreamStorageConfiguration":{
+      "name":"DescribeStreamStorageConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/describeStreamStorageConfiguration"
+      },
+      "input":{"shape":"DescribeStreamStorageConfigurationInput"},
+      "output":{"shape":"DescribeStreamStorageConfigurationOutput"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ClientLimitExceededException"},
+        {"shape":"InvalidArgumentException"},
+        {"shape":"ResourceNotFoundException"}
       ]
     },
     "GetDataEndpoint":{
@@ -487,6 +504,23 @@
         {"shape":"NotAuthorizedException"},
         {"shape":"VersionMismatchException"}
       ]
+    },
+    "UpdateStreamStorageConfiguration":{
+      "name":"UpdateStreamStorageConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/updateStreamStorageConfiguration"
+      },
+      "input":{"shape":"UpdateStreamStorageConfigurationInput"},
+      "output":{"shape":"UpdateStreamStorageConfigurationOutput"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ClientLimitExceededException"},
+        {"shape":"InvalidArgumentException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"VersionMismatchException"}
+      ]
     }
   },
   "shapes":{
@@ -622,7 +656,8 @@
         "MediaType":{"shape":"MediaType"},
         "KmsKeyId":{"shape":"KmsKeyId"},
         "DataRetentionInHours":{"shape":"DataRetentionInHours"},
-        "Tags":{"shape":"ResourceTags"}
+        "Tags":{"shape":"ResourceTags"},
+        "StreamStorageConfiguration":{"shape":"StreamStorageConfiguration"}
       }
     },
     "CreateStreamOutput":{
@@ -640,6 +675,13 @@
       "type":"integer",
       "min":0
     },
+    "DefaultStorageTier":{
+      "type":"string",
+      "enum":[
+        "HOT",
+        "WARM"
+      ]
+    },
     "DeleteAfterUpload":{"type":"boolean"},
     "DeleteEdgeConfigurationInput":{
       "type":"structure",
@@ -650,8 +692,7 @@
     },
     "DeleteEdgeConfigurationOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteSignalingChannelInput":{
       "type":"structure",
@@ -663,8 +704,7 @@
     },
     "DeleteSignalingChannelOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteStreamInput":{
       "type":"structure",
@@ -676,8 +716,7 @@
     },
     "DeleteStreamOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeletionConfig":{
       "type":"structure",
@@ -786,6 +825,21 @@
       "type":"structure",
       "members":{
         "StreamInfo":{"shape":"StreamInfo"}
+      }
+    },
+    "DescribeStreamStorageConfigurationInput":{
+      "type":"structure",
+      "members":{
+        "StreamName":{"shape":"StreamName"},
+        "StreamARN":{"shape":"ResourceARN"}
+      }
+    },
+    "DescribeStreamStorageConfigurationOutput":{
+      "type":"structure",
+      "members":{
+        "StreamName":{"shape":"StreamName"},
+        "StreamARN":{"shape":"ResourceARN"},
+        "StreamStorageConfiguration":{"shape":"StreamStorageConfiguration"}
       }
     },
     "DestinationRegion":{
@@ -1390,6 +1444,13 @@
         "ComparisonValue":{"shape":"StreamName"}
       }
     },
+    "StreamStorageConfiguration":{
+      "type":"structure",
+      "required":["DefaultStorageTier"],
+      "members":{
+        "DefaultStorageTier":{"shape":"DefaultStorageTier"}
+      }
+    },
     "SyncStatus":{
       "type":"string",
       "enum":[
@@ -1450,8 +1511,7 @@
     },
     "TagResourceOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagStreamInput":{
       "type":"structure",
@@ -1464,8 +1524,7 @@
     },
     "TagStreamOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{
       "type":"string",
@@ -1496,8 +1555,7 @@
     },
     "UntagResourceOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UntagStreamInput":{
       "type":"structure",
@@ -1510,8 +1568,7 @@
     },
     "UntagStreamOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateDataRetentionInput":{
       "type":"structure",
@@ -1537,8 +1594,7 @@
     },
     "UpdateDataRetentionOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateImageGenerationConfigurationInput":{
       "type":"structure",
@@ -1550,8 +1606,7 @@
     },
     "UpdateImageGenerationConfigurationOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateMediaStorageConfigurationInput":{
       "type":"structure",
@@ -1566,8 +1621,7 @@
     },
     "UpdateMediaStorageConfigurationOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateNotificationConfigurationInput":{
       "type":"structure",
@@ -1579,8 +1633,7 @@
     },
     "UpdateNotificationConfigurationOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateSignalingChannelInput":{
       "type":"structure",
@@ -1596,8 +1649,7 @@
     },
     "UpdateSignalingChannelOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateStreamInput":{
       "type":"structure",
@@ -1612,8 +1664,24 @@
     },
     "UpdateStreamOutput":{
       "type":"structure",
+      "members":{}
+    },
+    "UpdateStreamStorageConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "CurrentVersion",
+        "StreamStorageConfiguration"
+      ],
       "members":{
+        "StreamName":{"shape":"StreamName"},
+        "StreamARN":{"shape":"ResourceARN"},
+        "CurrentVersion":{"shape":"Version"},
+        "StreamStorageConfiguration":{"shape":"StreamStorageConfiguration"}
       }
+    },
+    "UpdateStreamStorageConfigurationOutput":{
+      "type":"structure",
+      "members":{}
     },
     "UploaderConfig":{
       "type":"structure",

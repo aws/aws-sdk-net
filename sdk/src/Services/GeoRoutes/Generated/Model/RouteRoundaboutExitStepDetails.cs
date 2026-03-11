@@ -69,7 +69,7 @@ namespace Amazon.GeoRoutes.Model
         /// Exit to be taken.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=12)]
+        [AWSProperty(Sensitive=true, Min=1, Max=12)]
         public int? RelativeExit
         {
             get { return this._relativeExit; }
@@ -107,6 +107,7 @@ namespace Amazon.GeoRoutes.Model
         /// Steering direction for the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteSteeringDirection SteeringDirection
         {
             get { return this._steeringDirection; }

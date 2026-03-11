@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AssociatedInstancesException
+        /// message.
+        /// </summary>
+        public AssociatedInstancesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AssociatedInstancesException with the specified error
         /// message.
         /// </summary>

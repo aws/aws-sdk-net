@@ -43,10 +43,10 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The data blob to put into the record, which is base64-encoded when the blob is serialized.
         /// When the data blob (the payload before base64-encoding) is added to the partition
-        /// key size, the total size must not exceed the maximum record size (1 MiB).
+        /// key size, the total size must not exceed the maximum record size (10 MiB).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1048576)]
+        [AWSProperty(Required=true, Min=0, Max=10485760)]
         public MemoryStream Data
         {
             get { return this._data; }

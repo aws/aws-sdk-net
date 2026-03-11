@@ -53,6 +53,7 @@ namespace Amazon.SageMaker.Model
         private string _statusMessage;
         private List<string> _targetResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _totalInstanceCount;
+        private int? _totalUltraServerCount;
         private string _trainingPlanArn;
         private string _trainingPlanName;
         private string _upfrontFee;
@@ -258,8 +259,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetResources. 
         /// <para>
-        /// The target resources (e.g., training jobs, HyperPod clusters) that can use this training
-        /// plan.
+        /// The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can
+        /// use this training plan.
         /// </para>
         ///  
         /// <para>
@@ -274,6 +275,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A training plan for HyperPod clusters can be used exclusively to provide compute resources
         /// to a cluster's instance group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A training plan for SageMaker endpoints can be used exclusively to provide compute
+        /// resources to SageMaker endpoints for model deployment.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -312,6 +318,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTotalInstanceCount()
         {
             return this._totalInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalUltraServerCount. 
+        /// <para>
+        /// The total number of UltraServers allocated to this training plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? TotalUltraServerCount
+        {
+            get { return this._totalUltraServerCount; }
+            set { this._totalUltraServerCount = value; }
+        }
+
+        // Check to see if TotalUltraServerCount property is set
+        internal bool IsSetTotalUltraServerCount()
+        {
+            return this._totalUltraServerCount.HasValue; 
         }
 
         /// <summary>

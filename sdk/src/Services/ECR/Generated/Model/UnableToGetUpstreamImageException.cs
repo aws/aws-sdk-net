@@ -41,6 +41,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToGetUpstreamImageException
+        /// message.
+        /// </summary>
+        public UnableToGetUpstreamImageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToGetUpstreamImageException with the specified error
         /// message.
         /// </summary>

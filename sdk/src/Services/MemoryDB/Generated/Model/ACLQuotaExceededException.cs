@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of ACLs
+    /// allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ACLQuotaExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ACLQuotaExceededException
+        /// message.
+        /// </summary>
+        public ACLQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ACLQuotaExceededException with the specified error

@@ -36,6 +36,7 @@ namespace Amazon.EKS.Model
     {
         private string _addonName;
         private List<AddonVersionInfo> _addonVersions = AWSConfigs.InitializeCollections ? new List<AddonVersionInfo>() : null;
+        private string _defaultNamespace;
         private MarketplaceInformation _marketplaceInformation;
         private string _owner;
         private string _publisher;
@@ -81,6 +82,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetAddonVersions()
         {
             return this._addonVersions != null && (this._addonVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultNamespace. 
+        /// <para>
+        /// The default Kubernetes namespace where this addon is typically installed if no custom
+        /// namespace is specified.
+        /// </para>
+        /// </summary>
+        public string DefaultNamespace
+        {
+            get { return this._defaultNamespace; }
+            set { this._defaultNamespace = value; }
+        }
+
+        // Check to see if DefaultNamespace property is set
+        internal bool IsSetDefaultNamespace()
+        {
+            return this._defaultNamespace != null;
         }
 
         /// <summary>

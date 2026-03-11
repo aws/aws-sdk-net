@@ -100,6 +100,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.GatewayUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("interceptorConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<GatewayInterceptorConfiguration, GatewayInterceptorConfigurationUnmarshaller>(GatewayInterceptorConfigurationUnmarshaller.Instance);
+                    response.InterceptorConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("policyEngineConfiguration", targetDepth))
+                {
+                    var unmarshaller = GatewayPolicyEngineConfigurationUnmarshaller.Instance;
+                    response.PolicyEngineConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("protocolConfiguration", targetDepth))

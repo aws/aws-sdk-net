@@ -40,7 +40,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the the shared Slurm key.
+        /// The Amazon Resource Name (ARN) of the shared Slurm key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

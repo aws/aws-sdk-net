@@ -40,6 +40,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for FleetCapacityExceededException
+        /// message.
+        /// </summary>
+        public FleetCapacityExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FleetCapacityExceededException with the specified error
         /// message.
         /// </summary>

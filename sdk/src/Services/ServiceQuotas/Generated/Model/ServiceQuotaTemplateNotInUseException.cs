@@ -39,6 +39,13 @@ namespace Amazon.ServiceQuotas.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceQuotaTemplateNotInUseException
+        /// message.
+        /// </summary>
+        public ServiceQuotaTemplateNotInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceQuotaTemplateNotInUseException with the specified error
         /// message.
         /// </summary>

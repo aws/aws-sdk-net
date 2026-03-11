@@ -42,6 +42,10 @@ namespace Amazon.MarketplaceEntitlementService
         /// Constant DIMENSION for GetEntitlementFilterName
         /// </summary>
         public static readonly GetEntitlementFilterName DIMENSION = new GetEntitlementFilterName("DIMENSION");
+        /// <summary>
+        /// Constant LICENSE_ARN for GetEntitlementFilterName
+        /// </summary>
+        public static readonly GetEntitlementFilterName LICENSE_ARN = new GetEntitlementFilterName("LICENSE_ARN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

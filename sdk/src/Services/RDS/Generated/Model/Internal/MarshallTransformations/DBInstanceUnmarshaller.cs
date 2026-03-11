@@ -91,6 +91,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActivityStreamStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdditionalStorageVolumes/member", targetDepth))
+                    {
+                        var unmarshaller = AdditionalStorageVolumeOutputUnmarshaller.Instance;
+                        if (unmarshalledObject.AdditionalStorageVolumes == null)
+                        {
+                            unmarshalledObject.AdditionalStorageVolumes = new List<AdditionalStorageVolumeOutput>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalStorageVolumes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -596,6 +607,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncryptionType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StorageThroughput", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -606,6 +623,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageVolumeStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageVolumeStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TagList/Tag", targetDepth))
@@ -629,6 +652,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("UpgradeRolloutOrder", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UpgradeRolloutOrder = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))

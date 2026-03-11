@@ -29,92 +29,96 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MetricDataResult Object
     /// </summary>  
-    public class MetricDataResultUnmarshaller : IXmlUnmarshaller<MetricDataResult, XmlUnmarshallerContext>
+    public class MetricDataResultUnmarshaller : ICborUnmarshaller<MetricDataResult, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public MetricDataResult Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public MetricDataResult Unmarshall(CborUnmarshallerContext context)
         {
             MetricDataResult unmarshalledObject = new MetricDataResult();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Label", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Label = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Messages/member", targetDepth))
-                    {
-                        var unmarshaller = MessageDataUnmarshaller.Instance;
-                        if (unmarshalledObject.Messages == null)
-                        {
-                            unmarshalledObject.Messages = new List<MessageData>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Messages.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("StatusCode", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamps/member", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        if (unmarshalledObject.Timestamps == null)
-                        {
-                            unmarshalledObject.Timestamps = new List<DateTime>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Timestamps.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Values/member", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        if (unmarshalledObject.Values == null)
-                        {
-                            unmarshalledObject.Values = new List<double>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Values.Add(item);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "Id":
+                        {
+                            context.AddPathSegment("Id");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Label":
+                        {
+                            context.AddPathSegment("Label");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Messages":
+                        {
+                            context.AddPathSegment("Messages");
+                            var unmarshaller = new CborListUnmarshaller<MessageData, MessageDataUnmarshaller>(MessageDataUnmarshaller.Instance);
+                            unmarshalledObject.Messages = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StatusCode":
+                        {
+                            context.AddPathSegment("StatusCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Timestamps":
+                        {
+                            context.AddPathSegment("Timestamps");
+                            var unmarshaller = new CborListUnmarshaller<DateTime, CborDateTimeUnmarshaller>(CborDateTimeUnmarshaller.Instance);
+                            unmarshalledObject.Timestamps = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Values":
+                        {
+                            context.AddPathSegment("Values");
+                            var unmarshaller = new CborListUnmarshaller<double, CborDoubleUnmarshaller>(CborDoubleUnmarshaller.Instance);
+                            unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static MetricDataResultUnmarshaller _instance = new MetricDataResultUnmarshaller();        
 

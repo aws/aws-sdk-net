@@ -36,6 +36,14 @@ namespace Amazon.CloudTrailData
         /// <summary>
         /// Construct instance of AmazonCloudTrailDataException
         /// </summary>
+        public AmazonCloudTrailDataException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudTrailDataException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudTrailDataException(string message)
             : base(message)

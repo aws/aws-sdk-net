@@ -71,6 +71,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PutConfigurationSetDeliveryOptionsRequestMarshaller _instance = new PutConfigurationSetDeliveryOptionsRequestMarshaller();        

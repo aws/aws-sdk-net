@@ -39,6 +39,13 @@ namespace Amazon.DeviceFarm.Model
     {
 
         /// <summary>
+        /// Default constructor for CannotDeleteException
+        /// message.
+        /// </summary>
+        public CannotDeleteException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotDeleteException with the specified error
         /// message.
         /// </summary>

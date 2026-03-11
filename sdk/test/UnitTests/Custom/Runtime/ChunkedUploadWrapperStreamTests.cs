@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -63,6 +64,14 @@ namespace AWSSDK.UnitTests
                 "x-amz-trailer-signature:ad2c42bee2f802836062a35974f2145e8fa97ae75ac6170c70ac367c8bcaff87\r\n" +
                 "\r\n";
 
+        private string ExtractChecksum(CoreChecksumAlgorithm algorithm, string expectedContent)
+        {
+            var key = $"x-amz-checksum-{algorithm.ToString().ToLower()}:";
+            int start = expectedContent.IndexOf(key) + key.Length;
+            int end = expectedContent.IndexOf("\r\n", start);
+            return expectedContent.Substring(start, end - start);
+        }
+
         /// <summary>
         /// Tests a given trailing checksum for a signed, chunked stream
         /// </summary>
@@ -80,7 +89,15 @@ namespace AWSSDK.UnitTests
             };
 
             var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
-            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192 , headerSigningResult, algorithm, trailingHeaders);
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(algorithm, expectedContent), value);
+                })
+            };
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192 , headerSigningResult, algorithm, trailingHeaders, cachedChecksum);
 
             var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
@@ -100,7 +117,15 @@ namespace AWSSDK.UnitTests
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
             var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
-            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 1, headerSigningResult, CoreChecksumAlgorithm.SHA256, trailingHeaders);
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedSHA256Content), value);
+                })
+            };
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 1, headerSigningResult, CoreChecksumAlgorithm.SHA256, trailingHeaders, cachedChecksum);
 
             var bytesRead = -1;
             var bufferSize = 1;
@@ -130,9 +155,6 @@ namespace AWSSDK.UnitTests
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
             var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
-            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult, CoreChecksumAlgorithm.SHA256, trailingHeaders);
-
-            var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
             var expectedContent =
                 "14000;chunk-signature=dd6818ebe851d9f6006431fac25c71960881bf8d86501344f19a43c1a2c2a9a7\r\n" +
@@ -143,6 +165,18 @@ namespace AWSSDK.UnitTests
                 "x-amz-checksum-sha256:bRzyLXzAmwhd/CXuGh864CZYBMYHvCB0rSU7zIL9ge4=\r\n" +
                 "x-amz-trailer-signature:cd8a0ba8bc4abaaa5f6e9921c30ca6e018110bcbaa3ea876e7b777b924bb4009\r\n" +
                 "\r\n";
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) => 
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedContent), value);
+                })
+            };
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult, CoreChecksumAlgorithm.SHA256, trailingHeaders, cachedChecksum);
+
+            var actualContent = new StreamReader(wrappedStream).ReadToEnd();                        
 
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, actualContent);
@@ -161,9 +195,6 @@ namespace AWSSDK.UnitTests
                 {"header-b", "value-b" }
             };
             var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
-            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult, CoreChecksumAlgorithm.NONE, trailingHeaders);
-
-            var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
             var expectedContent =
                 "B;chunk-signature=6a4d50a3307c001ad83900a73442136a0a0f203520fd8c0e966f655cc830bbe8\r\n" +
@@ -173,6 +204,19 @@ namespace AWSSDK.UnitTests
                 "header-b:value-b\r\n" +
                 "x-amz-trailer-signature:ff2899b910cb941057f921d11738b5d875f2e117ea9504cfea4f9c7a788a0852\r\n" +
                 "\r\n";
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedContent), value);
+                })
+            };
+
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult, CoreChecksumAlgorithm.NONE, trailingHeaders, cachedChecksum);
+
+            var actualContent = new StreamReader(wrappedStream).ReadToEnd();                        
 
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, actualContent);
@@ -194,9 +238,6 @@ namespace AWSSDK.UnitTests
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
             var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
-            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult, CoreChecksumAlgorithm.SHA256, trailingHeaders);
-
-            var actualContent = new StreamReader(wrappedStream).ReadToEnd();
 
             var expectedContent =
                 "B;chunk-signature=6a4d50a3307c001ad83900a73442136a0a0f203520fd8c0e966f655cc830bbe8\r\n" +
@@ -207,6 +248,18 @@ namespace AWSSDK.UnitTests
                 "x-amz-checksum-sha256:ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=\r\n" +
                 "x-amz-trailer-signature:0e357651fe17d33ea0d4173b2fd745d596354a66347ee8b5e4de44036c62becb\r\n" +
                 "\r\n";
+
+            var cachedChecksum = new CachedChecksum
+            {
+                Value = null,
+                OnComplete = ((string value) =>
+                {
+                    Assert.AreEqual(ExtractChecksum(CoreChecksumAlgorithm.SHA256, expectedContent), value);
+                })
+            };
+            var wrappedStream = new ChunkedUploadWrapperStream(contentStream, 8192, headerSigningResult, CoreChecksumAlgorithm.SHA256, trailingHeaders, cachedChecksum);
+
+            var actualContent = new StreamReader(wrappedStream).ReadToEnd();                        
 
             Assert.AreEqual(expectedContent.Length, wrappedStream.Length);
             Assert.AreEqual(expectedContent, actualContent);

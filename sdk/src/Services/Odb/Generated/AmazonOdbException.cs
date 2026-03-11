@@ -36,6 +36,14 @@ namespace Amazon.Odb
         /// <summary>
         /// Construct instance of AmazonOdbException
         /// </summary>
+        public AmazonOdbException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOdbException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOdbException(string message)
             : base(message)

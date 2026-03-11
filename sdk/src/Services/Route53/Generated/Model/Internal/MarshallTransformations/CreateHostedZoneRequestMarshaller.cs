@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateHostedZoneRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/hostedzone";
 
@@ -66,7 +67,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
-                if (publicRequest.VPC != null)
+                if (publicRequest.IsSetVPC())
                 {
                     xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
@@ -78,7 +79,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCallerReference())
                     xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
-                if (publicRequest.HostedZoneConfig != null)
+                if (publicRequest.IsSetHostedZoneConfig())
                 {
                     xmlWriter.WriteStartElement("HostedZoneConfig");
                     if(publicRequest.HostedZoneConfig.IsSetComment())
@@ -93,6 +94,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -104,8 +106,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateHostedZoneRequestMarshaller _instance = new CreateHostedZoneRequestMarshaller();        
@@ -127,5 +127,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateHostedZoneRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateHostedZoneRequest publicRequest);
     }    
 }

@@ -21,10 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  GetBucketWebsite response and response metadata.
-    /// </summary>
-    public class GetBucketWebsiteResponse : AmazonWebServiceResponse
+    public partial class GetBucketWebsiteResponse : AmazonWebServiceResponse
     {
         WebsiteConfiguration websiteConfiguration;
 

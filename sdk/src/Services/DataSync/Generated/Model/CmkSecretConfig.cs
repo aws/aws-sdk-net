@@ -31,8 +31,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Specifies configuration information for a DataSync-managed secret, such as an authentication
-    /// token or secret key that DataSync uses to access a specific storage location, with
-    /// a customer-managed KMS key.
+    /// token, secret key, password, or Kerberos keytab that DataSync uses to access a specific
+    /// storage location, with a customer-managed KMS key.
     /// 
     ///  <note> 
     /// <para>

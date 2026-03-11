@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryPrecedence operation
     /// </summary>  
-    public class QueryPrecedenceResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class QueryPrecedenceResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             QueryPrecedenceResponse response = new QueryPrecedenceResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, QueryPrecedenceResponse response);
 
         private static QueryPrecedenceResponseUnmarshaller _instance = new QueryPrecedenceResponseUnmarshaller();        
 

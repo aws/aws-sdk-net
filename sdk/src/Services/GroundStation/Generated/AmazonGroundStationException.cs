@@ -36,6 +36,14 @@ namespace Amazon.GroundStation
         /// <summary>
         /// Construct instance of AmazonGroundStationException
         /// </summary>
+        public AmazonGroundStationException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGroundStationException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGroundStationException(string message)
             : base(message)

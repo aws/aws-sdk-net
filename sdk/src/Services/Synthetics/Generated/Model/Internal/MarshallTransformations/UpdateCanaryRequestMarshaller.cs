@@ -93,6 +93,22 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ArtifactS3Location);
             }
 
+            if(publicRequest.IsSetBrowserConfigs())
+            {
+                context.Writer.WritePropertyName("BrowserConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBrowserConfigsListValue in publicRequest.BrowserConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BrowserConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBrowserConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCode())
             {
                 context.Writer.WritePropertyName("Code");
@@ -171,6 +187,22 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.VisualReference, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVisualReferences())
+            {
+                context.Writer.WritePropertyName("VisualReferences");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVisualReferencesListValue in publicRequest.VisualReferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VisualReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVisualReferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetVpcConfig())

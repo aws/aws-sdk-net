@@ -86,6 +86,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAppVersion())
+            {
+                context.Writer.WritePropertyName("AppVersion");
+                context.Writer.WriteStringValue(publicRequest.AppVersion);
+            }
+
             if(publicRequest.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
@@ -103,6 +109,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetEnableAutoMinorVersionUpgrade())
+            {
+                context.Writer.WritePropertyName("EnableAutoMinorVersionUpgrade");
+                context.Writer.WriteBooleanValue(publicRequest.EnableAutoMinorVersionUpgrade.Value);
+            }
+
             if(publicRequest.IsSetEnableIamSessionBasedIdentity())
             {
                 context.Writer.WritePropertyName("EnableIamSessionBasedIdentity");

@@ -52,6 +52,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FairShare);
             }
 
+            if(requestObject.IsSetIdleResourceSharing())
+            {
+                context.Writer.WritePropertyName("IdleResourceSharing");
+                context.Writer.WriteStringValue(requestObject.IdleResourceSharing);
+            }
+
             if(requestObject.IsSetPriorityClasses())
             {
                 context.Writer.WritePropertyName("PriorityClasses");

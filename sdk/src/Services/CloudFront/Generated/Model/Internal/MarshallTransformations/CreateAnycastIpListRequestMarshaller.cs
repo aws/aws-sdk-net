@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateAnycastIpListRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/anycast-ip-list";
 
@@ -63,30 +64,55 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateAnycastIpListRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                if(publicRequest.IsSetIpAddressType())
+                    xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+
+                var publicRequestIpamCidrConfigs = publicRequest.IpamCidrConfigs;
+                if (publicRequest.IsSetIpamCidrConfigs()) 
+                {
+                    xmlWriter.WriteStartElement("IpamCidrConfigs");
+                    foreach (var publicRequestIpamCidrConfigsValue in publicRequestIpamCidrConfigs) 
+                    {
+                        if (publicRequestIpamCidrConfigsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("IpamCidrConfig");
+                            if(publicRequestIpamCidrConfigsValue.IsSetAnycastIp())
+                                xmlWriter.WriteElementString("AnycastIp", StringUtils.FromString(publicRequestIpamCidrConfigsValue.AnycastIp));
+                            if(publicRequestIpamCidrConfigsValue.IsSetCidr())
+                                xmlWriter.WriteElementString("Cidr", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Cidr));
+                            if(publicRequestIpamCidrConfigsValue.IsSetIpamPoolArn())
+                                xmlWriter.WriteElementString("IpamPoolArn", StringUtils.FromString(publicRequestIpamCidrConfigsValue.IpamPoolArn));
+                            if(publicRequestIpamCidrConfigsValue.IsSetStatus())
+                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Status));
+                            xmlWriter.WriteEndElement();
+                        }
+                    }            
+                    xmlWriter.WriteEndElement();            
+                }
                 if(publicRequest.IsSetIpCount())
                     xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount.Value));
 
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
-                if (publicRequest.Tags != null)
+                if (publicRequest.IsSetTags())
                 {
                     xmlWriter.WriteStartElement("Tags");
                     var publicRequestTagsItems = publicRequest.Tags.Items;
-                    if (publicRequestTagsItems != null && (publicRequestTagsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tags.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
                         {
-                        if (publicRequestTagsItemsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
-                            if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTagsItemsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTagsItemsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
+                                if(publicRequestTagsItemsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
@@ -95,6 +121,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -106,8 +133,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateAnycastIpListRequestMarshaller _instance = new CreateAnycastIpListRequestMarshaller();        
@@ -129,5 +154,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateAnycastIpListRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateAnycastIpListRequest publicRequest);
     }    
 }

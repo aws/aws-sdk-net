@@ -13,8 +13,8 @@
 * permissions and limitations under the License.
 */
 
-using System.Collections.Generic;
 using Amazon.Runtime.Internal.Auth;
+using System.Collections.Generic;
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -27,6 +27,23 @@ namespace Amazon.Runtime.Credentials.Internal
         internal const string SigV4A = "aws.auth#sigv4a";
         internal const string Bearer = "smithy.api#httpBearerAuth";
         internal const string NoAuth = "smithy.api#noAuth";
+
+        /// <inheritdoc/>
+        public string ShortName 
+        { 
+            get
+            {
+                switch (SchemeId)
+                {
+                    case SigV4: return "sigv4";
+                    case SigV4A: return "sigv4a";
+                    case Bearer: return "httpBearerAuth";
+                    default:
+                        var index = SchemeId.IndexOf('#');
+                        return index >= 0 ? SchemeId.Substring(index + 1) : SchemeId;
+                }
+            }
+        }
 
         /// <summary>
         /// Default auth scheme options for services / operations that only support SigV4.

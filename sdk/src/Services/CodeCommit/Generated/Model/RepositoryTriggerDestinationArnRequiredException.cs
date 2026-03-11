@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryTriggerDestinationArnRequiredException
+        /// message.
+        /// </summary>
+        public RepositoryTriggerDestinationArnRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryTriggerDestinationArnRequiredException with the specified error
         /// message.
         /// </summary>

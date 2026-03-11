@@ -81,6 +81,7 @@ namespace Amazon
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
+        internal static int _cborReaderInitialBufferSize = GetConfigInt(CborReaderInitialBufferSizeKey, defaultValue: 1024 * 4); //4KB
         internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
         internal static bool _disableLegacyPersistenceStore = GetConfigBool(DisableLegacyPersistenceStoreKey, defaultValue: false);
         private static TelemetryProvider _telemetryProvider = new DefaultTelemetryProvider();
@@ -260,6 +261,33 @@ namespace Amazon
         {
             get { return _rootConfig.UseSdkCache; }
             set { _rootConfig.UseSdkCache = value; }
+        }
+
+        #endregion
+
+        #region CborReader Initial Buffer Size
+
+        /// <summary>
+        /// Key for the CborReaderInitialBufferSize property.
+        /// <seealso cref="Amazon.AWSConfigs.CborReaderInitialBufferSize"/>
+        /// </summary>
+        public const string CborReaderInitialBufferSizeKey = "CborReaderInitialBufferSize";
+
+        /// <summary>
+        /// Configures the initial buffer size in bytes for the streaming CBOR reader.
+        /// If this value isn't set, a default size of 4,096 bytes (4 KB) will be used.
+        /// <para />
+        /// Setting this property is not thread safe and should only be set at application startup.
+        /// <para />
+        /// <remarks>
+        /// Note that the buffer will automatically resize if it encounters a single data item larger
+        /// than this initial size.
+        /// </remarks>
+        /// </summary>
+        public static int CborReaderInitialBufferSize
+        {
+            get { return _rootConfig.CborReaderInitialBufferSize; }
+            set { _rootConfig.CborReaderInitialBufferSize = value; }
         }
 
         #endregion
@@ -506,6 +534,15 @@ namespace Amazon
             string value = GetConfig(name);
             bool result;
             if (bool.TryParse(value, out result))
+                return result;
+            return defaultValue;
+        }
+
+        private static int GetConfigInt(string name, int defaultValue = 0)
+        {
+            string value = GetConfig(name);
+            int result;
+            if (int.TryParse(value, out result))
                 return result;
             return defaultValue;
         }

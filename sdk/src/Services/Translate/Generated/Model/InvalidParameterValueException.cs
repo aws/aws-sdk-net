@@ -40,6 +40,13 @@ namespace Amazon.Translate.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidParameterValueException
+        /// message.
+        /// </summary>
+        public InvalidParameterValueException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterValueException with the specified error
         /// message.
         /// </summary>

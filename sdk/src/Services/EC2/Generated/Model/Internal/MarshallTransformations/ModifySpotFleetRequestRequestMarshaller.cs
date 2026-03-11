@@ -104,6 +104,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZone));
                                         }
+                                        if(publicRequestlistValuelistValue.IsSetAvailabilityZoneId())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZoneId));
+                                        }
                                         if(publicRequestlistValuelistValue.IsSetInstanceRequirements())
                                         {
                                             if(publicRequestlistValuelistValue.InstanceRequirements.IsSetAcceleratorCount())
@@ -338,6 +342,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             {
                                                 request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestlistValuelistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                                             }
+                                            if(publicRequestlistValuelistValue.InstanceRequirements.IsSetRequireEncryptionInTransit())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "RequireEncryptionInTransit", StringUtils.FromBool(publicRequestlistValuelistValue.InstanceRequirements.RequireEncryptionInTransit));
+                                            }
                                             if(publicRequestlistValuelistValue.InstanceRequirements.IsSetRequireHibernateSupport())
                                             {
                                                 request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestlistValuelistValue.InstanceRequirements.RequireHibernateSupport));
@@ -410,6 +418,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetCapacity", StringUtils.FromInt(publicRequest.TargetCapacity));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifySpotFleetRequestRequestMarshaller _instance = new ModifySpotFleetRequestRequestMarshaller();        

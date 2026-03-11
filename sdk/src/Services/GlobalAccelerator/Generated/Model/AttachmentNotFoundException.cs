@@ -39,6 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for AttachmentNotFoundException
+        /// message.
+        /// </summary>
+        public AttachmentNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttachmentNotFoundException with the specified error
         /// message.
         /// </summary>

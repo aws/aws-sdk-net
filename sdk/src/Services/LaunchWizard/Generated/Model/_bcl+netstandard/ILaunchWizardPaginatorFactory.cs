@@ -38,6 +38,16 @@ namespace Amazon.LaunchWizard.Model
         IListDeploymentEventsPaginator ListDeploymentEvents(ListDeploymentEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListDeploymentPatternVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDeploymentPatternVersionsPaginator ListDeploymentPatternVersions(ListDeploymentPatternVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
         [AWSPaginator(

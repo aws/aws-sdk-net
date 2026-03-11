@@ -36,6 +36,14 @@ namespace Amazon.BearerTokenAuthTest
         /// <summary>
         /// Construct instance of AmazonBearerTokenAuthTestException
         /// </summary>
+        public AmazonBearerTokenAuthTestException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBearerTokenAuthTestException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBearerTokenAuthTestException(string message)
             : base(message)

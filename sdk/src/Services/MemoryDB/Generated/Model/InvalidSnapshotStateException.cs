@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The snapshot is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidSnapshotStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidSnapshotStateException
+        /// message.
+        /// </summary>
+        public InvalidSnapshotStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidSnapshotStateException with the specified error

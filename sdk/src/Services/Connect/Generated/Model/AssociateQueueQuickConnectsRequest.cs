@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateQueueQuickConnects operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Associates a set of quick connects with a queue.
-    /// </para>
     /// </summary>
     public partial class AssociateQueueQuickConnectsRequest : AmazonConnectRequest
     {

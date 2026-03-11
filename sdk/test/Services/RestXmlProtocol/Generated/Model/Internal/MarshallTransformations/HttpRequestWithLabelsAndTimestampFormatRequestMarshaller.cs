@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpRequestWithLabelsAndTimestampFormatRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetDefaultFormat())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field DefaultFormat set");
@@ -103,5 +104,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithLabelsAndTimestampFormatRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithLabelsAndTimestampFormatRequest publicRequest);
     }    
 }

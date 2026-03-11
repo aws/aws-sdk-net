@@ -85,6 +85,30 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for ListProxies operation
+        ///</summary>
+        public IListProxiesPaginator ListProxies(ListProxiesRequest request) 
+        {
+            return new ListProxiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProxyConfigurations operation
+        ///</summary>
+        public IListProxyConfigurationsPaginator ListProxyConfigurations(ListProxyConfigurationsRequest request) 
+        {
+            return new ListProxyConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProxyRuleGroups operation
+        ///</summary>
+        public IListProxyRuleGroupsPaginator ListProxyRuleGroups(ListProxyRuleGroupsRequest request) 
+        {
+            return new ListProxyRuleGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRuleGroups operation
         ///</summary>
         public IListRuleGroupsPaginator ListRuleGroups(ListRuleGroupsRequest request) 

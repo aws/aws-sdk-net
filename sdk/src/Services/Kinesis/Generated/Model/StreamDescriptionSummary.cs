@@ -38,13 +38,16 @@ namespace Amazon.Kinesis.Model
         private EncryptionType _encryptionType;
         private List<EnhancedMetrics> _enhancedMonitoring = AWSConfigs.InitializeCollections ? new List<EnhancedMetrics>() : null;
         private string _keyId;
+        private int? _maxRecordSizeInKiB;
         private int? _openShardCount;
         private int? _retentionPeriodHours;
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
+        private string _streamId;
         private StreamModeDetails _streamModeDetails;
         private string _streamName;
         private StreamStatus _streamStatus;
+        private WarmThroughputObject _warmThroughput;
 
         /// <summary>
         /// Gets and sets the property ConsumerCount. 
@@ -161,6 +164,26 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxRecordSizeInKiB. 
+        /// <para>
+        /// The maximum record size of a single record in kibibyte (KiB) that you can write to,
+        /// and read from a stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=10240)]
+        public int? MaxRecordSizeInKiB
+        {
+            get { return this._maxRecordSizeInKiB; }
+            set { this._maxRecordSizeInKiB = value; }
+        }
+
+        // Check to see if MaxRecordSizeInKiB property is set
+        internal bool IsSetMaxRecordSizeInKiB()
+        {
+            return this._maxRecordSizeInKiB.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OpenShardCount. 
         /// <para>
         /// The number of open shards in the stream.
@@ -234,6 +257,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamCreationTimestamp()
         {
             return this._streamCreationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>
@@ -314,6 +356,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamStatus()
         {
             return this._streamStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// The warm throughput in MB/s for the stream. This represents the throughput capacity
+        /// that will be immediately available for write operations.
+        /// </para>
+        /// </summary>
+        public WarmThroughputObject WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

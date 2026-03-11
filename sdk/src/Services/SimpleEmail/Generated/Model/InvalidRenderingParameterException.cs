@@ -41,6 +41,13 @@ namespace Amazon.SimpleEmail.Model
         private string _templateName;
 
         /// <summary>
+        /// Default constructor for InvalidRenderingParameterException
+        /// message.
+        /// </summary>
+        public InvalidRenderingParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRenderingParameterException with the specified error
         /// message.
         /// </summary>

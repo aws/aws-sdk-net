@@ -40,7 +40,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowArn. 
         /// <para>
-        /// The ARN of the flow that you was updated. 
+        /// The ARN of the flow that you updated.
         /// </para>
         /// </summary>
         public string FlowArn

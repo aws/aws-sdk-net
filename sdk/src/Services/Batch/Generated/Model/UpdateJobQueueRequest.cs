@@ -40,6 +40,7 @@ namespace Amazon.Batch.Model
         private List<JobStateTimeLimitAction> _jobStateTimeLimitActions = AWSConfigs.InitializeCollections ? new List<JobStateTimeLimitAction>() : null;
         private int? _priority;
         private string _schedulingPolicyArn;
+        private List<ServiceEnvironmentOrder> _serviceEnvironmentOrder = AWSConfigs.InitializeCollections ? new List<ServiceEnvironmentOrder>() : null;
         private JQState _state;
 
         /// <summary>
@@ -165,6 +166,30 @@ namespace Amazon.Batch.Model
         internal bool IsSetSchedulingPolicyArn()
         {
             return this._schedulingPolicyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceEnvironmentOrder. 
+        /// <para>
+        /// The order of the service environment associated with the job queue. Job queues with
+        /// a higher priority are evaluated first when associated with the same service environment.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ServiceEnvironmentOrder> ServiceEnvironmentOrder
+        {
+            get { return this._serviceEnvironmentOrder; }
+            set { this._serviceEnvironmentOrder = value; }
+        }
+
+        // Check to see if ServiceEnvironmentOrder property is set
+        internal bool IsSetServiceEnvironmentOrder()
+        {
+            return this._serviceEnvironmentOrder != null && (this._serviceEnvironmentOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

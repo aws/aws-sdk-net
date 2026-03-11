@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateQueueQuickConnects operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Disassociates a set of quick connects from a queue.
-    /// </para>
     /// </summary>
     public partial class DisassociateQueueQuickConnectsRequest : AmazonConnectRequest
     {

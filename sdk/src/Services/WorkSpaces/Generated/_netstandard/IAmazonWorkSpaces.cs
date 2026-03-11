@@ -294,7 +294,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web ServicesSupport.
+        /// Amazon Web Services Support.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1429,6 +1429,30 @@ namespace Amazon.WorkSpaces
 
         #endregion
                 
+        #region  DescribeCustomWorkspaceImageImport
+
+
+
+        /// <summary>
+        /// Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomWorkspaceImageImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomWorkspaceImageImport service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">REST API Reference for DescribeCustomWorkspaceImageImport Operation</seealso>
+        Task<DescribeCustomWorkspaceImageImportResponse> DescribeCustomWorkspaceImageImportAsync(DescribeCustomWorkspaceImageImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeImageAssociations
 
 
@@ -2017,6 +2041,46 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
         Task<ImportClientBrandingResponse> ImportClientBrandingAsync(ImportClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ImportCustomWorkspaceImage
+
+
+
+        /// <summary>
+        /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+        /// WorkSpaces using EC2 Image Builder. The image must be an already licensed image that
+        /// is in your Amazon Web Services account, and you must own the image. For more information
+        /// about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Bring Your Own Windows Desktop Licenses</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCustomWorkspaceImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportCustomWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">REST API Reference for ImportCustomWorkspaceImage Operation</seealso>
+        Task<ImportCustomWorkspaceImageResponse> ImportCustomWorkspaceImageAsync(ImportCustomWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2927,7 +2991,7 @@ namespace Amazon.WorkSpaces
         ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web ServicesSupport
+        /// is destroyed. If you need to archive any user data, contact Amazon Web Services Support
         /// before terminating the WorkSpace.
         /// </para>
         ///  </important> 
@@ -3225,7 +3289,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web ServicesSupport.
+        /// Amazon Web Services Support.
         /// </para>
         ///  
         /// <para>
@@ -3241,7 +3305,8 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
         /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
-        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web ServicesSupport.
+        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
+        /// Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

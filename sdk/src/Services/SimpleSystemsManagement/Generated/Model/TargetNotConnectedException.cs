@@ -43,6 +43,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for TargetNotConnectedException
+        /// message.
+        /// </summary>
+        public TargetNotConnectedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TargetNotConnectedException with the specified error
         /// message.
         /// </summary>

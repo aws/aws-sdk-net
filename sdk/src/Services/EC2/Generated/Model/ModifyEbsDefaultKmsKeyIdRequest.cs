@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
     /// Amazon Web Services creates a unique Amazon Web Services managed KMS key in each Region
     /// for use with encryption by default. If you change the default KMS key to a symmetric
     /// customer managed KMS key, it is used instead of the Amazon Web Services managed KMS
-    /// key. To reset the default KMS key to the Amazon Web Services managed KMS key for EBS,
-    /// use <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric KMS keys.
+    /// key. Amazon EBS does not support asymmetric KMS keys.
     /// </para>
     ///  
     /// <para>

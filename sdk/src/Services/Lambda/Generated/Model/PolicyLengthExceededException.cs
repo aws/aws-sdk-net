@@ -42,6 +42,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for PolicyLengthExceededException
+        /// message.
+        /// </summary>
+        public PolicyLengthExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyLengthExceededException with the specified error
         /// message.
         /// </summary>

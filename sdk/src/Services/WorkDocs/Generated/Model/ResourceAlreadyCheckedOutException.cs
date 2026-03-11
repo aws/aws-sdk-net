@@ -39,6 +39,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceAlreadyCheckedOutException
+        /// message.
+        /// </summary>
+        public ResourceAlreadyCheckedOutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceAlreadyCheckedOutException with the specified error
         /// message.
         /// </summary>

@@ -86,7 +86,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum items to return in a request.
+        /// Specify the maximum number of items to return in a request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

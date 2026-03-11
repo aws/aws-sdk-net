@@ -70,6 +70,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRecordingGroupException
+        /// message.
+        /// </summary>
+        public InvalidRecordingGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRecordingGroupException with the specified error
         /// message.
         /// </summary>

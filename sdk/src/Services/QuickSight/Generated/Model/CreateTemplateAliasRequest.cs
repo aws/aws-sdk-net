@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The name that you want to give to the template alias that you're creating. Don't start
         /// the alias name with the <c>$</c> character. Alias names that start with <c>$</c> are
-        /// reserved by Amazon QuickSight. 
+        /// reserved by Quick Sight. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

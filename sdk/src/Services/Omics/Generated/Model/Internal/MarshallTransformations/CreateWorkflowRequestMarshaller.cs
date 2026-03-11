@@ -79,6 +79,34 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Accelerators);
             }
 
+            if(publicRequest.IsSetContainerRegistryMap())
+            {
+                context.Writer.WritePropertyName("containerRegistryMap");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContainerRegistryMapMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContainerRegistryMap, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetContainerRegistryMapUri())
+            {
+                context.Writer.WritePropertyName("containerRegistryMapUri");
+                context.Writer.WriteStringValue(publicRequest.ContainerRegistryMapUri);
+            }
+
+            if(publicRequest.IsSetDefinitionRepository())
+            {
+                context.Writer.WritePropertyName("definitionRepository");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DefinitionRepositoryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefinitionRepository, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDefinitionUri())
             {
                 context.Writer.WritePropertyName("definitionUri");
@@ -88,7 +116,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetDefinitionZip())
             {
                 context.Writer.WritePropertyName("definitionZip");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.DefinitionZip));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.DefinitionZip);
             }
 
             if(publicRequest.IsSetDescription())
@@ -134,6 +162,30 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetParameterTemplatePath())
+            {
+                context.Writer.WritePropertyName("parameterTemplatePath");
+                context.Writer.WriteStringValue(publicRequest.ParameterTemplatePath);
+            }
+
+            if(publicRequest.IsSetReadmeMarkdown())
+            {
+                context.Writer.WritePropertyName("readmeMarkdown");
+                context.Writer.WriteStringValue(publicRequest.ReadmeMarkdown);
+            }
+
+            if(publicRequest.IsSetReadmePath())
+            {
+                context.Writer.WritePropertyName("readmePath");
+                context.Writer.WriteStringValue(publicRequest.ReadmePath);
+            }
+
+            if(publicRequest.IsSetReadmeUri())
+            {
+                context.Writer.WritePropertyName("readmeUri");
+                context.Writer.WriteStringValue(publicRequest.ReadmeUri);
+            }
+
             if(publicRequest.IsSetRequestId())
             {
                 context.Writer.WritePropertyName("requestId");
@@ -169,6 +221,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWorkflowBucketOwnerId())
+            {
+                context.Writer.WritePropertyName("workflowBucketOwnerId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowBucketOwnerId);
             }
 
             writer.WriteEndObject();

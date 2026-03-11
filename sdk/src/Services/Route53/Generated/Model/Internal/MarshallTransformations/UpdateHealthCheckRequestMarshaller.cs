@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateHealthCheckRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetHealthCheckId())
                 throw new AmazonRoute53Exception("Request object does not have required field HealthCheckId set");
@@ -97,7 +98,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthThreshold.Value));
 
                 var publicRequestChildHealthChecks = publicRequest.ChildHealthChecks;
-                if (publicRequestChildHealthChecks != null && (publicRequestChildHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetChildHealthChecks()) 
                 {
                     xmlWriter.WriteStartElement("ChildHealthChecks");
                     foreach (var publicRequestChildHealthChecksValue in publicRequestChildHealthChecks) 
@@ -112,7 +113,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.EnableSNI.Value));
 
                 var publicRequestRegions = publicRequest.Regions;
-                if (publicRequestRegions != null && (publicRequestRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRegions()) 
                 {
                     xmlWriter.WriteStartElement("Regions");
                     foreach (var publicRequestRegionsValue in publicRequestRegions) 
@@ -123,7 +124,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }            
                     xmlWriter.WriteEndElement();            
                 }
-                if (publicRequest.AlarmIdentifier != null)
+                if (publicRequest.IsSetAlarmIdentifier())
                 {
                     xmlWriter.WriteStartElement("AlarmIdentifier");
                     if(publicRequest.AlarmIdentifier.IsSetRegion())
@@ -136,7 +137,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));
 
                 var publicRequestResetElements = publicRequest.ResetElements;
-                if (publicRequestResetElements != null && (publicRequestResetElements.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetResetElements()) 
                 {
                     xmlWriter.WriteStartElement("ResetElements");
                     foreach (var publicRequestResetElementsValue in publicRequestResetElements) 
@@ -150,6 +151,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -161,8 +163,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateHealthCheckRequestMarshaller _instance = new UpdateHealthCheckRequestMarshaller();        
@@ -184,5 +184,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateHealthCheckRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateHealthCheckRequest publicRequest);
     }    
 }

@@ -31,9 +31,10 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCodeInterpreterSession operation.
-    /// Creates and initializes a code interpreter session in Amazon Bedrock. The session
-    /// enables agents to execute code as part of their response generation, supporting programming
-    /// languages such as Python for data analysis, visualization, and computation tasks.
+    /// Creates and initializes a code interpreter session in Amazon Bedrock AgentCore. The
+    /// session enables agents to execute code as part of their response generation, supporting
+    /// programming languages such as Python for data analysis, visualization, and computation
+    /// tasks.
     /// 
     ///  
     /// <para>
@@ -47,17 +48,17 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_InvokeCodeInterpreter.html">InvokeCodeInterpreter</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeCodeInterpreter.html">InvokeCodeInterpreter</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a>
     /// 
     /// </para>
     ///  </li> </ul>
@@ -68,14 +69,16 @@ namespace Amazon.BedrockAgentCore.Model
         private string _codeInterpreterIdentifier;
         private string _name;
         private int? _sessionTimeoutSeconds;
+        private string _traceId;
+        private string _traceParent;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier to ensure that the API request completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request, but does not return an error. This parameter helps prevent the creation of
-        /// duplicate sessions if there are temporary network issues.
+        /// than one time. If this token matches a previous request, Amazon Bedrock AgentCore
+        /// ignores the request, but does not return an error. This parameter helps prevent the
+        /// creation of duplicate sessions if there are temporary network issues.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -135,8 +138,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property SessionTimeoutSeconds. 
         /// <para>
         /// The time in seconds after which the session automatically terminates if there is no
-        /// activity. The default value is 3600 seconds (1 hour). The minimum allowed value is
-        /// 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).
+        /// activity. The default value is 900 seconds (15 minutes). The minimum allowed value
+        /// is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28800)]
@@ -150,6 +153,44 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetSessionTimeoutSeconds()
         {
             return this._sessionTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The trace identifier for request tracking.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceParent. 
+        /// <para>
+        /// The parent trace information for distributed tracing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceParent
+        {
+            get { return this._traceParent; }
+            set { this._traceParent = value; }
+        }
+
+        // Check to see if TraceParent property is set
+        internal bool IsSetTraceParent()
+        {
+            return this._traceParent != null;
         }
 
     }

@@ -74,6 +74,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("StepMonitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = StepMonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.StepMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

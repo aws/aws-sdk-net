@@ -36,6 +36,14 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Construct instance of AmazonAPIGatewayException
         /// </summary>
+        public AmazonAPIGatewayException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAPIGatewayException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAPIGatewayException(string message)
             : base(message)

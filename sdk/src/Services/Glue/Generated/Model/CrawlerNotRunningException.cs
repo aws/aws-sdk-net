@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for CrawlerNotRunningException
+        /// message.
+        /// </summary>
+        public CrawlerNotRunningException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CrawlerNotRunningException with the specified error
         /// message.
         /// </summary>

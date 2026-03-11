@@ -40,6 +40,13 @@ namespace Amazon.Elasticsearch.Model
     {
 
         /// <summary>
+        /// Default constructor for DisabledOperationException
+        /// message.
+        /// </summary>
+        public DisabledOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DisabledOperationException with the specified error
         /// message.
         /// </summary>

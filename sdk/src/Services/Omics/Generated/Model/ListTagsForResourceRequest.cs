@@ -43,7 +43,7 @@ namespace Amazon.Omics.Model
         /// The resource's ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

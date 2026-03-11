@@ -141,6 +141,72 @@ namespace Amazon.OSIS
 
 
     /// <summary>
+    /// Constants used for properties of type PipelineEndpointStatus.
+    /// </summary>
+    public class PipelineEndpointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for PipelineEndpointStatus
+        /// </summary>
+        public static readonly PipelineEndpointStatus ACTIVE = new PipelineEndpointStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for PipelineEndpointStatus
+        /// </summary>
+        public static readonly PipelineEndpointStatus CREATE_FAILED = new PipelineEndpointStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for PipelineEndpointStatus
+        /// </summary>
+        public static readonly PipelineEndpointStatus CREATING = new PipelineEndpointStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for PipelineEndpointStatus
+        /// </summary>
+        public static readonly PipelineEndpointStatus DELETING = new PipelineEndpointStatus("DELETING");
+        /// <summary>
+        /// Constant REVOKED for PipelineEndpointStatus
+        /// </summary>
+        public static readonly PipelineEndpointStatus REVOKED = new PipelineEndpointStatus("REVOKED");
+        /// <summary>
+        /// Constant REVOKING for PipelineEndpointStatus
+        /// </summary>
+        public static readonly PipelineEndpointStatus REVOKING = new PipelineEndpointStatus("REVOKING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipelineEndpointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipelineEndpointStatus FindValue(string value)
+        {
+            return FindValue<PipelineEndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipelineEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PipelineStatus.
     /// </summary>
     public class PipelineStatus : ConstantClass

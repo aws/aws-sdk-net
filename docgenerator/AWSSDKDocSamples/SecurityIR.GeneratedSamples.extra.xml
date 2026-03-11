@@ -249,6 +249,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListInvestigations(Amazon.SecurityIR.Model.ListInvestigationsRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListInvestigations(Amazon.SecurityIR.Model.ListInvestigationsRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.ListInvestigationsRequest" />
+            <member name="T:Amazon.SecurityIR.Model.ListInvestigationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListInvestigations with feedback examples"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListMemberships(Amazon.SecurityIR.Model.ListMembershipsRequest)" />
             <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListMemberships(Amazon.SecurityIR.Model.ListMembershipsRequest)" />
             <member name="T:Amazon.SecurityIR.Model.ListMembershipsRequest" />
@@ -282,6 +301,44 @@
                     title="Invoke ListTagsForResource"
                     source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.SendFeedback(Amazon.SecurityIR.Model.SendFeedbackRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.SendFeedback(Amazon.SecurityIR.Model.SendFeedbackRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.SendFeedbackRequest" />
+            <member name="T:Amazon.SecurityIR.Model.SendFeedbackResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Send positive feedback for investigation result"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.SendFeedback(Amazon.SecurityIR.Model.SendFeedbackRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.SendFeedback(Amazon.SecurityIR.Model.SendFeedbackRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.SendFeedbackRequest" />
+            <member name="T:Amazon.SecurityIR.Model.SendFeedbackResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Send negative feedback with detailed comment"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>

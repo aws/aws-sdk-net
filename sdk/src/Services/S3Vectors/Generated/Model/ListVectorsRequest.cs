@@ -31,16 +31,10 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVectors operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// List vectors in the specified vector index. To specify the vector index, you can either
     /// use both the vector bucket name and the vector index name, or use the vector index
     /// Amazon Resource Name (ARN). 
-    /// </para>
+    /// 
     ///  
     /// <para>
     ///  <c>ListVectors</c> operations proceed sequentially; however, for faster performance
@@ -66,7 +60,6 @@ namespace Amazon.S3Vectors.Model
     /// the <c>s3vectors:GetVectors</c> permission.
     /// </para>
     ///  </li> </ul> </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class ListVectorsRequest : AmazonS3VectorsRequest
     {

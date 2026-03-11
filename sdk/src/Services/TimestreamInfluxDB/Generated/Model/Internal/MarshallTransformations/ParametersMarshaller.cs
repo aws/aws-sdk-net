@@ -57,6 +57,28 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInfluxDBv3Core())
+            {
+                context.Writer.WritePropertyName("InfluxDBv3Core");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InfluxDBv3CoreParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfluxDBv3Core, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetInfluxDBv3Enterprise())
+            {
+                context.Writer.WritePropertyName("InfluxDBv3Enterprise");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InfluxDBv3EnterpriseParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfluxDBv3Enterprise, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

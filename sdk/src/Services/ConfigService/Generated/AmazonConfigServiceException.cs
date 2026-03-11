@@ -36,6 +36,14 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Construct instance of AmazonConfigServiceException
         /// </summary>
+        public AmazonConfigServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConfigServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConfigServiceException(string message)
             : base(message)

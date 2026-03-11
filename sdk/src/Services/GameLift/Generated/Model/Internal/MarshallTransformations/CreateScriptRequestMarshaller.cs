@@ -81,6 +81,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetNodeJsVersion())
+            {
+                context.Writer.WritePropertyName("NodeJsVersion");
+                context.Writer.WriteStringValue(publicRequest.NodeJsVersion);
+            }
+
             if(publicRequest.IsSetStorageLocation())
             {
                 context.Writer.WritePropertyName("StorageLocation");
@@ -117,7 +123,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ZipFile);
             }
 
             writer.WriteEndObject();

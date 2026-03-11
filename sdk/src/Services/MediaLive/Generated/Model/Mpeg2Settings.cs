@@ -186,7 +186,7 @@ namespace Amazon.MediaLive.Model
         /// For example, 1001. The framerate is the numerator divided by the denominator. For
         /// example, 24000 / 1001 = 23.976 FPS.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? FramerateDenominator
         {
             get { return this._framerateDenominator; }
@@ -204,7 +204,7 @@ namespace Amazon.MediaLive.Model
         /// 24000. The framerate is the numerator divided by the denominator. For example, 24000
         /// / 1001 = 23.976 FPS.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? FramerateNumerator
         {
             get { return this._framerateNumerator; }
@@ -220,7 +220,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property GopClosedCadence. MPEG2: default is open GOP.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? GopClosedCadence
         {
             get { return this._gopClosedCadence; }
@@ -238,7 +237,6 @@ namespace Amazon.MediaLive.Model
         /// of B-frames between reference frames. If you do not know what a B-frame is, use the
         /// default.
         /// </summary>
-        [AWSProperty(Min=0, Max=7)]
         public int? GopNumBFrames
         {
             get { return this._gopNumBFrames; }

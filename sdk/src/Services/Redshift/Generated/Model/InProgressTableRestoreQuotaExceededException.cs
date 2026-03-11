@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InProgressTableRestoreQuotaExceededException
+        /// message.
+        /// </summary>
+        public InProgressTableRestoreQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InProgressTableRestoreQuotaExceededException with the specified error
         /// message.
         /// </summary>

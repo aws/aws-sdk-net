@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMemory operation.
-    /// Update memory.
+    /// Update an Amazon Bedrock AgentCore Memory resource memory.
     /// </summary>
     public partial class UpdateMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _memoryExecutionRoleArn;
         private string _memoryId;
         private ModifyMemoryStrategies _memoryStrategies;
+        private StreamDeliveryResources _streamDeliveryResources;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -65,7 +66,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description of the memory.
+        /// The updated description of the AgentCore Memory resource.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -87,7 +88,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The number of days after which memory events will expire, between 7 and 365 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=365)]
+        [AWSProperty(Min=3, Max=365)]
         public int? EventExpiryDuration
         {
             get { return this._eventExpiryDuration; }
@@ -103,7 +104,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property MemoryExecutionRoleArn. 
         /// <para>
-        /// The ARN of the IAM role that provides permissions for the memory.
+        /// The ARN of the IAM role that provides permissions for the AgentCore Memory resource.
         /// </para>
         /// </summary>
         public string MemoryExecutionRoleArn
@@ -153,6 +154,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetMemoryStrategies()
         {
             return this._memoryStrategies != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamDeliveryResources. 
+        /// <para>
+        /// Configuration for streaming memory record data to external resources.
+        /// </para>
+        /// </summary>
+        public StreamDeliveryResources StreamDeliveryResources
+        {
+            get { return this._streamDeliveryResources; }
+            set { this._streamDeliveryResources = value; }
+        }
+
+        // Check to see if StreamDeliveryResources property is set
+        internal bool IsSetStreamDeliveryResources()
+        {
+            return this._streamDeliveryResources != null;
         }
 
     }

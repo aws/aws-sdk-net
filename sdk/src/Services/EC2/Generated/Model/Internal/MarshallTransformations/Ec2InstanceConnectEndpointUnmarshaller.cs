@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("createdAt", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PreserveClientIp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("publicDnsNames", targetDepth))
+                    {
+                        var unmarshaller = InstanceConnectEndpointPublicDnsNamesUnmarshaller.Instance;
+                        unmarshalledObject.PublicDnsNames = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))

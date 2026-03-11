@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedPlatformTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedPlatformTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedPlatformTypeException with the specified error
         /// message.
         /// </summary>

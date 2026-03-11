@@ -44,6 +44,7 @@ namespace Amazon.LexModelsV2.Model
         private List<InputContext> _inputContexts = AWSConfigs.InitializeCollections ? new List<InputContext>() : null;
         private IntentClosingSetting _intentClosingSetting;
         private IntentConfirmationSetting _intentConfirmationSetting;
+        private string _intentDisplayName;
         private string _intentId;
         private string _intentName;
         private KendraConfiguration _kendraConfiguration;
@@ -246,6 +247,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetIntentConfirmationSetting()
         {
             return this._intentConfirmationSetting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntentDisplayName. 
+        /// <para>
+        /// The updated display name of the intent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string IntentDisplayName
+        {
+            get { return this._intentDisplayName; }
+            set { this._intentDisplayName = value; }
+        }
+
+        // Check to see if IntentDisplayName property is set
+        internal bool IsSetIntentDisplayName()
+        {
+            return this._intentDisplayName != null;
         }
 
         /// <summary>

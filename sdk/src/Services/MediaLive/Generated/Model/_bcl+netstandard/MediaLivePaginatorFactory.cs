@@ -45,6 +45,14 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Paginator for ListAlerts operation
+        ///</summary>
+        public IListAlertsPaginator ListAlerts(ListAlertsRequest request) 
+        {
+            return new ListAlertsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChannelPlacementGroups operation
         ///</summary>
         public IListChannelPlacementGroupsPaginator ListChannelPlacementGroups(ListChannelPlacementGroupsRequest request) 
@@ -74,6 +82,14 @@ namespace Amazon.MediaLive.Model
         public IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request) 
         {
             return new ListCloudWatchAlarmTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListClusterAlerts operation
+        ///</summary>
+        public IListClusterAlertsPaginator ListClusterAlerts(ListClusterAlertsRequest request) 
+        {
+            return new ListClusterAlertsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -130,6 +146,14 @@ namespace Amazon.MediaLive.Model
         public IListInputSecurityGroupsPaginator ListInputSecurityGroups(ListInputSecurityGroupsRequest request) 
         {
             return new ListInputSecurityGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMultiplexAlerts operation
+        ///</summary>
+        public IListMultiplexAlertsPaginator ListMultiplexAlerts(ListMultiplexAlertsRequest request) 
+        {
+            return new ListMultiplexAlertsPaginator(this.client, request);
         }
 
         /// <summary>

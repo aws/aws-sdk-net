@@ -36,9 +36,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _browserArn;
         private string _browserId;
+        private BrowserSigningConfigOutput _browserSigning;
         private DateTime? _createdAt;
         private string _description;
         private string _executionRoleArn;
+        private string _failureReason;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private BrowserNetworkConfiguration _networkConfiguration;
@@ -81,6 +83,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetBrowserId()
         {
             return this._browserId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserSigning. 
+        /// <para>
+        /// The browser signing configuration that shows whether cryptographic agent identification
+        /// is enabled for web bot authentication.
+        /// </para>
+        /// </summary>
+        public BrowserSigningConfigOutput BrowserSigning
+        {
+            get { return this._browserSigning; }
+            set { this._browserSigning = value; }
+        }
+
+        // Check to see if BrowserSigning property is set
+        internal bool IsSetBrowserSigning()
+        {
+            return this._browserSigning != null;
         }
 
         /// <summary>
@@ -138,6 +159,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason for failure if the browser is in a failed state.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>

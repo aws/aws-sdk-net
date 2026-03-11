@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CborPerformanceBenchmarksRunner", "CborPerformanceBenchmarksRunner\CborPerformanceBenchmarksRunner.csproj", "{48215134-BA62-4A22-A1C7-B1A29F2C8F06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CborProtocol", "CborProtocol", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatch.NetStandard", "..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj", "{AF4917EC-E1CF-FFA1-35AC-78A450BCD7EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecretsManager.NetStandard", "..\..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.NetStandard.csproj", "{DC83465A-0094-C5BB-865E-30AB8075E285}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Core.NetStandard", "..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj", "{628EAA8C-FDF0-DAE9-DA8B-0710542E3A35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OldProtocols", "OldProtocols", "{938A4185-962C-4ABB-A344-97BAA2B8C64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CloudWatch.NetStandard", "..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj", "{8651B417-2687-A38D-F39E-DF0D0C48A8A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecretsManager.NetStandard", "..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Services\SecretsManager\AWSSDK.SecretsManager.NetStandard.csproj", "{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Core.NetStandard", "..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Core\AWSSDK.Core.NetStandard.csproj", "{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Echo.NetStandard", "..\..\Services\Echo\AWSSDK.Echo.NetStandard.csproj", "{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Echo.NetStandard", "..\..\..\..\..\aws-sdk-net-old-protocols\sdk\test\Services\Echo\AWSSDK.Echo.NetStandard.csproj", "{77CADAE9-F953-5A51-1788-0521FB7E7906}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48215134-BA62-4A22-A1C7-B1A29F2C8F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48215134-BA62-4A22-A1C7-B1A29F2C8F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48215134-BA62-4A22-A1C7-B1A29F2C8F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48215134-BA62-4A22-A1C7-B1A29F2C8F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4917EC-E1CF-FFA1-35AC-78A450BCD7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4917EC-E1CF-FFA1-35AC-78A450BCD7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4917EC-E1CF-FFA1-35AC-78A450BCD7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4917EC-E1CF-FFA1-35AC-78A450BCD7EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC83465A-0094-C5BB-865E-30AB8075E285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC83465A-0094-C5BB-865E-30AB8075E285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC83465A-0094-C5BB-865E-30AB8075E285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC83465A-0094-C5BB-865E-30AB8075E285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628EAA8C-FDF0-DAE9-DA8B-0710542E3A35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628EAA8C-FDF0-DAE9-DA8B-0710542E3A35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628EAA8C-FDF0-DAE9-DA8B-0710542E3A35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628EAA8C-FDF0-DAE9-DA8B-0710542E3A35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8651B417-2687-A38D-F39E-DF0D0C48A8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8651B417-2687-A38D-F39E-DF0D0C48A8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8651B417-2687-A38D-F39E-DF0D0C48A8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8651B417-2687-A38D-F39E-DF0D0C48A8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF4917EC-E1CF-FFA1-35AC-78A450BCD7EA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DC83465A-0094-C5BB-865E-30AB8075E285} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{628EAA8C-FDF0-DAE9-DA8B-0710542E3A35} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8651B417-2687-A38D-F39E-DF0D0C48A8A5} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
+		{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
+		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{77CADAE9-F953-5A51-1788-0521FB7E7906} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C32806F1-F388-4C10-A94F-4BCC88584182}
+	EndGlobalSection
+EndGlobal

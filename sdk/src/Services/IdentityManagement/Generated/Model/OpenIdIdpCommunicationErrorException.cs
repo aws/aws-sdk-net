@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpenIdIdpCommunicationErrorException
+        /// message.
+        /// </summary>
+        public OpenIdIdpCommunicationErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpenIdIdpCommunicationErrorException with the specified error
         /// message.
         /// </summary>

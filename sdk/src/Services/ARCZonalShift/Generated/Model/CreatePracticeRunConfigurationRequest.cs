@@ -54,11 +54,56 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class CreatePracticeRunConfigurationRequest : AmazonARCZonalShiftRequest
     {
+        private List<string> _allowedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _blockedDates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _blockedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ControlCondition> _blockingAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
         private List<ControlCondition> _outcomeAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
         private string _resourceIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property AllowedWindows. 
+        /// <para>
+        /// Optionally, you can allow ARC to start practice runs for specific windows of days
+        /// and times. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify
+        /// dates, that dates and times for practice runs are in UTC. Also, be aware of potential
+        /// time adjustments that might be required for daylight saving time differences. Separate
+        /// multiple allowed windows with spaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, say you want to allow practice runs only on Wednesdays and Fridays from
+        /// noon to 5 p.m. For this scenario, you could set the following recurring days and times
+        /// as allowed windows, for example: <c>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>allowedWindows</c> have to start and end on the same day. Windows that span
+        /// multiple days aren't supported.
+        /// </para>
+        ///  </important>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public List<string> AllowedWindows
+        {
+            get { return this._allowedWindows; }
+            set { this._allowedWindows = value; }
+        }
+
+        // Check to see if AllowedWindows property is set
+        internal bool IsSetAllowedWindows()
+        {
+            return this._allowedWindows != null && (this._allowedWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property BlockedDates. 
@@ -113,9 +158,15 @@ namespace Amazon.ARCZonalShift.Model
         ///  
         /// <para>
         /// For example, say you run business report summaries three days a week. For this scenario,
-        /// you might set the following recurring days and times as blocked windows, for example:
-        /// <c>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</c>.
+        /// you could set the following recurring days and times as blocked windows, for example:
+        /// <c>Mon:00:00-Mon:10:00 Wed-20:30-Wed:21:30 Fri-20:30-Fri:21:30</c>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>blockedWindows</c> have to start and end on the same day. Windows that span
+        /// multiple days aren't supported.
+        /// </para>
+        ///  </important>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -138,9 +189,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property BlockingAlarms. 
         /// <para>
-        /// An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs.
-        /// This alarm blocks ARC from starting practice run zonal shifts, and ends a practice
-        /// run that's in progress, when the alarm is in an <c>ALARM</c> state. 
+        ///  <i>Blocking alarms</i> for practice runs are optional alarms that you can specify
+        /// that block practice runs when one or more of the alarms is in an <c>ALARM</c> state.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -148,7 +198,7 @@ namespace Amazon.ARCZonalShift.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=10)]
         public List<ControlCondition> BlockingAlarms
         {
             get { return this._blockingAlarms; }
@@ -164,16 +214,15 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property OutcomeAlarms. 
         /// <para>
-        /// The <i>outcome alarm</i> for practice runs is a required Amazon CloudWatch alarm that
-        /// you specify that ends a practice run when the alarm is in an <c>ALARM</c> state.
+        ///  <i>Outcome alarms</i> for practice runs are alarms that you specify that end a practice
+        /// run when one or more of the alarms is in an <c>ALARM</c> state.
         /// </para>
         ///  
         /// <para>
-        /// Configure the alarm to monitor the health of your application when traffic is shifted
-        /// away from an Availability Zone during each practice run. You should configure the
-        /// alarm to go into an <c>ALARM</c> state if your application is impacted by the zonal
-        /// shift, and you want to stop the zonal shift, to let traffic for the resource return
-        /// to the Availability Zone.
+        /// Configure one or more of these alarms to monitor the health of your application when
+        /// traffic is shifted away from an Availability Zone during each practice run. You should
+        /// configure these alarms to go into an <c>ALARM</c> state if you want to stop a zonal
+        /// shift, to let traffic for the resource return to the original Availability Zone.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -181,7 +230,7 @@ namespace Amazon.ARCZonalShift.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<ControlCondition> OutcomeAlarms
         {
             get { return this._outcomeAlarms; }

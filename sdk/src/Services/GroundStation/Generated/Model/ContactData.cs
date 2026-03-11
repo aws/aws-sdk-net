@@ -37,6 +37,7 @@ namespace Amazon.GroundStation.Model
         private string _contactId;
         private ContactStatus _contactStatus;
         private DateTime? _endTime;
+        private EphemerisResponseData _ephemeris;
         private string _errorMessage;
         private string _groundStation;
         private Elevation _maximumElevation;
@@ -103,6 +104,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ephemeris. 
+        /// <para>
+        /// The ephemeris that determines antenna pointing for the contact.
+        /// </para>
+        /// </summary>
+        public EphemerisResponseData Ephemeris
+        {
+            get { return this._ephemeris; }
+            set { this._ephemeris = value; }
+        }
+
+        // Check to see if Ephemeris property is set
+        internal bool IsSetEphemeris()
+        {
+            return this._ephemeris != null;
         }
 
         /// <summary>

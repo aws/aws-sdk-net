@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmail.Model
         private string _name;
 
         /// <summary>
+        /// Default constructor for CannotDeleteException
+        /// message.
+        /// </summary>
+        public CannotDeleteException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CannotDeleteException with the specified error
         /// message.
         /// </summary>

@@ -49,6 +49,7 @@ namespace Amazon.MediaConvert.Model
         private H264Settings _h264Settings;
         private H265Settings _h265Settings;
         private Mpeg2Settings _mpeg2Settings;
+        private PassthroughSettings _passthroughSettings;
         private ProresSettings _proresSettings;
         private UncompressedSettings _uncompressedSettings;
         private Vc3Settings _vc3Settings;
@@ -186,6 +187,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMpeg2Settings()
         {
             return this._mpeg2Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PassthroughSettings. Optional settings when you set Codec
+        /// to the value Passthrough.
+        /// </summary>
+        public PassthroughSettings PassthroughSettings
+        {
+            get { return this._passthroughSettings; }
+            set { this._passthroughSettings = value; }
+        }
+
+        // Check to see if PassthroughSettings property is set
+        internal bool IsSetPassthroughSettings()
+        {
+            return this._passthroughSettings != null;
         }
 
         /// <summary>

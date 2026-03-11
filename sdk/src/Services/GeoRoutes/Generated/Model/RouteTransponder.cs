@@ -42,6 +42,7 @@ namespace Amazon.GeoRoutes.Model
         /// Names of the toll system collecting the toll.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SystemName
         {
             get { return this._systemName; }

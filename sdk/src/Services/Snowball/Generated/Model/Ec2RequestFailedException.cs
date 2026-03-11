@@ -39,6 +39,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for Ec2RequestFailedException
+        /// message.
+        /// </summary>
+        public Ec2RequestFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new Ec2RequestFailedException with the specified error
         /// message.
         /// </summary>

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateContinuousDeploymentPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -76,11 +77,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.ContinuousDeploymentPolicyConfig.IsSetEnabled())
                         xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.ContinuousDeploymentPolicyConfig.Enabled.Value));
 
-                    if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames != null)
+                    if (publicRequest.ContinuousDeploymentPolicyConfig.IsSetStagingDistributionDnsNames())
                     {
                         xmlWriter.WriteStartElement("StagingDistributionDnsNames");
                         var publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems = publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.Items;
-                        if (publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems != null && (publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItemsValue in publicRequestContinuousDeploymentPolicyConfigStagingDistributionDnsNamesItems) 
@@ -95,10 +96,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ContinuousDeploymentPolicyConfig.StagingDistributionDnsNames.Quantity.Value));
                         xmlWriter.WriteEndElement();
                     }
-                    if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig != null)
+                    if (publicRequest.ContinuousDeploymentPolicyConfig.IsSetTrafficConfig())
                     {
                         xmlWriter.WriteStartElement("TrafficConfig");
-                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig != null)
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.IsSetSingleHeaderConfig())
                         {
                             xmlWriter.WriteStartElement("SingleHeaderConfig");
                             if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.IsSetHeader())
@@ -107,10 +108,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleHeaderConfig.Value));
                             xmlWriter.WriteEndElement();
                         }
-                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig != null)
+                        if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.IsSetSingleWeightConfig())
                         {
                             xmlWriter.WriteStartElement("SingleWeightConfig");
-                            if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig != null)
+                            if (publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.IsSetSessionStickinessConfig())
                             {
                                 xmlWriter.WriteStartElement("SessionStickinessConfig");
                                 if(publicRequest.ContinuousDeploymentPolicyConfig.TrafficConfig.SingleWeightConfig.SessionStickinessConfig.IsSetIdleTTL())
@@ -131,6 +132,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -142,8 +144,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateContinuousDeploymentPolicyRequestMarshaller _instance = new UpdateContinuousDeploymentPolicyRequestMarshaller();        
@@ -165,5 +165,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateContinuousDeploymentPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateContinuousDeploymentPolicyRequest publicRequest);
     }    
 }

@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCases operation.
-    /// Grants permission to list all cases the requester has access to.
+    /// Lists all cases the requester has access to.
     /// </summary>
     public partial class ListCasesRequest : AmazonSecurityIRRequest
     {
@@ -60,7 +60,9 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Optional element.
+        /// An optional string that, if supplied, must be copied from the output of a previous
+        /// call to ListCases. When provided in this manner, the API fetches the next page of
+        /// results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]

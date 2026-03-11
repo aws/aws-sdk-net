@@ -36,6 +36,14 @@ namespace Amazon.CodeGuruSecurity
         /// <summary>
         /// Construct instance of AmazonCodeGuruSecurityException
         /// </summary>
+        public AmazonCodeGuruSecurityException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeGuruSecurityException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeGuruSecurityException(string message)
             : base(message)

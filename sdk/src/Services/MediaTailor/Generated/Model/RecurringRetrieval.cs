@@ -39,6 +39,7 @@ namespace Amazon.MediaTailor.Model
         private int? _delayAfterAvailEndSeconds;
         private Dictionary<string, string> _dynamicVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TrafficShapingRetrievalWindow _trafficShapingRetrievalWindow;
+        private TrafficShapingTpsConfiguration _trafficShapingTpsConfiguration;
         private TrafficShapingType _trafficShapingType;
 
         /// <summary>
@@ -86,8 +87,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property TrafficShapingRetrievalWindow. 
         /// <para>
-        /// Configuration for spreading ADS traffic across a set window instead of sending ADS
-        /// requests for all sessions at the same time.
+        /// The configuration that tells Elemental MediaTailor how many seconds to spread out
+        /// requests to the ad decision server (ADS). Instead of sending ADS requests for all
+        /// sessions at the same time, MediaTailor spreads the requests across the amount of time
+        /// specified in the retrieval window.
         /// </para>
         /// </summary>
         public TrafficShapingRetrievalWindow TrafficShapingRetrievalWindow
@@ -103,10 +106,29 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TrafficShapingTpsConfiguration. 
+        /// <para>
+        /// The configuration for TPS-based traffic shaping. This approach limits requests to
+        /// the ad decision server (ADS) based on transactions per second and concurrent users.
+        /// </para>
+        /// </summary>
+        public TrafficShapingTpsConfiguration TrafficShapingTpsConfiguration
+        {
+            get { return this._trafficShapingTpsConfiguration; }
+            set { this._trafficShapingTpsConfiguration = value; }
+        }
+
+        // Check to see if TrafficShapingTpsConfiguration property is set
+        internal bool IsSetTrafficShapingTpsConfiguration()
+        {
+            return this._trafficShapingTpsConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrafficShapingType. 
         /// <para>
-        /// Indicates if this configuration uses a retrieval window for traffic shaping and limiting
-        /// the number of requests to the ADS at one time.
+        /// Indicates the type of traffic shaping used to limit the number of requests to the
+        /// ADS at one time.
         /// </para>
         /// </summary>
         public TrafficShapingType TrafficShapingType

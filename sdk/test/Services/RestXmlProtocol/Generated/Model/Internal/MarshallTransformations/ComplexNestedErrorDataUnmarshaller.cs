@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ComplexNestedErrorData Object
     /// </summary>  
-    public class ComplexNestedErrorDataUnmarshaller : IXmlUnmarshaller<ComplexNestedErrorData, XmlUnmarshallerContext>
+    public partial class ComplexNestedErrorDataUnmarshaller : IXmlUnmarshaller<ComplexNestedErrorData, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         unmarshalledObject.Foo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ComplexNestedErrorData unmarshalledObject, int targetDepth);
+
         private static ComplexNestedErrorDataUnmarshaller _instance = new ComplexNestedErrorDataUnmarshaller();        
 
         /// <summary>

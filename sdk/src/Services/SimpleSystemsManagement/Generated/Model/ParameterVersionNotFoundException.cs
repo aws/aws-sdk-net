@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ParameterVersionNotFoundException
+        /// message.
+        /// </summary>
+        public ParameterVersionNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParameterVersionNotFoundException with the specified error
         /// message.
         /// </summary>

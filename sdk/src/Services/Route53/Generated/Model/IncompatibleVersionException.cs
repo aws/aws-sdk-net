@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleVersionException
+        /// message.
+        /// </summary>
+        public IncompatibleVersionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleVersionException with the specified error
         /// message.
         /// </summary>

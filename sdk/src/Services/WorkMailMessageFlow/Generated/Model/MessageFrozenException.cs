@@ -40,6 +40,13 @@ namespace Amazon.WorkMailMessageFlow.Model
     {
 
         /// <summary>
+        /// Default constructor for MessageFrozenException
+        /// message.
+        /// </summary>
+        public MessageFrozenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MessageFrozenException with the specified error
         /// message.
         /// </summary>

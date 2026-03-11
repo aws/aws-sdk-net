@@ -39,6 +39,13 @@ namespace Amazon.EC2Protocol.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGreetingException
+        /// message.
+        /// </summary>
+        public InvalidGreetingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGreetingException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,13 @@ namespace Amazon.Lightsail.Model
         private string _tip;
 
         /// <summary>
+        /// Default constructor for AccountSetupInProgressException
+        /// message.
+        /// </summary>
+        public AccountSetupInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountSetupInProgressException with the specified error
         /// message.
         /// </summary>

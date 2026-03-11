@@ -35,8 +35,28 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class CollectionFilters
     {
+        private string _collectionGroupName;
         private string _name;
         private CollectionStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property CollectionGroupName. 
+        /// <para>
+        /// The name of the collection group to filter by.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=32)]
+        public string CollectionGroupName
+        {
+            get { return this._collectionGroupName; }
+            set { this._collectionGroupName = value; }
+        }
+
+        // Check to see if CollectionGroupName property is set
+        internal bool IsSetCollectionGroupName()
+        {
+            return this._collectionGroupName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

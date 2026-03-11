@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalOriginAccessConfigurationException
+        /// message.
+        /// </summary>
+        public IllegalOriginAccessConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalOriginAccessConfigurationException with the specified error
         /// message.
         /// </summary>

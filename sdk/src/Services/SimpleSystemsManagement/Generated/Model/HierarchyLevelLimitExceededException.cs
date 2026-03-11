@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for HierarchyLevelLimitExceededException
+        /// message.
+        /// </summary>
+        public HierarchyLevelLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HierarchyLevelLimitExceededException with the specified error
         /// message.
         /// </summary>

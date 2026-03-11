@@ -40,6 +40,7 @@ namespace Amazon.Imagebuilder.Model
         private DateTime? _deprecationTime;
         private ImageSource _imageSource;
         private string _lifecycleExecutionId;
+        private ImageLoggingConfiguration _loggingConfiguration;
         private string _name;
         private string _osVersion;
         private OutputResources _outputResources;
@@ -177,6 +178,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetLifecycleExecutionId()
         {
             return this._lifecycleExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// The logging configuration that's defined for the image.
+        /// </para>
+        /// </summary>
+        public ImageLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

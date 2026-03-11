@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ParameterDefinition Object
     /// </summary>  
-    public class ParameterDefinitionUnmarshaller : IXmlUnmarshaller<ParameterDefinition, XmlUnmarshallerContext>
+    public partial class ParameterDefinitionUnmarshaller : IXmlUnmarshaller<ParameterDefinition, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ParameterDefinition unmarshalledObject, int targetDepth);
+
         private static ParameterDefinitionUnmarshaller _instance = new ParameterDefinitionUnmarshaller();        
 
         /// <summary>

@@ -92,12 +92,12 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You are accessing an Oracle DB instance.
+    /// You are accessing an Oracle or SQL Server DB instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Your Oracle DB instance class supports configuring the number of CPU cores and threads
-    /// per core.
+    /// Your Oracle or SQL Server DB instance class supports configuring the number of CPU
+    /// cores and threads per core.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -106,8 +106,9 @@ namespace Amazon.RDS.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">
-    /// Configuring the processor for a DB instance class in RDS for Oracle</a> in the <i>Amazon
-    /// RDS User Guide. </i> 
+    /// Configuring the processor for a DB instance class in RDS for Oracle</a>, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Concepts.General.OptimizeCPU.html">
+    /// Optimizing your RDS for SQL Server CPU</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+    /// instance classes</a> in the <i>Amazon RDS User Guide. </i> 
     /// </para>
     /// </summary>
     public partial class ProcessorFeature

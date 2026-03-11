@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private ColorsConfiguration _colorsConfiguration;
         private ColumnIdentifier _column;
+        private DecalSettingsConfiguration _decalSettingsConfiguration;
         private FormatConfiguration _formatConfiguration;
         private ColumnRole _role;
 
@@ -74,6 +75,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColumn()
         {
             return this._column != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DecalSettingsConfiguration. 
+        /// <para>
+        /// Decal configuration of the column.
+        /// </para>
+        /// </summary>
+        public DecalSettingsConfiguration DecalSettingsConfiguration
+        {
+            get { return this._decalSettingsConfiguration; }
+            set { this._decalSettingsConfiguration = value; }
+        }
+
+        // Check to see if DecalSettingsConfiguration property is set
+        internal bool IsSetDecalSettingsConfiguration()
+        {
+            return this._decalSettingsConfiguration != null;
         }
 
         /// <summary>

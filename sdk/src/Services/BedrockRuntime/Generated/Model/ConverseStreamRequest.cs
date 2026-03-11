@@ -110,9 +110,11 @@ namespace Amazon.BedrockRuntime.Model
         private InferenceConfiguration _inferenceConfig;
         private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _modelId;
+        private OutputConfig _outputConfig;
         private PerformanceConfiguration _performanceConfig;
         private Dictionary<string, PromptVariableValues> _promptVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, PromptVariableValues>() : null;
         private Dictionary<string, string> _requestMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private ServiceTier _serviceTier;
         private List<SystemContentBlock> _system = AWSConfigs.InitializeCollections ? new List<SystemContentBlock>() : null;
         private ToolConfiguration _toolConfig;
 
@@ -299,6 +301,24 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputConfig. 
+        /// <para>
+        /// Output configuration for a model response.
+        /// </para>
+        /// </summary>
+        public OutputConfig OutputConfig
+        {
+            get { return this._outputConfig; }
+            set { this._outputConfig = value; }
+        }
+
+        // Check to see if OutputConfig property is set
+        internal bool IsSetOutputConfig()
+        {
+            return this._outputConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PerformanceConfig. 
         /// <para>
         /// Model performance settings for the request.
@@ -364,6 +384,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetRequestMetadata()
         {
             return this._requestMetadata != null && (this._requestMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceTier. 
+        /// <para>
+        /// Specifies the processing tier configuration used for serving the request.
+        /// </para>
+        /// </summary>
+        public ServiceTier ServiceTier
+        {
+            get { return this._serviceTier; }
+            set { this._serviceTier = value; }
+        }
+
+        // Check to see if ServiceTier property is set
+        internal bool IsSetServiceTier()
+        {
+            return this._serviceTier != null;
         }
 
         /// <summary>

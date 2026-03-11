@@ -44,12 +44,15 @@ namespace Amazon.RDS.Model
         private string _dbProxyArn;
         private string _dbProxyName;
         private bool? _debugLogging;
+        private string _defaultAuthScheme;
         private string _endpoint;
+        private EndpointNetworkType _endpointNetworkType;
         private string _engineFamily;
         private int? _idleClientTimeout;
         private bool? _requireTLS;
         private string _roleArn;
         private DBProxyStatus _status;
+        private TargetConnectionNetworkType _targetConnectionNetworkType;
         private DateTime? _updatedDate;
         private string _vpcId;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -137,12 +140,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DebugLogging. 
         /// <para>
-        /// Indicates whether the proxy includes detailed information about SQL statements in
-        /// its logs. This information helps you to debug issues involving SQL behavior or the
-        /// performance and scalability of the proxy connections. The debug information includes
-        /// the text of SQL statements that you submit through the proxy. Thus, only enable this
-        /// setting when needed for debugging, and only when you have security measures in place
-        /// to safeguard any sensitive information that appears in the logs.
+        /// Specifies whether the proxy logs detailed connection and query information. When you
+        /// enable <c>DebugLogging</c>, the proxy captures connection details and connection pool
+        /// behavior from your queries. Debug logging increases CloudWatch costs and can impact
+        /// proxy performance. Enable this option only when you need to troubleshoot connection
+        /// or performance issues.
         /// </para>
         /// </summary>
         public bool? DebugLogging
@@ -155,6 +157,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetDebugLogging()
         {
             return this._debugLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthScheme. 
+        /// <para>
+        /// The default authentication scheme that the proxy uses for client connections to the
+        /// proxy and connections from the proxy to the underlying database. Valid values are
+        /// <c>NONE</c> and <c>IAM_AUTH</c>. When set to <c>IAM_AUTH</c>, the proxy uses end-to-end
+        /// IAM authentication to connect to the database. 
+        /// </para>
+        /// </summary>
+        public string DefaultAuthScheme
+        {
+            get { return this._defaultAuthScheme; }
+            set { this._defaultAuthScheme = value; }
+        }
+
+        // Check to see if DefaultAuthScheme property is set
+        internal bool IsSetDefaultAuthScheme()
+        {
+            return this._defaultAuthScheme != null;
         }
 
         /// <summary>
@@ -174,6 +197,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointNetworkType. 
+        /// <para>
+        /// The network type of the DB proxy endpoint. The network type determines the IP version
+        /// that the proxy endpoint supports.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IPV4</c> - The proxy endpoint supports IPv4 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPV6</c> - The proxy endpoint supports IPv6 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DUAL</c> - The proxy endpoint supports both IPv4 and IPv6.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EndpointNetworkType EndpointNetworkType
+        {
+            get { return this._endpointNetworkType; }
+            set { this._endpointNetworkType = value; }
+        }
+
+        // Check to see if EndpointNetworkType property is set
+        internal bool IsSetEndpointNetworkType()
+        {
+            return this._endpointNetworkType != null;
         }
 
         /// <summary>
@@ -282,6 +341,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetConnectionNetworkType. 
+        /// <para>
+        /// The network type that the proxy uses to connect to the target database. The network
+        /// type determines the IP version that the proxy uses for connections to the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IPV4</c> - The proxy connects to the database using IPv4 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPV6</c> - The proxy connects to the database using IPv6 only.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TargetConnectionNetworkType TargetConnectionNetworkType
+        {
+            get { return this._targetConnectionNetworkType; }
+            set { this._targetConnectionNetworkType = value; }
+        }
+
+        // Check to see if TargetConnectionNetworkType property is set
+        internal bool IsSetTargetConnectionNetworkType()
+        {
+            return this._targetConnectionNetworkType != null;
         }
 
         /// <summary>

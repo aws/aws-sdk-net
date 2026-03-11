@@ -48,7 +48,7 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// For example, a route with a departure position and destination position returns one
-        /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+        /// leg with the positions <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">snapped
         /// to a nearby road</a>:
         /// </para>
         ///  <ul> <li> 

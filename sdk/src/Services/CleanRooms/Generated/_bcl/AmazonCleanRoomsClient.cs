@@ -307,7 +307,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
         public virtual BatchGetCollaborationAnalysisTemplateResponse BatchGetCollaborationAnalysisTemplate(BatchGetCollaborationAnalysisTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCollaborationAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
 
@@ -343,7 +343,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">REST API Reference for BatchGetCollaborationAnalysisTemplate Operation</seealso>
         public virtual Task<BatchGetCollaborationAnalysisTemplateResponse> BatchGetCollaborationAnalysisTemplateAsync(BatchGetCollaborationAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCollaborationAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
             
@@ -379,7 +379,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchema">REST API Reference for BatchGetSchema Operation</seealso>
         public virtual BatchGetSchemaResponse BatchGetSchema(BatchGetSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetSchemaResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchema">REST API Reference for BatchGetSchema Operation</seealso>
         public virtual Task<BatchGetSchemaResponse> BatchGetSchemaAsync(BatchGetSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetSchemaResponseUnmarshaller.Instance;
             
@@ -450,7 +450,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
         public virtual BatchGetSchemaAnalysisRuleResponse BatchGetSchemaAnalysisRule(BatchGetSchemaAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetSchemaAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetSchemaAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -485,7 +485,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
         public virtual Task<BatchGetSchemaAnalysisRuleResponse> BatchGetSchemaAnalysisRuleAsync(BatchGetSchemaAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetSchemaAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetSchemaAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -527,7 +527,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
         public virtual CreateAnalysisTemplateResponse CreateAnalysisTemplate(CreateAnalysisTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnalysisTemplateResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">REST API Reference for CreateAnalysisTemplate Operation</seealso>
         public virtual Task<CreateAnalysisTemplateResponse> CreateAnalysisTemplateAsync(CreateAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnalysisTemplateResponseUnmarshaller.Instance;
             
@@ -604,7 +604,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaboration">REST API Reference for CreateCollaboration Operation</seealso>
         public virtual CreateCollaborationResponse CreateCollaboration(CreateCollaborationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollaborationResponseUnmarshaller.Instance;
 
@@ -639,11 +639,96 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaboration">REST API Reference for CreateCollaboration Operation</seealso>
         public virtual Task<CreateCollaborationResponse> CreateCollaborationAsync(CreateCollaborationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollaborationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCollaborationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCollaborationChangeRequest
+
+
+        /// <summary>
+        /// Creates a new change request to modify an existing collaboration. This enables post-creation
+        /// modifications to collaborations through a structured API-driven approach.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the CreateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaborationChangeRequest">REST API Reference for CreateCollaborationChangeRequest Operation</seealso>
+        public virtual CreateCollaborationChangeRequestResponse CreateCollaborationChangeRequest(CreateCollaborationChangeRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCollaborationChangeRequestResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCollaborationChangeRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new change request to modify an existing collaboration. This enables post-creation
+        /// modifications to collaborations through a structured API-driven approach.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCollaborationChangeRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaborationChangeRequest">REST API Reference for CreateCollaborationChangeRequest Operation</seealso>
+        public virtual Task<CreateCollaborationChangeRequestResponse> CreateCollaborationChangeRequestAsync(CreateCollaborationChangeRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCollaborationChangeRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCollaborationChangeRequestResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -681,7 +766,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation">REST API Reference for CreateConfiguredAudienceModelAssociation Operation</seealso>
         public virtual CreateConfiguredAudienceModelAssociationResponse CreateConfiguredAudienceModelAssociation(CreateConfiguredAudienceModelAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
 
@@ -722,7 +807,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation">REST API Reference for CreateConfiguredAudienceModelAssociation Operation</seealso>
         public virtual Task<CreateConfiguredAudienceModelAssociationResponse> CreateConfiguredAudienceModelAssociationAsync(CreateConfiguredAudienceModelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
             
@@ -764,7 +849,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTable">REST API Reference for CreateConfiguredTable Operation</seealso>
         public virtual CreateConfiguredTableResponse CreateConfiguredTable(CreateConfiguredTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableResponseUnmarshaller.Instance;
 
@@ -805,7 +890,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTable">REST API Reference for CreateConfiguredTable Operation</seealso>
         public virtual Task<CreateConfiguredTableResponse> CreateConfiguredTableAsync(CreateConfiguredTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableResponseUnmarshaller.Instance;
             
@@ -848,7 +933,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAnalysisRule">REST API Reference for CreateConfiguredTableAnalysisRule Operation</seealso>
         public virtual CreateConfiguredTableAnalysisRuleResponse CreateConfiguredTableAnalysisRule(CreateConfiguredTableAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -890,7 +975,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAnalysisRule">REST API Reference for CreateConfiguredTableAnalysisRule Operation</seealso>
         public virtual Task<CreateConfiguredTableAnalysisRuleResponse> CreateConfiguredTableAnalysisRuleAsync(CreateConfiguredTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -933,7 +1018,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAssociation">REST API Reference for CreateConfiguredTableAssociation Operation</seealso>
         public virtual CreateConfiguredTableAssociationResponse CreateConfiguredTableAssociation(CreateConfiguredTableAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableAssociationResponseUnmarshaller.Instance;
 
@@ -975,7 +1060,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAssociation">REST API Reference for CreateConfiguredTableAssociation Operation</seealso>
         public virtual Task<CreateConfiguredTableAssociationResponse> CreateConfiguredTableAssociationAsync(CreateConfiguredTableAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableAssociationResponseUnmarshaller.Instance;
             
@@ -1014,7 +1099,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAssociationAnalysisRule">REST API Reference for CreateConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual CreateConfiguredTableAssociationAnalysisRuleResponse CreateConfiguredTableAssociationAnalysisRule(CreateConfiguredTableAssociationAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -1052,7 +1137,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAssociationAnalysisRule">REST API Reference for CreateConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual Task<CreateConfiguredTableAssociationAnalysisRuleResponse> CreateConfiguredTableAssociationAnalysisRuleAsync(CreateConfiguredTableAssociationAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -1094,7 +1179,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">REST API Reference for CreateIdMappingTable Operation</seealso>
         public virtual CreateIdMappingTableResponse CreateIdMappingTable(CreateIdMappingTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdMappingTableResponseUnmarshaller.Instance;
 
@@ -1135,7 +1220,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdMappingTable">REST API Reference for CreateIdMappingTable Operation</seealso>
         public virtual Task<CreateIdMappingTableResponse> CreateIdMappingTableAsync(CreateIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdMappingTableResponseUnmarshaller.Instance;
             
@@ -1177,7 +1262,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdNamespaceAssociation">REST API Reference for CreateIdNamespaceAssociation Operation</seealso>
         public virtual CreateIdNamespaceAssociationResponse CreateIdNamespaceAssociation(CreateIdNamespaceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdNamespaceAssociationResponseUnmarshaller.Instance;
 
@@ -1218,7 +1303,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateIdNamespaceAssociation">REST API Reference for CreateIdNamespaceAssociation Operation</seealso>
         public virtual Task<CreateIdNamespaceAssociationResponse> CreateIdNamespaceAssociationAsync(CreateIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdNamespaceAssociationResponseUnmarshaller.Instance;
             
@@ -1260,7 +1345,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateMembership">REST API Reference for CreateMembership Operation</seealso>
         public virtual CreateMembershipResponse CreateMembership(CreateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
 
@@ -1301,7 +1386,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateMembership">REST API Reference for CreateMembership Operation</seealso>
         public virtual Task<CreateMembershipResponse> CreateMembershipAsync(CreateMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
             
@@ -1314,10 +1399,9 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates a privacy budget template for a specified membership. Each membership can
-        /// have only one privacy budget template, but it can be deleted and recreated. If you
-        /// need to change the privacy budget template for a membership, use the <a>UpdatePrivacyBudgetTemplate</a>
-        /// operation.
+        /// Creates a privacy budget template for a specified collaboration. Each collaboration
+        /// can have only one privacy budget template. If you need to change the privacy budget
+        /// template, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivacyBudgetTemplate service method.</param>
         /// 
@@ -1334,6 +1418,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -1343,7 +1430,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate">REST API Reference for CreatePrivacyBudgetTemplate Operation</seealso>
         public virtual CreatePrivacyBudgetTemplateResponse CreatePrivacyBudgetTemplate(CreatePrivacyBudgetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrivacyBudgetTemplateResponseUnmarshaller.Instance;
 
@@ -1352,10 +1439,9 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates a privacy budget template for a specified membership. Each membership can
-        /// have only one privacy budget template, but it can be deleted and recreated. If you
-        /// need to change the privacy budget template for a membership, use the <a>UpdatePrivacyBudgetTemplate</a>
-        /// operation.
+        /// Creates a privacy budget template for a specified collaboration. Each collaboration
+        /// can have only one privacy budget template. If you need to change the privacy budget
+        /// template, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivacyBudgetTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1375,6 +1461,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -1384,7 +1473,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate">REST API Reference for CreatePrivacyBudgetTemplate Operation</seealso>
         public virtual Task<CreatePrivacyBudgetTemplateResponse> CreatePrivacyBudgetTemplateAsync(CreatePrivacyBudgetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrivacyBudgetTemplateResponseUnmarshaller.Instance;
             
@@ -1420,7 +1509,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
         public virtual DeleteAnalysisTemplateResponse DeleteAnalysisTemplate(DeleteAnalysisTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalysisTemplateResponseUnmarshaller.Instance;
 
@@ -1455,7 +1544,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">REST API Reference for DeleteAnalysisTemplate Operation</seealso>
         public virtual Task<DeleteAnalysisTemplateResponse> DeleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalysisTemplateResponseUnmarshaller.Instance;
             
@@ -1488,7 +1577,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteCollaboration">REST API Reference for DeleteCollaboration Operation</seealso>
         public virtual DeleteCollaborationResponse DeleteCollaboration(DeleteCollaborationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollaborationResponseUnmarshaller.Instance;
 
@@ -1520,7 +1609,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteCollaboration">REST API Reference for DeleteCollaboration Operation</seealso>
         public virtual Task<DeleteCollaborationResponse> DeleteCollaborationAsync(DeleteCollaborationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollaborationResponseUnmarshaller.Instance;
             
@@ -1556,7 +1645,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredAudienceModelAssociation">REST API Reference for DeleteConfiguredAudienceModelAssociation Operation</seealso>
         public virtual DeleteConfiguredAudienceModelAssociationResponse DeleteConfiguredAudienceModelAssociation(DeleteConfiguredAudienceModelAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
 
@@ -1591,7 +1680,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredAudienceModelAssociation">REST API Reference for DeleteConfiguredAudienceModelAssociation Operation</seealso>
         public virtual Task<DeleteConfiguredAudienceModelAssociationResponse> DeleteConfiguredAudienceModelAssociationAsync(DeleteConfiguredAudienceModelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
             
@@ -1630,7 +1719,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTable">REST API Reference for DeleteConfiguredTable Operation</seealso>
         public virtual DeleteConfiguredTableResponse DeleteConfiguredTable(DeleteConfiguredTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableResponseUnmarshaller.Instance;
 
@@ -1668,7 +1757,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTable">REST API Reference for DeleteConfiguredTable Operation</seealso>
         public virtual Task<DeleteConfiguredTableResponse> DeleteConfiguredTableAsync(DeleteConfiguredTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableResponseUnmarshaller.Instance;
             
@@ -1707,7 +1796,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAnalysisRule">REST API Reference for DeleteConfiguredTableAnalysisRule Operation</seealso>
         public virtual DeleteConfiguredTableAnalysisRuleResponse DeleteConfiguredTableAnalysisRule(DeleteConfiguredTableAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -1745,7 +1834,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAnalysisRule">REST API Reference for DeleteConfiguredTableAnalysisRule Operation</seealso>
         public virtual Task<DeleteConfiguredTableAnalysisRuleResponse> DeleteConfiguredTableAnalysisRuleAsync(DeleteConfiguredTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -1784,7 +1873,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAssociation">REST API Reference for DeleteConfiguredTableAssociation Operation</seealso>
         public virtual DeleteConfiguredTableAssociationResponse DeleteConfiguredTableAssociation(DeleteConfiguredTableAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableAssociationResponseUnmarshaller.Instance;
 
@@ -1822,7 +1911,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAssociation">REST API Reference for DeleteConfiguredTableAssociation Operation</seealso>
         public virtual Task<DeleteConfiguredTableAssociationResponse> DeleteConfiguredTableAssociationAsync(DeleteConfiguredTableAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableAssociationResponseUnmarshaller.Instance;
             
@@ -1861,7 +1950,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAssociationAnalysisRule">REST API Reference for DeleteConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual DeleteConfiguredTableAssociationAnalysisRuleResponse DeleteConfiguredTableAssociationAnalysisRule(DeleteConfiguredTableAssociationAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -1899,7 +1988,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredTableAssociationAnalysisRule">REST API Reference for DeleteConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual Task<DeleteConfiguredTableAssociationAnalysisRuleResponse> DeleteConfiguredTableAssociationAnalysisRuleAsync(DeleteConfiguredTableAssociationAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -1935,7 +2024,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdMappingTable">REST API Reference for DeleteIdMappingTable Operation</seealso>
         public virtual DeleteIdMappingTableResponse DeleteIdMappingTable(DeleteIdMappingTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdMappingTableResponseUnmarshaller.Instance;
 
@@ -1970,7 +2059,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdMappingTable">REST API Reference for DeleteIdMappingTable Operation</seealso>
         public virtual Task<DeleteIdMappingTableResponse> DeleteIdMappingTableAsync(DeleteIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdMappingTableResponseUnmarshaller.Instance;
             
@@ -2006,7 +2095,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdNamespaceAssociation">REST API Reference for DeleteIdNamespaceAssociation Operation</seealso>
         public virtual DeleteIdNamespaceAssociationResponse DeleteIdNamespaceAssociation(DeleteIdNamespaceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdNamespaceAssociationResponseUnmarshaller.Instance;
 
@@ -2041,7 +2130,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteIdNamespaceAssociation">REST API Reference for DeleteIdNamespaceAssociation Operation</seealso>
         public virtual Task<DeleteIdNamespaceAssociationResponse> DeleteIdNamespaceAssociationAsync(DeleteIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdNamespaceAssociationResponseUnmarshaller.Instance;
             
@@ -2082,7 +2171,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual DeleteMemberResponse DeleteMember(DeleteMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemberResponseUnmarshaller.Instance;
 
@@ -2122,7 +2211,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteMember">REST API Reference for DeleteMember Operation</seealso>
         public virtual Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemberResponseUnmarshaller.Instance;
             
@@ -2161,7 +2250,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteMembership">REST API Reference for DeleteMembership Operation</seealso>
         public virtual DeleteMembershipResponse DeleteMembership(DeleteMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMembershipResponseUnmarshaller.Instance;
 
@@ -2199,7 +2288,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteMembership">REST API Reference for DeleteMembership Operation</seealso>
         public virtual Task<DeleteMembershipResponse> DeleteMembershipAsync(DeleteMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMembershipResponseUnmarshaller.Instance;
             
@@ -2212,7 +2301,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Deletes a privacy budget template for a specified membership.
+        /// Deletes a privacy budget template for a specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrivacyBudgetTemplate service method.</param>
         /// 
@@ -2235,7 +2324,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate">REST API Reference for DeletePrivacyBudgetTemplate Operation</seealso>
         public virtual DeletePrivacyBudgetTemplateResponse DeletePrivacyBudgetTemplate(DeletePrivacyBudgetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrivacyBudgetTemplateResponseUnmarshaller.Instance;
 
@@ -2244,7 +2333,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Deletes a privacy budget template for a specified membership.
+        /// Deletes a privacy budget template for a specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrivacyBudgetTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2270,7 +2359,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate">REST API Reference for DeletePrivacyBudgetTemplate Operation</seealso>
         public virtual Task<DeletePrivacyBudgetTemplateResponse> DeletePrivacyBudgetTemplateAsync(DeletePrivacyBudgetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrivacyBudgetTemplateResponseUnmarshaller.Instance;
             
@@ -2306,7 +2395,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
         public virtual GetAnalysisTemplateResponse GetAnalysisTemplate(GetAnalysisTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalysisTemplateResponseUnmarshaller.Instance;
 
@@ -2341,7 +2430,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">REST API Reference for GetAnalysisTemplate Operation</seealso>
         public virtual Task<GetAnalysisTemplateResponse> GetAnalysisTemplateAsync(GetAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalysisTemplateResponseUnmarshaller.Instance;
             
@@ -2374,7 +2463,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaboration">REST API Reference for GetCollaboration Operation</seealso>
         public virtual GetCollaborationResponse GetCollaboration(GetCollaborationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationResponseUnmarshaller.Instance;
 
@@ -2406,7 +2495,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaboration">REST API Reference for GetCollaboration Operation</seealso>
         public virtual Task<GetCollaborationResponse> GetCollaborationAsync(GetCollaborationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationResponseUnmarshaller.Instance;
             
@@ -2442,7 +2531,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
         public virtual GetCollaborationAnalysisTemplateResponse GetCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
 
@@ -2477,11 +2566,82 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
         public virtual Task<GetCollaborationAnalysisTemplateResponse> GetCollaborationAnalysisTemplateAsync(GetCollaborationAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationAnalysisTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetCollaborationAnalysisTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCollaborationChangeRequest
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific collaboration change request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationChangeRequest">REST API Reference for GetCollaborationChangeRequest Operation</seealso>
+        public virtual GetCollaborationChangeRequestResponse GetCollaborationChangeRequest(GetCollaborationChangeRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationChangeRequestResponseUnmarshaller.Instance;
+
+            return Invoke<GetCollaborationChangeRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific collaboration change request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationChangeRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationChangeRequest">REST API Reference for GetCollaborationChangeRequest Operation</seealso>
+        public virtual Task<GetCollaborationChangeRequestResponse> GetCollaborationChangeRequestAsync(GetCollaborationChangeRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCollaborationChangeRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCollaborationChangeRequestResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2513,7 +2673,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation">REST API Reference for GetCollaborationConfiguredAudienceModelAssociation Operation</seealso>
         public virtual GetCollaborationConfiguredAudienceModelAssociationResponse GetCollaborationConfiguredAudienceModelAssociation(GetCollaborationConfiguredAudienceModelAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
 
@@ -2548,7 +2708,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation">REST API Reference for GetCollaborationConfiguredAudienceModelAssociation Operation</seealso>
         public virtual Task<GetCollaborationConfiguredAudienceModelAssociationResponse> GetCollaborationConfiguredAudienceModelAssociationAsync(GetCollaborationConfiguredAudienceModelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
             
@@ -2584,7 +2744,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationIdNamespaceAssociation">REST API Reference for GetCollaborationIdNamespaceAssociation Operation</seealso>
         public virtual GetCollaborationIdNamespaceAssociationResponse GetCollaborationIdNamespaceAssociation(GetCollaborationIdNamespaceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationIdNamespaceAssociationResponseUnmarshaller.Instance;
 
@@ -2619,7 +2779,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationIdNamespaceAssociation">REST API Reference for GetCollaborationIdNamespaceAssociation Operation</seealso>
         public virtual Task<GetCollaborationIdNamespaceAssociationResponse> GetCollaborationIdNamespaceAssociationAsync(GetCollaborationIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationIdNamespaceAssociationResponseUnmarshaller.Instance;
             
@@ -2655,7 +2815,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationPrivacyBudgetTemplate">REST API Reference for GetCollaborationPrivacyBudgetTemplate Operation</seealso>
         public virtual GetCollaborationPrivacyBudgetTemplateResponse GetCollaborationPrivacyBudgetTemplate(GetCollaborationPrivacyBudgetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationPrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationPrivacyBudgetTemplateResponseUnmarshaller.Instance;
 
@@ -2690,7 +2850,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationPrivacyBudgetTemplate">REST API Reference for GetCollaborationPrivacyBudgetTemplate Operation</seealso>
         public virtual Task<GetCollaborationPrivacyBudgetTemplateResponse> GetCollaborationPrivacyBudgetTemplateAsync(GetCollaborationPrivacyBudgetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationPrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationPrivacyBudgetTemplateResponseUnmarshaller.Instance;
             
@@ -2726,7 +2886,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredAudienceModelAssociation">REST API Reference for GetConfiguredAudienceModelAssociation Operation</seealso>
         public virtual GetConfiguredAudienceModelAssociationResponse GetConfiguredAudienceModelAssociation(GetConfiguredAudienceModelAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
 
@@ -2761,7 +2921,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredAudienceModelAssociation">REST API Reference for GetConfiguredAudienceModelAssociation Operation</seealso>
         public virtual Task<GetConfiguredAudienceModelAssociationResponse> GetConfiguredAudienceModelAssociationAsync(GetConfiguredAudienceModelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
             
@@ -2797,7 +2957,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTable">REST API Reference for GetConfiguredTable Operation</seealso>
         public virtual GetConfiguredTableResponse GetConfiguredTable(GetConfiguredTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableResponseUnmarshaller.Instance;
 
@@ -2832,7 +2992,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTable">REST API Reference for GetConfiguredTable Operation</seealso>
         public virtual Task<GetConfiguredTableResponse> GetConfiguredTableAsync(GetConfiguredTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableResponseUnmarshaller.Instance;
             
@@ -2868,7 +3028,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAnalysisRule">REST API Reference for GetConfiguredTableAnalysisRule Operation</seealso>
         public virtual GetConfiguredTableAnalysisRuleResponse GetConfiguredTableAnalysisRule(GetConfiguredTableAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -2903,7 +3063,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAnalysisRule">REST API Reference for GetConfiguredTableAnalysisRule Operation</seealso>
         public virtual Task<GetConfiguredTableAnalysisRuleResponse> GetConfiguredTableAnalysisRuleAsync(GetConfiguredTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -2939,7 +3099,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAssociation">REST API Reference for GetConfiguredTableAssociation Operation</seealso>
         public virtual GetConfiguredTableAssociationResponse GetConfiguredTableAssociation(GetConfiguredTableAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableAssociationResponseUnmarshaller.Instance;
 
@@ -2974,7 +3134,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAssociation">REST API Reference for GetConfiguredTableAssociation Operation</seealso>
         public virtual Task<GetConfiguredTableAssociationResponse> GetConfiguredTableAssociationAsync(GetConfiguredTableAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableAssociationResponseUnmarshaller.Instance;
             
@@ -3010,7 +3170,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAssociationAnalysisRule">REST API Reference for GetConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual GetConfiguredTableAssociationAnalysisRuleResponse GetConfiguredTableAssociationAnalysisRule(GetConfiguredTableAssociationAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -3045,7 +3205,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredTableAssociationAnalysisRule">REST API Reference for GetConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual Task<GetConfiguredTableAssociationAnalysisRuleResponse> GetConfiguredTableAssociationAnalysisRuleAsync(GetConfiguredTableAssociationAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -3081,7 +3241,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdMappingTable">REST API Reference for GetIdMappingTable Operation</seealso>
         public virtual GetIdMappingTableResponse GetIdMappingTable(GetIdMappingTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingTableResponseUnmarshaller.Instance;
 
@@ -3116,7 +3276,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdMappingTable">REST API Reference for GetIdMappingTable Operation</seealso>
         public virtual Task<GetIdMappingTableResponse> GetIdMappingTableAsync(GetIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingTableResponseUnmarshaller.Instance;
             
@@ -3152,7 +3312,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdNamespaceAssociation">REST API Reference for GetIdNamespaceAssociation Operation</seealso>
         public virtual GetIdNamespaceAssociationResponse GetIdNamespaceAssociation(GetIdNamespaceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
 
@@ -3187,7 +3347,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetIdNamespaceAssociation">REST API Reference for GetIdNamespaceAssociation Operation</seealso>
         public virtual Task<GetIdNamespaceAssociationResponse> GetIdNamespaceAssociationAsync(GetIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdNamespaceAssociationResponseUnmarshaller.Instance;
             
@@ -3223,7 +3383,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetMembership">REST API Reference for GetMembership Operation</seealso>
         public virtual GetMembershipResponse GetMembership(GetMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembershipResponseUnmarshaller.Instance;
 
@@ -3258,7 +3418,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetMembership">REST API Reference for GetMembership Operation</seealso>
         public virtual Task<GetMembershipResponse> GetMembershipAsync(GetMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembershipResponseUnmarshaller.Instance;
             
@@ -3294,7 +3454,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetPrivacyBudgetTemplate">REST API Reference for GetPrivacyBudgetTemplate Operation</seealso>
         public virtual GetPrivacyBudgetTemplateResponse GetPrivacyBudgetTemplate(GetPrivacyBudgetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrivacyBudgetTemplateResponseUnmarshaller.Instance;
 
@@ -3329,7 +3489,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetPrivacyBudgetTemplate">REST API Reference for GetPrivacyBudgetTemplate Operation</seealso>
         public virtual Task<GetPrivacyBudgetTemplateResponse> GetPrivacyBudgetTemplateAsync(GetPrivacyBudgetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrivacyBudgetTemplateResponseUnmarshaller.Instance;
             
@@ -3365,7 +3525,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">REST API Reference for GetProtectedJob Operation</seealso>
         public virtual GetProtectedJobResponse GetProtectedJob(GetProtectedJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectedJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectedJobResponseUnmarshaller.Instance;
 
@@ -3400,7 +3560,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">REST API Reference for GetProtectedJob Operation</seealso>
         public virtual Task<GetProtectedJobResponse> GetProtectedJobAsync(GetProtectedJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectedJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectedJobResponseUnmarshaller.Instance;
             
@@ -3436,7 +3596,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedQuery">REST API Reference for GetProtectedQuery Operation</seealso>
         public virtual GetProtectedQueryResponse GetProtectedQuery(GetProtectedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectedQueryResponseUnmarshaller.Instance;
 
@@ -3471,7 +3631,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedQuery">REST API Reference for GetProtectedQuery Operation</seealso>
         public virtual Task<GetProtectedQueryResponse> GetProtectedQueryAsync(GetProtectedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectedQueryResponseUnmarshaller.Instance;
             
@@ -3507,7 +3667,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetSchema">REST API Reference for GetSchema Operation</seealso>
         public virtual GetSchemaResponse GetSchema(GetSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
 
@@ -3542,7 +3702,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetSchema">REST API Reference for GetSchema Operation</seealso>
         public virtual Task<GetSchemaResponse> GetSchemaAsync(GetSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
             
@@ -3578,7 +3738,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetSchemaAnalysisRule">REST API Reference for GetSchemaAnalysisRule Operation</seealso>
         public virtual GetSchemaAnalysisRuleResponse GetSchemaAnalysisRule(GetSchemaAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -3613,7 +3773,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetSchemaAnalysisRule">REST API Reference for GetSchemaAnalysisRule Operation</seealso>
         public virtual Task<GetSchemaAnalysisRuleResponse> GetSchemaAnalysisRuleAsync(GetSchemaAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -3649,7 +3809,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
         public virtual ListAnalysisTemplatesResponse ListAnalysisTemplates(ListAnalysisTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysisTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysisTemplatesResponseUnmarshaller.Instance;
 
@@ -3684,7 +3844,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">REST API Reference for ListAnalysisTemplates Operation</seealso>
         public virtual Task<ListAnalysisTemplatesResponse> ListAnalysisTemplatesAsync(ListAnalysisTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysisTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysisTemplatesResponseUnmarshaller.Instance;
             
@@ -3720,7 +3880,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
         public virtual ListCollaborationAnalysisTemplatesResponse ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationAnalysisTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationAnalysisTemplatesResponseUnmarshaller.Instance;
 
@@ -3755,11 +3915,84 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
         public virtual Task<ListCollaborationAnalysisTemplatesResponse> ListCollaborationAnalysisTemplatesAsync(ListCollaborationAnalysisTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationAnalysisTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationAnalysisTemplatesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCollaborationAnalysisTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCollaborationChangeRequests
+
+
+        /// <summary>
+        /// Lists all change requests for a collaboration with pagination support. Returns change
+        /// requests sorted by creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationChangeRequests service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationChangeRequests service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationChangeRequests">REST API Reference for ListCollaborationChangeRequests Operation</seealso>
+        public virtual ListCollaborationChangeRequestsResponse ListCollaborationChangeRequests(ListCollaborationChangeRequestsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCollaborationChangeRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationChangeRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCollaborationChangeRequestsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all change requests for a collaboration with pagination support. Returns change
+        /// requests sorted by creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationChangeRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationChangeRequests service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationChangeRequests">REST API Reference for ListCollaborationChangeRequests Operation</seealso>
+        public virtual Task<ListCollaborationChangeRequestsResponse> ListCollaborationChangeRequestsAsync(ListCollaborationChangeRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCollaborationChangeRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCollaborationChangeRequestsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCollaborationChangeRequestsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3791,7 +4024,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationConfiguredAudienceModelAssociations">REST API Reference for ListCollaborationConfiguredAudienceModelAssociations Operation</seealso>
         public virtual ListCollaborationConfiguredAudienceModelAssociationsResponse ListCollaborationConfiguredAudienceModelAssociations(ListCollaborationConfiguredAudienceModelAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationConfiguredAudienceModelAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationConfiguredAudienceModelAssociationsResponseUnmarshaller.Instance;
 
@@ -3826,7 +4059,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationConfiguredAudienceModelAssociations">REST API Reference for ListCollaborationConfiguredAudienceModelAssociations Operation</seealso>
         public virtual Task<ListCollaborationConfiguredAudienceModelAssociationsResponse> ListCollaborationConfiguredAudienceModelAssociationsAsync(ListCollaborationConfiguredAudienceModelAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationConfiguredAudienceModelAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationConfiguredAudienceModelAssociationsResponseUnmarshaller.Instance;
             
@@ -3862,7 +4095,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationIdNamespaceAssociations">REST API Reference for ListCollaborationIdNamespaceAssociations Operation</seealso>
         public virtual ListCollaborationIdNamespaceAssociationsResponse ListCollaborationIdNamespaceAssociations(ListCollaborationIdNamespaceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationIdNamespaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationIdNamespaceAssociationsResponseUnmarshaller.Instance;
 
@@ -3897,7 +4130,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationIdNamespaceAssociations">REST API Reference for ListCollaborationIdNamespaceAssociations Operation</seealso>
         public virtual Task<ListCollaborationIdNamespaceAssociationsResponse> ListCollaborationIdNamespaceAssociationsAsync(ListCollaborationIdNamespaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationIdNamespaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationIdNamespaceAssociationsResponseUnmarshaller.Instance;
             
@@ -3935,7 +4168,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgets">REST API Reference for ListCollaborationPrivacyBudgets Operation</seealso>
         public virtual ListCollaborationPrivacyBudgetsResponse ListCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationPrivacyBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationPrivacyBudgetsResponseUnmarshaller.Instance;
 
@@ -3972,7 +4205,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgets">REST API Reference for ListCollaborationPrivacyBudgets Operation</seealso>
         public virtual Task<ListCollaborationPrivacyBudgetsResponse> ListCollaborationPrivacyBudgetsAsync(ListCollaborationPrivacyBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationPrivacyBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationPrivacyBudgetsResponseUnmarshaller.Instance;
             
@@ -4008,7 +4241,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgetTemplates">REST API Reference for ListCollaborationPrivacyBudgetTemplates Operation</seealso>
         public virtual ListCollaborationPrivacyBudgetTemplatesResponse ListCollaborationPrivacyBudgetTemplates(ListCollaborationPrivacyBudgetTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationPrivacyBudgetTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationPrivacyBudgetTemplatesResponseUnmarshaller.Instance;
 
@@ -4043,7 +4276,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgetTemplates">REST API Reference for ListCollaborationPrivacyBudgetTemplates Operation</seealso>
         public virtual Task<ListCollaborationPrivacyBudgetTemplatesResponse> ListCollaborationPrivacyBudgetTemplatesAsync(ListCollaborationPrivacyBudgetTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationPrivacyBudgetTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationPrivacyBudgetTemplatesResponseUnmarshaller.Instance;
             
@@ -4076,7 +4309,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborations">REST API Reference for ListCollaborations Operation</seealso>
         public virtual ListCollaborationsResponse ListCollaborations(ListCollaborationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationsResponseUnmarshaller.Instance;
 
@@ -4108,7 +4341,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborations">REST API Reference for ListCollaborations Operation</seealso>
         public virtual Task<ListCollaborationsResponse> ListCollaborationsAsync(ListCollaborationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationsResponseUnmarshaller.Instance;
             
@@ -4144,7 +4377,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredAudienceModelAssociations">REST API Reference for ListConfiguredAudienceModelAssociations Operation</seealso>
         public virtual ListConfiguredAudienceModelAssociationsResponse ListConfiguredAudienceModelAssociations(ListConfiguredAudienceModelAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredAudienceModelAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredAudienceModelAssociationsResponseUnmarshaller.Instance;
 
@@ -4179,7 +4412,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredAudienceModelAssociations">REST API Reference for ListConfiguredAudienceModelAssociations Operation</seealso>
         public virtual Task<ListConfiguredAudienceModelAssociationsResponse> ListConfiguredAudienceModelAssociationsAsync(ListConfiguredAudienceModelAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredAudienceModelAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredAudienceModelAssociationsResponseUnmarshaller.Instance;
             
@@ -4215,7 +4448,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredTableAssociations">REST API Reference for ListConfiguredTableAssociations Operation</seealso>
         public virtual ListConfiguredTableAssociationsResponse ListConfiguredTableAssociations(ListConfiguredTableAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredTableAssociationsResponseUnmarshaller.Instance;
 
@@ -4250,7 +4483,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredTableAssociations">REST API Reference for ListConfiguredTableAssociations Operation</seealso>
         public virtual Task<ListConfiguredTableAssociationsResponse> ListConfiguredTableAssociationsAsync(ListConfiguredTableAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredTableAssociationsResponseUnmarshaller.Instance;
             
@@ -4283,7 +4516,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredTables">REST API Reference for ListConfiguredTables Operation</seealso>
         public virtual ListConfiguredTablesResponse ListConfiguredTables(ListConfiguredTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredTablesResponseUnmarshaller.Instance;
 
@@ -4315,7 +4548,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredTables">REST API Reference for ListConfiguredTables Operation</seealso>
         public virtual Task<ListConfiguredTablesResponse> ListConfiguredTablesAsync(ListConfiguredTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredTablesResponseUnmarshaller.Instance;
             
@@ -4351,7 +4584,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdMappingTables">REST API Reference for ListIdMappingTables Operation</seealso>
         public virtual ListIdMappingTablesResponse ListIdMappingTables(ListIdMappingTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingTablesResponseUnmarshaller.Instance;
 
@@ -4386,7 +4619,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdMappingTables">REST API Reference for ListIdMappingTables Operation</seealso>
         public virtual Task<ListIdMappingTablesResponse> ListIdMappingTablesAsync(ListIdMappingTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingTablesResponseUnmarshaller.Instance;
             
@@ -4422,7 +4655,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdNamespaceAssociations">REST API Reference for ListIdNamespaceAssociations Operation</seealso>
         public virtual ListIdNamespaceAssociationsResponse ListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdNamespaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdNamespaceAssociationsResponseUnmarshaller.Instance;
 
@@ -4457,7 +4690,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListIdNamespaceAssociations">REST API Reference for ListIdNamespaceAssociations Operation</seealso>
         public virtual Task<ListIdNamespaceAssociationsResponse> ListIdNamespaceAssociationsAsync(ListIdNamespaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdNamespaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdNamespaceAssociationsResponseUnmarshaller.Instance;
             
@@ -4493,7 +4726,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -4528,7 +4761,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
             
@@ -4561,7 +4794,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
         public virtual ListMembershipsResponse ListMemberships(ListMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembershipsResponseUnmarshaller.Instance;
 
@@ -4593,7 +4826,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
         public virtual Task<ListMembershipsResponse> ListMembershipsAsync(ListMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembershipsResponseUnmarshaller.Instance;
             
@@ -4629,7 +4862,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgets">REST API Reference for ListPrivacyBudgets Operation</seealso>
         public virtual ListPrivacyBudgetsResponse ListPrivacyBudgets(ListPrivacyBudgetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrivacyBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrivacyBudgetsResponseUnmarshaller.Instance;
 
@@ -4664,7 +4897,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgets">REST API Reference for ListPrivacyBudgets Operation</seealso>
         public virtual Task<ListPrivacyBudgetsResponse> ListPrivacyBudgetsAsync(ListPrivacyBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrivacyBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrivacyBudgetsResponseUnmarshaller.Instance;
             
@@ -4700,7 +4933,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgetTemplates">REST API Reference for ListPrivacyBudgetTemplates Operation</seealso>
         public virtual ListPrivacyBudgetTemplatesResponse ListPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrivacyBudgetTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrivacyBudgetTemplatesResponseUnmarshaller.Instance;
 
@@ -4735,7 +4968,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgetTemplates">REST API Reference for ListPrivacyBudgetTemplates Operation</seealso>
         public virtual Task<ListPrivacyBudgetTemplatesResponse> ListPrivacyBudgetTemplatesAsync(ListPrivacyBudgetTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrivacyBudgetTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrivacyBudgetTemplatesResponseUnmarshaller.Instance;
             
@@ -4771,7 +5004,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">REST API Reference for ListProtectedJobs Operation</seealso>
         public virtual ListProtectedJobsResponse ListProtectedJobs(ListProtectedJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedJobsResponseUnmarshaller.Instance;
 
@@ -4806,7 +5039,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">REST API Reference for ListProtectedJobs Operation</seealso>
         public virtual Task<ListProtectedJobsResponse> ListProtectedJobsAsync(ListProtectedJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedJobsResponseUnmarshaller.Instance;
             
@@ -4842,7 +5075,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedQueries">REST API Reference for ListProtectedQueries Operation</seealso>
         public virtual ListProtectedQueriesResponse ListProtectedQueries(ListProtectedQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedQueriesResponseUnmarshaller.Instance;
 
@@ -4877,7 +5110,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedQueries">REST API Reference for ListProtectedQueries Operation</seealso>
         public virtual Task<ListProtectedQueriesResponse> ListProtectedQueriesAsync(ListProtectedQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedQueriesResponseUnmarshaller.Instance;
             
@@ -4913,7 +5146,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -4948,7 +5181,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
             
@@ -4975,7 +5208,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5001,7 +5234,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -5043,7 +5276,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIdMappingTable">REST API Reference for PopulateIdMappingTable Operation</seealso>
         public virtual PopulateIdMappingTableResponse PopulateIdMappingTable(PopulateIdMappingTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PopulateIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
 
@@ -5084,7 +5317,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PopulateIdMappingTable">REST API Reference for PopulateIdMappingTable Operation</seealso>
         public virtual Task<PopulateIdMappingTableResponse> PopulateIdMappingTableAsync(PopulateIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PopulateIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PopulateIdMappingTableResponseUnmarshaller.Instance;
             
@@ -5121,7 +5354,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PreviewPrivacyImpact">REST API Reference for PreviewPrivacyImpact Operation</seealso>
         public virtual PreviewPrivacyImpactResponse PreviewPrivacyImpact(PreviewPrivacyImpactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PreviewPrivacyImpactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PreviewPrivacyImpactResponseUnmarshaller.Instance;
 
@@ -5157,7 +5390,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PreviewPrivacyImpact">REST API Reference for PreviewPrivacyImpact Operation</seealso>
         public virtual Task<PreviewPrivacyImpactResponse> PreviewPrivacyImpactAsync(PreviewPrivacyImpactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PreviewPrivacyImpactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PreviewPrivacyImpactResponseUnmarshaller.Instance;
             
@@ -5196,7 +5429,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">REST API Reference for StartProtectedJob Operation</seealso>
         public virtual StartProtectedJobResponse StartProtectedJob(StartProtectedJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProtectedJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProtectedJobResponseUnmarshaller.Instance;
 
@@ -5234,7 +5467,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">REST API Reference for StartProtectedJob Operation</seealso>
         public virtual Task<StartProtectedJobResponse> StartProtectedJobAsync(StartProtectedJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProtectedJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProtectedJobResponseUnmarshaller.Instance;
             
@@ -5273,7 +5506,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedQuery">REST API Reference for StartProtectedQuery Operation</seealso>
         public virtual StartProtectedQueryResponse StartProtectedQuery(StartProtectedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProtectedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProtectedQueryResponseUnmarshaller.Instance;
 
@@ -5311,7 +5544,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedQuery">REST API Reference for StartProtectedQuery Operation</seealso>
         public virtual Task<StartProtectedQueryResponse> StartProtectedQueryAsync(StartProtectedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProtectedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProtectedQueryResponseUnmarshaller.Instance;
             
@@ -5338,7 +5571,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5364,7 +5597,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5391,7 +5624,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5417,7 +5650,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -5453,7 +5686,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
         public virtual UpdateAnalysisTemplateResponse UpdateAnalysisTemplate(UpdateAnalysisTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalysisTemplateResponseUnmarshaller.Instance;
 
@@ -5488,7 +5721,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">REST API Reference for UpdateAnalysisTemplate Operation</seealso>
         public virtual Task<UpdateAnalysisTemplateResponse> UpdateAnalysisTemplateAsync(UpdateAnalysisTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalysisTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalysisTemplateResponseUnmarshaller.Instance;
             
@@ -5521,7 +5754,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaboration">REST API Reference for UpdateCollaboration Operation</seealso>
         public virtual UpdateCollaborationResponse UpdateCollaboration(UpdateCollaborationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCollaborationResponseUnmarshaller.Instance;
 
@@ -5553,11 +5786,104 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaboration">REST API Reference for UpdateCollaboration Operation</seealso>
         public virtual Task<UpdateCollaborationResponse> UpdateCollaborationAsync(UpdateCollaborationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCollaborationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCollaborationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateCollaborationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCollaborationChangeRequest
+
+
+        /// <summary>
+        /// Updates an existing collaboration change request. This operation allows approval actions
+        /// for pending change requests in collaborations (APPROVE, DENY, CANCEL, COMMIT).
+        /// 
+        ///  
+        /// <para>
+        /// For change requests without automatic approval, a member in the collaboration can
+        /// manually APPROVE or DENY a change request. The collaboration owner can manually CANCEL
+        /// or COMMIT a change request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        public virtual UpdateCollaborationChangeRequestResponse UpdateCollaborationChangeRequest(UpdateCollaborationChangeRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCollaborationChangeRequestResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCollaborationChangeRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing collaboration change request. This operation allows approval actions
+        /// for pending change requests in collaborations (APPROVE, DENY, CANCEL, COMMIT).
+        /// 
+        ///  
+        /// <para>
+        /// For change requests without automatic approval, a member in the collaboration can
+        /// manually APPROVE or DENY a change request. The collaboration owner can manually CANCEL
+        /// or COMMIT a change request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollaborationChangeRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">REST API Reference for UpdateCollaborationChangeRequest Operation</seealso>
+        public virtual Task<UpdateCollaborationChangeRequestResponse> UpdateCollaborationChangeRequestAsync(UpdateCollaborationChangeRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCollaborationChangeRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCollaborationChangeRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCollaborationChangeRequestResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5589,7 +5915,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation">REST API Reference for UpdateConfiguredAudienceModelAssociation Operation</seealso>
         public virtual UpdateConfiguredAudienceModelAssociationResponse UpdateConfiguredAudienceModelAssociation(UpdateConfiguredAudienceModelAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
 
@@ -5624,7 +5950,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation">REST API Reference for UpdateConfiguredAudienceModelAssociation Operation</seealso>
         public virtual Task<UpdateConfiguredAudienceModelAssociationResponse> UpdateConfiguredAudienceModelAssociationAsync(UpdateConfiguredAudienceModelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredAudienceModelAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredAudienceModelAssociationResponseUnmarshaller.Instance;
             
@@ -5654,6 +5980,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -5663,7 +5992,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTable">REST API Reference for UpdateConfiguredTable Operation</seealso>
         public virtual UpdateConfiguredTableResponse UpdateConfiguredTable(UpdateConfiguredTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableResponseUnmarshaller.Instance;
 
@@ -5692,6 +6021,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -5701,7 +6033,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTable">REST API Reference for UpdateConfiguredTable Operation</seealso>
         public virtual Task<UpdateConfiguredTableResponse> UpdateConfiguredTableAsync(UpdateConfiguredTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableResponseUnmarshaller.Instance;
             
@@ -5740,7 +6072,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAnalysisRule">REST API Reference for UpdateConfiguredTableAnalysisRule Operation</seealso>
         public virtual UpdateConfiguredTableAnalysisRuleResponse UpdateConfiguredTableAnalysisRule(UpdateConfiguredTableAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -5778,7 +6110,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAnalysisRule">REST API Reference for UpdateConfiguredTableAnalysisRule Operation</seealso>
         public virtual Task<UpdateConfiguredTableAnalysisRuleResponse> UpdateConfiguredTableAnalysisRuleAsync(UpdateConfiguredTableAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -5817,7 +6149,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAssociation">REST API Reference for UpdateConfiguredTableAssociation Operation</seealso>
         public virtual UpdateConfiguredTableAssociationResponse UpdateConfiguredTableAssociation(UpdateConfiguredTableAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableAssociationResponseUnmarshaller.Instance;
 
@@ -5855,7 +6187,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAssociation">REST API Reference for UpdateConfiguredTableAssociation Operation</seealso>
         public virtual Task<UpdateConfiguredTableAssociationResponse> UpdateConfiguredTableAssociationAsync(UpdateConfiguredTableAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableAssociationResponseUnmarshaller.Instance;
             
@@ -5894,7 +6226,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAssociationAnalysisRule">REST API Reference for UpdateConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual UpdateConfiguredTableAssociationAnalysisRuleResponse UpdateConfiguredTableAssociationAnalysisRule(UpdateConfiguredTableAssociationAnalysisRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
 
@@ -5932,7 +6264,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredTableAssociationAnalysisRule">REST API Reference for UpdateConfiguredTableAssociationAnalysisRule Operation</seealso>
         public virtual Task<UpdateConfiguredTableAssociationAnalysisRuleResponse> UpdateConfiguredTableAssociationAnalysisRuleAsync(UpdateConfiguredTableAssociationAnalysisRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredTableAssociationAnalysisRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredTableAssociationAnalysisRuleResponseUnmarshaller.Instance;
             
@@ -5968,7 +6300,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdMappingTable">REST API Reference for UpdateIdMappingTable Operation</seealso>
         public virtual UpdateIdMappingTableResponse UpdateIdMappingTable(UpdateIdMappingTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdMappingTableResponseUnmarshaller.Instance;
 
@@ -6003,7 +6335,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdMappingTable">REST API Reference for UpdateIdMappingTable Operation</seealso>
         public virtual Task<UpdateIdMappingTableResponse> UpdateIdMappingTableAsync(UpdateIdMappingTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdMappingTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdMappingTableResponseUnmarshaller.Instance;
             
@@ -6039,7 +6371,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdNamespaceAssociation">REST API Reference for UpdateIdNamespaceAssociation Operation</seealso>
         public virtual UpdateIdNamespaceAssociationResponse UpdateIdNamespaceAssociation(UpdateIdNamespaceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
 
@@ -6074,7 +6406,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateIdNamespaceAssociation">REST API Reference for UpdateIdNamespaceAssociation Operation</seealso>
         public virtual Task<UpdateIdNamespaceAssociationResponse> UpdateIdNamespaceAssociationAsync(UpdateIdNamespaceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdNamespaceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdNamespaceAssociationResponseUnmarshaller.Instance;
             
@@ -6113,7 +6445,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateMembership">REST API Reference for UpdateMembership Operation</seealso>
         public virtual UpdateMembershipResponse UpdateMembership(UpdateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMembershipResponseUnmarshaller.Instance;
 
@@ -6151,7 +6483,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateMembership">REST API Reference for UpdateMembership Operation</seealso>
         public virtual Task<UpdateMembershipResponse> UpdateMembershipAsync(UpdateMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMembershipResponseUnmarshaller.Instance;
             
@@ -6164,7 +6496,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Updates the privacy budget template for the specified membership.
+        /// Updates the privacy budget template for the specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrivacyBudgetTemplate service method.</param>
         /// 
@@ -6190,7 +6522,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate">REST API Reference for UpdatePrivacyBudgetTemplate Operation</seealso>
         public virtual UpdatePrivacyBudgetTemplateResponse UpdatePrivacyBudgetTemplate(UpdatePrivacyBudgetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePrivacyBudgetTemplateResponseUnmarshaller.Instance;
 
@@ -6199,7 +6531,7 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Updates the privacy budget template for the specified membership.
+        /// Updates the privacy budget template for the specified collaboration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrivacyBudgetTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -6228,7 +6560,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate">REST API Reference for UpdatePrivacyBudgetTemplate Operation</seealso>
         public virtual Task<UpdatePrivacyBudgetTemplateResponse> UpdatePrivacyBudgetTemplateAsync(UpdatePrivacyBudgetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePrivacyBudgetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePrivacyBudgetTemplateResponseUnmarshaller.Instance;
             
@@ -6267,7 +6599,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">REST API Reference for UpdateProtectedJob Operation</seealso>
         public virtual UpdateProtectedJobResponse UpdateProtectedJob(UpdateProtectedJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectedJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectedJobResponseUnmarshaller.Instance;
 
@@ -6305,7 +6637,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">REST API Reference for UpdateProtectedJob Operation</seealso>
         public virtual Task<UpdateProtectedJobResponse> UpdateProtectedJobAsync(UpdateProtectedJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectedJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectedJobResponseUnmarshaller.Instance;
             
@@ -6344,7 +6676,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedQuery">REST API Reference for UpdateProtectedQuery Operation</seealso>
         public virtual UpdateProtectedQueryResponse UpdateProtectedQuery(UpdateProtectedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectedQueryResponseUnmarshaller.Instance;
 
@@ -6382,7 +6714,7 @@ namespace Amazon.CleanRooms
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedQuery">REST API Reference for UpdateProtectedQuery Operation</seealso>
         public virtual Task<UpdateProtectedQueryResponse> UpdateProtectedQueryAsync(UpdateProtectedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectedQueryResponseUnmarshaller.Instance;
             

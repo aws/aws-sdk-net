@@ -45,6 +45,14 @@ namespace Amazon.LaunchWizard.Model
         }
 
         /// <summary>
+        /// Paginator for ListDeploymentPatternVersions operation
+        ///</summary>
+        public IListDeploymentPatternVersionsPaginator ListDeploymentPatternVersions(ListDeploymentPatternVersionsRequest request) 
+        {
+            return new ListDeploymentPatternVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDeployments operation
         ///</summary>
         public IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request) 

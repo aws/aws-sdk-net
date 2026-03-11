@@ -92,6 +92,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetDisableIMDSV1())
+            {
+                context.Writer.WritePropertyName("DisableIMDSV1");
+                context.Writer.WriteBooleanValue(publicRequest.DisableIMDSV1.Value);
+            }
+
             if(publicRequest.IsSetDisconnectTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("DisconnectTimeoutInSeconds");
@@ -185,6 +191,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Platform");
                 context.Writer.WriteStringValue(publicRequest.Platform);
+            }
+
+            if(publicRequest.IsSetRootVolumeConfig())
+            {
+                context.Writer.WritePropertyName("RootVolumeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VolumeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RootVolumeConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetSessionScriptS3Location())

@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified Amazon Resource Name (ARN) is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidARNException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidARNException
+        /// message.
+        /// </summary>
+        public InvalidARNException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidARNException with the specified error

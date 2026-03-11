@@ -39,6 +39,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for NodeNotFoundException
+        /// message.
+        /// </summary>
+        public NodeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NodeNotFoundException with the specified error
         /// message.
         /// </summary>

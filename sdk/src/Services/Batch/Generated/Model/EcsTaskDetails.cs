@@ -150,7 +150,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property IpcMode. 
         /// <para>
-        /// The IPC resource namespace to use for the containers in the task.
+        /// The IPC resource namespace to use for the containers in the task. The valid values
+        /// are <c>host</c>, <c>task</c>, or <c>none</c>. For more information see <c>ipcMode</c>
+        /// in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.
         /// </para>
         /// </summary>
         public string IpcMode
@@ -187,7 +189,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property PidMode. 
         /// <para>
-        /// The process namespace to use for the containers in the task.
+        /// The process namespace to use for the containers in the task. The valid values are
+        /// <c>host</c>, or <c>task</c>. For more information see <c>pidMode</c> in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EcsTaskProperties.html">EcsTaskProperties</a>.
         /// </para>
         /// </summary>
         public string PidMode

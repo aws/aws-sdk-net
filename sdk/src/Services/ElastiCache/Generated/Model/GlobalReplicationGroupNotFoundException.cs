@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalReplicationGroupNotFoundException
+        /// message.
+        /// </summary>
+        public GlobalReplicationGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalReplicationGroupNotFoundException with the specified error
         /// message.
         /// </summary>

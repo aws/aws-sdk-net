@@ -302,6 +302,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTemporaryDataLocationCredentialsRequest.DurationSeconds</property>
+    <min>900</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetTemporaryGluePartitionCredentialsRequest.DurationSeconds</property>
     <min>900</min>
     <max>43200</max>
@@ -428,6 +433,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RegisterResourceRequest.ExpectedResourceOwnerAccount</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.RegisterResourceRequest.RoleArn</property>
     <pattern>arn:aws:iam::[0-9]*:role/.*</pattern>
   </property-value-rule>
@@ -501,6 +510,10 @@
     <property>Amazon.LakeFormation.Model.UpdateLFTagExpressionRequest.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateResourceRequest.ExpectedResourceOwnerAccount</property>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.UpdateResourceRequest.RoleArn</property>
@@ -759,6 +772,10 @@
     <property>Amazon.LakeFormation.Model.QuerySessionContext.QueryId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ResourceInfo.ExpectedResourceOwnerAccount</property>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.ResourceInfo.RoleArn</property>

@@ -40,6 +40,13 @@ namespace Amazon.DeviceFarm.Model
         private string _resourceName;
 
         /// <summary>
+        /// Default constructor for TagOperationException
+        /// message.
+        /// </summary>
+        public TagOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagOperationException with the specified error
         /// message.
         /// </summary>

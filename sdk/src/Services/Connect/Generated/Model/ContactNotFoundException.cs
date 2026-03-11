@@ -30,14 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The contact with the specified ID is not active or does not exist. Applies to Voice
-    /// calls only, not to Chat or Task contacts.
+    /// The contact with the specified ID does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ContactNotFoundException : AmazonConnectException
     {
+
+        /// <summary>
+        /// Default constructor for ContactNotFoundException
+        /// message.
+        /// </summary>
+        public ContactNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ContactNotFoundException with the specified error

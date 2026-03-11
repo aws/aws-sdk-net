@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for GitHubAccountTokenDoesNotExistException
+        /// message.
+        /// </summary>
+        public GitHubAccountTokenDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GitHubAccountTokenDoesNotExistException with the specified error
         /// message.
         /// </summary>

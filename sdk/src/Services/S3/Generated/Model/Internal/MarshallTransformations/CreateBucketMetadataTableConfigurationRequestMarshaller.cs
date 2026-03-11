@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateBucketMetadataTableConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.AddSubResource("metadataTable");
         
@@ -82,7 +83,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetMetadataTableConfiguration())
                 {
                     xmlWriter.WriteStartElement("MetadataTableConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
-                    if (publicRequest.MetadataTableConfiguration.S3TablesDestination != null)
+                    if (publicRequest.MetadataTableConfiguration.IsSetS3TablesDestination())
                     {
                         xmlWriter.WriteStartElement("S3TablesDestination");
                         if(publicRequest.MetadataTableConfiguration.S3TablesDestination.IsSetTableBucketArn())
@@ -95,13 +96,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -115,8 +115,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateBucketMetadataTableConfigurationRequestMarshaller _instance = new CreateBucketMetadataTableConfigurationRequestMarshaller();        
@@ -138,5 +136,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest);
     }    
 }

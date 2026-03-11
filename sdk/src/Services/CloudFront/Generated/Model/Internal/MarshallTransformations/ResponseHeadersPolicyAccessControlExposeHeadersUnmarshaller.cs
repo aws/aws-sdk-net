@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResponseHeadersPolicyAccessControlExposeHeaders Object
     /// </summary>  
-    public class ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller : IXmlUnmarshaller<ResponseHeadersPolicyAccessControlExposeHeaders, XmlUnmarshallerContext>
+    public partial class ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller : IXmlUnmarshaller<ResponseHeadersPolicyAccessControlExposeHeaders, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ResponseHeadersPolicyAccessControlExposeHeaders unmarshalledObject, int targetDepth);
+
         private static ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller _instance = new ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller();        
 
         /// <summary>

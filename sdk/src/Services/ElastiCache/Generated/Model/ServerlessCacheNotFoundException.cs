@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for ServerlessCacheNotFoundException
+        /// message.
+        /// </summary>
+        public ServerlessCacheNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServerlessCacheNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A user with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class DuplicateUserNameException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for DuplicateUserNameException
+        /// message.
+        /// </summary>
+        public DuplicateUserNameException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new DuplicateUserNameException with the specified error

@@ -136,7 +136,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>Unknown</c> - The reason that synchronization failed is unknown. Contact Amazon
-        /// Web ServicesSupport for more information.
+        /// Web Services Support for more information.
         /// </para>
         ///  </li> </ul>
         /// </summary>

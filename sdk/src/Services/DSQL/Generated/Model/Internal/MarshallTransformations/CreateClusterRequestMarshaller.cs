@@ -73,6 +73,12 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBypassPolicyLockoutSafetyCheck())
+            {
+                context.Writer.WritePropertyName("bypassPolicyLockoutSafetyCheck");
+                context.Writer.WriteBooleanValue(publicRequest.BypassPolicyLockoutSafetyCheck.Value);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -105,6 +111,12 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.MultiRegionProperties, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("policy");
+                context.Writer.WriteStringValue(publicRequest.Policy);
             }
 
             if(publicRequest.IsSetTags())

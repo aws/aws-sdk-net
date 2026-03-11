@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Creates an alias for a fleet. In most situations, you can use an alias ID in place
     /// of a fleet ID. An alias provides a level of abstraction for a fleet that is useful
     /// when redirecting player traffic from one fleet to another, such as when updating your
     /// game build. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon GameLift Servers supports two types of routing strategies for aliases: simple

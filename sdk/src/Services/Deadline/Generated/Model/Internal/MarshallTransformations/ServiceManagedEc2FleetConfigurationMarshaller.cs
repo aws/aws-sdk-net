@@ -74,6 +74,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.StorageProfileId);
             }
 
+            if(requestObject.IsSetVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("vpcConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

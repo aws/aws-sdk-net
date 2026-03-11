@@ -267,7 +267,7 @@ namespace Amazon.Account
 
         internal virtual AcceptPrimaryEmailUpdateResponse AcceptPrimaryEmailUpdate(AcceptPrimaryEmailUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
         public virtual Task<AcceptPrimaryEmailUpdateResponse> AcceptPrimaryEmailUpdateAsync(AcceptPrimaryEmailUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.Account
 
         internal virtual DeleteAlternateContactResponse DeleteAlternateContact(DeleteAlternateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlternateContactResponseUnmarshaller.Instance;
 
@@ -340,15 +340,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -380,7 +380,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DeleteAlternateContact">REST API Reference for DeleteAlternateContact Operation</seealso>
         public virtual Task<DeleteAlternateContactResponse> DeleteAlternateContactAsync(DeleteAlternateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlternateContactResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.Account
 
         internal virtual DisableRegionResponse DisableRegion(DisableRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRegionResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion">REST API Reference for DisableRegion Operation</seealso>
         public virtual Task<DisableRegionResponse> DisableRegionAsync(DisableRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRegionResponseUnmarshaller.Instance;
 
@@ -453,7 +453,7 @@ namespace Amazon.Account
 
         internal virtual EnableRegionResponse EnableRegion(EnableRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRegionResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">REST API Reference for EnableRegion Operation</seealso>
         public virtual Task<EnableRegionResponse> EnableRegionAsync(EnableRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRegionResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.Account
 
         internal virtual GetAccountInformationResponse GetAccountInformation(GetAccountInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountInformationResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
         public virtual Task<GetAccountInformationResponse> GetAccountInformationAsync(GetAccountInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountInformationResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.Account
 
         internal virtual GetAlternateContactResponse GetAlternateContact(GetAlternateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAlternateContactResponseUnmarshaller.Instance;
 
@@ -571,15 +571,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -611,7 +611,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAlternateContact">REST API Reference for GetAlternateContact Operation</seealso>
         public virtual Task<GetAlternateContactResponse> GetAlternateContactAsync(GetAlternateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAlternateContactResponseUnmarshaller.Instance;
 
@@ -623,7 +623,7 @@ namespace Amazon.Account
 
         internal virtual GetContactInformationResponse GetContactInformation(GetContactInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
 
@@ -637,8 +637,8 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-        /// the primary and alternate contact information</a>.
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContactInformation service method.</param>
@@ -668,7 +668,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">REST API Reference for GetContactInformation Operation</seealso>
         public virtual Task<GetContactInformationResponse> GetContactInformationAsync(GetContactInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
 
@@ -676,11 +676,68 @@ namespace Amazon.Account
         }
         #endregion
         
+        #region  GetGovCloudAccountInformation
+
+        internal virtual GetGovCloudAccountInformationResponse GetGovCloudAccountInformation(GetGovCloudAccountInformationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGovCloudAccountInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGovCloudAccountInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetGovCloudAccountInformationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about the GovCloud account linked to the specified standard
+        /// account (if it exists) including the GovCloud account ID and state. To use this API,
+        /// an IAM user or role must have the <c>account:GetGovCloudAccountInformation</c> IAM
+        /// permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGovCloudAccountInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGovCloudAccountInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceUnavailableException">
+        /// The operation failed because it specified a resource that is not currently available.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetGovCloudAccountInformation">REST API Reference for GetGovCloudAccountInformation Operation</seealso>
+        public virtual Task<GetGovCloudAccountInformationResponse> GetGovCloudAccountInformationAsync(GetGovCloudAccountInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGovCloudAccountInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGovCloudAccountInformationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGovCloudAccountInformationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetPrimaryEmail
 
         internal virtual GetPrimaryEmailResponse GetPrimaryEmail(GetPrimaryEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrimaryEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrimaryEmailResponseUnmarshaller.Instance;
 
@@ -719,7 +776,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
         public virtual Task<GetPrimaryEmailResponse> GetPrimaryEmailAsync(GetPrimaryEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrimaryEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrimaryEmailResponseUnmarshaller.Instance;
 
@@ -731,7 +788,7 @@ namespace Amazon.Account
 
         internal virtual GetRegionOptStatusResponse GetRegionOptStatus(GetRegionOptStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegionOptStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegionOptStatusResponseUnmarshaller.Instance;
 
@@ -767,7 +824,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">REST API Reference for GetRegionOptStatus Operation</seealso>
         public virtual Task<GetRegionOptStatusResponse> GetRegionOptStatusAsync(GetRegionOptStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegionOptStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegionOptStatusResponseUnmarshaller.Instance;
 
@@ -779,7 +836,7 @@ namespace Amazon.Account
 
         internal virtual ListRegionsResponse ListRegions(ListRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
 
@@ -816,7 +873,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">REST API Reference for ListRegions Operation</seealso>
         public virtual Task<ListRegionsResponse> ListRegionsAsync(ListRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
 
@@ -828,7 +885,7 @@ namespace Amazon.Account
 
         internal virtual PutAccountNameResponse PutAccountName(PutAccountNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountNameResponseUnmarshaller.Instance;
 
@@ -865,7 +922,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
         public virtual Task<PutAccountNameResponse> PutAccountNameAsync(PutAccountNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountNameResponseUnmarshaller.Instance;
 
@@ -877,7 +934,7 @@ namespace Amazon.Account
 
         internal virtual PutAlternateContactResponse PutAlternateContact(PutAlternateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlternateContactResponseUnmarshaller.Instance;
 
@@ -891,15 +948,15 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-        /// or updating the alternate contacts</a>.
+        /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+        /// the alternate contacts for your Amazon Web Services account</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Before you can update the alternate contact information for an Amazon Web Services
         /// account that is managed by Organizations, you must first enable integration between
         /// Amazon Web Services Account Management and Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
         /// trusted access for Amazon Web Services Account Management</a>.
         /// </para>
         ///  </note>
@@ -928,7 +985,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAlternateContact">REST API Reference for PutAlternateContact Operation</seealso>
         public virtual Task<PutAlternateContactResponse> PutAlternateContactAsync(PutAlternateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlternateContactResponseUnmarshaller.Instance;
 
@@ -940,7 +997,7 @@ namespace Amazon.Account
 
         internal virtual PutContactInformationResponse PutContactInformation(PutContactInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
 
@@ -954,8 +1011,8 @@ namespace Amazon.Account
         /// 
         ///  
         /// <para>
-        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-        /// the primary and alternate contact information</a>.
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContactInformation service method.</param>
@@ -982,7 +1039,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation">REST API Reference for PutContactInformation Operation</seealso>
         public virtual Task<PutContactInformationResponse> PutContactInformationAsync(PutContactInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
 
@@ -994,7 +1051,7 @@ namespace Amazon.Account
 
         internal virtual StartPrimaryEmailUpdateResponse StartPrimaryEmailUpdate(StartPrimaryEmailUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
@@ -1039,7 +1096,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
         public virtual Task<StartPrimaryEmailUpdateResponse> StartPrimaryEmailUpdateAsync(StartPrimaryEmailUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
 

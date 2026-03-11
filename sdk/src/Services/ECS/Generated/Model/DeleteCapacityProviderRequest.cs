@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
     public partial class DeleteCapacityProviderRequest : AmazonECSRequest
     {
         private string _capacityProvider;
+        private string _cluster;
 
         /// <summary>
         /// Gets and sets the property CapacityProvider. 
@@ -73,6 +74,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetCapacityProvider()
         {
             return this._capacityProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// The name of the cluster that contains the capacity provider to delete. Managed instances
+        /// capacity providers are cluster-scoped and can only be deleted from their associated
+        /// cluster.
+        /// </para>
+        /// </summary>
+        public string Cluster
+        {
+            get { return this._cluster; }
+            set { this._cluster = value; }
+        }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
         }
 
     }

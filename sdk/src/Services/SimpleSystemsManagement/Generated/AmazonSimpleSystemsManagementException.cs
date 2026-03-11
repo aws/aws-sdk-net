@@ -36,6 +36,14 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Construct instance of AmazonSimpleSystemsManagementException
         /// </summary>
+        public AmazonSimpleSystemsManagementException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimpleSystemsManagementException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimpleSystemsManagementException(string message)
             : base(message)

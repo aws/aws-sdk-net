@@ -40,6 +40,7 @@ namespace Amazon.Route53.Model
         private HostedZoneConfig _config;
         private long? _resourceRecordSetCount;
         private LinkedService _linkedService;
+        private HostedZoneFeatures _features;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -179,6 +180,25 @@ namespace Amazon.Route53.Model
         internal bool IsSetLinkedService()
         {
             return this._linkedService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// The features configuration for the hosted zone, including accelerated recovery settings
+        /// and status information.
+        /// </para>
+        /// </summary>
+        public HostedZoneFeatures Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null;
         }
 
     }

@@ -36,6 +36,14 @@ namespace Amazon.MarketplaceAgreement
         /// <summary>
         /// Construct instance of AmazonMarketplaceAgreementException
         /// </summary>
+        public AmazonMarketplaceAgreementException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMarketplaceAgreementException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMarketplaceAgreementException(string message)
             : base(message)

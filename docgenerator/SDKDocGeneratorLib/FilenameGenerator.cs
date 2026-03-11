@@ -16,7 +16,6 @@ namespace SDKDocGenerator
             {"ElasticLoadBalancing", "ELB"},
             {"ElasticBeanstalk", "EB"},
             {"ElasticMapReduce", "EMR"},
-            {"ElasticTranscoder", "ETS"},
             {"SimpleNotificationService", "SNS"},
             {"IdentityManagement", "IAM"},
             {"DatabaseMigrationService", "DMS"},

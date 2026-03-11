@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for CommentNotCreatedByCallerException
+        /// message.
+        /// </summary>
+        public CommentNotCreatedByCallerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CommentNotCreatedByCallerException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLimitException
+        /// message.
+        /// </summary>
+        public InvalidLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLimitException with the specified error
         /// message.
         /// </summary>

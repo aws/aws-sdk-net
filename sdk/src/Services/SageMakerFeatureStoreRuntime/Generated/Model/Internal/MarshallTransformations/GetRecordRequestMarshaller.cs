@@ -71,6 +71,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             
             if (publicRequest.IsSetFeatureNames())
                 request.ParameterCollection.Add("FeatureName", publicRequest.FeatureNames);
+            if (string.IsNullOrEmpty(publicRequest.RecordIdentifierValueAsString))
+                throw new AmazonSageMakerFeatureStoreRuntimeException("Request object does not have required field RecordIdentifierValueAsString set");
             
             if (publicRequest.IsSetRecordIdentifierValueAsString())
                 request.Parameters.Add("RecordIdentifierValueAsString", StringUtils.FromString(publicRequest.RecordIdentifierValueAsString));

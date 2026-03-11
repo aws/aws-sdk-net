@@ -35,6 +35,7 @@ namespace Amazon.ConnectParticipant.Model
     public partial class CreateParticipantConnectionResponse : AmazonWebServiceResponse
     {
         private ConnectionCredentials _connectionCredentials;
+        private WebRTCConnection _webRTCConnection;
         private Websocket _websocket;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetConnectionCredentials()
         {
             return this._connectionCredentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebRTCConnection. 
+        /// <para>
+        /// Creates the participant's WebRTC connection data required for the client application
+        /// (mobile application or website) to connect to the call. 
+        /// </para>
+        /// </summary>
+        public WebRTCConnection WebRTCConnection
+        {
+            get { return this._webRTCConnection; }
+            set { this._webRTCConnection = value; }
+        }
+
+        // Check to see if WebRTCConnection property is set
+        internal bool IsSetWebRTCConnection()
+        {
+            return this._webRTCConnection != null;
         }
 
         /// <summary>

@@ -72,7 +72,7 @@ namespace Amazon.SocialMessaging.Model
         /// to list all WABAs and their details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=115)]
         public string Id
         {
             get { return this._id; }

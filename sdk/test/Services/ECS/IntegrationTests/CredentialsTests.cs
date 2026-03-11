@@ -1,52 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon.Runtime;
-using Amazon;
-using Amazon.S3;
-using System.IO;
-using System.Net;
-using System.Diagnostics;
-using System.Reflection;
-using AWSSDK_DotNet.CommonTest.Utils;
+﻿using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
     public class CredentialsTests
     {
-        [TestMethod]
-        [TestCategory("General")]
-        [TestCategory("RequiresIAMUser")]
-        public void TestSessionCredentials()
-        {
-            using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
-            {
-                AWSCredentials credentials = sts.GetSessionToken().Credentials;
-
-                using (var ec2 = new Amazon.EC2.AmazonEC2Client(credentials))
-                {
-                    var regions = ec2.DescribeRegions().Regions;
-                    Console.WriteLine(regions.Count);
-                }
-
-                using (var s3 = new Amazon.S3.AmazonS3Client(credentials))
-                {
-                    var buckets = s3.ListBuckets().Buckets;
-                    Console.WriteLine(buckets.Count);
-                }
-
-                using (var swf = new Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient(credentials))
-                {
-                    var domains = swf.ListDomains(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).DomainInfos;
-                    Console.WriteLine(domains.Infos.Count);
-                }
-            }
-        }
-
         [TestMethod]
         [TestCategory("General")]
         public void TestCredentialsFile()

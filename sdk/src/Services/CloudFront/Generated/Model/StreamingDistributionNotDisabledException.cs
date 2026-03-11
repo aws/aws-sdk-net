@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for StreamingDistributionNotDisabledException
+        /// message.
+        /// </summary>
+        public StreamingDistributionNotDisabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StreamingDistributionNotDisabledException with the specified error
         /// message.
         /// </summary>

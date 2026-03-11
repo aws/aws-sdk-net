@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSingleSelectQuestionOption
     {
         private bool? _automaticFail;
+        private AutomaticFailConfiguration _automaticFailConfiguration;
         private string _refId;
         private int? _score;
         private string _text;
@@ -59,12 +60,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutomaticFailConfiguration. 
+        /// <para>
+        /// Whether automatic fail is configured on a single select question. 
+        /// </para>
+        /// </summary>
+        public AutomaticFailConfiguration AutomaticFailConfiguration
+        {
+            get { return this._automaticFailConfiguration; }
+            set { this._automaticFailConfiguration = value; }
+        }
+
+        // Check to see if AutomaticFailConfiguration property is set
+        internal bool IsSetAutomaticFailConfiguration()
+        {
+            return this._automaticFailConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RefId. 
         /// <para>
         /// The identifier of the answer option. An identifier must be unique within the question.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string RefId
         {
             get { return this._refId; }
@@ -83,7 +102,6 @@ namespace Amazon.Connect.Model
         /// The score assigned to the answer option.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
         public int? Score
         {
             get { return this._score; }
@@ -102,7 +120,7 @@ namespace Amazon.Connect.Model
         /// The title of the answer option.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=128)]
+        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }

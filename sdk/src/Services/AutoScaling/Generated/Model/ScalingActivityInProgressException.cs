@@ -39,6 +39,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for ScalingActivityInProgressException
+        /// message.
+        /// </summary>
+        public ScalingActivityInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ScalingActivityInProgressException with the specified error
         /// message.
         /// </summary>

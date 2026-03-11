@@ -38,7 +38,7 @@
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/APIGateway/AWSSDK.APIGateway.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/AWSSupport/AWSSDK.AWSSupport.NetFramework.csproj" />
-    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.NetFramework.csproj" />
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedAPIEndpointException
+        /// message.
+        /// </summary>
+        public UnsupportedAPIEndpointException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedAPIEndpointException with the specified error
         /// message.
         /// </summary>

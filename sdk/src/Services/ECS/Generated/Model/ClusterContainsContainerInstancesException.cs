@@ -41,6 +41,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterContainsContainerInstancesException
+        /// message.
+        /// </summary>
+        public ClusterContainsContainerInstancesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterContainsContainerInstancesException with the specified error
         /// message.
         /// </summary>

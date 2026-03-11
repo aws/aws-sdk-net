@@ -40,6 +40,8 @@ namespace Amazon.PaymentCryptography.Model
         private KeyAttributes _keyAttributes;
         private string _keyCheckValue;
         private KeyState _keyState;
+        private MultiRegionKeyType _multiRegionKeyType;
+        private string _primaryRegion;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -156,6 +158,49 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyState()
         {
             return this._keyState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionKeyType. 
+        /// <para>
+        /// Indicates whether this key is a Multi-Region key and its role in the Multi-Region
+        /// key hierarchy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Multi-Region replication keys allow the same key material to be used across multiple
+        /// Amazon Web Services Regions. This field specifies whether the key is a Primary Region
+        /// key (PRK) (which can be replicated to other Amazon Web Services Regions) or a Replica
+        /// Region key (RRK) (which is a copy of a PRK in another Region). For more information,
+        /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region
+        /// key replication</a>.
+        /// </para>
+        /// </summary>
+        public MultiRegionKeyType MultiRegionKeyType
+        {
+            get { return this._multiRegionKeyType; }
+            set { this._multiRegionKeyType = value; }
+        }
+
+        // Check to see if MultiRegionKeyType property is set
+        internal bool IsSetMultiRegionKeyType()
+        {
+            return this._multiRegionKeyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryRegion.
+        /// </summary>
+        public string PrimaryRegion
+        {
+            get { return this._primaryRegion; }
+            set { this._primaryRegion = value; }
+        }
+
+        // Check to see if PrimaryRegion property is set
+        internal bool IsSetPrimaryRegion()
+        {
+            return this._primaryRegion != null;
         }
 
     }

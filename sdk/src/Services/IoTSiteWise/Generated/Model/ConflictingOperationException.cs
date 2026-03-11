@@ -42,6 +42,13 @@ namespace Amazon.IoTSiteWise.Model
         private string _resourceId;
 
         /// <summary>
+        /// Default constructor for ConflictingOperationException
+        /// message.
+        /// </summary>
+        public ConflictingOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictingOperationException with the specified error
         /// message.
         /// </summary>

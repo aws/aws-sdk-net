@@ -99,6 +99,10 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                 {
                     return SubnetInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetNotAllowedFault"))
+                {
+                    return SubnetNotAllowedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetQuotaExceededFault"))
                 {
                     return SubnetQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

@@ -36,6 +36,14 @@ namespace Amazon.Athena
         /// <summary>
         /// Construct instance of AmazonAthenaException
         /// </summary>
+        public AmazonAthenaException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAthenaException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAthenaException(string message)
             : base(message)

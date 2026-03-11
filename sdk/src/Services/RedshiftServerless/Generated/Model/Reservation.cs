@@ -141,8 +141,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The start date for the serverless reservation. This is the date you specified for
-        /// the reservation to start when you created the reservation.
+        /// The start date for the serverless reservation. This is the date you created the reservation.
         /// </para>
         /// </summary>
         public DateTime? StartDate

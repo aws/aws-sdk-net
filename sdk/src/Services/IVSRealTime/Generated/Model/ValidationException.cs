@@ -48,6 +48,13 @@ namespace Amazon.IVSRealTime.Model
         private string _xFrameOptions;
 
         /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ValidationException with the specified error
         /// message.
         /// </summary>

@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgent.Model
         /// The name of the Amazon S3 bucket in which to store the input into the node.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=0, Max=63)]
         public string BucketName
         {
             get { return this._bucketName; }

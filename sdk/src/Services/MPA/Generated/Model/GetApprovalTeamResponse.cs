@@ -230,13 +230,6 @@ namespace Amazon.MPA.Model
         /// An array of <c>PolicyReference</c> objects. Contains a list of policies that define
         /// the permissions for team resources.
         /// </para>
-        ///  
-        /// <para>
-        /// The protected operation for a service integration might require specific permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-        /// other services work with Multi-party approval</a> in the <i>Multi-party approval User
-        /// Guide</i>.
-        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

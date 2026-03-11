@@ -35,6 +35,7 @@ namespace Amazon.S3Tables.Model
     public partial class TableSummary
     {
         private DateTime? _createdAt;
+        private string _managedByService;
         private DateTime? _modifiedAt;
         private string _name;
         private List<string> _awsNamespace = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -60,6 +61,25 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedByService. 
+        /// <para>
+        /// The Amazon Web Services service managing this table, if applicable. For example, a
+        /// replicated table is managed by the S3 Tables replication service.
+        /// </para>
+        /// </summary>
+        public string ManagedByService
+        {
+            get { return this._managedByService; }
+            set { this._managedByService = value; }
+        }
+
+        // Check to see if ManagedByService property is set
+        internal bool IsSetManagedByService()
+        {
+            return this._managedByService != null;
         }
 
         /// <summary>

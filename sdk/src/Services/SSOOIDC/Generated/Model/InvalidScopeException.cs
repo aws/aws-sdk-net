@@ -41,6 +41,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for InvalidScopeException
+        /// message.
+        /// </summary>
+        public InvalidScopeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidScopeException with the specified error
         /// message.
         /// </summary>

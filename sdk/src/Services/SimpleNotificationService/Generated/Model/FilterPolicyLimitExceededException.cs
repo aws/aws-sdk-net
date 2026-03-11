@@ -32,13 +32,20 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
     /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
-    /// the Amazon Web Services Support Center.
+    /// the Amazon Web ServicesSupport Center.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class FilterPolicyLimitExceededException : AmazonSimpleNotificationServiceException
     {
+
+        /// <summary>
+        /// Default constructor for FilterPolicyLimitExceededException
+        /// message.
+        /// </summary>
+        public FilterPolicyLimitExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new FilterPolicyLimitExceededException with the specified error

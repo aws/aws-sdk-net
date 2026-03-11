@@ -42,6 +42,13 @@ namespace Amazon.Route53Domains.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInputException
+        /// message.
+        /// </summary>
+        public InvalidInputException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInputException with the specified error
         /// message.
         /// </summary>

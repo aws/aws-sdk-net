@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBProxyEndpointAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBProxyEndpointAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBProxyEndpointAlreadyExistsException with the specified error
         /// message.
         /// </summary>

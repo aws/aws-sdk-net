@@ -40,6 +40,13 @@ namespace Amazon.XRay.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyCountLimitExceededException
+        /// message.
+        /// </summary>
+        public PolicyCountLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyCountLimitExceededException with the specified error
         /// message.
         /// </summary>

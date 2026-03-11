@@ -38,9 +38,16 @@ namespace Amazon.Account.Model
     #endif
     public partial class TooManyRequestsException : AmazonAccountException
     {
-        private string _requestErrorType;
+        private string _errorType;
 
         private RetryableDetails _retryableDetails = new RetryableDetails(true);
+
+        /// <summary>
+        /// Default constructor for TooManyRequestsException
+        /// message.
+        /// </summary>
+        public TooManyRequestsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
@@ -130,14 +137,14 @@ namespace Amazon.Account.Model
         /// </summary>
         public string RequestErrorType
         {
-            get { return this._requestErrorType; }
-            set { this._requestErrorType = value; }
+            get { return this._errorType; }
+            set { this._errorType = value; }
         }
 
         // Check to see if RequestErrorType property is set
         internal bool IsSetRequestErrorType()
         {
-            return this._requestErrorType != null;
+            return this._errorType != null;
         }
 
         /// <summary>

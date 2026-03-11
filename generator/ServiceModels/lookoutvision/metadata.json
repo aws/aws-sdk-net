@@ -1,6 +1,0 @@
-{
-  "active": true,
-  "synopsis": "This release introduces support for Amazon Lookout for Vision.",
-  "generate-client-constructors": true,
-  "legacy-service-id": "LookoutVision"
-}

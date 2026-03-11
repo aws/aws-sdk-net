@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmailV2.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalServiceErrorException
+        /// message.
+        /// </summary>
+        public InternalServiceErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServiceErrorException with the specified error
         /// message.
         /// </summary>

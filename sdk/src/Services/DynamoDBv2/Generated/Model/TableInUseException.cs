@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for TableInUseException
+        /// message.
+        /// </summary>
+        public TableInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TableInUseException with the specified error
         /// message.
         /// </summary>

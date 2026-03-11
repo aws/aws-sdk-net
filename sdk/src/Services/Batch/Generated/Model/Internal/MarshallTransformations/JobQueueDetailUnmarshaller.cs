@@ -74,6 +74,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobQueueName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("jobQueueType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobQueueType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("jobStateTimeLimitActions", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobStateTimeLimitAction, JobStateTimeLimitActionUnmarshaller>(JobStateTimeLimitActionUnmarshaller.Instance);
@@ -90,6 +96,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchedulingPolicyArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("serviceEnvironmentOrder", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServiceEnvironmentOrder, ServiceEnvironmentOrderUnmarshaller>(ServiceEnvironmentOrderUnmarshaller.Instance);
+                    unmarshalledObject.ServiceEnvironmentOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSecurityGroupNotFoundException
+        /// message.
+        /// </summary>
+        public ClusterSecurityGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSecurityGroupNotFoundException with the specified error
         /// message.
         /// </summary>

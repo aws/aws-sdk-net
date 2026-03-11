@@ -38,7 +38,7 @@ namespace Amazon.XRay.Model
     /// 
     ///  
     /// <para>
-    /// This API does not initiate a retrieval job. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
+    /// This API does not initiate a retrieval process. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
     /// which generates the required <c>RetrievalToken</c>.
     /// </para>
     ///  
@@ -50,14 +50,14 @@ namespace Amazon.XRay.Model
     ///  
     /// <para>
     /// For cross-account observability, this API can retrieve traces from linked accounts
-    /// when CloudWatch log is the destination across relevant accounts. For more details,
+    /// when CloudWatch log is set as the destination across relevant accounts. For more details,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
     /// cross-account observability</a>.
     /// </para>
     ///  
     /// <para>
-    /// For retrieving data from X-Ray directly as opposed to the Transaction-Search Log group,
-    /// see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
+    /// For retrieving data from X-Ray directly as opposed to the Transaction Search generated
+    /// log group, see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
     /// </para>
     /// </summary>
     public partial class ListRetrievedTracesRequest : AmazonXRayRequest

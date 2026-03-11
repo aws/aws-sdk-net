@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NestedWithNamespace Object
     /// </summary>  
-    public class NestedWithNamespaceUnmarshaller : IXmlUnmarshaller<NestedWithNamespace, XmlUnmarshallerContext>
+    public partial class NestedWithNamespaceUnmarshaller : IXmlUnmarshaller<NestedWithNamespace, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,12 +57,13 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("@someName", targetDepth - 1))
-
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AttrField = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -71,6 +72,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, NestedWithNamespace unmarshalledObject, int targetDepth);
+
         private static NestedWithNamespaceUnmarshaller _instance = new NestedWithNamespaceUnmarshaller();        
 
         /// <summary>

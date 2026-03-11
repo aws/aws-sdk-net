@@ -41,6 +41,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountNotManagementOrDelegatedAdministratorException
+        /// message.
+        /// </summary>
+        public AccountNotManagementOrDelegatedAdministratorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountNotManagementOrDelegatedAdministratorException with the specified error
         /// message.
         /// </summary>

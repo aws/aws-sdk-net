@@ -31,16 +31,13 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResolverType operation.
-    /// Grants permission to update the resolver type for a case.
+    /// Updates the resolver type for a case.
     /// 
     ///  <important> 
     /// <para>
     /// This is a one-way action and cannot be reversed.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// Options include self-supported &gt; AWS-supported.
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateResolverTypeRequest : AmazonSecurityIRRequest
     {

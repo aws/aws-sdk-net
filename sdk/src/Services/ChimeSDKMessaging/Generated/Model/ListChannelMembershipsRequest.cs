@@ -41,7 +41,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     ///  </note> 
     /// <para>
     /// If you want to list the channels to which a specific app instance user belongs, see
-    /// the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+    /// the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
     /// API.
     /// </para>
     /// </summary>

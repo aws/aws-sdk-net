@@ -36,8 +36,44 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class StartIdMappingJobRequest : AmazonEntityResolutionRequest
     {
+        private JobType _jobType;
         private List<IdMappingJobOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingJobOutputSource>() : null;
         private string _workflowName;
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        ///  The job type for the ID mapping job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>jobType</c> value is set to <c>INCREMENTAL</c>, only new or changed data
+        /// is processed since the last job run. This is the default value if the <c>CreateIdMappingWorkflow</c>
+        /// API is configured with an <c>incrementalRunConfig</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>jobType</c> value is set to <c>BATCH</c>, all data is processed from the
+        /// input source, regardless of previous job runs. This is the default value if the <c>CreateIdMappingWorkflow</c>
+        /// API isn't configured with an <c>incrementalRunConfig</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>jobType</c> value is set to <c>DELETE_ONLY</c>, only deletion requests from
+        /// <c>BatchDeleteUniqueIds</c> are processed.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 

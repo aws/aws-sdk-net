@@ -109,8 +109,16 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeStatus. 
         /// <para>
         /// Current status of the compute. A compute must have an <c>ACTIVE</c> status to host
-        /// game sessions.
+        /// game sessions. Valid values include <c>PENDING</c>, <c>ACTIVE</c>, <c>TERMINATING</c>,
+        /// and <c>IMPAIRED</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// While the ComputeStatus enum type is valid for Container based servers, the result
+        /// may also include other non-enumerated string values such as "Active" for fleets which
+        /// are not Container-based.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ComputeStatus ComputeStatus
         {
@@ -348,7 +356,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
+        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2026. See more details in the
         /// <a href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
         /// FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x for
         /// Amazon GameLift Servers, first update the game server build to server SDK 5.x, and

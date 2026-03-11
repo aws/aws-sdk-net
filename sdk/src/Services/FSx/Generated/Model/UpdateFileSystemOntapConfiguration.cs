@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
+        private string _endpointIpv6AddressRange;
         private string _fsxAdminPassword;
         private int? _haPairs;
         private List<string> _removeRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -109,8 +110,8 @@ namespace Amazon.FSx.Model
         /// for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but
         /// you can provision additional IOPS per GB of storage. The configuration consists of
         /// an IOPS mode (<c>AUTOMATIC</c> or <c>USER_PROVISIONED</c>), and in the case of <c>USER_PROVISIONED</c>
-        /// IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
-        /// SSD storage capacity and IOPS</a>.
+        /// IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/storage-capacity-and-IOPS.html">File
+        /// system storage capacity and IOPS</a>.
         /// </para>
         /// </summary>
         public DiskIopsConfiguration DiskIopsConfiguration
@@ -123,6 +124,29 @@ namespace Amazon.FSx.Model
         internal bool IsSetDiskIopsConfiguration()
         {
             return this._diskIopsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointIpv6AddressRange. 
+        /// <para>
+        /// (Multi-AZ only) Specifies the IPv6 address range in which the endpoints to access
+        /// your file system will be created. By default in the Amazon FSx API and Amazon FSx
+        /// console, Amazon FSx selects an available /118 IP address range for you from one of
+        /// the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems
+        /// deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=43)]
+        public string EndpointIpv6AddressRange
+        {
+            get { return this._endpointIpv6AddressRange; }
+            set { this._endpointIpv6AddressRange = value; }
+        }
+
+        // Check to see if EndpointIpv6AddressRange property is set
+        internal bool IsSetEndpointIpv6AddressRange()
+        {
+            return this._endpointIpv6AddressRange != null;
         }
 
         /// <summary>

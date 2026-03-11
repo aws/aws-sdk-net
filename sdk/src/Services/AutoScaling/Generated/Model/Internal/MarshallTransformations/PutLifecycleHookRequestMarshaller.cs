@@ -92,6 +92,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PutLifecycleHookRequestMarshaller _instance = new PutLifecycleHookRequestMarshaller();        

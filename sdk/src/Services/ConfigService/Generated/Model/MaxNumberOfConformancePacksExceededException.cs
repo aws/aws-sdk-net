@@ -41,6 +41,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxNumberOfConformancePacksExceededException
+        /// message.
+        /// </summary>
+        public MaxNumberOfConformancePacksExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxNumberOfConformancePacksExceededException with the specified error
         /// message.
         /// </summary>

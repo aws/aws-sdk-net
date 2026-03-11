@@ -40,6 +40,13 @@ namespace Amazon.EKS.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourcePropagationDelayException
+        /// message.
+        /// </summary>
+        public ResourcePropagationDelayException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourcePropagationDelayException with the specified error
         /// message.
         /// </summary>

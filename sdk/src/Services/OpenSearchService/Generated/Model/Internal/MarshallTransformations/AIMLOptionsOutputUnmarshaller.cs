@@ -68,6 +68,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3VectorsEngine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ServerlessVectorAcceleration", targetDepth))
+                {
+                    var unmarshaller = ServerlessVectorAccelerationUnmarshaller.Instance;
+                    unmarshalledObject.ServerlessVectorAcceleration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

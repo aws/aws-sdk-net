@@ -79,6 +79,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.HookFailureMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HookInvocationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookInvocationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HookInvocationPoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -107,6 +113,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OperationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OperationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PhysicalResourceId", targetDepth))

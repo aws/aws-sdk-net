@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for RedshiftIdcApplicationQuotaExceededException
+        /// message.
+        /// </summary>
+        public RedshiftIdcApplicationQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RedshiftIdcApplicationQuotaExceededException with the specified error
         /// message.
         /// </summary>

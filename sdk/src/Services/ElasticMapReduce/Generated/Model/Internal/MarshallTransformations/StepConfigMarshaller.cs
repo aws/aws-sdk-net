@@ -69,6 +69,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Name);
             }
 
+            if(requestObject.IsSetStepMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("StepMonitoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StepMonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.StepMonitoringConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

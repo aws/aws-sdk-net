@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientResourceCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientResourceCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientResourceCapacityException with the specified error
         /// message.
         /// </summary>

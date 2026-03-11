@@ -42,6 +42,13 @@ namespace Amazon.Glacier.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for PolicyEnforcedException
+        /// message.
+        /// </summary>
+        public PolicyEnforcedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyEnforcedException with the specified error
         /// message.
         /// </summary>

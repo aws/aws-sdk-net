@@ -29,94 +29,112 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Datapoint Object
     /// </summary>  
-    public class DatapointUnmarshaller : IXmlUnmarshaller<Datapoint, XmlUnmarshallerContext>
+    public class DatapointUnmarshaller : ICborUnmarshaller<Datapoint, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        public Datapoint Unmarshall(XmlUnmarshallerContext context)
+        /// <returns>The unmarshalled object</returns>
+        public Datapoint Unmarshall(CborUnmarshallerContext context)
         {
             Datapoint unmarshalledObject = new Datapoint();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            if (context.IsEmptyResponse)
+                return null;
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Average", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        unmarshalledObject.Average = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ExtendedStatistics/entry", targetDepth))
-                    {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance, "key", "value");
-                        if (unmarshalledObject.ExtendedStatistics == null)
-                        {
-                            unmarshalledObject.ExtendedStatistics = new Dictionary<string, double>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ExtendedStatistics.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Maximum", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Minimum", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SampleCount", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        unmarshalledObject.SampleCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Sum", targetDepth))
-                    {
-                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                        unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamp", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Unit", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                reader.ReadNull();
+                return null;
             }
 
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "Average":
+                        {
+                            context.AddPathSegment("Average");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.Average = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExtendedStatistics":
+                        {
+                            context.AddPathSegment("ExtendedStatistics");
+                            var unmarshaller = new CborDictionaryUnmarshaller<string, double, CborStringUnmarshaller, CborDoubleUnmarshaller>(CborStringUnmarshaller.Instance, CborDoubleUnmarshaller.Instance);
+                            unmarshalledObject.ExtendedStatistics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Maximum":
+                        {
+                            context.AddPathSegment("Maximum");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Minimum":
+                        {
+                            context.AddPathSegment("Minimum");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SampleCount":
+                        {
+                            context.AddPathSegment("SampleCount");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.SampleCount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Sum":
+                        {
+                            context.AddPathSegment("Sum");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Timestamp":
+                        {
+                            context.AddPathSegment("Timestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Unit":
+                        {
+                            context.AddPathSegment("Unit");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
+
 
         private static DatapointUnmarshaller _instance = new DatapointUnmarshaller();        
 

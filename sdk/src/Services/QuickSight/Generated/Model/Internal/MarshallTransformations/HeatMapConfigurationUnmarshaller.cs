@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorScale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ColumnAxisDisplayOptions", targetDepth))
+                {
+                    var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ColumnAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ColumnLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
@@ -90,6 +96,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LegendOptionsUnmarshaller.Instance;
                     unmarshalledObject.Legend = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RowAxisDisplayOptions", targetDepth))
+                {
+                    var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
+                    unmarshalledObject.RowAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowLabelOptions", targetDepth))

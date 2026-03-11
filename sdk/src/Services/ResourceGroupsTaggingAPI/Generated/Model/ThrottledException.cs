@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// The request was denied to limit the frequency of submitted requests.
+    /// The request failed because it exceeded the allowed frequency of submitted requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ThrottledException : AmazonResourceGroupsTaggingAPIException
     {
+
+        /// <summary>
+        /// Default constructor for ThrottledException
+        /// message.
+        /// </summary>
+        public ThrottledException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ThrottledException with the specified error

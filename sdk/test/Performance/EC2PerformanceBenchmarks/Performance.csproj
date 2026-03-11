@@ -32,7 +32,7 @@
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.NetStandard.csproj" />
-    <ProjectReference Include="..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.NetStandard.csproj" />
+    <ProjectReference Include="..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

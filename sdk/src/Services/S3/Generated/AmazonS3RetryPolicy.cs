@@ -62,6 +62,7 @@ namespace Amazon.S3.Internal
             typeof(DeleteObjectsRequest),
             typeof(DeleteObjectTaggingRequest),
             typeof(DeletePublicAccessBlockRequest),
+            typeof(GetBucketAbacRequest),
             typeof(GetBucketAccelerateConfigurationRequest),
             typeof(GetBucketAclRequest),
             typeof(GetBucketAnalyticsConfigurationRequest),
@@ -106,6 +107,7 @@ namespace Amazon.S3.Internal
             typeof(ListPartsRequest),
             typeof(ListVersionsRequest),
             typeof(PutBucketRequest),
+            typeof(PutBucketAbacRequest),
             typeof(PutBucketAccelerateConfigurationRequest),
             typeof(PutBucketAclRequest),
             typeof(PutBucketAnalyticsConfigurationRequest),
@@ -136,6 +138,7 @@ namespace Amazon.S3.Internal
             typeof(SelectObjectContentRequest),
             typeof(UpdateBucketMetadataInventoryTableConfigurationRequest),
             typeof(UpdateBucketMetadataJournalTableConfigurationRequest),
+            typeof(UpdateObjectEncryptionRequest),
             typeof(UploadPartRequest),
             typeof(WriteGetObjectResponseRequest),
         };

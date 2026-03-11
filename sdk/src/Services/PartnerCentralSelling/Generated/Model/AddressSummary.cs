@@ -45,7 +45,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the end <c>Customer</c>'s city associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -83,7 +83,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the end <c>Customer</c>'s postal code associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=20)]
+        [AWSProperty(Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }

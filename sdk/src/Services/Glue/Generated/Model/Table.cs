@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _databaseName;
         private string _description;
         private FederatedTable _federatedTable;
+        private bool? _isMaterializedView;
         private bool? _isMultiDialectView;
         private bool? _isRegisteredWithLakeFormation;
         private DateTime? _lastAccessTime;
@@ -171,6 +172,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetFederatedTable()
         {
             return this._federatedTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMaterializedView. 
+        /// <para>
+        /// Indicates a table is a <c>MaterializedView</c>.
+        /// </para>
+        /// </summary>
+        public bool? IsMaterializedView
+        {
+            get { return this._isMaterializedView; }
+            set { this._isMaterializedView = value; }
+        }
+
+        // Check to see if IsMaterializedView property is set
+        internal bool IsSetIsMaterializedView()
+        {
+            return this._isMaterializedView.HasValue; 
         }
 
         /// <summary>
@@ -361,7 +380,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Indicates the the state of an asynchronous change to a table.
+        /// </para>
         /// </summary>
         public TableStatus Status
         {

@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for SNSNoAuthorizationException
+        /// message.
+        /// </summary>
+        public SNSNoAuthorizationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SNSNoAuthorizationException with the specified error
         /// message.
         /// </summary>

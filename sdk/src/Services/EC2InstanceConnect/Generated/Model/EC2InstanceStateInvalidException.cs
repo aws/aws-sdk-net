@@ -41,6 +41,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for EC2InstanceStateInvalidException
+        /// message.
+        /// </summary>
+        public EC2InstanceStateInvalidException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EC2InstanceStateInvalidException with the specified error
         /// message.
         /// </summary>

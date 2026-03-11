@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("runtimeEndpoints", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AgentEndpoint, AgentEndpointUnmarshaller>(AgentEndpointUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<AgentRuntimeEndpoint, AgentRuntimeEndpointUnmarshaller>(AgentRuntimeEndpointUnmarshaller.Instance);
                     response.RuntimeEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

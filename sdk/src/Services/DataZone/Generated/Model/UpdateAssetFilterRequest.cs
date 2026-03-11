@@ -32,6 +32,25 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the UpdateAssetFilter operation.
     /// Updates an asset filter.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The domain, asset, and asset filter identifier must all exist. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The asset must contain the columns being referenced in the update.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If applying a row filter, ensure the column referenced in the expression exists in
+    /// the asset schema.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateAssetFilterRequest : AmazonDataZoneRequest
     {

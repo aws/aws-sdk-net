@@ -30,5 +30,10 @@ namespace Amazon.CostExplorer.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListCostAllocationTagBackfillHistoryResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the BackfillRequests
+        /// </summary>
+        IPaginatedEnumerable<CostAllocationTagBackfillRequest> BackfillRequests { get; }
     }
 }

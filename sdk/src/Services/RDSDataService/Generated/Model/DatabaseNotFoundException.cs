@@ -39,6 +39,13 @@ namespace Amazon.RDSDataService.Model
     {
 
         /// <summary>
+        /// Default constructor for DatabaseNotFoundException
+        /// message.
+        /// </summary>
+        public DatabaseNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DatabaseNotFoundException with the specified error
         /// message.
         /// </summary>

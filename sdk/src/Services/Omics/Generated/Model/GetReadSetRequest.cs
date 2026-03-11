@@ -31,7 +31,9 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReadSet operation.
-    /// Gets a file from a read set.
+    /// Retrieves detailed information from parts of a read set and returns the read set in
+    /// the same format that it was uploaded. You must have read sets uploaded to your sequence
+    /// store in order to run this operation.
     /// </summary>
     public partial class GetReadSetRequest : AmazonOmicsRequest
     {

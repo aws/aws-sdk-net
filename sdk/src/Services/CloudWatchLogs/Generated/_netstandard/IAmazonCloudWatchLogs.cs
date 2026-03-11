@@ -178,6 +178,43 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  AssociateSourceToS3TableIntegration
+
+
+
+        /// <summary>
+        /// Associates a data source with an S3 Table Integration for query access in the 'logs'
+        /// namespace. This enables querying log data using analytics engines that support Iceberg
+        /// such as Amazon Athena, Amazon Redshift, and Apache Spark.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceToS3TableIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSourceToS3TableIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateSourceToS3TableIntegration">REST API Reference for AssociateSourceToS3TableIntegration Operation</seealso>
+        Task<AssociateSourceToS3TableIntegrationResponse> AssociateSourceToS3TableIntegrationAsync(AssociateSourceToS3TableIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelExportTask
 
 
@@ -210,6 +247,40 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelImportTask
+
+
+
+        /// <summary>
+        /// Cancels an active import task and stops importing data from the CloudTrail Lake Event
+        /// Data Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelImportTask service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
+        Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -376,6 +447,125 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateImportTask
+
+
+
+        /// <summary>
+        /// Starts an import from a data source to CloudWatch Log and creates a managed log group
+        /// as the destination for the imported data. Currently, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">CloudTrail
+        /// Event Data Store</a> is the only supported data source. 
+        /// 
+        ///  
+        /// <para>
+        /// The import task must satisfy the following constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified source must be in an ACTIVE state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The API caller must have permissions to access the data in the provided source and
+        /// to perform iam:PassRole on the provided import role which has the same permissions,
+        /// as described below.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided IAM role must trust the "cloudtrail.amazonaws.com" principal and have
+        /// the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// cloudtrail:GetEventDataStoreData
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// logs:CreateLogGroup
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// logs:CreateLogStream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// logs:PutResourcePolicy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (If source has an associated Amazon Web Services KMS Key) kms:Decrypt
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example IAM policy for provided import role:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>[ { "Effect": "Allow", "Action": "iam:PassRole", "Resource": "arn:aws:iam::123456789012:role/apiCallerCredentials",
+        /// "Condition": { "StringLike": { "iam:AssociatedResourceARN": "arn:aws:logs:us-east-1:123456789012:log-group:aws/cloudtrail/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb:*"
+        /// } } }, { "Effect": "Allow", "Action": [ "cloudtrail:GetEventDataStoreData" ], "Resource":
+        /// [ "arn:aws:cloudtrail:us-east-1:123456789012:eventdatastore/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb"
+        /// ] }, { "Effect": "Allow", "Action": [ "logs:CreateImportTask", "logs:CreateLogGroup",
+        /// "logs:CreateLogStream", "logs:PutResourcePolicy" ], "Resource": [ "arn:aws:logs:us-east-1:123456789012:log-group:/aws/cloudtrail/*"
+        /// ] }, { "Effect": "Allow", "Action": [ "kms:Decrypt", "kms:GenerateDataKey" ], "Resource":
+        /// [ "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012" ]
+        /// } ]</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the import source has a customer managed key, the "cloudtrail.amazonaws.com" principal
+        /// needs permissions to perform kms:Decrypt and kms:GenerateDataKey.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There can be no more than 3 active imports per account at a given time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The startEventTime must be less than or equal to endEventTime.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The data being imported must be within the specified source's retention period.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImportTask service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateImportTask">REST API Reference for CreateImportTask Operation</seealso>
+        Task<CreateImportTaskResponse> CreateImportTaskAsync(CreateImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -593,14 +783,60 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  CreateScheduledQuery
+
+
+
+        /// <summary>
+        /// Creates a scheduled query that runs CloudWatch Logs Insights queries at regular intervals.
+        /// Scheduled queries enable proactive monitoring by automatically executing queries to
+        /// detect patterns and anomalies in your log data. Query results can be delivered to
+        /// Amazon S3 for analysis or further processing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateScheduledQuery">REST API Reference for CreateScheduledQuery Operation</seealso>
+        Task<CreateScheduledQueryResponse> CreateScheduledQueryAsync(CreateScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteAccountPolicy
 
 
 
         /// <summary>
         /// Deletes a CloudWatch Logs account policy. This stops the account-wide policy from
-        /// applying to log groups in the account. If you delete a data protection policy or subscription
-        /// filter policy, any log-group level policies of those types remain in effect.
+        /// applying to log groups or data sources in the account. If you delete a data protection
+        /// policy or subscription filter policy, any log-group level policies of those types
+        /// remain in effect. This operation supports deletion of data source-based field index
+        /// policies, including facet configurations, in addition to log group-based policies.
         /// 
         ///  
         /// <para>
@@ -626,6 +862,12 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To delete a field index policy, you must have the <c>logs:DeleteIndexPolicy</c> and
         /// <c>logs:DeleteAccountPolicy</c> permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete a field index policy that included facet configurations, those facets
+        /// will no longer be available for interactive exploration in the CloudWatch Logs Insights
+        /// console. However, facet data is retained for up to 30 days.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -895,14 +1137,22 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// If the deleted policy included facet configurations, those facets will no longer be
+        /// available for interactive exploration in the CloudWatch Logs Insights console for
+        /// this log group. However, facet data is retained for up to 30 days.
+        /// </para>
+        ///  
+        /// <para>
         /// You can't use this operation to delete an account-level index policy. Instead, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeletAccountPolicy</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeleteAccountPolicy</a>.
         /// </para>
         ///  
         /// <para>
         /// If you delete a log-group level field index policy and there is an account-level field
         /// index policy, in a few minutes the log group begins using that account-wide policy
-        /// to index new incoming log events. 
+        /// to index new incoming log events. This operation only affects log group-level policies,
+        /// including any facet configurations, and preserves any data source-based account policies
+        /// that may apply to the log group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndexPolicy service method.</param>
@@ -1021,6 +1271,9 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1051,6 +1304,9 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1188,6 +1444,42 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteScheduledQuery
+
+
+
+        /// <summary>
+        /// Deletes a scheduled query and stops all future executions. This operation also removes
+        /// any configured actions and associated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteScheduledQuery">REST API Reference for DeleteScheduledQuery Operation</seealso>
+        Task<DeleteScheduledQueryResponse> DeleteScheduledQueryAsync(DeleteScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1512,8 +1804,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns a list of field indexes listed in the field index policies of one or more
-        /// log groups. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// Returns a list of custom and default field indexes which are discovered in log data.
+        /// For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFieldIndexes service method.</param>
         /// <param name="cancellationToken">
@@ -1541,13 +1833,82 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  DescribeImportTaskBatches
+
+
+
+        /// <summary>
+        /// Gets detailed information about the individual batches within an import task, including
+        /// their status and any error messages. For CloudTrail Event Data Store sources, a batch
+        /// refers to a subset of stored events grouped by their eventTime.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTaskBatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImportTaskBatches service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeImportTaskBatches">REST API Reference for DescribeImportTaskBatches Operation</seealso>
+        Task<DescribeImportTaskBatchesResponse> DescribeImportTaskBatchesAsync(DescribeImportTaskBatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeImportTasks
+
+
+
+        /// <summary>
+        /// Lists and describes import tasks, with optional filtering by import status and source
+        /// ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImportTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImportTasks service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeImportTasks">REST API Reference for DescribeImportTasks Operation</seealso>
+        Task<DescribeImportTasksResponse> DescribeImportTasksAsync(DescribeImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeIndexPolicies
 
 
 
         /// <summary>
-        /// Returns the field index policies of one or more log groups. For more information about
-        /// field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// Returns the field index policies of the specified log group. For more information
+        /// about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
         /// 
         ///  
         /// <para>
@@ -1595,8 +1956,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns information about log groups. You can return all your log groups or filter
-        /// the results by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups, including data sources that ingest into each
+        /// log group. You can return all your log groups or filter the results by prefix. The
+        /// results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -1632,8 +1994,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns information about log groups. You can return all your log groups or filter
-        /// the results by prefix. The results are ASCII-sorted by log group name.
+        /// Returns information about log groups, including data sources that ingest into each
+        /// log group. You can return all your log groups or filter the results by prefix. The
+        /// results are ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
@@ -1753,6 +2116,14 @@ namespace Amazon.CloudWatchLogs
         /// Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or
         /// have been run recently in this account. You can request all queries or limit it to
         /// queries of a specific log group or queries with a certain status.
+        /// 
+        ///  
+        /// <para>
+        /// This operation includes both interactive queries started directly by users and automated
+        /// queries executed by scheduled query configurations. Scheduled query executions appear
+        /// in the results alongside manually initiated queries, providing visibility into all
+        /// query activity in your account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueries service method.</param>
         /// <param name="cancellationToken">
@@ -1917,6 +2288,42 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  DisassociateSourceFromS3TableIntegration
+
+
+
+        /// <summary>
+        /// Disassociates a data source from an S3 Table Integration, removing query access and
+        /// deleting all associated data from the integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceFromS3TableIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSourceFromS3TableIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateSourceFromS3TableIntegration">REST API Reference for DisassociateSourceFromS3TableIntegration Operation</seealso>
+        Task<DisassociateSourceFromS3TableIntegrationResponse> DisassociateSourceFromS3TableIntegrationAsync(DisassociateSourceFromS3TableIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  FilterLogEvents
 
 
@@ -1935,7 +2342,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log stream name, or a log stream name prefix that matches mutltiple log streams
+        /// The log stream name, or a log stream name prefix that matches multiple log streams
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2321,6 +2728,38 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  GetLogFields
+
+
+
+        /// <summary>
+        /// Discovers available fields for a specific data source and type. The response includes
+        /// any field modifications introduced through pipelines, such as new fields or changed
+        /// field types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLogFields service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLogFields service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogFields">REST API Reference for GetLogFields Operation</seealso>
+        Task<GetLogFieldsResponse> GetLogFieldsAsync(GetLogFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetLogGroupFields
 
 
@@ -2330,6 +2769,11 @@ namespace Amazon.CloudWatchLogs
         /// group. Includes the percentage of log events that contain each field. The search is
         /// limited to a time period that you specify.
         /// 
+        ///  
+        /// <para>
+        /// This operation is used for discovering fields within log group events. For discovering
+        /// fields across data sources, use the GetLogFields operation.
+        /// </para>
         ///  
         /// <para>
         /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
@@ -2395,6 +2839,17 @@ namespace Amazon.CloudWatchLogs
         /// the large field was located. For example, this could be <c>@ptr.$['input']['message']</c>,
         /// <c>@ptr.$['AAA']['BBB']['CCC']['DDD']</c>, <c>@ptr.$['AAA']</c>, or any other path
         /// matching your log structure.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>GetLogObject</c> API routes requests using SDK host prefix injection. SDK versions
+        /// released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogObject service method.</param>
         /// <param name="cancellationToken">
@@ -2488,6 +2943,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// This operation is used both for retrieving results from interactive queries and from
+        /// automated scheduled query executions. Scheduled queries use <c>GetQueryResults</c>
+        /// internally to retrieve query results for processing and delivery to configured destinations.
+        /// </para>
+        ///  
+        /// <para>
         /// If you are using CloudWatch cross-account observability, you can use this operation
         /// in a monitoring account to start queries in linked source accounts. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
@@ -2511,6 +2972,78 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetScheduledQuery
+
+
+
+        /// <summary>
+        /// Retrieves details about a specific scheduled query, including its configuration, execution
+        /// status, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQuery">REST API Reference for GetScheduledQuery Operation</seealso>
+        Task<GetScheduledQueryResponse> GetScheduledQueryAsync(GetScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetScheduledQueryHistory
+
+
+
+        /// <summary>
+        /// Retrieves the execution history of a scheduled query within a specified time range,
+        /// including query results and destination processing status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScheduledQueryHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetScheduledQueryHistory service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetScheduledQueryHistory">REST API Reference for GetScheduledQueryHistory Operation</seealso>
+        Task<GetScheduledQueryHistoryResponse> GetScheduledQueryHistoryAsync(GetScheduledQueryHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2547,6 +3080,47 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetTransformer">REST API Reference for GetTransformer Operation</seealso>
         Task<GetTransformerResponse> GetTransformerAsync(GetTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAggregateLogGroupSummaries
+
+
+
+        /// <summary>
+        /// Returns an aggregate summary of all log groups in the Region grouped by specified
+        /// data source characteristics. Supports optional filtering by log group class, name
+        /// patterns, and data sources. If you perform this action in a monitoring account, you
+        /// can also return aggregated summaries of log groups from source accounts that are linked
+        /// to the monitoring account. For more information about using cross-account observability
+        /// to set up monitoring accounts and source accounts, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The operation aggregates log groups by data source name and type and optionally format,
+        /// providing counts of log groups that share these characteristics. The operation paginates
+        /// results. By default, it returns up to 50 results and includes a token to retrieve
+        /// more results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregateLogGroupSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAggregateLogGroupSummaries service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAggregateLogGroupSummaries">REST API Reference for ListAggregateLogGroupSummaries Operation</seealso>
+        Task<ListAggregateLogGroupSummariesResponse> ListAggregateLogGroupSummariesAsync(ListAggregateLogGroupSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2652,8 +3226,11 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can optionally filter the list by log group class and by using regular expressions
-        /// in your request to match strings in the log group names.
+        /// You can optionally filter the list by log group class, by using regular expressions
+        /// in your request to match strings in the log group names, by using the fieldIndexes
+        /// parameter to filter log groups based on which field indexes are configured, by using
+        /// the dataSources parameter to filter log groups by data source types, and by using
+        /// the fieldIndexNames parameter to filter by specific field index names.
         /// </para>
         ///  
         /// <para>
@@ -2714,6 +3291,75 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListLogGroupsForQuery">REST API Reference for ListLogGroupsForQuery Operation</seealso>
         Task<ListLogGroupsForQueryResponse> ListLogGroupsForQueryAsync(ListLogGroupsForQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListScheduledQueries
+
+
+
+        /// <summary>
+        /// Lists all scheduled queries in your account and region. You can filter results by
+        /// state to show only enabled or disabled queries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScheduledQueries service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListScheduledQueries">REST API Reference for ListScheduledQueries Operation</seealso>
+        Task<ListScheduledQueriesResponse> ListScheduledQueriesAsync(ListScheduledQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSourcesForS3TableIntegration
+
+
+
+        /// <summary>
+        /// Returns a list of data source associations for a specified S3 Table Integration, showing
+        /// which data sources are currently associated for query access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourcesForS3TableIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSourcesForS3TableIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListSourcesForS3TableIntegration">REST API Reference for ListSourcesForS3TableIntegration Operation</seealso>
+        Task<ListSourcesForS3TableIntegrationResponse> ListSourcesForS3TableIntegrationAsync(ListSourcesForS3TableIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2786,8 +3432,17 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates an account-level data protection policy, subscription filter policy, field
         /// index policy, transformer policy, or metric extraction policy that applies to all
-        /// log groups or a subset of log groups in the account.
+        /// log groups, a subset of log groups, or a data source name and type combination in
+        /// the account.
         /// 
+        ///  
+        /// <para>
+        /// For field index policies, you can configure indexed fields as <i>facets</i> to enable
+        /// interactive exploration of your logs. Facets provide value distributions and counts
+        /// for indexed fields in the CloudWatch Logs Insights console without requiring query
+        /// execution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+        /// facets to group and explore logs</a>.
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, you must be signed on with the correct permissions depending
@@ -2812,6 +3467,11 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// To create a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
         /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure facets for field index policies, you must have the <c>logs:PutIndexPolicy</c>
+        /// and <c>logs:PutAccountPolicy</c> permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2967,7 +3627,7 @@ namespace Amazon.CloudWatchLogs
         /// If you have multiple account-level transformer policies with selection criteria, no
         /// two of them can use the same or overlapping log group name prefixes. For example,
         /// if you have one policy filtered to log groups that start with <c>my-log</c>, you can't
-        /// have another field index policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+        /// have another transformer policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
         /// </para>
         ///  
         /// <para>
@@ -2983,18 +3643,20 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can use field index policies to create indexes on fields found in log events in
-        /// the log group. Creating field indexes can help lower the scan volume for CloudWatch
-        /// Logs Insights queries that reference those fields, because these queries attempt to
-        /// skip the processing of log events that are known to not match the indexed field. Good
-        /// fields to index are fields that you often need to query for and fields or values that
-        /// match only a small fraction of the total log events. Common examples of indexes include
-        /// request ID, session ID, user IDs, or instance IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
+        /// You can use field index policies to create indexes on fields found in log events for
+        /// a log group or data source name and type combination. Creating field indexes can help
+        /// lower the scan volume for CloudWatch Logs Insights queries that reference those fields,
+        /// because these queries attempt to skip the processing of log events that are known
+        /// to not match the indexed field. Good fields to index are fields that you often need
+        /// to query for and fields or values that match only a small fraction of the total log
+        /// events. Common examples of indexes include request ID, session ID, user IDs, or instance
+        /// IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
         /// field indexes to improve query performance and reduce costs</a> 
         /// </para>
         ///  
         /// <para>
         /// To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
+        /// operation. To find the fields for a data source use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html">GetLogFields</a>
         /// operation.
         /// </para>
         ///  
@@ -3013,11 +3675,18 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// You can have one account-level field index policy that applies to all log groups in
         /// the account. Or you can create as many as 20 account-level field index policies that
-        /// are each scoped to a subset of log groups with the <c>selectionCriteria</c> parameter.
-        /// If you have multiple account-level index policies with selection criteria, no two
-        /// of them can use the same or overlapping log group name prefixes. For example, if you
-        /// have one policy filtered to log groups that start with <c>my-log</c>, you can't have
-        /// another field index policy filtered to <c>my-logpprod</c> or <c>my-logging</c>.
+        /// are each scoped to a subset of log groups using <c>LogGroupNamePrefix</c> with the
+        /// <c>selectionCriteria</c> parameter. You can have another 20 account-level field index
+        /// policies using <c>DataSourceName</c> and <c>DataSourceType</c> for the <c>selectionCriteria</c>
+        /// parameter. If you have multiple account-level index policies with <c>LogGroupNamePrefix</c>
+        /// selection criteria, no two of them can use the same or overlapping log group name
+        /// prefixes. For example, if you have one policy filtered to log groups that start with
+        /// <i>my-log</i>, you can't have another field index policy filtered to <i>my-logpprod</i>
+        /// or <i>my-logging</i>. Similarly, if you have multiple account-level index policies
+        /// with <c>DataSourceName</c> and <c>DataSourceType</c> selection criteria, no two of
+        /// them can use the same data source name and type combination. For example, if you have
+        /// one policy filtered to the data source name <c>amazon_vpc</c> and data source type
+        /// <c>flow</c> you cannot create another policy with this combination.
         /// </para>
         ///  
         /// <para>
@@ -3027,11 +3696,162 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// CloudWatch Logs provides default field indexes for all log groups in the Standard
+        /// log class. Default field indexes are automatically available for the following fields:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>@logStream</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@aws.region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@aws.account</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@source.log</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@data_source_name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@data_source_type</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@data_format</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>traceId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>severityText</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>attributes.session.id</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// CloudWatch Logs provides default field indexes for certain data source name and type
+        /// combinations as well. Default field indexes are automatically available for the following
+        /// data source name and type combinations as identified in the following list:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>amazon_vpc.flow</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>action</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>logStatus</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>flowDirection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>type</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>amazon_route53.resolver_query</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>transport</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>rcode</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>aws_waf.access</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>action</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>httpRequest.country</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>aws_cloudtrail.data</c>, <c>aws_cloudtrail.management</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>eventSource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eventName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>awsRegion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>userAgent</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>errorCode</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eventType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>managementEvent</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>readOnly</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>eventCategory</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>requestId</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default field indexes are in addition to any custom field indexes you define within
+        /// your policy. Default field indexes are not counted towards your <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax">field
+        /// index quota</a>. 
+        /// </para>
+        ///  
+        /// <para>
         /// If you want to create a field index policy for a single log group, you can use <a
         /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>
-        /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use only that
-        /// log-group level policy, and will ignore the account-level policy that you create with
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
+        /// instead of <c>PutAccountPolicy</c>. If you do so, that log group will use that log-group
+        /// level policy and any account-level policies that match at the data source level; any
+        /// account-level policy that matches at the log group level (for example, no selection
+        /// criteria or log group name prefix selection criteria) will be ignored.
         /// </para>
         ///  
         /// <para>
@@ -3051,11 +3871,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <important> 
         /// <para>
-        /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
-        /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
-        /// turning off those features by accident, we recommend that you exclude the underlying
-        /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
-        /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+        /// Creating a policy disables metrics for Amazon Web Services features that use EMF to
+        /// create metrics, such as CloudWatch Container Insights and CloudWatch Application Signals.
+        /// To prevent turning off those features by accident, we recommend that you exclude the
+        /// underlying log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT
+        /// IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3135,6 +3955,50 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">REST API Reference for PutAccountPolicy Operation</seealso>
         Task<PutAccountPolicyResponse> PutAccountPolicyAsync(PutAccountPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutBearerTokenAuthentication
+
+
+
+        /// <summary>
+        /// Enables or disables bearer token authentication for the specified log group. When
+        /// enabled on a log group, bearer token authentication is enabled on operations until
+        /// it is explicitly disabled.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the parameters that are common to all actions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+        /// Parameters</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBearerTokenAuthentication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBearerTokenAuthentication service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">REST API Reference for PutBearerTokenAuthentication Operation</seealso>
+        Task<PutBearerTokenAuthenticationResponse> PutBearerTokenAuthenticationAsync(PutBearerTokenAuthenticationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3548,6 +4412,15 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// You can configure indexed fields as <i>facets</i> to enable interactive exploration
+        /// and filtering of your logs in the CloudWatch Logs Insights console. Facets allow you
+        /// to view value distributions and counts for indexed fields without running queries.
+        /// When you create a field index, you can optionally set it as a facet to enable this
+        /// interactive analysis capability. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
+        /// facets to group and explore logs</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
         /// operation.
         /// </para>
@@ -3557,6 +4430,38 @@ namespace Amazon.CloudWatchLogs
         /// CloudWatch Logs Insights query on that log group that includes <c>requestId = <i>value</i>
         /// </c> or <c>requestId IN [<i>value</i>, <i>value</i>, ...]</c> will process fewer log
         /// events to reduce costs, and have improved performance.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch Logs provides default field indexes for all log groups in the Standard
+        /// log class. Default field indexes are automatically available for the following fields:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>@logStream</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@aws.region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@aws.account</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@source.log</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>traceId</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default field indexes are in addition to any custom field indexes you define within
+        /// your policy. Default field indexes are not counted towards your field index quota.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3578,10 +4483,12 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// Log group-level field index policies created with <c>PutIndexPolicy</c> override account-level
-        /// field index policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.
-        /// If you use <c>PutIndexPolicy</c> to create a field index policy for a log group, that
-        /// log group uses only that policy. The log group ignores any account-wide field index
-        /// policy that you might have created.
+        /// field index policies created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+        /// that apply to log groups. If you use <c>PutIndexPolicy</c> to create a field index
+        /// policy for a log group, that log group uses only that policy for log group-level indexing,
+        /// including any facet configurations. The log group ignores any account-wide field index
+        /// policy that applies to log groups, but data source-based account policies may still
+        /// apply.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIndexPolicy service method.</param>
@@ -3771,6 +4678,50 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  PutLogGroupDeletionProtection
+
+
+
+        /// <summary>
+        /// Enables or disables deletion protection for the specified log group. When enabled
+        /// on a log group, deletion protection blocks all deletion operations until it is explicitly
+        /// disabled.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the parameters that are common to all actions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+        /// Parameters</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLogGroupDeletionProtection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutLogGroupDeletionProtection service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogGroupDeletionProtection">REST API Reference for PutLogGroupDeletionProtection Operation</seealso>
+        Task<PutLogGroupDeletionProtectionResponse> PutLogGroupDeletionProtectionAsync(PutLogGroupDeletionProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutMetricFilter
 
 
@@ -3901,8 +4852,31 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a resource policy allowing other Amazon Web Services services to
-        /// put log events to this account, such as Amazon Route 53. An account can have up to
-        /// 10 resource policies per Amazon Web Services Region.
+        /// put log events to this account, such as Amazon Route 53. This API has the following
+        /// restrictions:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Supported actions</b> - Policy only supports <c>logs:PutLogEvents</c> and <c>logs:CreateLogStream
+        /// </c> actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Supported principals</b> - Policy only applies when operations are invoked by
+        /// Amazon Web Services service principals (not IAM users, roles, or cross-account principals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy limits</b> - An account can have a maximum of 10 policies without resourceARN
+        /// and one per LogGroup resourceARN
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Resource policies with actions invoked by non-Amazon Web Services service principals
+        /// (such as IAM users, roles, or other Amazon Web Services accounts) will not be enforced.
+        /// For access control involving these principals, use the IAM policies.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -4214,8 +5188,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
-        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// The <c>StartLiveTail</c> API routes requests using SDK host prefix injection. SDK
+        /// versions released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -4260,8 +5238,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Starts a query of one or more log groups using CloudWatch Logs Insights. You specify
-        /// the log groups and time range to query and the query string to use.
+        /// Starts a query of one or more log groups or data sources using CloudWatch Logs Insights.
+        /// You specify the log groups or data sources and time range to query and the query string
+        /// to use. You can query up to 10 data sources in a single query.
         /// 
         ///  
         /// <para>
@@ -4274,6 +5253,13 @@ namespace Amazon.CloudWatchLogs
         /// Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
         /// to retrieve the results of a query, using the <c>queryId</c> that <c>StartQuery</c>
         /// returns. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Interactive queries started with <c>StartQuery</c> share concurrency limits with automated
+        /// scheduled query executions. Both types of queries count toward the same regional concurrent
+        /// query quota, so high scheduled query activity may affect the availability of concurrent
+        /// slots for interactive queries.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4289,7 +5275,8 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
         /// for the query. The <c>SOURCE</c> command can select log groups based on log group
-        /// name prefix, account ID, and log class. 
+        /// name prefix, account ID, and log class, or select data sources using dataSource syntax
+        /// in LogsQL, PPL, and SQL. 
         /// </para>
         ///  
         /// <para>
@@ -4361,6 +5348,14 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Stops a CloudWatch Logs Insights query that is in progress. If the query has already
         /// ended, the operation returns an error indicating that the specified query is not running.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be used to cancel both interactive queries and individual scheduled
+        /// query executions. When used with scheduled queries, <c>StopQuery</c> cancels only
+        /// the specific execution identified by the query ID, not the scheduled query configuration
+        /// itself.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopQuery service method.</param>
         /// <param name="cancellationToken">
@@ -4723,6 +5718,42 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
         Task<UpdateLogAnomalyDetectorResponse> UpdateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateScheduledQuery
+
+
+
+        /// <summary>
+        /// Updates an existing scheduled query with new configuration. This operation uses PUT
+        /// semantics, allowing modification of query parameters, schedule, and destinations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScheduledQuery service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This exception is
+        /// returned when the service encounters an unexpected condition that prevents it from
+        /// fulfilling the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateScheduledQuery">REST API Reference for UpdateScheduledQuery Operation</seealso>
+        Task<UpdateScheduledQueryResponse> UpdateScheduledQueryAsync(UpdateScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

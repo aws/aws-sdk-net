@@ -40,6 +40,13 @@ namespace Amazon.OAM.Model
         private string _amznErrorType;
 
         /// <summary>
+        /// Default constructor for InternalServiceException
+        /// message.
+        /// </summary>
+        public InternalServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServiceException with the specified error
         /// message.
         /// </summary>

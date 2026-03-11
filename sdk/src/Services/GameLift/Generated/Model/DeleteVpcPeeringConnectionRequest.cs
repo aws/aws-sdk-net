@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpcPeeringConnection operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Removes a VPC peering connection. To delete the connection, you must have a valid
     /// authorization for the VPC peering connection that you want to delete.. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Once a valid authorization exists, call this operation from the Amazon Web Services

@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for RevocationIdNotFoundException
+        /// message.
+        /// </summary>
+        public RevocationIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RevocationIdNotFoundException with the specified error
         /// message.
         /// </summary>

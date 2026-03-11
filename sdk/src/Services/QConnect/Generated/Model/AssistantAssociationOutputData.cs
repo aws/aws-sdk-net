@@ -34,7 +34,27 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class AssistantAssociationOutputData
     {
+        private ExternalBedrockKnowledgeBaseConfig _externalBedrockKnowledgeBaseConfig;
         private KnowledgeBaseAssociationData _knowledgeBaseAssociation;
+
+        /// <summary>
+        /// Gets and sets the property ExternalBedrockKnowledgeBaseConfig. 
+        /// <para>
+        /// The configuration for an external Bedrock knowledge base association in the output
+        /// data.
+        /// </para>
+        /// </summary>
+        public ExternalBedrockKnowledgeBaseConfig ExternalBedrockKnowledgeBaseConfig
+        {
+            get { return this._externalBedrockKnowledgeBaseConfig; }
+            set { this._externalBedrockKnowledgeBaseConfig = value; }
+        }
+
+        // Check to see if ExternalBedrockKnowledgeBaseConfig property is set
+        internal bool IsSetExternalBedrockKnowledgeBaseConfig()
+        {
+            return this._externalBedrockKnowledgeBaseConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseAssociation. 

@@ -39,6 +39,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPolicyRevisionIdException
+        /// message.
+        /// </summary>
+        public InvalidPolicyRevisionIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPolicyRevisionIdException with the specified error
         /// message.
         /// </summary>

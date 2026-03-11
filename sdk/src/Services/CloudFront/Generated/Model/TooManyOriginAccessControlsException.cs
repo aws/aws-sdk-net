@@ -46,6 +46,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyOriginAccessControlsException
+        /// message.
+        /// </summary>
+        public TooManyOriginAccessControlsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyOriginAccessControlsException with the specified error
         /// message.
         /// </summary>

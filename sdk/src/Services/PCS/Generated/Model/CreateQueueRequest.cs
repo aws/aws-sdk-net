@@ -40,6 +40,7 @@ namespace Amazon.PCS.Model
         private string _clusterIdentifier;
         private List<ComputeNodeGroupConfiguration> _computeNodeGroupConfigurations = AWSConfigs.InitializeCollections ? new List<ComputeNodeGroupConfiguration>() : null;
         private string _queueName;
+        private QueueSlurmConfigurationRequest _slurmConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -126,6 +127,24 @@ namespace Amazon.PCS.Model
         internal bool IsSetQueueName()
         {
             return this._queueName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmConfiguration. 
+        /// <para>
+        /// Additional options related to the Slurm scheduler.
+        /// </para>
+        /// </summary>
+        public QueueSlurmConfigurationRequest SlurmConfiguration
+        {
+            get { return this._slurmConfiguration; }
+            set { this._slurmConfiguration = value; }
+        }
+
+        // Check to see if SlurmConfiguration property is set
+        internal bool IsSetSlurmConfiguration()
+        {
+            return this._slurmConfiguration != null;
         }
 
         /// <summary>

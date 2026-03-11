@@ -49,6 +49,7 @@ namespace Amazon.AppSync.Model
         /// for connecting, publishing, and subscribing to an Event API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventConfig EventConfig
         {
             get { return this._eventConfig; }

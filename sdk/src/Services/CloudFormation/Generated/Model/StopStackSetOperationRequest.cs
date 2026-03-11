@@ -31,9 +31,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the StopStackSetOperation operation.
-    /// Stops an in-progress operation on a stack set and its associated stack instances.
-    /// StackSets will cancel all the unstarted stack instance deployments and wait for those
-    /// are in-progress to complete.
+    /// Stops an in-progress operation on a StackSet and its associated stack instances. StackSets
+    /// will cancel all the unstarted stack instance deployments and wait for those are in-progress
+    /// to complete.
     /// </summary>
     public partial class StopStackSetOperationRequest : AmazonCloudFormationRequest
     {
@@ -44,13 +44,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CallAs. 
         /// <para>
-        /// [Service-managed permissions] Specifies whether you are acting as an account administrator
-        /// in the organization's management account or as a delegated administrator in a member
-        /// account.
+        /// Specifies whether you are acting as an account administrator in the organization's
+        /// management account or as a delegated administrator in a member account. Valid only
+        /// if the StackSet uses service-managed permissions.
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -103,7 +103,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to stop the operation for.
+        /// The name or unique ID of the StackSet that you want to stop the operation for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

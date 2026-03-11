@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmail.Model
         private string _configurationSetName;
 
         /// <summary>
+        /// Default constructor for ConfigurationSetAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ConfigurationSetAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConfigurationSetAlreadyExistsException with the specified error
         /// message.
         /// </summary>

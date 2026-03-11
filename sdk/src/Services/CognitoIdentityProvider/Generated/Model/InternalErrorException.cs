@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalErrorException
+        /// message.
+        /// </summary>
+        public InternalErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalErrorException with the specified error
         /// message.
         /// </summary>

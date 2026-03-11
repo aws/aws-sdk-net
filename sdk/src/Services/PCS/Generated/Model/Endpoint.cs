@@ -34,10 +34,33 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class Endpoint
     {
+        private string _ipv6Address;
         private string _port;
         private string _privateIpAddress;
         private string _publicIpAddress;
         private EndpointType _type;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// The endpoint's IPv6 address.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>2001:db8::1</c> 
+        /// </para>
+        /// </summary>
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Port. 
@@ -65,11 +88,15 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The endpoint's private IP address.
+        /// For clusters that use IPv4, this is the endpoint's private IP address.
         /// </para>
         ///  
         /// <para>
-        /// Example: <c>2.2.2.2</c> 
+        /// Example: <c>10.1.2.3</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For clusters configured to use IPv6, this is an empty string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +119,7 @@ namespace Amazon.PCS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <c>1.1.1.1</c> 
+        /// Example: <c>192.0.2.1</c> 
         /// </para>
         /// </summary>
         public string PublicIpAddress

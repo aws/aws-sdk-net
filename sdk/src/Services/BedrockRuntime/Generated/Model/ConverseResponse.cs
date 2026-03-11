@@ -38,6 +38,7 @@ namespace Amazon.BedrockRuntime.Model
         private ConverseMetrics _metrics;
         private ConverseOutput _output;
         private PerformanceConfiguration _performanceConfig;
+        private ServiceTier _serviceTier;
         private StopReason _stopReason;
         private ConverseTrace _trace;
         private TokenUsage _usage;
@@ -114,6 +115,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetPerformanceConfig()
         {
             return this._performanceConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceTier. 
+        /// <para>
+        /// Specifies the processing tier configuration used for serving the request.
+        /// </para>
+        /// </summary>
+        public ServiceTier ServiceTier
+        {
+            get { return this._serviceTier; }
+            set { this._serviceTier = value; }
+        }
+
+        // Check to see if ServiceTier property is set
+        internal bool IsSetServiceTier()
+        {
+            return this._serviceTier != null;
         }
 
         /// <summary>

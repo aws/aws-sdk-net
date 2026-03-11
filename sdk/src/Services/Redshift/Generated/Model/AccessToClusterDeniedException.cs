@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessToClusterDeniedException
+        /// message.
+        /// </summary>
+        public AccessToClusterDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessToClusterDeniedException with the specified error
         /// message.
         /// </summary>

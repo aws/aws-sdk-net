@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for TrailNotProvidedException
+        /// message.
+        /// </summary>
+        public TrailNotProvidedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrailNotProvidedException with the specified error
         /// message.
         /// </summary>

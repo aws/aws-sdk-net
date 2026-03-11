@@ -128,6 +128,11 @@ namespace ServiceClientGenerator
         {
             get
             {
+                // if a rename happened, look for the original operation in the model
+                if (this.model.DocumentRoot["operations"][this.Name] != null && this.model.DocumentRoot["operations"][this.Name]["httpChecksum"] != null && this.model.DocumentRoot["operations"][this.Name]["httpChecksum"]["requestChecksumRequired"] != null)
+                {
+                    return true;
+                }
                 if (data[ServiceModel.HttpChecksumRequiredKey] != null && data[ServiceModel.HttpChecksumRequiredKey].IsBoolean)
                 {
                     if ((bool)data[ServiceModel.HttpChecksumRequiredKey])
@@ -153,6 +158,10 @@ namespace ServiceClientGenerator
         {
             get
             {
+                if (this.model.DocumentRoot["operations"][this.Name] != null && this.model.DocumentRoot["operations"][this.Name][ServiceModel.HttpChecksumKey] != null)
+                {
+                    return new ChecksumConfiguration(this.model.DocumentRoot["operations"][this.Name][ServiceModel.HttpChecksumKey]);
+                }
                 if (data[ServiceModel.HttpChecksumKey] != null)
                     return new ChecksumConfiguration(data[ServiceModel.HttpChecksumKey]);
 
@@ -188,6 +197,11 @@ namespace ServiceClientGenerator
         {
             get
             {
+                if (this.OperationModifiers != null && this.OperationModifiers.SkipChecksumDuringMarshalling)
+                {
+                    return false;
+                }
+
                 if (HttpChecksumRequired)
                 {
                     return true;
@@ -560,9 +574,12 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure == null)
                     return new List<Member>();
 
+                this.model.Customizations.ShapeModifiers.TryGetValue(this.RequestStructure.Name, out var modifiers);
+
                 var payloadName = this.RequestStructure.PayloadMemberName;
                 return this.RequestStructure.Members.Where(
                     m =>
+                        !(modifiers != null && modifiers.ExcludedMarshallingProperties.Contains(m.ModeledName)) &&
                         m.MarshallLocation == MarshallLocation.Body &&
                         !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }
@@ -576,6 +593,10 @@ namespace ServiceClientGenerator
         {
             get
             {
+                CustomizationsModel.ShapeModifier modifier = null;
+                if (this.ResponseStructure != null)
+                    this.model.Customizations.ShapeModifiers.TryGetValue(this.ResponseStructure.Name, out modifier);
+                
                 if (this.ResponseStructure == null)
                     return new List<Member>();
 
@@ -583,14 +604,17 @@ namespace ServiceClientGenerator
                 if (this.InputOutputIsSameShape && string.Equals(model.Protocol,"rest-xml",StringComparison.OrdinalIgnoreCase))
                 {
                     return this.ResponseStructure.Members.Where(
-                        m =>
+                        m => 
                             m.MarshallLocation == MarshallLocation.Body || m.MarshallLocation == MarshallLocation.Uri || m.MarshallLocation == MarshallLocation.QueryString &&
-                            !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
+                            !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal) &&
+                            !(modifier != null && modifier.ExcludedUnmarshallingProperties.Contains(m.ModeledName))
+                            ).ToList();
                 }
                 return this.ResponseStructure.Members.Where(
                     m =>
                         m.MarshallLocation == MarshallLocation.Body &&
-                        !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
+                        !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal) &&
+                        !(modifier != null && modifier.ExcludedUnmarshallingProperties.Contains(m.ModeledName))).ToList();
             }
         }
 

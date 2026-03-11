@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for IllegalArgumentException
+        /// message.
+        /// </summary>
+        public IllegalArgumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalArgumentException with the specified error
         /// message.
         /// </summary>

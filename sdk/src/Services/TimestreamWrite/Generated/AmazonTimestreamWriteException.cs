@@ -36,6 +36,14 @@ namespace Amazon.TimestreamWrite
         /// <summary>
         /// Construct instance of AmazonTimestreamWriteException
         /// </summary>
+        public AmazonTimestreamWriteException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTimestreamWriteException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTimestreamWriteException(string message)
             : base(message)

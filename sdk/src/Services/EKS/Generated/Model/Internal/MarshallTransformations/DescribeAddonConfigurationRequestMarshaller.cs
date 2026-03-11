@@ -62,9 +62,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AddonName))
+                throw new AmazonEKSException("Request object does not have required field AddonName set");
             
             if (publicRequest.IsSetAddonName())
                 request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
+            if (string.IsNullOrEmpty(publicRequest.AddonVersion))
+                throw new AmazonEKSException("Request object does not have required field AddonVersion set");
             
             if (publicRequest.IsSetAddonVersion())
                 request.Parameters.Add("addonVersion", StringUtils.FromString(publicRequest.AddonVersion));

@@ -39,6 +39,13 @@ namespace Amazon.MediaStore.Model
     {
 
         /// <summary>
+        /// Default constructor for ContainerInUseException
+        /// message.
+        /// </summary>
+        public ContainerInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ContainerInUseException with the specified error
         /// message.
         /// </summary>

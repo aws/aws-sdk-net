@@ -117,6 +117,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListClusterEvents operation
+        ///</summary>
+        public IListClusterEventsPaginator ListClusterEvents(ListClusterEventsRequest request) 
+        {
+            return new ListClusterEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClusterNodes operation
         ///</summary>
         public IListClusterNodesPaginator ListClusterNodes(ListClusterNodesRequest request) 
@@ -346,6 +354,14 @@ namespace Amazon.SageMaker.Model
         public IListLineageGroupsPaginator ListLineageGroups(ListLineageGroupsRequest request) 
         {
             return new ListLineageGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMlflowApps operation
+        ///</summary>
+        public IListMlflowAppsPaginator ListMlflowApps(ListMlflowAppsRequest request) 
+        {
+            return new ListMlflowAppsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -650,6 +666,14 @@ namespace Amazon.SageMaker.Model
         public IListTrialsPaginator ListTrials(ListTrialsRequest request) 
         {
             return new ListTrialsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListUltraServersByReservedCapacity operation
+        ///</summary>
+        public IListUltraServersByReservedCapacityPaginator ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request) 
+        {
+            return new ListUltraServersByReservedCapacityPaginator(this.client, request);
         }
 
         /// <summary>

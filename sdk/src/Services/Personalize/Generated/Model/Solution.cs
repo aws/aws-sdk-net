@@ -64,6 +64,7 @@ namespace Amazon.Personalize.Model
         private bool? _performAutoML;
         private bool? _performAutoTraining;
         private bool? _performhpo;
+        private bool? _performIncrementalUpdate;
         private string _recipeArn;
         private string _solutionArn;
         private SolutionConfig _solutionConfig;
@@ -287,6 +288,27 @@ namespace Amazon.Personalize.Model
         internal bool IsSetPerformHPO()
         {
             return this._performhpo.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformIncrementalUpdate. 
+        /// <para>
+        /// A Boolean value that indicates whether incremental training updates are performed
+        /// on the model. When enabled, this allows the model to learn from new data more frequently
+        /// without requiring full retraining, which enables near real-time personalization. This
+        /// parameter is supported only for solutions that use the semantic-similarity recipe
+        /// </para>
+        /// </summary>
+        public bool? PerformIncrementalUpdate
+        {
+            get { return this._performIncrementalUpdate; }
+            set { this._performIncrementalUpdate = value; }
+        }
+
+        // Check to see if PerformIncrementalUpdate property is set
+        internal bool IsSetPerformIncrementalUpdate()
+        {
+            return this._performIncrementalUpdate.HasValue; 
         }
 
         /// <summary>

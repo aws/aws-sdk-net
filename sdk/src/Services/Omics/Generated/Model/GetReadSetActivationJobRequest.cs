@@ -31,7 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReadSetActivationJob operation.
-    /// Gets information about a read set activation job.
+    /// Returns detailed information about the status of a read set activation job in JSON
+    /// format.
     /// </summary>
     public partial class GetReadSetActivationJobRequest : AmazonOmicsRequest
     {

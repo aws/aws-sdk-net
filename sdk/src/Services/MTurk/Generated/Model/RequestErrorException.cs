@@ -40,6 +40,13 @@ namespace Amazon.MTurk.Model
         private string _turkErrorCode;
 
         /// <summary>
+        /// Default constructor for RequestErrorException
+        /// message.
+        /// </summary>
+        public RequestErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestErrorException with the specified error
         /// message.
         /// </summary>

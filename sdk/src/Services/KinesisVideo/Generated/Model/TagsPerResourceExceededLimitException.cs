@@ -40,6 +40,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for TagsPerResourceExceededLimitException
+        /// message.
+        /// </summary>
+        public TagsPerResourceExceededLimitException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagsPerResourceExceededLimitException with the specified error
         /// message.
         /// </summary>

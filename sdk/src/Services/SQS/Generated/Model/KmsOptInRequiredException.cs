@@ -40,6 +40,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsOptInRequiredException
+        /// message.
+        /// </summary>
+        public KmsOptInRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsOptInRequiredException with the specified error
         /// message.
         /// </summary>

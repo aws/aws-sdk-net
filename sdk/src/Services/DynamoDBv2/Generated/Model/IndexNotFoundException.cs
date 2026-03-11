@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for IndexNotFoundException
+        /// message.
+        /// </summary>
+        public IndexNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IndexNotFoundException with the specified error
         /// message.
         /// </summary>

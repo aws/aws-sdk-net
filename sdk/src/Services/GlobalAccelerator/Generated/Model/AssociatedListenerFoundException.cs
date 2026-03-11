@@ -40,6 +40,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for AssociatedListenerFoundException
+        /// message.
+        /// </summary>
+        public AssociatedListenerFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AssociatedListenerFoundException with the specified error
         /// message.
         /// </summary>

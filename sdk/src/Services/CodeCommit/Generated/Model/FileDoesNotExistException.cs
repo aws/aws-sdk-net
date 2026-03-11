@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FileDoesNotExistException
+        /// message.
+        /// </summary>
+        public FileDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileDoesNotExistException with the specified error
         /// message.
         /// </summary>

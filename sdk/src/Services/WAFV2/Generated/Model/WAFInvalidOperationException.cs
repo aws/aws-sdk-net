@@ -39,6 +39,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFInvalidOperationException
+        /// message.
+        /// </summary>
+        public WAFInvalidOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInvalidOperationException with the specified error
         /// message.
         /// </summary>

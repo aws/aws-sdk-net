@@ -65,9 +65,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetEnvironmentId())
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
+            if (string.IsNullOrEmpty(publicRequest.ClusterName))
+                throw new AmazonFinspaceException("Request object does not have required field ClusterName set");
             
             if (publicRequest.IsSetClusterName())
                 request.Parameters.Add("clusterName", StringUtils.FromString(publicRequest.ClusterName));
+            if (string.IsNullOrEmpty(publicRequest.UserArn))
+                throw new AmazonFinspaceException("Request object does not have required field UserArn set");
             
             if (publicRequest.IsSetUserArn())
                 request.Parameters.Add("userArn", StringUtils.FromString(publicRequest.UserArn));

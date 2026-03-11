@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The assessment for aPersonally Identifiable Information (PII) policy.
+    /// The assessment for a Personally Identifiable Information (PII) policy.
     /// </summary>
     public partial class GuardrailSensitiveInformationPolicyAssessment
     {

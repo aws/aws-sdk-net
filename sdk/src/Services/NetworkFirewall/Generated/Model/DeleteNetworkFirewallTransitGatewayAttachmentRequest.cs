@@ -36,7 +36,7 @@ namespace Amazon.NetworkFirewall.Model
     /// 
     ///  <important> 
     /// <para>
-    /// After you delete a transit gateway attachment, raffic will no longer flow through
+    /// After you delete a transit gateway attachment, traffic will no longer flow through
     /// the firewall endpoints.
     /// </para>
     ///  </important> 

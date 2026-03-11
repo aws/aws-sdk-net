@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentity.Model
     {
 
         /// <summary>
+        /// Default constructor for ExternalServiceException
+        /// message.
+        /// </summary>
+        public ExternalServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExternalServiceException with the specified error
         /// message.
         /// </summary>

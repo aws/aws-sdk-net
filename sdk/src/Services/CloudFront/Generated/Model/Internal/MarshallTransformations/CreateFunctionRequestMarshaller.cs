@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateFunctionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/function";
 
@@ -66,27 +67,27 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFunctionCode())
                     xmlWriter.WriteElementString("FunctionCode", StringUtils.FromMemoryStream(publicRequest.FunctionCode));
 
-                if (publicRequest.FunctionConfig != null)
+                if (publicRequest.IsSetFunctionConfig())
                 {
                     xmlWriter.WriteStartElement("FunctionConfig");
                     if(publicRequest.FunctionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FunctionConfig.Comment));
-                    if (publicRequest.FunctionConfig.KeyValueStoreAssociations != null)
+                    if (publicRequest.FunctionConfig.IsSetKeyValueStoreAssociations())
                     {
                         xmlWriter.WriteStartElement("KeyValueStoreAssociations");
                         var publicRequestFunctionConfigKeyValueStoreAssociationsItems = publicRequest.FunctionConfig.KeyValueStoreAssociations.Items;
-                        if (publicRequestFunctionConfigKeyValueStoreAssociationsItems != null && (publicRequestFunctionConfigKeyValueStoreAssociationsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.FunctionConfig.KeyValueStoreAssociations.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue in publicRequestFunctionConfigKeyValueStoreAssociationsItems) 
                             {
-                            if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("KeyValueStoreAssociation");
-                                if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
-                                xmlWriter.WriteEndElement();
-                            }
+                                if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("KeyValueStoreAssociation");
+                                    if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
+                                        xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
+                                    xmlWriter.WriteEndElement();
+                                }
                             }            
                             xmlWriter.WriteEndElement();            
                         }
@@ -104,6 +105,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -115,8 +117,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateFunctionRequestMarshaller _instance = new CreateFunctionRequestMarshaller();        
@@ -138,5 +138,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateFunctionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateFunctionRequest publicRequest);
     }    
 }

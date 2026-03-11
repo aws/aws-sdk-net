@@ -36,6 +36,14 @@ namespace Amazon.LexRuntimeV2
         /// <summary>
         /// Construct instance of AmazonLexRuntimeV2Exception
         /// </summary>
+        public AmazonLexRuntimeV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonLexRuntimeV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonLexRuntimeV2Exception(string message)
             : base(message)

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestResult Object
     /// </summary>  
-    public class TestResultUnmarshaller : IXmlUnmarshaller<TestResult, XmlUnmarshallerContext>
+    public partial class TestResultUnmarshaller : IXmlUnmarshaller<TestResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -90,6 +90,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.FunctionSummary = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -98,6 +100,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, TestResult unmarshalledObject, int targetDepth);
+
         private static TestResultUnmarshaller _instance = new TestResultUnmarshaller();        
 
         /// <summary>

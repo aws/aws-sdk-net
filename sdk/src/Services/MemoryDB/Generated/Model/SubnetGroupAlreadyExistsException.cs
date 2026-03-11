@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A subnet group with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SubnetGroupAlreadyExistsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SubnetGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public SubnetGroupAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SubnetGroupAlreadyExistsException with the specified error

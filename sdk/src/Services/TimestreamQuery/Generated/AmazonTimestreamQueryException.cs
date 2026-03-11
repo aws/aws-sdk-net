@@ -36,6 +36,14 @@ namespace Amazon.TimestreamQuery
         /// <summary>
         /// Construct instance of AmazonTimestreamQueryException
         /// </summary>
+        public AmazonTimestreamQueryException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTimestreamQueryException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTimestreamQueryException(string message)
             : base(message)

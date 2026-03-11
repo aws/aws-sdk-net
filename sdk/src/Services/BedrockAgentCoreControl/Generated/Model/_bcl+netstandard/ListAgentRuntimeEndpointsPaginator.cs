@@ -45,8 +45,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Enumerable containing all of the RuntimeEndpoints
         /// </summary>
-        public IPaginatedEnumerable<AgentEndpoint> RuntimeEndpoints => 
-            new PaginatedResultKeyResponse<ListAgentRuntimeEndpointsResponse, AgentEndpoint>(this, (i) => i.RuntimeEndpoints ?? new List<AgentEndpoint>());
+        public IPaginatedEnumerable<AgentRuntimeEndpoint> RuntimeEndpoints => 
+            new PaginatedResultKeyResponse<ListAgentRuntimeEndpointsResponse, AgentRuntimeEndpoint>(this, (i) => i.RuntimeEndpoints ?? new List<AgentRuntimeEndpoint>());
 
         internal ListAgentRuntimeEndpointsPaginator(IAmazonBedrockAgentCoreControl client, ListAgentRuntimeEndpointsRequest request)
         {

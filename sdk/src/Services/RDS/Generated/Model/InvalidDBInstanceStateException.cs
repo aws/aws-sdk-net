@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBInstanceStateException
+        /// message.
+        /// </summary>
+        public InvalidDBInstanceStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBInstanceStateException with the specified error
         /// message.
         /// </summary>

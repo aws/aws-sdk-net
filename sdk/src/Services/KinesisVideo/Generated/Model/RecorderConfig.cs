@@ -31,7 +31,7 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// The recorder configuration consists of the local <c>MediaSourceConfig</c> details
-    /// that are used as credentials to accesss the local media files streamed on the camera.
+    /// that are used as credentials to access the local media files streamed on the camera.
     /// </summary>
     public partial class RecorderConfig
     {

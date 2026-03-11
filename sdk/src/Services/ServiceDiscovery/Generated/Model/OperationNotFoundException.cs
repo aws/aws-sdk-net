@@ -39,6 +39,13 @@ namespace Amazon.ServiceDiscovery.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationNotFoundException
+        /// message.
+        /// </summary>
+        public OperationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationNotFoundException with the specified error
         /// message.
         /// </summary>

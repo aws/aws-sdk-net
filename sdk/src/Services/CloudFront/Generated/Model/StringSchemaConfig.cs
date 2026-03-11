@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// A comment to describe the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Comment
         {
             get { return this._comment; }

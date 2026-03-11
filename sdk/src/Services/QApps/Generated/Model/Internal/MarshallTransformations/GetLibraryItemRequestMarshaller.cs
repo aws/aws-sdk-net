@@ -65,6 +65,8 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAppId())
                 request.Parameters.Add("appId", StringUtils.FromString(publicRequest.AppId));
+            if (string.IsNullOrEmpty(publicRequest.LibraryItemId))
+                throw new AmazonQAppsException("Request object does not have required field LibraryItemId set");
             
             if (publicRequest.IsSetLibraryItemId())
                 request.Parameters.Add("libraryItemId", StringUtils.FromString(publicRequest.LibraryItemId));

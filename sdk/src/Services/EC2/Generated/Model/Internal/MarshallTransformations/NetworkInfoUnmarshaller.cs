@@ -114,6 +114,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Ipv4AddressesPerInterface = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipv4AddressesPerSecondaryInterface", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.Ipv4AddressesPerSecondaryInterface = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6AddressesPerInterface", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -138,6 +144,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaximumNetworkInterfaces = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("maximumSecondaryNetworkInterfaces", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumSecondaryNetworkInterfaces = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkCards/item", targetDepth))
                     {
                         var unmarshaller = NetworkCardInfoUnmarshaller.Instance;
@@ -153,6 +165,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NetworkPerformance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("secondaryNetworkSupported", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.SecondaryNetworkSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

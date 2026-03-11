@@ -39,6 +39,13 @@ namespace Amazon.TaxSettings.Model
     {
 
         /// <summary>
+        /// Default constructor for CaseCreationLimitExceededException
+        /// message.
+        /// </summary>
+        public CaseCreationLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CaseCreationLimitExceededException with the specified error
         /// message.
         /// </summary>

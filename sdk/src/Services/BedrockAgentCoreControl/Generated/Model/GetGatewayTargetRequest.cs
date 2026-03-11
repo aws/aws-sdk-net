@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGatewayTarget operation.
-    /// Retrieves information about a specific Gateway Target.
+    /// Retrieves information about a specific gateway target.
     /// </summary>
     public partial class GetGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The identifier of the gateway that contains the target. This can be either the gateway
-        /// ID or the gateway ARN.
+        /// The identifier of the gateway that contains the target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

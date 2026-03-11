@@ -189,11 +189,27 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMetadataModelChildren operation
+        ///</summary>
+        public IDescribeMetadataModelChildrenPaginator DescribeMetadataModelChildren(DescribeMetadataModelChildrenRequest request) 
+        {
+            return new DescribeMetadataModelChildrenPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeMetadataModelConversions operation
         ///</summary>
         public IDescribeMetadataModelConversionsPaginator DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request) 
         {
             return new DescribeMetadataModelConversionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelCreations operation
+        ///</summary>
+        public IDescribeMetadataModelCreationsPaginator DescribeMetadataModelCreations(DescribeMetadataModelCreationsRequest request) 
+        {
+            return new DescribeMetadataModelCreationsPaginator(this.client, request);
         }
 
         /// <summary>

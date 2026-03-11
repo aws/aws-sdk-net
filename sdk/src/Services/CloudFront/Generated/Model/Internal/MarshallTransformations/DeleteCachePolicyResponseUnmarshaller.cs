@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteCachePolicy operation
     /// </summary>  
-    public class DeleteCachePolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteCachePolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteCachePolicyResponse response = new DeleteCachePolicyResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -96,6 +97,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteCachePolicyResponse response);
 
         private static DeleteCachePolicyResponseUnmarshaller _instance = new DeleteCachePolicyResponseUnmarshaller();        
 

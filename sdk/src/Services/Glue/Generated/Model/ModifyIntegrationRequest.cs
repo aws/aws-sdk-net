@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     {
         private string _dataFilter;
         private string _description;
+        private IntegrationConfig _integrationConfig;
         private string _integrationIdentifier;
         private string _integrationName;
 
@@ -76,6 +77,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationConfig. 
+        /// <para>
+        /// The configuration settings for the integration. Currently, only the RefreshInterval
+        /// can be modified. 
+        /// </para>
+        /// </summary>
+        public IntegrationConfig IntegrationConfig
+        {
+            get { return this._integrationConfig; }
+            set { this._integrationConfig = value; }
+        }
+
+        // Check to see if IntegrationConfig property is set
+        internal bool IsSetIntegrationConfig()
+        {
+            return this._integrationConfig != null;
         }
 
         /// <summary>

@@ -2713,7 +2713,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets information about a knoweldge base.
+        /// Gets information about a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBase service method.</param>
         /// 
@@ -2740,7 +2740,7 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets information about a knoweldge base.
+        /// Gets information about a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBase service method.</param>
         /// <param name="cancellationToken">

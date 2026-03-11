@@ -34,7 +34,27 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class LifecyclePolicyRuleAction
     {
+        private LifecyclePolicyTargetStorageClass _targetStorageClass;
         private ImageActionType _type;
+
+        /// <summary>
+        /// Gets and sets the property TargetStorageClass. 
+        /// <para>
+        /// The target storage class for the action. This is only present when the <c>type</c>
+        /// is <c>TRANSITION.</c> 
+        /// </para>
+        /// </summary>
+        public LifecyclePolicyTargetStorageClass TargetStorageClass
+        {
+            get { return this._targetStorageClass; }
+            set { this._targetStorageClass = value; }
+        }
+
+        // Check to see if TargetStorageClass property is set
+        internal bool IsSetTargetStorageClass()
+        {
+            return this._targetStorageClass != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 

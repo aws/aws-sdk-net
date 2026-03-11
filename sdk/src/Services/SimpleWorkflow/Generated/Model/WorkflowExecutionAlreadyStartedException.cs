@@ -40,6 +40,13 @@ namespace Amazon.SimpleWorkflow.Model
     {
 
         /// <summary>
+        /// Default constructor for WorkflowExecutionAlreadyStartedException
+        /// message.
+        /// </summary>
+        public WorkflowExecutionAlreadyStartedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WorkflowExecutionAlreadyStartedException with the specified error
         /// message.
         /// </summary>

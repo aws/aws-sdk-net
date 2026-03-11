@@ -39,6 +39,13 @@ namespace Amazon.NetworkFirewall.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceOwnerCheckException
+        /// message.
+        /// </summary>
+        public ResourceOwnerCheckException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceOwnerCheckException with the specified error
         /// message.
         /// </summary>

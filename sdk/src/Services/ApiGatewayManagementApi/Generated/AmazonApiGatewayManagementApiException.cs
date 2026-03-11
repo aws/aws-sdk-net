@@ -36,6 +36,14 @@ namespace Amazon.ApiGatewayManagementApi
         /// <summary>
         /// Construct instance of AmazonApiGatewayManagementApiException
         /// </summary>
+        public AmazonApiGatewayManagementApiException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonApiGatewayManagementApiException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonApiGatewayManagementApiException(string message)
             : base(message)

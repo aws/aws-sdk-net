@@ -85,6 +85,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.InstanceUsages.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("interruptible", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        response.Interruptible = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("interruptibleCapacityAllocation", targetDepth))
+                    {
+                        var unmarshaller = InterruptibleCapacityAllocationUnmarshaller.Instance;
+                        response.InterruptibleCapacityAllocation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("interruptionInfo", targetDepth))
+                    {
+                        var unmarshaller = InterruptionInfoUnmarshaller.Instance;
+                        response.InterruptionInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("nextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

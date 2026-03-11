@@ -705,6 +705,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateSecondaryNetwork(Amazon.EC2.Model.CreateSecondaryNetworkRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateSecondaryNetwork(Amazon.EC2.Model.CreateSecondaryNetworkRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateSecondaryNetworkRequest" />
+            <member name="T:Amazon.EC2.Model.CreateSecondaryNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a rdma secondary network with a /16 CIDR block.
+                </para>
+                <code
+                    title="To create a secondary network"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-secondary-network-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateSecondarySubnet(Amazon.EC2.Model.CreateSecondarySubnetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateSecondarySubnet(Amazon.EC2.Model.CreateSecondarySubnetRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateSecondarySubnetRequest" />
+            <member name="T:Amazon.EC2.Model.CreateSecondarySubnetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a secondary subnet with a /24 CIDR block in the specified secondary network and Availability Zone.
+                </para>
+                <code
+                    title="To create a secondary subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-secondary-subnet-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.CreateSecurityGroup(Amazon.EC2.Model.CreateSecurityGroupRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.CreateSecurityGroup(Amazon.EC2.Model.CreateSecurityGroupRequest)" />
             <member name="T:Amazon.EC2.Model.CreateSecurityGroupRequest" />
@@ -1100,6 +1138,44 @@
                     title="To delete a route table"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-delete-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteSecondaryNetwork(Amazon.EC2.Model.DeleteSecondaryNetworkRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteSecondaryNetwork(Amazon.EC2.Model.DeleteSecondaryNetworkRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteSecondaryNetworkRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteSecondaryNetworkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a secondary network.
+                </para>
+                <code
+                    title="To delete a secondary network"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-secondary-network-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteSecondarySubnet(Amazon.EC2.Model.DeleteSecondarySubnetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteSecondarySubnet(Amazon.EC2.Model.DeleteSecondarySubnetRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteSecondarySubnetRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteSecondarySubnetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a secondary subnet.
+                </para>
+                <code
+                    title="To delete a secondary subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-secondary-subnet-1" />
             </example>
         </value>
     </doc>
@@ -1806,6 +1882,101 @@
                     title="To describe a route table"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-describe-route-tables-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecondaryInterfaces(Amazon.EC2.Model.DescribeSecondaryInterfacesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecondaryInterfaces(Amazon.EC2.Model.DescribeSecondaryInterfacesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryInterfacesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryInterfacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all secondary interfaces in the current Region.
+                </para>
+                <code
+                    title="To describe all secondary interfaces"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-secondary-interfaces-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecondaryInterfaces(Amazon.EC2.Model.DescribeSecondaryInterfacesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecondaryInterfaces(Amazon.EC2.Model.DescribeSecondaryInterfacesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryInterfacesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryInterfacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example uses filters to describe secondary interfaces attached to a specific instance.
+                </para>
+                <code
+                    title="To describe secondary interfaces using filters"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-secondary-interfaces-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecondaryNetworks(Amazon.EC2.Model.DescribeSecondaryNetworksRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecondaryNetworks(Amazon.EC2.Model.DescribeSecondaryNetworksRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryNetworksRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryNetworksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified secondary networks.
+                </para>
+                <code
+                    title="To describe specified secondary networks"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-secondary-networks-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecondaryNetworks(Amazon.EC2.Model.DescribeSecondaryNetworksRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecondaryNetworks(Amazon.EC2.Model.DescribeSecondaryNetworksRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryNetworksRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondaryNetworksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example uses filters to describe any secondary network you own that has a tag with the key Environment and the value Production and whose state is create-complete.
+                </para>
+                <code
+                    title="To describe secondary networks using filters"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-secondary-networks-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecondarySubnets(Amazon.EC2.Model.DescribeSecondarySubnetsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecondarySubnets(Amazon.EC2.Model.DescribeSecondarySubnetsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondarySubnetsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecondarySubnetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified secondary subnets.
+                </para>
+                <code
+                    title="To describe specified secondary subnets"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-secondary-subnets-1" />
             </example>
         </value>
     </doc>

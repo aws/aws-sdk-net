@@ -41,6 +41,7 @@ namespace Amazon.Organizations.Model
         private AccountJoinedMethod _joinedMethod;
         private DateTime? _joinedTimestamp;
         private string _name;
+        private AccountState _state;
         private AccountStatus _status;
 
         /// <summary>
@@ -171,6 +172,31 @@ namespace Amazon.Organizations.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Each state represents a specific phase in the account lifecycle. Use this information
+        /// to manage account access, automate workflows, or trigger actions based on account
+        /// state changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor
+        /// the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AccountState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

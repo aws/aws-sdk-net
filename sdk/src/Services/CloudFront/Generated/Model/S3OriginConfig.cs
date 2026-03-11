@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
     public partial class S3OriginConfig
     {
         private string _originAccessIdentity;
+        private int? _originReadTimeout;
 
         /// <summary>
         /// Gets and sets the property OriginAccessIdentity. 
@@ -96,6 +97,32 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginAccessIdentity()
         {
             return this._originAccessIdentity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginReadTimeout. 
+        /// <para>
+        /// Specifies how long, in seconds, CloudFront waits for a response from the origin. This
+        /// is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second,
+        /// the maximum is 120 seconds, and the default (if you don't specify otherwise) is 30
+        /// seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginResponseTimeout">Response
+        /// timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? OriginReadTimeout
+        {
+            get { return this._originReadTimeout; }
+            set { this._originReadTimeout = value; }
+        }
+
+        // Check to see if OriginReadTimeout property is set
+        internal bool IsSetOriginReadTimeout()
+        {
+            return this._originReadTimeout.HasValue; 
         }
 
     }

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Represents a Security Hub administrator account designated by an organization management
-    /// account.
+    /// Represents a Security Hub CSPM administrator account designated by an organization
+    /// management account.
     /// </summary>
     public partial class AdminAccount
     {
@@ -41,7 +41,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account identifier of the Security Hub administrator account.
+        /// The Amazon Web Services account identifier of the Security Hub CSPM administrator
+        /// account.
         /// </para>
         /// </summary>
         public string AccountId
@@ -59,8 +60,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Security Hub administrator account. Indicates whether the
-        /// account is currently enabled as a Security Hub administrator.
+        /// The current status of the Security Hub CSPM administrator account. Indicates whether
+        /// the account is currently enabled as a Security Hub CSPM administrator.
         /// </para>
         /// </summary>
         public AdminStatus Status

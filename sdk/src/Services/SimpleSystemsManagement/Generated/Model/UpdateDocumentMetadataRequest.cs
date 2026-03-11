@@ -31,8 +31,18 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDocumentMetadata operation.
+    /// <important> 
+    /// <para>
+    /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+    /// Existing customers can continue to use the service as normal. For more information,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+    /// Web Services Systems Manager Change Manager availability change</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Updates information related to approval reviews for a specific version of a change
     /// template in Change Manager.
+    /// </para>
     /// </summary>
     public partial class UpdateDocumentMetadataRequest : AmazonSimpleSystemsManagementRequest
     {

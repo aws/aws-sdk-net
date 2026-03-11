@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the StartBrowserSession operation.
-    /// Creates and initializes a browser session in Amazon Bedrock. The session enables agents
-    /// to navigate and interact with web content, extract information from websites, and
-    /// perform web-based tasks as part of their response generation.
+    /// Creates and initializes a browser session in Amazon Bedrock AgentCore. The session
+    /// enables agents to navigate and interact with web content, extract information from
+    /// websites, and perform web-based tasks as part of their response generation.
     /// 
     ///  
     /// <para>
@@ -48,17 +48,22 @@ namespace Amazon.BedrockAgentCore.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
     /// 
     /// </para>
     ///  </li> </ul>
@@ -67,8 +72,13 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _browserIdentifier;
         private string _clientToken;
+        private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private string _name;
+        private BrowserProfileConfiguration _profileConfiguration;
+        private ProxyConfiguration _proxyConfiguration;
         private int? _sessionTimeoutSeconds;
+        private string _traceId;
+        private string _traceParent;
         private ViewPort _viewPort;
 
         /// <summary>
@@ -95,9 +105,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier to ensure that the API request completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request, but does not return an error. This parameter helps prevent the creation of
-        /// duplicate sessions if there are temporary network issues.
+        /// than one time. If this token matches a previous request, Amazon Bedrock AgentCore
+        /// ignores the request, but does not return an error. This parameter helps prevent the
+        /// creation of duplicate sessions if there are temporary network issues.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -111,6 +121,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// A list of browser extensions to load into the browser session.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<BrowserExtension> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,6 +165,48 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// The browser profile configuration to use for this session. A browser profile contains
+        /// persistent data such as cookies and local storage that can be reused across multiple
+        /// browser sessions. If specified, the session initializes with the profile's stored
+        /// data, enabling continuity for tasks that require authentication or personalized settings.
+        /// </para>
+        /// </summary>
+        public BrowserProfileConfiguration ProfileConfiguration
+        {
+            get { return this._profileConfiguration; }
+            set { this._profileConfiguration = value; }
+        }
+
+        // Check to see if ProfileConfiguration property is set
+        internal bool IsSetProfileConfiguration()
+        {
+            return this._profileConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfiguration. 
+        /// <para>
+        /// Optional proxy configuration for routing browser traffic through customer-specified
+        /// proxy servers. When provided, enables HTTP Basic authentication via Amazon Web Services
+        /// Secrets Manager and domain-based routing rules. Requires <c>secretsmanager:GetSecretValue</c>
+        /// IAM permission for the specified secret ARNs.
+        /// </para>
+        /// </summary>
+        public ProxyConfiguration ProxyConfiguration
+        {
+            get { return this._proxyConfiguration; }
+            set { this._proxyConfiguration = value; }
+        }
+
+        // Check to see if ProxyConfiguration property is set
+        internal bool IsSetProxyConfiguration()
+        {
+            return this._proxyConfiguration != null;
         }
 
         /// <summary>
@@ -155,11 +231,49 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The trace identifier for request tracking.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceParent. 
+        /// <para>
+        /// The parent trace information for distributed tracing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceParent
+        {
+            get { return this._traceParent; }
+            set { this._traceParent = value; }
+        }
+
+        // Check to see if TraceParent property is set
+        internal bool IsSetTraceParent()
+        {
+            return this._traceParent != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ViewPort. 
         /// <para>
         /// The dimensions of the browser viewport for this session. This determines the visible
         /// area of the web content and affects how web pages are rendered. If not specified,
-        /// Amazon Bedrock uses a default viewport size.
+        /// Amazon Bedrock AgentCore uses a default viewport size.
         /// </para>
         /// </summary>
         public ViewPort ViewPort

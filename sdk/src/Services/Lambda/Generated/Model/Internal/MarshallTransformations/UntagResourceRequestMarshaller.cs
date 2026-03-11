@@ -64,11 +64,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetResource())
                 throw new AmazonLambdaException("Request object does not have required field Resource set");
-            request.AddPathResource("{ARN}", StringUtils.FromString(publicRequest.Resource));
+            request.AddPathResource("{Resource}", StringUtils.FromString(publicRequest.Resource));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonLambdaException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = "/2017-03-31/tags/{ARN}";
+            request.ResourcePath = "/2017-03-31/tags/{Resource}";
             request.UseQueryString = true;
 
             return request;

@@ -83,6 +83,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTaskStatus())
                 request.Parameters.Add("taskStatus", StringUtils.FromString(publicRequest.TaskStatus));
+            if (string.IsNullOrEmpty(publicRequest.Type))
+                throw new AmazonDataZoneException("Request object does not have required field Type set");
             
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));

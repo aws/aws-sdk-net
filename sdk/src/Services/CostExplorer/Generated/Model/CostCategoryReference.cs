@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// A reference to a Cost Category containing only enough information to identify the
+    /// A reference to a cost category containing only enough information to identify the
     /// Cost Category.
     /// 
     ///  
     /// <para>
-    /// You can use this information to retrieve the full Cost Category information using
+    /// You can use this information to retrieve the full cost category information using
     /// <c>DescribeCostCategory</c>.
     /// </para>
     /// </summary>
@@ -48,12 +48,13 @@ namespace Amazon.CostExplorer.Model
         private string _name;
         private int? _numberOfRules;
         private List<CostCategoryProcessingStatus> _processingStatus = AWSConfigs.InitializeCollections ? new List<CostCategoryProcessingStatus>() : null;
+        private List<string> _supportedResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        /// The unique identifier for your Cost Category. 
+        /// The unique identifier for your cost category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -88,7 +89,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        /// The Cost Category's effective end date.
+        /// The cost category's effective end date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -107,7 +108,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        /// The Cost Category's effective start date.
+        /// The cost category's effective start date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -142,7 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NumberOfRules. 
         /// <para>
-        /// The number of rules that are associated with a specific Cost Category. 
+        /// The number of rules that are associated with a specific cost category. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -180,6 +181,29 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetProcessingStatus()
         {
             return this._processingStatus != null && (this._processingStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedResourceTypes. 
+        /// <para>
+        ///  The resource types supported by a specific cost category. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SupportedResourceTypes
+        {
+            get { return this._supportedResourceTypes; }
+            set { this._supportedResourceTypes = value; }
+        }
+
+        // Check to see if SupportedResourceTypes property is set
+        internal bool IsSetSupportedResourceTypes()
+        {
+            return this._supportedResourceTypes != null && (this._supportedResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

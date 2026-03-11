@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConstantAndVariableQueryString operation
     /// </summary>  
-    public class ConstantAndVariableQueryStringResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ConstantAndVariableQueryStringResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             ConstantAndVariableQueryStringResponse response = new ConstantAndVariableQueryStringResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ConstantAndVariableQueryStringResponse response);
 
         private static ConstantAndVariableQueryStringResponseUnmarshaller _instance = new ConstantAndVariableQueryStringResponseUnmarshaller();        
 

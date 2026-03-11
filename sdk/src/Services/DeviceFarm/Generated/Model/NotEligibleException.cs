@@ -39,6 +39,13 @@ namespace Amazon.DeviceFarm.Model
     {
 
         /// <summary>
+        /// Default constructor for NotEligibleException
+        /// message.
+        /// </summary>
+        public NotEligibleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotEligibleException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyEntriesInBatchRequestException
+        /// message.
+        /// </summary>
+        public TooManyEntriesInBatchRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyEntriesInBatchRequestException with the specified error
         /// message.
         /// </summary>

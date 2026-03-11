@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsMetadataNotFoundException
+        /// message.
+        /// </summary>
+        public OpsMetadataNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsMetadataNotFoundException with the specified error
         /// message.
         /// </summary>

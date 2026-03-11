@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidInstanceTypeException
+        /// message.
+        /// </summary>
+        public InvalidInstanceTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidInstanceTypeException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.StorageGateway.Model
         private StorageGatewayError _error;
 
         /// <summary>
+        /// Default constructor for InvalidGatewayRequestException
+        /// message.
+        /// </summary>
+        public InvalidGatewayRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGatewayRequestException with the specified error
         /// message.
         /// </summary>

@@ -64,6 +64,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTrailNameException
+        /// message.
+        /// </summary>
+        public InvalidTrailNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTrailNameException with the specified error
         /// message.
         /// </summary>

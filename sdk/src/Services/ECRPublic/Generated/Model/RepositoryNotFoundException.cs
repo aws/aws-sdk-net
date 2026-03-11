@@ -40,6 +40,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryNotFoundException
+        /// message.
+        /// </summary>
+        public RepositoryNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryNotFoundException with the specified error
         /// message.
         /// </summary>

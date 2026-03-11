@@ -80,6 +80,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.PerformAutoTraining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("performIncrementalUpdate", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.PerformIncrementalUpdate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("solutionUpdateConfig", targetDepth))
                 {
                     var unmarshaller = SolutionUpdateConfigUnmarshaller.Instance;

@@ -36,6 +36,14 @@ namespace Amazon.CustomerProfiles
         /// <summary>
         /// Construct instance of AmazonCustomerProfilesException
         /// </summary>
+        public AmazonCustomerProfilesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCustomerProfilesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCustomerProfilesException(string message)
             : base(message)

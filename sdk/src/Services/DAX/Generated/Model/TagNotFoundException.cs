@@ -39,6 +39,13 @@ namespace Amazon.DAX.Model
     {
 
         /// <summary>
+        /// Default constructor for TagNotFoundException
+        /// message.
+        /// </summary>
+        public TagNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagNotFoundException with the specified error
         /// message.
         /// </summary>

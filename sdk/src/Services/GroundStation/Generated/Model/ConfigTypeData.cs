@@ -44,6 +44,7 @@ namespace Amazon.GroundStation.Model
         private AntennaUplinkConfig _antennaUplinkConfig;
         private DataflowEndpointConfig _dataflowEndpointConfig;
         private S3RecordingConfig _s3RecordingConfig;
+        private TelemetrySinkConfig _telemetrySinkConfig;
         private TrackingConfig _trackingConfig;
         private UplinkEchoConfig _uplinkEchoConfig;
 
@@ -141,6 +142,24 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TelemetrySinkConfig. 
+        /// <para>
+        /// Information about a telemetry sink <c>Config</c>.
+        /// </para>
+        /// </summary>
+        public TelemetrySinkConfig TelemetrySinkConfig
+        {
+            get { return this._telemetrySinkConfig; }
+            set { this._telemetrySinkConfig = value; }
+        }
+
+        // Check to see if TelemetrySinkConfig property is set
+        internal bool IsSetTelemetrySinkConfig()
+        {
+            return this._telemetrySinkConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrackingConfig. 
         /// <para>
         /// Object that determines whether tracking should be used during a contact executed with
@@ -166,8 +185,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         ///  
         /// <para>
-        /// Parameters from the <c>AntennaUplinkConfig</c>, corresponding to the specified <c>AntennaUplinkConfigArn</c>,
-        /// are used when this <c>UplinkEchoConfig</c> is used in a contact.
+        /// Parameters from the <c>AntennaUplinkConfig</c>, corresponding to the specified <c>
+        /// AntennaUplinkConfigArn</c>, are used when this <c>UplinkEchoConfig</c> is used in
+        /// a contact.
         /// </para>
         /// </summary>
         public UplinkEchoConfig UplinkEchoConfig

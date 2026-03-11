@@ -40,6 +40,13 @@ namespace Amazon.Personalize.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyTagKeysException
+        /// message.
+        /// </summary>
+        public TooManyTagKeysException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyTagKeysException with the specified error
         /// message.
         /// </summary>

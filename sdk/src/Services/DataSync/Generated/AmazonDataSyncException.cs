@@ -36,6 +36,14 @@ namespace Amazon.DataSync
         /// <summary>
         /// Construct instance of AmazonDataSyncException
         /// </summary>
+        public AmazonDataSyncException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDataSyncException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDataSyncException(string message)
             : base(message)

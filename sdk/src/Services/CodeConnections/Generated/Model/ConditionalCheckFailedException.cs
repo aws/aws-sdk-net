@@ -39,6 +39,13 @@ namespace Amazon.CodeConnections.Model
     {
 
         /// <summary>
+        /// Default constructor for ConditionalCheckFailedException
+        /// message.
+        /// </summary>
+        public ConditionalCheckFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConditionalCheckFailedException with the specified error
         /// message.
         /// </summary>

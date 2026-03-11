@@ -107,6 +107,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetOwnerAccount())
+            {
+                context.Writer.WritePropertyName("OwnerAccount");
+                context.Writer.WriteStringValue(publicRequest.OwnerAccount);
+            }
+
             if(publicRequest.IsSetQueryParameters())
             {
                 context.Writer.WritePropertyName("QueryParameters");

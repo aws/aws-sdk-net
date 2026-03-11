@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterParameterGroupNotFoundException
+        /// message.
+        /// </summary>
+        public ClusterParameterGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterParameterGroupNotFoundException with the specified error
         /// message.
         /// </summary>

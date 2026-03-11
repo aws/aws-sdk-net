@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for ConditionNotOverridableException
+        /// message.
+        /// </summary>
+        public ConditionNotOverridableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConditionNotOverridableException with the specified error
         /// message.
         /// </summary>

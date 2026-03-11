@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A cluster with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ClusterAlreadyExistsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ClusterAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ClusterAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ClusterAlreadyExistsException with the specified error

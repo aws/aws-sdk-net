@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The identifier of the memory record that was deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=40, Max=50)]
         public string MemoryRecordId
         {
             get { return this._memoryRecordId; }

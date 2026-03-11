@@ -31,9 +31,10 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateParticipant operation.
-    /// Adds a new participant into an on-going chat contact. For more information, see <a
-    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
-    /// chat flow experiences by integrating custom participants</a>.
+    /// Adds a new participant into an on-going chat contact or webRTC call. For more information,
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+    /// chat flow experiences by integrating custom participants</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+    /// multi-user web, in-app, and video calling</a>.
     /// </summary>
     public partial class CreateParticipantRequest : AmazonConnectRequest
     {
@@ -67,8 +68,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. Only contacts in
-        /// the CHAT channel are supported.
+        /// The identifier of the contact in this instance of Amazon Connect. Supports contacts
+        /// in the CHAT channel and VOICE (WebRTC) channels. For WebRTC calls, this should be
+        /// the initial contact ID that was generated when the contact was first created (from
+        /// the StartWebRTCContact API) in the VOICE channel
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -111,11 +114,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The only Valid value for <c>ParticipantRole</c> is <c>CUSTOM_BOT</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>DisplayName</c> is <b>Required</b>.
+        /// The only valid value for <c>ParticipantRole</c> is <c>CUSTOM_BOT</c> for chat contact
+        /// and <c>CUSTOMER</c> for voice contact.
         /// </para>
         ///  </important>
         /// </summary>

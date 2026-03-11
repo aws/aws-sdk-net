@@ -39,6 +39,13 @@ namespace Amazon.S3.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchUploadException
+        /// message.
+        /// </summary>
+        public NoSuchUploadException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchUploadException with the specified error
         /// message.
         /// </summary>

@@ -45,7 +45,9 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property CoreDeviceOperatingSystem. 
         /// <para>
-        /// The operating system of the core device in IoT Greengrass V2.
+        /// The operating system of the core device in IoT Greengrass V2. Specifying the operating
+        /// system is required for MQTT-enabled, V3 gateways (<c>gatewayVersion</c> <c>3</c>)
+        /// and not applicable for Classic stream, V2 gateways (<c>gatewayVersion</c> <c>2</c>).
         /// </para>
         /// </summary>
         public CoreDeviceOperatingSystem CoreDeviceOperatingSystem

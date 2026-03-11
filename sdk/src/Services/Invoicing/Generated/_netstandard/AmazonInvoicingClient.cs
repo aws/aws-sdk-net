@@ -63,11 +63,62 @@ namespace Amazon.Invoicing
     /// </para>
     ///  
     /// <para>
+    ///  <b>Amazon Web Services Procurement Portal Preferences</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Procurement Portal Preferences APIs to programmatically
+    /// create, update, delete, get, and list procurement portal connections and e-invoice
+    /// delivery settings. You can also programmatically fetch and modify the status of procurement
+    /// portal configurations. For example, SAP Business Network or Coupa connections, configure
+    /// e-invoice delivery and purchase order retrieval features.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Procurement Portal Preferences to connect e-invoice
+    /// delivery to your procurement portals based on your organizational needs. By using
+    /// Amazon Web Services Procurement Portal Preferences, you can configure connections
+    /// to SAP Business Network and Coupa procurement portals that retrieve purchase orders
+    /// and deliver Amazon Web Services invoices on the same day they are generated. You can
+    /// also set up testing environments to validate invoice delivery without affecting live
+    /// transactions, and manage contact information for portal setup and support. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Administrative users should understand that billing read-only policies will show all
+    /// procurement portal connection details. Review your IAM policies to ensure appropriate
+    /// access controls are in place for procurement portal preferences.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Amazon Web Services Invoice Management</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Invoice Management APIs to programmatically list invoice
+    /// summaries and get invoice documents. You can also programmatically fetch invoice documents
+    /// with S3 pre-signed URLs.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Invoice Management to access invoice information based
+    /// on your organizational needs. By using Amazon Web Services Invoice Management, you
+    /// can retrieve paginated lists of invoice summaries that include invoice metadata such
+    /// as invoice IDs, amounts, and currencies without downloading documents. You can also
+    /// download invoice documents in PDF format using S3 pre-signed URLs with built-in expiration.
+    /// As you manage invoices across your organization using Amazon Web Services Invoice
+    /// Management APIs, you can create invoice retrieval processes and integrate invoice
+    /// data into your financial systems.
+    /// </para>
+    ///  
+    /// <para>
     /// Service endpoint
     /// </para>
     ///  
     /// <para>
-    /// You can use the following endpoints for Amazon Web Services Invoice Configuration:
+    /// You can use the following endpoints for Amazon Web Services Invoice Configuration,
+    /// Amazon Web Services Procurement Portal Preferences, and Amazon Web Services Invoice
+    /// Management:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -300,7 +351,7 @@ namespace Amazon.Invoicing
 
         internal virtual BatchGetInvoiceProfileResponse BatchGetInvoiceProfile(BatchGetInvoiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetInvoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetInvoiceProfileResponseUnmarshaller.Instance;
 
@@ -337,7 +388,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/BatchGetInvoiceProfile">REST API Reference for BatchGetInvoiceProfile Operation</seealso>
         public virtual Task<BatchGetInvoiceProfileResponse> BatchGetInvoiceProfileAsync(BatchGetInvoiceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetInvoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetInvoiceProfileResponseUnmarshaller.Instance;
 
@@ -349,7 +400,7 @@ namespace Amazon.Invoicing
 
         internal virtual CreateInvoiceUnitResponse CreateInvoiceUnit(CreateInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -382,7 +433,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateInvoiceUnit">REST API Reference for CreateInvoiceUnit Operation</seealso>
         public virtual Task<CreateInvoiceUnitResponse> CreateInvoiceUnitAsync(CreateInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -390,11 +441,67 @@ namespace Amazon.Invoicing
         }
         #endregion
         
+        #region  CreateProcurementPortalPreference
+
+        internal virtual CreateProcurementPortalPreferenceResponse CreateProcurementPortalPreference(CreateProcurementPortalPreferenceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProcurementPortalPreferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a procurement portal preference configuration for e-invoice delivery and purchase
+        /// order retrieval. This preference defines how invoices are delivered to a procurement
+        /// portal and how purchase orders are retrieved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateProcurementPortalPreference">REST API Reference for CreateProcurementPortalPreference Operation</seealso>
+        public virtual Task<CreateProcurementPortalPreferenceResponse> CreateProcurementPortalPreferenceAsync(CreateProcurementPortalPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProcurementPortalPreferenceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteInvoiceUnit
 
         internal virtual DeleteInvoiceUnitResponse DeleteInvoiceUnit(DeleteInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -430,7 +537,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteInvoiceUnit">REST API Reference for DeleteInvoiceUnit Operation</seealso>
         public virtual Task<DeleteInvoiceUnitResponse> DeleteInvoiceUnitAsync(DeleteInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -438,11 +545,117 @@ namespace Amazon.Invoicing
         }
         #endregion
         
+        #region  DeleteProcurementPortalPreference
+
+        internal virtual DeleteProcurementPortalPreferenceResponse DeleteProcurementPortalPreference(DeleteProcurementPortalPreferenceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProcurementPortalPreferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing procurement portal preference. This action cannot be undone. Active
+        /// e-invoice delivery and PO retrieval configurations will be terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteProcurementPortalPreference">REST API Reference for DeleteProcurementPortalPreference Operation</seealso>
+        public virtual Task<DeleteProcurementPortalPreferenceResponse> DeleteProcurementPortalPreferenceAsync(DeleteProcurementPortalPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProcurementPortalPreferenceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetInvoicePDF
+
+        internal virtual GetInvoicePDFResponse GetInvoicePDF(GetInvoicePDFRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvoicePDFRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvoicePDFResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvoicePDFResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        public virtual Task<GetInvoicePDFResponse> GetInvoicePDFAsync(GetInvoicePDFRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvoicePDFRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvoicePDFResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInvoicePDFResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetInvoiceUnit
 
         internal virtual GetInvoiceUnitResponse GetInvoiceUnit(GetInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -478,7 +691,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoiceUnit">REST API Reference for GetInvoiceUnit Operation</seealso>
         public virtual Task<GetInvoiceUnitResponse> GetInvoiceUnitAsync(GetInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -486,11 +699,68 @@ namespace Amazon.Invoicing
         }
         #endregion
         
+        #region  GetProcurementPortalPreference
+
+        internal virtual GetProcurementPortalPreferenceResponse GetProcurementPortalPreference(GetProcurementPortalPreferenceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<GetProcurementPortalPreferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific procurement portal preference configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetProcurementPortalPreference">REST API Reference for GetProcurementPortalPreference Operation</seealso>
+        public virtual Task<GetProcurementPortalPreferenceResponse> GetProcurementPortalPreferenceAsync(GetProcurementPortalPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProcurementPortalPreferenceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListInvoiceSummaries
 
         internal virtual ListInvoiceSummariesResponse ListInvoiceSummaries(ListInvoiceSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
 
@@ -526,7 +796,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
         public virtual Task<ListInvoiceSummariesResponse> ListInvoiceSummariesAsync(ListInvoiceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
 
@@ -538,7 +808,7 @@ namespace Amazon.Invoicing
 
         internal virtual ListInvoiceUnitsResponse ListInvoiceUnits(ListInvoiceUnitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceUnitsResponseUnmarshaller.Instance;
 
@@ -572,7 +842,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceUnits">REST API Reference for ListInvoiceUnits Operation</seealso>
         public virtual Task<ListInvoiceUnitsResponse> ListInvoiceUnitsAsync(ListInvoiceUnitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceUnitsResponseUnmarshaller.Instance;
 
@@ -580,11 +850,66 @@ namespace Amazon.Invoicing
         }
         #endregion
         
+        #region  ListProcurementPortalPreferences
+
+        internal virtual ListProcurementPortalPreferencesResponse ListProcurementPortalPreferences(ListProcurementPortalPreferencesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProcurementPortalPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProcurementPortalPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProcurementPortalPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of procurement portal preferences associated with the Amazon Web
+        /// Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProcurementPortalPreferences service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalPreferences">REST API Reference for ListProcurementPortalPreferences Operation</seealso>
+        public virtual Task<ListProcurementPortalPreferencesResponse> ListProcurementPortalPreferencesAsync(ListProcurementPortalPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProcurementPortalPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProcurementPortalPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProcurementPortalPreferencesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -620,7 +945,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -628,11 +953,69 @@ namespace Amazon.Invoicing
         }
         #endregion
         
+        #region  PutProcurementPortalPreference
+
+        internal virtual PutProcurementPortalPreferenceResponse PutProcurementPortalPreference(PutProcurementPortalPreferenceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<PutProcurementPortalPreferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing procurement portal preference configuration. This operation can
+        /// modify settings for e-invoice delivery and purchase order retrieval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/PutProcurementPortalPreference">REST API Reference for PutProcurementPortalPreference Operation</seealso>
+        public virtual Task<PutProcurementPortalPreferenceResponse> PutProcurementPortalPreferenceAsync(PutProcurementPortalPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutProcurementPortalPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProcurementPortalPreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutProcurementPortalPreferenceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -672,7 +1055,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -684,7 +1067,7 @@ namespace Amazon.Invoicing
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -720,7 +1103,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -732,7 +1115,7 @@ namespace Amazon.Invoicing
 
         internal virtual UpdateInvoiceUnitResponse UpdateInvoiceUnit(UpdateInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -769,11 +1152,69 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateInvoiceUnit">REST API Reference for UpdateInvoiceUnit Operation</seealso>
         public virtual Task<UpdateInvoiceUnitResponse> UpdateInvoiceUnitAsync(UpdateInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvoiceUnitResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateInvoiceUnitResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateProcurementPortalPreferenceStatus
+
+        internal virtual UpdateProcurementPortalPreferenceStatusResponse UpdateProcurementPortalPreferenceStatus(UpdateProcurementPortalPreferenceStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProcurementPortalPreferenceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProcurementPortalPreferenceStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProcurementPortalPreferenceStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the status of a procurement portal preference, including the activation state
+        /// of e-invoice delivery and purchase order retrieval features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProcurementPortalPreferenceStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProcurementPortalPreferenceStatus service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateProcurementPortalPreferenceStatus">REST API Reference for UpdateProcurementPortalPreferenceStatus Operation</seealso>
+        public virtual Task<UpdateProcurementPortalPreferenceStatusResponse> UpdateProcurementPortalPreferenceStatusAsync(UpdateProcurementPortalPreferenceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProcurementPortalPreferenceStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProcurementPortalPreferenceStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProcurementPortalPreferenceStatusResponse>(request, options, cancellationToken);
         }
         #endregion
         

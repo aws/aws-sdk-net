@@ -92,6 +92,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.NdiProgramName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ndiSourceSettings", targetDepth))
+                {
+                    var unmarshaller = NdiSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.NdiSourceSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ndiSpeedHqQuality", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

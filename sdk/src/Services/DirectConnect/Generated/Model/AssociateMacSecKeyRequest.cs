@@ -32,7 +32,7 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the AssociateMacSecKey operation.
     /// Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association
-    /// Key (CAK) pair with an Direct Connect dedicated connection.
+    /// Key (CAK) pair with a Direct Connect connection.
     /// 
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Cak. 
         /// <para>
-        /// The MAC Security (MACsec) CAK to associate with the dedicated connection.
+        /// The MAC Security (MACsec) CAK to associate with the connection.
         /// </para>
         ///  
         /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Ckn. 
         /// <para>
-        /// The MAC Security (MACsec) CKN to associate with the dedicated connection.
+        /// The MAC Security (MACsec) CKN to associate with the connection.
         /// </para>
         ///  
         /// <para>
@@ -117,12 +117,13 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).
+        /// The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG
+        /// (dxlag-xxxx).
         /// </para>
         ///  
         /// <para>
-        /// You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection
-        /// ID.
+        /// You can use <a>DescribeConnections</a>, <a>DescribeInterconnects</a>, or <a>DescribeLags</a>
+        /// to retrieve connection ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,7 +143,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property SecretARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate
-        /// with the dedicated connection.
+        /// with the connection.
         /// </para>
         ///  
         /// <para>

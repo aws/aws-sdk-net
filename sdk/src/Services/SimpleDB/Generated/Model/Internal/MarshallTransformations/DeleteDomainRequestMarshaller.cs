@@ -64,6 +64,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
             }
+
             return request;
         }
                     private static DeleteDomainRequestMarshaller _instance = new DeleteDomainRequestMarshaller();        

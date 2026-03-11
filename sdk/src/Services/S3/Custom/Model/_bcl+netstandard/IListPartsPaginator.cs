@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListPartsResponse> Responses { get; }
-        
+
         /// <summary>
         /// Enumerable containing all of the Parts
         /// </summary>

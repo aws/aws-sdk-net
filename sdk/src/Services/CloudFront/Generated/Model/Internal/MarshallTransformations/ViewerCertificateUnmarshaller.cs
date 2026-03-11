@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ViewerCertificate Object
     /// </summary>  
-    public class ViewerCertificateUnmarshaller : IXmlUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>
+    public partial class ViewerCertificateUnmarshaller : IXmlUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,6 +98,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.SSLSupportMethod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -106,6 +108,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ViewerCertificate unmarshalledObject, int targetDepth);
+
         private static ViewerCertificateUnmarshaller _instance = new ViewerCertificateUnmarshaller();        
 
         /// <summary>

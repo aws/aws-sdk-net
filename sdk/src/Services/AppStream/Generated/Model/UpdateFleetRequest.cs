@@ -73,6 +73,7 @@ namespace Amazon.AppStream.Model
         private ComputeCapacity _computeCapacity;
         private bool? _deleteVpcConfig;
         private string _description;
+        private bool? _disableIMDSV1;
         private int? _disconnectTimeoutInSeconds;
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
@@ -87,6 +88,7 @@ namespace Amazon.AppStream.Model
         private int? _maxUserDurationInSeconds;
         private string _name;
         private PlatformType _platform;
+        private VolumeConfig _rootVolumeConfig;
         private S3Location _sessionScriptS3Location;
         private StreamView _streamView;
         private List<string> _usbDeviceFilterStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -169,6 +171,32 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableIMDSV1. 
+        /// <para>
+        /// Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2.
+        /// Set to false to enable both IMDSv1 and IMDSv2.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the
+        /// agent version or managed image update released on or after January 16, 2024 to support
+        /// IMDSv2 enforcement.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? DisableIMDSV1
+        {
+            get { return this._disableIMDSV1; }
+            set { this._disableIMDSV1 = value; }
+        }
+
+        // Check to see if DisableIMDSV1 property is set
+        internal bool IsSetDisableIMDSV1()
+        {
+            return this._disableIMDSV1.HasValue; 
         }
 
         /// <summary>
@@ -258,14 +286,15 @@ namespace Amazon.AppStream.Model
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a
         /// role, a fleet instance calls the AWS Security Token Service (STS) <c>AssumeRole</c>
         /// API operation and passes the ARN of the role to use. The operation creates a new session
-        /// with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-        /// creates the <b>appstream_machine_role</b> credential profile on the instance.
+        /// with temporary credentials. WorkSpaces Applications retrieves the temporary credentials
+        /// and creates the <b>appstream_machine_role</b> credential profile on the instance.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
-        /// an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream
-        /// 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces
+        /// Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -451,26 +480,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-design.large
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-design.4xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-desktop.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// stream.graphics.g4dn.xlarge
         /// </para>
         ///  </li> <li> 
@@ -495,15 +504,87 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-pro.4xlarge
+        /// stream.graphics.g5.xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-pro.8xlarge
+        /// stream.graphics.g5.2xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-pro.16xlarge
+        /// stream.graphics.g5.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.16xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.24xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.16xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.24xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.gr6.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.gr6.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6f.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6f.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6f.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6f.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.gr6f.4xlarge
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -627,8 +708,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for
-        /// Elastic fleets. 
+        /// The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404
+        /// are supported for Elastic fleets. 
         /// </para>
         /// </summary>
         public PlatformType Platform
@@ -641,6 +722,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootVolumeConfig. 
+        /// <para>
+        /// The updated configuration for the root volume of fleet instances. Note that volume
+        /// size cannot be decreased below the image volume size.
+        /// </para>
+        /// </summary>
+        public VolumeConfig RootVolumeConfig
+        {
+            get { return this._rootVolumeConfig; }
+            set { this._rootVolumeConfig = value; }
+        }
+
+        // Check to see if RootVolumeConfig property is set
+        internal bool IsSetRootVolumeConfig()
+        {
+            return this._rootVolumeConfig != null;
         }
 
         /// <summary>
@@ -665,10 +765,10 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StreamView. 
         /// <para>
-        /// The AppStream 2.0 view that is displayed to your users when they stream from the fleet.
-        /// When <c>APP</c> is specified, only the windows of applications opened by users display.
-        /// When <c>DESKTOP</c> is specified, the standard desktop that is provided by the operating
-        /// system displays.
+        /// The WorkSpaces Applications view that is displayed to your users when they stream
+        /// from the fleet. When <c>APP</c> is specified, only the windows of applications opened
+        /// by users display. When <c>DESKTOP</c> is specified, the standard desktop that is provided
+        /// by the operating system displays.
         /// </para>
         ///  
         /// <para>

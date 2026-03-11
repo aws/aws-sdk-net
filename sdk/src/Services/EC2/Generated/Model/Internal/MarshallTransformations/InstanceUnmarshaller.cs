@@ -361,6 +361,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("secondaryInterfaceSet/item", targetDepth))
+                    {
+                        var unmarshaller = InstanceSecondaryInterfaceUnmarshaller.Instance;
+                        if (unmarshalledObject.SecondaryInterfaces == null)
+                        {
+                            unmarshalledObject.SecondaryInterfaces = new List<InstanceSecondaryInterface>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecondaryInterfaces.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = GroupIdentifierUnmarshaller.Instance;

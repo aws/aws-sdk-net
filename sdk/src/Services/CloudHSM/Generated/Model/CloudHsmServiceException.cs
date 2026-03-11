@@ -40,6 +40,13 @@ namespace Amazon.CloudHSM.Model
         private bool? _retryable;
 
         /// <summary>
+        /// Default constructor for CloudHsmServiceException
+        /// message.
+        /// </summary>
+        public CloudHsmServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudHsmServiceException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _clientToken;
         private string _configVersion;
         private string _description;
+        private IamFederationConfigOptions _iamFederationOptions;
         private UpdateIamIdentityCenterConfigOptions _iamIdentityCenterOptionsUpdates;
         private string _id;
         private SamlConfigOptions _samlOptions;
@@ -100,6 +101,26 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamFederationOptions. 
+        /// <para>
+        /// Describes IAM federation options in the form of a key-value map for updating an existing
+        /// security configuration. Use this field to modify IAM federation settings for the security
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public IamFederationConfigOptions IamFederationOptions
+        {
+            get { return this._iamFederationOptions; }
+            set { this._iamFederationOptions = value; }
+        }
+
+        // Check to see if IamFederationOptions property is set
+        internal bool IsSetIamFederationOptions()
+        {
+            return this._iamFederationOptions != null;
         }
 
         /// <summary>

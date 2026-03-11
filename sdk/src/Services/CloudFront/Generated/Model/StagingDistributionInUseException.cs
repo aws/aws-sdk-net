@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for StagingDistributionInUseException
+        /// message.
+        /// </summary>
+        public StagingDistributionInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StagingDistributionInUseException with the specified error
         /// message.
         /// </summary>

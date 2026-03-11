@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// (*), this entry specifies the weight factor to use for share identifiers that start
         /// with that prefix. The list of share identifiers in a fair-share policy can't overlap.
         /// For example, you can't have one that specifies a <c>shareIdentifier</c> of <c>UserA*</c>
-        /// and another that specifies a <c>shareIdentifier</c> of <c>UserA-1</c>.
+        /// and another that specifies a <c>shareIdentifier</c> of <c>UserA1</c>.
         /// </para>
         ///  
         /// <para>

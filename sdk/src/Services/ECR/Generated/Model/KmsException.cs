@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
         private string _kmsError;
 
         /// <summary>
+        /// Default constructor for KmsException
+        /// message.
+        /// </summary>
+        public KmsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsException with the specified error
         /// message.
         /// </summary>

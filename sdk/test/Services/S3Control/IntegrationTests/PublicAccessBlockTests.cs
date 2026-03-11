@@ -3,25 +3,25 @@ using Amazon.S3Control;
 using Amazon.S3Control.Model;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
-using Amazon.Runtime;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.IO;
-using Amazon.Util;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3Control
 {
     [TestClass]
+    [TestCategory("S3Control")]
     public class PublicAccessBlockTests : TestBase<AmazonS3ControlClient>
     {
         private string accountId;
-
         private AmazonS3ControlClient client;
 
         [TestInitialize]
-        public void Initialize()
+        public async Task Initialize()
         {
-            accountId = new AmazonSecurityTokenServiceClient().GetCallerIdentity(new GetCallerIdentityRequest()).Account;
+            var response = await new AmazonSecurityTokenServiceClient().GetCallerIdentityAsync(new GetCallerIdentityRequest());
+            accountId = response.Account;
             client = new AmazonS3ControlClient(RegionEndpoint.USEast1);
         }
 
@@ -32,45 +32,47 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3Control
         }
 
         [TestMethod]
-        [TestCategory("S3Control")]
-        public void TestPublicAccessBlock()
+        public async Task TestPublicAccessBlock()
         {
-            client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
+            await client.PutPublicAccessBlockAsync(new PutPublicAccessBlockRequest
             {
                 AccountId = accountId,
-                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration()
+                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
                 {
                     BlockPublicPolicy = false
                 }
             });
-            var response = client.GetPublicAccessBlock(new GetPublicAccessBlockRequest()
+
+            var response = await client.GetPublicAccessBlockAsync(new GetPublicAccessBlockRequest
             {
                 AccountId = accountId
             });
+
             Assert.IsTrue(response.ResponseMetadata.Metadata.ContainsKey(HeaderKeys.XAmzId2Header));
             Assert.IsFalse(response.PublicAccessBlockConfiguration.BlockPublicPolicy.Value);
-            client.DeletePublicAccessBlock(new DeletePublicAccessBlockRequest()
+            
+            await client.DeletePublicAccessBlockAsync(new DeletePublicAccessBlockRequest
             {
                 AccountId = accountId
             });
         }
 
         [TestMethod]
-        [TestCategory("S3Control")]
-        public void TestPublicAccessBlockException()
+        public async Task TestPublicAccessBlockException()
         {
-            var exception = Assert.ThrowsException<AmazonS3ControlException>(() =>
+            var exception = await Assert.ThrowsExceptionAsync<AmazonS3ControlException>(async () =>
             {
-                client.PutPublicAccessBlock(new PutPublicAccessBlockRequest
+                await client.PutPublicAccessBlockAsync(new PutPublicAccessBlockRequest
                 {
                     AccountId = "0000",
-                    PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration()
+                    PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
                     {
                         BlockPublicPolicy = false
                     }
                 });
             });
-            Assert.IsFalse(String.IsNullOrEmpty(exception.AmazonId2));
+
+            Assert.IsFalse(string.IsNullOrEmpty(exception.AmazonId2));
         }
     }
 }

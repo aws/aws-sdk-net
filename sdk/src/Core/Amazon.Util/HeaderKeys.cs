@@ -37,6 +37,7 @@ namespace Amazon.Util
         public const string ContentMD5Header = "Content-MD5";
         public const string ContentEncodingHeader = "Content-Encoding";
         public const string ContentDispositionHeader = "Content-Disposition";
+        public const string ContentLanguageHeader = "Content-Language";
         public const string ETagHeader = "ETag";
         public const string Expires = "Expires";
         public const string AuthorizationHeader = "Authorization";
@@ -120,5 +121,7 @@ namespace Amazon.Util
         public const string XAmzRenameSourceIfNoneMatchHeader = "x-amz-rename-source-if-none-match";
         public const string XAmzRenameSourceIfUnmodifiedSinceHeader = "x-amz-rename-source-if-unmodified-since";
         public const string XAmzQueryMode = "x-amzn-query-mode";
+
+        public const string DPoPHeader = "DPoP";
     }
 }

@@ -23,6 +23,42 @@
     <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest.BuyerIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest.ClientToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest.ProcurementPortalInstanceEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest.ProcurementPortalSharedSecret</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest.SupplierIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.CreateProcurementPortalPreferenceResponse.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.DeleteInvoiceUnitRequest.InvoiceUnitArn</property>
     <min>1</min>
     <max>256</max>
@@ -33,6 +69,24 @@
     <min>1</min>
     <max>256</max>
     <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceResponse.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.GetInvoicePDFRequest.InvoiceId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.GetInvoiceUnitRequest.InvoiceUnitArn</property>
@@ -61,6 +115,12 @@
     <min>1</min>
     <max>50</max>
     <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.ListInvoiceSummariesRequest.MaxResults</property>
@@ -93,10 +153,51 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws[-a-z0-9]*:(invoicing)::[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest.ProcurementPortalInstanceEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest.ProcurementPortalSharedSecret</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.PutProcurementPortalPreferenceResponse.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.TagResourceRequest.ResourceArn</property>
@@ -129,6 +230,30 @@
     <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest.EinvoiceDeliveryPreferenceStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest.PurchaseOrderRetrievalPreferenceStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusResponse.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.AccessDeniedException.ResourceName</property>
     <min>1</min>
     <max>256</max>
@@ -149,6 +274,30 @@
     <property>Amazon.Invoicing.Model.BillingPeriod.Year</property>
     <min>2005</min>
     <max>2050</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ConflictException.ResourceId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ConflictException.ResourceType</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.Contact.Email</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.Contact.Name</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.CurrencyExchangeDetails.Rate</property>
@@ -240,6 +389,18 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.InvoicePDF.DocumentUrl</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.InvoicePDF.InvoiceId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.InvoiceProfile.AccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -324,6 +485,92 @@
     <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.AwsAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.BuyerIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.EinvoiceDeliveryPreferenceStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.ProcurementPortalInstanceEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.ProcurementPortalSharedSecret</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.PurchaseOrderRetrievalEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.PurchaseOrderRetrievalPreferenceStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreference.SupplierIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreferenceSummary.AwsAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreferenceSummary.BuyerIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreferenceSummary.EinvoiceDeliveryPreferenceStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreferenceSummary.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreferenceSummary.PurchaseOrderRetrievalPreferenceStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalPreferenceSummary.SupplierIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.ReceiverAddress.AddressLine1</property>
     <min>0</min>
     <max>1024</max>
@@ -394,6 +641,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.SupplementalDocument.DocumentUrl</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.TaxesBreakdown.TotalAmount</property>
     <min>0</min>
     <max>1024</max>
@@ -416,6 +669,60 @@
     <min>0</min>
     <max>1024</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreference.BuyerIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreference.ProcurementPortalInstanceEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreference.ProcurementPortalSharedSecret</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreference.PurchaseOrderRetrievalEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreference.SupplierIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreferenceInput.BuyerIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreferenceInput.ProcurementPortalInstanceEndpoint</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreferenceInput.ProcurementPortalSharedSecret</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.TestEnvPreferenceInput.SupplierIdentifier</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.ValidationException.ResourceName</property>

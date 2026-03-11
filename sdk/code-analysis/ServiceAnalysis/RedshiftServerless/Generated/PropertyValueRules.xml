@@ -486,6 +486,24 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateLakehouseConfigurationRequest.CatalogName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateLakehouseConfigurationRequest.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateLakehouseConfigurationResponse.NamespaceName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.UpdateNamespaceRequest.NamespaceName</property>
     <min>3</min>
     <max>64</max>

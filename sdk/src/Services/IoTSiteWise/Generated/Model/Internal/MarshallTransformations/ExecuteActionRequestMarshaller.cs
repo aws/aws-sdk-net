@@ -96,6 +96,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
 
+            if(publicRequest.IsSetResolveTo())
+            {
+                context.Writer.WritePropertyName("resolveTo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResolveToMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResolveTo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTargetResource())
             {
                 context.Writer.WritePropertyName("targetResource");

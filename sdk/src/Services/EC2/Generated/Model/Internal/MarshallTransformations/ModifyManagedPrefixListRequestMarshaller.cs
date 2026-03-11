@@ -88,6 +88,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetIpamPrefixListResolverSyncEnabled())
+                {
+                    request.Parameters.Add("IpamPrefixListResolverSyncEnabled", StringUtils.FromBool(publicRequest.IpamPrefixListResolverSyncEnabled));
+                }
                 if(publicRequest.IsSetMaxEntries())
                 {
                     request.Parameters.Add("MaxEntries", StringUtils.FromInt(publicRequest.MaxEntries));
@@ -118,6 +122,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyManagedPrefixListRequestMarshaller _instance = new ModifyManagedPrefixListRequestMarshaller();        

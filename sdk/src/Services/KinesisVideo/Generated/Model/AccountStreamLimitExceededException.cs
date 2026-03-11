@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideo.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountStreamLimitExceededException
+        /// message.
+        /// </summary>
+        public AccountStreamLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountStreamLimitExceededException with the specified error
         /// message.
         /// </summary>

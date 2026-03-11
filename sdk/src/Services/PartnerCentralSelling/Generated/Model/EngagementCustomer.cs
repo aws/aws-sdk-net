@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// This field is used to identify the customer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=120)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string CompanyName
         {
             get { return this._companyName; }
@@ -107,7 +107,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// the legitimacy and size of the customer organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string WebsiteUrl
         {
             get { return this._websiteUrl; }

@@ -40,6 +40,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for PlatformNotSupportedException
+        /// message.
+        /// </summary>
+        public PlatformNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PlatformNotSupportedException with the specified error
         /// message.
         /// </summary>

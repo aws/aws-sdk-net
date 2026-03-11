@@ -59,7 +59,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property SourceS3Object. 
         /// <para>
-        /// Source S3 object used for the ephemeris.
+        /// Source Amazon S3 object used for the ephemeris.
         /// </para>
         /// </summary>
         public S3Object SourceS3Object

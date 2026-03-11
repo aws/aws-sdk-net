@@ -37,6 +37,14 @@ namespace Amazon.ObservabilityAdmin.Model
     #endif
     public partial class ValidationException : AmazonObservabilityAdminException
     {
+        private List<ValidationError> _errors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
+
+        /// <summary>
+        /// Default constructor for ValidationException
+        /// message.
+        /// </summary>
+        public ValidationException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -98,6 +106,7 @@ namespace Amazon.ObservabilityAdmin.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Errors = (List<ValidationError>)info.GetValue("Errors", typeof(List<ValidationError>));
         }
 
         /// <summary>
@@ -113,8 +122,32 @@ namespace Amazon.ObservabilityAdmin.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Errors", this.Errors);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        ///  The errors in the input which caused the exception. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ValidationError> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

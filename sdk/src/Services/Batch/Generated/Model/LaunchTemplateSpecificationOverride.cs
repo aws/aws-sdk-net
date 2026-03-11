@@ -130,7 +130,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>optimal</c> isn't allowed.
+        /// The following Batch <c>InstanceTypes</c> are not allowed: <c>optimal</c>, <c>default_x86_64</c>,
+        /// and <c>default_arm64</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

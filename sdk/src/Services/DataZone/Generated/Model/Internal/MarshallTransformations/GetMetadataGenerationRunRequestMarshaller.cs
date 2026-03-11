@@ -68,7 +68,11 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetIdentifier())
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
+            
+            if (publicRequest.IsSetType())
+                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/metadata-generation-runs/{identifier}";
+            request.UseQueryString = true;
 
             return request;
         }

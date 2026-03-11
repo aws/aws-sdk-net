@@ -36,6 +36,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     {
         private AgentlessConfig _agentless;
         private PredictiveConfig _predictive;
+        private PreviewConfig _preview;
         private ProgressiveConfig _progressive;
 
         /// <summary>
@@ -66,6 +67,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetPredictive()
         {
             return this._predictive != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preview.
+        /// </summary>
+        public PreviewConfig Preview
+        {
+            get { return this._preview; }
+            set { this._preview = value; }
+        }
+
+        // Check to see if Preview property is set
+        internal bool IsSetPreview()
+        {
+            return this._preview != null;
         }
 
         /// <summary>

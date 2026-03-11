@@ -39,6 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private DataProductFilters _dataProductFilters;
         private MachineLearningProductFilters _machineLearningProductFilters;
         private OfferFilters _offerFilters;
+        private OfferSetFilters _offerSetFilters;
         private ResaleAuthorizationFilters _resaleAuthorizationFilters;
         private SaaSProductFilters _saaSProductFilters;
 
@@ -127,6 +128,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetOfferFilters()
         {
             return this._offerFilters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSetFilters. 
+        /// <para>
+        /// A filter for offer sets.
+        /// </para>
+        /// </summary>
+        public OfferSetFilters OfferSetFilters
+        {
+            get { return this._offerSetFilters; }
+            set { this._offerSetFilters = value; }
+        }
+
+        // Check to see if OfferSetFilters property is set
+        internal bool IsSetOfferSetFilters()
+        {
+            return this._offerSetFilters != null;
         }
 
         /// <summary>

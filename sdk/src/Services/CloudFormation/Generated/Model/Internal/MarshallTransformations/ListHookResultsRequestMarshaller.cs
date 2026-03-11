@@ -63,6 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+                if(publicRequest.IsSetStatus())
+                {
+                    request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
+                }
                 if(publicRequest.IsSetTargetId())
                 {
                     request.Parameters.Add("TargetId", StringUtils.FromString(publicRequest.TargetId));
@@ -71,7 +75,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TargetType", StringUtils.FromString(publicRequest.TargetType));
                 }
+                if(publicRequest.IsSetTypeArn())
+                {
+                    request.Parameters.Add("TypeArn", StringUtils.FromString(publicRequest.TypeArn));
+                }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListHookResultsRequestMarshaller _instance = new ListHookResultsRequestMarshaller();        

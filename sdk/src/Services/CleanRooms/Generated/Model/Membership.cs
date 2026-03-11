@@ -44,6 +44,7 @@ namespace Amazon.CleanRooms.Model
         private MembershipProtectedJobResultConfiguration _defaultJobResultConfiguration;
         private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private string _id;
+        private bool? _isMetricsEnabled;
         private MembershipJobLogStatus _jobLogStatus;
         private List<string> _memberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MLMemberAbilities _mlMemberAbilities;
@@ -240,6 +241,28 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMetricsEnabled. 
+        /// <para>
+        /// An indicator as to whether Amazon CloudWatch metrics are enabled for the membership.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, metrics about query execution are collected in Amazon CloudWatch.
+        /// </para>
+        /// </summary>
+        public bool? IsMetricsEnabled
+        {
+            get { return this._isMetricsEnabled; }
+            set { this._isMetricsEnabled = value; }
+        }
+
+        // Check to see if IsMetricsEnabled property is set
+        internal bool IsSetIsMetricsEnabled()
+        {
+            return this._isMetricsEnabled.HasValue; 
         }
 
         /// <summary>

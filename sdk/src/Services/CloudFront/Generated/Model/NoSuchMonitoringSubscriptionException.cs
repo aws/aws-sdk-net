@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchMonitoringSubscriptionException
+        /// message.
+        /// </summary>
+        public NoSuchMonitoringSubscriptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchMonitoringSubscriptionException with the specified error
         /// message.
         /// </summary>

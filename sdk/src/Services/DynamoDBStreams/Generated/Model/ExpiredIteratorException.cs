@@ -41,6 +41,13 @@ namespace Amazon.DynamoDBStreams.Model
     {
 
         /// <summary>
+        /// Default constructor for ExpiredIteratorException
+        /// message.
+        /// </summary>
+        public ExpiredIteratorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExpiredIteratorException with the specified error
         /// message.
         /// </summary>

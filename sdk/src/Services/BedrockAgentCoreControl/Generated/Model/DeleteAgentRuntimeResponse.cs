@@ -34,16 +34,35 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class DeleteAgentRuntimeResponse : AmazonWebServiceResponse
     {
-        private AgentStatus _status;
+        private string _agentRuntimeId;
+        private AgentRuntimeStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AgentRuntimeId. 
+        /// <para>
+        /// The unique identifier of the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public string AgentRuntimeId
+        {
+            get { return this._agentRuntimeId; }
+            set { this._agentRuntimeId = value; }
+        }
+
+        // Check to see if AgentRuntimeId property is set
+        internal bool IsSetAgentRuntimeId()
+        {
+            return this._agentRuntimeId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the agent runtime deletion.
+        /// The current status of the AgentCore Runtime deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentStatus Status
+        public AgentRuntimeStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

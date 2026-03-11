@@ -41,6 +41,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for ConflictingTypesException
+        /// message.
+        /// </summary>
+        public ConflictingTypesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConflictingTypesException with the specified error
         /// message.
         /// </summary>

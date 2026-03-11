@@ -36,6 +36,14 @@ namespace Amazon.KendraRanking
         /// <summary>
         /// Construct instance of AmazonKendraRankingException
         /// </summary>
+        public AmazonKendraRankingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKendraRankingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKendraRankingException(string message)
             : base(message)

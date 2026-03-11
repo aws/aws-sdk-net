@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = AWSConfigs.InitializeCollections ? new List<ColumnLevelPermissionRule>() : null;
         private long? _consumedSpiceCapacityInBytes;
         private DateTime? _createdTime;
+        private DataPrepConfiguration _dataPrepConfiguration;
         private string _dataSetId;
         private List<DatasetParameter> _datasetParameters = AWSConfigs.InitializeCollections ? new List<DatasetParameter>() : null;
         private DataSetUsageConfiguration _dataSetUsageConfiguration;
@@ -52,6 +53,7 @@ namespace Amazon.QuickSight.Model
         private Dictionary<string, PhysicalTable> _physicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, PhysicalTable>() : null;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
+        private SemanticModelConfiguration _semanticModelConfiguration;
         private DataSetUseAs _useAs;
 
         /// <summary>
@@ -75,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroups. 
         /// <para>
-        /// Groupings of columns that work together in certain Amazon QuickSight features. Currently,
+        /// Groupings of columns that work together in certain Quick Sight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
         /// <para />
@@ -157,6 +159,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPrepConfiguration. 
+        /// <para>
+        /// The data preparation configuration associated with this dataset.
+        /// </para>
+        /// </summary>
+        public DataPrepConfiguration DataPrepConfiguration
+        {
+            get { return this._dataPrepConfiguration; }
+            set { this._dataPrepConfiguration = value; }
+        }
+
+        // Check to see if DataPrepConfiguration property is set
+        internal bool IsSetDataPrepConfiguration()
+        {
+            return this._dataPrepConfiguration != null;
         }
 
         /// <summary>
@@ -422,6 +442,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionTagConfiguration()
         {
             return this._rowLevelPermissionTagConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SemanticModelConfiguration. 
+        /// <para>
+        /// The semantic model configuration associated with this dataset.
+        /// </para>
+        /// </summary>
+        public SemanticModelConfiguration SemanticModelConfiguration
+        {
+            get { return this._semanticModelConfiguration; }
+            set { this._semanticModelConfiguration = value; }
+        }
+
+        // Check to see if SemanticModelConfiguration property is set
+        internal bool IsSetSemanticModelConfiguration()
+        {
+            return this._semanticModelConfiguration != null;
         }
 
         /// <summary>

@@ -63,7 +63,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetWaitForTransitioningInstances())
+                {
+                    request.Parameters.Add("WaitForTransitioningInstances", StringUtils.FromBool(publicRequest.WaitForTransitioningInstances));
+                }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CancelInstanceRefreshRequestMarshaller _instance = new CancelInstanceRefreshRequestMarshaller();        

@@ -36,9 +36,12 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceTargetDefinition
     {
         private string _afterValue;
+        private AfterValueFrom _afterValueFrom;
         private ResourceAttribute _attribute;
         private AttributeChangeType _attributeChangeType;
         private string _beforeValue;
+        private BeforeValueFrom _beforeValueFrom;
+        private LiveResourceDrift _drift;
         private string _name;
         private string _path;
         private RequiresRecreation _requiresRecreation;
@@ -59,6 +62,32 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAfterValue()
         {
             return this._afterValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AfterValueFrom. 
+        /// <para>
+        /// Indicates the source of the after value. Valid value:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TEMPLATE</c> – The after value comes from the new template.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only present for drift-aware change sets.
+        /// </para>
+        /// </summary>
+        public AfterValueFrom AfterValueFrom
+        {
+            get { return this._afterValueFrom; }
+            set { this._afterValueFrom = value; }
+        }
+
+        // Check to see if AfterValueFrom property is set
+        internal bool IsSetAfterValueFrom()
+        {
+            return this._afterValueFrom != null;
         }
 
         /// <summary>
@@ -97,6 +126,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <c>Modify</c> The item will be modified.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SyncWithActual</c> The drift status of this item will be reset but the item will
+        /// not be modified.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public AttributeChangeType AttributeChangeType
@@ -127,6 +161,56 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetBeforeValue()
         {
             return this._beforeValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BeforeValueFrom. 
+        /// <para>
+        /// Indicates the source of the before value. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ACTUAL_STATE</c> – The before value represents current actual state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PREVIOUS_DEPLOYMENT_STATE</c> – The before value represents the previous CloudFormation
+        /// deployment state.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only present for drift-aware change sets.
+        /// </para>
+        /// </summary>
+        public BeforeValueFrom BeforeValueFrom
+        {
+            get { return this._beforeValueFrom; }
+            set { this._beforeValueFrom = value; }
+        }
+
+        // Check to see if BeforeValueFrom property is set
+        internal bool IsSetBeforeValueFrom()
+        {
+            return this._beforeValueFrom != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Drift. 
+        /// <para>
+        /// Detailed drift information for the resource property, including actual values, previous
+        /// deployment values, and drift detection timestamps.
+        /// </para>
+        /// </summary>
+        public LiveResourceDrift Drift
+        {
+            get { return this._drift; }
+            set { this._drift = value; }
+        }
+
+        // Check to see if Drift property is set
+        internal bool IsSetDrift()
+        {
+            return this._drift != null;
         }
 
         /// <summary>

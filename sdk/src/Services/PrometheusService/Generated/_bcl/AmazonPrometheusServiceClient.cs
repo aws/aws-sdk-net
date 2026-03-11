@@ -320,7 +320,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
         public virtual CreateAlertManagerDefinitionResponse CreateAlertManagerDefinition(CreateAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -363,11 +363,92 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
         public virtual Task<CreateAlertManagerDefinitionResponse> CreateAlertManagerDefinitionAsync(CreateAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAnomalyDetector
+
+
+        /// <summary>
+        /// Creates an anomaly detector within a workspace using the Random Cut Forest algorithm
+        /// for time-series analysis. The anomaly detector analyzes Amazon Managed Service for
+        /// Prometheus metrics to identify unusual patterns and behaviors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
+        public virtual CreateAnomalyDetectorResponse CreateAnomalyDetector(CreateAnomalyDetectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnomalyDetectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an anomaly detector within a workspace using the Random Cut Forest algorithm
+        /// for time-series analysis. The anomaly detector analyzes Amazon Managed Service for
+        /// Prometheus metrics to identify unusual patterns and behaviors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
+        public virtual Task<CreateAnomalyDetectorResponse> CreateAnomalyDetectorAsync(CreateAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnomalyDetectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAnomalyDetectorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -404,7 +485,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
         public virtual CreateLoggingConfigurationResponse CreateLoggingConfiguration(CreateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -444,7 +525,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
         public virtual Task<CreateLoggingConfigurationResponse> CreateLoggingConfigurationAsync(CreateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -478,7 +559,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">REST API Reference for CreateQueryLoggingConfiguration Operation</seealso>
         public virtual CreateQueryLoggingConfigurationResponse CreateQueryLoggingConfiguration(CreateQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -511,7 +592,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">REST API Reference for CreateQueryLoggingConfiguration Operation</seealso>
         public virtual Task<CreateQueryLoggingConfigurationResponse> CreateQueryLoggingConfigurationAsync(CreateQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueryLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -528,7 +609,12 @@ namespace Amazon.PrometheusService
         /// a workspace. A rule groups namespace is associated with exactly one rules file. A
         /// workspace can have multiple rule groups namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to create new rule groups namespaces. To update an existing
         /// rule groups namespace, use <c>PutRuleGroupsNamespace</c>.
@@ -561,7 +647,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
         public virtual CreateRuleGroupsNamespaceResponse CreateRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -574,7 +660,12 @@ namespace Amazon.PrometheusService
         /// a workspace. A rule groups namespace is associated with exactly one rules file. A
         /// workspace can have multiple rule groups namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to create new rule groups namespaces. To update an existing
         /// rule groups namespace, use <c>PutRuleGroupsNamespace</c>.
@@ -610,7 +701,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
         public virtual Task<CreateRuleGroupsNamespaceResponse> CreateRuleGroupsNamespaceAsync(CreateRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
             
@@ -624,16 +715,18 @@ namespace Amazon.PrometheusService
 
         /// <summary>
         /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-        /// pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and
-        /// sends them to your Amazon Managed Service for Prometheus workspace. Scrapers are flexible,
-        /// and can be configured to control what metrics are collected, the frequency of collection,
-        /// what transformations are applied to the metrics, and more.
+        /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
+        /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
+        /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
+        /// service discovery. Scrapers are flexible, and can be configured to control what metrics
+        /// are collected, the frequency of collection, what transformations are applied to the
+        /// metrics, and more.
         /// 
         ///  
         /// <para>
         /// An IAM role will be created for you that Amazon Managed Service for Prometheus uses
-        /// to access the metrics in your cluster. You must configure this role with a policy
-        /// that allows it to scrape metrics from your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
+        /// to access the metrics in your source. You must configure this role with a policy that
+        /// allows it to scrape metrics from your source. For Amazon EKS sources, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
         /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
         /// </para>
         ///  
@@ -645,8 +738,7 @@ namespace Amazon.PrometheusService
         /// <para>
         /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
         /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
-        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
-        /// metrics.
+        /// interfaces are used to connect to your source within the VPC for scraping metrics.
         /// </para>
         ///  <note> 
         /// <para>
@@ -684,7 +776,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
         public virtual CreateScraperResponse CreateScraper(CreateScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
 
@@ -694,16 +786,18 @@ namespace Amazon.PrometheusService
 
         /// <summary>
         /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-        /// pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and
-        /// sends them to your Amazon Managed Service for Prometheus workspace. Scrapers are flexible,
-        /// and can be configured to control what metrics are collected, the frequency of collection,
-        /// what transformations are applied to the metrics, and more.
+        /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
+        /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
+        /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
+        /// service discovery. Scrapers are flexible, and can be configured to control what metrics
+        /// are collected, the frequency of collection, what transformations are applied to the
+        /// metrics, and more.
         /// 
         ///  
         /// <para>
         /// An IAM role will be created for you that Amazon Managed Service for Prometheus uses
-        /// to access the metrics in your cluster. You must configure this role with a policy
-        /// that allows it to scrape metrics from your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
+        /// to access the metrics in your source. You must configure this role with a policy that
+        /// allows it to scrape metrics from your source. For Amazon EKS sources, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
         /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
         /// </para>
         ///  
@@ -715,8 +809,7 @@ namespace Amazon.PrometheusService
         /// <para>
         /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
         /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
-        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
-        /// metrics.
+        /// interfaces are used to connect to your source within the VPC for scraping metrics.
         /// </para>
         ///  <note> 
         /// <para>
@@ -757,7 +850,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
         public virtual Task<CreateScraperResponse> CreateScraperAsync(CreateScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
             
@@ -798,7 +891,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
         public virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -838,7 +931,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
         public virtual Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
             
@@ -877,7 +970,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
         public virtual DeleteAlertManagerDefinitionResponse DeleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -915,11 +1008,88 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
         public virtual Task<DeleteAlertManagerDefinitionResponse> DeleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAnomalyDetector
+
+
+        /// <summary>
+        /// Removes an anomaly detector from a workspace. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        public virtual DeleteAnomalyDetectorResponse DeleteAnomalyDetector(DeleteAnomalyDetectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAnomalyDetectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes an anomaly detector from a workspace. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
+        public virtual Task<DeleteAnomalyDetectorResponse> DeleteAnomalyDetectorAsync(DeleteAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAnomalyDetectorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -957,7 +1127,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -998,7 +1168,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -1034,7 +1204,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
         public virtual DeleteQueryLoggingConfigurationResponse DeleteQueryLoggingConfiguration(DeleteQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1069,11 +1239,90 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteQueryLoggingConfigurationResponse> DeleteQueryLoggingConfigurationAsync(DeleteQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteQueryLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to an Amazon Managed Service for Prometheus
+        /// workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to an Amazon Managed Service for Prometheus
+        /// workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1108,7 +1357,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
         public virtual DeleteRuleGroupsNamespaceResponse DeleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -1146,7 +1395,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
         public virtual Task<DeleteRuleGroupsNamespaceResponse> DeleteRuleGroupsNamespaceAsync(DeleteRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
             
@@ -1186,7 +1435,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
         public virtual DeleteScraperResponse DeleteScraper(DeleteScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
 
@@ -1225,11 +1474,82 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
         public virtual Task<DeleteScraperResponse> DeleteScraperAsync(DeleteScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        public virtual DeleteScraperLoggingConfigurationResponse DeleteScraperLoggingConfiguration(DeleteScraperLoggingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScraperLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        public virtual Task<DeleteScraperLoggingConfigurationResponse> DeleteScraperLoggingConfigurationAsync(DeleteScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteScraperLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1271,7 +1591,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
         public virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -1316,7 +1636,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
         public virtual Task<DeleteWorkspaceResponse> DeleteWorkspaceAsync(DeleteWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
             
@@ -1352,7 +1672,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
         public virtual DescribeAlertManagerDefinitionResponse DescribeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -1387,11 +1707,84 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
         public virtual Task<DescribeAlertManagerDefinitionResponse> DescribeAlertManagerDefinitionAsync(DescribeAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAnomalyDetector
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific anomaly detector, including its status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
+        public virtual DescribeAnomalyDetectorResponse DescribeAnomalyDetector(DescribeAnomalyDetectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAnomalyDetectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific anomaly detector, including its status
+        /// and configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
+        public virtual Task<DescribeAnomalyDetectorResponse> DescribeAnomalyDetectorAsync(DescribeAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAnomalyDetectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAnomalyDetectorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1427,7 +1820,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         public virtual DescribeLoggingConfigurationResponse DescribeLoggingConfiguration(DescribeLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1466,7 +1859,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         public virtual Task<DescribeLoggingConfigurationResponse> DescribeLoggingConfigurationAsync(DescribeLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -1499,7 +1892,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">REST API Reference for DescribeQueryLoggingConfiguration Operation</seealso>
         public virtual DescribeQueryLoggingConfigurationResponse DescribeQueryLoggingConfiguration(DescribeQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1531,11 +1924,84 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">REST API Reference for DescribeQueryLoggingConfiguration Operation</seealso>
         public virtual Task<DescribeQueryLoggingConfigurationResponse> DescribeQueryLoggingConfigurationAsync(DescribeQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueryLoggingConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeQueryLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeResourcePolicy
+
+
+        /// <summary>
+        /// Returns information about the resource-based policy attached to an Amazon Managed
+        /// Service for Prometheus workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the resource-based policy attached to an Amazon Managed
+        /// Service for Prometheus workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1568,7 +2034,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
         public virtual DescribeRuleGroupsNamespaceResponse DescribeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -1604,7 +2070,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
         public virtual Task<DescribeRuleGroupsNamespaceResponse> DescribeRuleGroupsNamespaceAsync(DescribeRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
             
@@ -1640,7 +2106,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
         public virtual DescribeScraperResponse DescribeScraper(DescribeScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
 
@@ -1675,11 +2141,76 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
         public virtual Task<DescribeScraperResponse> DescribeScraperAsync(DescribeScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        public virtual DescribeScraperLoggingConfigurationResponse DescribeScraperLoggingConfiguration(DescribeScraperLoggingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScraperLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        public virtual Task<DescribeScraperLoggingConfigurationResponse> DescribeScraperLoggingConfigurationAsync(DescribeScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeScraperLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1711,7 +2242,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
         public virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
 
@@ -1746,7 +2277,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
         public virtual Task<DescribeWorkspaceResponse> DescribeWorkspaceAsync(DescribeWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
             
@@ -1784,7 +2315,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
         public virtual DescribeWorkspaceConfigurationResponse DescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -1821,7 +2352,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
         public virtual Task<DescribeWorkspaceConfigurationResponse> DescribeWorkspaceConfigurationAsync(DescribeWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
             
@@ -1852,7 +2383,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
         public virtual GetDefaultScraperConfigurationResponse GetDefaultScraperConfiguration(GetDefaultScraperConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
 
@@ -1882,11 +2413,84 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
         public virtual Task<GetDefaultScraperConfigurationResponse> GetDefaultScraperConfigurationAsync(GetDefaultScraperConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDefaultScraperConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAnomalyDetectors
+
+
+        /// <summary>
+        /// Returns a paginated list of anomaly detectors for a workspace with optional filtering
+        /// by alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyDetectors service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalyDetectors service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
+        public virtual ListAnomalyDetectorsResponse ListAnomalyDetectors(ListAnomalyDetectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAnomalyDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomalyDetectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnomalyDetectorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of anomaly detectors for a workspace with optional filtering
+        /// by alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyDetectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalyDetectors service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
+        public virtual Task<ListAnomalyDetectorsResponse> ListAnomalyDetectorsAsync(ListAnomalyDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAnomalyDetectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomalyDetectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAnomalyDetectorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1918,7 +2522,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
         public virtual ListRuleGroupsNamespacesResponse ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
 
@@ -1953,7 +2557,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
         public virtual Task<ListRuleGroupsNamespacesResponse> ListRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
             
@@ -1988,7 +2592,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
         public virtual ListScrapersResponse ListScrapers(ListScrapersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
 
@@ -2022,7 +2626,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
         public virtual Task<ListScrapersResponse> ListScrapersAsync(ListScrapersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
             
@@ -2060,7 +2664,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2097,7 +2701,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2131,7 +2735,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
         public virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -2164,7 +2768,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
         public virtual Task<ListWorkspacesResponse> ListWorkspacesAsync(ListWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
             
@@ -2208,7 +2812,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
         public virtual PutAlertManagerDefinitionResponse PutAlertManagerDefinition(PutAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -2251,11 +2855,223 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
         public virtual Task<PutAlertManagerDefinitionResponse> PutAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAnomalyDetector
+
+
+        /// <summary>
+        /// When you call <c>PutAnomalyDetector</c>, the operation creates a new anomaly detector
+        /// if one doesn't exist, or updates an existing one. Each call to this operation triggers
+        /// a complete retraining of the detector, which includes querying the minimum required
+        /// samples and backfilling the detector with historical data. This process occurs regardless
+        /// of whether you're making a minor change like updating the evaluation interval or making
+        /// more substantial modifications. The operation serves as the single method for creating,
+        /// updating, and retraining anomaly detectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector service method.</param>
+        /// 
+        /// <returns>The response from the PutAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        public virtual PutAnomalyDetectorResponse PutAnomalyDetector(PutAnomalyDetectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<PutAnomalyDetectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// When you call <c>PutAnomalyDetector</c>, the operation creates a new anomaly detector
+        /// if one doesn't exist, or updates an existing one. Each call to this operation triggers
+        /// a complete retraining of the detector, which includes querying the minimum required
+        /// samples and backfilling the detector with historical data. This process occurs regardless
+        /// of whether you're making a minor change like updating the evaluation interval or making
+        /// more substantial modifications. The operation serves as the single method for creating,
+        /// updating, and retraining anomaly detectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAnomalyDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAnomalyDetector service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Completing the request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
+        public virtual Task<PutAnomalyDetectorResponse> PutAnomalyDetectorAsync(PutAnomalyDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAnomalyDetectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates or updates a resource-based policy for an Amazon Managed Service for Prometheus
+        /// workspace. Use resource-based policies to grant permissions to other AWS accounts
+        /// or services to access your workspace.
+        /// 
+        ///  
+        /// <para>
+        /// Only Prometheus-compatible APIs can be used for workspace sharing. You can add non-Prometheus-compatible
+        /// APIs to the policy, but they will be ignored. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-Prometheus-Compatible-Apis.html">Prometheus-compatible
+        /// APIs</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your workspace uses customer-managed KMS keys for encryption, you must grant the
+        /// principals in your resource-based policy access to those KMS keys. You can do this
+        /// by creating KMS grants. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
+        /// in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption
+        /// at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about working with IAM, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/security_iam_service-with-iam.html">Using
+        /// Amazon Managed Service for Prometheus with IAM</a> in the <i>Amazon Managed Service
+        /// for Prometheus User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates a resource-based policy for an Amazon Managed Service for Prometheus
+        /// workspace. Use resource-based policies to grant permissions to other AWS accounts
+        /// or services to access your workspace.
+        /// 
+        ///  
+        /// <para>
+        /// Only Prometheus-compatible APIs can be used for workspace sharing. You can add non-Prometheus-compatible
+        /// APIs to the policy, but they will be ignored. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-Prometheus-Compatible-Apis.html">Prometheus-compatible
+        /// APIs</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your workspace uses customer-managed KMS keys for encryption, you must grant the
+        /// principals in your resource-based policy access to those KMS keys. You can do this
+        /// by creating KMS grants. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
+        /// in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption
+        /// at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about working with IAM, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/security_iam_service-with-iam.html">Using
+        /// Amazon Managed Service for Prometheus with IAM</a> in the <i>Amazon Managed Service
+        /// for Prometheus User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2268,7 +3084,12 @@ namespace Amazon.PrometheusService
         /// is associated with exactly one rules file. A workspace can have multiple rule groups
         /// namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to update existing rule groups namespaces. To create a new
         /// rule groups namespace, use <c>CreateRuleGroupsNamespace</c>.
@@ -2306,7 +3127,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
         public virtual PutRuleGroupsNamespaceResponse PutRuleGroupsNamespace(PutRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -2319,7 +3140,12 @@ namespace Amazon.PrometheusService
         /// is associated with exactly one rules file. A workspace can have multiple rule groups
         /// namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to update existing rule groups namespaces. To create a new
         /// rule groups namespace, use <c>CreateRuleGroupsNamespace</c>.
@@ -2360,7 +3186,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
         public virtual Task<PutRuleGroupsNamespaceResponse> PutRuleGroupsNamespaceAsync(PutRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
             
@@ -2406,7 +3232,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2451,7 +3277,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2488,7 +3314,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2524,7 +3350,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2567,7 +3393,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2609,7 +3435,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateLoggingConfigurationResponse> UpdateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -2645,7 +3471,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">REST API Reference for UpdateQueryLoggingConfiguration Operation</seealso>
         public virtual UpdateQueryLoggingConfigurationResponse UpdateQueryLoggingConfiguration(UpdateQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2680,7 +3506,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">REST API Reference for UpdateQueryLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateQueryLoggingConfigurationResponse> UpdateQueryLoggingConfigurationAsync(UpdateQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueryLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -2728,7 +3554,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraper">REST API Reference for UpdateScraper Operation</seealso>
         public virtual UpdateScraperResponse UpdateScraper(UpdateScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScraperResponseUnmarshaller.Instance;
 
@@ -2775,11 +3601,82 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraper">REST API Reference for UpdateScraper Operation</seealso>
         public virtual Task<UpdateScraperResponse> UpdateScraperAsync(UpdateScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScraperResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        public virtual UpdateScraperLoggingConfigurationResponse UpdateScraperLoggingConfiguration(UpdateScraperLoggingConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScraperLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScraperLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        public virtual Task<UpdateScraperLoggingConfigurationResponse> UpdateScraperLoggingConfigurationAsync(UpdateScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScraperLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateScraperLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2817,7 +3714,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">REST API Reference for UpdateWorkspaceAlias Operation</seealso>
         public virtual UpdateWorkspaceAliasResponse UpdateWorkspaceAlias(UpdateWorkspaceAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceAliasResponseUnmarshaller.Instance;
 
@@ -2858,7 +3755,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">REST API Reference for UpdateWorkspaceAlias Operation</seealso>
         public virtual Task<UpdateWorkspaceAliasResponse> UpdateWorkspaceAliasAsync(UpdateWorkspaceAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceAliasResponseUnmarshaller.Instance;
             
@@ -2907,7 +3804,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
         public virtual UpdateWorkspaceConfigurationResponse UpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -2955,7 +3852,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
         public virtual Task<UpdateWorkspaceConfigurationResponse> UpdateWorkspaceConfigurationAsync(UpdateWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
             

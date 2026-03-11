@@ -1,17 +1,17 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -276,19 +276,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(hashKey, rangeKey), operationConfig);
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(hashKey, rangeKey), null, operationConfig);
         }
 
         /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(key), operationConfig);
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(key), null, operationConfig);
         }
 
         /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, TransactWriteItemOperationConfig operationConfig = null)
         {
-            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), operationConfig);
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), null, operationConfig);
         }
 
         /// <inheritdoc/>
@@ -383,6 +383,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
+        internal void AddDocumentToUpdate(Document document, HashSet<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
+        {
+            AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), ifNotExistAttributeNames, operationConfig);
+        }
+
         internal void ExecuteHelper()
         {
             try
@@ -425,14 +430,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
             });
         }
 
-        internal void AddDocumentToUpdateHelper(Document document, Key key, TransactWriteItemOperationConfig operationConfig = null)
+        internal void AddDocumentToUpdateHelper(Document document, Key key, HashSet<string> ifNotExistAttributeNames, TransactWriteItemOperationConfig operationConfig = null)
         {
             Items.Add(new ToUpdateWithDocumentTransactWriteRequestItem
             {
                 TransactionPart = this,
                 Document = document,
                 Key = key,
-                OperationConfig = operationConfig
+                OperationConfig = operationConfig,
+                IfNotExistAttributeNames = ifNotExistAttributeNames
             });
         }
 
@@ -499,9 +505,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private static bool TryFilterDuplicates<T>(Dictionary<string, T> src, Dictionary<string, T> other,
             out Dictionary<string, T> dest, out List<string> conflictingKeys)
         {
-            dest = new Dictionary<string, T>();
             conflictingKeys = new List<string>();
 
+            // If src is null, there's nothing to filter - return null
+            if (src == null)
+            {
+                dest = null;
+                return true;
+            }
+
+            // If other is null, all of src is unique - return src as-is
+            if (other == null)
+            {
+                dest = src;
+                return true;
+            }
+
+            dest = new Dictionary<string, T>();
             foreach (var kvp in src)
             {
                 if (other.TryGetValue(kvp.Key, out var otherValue))
@@ -930,6 +950,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         public Document Document { get; set; }
 
+        public HashSet<string> IfNotExistAttributeNames { get; set; }
+
         #endregion
 
 
@@ -957,7 +979,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
 
-            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates,null,null,
+            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, IfNotExistAttributeNames, null, null,
                 out statement, out expressionAttributeValues, out expressionAttributes);
 
             return true;

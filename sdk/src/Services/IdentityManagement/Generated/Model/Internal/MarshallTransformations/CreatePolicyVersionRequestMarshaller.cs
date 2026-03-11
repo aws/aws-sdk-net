@@ -72,6 +72,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SetAsDefault", StringUtils.FromBool(publicRequest.SetAsDefault));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreatePolicyVersionRequestMarshaller _instance = new CreatePolicyVersionRequestMarshaller();        

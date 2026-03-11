@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotScheduleUpdateInProgressException
+        /// message.
+        /// </summary>
+        public SnapshotScheduleUpdateInProgressException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotScheduleUpdateInProgressException with the specified error
         /// message.
         /// </summary>

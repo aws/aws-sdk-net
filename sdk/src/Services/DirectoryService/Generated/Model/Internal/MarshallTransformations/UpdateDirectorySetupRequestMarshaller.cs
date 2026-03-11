@@ -87,6 +87,28 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DirectoryId);
             }
 
+            if(publicRequest.IsSetDirectorySizeUpdateSettings())
+            {
+                context.Writer.WritePropertyName("DirectorySizeUpdateSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DirectorySizeUpdateSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DirectorySizeUpdateSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNetworkUpdateSettings())
+            {
+                context.Writer.WritePropertyName("NetworkUpdateSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkUpdateSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkUpdateSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetOSUpdateSettings())
             {
                 context.Writer.WritePropertyName("OSUpdateSettings");

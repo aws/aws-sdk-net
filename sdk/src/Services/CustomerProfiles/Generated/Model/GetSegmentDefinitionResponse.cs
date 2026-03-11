@@ -40,6 +40,8 @@ namespace Amazon.CustomerProfiles.Model
         private string _segmentDefinitionArn;
         private string _segmentDefinitionName;
         private SegmentGroup _segmentGroups;
+        private string _segmentSqlQuery;
+        private SegmentType _segmentType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -66,7 +68,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The description of the segment definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4000)]
         public string Description
         {
             get { return this._description; }
@@ -153,6 +155,51 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetSegmentGroups()
         {
             return this._segmentGroups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentSqlQuery. 
+        /// <para>
+        /// The segment SQL query.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=50000)]
+        public string SegmentSqlQuery
+        {
+            get { return this._segmentSqlQuery; }
+            set { this._segmentSqlQuery = value; }
+        }
+
+        // Check to see if SegmentSqlQuery property is set
+        internal bool IsSetSegmentSqlQuery()
+        {
+            return this._segmentSqlQuery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentType. 
+        /// <para>
+        /// The segment type.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Classic : Segments created using traditional SegmentGroup structure
+        /// </para>
+        ///  
+        /// <para>
+        ///  Enhanced : Segments created using SQL queries 
+        /// </para>
+        /// </summary>
+        public SegmentType SegmentType
+        {
+            get { return this._segmentType; }
+            set { this._segmentType = value; }
+        }
+
+        // Check to see if SegmentType property is set
+        internal bool IsSetSegmentType()
+        {
+            return this._segmentType != null;
         }
 
         /// <summary>

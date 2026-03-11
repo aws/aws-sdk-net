@@ -40,6 +40,13 @@ namespace Amazon.IVS.Model
         private string _exceptionMessage;
 
         /// <summary>
+        /// Default constructor for PendingVerificationException
+        /// message.
+        /// </summary>
+        public PendingVerificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PendingVerificationException with the specified error
         /// message.
         /// </summary>

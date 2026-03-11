@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for PolicyTypeNotFoundException
+        /// message.
+        /// </summary>
+        public PolicyTypeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PolicyTypeNotFoundException with the specified error
         /// message.
         /// </summary>

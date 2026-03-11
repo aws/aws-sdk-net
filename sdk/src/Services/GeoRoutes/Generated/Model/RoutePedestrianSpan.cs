@@ -60,7 +60,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? BestCaseDuration
         {
             get { return this._bestCaseDuration; }
@@ -79,7 +79,7 @@ namespace Amazon.GeoRoutes.Model
         /// 3 letter Country code corresponding to the Span.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string Country
         {
             get { return this._country; }
@@ -99,7 +99,7 @@ namespace Amazon.GeoRoutes.Model
         /// on a span split by other properties.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? Distance
         {
             get { return this._distance; }
@@ -123,7 +123,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? Duration
         {
             get { return this._duration; }
@@ -164,7 +164,7 @@ namespace Amazon.GeoRoutes.Model
         /// Functional classification of the road segment corresponding to the span.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Sensitive=true, Min=1, Max=5)]
         public int? FunctionalClassification
         {
             get { return this._functionalClassification; }
@@ -273,7 +273,7 @@ namespace Amazon.GeoRoutes.Model
         /// 2-3 letter Region code corresponding to the Span. This is either a province or a state.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
         public string Region
         {
             get { return this._region; }
@@ -365,7 +365,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? TypicalDuration
         {
             get { return this._typicalDuration; }

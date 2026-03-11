@@ -40,6 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _email;
         private string _firstName;
         private string _lastName;
+        private string _phone;
 
         /// <summary>
         /// Gets and sets the property BusinessTitle. 
@@ -49,7 +50,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// value <c>PartnerAccountManager</c> to update details of the opportunity owner.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string BusinessTitle
         {
             get { return this._businessTitle; }
@@ -69,7 +70,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and notifications related to the opportunity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Email
         {
             get { return this._email; }
@@ -89,7 +90,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// retrieves this value from the user profile by referencing the associated email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -109,7 +110,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// retrieves this value from the user profile by referencing the associated email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string LastName
         {
             get { return this._lastName; }
@@ -120,6 +121,27 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetLastName()
         {
             return this._lastName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Phone. 
+        /// <para>
+        /// Specifies the contact phone number of the assignee responsible for the opportunity
+        /// or engagement. This field enables direct communication for time-sensitive matters
+        /// and facilitates coordination between AWS and partner teams.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string Phone
+        {
+            get { return this._phone; }
+            set { this._phone = value; }
+        }
+
+        // Check to see if Phone property is set
+        internal bool IsSetPhone()
+        {
+            return this._phone != null;
         }
 
     }

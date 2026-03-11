@@ -56,6 +56,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("BillingViewArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingViewArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("BudgetedAndActualAmountsList", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BudgetedAndActualAmounts, BudgetedAndActualAmountsUnmarshaller>(BudgetedAndActualAmountsUnmarshaller.Instance);
@@ -84,6 +90,18 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CostTypesUnmarshaller.Instance;
                     unmarshalledObject.CostTypes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FilterExpression", targetDepth))
+                {
+                    var unmarshaller = ExpressionUnmarshaller.Instance;
+                    unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeUnit", targetDepth))

@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientDBInstanceCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientDBInstanceCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientDBInstanceCapacityException with the specified error
         /// message.
         /// </summary>

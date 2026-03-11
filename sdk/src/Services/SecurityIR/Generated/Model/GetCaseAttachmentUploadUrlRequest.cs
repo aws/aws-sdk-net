@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCaseAttachmentUploadUrl operation.
-    /// Grants permission to upload an attachment to a case.
+    /// Uploads an attachment to a case.
     /// </summary>
     public partial class GetCaseAttachmentUploadUrlRequest : AmazonSecurityIRRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.SecurityIR.Model
         /// Gets and sets the property CaseId. 
         /// <para>
         /// Required element for GetCaseAttachmentUploadUrl to identify the case ID for uploading
-        /// an attachment to. 
+        /// an attachment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=32)]
@@ -63,7 +63,13 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional element for customer provided token.
+        /// <note> 
+        /// <para>
+        /// The <c>clientToken</c> field is an idempotency key used to ensure that repeated attempts
+        /// for a single action will be ignored by the server during retries. A caller supplied
+        /// unique ID (typically a UUID) should be provided. 
+        /// </para>
+        ///  </note>
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -82,7 +88,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ContentLength. 
         /// <para>
-        /// Required element for GetCaseAttachmentUploadUrl to identify the size od the file attachment.
+        /// Required element for GetCaseAttachmentUploadUrl to identify the size of the file attachment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=104857600)]

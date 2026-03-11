@@ -88,7 +88,8 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property SingleMasterConfiguration. 
         /// <para>
         /// A structure containing the configuration for the <c>SINGLE_MASTER</c> channel type.
-        /// 
+        /// The default configuration for the channel message's time to live is 60 seconds (1
+        /// minute).
         /// </para>
         /// </summary>
         public SingleMasterConfiguration SingleMasterConfiguration

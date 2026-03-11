@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for SnapshotCopyGrantQuotaExceededException
+        /// message.
+        /// </summary>
+        public SnapshotCopyGrantQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SnapshotCopyGrantQuotaExceededException with the specified error
         /// message.
         /// </summary>

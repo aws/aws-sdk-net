@@ -65,6 +65,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetRequestId())
                 throw new AmazonAuditManagerException("Request object does not have required field RequestId set");
             request.AddPathResource("{requestId}", StringUtils.FromString(publicRequest.RequestId));
+            if (string.IsNullOrEmpty(publicRequest.RequestType))
+                throw new AmazonAuditManagerException("Request object does not have required field RequestType set");
             
             if (publicRequest.IsSetRequestType())
                 request.Parameters.Add("requestType", StringUtils.FromString(publicRequest.RequestType));

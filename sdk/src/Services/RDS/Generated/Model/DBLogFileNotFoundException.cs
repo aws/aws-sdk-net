@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBLogFileNotFoundException
+        /// message.
+        /// </summary>
+        public DBLogFileNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBLogFileNotFoundException with the specified error
         /// message.
         /// </summary>

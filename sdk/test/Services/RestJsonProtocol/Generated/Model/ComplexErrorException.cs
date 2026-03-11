@@ -42,6 +42,13 @@ namespace Amazon.RestJsonProtocol.Model
         private string _topLevel;
 
         /// <summary>
+        /// Default constructor for ComplexErrorException
+        /// message.
+        /// </summary>
+        public ComplexErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ComplexErrorException with the specified error
         /// message.
         /// </summary>

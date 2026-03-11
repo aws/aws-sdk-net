@@ -40,6 +40,13 @@ namespace Amazon.SimpleNotificationService.Model
         private string _status;
 
         /// <summary>
+        /// Default constructor for VerificationException
+        /// message.
+        /// </summary>
+        public VerificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VerificationException with the specified error
         /// message.
         /// </summary>

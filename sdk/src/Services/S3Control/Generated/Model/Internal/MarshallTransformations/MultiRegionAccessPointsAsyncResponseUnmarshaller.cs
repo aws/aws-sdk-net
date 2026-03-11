@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MultiRegionAccessPointsAsyncResponse Object
     /// </summary>  
-    public class MultiRegionAccessPointsAsyncResponseUnmarshaller : IXmlUnmarshaller<MultiRegionAccessPointsAsyncResponse, XmlUnmarshallerContext>
+    public partial class MultiRegionAccessPointsAsyncResponseUnmarshaller : IXmlUnmarshaller<MultiRegionAccessPointsAsyncResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,6 +66,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -74,6 +76,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, MultiRegionAccessPointsAsyncResponse unmarshalledObject, int targetDepth);
+
         private static MultiRegionAccessPointsAsyncResponseUnmarshaller _instance = new MultiRegionAccessPointsAsyncResponseUnmarshaller();        
 
         /// <summary>

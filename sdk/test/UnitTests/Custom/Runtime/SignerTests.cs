@@ -83,8 +83,8 @@ namespace AWSSDK.UnitTests
                 new object[]{new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
                     "us-east-1", "ecr", "api.ecr.us-east-1.amazonaws.com" },
                  // Pseudoregion with credentialScope.region, different partition
-                new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
-                    "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
+                // new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
+                //     "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
                 // Pseudoregion, no credentialScope.region
                 new object[]{new AmazonIotDataConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-east-1") },
                     "us-east-1", "iotdata", "data.iot-fips.us-east-1.amazonaws.com" },

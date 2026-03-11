@@ -40,6 +40,13 @@ namespace Amazon.AWSSupport.Model
     {
 
         /// <summary>
+        /// Default constructor for AttachmentSetExpiredException
+        /// message.
+        /// </summary>
+        public AttachmentSetExpiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttachmentSetExpiredException with the specified error
         /// message.
         /// </summary>

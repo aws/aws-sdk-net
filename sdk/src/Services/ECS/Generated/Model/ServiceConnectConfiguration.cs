@@ -46,10 +46,38 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ServiceConnectConfiguration
     {
+        private ServiceConnectAccessLogConfiguration _accessLogConfiguration;
         private bool? _enabled;
         private LogConfiguration _logConfiguration;
         private string _awsNamespace;
         private List<ServiceConnectService> _services = AWSConfigs.InitializeCollections ? new List<ServiceConnectService>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AccessLogConfiguration. 
+        /// <para>
+        /// The configuration for Service Connect access logging. Access logs capture detailed
+        /// information about requests made to your service, including request patterns, response
+        /// codes, and timing data. They can be useful for debugging connectivity issues, monitoring
+        /// service performance, and auditing service-to-service communication for security and
+        /// compliance purposes.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To enable access logs, you must also specify a <c>logConfiguration</c> in the <c>serviceConnectConfiguration</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ServiceConnectAccessLogConfiguration AccessLogConfiguration
+        {
+            get { return this._accessLogConfiguration; }
+            set { this._accessLogConfiguration = value; }
+        }
+
+        // Check to see if AccessLogConfiguration property is set
+        internal bool IsSetAccessLogConfiguration()
+        {
+            return this._accessLogConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 

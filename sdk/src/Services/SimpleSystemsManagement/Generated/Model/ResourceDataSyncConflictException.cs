@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceDataSyncConflictException
+        /// message.
+        /// </summary>
+        public ResourceDataSyncConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDataSyncConflictException with the specified error
         /// message.
         /// </summary>

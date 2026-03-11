@@ -382,6 +382,10 @@ namespace Amazon.Evs
         /// Constant VCF521 for VcfVersion
         /// </summary>
         public static readonly VcfVersion VCF521 = new VcfVersion("VCF-5.2.1");
+        /// <summary>
+        /// Constant VCF522 for VcfVersion
+        /// </summary>
+        public static readonly VcfVersion VCF522 = new VcfVersion("VCF-5.2.2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

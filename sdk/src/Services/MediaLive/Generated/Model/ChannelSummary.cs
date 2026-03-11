@@ -39,11 +39,14 @@ namespace Amazon.MediaLive.Model
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
         private ChannelEngineVersionResponse _channelEngineVersion;
+        private List<string> _channelSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private List<ChannelEgressEndpoint> _egressEndpoints = AWSConfigs.InitializeCollections ? new List<ChannelEgressEndpoint>() : null;
         private string _id;
+        private DescribeInferenceSettings _inferenceSettings;
         private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
+        private DescribeLinkedChannelSettings _linkedChannelSettings;
         private LogLevel _logLevel;
         private MaintenanceStatus _maintenance;
         private string _name;
@@ -133,6 +136,27 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChannelSecurityGroups. A list of IDs for all the Input
+        /// Security Groups attached to the channel.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ChannelSecurityGroups
+        {
+            get { return this._channelSecurityGroups; }
+            set { this._channelSecurityGroups = value; }
+        }
+
+        // Check to see if ChannelSecurityGroups property is set
+        internal bool IsSetChannelSecurityGroups()
+        {
+            return this._channelSecurityGroups != null && (this._channelSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Destinations. A list of destinations of the channel. For
         /// UDP outputs, there is onedestination per output. For other types (HLS, for example),
         /// there isone destination per packager.
@@ -191,6 +215,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceSettings. Include this setting to include Elemental
+        /// Inference features in this channel.
+        /// </summary>
+        public DescribeInferenceSettings InferenceSettings
+        {
+            get { return this._inferenceSettings; }
+            set { this._inferenceSettings = value; }
+        }
+
+        // Check to see if InferenceSettings property is set
+        internal bool IsSetInferenceSettings()
+        {
+            return this._inferenceSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputAttachments. List of input attachments for channel.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -224,6 +264,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputSpecification()
         {
             return this._inputSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedChannelSettings. Linked Channel Settings for this
+        /// channel.
+        /// </summary>
+        public DescribeLinkedChannelSettings LinkedChannelSettings
+        {
+            get { return this._linkedChannelSettings; }
+            set { this._linkedChannelSettings = value; }
+        }
+
+        // Check to see if LinkedChannelSettings property is set
+        internal bool IsSetLinkedChannelSettings()
+        {
+            return this._linkedChannelSettings != null;
         }
 
         /// <summary>

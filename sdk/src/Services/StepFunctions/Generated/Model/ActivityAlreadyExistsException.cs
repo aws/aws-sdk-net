@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for ActivityAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ActivityAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActivityAlreadyExistsException with the specified error
         /// message.
         /// </summary>

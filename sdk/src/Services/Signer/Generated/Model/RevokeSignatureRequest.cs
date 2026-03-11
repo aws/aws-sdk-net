@@ -31,8 +31,8 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSignature operation.
-    /// Changes the state of a signing job to REVOKED. This indicates that the signature is
-    /// no longer valid.
+    /// Changes the state of a signing job to <c>REVOKED</c>. This indicates that the signature
+    /// is no longer valid.
     /// </summary>
     public partial class RevokeSignatureRequest : AmazonSignerRequest
     {

@@ -65,6 +65,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonMediaPackageVodException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonMediaPackageVodException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

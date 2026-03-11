@@ -36,6 +36,14 @@ namespace Amazon.EKS
         /// <summary>
         /// Construct instance of AmazonEKSException
         /// </summary>
+        public AmazonEKSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEKSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEKSException(string message)
             : base(message)

@@ -46,6 +46,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksKeyInvalidConfigurationException
+        /// message.
+        /// </summary>
+        public XksKeyInvalidConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksKeyInvalidConfigurationException with the specified error
         /// message.
         /// </summary>

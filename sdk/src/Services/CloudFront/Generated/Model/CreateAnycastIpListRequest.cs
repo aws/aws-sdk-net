@@ -35,9 +35,67 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class CreateAnycastIpListRequest : AmazonCloudFrontRequest
     {
+        private IpAddressType _ipAddressType;
+        private List<IpamCidrConfig> _ipamCidrConfigs = AWSConfigs.InitializeCollections ? new List<IpamCidrConfig>() : null;
         private int? _ipCount;
         private string _name;
         private Tags _tags;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Anycast static IP list. You can specify one of the following
+        /// options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipv4</c> only
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> only 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>dualstack</c> - Allocate a list of both IPv4 and IPv6 addresses
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamCidrConfigs. 
+        /// <para>
+        ///  A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool
+        /// settings for creating the Anycast static IP list. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IpamCidrConfig> IpamCidrConfigs
+        {
+            get { return this._ipamCidrConfigs; }
+            set { this._ipamCidrConfigs = value; }
+        }
+
+        // Check to see if IpamCidrConfigs property is set
+        internal bool IsSetIpamCidrConfigs()
+        {
+            return this._ipamCidrConfigs != null && (this._ipamCidrConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property IpCount. 

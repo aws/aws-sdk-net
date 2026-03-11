@@ -79,6 +79,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AvailabilityZone);
             }
 
+            if(publicRequest.IsSetEncodingConfig())
+            {
+                context.Writer.WritePropertyName("encodingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncodingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncodingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetEntitlements())
             {
                 context.Writer.WritePropertyName("entitlements");
@@ -99,6 +110,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("flowSize");
                 context.Writer.WriteStringValue(publicRequest.FlowSize);
+            }
+
+            if(publicRequest.IsSetFlowTags())
+            {
+                context.Writer.WritePropertyName("flowTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFlowTagsKvp in publicRequest.FlowTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestFlowTagsKvp.Key);
+                    var publicRequestFlowTagsValue = publicRequestFlowTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFlowTagsValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetMaintenance())

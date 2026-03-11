@@ -35,6 +35,25 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class InitializeServiceRequest : AmazonOdbRequest
     {
+        private bool? _ociIdentityDomain;
+
+        /// <summary>
+        /// Gets and sets the property OciIdentityDomain. 
+        /// <para>
+        /// The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.
+        /// </para>
+        /// </summary>
+        public bool? OciIdentityDomain
+        {
+            get { return this._ociIdentityDomain; }
+            set { this._ociIdentityDomain = value; }
+        }
+
+        // Check to see if OciIdentityDomain property is set
+        internal bool IsSetOciIdentityDomain()
+        {
+            return this._ociIdentityDomain.HasValue; 
+        }
 
     }
 }

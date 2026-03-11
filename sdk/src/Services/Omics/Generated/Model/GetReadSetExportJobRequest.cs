@@ -31,7 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReadSetExportJob operation.
-    /// Gets information about a read set export job.
+    /// Retrieves status information about a read set export job and returns the data in JSON
+    /// format. Use this operation to actively monitor the progress of an export job.
     /// </summary>
     public partial class GetReadSetExportJobRequest : AmazonOmicsRequest
     {

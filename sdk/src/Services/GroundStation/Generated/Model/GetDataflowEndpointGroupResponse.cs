@@ -50,7 +50,7 @@ namespace Amazon.GroundStation.Model
         /// exits the <c>POSTPASS</c> state.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=120, Max=480)]
+        [AWSProperty(Min=30, Max=480)]
         public int? ContactPostPassDurationSeconds
         {
             get { return this._contactPostPassDurationSeconds; }
@@ -72,7 +72,7 @@ namespace Amazon.GroundStation.Model
         /// exits the <c>PREPASS</c> state.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=120, Max=480)]
+        [AWSProperty(Min=30, Max=480)]
         public int? ContactPrePassDurationSeconds
         {
             get { return this._contactPrePassDurationSeconds; }

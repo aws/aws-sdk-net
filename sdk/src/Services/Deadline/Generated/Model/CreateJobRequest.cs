@@ -39,15 +39,18 @@ namespace Amazon.Deadline.Model
     {
         private Attachments _attachments;
         private string _clientToken;
+        private string _descriptionOverride;
         private string _farmId;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
         private int? _maxWorkerCount;
+        private string _nameOverride;
         private Dictionary<string, JobParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, JobParameter>() : null;
         private int? _priority;
         private string _queueId;
         private string _sourceJobId;
         private string _storageProfileId;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CreateJobTargetTaskRunStatus _targetTaskRunStatus;
         private string _template;
         private JobTemplateType _templateType;
@@ -88,6 +91,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DescriptionOverride. 
+        /// <para>
+        /// A custom description to override the job description derived from the job template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string DescriptionOverride
+        {
+            get { return this._descriptionOverride; }
+            set { this._descriptionOverride = value; }
+        }
+
+        // Check to see if DescriptionOverride property is set
+        internal bool IsSetDescriptionOverride()
+        {
+            return this._descriptionOverride != null;
         }
 
         /// <summary>
@@ -176,6 +198,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxWorkerCount()
         {
             return this._maxWorkerCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NameOverride. 
+        /// <para>
+        /// A custom name to override the job name derived from the job template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string NameOverride
+        {
+            get { return this._nameOverride; }
+            set { this._nameOverride = value; }
+        }
+
+        // Check to see if NameOverride property is set
+        internal bool IsSetNameOverride()
+        {
+            return this._nameOverride != null;
         }
 
         /// <summary>
@@ -275,6 +316,30 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStorageProfileId()
         {
             return this._storageProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys
+        /// and values are both required, but tag values can be empty strings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

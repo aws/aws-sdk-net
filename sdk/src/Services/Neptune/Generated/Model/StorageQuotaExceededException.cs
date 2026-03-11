@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for StorageQuotaExceededException
+        /// message.
+        /// </summary>
+        public StorageQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StorageQuotaExceededException with the specified error
         /// message.
         /// </summary>

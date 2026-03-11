@@ -287,7 +287,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -317,7 +317,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">REST API Reference for AssociateAssets Operation</seealso>
         public virtual AssociateAssetsResponse AssociateAssets(AssociateAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAssetsResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -378,7 +378,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">REST API Reference for AssociateAssets Operation</seealso>
         public virtual Task<AssociateAssetsResponse> AssociateAssetsAsync(AssociateAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAssetsResponseUnmarshaller.Instance;
             
@@ -424,7 +424,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">REST API Reference for AssociateTimeSeriesToAssetProperty Operation</seealso>
         public virtual AssociateTimeSeriesToAssetPropertyResponse AssociateTimeSeriesToAssetProperty(AssociateTimeSeriesToAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTimeSeriesToAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTimeSeriesToAssetPropertyResponseUnmarshaller.Instance;
 
@@ -469,7 +469,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">REST API Reference for AssociateTimeSeriesToAssetProperty Operation</seealso>
         public virtual Task<AssociateTimeSeriesToAssetPropertyResponse> AssociateTimeSeriesToAssetPropertyAsync(AssociateTimeSeriesToAssetPropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTimeSeriesToAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTimeSeriesToAssetPropertyResponseUnmarshaller.Instance;
             
@@ -495,7 +495,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -522,7 +522,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">REST API Reference for BatchAssociateProjectAssets Operation</seealso>
         public virtual BatchAssociateProjectAssetsResponse BatchAssociateProjectAssets(BatchAssociateProjectAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateProjectAssetsResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -574,7 +574,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">REST API Reference for BatchAssociateProjectAssets Operation</seealso>
         public virtual Task<BatchAssociateProjectAssetsResponse> BatchAssociateProjectAssetsAsync(BatchAssociateProjectAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateProjectAssetsResponseUnmarshaller.Instance;
             
@@ -616,7 +616,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">REST API Reference for BatchDisassociateProjectAssets Operation</seealso>
         public virtual BatchDisassociateProjectAssetsResponse BatchDisassociateProjectAssets(BatchDisassociateProjectAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateProjectAssetsResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">REST API Reference for BatchDisassociateProjectAssets Operation</seealso>
         public virtual Task<BatchDisassociateProjectAssetsResponse> BatchDisassociateProjectAssetsAsync(BatchDisassociateProjectAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateProjectAssetsResponseUnmarshaller.Instance;
             
@@ -701,7 +701,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
         public virtual BatchGetAssetPropertyAggregatesResponse BatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyAggregatesResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
         public virtual Task<BatchGetAssetPropertyAggregatesResponse> BatchGetAssetPropertyAggregatesAsync(BatchGetAssetPropertyAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyAggregatesResponseUnmarshaller.Instance;
             
@@ -788,7 +788,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
         public virtual BatchGetAssetPropertyValueResponse BatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -831,7 +831,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
         public virtual Task<BatchGetAssetPropertyValueResponse> BatchGetAssetPropertyValueAsync(BatchGetAssetPropertyValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueResponseUnmarshaller.Instance;
             
@@ -875,7 +875,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
         public virtual BatchGetAssetPropertyValueHistoryResponse BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -918,7 +918,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
         public virtual Task<BatchGetAssetPropertyValueHistoryResponse> BatchGetAssetPropertyValueHistoryAsync(BatchGetAssetPropertyValueHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
             
@@ -983,7 +983,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1013,7 +1013,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">REST API Reference for BatchPutAssetPropertyValue Operation</seealso>
         public virtual BatchPutAssetPropertyValueResponse BatchPutAssetPropertyValue(BatchPutAssetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -1077,7 +1077,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1107,7 +1107,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">REST API Reference for BatchPutAssetPropertyValue Operation</seealso>
         public virtual Task<BatchPutAssetPropertyValueResponse> BatchPutAssetPropertyValueAsync(BatchPutAssetPropertyValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutAssetPropertyValueResponseUnmarshaller.Instance;
             
@@ -1123,6 +1123,13 @@ namespace Amazon.IoTSiteWise
         /// Creates an access policy that grants the specified identity (IAM Identity Center user,
         /// IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor
         /// portal or project resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Support for access policies that use an SSO Group as the identity is not supported
+        /// at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPolicy service method.</param>
         /// 
@@ -1135,7 +1142,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1162,7 +1169,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">REST API Reference for CreateAccessPolicy Operation</seealso>
         public virtual CreateAccessPolicyResponse CreateAccessPolicy(CreateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1174,6 +1181,13 @@ namespace Amazon.IoTSiteWise
         /// Creates an access policy that grants the specified identity (IAM Identity Center user,
         /// IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor
         /// portal or project resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Support for access policies that use an SSO Group as the identity is not supported
+        /// at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1189,7 +1203,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1216,7 +1230,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">REST API Reference for CreateAccessPolicy Operation</seealso>
         public virtual Task<CreateAccessPolicyResponse> CreateAccessPolicyAsync(CreateAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPolicyResponseUnmarshaller.Instance;
             
@@ -1247,7 +1261,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1277,7 +1291,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual CreateAssetResponse CreateAsset(CreateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
 
@@ -1307,7 +1321,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1337,7 +1351,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual Task<CreateAssetResponse> CreateAssetAsync(CreateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
             
@@ -1359,7 +1373,8 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  
         /// <para>
-        /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
+        /// You can create three types of asset models, <c>ASSET_MODEL</c>, <c>COMPONENT_MODEL</c>,
+        /// or an <c>INTERFACE</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1371,6 +1386,11 @@ namespace Amazon.IoTSiteWise
         ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
         /// models of other asset models. You can't create assets directly from this type of asset
         /// model. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>INTERFACE</b> – An interface is a type of model that defines a standard structure
+        /// that can be applied to different asset models.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1389,7 +1409,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1419,7 +1439,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">REST API Reference for CreateAssetModel Operation</seealso>
         public virtual CreateAssetModelResponse CreateAssetModel(CreateAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelResponseUnmarshaller.Instance;
 
@@ -1437,7 +1457,8 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  
         /// <para>
-        /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
+        /// You can create three types of asset models, <c>ASSET_MODEL</c>, <c>COMPONENT_MODEL</c>,
+        /// or an <c>INTERFACE</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1449,6 +1470,11 @@ namespace Amazon.IoTSiteWise
         ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
         /// models of other asset models. You can't create assets directly from this type of asset
         /// model. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>INTERFACE</b> – An interface is a type of model that defines a standard structure
+        /// that can be applied to different asset models.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1470,7 +1496,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1500,7 +1526,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">REST API Reference for CreateAssetModel Operation</seealso>
         public virtual Task<CreateAssetModelResponse> CreateAssetModelAsync(CreateAssetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelResponseUnmarshaller.Instance;
             
@@ -1558,7 +1584,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1591,7 +1617,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
         public virtual CreateAssetModelCompositeModelResponse CreateAssetModelCompositeModel(CreateAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -1648,7 +1674,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1681,7 +1707,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
         public virtual Task<CreateAssetModelCompositeModelResponse> CreateAssetModelCompositeModelAsync(CreateAssetModelCompositeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelCompositeModelResponseUnmarshaller.Instance;
             
@@ -1706,10 +1732,22 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// Bulk import is designed to store historical data to IoT SiteWise. It does not trigger
-        /// computations or notifications on IoT SiteWise warm or cold tier storage.
+        /// Bulk import is designed to store historical data to IoT SiteWise.
         /// </para>
-        ///  </important>
+        ///  <ul> <li> 
+        /// <para>
+        /// Newly ingested data in the hot tier triggers notifications and computations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After data moves from the hot tier to the warm or cold tier based on retention settings,
+        /// it does not trigger computations or notifications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data older than 7 days does not trigger computations or notifications.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob service method.</param>
         /// 
@@ -1726,7 +1764,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1756,7 +1794,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
         public virtual CreateBulkImportJobResponse CreateBulkImportJob(CreateBulkImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBulkImportJobResponseUnmarshaller.Instance;
 
@@ -1777,10 +1815,22 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// Bulk import is designed to store historical data to IoT SiteWise. It does not trigger
-        /// computations or notifications on IoT SiteWise warm or cold tier storage.
+        /// Bulk import is designed to store historical data to IoT SiteWise.
         /// </para>
-        ///  </important>
+        ///  <ul> <li> 
+        /// <para>
+        /// Newly ingested data in the hot tier triggers notifications and computations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After data moves from the hot tier to the warm or cold tier based on retention settings,
+        /// it does not trigger computations or notifications.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data older than 7 days does not trigger computations or notifications.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -1800,7 +1850,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1830,11 +1880,130 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
         public virtual Task<CreateBulkImportJobResponse> CreateBulkImportJobAsync(CreateBulkImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBulkImportJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateBulkImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateComputationModel
+
+
+        /// <summary>
+        /// Create a computation model with a configuration and data binding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
+        public virtual CreateComputationModelResponse CreateComputationModel(CreateComputationModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputationModelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateComputationModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a computation model with a configuration and data binding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputationModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
+        public virtual Task<CreateComputationModelResponse> CreateComputationModelAsync(CreateComputationModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputationModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateComputationModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1856,7 +2025,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1883,7 +2052,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual CreateDashboardResponse CreateDashboard(CreateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -1908,7 +2077,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1935,7 +2104,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual Task<CreateDashboardResponse> CreateDashboardAsync(CreateDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
             
@@ -1965,7 +2134,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -1995,7 +2164,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -2024,7 +2193,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2054,7 +2223,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
             
@@ -2082,7 +2251,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2109,7 +2278,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -2136,7 +2305,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2163,7 +2332,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual Task<CreateGatewayResponse> CreateGatewayAsync(CreateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
             
@@ -2198,7 +2367,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2225,7 +2394,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
         public virtual CreatePortalResponse CreatePortal(CreatePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
 
@@ -2259,7 +2428,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2286,7 +2455,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
         public virtual Task<CreatePortalResponse> CreatePortalAsync(CreatePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
             
@@ -2318,7 +2487,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2345,7 +2514,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -2376,7 +2545,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -2403,7 +2572,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
             
@@ -2447,7 +2616,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">REST API Reference for DeleteAccessPolicy Operation</seealso>
         public virtual DeleteAccessPolicyResponse DeleteAccessPolicy(DeleteAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPolicyResponseUnmarshaller.Instance;
 
@@ -2490,7 +2659,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">REST API Reference for DeleteAccessPolicy Operation</seealso>
         public virtual Task<DeleteAccessPolicyResponse> DeleteAccessPolicyAsync(DeleteAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPolicyResponseUnmarshaller.Instance;
             
@@ -2544,7 +2713,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual DeleteAssetResponse DeleteAsset(DeleteAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -2597,7 +2766,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
             
@@ -2650,7 +2819,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">REST API Reference for DeleteAssetModel Operation</seealso>
         public virtual DeleteAssetModelResponse DeleteAssetModel(DeleteAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelResponseUnmarshaller.Instance;
 
@@ -2702,7 +2871,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">REST API Reference for DeleteAssetModel Operation</seealso>
         public virtual Task<DeleteAssetModelResponse> DeleteAssetModelAsync(DeleteAssetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelResponseUnmarshaller.Instance;
             
@@ -2756,7 +2925,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
         public virtual DeleteAssetModelCompositeModelResponse DeleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -2809,11 +2978,193 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
         public virtual Task<DeleteAssetModelCompositeModelResponse> DeleteAssetModelCompositeModelAsync(DeleteAssetModelCompositeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelCompositeModelResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAssetModelCompositeModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAssetModelInterfaceRelationship
+
+
+        /// <summary>
+        /// Deletes an interface relationship between an asset model and an interface asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModelInterfaceRelationship service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelInterfaceRelationship">REST API Reference for DeleteAssetModelInterfaceRelationship Operation</seealso>
+        public virtual DeleteAssetModelInterfaceRelationshipResponse DeleteAssetModelInterfaceRelationship(DeleteAssetModelInterfaceRelationshipRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAssetModelInterfaceRelationshipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAssetModelInterfaceRelationshipResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an interface relationship between an asset model and an interface asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModelInterfaceRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelInterfaceRelationship">REST API Reference for DeleteAssetModelInterfaceRelationship Operation</seealso>
+        public virtual Task<DeleteAssetModelInterfaceRelationshipResponse> DeleteAssetModelInterfaceRelationshipAsync(DeleteAssetModelInterfaceRelationshipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAssetModelInterfaceRelationshipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAssetModelInterfaceRelationshipResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteComputationModel
+
+
+        /// <summary>
+        /// Deletes a computation model. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
+        public virtual DeleteComputationModelResponse DeleteComputationModel(DeleteComputationModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteComputationModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteComputationModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a computation model. This action can't be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputationModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
+        public virtual Task<DeleteComputationModelResponse> DeleteComputationModelAsync(DeleteComputationModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteComputationModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteComputationModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2851,7 +3202,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual DeleteDashboardResponse DeleteDashboard(DeleteDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -2892,7 +3243,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
             
@@ -2938,7 +3289,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -2983,7 +3334,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
             
@@ -3030,7 +3381,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -3076,7 +3427,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
             
@@ -3122,7 +3473,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
         public virtual DeletePortalResponse DeletePortal(DeletePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
 
@@ -3167,7 +3518,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
         public virtual Task<DeletePortalResponse> DeletePortalAsync(DeletePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
             
@@ -3209,7 +3560,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -3250,7 +3601,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
             
@@ -3322,7 +3673,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">REST API Reference for DeleteTimeSeries Operation</seealso>
         public virtual DeleteTimeSeriesResponse DeleteTimeSeries(DeleteTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimeSeriesResponseUnmarshaller.Instance;
 
@@ -3393,7 +3744,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">REST API Reference for DeleteTimeSeries Operation</seealso>
         public virtual Task<DeleteTimeSeriesResponse> DeleteTimeSeriesAsync(DeleteTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimeSeriesResponseUnmarshaller.Instance;
             
@@ -3436,7 +3787,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">REST API Reference for DescribeAccessPolicy Operation</seealso>
         public virtual DescribeAccessPolicyResponse DescribeAccessPolicy(DescribeAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3478,7 +3829,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">REST API Reference for DescribeAccessPolicy Operation</seealso>
         public virtual Task<DescribeAccessPolicyResponse> DescribeAccessPolicyAsync(DescribeAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessPolicyResponseUnmarshaller.Instance;
             
@@ -3520,7 +3871,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
         public virtual DescribeActionResponse DescribeAction(DescribeActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
 
@@ -3561,7 +3912,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
         public virtual Task<DescribeActionResponse> DescribeActionAsync(DescribeActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
             
@@ -3603,7 +3954,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         public virtual DescribeAssetResponse DescribeAsset(DescribeAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetResponseUnmarshaller.Instance;
 
@@ -3644,7 +3995,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         public virtual Task<DescribeAssetResponse> DescribeAssetAsync(DescribeAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetResponseUnmarshaller.Instance;
             
@@ -3688,7 +4039,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
         public virtual DescribeAssetCompositeModelResponse DescribeAssetCompositeModel(DescribeAssetCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetCompositeModelResponseUnmarshaller.Instance;
 
@@ -3731,7 +4082,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
         public virtual Task<DescribeAssetCompositeModelResponse> DescribeAssetCompositeModelAsync(DescribeAssetCompositeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetCompositeModelResponseUnmarshaller.Instance;
             
@@ -3744,7 +4095,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about an asset model.
+        /// Retrieves information about an asset model. This includes details about the asset
+        /// model's properties, hierarchies, composite models, and any interface relationships
+        /// if the asset model implements interfaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModel service method.</param>
         /// 
@@ -3773,7 +4126,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel">REST API Reference for DescribeAssetModel Operation</seealso>
         public virtual DescribeAssetModelResponse DescribeAssetModel(DescribeAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelResponseUnmarshaller.Instance;
 
@@ -3782,7 +4135,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about an asset model.
+        /// Retrieves information about an asset model. This includes details about the asset
+        /// model's properties, hierarchies, composite models, and any interface relationships
+        /// if the asset model implements interfaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModel service method.</param>
         /// <param name="cancellationToken">
@@ -3814,7 +4169,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel">REST API Reference for DescribeAssetModel Operation</seealso>
         public virtual Task<DescribeAssetModelResponse> DescribeAssetModelAsync(DescribeAssetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelResponseUnmarshaller.Instance;
             
@@ -3858,7 +4213,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
         public virtual DescribeAssetModelCompositeModelResponse DescribeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -3901,11 +4256,96 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
         public virtual Task<DescribeAssetModelCompositeModelResponse> DescribeAssetModelCompositeModelAsync(DescribeAssetModelCompositeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelCompositeModelResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeAssetModelCompositeModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAssetModelInterfaceRelationship
+
+
+        /// <summary>
+        /// Retrieves information about an interface relationship between an asset model and an
+        /// interface asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModelInterfaceRelationship service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelInterfaceRelationship">REST API Reference for DescribeAssetModelInterfaceRelationship Operation</seealso>
+        public virtual DescribeAssetModelInterfaceRelationshipResponse DescribeAssetModelInterfaceRelationship(DescribeAssetModelInterfaceRelationshipRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAssetModelInterfaceRelationshipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssetModelInterfaceRelationshipResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about an interface relationship between an asset model and an
+        /// interface asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModelInterfaceRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelInterfaceRelationship">REST API Reference for DescribeAssetModelInterfaceRelationship Operation</seealso>
+        public virtual Task<DescribeAssetModelInterfaceRelationshipResponse> DescribeAssetModelInterfaceRelationshipAsync(DescribeAssetModelInterfaceRelationshipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAssetModelInterfaceRelationshipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAssetModelInterfaceRelationshipResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3955,7 +4395,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">REST API Reference for DescribeAssetProperty Operation</seealso>
         public virtual DescribeAssetPropertyResponse DescribeAssetProperty(DescribeAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetPropertyResponseUnmarshaller.Instance;
 
@@ -4008,7 +4448,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">REST API Reference for DescribeAssetProperty Operation</seealso>
         public virtual Task<DescribeAssetPropertyResponse> DescribeAssetPropertyAsync(DescribeAssetPropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetPropertyResponseUnmarshaller.Instance;
             
@@ -4052,7 +4492,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
         public virtual DescribeBulkImportJobResponse DescribeBulkImportJob(DescribeBulkImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBulkImportJobResponseUnmarshaller.Instance;
 
@@ -4095,11 +4535,177 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
         public virtual Task<DescribeBulkImportJobResponse> DescribeBulkImportJobAsync(DescribeBulkImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBulkImportJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeBulkImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeComputationModel
+
+
+        /// <summary>
+        /// Retrieves information about a computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
+        public virtual DescribeComputationModelResponse DescribeComputationModel(DescribeComputationModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputationModelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComputationModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
+        public virtual Task<DescribeComputationModelResponse> DescribeComputationModelAsync(DescribeComputationModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputationModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeComputationModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeComputationModelExecutionSummary
+
+
+        /// <summary>
+        /// Retrieves information about the execution summary of a computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModelExecutionSummary service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComputationModelExecutionSummary service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
+        public virtual DescribeComputationModelExecutionSummaryResponse DescribeComputationModelExecutionSummary(DescribeComputationModelExecutionSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeComputationModelExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputationModelExecutionSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComputationModelExecutionSummaryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about the execution summary of a computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputationModelExecutionSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeComputationModelExecutionSummary service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
+        public virtual Task<DescribeComputationModelExecutionSummaryResponse> DescribeComputationModelExecutionSummaryAsync(DescribeComputationModelExecutionSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeComputationModelExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputationModelExecutionSummaryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeComputationModelExecutionSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4137,7 +4743,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         public virtual DescribeDashboardResponse DescribeDashboard(DescribeDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardResponseUnmarshaller.Instance;
 
@@ -4178,7 +4784,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         public virtual Task<DescribeDashboardResponse> DescribeDashboardAsync(DescribeDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardResponseUnmarshaller.Instance;
             
@@ -4220,7 +4826,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -4261,7 +4867,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
             
@@ -4303,7 +4909,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">REST API Reference for DescribeDefaultEncryptionConfiguration Operation</seealso>
         public virtual DescribeDefaultEncryptionConfigurationResponse DescribeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -4344,11 +4950,94 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">REST API Reference for DescribeDefaultEncryptionConfiguration Operation</seealso>
         public virtual Task<DescribeDefaultEncryptionConfigurationResponse> DescribeDefaultEncryptionConfigurationAsync(DescribeDefaultEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeDefaultEncryptionConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExecution
+
+
+        /// <summary>
+        /// Retrieves information about the execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExecution service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        public virtual DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExecutionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about the execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExecution service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
+        public virtual Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4386,7 +5075,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual DescribeGatewayResponse DescribeGateway(DescribeGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -4427,7 +5116,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual Task<DescribeGatewayResponse> DescribeGatewayAsync(DescribeGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
             
@@ -4440,11 +5129,37 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about a gateway capability configuration. Each gateway capability
-        /// defines data sources for a gateway. A capability configuration can contain multiple
-        /// data source configurations. If you define OPC-UA sources for a gateway in the IoT
-        /// SiteWise console, all of your OPC-UA sources are stored in one capability configuration.
-        /// To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
+        /// Each gateway capability defines data sources for a gateway. This is the namespace
+        /// of the gateway capability.
+        /// 
+        ///  
+        /// <para>
+        /// . The namespace follows the format <c>service:capability:version</c>, where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>service</c> - The service providing the capability, or <c>iotsitewise</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>capability</c> - The specific capability type. Options include: <c>opcuacollector</c>
+        /// for the OPC UA data source collector, or <c>publisher</c> for data publisher capability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>version</c> - The version number of the capability. Option include <c>2</c> for
+        /// Classic streams, V2 gateways, and <c>3</c> for MQTT-enabled, V3 gateways.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After updating a capability configuration, the sync status becomes <c>OUT_OF_SYNC</c>
+        /// until the gateway processes the configuration.Use <c>DescribeGatewayCapabilityConfiguration</c>
+        /// to check the sync status and verify the configuration was applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// A gateway can have multiple capability configurations with different namespaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayCapabilityConfiguration service method.</param>
         /// 
@@ -4473,7 +5188,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGatewayCapabilityConfiguration">REST API Reference for DescribeGatewayCapabilityConfiguration Operation</seealso>
         public virtual DescribeGatewayCapabilityConfigurationResponse DescribeGatewayCapabilityConfiguration(DescribeGatewayCapabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -4482,11 +5197,37 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about a gateway capability configuration. Each gateway capability
-        /// defines data sources for a gateway. A capability configuration can contain multiple
-        /// data source configurations. If you define OPC-UA sources for a gateway in the IoT
-        /// SiteWise console, all of your OPC-UA sources are stored in one capability configuration.
-        /// To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
+        /// Each gateway capability defines data sources for a gateway. This is the namespace
+        /// of the gateway capability.
+        /// 
+        ///  
+        /// <para>
+        /// . The namespace follows the format <c>service:capability:version</c>, where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>service</c> - The service providing the capability, or <c>iotsitewise</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>capability</c> - The specific capability type. Options include: <c>opcuacollector</c>
+        /// for the OPC UA data source collector, or <c>publisher</c> for data publisher capability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>version</c> - The version number of the capability. Option include <c>2</c> for
+        /// Classic streams, V2 gateways, and <c>3</c> for MQTT-enabled, V3 gateways.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After updating a capability configuration, the sync status becomes <c>OUT_OF_SYNC</c>
+        /// until the gateway processes the configuration.Use <c>DescribeGatewayCapabilityConfiguration</c>
+        /// to check the sync status and verify the configuration was applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// A gateway can have multiple capability configurations with different namespaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayCapabilityConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4518,7 +5259,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGatewayCapabilityConfiguration">REST API Reference for DescribeGatewayCapabilityConfiguration Operation</seealso>
         public virtual Task<DescribeGatewayCapabilityConfigurationResponse> DescribeGatewayCapabilityConfigurationAsync(DescribeGatewayCapabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
             
@@ -4560,7 +5301,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual DescribeLoggingOptionsResponse DescribeLoggingOptions(DescribeLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -4601,7 +5342,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual Task<DescribeLoggingOptionsResponse> DescribeLoggingOptionsAsync(DescribeLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
             
@@ -4643,7 +5384,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribePortal">REST API Reference for DescribePortal Operation</seealso>
         public virtual DescribePortalResponse DescribePortal(DescribePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePortalResponseUnmarshaller.Instance;
 
@@ -4684,7 +5425,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribePortal">REST API Reference for DescribePortal Operation</seealso>
         public virtual Task<DescribePortalResponse> DescribePortalAsync(DescribePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePortalResponseUnmarshaller.Instance;
             
@@ -4726,7 +5467,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
@@ -4767,7 +5508,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
             
@@ -4797,7 +5538,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -4824,7 +5565,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">REST API Reference for DescribeStorageConfiguration Operation</seealso>
         public virtual DescribeStorageConfigurationResponse DescribeStorageConfiguration(DescribeStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -4853,7 +5594,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -4880,7 +5621,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">REST API Reference for DescribeStorageConfiguration Operation</seealso>
         public virtual Task<DescribeStorageConfigurationResponse> DescribeStorageConfigurationAsync(DescribeStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStorageConfigurationResponseUnmarshaller.Instance;
             
@@ -4946,7 +5687,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">REST API Reference for DescribeTimeSeries Operation</seealso>
         public virtual DescribeTimeSeriesResponse DescribeTimeSeries(DescribeTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTimeSeriesResponseUnmarshaller.Instance;
 
@@ -5011,7 +5752,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">REST API Reference for DescribeTimeSeries Operation</seealso>
         public virtual Task<DescribeTimeSeriesResponse> DescribeTimeSeriesAsync(DescribeTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTimeSeriesResponseUnmarshaller.Instance;
             
@@ -5058,7 +5799,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateAssets">REST API Reference for DisassociateAssets Operation</seealso>
         public virtual DisassociateAssetsResponse DisassociateAssets(DisassociateAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAssetsResponseUnmarshaller.Instance;
 
@@ -5104,7 +5845,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateAssets">REST API Reference for DisassociateAssets Operation</seealso>
         public virtual Task<DisassociateAssetsResponse> DisassociateAssetsAsync(DisassociateAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAssetsResponseUnmarshaller.Instance;
             
@@ -5150,7 +5891,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">REST API Reference for DisassociateTimeSeriesFromAssetProperty Operation</seealso>
         public virtual DisassociateTimeSeriesFromAssetPropertyResponse DisassociateTimeSeriesFromAssetProperty(DisassociateTimeSeriesFromAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTimeSeriesFromAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTimeSeriesFromAssetPropertyResponseUnmarshaller.Instance;
 
@@ -5195,7 +5936,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">REST API Reference for DisassociateTimeSeriesFromAssetProperty Operation</seealso>
         public virtual Task<DisassociateTimeSeriesFromAssetPropertyResponse> DisassociateTimeSeriesFromAssetPropertyAsync(DisassociateTimeSeriesFromAssetPropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTimeSeriesFromAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTimeSeriesFromAssetPropertyResponseUnmarshaller.Instance;
             
@@ -5225,7 +5966,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5252,7 +5993,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
         public virtual ExecuteActionResponse ExecuteAction(ExecuteActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteActionResponseUnmarshaller.Instance;
 
@@ -5281,7 +6022,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5308,7 +6049,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
         public virtual Task<ExecuteActionResponse> ExecuteActionAsync(ExecuteActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteActionResponseUnmarshaller.Instance;
             
@@ -5360,7 +6101,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -5411,7 +6152,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
             
@@ -5472,7 +6213,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">REST API Reference for GetAssetPropertyAggregates Operation</seealso>
         public virtual GetAssetPropertyAggregatesResponse GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyAggregatesResponseUnmarshaller.Instance;
 
@@ -5532,7 +6273,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">REST API Reference for GetAssetPropertyAggregates Operation</seealso>
         public virtual Task<GetAssetPropertyAggregatesResponse> GetAssetPropertyAggregatesAsync(GetAssetPropertyAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyAggregatesResponseUnmarshaller.Instance;
             
@@ -5593,7 +6334,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">REST API Reference for GetAssetPropertyValue Operation</seealso>
         public virtual GetAssetPropertyValueResponse GetAssetPropertyValue(GetAssetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -5653,7 +6394,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">REST API Reference for GetAssetPropertyValue Operation</seealso>
         public virtual Task<GetAssetPropertyValueResponse> GetAssetPropertyValueAsync(GetAssetPropertyValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueResponseUnmarshaller.Instance;
             
@@ -5714,7 +6455,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">REST API Reference for GetAssetPropertyValueHistory Operation</seealso>
         public virtual GetAssetPropertyValueHistoryResponse GetAssetPropertyValueHistory(GetAssetPropertyValueHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -5774,7 +6515,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">REST API Reference for GetAssetPropertyValueHistory Operation</seealso>
         public virtual Task<GetAssetPropertyValueHistoryResponse> GetAssetPropertyValueHistoryAsync(GetAssetPropertyValueHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
             
@@ -5841,7 +6582,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">REST API Reference for GetInterpolatedAssetPropertyValues Operation</seealso>
         public virtual GetInterpolatedAssetPropertyValuesResponse GetInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInterpolatedAssetPropertyValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInterpolatedAssetPropertyValuesResponseUnmarshaller.Instance;
 
@@ -5907,7 +6648,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">REST API Reference for GetInterpolatedAssetPropertyValues Operation</seealso>
         public virtual Task<GetInterpolatedAssetPropertyValuesResponse> GetInterpolatedAssetPropertyValuesAsync(GetInterpolatedAssetPropertyValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInterpolatedAssetPropertyValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInterpolatedAssetPropertyValuesResponseUnmarshaller.Instance;
             
@@ -5940,7 +6681,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -5967,7 +6708,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/InvokeAssistant">REST API Reference for InvokeAssistant Operation</seealso>
         public virtual InvokeAssistantResponse InvokeAssistant(InvokeAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAssistantResponseUnmarshaller.Instance;
 
@@ -5999,7 +6740,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -6026,7 +6767,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/InvokeAssistant">REST API Reference for InvokeAssistant Operation</seealso>
         public virtual Task<InvokeAssistantResponse> InvokeAssistantAsync(InvokeAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAssistantResponseUnmarshaller.Instance;
             
@@ -6067,7 +6808,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual ListAccessPoliciesResponse ListAccessPolicies(ListAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -6107,7 +6848,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual Task<ListAccessPoliciesResponse> ListAccessPoliciesAsync(ListAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
             
@@ -6149,7 +6890,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual ListActionsResponse ListActions(ListActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
 
@@ -6190,7 +6931,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual Task<ListActionsResponse> ListActionsAsync(ListActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
             
@@ -6232,7 +6973,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
         public virtual ListAssetModelCompositeModelsResponse ListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelCompositeModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelCompositeModelsResponseUnmarshaller.Instance;
 
@@ -6273,7 +7014,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
         public virtual Task<ListAssetModelCompositeModelsResponse> ListAssetModelCompositeModelsAsync(ListAssetModelCompositeModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelCompositeModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelCompositeModelsResponseUnmarshaller.Instance;
             
@@ -6317,7 +7058,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
         public virtual ListAssetModelPropertiesResponse ListAssetModelProperties(ListAssetModelPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelPropertiesResponseUnmarshaller.Instance;
 
@@ -6360,7 +7101,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
         public virtual Task<ListAssetModelPropertiesResponse> ListAssetModelPropertiesAsync(ListAssetModelPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelPropertiesResponseUnmarshaller.Instance;
             
@@ -6399,7 +7140,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModels">REST API Reference for ListAssetModels Operation</seealso>
         public virtual ListAssetModelsResponse ListAssetModels(ListAssetModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelsResponseUnmarshaller.Instance;
 
@@ -6437,7 +7178,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModels">REST API Reference for ListAssetModels Operation</seealso>
         public virtual Task<ListAssetModelsResponse> ListAssetModelsAsync(ListAssetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelsResponseUnmarshaller.Instance;
             
@@ -6481,7 +7222,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
         public virtual ListAssetPropertiesResponse ListAssetProperties(ListAssetPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetPropertiesResponseUnmarshaller.Instance;
 
@@ -6524,7 +7265,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
         public virtual Task<ListAssetPropertiesResponse> ListAssetPropertiesAsync(ListAssetPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetPropertiesResponseUnmarshaller.Instance;
             
@@ -6568,7 +7309,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
         public virtual ListAssetRelationshipsResponse ListAssetRelationships(ListAssetRelationshipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetRelationshipsResponseUnmarshaller.Instance;
 
@@ -6611,7 +7352,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
         public virtual Task<ListAssetRelationshipsResponse> ListAssetRelationshipsAsync(ListAssetRelationshipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetRelationshipsResponseUnmarshaller.Instance;
             
@@ -6673,7 +7414,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual ListAssetsResponse ListAssets(ListAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
 
@@ -6734,7 +7475,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
             
@@ -6790,7 +7531,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">REST API Reference for ListAssociatedAssets Operation</seealso>
         public virtual ListAssociatedAssetsResponse ListAssociatedAssets(ListAssociatedAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAssetsResponseUnmarshaller.Instance;
 
@@ -6845,7 +7586,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">REST API Reference for ListAssociatedAssets Operation</seealso>
         public virtual Task<ListAssociatedAssetsResponse> ListAssociatedAssetsAsync(ListAssociatedAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAssetsResponseUnmarshaller.Instance;
             
@@ -6889,7 +7630,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
         public virtual ListBulkImportJobsResponse ListBulkImportJobs(ListBulkImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkImportJobsResponseUnmarshaller.Instance;
 
@@ -6932,7 +7673,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
         public virtual Task<ListBulkImportJobsResponse> ListBulkImportJobsAsync(ListBulkImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkImportJobsResponseUnmarshaller.Instance;
             
@@ -6975,7 +7716,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
         public virtual ListCompositionRelationshipsResponse ListCompositionRelationships(ListCompositionRelationshipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCompositionRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCompositionRelationshipsResponseUnmarshaller.Instance;
 
@@ -7017,11 +7758,254 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
         public virtual Task<ListCompositionRelationshipsResponse> ListCompositionRelationshipsAsync(ListCompositionRelationshipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCompositionRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCompositionRelationshipsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCompositionRelationshipsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListComputationModelDataBindingUsages
+
+
+        /// <summary>
+        /// Lists all data binding usages for computation models. This allows to identify where
+        /// specific data bindings are being utilized across the computation models. This track
+        /// dependencies between data sources and computation models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelDataBindingUsages service method.</param>
+        /// 
+        /// <returns>The response from the ListComputationModelDataBindingUsages service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
+        public virtual ListComputationModelDataBindingUsagesResponse ListComputationModelDataBindingUsages(ListComputationModelDataBindingUsagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComputationModelDataBindingUsagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputationModelDataBindingUsagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListComputationModelDataBindingUsagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all data binding usages for computation models. This allows to identify where
+        /// specific data bindings are being utilized across the computation models. This track
+        /// dependencies between data sources and computation models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelDataBindingUsages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComputationModelDataBindingUsages service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
+        public virtual Task<ListComputationModelDataBindingUsagesResponse> ListComputationModelDataBindingUsagesAsync(ListComputationModelDataBindingUsagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComputationModelDataBindingUsagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputationModelDataBindingUsagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListComputationModelDataBindingUsagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListComputationModelResolveToResources
+
+
+        /// <summary>
+        /// Lists all distinct resources that are resolved from the executed actions of the computation
+        /// model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelResolveToResources service method.</param>
+        /// 
+        /// <returns>The response from the ListComputationModelResolveToResources service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
+        public virtual ListComputationModelResolveToResourcesResponse ListComputationModelResolveToResources(ListComputationModelResolveToResourcesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComputationModelResolveToResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputationModelResolveToResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListComputationModelResolveToResourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all distinct resources that are resolved from the executed actions of the computation
+        /// model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModelResolveToResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComputationModelResolveToResources service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
+        public virtual Task<ListComputationModelResolveToResourcesResponse> ListComputationModelResolveToResourcesAsync(ListComputationModelResolveToResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComputationModelResolveToResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputationModelResolveToResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListComputationModelResolveToResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListComputationModels
+
+
+        /// <summary>
+        /// Retrieves a paginated list of summaries of all computation models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModels service method.</param>
+        /// 
+        /// <returns>The response from the ListComputationModels service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
+        public virtual ListComputationModelsResponse ListComputationModels(ListComputationModelsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComputationModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputationModelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListComputationModelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of summaries of all computation models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputationModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComputationModels service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
+        public virtual Task<ListComputationModelsResponse> ListComputationModelsAsync(ListComputationModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListComputationModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputationModelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListComputationModelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7056,7 +8040,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -7094,7 +8078,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
             
@@ -7133,7 +8117,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -7171,11 +8155,94 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExecutions
+
+
+        /// <summary>
+        /// Retrieves a paginated list of summaries of all executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListExecutions service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        public virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExecutionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of summaries of all executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExecutions service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
+        public virtual Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7210,7 +8277,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -7248,11 +8315,96 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInterfaceRelationships
+
+
+        /// <summary>
+        /// Retrieves a paginated list of asset models that have a specific interface asset model
+        /// applied to them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInterfaceRelationships service method.</param>
+        /// 
+        /// <returns>The response from the ListInterfaceRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListInterfaceRelationships">REST API Reference for ListInterfaceRelationships Operation</seealso>
+        public virtual ListInterfaceRelationshipsResponse ListInterfaceRelationships(ListInterfaceRelationshipsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInterfaceRelationshipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInterfaceRelationshipsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInterfaceRelationshipsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of asset models that have a specific interface asset model
+        /// applied to them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInterfaceRelationships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInterfaceRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListInterfaceRelationships">REST API Reference for ListInterfaceRelationships Operation</seealso>
+        public virtual Task<ListInterfaceRelationshipsResponse> ListInterfaceRelationshipsAsync(ListInterfaceRelationshipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInterfaceRelationshipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInterfaceRelationshipsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInterfaceRelationshipsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7287,7 +8439,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">REST API Reference for ListPortals Operation</seealso>
         public virtual ListPortalsResponse ListPortals(ListPortalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
 
@@ -7325,7 +8477,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">REST API Reference for ListPortals Operation</seealso>
         public virtual Task<ListPortalsResponse> ListPortalsAsync(ListPortalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
             
@@ -7364,7 +8516,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">REST API Reference for ListProjectAssets Operation</seealso>
         public virtual ListProjectAssetsResponse ListProjectAssets(ListProjectAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectAssetsResponseUnmarshaller.Instance;
 
@@ -7402,7 +8554,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">REST API Reference for ListProjectAssets Operation</seealso>
         public virtual Task<ListProjectAssetsResponse> ListProjectAssetsAsync(ListProjectAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectAssetsResponseUnmarshaller.Instance;
             
@@ -7441,7 +8593,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -7479,7 +8631,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
             
@@ -7509,7 +8661,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -7539,7 +8691,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7568,7 +8720,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -7598,7 +8750,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -7640,7 +8792,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
         public virtual ListTimeSeriesResponse ListTimeSeries(ListTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimeSeriesResponseUnmarshaller.Instance;
 
@@ -7681,11 +8833,126 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
         public virtual Task<ListTimeSeriesResponse> ListTimeSeriesAsync(ListTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimeSeriesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTimeSeriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAssetModelInterfaceRelationship
+
+
+        /// <summary>
+        /// Creates or updates an interface relationship between an asset model and an interface
+        /// asset model. This operation applies an interface to an asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAssetModelInterfaceRelationship service method.</param>
+        /// 
+        /// <returns>The response from the PutAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetModelInterfaceRelationship">REST API Reference for PutAssetModelInterfaceRelationship Operation</seealso>
+        public virtual PutAssetModelInterfaceRelationshipResponse PutAssetModelInterfaceRelationship(PutAssetModelInterfaceRelationshipRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAssetModelInterfaceRelationshipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
+
+            return Invoke<PutAssetModelInterfaceRelationshipResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates an interface relationship between an asset model and an interface
+        /// asset model. This operation applies an interface to an asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAssetModelInterfaceRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetModelInterfaceRelationship">REST API Reference for PutAssetModelInterfaceRelationship Operation</seealso>
+        public virtual Task<PutAssetModelInterfaceRelationshipResponse> PutAssetModelInterfaceRelationshipAsync(PutAssetModelInterfaceRelationshipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAssetModelInterfaceRelationshipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAssetModelInterfaceRelationshipResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7713,7 +8980,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -7737,7 +9004,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">REST API Reference for PutDefaultEncryptionConfiguration Operation</seealso>
         public virtual PutDefaultEncryptionConfigurationResponse PutDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -7768,7 +9035,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -7792,7 +9059,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">REST API Reference for PutDefaultEncryptionConfiguration Operation</seealso>
         public virtual Task<PutDefaultEncryptionConfigurationResponse> PutDefaultEncryptionConfigurationAsync(PutDefaultEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
             
@@ -7838,7 +9105,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual PutLoggingOptionsResponse PutLoggingOptions(PutLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -7883,7 +9150,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual Task<PutLoggingOptionsResponse> PutLoggingOptionsAsync(PutLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
             
@@ -7913,7 +9180,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -7943,7 +9210,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">REST API Reference for PutStorageConfiguration Operation</seealso>
         public virtual PutStorageConfigurationResponse PutStorageConfiguration(PutStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -7972,7 +9239,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8002,7 +9269,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">REST API Reference for PutStorageConfiguration Operation</seealso>
         public virtual Task<PutStorageConfigurationResponse> PutStorageConfigurationAsync(PutStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageConfigurationResponseUnmarshaller.Instance;
             
@@ -8033,7 +9300,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8058,7 +9325,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.TooManyTagsException">
-        /// You've reached the limit for the number of tags allowed for a resource. For more information,
+        /// You've reached the quota for the number of tags allowed for a resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
         /// naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.
         /// </exception>
@@ -8068,7 +9335,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8098,7 +9365,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8123,7 +9390,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.TooManyTagsException">
-        /// You've reached the limit for the number of tags allowed for a resource. For more information,
+        /// You've reached the quota for the number of tags allowed for a resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
         /// naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.
         /// </exception>
@@ -8133,7 +9400,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -8163,7 +9430,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8193,7 +9460,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8222,7 +9489,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8252,7 +9519,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -8295,7 +9562,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">REST API Reference for UpdateAccessPolicy Operation</seealso>
         public virtual UpdateAccessPolicyResponse UpdateAccessPolicy(UpdateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -8337,7 +9604,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">REST API Reference for UpdateAccessPolicy Operation</seealso>
         public virtual Task<UpdateAccessPolicyResponse> UpdateAccessPolicyAsync(UpdateAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessPolicyResponseUnmarshaller.Instance;
             
@@ -8387,7 +9654,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
         public virtual UpdateAssetResponse UpdateAsset(UpdateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
 
@@ -8436,7 +9703,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
         public virtual Task<UpdateAssetResponse> UpdateAssetAsync(UpdateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
             
@@ -8491,7 +9758,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8524,7 +9791,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">REST API Reference for UpdateAssetModel Operation</seealso>
         public virtual UpdateAssetModelResponse UpdateAssetModel(UpdateAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelResponseUnmarshaller.Instance;
 
@@ -8578,7 +9845,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8611,7 +9878,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">REST API Reference for UpdateAssetModel Operation</seealso>
         public virtual Task<UpdateAssetModelResponse> UpdateAssetModelAsync(UpdateAssetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelResponseUnmarshaller.Instance;
             
@@ -8667,7 +9934,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8700,7 +9967,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
         public virtual UpdateAssetModelCompositeModelResponse UpdateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -8755,7 +10022,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -8788,7 +10055,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
         public virtual Task<UpdateAssetModelCompositeModelResponse> UpdateAssetModelCompositeModelAsync(UpdateAssetModelCompositeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelCompositeModelResponseUnmarshaller.Instance;
             
@@ -8842,7 +10109,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">REST API Reference for UpdateAssetProperty Operation</seealso>
         public virtual UpdateAssetPropertyResponse UpdateAssetProperty(UpdateAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetPropertyResponseUnmarshaller.Instance;
 
@@ -8895,11 +10162,130 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">REST API Reference for UpdateAssetProperty Operation</seealso>
         public virtual Task<UpdateAssetPropertyResponse> UpdateAssetPropertyAsync(UpdateAssetPropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetPropertyResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateAssetPropertyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateComputationModel
+
+
+        /// <summary>
+        /// Updates the computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputationModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
+        public virtual UpdateComputationModelResponse UpdateComputationModel(UpdateComputationModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateComputationModelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateComputationModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the computation model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputationModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateComputationModel service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
+        public virtual Task<UpdateComputationModelResponse> UpdateComputationModelAsync(UpdateComputationModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateComputationModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateComputationModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateComputationModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8937,7 +10323,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -8978,7 +10364,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual Task<UpdateDashboardResponse> UpdateDashboardAsync(UpdateDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
             
@@ -9008,7 +10394,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -9035,7 +10421,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -9064,7 +10450,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -9091,7 +10477,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
             
@@ -9137,7 +10523,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
         public virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
 
@@ -9182,7 +10568,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
         public virtual Task<UpdateGatewayResponse> UpdateGatewayAsync(UpdateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
             
@@ -9196,11 +10582,45 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Updates a gateway capability configuration or defines a new capability configuration.
-        /// Each gateway capability defines data sources for a gateway. A capability configuration
-        /// can contain multiple data source configurations. If you define OPC-UA sources for
-        /// a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one
-        /// capability configuration. To list all capability configurations for a gateway, use
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
+        /// Each gateway capability defines data sources for a gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Important workflow notes:
+        /// </para>
+        ///  
+        /// <para>
+        /// Each gateway capability defines data sources for a gateway. This is the namespace
+        /// of the gateway capability.
+        /// </para>
+        ///  
+        /// <para>
+        /// . The namespace follows the format <c>service:capability:version</c>, where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>service</c> - The service providing the capability, or <c>iotsitewise</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>capability</c> - The specific capability type. Options include: <c>opcuacollector</c>
+        /// for the OPC UA data source collector, or <c>publisher</c> for data publisher capability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>version</c> - The version number of the capability. Option include <c>2</c> for
+        /// Classic streams, V2 gateways, and <c>3</c> for MQTT-enabled, V3 gateways.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After updating a capability configuration, the sync status becomes <c>OUT_OF_SYNC</c>
+        /// until the gateway processes the configuration.Use <c>DescribeGatewayCapabilityConfiguration</c>
+        /// to check the sync status and verify the configuration was applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// A gateway can have multiple capability configurations with different namespaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayCapabilityConfiguration service method.</param>
         /// 
@@ -9217,7 +10637,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -9244,7 +10664,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGatewayCapabilityConfiguration">REST API Reference for UpdateGatewayCapabilityConfiguration Operation</seealso>
         public virtual UpdateGatewayCapabilityConfigurationResponse UpdateGatewayCapabilityConfiguration(UpdateGatewayCapabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -9254,11 +10674,45 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Updates a gateway capability configuration or defines a new capability configuration.
-        /// Each gateway capability defines data sources for a gateway. A capability configuration
-        /// can contain multiple data source configurations. If you define OPC-UA sources for
-        /// a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one
-        /// capability configuration. To list all capability configurations for a gateway, use
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
+        /// Each gateway capability defines data sources for a gateway.
+        /// 
+        ///  
+        /// <para>
+        /// Important workflow notes:
+        /// </para>
+        ///  
+        /// <para>
+        /// Each gateway capability defines data sources for a gateway. This is the namespace
+        /// of the gateway capability.
+        /// </para>
+        ///  
+        /// <para>
+        /// . The namespace follows the format <c>service:capability:version</c>, where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>service</c> - The service providing the capability, or <c>iotsitewise</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>capability</c> - The specific capability type. Options include: <c>opcuacollector</c>
+        /// for the OPC UA data source collector, or <c>publisher</c> for data publisher capability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>version</c> - The version number of the capability. Option include <c>2</c> for
+        /// Classic streams, V2 gateways, and <c>3</c> for MQTT-enabled, V3 gateways.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After updating a capability configuration, the sync status becomes <c>OUT_OF_SYNC</c>
+        /// until the gateway processes the configuration.Use <c>DescribeGatewayCapabilityConfiguration</c>
+        /// to check the sync status and verify the configuration was applied.
+        /// </para>
+        ///  
+        /// <para>
+        /// A gateway can have multiple capability configurations with different namespaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayCapabilityConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -9278,7 +10732,7 @@ namespace Amazon.IoTSiteWise
         /// unsupported characters. Check your request and try again.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
-        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
         /// to associate more than the allowed number of child assets or attempting to create
         /// more than the allowed number of properties for an asset model.
         /// 
@@ -9305,7 +10759,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGatewayCapabilityConfiguration">REST API Reference for UpdateGatewayCapabilityConfiguration Operation</seealso>
         public virtual Task<UpdateGatewayCapabilityConfigurationResponse> UpdateGatewayCapabilityConfigurationAsync(UpdateGatewayCapabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
             
@@ -9351,7 +10805,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
         public virtual UpdatePortalResponse UpdatePortal(UpdatePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
 
@@ -9396,7 +10850,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
         public virtual Task<UpdatePortalResponse> UpdatePortalAsync(UpdatePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
             
@@ -9438,7 +10892,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -9479,7 +10933,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
             

@@ -75,6 +75,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeletionProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("deletionProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
+            }
+
             if(publicRequest.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");

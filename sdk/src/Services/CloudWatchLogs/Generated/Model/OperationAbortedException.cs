@@ -39,6 +39,13 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Default constructor for OperationAbortedException
+        /// message.
+        /// </summary>
+        public OperationAbortedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OperationAbortedException with the specified error
         /// message.
         /// </summary>

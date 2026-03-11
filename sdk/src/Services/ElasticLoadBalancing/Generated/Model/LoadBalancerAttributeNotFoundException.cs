@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for LoadBalancerAttributeNotFoundException
+        /// message.
+        /// </summary>
+        public LoadBalancerAttributeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LoadBalancerAttributeNotFoundException with the specified error
         /// message.
         /// </summary>

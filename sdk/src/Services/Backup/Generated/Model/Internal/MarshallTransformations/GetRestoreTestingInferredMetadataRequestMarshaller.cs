@@ -65,9 +65,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetBackupVaultAccountId())
                 request.Parameters.Add("BackupVaultAccountId", StringUtils.FromString(publicRequest.BackupVaultAccountId));
+            if (string.IsNullOrEmpty(publicRequest.BackupVaultName))
+                throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
             
             if (publicRequest.IsSetBackupVaultName())
                 request.Parameters.Add("BackupVaultName", StringUtils.FromString(publicRequest.BackupVaultName));
+            if (string.IsNullOrEmpty(publicRequest.RecoveryPointArn))
+                throw new AmazonBackupException("Request object does not have required field RecoveryPointArn set");
             
             if (publicRequest.IsSetRecoveryPointArn())
                 request.Parameters.Add("RecoveryPointArn", StringUtils.FromString(publicRequest.RecoveryPointArn));

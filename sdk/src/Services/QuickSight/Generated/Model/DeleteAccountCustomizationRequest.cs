@@ -31,8 +31,33 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountCustomization operation.
-    /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
-    /// the specified Amazon Web Services account and Amazon QuickSight namespace.
+    /// <important> 
+    /// <para>
+    /// This API permanently deletes all Quick Sight customizations for the specified Amazon
+    /// Web Services account and namespace. When you delete account customizations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// All customizations are removed including themes, branding, and visual settings
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// This action cannot be undone through the API
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Users will see default Quick Sight styling after customizations are deleted
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Before proceeding:</b> Ensure you have backups of any custom themes or branding
+    /// elements you may want to recreate.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Deletes all Amazon Quick Sight customizations for the specified Amazon Web Services
+    /// account and Quick Sight namespace.
+    /// </para>
     /// </summary>
     public partial class DeleteAccountCustomizationRequest : AmazonQuickSightRequest
     {
@@ -42,8 +67,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account that you want to delete Amazon QuickSight
-        /// customizations from in this Amazon Web Services Region.
+        /// The ID for the Amazon Web Services account that you want to delete Quick Sight customizations
+        /// from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -62,7 +87,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that you're deleting the customizations from.
+        /// The Quick Sight namespace that you're deleting the customizations from.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

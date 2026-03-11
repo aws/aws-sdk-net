@@ -88,6 +88,16 @@ namespace Amazon.WorkSpacesWeb.Model
         IListPortalsPaginator ListPortals(ListPortalsRequest request);
 
         /// <summary>
+        /// Paginator for ListSessionLoggers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSessionLoggersPaginator ListSessionLoggers(ListSessionLoggersRequest request);
+
+        /// <summary>
         /// Paginator for ListSessions operation
         ///</summary>
         [AWSPaginator(

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for CustomCnameAssociationException
+        /// message.
+        /// </summary>
+        public CustomCnameAssociationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CustomCnameAssociationException with the specified error
         /// message.
         /// </summary>

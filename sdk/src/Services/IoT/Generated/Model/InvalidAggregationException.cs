@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAggregationException
+        /// message.
+        /// </summary>
+        public InvalidAggregationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAggregationException with the specified error
         /// message.
         /// </summary>

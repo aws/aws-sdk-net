@@ -114,6 +114,17 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.QueueName);
             }
 
+            if(publicRequest.IsSetSlurmConfiguration())
+            {
+                context.Writer.WritePropertyName("slurmConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QueueSlurmConfigurationRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SlurmConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

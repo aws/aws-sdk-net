@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingCustomsException
+        /// message.
+        /// </summary>
+        public MissingCustomsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingCustomsException with the specified error
         /// message.
         /// </summary>

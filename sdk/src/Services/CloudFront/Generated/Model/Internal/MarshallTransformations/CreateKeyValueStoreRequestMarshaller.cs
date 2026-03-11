@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateKeyValueStoreRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/key-value-store";
 
@@ -66,7 +67,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetComment())
                     xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
 
-                if (publicRequest.ImportSource != null)
+                if (publicRequest.IsSetImportSource())
                 {
                     xmlWriter.WriteStartElement("ImportSource");
                     if(publicRequest.ImportSource.IsSetSourceARN())
@@ -81,6 +82,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -92,8 +94,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateKeyValueStoreRequestMarshaller _instance = new CreateKeyValueStoreRequestMarshaller();        
@@ -115,5 +115,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateKeyValueStoreRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateKeyValueStoreRequest publicRequest);
     }    
 }

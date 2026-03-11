@@ -38,13 +38,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _agentRuntimeId;
         private string _agentRuntimeVersion;
         private DateTime? _createdAt;
-        private AgentStatus _status;
+        private AgentRuntimeStatus _status;
         private WorkloadIdentityDetails _workloadIdentityDetails;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent runtime.
+        /// The Amazon Resource Name (ARN) of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime.
+        /// The unique identifier of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeVersion. 
         /// <para>
-        /// The version of the agent runtime.
+        /// The version of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime was created.
+        /// The timestamp when the AgentCore Runtime was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,11 +120,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the agent runtime.
+        /// The current status of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentStatus Status
+        public AgentRuntimeStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -139,7 +139,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityDetails. 
         /// <para>
-        /// The workload identity details for the agent runtime.
+        /// The workload identity details for the AgentCore Runtime.
         /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails

@@ -40,6 +40,13 @@ namespace Amazon.MediaLive.Model
         private List<ValidationError> _validationErrors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
 
         /// <summary>
+        /// Default constructor for UnprocessableEntityException
+        /// message.
+        /// </summary>
+        public UnprocessableEntityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnprocessableEntityException with the specified error
         /// message.
         /// </summary>

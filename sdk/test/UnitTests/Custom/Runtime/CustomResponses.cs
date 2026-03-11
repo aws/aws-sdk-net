@@ -50,7 +50,7 @@ namespace AWSSDK.UnitTests
                 if (isOK)
                     return response;
 
-#if BCL
+#if NETFRAMEWORK
                 throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));
 #else
                 throw new NotImplementedException();
@@ -62,7 +62,7 @@ namespace AWSSDK.UnitTests
             AmazonServiceClient client,
             Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> responseCreator)
         {
-#if BCL
+#if NETFRAMEWORK
             var requestFactory = new HttpHandlerTests.MockHttpRequestFactory();
             requestFactory.ResponseCreator = responseCreator;
             ReplaceHttpRequestHandler(client, requestFactory);

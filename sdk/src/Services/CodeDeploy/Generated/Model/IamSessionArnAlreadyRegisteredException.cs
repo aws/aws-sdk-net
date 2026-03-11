@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for IamSessionArnAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public IamSessionArnAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IamSessionArnAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

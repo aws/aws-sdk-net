@@ -34,11 +34,36 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class DataDetails
     {
+        private CaseSummarizationChunkDataDetails _caseSummarizationChunkData;
         private ContentDataDetails _contentData;
+        private EmailGenerativeAnswerChunkDataDetails _emailGenerativeAnswerChunkData;
+        private EmailOverviewChunkDataDetails _emailOverviewChunkData;
+        private EmailResponseChunkDataDetails _emailResponseChunkData;
         private GenerativeChunkDataDetails _generativeChunkData;
         private GenerativeDataDetails _generativeData;
         private IntentDetectedDataDetails _intentDetectedData;
+        private NotesChunkDataDetails _notesChunkData;
+        private NotesDataDetails _notesData;
         private SourceContentDataDetails _sourceContentData;
+        private SuggestedMessageDataDetails _suggestedMessageData;
+
+        /// <summary>
+        /// Gets and sets the property CaseSummarizationChunkData. 
+        /// <para>
+        /// Details about case summarization chunk data.
+        /// </para>
+        /// </summary>
+        public CaseSummarizationChunkDataDetails CaseSummarizationChunkData
+        {
+            get { return this._caseSummarizationChunkData; }
+            set { this._caseSummarizationChunkData = value; }
+        }
+
+        // Check to see if CaseSummarizationChunkData property is set
+        internal bool IsSetCaseSummarizationChunkData()
+        {
+            return this._caseSummarizationChunkData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContentData. 
@@ -56,6 +81,61 @@ namespace Amazon.QConnect.Model
         internal bool IsSetContentData()
         {
             return this._contentData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailGenerativeAnswerChunkData. 
+        /// <para>
+        /// Streaming chunk data for email generative answers containing partial knowledge-based
+        /// response content.
+        /// </para>
+        /// </summary>
+        public EmailGenerativeAnswerChunkDataDetails EmailGenerativeAnswerChunkData
+        {
+            get { return this._emailGenerativeAnswerChunkData; }
+            set { this._emailGenerativeAnswerChunkData = value; }
+        }
+
+        // Check to see if EmailGenerativeAnswerChunkData property is set
+        internal bool IsSetEmailGenerativeAnswerChunkData()
+        {
+            return this._emailGenerativeAnswerChunkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailOverviewChunkData. 
+        /// <para>
+        /// Streaming chunk data for email overview containing partial overview content.
+        /// </para>
+        /// </summary>
+        public EmailOverviewChunkDataDetails EmailOverviewChunkData
+        {
+            get { return this._emailOverviewChunkData; }
+            set { this._emailOverviewChunkData = value; }
+        }
+
+        // Check to see if EmailOverviewChunkData property is set
+        internal bool IsSetEmailOverviewChunkData()
+        {
+            return this._emailOverviewChunkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailResponseChunkData. 
+        /// <para>
+        /// Streaming chunk data for email response generation containing partial response content.
+        /// </para>
+        /// </summary>
+        public EmailResponseChunkDataDetails EmailResponseChunkData
+        {
+            get { return this._emailResponseChunkData; }
+            set { this._emailResponseChunkData = value; }
+        }
+
+        // Check to see if EmailResponseChunkData property is set
+        internal bool IsSetEmailResponseChunkData()
+        {
+            return this._emailResponseChunkData != null;
         }
 
         /// <summary>
@@ -113,6 +193,42 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotesChunkData. 
+        /// <para>
+        /// Details about notes chunk data.
+        /// </para>
+        /// </summary>
+        public NotesChunkDataDetails NotesChunkData
+        {
+            get { return this._notesChunkData; }
+            set { this._notesChunkData = value; }
+        }
+
+        // Check to see if NotesChunkData property is set
+        internal bool IsSetNotesChunkData()
+        {
+            return this._notesChunkData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotesData. 
+        /// <para>
+        /// Details about notes data.
+        /// </para>
+        /// </summary>
+        public NotesDataDetails NotesData
+        {
+            get { return this._notesData; }
+            set { this._notesData = value; }
+        }
+
+        // Check to see if NotesData property is set
+        internal bool IsSetNotesData()
+        {
+            return this._notesData != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceContentData. 
         /// <para>
         /// Details about the content data.
@@ -128,6 +244,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetSourceContentData()
         {
             return this._sourceContentData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuggestedMessageData. 
+        /// <para>
+        /// Details about suggested message data.
+        /// </para>
+        /// </summary>
+        public SuggestedMessageDataDetails SuggestedMessageData
+        {
+            get { return this._suggestedMessageData; }
+            set { this._suggestedMessageData = value; }
+        }
+
+        // Check to see if SuggestedMessageData property is set
+        internal bool IsSetSuggestedMessageData()
+        {
+            return this._suggestedMessageData != null;
         }
 
     }

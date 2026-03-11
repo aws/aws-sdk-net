@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContainerGroupDefinition operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Updates properties in an existing container group definition. This operation doesn't
     /// replace the definition. Instead, it creates a new version of the definition and saves
     /// it separately. You can access all versions that you choose to retain.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The only property you can't update is the container group type.
@@ -147,7 +151,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
+        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2026. See more details in the
         /// <a href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
         /// game servers that are hosted on AL2 and use server SDK version 4.x for Amazon GameLift
         /// Servers, first update the game server build to server SDK 5.x, and then deploy to

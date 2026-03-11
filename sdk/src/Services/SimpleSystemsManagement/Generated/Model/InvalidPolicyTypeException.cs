@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPolicyTypeException
+        /// message.
+        /// </summary>
+        public InvalidPolicyTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPolicyTypeException with the specified error
         /// message.
         /// </summary>

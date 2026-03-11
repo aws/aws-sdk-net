@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchConfigRuleInConformancePackException
+        /// message.
+        /// </summary>
+        public NoSuchConfigRuleInConformancePackException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchConfigRuleInConformancePackException with the specified error
         /// message.
         /// </summary>

@@ -300,7 +300,7 @@ namespace Amazon.Connect
 
         internal virtual ActivateEvaluationFormResponse ActivateEvaluationForm(ActivateEvaluationFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ActivateEvaluationForm">REST API Reference for ActivateEvaluationForm Operation</seealso>
         public virtual Task<ActivateEvaluationFormResponse> ActivateEvaluationFormAsync(ActivateEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateAnalyticsDataSetResponse AssociateAnalyticsDataSet(AssociateAnalyticsDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">REST API Reference for AssociateAnalyticsDataSet Operation</seealso>
         public virtual Task<AssociateAnalyticsDataSetResponse> AssociateAnalyticsDataSetAsync(AssociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateApprovedOriginResponse AssociateApprovedOrigin(AssociateApprovedOriginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApprovedOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApprovedOriginResponseUnmarshaller.Instance;
 
@@ -445,7 +445,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">REST API Reference for AssociateApprovedOrigin Operation</seealso>
         public virtual Task<AssociateApprovedOriginResponse> AssociateApprovedOriginAsync(AssociateApprovedOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApprovedOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApprovedOriginResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateBotResponse AssociateBot(AssociateBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateBotResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot">REST API Reference for AssociateBot Operation</seealso>
         public virtual Task<AssociateBotResponse> AssociateBotAsync(AssociateBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateBotResponseUnmarshaller.Instance;
 
@@ -513,11 +513,116 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateContactWithUser
+
+        internal virtual AssociateContactWithUserResponse AssociateContactWithUser(AssociateContactWithUserRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContactWithUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContactWithUserResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContactWithUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a queued contact with an agent.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Programmatically assign queued contacts to available users.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use it to associate contacts with users regardless of their current state, including
+        /// custom states. Ensure your application logic accounts for user availability before
+        /// making associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It honors the IAM context key <c>connect:PreferredUserArn</c> to prevent unauthorized
+        /// contact associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
+        /// controls and prevent unauthorized contact associations. Verify that your IAM policies
+        /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateContactWithUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">REST API Reference for AssociateContactWithUser Operation</seealso>
+        public virtual Task<AssociateContactWithUserResponse> AssociateContactWithUserAsync(AssociateContactWithUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContactWithUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContactWithUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateContactWithUserResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AssociateDefaultVocabulary
 
         internal virtual AssociateDefaultVocabularyResponse AssociateDefaultVocabulary(AssociateDefaultVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDefaultVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
 
@@ -554,7 +659,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
         public virtual Task<AssociateDefaultVocabularyResponse> AssociateDefaultVocabularyAsync(AssociateDefaultVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDefaultVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
 
@@ -562,11 +667,171 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateEmailAddressAlias
+
+        internal virtual AssociateEmailAddressAliasResponse AssociateEmailAddressAlias(AssociateEmailAddressAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEmailAddressAliasResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEmailAddressAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        public virtual Task<AssociateEmailAddressAliasResponse> AssociateEmailAddressAliasAsync(AssociateEmailAddressAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEmailAddressAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateEmailAddressAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AssociateFlow
 
         internal virtual AssociateFlowResponse AssociateFlow(AssociateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFlowResponseUnmarshaller.Instance;
 
@@ -605,7 +870,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">REST API Reference for AssociateFlow Operation</seealso>
         public virtual Task<AssociateFlowResponse> AssociateFlowAsync(AssociateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFlowResponseUnmarshaller.Instance;
 
@@ -613,11 +878,67 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateHoursOfOperations
+
+        internal virtual AssociateHoursOfOperationsResponse AssociateHoursOfOperations(AssociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a set of hours of operations with another hours of operation. Refer to
+        /// Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">REST API Reference for AssociateHoursOfOperations Operation</seealso>
+        public virtual Task<AssociateHoursOfOperationsResponse> AssociateHoursOfOperationsAsync(AssociateHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AssociateInstanceStorageConfig
 
         internal virtual AssociateInstanceStorageConfigResponse AssociateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -669,7 +990,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">REST API Reference for AssociateInstanceStorageConfig Operation</seealso>
         public virtual Task<AssociateInstanceStorageConfigResponse> AssociateInstanceStorageConfigAsync(AssociateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -681,7 +1002,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateLambdaFunctionResponse AssociateLambdaFunction(AssociateLambdaFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLambdaFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLambdaFunctionResponseUnmarshaller.Instance;
 
@@ -728,7 +1049,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">REST API Reference for AssociateLambdaFunction Operation</seealso>
         public virtual Task<AssociateLambdaFunctionResponse> AssociateLambdaFunctionAsync(AssociateLambdaFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLambdaFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLambdaFunctionResponseUnmarshaller.Instance;
 
@@ -740,7 +1061,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateLexBotResponse AssociateLexBot(AssociateLexBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLexBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLexBotResponseUnmarshaller.Instance;
 
@@ -788,7 +1109,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">REST API Reference for AssociateLexBot Operation</seealso>
         public virtual Task<AssociateLexBotResponse> AssociateLexBotAsync(AssociateLexBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLexBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLexBotResponseUnmarshaller.Instance;
 
@@ -800,7 +1121,7 @@ namespace Amazon.Connect
 
         internal virtual AssociatePhoneNumberContactFlowResponse AssociatePhoneNumberContactFlow(AssociatePhoneNumberContactFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePhoneNumberContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
 
@@ -849,7 +1170,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociatePhoneNumberContactFlow">REST API Reference for AssociatePhoneNumberContactFlow Operation</seealso>
         public virtual Task<AssociatePhoneNumberContactFlowResponse> AssociatePhoneNumberContactFlowAsync(AssociatePhoneNumberContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePhoneNumberContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
 
@@ -857,11 +1178,99 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateQueueEmailAddresses
+
+        internal virtual AssociateQueueEmailAddressesResponse AssociateQueueEmailAddresses(AssociateQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateQueueEmailAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a set of email addresses with a queue to enable agents to select different
+        /// "From" (system) email addresses when replying to inbound email contacts or initiating
+        /// outbound email contacts. This allows agents to handle email contacts across different
+        /// brands and business units within the same queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can associate up to 49 additional email addresses with a single queue, plus 1
+        /// default outbound email address, for a total of 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// can be associated with a queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents will be able to select from these associated email addresses when handling
+        /// email contacts in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For inbound email contacts, agents can select from email addresses associated with
+        /// the queue where the contact was accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For outbound email contacts, agents can select from email addresses associated with
+        /// their default outbound queue configured in their routing profile.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">REST API Reference for AssociateQueueEmailAddresses Operation</seealso>
+        public virtual Task<AssociateQueueEmailAddressesResponse> AssociateQueueEmailAddressesAsync(AssociateQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AssociateQueueQuickConnects
 
         internal virtual AssociateQueueQuickConnectsResponse AssociateQueueQuickConnects(AssociateQueueQuickConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateQueueQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateQueueQuickConnectsResponseUnmarshaller.Instance;
 
@@ -871,12 +1280,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a set of quick connects with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -905,7 +1309,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">REST API Reference for AssociateQueueQuickConnects Operation</seealso>
         public virtual Task<AssociateQueueQuickConnectsResponse> AssociateQueueQuickConnectsAsync(AssociateQueueQuickConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateQueueQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateQueueQuickConnectsResponseUnmarshaller.Instance;
 
@@ -917,7 +1321,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateRoutingProfileQueuesResponse AssociateRoutingProfileQueues(AssociateRoutingProfileQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -953,7 +1357,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateRoutingProfileQueues">REST API Reference for AssociateRoutingProfileQueues Operation</seealso>
         public virtual Task<AssociateRoutingProfileQueuesResponse> AssociateRoutingProfileQueuesAsync(AssociateRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -965,7 +1369,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateSecurityKeyResponse AssociateSecurityKey(AssociateSecurityKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSecurityKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
 
@@ -1012,7 +1416,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">REST API Reference for AssociateSecurityKey Operation</seealso>
         public virtual Task<AssociateSecurityKeyResponse> AssociateSecurityKeyAsync(AssociateSecurityKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSecurityKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
 
@@ -1020,11 +1424,65 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateSecurityProfiles
+
+        internal virtual AssociateSecurityProfilesResponse AssociateSecurityProfiles(AssociateSecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSecurityProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associate security profiles with an Entity in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityProfiles">REST API Reference for AssociateSecurityProfiles Operation</seealso>
+        public virtual Task<AssociateSecurityProfilesResponse> AssociateSecurityProfilesAsync(AssociateSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSecurityProfilesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AssociateTrafficDistributionGroupUser
 
         internal virtual AssociateTrafficDistributionGroupUserResponse AssociateTrafficDistributionGroupUser(AssociateTrafficDistributionGroupUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrafficDistributionGroupUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrafficDistributionGroupUserResponseUnmarshaller.Instance;
 
@@ -1064,7 +1522,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">REST API Reference for AssociateTrafficDistributionGroupUser Operation</seealso>
         public virtual Task<AssociateTrafficDistributionGroupUserResponse> AssociateTrafficDistributionGroupUserAsync(AssociateTrafficDistributionGroupUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrafficDistributionGroupUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrafficDistributionGroupUserResponseUnmarshaller.Instance;
 
@@ -1076,7 +1534,7 @@ namespace Amazon.Connect
 
         internal virtual AssociateUserProficienciesResponse AssociateUserProficiencies(AssociateUserProficienciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateUserProficienciesResponseUnmarshaller.Instance;
 
@@ -1112,7 +1570,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateUserProficiencies">REST API Reference for AssociateUserProficiencies Operation</seealso>
         public virtual Task<AssociateUserProficienciesResponse> AssociateUserProficienciesAsync(AssociateUserProficienciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateUserProficienciesResponseUnmarshaller.Instance;
 
@@ -1120,11 +1578,66 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateWorkspace
+
+        internal virtual AssociateWorkspaceResponse AssociateWorkspace(AssociateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a workspace with one or more users or routing profiles, allowing them to
+        /// access the workspace's configured views and pages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateWorkspace">REST API Reference for AssociateWorkspace Operation</seealso>
+        public virtual Task<AssociateWorkspaceResponse> AssociateWorkspaceAsync(AssociateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateWorkspaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchAssociateAnalyticsDataSet
 
         internal virtual BatchAssociateAnalyticsDataSetResponse BatchAssociateAnalyticsDataSet(BatchAssociateAnalyticsDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -1161,7 +1674,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">REST API Reference for BatchAssociateAnalyticsDataSet Operation</seealso>
         public virtual Task<BatchAssociateAnalyticsDataSetResponse> BatchAssociateAnalyticsDataSetAsync(BatchAssociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -1169,11 +1682,190 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  BatchCreateDataTableValue
+
+        internal virtual BatchCreateDataTableValueResponse BatchCreateDataTableValue(BatchCreateDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates values for attributes in a data table. The value may be a default or it may
+        /// be associated with a primary value. The value must pass all customer defined validation
+        /// as well as the default validation for the value type. The operation must conform to
+        /// Batch Operation API Standards. Although the standard specifies that successful and
+        /// failed entities are listed separately in the response, authorization fails if any
+        /// primary values or attributes are unauthorized. The combination of primary values and
+        /// the attribute name serve as the identifier for the individual item request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchCreateDataTableValue">REST API Reference for BatchCreateDataTableValue Operation</seealso>
+        public virtual Task<BatchCreateDataTableValueResponse> BatchCreateDataTableValueAsync(BatchCreateDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchCreateDataTableValueResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchDeleteDataTableValue
+
+        internal virtual BatchDeleteDataTableValueResponse BatchDeleteDataTableValue(BatchDeleteDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes multiple values from a data table. API users may delete values at any time.
+        /// When deletion is requested from the admin website, a warning is shown alerting the
+        /// user of the most recent time the attribute and its values were accessed. System managed
+        /// values are not deletable by customers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDeleteDataTableValue">REST API Reference for BatchDeleteDataTableValue Operation</seealso>
+        public virtual Task<BatchDeleteDataTableValueResponse> BatchDeleteDataTableValueAsync(BatchDeleteDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteDataTableValueResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchDescribeDataTableValue
+
+        internal virtual BatchDescribeDataTableValueResponse BatchDescribeDataTableValue(BatchDescribeDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple values from a data table without evaluating expressions. Returns
+        /// the raw stored values along with metadata such as lock versions and modification timestamps.
+        /// "Describe" is a deprecated term but is allowed to maintain consistency with existing
+        /// operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDescribeDataTableValue">REST API Reference for BatchDescribeDataTableValue Operation</seealso>
+        public virtual Task<BatchDescribeDataTableValueResponse> BatchDescribeDataTableValueAsync(BatchDescribeDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDescribeDataTableValueResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchDisassociateAnalyticsDataSet
 
         internal virtual BatchDisassociateAnalyticsDataSetResponse BatchDisassociateAnalyticsDataSet(BatchDisassociateAnalyticsDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -1210,7 +1902,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">REST API Reference for BatchDisassociateAnalyticsDataSet Operation</seealso>
         public virtual Task<BatchDisassociateAnalyticsDataSetResponse> BatchDisassociateAnalyticsDataSetAsync(BatchDisassociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -1222,7 +1914,7 @@ namespace Amazon.Connect
 
         internal virtual BatchGetAttachedFileMetadataResponse BatchGetAttachedFileMetadata(BatchGetAttachedFileMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAttachedFileMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAttachedFileMetadataResponseUnmarshaller.Instance;
 
@@ -1259,7 +1951,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetAttachedFileMetadata">REST API Reference for BatchGetAttachedFileMetadata Operation</seealso>
         public virtual Task<BatchGetAttachedFileMetadataResponse> BatchGetAttachedFileMetadataAsync(BatchGetAttachedFileMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAttachedFileMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAttachedFileMetadataResponseUnmarshaller.Instance;
 
@@ -1271,7 +1963,7 @@ namespace Amazon.Connect
 
         internal virtual BatchGetFlowAssociationResponse BatchGetFlowAssociation(BatchGetFlowAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFlowAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFlowAssociationResponseUnmarshaller.Instance;
 
@@ -1310,7 +2002,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetFlowAssociation">REST API Reference for BatchGetFlowAssociation Operation</seealso>
         public virtual Task<BatchGetFlowAssociationResponse> BatchGetFlowAssociationAsync(BatchGetFlowAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFlowAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFlowAssociationResponseUnmarshaller.Instance;
 
@@ -1322,7 +2014,7 @@ namespace Amazon.Connect
 
         internal virtual BatchPutContactResponse BatchPutContact(BatchPutContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
 
@@ -1374,7 +2066,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact">REST API Reference for BatchPutContact Operation</seealso>
         public virtual Task<BatchPutContactResponse> BatchPutContactAsync(BatchPutContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
 
@@ -1382,11 +2074,68 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  BatchUpdateDataTableValue
+
+        internal virtual BatchUpdateDataTableValueResponse BatchUpdateDataTableValue(BatchUpdateDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates multiple data table values using all properties from BatchCreateDataTableValue.
+        /// System managed values are not modifiable by customers. The operation requires proper
+        /// lock versions to prevent concurrent modification conflicts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchUpdateDataTableValue">REST API Reference for BatchUpdateDataTableValue Operation</seealso>
+        public virtual Task<BatchUpdateDataTableValueResponse> BatchUpdateDataTableValueAsync(BatchUpdateDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateDataTableValueResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ClaimPhoneNumber
 
         internal virtual ClaimPhoneNumberResponse ClaimPhoneNumber(ClaimPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClaimPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClaimPhoneNumberResponseUnmarshaller.Instance;
 
@@ -1463,7 +2212,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimPhoneNumber">REST API Reference for ClaimPhoneNumber Operation</seealso>
         public virtual Task<ClaimPhoneNumberResponse> ClaimPhoneNumberAsync(ClaimPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClaimPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClaimPhoneNumberResponseUnmarshaller.Instance;
 
@@ -1475,7 +2224,7 @@ namespace Amazon.Connect
 
         internal virtual CompleteAttachedFileUploadResponse CompleteAttachedFileUpload(CompleteAttachedFileUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteAttachedFileUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteAttachedFileUploadResponseUnmarshaller.Instance;
 
@@ -1512,7 +2261,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CompleteAttachedFileUpload">REST API Reference for CompleteAttachedFileUpload Operation</seealso>
         public virtual Task<CompleteAttachedFileUploadResponse> CompleteAttachedFileUploadAsync(CompleteAttachedFileUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteAttachedFileUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteAttachedFileUploadResponseUnmarshaller.Instance;
 
@@ -1524,7 +2273,7 @@ namespace Amazon.Connect
 
         internal virtual CreateAgentStatusResponse CreateAgentStatus(CreateAgentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAgentStatusResponseUnmarshaller.Instance;
 
@@ -1534,12 +2283,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates an agent status for the specified Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1571,7 +2315,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateAgentStatus">REST API Reference for CreateAgentStatus Operation</seealso>
         public virtual Task<CreateAgentStatusResponse> CreateAgentStatusAsync(CreateAgentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAgentStatusResponseUnmarshaller.Instance;
 
@@ -1583,7 +2327,7 @@ namespace Amazon.Connect
 
         internal virtual CreateContactResponse CreateContact(CreateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
 
@@ -1662,7 +2406,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">REST API Reference for CreateContact Operation</seealso>
         public virtual Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
 
@@ -1674,7 +2418,7 @@ namespace Amazon.Connect
 
         internal virtual CreateContactFlowResponse CreateContactFlow(CreateContactFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactFlowResponseUnmarshaller.Instance;
 
@@ -1725,7 +2469,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">REST API Reference for CreateContactFlow Operation</seealso>
         public virtual Task<CreateContactFlowResponse> CreateContactFlowAsync(CreateContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactFlowResponseUnmarshaller.Instance;
 
@@ -1737,7 +2481,7 @@ namespace Amazon.Connect
 
         internal virtual CreateContactFlowModuleResponse CreateContactFlowModule(CreateContactFlowModuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactFlowModuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactFlowModuleResponseUnmarshaller.Instance;
 
@@ -1788,7 +2532,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">REST API Reference for CreateContactFlowModule Operation</seealso>
         public virtual Task<CreateContactFlowModuleResponse> CreateContactFlowModuleAsync(CreateContactFlowModuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactFlowModuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactFlowModuleResponseUnmarshaller.Instance;
 
@@ -1796,11 +2540,123 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateContactFlowModuleAlias
+
+        internal virtual CreateContactFlowModuleAliasResponse CreateContactFlowModuleAlias(CreateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual Task<CreateContactFlowModuleAliasResponse> CreateContactFlowModuleAliasAsync(CreateContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateContactFlowModuleVersion
+
+        internal virtual CreateContactFlowModuleVersionResponse CreateContactFlowModuleVersion(CreateContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an immutable snapshot of a contact flow module, preserving its content and
+        /// settings at a specific point in time for version control and rollback capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual Task<CreateContactFlowModuleVersionResponse> CreateContactFlowModuleVersionAsync(CreateContactFlowModuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContactFlowModuleVersionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateContactFlowVersion
 
         internal virtual CreateContactFlowVersionResponse CreateContactFlowVersion(CreateContactFlowVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactFlowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactFlowVersionResponseUnmarshaller.Instance;
 
@@ -1845,7 +2701,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
         public virtual Task<CreateContactFlowVersionResponse> CreateContactFlowVersionAsync(CreateContactFlowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactFlowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactFlowVersionResponseUnmarshaller.Instance;
 
@@ -1853,11 +2709,141 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateDataTable
+
+        internal virtual CreateDataTableResponse CreateDataTable(CreateDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new data table with the specified properties. Supports the creation of all
+        /// table properties except for attributes and values. A table with no attributes and
+        /// values is a valid state for a table. The number of tables per instance is limited
+        /// to 100 per instance. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">REST API Reference for CreateDataTable Operation</seealso>
+        public virtual Task<CreateDataTableResponse> CreateDataTableAsync(CreateDataTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataTableResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateDataTableAttribute
+
+        internal virtual CreateDataTableAttributeResponse CreateDataTableAttribute(CreateDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds an attribute to an existing data table. Creating a new primary attribute uses
+        /// the empty value for the specified value type for all existing records. This should
+        /// not affect uniqueness of published data tables since the existing primary values will
+        /// already be unique. Creating attributes does not create any values. System managed
+        /// tables may not allow customers to create new attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTableAttribute">REST API Reference for CreateDataTableAttribute Operation</seealso>
+        public virtual Task<CreateDataTableAttributeResponse> CreateDataTableAttributeAsync(CreateDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataTableAttributeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateEmailAddress
 
         internal virtual CreateEmailAddressResponse CreateEmailAddress(CreateEmailAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailAddressResponseUnmarshaller.Instance;
 
@@ -1910,7 +2896,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">REST API Reference for CreateEmailAddress Operation</seealso>
         public virtual Task<CreateEmailAddressResponse> CreateEmailAddressAsync(CreateEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailAddressResponseUnmarshaller.Instance;
 
@@ -1922,7 +2908,7 @@ namespace Amazon.Connect
 
         internal virtual CreateEvaluationFormResponse CreateEvaluationForm(CreateEvaluationFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -1964,7 +2950,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">REST API Reference for CreateEvaluationForm Operation</seealso>
         public virtual Task<CreateEvaluationFormResponse> CreateEvaluationFormAsync(CreateEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -1976,7 +2962,7 @@ namespace Amazon.Connect
 
         internal virtual CreateHoursOfOperationResponse CreateHoursOfOperation(CreateHoursOfOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -1986,12 +2972,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
-        /// Creates hours of operation. 
-        /// </para>
+        /// Creates hours of operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -2017,13 +2998,16 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">REST API Reference for CreateHoursOfOperation Operation</seealso>
         public virtual Task<CreateHoursOfOperationResponse> CreateHoursOfOperationAsync(CreateHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -2035,7 +3019,7 @@ namespace Amazon.Connect
 
         internal virtual CreateHoursOfOperationOverrideResponse CreateHoursOfOperationOverride(CreateHoursOfOperationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -2045,7 +3029,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -2077,7 +3061,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
         public virtual Task<CreateHoursOfOperationOverrideResponse> CreateHoursOfOperationOverrideAsync(CreateHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -2089,7 +3073,7 @@ namespace Amazon.Connect
 
         internal virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
@@ -2146,7 +3130,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         public virtual Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
@@ -2158,7 +3142,7 @@ namespace Amazon.Connect
 
         internal virtual CreateIntegrationAssociationResponse CreateIntegrationAssociation(CreateIntegrationAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -2194,7 +3178,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">REST API Reference for CreateIntegrationAssociation Operation</seealso>
         public virtual Task<CreateIntegrationAssociationResponse> CreateIntegrationAssociationAsync(CreateIntegrationAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -2202,11 +3186,68 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateNotification
+
+        internal virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNotificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new notification to be delivered to specified recipients. Notifications
+        /// can include localized content with links, and an optional expiration time. Recipients
+        /// can be specified as individual user ARNs or instance ARNs to target all users in an
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
+        public virtual Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNotificationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateParticipant
 
         internal virtual CreateParticipantResponse CreateParticipant(CreateParticipantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParticipantResponseUnmarshaller.Instance;
 
@@ -2216,9 +3257,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Adds a new participant into an on-going chat contact. For more information, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
-        /// chat flow experiences by integrating custom participants</a>.
+        /// Adds a new participant into an on-going chat contact or webRTC call. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+        /// multi-user web, in-app, and video calling</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
         /// <param name="cancellationToken">
@@ -2226,6 +3268,10 @@ namespace Amazon.Connect
         /// </param>
         /// 
         /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -2244,7 +3290,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
         public virtual Task<CreateParticipantResponse> CreateParticipantAsync(CreateParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParticipantResponseUnmarshaller.Instance;
 
@@ -2256,7 +3302,7 @@ namespace Amazon.Connect
 
         internal virtual CreatePersistentContactAssociationResponse CreatePersistentContactAssociation(CreatePersistentContactAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePersistentContactAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePersistentContactAssociationResponseUnmarshaller.Instance;
 
@@ -2297,7 +3343,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePersistentContactAssociation">REST API Reference for CreatePersistentContactAssociation Operation</seealso>
         public virtual Task<CreatePersistentContactAssociationResponse> CreatePersistentContactAssociationAsync(CreatePersistentContactAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePersistentContactAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePersistentContactAssociationResponseUnmarshaller.Instance;
 
@@ -2309,7 +3355,7 @@ namespace Amazon.Connect
 
         internal virtual CreatePredefinedAttributeResponse CreatePredefinedAttribute(CreatePredefinedAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -2319,11 +3365,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create an attribute for routing proficiency (for example, agent certification) that
+        /// has predefined values (for example, a list of possible certifications). For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -2355,7 +3431,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePredefinedAttribute">REST API Reference for CreatePredefinedAttribute Operation</seealso>
         public virtual Task<CreatePredefinedAttributeResponse> CreatePredefinedAttributeAsync(CreatePredefinedAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -2367,7 +3443,7 @@ namespace Amazon.Connect
 
         internal virtual CreatePromptResponse CreatePrompt(CreatePromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePromptResponseUnmarshaller.Instance;
 
@@ -2408,7 +3484,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
         public virtual Task<CreatePromptResponse> CreatePromptAsync(CreatePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePromptResponseUnmarshaller.Instance;
 
@@ -2420,7 +3496,7 @@ namespace Amazon.Connect
 
         internal virtual CreatePushNotificationRegistrationResponse CreatePushNotificationRegistration(CreatePushNotificationRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePushNotificationRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePushNotificationRegistrationResponseUnmarshaller.Instance;
 
@@ -2462,7 +3538,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
         public virtual Task<CreatePushNotificationRegistrationResponse> CreatePushNotificationRegistrationAsync(CreatePushNotificationRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePushNotificationRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePushNotificationRegistrationResponseUnmarshaller.Instance;
 
@@ -2474,7 +3550,7 @@ namespace Amazon.Connect
 
         internal virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -2542,7 +3618,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -2554,7 +3630,7 @@ namespace Amazon.Connect
 
         internal virtual CreateQuickConnectResponse CreateQuickConnect(CreateQuickConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuickConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuickConnectResponseUnmarshaller.Instance;
 
@@ -2596,7 +3672,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">REST API Reference for CreateQuickConnect Operation</seealso>
         public virtual Task<CreateQuickConnectResponse> CreateQuickConnectAsync(CreateQuickConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuickConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuickConnectResponseUnmarshaller.Instance;
 
@@ -2608,7 +3684,7 @@ namespace Amazon.Connect
 
         internal virtual CreateRoutingProfileResponse CreateRoutingProfile(CreateRoutingProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoutingProfileResponseUnmarshaller.Instance;
 
@@ -2650,7 +3726,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRoutingProfile">REST API Reference for CreateRoutingProfile Operation</seealso>
         public virtual Task<CreateRoutingProfileResponse> CreateRoutingProfileAsync(CreateRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoutingProfileResponseUnmarshaller.Instance;
 
@@ -2662,7 +3738,7 @@ namespace Amazon.Connect
 
         internal virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -2710,7 +3786,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -2722,7 +3798,7 @@ namespace Amazon.Connect
 
         internal virtual CreateSecurityProfileResponse CreateSecurityProfile(CreateSecurityProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
 
@@ -2772,7 +3848,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">REST API Reference for CreateSecurityProfile Operation</seealso>
         public virtual Task<CreateSecurityProfileResponse> CreateSecurityProfileAsync(CreateSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
 
@@ -2784,7 +3860,7 @@ namespace Amazon.Connect
 
         internal virtual CreateTaskTemplateResponse CreateTaskTemplate(CreateTaskTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskTemplateResponseUnmarshaller.Instance;
 
@@ -2823,7 +3899,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
         public virtual Task<CreateTaskTemplateResponse> CreateTaskTemplateAsync(CreateTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskTemplateResponseUnmarshaller.Instance;
 
@@ -2831,11 +3907,78 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateTestCase
+
+        internal virtual CreateTestCaseResponse CreateTestCase(CreateTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTestCaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a test case with its content and metadata for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
+        public virtual Task<CreateTestCaseResponse> CreateTestCaseAsync(CreateTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTestCaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateTrafficDistributionGroup
 
         internal virtual CreateTrafficDistributionGroupResponse CreateTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficDistributionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficDistributionGroupResponseUnmarshaller.Instance;
 
@@ -2896,7 +4039,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">REST API Reference for CreateTrafficDistributionGroup Operation</seealso>
         public virtual Task<CreateTrafficDistributionGroupResponse> CreateTrafficDistributionGroupAsync(CreateTrafficDistributionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficDistributionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficDistributionGroupResponseUnmarshaller.Instance;
 
@@ -2908,7 +4051,7 @@ namespace Amazon.Connect
 
         internal virtual CreateUseCaseResponse CreateUseCase(CreateUseCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUseCaseResponseUnmarshaller.Instance;
 
@@ -2944,7 +4087,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">REST API Reference for CreateUseCase Operation</seealso>
         public virtual Task<CreateUseCaseResponse> CreateUseCaseAsync(CreateUseCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUseCaseResponseUnmarshaller.Instance;
 
@@ -2956,7 +4099,7 @@ namespace Amazon.Connect
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -2971,11 +4114,41 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-        /// parameters are required in some situations. For example, <c>Email</c> is required
-        /// if you are using SAML for identity management. <c>FirstName</c> and <c>LastName</c>
-        /// are required if you are using Amazon Connect or SAML for identity management.
+        /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
+        /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+        /// management.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+        /// channel-specific configuration parameters. Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+        /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+        /// for per-channel configuration.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -3012,7 +4185,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -3024,7 +4197,7 @@ namespace Amazon.Connect
 
         internal virtual CreateUserHierarchyGroupResponse CreateUserHierarchyGroup(CreateUserHierarchyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserHierarchyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserHierarchyGroupResponseUnmarshaller.Instance;
 
@@ -3066,7 +4239,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup">REST API Reference for CreateUserHierarchyGroup Operation</seealso>
         public virtual Task<CreateUserHierarchyGroupResponse> CreateUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserHierarchyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserHierarchyGroupResponseUnmarshaller.Instance;
 
@@ -3078,7 +4251,7 @@ namespace Amazon.Connect
 
         internal virtual CreateViewResponse CreateView(CreateViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateViewResponseUnmarshaller.Instance;
 
@@ -3125,7 +4298,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3139,7 +4315,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">REST API Reference for CreateView Operation</seealso>
         public virtual Task<CreateViewResponse> CreateViewAsync(CreateViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateViewResponseUnmarshaller.Instance;
 
@@ -3151,7 +4327,7 @@ namespace Amazon.Connect
 
         internal virtual CreateViewVersionResponse CreateViewVersion(CreateViewVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateViewVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateViewVersionResponseUnmarshaller.Instance;
 
@@ -3193,7 +4369,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3207,7 +4386,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">REST API Reference for CreateViewVersion Operation</seealso>
         public virtual Task<CreateViewVersionResponse> CreateViewVersionAsync(CreateViewVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateViewVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateViewVersionResponseUnmarshaller.Instance;
 
@@ -3219,7 +4398,7 @@ namespace Amazon.Connect
 
         internal virtual CreateVocabularyResponse CreateVocabulary(CreateVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
 
@@ -3264,7 +4443,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
         public virtual Task<CreateVocabularyResponse> CreateVocabularyAsync(CreateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
 
@@ -3272,11 +4451,136 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateWorkspace
+
+        internal virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a workspace that defines the user experience by mapping views to pages. Workspaces
+        /// can be assigned to users or routing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
+        public virtual Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkspaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateWorkspacePage
+
+        internal virtual CreateWorkspacePageResponse CreateWorkspacePage(CreateWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspacePageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a view with a page in a workspace, defining what users see when they navigate
+        /// to that page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspacePage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspacePage">REST API Reference for CreateWorkspacePage Operation</seealso>
+        public virtual Task<CreateWorkspacePageResponse> CreateWorkspacePageAsync(CreateWorkspacePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacePageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkspacePageResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeactivateEvaluationForm
 
         internal virtual DeactivateEvaluationFormResponse DeactivateEvaluationForm(DeactivateEvaluationFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -3314,7 +4618,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeactivateEvaluationForm">REST API Reference for DeactivateEvaluationForm Operation</seealso>
         public virtual Task<DeactivateEvaluationFormResponse> DeactivateEvaluationFormAsync(DeactivateEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -3326,7 +4630,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteAttachedFileResponse DeleteAttachedFile(DeleteAttachedFileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttachedFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttachedFileResponseUnmarshaller.Instance;
 
@@ -3368,7 +4672,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAttachedFile">REST API Reference for DeleteAttachedFile Operation</seealso>
         public virtual Task<DeleteAttachedFileResponse> DeleteAttachedFileAsync(DeleteAttachedFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttachedFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttachedFileResponseUnmarshaller.Instance;
 
@@ -3380,7 +4684,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteContactEvaluationResponse DeleteContactEvaluation(DeleteContactEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactEvaluationResponseUnmarshaller.Instance;
 
@@ -3416,7 +4720,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">REST API Reference for DeleteContactEvaluation Operation</seealso>
         public virtual Task<DeleteContactEvaluationResponse> DeleteContactEvaluationAsync(DeleteContactEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactEvaluationResponseUnmarshaller.Instance;
 
@@ -3428,7 +4732,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteContactFlowResponse DeleteContactFlow(DeleteContactFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactFlowResponseUnmarshaller.Instance;
 
@@ -3467,7 +4771,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">REST API Reference for DeleteContactFlow Operation</seealso>
         public virtual Task<DeleteContactFlowResponse> DeleteContactFlowAsync(DeleteContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactFlowResponseUnmarshaller.Instance;
 
@@ -3479,7 +4783,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteContactFlowModuleResponse DeleteContactFlowModule(DeleteContactFlowModuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactFlowModuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactFlowModuleResponseUnmarshaller.Instance;
 
@@ -3518,7 +4822,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">REST API Reference for DeleteContactFlowModule Operation</seealso>
         public virtual Task<DeleteContactFlowModuleResponse> DeleteContactFlowModuleAsync(DeleteContactFlowModuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactFlowModuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactFlowModuleResponseUnmarshaller.Instance;
 
@@ -3526,11 +4830,114 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteContactFlowModuleAlias
+
+        internal virtual DeleteContactFlowModuleAliasResponse DeleteContactFlowModuleAlias(DeleteContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes an alias reference, breaking the named connection to the underlying module
+        /// version without affecting the version itself.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual Task<DeleteContactFlowModuleAliasResponse> DeleteContactFlowModuleAliasAsync(DeleteContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteContactFlowModuleVersion
+
+        internal virtual DeleteContactFlowModuleVersionResponse DeleteContactFlowModuleVersion(DeleteContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual Task<DeleteContactFlowModuleVersionResponse> DeleteContactFlowModuleVersionAsync(DeleteContactFlowModuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContactFlowModuleVersionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteContactFlowVersion
 
         internal virtual DeleteContactFlowVersionResponse DeleteContactFlowVersion(DeleteContactFlowVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
 
@@ -3569,7 +4976,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
         public virtual Task<DeleteContactFlowVersionResponse> DeleteContactFlowVersionAsync(DeleteContactFlowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
 
@@ -3577,11 +4984,126 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteDataTable
+
+        internal virtual DeleteDataTableResponse DeleteDataTable(DeleteDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a data table and all associated attributes, versions, audits, and values.
+        /// Does not update any references to the data table, even from other data tables. This
+        /// includes dynamic values and conditional validations. System managed data tables are
+        /// not deletable by customers. API users may delete the table at any time. When deletion
+        /// is requested from the admin website, a warning is shown alerting the user of the most
+        /// recent time the table and its values were accessed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTable">REST API Reference for DeleteDataTable Operation</seealso>
+        public virtual Task<DeleteDataTableResponse> DeleteDataTableAsync(DeleteDataTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataTableResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteDataTableAttribute
+
+        internal virtual DeleteDataTableAttributeResponse DeleteDataTableAttribute(DeleteDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an attribute and all its values from a data table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTableAttribute">REST API Reference for DeleteDataTableAttribute Operation</seealso>
+        public virtual Task<DeleteDataTableAttributeResponse> DeleteDataTableAttributeAsync(DeleteDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataTableAttributeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteEmailAddress
 
         internal virtual DeleteEmailAddressResponse DeleteEmailAddress(DeleteEmailAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailAddressResponseUnmarshaller.Instance;
 
@@ -3623,7 +5145,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">REST API Reference for DeleteEmailAddress Operation</seealso>
         public virtual Task<DeleteEmailAddressResponse> DeleteEmailAddressAsync(DeleteEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailAddressResponseUnmarshaller.Instance;
 
@@ -3635,7 +5157,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteEvaluationFormResponse DeleteEvaluationForm(DeleteEvaluationFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEvaluationFormResponseUnmarshaller.Instance;
 
@@ -3682,7 +5204,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEvaluationForm">REST API Reference for DeleteEvaluationForm Operation</seealso>
         public virtual Task<DeleteEvaluationFormResponse> DeleteEvaluationFormAsync(DeleteEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEvaluationFormResponseUnmarshaller.Instance;
 
@@ -3694,7 +5216,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteHoursOfOperationResponse DeleteHoursOfOperation(DeleteHoursOfOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -3704,12 +5226,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes an hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -3735,7 +5252,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">REST API Reference for DeleteHoursOfOperation Operation</seealso>
         public virtual Task<DeleteHoursOfOperationResponse> DeleteHoursOfOperationAsync(DeleteHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -3747,7 +5264,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteHoursOfOperationOverrideResponse DeleteHoursOfOperationOverride(DeleteHoursOfOperationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -3757,7 +5274,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -3783,7 +5300,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
         public virtual Task<DeleteHoursOfOperationOverrideResponse> DeleteHoursOfOperationOverrideAsync(DeleteHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -3795,7 +5312,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -3839,7 +5356,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -3851,7 +5368,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteIntegrationAssociationResponse DeleteIntegrationAssociation(DeleteIntegrationAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -3885,7 +5402,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">REST API Reference for DeleteIntegrationAssociation Operation</seealso>
         public virtual Task<DeleteIntegrationAssociationResponse> DeleteIntegrationAssociationAsync(DeleteIntegrationAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -3893,11 +5410,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteNotification
+
+        internal virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a notification. Once deleted, the notification is no longer visible to all
+        /// users and cannot be managed through the Admin Website or APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
+        public virtual Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNotificationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeletePredefinedAttribute
 
         internal virtual DeletePredefinedAttributeResponse DeletePredefinedAttribute(DeletePredefinedAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -3925,7 +5494,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3936,7 +5508,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePredefinedAttribute">REST API Reference for DeletePredefinedAttribute Operation</seealso>
         public virtual Task<DeletePredefinedAttributeResponse> DeletePredefinedAttributeAsync(DeletePredefinedAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -3948,7 +5520,7 @@ namespace Amazon.Connect
 
         internal virtual DeletePromptResponse DeletePrompt(DeletePromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
 
@@ -3984,7 +5556,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
         public virtual Task<DeletePromptResponse> DeletePromptAsync(DeletePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
 
@@ -3996,7 +5568,7 @@ namespace Amazon.Connect
 
         internal virtual DeletePushNotificationRegistrationResponse DeletePushNotificationRegistration(DeletePushNotificationRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePushNotificationRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePushNotificationRegistrationResponseUnmarshaller.Instance;
 
@@ -4032,7 +5604,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
         public virtual Task<DeletePushNotificationRegistrationResponse> DeletePushNotificationRegistrationAsync(DeletePushNotificationRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePushNotificationRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePushNotificationRegistrationResponseUnmarshaller.Instance;
 
@@ -4044,7 +5616,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -4072,7 +5644,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4083,7 +5658,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -4095,7 +5670,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteQuickConnectResponse DeleteQuickConnect(DeleteQuickConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuickConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuickConnectResponseUnmarshaller.Instance;
 
@@ -4153,7 +5728,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">REST API Reference for DeleteQuickConnect Operation</seealso>
         public virtual Task<DeleteQuickConnectResponse> DeleteQuickConnectAsync(DeleteQuickConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuickConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuickConnectResponseUnmarshaller.Instance;
 
@@ -4165,7 +5740,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteRoutingProfileResponse DeleteRoutingProfile(DeleteRoutingProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoutingProfileResponseUnmarshaller.Instance;
 
@@ -4193,7 +5768,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4204,7 +5782,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">REST API Reference for DeleteRoutingProfile Operation</seealso>
         public virtual Task<DeleteRoutingProfileResponse> DeleteRoutingProfileAsync(DeleteRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoutingProfileResponseUnmarshaller.Instance;
 
@@ -4216,7 +5794,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -4252,7 +5830,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -4264,7 +5842,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteSecurityProfileResponse DeleteSecurityProfile(DeleteSecurityProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
 
@@ -4295,7 +5873,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4306,7 +5887,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile">REST API Reference for DeleteSecurityProfile Operation</seealso>
         public virtual Task<DeleteSecurityProfileResponse> DeleteSecurityProfileAsync(DeleteSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
 
@@ -4318,7 +5899,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteTaskTemplateResponse DeleteTaskTemplate(DeleteTaskTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskTemplateResponseUnmarshaller.Instance;
 
@@ -4354,7 +5935,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
         public virtual Task<DeleteTaskTemplateResponse> DeleteTaskTemplateAsync(DeleteTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskTemplateResponseUnmarshaller.Instance;
 
@@ -4362,11 +5943,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteTestCase
+
+        internal virtual DeleteTestCaseResponse DeleteTestCase(DeleteTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTestCaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the test case that has already been created for the specified Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
+        public virtual Task<DeleteTestCaseResponse> DeleteTestCaseAsync(DeleteTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTestCaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteTrafficDistributionGroup
 
         internal virtual DeleteTrafficDistributionGroupResponse DeleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficDistributionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficDistributionGroupResponseUnmarshaller.Instance;
 
@@ -4401,7 +6034,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -4409,7 +6045,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">REST API Reference for DeleteTrafficDistributionGroup Operation</seealso>
         public virtual Task<DeleteTrafficDistributionGroupResponse> DeleteTrafficDistributionGroupAsync(DeleteTrafficDistributionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficDistributionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficDistributionGroupResponseUnmarshaller.Instance;
 
@@ -4421,7 +6057,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteUseCaseResponse DeleteUseCase(DeleteUseCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUseCaseResponseUnmarshaller.Instance;
 
@@ -4454,7 +6090,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">REST API Reference for DeleteUseCase Operation</seealso>
         public virtual Task<DeleteUseCaseResponse> DeleteUseCaseAsync(DeleteUseCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUseCaseResponseUnmarshaller.Instance;
 
@@ -4466,7 +6102,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -4530,7 +6166,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -4542,7 +6178,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteUserHierarchyGroupResponse DeleteUserHierarchyGroup(DeleteUserHierarchyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserHierarchyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserHierarchyGroupResponseUnmarshaller.Instance;
 
@@ -4571,7 +6207,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4582,7 +6221,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup">REST API Reference for DeleteUserHierarchyGroup Operation</seealso>
         public virtual Task<DeleteUserHierarchyGroupResponse> DeleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserHierarchyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserHierarchyGroupResponseUnmarshaller.Instance;
 
@@ -4594,7 +6233,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteViewResponse DeleteView(DeleteViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteViewResponseUnmarshaller.Instance;
 
@@ -4626,7 +6265,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4637,7 +6279,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">REST API Reference for DeleteView Operation</seealso>
         public virtual Task<DeleteViewResponse> DeleteViewAsync(DeleteViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteViewResponseUnmarshaller.Instance;
 
@@ -4649,7 +6291,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteViewVersionResponse DeleteViewVersion(DeleteViewVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteViewVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteViewVersionResponseUnmarshaller.Instance;
 
@@ -4680,7 +6322,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4691,7 +6336,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">REST API Reference for DeleteViewVersion Operation</seealso>
         public virtual Task<DeleteViewVersionResponse> DeleteViewVersionAsync(DeleteViewVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteViewVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteViewVersionResponseUnmarshaller.Instance;
 
@@ -4703,7 +6348,7 @@ namespace Amazon.Connect
 
         internal virtual DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
 
@@ -4731,7 +6376,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4742,7 +6390,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
         public virtual Task<DeleteVocabularyResponse> DeleteVocabularyAsync(DeleteVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
 
@@ -4750,11 +6398,165 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteWorkspace
+
+        internal virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a workspace and removes all associated view and resource assignments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
+        public virtual Task<DeleteWorkspaceResponse> DeleteWorkspaceAsync(DeleteWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteWorkspaceMedia
+
+        internal virtual DeleteWorkspaceMediaResponse DeleteWorkspaceMedia(DeleteWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a media asset (such as a logo) from a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspaceMedia">REST API Reference for DeleteWorkspaceMedia Operation</seealso>
+        public virtual Task<DeleteWorkspaceMediaResponse> DeleteWorkspaceMediaAsync(DeleteWorkspaceMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspaceMediaResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteWorkspacePage
+
+        internal virtual DeleteWorkspacePageResponse DeleteWorkspacePage(DeleteWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspacePageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between a view and a page in a workspace. The page will display
+        /// the default view after deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspacePage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspacePage">REST API Reference for DeleteWorkspacePage Operation</seealso>
+        public virtual Task<DeleteWorkspacePageResponse> DeleteWorkspacePageAsync(DeleteWorkspacePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspacePageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspacePageResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeAgentStatus
 
         internal virtual DescribeAgentStatusResponse DescribeAgentStatus(DescribeAgentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgentStatusResponseUnmarshaller.Instance;
 
@@ -4764,12 +6566,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes an agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -4795,7 +6592,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAgentStatus">REST API Reference for DescribeAgentStatus Operation</seealso>
         public virtual Task<DescribeAgentStatusResponse> DescribeAgentStatusAsync(DescribeAgentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgentStatusResponseUnmarshaller.Instance;
 
@@ -4807,7 +6604,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeAuthenticationProfileResponse DescribeAuthenticationProfile(DescribeAuthenticationProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAuthenticationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAuthenticationProfileResponseUnmarshaller.Instance;
 
@@ -4818,7 +6615,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -4849,7 +6646,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">REST API Reference for DescribeAuthenticationProfile Operation</seealso>
         public virtual Task<DescribeAuthenticationProfileResponse> DescribeAuthenticationProfileAsync(DescribeAuthenticationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAuthenticationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAuthenticationProfileResponseUnmarshaller.Instance;
 
@@ -4861,7 +6658,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeContactResponse DescribeContact(DescribeContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
 
@@ -4877,7 +6674,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -4888,7 +6714,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// <param name="cancellationToken">
@@ -4914,7 +6744,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
         public virtual Task<DescribeContactResponse> DescribeContactAsync(DescribeContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
 
@@ -4926,7 +6756,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeContactEvaluationResponse DescribeContactEvaluation(DescribeContactEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactEvaluationResponseUnmarshaller.Instance;
 
@@ -4959,7 +6789,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactEvaluation">REST API Reference for DescribeContactEvaluation Operation</seealso>
         public virtual Task<DescribeContactEvaluationResponse> DescribeContactEvaluationAsync(DescribeContactEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactEvaluationResponseUnmarshaller.Instance;
 
@@ -4971,7 +6801,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeContactFlowResponse DescribeContactFlow(DescribeContactFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactFlowResponseUnmarshaller.Instance;
 
@@ -5035,7 +6865,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">REST API Reference for DescribeContactFlow Operation</seealso>
         public virtual Task<DescribeContactFlowResponse> DescribeContactFlowAsync(DescribeContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactFlowResponseUnmarshaller.Instance;
 
@@ -5047,7 +6877,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeContactFlowModuleResponse DescribeContactFlowModule(DescribeContactFlowModuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactFlowModuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactFlowModuleResponseUnmarshaller.Instance;
 
@@ -5094,7 +6924,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">REST API Reference for DescribeContactFlowModule Operation</seealso>
         public virtual Task<DescribeContactFlowModuleResponse> DescribeContactFlowModuleAsync(DescribeContactFlowModuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactFlowModuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactFlowModuleResponseUnmarshaller.Instance;
 
@@ -5102,11 +6932,170 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DescribeContactFlowModuleAlias
+
+        internal virtual DescribeContactFlowModuleAliasResponse DescribeContactFlowModuleAlias(DescribeContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific alias, including which version it
+        /// currently points to and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual Task<DescribeContactFlowModuleAliasResponse> DescribeContactFlowModuleAliasAsync(DescribeContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeDataTable
+
+        internal virtual DescribeDataTableResponse DescribeDataTable(DescribeDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all properties for a data table except for attributes and values. All properties
+        /// from CreateDataTable are returned as well as properties for region replication, versioning,
+        /// and system tables. "Describe" is a deprecated term but is allowed to maintain consistency
+        /// with existing operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTable">REST API Reference for DescribeDataTable Operation</seealso>
+        public virtual Task<DescribeDataTableResponse> DescribeDataTableAsync(DescribeDataTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDataTableResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeDataTableAttribute
+
+        internal virtual DescribeDataTableAttributeResponse DescribeDataTableAttribute(DescribeDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns detailed information for a specific data table attribute including its configuration,
+        /// validation rules, and metadata. "Describe" is a deprecated term but is allowed to
+        /// maintain consistency with existing operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTableAttribute">REST API Reference for DescribeDataTableAttribute Operation</seealso>
+        public virtual Task<DescribeDataTableAttributeResponse> DescribeDataTableAttributeAsync(DescribeDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDataTableAttributeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeEmailAddress
 
         internal virtual DescribeEmailAddressResponse DescribeEmailAddress(DescribeEmailAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEmailAddressResponseUnmarshaller.Instance;
 
@@ -5145,7 +7134,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">REST API Reference for DescribeEmailAddress Operation</seealso>
         public virtual Task<DescribeEmailAddressResponse> DescribeEmailAddressAsync(DescribeEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEmailAddressResponseUnmarshaller.Instance;
 
@@ -5157,7 +7146,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeEvaluationFormResponse DescribeEvaluationForm(DescribeEvaluationFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEvaluationFormResponseUnmarshaller.Instance;
 
@@ -5191,7 +7180,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">REST API Reference for DescribeEvaluationForm Operation</seealso>
         public virtual Task<DescribeEvaluationFormResponse> DescribeEvaluationFormAsync(DescribeEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEvaluationFormResponseUnmarshaller.Instance;
 
@@ -5203,7 +7192,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeHoursOfOperationResponse DescribeHoursOfOperation(DescribeHoursOfOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -5213,12 +7202,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -5244,7 +7228,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">REST API Reference for DescribeHoursOfOperation Operation</seealso>
         public virtual Task<DescribeHoursOfOperationResponse> DescribeHoursOfOperationAsync(DescribeHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -5256,7 +7240,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeHoursOfOperationOverrideResponse DescribeHoursOfOperationOverride(DescribeHoursOfOperationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -5292,7 +7276,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
         public virtual Task<DescribeHoursOfOperationOverrideResponse> DescribeHoursOfOperationOverrideAsync(DescribeHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -5304,7 +7288,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeInstanceResponse DescribeInstance(DescribeInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
 
@@ -5346,7 +7330,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
         public virtual Task<DescribeInstanceResponse> DescribeInstanceAsync(DescribeInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
 
@@ -5358,7 +7342,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -5399,7 +7383,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public virtual Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -5411,7 +7395,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeInstanceStorageConfigResponse DescribeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -5453,7 +7437,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">REST API Reference for DescribeInstanceStorageConfig Operation</seealso>
         public virtual Task<DescribeInstanceStorageConfigResponse> DescribeInstanceStorageConfigAsync(DescribeInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -5461,11 +7445,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DescribeNotification
+
+        internal virtual DescribeNotificationResponse DescribeNotification(DescribeNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific notification, including its content,
+        /// priority, recipients, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">REST API Reference for DescribeNotification Operation</seealso>
+        public virtual Task<DescribeNotificationResponse> DescribeNotificationAsync(DescribeNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNotificationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribePhoneNumber
 
         internal virtual DescribePhoneNumberResponse DescribePhoneNumber(DescribePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePhoneNumberResponseUnmarshaller.Instance;
 
@@ -5514,7 +7550,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">REST API Reference for DescribePhoneNumber Operation</seealso>
         public virtual Task<DescribePhoneNumberResponse> DescribePhoneNumberAsync(DescribePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePhoneNumberResponseUnmarshaller.Instance;
 
@@ -5526,7 +7562,7 @@ namespace Amazon.Connect
 
         internal virtual DescribePredefinedAttributeResponse DescribePredefinedAttribute(DescribePredefinedAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -5536,11 +7572,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Describes a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -5566,7 +7623,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePredefinedAttribute">REST API Reference for DescribePredefinedAttribute Operation</seealso>
         public virtual Task<DescribePredefinedAttributeResponse> DescribePredefinedAttributeAsync(DescribePredefinedAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -5578,7 +7635,7 @@ namespace Amazon.Connect
 
         internal virtual DescribePromptResponse DescribePrompt(DescribePromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePromptResponseUnmarshaller.Instance;
 
@@ -5614,7 +7671,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
         public virtual Task<DescribePromptResponse> DescribePromptAsync(DescribePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePromptResponseUnmarshaller.Instance;
 
@@ -5626,7 +7683,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeQueueResponse DescribeQueue(DescribeQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueueResponseUnmarshaller.Instance;
 
@@ -5636,12 +7693,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
         /// <param name="cancellationToken">
@@ -5667,7 +7719,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">REST API Reference for DescribeQueue Operation</seealso>
         public virtual Task<DescribeQueueResponse> DescribeQueueAsync(DescribeQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueueResponseUnmarshaller.Instance;
 
@@ -5679,7 +7731,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeQuickConnectResponse DescribeQuickConnect(DescribeQuickConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuickConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuickConnectResponseUnmarshaller.Instance;
 
@@ -5715,7 +7767,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">REST API Reference for DescribeQuickConnect Operation</seealso>
         public virtual Task<DescribeQuickConnectResponse> DescribeQuickConnectAsync(DescribeQuickConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuickConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuickConnectResponseUnmarshaller.Instance;
 
@@ -5727,7 +7779,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeRoutingProfileResponse DescribeRoutingProfile(DescribeRoutingProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRoutingProfileResponseUnmarshaller.Instance;
 
@@ -5772,7 +7824,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRoutingProfile">REST API Reference for DescribeRoutingProfile Operation</seealso>
         public virtual Task<DescribeRoutingProfileResponse> DescribeRoutingProfileAsync(DescribeRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRoutingProfileResponseUnmarshaller.Instance;
 
@@ -5784,7 +7836,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
@@ -5820,7 +7872,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         public virtual Task<DescribeRuleResponse> DescribeRuleAsync(DescribeRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
@@ -5832,7 +7884,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeSecurityProfileResponse DescribeSecurityProfile(DescribeSecurityProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
 
@@ -5876,7 +7928,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">REST API Reference for DescribeSecurityProfile Operation</seealso>
         public virtual Task<DescribeSecurityProfileResponse> DescribeSecurityProfileAsync(DescribeSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
 
@@ -5884,11 +7936,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DescribeTestCase
+
+        internal virtual DescribeTestCaseResponse DescribeTestCase(DescribeTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTestCaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified test case and allows you to get the content and metadata of
+        /// the test case for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">REST API Reference for DescribeTestCase Operation</seealso>
+        public virtual Task<DescribeTestCaseResponse> DescribeTestCaseAsync(DescribeTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTestCaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTestCaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeTrafficDistributionGroup
 
         internal virtual DescribeTrafficDistributionGroupResponse DescribeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficDistributionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficDistributionGroupResponseUnmarshaller.Instance;
 
@@ -5924,7 +8028,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">REST API Reference for DescribeTrafficDistributionGroup Operation</seealso>
         public virtual Task<DescribeTrafficDistributionGroupResponse> DescribeTrafficDistributionGroupAsync(DescribeTrafficDistributionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficDistributionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficDistributionGroupResponseUnmarshaller.Instance;
 
@@ -5936,7 +8040,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -5975,7 +8079,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -5987,7 +8091,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeUserHierarchyGroupResponse DescribeUserHierarchyGroup(DescribeUserHierarchyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
 
@@ -6023,7 +8127,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyGroup">REST API Reference for DescribeUserHierarchyGroup Operation</seealso>
         public virtual Task<DescribeUserHierarchyGroupResponse> DescribeUserHierarchyGroupAsync(DescribeUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
 
@@ -6035,7 +8139,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeUserHierarchyStructureResponse DescribeUserHierarchyStructure(DescribeUserHierarchyStructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
 
@@ -6071,7 +8175,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure">REST API Reference for DescribeUserHierarchyStructure Operation</seealso>
         public virtual Task<DescribeUserHierarchyStructureResponse> DescribeUserHierarchyStructureAsync(DescribeUserHierarchyStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
 
@@ -6083,7 +8187,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeViewResponse DescribeView(DescribeViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeViewResponseUnmarshaller.Instance;
 
@@ -6139,7 +8243,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">REST API Reference for DescribeView Operation</seealso>
         public virtual Task<DescribeViewResponse> DescribeViewAsync(DescribeViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeViewResponseUnmarshaller.Instance;
 
@@ -6151,7 +8255,7 @@ namespace Amazon.Connect
 
         internal virtual DescribeVocabularyResponse DescribeVocabulary(DescribeVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVocabularyResponseUnmarshaller.Instance;
 
@@ -6187,7 +8291,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">REST API Reference for DescribeVocabulary Operation</seealso>
         public virtual Task<DescribeVocabularyResponse> DescribeVocabularyAsync(DescribeVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVocabularyResponseUnmarshaller.Instance;
 
@@ -6195,11 +8299,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DescribeWorkspace
+
+        internal virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about a workspace, including its configuration and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
+        public virtual Task<DescribeWorkspaceResponse> DescribeWorkspaceAsync(DescribeWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorkspaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateAnalyticsDataSet
 
         internal virtual DisassociateAnalyticsDataSetResponse DisassociateAnalyticsDataSet(DisassociateAnalyticsDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -6235,7 +8390,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">REST API Reference for DisassociateAnalyticsDataSet Operation</seealso>
         public virtual Task<DisassociateAnalyticsDataSetResponse> DisassociateAnalyticsDataSetAsync(DisassociateAnalyticsDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAnalyticsDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
@@ -6247,7 +8402,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateApprovedOriginResponse DisassociateApprovedOrigin(DisassociateApprovedOriginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApprovedOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApprovedOriginResponseUnmarshaller.Instance;
 
@@ -6288,7 +8443,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">REST API Reference for DisassociateApprovedOrigin Operation</seealso>
         public virtual Task<DisassociateApprovedOriginResponse> DisassociateApprovedOriginAsync(DisassociateApprovedOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApprovedOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApprovedOriginResponseUnmarshaller.Instance;
 
@@ -6300,7 +8455,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateBotResponse DisassociateBot(DisassociateBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateBotResponseUnmarshaller.Instance;
 
@@ -6339,7 +8494,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot">REST API Reference for DisassociateBot Operation</seealso>
         public virtual Task<DisassociateBotResponse> DisassociateBotAsync(DisassociateBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateBotResponseUnmarshaller.Instance;
 
@@ -6347,11 +8502,174 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DisassociateEmailAddressAlias
+
+        internal virtual DisassociateEmailAddressAliasResponse DisassociateEmailAddressAlias(DisassociateEmailAddressAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEmailAddressAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEmailAddressAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        public virtual Task<DisassociateEmailAddressAliasResponse> DisassociateEmailAddressAliasAsync(DisassociateEmailAddressAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEmailAddressAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateEmailAddressAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateFlow
 
         internal virtual DisassociateFlowResponse DisassociateFlow(DisassociateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFlowResponseUnmarshaller.Instance;
 
@@ -6390,7 +8708,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">REST API Reference for DisassociateFlow Operation</seealso>
         public virtual Task<DisassociateFlowResponse> DisassociateFlowAsync(DisassociateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFlowResponseUnmarshaller.Instance;
 
@@ -6398,11 +8716,64 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DisassociateHoursOfOperations
+
+        internal virtual DisassociateHoursOfOperationsResponse DisassociateHoursOfOperations(DisassociateHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a set of hours of operations with another hours of operation. Refer
+        /// to Administrator Guide <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+        /// here </a> for more information on inheriting overrides from parent hours of operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">REST API Reference for DisassociateHoursOfOperations Operation</seealso>
+        public virtual Task<DisassociateHoursOfOperationsResponse> DisassociateHoursOfOperationsAsync(DisassociateHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateInstanceStorageConfig
 
         internal virtual DisassociateInstanceStorageConfigResponse DisassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -6444,7 +8815,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">REST API Reference for DisassociateInstanceStorageConfig Operation</seealso>
         public virtual Task<DisassociateInstanceStorageConfigResponse> DisassociateInstanceStorageConfigAsync(DisassociateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -6456,7 +8827,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateLambdaFunctionResponse DisassociateLambdaFunction(DisassociateLambdaFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLambdaFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLambdaFunctionResponseUnmarshaller.Instance;
 
@@ -6498,7 +8869,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">REST API Reference for DisassociateLambdaFunction Operation</seealso>
         public virtual Task<DisassociateLambdaFunctionResponse> DisassociateLambdaFunctionAsync(DisassociateLambdaFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLambdaFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLambdaFunctionResponseUnmarshaller.Instance;
 
@@ -6510,7 +8881,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateLexBotResponse DisassociateLexBot(DisassociateLexBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLexBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
 
@@ -6552,7 +8923,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">REST API Reference for DisassociateLexBot Operation</seealso>
         public virtual Task<DisassociateLexBotResponse> DisassociateLexBotAsync(DisassociateLexBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLexBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
 
@@ -6564,7 +8935,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociatePhoneNumberContactFlowResponse DisassociatePhoneNumberContactFlow(DisassociatePhoneNumberContactFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePhoneNumberContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
 
@@ -6613,7 +8984,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociatePhoneNumberContactFlow">REST API Reference for DisassociatePhoneNumberContactFlow Operation</seealso>
         public virtual Task<DisassociatePhoneNumberContactFlowResponse> DisassociatePhoneNumberContactFlowAsync(DisassociatePhoneNumberContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePhoneNumberContactFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
 
@@ -6621,11 +8992,86 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DisassociateQueueEmailAddresses
+
+        internal virtual DisassociateQueueEmailAddressesResponse DisassociateQueueEmailAddresses(DisassociateQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateQueueEmailAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between a set of email addresses and a queue. After disassociation,
+        /// agents will no longer be able to select these email addresses as "From" addresses
+        /// when replying to inbound email contacts or initiating outbound email contacts in this
+        /// queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Agents will no longer see these email addresses in their "From" address selection
+        /// options for this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses themselves are not deleted from the instance, only their availability
+        /// for agent selection in this queue is removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect immediately and will affect the agent experience in the Contact
+        /// Control Panel (CCP).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">REST API Reference for DisassociateQueueEmailAddresses Operation</seealso>
+        public virtual Task<DisassociateQueueEmailAddressesResponse> DisassociateQueueEmailAddressesAsync(DisassociateQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateQueueQuickConnects
 
         internal virtual DisassociateQueueQuickConnectsResponse DisassociateQueueQuickConnects(DisassociateQueueQuickConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateQueueQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateQueueQuickConnectsResponseUnmarshaller.Instance;
 
@@ -6635,12 +9081,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Disassociates a set of quick connects from a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -6666,7 +9107,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">REST API Reference for DisassociateQueueQuickConnects Operation</seealso>
         public virtual Task<DisassociateQueueQuickConnectsResponse> DisassociateQueueQuickConnectsAsync(DisassociateQueueQuickConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateQueueQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateQueueQuickConnectsResponseUnmarshaller.Instance;
 
@@ -6678,7 +9119,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateRoutingProfileQueuesResponse DisassociateRoutingProfileQueues(DisassociateRoutingProfileQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -6689,6 +9130,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Disassociates a set of queues from a routing profile.
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 queue references can be disassociated in a single API call. More than 10
+        /// queue references results in a single call results in an InvalidParameterException.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRoutingProfileQueues service method.</param>
         /// <param name="cancellationToken">
@@ -6714,7 +9161,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateRoutingProfileQueues">REST API Reference for DisassociateRoutingProfileQueues Operation</seealso>
         public virtual Task<DisassociateRoutingProfileQueuesResponse> DisassociateRoutingProfileQueuesAsync(DisassociateRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -6726,7 +9173,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateSecurityKeyResponse DisassociateSecurityKey(DisassociateSecurityKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSecurityKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSecurityKeyResponseUnmarshaller.Instance;
 
@@ -6767,7 +9214,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">REST API Reference for DisassociateSecurityKey Operation</seealso>
         public virtual Task<DisassociateSecurityKeyResponse> DisassociateSecurityKeyAsync(DisassociateSecurityKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSecurityKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSecurityKeyResponseUnmarshaller.Instance;
 
@@ -6775,11 +9222,66 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DisassociateSecurityProfiles
+
+        internal virtual DisassociateSecurityProfilesResponse DisassociateSecurityProfiles(DisassociateSecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSecurityProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a security profile attached to a Q in Connect AI Agent Entity in an
+        /// Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityProfiles">REST API Reference for DisassociateSecurityProfiles Operation</seealso>
+        public virtual Task<DisassociateSecurityProfilesResponse> DisassociateSecurityProfilesAsync(DisassociateSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSecurityProfilesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DisassociateTrafficDistributionGroupUser
 
         internal virtual DisassociateTrafficDistributionGroupUserResponse DisassociateTrafficDistributionGroupUser(DisassociateTrafficDistributionGroupUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrafficDistributionGroupUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrafficDistributionGroupUserResponseUnmarshaller.Instance;
 
@@ -6819,7 +9321,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">REST API Reference for DisassociateTrafficDistributionGroupUser Operation</seealso>
         public virtual Task<DisassociateTrafficDistributionGroupUserResponse> DisassociateTrafficDistributionGroupUserAsync(DisassociateTrafficDistributionGroupUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrafficDistributionGroupUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrafficDistributionGroupUserResponseUnmarshaller.Instance;
 
@@ -6831,7 +9333,7 @@ namespace Amazon.Connect
 
         internal virtual DisassociateUserProficienciesResponse DisassociateUserProficiencies(DisassociateUserProficienciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateUserProficienciesResponseUnmarshaller.Instance;
 
@@ -6867,7 +9369,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateUserProficiencies">REST API Reference for DisassociateUserProficiencies Operation</seealso>
         public virtual Task<DisassociateUserProficienciesResponse> DisassociateUserProficienciesAsync(DisassociateUserProficienciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateUserProficienciesResponseUnmarshaller.Instance;
 
@@ -6875,11 +9377,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DisassociateWorkspace
+
+        internal virtual DisassociateWorkspaceResponse DisassociateWorkspace(DisassociateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between a workspace and one or more users or routing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateWorkspace">REST API Reference for DisassociateWorkspace Operation</seealso>
+        public virtual Task<DisassociateWorkspaceResponse> DisassociateWorkspaceAsync(DisassociateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateWorkspaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DismissUserContact
 
         internal virtual DismissUserContactResponse DismissUserContact(DismissUserContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DismissUserContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DismissUserContactResponseUnmarshaller.Instance;
 
@@ -6922,7 +9475,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact">REST API Reference for DismissUserContact Operation</seealso>
         public virtual Task<DismissUserContactResponse> DismissUserContactAsync(DismissUserContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DismissUserContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DismissUserContactResponseUnmarshaller.Instance;
 
@@ -6930,11 +9483,67 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  EvaluateDataTableValues
+
+        internal virtual EvaluateDataTableValuesResponse EvaluateDataTableValues(EvaluateDataTableValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EvaluateDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateDataTableValuesResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateDataTableValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Evaluates values at the time of the request and returns them. It considers the request's
+        /// timezone or the table's timezone, in that order, when accessing time based tables.
+        /// When a value is accessed, the accessor's identity and the time of access are saved
+        /// alongside the value to help identify values that are actively in use. The term "Batch"
+        /// is not included in the operation name since it does not meet all the criteria for
+        /// a batch operation as specified in Batch Operations: Amazon Web Services API Standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EvaluateDataTableValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">REST API Reference for EvaluateDataTableValues Operation</seealso>
+        public virtual Task<EvaluateDataTableValuesResponse> EvaluateDataTableValuesAsync(EvaluateDataTableValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EvaluateDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateDataTableValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EvaluateDataTableValuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetAttachedFile
 
         internal virtual GetAttachedFileResponse GetAttachedFile(GetAttachedFileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttachedFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttachedFileResponseUnmarshaller.Instance;
 
@@ -6972,7 +9581,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetAttachedFile">REST API Reference for GetAttachedFile Operation</seealso>
         public virtual Task<GetAttachedFileResponse> GetAttachedFileAsync(GetAttachedFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttachedFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttachedFileResponseUnmarshaller.Instance;
 
@@ -6984,7 +9593,7 @@ namespace Amazon.Connect
 
         internal virtual GetContactAttributesResponse GetContactAttributes(GetContactAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
 
@@ -7014,7 +9623,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">REST API Reference for GetContactAttributes Operation</seealso>
         public virtual Task<GetContactAttributesResponse> GetContactAttributesAsync(GetContactAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
 
@@ -7022,11 +9631,109 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  GetContactMetrics
+
+        internal virtual GetContactMetricsResponse GetContactMetrics(GetContactMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContactMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves contact metric data for a specified contact.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common use cases for position in queue and estimated wait time:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Customer-Facing Wait Time Announcements - Display or announce the estimated wait time
+        /// and position in queue to customers before or during their queue experience. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Callback Offerings - Offer customers a callback option when the estimated wait time
+        /// or position in queue exceeds a defined threshold. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue Routing Decisions - Route incoming contacts to less congested queues by comparing
+        /// estimated wait time and position in queue across multiple queues. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Self-Service Deflection - Redirect customers to self-service options like chatbots
+        /// or FAQs when estimated wait time is high or position in queue is unfavorable. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Metrics are only available while the contact is actively in queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For more information, see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
+        /// in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContactMetrics service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactMetrics">REST API Reference for GetContactMetrics Operation</seealso>
+        public virtual Task<GetContactMetricsResponse> GetContactMetricsAsync(GetContactMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContactMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContactMetricsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCurrentMetricData
 
         internal virtual GetCurrentMetricDataResponse GetCurrentMetricData(GetCurrentMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCurrentMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
 
@@ -7043,6 +9750,46 @@ namespace Amazon.Connect
         /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
         /// <param name="cancellationToken">
@@ -7068,7 +9815,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">REST API Reference for GetCurrentMetricData Operation</seealso>
         public virtual Task<GetCurrentMetricDataResponse> GetCurrentMetricDataAsync(GetCurrentMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCurrentMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
 
@@ -7080,7 +9827,7 @@ namespace Amazon.Connect
 
         internal virtual GetCurrentUserDataResponse GetCurrentUserData(GetCurrentUserDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCurrentUserDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCurrentUserDataResponseUnmarshaller.Instance;
 
@@ -7116,7 +9863,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentUserData">REST API Reference for GetCurrentUserData Operation</seealso>
         public virtual Task<GetCurrentUserDataResponse> GetCurrentUserDataAsync(GetCurrentUserDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCurrentUserDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCurrentUserDataResponseUnmarshaller.Instance;
 
@@ -7128,7 +9875,7 @@ namespace Amazon.Connect
 
         internal virtual GetEffectiveHoursOfOperationsResponse GetEffectiveHoursOfOperations(GetEffectiveHoursOfOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
 
@@ -7164,7 +9911,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
         public virtual Task<GetEffectiveHoursOfOperationsResponse> GetEffectiveHoursOfOperationsAsync(GetEffectiveHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
 
@@ -7176,7 +9923,7 @@ namespace Amazon.Connect
 
         internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFederationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
@@ -7235,7 +9982,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFederationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
@@ -7247,7 +9994,7 @@ namespace Amazon.Connect
 
         internal virtual GetFlowAssociationResponse GetFlowAssociation(GetFlowAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowAssociationResponseUnmarshaller.Instance;
 
@@ -7286,7 +10033,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">REST API Reference for GetFlowAssociation Operation</seealso>
         public virtual Task<GetFlowAssociationResponse> GetFlowAssociationAsync(GetFlowAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowAssociationResponseUnmarshaller.Instance;
 
@@ -7298,7 +10045,7 @@ namespace Amazon.Connect
 
         internal virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
@@ -7351,7 +10098,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
@@ -7363,7 +10110,7 @@ namespace Amazon.Connect
 
         internal virtual GetMetricDataV2Response GetMetricDataV2(GetMetricDataV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataV2ResponseUnmarshaller.Instance;
 
@@ -7389,6 +10136,50 @@ namespace Amazon.Connect
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Narrow the time range of your request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
         /// <param name="cancellationToken">
@@ -7414,7 +10205,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">REST API Reference for GetMetricDataV2 Operation</seealso>
         public virtual Task<GetMetricDataV2Response> GetMetricDataV2Async(GetMetricDataV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataV2ResponseUnmarshaller.Instance;
 
@@ -7426,7 +10217,7 @@ namespace Amazon.Connect
 
         internal virtual GetPromptFileResponse GetPromptFile(GetPromptFileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPromptFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPromptFileResponseUnmarshaller.Instance;
 
@@ -7462,7 +10253,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
         public virtual Task<GetPromptFileResponse> GetPromptFileAsync(GetPromptFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPromptFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPromptFileResponseUnmarshaller.Instance;
 
@@ -7474,7 +10265,7 @@ namespace Amazon.Connect
 
         internal virtual GetTaskTemplateResponse GetTaskTemplate(GetTaskTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskTemplateResponseUnmarshaller.Instance;
 
@@ -7510,7 +10301,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
         public virtual Task<GetTaskTemplateResponse> GetTaskTemplateAsync(GetTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskTemplateResponseUnmarshaller.Instance;
 
@@ -7518,11 +10309,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  GetTestCaseExecutionSummary
+
+        internal virtual GetTestCaseExecutionSummaryResponse GetTestCaseExecutionSummary(GetTestCaseExecutionSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTestCaseExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTestCaseExecutionSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetTestCaseExecutionSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an overview of a test execution that includes the status of the execution,
+        /// start and end time, and observation summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestCaseExecutionSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTestCaseExecutionSummary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">REST API Reference for GetTestCaseExecutionSummary Operation</seealso>
+        public virtual Task<GetTestCaseExecutionSummaryResponse> GetTestCaseExecutionSummaryAsync(GetTestCaseExecutionSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTestCaseExecutionSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTestCaseExecutionSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTestCaseExecutionSummaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetTrafficDistribution
 
         internal virtual GetTrafficDistributionResponse GetTrafficDistribution(GetTrafficDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficDistributionResponseUnmarshaller.Instance;
 
@@ -7558,7 +10401,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">REST API Reference for GetTrafficDistribution Operation</seealso>
         public virtual Task<GetTrafficDistributionResponse> GetTrafficDistributionAsync(GetTrafficDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficDistributionResponseUnmarshaller.Instance;
 
@@ -7570,7 +10413,7 @@ namespace Amazon.Connect
 
         internal virtual ImportPhoneNumberResponse ImportPhoneNumber(ImportPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportPhoneNumberResponseUnmarshaller.Instance;
 
@@ -7609,7 +10452,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
         /// 
         /// </para>
         /// </summary>
@@ -7640,7 +10483,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">REST API Reference for ImportPhoneNumber Operation</seealso>
         public virtual Task<ImportPhoneNumberResponse> ImportPhoneNumberAsync(ImportPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportPhoneNumberResponseUnmarshaller.Instance;
 
@@ -7648,11 +10491,59 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ImportWorkspaceMedia
+
+        internal virtual ImportWorkspaceMediaResponse ImportWorkspaceMedia(ImportWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ImportWorkspaceMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports a media asset (such as a logo) for use in a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportWorkspaceMedia">REST API Reference for ImportWorkspaceMedia Operation</seealso>
+        public virtual Task<ImportWorkspaceMediaResponse> ImportWorkspaceMediaAsync(ImportWorkspaceMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportWorkspaceMediaResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListAgentStatuses
 
         internal virtual ListAgentStatusesResponse ListAgentStatuses(ListAgentStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAgentStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAgentStatusesResponseUnmarshaller.Instance;
 
@@ -7662,12 +10553,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists agent statuses.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentStatuses service method.</param>
         /// <param name="cancellationToken">
@@ -7693,7 +10579,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">REST API Reference for ListAgentStatuses Operation</seealso>
         public virtual Task<ListAgentStatusesResponse> ListAgentStatusesAsync(ListAgentStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAgentStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAgentStatusesResponseUnmarshaller.Instance;
 
@@ -7705,7 +10591,7 @@ namespace Amazon.Connect
 
         internal virtual ListAnalyticsDataAssociationsResponse ListAnalyticsDataAssociations(ListAnalyticsDataAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyticsDataAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyticsDataAssociationsResponseUnmarshaller.Instance;
 
@@ -7741,7 +10627,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">REST API Reference for ListAnalyticsDataAssociations Operation</seealso>
         public virtual Task<ListAnalyticsDataAssociationsResponse> ListAnalyticsDataAssociationsAsync(ListAnalyticsDataAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyticsDataAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyticsDataAssociationsResponseUnmarshaller.Instance;
 
@@ -7753,7 +10639,7 @@ namespace Amazon.Connect
 
         internal virtual ListAnalyticsDataLakeDataSetsResponse ListAnalyticsDataLakeDataSets(ListAnalyticsDataLakeDataSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyticsDataLakeDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyticsDataLakeDataSetsResponseUnmarshaller.Instance;
 
@@ -7790,7 +10676,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">REST API Reference for ListAnalyticsDataLakeDataSets Operation</seealso>
         public virtual Task<ListAnalyticsDataLakeDataSetsResponse> ListAnalyticsDataLakeDataSetsAsync(ListAnalyticsDataLakeDataSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyticsDataLakeDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyticsDataLakeDataSetsResponseUnmarshaller.Instance;
 
@@ -7802,7 +10688,7 @@ namespace Amazon.Connect
 
         internal virtual ListApprovedOriginsResponse ListApprovedOrigins(ListApprovedOriginsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApprovedOriginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
 
@@ -7843,7 +10729,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
         public virtual Task<ListApprovedOriginsResponse> ListApprovedOriginsAsync(ListApprovedOriginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApprovedOriginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
 
@@ -7855,7 +10741,7 @@ namespace Amazon.Connect
 
         internal virtual ListAssociatedContactsResponse ListAssociatedContacts(ListAssociatedContactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedContactsResponseUnmarshaller.Instance;
 
@@ -7892,7 +10778,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">REST API Reference for ListAssociatedContacts Operation</seealso>
         public virtual Task<ListAssociatedContactsResponse> ListAssociatedContactsAsync(ListAssociatedContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedContactsResponseUnmarshaller.Instance;
 
@@ -7904,7 +10790,7 @@ namespace Amazon.Connect
 
         internal virtual ListAuthenticationProfilesResponse ListAuthenticationProfiles(ListAuthenticationProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAuthenticationProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAuthenticationProfilesResponseUnmarshaller.Instance;
 
@@ -7915,7 +10801,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -7947,7 +10833,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">REST API Reference for ListAuthenticationProfiles Operation</seealso>
         public virtual Task<ListAuthenticationProfilesResponse> ListAuthenticationProfilesAsync(ListAuthenticationProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAuthenticationProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAuthenticationProfilesResponseUnmarshaller.Instance;
 
@@ -7959,7 +10845,7 @@ namespace Amazon.Connect
 
         internal virtual ListBotsResponse ListBots(ListBotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
 
@@ -7999,7 +10885,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots">REST API Reference for ListBots Operation</seealso>
         public virtual Task<ListBotsResponse> ListBotsAsync(ListBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
 
@@ -8007,11 +10893,66 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListChildHoursOfOperations
+
+        internal virtual ListChildHoursOfOperationsResponse ListChildHoursOfOperations(ListChildHoursOfOperationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChildHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about the child hours of operations for the specified parent
+        /// hours of operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about child hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link
+        /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChildHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChildHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">REST API Reference for ListChildHoursOfOperations Operation</seealso>
+        public virtual Task<ListChildHoursOfOperationsResponse> ListChildHoursOfOperationsAsync(ListChildHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListChildHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChildHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChildHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListContactEvaluations
 
         internal virtual ListContactEvaluationsResponse ListContactEvaluations(ListContactEvaluationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactEvaluationsResponseUnmarshaller.Instance;
 
@@ -8044,7 +10985,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactEvaluations">REST API Reference for ListContactEvaluations Operation</seealso>
         public virtual Task<ListContactEvaluationsResponse> ListContactEvaluationsAsync(ListContactEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactEvaluationsResponseUnmarshaller.Instance;
 
@@ -8052,11 +10993,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListContactFlowModuleAliases
+
+        internal virtual ListContactFlowModuleAliasesResponse ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleAliasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all aliases associated with a contact flow module, showing their current version
+        /// mappings and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual Task<ListContactFlowModuleAliasesResponse> ListContactFlowModuleAliasesAsync(ListContactFlowModuleAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContactFlowModuleAliasesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListContactFlowModules
 
         internal virtual ListContactFlowModulesResponse ListContactFlowModules(ListContactFlowModulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactFlowModulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactFlowModulesResponseUnmarshaller.Instance;
 
@@ -8095,7 +11088,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">REST API Reference for ListContactFlowModules Operation</seealso>
         public virtual Task<ListContactFlowModulesResponse> ListContactFlowModulesAsync(ListContactFlowModulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactFlowModulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactFlowModulesResponseUnmarshaller.Instance;
 
@@ -8103,11 +11096,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListContactFlowModuleVersions
+
+        internal virtual ListContactFlowModuleVersionsResponse ListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all versions for a specific contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual Task<ListContactFlowModuleVersionsResponse> ListContactFlowModuleVersionsAsync(ListContactFlowModuleVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContactFlowModuleVersionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListContactFlows
 
         internal virtual ListContactFlowsResponse ListContactFlows(ListContactFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactFlowsResponseUnmarshaller.Instance;
 
@@ -8154,7 +11198,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">REST API Reference for ListContactFlows Operation</seealso>
         public virtual Task<ListContactFlowsResponse> ListContactFlowsAsync(ListContactFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactFlowsResponseUnmarshaller.Instance;
 
@@ -8166,7 +11210,7 @@ namespace Amazon.Connect
 
         internal virtual ListContactFlowVersionsResponse ListContactFlowVersions(ListContactFlowVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactFlowVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactFlowVersionsResponseUnmarshaller.Instance;
 
@@ -8206,7 +11250,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
         public virtual Task<ListContactFlowVersionsResponse> ListContactFlowVersionsAsync(ListContactFlowVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactFlowVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactFlowVersionsResponseUnmarshaller.Instance;
 
@@ -8218,7 +11262,7 @@ namespace Amazon.Connect
 
         internal virtual ListContactReferencesResponse ListContactReferences(ListContactReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactReferencesResponseUnmarshaller.Instance;
 
@@ -8261,7 +11305,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactReferences">REST API Reference for ListContactReferences Operation</seealso>
         public virtual Task<ListContactReferencesResponse> ListContactReferencesAsync(ListContactReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactReferencesResponseUnmarshaller.Instance;
 
@@ -8269,11 +11313,223 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListDataTableAttributes
+
+        internal virtual ListDataTableAttributesResponse ListDataTableAttributes(ListDataTableAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTableAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all attributes for a specified data table. A maximum of 100 attributes per
+        /// data table is allowed. Customers can request an increase by using Amazon Web Services
+        /// Service Quotas. The response can be filtered by specific attribute IDs for CloudFormation
+        /// integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTableAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">REST API Reference for ListDataTableAttributes Operation</seealso>
+        public virtual Task<ListDataTableAttributesResponse> ListDataTableAttributesAsync(ListDataTableAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTableAttributesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDataTablePrimaryValues
+
+        internal virtual ListDataTablePrimaryValuesResponse ListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTablePrimaryValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all primary value combinations for a given data table. Returns the unique combinations
+        /// of primary attribute values that identify records in the table. Up to 100 records
+        /// are returned per request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTablePrimaryValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTablePrimaryValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTablePrimaryValues">REST API Reference for ListDataTablePrimaryValues Operation</seealso>
+        public virtual Task<ListDataTablePrimaryValuesResponse> ListDataTablePrimaryValuesAsync(ListDataTablePrimaryValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTablePrimaryValuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDataTables
+
+        internal virtual ListDataTablesResponse ListDataTables(ListDataTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all data tables for the specified Amazon Connect instance. Returns summary information
+        /// for each table including basic metadata and modification details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTables service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTables">REST API Reference for ListDataTables Operation</seealso>
+        public virtual Task<ListDataTablesResponse> ListDataTablesAsync(ListDataTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTablesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDataTableValues
+
+        internal virtual ListDataTableValuesResponse ListDataTableValues(ListDataTableValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTableValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists values stored in a data table with optional filtering by record IDs or primary
+        /// attribute values. Returns the raw stored values along with metadata such as lock versions
+        /// and modification timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTableValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableValues">REST API Reference for ListDataTableValues Operation</seealso>
+        public virtual Task<ListDataTableValuesResponse> ListDataTableValuesAsync(ListDataTableValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTableValuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListDefaultVocabularies
 
         internal virtual ListDefaultVocabulariesResponse ListDefaultVocabularies(ListDefaultVocabulariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDefaultVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
 
@@ -8306,7 +11562,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
         public virtual Task<ListDefaultVocabulariesResponse> ListDefaultVocabulariesAsync(ListDefaultVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDefaultVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
 
@@ -8314,11 +11570,60 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListEntitySecurityProfiles
+
+        internal virtual ListEntitySecurityProfilesResponse ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntitySecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitySecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitySecurityProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all security profiles attached to a Q in Connect AIAgent Entity in an Amazon
+        /// Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitySecurityProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntitySecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEntitySecurityProfiles">REST API Reference for ListEntitySecurityProfiles Operation</seealso>
+        public virtual Task<ListEntitySecurityProfilesResponse> ListEntitySecurityProfilesAsync(ListEntitySecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntitySecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitySecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntitySecurityProfilesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListEvaluationForms
 
         internal virtual ListEvaluationFormsResponse ListEvaluationForms(ListEvaluationFormsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEvaluationFormsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEvaluationFormsResponseUnmarshaller.Instance;
 
@@ -8351,7 +11656,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationForms">REST API Reference for ListEvaluationForms Operation</seealso>
         public virtual Task<ListEvaluationFormsResponse> ListEvaluationFormsAsync(ListEvaluationFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEvaluationFormsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEvaluationFormsResponseUnmarshaller.Instance;
 
@@ -8363,7 +11668,7 @@ namespace Amazon.Connect
 
         internal virtual ListEvaluationFormVersionsResponse ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEvaluationFormVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEvaluationFormVersionsResponseUnmarshaller.Instance;
 
@@ -8396,7 +11701,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">REST API Reference for ListEvaluationFormVersions Operation</seealso>
         public virtual Task<ListEvaluationFormVersionsResponse> ListEvaluationFormVersionsAsync(ListEvaluationFormVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEvaluationFormVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEvaluationFormVersionsResponseUnmarshaller.Instance;
 
@@ -8408,7 +11713,7 @@ namespace Amazon.Connect
 
         internal virtual ListFlowAssociationsResponse ListFlowAssociations(ListFlowAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowAssociationsResponseUnmarshaller.Instance;
 
@@ -8447,7 +11752,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
         public virtual Task<ListFlowAssociationsResponse> ListFlowAssociationsAsync(ListFlowAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowAssociationsResponseUnmarshaller.Instance;
 
@@ -8459,7 +11764,7 @@ namespace Amazon.Connect
 
         internal virtual ListHoursOfOperationOverridesResponse ListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
 
@@ -8495,7 +11800,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
         public virtual Task<ListHoursOfOperationOverridesResponse> ListHoursOfOperationOverridesAsync(ListHoursOfOperationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
 
@@ -8507,7 +11812,7 @@ namespace Amazon.Connect
 
         internal virtual ListHoursOfOperationsResponse ListHoursOfOperations(ListHoursOfOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHoursOfOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHoursOfOperationsResponseUnmarshaller.Instance;
 
@@ -8550,7 +11855,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperations">REST API Reference for ListHoursOfOperations Operation</seealso>
         public virtual Task<ListHoursOfOperationsResponse> ListHoursOfOperationsAsync(ListHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHoursOfOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHoursOfOperationsResponseUnmarshaller.Instance;
 
@@ -8562,7 +11867,7 @@ namespace Amazon.Connect
 
         internal virtual ListInstanceAttributesResponse ListInstanceAttributes(ListInstanceAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceAttributesResponseUnmarshaller.Instance;
 
@@ -8603,7 +11908,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">REST API Reference for ListInstanceAttributes Operation</seealso>
         public virtual Task<ListInstanceAttributesResponse> ListInstanceAttributesAsync(ListInstanceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceAttributesResponseUnmarshaller.Instance;
 
@@ -8615,7 +11920,7 @@ namespace Amazon.Connect
 
         internal virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
@@ -8649,7 +11954,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
@@ -8661,7 +11966,7 @@ namespace Amazon.Connect
 
         internal virtual ListInstanceStorageConfigsResponse ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceStorageConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
 
@@ -8703,7 +12008,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">REST API Reference for ListInstanceStorageConfigs Operation</seealso>
         public virtual Task<ListInstanceStorageConfigsResponse> ListInstanceStorageConfigsAsync(ListInstanceStorageConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceStorageConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
 
@@ -8715,7 +12020,7 @@ namespace Amazon.Connect
 
         internal virtual ListIntegrationAssociationsResponse ListIntegrationAssociations(ListIntegrationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIntegrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIntegrationAssociationsResponseUnmarshaller.Instance;
 
@@ -8749,7 +12054,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">REST API Reference for ListIntegrationAssociations Operation</seealso>
         public virtual Task<ListIntegrationAssociationsResponse> ListIntegrationAssociationsAsync(ListIntegrationAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIntegrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIntegrationAssociationsResponseUnmarshaller.Instance;
 
@@ -8761,7 +12066,7 @@ namespace Amazon.Connect
 
         internal virtual ListLambdaFunctionsResponse ListLambdaFunctions(ListLambdaFunctionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLambdaFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLambdaFunctionsResponseUnmarshaller.Instance;
 
@@ -8803,7 +12108,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">REST API Reference for ListLambdaFunctions Operation</seealso>
         public virtual Task<ListLambdaFunctionsResponse> ListLambdaFunctionsAsync(ListLambdaFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLambdaFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLambdaFunctionsResponseUnmarshaller.Instance;
 
@@ -8815,7 +12120,7 @@ namespace Amazon.Connect
 
         internal virtual ListLexBotsResponse ListLexBots(ListLexBotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLexBotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLexBotsResponseUnmarshaller.Instance;
 
@@ -8858,7 +12163,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">REST API Reference for ListLexBots Operation</seealso>
         public virtual Task<ListLexBotsResponse> ListLexBotsAsync(ListLexBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLexBotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLexBotsResponseUnmarshaller.Instance;
 
@@ -8866,11 +12171,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListNotifications
+
+        internal virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotificationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all notifications in the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
+        public virtual Task<ListNotificationsResponse> ListNotificationsAsync(ListNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListNotificationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListPhoneNumbers
 
         internal virtual ListPhoneNumbersResponse ListPhoneNumbers(ListPhoneNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersResponseUnmarshaller.Instance;
 
@@ -8931,7 +12287,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">REST API Reference for ListPhoneNumbers Operation</seealso>
         public virtual Task<ListPhoneNumbersResponse> ListPhoneNumbersAsync(ListPhoneNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersResponseUnmarshaller.Instance;
 
@@ -8943,7 +12299,7 @@ namespace Amazon.Connect
 
         internal virtual ListPhoneNumbersV2Response ListPhoneNumbersV2(ListPhoneNumbersV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersV2ResponseUnmarshaller.Instance;
 
@@ -9000,7 +12356,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersV2">REST API Reference for ListPhoneNumbersV2 Operation</seealso>
         public virtual Task<ListPhoneNumbersV2Response> ListPhoneNumbersV2Async(ListPhoneNumbersV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersV2ResponseUnmarshaller.Instance;
 
@@ -9012,7 +12368,7 @@ namespace Amazon.Connect
 
         internal virtual ListPredefinedAttributesResponse ListPredefinedAttributes(ListPredefinedAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPredefinedAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPredefinedAttributesResponseUnmarshaller.Instance;
 
@@ -9022,11 +12378,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -9052,7 +12429,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPredefinedAttributes">REST API Reference for ListPredefinedAttributes Operation</seealso>
         public virtual Task<ListPredefinedAttributesResponse> ListPredefinedAttributesAsync(ListPredefinedAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPredefinedAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPredefinedAttributesResponseUnmarshaller.Instance;
 
@@ -9064,7 +12441,7 @@ namespace Amazon.Connect
 
         internal virtual ListPromptsResponse ListPrompts(ListPromptsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPromptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
 
@@ -9100,7 +12477,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
         public virtual Task<ListPromptsResponse> ListPromptsAsync(ListPromptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPromptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
 
@@ -9108,11 +12485,91 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListQueueEmailAddresses
+
+        internal virtual ListQueueEmailAddressesResponse ListQueueEmailAddresses(ListQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueueEmailAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all email addresses that are currently associated with a specific queue, providing
+        /// details about which "From" email addresses agents can select when handling email contacts.
+        /// This helps administrators manage agent email address options and understand the available
+        /// choices for different brands and business units.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The response includes metadata about each email address available for agent selection,
+        /// including whether it's configured as the default outbound email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents can select from these email addresses when replying to inbound contacts or
+        /// initiating outbound contacts in this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The list includes both explicitly associated email addresses and any default outbound
+        /// email address configured for the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Results are paginated to handle queues with many associated email addresses (up to
+        /// 50 per queue).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">REST API Reference for ListQueueEmailAddresses Operation</seealso>
+        public virtual Task<ListQueueEmailAddressesResponse> ListQueueEmailAddressesAsync(ListQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListQueueQuickConnects
 
         internal virtual ListQueueQuickConnectsResponse ListQueueQuickConnects(ListQueueQuickConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueQuickConnectsResponseUnmarshaller.Instance;
 
@@ -9122,12 +12579,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the quick connects associated with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -9153,7 +12605,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">REST API Reference for ListQueueQuickConnects Operation</seealso>
         public virtual Task<ListQueueQuickConnectsResponse> ListQueueQuickConnectsAsync(ListQueueQuickConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueQuickConnectsResponseUnmarshaller.Instance;
 
@@ -9165,7 +12617,7 @@ namespace Amazon.Connect
 
         internal virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -9213,7 +12665,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -9225,7 +12677,7 @@ namespace Amazon.Connect
 
         internal virtual ListQuickConnectsResponse ListQuickConnects(ListQuickConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickConnectsResponseUnmarshaller.Instance;
 
@@ -9261,7 +12713,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">REST API Reference for ListQuickConnects Operation</seealso>
         public virtual Task<ListQuickConnectsResponse> ListQuickConnectsAsync(ListQuickConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickConnectsResponseUnmarshaller.Instance;
 
@@ -9273,7 +12725,7 @@ namespace Amazon.Connect
 
         internal virtual ListRealtimeContactAnalysisSegmentsV2Response ListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRealtimeContactAnalysisSegmentsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRealtimeContactAnalysisSegmentsV2ResponseUnmarshaller.Instance;
 
@@ -9322,7 +12774,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
         public virtual Task<ListRealtimeContactAnalysisSegmentsV2Response> ListRealtimeContactAnalysisSegmentsV2Async(ListRealtimeContactAnalysisSegmentsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRealtimeContactAnalysisSegmentsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRealtimeContactAnalysisSegmentsV2ResponseUnmarshaller.Instance;
 
@@ -9330,11 +12782,97 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListRoutingProfileManualAssignmentQueues
+
+        internal virtual ListRoutingProfileManualAssignmentQueuesResponse ListRoutingProfileManualAssignmentQueues(ListRoutingProfileManualAssignmentQueuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfileManualAssignmentQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfileManualAssignmentQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoutingProfileManualAssignmentQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the manual assignment queues associated with a routing profile.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how manual contact assignment works in the agent workspace,
+        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API only returns the manual assignment queues associated with a routing profile.
+        /// Use the ListRoutingProfileQueues API to list the auto assignment queues for the routing
+        /// profile.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileManualAssignmentQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoutingProfileManualAssignmentQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileManualAssignmentQueues">REST API Reference for ListRoutingProfileManualAssignmentQueues Operation</seealso>
+        public virtual Task<ListRoutingProfileManualAssignmentQueuesResponse> ListRoutingProfileManualAssignmentQueuesAsync(ListRoutingProfileManualAssignmentQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfileManualAssignmentQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfileManualAssignmentQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoutingProfileManualAssignmentQueuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListRoutingProfileQueues
 
         internal virtual ListRoutingProfileQueuesResponse ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -9370,7 +12908,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileQueues">REST API Reference for ListRoutingProfileQueues Operation</seealso>
         public virtual Task<ListRoutingProfileQueuesResponse> ListRoutingProfileQueuesAsync(ListRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -9382,7 +12920,7 @@ namespace Amazon.Connect
 
         internal virtual ListRoutingProfilesResponse ListRoutingProfiles(ListRoutingProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
 
@@ -9426,7 +12964,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">REST API Reference for ListRoutingProfiles Operation</seealso>
         public virtual Task<ListRoutingProfilesResponse> ListRoutingProfilesAsync(ListRoutingProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
 
@@ -9438,7 +12976,7 @@ namespace Amazon.Connect
 
         internal virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -9474,7 +13012,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -9486,7 +13024,7 @@ namespace Amazon.Connect
 
         internal virtual ListSecurityKeysResponse ListSecurityKeys(ListSecurityKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityKeysResponseUnmarshaller.Instance;
 
@@ -9527,7 +13065,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
         public virtual Task<ListSecurityKeysResponse> ListSecurityKeysAsync(ListSecurityKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityKeysResponseUnmarshaller.Instance;
 
@@ -9539,7 +13077,7 @@ namespace Amazon.Connect
 
         internal virtual ListSecurityProfileApplicationsResponse ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityProfileApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
 
@@ -9549,7 +13087,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns a list of third-party applications in a specific security profile.
+        /// Returns a list of third-party applications or MCP Servers in a specific security profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
         /// <param name="cancellationToken">
@@ -9575,7 +13113,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileApplications">REST API Reference for ListSecurityProfileApplications Operation</seealso>
         public virtual Task<ListSecurityProfileApplicationsResponse> ListSecurityProfileApplicationsAsync(ListSecurityProfileApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityProfileApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
 
@@ -9583,11 +13121,59 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListSecurityProfileFlowModules
+
+        internal virtual ListSecurityProfileFlowModulesResponse ListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileFlowModulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfileFlowModulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A list of Flow Modules an AI Agent can invoke as a tool
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileFlowModules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSecurityProfileFlowModules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileFlowModules">REST API Reference for ListSecurityProfileFlowModules Operation</seealso>
+        public virtual Task<ListSecurityProfileFlowModulesResponse> ListSecurityProfileFlowModulesAsync(ListSecurityProfileFlowModulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileFlowModulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityProfileFlowModulesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListSecurityProfilePermissions
 
         internal virtual ListSecurityProfilePermissionsResponse ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityProfilePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityProfilePermissionsResponseUnmarshaller.Instance;
 
@@ -9631,7 +13217,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions">REST API Reference for ListSecurityProfilePermissions Operation</seealso>
         public virtual Task<ListSecurityProfilePermissionsResponse> ListSecurityProfilePermissionsAsync(ListSecurityProfilePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityProfilePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityProfilePermissionsResponseUnmarshaller.Instance;
 
@@ -9643,7 +13229,7 @@ namespace Amazon.Connect
 
         internal virtual ListSecurityProfilesResponse ListSecurityProfiles(ListSecurityProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
 
@@ -9688,7 +13274,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">REST API Reference for ListSecurityProfiles Operation</seealso>
         public virtual Task<ListSecurityProfilesResponse> ListSecurityProfilesAsync(ListSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
 
@@ -9700,7 +13286,7 @@ namespace Amazon.Connect
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -9743,7 +13329,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -9755,7 +13341,7 @@ namespace Amazon.Connect
 
         internal virtual ListTaskTemplatesResponse ListTaskTemplates(ListTaskTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskTemplatesResponseUnmarshaller.Instance;
 
@@ -9791,7 +13377,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">REST API Reference for ListTaskTemplates Operation</seealso>
         public virtual Task<ListTaskTemplatesResponse> ListTaskTemplatesAsync(ListTaskTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskTemplatesResponseUnmarshaller.Instance;
 
@@ -9799,11 +13385,166 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListTestCaseExecutionRecords
+
+        internal virtual ListTestCaseExecutionRecordsResponse ListTestCaseExecutionRecords(ListTestCaseExecutionRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCaseExecutionRecordsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists detailed steps of test case execution that includes all observations along with
+        /// actions taken and data associated in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutionRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutionRecords service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">REST API Reference for ListTestCaseExecutionRecords Operation</seealso>
+        public virtual Task<ListTestCaseExecutionRecordsResponse> ListTestCaseExecutionRecordsAsync(ListTestCaseExecutionRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTestCaseExecutionRecordsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListTestCaseExecutions
+
+        internal virtual ListTestCaseExecutionsResponse ListTestCaseExecutions(ListTestCaseExecutionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCaseExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all test case executions and allows filtering by test case id, test case name,
+        /// start time, end time or status of the execution for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCaseExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestCaseExecutions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">REST API Reference for ListTestCaseExecutions Operation</seealso>
+        public virtual Task<ListTestCaseExecutionsResponse> ListTestCaseExecutionsAsync(ListTestCaseExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCaseExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCaseExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTestCaseExecutionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListTestCases
+
+        internal virtual ListTestCasesResponse ListTestCases(ListTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestCasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the test cases present in the specific Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
+        public virtual Task<ListTestCasesResponse> ListTestCasesAsync(ListTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTestCasesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTrafficDistributionGroups
 
         internal virtual ListTrafficDistributionGroupsResponse ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficDistributionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficDistributionGroupsResponseUnmarshaller.Instance;
 
@@ -9836,7 +13577,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
         public virtual Task<ListTrafficDistributionGroupsResponse> ListTrafficDistributionGroupsAsync(ListTrafficDistributionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficDistributionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficDistributionGroupsResponseUnmarshaller.Instance;
 
@@ -9848,7 +13589,7 @@ namespace Amazon.Connect
 
         internal virtual ListTrafficDistributionGroupUsersResponse ListTrafficDistributionGroupUsers(ListTrafficDistributionGroupUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficDistributionGroupUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficDistributionGroupUsersResponseUnmarshaller.Instance;
 
@@ -9884,7 +13625,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">REST API Reference for ListTrafficDistributionGroupUsers Operation</seealso>
         public virtual Task<ListTrafficDistributionGroupUsersResponse> ListTrafficDistributionGroupUsersAsync(ListTrafficDistributionGroupUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficDistributionGroupUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficDistributionGroupUsersResponseUnmarshaller.Instance;
 
@@ -9896,7 +13637,7 @@ namespace Amazon.Connect
 
         internal virtual ListUseCasesResponse ListUseCases(ListUseCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUseCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUseCasesResponseUnmarshaller.Instance;
 
@@ -9929,7 +13670,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">REST API Reference for ListUseCases Operation</seealso>
         public virtual Task<ListUseCasesResponse> ListUseCasesAsync(ListUseCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUseCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUseCasesResponseUnmarshaller.Instance;
 
@@ -9941,7 +13682,7 @@ namespace Amazon.Connect
 
         internal virtual ListUserHierarchyGroupsResponse ListUserHierarchyGroups(ListUserHierarchyGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
 
@@ -9984,7 +13725,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">REST API Reference for ListUserHierarchyGroups Operation</seealso>
         public virtual Task<ListUserHierarchyGroupsResponse> ListUserHierarchyGroupsAsync(ListUserHierarchyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
 
@@ -9992,11 +13733,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListUserNotifications
+
+        internal virtual ListUserNotificationsResponse ListUserNotifications(ListUserNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserNotificationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of notifications for a specific user, including the notification
+        /// status for that user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserNotifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUserNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">REST API Reference for ListUserNotifications Operation</seealso>
+        public virtual Task<ListUserNotificationsResponse> ListUserNotificationsAsync(ListUserNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserNotificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserNotificationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListUserProficiencies
 
         internal virtual ListUserProficienciesResponse ListUserProficiencies(ListUserProficienciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUserProficienciesResponseUnmarshaller.Instance;
 
@@ -10032,7 +13825,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserProficiencies">REST API Reference for ListUserProficiencies Operation</seealso>
         public virtual Task<ListUserProficienciesResponse> ListUserProficienciesAsync(ListUserProficienciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUserProficienciesResponseUnmarshaller.Instance;
 
@@ -10044,7 +13837,7 @@ namespace Amazon.Connect
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -10080,7 +13873,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -10092,7 +13885,7 @@ namespace Amazon.Connect
 
         internal virtual ListViewsResponse ListViews(ListViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListViewsResponseUnmarshaller.Instance;
 
@@ -10136,7 +13929,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">REST API Reference for ListViews Operation</seealso>
         public virtual Task<ListViewsResponse> ListViewsAsync(ListViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListViewsResponseUnmarshaller.Instance;
 
@@ -10148,7 +13941,7 @@ namespace Amazon.Connect
 
         internal virtual ListViewVersionsResponse ListViewVersions(ListViewVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListViewVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListViewVersionsResponseUnmarshaller.Instance;
 
@@ -10193,7 +13986,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">REST API Reference for ListViewVersions Operation</seealso>
         public virtual Task<ListViewVersionsResponse> ListViewVersionsAsync(ListViewVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListViewVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListViewVersionsResponseUnmarshaller.Instance;
 
@@ -10201,11 +13994,165 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListWorkspaceMedia
+
+        internal virtual ListWorkspaceMediaResponse ListWorkspaceMedia(ListWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspaceMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists media assets (such as logos) associated with a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaceMedia">REST API Reference for ListWorkspaceMedia Operation</seealso>
+        public virtual Task<ListWorkspaceMediaResponse> ListWorkspaceMediaAsync(ListWorkspaceMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkspaceMediaResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListWorkspacePages
+
+        internal virtual ListWorkspacePagesResponse ListWorkspacePages(ListWorkspacePagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacePagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacePagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspacePagesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the page configurations in a workspace, including the views assigned to each
+        /// page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspacePages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkspacePages service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspacePages">REST API Reference for ListWorkspacePages Operation</seealso>
+        public virtual Task<ListWorkspacePagesResponse> ListWorkspacePagesAsync(ListWorkspacePagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacePagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacePagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkspacePagesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListWorkspaces
+
+        internal virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the workspaces in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkspaces service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
+        public virtual Task<ListWorkspacesResponse> ListWorkspacesAsync(ListWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkspacesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  MonitorContact
 
         internal virtual MonitorContactResponse MonitorContact(MonitorContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MonitorContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MonitorContactResponseUnmarshaller.Instance;
 
@@ -10248,7 +14195,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact">REST API Reference for MonitorContact Operation</seealso>
         public virtual Task<MonitorContactResponse> MonitorContactAsync(MonitorContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MonitorContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MonitorContactResponseUnmarshaller.Instance;
 
@@ -10260,7 +14207,7 @@ namespace Amazon.Connect
 
         internal virtual PauseContactResponse PauseContact(PauseContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseContactResponseUnmarshaller.Instance;
 
@@ -10306,7 +14253,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">REST API Reference for PauseContact Operation</seealso>
         public virtual Task<PauseContactResponse> PauseContactAsync(PauseContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseContactResponseUnmarshaller.Instance;
 
@@ -10318,7 +14265,7 @@ namespace Amazon.Connect
 
         internal virtual PutUserStatusResponse PutUserStatus(PutUserStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutUserStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutUserStatusResponseUnmarshaller.Instance;
 
@@ -10365,7 +14312,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PutUserStatus">REST API Reference for PutUserStatus Operation</seealso>
         public virtual Task<PutUserStatusResponse> PutUserStatusAsync(PutUserStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutUserStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutUserStatusResponseUnmarshaller.Instance;
 
@@ -10377,7 +14324,7 @@ namespace Amazon.Connect
 
         internal virtual ReleasePhoneNumberResponse ReleasePhoneNumber(ReleasePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleasePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
 
@@ -10400,7 +14347,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
@@ -10443,7 +14390,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -10454,7 +14404,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">REST API Reference for ReleasePhoneNumber Operation</seealso>
         public virtual Task<ReleasePhoneNumberResponse> ReleasePhoneNumberAsync(ReleasePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleasePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
 
@@ -10466,7 +14416,7 @@ namespace Amazon.Connect
 
         internal virtual ReplicateInstanceResponse ReplicateInstance(ReplicateInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplicateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplicateInstanceResponseUnmarshaller.Instance;
 
@@ -10520,7 +14470,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">REST API Reference for ReplicateInstance Operation</seealso>
         public virtual Task<ReplicateInstanceResponse> ReplicateInstanceAsync(ReplicateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplicateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplicateInstanceResponseUnmarshaller.Instance;
 
@@ -10532,7 +14482,7 @@ namespace Amazon.Connect
 
         internal virtual ResumeContactResponse ResumeContact(ResumeContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeContactResponseUnmarshaller.Instance;
 
@@ -10575,7 +14525,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">REST API Reference for ResumeContact Operation</seealso>
         public virtual Task<ResumeContactResponse> ResumeContactAsync(ResumeContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeContactResponseUnmarshaller.Instance;
 
@@ -10587,7 +14537,7 @@ namespace Amazon.Connect
 
         internal virtual ResumeContactRecordingResponse ResumeContactRecording(ResumeContactRecordingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeContactRecordingResponseUnmarshaller.Instance;
 
@@ -10616,6 +14566,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -10625,7 +14581,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">REST API Reference for ResumeContactRecording Operation</seealso>
         public virtual Task<ResumeContactRecordingResponse> ResumeContactRecordingAsync(ResumeContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeContactRecordingResponseUnmarshaller.Instance;
 
@@ -10637,7 +14593,7 @@ namespace Amazon.Connect
 
         internal virtual SearchAgentStatusesResponse SearchAgentStatuses(SearchAgentStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAgentStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAgentStatusesResponseUnmarshaller.Instance;
 
@@ -10673,7 +14629,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
         public virtual Task<SearchAgentStatusesResponse> SearchAgentStatusesAsync(SearchAgentStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAgentStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAgentStatusesResponseUnmarshaller.Instance;
 
@@ -10685,7 +14641,7 @@ namespace Amazon.Connect
 
         internal virtual SearchAvailablePhoneNumbersResponse SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAvailablePhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
 
@@ -10721,7 +14677,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAvailablePhoneNumbers">REST API Reference for SearchAvailablePhoneNumbers Operation</seealso>
         public virtual Task<SearchAvailablePhoneNumbersResponse> SearchAvailablePhoneNumbersAsync(SearchAvailablePhoneNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAvailablePhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
 
@@ -10729,11 +14685,92 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchContactEvaluations
+
+        internal virtual SearchContactEvaluationsResponse SearchContactEvaluations(SearchContactEvaluationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchContactEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactEvaluationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactEvaluationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find contact evaluations by using specific search criteria.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find contact evaluations that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        public virtual Task<SearchContactEvaluationsResponse> SearchContactEvaluationsAsync(SearchContactEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchContactEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactEvaluationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchContactEvaluationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchContactFlowModules
 
         internal virtual SearchContactFlowModulesResponse SearchContactFlowModules(SearchContactFlowModulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContactFlowModulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContactFlowModulesResponseUnmarshaller.Instance;
 
@@ -10769,7 +14806,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">REST API Reference for SearchContactFlowModules Operation</seealso>
         public virtual Task<SearchContactFlowModulesResponse> SearchContactFlowModulesAsync(SearchContactFlowModulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContactFlowModulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContactFlowModulesResponseUnmarshaller.Instance;
 
@@ -10781,7 +14818,7 @@ namespace Amazon.Connect
 
         internal virtual SearchContactFlowsResponse SearchContactFlows(SearchContactFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContactFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContactFlowsResponseUnmarshaller.Instance;
 
@@ -10817,7 +14854,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">REST API Reference for SearchContactFlows Operation</seealso>
         public virtual Task<SearchContactFlowsResponse> SearchContactFlowsAsync(SearchContactFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContactFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContactFlowsResponseUnmarshaller.Instance;
 
@@ -10829,7 +14866,7 @@ namespace Amazon.Connect
 
         internal virtual SearchContactsResponse SearchContacts(SearchContactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContactsResponseUnmarshaller.Instance;
 
@@ -10865,7 +14902,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
         public virtual Task<SearchContactsResponse> SearchContactsAsync(SearchContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchContactsResponseUnmarshaller.Instance;
 
@@ -10873,11 +14910,61 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchDataTables
+
+        internal virtual SearchDataTablesResponse SearchDataTables(SearchDataTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataTablesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchDataTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for data tables based on the table's ID, name, and description. In the future,
+        /// this operation can support searching on attribute names and possibly primary values.
+        /// Follows other search operations closely and supports both search criteria and filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchDataTables service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchDataTables">REST API Reference for SearchDataTables Operation</seealso>
+        public virtual Task<SearchDataTablesResponse> SearchDataTablesAsync(SearchDataTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchDataTablesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchEmailAddresses
 
         internal virtual SearchEmailAddressesResponse SearchEmailAddresses(SearchEmailAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchEmailAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchEmailAddressesResponseUnmarshaller.Instance;
 
@@ -10916,7 +15003,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">REST API Reference for SearchEmailAddresses Operation</seealso>
         public virtual Task<SearchEmailAddressesResponse> SearchEmailAddressesAsync(SearchEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchEmailAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchEmailAddressesResponseUnmarshaller.Instance;
 
@@ -10924,11 +15011,96 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchEvaluationForms
+
+        internal virtual SearchEvaluationFormsResponse SearchEvaluationForms(SearchEvaluationFormsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchEvaluationFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchEvaluationFormsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchEvaluationFormsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List all evaluation forms in an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that meet specific criteria, such as Title, Description,
+        /// Status, and more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        public virtual Task<SearchEvaluationFormsResponse> SearchEvaluationFormsAsync(SearchEvaluationFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchEvaluationFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchEvaluationFormsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchEvaluationFormsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchHoursOfOperationOverrides
 
         internal virtual SearchHoursOfOperationOverridesResponse SearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
 
@@ -10964,7 +15136,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
         public virtual Task<SearchHoursOfOperationOverridesResponse> SearchHoursOfOperationOverridesAsync(SearchHoursOfOperationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
 
@@ -10976,7 +15148,7 @@ namespace Amazon.Connect
 
         internal virtual SearchHoursOfOperationsResponse SearchHoursOfOperations(SearchHoursOfOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchHoursOfOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
 
@@ -11012,7 +15184,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
         public virtual Task<SearchHoursOfOperationsResponse> SearchHoursOfOperationsAsync(SearchHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchHoursOfOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
 
@@ -11020,11 +15192,64 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchNotifications
+
+        internal virtual SearchNotificationsResponse SearchNotifications(SearchNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchNotificationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for notifications based on specified criteria and filters. Returns a paginated
+        /// list of notifications matching the search parameters, ordered by descending creation
+        /// time. Supports filtering by content and tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchNotifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">REST API Reference for SearchNotifications Operation</seealso>
+        public virtual Task<SearchNotificationsResponse> SearchNotificationsAsync(SearchNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNotificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchNotificationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchPredefinedAttributes
 
         internal virtual SearchPredefinedAttributesResponse SearchPredefinedAttributes(SearchPredefinedAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPredefinedAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPredefinedAttributesResponseUnmarshaller.Instance;
 
@@ -11034,10 +15259,31 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches predefined attributes that meet certain criteria. <i>Predefined attributes</i>
-        /// are attributes in an Amazon Connect instance that can be used to route contacts to
-        /// an agent or pools of agents within a queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Searches predefined attributes that meet certain criteria. A <i>predefined attribute</i>
+        /// is made up of a name and a value. You can use predefined attributes for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -11063,7 +15309,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPredefinedAttributes">REST API Reference for SearchPredefinedAttributes Operation</seealso>
         public virtual Task<SearchPredefinedAttributesResponse> SearchPredefinedAttributesAsync(SearchPredefinedAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPredefinedAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPredefinedAttributesResponseUnmarshaller.Instance;
 
@@ -11075,7 +15321,7 @@ namespace Amazon.Connect
 
         internal virtual SearchPromptsResponse SearchPrompts(SearchPromptsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPromptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPromptsResponseUnmarshaller.Instance;
 
@@ -11111,7 +15357,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
         public virtual Task<SearchPromptsResponse> SearchPromptsAsync(SearchPromptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPromptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPromptsResponseUnmarshaller.Instance;
 
@@ -11123,7 +15369,7 @@ namespace Amazon.Connect
 
         internal virtual SearchQueuesResponse SearchQueues(SearchQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
 
@@ -11159,7 +15405,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">REST API Reference for SearchQueues Operation</seealso>
         public virtual Task<SearchQueuesResponse> SearchQueuesAsync(SearchQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
 
@@ -11171,7 +15417,7 @@ namespace Amazon.Connect
 
         internal virtual SearchQuickConnectsResponse SearchQuickConnects(SearchQuickConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
 
@@ -11207,7 +15453,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
         public virtual Task<SearchQuickConnectsResponse> SearchQuickConnectsAsync(SearchQuickConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchQuickConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
 
@@ -11219,7 +15465,7 @@ namespace Amazon.Connect
 
         internal virtual SearchResourceTagsResponse SearchResourceTags(SearchResourceTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchResourceTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResourceTagsResponseUnmarshaller.Instance;
 
@@ -11259,7 +15505,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">REST API Reference for SearchResourceTags Operation</seealso>
         public virtual Task<SearchResourceTagsResponse> SearchResourceTagsAsync(SearchResourceTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchResourceTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResourceTagsResponseUnmarshaller.Instance;
 
@@ -11271,7 +15517,7 @@ namespace Amazon.Connect
 
         internal virtual SearchRoutingProfilesResponse SearchRoutingProfiles(SearchRoutingProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRoutingProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
 
@@ -11316,7 +15562,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">REST API Reference for SearchRoutingProfiles Operation</seealso>
         public virtual Task<SearchRoutingProfilesResponse> SearchRoutingProfilesAsync(SearchRoutingProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRoutingProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
 
@@ -11328,7 +15574,7 @@ namespace Amazon.Connect
 
         internal virtual SearchSecurityProfilesResponse SearchSecurityProfiles(SearchSecurityProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSecurityProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSecurityProfilesResponseUnmarshaller.Instance;
 
@@ -11372,7 +15618,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">REST API Reference for SearchSecurityProfiles Operation</seealso>
         public virtual Task<SearchSecurityProfilesResponse> SearchSecurityProfilesAsync(SearchSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSecurityProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSecurityProfilesResponseUnmarshaller.Instance;
 
@@ -11380,11 +15626,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchTestCases
+
+        internal virtual SearchTestCasesResponse SearchTestCases(SearchTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTestCasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for test cases in the specified Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTestCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchTestCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">REST API Reference for SearchTestCases Operation</seealso>
+        public virtual Task<SearchTestCasesResponse> SearchTestCasesAsync(SearchTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTestCasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchTestCasesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchUserHierarchyGroups
 
         internal virtual SearchUserHierarchyGroupsResponse SearchUserHierarchyGroups(SearchUserHierarchyGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUserHierarchyGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUserHierarchyGroupsResponseUnmarshaller.Instance;
 
@@ -11427,7 +15724,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
         public virtual Task<SearchUserHierarchyGroupsResponse> SearchUserHierarchyGroupsAsync(SearchUserHierarchyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUserHierarchyGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUserHierarchyGroupsResponseUnmarshaller.Instance;
 
@@ -11439,7 +15736,7 @@ namespace Amazon.Connect
 
         internal virtual SearchUsersResponse SearchUsers(SearchUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -11481,7 +15778,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
         public virtual Task<SearchUsersResponse> SearchUsersAsync(SearchUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -11489,11 +15786,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchViews
+
+        internal virtual SearchViewsResponse SearchViews(SearchViewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchViewsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchViewsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches views based on name, description, or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchViews service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchViews">REST API Reference for SearchViews Operation</seealso>
+        public virtual Task<SearchViewsResponse> SearchViewsAsync(SearchViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchViewsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchViewsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchVocabularies
 
         internal virtual SearchVocabulariesResponse SearchVocabularies(SearchVocabulariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
 
@@ -11527,7 +15875,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">REST API Reference for SearchVocabularies Operation</seealso>
         public virtual Task<SearchVocabulariesResponse> SearchVocabulariesAsync(SearchVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
 
@@ -11535,11 +15883,114 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchWorkspaceAssociations
+
+        internal virtual SearchWorkspaceAssociationsResponse SearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchWorkspaceAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for workspace associations with users or routing profiles based on various
+        /// criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchWorkspaceAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaceAssociations">REST API Reference for SearchWorkspaceAssociations Operation</seealso>
+        public virtual Task<SearchWorkspaceAssociationsResponse> SearchWorkspaceAssociationsAsync(SearchWorkspaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchWorkspaceAssociationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SearchWorkspaces
+
+        internal virtual SearchWorkspacesResponse SearchWorkspaces(SearchWorkspacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchWorkspacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches workspaces based on name, description, visibility, or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchWorkspaces service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaces">REST API Reference for SearchWorkspaces Operation</seealso>
+        public virtual Task<SearchWorkspacesResponse> SearchWorkspacesAsync(SearchWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchWorkspacesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SendChatIntegrationEvent
 
         internal virtual SendChatIntegrationEventResponse SendChatIntegrationEvent(SendChatIntegrationEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendChatIntegrationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendChatIntegrationEventResponseUnmarshaller.Instance;
 
@@ -11598,7 +16049,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">REST API Reference for SendChatIntegrationEvent Operation</seealso>
         public virtual Task<SendChatIntegrationEventResponse> SendChatIntegrationEventAsync(SendChatIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendChatIntegrationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendChatIntegrationEventResponseUnmarshaller.Instance;
 
@@ -11610,7 +16061,7 @@ namespace Amazon.Connect
 
         internal virtual SendOutboundEmailResponse SendOutboundEmail(SendOutboundEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendOutboundEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendOutboundEmailResponseUnmarshaller.Instance;
 
@@ -11661,7 +16112,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">REST API Reference for SendOutboundEmail Operation</seealso>
         public virtual Task<SendOutboundEmailResponse> SendOutboundEmailAsync(SendOutboundEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendOutboundEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendOutboundEmailResponseUnmarshaller.Instance;
 
@@ -11673,7 +16124,7 @@ namespace Amazon.Connect
 
         internal virtual StartAttachedFileUploadResponse StartAttachedFileUpload(StartAttachedFileUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAttachedFileUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAttachedFileUploadResponseUnmarshaller.Instance;
 
@@ -11720,7 +16171,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">REST API Reference for StartAttachedFileUpload Operation</seealso>
         public virtual Task<StartAttachedFileUploadResponse> StartAttachedFileUploadAsync(StartAttachedFileUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAttachedFileUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAttachedFileUploadResponseUnmarshaller.Instance;
 
@@ -11732,7 +16183,7 @@ namespace Amazon.Connect
 
         internal virtual StartChatContactResponse StartChatContact(StartChatContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartChatContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartChatContactResponseUnmarshaller.Instance;
 
@@ -11770,7 +16221,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web ServicesSupport. 
+        /// contact Amazon Web Services Support. 
         /// </para>
         ///  
         /// <para>
@@ -11813,7 +16264,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">REST API Reference for StartChatContact Operation</seealso>
         public virtual Task<StartChatContactResponse> StartChatContactAsync(StartChatContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartChatContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartChatContactResponseUnmarshaller.Instance;
 
@@ -11825,7 +16276,7 @@ namespace Amazon.Connect
 
         internal virtual StartContactEvaluationResponse StartContactEvaluation(StartContactEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContactEvaluationResponseUnmarshaller.Instance;
 
@@ -11874,7 +16325,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactEvaluation">REST API Reference for StartContactEvaluation Operation</seealso>
         public virtual Task<StartContactEvaluationResponse> StartContactEvaluationAsync(StartContactEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContactEvaluationResponseUnmarshaller.Instance;
 
@@ -11882,11 +16333,66 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  StartContactMediaProcessing
+
+        internal virtual StartContactMediaProcessingResponse StartContactMediaProcessing(StartContactMediaProcessingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return Invoke<StartContactMediaProcessingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables in-flight message processing for an ongoing chat session. Message processing
+        /// will stay active for the rest of the chat, even if an individual contact segment ends.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactMediaProcessing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartContactMediaProcessing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactMediaProcessing">REST API Reference for StartContactMediaProcessing Operation</seealso>
+        public virtual Task<StartContactMediaProcessingResponse> StartContactMediaProcessingAsync(StartContactMediaProcessingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartContactMediaProcessingResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartContactRecording
 
         internal virtual StartContactRecordingResponse StartContactRecording(StartContactRecordingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContactRecordingResponseUnmarshaller.Instance;
 
@@ -11935,6 +16441,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -11947,7 +16459,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">REST API Reference for StartContactRecording Operation</seealso>
         public virtual Task<StartContactRecordingResponse> StartContactRecordingAsync(StartContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContactRecordingResponseUnmarshaller.Instance;
 
@@ -11959,7 +16471,7 @@ namespace Amazon.Connect
 
         internal virtual StartContactStreamingResponse StartContactStreaming(StartContactStreamingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContactStreamingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContactStreamingResponseUnmarshaller.Instance;
 
@@ -12017,7 +16529,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">REST API Reference for StartContactStreaming Operation</seealso>
         public virtual Task<StartContactStreamingResponse> StartContactStreamingAsync(StartContactStreamingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContactStreamingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContactStreamingResponseUnmarshaller.Instance;
 
@@ -12029,7 +16541,7 @@ namespace Amazon.Connect
 
         internal virtual StartEmailContactResponse StartEmailContact(StartEmailContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEmailContactResponseUnmarshaller.Instance;
 
@@ -12072,7 +16584,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">REST API Reference for StartEmailContact Operation</seealso>
         public virtual Task<StartEmailContactResponse> StartEmailContactAsync(StartEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEmailContactResponseUnmarshaller.Instance;
 
@@ -12084,7 +16596,7 @@ namespace Amazon.Connect
 
         internal virtual StartOutboundChatContactResponse StartOutboundChatContact(StartOutboundChatContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOutboundChatContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOutboundChatContactResponseUnmarshaller.Instance;
 
@@ -12094,25 +16606,26 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-        /// the <c>ContactId</c> of the outbound SMS contact created.
+        /// Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API
+        /// provides the <c>ContactId</c> of the outbound SMS or WhatsApp contact created.
         /// 
         ///  
         /// <para>
         ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
         /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
-        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new contact created.
         /// </para>
         ///  
         /// <para>
-        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
-        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// This API can be used to initiate outbound SMS or WhatsApp contacts for an agent, or
+        /// it can also deflect an ongoing contact to an outbound SMS or WhatsApp contact by using
+        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
         /// Flow Action.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using SMS in Amazon Connect, see the following topics in
-        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
+        /// topics in the <i>Amazon Connect Administrator Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12122,7 +16635,13 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
-        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// an SMS-enabled phone number through Amazon Web Services End User Messaging SMS</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set
+        /// up WhatsApp Business messaging</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12157,7 +16676,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">REST API Reference for StartOutboundChatContact Operation</seealso>
         public virtual Task<StartOutboundChatContactResponse> StartOutboundChatContactAsync(StartOutboundChatContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOutboundChatContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOutboundChatContactResponseUnmarshaller.Instance;
 
@@ -12169,7 +16688,7 @@ namespace Amazon.Connect
 
         internal virtual StartOutboundEmailContactResponse StartOutboundEmailContact(StartOutboundEmailContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOutboundEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOutboundEmailContactResponseUnmarshaller.Instance;
 
@@ -12212,7 +16731,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">REST API Reference for StartOutboundEmailContact Operation</seealso>
         public virtual Task<StartOutboundEmailContactResponse> StartOutboundEmailContactAsync(StartOutboundEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOutboundEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOutboundEmailContactResponseUnmarshaller.Instance;
 
@@ -12224,7 +16743,7 @@ namespace Amazon.Connect
 
         internal virtual StartOutboundVoiceContactResponse StartOutboundVoiceContact(StartOutboundVoiceContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOutboundVoiceContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
 
@@ -12245,8 +16764,9 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// There is a 60-second dialing timeout for this operation. If the call is not connected
-        /// after 60 seconds, it fails.
+        /// Dialing timeout for this operation can be configured with the “RingTimeoutInSeconds”
+        /// parameter. If not specified, the default dialing timeout will be 60 seconds which
+        /// means if the call is not connected within 60 seconds, it fails.
         /// </para>
         ///  <note> 
         /// <para>
@@ -12261,6 +16781,12 @@ namespace Amazon.Connect
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -12294,7 +16820,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">REST API Reference for StartOutboundVoiceContact Operation</seealso>
         public virtual Task<StartOutboundVoiceContactResponse> StartOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOutboundVoiceContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
 
@@ -12306,7 +16832,7 @@ namespace Amazon.Connect
 
         internal virtual StartScreenSharingResponse StartScreenSharing(StartScreenSharingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartScreenSharingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartScreenSharingResponseUnmarshaller.Instance;
 
@@ -12348,7 +16874,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
         public virtual Task<StartScreenSharingResponse> StartScreenSharingAsync(StartScreenSharingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartScreenSharingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartScreenSharingResponseUnmarshaller.Instance;
 
@@ -12360,7 +16886,7 @@ namespace Amazon.Connect
 
         internal virtual StartTaskContactResponse StartTaskContact(StartTaskContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
 
@@ -12455,7 +16981,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">REST API Reference for StartTaskContact Operation</seealso>
         public virtual Task<StartTaskContactResponse> StartTaskContactAsync(StartTaskContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
 
@@ -12463,11 +16989,65 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  StartTestCaseExecution
+
+        internal virtual StartTestCaseExecutionResponse StartTestCaseExecution(StartTestCaseExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartTestCaseExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts executing a published test case.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTestCaseExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">REST API Reference for StartTestCaseExecution Operation</seealso>
+        public virtual Task<StartTestCaseExecutionResponse> StartTestCaseExecutionAsync(StartTestCaseExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartTestCaseExecutionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartWebRTCContact
 
         internal virtual StartWebRTCContactResponse StartWebRTCContact(StartWebRTCContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWebRTCContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWebRTCContactResponseUnmarshaller.Instance;
 
@@ -12505,7 +17085,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">REST API Reference for StartWebRTCContact Operation</seealso>
         public virtual Task<StartWebRTCContactResponse> StartWebRTCContactAsync(StartWebRTCContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWebRTCContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWebRTCContactResponseUnmarshaller.Instance;
 
@@ -12517,7 +17097,7 @@ namespace Amazon.Connect
 
         internal virtual StopContactResponse StopContact(StopContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopContactResponseUnmarshaller.Instance;
 
@@ -12562,11 +17142,16 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat or Task contacts.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -12580,7 +17165,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">REST API Reference for StopContact Operation</seealso>
         public virtual Task<StopContactResponse> StopContactAsync(StopContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopContactResponseUnmarshaller.Instance;
 
@@ -12588,11 +17173,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  StopContactMediaProcessing
+
+        internal virtual StopContactMediaProcessingResponse StopContactMediaProcessing(StopContactMediaProcessingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return Invoke<StopContactMediaProcessingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops in-flight message processing for an ongoing chat session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactMediaProcessing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopContactMediaProcessing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactMediaProcessing">REST API Reference for StopContactMediaProcessing Operation</seealso>
+        public virtual Task<StopContactMediaProcessingResponse> StopContactMediaProcessingAsync(StopContactMediaProcessingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopContactMediaProcessingResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopContactRecording
 
         internal virtual StopContactRecordingResponse StopContactRecording(StopContactRecordingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopContactRecordingResponseUnmarshaller.Instance;
 
@@ -12623,6 +17259,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -12632,7 +17274,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">REST API Reference for StopContactRecording Operation</seealso>
         public virtual Task<StopContactRecordingResponse> StopContactRecordingAsync(StopContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopContactRecordingResponseUnmarshaller.Instance;
 
@@ -12644,7 +17286,7 @@ namespace Amazon.Connect
 
         internal virtual StopContactStreamingResponse StopContactStreaming(StopContactStreamingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopContactStreamingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopContactStreamingResponseUnmarshaller.Instance;
 
@@ -12679,7 +17321,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">REST API Reference for StopContactStreaming Operation</seealso>
         public virtual Task<StopContactStreamingResponse> StopContactStreamingAsync(StopContactStreamingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopContactStreamingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopContactStreamingResponseUnmarshaller.Instance;
 
@@ -12687,11 +17329,62 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  StopTestCaseExecution
+
+        internal virtual StopTestCaseExecutionResponse StopTestCaseExecution(StopTestCaseExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopTestCaseExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a running test execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTestCaseExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopTestCaseExecution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">REST API Reference for StopTestCaseExecution Operation</seealso>
+        public virtual Task<StopTestCaseExecutionResponse> StopTestCaseExecutionAsync(StopTestCaseExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopTestCaseExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTestCaseExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopTestCaseExecutionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SubmitContactEvaluation
 
         internal virtual SubmitContactEvaluationResponse SubmitContactEvaluation(SubmitContactEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitContactEvaluationResponseUnmarshaller.Instance;
 
@@ -12737,7 +17430,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SubmitContactEvaluation">REST API Reference for SubmitContactEvaluation Operation</seealso>
         public virtual Task<SubmitContactEvaluationResponse> SubmitContactEvaluationAsync(SubmitContactEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitContactEvaluationResponseUnmarshaller.Instance;
 
@@ -12749,7 +17442,7 @@ namespace Amazon.Connect
 
         internal virtual SuspendContactRecordingResponse SuspendContactRecording(SuspendContactRecordingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuspendContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuspendContactRecordingResponseUnmarshaller.Instance;
 
@@ -12785,6 +17478,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -12794,7 +17493,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">REST API Reference for SuspendContactRecording Operation</seealso>
         public virtual Task<SuspendContactRecordingResponse> SuspendContactRecordingAsync(SuspendContactRecordingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuspendContactRecordingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuspendContactRecordingResponseUnmarshaller.Instance;
 
@@ -12806,7 +17505,7 @@ namespace Amazon.Connect
 
         internal virtual TagContactResponse TagContact(TagContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagContactResponseUnmarshaller.Instance;
 
@@ -12829,6 +17528,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -12844,7 +17549,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact">REST API Reference for TagContact Operation</seealso>
         public virtual Task<TagContactResponse> TagContactAsync(TagContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagContactResponseUnmarshaller.Instance;
 
@@ -12856,7 +17561,7 @@ namespace Amazon.Connect
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -12906,7 +17611,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -12918,7 +17623,7 @@ namespace Amazon.Connect
 
         internal virtual TransferContactResponse TransferContact(TransferContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransferContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransferContactResponseUnmarshaller.Instance;
 
@@ -12991,7 +17696,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">REST API Reference for TransferContact Operation</seealso>
         public virtual Task<TransferContactResponse> TransferContactAsync(TransferContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransferContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransferContactResponseUnmarshaller.Instance;
 
@@ -13003,7 +17708,7 @@ namespace Amazon.Connect
 
         internal virtual UntagContactResponse UntagContact(UntagContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagContactResponseUnmarshaller.Instance;
 
@@ -13026,6 +17731,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -13041,7 +17752,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact">REST API Reference for UntagContact Operation</seealso>
         public virtual Task<UntagContactResponse> UntagContactAsync(UntagContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagContactResponseUnmarshaller.Instance;
 
@@ -13053,7 +17764,7 @@ namespace Amazon.Connect
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -13089,7 +17800,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -13101,7 +17812,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateAgentStatusResponse UpdateAgentStatus(UpdateAgentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
 
@@ -13111,12 +17822,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -13148,7 +17854,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
         public virtual Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(UpdateAgentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
 
@@ -13160,7 +17866,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateAuthenticationProfileResponse UpdateAuthenticationProfile(UpdateAuthenticationProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAuthenticationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAuthenticationProfileResponseUnmarshaller.Instance;
 
@@ -13171,7 +17877,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -13202,7 +17908,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">REST API Reference for UpdateAuthenticationProfile Operation</seealso>
         public virtual Task<UpdateAuthenticationProfileResponse> UpdateAuthenticationProfileAsync(UpdateAuthenticationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAuthenticationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAuthenticationProfileResponseUnmarshaller.Instance;
 
@@ -13214,7 +17920,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
 
@@ -13254,6 +17960,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -13269,7 +17981,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
         public virtual Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
 
@@ -13281,7 +17993,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactAttributesResponse UpdateContactAttributes(UpdateContactAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
 
@@ -13320,6 +18032,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -13332,7 +18050,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">REST API Reference for UpdateContactAttributes Operation</seealso>
         public virtual Task<UpdateContactAttributesResponse> UpdateContactAttributesAsync(UpdateContactAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
 
@@ -13344,7 +18062,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactEvaluationResponse UpdateContactEvaluation(UpdateContactEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactEvaluationResponseUnmarshaller.Instance;
 
@@ -13383,7 +18101,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactEvaluation">REST API Reference for UpdateContactEvaluation Operation</seealso>
         public virtual Task<UpdateContactEvaluationResponse> UpdateContactEvaluationAsync(UpdateContactEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactEvaluationResponseUnmarshaller.Instance;
 
@@ -13395,7 +18113,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactFlowContentResponse UpdateContactFlowContent(UpdateContactFlowContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowContentResponseUnmarshaller.Instance;
 
@@ -13447,7 +18165,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">REST API Reference for UpdateContactFlowContent Operation</seealso>
         public virtual Task<UpdateContactFlowContentResponse> UpdateContactFlowContentAsync(UpdateContactFlowContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowContentResponseUnmarshaller.Instance;
 
@@ -13459,7 +18177,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactFlowMetadataResponse UpdateContactFlowMetadata(UpdateContactFlowMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowMetadataResponseUnmarshaller.Instance;
 
@@ -13498,7 +18216,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata">REST API Reference for UpdateContactFlowMetadata Operation</seealso>
         public virtual Task<UpdateContactFlowMetadataResponse> UpdateContactFlowMetadataAsync(UpdateContactFlowMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowMetadataResponseUnmarshaller.Instance;
 
@@ -13506,11 +18224,69 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  UpdateContactFlowModuleAlias
+
+        internal virtual UpdateContactFlowModuleAliasResponse UpdateContactFlowModuleAlias(UpdateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a specific Aliases metadata, including the version it’s tied to, it’s name,
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual Task<UpdateContactFlowModuleAliasResponse> UpdateContactFlowModuleAliasAsync(UpdateContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateContactFlowModuleContent
 
         internal virtual UpdateContactFlowModuleContentResponse UpdateContactFlowModuleContent(UpdateContactFlowModuleContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowModuleContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowModuleContentResponseUnmarshaller.Instance;
 
@@ -13557,7 +18333,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">REST API Reference for UpdateContactFlowModuleContent Operation</seealso>
         public virtual Task<UpdateContactFlowModuleContentResponse> UpdateContactFlowModuleContentAsync(UpdateContactFlowModuleContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowModuleContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowModuleContentResponseUnmarshaller.Instance;
 
@@ -13569,7 +18345,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactFlowModuleMetadataResponse UpdateContactFlowModuleMetadata(UpdateContactFlowModuleMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowModuleMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowModuleMetadataResponseUnmarshaller.Instance;
 
@@ -13611,7 +18387,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata">REST API Reference for UpdateContactFlowModuleMetadata Operation</seealso>
         public virtual Task<UpdateContactFlowModuleMetadataResponse> UpdateContactFlowModuleMetadataAsync(UpdateContactFlowModuleMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowModuleMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowModuleMetadataResponseUnmarshaller.Instance;
 
@@ -13623,7 +18399,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactFlowNameResponse UpdateContactFlowName(UpdateContactFlowNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowNameResponseUnmarshaller.Instance;
 
@@ -13668,7 +18444,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName">REST API Reference for UpdateContactFlowName Operation</seealso>
         public virtual Task<UpdateContactFlowNameResponse> UpdateContactFlowNameAsync(UpdateContactFlowNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactFlowNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactFlowNameResponseUnmarshaller.Instance;
 
@@ -13680,7 +18456,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactRoutingDataResponse UpdateContactRoutingData(UpdateContactRoutingDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactRoutingDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactRoutingDataResponseUnmarshaller.Instance;
 
@@ -13720,6 +18496,12 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidActiveRegionException">
+        /// This exception occurs when an API request is made to a non-active region in an Amazon
+        /// Connect instance configured with Amazon Connect Global Resiliency. For example, if
+        /// the active region is US West (Oregon) and a request is made to US East (N. Virginia),
+        /// the exception will be returned.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
         /// </exception>
@@ -13735,7 +18517,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactRoutingData">REST API Reference for UpdateContactRoutingData Operation</seealso>
         public virtual Task<UpdateContactRoutingDataResponse> UpdateContactRoutingDataAsync(UpdateContactRoutingDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactRoutingDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactRoutingDataResponseUnmarshaller.Instance;
 
@@ -13747,7 +18529,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateContactScheduleResponse UpdateContactSchedule(UpdateContactScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
 
@@ -13786,7 +18568,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
         public virtual Task<UpdateContactScheduleResponse> UpdateContactScheduleAsync(UpdateContactScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
 
@@ -13794,11 +18576,195 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  UpdateDataTableAttribute
+
+        internal virtual UpdateDataTableAttributeResponse UpdateDataTableAttribute(UpdateDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates all properties for an attribute using all properties from CreateDataTableAttribute.
+        /// There are no other granular update endpoints. It does not act as a patch operation
+        /// - all properties must be provided. System managed attributes are not mutable by customers.
+        /// Changing an attribute's validation does not invalidate existing values since validation
+        /// only runs when values are created or updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableAttribute">REST API Reference for UpdateDataTableAttribute Operation</seealso>
+        public virtual Task<UpdateDataTableAttributeResponse> UpdateDataTableAttributeAsync(UpdateDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataTableAttributeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateDataTableMetadata
+
+        internal virtual UpdateDataTableMetadataResponse UpdateDataTableMetadata(UpdateDataTableMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTableMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the metadata properties of a data table. Accepts all fields similar to CreateDataTable,
+        /// except for fields and tags. There are no other granular update endpoints. It does
+        /// not act as a patch operation - all properties must be provided or defaults will be
+        /// used. Fields follow the same requirements as CreateDataTable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTableMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableMetadata">REST API Reference for UpdateDataTableMetadata Operation</seealso>
+        public virtual Task<UpdateDataTableMetadataResponse> UpdateDataTableMetadataAsync(UpdateDataTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataTableMetadataResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateDataTablePrimaryValues
+
+        internal virtual UpdateDataTablePrimaryValuesResponse UpdateDataTablePrimaryValues(UpdateDataTablePrimaryValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTablePrimaryValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the primary values for a record. This operation affects all existing values
+        /// that are currently associated to the record and its primary values. Users that have
+        /// restrictions on attributes and/or primary values are not authorized to use this endpoint.
+        /// The combination of new primary values must be unique within the table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTablePrimaryValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTablePrimaryValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTablePrimaryValues">REST API Reference for UpdateDataTablePrimaryValues Operation</seealso>
+        public virtual Task<UpdateDataTablePrimaryValuesResponse> UpdateDataTablePrimaryValuesAsync(UpdateDataTablePrimaryValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataTablePrimaryValuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateEmailAddressMetadata
 
         internal virtual UpdateEmailAddressMetadataResponse UpdateEmailAddressMetadata(UpdateEmailAddressMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmailAddressMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmailAddressMetadataResponseUnmarshaller.Instance;
 
@@ -13842,7 +18808,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">REST API Reference for UpdateEmailAddressMetadata Operation</seealso>
         public virtual Task<UpdateEmailAddressMetadataResponse> UpdateEmailAddressMetadataAsync(UpdateEmailAddressMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmailAddressMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmailAddressMetadataResponseUnmarshaller.Instance;
 
@@ -13854,7 +18820,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateEvaluationFormResponse UpdateEvaluationForm(UpdateEvaluationFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -13901,7 +18867,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">REST API Reference for UpdateEvaluationForm Operation</seealso>
         public virtual Task<UpdateEvaluationFormResponse> UpdateEvaluationFormAsync(UpdateEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEvaluationFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEvaluationFormResponseUnmarshaller.Instance;
 
@@ -13913,7 +18879,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateHoursOfOperationResponse UpdateHoursOfOperation(UpdateHoursOfOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -13923,12 +18889,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -13957,7 +18918,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperation">REST API Reference for UpdateHoursOfOperation Operation</seealso>
         public virtual Task<UpdateHoursOfOperationResponse> UpdateHoursOfOperationAsync(UpdateHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -13969,7 +18930,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateHoursOfOperationOverrideResponse UpdateHoursOfOperationOverride(UpdateHoursOfOperationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -14011,7 +18972,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
         public virtual Task<UpdateHoursOfOperationOverrideResponse> UpdateHoursOfOperationOverrideAsync(UpdateHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
 
@@ -14023,7 +18984,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateInstanceAttributeResponse UpdateInstanceAttribute(UpdateInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -14064,7 +19025,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">REST API Reference for UpdateInstanceAttribute Operation</seealso>
         public virtual Task<UpdateInstanceAttributeResponse> UpdateInstanceAttributeAsync(UpdateInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -14076,7 +19037,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateInstanceStorageConfigResponse UpdateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -14117,7 +19078,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
         public virtual Task<UpdateInstanceStorageConfigResponse> UpdateInstanceStorageConfigAsync(UpdateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceStorageConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
 
@@ -14125,11 +19086,63 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  UpdateNotificationContent
+
+        internal virtual UpdateNotificationContentResponse UpdateNotificationContent(UpdateNotificationContentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotificationContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the localized content of an existing notification. This operation applies
+        /// to all users for whom the notification was sent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNotificationContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
+        public virtual Task<UpdateNotificationContentResponse> UpdateNotificationContentAsync(UpdateNotificationContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNotificationContentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateParticipantAuthentication
 
         internal virtual UpdateParticipantAuthenticationResponse UpdateParticipantAuthentication(UpdateParticipantAuthenticationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParticipantAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParticipantAuthenticationResponseUnmarshaller.Instance;
 
@@ -14187,7 +19200,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
         public virtual Task<UpdateParticipantAuthenticationResponse> UpdateParticipantAuthenticationAsync(UpdateParticipantAuthenticationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParticipantAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParticipantAuthenticationResponseUnmarshaller.Instance;
 
@@ -14199,7 +19212,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateParticipantRoleConfigResponse UpdateParticipantRoleConfig(UpdateParticipantRoleConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParticipantRoleConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParticipantRoleConfigResponseUnmarshaller.Instance;
 
@@ -14262,7 +19275,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">REST API Reference for UpdateParticipantRoleConfig Operation</seealso>
         public virtual Task<UpdateParticipantRoleConfigResponse> UpdateParticipantRoleConfigAsync(UpdateParticipantRoleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParticipantRoleConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParticipantRoleConfigResponseUnmarshaller.Instance;
 
@@ -14274,7 +19287,7 @@ namespace Amazon.Connect
 
         internal virtual UpdatePhoneNumberResponse UpdatePhoneNumber(UpdatePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -14322,7 +19335,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -14333,7 +19349,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
         public virtual Task<UpdatePhoneNumberResponse> UpdatePhoneNumberAsync(UpdatePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -14345,7 +19361,7 @@ namespace Amazon.Connect
 
         internal virtual UpdatePhoneNumberMetadataResponse UpdatePhoneNumberMetadata(UpdatePhoneNumberMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberMetadataResponseUnmarshaller.Instance;
 
@@ -14387,7 +19403,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -14398,7 +19417,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumberMetadata">REST API Reference for UpdatePhoneNumberMetadata Operation</seealso>
         public virtual Task<UpdatePhoneNumberMetadataResponse> UpdatePhoneNumberMetadataAsync(UpdatePhoneNumberMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberMetadataResponseUnmarshaller.Instance;
 
@@ -14410,7 +19429,7 @@ namespace Amazon.Connect
 
         internal virtual UpdatePredefinedAttributeResponse UpdatePredefinedAttribute(UpdatePredefinedAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -14420,11 +19439,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// Updates a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update routing proficiency (for example, agent certification) that has predefined
+        /// values (for example, a list of possible certifications). For more information, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -14450,7 +19499,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePredefinedAttribute">REST API Reference for UpdatePredefinedAttribute Operation</seealso>
         public virtual Task<UpdatePredefinedAttributeResponse> UpdatePredefinedAttributeAsync(UpdatePredefinedAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePredefinedAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePredefinedAttributeResponseUnmarshaller.Instance;
 
@@ -14462,7 +19511,7 @@ namespace Amazon.Connect
 
         internal virtual UpdatePromptResponse UpdatePrompt(UpdatePromptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
 
@@ -14498,7 +19547,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
         public virtual Task<UpdatePromptResponse> UpdatePromptAsync(UpdatePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePromptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
 
@@ -14510,7 +19559,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQueueHoursOfOperationResponse UpdateQueueHoursOfOperation(UpdateQueueHoursOfOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -14520,12 +19569,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation for the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -14551,7 +19595,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">REST API Reference for UpdateQueueHoursOfOperation Operation</seealso>
         public virtual Task<UpdateQueueHoursOfOperationResponse> UpdateQueueHoursOfOperationAsync(UpdateQueueHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueHoursOfOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueHoursOfOperationResponseUnmarshaller.Instance;
 
@@ -14563,7 +19607,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQueueMaxContactsResponse UpdateQueueMaxContacts(UpdateQueueMaxContactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueMaxContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueMaxContactsResponseUnmarshaller.Instance;
 
@@ -14573,13 +19617,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the maximum number of contacts allowed in a queue before it is considered
         /// full.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueMaxContacts service method.</param>
         /// <param name="cancellationToken">
@@ -14605,7 +19644,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">REST API Reference for UpdateQueueMaxContacts Operation</seealso>
         public virtual Task<UpdateQueueMaxContactsResponse> UpdateQueueMaxContactsAsync(UpdateQueueMaxContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueMaxContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueMaxContactsResponseUnmarshaller.Instance;
 
@@ -14617,7 +19656,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQueueNameResponse UpdateQueueName(UpdateQueueNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueNameResponseUnmarshaller.Instance;
 
@@ -14627,13 +19666,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the name and description of a queue. At least <c>Name</c> or <c>Description</c>
         /// must be provided.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueName service method.</param>
         /// <param name="cancellationToken">
@@ -14662,7 +19696,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">REST API Reference for UpdateQueueName Operation</seealso>
         public virtual Task<UpdateQueueNameResponse> UpdateQueueNameAsync(UpdateQueueNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueNameResponseUnmarshaller.Instance;
 
@@ -14674,7 +19708,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQueueOutboundCallerConfigResponse UpdateQueueOutboundCallerConfig(UpdateQueueOutboundCallerConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueOutboundCallerConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueOutboundCallerConfigResponseUnmarshaller.Instance;
 
@@ -14684,13 +19718,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -14741,7 +19771,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">REST API Reference for UpdateQueueOutboundCallerConfig Operation</seealso>
         public virtual Task<UpdateQueueOutboundCallerConfigResponse> UpdateQueueOutboundCallerConfigAsync(UpdateQueueOutboundCallerConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueOutboundCallerConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueOutboundCallerConfigResponseUnmarshaller.Instance;
 
@@ -14753,7 +19783,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQueueOutboundEmailConfigResponse UpdateQueueOutboundEmailConfig(UpdateQueueOutboundEmailConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueOutboundEmailConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueOutboundEmailConfigResponseUnmarshaller.Instance;
 
@@ -14795,7 +19825,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">REST API Reference for UpdateQueueOutboundEmailConfig Operation</seealso>
         public virtual Task<UpdateQueueOutboundEmailConfigResponse> UpdateQueueOutboundEmailConfigAsync(UpdateQueueOutboundEmailConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueOutboundEmailConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueOutboundEmailConfigResponseUnmarshaller.Instance;
 
@@ -14807,7 +19837,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQueueStatusResponse UpdateQueueStatus(UpdateQueueStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueStatusResponseUnmarshaller.Instance;
 
@@ -14817,12 +19847,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the status of the queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueStatus service method.</param>
         /// <param name="cancellationToken">
@@ -14848,7 +19873,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">REST API Reference for UpdateQueueStatus Operation</seealso>
         public virtual Task<UpdateQueueStatusResponse> UpdateQueueStatusAsync(UpdateQueueStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueStatusResponseUnmarshaller.Instance;
 
@@ -14860,7 +19885,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQuickConnectConfigResponse UpdateQuickConnectConfig(UpdateQuickConnectConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickConnectConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickConnectConfigResponseUnmarshaller.Instance;
 
@@ -14896,7 +19921,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">REST API Reference for UpdateQuickConnectConfig Operation</seealso>
         public virtual Task<UpdateQuickConnectConfigResponse> UpdateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickConnectConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickConnectConfigResponseUnmarshaller.Instance;
 
@@ -14908,7 +19933,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateQuickConnectNameResponse UpdateQuickConnectName(UpdateQuickConnectNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickConnectNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickConnectNameResponseUnmarshaller.Instance;
 
@@ -14945,7 +19970,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">REST API Reference for UpdateQuickConnectName Operation</seealso>
         public virtual Task<UpdateQuickConnectNameResponse> UpdateQuickConnectNameAsync(UpdateQuickConnectNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickConnectNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickConnectNameResponseUnmarshaller.Instance;
 
@@ -14957,7 +19982,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateRoutingProfileAgentAvailabilityTimerResponse UpdateRoutingProfileAgentAvailabilityTimer(UpdateRoutingProfileAgentAvailabilityTimerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileAgentAvailabilityTimerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileAgentAvailabilityTimerResponseUnmarshaller.Instance;
 
@@ -14994,7 +20019,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileAgentAvailabilityTimer">REST API Reference for UpdateRoutingProfileAgentAvailabilityTimer Operation</seealso>
         public virtual Task<UpdateRoutingProfileAgentAvailabilityTimerResponse> UpdateRoutingProfileAgentAvailabilityTimerAsync(UpdateRoutingProfileAgentAvailabilityTimerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileAgentAvailabilityTimerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileAgentAvailabilityTimerResponseUnmarshaller.Instance;
 
@@ -15006,7 +20031,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateRoutingProfileConcurrencyResponse UpdateRoutingProfileConcurrency(UpdateRoutingProfileConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileConcurrencyResponseUnmarshaller.Instance;
 
@@ -15043,7 +20068,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileConcurrency">REST API Reference for UpdateRoutingProfileConcurrency Operation</seealso>
         public virtual Task<UpdateRoutingProfileConcurrencyResponse> UpdateRoutingProfileConcurrencyAsync(UpdateRoutingProfileConcurrencyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileConcurrencyResponseUnmarshaller.Instance;
 
@@ -15055,7 +20080,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateRoutingProfileDefaultOutboundQueueResponse UpdateRoutingProfileDefaultOutboundQueue(UpdateRoutingProfileDefaultOutboundQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileDefaultOutboundQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileDefaultOutboundQueueResponseUnmarshaller.Instance;
 
@@ -15091,7 +20116,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileDefaultOutboundQueue">REST API Reference for UpdateRoutingProfileDefaultOutboundQueue Operation</seealso>
         public virtual Task<UpdateRoutingProfileDefaultOutboundQueueResponse> UpdateRoutingProfileDefaultOutboundQueueAsync(UpdateRoutingProfileDefaultOutboundQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileDefaultOutboundQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileDefaultOutboundQueueResponseUnmarshaller.Instance;
 
@@ -15103,7 +20128,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateRoutingProfileNameResponse UpdateRoutingProfileName(UpdateRoutingProfileNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileNameResponseUnmarshaller.Instance;
 
@@ -15143,7 +20168,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileName">REST API Reference for UpdateRoutingProfileName Operation</seealso>
         public virtual Task<UpdateRoutingProfileNameResponse> UpdateRoutingProfileNameAsync(UpdateRoutingProfileNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileNameResponseUnmarshaller.Instance;
 
@@ -15155,7 +20180,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateRoutingProfileQueuesResponse UpdateRoutingProfileQueues(UpdateRoutingProfileQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -15191,7 +20216,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileQueues">REST API Reference for UpdateRoutingProfileQueues Operation</seealso>
         public virtual Task<UpdateRoutingProfileQueuesResponse> UpdateRoutingProfileQueuesAsync(UpdateRoutingProfileQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingProfileQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingProfileQueuesResponseUnmarshaller.Instance;
 
@@ -15203,7 +20228,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -15248,7 +20273,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual Task<UpdateRuleResponse> UpdateRuleAsync(UpdateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -15260,7 +20285,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateSecurityProfileResponse UpdateSecurityProfile(UpdateSecurityProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
 
@@ -15304,7 +20329,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">REST API Reference for UpdateSecurityProfile Operation</seealso>
         public virtual Task<UpdateSecurityProfileResponse> UpdateSecurityProfileAsync(UpdateSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
 
@@ -15316,7 +20341,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateTaskTemplateResponse UpdateTaskTemplate(UpdateTaskTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskTemplateResponseUnmarshaller.Instance;
 
@@ -15357,7 +20382,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
         public virtual Task<UpdateTaskTemplateResponse> UpdateTaskTemplateAsync(UpdateTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskTemplateResponseUnmarshaller.Instance;
 
@@ -15365,11 +20390,70 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  UpdateTestCase
+
+        internal virtual UpdateTestCaseResponse UpdateTestCase(UpdateTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTestCaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates any of the metadata for a test case, such as the name, description, and status
+        /// or content of an existing test case. This API doesn't allow customers to update the
+        /// tags of the test case resource for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTestCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidTestCaseException">
+        /// The test is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
+        public virtual Task<UpdateTestCaseResponse> UpdateTestCaseAsync(UpdateTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTestCaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateTrafficDistribution
 
         internal virtual UpdateTrafficDistributionResponse UpdateTrafficDistribution(UpdateTrafficDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrafficDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrafficDistributionResponseUnmarshaller.Instance;
 
@@ -15430,7 +20514,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">REST API Reference for UpdateTrafficDistribution Operation</seealso>
         public virtual Task<UpdateTrafficDistributionResponse> UpdateTrafficDistributionAsync(UpdateTrafficDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrafficDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrafficDistributionResponseUnmarshaller.Instance;
 
@@ -15438,11 +20522,71 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  UpdateUserConfig
+
+        internal virtual UpdateUserConfigResponse UpdateUserConfig(UpdateUserConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration settings for the specified user, including per-channel auto-accept
+        /// and after contact work (ACW) timeout settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+        /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+        /// auto-accept and ACW timeout values for each channel type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual Task<UpdateUserConfigResponse> UpdateUserConfigAsync(UpdateUserConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateUserHierarchy
 
         internal virtual UpdateUserHierarchyResponse UpdateUserHierarchy(UpdateUserHierarchyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserHierarchyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
 
@@ -15478,7 +20622,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">REST API Reference for UpdateUserHierarchy Operation</seealso>
         public virtual Task<UpdateUserHierarchyResponse> UpdateUserHierarchyAsync(UpdateUserHierarchyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserHierarchyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
 
@@ -15490,7 +20634,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserHierarchyGroupNameResponse UpdateUserHierarchyGroupName(UpdateUserHierarchyGroupNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserHierarchyGroupNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserHierarchyGroupNameResponseUnmarshaller.Instance;
 
@@ -15529,7 +20673,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName">REST API Reference for UpdateUserHierarchyGroupName Operation</seealso>
         public virtual Task<UpdateUserHierarchyGroupNameResponse> UpdateUserHierarchyGroupNameAsync(UpdateUserHierarchyGroupNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserHierarchyGroupNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserHierarchyGroupNameResponseUnmarshaller.Instance;
 
@@ -15541,7 +20685,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserHierarchyStructureResponse UpdateUserHierarchyStructure(UpdateUserHierarchyStructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserHierarchyStructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserHierarchyStructureResponseUnmarshaller.Instance;
 
@@ -15569,7 +20713,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -15580,7 +20727,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure">REST API Reference for UpdateUserHierarchyStructure Operation</seealso>
         public virtual Task<UpdateUserHierarchyStructureResponse> UpdateUserHierarchyStructureAsync(UpdateUserHierarchyStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserHierarchyStructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserHierarchyStructureResponseUnmarshaller.Instance;
 
@@ -15592,7 +20739,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserIdentityInfoResponse UpdateUserIdentityInfo(UpdateUserIdentityInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
 
@@ -15639,7 +20786,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">REST API Reference for UpdateUserIdentityInfo Operation</seealso>
         public virtual Task<UpdateUserIdentityInfoResponse> UpdateUserIdentityInfoAsync(UpdateUserIdentityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
 
@@ -15647,11 +20794,65 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  UpdateUserNotificationStatus
+
+        internal virtual UpdateUserNotificationStatusResponse UpdateUserNotificationStatus(UpdateUserNotificationStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserNotificationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserNotificationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserNotificationStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the status of a notification for a specific user, such as marking it as read
+        /// or hidden. Users can only update notification status for notifications that have been
+        /// sent to them. READ status deprioritizes the notification and greys it out, while HIDDEN
+        /// status removes it from the notification widget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserNotificationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserNotificationStatus service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">REST API Reference for UpdateUserNotificationStatus Operation</seealso>
+        public virtual Task<UpdateUserNotificationStatusResponse> UpdateUserNotificationStatusAsync(UpdateUserNotificationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserNotificationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserNotificationStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserNotificationStatusResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateUserPhoneConfig
 
         internal virtual UpdateUserPhoneConfigResponse UpdateUserPhoneConfig(UpdateUserPhoneConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
 
@@ -15662,6 +20863,16 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the phone configuration settings for the specified user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+        /// API, which supports additional functionality that is not available in the UpdateUserPhoneConfig
+        /// API, such as voice enhancement settings and per-channel configuration for auto-accept
+        /// and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API
+        /// will always set the same ACW timeouts to all channels the user handles.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig service method.</param>
         /// <param name="cancellationToken">
@@ -15687,7 +20898,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserPhoneConfig">REST API Reference for UpdateUserPhoneConfig Operation</seealso>
         public virtual Task<UpdateUserPhoneConfigResponse> UpdateUserPhoneConfigAsync(UpdateUserPhoneConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
 
@@ -15699,7 +20910,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserProficienciesResponse UpdateUserProficiencies(UpdateUserProficienciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserProficienciesResponseUnmarshaller.Instance;
 
@@ -15735,7 +20946,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserProficiencies">REST API Reference for UpdateUserProficiencies Operation</seealso>
         public virtual Task<UpdateUserProficienciesResponse> UpdateUserProficienciesAsync(UpdateUserProficienciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserProficienciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserProficienciesResponseUnmarshaller.Instance;
 
@@ -15747,7 +20958,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserRoutingProfileResponse UpdateUserRoutingProfile(UpdateUserRoutingProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
 
@@ -15783,7 +20994,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserRoutingProfile">REST API Reference for UpdateUserRoutingProfile Operation</seealso>
         public virtual Task<UpdateUserRoutingProfileResponse> UpdateUserRoutingProfileAsync(UpdateUserRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
 
@@ -15795,7 +21006,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateUserSecurityProfilesResponse UpdateUserSecurityProfiles(UpdateUserSecurityProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
 
@@ -15831,7 +21042,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserSecurityProfiles">REST API Reference for UpdateUserSecurityProfiles Operation</seealso>
         public virtual Task<UpdateUserSecurityProfilesResponse> UpdateUserSecurityProfilesAsync(UpdateUserSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
 
@@ -15843,7 +21054,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateViewContentResponse UpdateViewContent(UpdateViewContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateViewContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateViewContentResponseUnmarshaller.Instance;
 
@@ -15883,7 +21094,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -15894,7 +21108,7 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">REST API Reference for UpdateViewContent Operation</seealso>
         public virtual Task<UpdateViewContentResponse> UpdateViewContentAsync(UpdateViewContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateViewContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateViewContentResponseUnmarshaller.Instance;
 
@@ -15906,7 +21120,7 @@ namespace Amazon.Connect
 
         internal virtual UpdateViewMetadataResponse UpdateViewMetadata(UpdateViewMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateViewMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateViewMetadataResponseUnmarshaller.Instance;
 
@@ -15941,7 +21155,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -15952,11 +21169,226 @@ namespace Amazon.Connect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">REST API Reference for UpdateViewMetadata Operation</seealso>
         public virtual Task<UpdateViewMetadataResponse> UpdateViewMetadataAsync(UpdateViewMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateViewMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateViewMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateViewMetadataResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateWorkspaceMetadata
+
+        internal virtual UpdateWorkspaceMetadataResponse UpdateWorkspaceMetadata(UpdateWorkspaceMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the metadata of a workspace, such as its name and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceMetadata">REST API Reference for UpdateWorkspaceMetadata Operation</seealso>
+        public virtual Task<UpdateWorkspaceMetadataResponse> UpdateWorkspaceMetadataAsync(UpdateWorkspaceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspaceMetadataResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateWorkspacePage
+
+        internal virtual UpdateWorkspacePageResponse UpdateWorkspacePage(UpdateWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspacePageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration of a page in a workspace, including the associated view
+        /// and input data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacePage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspacePage">REST API Reference for UpdateWorkspacePage Operation</seealso>
+        public virtual Task<UpdateWorkspacePageResponse> UpdateWorkspacePageAsync(UpdateWorkspacePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspacePageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspacePageResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateWorkspaceTheme
+
+        internal virtual UpdateWorkspaceThemeResponse UpdateWorkspaceTheme(UpdateWorkspaceThemeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceThemeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceThemeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the theme configuration for a workspace, including colors and styling.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceTheme service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceTheme service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceTheme">REST API Reference for UpdateWorkspaceTheme Operation</seealso>
+        public virtual Task<UpdateWorkspaceThemeResponse> UpdateWorkspaceThemeAsync(UpdateWorkspaceThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceThemeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspaceThemeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateWorkspaceVisibility
+
+        internal virtual UpdateWorkspaceVisibilityResponse UpdateWorkspaceVisibility(UpdateWorkspaceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceVisibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the visibility setting of a workspace, controlling whether it is available
+        /// to all users, assigned users only, or none.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceVisibility service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceVisibility">REST API Reference for UpdateWorkspaceVisibility Operation</seealso>
+        public virtual Task<UpdateWorkspaceVisibilityResponse> UpdateWorkspaceVisibilityAsync(UpdateWorkspaceVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspaceVisibilityResponse>(request, options, cancellationToken);
         }
         #endregion
         

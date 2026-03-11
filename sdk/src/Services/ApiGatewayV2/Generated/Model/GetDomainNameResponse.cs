@@ -79,7 +79,10 @@ namespace Amazon.ApiGatewayV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainNameArn.
+        /// Gets and sets the property DomainNameArn. 
+        /// <para>
+        /// The ARN of the DomainName resource.
+        /// </para>
         /// </summary>
         public string DomainNameArn
         {

@@ -40,6 +40,7 @@ namespace Amazon.ControlTower.Model
     public partial class DisableControlRequest : AmazonControlTowerRequest
     {
         private string _controlIdentifier;
+        private string _enabledControlIdentifier;
         private string _targetIdentifier;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ControlTower.Model
         /// overview page</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string ControlIdentifier
         {
             get { return this._controlIdentifier; }
@@ -65,6 +66,26 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnabledControlIdentifier. 
+        /// <para>
+        /// The ARN of the enabled control to be disabled, which uniquely identifies the control
+        /// instance on the target organizational unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string EnabledControlIdentifier
+        {
+            get { return this._enabledControlIdentifier; }
+            set { this._enabledControlIdentifier = value; }
+        }
+
+        // Check to see if EnabledControlIdentifier property is set
+        internal bool IsSetEnabledControlIdentifier()
+        {
+            return this._enabledControlIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
         /// The ARN of the organizational unit. For information on how to find the <c>targetIdentifier</c>,
@@ -72,7 +93,7 @@ namespace Amazon.ControlTower.Model
         /// overview page</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string TargetIdentifier
         {
             get { return this._targetIdentifier; }

@@ -317,7 +317,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
         public virtual AcceptDataGrantResponse AcceptDataGrant(AcceptDataGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptDataGrantResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
         public virtual Task<AcceptDataGrantResponse> AcceptDataGrantAsync(AcceptDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptDataGrantResponseUnmarshaller.Instance;
             
@@ -394,7 +394,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
             
@@ -470,7 +470,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
         public virtual CreateDataGrantResponse CreateDataGrant(CreateDataGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataGrantResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
         public virtual Task<CreateDataGrantResponse> CreateDataGrantAsync(CreateDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataGrantResponseUnmarshaller.Instance;
             
@@ -544,7 +544,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataSet">REST API Reference for CreateDataSet Operation</seealso>
         public virtual CreateDataSetResponse CreateDataSet(CreateDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataSet">REST API Reference for CreateDataSet Operation</seealso>
         public virtual Task<CreateDataSetResponse> CreateDataSetAsync(CreateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetResponseUnmarshaller.Instance;
             
@@ -615,7 +615,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
         public virtual CreateEventActionResponse CreateEventAction(CreateEventActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventActionResponseUnmarshaller.Instance;
 
@@ -650,7 +650,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
         public virtual Task<CreateEventActionResponse> CreateEventActionAsync(CreateEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventActionResponseUnmarshaller.Instance;
             
@@ -690,7 +690,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
             
@@ -765,7 +765,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateRevision">REST API Reference for CreateRevision Operation</seealso>
         public virtual CreateRevisionResponse CreateRevision(CreateRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRevisionResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateRevision">REST API Reference for CreateRevision Operation</seealso>
         public virtual Task<CreateRevisionResponse> CreateRevisionAsync(CreateRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRevisionResponseUnmarshaller.Instance;
             
@@ -840,7 +840,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual DeleteAssetResponse DeleteAsset(DeleteAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
             
@@ -915,7 +915,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
         public virtual DeleteDataGrantResponse DeleteDataGrant(DeleteDataGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataGrantResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
         public virtual Task<DeleteDataGrantResponse> DeleteDataGrantAsync(DeleteDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataGrantResponseUnmarshaller.Instance;
             
@@ -990,7 +990,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataSet">REST API Reference for DeleteDataSet Operation</seealso>
         public virtual DeleteDataSetResponse DeleteDataSet(DeleteDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSetResponseUnmarshaller.Instance;
 
@@ -1029,7 +1029,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataSet">REST API Reference for DeleteDataSet Operation</seealso>
         public virtual Task<DeleteDataSetResponse> DeleteDataSetAsync(DeleteDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSetResponseUnmarshaller.Instance;
             
@@ -1062,7 +1062,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
         public virtual DeleteEventActionResponse DeleteEventAction(DeleteEventActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventActionResponseUnmarshaller.Instance;
 
@@ -1094,7 +1094,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
         public virtual Task<DeleteEventActionResponse> DeleteEventActionAsync(DeleteEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventActionResponseUnmarshaller.Instance;
             
@@ -1134,7 +1134,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteRevision">REST API Reference for DeleteRevision Operation</seealso>
         public virtual DeleteRevisionResponse DeleteRevision(DeleteRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRevisionResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteRevision">REST API Reference for DeleteRevision Operation</seealso>
         public virtual Task<DeleteRevisionResponse> DeleteRevisionAsync(DeleteRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRevisionResponseUnmarshaller.Instance;
             
@@ -1206,7 +1206,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetAsset">REST API Reference for GetAsset Operation</seealso>
         public virtual GetAssetResponse GetAsset(GetAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetResponseUnmarshaller.Instance;
 
@@ -1238,7 +1238,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetAsset">REST API Reference for GetAsset Operation</seealso>
         public virtual Task<GetAssetResponse> GetAssetAsync(GetAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetResponseUnmarshaller.Instance;
             
@@ -1274,7 +1274,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
         public virtual GetDataGrantResponse GetDataGrant(GetDataGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataGrantResponseUnmarshaller.Instance;
 
@@ -1309,7 +1309,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
         public virtual Task<GetDataGrantResponse> GetDataGrantAsync(GetDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataGrantResponseUnmarshaller.Instance;
             
@@ -1342,7 +1342,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataSet">REST API Reference for GetDataSet Operation</seealso>
         public virtual GetDataSetResponse GetDataSet(GetDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetResponseUnmarshaller.Instance;
 
@@ -1374,7 +1374,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataSet">REST API Reference for GetDataSet Operation</seealso>
         public virtual Task<GetDataSetResponse> GetDataSetAsync(GetDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetResponseUnmarshaller.Instance;
             
@@ -1407,7 +1407,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
         public virtual GetEventActionResponse GetEventAction(GetEventActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventActionResponseUnmarshaller.Instance;
 
@@ -1439,7 +1439,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
         public virtual Task<GetEventActionResponse> GetEventActionAsync(GetEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventActionResponseUnmarshaller.Instance;
             
@@ -1472,7 +1472,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
             
@@ -1540,7 +1540,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
         public virtual GetReceivedDataGrantResponse GetReceivedDataGrant(GetReceivedDataGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReceivedDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReceivedDataGrantResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
         public virtual Task<GetReceivedDataGrantResponse> GetReceivedDataGrantAsync(GetReceivedDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReceivedDataGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReceivedDataGrantResponseUnmarshaller.Instance;
             
@@ -1608,7 +1608,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetRevision">REST API Reference for GetRevision Operation</seealso>
         public virtual GetRevisionResponse GetRevision(GetRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRevisionResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetRevision">REST API Reference for GetRevision Operation</seealso>
         public virtual Task<GetRevisionResponse> GetRevisionAsync(GetRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRevisionResponseUnmarshaller.Instance;
             
@@ -1676,7 +1676,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
         public virtual ListDataGrantsResponse ListDataGrants(ListDataGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataGrantsResponseUnmarshaller.Instance;
 
@@ -1711,7 +1711,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
         public virtual Task<ListDataGrantsResponse> ListDataGrantsAsync(ListDataGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataGrantsResponseUnmarshaller.Instance;
             
@@ -1744,7 +1744,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSetRevisions">REST API Reference for ListDataSetRevisions Operation</seealso>
         public virtual ListDataSetRevisionsResponse ListDataSetRevisions(ListDataSetRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetRevisionsResponseUnmarshaller.Instance;
 
@@ -1776,7 +1776,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSetRevisions">REST API Reference for ListDataSetRevisions Operation</seealso>
         public virtual Task<ListDataSetRevisionsResponse> ListDataSetRevisionsAsync(ListDataSetRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetRevisionsResponseUnmarshaller.Instance;
             
@@ -1810,7 +1810,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSets">REST API Reference for ListDataSets Operation</seealso>
         public virtual ListDataSetsResponse ListDataSets(ListDataSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
 
@@ -1843,7 +1843,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSets">REST API Reference for ListDataSets Operation</seealso>
         public virtual Task<ListDataSetsResponse> ListDataSetsAsync(ListDataSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
             
@@ -1876,7 +1876,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
         public virtual ListEventActionsResponse ListEventActions(ListEventActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventActionsResponseUnmarshaller.Instance;
 
@@ -1908,7 +1908,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
         public virtual Task<ListEventActionsResponse> ListEventActionsAsync(ListEventActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventActionsResponseUnmarshaller.Instance;
             
@@ -1941,7 +1941,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1973,7 +1973,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
             
@@ -2009,7 +2009,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
         public virtual ListReceivedDataGrantsResponse ListReceivedDataGrants(ListReceivedDataGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReceivedDataGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReceivedDataGrantsResponseUnmarshaller.Instance;
 
@@ -2044,7 +2044,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
         public virtual Task<ListReceivedDataGrantsResponse> ListReceivedDataGrantsAsync(ListReceivedDataGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReceivedDataGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReceivedDataGrantsResponseUnmarshaller.Instance;
             
@@ -2077,7 +2077,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListRevisionAssets">REST API Reference for ListRevisionAssets Operation</seealso>
         public virtual ListRevisionAssetsResponse ListRevisionAssets(ListRevisionAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRevisionAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRevisionAssetsResponseUnmarshaller.Instance;
 
@@ -2109,7 +2109,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListRevisionAssets">REST API Reference for ListRevisionAssets Operation</seealso>
         public virtual Task<ListRevisionAssetsResponse> ListRevisionAssetsAsync(ListRevisionAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRevisionAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRevisionAssetsResponseUnmarshaller.Instance;
             
@@ -2130,7 +2130,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2150,7 +2150,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2190,7 +2190,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
         public virtual RevokeRevisionResponse RevokeRevision(RevokeRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeRevisionResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
         public virtual Task<RevokeRevisionResponse> RevokeRevisionAsync(RevokeRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeRevisionResponseUnmarshaller.Instance;
             
@@ -2266,7 +2266,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">REST API Reference for SendApiAsset Operation</seealso>
         public virtual SendApiAssetResponse SendApiAsset(SendApiAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendApiAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendApiAssetResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">REST API Reference for SendApiAsset Operation</seealso>
         public virtual Task<SendApiAssetResponse> SendApiAssetAsync(SendApiAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendApiAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendApiAssetResponseUnmarshaller.Instance;
             
@@ -2342,7 +2342,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
         public virtual SendDataSetNotificationResponse SendDataSetNotification(SendDataSetNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataSetNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataSetNotificationResponseUnmarshaller.Instance;
 
@@ -2381,7 +2381,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">REST API Reference for SendDataSetNotification Operation</seealso>
         public virtual Task<SendDataSetNotificationResponse> SendDataSetNotificationAsync(SendDataSetNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataSetNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataSetNotificationResponseUnmarshaller.Instance;
             
@@ -2421,7 +2421,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/StartJob">REST API Reference for StartJob Operation</seealso>
         public virtual StartJobResponse StartJob(StartJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobResponseUnmarshaller.Instance;
 
@@ -2460,7 +2460,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/StartJob">REST API Reference for StartJob Operation</seealso>
         public virtual Task<StartJobResponse> StartJobAsync(StartJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobResponseUnmarshaller.Instance;
             
@@ -2481,7 +2481,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2501,7 +2501,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2522,7 +2522,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2542,7 +2542,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2582,7 +2582,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
         public virtual UpdateAssetResponse UpdateAsset(UpdateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
 
@@ -2621,7 +2621,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
         public virtual Task<UpdateAssetResponse> UpdateAssetAsync(UpdateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
             
@@ -2657,7 +2657,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateDataSet">REST API Reference for UpdateDataSet Operation</seealso>
         public virtual UpdateDataSetResponse UpdateDataSet(UpdateDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSetResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateDataSet">REST API Reference for UpdateDataSet Operation</seealso>
         public virtual Task<UpdateDataSetResponse> UpdateDataSetAsync(UpdateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSetResponseUnmarshaller.Instance;
             
@@ -2728,7 +2728,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
         public virtual UpdateEventActionResponse UpdateEventAction(UpdateEventActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventActionResponseUnmarshaller.Instance;
 
@@ -2763,7 +2763,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
         public virtual Task<UpdateEventActionResponse> UpdateEventActionAsync(UpdateEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventActionResponseUnmarshaller.Instance;
             
@@ -2803,7 +2803,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateRevision">REST API Reference for UpdateRevision Operation</seealso>
         public virtual UpdateRevisionResponse UpdateRevision(UpdateRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRevisionResponseUnmarshaller.Instance;
 
@@ -2842,7 +2842,7 @@ namespace Amazon.DataExchange
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateRevision">REST API Reference for UpdateRevision Operation</seealso>
         public virtual Task<UpdateRevisionResponse> UpdateRevisionAsync(UpdateRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRevisionResponseUnmarshaller.Instance;
             

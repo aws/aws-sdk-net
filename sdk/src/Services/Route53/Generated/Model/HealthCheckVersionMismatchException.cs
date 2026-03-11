@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for HealthCheckVersionMismatchException
+        /// message.
+        /// </summary>
+        public HealthCheckVersionMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HealthCheckVersionMismatchException with the specified error
         /// message.
         /// </summary>

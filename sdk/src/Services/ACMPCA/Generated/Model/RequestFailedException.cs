@@ -39,6 +39,13 @@ namespace Amazon.ACMPCA.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestFailedException
+        /// message.
+        /// </summary>
+        public RequestFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestFailedException with the specified error
         /// message.
         /// </summary>

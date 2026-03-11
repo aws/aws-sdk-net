@@ -39,6 +39,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ExportNotFoundException
+        /// message.
+        /// </summary>
+        public ExportNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ExportNotFoundException with the specified error
         /// message.
         /// </summary>

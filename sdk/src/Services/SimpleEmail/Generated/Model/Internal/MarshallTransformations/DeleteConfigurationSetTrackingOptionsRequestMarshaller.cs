@@ -64,6 +64,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteConfigurationSetTrackingOptionsRequestMarshaller _instance = new DeleteConfigurationSetTrackingOptionsRequestMarshaller();        

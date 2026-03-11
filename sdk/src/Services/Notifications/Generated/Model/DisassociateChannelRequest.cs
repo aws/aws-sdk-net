@@ -32,7 +32,8 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Container for the parameters to the DisassociateChannel operation.
     /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
-    /// Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+    /// Channels include Amazon Q Developer in chat applications, the Console Mobile Application,
+    /// and emails (notifications-contacts).
     /// </summary>
     public partial class DisassociateChannelRequest : AmazonNotificationsRequest
     {

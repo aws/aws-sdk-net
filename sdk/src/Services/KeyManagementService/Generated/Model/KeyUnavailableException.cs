@@ -40,6 +40,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for KeyUnavailableException
+        /// message.
+        /// </summary>
+        public KeyUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeyUnavailableException with the specified error
         /// message.
         /// </summary>

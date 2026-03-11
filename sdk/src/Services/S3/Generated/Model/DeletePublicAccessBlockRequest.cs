@@ -37,9 +37,11 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. To use
-    /// this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c> permission.
-    /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Removes the <c>PublicAccessBlock</c> configuration for an Amazon S3 bucket. This operation
+    /// removes the bucket-level configuration only. The effective public access behavior
+    /// will still be governed by account-level settings (which may inherit from organization-level
+    /// policies). To use this operation, you must have the <c>s3:PutBucketPublicAccessBlock</c>
+    /// permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
     /// Access Permissions to Your Amazon S3 Resources</a>.
     /// </para>
@@ -67,7 +69,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html">GetBucketPolicyStatus</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeletePublicAccessBlockRequest : AmazonWebServiceRequest
     {
@@ -81,6 +89,7 @@ namespace Amazon.S3.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

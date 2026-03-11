@@ -262,7 +262,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetObjectAttributesRequest : AmazonWebServiceRequest
     {
@@ -321,6 +327,7 @@ namespace Amazon.S3.Model
         /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -414,7 +421,7 @@ namespace Amazon.S3.Model
         // Check to see if ObjectAttributes property is set
         internal bool IsSetObjectAttributes()
         {
-            return this._objectAttributes != null;
+            return this._objectAttributes != null && (this._objectAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

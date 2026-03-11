@@ -39,6 +39,13 @@ namespace Amazon.RedshiftServerless.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPaginationException
+        /// message.
+        /// </summary>
+        public InvalidPaginationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPaginationException with the specified error
         /// message.
         /// </summary>

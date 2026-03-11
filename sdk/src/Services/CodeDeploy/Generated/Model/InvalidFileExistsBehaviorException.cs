@@ -42,6 +42,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidFileExistsBehaviorException
+        /// message.
+        /// </summary>
+        public InvalidFileExistsBehaviorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidFileExistsBehaviorException with the specified error
         /// message.
         /// </summary>

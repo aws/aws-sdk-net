@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The VPC network is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidVPCNetworkStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidVPCNetworkStateException
+        /// message.
+        /// </summary>
+        public InvalidVPCNetworkStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidVPCNetworkStateException with the specified error

@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private ActivityStreamMode _activityStreamMode;
         private ActivityStreamPolicyStatus _activityStreamPolicyStatus;
         private ActivityStreamStatus _activityStreamStatus;
+        private List<AdditionalStorageVolumeOutput> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolumeOutput>() : null;
         private int? _allocatedStorage;
         private List<DBInstanceRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<DBInstanceRole>() : null;
         private DateTime? _automaticRestartTime;
@@ -124,11 +125,14 @@ namespace Amazon.RDS.Model
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBInstanceStatusInfo>() : null;
         private bool? _storageEncrypted;
+        private StorageEncryptionType _storageEncryptionType;
         private int? _storageThroughput;
         private string _storageType;
+        private string _storageVolumeStatus;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tdeCredentialArn;
         private string _timezone;
+        private UpgradeRolloutOrder _upgradeRolloutOrder;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
@@ -241,6 +245,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetActivityStreamStatus()
         {
             return this._activityStreamStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// The additional storage volumes associated with the DB instance. RDS supports additional
+        /// storage volumes for RDS for Oracle and RDS for SQL Server.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolumeOutput> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1761,7 +1789,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The open mode of a Db2 or an Oracle read replica. The default is <c>open-read-only</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-        /// with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+        /// with replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
         /// with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
         /// 
         /// </para>
@@ -1865,6 +1893,39 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the DB instance. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The DB instance is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The DB instance is encrypted using an Amazon Web Services owned
+        /// KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The DB instance is encrypted using a customer managed KMS key or
+        /// Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
         /// The storage throughput for the DB instance.
@@ -1902,6 +1963,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageVolumeStatus. 
+        /// <para>
+        /// The detailed status information for storage volumes associated with the DB instance.
+        /// This information helps identify which specific volume is causing the instance to be
+        /// in a storage-full state.
+        /// </para>
+        /// </summary>
+        public string StorageVolumeStatus
+        {
+            get { return this._storageVolumeStatus; }
+            set { this._storageVolumeStatus = value; }
+        }
+
+        // Check to see if StorageVolumeStatus property is set
+        internal bool IsSetStorageVolumeStatus()
+        {
+            return this._storageVolumeStatus != null;
         }
 
         /// <summary>
@@ -1960,6 +2041,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetTimezone()
         {
             return this._timezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeRolloutOrder. 
+        /// <para>
+        /// This data type represents the order in which the instances are upgraded.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// [first] - Typically used for development or testing environments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [second] - Default order for resources not specifically configured.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [last] - Usually reserved for production environments.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public UpgradeRolloutOrder UpgradeRolloutOrder
+        {
+            get { return this._upgradeRolloutOrder; }
+            set { this._upgradeRolloutOrder = value; }
+        }
+
+        // Check to see if UpgradeRolloutOrder property is set
+        internal bool IsSetUpgradeRolloutOrder()
+        {
+            return this._upgradeRolloutOrder != null;
         }
 
         /// <summary>

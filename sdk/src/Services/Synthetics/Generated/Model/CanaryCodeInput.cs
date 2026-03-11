@@ -58,12 +58,51 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class CanaryCodeInput
     {
+        private List<string> _blueprintTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Dependency> _dependencies = AWSConfigs.InitializeCollections ? new List<Dependency>() : null;
         private string _handler;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3Version;
         private MemoryStream _zipFile;
+
+        /// <summary>
+        /// Gets and sets the property BlueprintTypes. 
+        /// <para>
+        ///  <c>BlueprintTypes</c> is a list of templates that enable simplified canary creation.
+        /// You can create canaries for common monitoring scenarios by providing only a JSON configuration
+        /// file instead of writing custom scripts. The only supported value is <c>multi-checks</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Multi-checks monitors HTTP/DNS/SSL/TCP endpoints with built-in authentication schemes
+        /// (Basic, API Key, OAuth, SigV4) and assertion capabilities. When you specify <c>BlueprintTypes</c>,
+        /// the Handler field cannot be specified since the blueprint provides a pre-defined entry
+        /// point.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>BlueprintTypes</c> is supported only on canaries for syn-nodejs-3.0 runtime or
+        /// later.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> BlueprintTypes
+        {
+            get { return this._blueprintTypes; }
+            set { this._blueprintTypes = value; }
+        }
+
+        // Check to see if BlueprintTypes property is set
+        internal bool IsSetBlueprintTypes()
+        {
+            return this._blueprintTypes != null && (this._blueprintTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Dependencies. 
@@ -102,8 +141,13 @@ namespace Amazon.Synthetics.Model
         /// </c>, or you can specify a folder where canary scripts reside as <c> <i>folder</i>/<i>fileName</i>.<i>functionName</i>
         /// </c>.
         /// </para>
+        ///  
+        /// <para>
+        /// This field is required when you don't specify <c>BlueprintTypes</c> and is not allowed
+        /// when you specify <c>BlueprintTypes</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Handler
         {
             get { return this._handler; }

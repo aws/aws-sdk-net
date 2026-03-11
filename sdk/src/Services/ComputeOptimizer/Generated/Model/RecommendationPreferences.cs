@@ -42,8 +42,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CpuVendorArchitectures. 
         /// <para>
-        /// Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
-        /// group recommendations.
+        /// Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon EC2 Auto
+        /// Scaling group recommendations.
         /// </para>
         ///  
         /// <para>

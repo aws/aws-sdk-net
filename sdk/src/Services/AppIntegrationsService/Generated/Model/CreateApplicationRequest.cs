@@ -35,15 +35,38 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class CreateApplicationRequest : AmazonAppIntegrationsServiceRequest
     {
+        private ApplicationConfig _applicationConfig;
         private ApplicationSourceConfig _applicationSourceConfig;
+        private ApplicationType _applicationType;
         private string _clientToken;
         private string _description;
+        private IframeConfig _iframeConfig;
+        private int? _initializationTimeout;
+        private bool? _isService;
         private string _name;
         private string _awsNamespace;
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Publication> _publications = AWSConfigs.InitializeCollections ? new List<Publication>() : null;
         private List<Subscription> _subscriptions = AWSConfigs.InitializeCollections ? new List<Subscription>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationConfig. 
+        /// <para>
+        /// The configuration settings for the application.
+        /// </para>
+        /// </summary>
+        public ApplicationConfig ApplicationConfig
+        {
+            get { return this._applicationConfig; }
+            set { this._applicationConfig = value; }
+        }
+
+        // Check to see if ApplicationConfig property is set
+        internal bool IsSetApplicationConfig()
+        {
+            return this._applicationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationSourceConfig. 
@@ -62,6 +85,24 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetApplicationSourceConfig()
         {
             return this._applicationSourceConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of application.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
         }
 
         /// <summary>
@@ -106,6 +147,62 @@ namespace Amazon.AppIntegrationsService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IframeConfig. 
+        /// <para>
+        /// The iframe configuration for the application.
+        /// </para>
+        /// </summary>
+        public IframeConfig IframeConfig
+        {
+            get { return this._iframeConfig; }
+            set { this._iframeConfig = value; }
+        }
+
+        // Check to see if IframeConfig property is set
+        internal bool IsSetIframeConfig()
+        {
+            return this._iframeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitializationTimeout. 
+        /// <para>
+        /// The maximum time in milliseconds allowed to establish a connection with the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=600000)]
+        public int? InitializationTimeout
+        {
+            get { return this._initializationTimeout; }
+            set { this._initializationTimeout = value; }
+        }
+
+        // Check to see if InitializationTimeout property is set
+        internal bool IsSetInitializationTimeout()
+        {
+            return this._initializationTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsService. 
+        /// <para>
+        /// Indicates whether the application is a service.
+        /// </para>
+        /// </summary>
+        [Obsolete("IsService has been deprecated in favor of ApplicationType")]
+        public bool? IsService
+        {
+            get { return this._isService; }
+            set { this._isService = value; }
+        }
+
+        // Check to see if IsService property is set
+        internal bool IsSetIsService()
+        {
+            return this._isService.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the application.
@@ -130,7 +227,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// The namespace of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=211)]
         public string Namespace
         {
             get { return this._awsNamespace; }

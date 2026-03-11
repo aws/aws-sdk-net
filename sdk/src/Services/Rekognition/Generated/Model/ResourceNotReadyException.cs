@@ -40,6 +40,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNotReadyException
+        /// message.
+        /// </summary>
+        public ResourceNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotReadyException with the specified error
         /// message.
         /// </summary>

@@ -28,6 +28,16 @@ namespace Amazon.CostOptimizationHub.Model
     {
 
         /// <summary>
+        /// Paginator for ListEfficiencyMetrics operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEfficiencyMetricsPaginator ListEfficiencyMetrics(ListEfficiencyMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnrollmentStatuses operation
         ///</summary>
         [AWSPaginator(

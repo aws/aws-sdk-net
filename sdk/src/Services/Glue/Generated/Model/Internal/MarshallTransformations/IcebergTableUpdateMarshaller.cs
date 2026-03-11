@@ -46,6 +46,29 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAction())
+            {
+                context.Writer.WritePropertyName("Action");
+                context.Writer.WriteStringValue(requestObject.Action);
+            }
+
+            if(requestObject.IsSetEncryptionKey())
+            {
+                context.Writer.WritePropertyName("EncryptionKey");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IcebergEncryptedKeyMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionKey, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetKeyId())
+            {
+                context.Writer.WritePropertyName("KeyId");
+                context.Writer.WriteStringValue(requestObject.KeyId);
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");

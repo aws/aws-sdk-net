@@ -31,17 +31,11 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the QueryVectors operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Performs an approximate nearest neighbor search query in a vector index using a query
     /// vector. By default, it returns the keys of approximate nearest neighbors. You can
     /// optionally include the computed distance (between the query vector and each vector
     /// in the response), the vector data, and metadata of each vector in the response. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// To specify the vector index, you can either use both the vector bucket name and the
@@ -68,7 +62,6 @@ namespace Amazon.S3Vectors.Model
     /// vector data, or metadata without the <c>s3vectors:GetVectors</c> permission.
     /// </para>
     ///  </li> </ul> </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class QueryVectorsRequest : AmazonS3VectorsRequest
     {

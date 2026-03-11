@@ -36,6 +36,14 @@ namespace Amazon.Elasticsearch
         /// <summary>
         /// Construct instance of AmazonElasticsearchException
         /// </summary>
+        public AmazonElasticsearchException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonElasticsearchException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonElasticsearchException(string message)
             : base(message)

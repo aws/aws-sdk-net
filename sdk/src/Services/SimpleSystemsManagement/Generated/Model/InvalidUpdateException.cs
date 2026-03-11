@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidUpdateException
+        /// message.
+        /// </summary>
+        public InvalidUpdateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidUpdateException with the specified error
         /// message.
         /// </summary>

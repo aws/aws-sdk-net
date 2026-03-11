@@ -40,6 +40,13 @@ namespace Amazon.CostExplorer.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestChangedException
+        /// message.
+        /// </summary>
+        public RequestChangedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestChangedException with the specified error
         /// message.
         /// </summary>

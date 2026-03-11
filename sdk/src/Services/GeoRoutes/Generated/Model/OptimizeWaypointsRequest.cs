@@ -113,6 +113,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <c>2020-04-22T17:57:24+02:00</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DepartureTime
         {
             get { return this._departureTime; }

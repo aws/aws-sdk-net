@@ -44,9 +44,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// If this parameter is specified and two update requests with identical payloads and
-        /// <c>clientToken</c>s are received, these requests are considered the same request and
-        /// the second request is rejected. A <c>clientToken</c> is valid for 8 hours or until
-        /// one hour after the consumable resource is deleted, whichever is less.
+        /// <c>clientToken</c>s are received, these requests are considered the same request.
+        /// Both requests will succeed, but the update will only happen once. A <c>clientToken</c>
+        /// is valid for 8 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The throttling rate limit is met.
+    /// The API throttling rate limit is exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ThrottlingException : AmazonBraketException
     {
+
+        /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error

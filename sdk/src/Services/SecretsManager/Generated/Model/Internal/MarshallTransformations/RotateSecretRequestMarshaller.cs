@@ -86,6 +86,28 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetExternalSecretRotationMetadata())
+            {
+                context.Writer.WritePropertyName("ExternalSecretRotationMetadata");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExternalSecretRotationMetadataListValue in publicRequest.ExternalSecretRotationMetadata)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ExternalSecretRotationMetadataItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExternalSecretRotationMetadataListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetExternalSecretRotationRoleArn())
+            {
+                context.Writer.WritePropertyName("ExternalSecretRotationRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ExternalSecretRotationRoleArn);
+            }
+
             if(publicRequest.IsSetRotateImmediately())
             {
                 context.Writer.WritePropertyName("RotateImmediately");

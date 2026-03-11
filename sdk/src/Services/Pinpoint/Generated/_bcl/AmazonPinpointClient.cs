@@ -276,7 +276,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
             
@@ -360,7 +360,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         public virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         public virtual Task<CreateCampaignResponse> CreateCampaignAsync(CreateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
             
@@ -438,7 +438,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         public virtual CreateEmailTemplateResponse CreateEmailTemplate(CreateEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailTemplateResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">REST API Reference for CreateEmailTemplate Operation</seealso>
         public virtual Task<CreateEmailTemplateResponse> CreateEmailTemplateAsync(CreateEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailTemplateResponseUnmarshaller.Instance;
             
@@ -515,7 +515,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
         public virtual CreateExportJobResponse CreateExportJob(CreateExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob">REST API Reference for CreateExportJob Operation</seealso>
         public virtual Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExportJobResponseUnmarshaller.Instance;
             
@@ -598,7 +598,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
         public virtual CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
 
@@ -639,7 +639,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob">REST API Reference for CreateImportJob Operation</seealso>
         public virtual Task<CreateImportJobResponse> CreateImportJobAsync(CreateImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImportJobResponseUnmarshaller.Instance;
             
@@ -675,7 +675,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">REST API Reference for CreateInAppTemplate Operation</seealso>
         public virtual CreateInAppTemplateResponse CreateInAppTemplate(CreateInAppTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInAppTemplateResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateInAppTemplate">REST API Reference for CreateInAppTemplate Operation</seealso>
         public virtual Task<CreateInAppTemplateResponse> CreateInAppTemplateAsync(CreateInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInAppTemplateResponseUnmarshaller.Instance;
             
@@ -752,7 +752,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateJourney">REST API Reference for CreateJourney Operation</seealso>
         public virtual CreateJourneyResponse CreateJourney(CreateJourneyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJourneyResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateJourney">REST API Reference for CreateJourney Operation</seealso>
         public virtual Task<CreateJourneyResponse> CreateJourneyAsync(CreateJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJourneyResponseUnmarshaller.Instance;
             
@@ -830,7 +830,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">REST API Reference for CreatePushTemplate Operation</seealso>
         public virtual CreatePushTemplateResponse CreatePushTemplate(CreatePushTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePushTemplateResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">REST API Reference for CreatePushTemplate Operation</seealso>
         public virtual Task<CreatePushTemplateResponse> CreatePushTemplateAsync(CreatePushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePushTemplateResponseUnmarshaller.Instance;
             
@@ -908,7 +908,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration">REST API Reference for CreateRecommenderConfiguration Operation</seealso>
         public virtual CreateRecommenderConfigurationResponse CreateRecommenderConfiguration(CreateRecommenderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecommenderConfigurationResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration">REST API Reference for CreateRecommenderConfiguration Operation</seealso>
         public virtual Task<CreateRecommenderConfigurationResponse> CreateRecommenderConfigurationAsync(CreateRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecommenderConfigurationResponseUnmarshaller.Instance;
             
@@ -992,7 +992,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         public virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         public virtual Task<CreateSegmentResponse> CreateSegmentAsync(CreateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
             
@@ -1070,7 +1070,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">REST API Reference for CreateSmsTemplate Operation</seealso>
         public virtual CreateSmsTemplateResponse CreateSmsTemplate(CreateSmsTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSmsTemplateResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">REST API Reference for CreateSmsTemplate Operation</seealso>
         public virtual Task<CreateSmsTemplateResponse> CreateSmsTemplateAsync(CreateSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSmsTemplateResponseUnmarshaller.Instance;
             
@@ -1141,7 +1141,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">REST API Reference for CreateVoiceTemplate Operation</seealso>
         public virtual CreateVoiceTemplateResponse CreateVoiceTemplate(CreateVoiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceTemplateResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">REST API Reference for CreateVoiceTemplate Operation</seealso>
         public virtual Task<CreateVoiceTemplateResponse> CreateVoiceTemplateAsync(CreateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceTemplateResponseUnmarshaller.Instance;
             
@@ -1219,7 +1219,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">REST API Reference for DeleteAdmChannel Operation</seealso>
         public virtual DeleteAdmChannelResponse DeleteAdmChannel(DeleteAdmChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAdmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel">REST API Reference for DeleteAdmChannel Operation</seealso>
         public virtual Task<DeleteAdmChannelResponse> DeleteAdmChannelAsync(DeleteAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAdmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAdmChannelResponseUnmarshaller.Instance;
             
@@ -1304,7 +1304,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel">REST API Reference for DeleteApnsChannel Operation</seealso>
         public virtual DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel">REST API Reference for DeleteApnsChannel Operation</seealso>
         public virtual Task<DeleteApnsChannelResponse> DeleteApnsChannelAsync(DeleteApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsChannelResponseUnmarshaller.Instance;
             
@@ -1389,7 +1389,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">REST API Reference for DeleteApnsSandboxChannel Operation</seealso>
         public virtual DeleteApnsSandboxChannelResponse DeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
 
@@ -1431,7 +1431,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel">REST API Reference for DeleteApnsSandboxChannel Operation</seealso>
         public virtual Task<DeleteApnsSandboxChannelResponse> DeleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsSandboxChannelResponseUnmarshaller.Instance;
             
@@ -1474,7 +1474,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel">REST API Reference for DeleteApnsVoipChannel Operation</seealso>
         public virtual DeleteApnsVoipChannelResponse DeleteApnsVoipChannel(DeleteApnsVoipChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
 
@@ -1516,7 +1516,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel">REST API Reference for DeleteApnsVoipChannel Operation</seealso>
         public virtual Task<DeleteApnsVoipChannelResponse> DeleteApnsVoipChannelAsync(DeleteApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsVoipChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsVoipChannelResponseUnmarshaller.Instance;
             
@@ -1559,7 +1559,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel">REST API Reference for DeleteApnsVoipSandboxChannel Operation</seealso>
         public virtual DeleteApnsVoipSandboxChannelResponse DeleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
@@ -1601,7 +1601,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel">REST API Reference for DeleteApnsVoipSandboxChannel Operation</seealso>
         public virtual Task<DeleteApnsVoipSandboxChannelResponse> DeleteApnsVoipSandboxChannelAsync(DeleteApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApnsVoipSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApnsVoipSandboxChannelResponseUnmarshaller.Instance;
             
@@ -1643,7 +1643,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
@@ -1684,7 +1684,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
             
@@ -1727,7 +1727,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel">REST API Reference for DeleteBaiduChannel Operation</seealso>
         public virtual DeleteBaiduChannelResponse DeleteBaiduChannel(DeleteBaiduChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBaiduChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel">REST API Reference for DeleteBaiduChannel Operation</seealso>
         public virtual Task<DeleteBaiduChannelResponse> DeleteBaiduChannelAsync(DeleteBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBaiduChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBaiduChannelResponseUnmarshaller.Instance;
             
@@ -1811,7 +1811,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         public virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         public virtual Task<DeleteCampaignResponse> DeleteCampaignAsync(DeleteCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
             
@@ -1895,7 +1895,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">REST API Reference for DeleteEmailChannel Operation</seealso>
         public virtual DeleteEmailChannelResponse DeleteEmailChannel(DeleteEmailChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
 
@@ -1937,7 +1937,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel">REST API Reference for DeleteEmailChannel Operation</seealso>
         public virtual Task<DeleteEmailChannelResponse> DeleteEmailChannelAsync(DeleteEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailChannelResponseUnmarshaller.Instance;
             
@@ -1979,7 +1979,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
         public virtual DeleteEmailTemplateResponse DeleteEmailTemplate(DeleteEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailTemplateResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">REST API Reference for DeleteEmailTemplate Operation</seealso>
         public virtual Task<DeleteEmailTemplateResponse> DeleteEmailTemplateAsync(DeleteEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailTemplateResponseUnmarshaller.Instance;
             
@@ -2062,7 +2062,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
             
@@ -2145,7 +2145,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         public virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         public virtual Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
             
@@ -2229,7 +2229,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         public virtual DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGcmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
 
@@ -2271,7 +2271,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel">REST API Reference for DeleteGcmChannel Operation</seealso>
         public virtual Task<DeleteGcmChannelResponse> DeleteGcmChannelAsync(DeleteGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGcmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGcmChannelResponseUnmarshaller.Instance;
             
@@ -2313,7 +2313,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">REST API Reference for DeleteInAppTemplate Operation</seealso>
         public virtual DeleteInAppTemplateResponse DeleteInAppTemplate(DeleteInAppTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInAppTemplateResponseUnmarshaller.Instance;
 
@@ -2354,7 +2354,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteInAppTemplate">REST API Reference for DeleteInAppTemplate Operation</seealso>
         public virtual Task<DeleteInAppTemplateResponse> DeleteInAppTemplateAsync(DeleteInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInAppTemplateResponseUnmarshaller.Instance;
             
@@ -2396,7 +2396,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteJourney">REST API Reference for DeleteJourney Operation</seealso>
         public virtual DeleteJourneyResponse DeleteJourney(DeleteJourneyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJourneyResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteJourney">REST API Reference for DeleteJourney Operation</seealso>
         public virtual Task<DeleteJourneyResponse> DeleteJourneyAsync(DeleteJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJourneyResponseUnmarshaller.Instance;
             
@@ -2480,7 +2480,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">REST API Reference for DeletePushTemplate Operation</seealso>
         public virtual DeletePushTemplateResponse DeletePushTemplate(DeletePushTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePushTemplateResponseUnmarshaller.Instance;
 
@@ -2522,7 +2522,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">REST API Reference for DeletePushTemplate Operation</seealso>
         public virtual Task<DeletePushTemplateResponse> DeletePushTemplateAsync(DeletePushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePushTemplateResponseUnmarshaller.Instance;
             
@@ -2564,7 +2564,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration">REST API Reference for DeleteRecommenderConfiguration Operation</seealso>
         public virtual DeleteRecommenderConfigurationResponse DeleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommenderConfigurationResponseUnmarshaller.Instance;
 
@@ -2605,7 +2605,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration">REST API Reference for DeleteRecommenderConfiguration Operation</seealso>
         public virtual Task<DeleteRecommenderConfigurationResponse> DeleteRecommenderConfigurationAsync(DeleteRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommenderConfigurationResponseUnmarshaller.Instance;
             
@@ -2647,7 +2647,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         public virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
@@ -2688,7 +2688,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         public virtual Task<DeleteSegmentResponse> DeleteSegmentAsync(DeleteSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
             
@@ -2731,7 +2731,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">REST API Reference for DeleteSmsChannel Operation</seealso>
         public virtual DeleteSmsChannelResponse DeleteSmsChannel(DeleteSmsChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSmsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
 
@@ -2773,7 +2773,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel">REST API Reference for DeleteSmsChannel Operation</seealso>
         public virtual Task<DeleteSmsChannelResponse> DeleteSmsChannelAsync(DeleteSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSmsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSmsChannelResponseUnmarshaller.Instance;
             
@@ -2815,7 +2815,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">REST API Reference for DeleteSmsTemplate Operation</seealso>
         public virtual DeleteSmsTemplateResponse DeleteSmsTemplate(DeleteSmsTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSmsTemplateResponseUnmarshaller.Instance;
 
@@ -2856,7 +2856,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">REST API Reference for DeleteSmsTemplate Operation</seealso>
         public virtual Task<DeleteSmsTemplateResponse> DeleteSmsTemplateAsync(DeleteSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSmsTemplateResponseUnmarshaller.Instance;
             
@@ -2898,7 +2898,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">REST API Reference for DeleteUserEndpoints Operation</seealso>
         public virtual DeleteUserEndpointsResponse DeleteUserEndpoints(DeleteUserEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
 
@@ -2939,7 +2939,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteUserEndpoints">REST API Reference for DeleteUserEndpoints Operation</seealso>
         public virtual Task<DeleteUserEndpointsResponse> DeleteUserEndpointsAsync(DeleteUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
             
@@ -2982,7 +2982,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel">REST API Reference for DeleteVoiceChannel Operation</seealso>
         public virtual DeleteVoiceChannelResponse DeleteVoiceChannel(DeleteVoiceChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
 
@@ -3024,7 +3024,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceChannel">REST API Reference for DeleteVoiceChannel Operation</seealso>
         public virtual Task<DeleteVoiceChannelResponse> DeleteVoiceChannelAsync(DeleteVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
             
@@ -3066,7 +3066,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">REST API Reference for DeleteVoiceTemplate Operation</seealso>
         public virtual DeleteVoiceTemplateResponse DeleteVoiceTemplate(DeleteVoiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceTemplateResponseUnmarshaller.Instance;
 
@@ -3107,7 +3107,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">REST API Reference for DeleteVoiceTemplate Operation</seealso>
         public virtual Task<DeleteVoiceTemplateResponse> DeleteVoiceTemplateAsync(DeleteVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceTemplateResponseUnmarshaller.Instance;
             
@@ -3149,7 +3149,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">REST API Reference for GetAdmChannel Operation</seealso>
         public virtual GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
 
@@ -3190,7 +3190,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel">REST API Reference for GetAdmChannel Operation</seealso>
         public virtual Task<GetAdmChannelResponse> GetAdmChannelAsync(GetAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdmChannelResponseUnmarshaller.Instance;
             
@@ -3232,7 +3232,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel">REST API Reference for GetApnsChannel Operation</seealso>
         public virtual GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
 
@@ -3273,7 +3273,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel">REST API Reference for GetApnsChannel Operation</seealso>
         public virtual Task<GetApnsChannelResponse> GetApnsChannelAsync(GetApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsChannelResponseUnmarshaller.Instance;
             
@@ -3316,7 +3316,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">REST API Reference for GetApnsSandboxChannel Operation</seealso>
         public virtual GetApnsSandboxChannelResponse GetApnsSandboxChannel(GetApnsSandboxChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
 
@@ -3358,7 +3358,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel">REST API Reference for GetApnsSandboxChannel Operation</seealso>
         public virtual Task<GetApnsSandboxChannelResponse> GetApnsSandboxChannelAsync(GetApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsSandboxChannelResponseUnmarshaller.Instance;
             
@@ -3401,7 +3401,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel">REST API Reference for GetApnsVoipChannel Operation</seealso>
         public virtual GetApnsVoipChannelResponse GetApnsVoipChannel(GetApnsVoipChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsVoipChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
 
@@ -3443,7 +3443,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel">REST API Reference for GetApnsVoipChannel Operation</seealso>
         public virtual Task<GetApnsVoipChannelResponse> GetApnsVoipChannelAsync(GetApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsVoipChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsVoipChannelResponseUnmarshaller.Instance;
             
@@ -3486,7 +3486,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel">REST API Reference for GetApnsVoipSandboxChannel Operation</seealso>
         public virtual GetApnsVoipSandboxChannelResponse GetApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
@@ -3528,7 +3528,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel">REST API Reference for GetApnsVoipSandboxChannel Operation</seealso>
         public virtual Task<GetApnsVoipSandboxChannelResponse> GetApnsVoipSandboxChannelAsync(GetApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApnsVoipSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApnsVoipSandboxChannelResponseUnmarshaller.Instance;
             
@@ -3570,7 +3570,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual GetAppResponse GetApp(GetAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
 
@@ -3611,7 +3611,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp">REST API Reference for GetApp Operation</seealso>
         public virtual Task<GetAppResponse> GetAppAsync(GetAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppResponseUnmarshaller.Instance;
             
@@ -3653,7 +3653,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">REST API Reference for GetApplicationDateRangeKpi Operation</seealso>
         public virtual GetApplicationDateRangeKpiResponse GetApplicationDateRangeKpi(GetApplicationDateRangeKpiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationDateRangeKpiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationDateRangeKpiResponseUnmarshaller.Instance;
 
@@ -3694,7 +3694,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">REST API Reference for GetApplicationDateRangeKpi Operation</seealso>
         public virtual Task<GetApplicationDateRangeKpiResponse> GetApplicationDateRangeKpiAsync(GetApplicationDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationDateRangeKpiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationDateRangeKpiResponseUnmarshaller.Instance;
             
@@ -3736,7 +3736,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">REST API Reference for GetApplicationSettings Operation</seealso>
         public virtual GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
 
@@ -3777,7 +3777,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">REST API Reference for GetApplicationSettings Operation</seealso>
         public virtual Task<GetApplicationSettingsResponse> GetApplicationSettingsAsync(GetApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationSettingsResponseUnmarshaller.Instance;
             
@@ -3820,7 +3820,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">REST API Reference for GetApps Operation</seealso>
         public virtual GetAppsResponse GetApps(GetAppsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppsResponseUnmarshaller.Instance;
 
@@ -3862,7 +3862,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">REST API Reference for GetApps Operation</seealso>
         public virtual Task<GetAppsResponse> GetAppsAsync(GetAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppsResponseUnmarshaller.Instance;
             
@@ -3904,7 +3904,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel">REST API Reference for GetBaiduChannel Operation</seealso>
         public virtual GetBaiduChannelResponse GetBaiduChannel(GetBaiduChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBaiduChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
 
@@ -3945,7 +3945,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel">REST API Reference for GetBaiduChannel Operation</seealso>
         public virtual Task<GetBaiduChannelResponse> GetBaiduChannelAsync(GetBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBaiduChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBaiduChannelResponseUnmarshaller.Instance;
             
@@ -3987,7 +3987,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         public virtual GetCampaignResponse GetCampaign(GetCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
@@ -4028,7 +4028,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         public virtual Task<GetCampaignResponse> GetCampaignAsync(GetCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
             
@@ -4070,7 +4070,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">REST API Reference for GetCampaignActivities Operation</seealso>
         public virtual GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
 
@@ -4111,7 +4111,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">REST API Reference for GetCampaignActivities Operation</seealso>
         public virtual Task<GetCampaignActivitiesResponse> GetCampaignActivitiesAsync(GetCampaignActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignActivitiesResponseUnmarshaller.Instance;
             
@@ -4153,7 +4153,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">REST API Reference for GetCampaignDateRangeKpi Operation</seealso>
         public virtual GetCampaignDateRangeKpiResponse GetCampaignDateRangeKpi(GetCampaignDateRangeKpiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignDateRangeKpiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignDateRangeKpiResponseUnmarshaller.Instance;
 
@@ -4194,7 +4194,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">REST API Reference for GetCampaignDateRangeKpi Operation</seealso>
         public virtual Task<GetCampaignDateRangeKpiResponse> GetCampaignDateRangeKpiAsync(GetCampaignDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignDateRangeKpiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignDateRangeKpiResponseUnmarshaller.Instance;
             
@@ -4237,7 +4237,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns">REST API Reference for GetCampaigns Operation</seealso>
         public virtual GetCampaignsResponse GetCampaigns(GetCampaignsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignsResponseUnmarshaller.Instance;
 
@@ -4279,7 +4279,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns">REST API Reference for GetCampaigns Operation</seealso>
         public virtual Task<GetCampaignsResponse> GetCampaignsAsync(GetCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignsResponseUnmarshaller.Instance;
             
@@ -4322,7 +4322,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion">REST API Reference for GetCampaignVersion Operation</seealso>
         public virtual GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
 
@@ -4364,7 +4364,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion">REST API Reference for GetCampaignVersion Operation</seealso>
         public virtual Task<GetCampaignVersionResponse> GetCampaignVersionAsync(GetCampaignVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignVersionResponseUnmarshaller.Instance;
             
@@ -4407,7 +4407,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions">REST API Reference for GetCampaignVersions Operation</seealso>
         public virtual GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
@@ -4449,7 +4449,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions">REST API Reference for GetCampaignVersions Operation</seealso>
         public virtual Task<GetCampaignVersionsResponse> GetCampaignVersionsAsync(GetCampaignVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
             
@@ -4491,7 +4491,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">REST API Reference for GetChannels Operation</seealso>
         public virtual GetChannelsResponse GetChannels(GetChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelsResponseUnmarshaller.Instance;
 
@@ -4532,7 +4532,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetChannels">REST API Reference for GetChannels Operation</seealso>
         public virtual Task<GetChannelsResponse> GetChannelsAsync(GetChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelsResponseUnmarshaller.Instance;
             
@@ -4574,7 +4574,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">REST API Reference for GetEmailChannel Operation</seealso>
         public virtual GetEmailChannelResponse GetEmailChannel(GetEmailChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
 
@@ -4615,7 +4615,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel">REST API Reference for GetEmailChannel Operation</seealso>
         public virtual Task<GetEmailChannelResponse> GetEmailChannelAsync(GetEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailChannelResponseUnmarshaller.Instance;
             
@@ -4658,7 +4658,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
         public virtual GetEmailTemplateResponse GetEmailTemplate(GetEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailTemplateResponseUnmarshaller.Instance;
 
@@ -4700,7 +4700,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">REST API Reference for GetEmailTemplate Operation</seealso>
         public virtual Task<GetEmailTemplateResponse> GetEmailTemplateAsync(GetEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailTemplateResponseUnmarshaller.Instance;
             
@@ -4743,7 +4743,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         public virtual GetEndpointResponse GetEndpoint(GetEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
@@ -4785,7 +4785,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         public virtual Task<GetEndpointResponse> GetEndpointAsync(GetEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
             
@@ -4827,7 +4827,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         public virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
@@ -4868,7 +4868,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         public virtual Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
             
@@ -4911,7 +4911,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
         public virtual GetExportJobResponse GetExportJob(GetExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
 
@@ -4953,7 +4953,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob">REST API Reference for GetExportJob Operation</seealso>
         public virtual Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportJobResponseUnmarshaller.Instance;
             
@@ -4996,7 +4996,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs">REST API Reference for GetExportJobs Operation</seealso>
         public virtual GetExportJobsResponse GetExportJobs(GetExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportJobsResponseUnmarshaller.Instance;
 
@@ -5038,7 +5038,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs">REST API Reference for GetExportJobs Operation</seealso>
         public virtual Task<GetExportJobsResponse> GetExportJobsAsync(GetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportJobsResponseUnmarshaller.Instance;
             
@@ -5080,7 +5080,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel">REST API Reference for GetGcmChannel Operation</seealso>
         public virtual GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGcmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
 
@@ -5121,7 +5121,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel">REST API Reference for GetGcmChannel Operation</seealso>
         public virtual Task<GetGcmChannelResponse> GetGcmChannelAsync(GetGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGcmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGcmChannelResponseUnmarshaller.Instance;
             
@@ -5164,7 +5164,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         public virtual GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
 
@@ -5206,7 +5206,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob">REST API Reference for GetImportJob Operation</seealso>
         public virtual Task<GetImportJobResponse> GetImportJobAsync(GetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobResponseUnmarshaller.Instance;
             
@@ -5249,7 +5249,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         public virtual GetImportJobsResponse GetImportJobs(GetImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
 
@@ -5291,7 +5291,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs">REST API Reference for GetImportJobs Operation</seealso>
         public virtual Task<GetImportJobsResponse> GetImportJobsAsync(GetImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportJobsResponseUnmarshaller.Instance;
             
@@ -5333,7 +5333,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">REST API Reference for GetInAppMessages Operation</seealso>
         public virtual GetInAppMessagesResponse GetInAppMessages(GetInAppMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInAppMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInAppMessagesResponseUnmarshaller.Instance;
 
@@ -5374,7 +5374,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppMessages">REST API Reference for GetInAppMessages Operation</seealso>
         public virtual Task<GetInAppMessagesResponse> GetInAppMessagesAsync(GetInAppMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInAppMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInAppMessagesResponseUnmarshaller.Instance;
             
@@ -5417,7 +5417,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">REST API Reference for GetInAppTemplate Operation</seealso>
         public virtual GetInAppTemplateResponse GetInAppTemplate(GetInAppTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInAppTemplateResponseUnmarshaller.Instance;
 
@@ -5459,7 +5459,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetInAppTemplate">REST API Reference for GetInAppTemplate Operation</seealso>
         public virtual Task<GetInAppTemplateResponse> GetInAppTemplateAsync(GetInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInAppTemplateResponseUnmarshaller.Instance;
             
@@ -5501,7 +5501,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">REST API Reference for GetJourney Operation</seealso>
         public virtual GetJourneyResponse GetJourney(GetJourneyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyResponseUnmarshaller.Instance;
 
@@ -5542,7 +5542,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourney">REST API Reference for GetJourney Operation</seealso>
         public virtual Task<GetJourneyResponse> GetJourneyAsync(GetJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyResponseUnmarshaller.Instance;
             
@@ -5585,7 +5585,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyDateRangeKpi">REST API Reference for GetJourneyDateRangeKpi Operation</seealso>
         public virtual GetJourneyDateRangeKpiResponse GetJourneyDateRangeKpi(GetJourneyDateRangeKpiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyDateRangeKpiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyDateRangeKpiResponseUnmarshaller.Instance;
 
@@ -5627,7 +5627,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyDateRangeKpi">REST API Reference for GetJourneyDateRangeKpi Operation</seealso>
         public virtual Task<GetJourneyDateRangeKpiResponse> GetJourneyDateRangeKpiAsync(GetJourneyDateRangeKpiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyDateRangeKpiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyDateRangeKpiResponseUnmarshaller.Instance;
             
@@ -5670,7 +5670,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionActivityMetrics">REST API Reference for GetJourneyExecutionActivityMetrics Operation</seealso>
         public virtual GetJourneyExecutionActivityMetricsResponse GetJourneyExecutionActivityMetrics(GetJourneyExecutionActivityMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyExecutionActivityMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyExecutionActivityMetricsResponseUnmarshaller.Instance;
 
@@ -5712,7 +5712,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionActivityMetrics">REST API Reference for GetJourneyExecutionActivityMetrics Operation</seealso>
         public virtual Task<GetJourneyExecutionActivityMetricsResponse> GetJourneyExecutionActivityMetricsAsync(GetJourneyExecutionActivityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyExecutionActivityMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyExecutionActivityMetricsResponseUnmarshaller.Instance;
             
@@ -5755,7 +5755,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionMetrics">REST API Reference for GetJourneyExecutionMetrics Operation</seealso>
         public virtual GetJourneyExecutionMetricsResponse GetJourneyExecutionMetrics(GetJourneyExecutionMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyExecutionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyExecutionMetricsResponseUnmarshaller.Instance;
 
@@ -5797,7 +5797,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyExecutionMetrics">REST API Reference for GetJourneyExecutionMetrics Operation</seealso>
         public virtual Task<GetJourneyExecutionMetricsResponse> GetJourneyExecutionMetricsAsync(GetJourneyExecutionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyExecutionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyExecutionMetricsResponseUnmarshaller.Instance;
             
@@ -5840,7 +5840,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
         public virtual GetJourneyRunExecutionActivityMetricsResponse GetJourneyRunExecutionActivityMetrics(GetJourneyRunExecutionActivityMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRunExecutionActivityMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyRunExecutionActivityMetricsResponseUnmarshaller.Instance;
 
@@ -5882,7 +5882,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
         public virtual Task<GetJourneyRunExecutionActivityMetricsResponse> GetJourneyRunExecutionActivityMetricsAsync(GetJourneyRunExecutionActivityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRunExecutionActivityMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyRunExecutionActivityMetricsResponseUnmarshaller.Instance;
             
@@ -5925,7 +5925,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
         public virtual GetJourneyRunExecutionMetricsResponse GetJourneyRunExecutionMetrics(GetJourneyRunExecutionMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRunExecutionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyRunExecutionMetricsResponseUnmarshaller.Instance;
 
@@ -5967,7 +5967,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
         public virtual Task<GetJourneyRunExecutionMetricsResponse> GetJourneyRunExecutionMetricsAsync(GetJourneyRunExecutionMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRunExecutionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyRunExecutionMetricsResponseUnmarshaller.Instance;
             
@@ -6009,7 +6009,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
         public virtual GetJourneyRunsResponse GetJourneyRuns(GetJourneyRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyRunsResponseUnmarshaller.Instance;
 
@@ -6050,7 +6050,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
         public virtual Task<GetJourneyRunsResponse> GetJourneyRunsAsync(GetJourneyRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJourneyRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJourneyRunsResponseUnmarshaller.Instance;
             
@@ -6093,7 +6093,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">REST API Reference for GetPushTemplate Operation</seealso>
         public virtual GetPushTemplateResponse GetPushTemplate(GetPushTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPushTemplateResponseUnmarshaller.Instance;
 
@@ -6135,7 +6135,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">REST API Reference for GetPushTemplate Operation</seealso>
         public virtual Task<GetPushTemplateResponse> GetPushTemplateAsync(GetPushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPushTemplateResponseUnmarshaller.Instance;
             
@@ -6177,7 +6177,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration">REST API Reference for GetRecommenderConfiguration Operation</seealso>
         public virtual GetRecommenderConfigurationResponse GetRecommenderConfiguration(GetRecommenderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommenderConfigurationResponseUnmarshaller.Instance;
 
@@ -6218,7 +6218,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration">REST API Reference for GetRecommenderConfiguration Operation</seealso>
         public virtual Task<GetRecommenderConfigurationResponse> GetRecommenderConfigurationAsync(GetRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommenderConfigurationResponseUnmarshaller.Instance;
             
@@ -6261,7 +6261,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations">REST API Reference for GetRecommenderConfigurations Operation</seealso>
         public virtual GetRecommenderConfigurationsResponse GetRecommenderConfigurations(GetRecommenderConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommenderConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommenderConfigurationsResponseUnmarshaller.Instance;
 
@@ -6303,7 +6303,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations">REST API Reference for GetRecommenderConfigurations Operation</seealso>
         public virtual Task<GetRecommenderConfigurationsResponse> GetRecommenderConfigurationsAsync(GetRecommenderConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommenderConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommenderConfigurationsResponseUnmarshaller.Instance;
             
@@ -6346,7 +6346,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         public virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
@@ -6388,7 +6388,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         public virtual Task<GetSegmentResponse> GetSegmentAsync(GetSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
             
@@ -6430,7 +6430,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs">REST API Reference for GetSegmentExportJobs Operation</seealso>
         public virtual GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
 
@@ -6471,7 +6471,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs">REST API Reference for GetSegmentExportJobs Operation</seealso>
         public virtual Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(GetSegmentExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
             
@@ -6513,7 +6513,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs">REST API Reference for GetSegmentImportJobs Operation</seealso>
         public virtual GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
 
@@ -6554,7 +6554,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs">REST API Reference for GetSegmentImportJobs Operation</seealso>
         public virtual Task<GetSegmentImportJobsResponse> GetSegmentImportJobsAsync(GetSegmentImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentImportJobsResponseUnmarshaller.Instance;
             
@@ -6597,7 +6597,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments">REST API Reference for GetSegments Operation</seealso>
         public virtual GetSegmentsResponse GetSegments(GetSegmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentsResponseUnmarshaller.Instance;
 
@@ -6639,7 +6639,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments">REST API Reference for GetSegments Operation</seealso>
         public virtual Task<GetSegmentsResponse> GetSegmentsAsync(GetSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentsResponseUnmarshaller.Instance;
             
@@ -6682,7 +6682,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion">REST API Reference for GetSegmentVersion Operation</seealso>
         public virtual GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
 
@@ -6724,7 +6724,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion">REST API Reference for GetSegmentVersion Operation</seealso>
         public virtual Task<GetSegmentVersionResponse> GetSegmentVersionAsync(GetSegmentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentVersionResponseUnmarshaller.Instance;
             
@@ -6767,7 +6767,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">REST API Reference for GetSegmentVersions Operation</seealso>
         public virtual GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
 
@@ -6809,7 +6809,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">REST API Reference for GetSegmentVersions Operation</seealso>
         public virtual Task<GetSegmentVersionsResponse> GetSegmentVersionsAsync(GetSegmentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
             
@@ -6851,7 +6851,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">REST API Reference for GetSmsChannel Operation</seealso>
         public virtual GetSmsChannelResponse GetSmsChannel(GetSmsChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSmsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
 
@@ -6892,7 +6892,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel">REST API Reference for GetSmsChannel Operation</seealso>
         public virtual Task<GetSmsChannelResponse> GetSmsChannelAsync(GetSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSmsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
             
@@ -6935,7 +6935,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">REST API Reference for GetSmsTemplate Operation</seealso>
         public virtual GetSmsTemplateResponse GetSmsTemplate(GetSmsTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSmsTemplateResponseUnmarshaller.Instance;
 
@@ -6977,7 +6977,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">REST API Reference for GetSmsTemplate Operation</seealso>
         public virtual Task<GetSmsTemplateResponse> GetSmsTemplateAsync(GetSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSmsTemplateResponseUnmarshaller.Instance;
             
@@ -7020,7 +7020,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">REST API Reference for GetUserEndpoints Operation</seealso>
         public virtual GetUserEndpointsResponse GetUserEndpoints(GetUserEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
 
@@ -7062,7 +7062,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetUserEndpoints">REST API Reference for GetUserEndpoints Operation</seealso>
         public virtual Task<GetUserEndpointsResponse> GetUserEndpointsAsync(GetUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
             
@@ -7104,7 +7104,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel">REST API Reference for GetVoiceChannel Operation</seealso>
         public virtual GetVoiceChannelResponse GetVoiceChannel(GetVoiceChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
 
@@ -7145,7 +7145,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceChannel">REST API Reference for GetVoiceChannel Operation</seealso>
         public virtual Task<GetVoiceChannelResponse> GetVoiceChannelAsync(GetVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
             
@@ -7188,7 +7188,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">REST API Reference for GetVoiceTemplate Operation</seealso>
         public virtual GetVoiceTemplateResponse GetVoiceTemplate(GetVoiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceTemplateResponseUnmarshaller.Instance;
 
@@ -7230,7 +7230,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">REST API Reference for GetVoiceTemplate Operation</seealso>
         public virtual Task<GetVoiceTemplateResponse> GetVoiceTemplateAsync(GetVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceTemplateResponseUnmarshaller.Instance;
             
@@ -7273,7 +7273,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListJourneys">REST API Reference for ListJourneys Operation</seealso>
         public virtual ListJourneysResponse ListJourneys(ListJourneysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJourneysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJourneysResponseUnmarshaller.Instance;
 
@@ -7315,7 +7315,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListJourneys">REST API Reference for ListJourneys Operation</seealso>
         public virtual Task<ListJourneysResponse> ListJourneysAsync(ListJourneysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJourneysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJourneysResponseUnmarshaller.Instance;
             
@@ -7337,7 +7337,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7358,7 +7358,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -7395,7 +7395,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -7431,7 +7431,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
             
@@ -7473,7 +7473,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         public virtual ListTemplateVersionsResponse ListTemplateVersions(ListTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -7514,7 +7514,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         public virtual Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(ListTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateVersionsResponseUnmarshaller.Instance;
             
@@ -7556,7 +7556,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">REST API Reference for PhoneNumberValidate Operation</seealso>
         public virtual PhoneNumberValidateResponse PhoneNumberValidate(PhoneNumberValidateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PhoneNumberValidateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
 
@@ -7597,7 +7597,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate">REST API Reference for PhoneNumberValidate Operation</seealso>
         public virtual Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PhoneNumberValidateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
             
@@ -7640,7 +7640,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -7682,7 +7682,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
             
@@ -7725,7 +7725,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream">REST API Reference for PutEventStream Operation</seealso>
         public virtual PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventStreamResponseUnmarshaller.Instance;
 
@@ -7767,7 +7767,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream">REST API Reference for PutEventStream Operation</seealso>
         public virtual Task<PutEventStreamResponse> PutEventStreamAsync(PutEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventStreamResponseUnmarshaller.Instance;
             
@@ -7811,7 +7811,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">REST API Reference for RemoveAttributes Operation</seealso>
         public virtual RemoveAttributesResponse RemoveAttributes(RemoveAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
 
@@ -7854,7 +7854,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">REST API Reference for RemoveAttributes Operation</seealso>
         public virtual Task<RemoveAttributesResponse> RemoveAttributesAsync(RemoveAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
             
@@ -7896,7 +7896,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">REST API Reference for SendMessages Operation</seealso>
         public virtual SendMessagesResponse SendMessages(SendMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessagesResponseUnmarshaller.Instance;
 
@@ -7937,7 +7937,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">REST API Reference for SendMessages Operation</seealso>
         public virtual Task<SendMessagesResponse> SendMessagesAsync(SendMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessagesResponseUnmarshaller.Instance;
             
@@ -7979,7 +7979,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">REST API Reference for SendOTPMessage Operation</seealso>
         public virtual SendOTPMessageResponse SendOTPMessage(SendOTPMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendOTPMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendOTPMessageResponseUnmarshaller.Instance;
 
@@ -8020,7 +8020,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">REST API Reference for SendOTPMessage Operation</seealso>
         public virtual Task<SendOTPMessageResponse> SendOTPMessageAsync(SendOTPMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendOTPMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendOTPMessageResponseUnmarshaller.Instance;
             
@@ -8062,7 +8062,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">REST API Reference for SendUsersMessages Operation</seealso>
         public virtual SendUsersMessagesResponse SendUsersMessages(SendUsersMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendUsersMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
 
@@ -8103,7 +8103,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">REST API Reference for SendUsersMessages Operation</seealso>
         public virtual Task<SendUsersMessagesResponse> SendUsersMessagesAsync(SendUsersMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendUsersMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendUsersMessagesResponseUnmarshaller.Instance;
             
@@ -8125,7 +8125,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8146,7 +8146,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -8168,7 +8168,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8189,7 +8189,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -8232,7 +8232,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">REST API Reference for UpdateAdmChannel Operation</seealso>
         public virtual UpdateAdmChannelResponse UpdateAdmChannel(UpdateAdmChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAdmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
 
@@ -8274,7 +8274,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel">REST API Reference for UpdateAdmChannel Operation</seealso>
         public virtual Task<UpdateAdmChannelResponse> UpdateAdmChannelAsync(UpdateAdmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAdmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAdmChannelResponseUnmarshaller.Instance;
             
@@ -8317,7 +8317,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel">REST API Reference for UpdateApnsChannel Operation</seealso>
         public virtual UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
 
@@ -8359,7 +8359,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel">REST API Reference for UpdateApnsChannel Operation</seealso>
         public virtual Task<UpdateApnsChannelResponse> UpdateApnsChannelAsync(UpdateApnsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsChannelResponseUnmarshaller.Instance;
             
@@ -8402,7 +8402,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">REST API Reference for UpdateApnsSandboxChannel Operation</seealso>
         public virtual UpdateApnsSandboxChannelResponse UpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
 
@@ -8444,7 +8444,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel">REST API Reference for UpdateApnsSandboxChannel Operation</seealso>
         public virtual Task<UpdateApnsSandboxChannelResponse> UpdateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsSandboxChannelResponseUnmarshaller.Instance;
             
@@ -8487,7 +8487,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel">REST API Reference for UpdateApnsVoipChannel Operation</seealso>
         public virtual UpdateApnsVoipChannelResponse UpdateApnsVoipChannel(UpdateApnsVoipChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
 
@@ -8529,7 +8529,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel">REST API Reference for UpdateApnsVoipChannel Operation</seealso>
         public virtual Task<UpdateApnsVoipChannelResponse> UpdateApnsVoipChannelAsync(UpdateApnsVoipChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsVoipChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsVoipChannelResponseUnmarshaller.Instance;
             
@@ -8572,7 +8572,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel">REST API Reference for UpdateApnsVoipSandboxChannel Operation</seealso>
         public virtual UpdateApnsVoipSandboxChannelResponse UpdateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
 
@@ -8614,7 +8614,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel">REST API Reference for UpdateApnsVoipSandboxChannel Operation</seealso>
         public virtual Task<UpdateApnsVoipSandboxChannelResponse> UpdateApnsVoipSandboxChannelAsync(UpdateApnsVoipSandboxChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApnsVoipSandboxChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApnsVoipSandboxChannelResponseUnmarshaller.Instance;
             
@@ -8656,7 +8656,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         public virtual UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
@@ -8697,7 +8697,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         public virtual Task<UpdateApplicationSettingsResponse> UpdateApplicationSettingsAsync(UpdateApplicationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
             
@@ -8740,7 +8740,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel">REST API Reference for UpdateBaiduChannel Operation</seealso>
         public virtual UpdateBaiduChannelResponse UpdateBaiduChannel(UpdateBaiduChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBaiduChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
 
@@ -8782,7 +8782,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel">REST API Reference for UpdateBaiduChannel Operation</seealso>
         public virtual Task<UpdateBaiduChannelResponse> UpdateBaiduChannelAsync(UpdateBaiduChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBaiduChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBaiduChannelResponseUnmarshaller.Instance;
             
@@ -8824,7 +8824,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         public virtual UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
@@ -8865,7 +8865,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         public virtual Task<UpdateCampaignResponse> UpdateCampaignAsync(UpdateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
             
@@ -8908,7 +8908,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">REST API Reference for UpdateEmailChannel Operation</seealso>
         public virtual UpdateEmailChannelResponse UpdateEmailChannel(UpdateEmailChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmailChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
 
@@ -8950,7 +8950,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel">REST API Reference for UpdateEmailChannel Operation</seealso>
         public virtual Task<UpdateEmailChannelResponse> UpdateEmailChannelAsync(UpdateEmailChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmailChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmailChannelResponseUnmarshaller.Instance;
             
@@ -8993,7 +8993,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
         public virtual UpdateEmailTemplateResponse UpdateEmailTemplate(UpdateEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmailTemplateResponseUnmarshaller.Instance;
 
@@ -9035,7 +9035,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">REST API Reference for UpdateEmailTemplate Operation</seealso>
         public virtual Task<UpdateEmailTemplateResponse> UpdateEmailTemplateAsync(UpdateEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEmailTemplateResponseUnmarshaller.Instance;
             
@@ -9081,7 +9081,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
@@ -9126,7 +9126,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
             
@@ -9172,7 +9172,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">REST API Reference for UpdateEndpointsBatch Operation</seealso>
         public virtual UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
 
@@ -9217,7 +9217,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">REST API Reference for UpdateEndpointsBatch Operation</seealso>
         public virtual Task<UpdateEndpointsBatchResponse> UpdateEndpointsBatchAsync(UpdateEndpointsBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointsBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointsBatchResponseUnmarshaller.Instance;
             
@@ -9260,7 +9260,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         public virtual UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGcmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
 
@@ -9302,7 +9302,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel">REST API Reference for UpdateGcmChannel Operation</seealso>
         public virtual Task<UpdateGcmChannelResponse> UpdateGcmChannelAsync(UpdateGcmChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGcmChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGcmChannelResponseUnmarshaller.Instance;
             
@@ -9345,7 +9345,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">REST API Reference for UpdateInAppTemplate Operation</seealso>
         public virtual UpdateInAppTemplateResponse UpdateInAppTemplate(UpdateInAppTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInAppTemplateResponseUnmarshaller.Instance;
 
@@ -9387,7 +9387,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateInAppTemplate">REST API Reference for UpdateInAppTemplate Operation</seealso>
         public virtual Task<UpdateInAppTemplateResponse> UpdateInAppTemplateAsync(UpdateInAppTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInAppTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInAppTemplateResponseUnmarshaller.Instance;
             
@@ -9432,7 +9432,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">REST API Reference for UpdateJourney Operation</seealso>
         public virtual UpdateJourneyResponse UpdateJourney(UpdateJourneyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJourneyResponseUnmarshaller.Instance;
 
@@ -9476,7 +9476,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney">REST API Reference for UpdateJourney Operation</seealso>
         public virtual Task<UpdateJourneyResponse> UpdateJourneyAsync(UpdateJourneyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJourneyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJourneyResponseUnmarshaller.Instance;
             
@@ -9518,7 +9518,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">REST API Reference for UpdateJourneyState Operation</seealso>
         public virtual UpdateJourneyStateResponse UpdateJourneyState(UpdateJourneyStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJourneyStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJourneyStateResponseUnmarshaller.Instance;
 
@@ -9559,7 +9559,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">REST API Reference for UpdateJourneyState Operation</seealso>
         public virtual Task<UpdateJourneyStateResponse> UpdateJourneyStateAsync(UpdateJourneyStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJourneyStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJourneyStateResponseUnmarshaller.Instance;
             
@@ -9602,7 +9602,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">REST API Reference for UpdatePushTemplate Operation</seealso>
         public virtual UpdatePushTemplateResponse UpdatePushTemplate(UpdatePushTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePushTemplateResponseUnmarshaller.Instance;
 
@@ -9644,7 +9644,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">REST API Reference for UpdatePushTemplate Operation</seealso>
         public virtual Task<UpdatePushTemplateResponse> UpdatePushTemplateAsync(UpdatePushTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePushTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePushTemplateResponseUnmarshaller.Instance;
             
@@ -9686,7 +9686,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">REST API Reference for UpdateRecommenderConfiguration Operation</seealso>
         public virtual UpdateRecommenderConfigurationResponse UpdateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecommenderConfigurationResponseUnmarshaller.Instance;
 
@@ -9727,7 +9727,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">REST API Reference for UpdateRecommenderConfiguration Operation</seealso>
         public virtual Task<UpdateRecommenderConfigurationResponse> UpdateRecommenderConfigurationAsync(UpdateRecommenderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecommenderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecommenderConfigurationResponseUnmarshaller.Instance;
             
@@ -9770,7 +9770,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">REST API Reference for UpdateSegment Operation</seealso>
         public virtual UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
 
@@ -9812,7 +9812,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment">REST API Reference for UpdateSegment Operation</seealso>
         public virtual Task<UpdateSegmentResponse> UpdateSegmentAsync(UpdateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSegmentResponseUnmarshaller.Instance;
             
@@ -9855,7 +9855,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">REST API Reference for UpdateSmsChannel Operation</seealso>
         public virtual UpdateSmsChannelResponse UpdateSmsChannel(UpdateSmsChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSmsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
 
@@ -9897,7 +9897,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel">REST API Reference for UpdateSmsChannel Operation</seealso>
         public virtual Task<UpdateSmsChannelResponse> UpdateSmsChannelAsync(UpdateSmsChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSmsChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
             
@@ -9939,7 +9939,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">REST API Reference for UpdateSmsTemplate Operation</seealso>
         public virtual UpdateSmsTemplateResponse UpdateSmsTemplate(UpdateSmsTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSmsTemplateResponseUnmarshaller.Instance;
 
@@ -9980,7 +9980,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">REST API Reference for UpdateSmsTemplate Operation</seealso>
         public virtual Task<UpdateSmsTemplateResponse> UpdateSmsTemplateAsync(UpdateSmsTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSmsTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSmsTemplateResponseUnmarshaller.Instance;
             
@@ -10022,7 +10022,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">REST API Reference for UpdateTemplateActiveVersion Operation</seealso>
         public virtual UpdateTemplateActiveVersionResponse UpdateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateActiveVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateActiveVersionResponseUnmarshaller.Instance;
 
@@ -10063,7 +10063,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">REST API Reference for UpdateTemplateActiveVersion Operation</seealso>
         public virtual Task<UpdateTemplateActiveVersionResponse> UpdateTemplateActiveVersionAsync(UpdateTemplateActiveVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateActiveVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateActiveVersionResponseUnmarshaller.Instance;
             
@@ -10106,7 +10106,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel">REST API Reference for UpdateVoiceChannel Operation</seealso>
         public virtual UpdateVoiceChannelResponse UpdateVoiceChannel(UpdateVoiceChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
 
@@ -10148,7 +10148,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceChannel">REST API Reference for UpdateVoiceChannel Operation</seealso>
         public virtual Task<UpdateVoiceChannelResponse> UpdateVoiceChannelAsync(UpdateVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
             
@@ -10191,7 +10191,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">REST API Reference for UpdateVoiceTemplate Operation</seealso>
         public virtual UpdateVoiceTemplateResponse UpdateVoiceTemplate(UpdateVoiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceTemplateResponseUnmarshaller.Instance;
 
@@ -10233,7 +10233,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">REST API Reference for UpdateVoiceTemplate Operation</seealso>
         public virtual Task<UpdateVoiceTemplateResponse> UpdateVoiceTemplateAsync(UpdateVoiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceTemplateResponseUnmarshaller.Instance;
             
@@ -10275,7 +10275,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">REST API Reference for VerifyOTPMessage Operation</seealso>
         public virtual VerifyOTPMessageResponse VerifyOTPMessage(VerifyOTPMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyOTPMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyOTPMessageResponseUnmarshaller.Instance;
 
@@ -10316,7 +10316,7 @@ namespace Amazon.Pinpoint
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">REST API Reference for VerifyOTPMessage Operation</seealso>
         public virtual Task<VerifyOTPMessageResponse> VerifyOTPMessageAsync(VerifyOTPMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyOTPMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyOTPMessageResponseUnmarshaller.Instance;
             

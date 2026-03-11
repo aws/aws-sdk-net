@@ -39,6 +39,13 @@ namespace Amazon.ManagedBlockchain.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalActionException
+        /// message.
+        /// </summary>
+        public IllegalActionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalActionException with the specified error
         /// message.
         /// </summary>

@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(OmitsNullSerializesEmptyStringRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetEmptyString())
@@ -66,8 +67,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/OmitsNullSerializesEmptyString";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static OmitsNullSerializesEmptyStringRequestMarshaller _instance = new OmitsNullSerializesEmptyStringRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, OmitsNullSerializesEmptyStringRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, OmitsNullSerializesEmptyStringRequest publicRequest);
     }    
 }

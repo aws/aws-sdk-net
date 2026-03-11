@@ -1547,7 +1547,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Firehose delivery stream (Kinesis Data Firehose)
+        /// Firehose delivery stream (Firehose)
         /// </para>
         ///  </li> <li> 
         /// <para>

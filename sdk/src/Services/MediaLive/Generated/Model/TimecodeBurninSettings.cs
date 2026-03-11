@@ -73,7 +73,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Prefix. Create a timecode burn-in prefix (optional)
         /// </summary>
-        [AWSProperty(Max=255)]
         public string Prefix
         {
             get { return this._prefix; }

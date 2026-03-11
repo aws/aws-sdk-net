@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnionPayload Object
     /// </summary>  
-    public class UnionPayloadUnmarshaller : IXmlUnmarshaller<UnionPayload, XmlUnmarshallerContext>
+    public partial class UnionPayloadUnmarshaller : IXmlUnmarshaller<UnionPayload, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         unmarshalledObject.Greeting = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, UnionPayload unmarshalledObject, int targetDepth);
+
         private static UnionPayloadUnmarshaller _instance = new UnionPayloadUnmarshaller();        
 
         /// <summary>

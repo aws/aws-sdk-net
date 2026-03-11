@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The structure that contains information about a stack set operation.
+    /// The structure that contains information about a StackSet operation.
     /// </summary>
     public partial class StackSetOperation
     {
@@ -52,10 +52,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The type of stack set operation: <c>CREATE</c>, <c>UPDATE</c>, or <c>DELETE</c>. Create
-        /// and delete operations affect only the specified stack set instances that are associated
-        /// with the specified stack set. Update operations affect both the stack set itself,
-        /// in addition to <i>all</i> associated stack set instances.
+        /// The type of StackSet operation: <c>CREATE</c>, <c>UPDATE</c>, or <c>DELETE</c>. Create
+        /// and delete operations affect only the specified stack instances that are associated
+        /// with the specified StackSet. Update operations affect both the StackSet itself, in
+        /// addition to <i>all</i> associated stack instances.
         /// </para>
         /// </summary>
         public StackSetOperationAction Action
@@ -73,12 +73,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
+        /// The Amazon Resource Name (ARN) of the IAM role used to perform this StackSet operation.
         /// </para>
         ///  
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
         /// self-managed permissions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -120,7 +120,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [Service-managed permissions] The Organizations accounts affected by the stack operation.
+        /// The Organizations accounts affected by the stack operation. Valid only if the StackSet
+        /// uses service-managed permissions.
         /// </para>
         /// </summary>
         public DeploymentTargets DeploymentTargets
@@ -138,8 +139,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
         /// <para>
-        /// The time at which the stack set operation ended, across all accounts and Regions specified.
-        /// Note that this doesn't necessarily mean that the stack set operation was successful,
+        /// The time at which the StackSet operation ended, across all accounts and Regions specified.
+        /// Note that this doesn't necessarily mean that the StackSet operation was successful,
         /// or even attempted, in each account or Region.
         /// </para>
         /// </summary>
@@ -158,12 +159,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
-        /// The name of the IAM execution role used to create or update the stack set.
+        /// The name of the IAM execution role used to create or update the StackSet.
         /// </para>
         ///  
         /// <para>
         /// Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets.
+        /// include in their StackSets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -182,7 +183,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique ID of a stack set operation.
+        /// The unique ID of a StackSet operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -201,7 +202,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// The preferences for how CloudFormation performs this stack set operation.
+        /// The preferences for how CloudFormation performs this StackSet operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -219,10 +220,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RetainStacks. 
         /// <para>
-        /// For stack set operations of action type <c>DELETE</c>, specifies whether to remove
-        /// the stack instances from the specified stack set, but doesn't delete the stacks. You
-        /// can't re-associate a retained stack, or add an existing, saved stack to a new stack
-        /// set.
+        /// For StackSet operations of action type <c>DELETE</c>, specifies whether to remove
+        /// the stack instances from the specified StackSet, but doesn't delete the stacks. You
+        /// can't re-associate a retained stack, or add an existing, saved stack to a new StackSet.
         /// </para>
         /// </summary>
         public bool? RetainStacks
@@ -240,12 +240,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetDriftDetectionDetails. 
         /// <para>
-        /// Detailed information about the drift status of the stack set. This includes information
-        /// about drift operations currently being performed on the stack set.
+        /// Detailed information about the drift status of the StackSet. This includes information
+        /// about drift operations currently being performed on the StackSet.
         /// </para>
         ///  
         /// <para>
-        /// This information will only be present for stack set operations whose <c>Action</c>
+        /// This information will only be present for StackSet operations whose <c>Action</c>
         /// type is <c>DETECT_DRIFT</c>.
         /// </para>
         ///  
@@ -269,7 +269,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetId. 
         /// <para>
-        /// The ID of the stack set.
+        /// The ID of the StackSet.
         /// </para>
         /// </summary>
         public string StackSetId
@@ -302,7 +302,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <c>QUEUED</c>: [Service-managed permissions] For automatic deployments that require
         /// a sequence of operations, the operation is queued to be performed. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">StackSets
+        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">StackSets
         /// status codes</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> <li> 

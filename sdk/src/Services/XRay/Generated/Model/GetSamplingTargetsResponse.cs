@@ -36,6 +36,7 @@ namespace Amazon.XRay.Model
     {
         private DateTime? _lastRuleModification;
         private List<SamplingTargetDocument> _samplingTargetDocuments = AWSConfigs.InitializeCollections ? new List<SamplingTargetDocument>() : null;
+        private List<UnprocessedStatistics> _unprocessedBoostStatistics = AWSConfigs.InitializeCollections ? new List<UnprocessedStatistics>() : null;
         private List<UnprocessedStatistics> _unprocessedStatistics = AWSConfigs.InitializeCollections ? new List<UnprocessedStatistics>() : null;
 
         /// <summary>
@@ -80,6 +81,30 @@ namespace Amazon.XRay.Model
         internal bool IsSetSamplingTargetDocuments()
         {
             return this._samplingTargetDocuments != null && (this._samplingTargetDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnprocessedBoostStatistics. 
+        /// <para>
+        /// Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingBoostStatisticsDocument.html">SamplingBoostStatisticsDocument</a>
+        /// that X-Ray could not process.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<UnprocessedStatistics> UnprocessedBoostStatistics
+        {
+            get { return this._unprocessedBoostStatistics; }
+            set { this._unprocessedBoostStatistics = value; }
+        }
+
+        // Check to see if UnprocessedBoostStatistics property is set
+        internal bool IsSetUnprocessedBoostStatistics()
+        {
+            return this._unprocessedBoostStatistics != null && (this._unprocessedBoostStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

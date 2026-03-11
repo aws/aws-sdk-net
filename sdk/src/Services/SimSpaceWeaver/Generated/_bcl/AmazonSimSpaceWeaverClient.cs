@@ -347,7 +347,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -426,7 +426,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
             
@@ -462,7 +462,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
             
@@ -540,7 +540,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DeleteSimulation">REST API Reference for DeleteSimulation Operation</seealso>
         public virtual DeleteSimulationResponse DeleteSimulation(DeleteSimulationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSimulationResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DeleteSimulation">REST API Reference for DeleteSimulation Operation</seealso>
         public virtual Task<DeleteSimulationResponse> DeleteSimulationAsync(DeleteSimulationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSimulationResponseUnmarshaller.Instance;
             
@@ -615,7 +615,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual DescribeAppResponse DescribeApp(DescribeAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual Task<DescribeAppResponse> DescribeAppAsync(DescribeAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppResponseUnmarshaller.Instance;
             
@@ -680,7 +680,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DescribeSimulation">REST API Reference for DescribeSimulation Operation</seealso>
         public virtual DescribeSimulationResponse DescribeSimulation(DescribeSimulationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSimulationResponseUnmarshaller.Instance;
 
@@ -712,7 +712,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DescribeSimulation">REST API Reference for DescribeSimulation Operation</seealso>
         public virtual Task<DescribeSimulationResponse> DescribeSimulationAsync(DescribeSimulationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSimulationResponseUnmarshaller.Instance;
             
@@ -745,7 +745,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual ListAppsResponse ListApps(ListAppsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
             
@@ -808,7 +808,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListSimulations">REST API Reference for ListSimulations Operation</seealso>
         public virtual ListSimulationsResponse ListSimulations(ListSimulationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSimulationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSimulationsResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListSimulations">REST API Reference for ListSimulations Operation</seealso>
         public virtual Task<ListSimulationsResponse> ListSimulationsAsync(ListSimulationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSimulationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSimulationsResponseUnmarshaller.Instance;
             
@@ -865,7 +865,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -927,7 +927,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartApp">REST API Reference for StartApp Operation</seealso>
         public virtual StartAppResponse StartApp(StartAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAppResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartApp">REST API Reference for StartApp Operation</seealso>
         public virtual Task<StartAppResponse> StartAppAsync(StartAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAppResponseUnmarshaller.Instance;
             
@@ -998,7 +998,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartClock">REST API Reference for StartClock Operation</seealso>
         public virtual StartClockResponse StartClock(StartClockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartClockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartClockResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartClock">REST API Reference for StartClock Operation</seealso>
         public virtual Task<StartClockResponse> StartClockAsync(StartClockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartClockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartClockResponseUnmarshaller.Instance;
             
@@ -1074,7 +1074,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartSimulation">REST API Reference for StartSimulation Operation</seealso>
         public virtual StartSimulationResponse StartSimulation(StartSimulationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSimulationResponseUnmarshaller.Instance;
 
@@ -1114,7 +1114,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartSimulation">REST API Reference for StartSimulation Operation</seealso>
         public virtual Task<StartSimulationResponse> StartSimulationAsync(StartSimulationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSimulationResponseUnmarshaller.Instance;
             
@@ -1150,7 +1150,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopApp">REST API Reference for StopApp Operation</seealso>
         public virtual StopAppResponse StopApp(StopAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopAppResponseUnmarshaller.Instance;
 
@@ -1185,7 +1185,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopApp">REST API Reference for StopApp Operation</seealso>
         public virtual Task<StopAppResponse> StopAppAsync(StopAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopAppResponseUnmarshaller.Instance;
             
@@ -1221,7 +1221,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopClock">REST API Reference for StopClock Operation</seealso>
         public virtual StopClockResponse StopClock(StopClockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopClockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopClockResponseUnmarshaller.Instance;
 
@@ -1256,7 +1256,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopClock">REST API Reference for StopClock Operation</seealso>
         public virtual Task<StopClockResponse> StopClockAsync(StopClockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopClockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopClockResponseUnmarshaller.Instance;
             
@@ -1299,7 +1299,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopSimulation">REST API Reference for StopSimulation Operation</seealso>
         public virtual StopSimulationResponse StopSimulation(StopSimulationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSimulationResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopSimulation">REST API Reference for StopSimulation Operation</seealso>
         public virtual Task<StopSimulationResponse> StopSimulationAsync(StopSimulationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSimulationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSimulationResponseUnmarshaller.Instance;
             
@@ -1372,7 +1372,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1402,7 +1402,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1431,7 +1431,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1459,7 +1459,7 @@ namespace Amazon.SimSpaceWeaver
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

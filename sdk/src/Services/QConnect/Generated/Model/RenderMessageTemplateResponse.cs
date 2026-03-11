@@ -37,6 +37,7 @@ namespace Amazon.QConnect.Model
         private List<MessageTemplateAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<MessageTemplateAttachment>() : null;
         private List<string> _attributesNotInterpolated = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MessageTemplateContentProvider _content;
+        private MessageTemplateSourceConfigurationSummary _sourceConfigurationSummary;
 
         /// <summary>
         /// Gets and sets the property Attachments. 
@@ -91,7 +92,6 @@ namespace Amazon.QConnect.Model
         /// The content of the message template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MessageTemplateContentProvider Content
         {
             get { return this._content; }
@@ -102,6 +102,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfigurationSummary. 
+        /// <para>
+        /// The source configuration of the message template.
+        /// </para>
+        /// </summary>
+        public MessageTemplateSourceConfigurationSummary SourceConfigurationSummary
+        {
+            get { return this._sourceConfigurationSummary; }
+            set { this._sourceConfigurationSummary = value; }
+        }
+
+        // Check to see if SourceConfigurationSummary property is set
+        internal bool IsSetSourceConfigurationSummary()
+        {
+            return this._sourceConfigurationSummary != null;
         }
 
     }

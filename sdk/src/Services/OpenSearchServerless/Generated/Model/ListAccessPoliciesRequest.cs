@@ -65,7 +65,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <para>
         /// If your initial <c>ListAccessPolicies</c> operation returns a <c>nextToken</c>, you
         /// can include the returned <c>nextToken</c> in subsequent <c>ListAccessPolicies</c>
-        /// operations, which returns results in the next page. 
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

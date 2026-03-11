@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTableRestoreArgumentException
+        /// message.
+        /// </summary>
+        public InvalidTableRestoreArgumentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTableRestoreArgumentException with the specified error
         /// message.
         /// </summary>

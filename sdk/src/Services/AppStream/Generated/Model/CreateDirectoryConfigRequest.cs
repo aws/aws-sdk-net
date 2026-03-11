@@ -31,9 +31,9 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDirectoryConfig operation.
-    /// Creates a Directory Config object in AppStream 2.0. This object includes the configuration
-    /// information required to join fleets and image builders to Microsoft Active Directory
-    /// domains.
+    /// Creates a Directory Config object in WorkSpaces Applications. This object includes
+    /// the configuration information required to join fleets and image builders to Microsoft
+    /// Active Directory domains.
     /// </summary>
     public partial class CreateDirectoryConfigRequest : AmazonAppStreamRequest
     {

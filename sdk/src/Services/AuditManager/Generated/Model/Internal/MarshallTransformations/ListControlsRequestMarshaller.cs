@@ -65,6 +65,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetControlCatalogId())
                 request.Parameters.Add("controlCatalogId", StringUtils.FromString(publicRequest.ControlCatalogId));
+            if (string.IsNullOrEmpty(publicRequest.ControlType))
+                throw new AmazonAuditManagerException("Request object does not have required field ControlType set");
             
             if (publicRequest.IsSetControlType())
                 request.Parameters.Add("controlType", StringUtils.FromString(publicRequest.ControlType));

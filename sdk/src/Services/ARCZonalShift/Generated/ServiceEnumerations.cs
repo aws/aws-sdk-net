@@ -259,6 +259,10 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         public static readonly ConflictExceptionReason PracticeOutcomeAlarmsRed = new ConflictExceptionReason("PracticeOutcomeAlarmsRed");
         /// <summary>
+        /// Constant PracticeOutsideAllowedWindows for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PracticeOutsideAllowedWindows = new ConflictExceptionReason("PracticeOutsideAllowedWindows");
+        /// <summary>
         /// Constant SimultaneousZonalShiftsConflict for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason SimultaneousZonalShiftsConflict = new ConflictExceptionReason("SimultaneousZonalShiftsConflict");
@@ -507,9 +511,17 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         public static readonly ValidationExceptionReason InvalidExpiresIn = new ValidationExceptionReason("InvalidExpiresIn");
         /// <summary>
+        /// Constant InvalidPracticeAllowedWindow for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidPracticeAllowedWindow = new ValidationExceptionReason("InvalidPracticeAllowedWindow");
+        /// <summary>
         /// Constant InvalidPracticeBlocker for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason InvalidPracticeBlocker = new ValidationExceptionReason("InvalidPracticeBlocker");
+        /// <summary>
+        /// Constant InvalidPracticeWindows for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidPracticeWindows = new ValidationExceptionReason("InvalidPracticeWindows");
         /// <summary>
         /// Constant InvalidResourceIdentifier for ValidationExceptionReason
         /// </summary>

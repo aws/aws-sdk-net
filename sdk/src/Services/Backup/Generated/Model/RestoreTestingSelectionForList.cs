@@ -132,6 +132,11 @@ namespace Amazon.Backup.Model
         /// <para>
         /// Unique name of a restore testing selection.
         /// </para>
+        ///  
+        /// <para>
+        /// The name consists of only alphanumeric characters and underscores. Maximum length
+        /// is 50.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RestoreTestingSelectionName

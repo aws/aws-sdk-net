@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLocationCodeException
+        /// message.
+        /// </summary>
+        public InvalidLocationCodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLocationCodeException with the specified error
         /// message.
         /// </summary>

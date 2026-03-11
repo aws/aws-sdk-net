@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmail.Model
         private string _configurationSetName;
 
         /// <summary>
+        /// Default constructor for TrackingOptionsDoesNotExistException
+        /// message.
+        /// </summary>
+        public TrackingOptionsDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrackingOptionsDoesNotExistException with the specified error
         /// message.
         /// </summary>

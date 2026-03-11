@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBShardGroupStateException
+        /// message.
+        /// </summary>
+        public InvalidDBShardGroupStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBShardGroupStateException with the specified error
         /// message.
         /// </summary>

@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(SubmitMultiRegionAccessPointRoutesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PATCH";
         
             if (publicRequest.IsSetAccountId()) 
@@ -72,28 +73,29 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 var publicRequestRouteUpdates = publicRequest.RouteUpdates;
-                if (publicRequestRouteUpdates != null && (publicRequestRouteUpdates.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRouteUpdates()) 
                 {
                     xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
-                    if (publicRequestRouteUpdatesValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Route");
-                        if(publicRequestRouteUpdatesValue.IsSetBucket())
-                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
-                        if(publicRequestRouteUpdatesValue.IsSetRegion())
-                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
-                        if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
-                            xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestRouteUpdatesValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Route");
+                            if(publicRequestRouteUpdatesValue.IsSetBucket())
+                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
+                            if(publicRequestRouteUpdatesValue.IsSetRegion())
+                                xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
+                            if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
+                                xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -106,8 +108,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static SubmitMultiRegionAccessPointRoutesRequestMarshaller _instance = new SubmitMultiRegionAccessPointRoutesRequestMarshaller();        
@@ -129,5 +129,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, SubmitMultiRegionAccessPointRoutesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, SubmitMultiRegionAccessPointRoutesRequest publicRequest);
     }    
 }

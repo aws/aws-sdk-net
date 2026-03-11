@@ -38,7 +38,15 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class ServiceAlreadyExistsException : AmazonServiceDiscoveryException
     {
         private string _creatorRequestId;
+        private string _serviceArn;
         private string _serviceId;
+
+        /// <summary>
+        /// Default constructor for ServiceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ServiceAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceAlreadyExistsException with the specified error
@@ -101,6 +109,7 @@ namespace Amazon.ServiceDiscovery.Model
             : base(info, context)
         {
             this.CreatorRequestId = (string)info.GetValue("CreatorRequestId", typeof(string));
+            this.ServiceArn = (string)info.GetValue("ServiceArn", typeof(string));
             this.ServiceId = (string)info.GetValue("ServiceId", typeof(string));
         }
 
@@ -118,6 +127,7 @@ namespace Amazon.ServiceDiscovery.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("CreatorRequestId", this.CreatorRequestId);
+            info.AddValue("ServiceArn", this.ServiceArn);
             info.AddValue("ServiceId", this.ServiceId);
         }
 #endif
@@ -139,6 +149,25 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetCreatorRequestId()
         {
             return this._creatorRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceArn. 
+        /// <para>
+        /// The ARN of the existing service.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string ServiceArn
+        {
+            get { return this._serviceArn; }
+            set { this._serviceArn = value; }
+        }
+
+        // Check to see if ServiceArn property is set
+        internal bool IsSetServiceArn()
+        {
+            return this._serviceArn != null;
         }
 
         /// <summary>

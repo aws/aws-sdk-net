@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InactiveQueryException
+        /// message.
+        /// </summary>
+        public InactiveQueryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InactiveQueryException with the specified error
         /// message.
         /// </summary>

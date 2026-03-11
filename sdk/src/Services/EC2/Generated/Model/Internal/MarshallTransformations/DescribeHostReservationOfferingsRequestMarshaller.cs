@@ -111,6 +111,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OfferingId", StringUtils.FromString(publicRequest.OfferingId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeHostReservationOfferingsRequestMarshaller _instance = new DescribeHostReservationOfferingsRequestMarshaller();        

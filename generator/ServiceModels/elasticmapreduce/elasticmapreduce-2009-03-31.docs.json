@@ -74,43 +74,35 @@
     },
     "AddInstanceFleetInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AddInstanceFleetOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "AddInstanceGroupsInput": {
       "base": "<p>Input to an AddInstanceGroups call.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AddInstanceGroupsOutput": {
       "base": "<p>Output from an AddInstanceGroups call.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AddJobFlowStepsInput": {
       "base": "<p> The input argument to the <a>AddJobFlowSteps</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AddJobFlowStepsOutput": {
       "base": "<p> The output for the <a>AddJobFlowSteps</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AddTagsInput": {
       "base": "<p>This input identifies an Amazon EMR resource and a list of tags to attach.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AddTagsOutput": {
       "base": "<p>This output indicates the result of adding tags to a resource.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "AdjustmentType": {
       "base": null,
@@ -221,6 +213,7 @@
       "base": null,
       "refs": {
         "BlockPublicAccessConfiguration$BlockPublicSecurityGroupRules": "<p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>",
+        "CloudWatchLogConfiguration$Enabled": "<p>Specifies if CloudWatch logging is enabled.</p>",
         "Cluster$AutoTerminate": "<p>Specifies whether the cluster should terminate after completing all steps.</p>",
         "Cluster$TerminationProtected": "<p>Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>",
         "Cluster$VisibleToAllUsers": "<p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <a>RunJobFlow</a> command, the CLI <a href=\"https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html\">create-cluster</a> command, or the Amazon Web Services Management Console.</p>",
@@ -246,6 +239,7 @@
       "base": null,
       "refs": {
         "Cluster$UnhealthyNodeReplacement": "<p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>",
+        "Cluster$ExtendedSupport": "<p>Reserved.</p>",
         "CreateStudioInput$TrustedIdentityPropagationEnabled": "<p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>",
         "EbsConfiguration$EbsOptimized": "<p>Indicates whether an Amazon EBS volume is EBS-optimized. The default is false. You should explicitly set this value to true to enable the Amazon EBS-optimized setting for an EC2 instance.</p>",
         "GetOnClusterAppUIPresignedURLInput$DryRun": "<p>Determines if the user interface presigned URL is for a dry run.</p>",
@@ -254,6 +248,9 @@
         "InstanceTypeSpecification$EbsOptimized": "<p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>",
         "JobFlowInstancesConfig$UnhealthyNodeReplacement": "<p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>",
         "JobFlowInstancesDetail$UnhealthyNodeReplacement": "<p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>",
+        "ModifyClusterInput$ExtendedSupport": "<p>Reserved.</p>",
+        "ModifyClusterOutput$ExtendedSupport": "<p>Reserved.</p>",
+        "RunJobFlowInput$ExtendedSupport": "<p>Reserved.</p>",
         "SetUnhealthyNodeReplacementInput$UnhealthyNodeReplacement": "<p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>",
         "Studio$TrustedIdentityPropagationEnabled": "<p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>"
       }
@@ -297,13 +294,11 @@
     },
     "CancelStepsInput": {
       "base": "<p>The input argument to the <a>CancelSteps</a> operation.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "CancelStepsOutput": {
       "base": "<p> The output for the <a>CancelSteps</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "CancelStepsRequestStatus": {
       "base": null,
@@ -315,6 +310,12 @@
       "base": "<p>The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.</p>",
       "refs": {
         "ScalingTrigger$CloudWatchAlarmDefinition": "<p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>"
+      }
+    },
+    "CloudWatchLogConfiguration": {
+      "base": "<p>Holds CloudWatch log configuration settings and metadata that specify settings like log files to monitor and where to send them.</p>",
+      "refs": {
+        "MonitoringConfiguration$CloudWatchLogConfiguration": "<p>CloudWatch log configuration settings and metadata that specify settings like log files to monitor and where to send them.</p>"
       }
     },
     "Cluster": {
@@ -450,38 +451,31 @@
     },
     "CreatePersistentAppUIInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreatePersistentAppUIOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateSecurityConfigurationInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateSecurityConfigurationOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateStudioInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateStudioOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "CreateStudioSessionMappingInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Credentials": {
       "base": "<p>The credentials that you can use to connect to cluster endpoints. Credentials consist of a username and a password.</p>",
@@ -544,103 +538,83 @@
     },
     "DeleteSecurityConfigurationInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteSecurityConfigurationOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteStudioInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DeleteStudioSessionMappingInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterInput": {
       "base": "<p>This input determines which cluster to describe.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeClusterOutput": {
       "base": "<p>This output contains the description of the cluster.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeJobFlowsInput": {
       "base": "<p> The input for the <a>DescribeJobFlows</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeJobFlowsOutput": {
       "base": "<p> The output for the <a>DescribeJobFlows</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeNotebookExecutionInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeNotebookExecutionOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePersistentAppUIInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribePersistentAppUIOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeReleaseLabelInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeReleaseLabelOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSecurityConfigurationInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeSecurityConfigurationOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeStepInput": {
       "base": "<p>This input determines which step to describe.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeStepOutput": {
       "base": "<p>This output contains the description of the cluster step.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeStudioInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "DescribeStudioOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "EC2InstanceIdsList": {
       "base": null,
@@ -776,73 +750,59 @@
     },
     "GetAutoTerminationPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetAutoTerminationPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetBlockPublicAccessConfigurationInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetBlockPublicAccessConfigurationOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetClusterSessionCredentialsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetClusterSessionCredentialsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetManagedScalingPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetManagedScalingPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetOnClusterAppUIPresignedURLInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetOnClusterAppUIPresignedURLOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetPersistentAppUIPresignedURLInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetPersistentAppUIPresignedURLOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetStudioSessionMappingInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "GetStudioSessionMappingOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "HadoopJarStepConfig": {
       "base": "<p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>",
@@ -1249,18 +1209,15 @@
     },
     "InternalServerError": {
       "base": "<p>Indicates that an error occurred while processing the request and that the request was not completed.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "InternalServerException": {
       "base": "<p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "InvalidRequestException": {
       "base": "<p>This exception occurs when there is something wrong with user input.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "JobFlowDetail": {
       "base": "<p>A description of a cluster (job flow).</p>",
@@ -1326,122 +1283,104 @@
     },
     "ListBootstrapActionsInput": {
       "base": "<p>This input determines which bootstrap actions to retrieve.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListBootstrapActionsOutput": {
       "base": "<p>This output contains the bootstrap actions detail.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClustersInput": {
       "base": "<p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListClustersOutput": {
       "base": "<p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInstanceFleetsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInstanceFleetsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInstanceGroupsInput": {
       "base": "<p>This input determines which instance groups to retrieve.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInstanceGroupsOutput": {
       "base": "<p>This input determines which instance groups to retrieve.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInstancesInput": {
       "base": "<p>This input determines which instances to list.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListInstancesOutput": {
       "base": "<p>This output contains the list of instances.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListNotebookExecutionsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListNotebookExecutionsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListReleaseLabelsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListReleaseLabelsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSecurityConfigurationsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSecurityConfigurationsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStepsInput": {
       "base": "<p>This input determines which steps to list.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStepsOutput": {
       "base": "<p>This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStudioSessionMappingsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStudioSessionMappingsOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStudiosInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListStudiosOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSupportedInstanceTypesInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ListSupportedInstanceTypesOutput": {
       "base": null,
+      "refs": {}
+    },
+    "LogTypesMap": {
+      "base": null,
       "refs": {
+        "CloudWatchLogConfiguration$LogTypes": "<p>A map of log types to file names for publishing logs to the standard output or standard error streams for CloudWatch. Valid log types include STEP_LOGS, SPARK_DRIVER, and SPARK_EXECUTOR. Valid file names for each type include STDOUT and STDERR.</p>"
       }
     },
     "Long": {
@@ -1516,22 +1455,25 @@
     },
     "ModifyClusterInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ModifyClusterOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ModifyInstanceFleetInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ModifyInstanceGroupsInput": {
       "base": "<p>Change the size of some instance groups.</p>",
+      "refs": {}
+    },
+    "MonitoringConfiguration": {
+      "base": "<p>Contains CloudWatch log configuration metadata and settings.</p>",
       "refs": {
+        "Cluster$MonitoringConfiguration": "<p>Contains Cloudwatch log configuration metadata and settings.</p>",
+        "RunJobFlowInput$MonitoringConfiguration": "<p>Contains CloudWatch log configuration metadata and settings.</p>"
       }
     },
     "NewSupportedProductsList": {
@@ -1739,48 +1681,40 @@
     "ProfilerType": {
       "base": null,
       "refs": {
-        "CreatePersistentAppUIInput$ProfilerType": "<p>The profiler type for the persistent application user interface. Valid values are SHS, TEZUI, or YTS.</p>"
+        "CreatePersistentAppUIInput$ProfilerType": "<p>The profiler type for the persistent application user interface.</p>"
       }
     },
     "PutAutoScalingPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutAutoScalingPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutAutoTerminationPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutAutoTerminationPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutBlockPublicAccessConfigurationInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutBlockPublicAccessConfigurationOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutManagedScalingPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "PutManagedScalingPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "ReconfigurationType": {
       "base": null,
@@ -1796,43 +1730,35 @@
     },
     "RemoveAutoScalingPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveAutoScalingPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveAutoTerminationPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveAutoTerminationPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveManagedScalingPolicyInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveManagedScalingPolicyOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveTagsInput": {
       "base": "<p>This input identifies an Amazon EMR resource and a list of tags to remove.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "RemoveTagsOutput": {
       "base": "<p>This output indicates the result of removing tags from the resource.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "RepoUpgradeOnBoot": {
       "base": null,
@@ -1850,12 +1776,16 @@
     },
     "RunJobFlowInput": {
       "base": "<p> Input to the <a>RunJobFlow</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "RunJobFlowOutput": {
       "base": "<p> The result of the <a>RunJobFlow</a> operation. </p>",
+      "refs": {}
+    },
+    "S3MonitoringConfiguration": {
+      "base": "<p>The Amazon S3 configuration for monitoring log publishing. You can configure your step to send log information to Amazon S3. When it's specified, it takes precedence over the cluster's logging configuration. If you don't specify this configuration entirely, or omit individual fields, EMR falls back to cluster-level logging behavior.</p>",
       "refs": {
+        "StepMonitoringConfiguration$S3MonitoringConfiguration": "<p>The Amazon S3 configuration for monitoring log publishing. You can configure your step to send log information to Amazon S3. When it's specified, it takes precedence over the cluster's logging configuration. If you don't specify this configuration entirely, or omit individual fields, EMR falls back to cluster-level logging behavior. </p>"
       }
     },
     "ScaleDownBehavior": {
@@ -1949,23 +1879,19 @@
     },
     "SetKeepJobFlowAliveWhenNoStepsInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SetTerminationProtectionInput": {
       "base": "<p> The input argument to the <a>TerminationProtection</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "SetUnhealthyNodeReplacementInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "SetVisibleToAllUsersInput": {
       "base": "<p>The input to the SetVisibleToAllUsers action.</p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ShrinkPolicy": {
       "base": "<p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>",
@@ -2019,13 +1945,11 @@
     },
     "StartNotebookExecutionInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "StartNotebookExecutionOutput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "Statistic": {
       "base": null,
@@ -2099,6 +2023,12 @@
         "CancelStepsInput$StepIds": "<p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps and their states for the specified cluster.</p>"
       }
     },
+    "StepMonitoringConfiguration": {
+      "base": "<p>Object that holds configuration properties for logging.</p>",
+      "refs": {
+        "StepConfig$StepMonitoringConfiguration": "<p>Object that holds configuration properties for logging.</p>"
+      }
+    },
     "StepState": {
       "base": null,
       "refs": {
@@ -2151,8 +2081,7 @@
     },
     "StopNotebookExecutionInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "String": {
       "base": null,
@@ -2208,7 +2137,7 @@
         "Instance$InstanceGroupId": "<p>The identifier of the instance group to which this instance belongs.</p>",
         "InstanceFleetStateChangeReason$Message": "<p>An explanatory message.</p>",
         "InstanceGroup$Name": "<p>The name of the instance group.</p>",
-        "InstanceGroup$BidPrice": "<p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>",
+        "InstanceGroup$BidPrice": "<p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>",
         "InstanceGroupStateChangeReason$Message": "<p>The status change reason description.</p>",
         "InstanceStateChangeReason$Message": "<p>The status change reason description.</p>",
         "ListReleaseLabelsInput$NextToken": "<p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>",
@@ -2227,8 +2156,12 @@
         "SimplifiedApplication$Name": "<p>The returned release label application name. For example, <code>hadoop</code>.</p>",
         "SimplifiedApplication$Version": "<p>The returned release label application version. For example, <code>3.2.1</code>.</p>",
         "Step$Name": "<p>The name of the cluster step.</p>",
+        "Step$LogUri": "<p>The Amazon S3 destination URI for log publishing.</p>",
+        "Step$EncryptionKeyArn": "<p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>",
         "StepStateChangeReason$Message": "<p>The descriptive message for the state change reason.</p>",
         "StepSummary$Name": "<p>The name of the cluster step.</p>",
+        "StepSummary$LogUri": "<p>The Amazon S3 destination URI for log publishing.</p>",
+        "StepSummary$EncryptionKeyArn": "<p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>",
         "StringList$member": null,
         "StringMap$key": null,
         "StringMap$value": null,
@@ -2335,8 +2268,7 @@
     },
     "TerminateJobFlowsInput": {
       "base": "<p> Input to the <a>TerminateJobFlows</a> operation. </p>",
-      "refs": {
-      }
+      "refs": {}
     },
     "ThroughputVal": {
       "base": null,
@@ -2352,13 +2284,11 @@
     },
     "UpdateStudioInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UpdateStudioSessionMappingInput": {
       "base": null,
-      "refs": {
-      }
+      "refs": {}
     },
     "UriString": {
       "base": null,
@@ -2410,6 +2340,9 @@
     "XmlString": {
       "base": null,
       "refs": {
+        "CloudWatchLogConfiguration$LogGroupName": "<p>The name of the CloudWatch log group where logs are published.</p>",
+        "CloudWatchLogConfiguration$LogStreamNamePrefix": "<p>The prefix of the log stream name.</p>",
+        "CloudWatchLogConfiguration$EncryptionKeyArn": "<p>The ARN of the encryption key used to encrypt the logs.</p>",
         "Cluster$SecurityConfiguration": "<p>The name of the security configuration applied to the cluster.</p>",
         "Cluster$AutoScalingRole": "<p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>",
         "CreateSecurityConfigurationInput$Name": "<p>The name of the security configuration.</p>",
@@ -2440,6 +2373,7 @@
         "KeyValue$Key": "<p>The unique identifier of a key-value pair.</p>",
         "KeyValue$Value": "<p>The value part of the identified key.</p>",
         "ListNotebookExecutionsInput$ExecutionEngineId": "<p>The unique ID of the execution engine.</p>",
+        "LogTypesMap$key": null,
         "NotebookExecution$NotebookParams": "<p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>",
         "NotebookExecution$OutputNotebookURI": "<p>The location of the notebook execution's output file in Amazon S3.</p>",
         "NotebookExecution$LastStateChangeReason": "<p>The reason for the latest status change of the notebook execution.</p>",
@@ -2453,6 +2387,8 @@
         "RunJobFlowInput$ServiceRole": "<p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>",
         "RunJobFlowInput$SecurityConfiguration": "<p>The name of a security configuration to apply to the cluster.</p>",
         "RunJobFlowInput$AutoScalingRole": "<p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>",
+        "S3MonitoringConfiguration$LogUri": "<p>The Amazon S3 destination URI for log publishing.</p>",
+        "S3MonitoringConfiguration$EncryptionKeyArn": "<p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>",
         "ScriptBootstrapActionConfig$Path": "<p>Location in Amazon S3 of the script to run during a bootstrap action.</p>",
         "SecurityConfigurationSummary$Name": "<p>The name of the security configuration.</p>",
         "StartNotebookExecutionInput$RelativePath": "<p>The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>",
@@ -2476,6 +2412,7 @@
         "DescribeJobFlowsInput$JobFlowIds": "<p>Return only job flows whose job flow ID is contained in this list.</p>",
         "HadoopJarStepConfig$Args": "<p>A list of command line arguments passed to the JAR file's main function when executed.</p>",
         "ListStepsInput$StepIds": "<p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>",
+        "LogTypesMap$value": null,
         "ScriptBootstrapActionConfig$Args": "<p>A list of command line arguments to pass to the bootstrap action script.</p>",
         "SetKeepJobFlowAliveWhenNoStepsInput$JobFlowIds": "<p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href=\"https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html\">RunJobFlow</a> and can also be obtained from <a href=\"https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html\">DescribeJobFlows</a>.</p>",
         "SetTerminationProtectionInput$JobFlowIds": "<p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>",
@@ -2534,17 +2471,17 @@
         "InstanceFleetModifyConfig$Context": "<p>Reserved.</p>",
         "InstanceGroup$CustomAmiId": "<p>The custom AMI ID to use for the provisioned instance group.</p>",
         "InstanceGroupConfig$Name": "<p>Friendly name given to the instance group.</p>",
-        "InstanceGroupConfig$BidPrice": "<p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>",
+        "InstanceGroupConfig$BidPrice": "<p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>",
         "InstanceGroupConfig$CustomAmiId": "<p>The custom AMI ID to use for the provisioned instance group.</p>",
         "InstanceGroupDetail$InstanceGroupId": "<p>Unique identifier for the instance group.</p>",
         "InstanceGroupDetail$Name": "<p>Friendly name for the instance group.</p>",
-        "InstanceGroupDetail$BidPrice": "<p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>",
+        "InstanceGroupDetail$BidPrice": "<p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>",
         "InstanceGroupDetail$CustomAmiId": "<p>The custom AMI ID to use for the provisioned instance group.</p>",
         "InstanceGroupIdsList$member": null,
         "InstanceGroupModifyConfig$InstanceGroupId": "<p>Unique ID of the instance group to modify.</p>",
         "InstanceTypeConfig$BidPrice": "<p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>",
         "InstanceTypeConfig$CustomAmiId": "<p>The custom AMI ID to use for the instance type.</p>",
-        "InstanceTypeSpecification$BidPrice": "<p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>",
+        "InstanceTypeSpecification$BidPrice": "<p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>",
         "InstanceTypeSpecification$CustomAmiId": "<p>The custom AMI ID to use for the instance type.</p>",
         "JobFlowDetail$JobFlowId": "<p>The job flow identifier.</p>",
         "JobFlowDetail$Name": "<p>The name of the job flow.</p>",

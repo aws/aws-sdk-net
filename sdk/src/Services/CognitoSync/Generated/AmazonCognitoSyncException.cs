@@ -36,6 +36,14 @@ namespace Amazon.CognitoSync
         /// <summary>
         /// Construct instance of AmazonCognitoSyncException
         /// </summary>
+        public AmazonCognitoSyncException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCognitoSyncException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCognitoSyncException(string message)
             : base(message)

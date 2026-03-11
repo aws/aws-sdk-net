@@ -41,6 +41,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateConflictException
+        /// message.
+        /// </summary>
+        public CertificateConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateConflictException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.LexRuntimeV2.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerException with the specified error
         /// message.
         /// </summary>

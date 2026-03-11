@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
+    /// <b>This API works with the following fleet types:</b> Anywhere, Container
     /// 
+    ///  
+    /// <para>
+    /// Registers a compute resource in an Amazon GameLift Servers Anywhere fleet. 
+    /// </para>
     ///  
     /// <para>
     /// For an Anywhere fleet that's running the Amazon GameLift Servers Agent, the Agent

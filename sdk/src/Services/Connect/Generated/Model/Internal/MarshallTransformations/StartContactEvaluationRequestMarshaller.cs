@@ -76,6 +76,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoEvaluationConfiguration())
+            {
+                context.Writer.WritePropertyName("AutoEvaluationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoEvaluationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoEvaluationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -97,6 +108,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EvaluationFormId");
                 context.Writer.WriteStringValue(publicRequest.EvaluationFormId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

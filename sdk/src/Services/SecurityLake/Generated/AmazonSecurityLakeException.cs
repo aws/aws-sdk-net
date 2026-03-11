@@ -36,6 +36,14 @@ namespace Amazon.SecurityLake
         /// <summary>
         /// Construct instance of AmazonSecurityLakeException
         /// </summary>
+        public AmazonSecurityLakeException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSecurityLakeException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSecurityLakeException(string message)
             : base(message)

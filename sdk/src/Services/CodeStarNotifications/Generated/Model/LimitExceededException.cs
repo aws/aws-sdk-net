@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts,
+    /// One of the CodeStar Notifications limits has been exceeded. Limits apply to accounts,
     /// notification rules, notifications, resources, and targets. For more information, see
     /// Limits.
     /// </summary>
@@ -39,6 +39,13 @@ namespace Amazon.CodeStarNotifications.Model
     #endif
     public partial class LimitExceededException : AmazonCodeStarNotificationsException
     {
+
+        /// <summary>
+        /// Default constructor for LimitExceededException
+        /// message.
+        /// </summary>
+        public LimitExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new LimitExceededException with the specified error

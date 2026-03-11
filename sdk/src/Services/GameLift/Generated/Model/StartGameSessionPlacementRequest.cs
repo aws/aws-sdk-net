@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StartGameSessionPlacement operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Makes a request to start a new game session using a game session queue. When processing
     /// a placement request, Amazon GameLift Servers looks for the best possible available
     /// resource to host the game session, based on how the queue is configured to prioritize
@@ -39,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// placement request can include a list of players to create a set of player sessions.
     /// The request can also include information to pass to the new game session, such as
     /// to specify a game map or other options.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 
@@ -186,6 +190,19 @@ namespace Amazon.GameLift.Model
         /// A set of key-value pairs that can store custom data in a game session. For example:
         /// <c>{"Key": "difficulty", "Value": "novice"}</c>.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

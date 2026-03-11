@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for PasswordHistoryPolicyViolationException
+        /// message.
+        /// </summary>
+        public PasswordHistoryPolicyViolationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PasswordHistoryPolicyViolationException with the specified error
         /// message.
         /// </summary>

@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for NetworkFailureException
+        /// message.
+        /// </summary>
+        public NetworkFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NetworkFailureException with the specified error
         /// message.
         /// </summary>

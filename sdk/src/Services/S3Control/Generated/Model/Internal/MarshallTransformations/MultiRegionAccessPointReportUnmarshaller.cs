@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MultiRegionAccessPointReport Object
     /// </summary>  
-    public class MultiRegionAccessPointReportUnmarshaller : IXmlUnmarshaller<MultiRegionAccessPointReport, XmlUnmarshallerContext>
+    public partial class MultiRegionAccessPointReportUnmarshaller : IXmlUnmarshaller<MultiRegionAccessPointReport, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -96,6 +96,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -104,6 +106,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, MultiRegionAccessPointReport unmarshalledObject, int targetDepth);
+
         private static MultiRegionAccessPointReportUnmarshaller _instance = new MultiRegionAccessPointReportUnmarshaller();        
 
         /// <summary>

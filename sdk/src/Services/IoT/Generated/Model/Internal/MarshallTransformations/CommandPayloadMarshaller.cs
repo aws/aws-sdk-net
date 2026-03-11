@@ -49,7 +49,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("content");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Content));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Content);
             }
 
             if(requestObject.IsSetContentType())

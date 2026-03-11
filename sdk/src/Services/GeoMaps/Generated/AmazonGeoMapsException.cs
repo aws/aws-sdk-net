@@ -36,6 +36,14 @@ namespace Amazon.GeoMaps
         /// <summary>
         /// Construct instance of AmazonGeoMapsException
         /// </summary>
+        public AmazonGeoMapsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonGeoMapsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonGeoMapsException(string message)
             : base(message)

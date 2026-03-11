@@ -49,7 +49,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// You can only call this operation from the management account.
     /// </para>
     /// </summary>
     public partial class CreateOrganizationalUnitRequest : AmazonOrganizationsRequest
@@ -80,8 +80,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ParentId. 
         /// <para>
-        /// The unique identifier (ID) of the parent root or OU that you want to create the new
-        /// OU in.
+        /// ID for the parent root or OU that you want to create the new OU in.
         /// </para>
         ///  
         /// <para>

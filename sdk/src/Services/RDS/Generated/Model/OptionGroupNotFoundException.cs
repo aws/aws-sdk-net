@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for OptionGroupNotFoundException
+        /// message.
+        /// </summary>
+        public OptionGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OptionGroupNotFoundException with the specified error
         /// message.
         /// </summary>

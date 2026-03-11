@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSnapshotCopyGrantStateException
+        /// message.
+        /// </summary>
+        public InvalidSnapshotCopyGrantStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSnapshotCopyGrantStateException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.Comprehend.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedLanguageException
+        /// message.
+        /// </summary>
+        public UnsupportedLanguageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedLanguageException with the specified error
         /// message.
         /// </summary>

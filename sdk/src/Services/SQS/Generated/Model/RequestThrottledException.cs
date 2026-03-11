@@ -51,6 +51,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestThrottledException
+        /// message.
+        /// </summary>
+        public RequestThrottledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestThrottledException with the specified error
         /// message.
         /// </summary>

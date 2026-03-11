@@ -35,13 +35,16 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CreateCollaborationRequest : AmazonCleanRoomsRequest
     {
+        private List<string> _allowedResultRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalyticsEngine _analyticsEngine;
+        private List<string> _autoApprovedChangeRequestTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _creatorDisplayName;
         private List<string> _creatorMemberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MLMemberAbilities _creatormlMemberAbilities;
         private PaymentConfiguration _creatorPaymentConfiguration;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
+        private bool? _isMetricsEnabled;
         private CollaborationJobLogStatus _jobLogStatus;
         private List<MemberSpecification> _members = AWSConfigs.InitializeCollections ? new List<MemberSpecification>() : null;
         private string _name;
@@ -49,10 +52,42 @@ namespace Amazon.CleanRooms.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
+        /// Gets and sets the property AllowedResultRegions. 
+        /// <para>
+        /// The Amazon Web Services Regions where collaboration query results can be stored. When
+        /// specified, results can only be written to these Regions. This parameter enables you
+        /// to meet your compliance and data governance requirements, and implement regional data
+        /// governance policies.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AllowedResultRegions
+        {
+            get { return this._allowedResultRegions; }
+            set { this._allowedResultRegions = value; }
+        }
+
+        // Check to see if AllowedResultRegions property is set
+        internal bool IsSetAllowedResultRegions()
+        {
+            return this._allowedResultRegions != null && (this._allowedResultRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AnalyticsEngine. 
         /// <para>
         ///  The analytics engine.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After July 16, 2025, the <c>CLEAN_ROOMS_SQL</c> parameter will no longer be available.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public AnalyticsEngine AnalyticsEngine
         {
@@ -64,6 +99,29 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAnalyticsEngine()
         {
             return this._analyticsEngine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoApprovedChangeRequestTypes. 
+        /// <para>
+        /// The types of change requests that are automatically approved for this collaboration.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AutoApprovedChangeRequestTypes
+        {
+            get { return this._autoApprovedChangeRequestTypes; }
+            set { this._autoApprovedChangeRequestTypes = value; }
+        }
+
+        // Check to see if AutoApprovedChangeRequestTypes property is set
+        internal bool IsSetAutoApprovedChangeRequestTypes()
+        {
+            return this._autoApprovedChangeRequestTypes != null && (this._autoApprovedChangeRequestTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,6 +247,29 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsMetricsEnabled. 
+        /// <para>
+        /// An indicator as to whether metrics have been enabled or disabled for the collaboration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, collaboration members can opt in to Amazon CloudWatch metrics for
+        /// their membership queries. The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? IsMetricsEnabled
+        {
+            get { return this._isMetricsEnabled; }
+            set { this._isMetricsEnabled = value; }
+        }
+
+        // Check to see if IsMetricsEnabled property is set
+        internal bool IsSetIsMetricsEnabled()
+        {
+            return this._isMetricsEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobLogStatus. 
         /// <para>
         /// Specifies whether job logs are enabled for this collaboration. 
@@ -222,7 +303,7 @@ namespace Amazon.CleanRooms.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=9)]
+        [AWSProperty(Required=true, Min=0)]
         public List<MemberSpecification> Members
         {
             get { return this._members; }

@@ -35,7 +35,8 @@ namespace Amazon.Notifications.Model
     /// 
     ///  
     /// <para>
-    /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+    /// Supported Channels include Amazon Q Developer in chat applications, the Console Mobile
+    /// Application, and emails (notifications-contacts).
     /// </para>
     /// </summary>
     public partial class AssociateManagedNotificationAdditionalChannelRequest : AmazonNotificationsRequest
@@ -50,7 +51,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported ARNs include Chatbot, the Console Mobile Application, and email (notifications-contacts).
+        /// Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile
+        /// Application, and email (notifications-contacts).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

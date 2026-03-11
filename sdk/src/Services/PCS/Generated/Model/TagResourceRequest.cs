@@ -31,10 +31,10 @@ namespace Amazon.PCS.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds or edits tags on an Amazon Web Services PCS resource. Each tag consists of a
-    /// tag key and a tag value. The tag key and tag value are case-sensitive strings. The
-    /// tag value can be an empty (null) string. To add a tag, specify a new tag key and a
-    /// tag value. To edit a tag, specify an existing tag key and a new tag value.
+    /// Adds or edits tags on an PCS resource. Each tag consists of a tag key and a tag value.
+    /// The tag key and tag value are case-sensitive strings. The tag value can be an empty
+    /// (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag,
+    /// specify an existing tag key and a new tag value.
     /// </summary>
     public partial class TagResourceRequest : AmazonPCSRequest
     {

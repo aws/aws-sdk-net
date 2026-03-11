@@ -77,6 +77,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (publicRequest.UpdatedEarlierThan == null)
+                throw new AmazonQBusinessException("Request object does not have required field UpdatedEarlierThan set");
             
             if (publicRequest.IsSetUpdatedEarlierThan())
                 request.Parameters.Add("updatedEarlierThan", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.UpdatedEarlierThan));

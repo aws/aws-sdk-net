@@ -42,6 +42,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for CodeStorageExceededException
+        /// message.
+        /// </summary>
+        public CodeStorageExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CodeStorageExceededException with the specified error
         /// message.
         /// </summary>

@@ -45,7 +45,7 @@ namespace Amazon.OpenSearchServerless
     /// </para>
     ///  
     /// <para>
-    ///  To learn more about OpenSearch Serverless, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
+    /// To learn more about OpenSearch Serverless, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
     /// is Amazon OpenSearch Serverless?</a> 
     /// </para>
     /// </summary>
@@ -63,8 +63,9 @@ namespace Amazon.OpenSearchServerless
 
 
         /// <summary>
-        /// Returns attributes for one or more collections, including the collection endpoint
-        /// and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// Returns attributes for one or more collections, including the collection endpoint,
+        /// the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
         /// and managing Amazon OpenSearch Serverless collections</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCollection service method.</param>
@@ -81,6 +82,32 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetCollection">REST API Reference for BatchGetCollection Operation</seealso>
         Task<BatchGetCollectionResponse> BatchGetCollectionAsync(BatchGetCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchGetCollectionGroup
+
+
+
+        /// <summary>
+        /// Returns attributes for one or more collection groups, including capacity limits and
+        /// the number of collections in each group. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// and managing Amazon OpenSearch Serverless collections</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCollectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCollectionGroup service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetCollectionGroup">REST API Reference for BatchGetCollectionGroup Operation</seealso>
+        Task<BatchGetCollectionGroupResponse> BatchGetCollectionGroupAsync(BatchGetCollectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -181,8 +208,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateAccessPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -215,8 +241,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateCollection service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -234,6 +259,80 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCollectionGroup
+
+
+
+        /// <summary>
+        /// Creates a collection group within OpenSearch Serverless. Collection groups let you
+        /// manage OpenSearch Compute Units (OCUs) at a group level, with multiple collections
+        /// sharing the group's capacity limits.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-collection-groups.html">Managing
+        /// collection groups</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCollectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCollectionGroup service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateCollectionGroup">REST API Reference for CreateCollectionGroup Operation</seealso>
+        Task<CreateCollectionGroupResponse> CreateCollectionGroupAsync(CreateCollectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIndex
+
+
+
+        /// <summary>
+        /// Creates an index within an OpenSearch Serverless collection. Unlike other OpenSearch
+        /// indexes, indexes created by this API are automatically configured to conduct automatic
+        /// semantic enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a> in the <i>OpenSearch User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -255,8 +354,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -290,8 +388,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateSecurityConfig service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -328,8 +425,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateSecurityPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -363,8 +459,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateVpcEndpoint service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -397,8 +492,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteAccessPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -430,8 +524,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteCollection service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -444,6 +537,69 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCollectionGroup
+
+
+
+        /// <summary>
+        /// Deletes a collection group. You can only delete empty collection groups that contain
+        /// no collections. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// and managing Amazon OpenSearch Serverless collections</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCollectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCollectionGroup service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollectionGroup">REST API Reference for DeleteCollectionGroup Operation</seealso>
+        Task<DeleteCollectionGroupResponse> DeleteCollectionGroupAsync(DeleteCollectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIndex
+
+
+
+        /// <summary>
+        /// Deletes an index from an OpenSearch Serverless collection. Be aware that the index
+        /// might be configured to conduct automatic semantic enrichment ingestion and search.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -463,8 +619,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -497,8 +652,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteSecurityConfig service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -529,8 +683,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteSecurityPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -563,8 +716,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteVpcEndpoint service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -629,6 +781,36 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIndex
+
+
+
+        /// <summary>
+        /// Retrieves information about an index in an OpenSearch Serverless collection, including
+        /// its schema definition. The index might be configured to conduct automatic semantic
+        /// enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -734,6 +916,31 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         Task<ListAccessPoliciesResponse> ListAccessPoliciesAsync(ListAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCollectionGroups
+
+
+
+        /// <summary>
+        /// Returns a list of collection groups. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// and managing Amazon OpenSearch Serverless collections</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollectionGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollectionGroups service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListCollectionGroups">REST API Reference for ListCollectionGroups Operation</seealso>
+        Task<ListCollectionGroupsResponse> ListCollectionGroupsAsync(ListCollectionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -917,8 +1124,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the TagResource service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -955,8 +1161,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UntagResource service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -988,8 +1193,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateAccessPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1023,6 +1227,10 @@ namespace Amazon.OpenSearchServerless
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
         /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
         /// Thrown when the HTTP request contains invalid input or is missing required input.
         /// </exception>
@@ -1046,8 +1254,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateCollection service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1057,6 +1264,69 @@ namespace Amazon.OpenSearchServerless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollection">REST API Reference for UpdateCollection Operation</seealso>
         Task<UpdateCollectionResponse> UpdateCollectionAsync(UpdateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCollectionGroup
+
+
+
+        /// <summary>
+        /// Updates the description and capacity limits of a collection group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCollectionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCollectionGroup service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollectionGroup">REST API Reference for UpdateCollectionGroup Operation</seealso>
+        Task<UpdateCollectionGroupResponse> UpdateCollectionGroupAsync(UpdateCollectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateIndex
+
+
+
+        /// <summary>
+        /// Updates an existing index in an OpenSearch Serverless collection. This operation allows
+        /// you to modify the index schema, including adding new fields or changing field mappings.
+        /// You can also enable automatic semantic enrichment ingestion and search. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1076,8 +1346,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1114,8 +1383,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateSecurityConfig service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1148,8 +1416,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateSecurityPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1186,8 +1453,7 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateVpcEndpoint service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created. When deleting a resource, thrown when the resource is not in
-        /// the ACTIVE or FAILED state.
+        /// or is being created.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.

@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ResourceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceQuotaExceededException with the specified error
         /// message.
         /// </summary>

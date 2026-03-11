@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScalingPolicy operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Deletes a fleet scaling policy. Once deleted, the policy is no longer in force and
     /// Amazon GameLift Servers removes all record of it. To delete a scaling policy, specify
     /// both the scaling policy name and the fleet ID it is associated with.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To temporarily suspend scaling policies, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.

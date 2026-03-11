@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for IpRouteLimitExceededException
+        /// message.
+        /// </summary>
+        public IpRouteLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IpRouteLimitExceededException with the specified error
         /// message.
         /// </summary>

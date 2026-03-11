@@ -15,7 +15,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IXmlUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
+    public partial class <#=this.UnmarshallerBaseName #>Unmarshaller : IXmlUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,10 +70,16 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)
         {
-            ProcessResponseBodyOrStructureMembers(member, true);
+            if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Structure.Name, out var modifier) && modifier.ExcludedUnmarshallingProperties.Contains(member.ModeledName))
+                continue;
+            ProcessResponseBodyOrStructureMembers(member, true, this.Structure);
 #>
 <#
         }
+#>
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
+<#
     }
 #>
 				}
@@ -84,6 +90,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, <#=this.UnmarshallerBaseName #> unmarshalledObject, int targetDepth);
+
 <#
     this.AddStructureSingletonMethod();
 #>

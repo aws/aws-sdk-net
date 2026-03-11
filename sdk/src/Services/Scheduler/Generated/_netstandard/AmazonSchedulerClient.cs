@@ -271,7 +271,7 @@ namespace Amazon.Scheduler
 
         internal virtual CreateScheduleResponse CreateSchedule(CreateScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduleResponseUnmarshaller.Instance;
 
@@ -310,7 +310,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateSchedule">REST API Reference for CreateSchedule Operation</seealso>
         public virtual Task<CreateScheduleResponse> CreateScheduleAsync(CreateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduleResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.Scheduler
 
         internal virtual CreateScheduleGroupResponse CreateScheduleGroup(CreateScheduleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduleGroupResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateScheduleGroup">REST API Reference for CreateScheduleGroup Operation</seealso>
         public virtual Task<CreateScheduleGroupResponse> CreateScheduleGroupAsync(CreateScheduleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduleGroupResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.Scheduler
 
         internal virtual DeleteScheduleResponse DeleteSchedule(DeleteScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
 
@@ -406,7 +406,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeleteSchedule">REST API Reference for DeleteSchedule Operation</seealso>
         public virtual Task<DeleteScheduleResponse> DeleteScheduleAsync(DeleteScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.Scheduler
 
         internal virtual DeleteScheduleGroupResponse DeleteScheduleGroup(DeleteScheduleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleGroupResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeleteScheduleGroup">REST API Reference for DeleteScheduleGroup Operation</seealso>
         public virtual Task<DeleteScheduleGroupResponse> DeleteScheduleGroupAsync(DeleteScheduleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleGroupResponseUnmarshaller.Instance;
 
@@ -477,7 +477,7 @@ namespace Amazon.Scheduler
 
         internal virtual GetScheduleResponse GetSchedule(GetScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScheduleResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/GetSchedule">REST API Reference for GetSchedule Operation</seealso>
         public virtual Task<GetScheduleResponse> GetScheduleAsync(GetScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScheduleResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.Scheduler
 
         internal virtual GetScheduleGroupResponse GetScheduleGroup(GetScheduleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScheduleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScheduleGroupResponseUnmarshaller.Instance;
 
@@ -555,7 +555,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/GetScheduleGroup">REST API Reference for GetScheduleGroup Operation</seealso>
         public virtual Task<GetScheduleGroupResponse> GetScheduleGroupAsync(GetScheduleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScheduleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScheduleGroupResponseUnmarshaller.Instance;
 
@@ -567,7 +567,7 @@ namespace Amazon.Scheduler
 
         internal virtual ListScheduleGroupsResponse ListScheduleGroups(ListScheduleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduleGroupsResponseUnmarshaller.Instance;
 
@@ -597,7 +597,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListScheduleGroups">REST API Reference for ListScheduleGroups Operation</seealso>
         public virtual Task<ListScheduleGroupsResponse> ListScheduleGroupsAsync(ListScheduleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduleGroupsResponseUnmarshaller.Instance;
 
@@ -609,7 +609,7 @@ namespace Amazon.Scheduler
 
         internal virtual ListSchedulesResponse ListSchedules(ListSchedulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchedulesResponseUnmarshaller.Instance;
 
@@ -642,7 +642,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListSchedules">REST API Reference for ListSchedules Operation</seealso>
         public virtual Task<ListSchedulesResponse> ListSchedulesAsync(ListSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchedulesResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.Scheduler
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -687,7 +687,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -699,7 +699,7 @@ namespace Amazon.Scheduler
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.Scheduler
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -784,7 +784,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.Scheduler
 
         internal virtual UpdateScheduleResponse UpdateSchedule(UpdateScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduleResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.Scheduler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/UpdateSchedule">REST API Reference for UpdateSchedule Operation</seealso>
         public virtual Task<UpdateScheduleResponse> UpdateScheduleAsync(UpdateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduleResponseUnmarshaller.Instance;
 

@@ -36,6 +36,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Construct instance of AmazonSecretsManagerException
         /// </summary>
+        public AmazonSecretsManagerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSecretsManagerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSecretsManagerException(string message)
             : base(message)

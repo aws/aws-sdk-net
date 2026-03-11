@@ -39,6 +39,13 @@ namespace Amazon.Chatbot.Model
     {
 
         /// <summary>
+        /// Default constructor for DescribeSlackUserIdentitiesException
+        /// message.
+        /// </summary>
+        public DescribeSlackUserIdentitiesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DescribeSlackUserIdentitiesException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.FMS
         /// <summary>
         /// Construct instance of AmazonFMSException
         /// </summary>
+        public AmazonFMSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonFMSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonFMSException(string message)
             : base(message)

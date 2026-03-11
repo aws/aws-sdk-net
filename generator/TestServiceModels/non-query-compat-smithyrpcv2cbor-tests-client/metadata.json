@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "test-service": true,
+  "synopsis": "NonQueryCompatibleRpcV2Protocol test service"
+}

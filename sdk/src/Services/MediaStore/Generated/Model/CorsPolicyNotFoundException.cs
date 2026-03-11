@@ -39,6 +39,13 @@ namespace Amazon.MediaStore.Model
     {
 
         /// <summary>
+        /// Default constructor for CorsPolicyNotFoundException
+        /// message.
+        /// </summary>
+        public CorsPolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CorsPolicyNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRunTask operation.
-    /// Gets information about a workflow run task.
+    /// Gets detailed information about a run task using its ID.
     /// </summary>
     public partial class GetRunTaskRequest : AmazonOmicsRequest
     {

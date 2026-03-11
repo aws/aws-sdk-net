@@ -168,6 +168,26 @@ namespace Amazon.SimpleEmailV2.Model
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
 
         /// <summary>
+        /// Paginator for ListReputationEntities operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListReputationEntitiesPaginator ListReputationEntities(ListReputationEntitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceTenants operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListResourceTenantsPaginator ListResourceTenants(ListResourceTenantsRequest request);
+
+        /// <summary>
         /// Paginator for ListSuppressedDestinations operation
         ///</summary>
         [AWSPaginator(
@@ -176,5 +196,25 @@ namespace Amazon.SimpleEmailV2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListSuppressedDestinationsPaginator ListSuppressedDestinations(ListSuppressedDestinationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTenantResources operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTenantResourcesPaginator ListTenantResources(ListTenantResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTenants operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTenantsPaginator ListTenants(ListTenantsRequest request);
     }
 }

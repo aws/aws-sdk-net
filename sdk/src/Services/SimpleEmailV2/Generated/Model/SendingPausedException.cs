@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmailV2.Model
     {
 
         /// <summary>
+        /// Default constructor for SendingPausedException
+        /// message.
+        /// </summary>
+        public SendingPausedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SendingPausedException with the specified error
         /// message.
         /// </summary>

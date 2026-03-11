@@ -34,8 +34,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Each rule must include exactly one of the following types of actions: <c>forward</c>,
+    /// Each rule must include exactly one of the following routing actions: <c>forward</c>,
     /// <c>fixed-response</c>, or <c>redirect</c>, and it must be the last action to be performed.
+    /// </para>
+    ///  
+    /// <para>
+    /// Optionally, a rule for an HTTPS listener can also include one of the following user
+    /// authentication actions: <c>authenticate-oidc</c>, <c>authenticate-cognito</c>, or
+    /// <c>jwt-validation</c>.
     /// </para>
     /// </summary>
     public partial class Action
@@ -44,6 +50,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private AuthenticateOidcActionConfig _authenticateOidcConfig;
         private FixedResponseActionConfig _fixedResponseConfig;
         private ForwardActionConfig _forwardConfig;
+        private JwtValidationActionConfig _jwtValidationConfig;
         private int? _order;
         private RedirectActionConfig _redirectConfig;
         private string _targetGroupArn;
@@ -109,11 +116,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property ForwardConfig. 
         /// <para>
-        /// Information for creating an action that distributes requests among one or more target
-        /// groups. For Network Load Balancers, you can specify a single target group. Specify
-        /// only when <c>Type</c> is <c>forward</c>. If you specify both <c>ForwardConfig</c>
-        /// and <c>TargetGroupArn</c>, you can specify only one target group using <c>ForwardConfig</c>
-        /// and it must be the same target group specified in <c>TargetGroupArn</c>.
+        /// Information for creating an action that distributes requests among multiple target
+        /// groups. Specify only when <c>Type</c> is <c>forward</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify both <c>ForwardConfig</c> and <c>TargetGroupArn</c>, you can specify
+        /// only one target group using <c>ForwardConfig</c> and it must be the same target group
+        /// specified in <c>TargetGroupArn</c>.
         /// </para>
         /// </summary>
         public ForwardActionConfig ForwardConfig
@@ -126,6 +136,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetForwardConfig()
         {
             return this._forwardConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JwtValidationConfig. 
+        /// <para>
+        /// [HTTPS listeners] Information for validating JWT access tokens in client requests.
+        /// Specify only when <c>Type</c> is <c>jwt-validation</c>.
+        /// </para>
+        /// </summary>
+        public JwtValidationActionConfig JwtValidationConfig
+        {
+            get { return this._jwtValidationConfig; }
+            set { this._jwtValidationConfig = value; }
+        }
+
+        // Check to see if JwtValidationConfig property is set
+        internal bool IsSetJwtValidationConfig()
+        {
+            return this._jwtValidationConfig != null;
         }
 
         /// <summary>
@@ -171,8 +200,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the target group. Specify only when <c>Type</c>
-        /// is <c>forward</c> and you want to route to a single target group. To route to one
-        /// or more target groups, use <c>ForwardConfig</c> instead.
+        /// is <c>forward</c> and you want to route to a single target group. To route to multiple
+        /// target groups, you must use <c>ForwardConfig</c> instead.
         /// </para>
         /// </summary>
         public string TargetGroupArn

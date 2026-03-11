@@ -120,7 +120,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// An incorrect or invalid identifier results in an error.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string RelatedEntityIdentifier
         {
             get { return this._relatedEntityIdentifier; }

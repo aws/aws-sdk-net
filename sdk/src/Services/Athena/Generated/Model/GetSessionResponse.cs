@@ -37,6 +37,7 @@ namespace Amazon.Athena.Model
         private string _description;
         private EngineConfiguration _engineConfiguration;
         private string _engineVersion;
+        private MonitoringConfiguration _monitoringConfiguration;
         private string _notebookVersion;
         private SessionConfiguration _sessionConfiguration;
         private string _sessionId;
@@ -99,6 +100,21 @@ namespace Amazon.Athena.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration.
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
         }
 
         /// <summary>

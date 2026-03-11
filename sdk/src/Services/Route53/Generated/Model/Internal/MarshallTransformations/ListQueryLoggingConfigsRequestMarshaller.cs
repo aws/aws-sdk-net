@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListQueryLoggingConfigsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetHostedZoneId())
@@ -69,8 +70,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/queryloggingconfig";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListQueryLoggingConfigsRequestMarshaller _instance = new ListQueryLoggingConfigsRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListQueryLoggingConfigsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListQueryLoggingConfigsRequest publicRequest);
     }    
 }

@@ -39,6 +39,13 @@ namespace Amazon.ServiceDiscovery.Model
     {
 
         /// <summary>
+        /// Default constructor for NamespaceNotFoundException
+        /// message.
+        /// </summary>
+        public NamespaceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NamespaceNotFoundException with the specified error
         /// message.
         /// </summary>

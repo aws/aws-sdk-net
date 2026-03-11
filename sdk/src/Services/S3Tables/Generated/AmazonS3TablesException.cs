@@ -36,6 +36,14 @@ namespace Amazon.S3Tables
         /// <summary>
         /// Construct instance of AmazonS3TablesException
         /// </summary>
+        public AmazonS3TablesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonS3TablesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonS3TablesException(string message)
             : base(message)

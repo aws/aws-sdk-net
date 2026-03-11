@@ -42,6 +42,13 @@ namespace Amazon.WAFV2.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFNonexistentItemException
+        /// message.
+        /// </summary>
+        public WAFNonexistentItemException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFNonexistentItemException with the specified error
         /// message.
         /// </summary>

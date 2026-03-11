@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for TypeConfigurationNotFoundException
+        /// message.
+        /// </summary>
+        public TypeConfigurationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TypeConfigurationNotFoundException with the specified error
         /// message.
         /// </summary>

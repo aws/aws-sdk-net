@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateLoadBalancerNameException
+        /// message.
+        /// </summary>
+        public DuplicateLoadBalancerNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateLoadBalancerNameException with the specified error
         /// message.
         /// </summary>

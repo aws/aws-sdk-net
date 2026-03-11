@@ -68,6 +68,39 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetInheritanceDriftStatuses())
+            {
+                context.Writer.WritePropertyName("inheritanceDriftStatuses");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInheritanceDriftStatusesListValue in requestObject.InheritanceDriftStatuses)
+                {
+                        context.Writer.WriteStringValue(requestObjectInheritanceDriftStatusesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetParentIdentifiers())
+            {
+                context.Writer.WritePropertyName("parentIdentifiers");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectParentIdentifiersListValue in requestObject.ParentIdentifiers)
+                {
+                        context.Writer.WriteStringValue(requestObjectParentIdentifiersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetResourceDriftStatuses())
+            {
+                context.Writer.WritePropertyName("resourceDriftStatuses");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectResourceDriftStatusesListValue in requestObject.ResourceDriftStatuses)
+                {
+                        context.Writer.WriteStringValue(requestObjectResourceDriftStatusesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("statuses");

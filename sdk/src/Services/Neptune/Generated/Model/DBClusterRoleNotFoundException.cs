@@ -40,6 +40,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterRoleNotFoundException
+        /// message.
+        /// </summary>
+        public DBClusterRoleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterRoleNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.BackupSearch
         /// <summary>
         /// Construct instance of AmazonBackupSearchException
         /// </summary>
+        public AmazonBackupSearchException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBackupSearchException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBackupSearchException(string message)
             : base(message)

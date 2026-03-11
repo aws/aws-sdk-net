@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ResizeNotFoundException
+        /// message.
+        /// </summary>
+        public ResizeNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResizeNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteVPCAssociationAuthorization operation
     /// </summary>  
-    public class DeleteVPCAssociationAuthorizationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteVPCAssociationAuthorizationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             DeleteVPCAssociationAuthorizationResponse response = new DeleteVPCAssociationAuthorizationResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -92,6 +93,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteVPCAssociationAuthorizationResponse response);
 
         private static DeleteVPCAssociationAuthorizationResponseUnmarshaller _instance = new DeleteVPCAssociationAuthorizationResponseUnmarshaller();        
 

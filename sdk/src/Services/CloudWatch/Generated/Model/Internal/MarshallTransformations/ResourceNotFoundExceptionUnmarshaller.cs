@@ -29,48 +29,54 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceNotFoundException operation
+    /// Response Unmarshaller for ResourceNotFoundException Object
     /// </summary>  
-    public class ResourceNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceNotFoundException, XmlUnmarshallerContext>
+    public class ResourceNotFoundExceptionUnmarshaller : ICborErrorResponseUnmarshaller<ResourceNotFoundException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(XmlUnmarshallerContext context)
+        public ResourceNotFoundException Unmarshall(CborUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ResourceNotFoundException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            ResourceNotFoundException response = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException, 
+            ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            var reader = context.Reader;
+            context.AddPathSegment("ResourceNotFoundException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.IsStartElement || context.IsAttribute)
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
-            return response;
+            reader.ReadEndMap();
+            context.PopPathSegment();
+          
+            return unmarshalledObject;
         }
 
         private static ResourceNotFoundExceptionUnmarshaller _instance = new ResourceNotFoundExceptionUnmarshaller();        

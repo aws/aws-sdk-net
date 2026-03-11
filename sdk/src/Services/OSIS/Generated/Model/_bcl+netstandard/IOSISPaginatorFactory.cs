@@ -28,6 +28,26 @@ namespace Amazon.OSIS.Model
     {
 
         /// <summary>
+        /// Paginator for ListPipelineEndpointConnections operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPipelineEndpointConnectionsPaginator ListPipelineEndpointConnections(ListPipelineEndpointConnectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelineEndpoints operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPipelineEndpointsPaginator ListPipelineEndpoints(ListPipelineEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
         [AWSPaginator(

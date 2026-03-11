@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagException
+        /// message.
+        /// </summary>
+        public InvalidTagException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagException with the specified error
         /// message.
         /// </summary>

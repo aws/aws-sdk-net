@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyFunctionAssociationsException
+        /// message.
+        /// </summary>
+        public TooManyFunctionAssociationsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyFunctionAssociationsException with the specified error
         /// message.
         /// </summary>

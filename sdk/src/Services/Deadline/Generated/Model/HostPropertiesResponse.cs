@@ -63,6 +63,7 @@ namespace Amazon.Deadline.Model
         /// The instance type of the host EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Ec2InstanceType
         {
             get { return this._ec2InstanceType; }

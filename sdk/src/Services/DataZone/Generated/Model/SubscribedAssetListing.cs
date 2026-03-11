@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private string _entityType;
         private string _forms;
         private List<DetailedGlossaryTerm> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
+        private Permissions _permissions;
 
         /// <summary>
         /// Gets and sets the property AssetScope. 
@@ -155,6 +156,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGlossaryTerms()
         {
             return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// The asset permissions.
+        /// </para>
+        /// </summary>
+        public Permissions Permissions
+        {
+            get { return this._permissions; }
+            set { this._permissions = value; }
+        }
+
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
+        {
+            return this._permissions != null;
         }
 
     }

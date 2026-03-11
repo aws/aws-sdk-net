@@ -37,6 +37,7 @@ namespace Amazon.NetworkManager.Model
     {
         private string _clientToken;
         private string _peeringId;
+        private string _routingPolicyLabel;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _transitGatewayRouteTableArn;
 
@@ -76,6 +77,26 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetPeeringId()
         {
             return this._peeringId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingPolicyLabel. 
+        /// <para>
+        /// The routing policy label to apply to the Transit Gateway route table attachment for
+        /// traffic routing decisions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string RoutingPolicyLabel
+        {
+            get { return this._routingPolicyLabel; }
+            set { this._routingPolicyLabel = value; }
+        }
+
+        // Check to see if RoutingPolicyLabel property is set
+        internal bool IsSetRoutingPolicyLabel()
+        {
+            return this._routingPolicyLabel != null;
         }
 
         /// <summary>

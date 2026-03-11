@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for EncryptionKeyInvalidIdException
+        /// message.
+        /// </summary>
+        public EncryptionKeyInvalidIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EncryptionKeyInvalidIdException with the specified error
         /// message.
         /// </summary>

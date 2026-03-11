@@ -52,6 +52,11 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId GZIP_REQUEST_COMPRESSION = new UserAgentFeatureId("L");
 
         /// <summary>
+        /// An operation called using the Smithy RPC v2 CBOR protocol.
+        /// </summary>
+        public static readonly UserAgentFeatureId PROTOCOL_RPC_V2_CBOR = new UserAgentFeatureId("M");
+
+        /// <summary>
         /// An operation called using a user provided endpoint URL.
         /// </summary>
         public static readonly UserAgentFeatureId ENDPOINT_OVERRIDE = new UserAgentFeatureId("N");
@@ -240,6 +245,31 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// Calling an SSO-OIDC operation as part of the SSO login flow, when using the OAuth2.0 authorization code grant.
         /// </summary>
         public static readonly UserAgentFeatureId SSO_LOGIN_AUTH = new UserAgentFeatureId("2");
+
+        /// <summary>
+        /// A call to Sign-In's CreateTokenWithOAuth2Request from a tool that implemented the Sign-In flow, using the same-device workflow.
+        /// </summary>
+        public static readonly UserAgentFeatureId LOGIN_SAME_DEVICE = new UserAgentFeatureId("AA");
+
+        /// <summary>
+        /// A call to Sign-In's CreateTokenWithOAuth2Request from a tool that implemented the Sign-In flow, using the cross-device workflow.
+        /// </summary>
+        public static readonly UserAgentFeatureId LOGIN_CROSS_DEVICE = new UserAgentFeatureId("AB");
+
+        /// <summary>
+        /// An operation called using credentials resolved from a Sign-In session in a config file.
+        /// </summary>
+        public static readonly UserAgentFeatureId CREDENTIALS_PROFILE_LOGIN = new UserAgentFeatureId("AC");
+
+        /// <summary>
+        /// An operation called using credentials resolved from a Sign-In session.
+        /// </summary>
+        public static readonly UserAgentFeatureId CREDENTIALS_LOGIN = new UserAgentFeatureId("AD");
+
+        /// <summary>
+        /// An operation called using a Bearer token resolved from service-specific environment variables.
+        /// </summary>
+        public static readonly UserAgentFeatureId BEARER_SERVICE_ENV_VARS = new UserAgentFeatureId("3");
 
         /// <summary>
         /// Indicates that an AWS SDK client has been configured with a non-null, non-NoOp tracing provider.

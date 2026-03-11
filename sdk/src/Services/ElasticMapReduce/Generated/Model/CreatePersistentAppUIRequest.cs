@@ -62,8 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ProfilerType. 
         /// <para>
-        /// The profiler type for the persistent application user interface. Valid values are
-        /// SHS, TEZUI, or YTS.
+        /// The profiler type for the persistent application user interface.
         /// </para>
         /// </summary>
         public ProfilerType ProfilerType

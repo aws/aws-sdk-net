@@ -91,6 +91,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.CreateBillEstimateResponse.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.CreateBillEstimateResponse.Id</property>
     <min>36</min>
     <max>36</max>
@@ -109,10 +115,22 @@
     <pattern>[\u0021-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.CreateBillScenarioRequest.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.CreateBillScenarioRequest.Name</property>
     <min>0</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.CreateBillScenarioResponse.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.CreateBillScenarioResponse.Id</property>
@@ -175,6 +193,12 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetBillEstimateResponse.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.GetBillEstimateResponse.Id</property>
     <min>36</min>
     <max>36</max>
@@ -191,6 +215,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetBillScenarioResponse.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.GetBillScenarioResponse.Id</property>
@@ -465,6 +495,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.UpdateBillEstimateResponse.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.UpdateBillEstimateResponse.Id</property>
     <min>36</min>
     <max>36</max>
@@ -477,6 +513,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.UpdateBillScenarioRequest.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.UpdateBillScenarioRequest.Identifier</property>
     <min>36</min>
     <max>36</max>
@@ -487,6 +529,12 @@
     <min>0</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.UpdateBillScenarioResponse.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.UpdateBillScenarioResponse.Id</property>
@@ -993,6 +1041,12 @@
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.BillScenarioSummary.CostCategoryGroupSharingPreferenceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[-a-z0-9]*:ce::[0-9]{12}:costcategory/[a-f0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillScenarioSummary.Id</property>

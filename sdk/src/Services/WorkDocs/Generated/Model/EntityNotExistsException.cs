@@ -40,6 +40,13 @@ namespace Amazon.WorkDocs.Model
         private List<string> _entityIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for EntityNotExistsException
+        /// message.
+        /// </summary>
+        public EntityNotExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityNotExistsException with the specified error
         /// message.
         /// </summary>

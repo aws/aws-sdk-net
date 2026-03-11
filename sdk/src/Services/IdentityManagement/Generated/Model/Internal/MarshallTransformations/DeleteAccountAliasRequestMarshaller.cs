@@ -64,6 +64,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("AccountAlias", StringUtils.FromString(publicRequest.AccountAlias));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteAccountAliasRequestMarshaller _instance = new DeleteAccountAliasRequestMarshaller();        

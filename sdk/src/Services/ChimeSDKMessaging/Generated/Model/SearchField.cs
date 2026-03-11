@@ -31,6 +31,13 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// A <c>Field</c> of the channel that you want to search.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation isn't supported for <c>AppInstanceUsers</c> with a large number of
+    /// memberships.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchField
     {
@@ -91,7 +98,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for <c>AppInstanceUsers</c> with large number of memberships.
+        /// This operation isn't supported for <c>AppInstanceUsers</c> with a large number of
+        /// memberships.
         /// </para>
         ///  </note>
         /// <para />

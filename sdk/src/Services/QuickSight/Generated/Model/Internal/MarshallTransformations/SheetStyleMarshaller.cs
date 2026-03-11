@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBackground())
+            {
+                context.Writer.WritePropertyName("Background");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SheetBackgroundStyleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Background, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTile())
             {
                 context.Writer.WritePropertyName("Tile");

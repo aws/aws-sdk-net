@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
     {
         private string _availabilityZoneGroup;
         private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
+        private List<AvailableAdditionalStorageVolumesOption> _availableAdditionalStorageVolumesOptions = AWSConfigs.InitializeCollections ? new List<AvailableAdditionalStorageVolumesOption>() : null;
         private List<AvailableProcessorFeature> _availableProcessorFeatures = AWSConfigs.InitializeCollections ? new List<AvailableProcessorFeature>() : null;
         private string _dbInstanceClass;
         private string _engine;
@@ -64,10 +65,12 @@ namespace Amazon.RDS.Model
         private List<string> _supportedActivityStreamModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _supportedEngineModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _supportsAdditionalStorageVolumes;
         private bool? _supportsClusters;
         private bool? _supportsDedicatedLogVolume;
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
+        private bool? _supportsHttpEndpoint;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
         private bool? _supportsKerberosAuthentication;
@@ -116,6 +119,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableAdditionalStorageVolumesOptions. 
+        /// <para>
+        /// The available options for additional storage volumes for the DB instance class.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailableAdditionalStorageVolumesOption> AvailableAdditionalStorageVolumesOptions
+        {
+            get { return this._availableAdditionalStorageVolumesOptions; }
+            set { this._availableAdditionalStorageVolumesOptions = value; }
+        }
+
+        // Check to see if AvailableAdditionalStorageVolumesOptions property is set
+        internal bool IsSetAvailableAdditionalStorageVolumesOptions()
+        {
+            return this._availableAdditionalStorageVolumesOptions != null && (this._availableAdditionalStorageVolumesOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -552,6 +578,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SupportsAdditionalStorageVolumes. 
+        /// <para>
+        /// Indicates whether the DB instance class supports additional storage volumes.
+        /// </para>
+        /// </summary>
+        public bool? SupportsAdditionalStorageVolumes
+        {
+            get { return this._supportsAdditionalStorageVolumes; }
+            set { this._supportsAdditionalStorageVolumes = value; }
+        }
+
+        // Check to see if SupportsAdditionalStorageVolumes property is set
+        internal bool IsSetSupportsAdditionalStorageVolumes()
+        {
+            return this._supportsAdditionalStorageVolumes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportsClusters. 
         /// <para>
         /// Indicates whether DB instances can be configured as a Multi-AZ DB cluster.
@@ -629,6 +673,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsGlobalDatabases()
         {
             return this._supportsGlobalDatabases.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsHttpEndpoint. 
+        /// <para>
+        /// Indicates whether a DB instance supports HTTP endpoints.
+        /// </para>
+        /// </summary>
+        public bool? SupportsHttpEndpoint
+        {
+            get { return this._supportsHttpEndpoint; }
+            set { this._supportsHttpEndpoint = value; }
+        }
+
+        // Check to see if SupportsHttpEndpoint property is set
+        internal bool IsSetSupportsHttpEndpoint()
+        {
+            return this._supportsHttpEndpoint.HasValue; 
         }
 
         /// <summary>

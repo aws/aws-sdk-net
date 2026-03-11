@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for IntegrationConflictOperationException
+        /// message.
+        /// </summary>
+        public IntegrationConflictOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IntegrationConflictOperationException with the specified error
         /// message.
         /// </summary>

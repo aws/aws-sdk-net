@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for HsmClientCertificateNotFoundException
+        /// message.
+        /// </summary>
+        public HsmClientCertificateNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HsmClientCertificateNotFoundException with the specified error
         /// message.
         /// </summary>

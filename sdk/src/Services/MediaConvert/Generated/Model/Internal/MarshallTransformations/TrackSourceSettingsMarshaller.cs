@@ -46,6 +46,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetStreamNumber())
+            {
+                context.Writer.WritePropertyName("streamNumber");
+                context.Writer.WriteNumberValue(requestObject.StreamNumber.Value);
+            }
+
             if(requestObject.IsSetTrackNumber())
             {
                 context.Writer.WritePropertyName("trackNumber");

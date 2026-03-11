@@ -36,6 +36,14 @@ namespace Amazon.Schemas
         /// <summary>
         /// Construct instance of AmazonSchemasException
         /// </summary>
+        public AmazonSchemasException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSchemasException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSchemasException(string message)
             : base(message)

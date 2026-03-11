@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private string _transitGatewayId;
         private GatewayType _type;
         private List<VgwTelemetry> _vgwTelemetry = AWSConfigs.InitializeCollections ? new List<VgwTelemetry>() : null;
+        private string _vpnConcentratorId;
         private string _vpnConnectionId;
         private string _vpnGatewayId;
 
@@ -323,6 +324,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetVgwTelemetry()
         {
             return this._vgwTelemetry != null && (this._vgwTelemetry.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpnConcentratorId. 
+        /// <para>
+        /// The ID of the VPN concentrator associated with the VPN connection.
+        /// </para>
+        /// </summary>
+        public string VpnConcentratorId
+        {
+            get { return this._vpnConcentratorId; }
+            set { this._vpnConcentratorId = value; }
+        }
+
+        // Check to see if VpnConcentratorId property is set
+        internal bool IsSetVpnConcentratorId()
+        {
+            return this._vpnConcentratorId != null;
         }
 
         /// <summary>

@@ -105,6 +105,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     return BillExpirationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BillingViewHealthStatusException"))
+                {
+                    return BillingViewHealthStatusExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DataUnavailableException"))
                 {
                     return DataUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

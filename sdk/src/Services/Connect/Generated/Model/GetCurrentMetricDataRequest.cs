@@ -38,6 +38,46 @@ namespace Amazon.Connect.Model
     /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
     /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// When you make a successful API request, you can expect the following metric values
+    /// in the response:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+    /// zero or insufficient data
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+    /// is the calculation result
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// The following guidelines can help you work with the API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Each dimension in the metric response must contain a value
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Each item in MetricResult must include all requested metrics
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the response is slow due to large result sets, try these approaches:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Add filters to reduce the amount of data returned
+    /// </para>
+    ///  </li> </ul> </li> </ul> </note>
     /// </summary>
     public partial class GetCurrentMetricDataRequest : AmazonConnectRequest
     {
@@ -52,11 +92,16 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property CurrentMetrics. 
         /// <para>
-        /// The metrics to retrieve. Specify the name and unit for each metric. The following
-        /// metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
+        /// The metrics to retrieve. Specify the name or metricId, and unit for each metric. The
+        /// following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
-        ///  <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        ///  MetricId should be used to reference custom metrics or out of the box metrics as
+        /// Arn. If using MetricId, the limit is 10 MetricId per request.
+        /// </para>
+        ///  </note> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> 
         /// <para>
         /// Unit: COUNT
         /// </para>
@@ -146,7 +191,25 @@ namespace Amazon.Connect.Model
         /// Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time">Scheduled</a>
         /// 
         /// </para>
-        ///  </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> 
+        ///  </dd> <dt>ESTIMATED_WAIT_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
+        /// </para>
+        ///  
+        /// <para>
+        /// This metric supports filter and grouping combination only used for core routing purpose.
+        /// Valid filter and grouping use cases: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Filter by a list of [Queues] and a list of [Channels], group by [“QUEUE”, “CHANNEL”]
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Filter by a singleton list of [Queue], a singleton list of [Channel], a list of [RoutingStepExpression],
+        /// group by [“ROUTING_STEP_EXPRESSION”].
+        /// </para>
+        ///  </li> </ul> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
         /// </para>
@@ -240,12 +303,37 @@ namespace Amazon.Connect.Model
         /// <para>
         /// RoutingStepExpressions: 50
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AgentStatuses: 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subtypes: 10
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ValidationTestTypes: 10
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Metric data is retrieved only for the resources associated with the queues or routing
         /// profiles, and by any channels included in the filter. (You cannot filter by both queue
         /// AND routing profile.) You can include both resource IDs and resource ARNs in the same
         /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>AgentStatuses</c> as filter make sure Queues is added as primary filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>Subtypes</c> as filter make sure Queues is added as primary filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>ValidationTestTypes</c> as filter make sure Queues is added as primary
+        /// filter.
         /// </para>
         ///  
         /// <para>
@@ -274,8 +362,16 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Groupings. 
         /// <para>
-        /// The grouping applied to the metrics returned. For example, when grouped by <c>QUEUE</c>,
-        /// the metrics returned apply to each queue rather than aggregated for all queues. 
+        /// Defines the level of aggregation for metrics data by a dimension(s). Its similar to
+        /// sorting items into buckets based on a common characteristic, then counting or calculating
+        /// something for each bucket. For example, when grouped by <c>QUEUE</c>, the metrics
+        /// returned apply to each queue rather than aggregated for all queues. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The grouping list is an ordered list, with the first item in the list defined as the
+        /// primary grouping. If no grouping is included in the request, the aggregation happens
+        /// at the instance-level.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -284,13 +380,20 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you group by <c>ROUTING_PROFILE</c>, you must include either a queue or routing
-        /// profile filter. In addition, a routing profile filter is required for metrics <c>CONTACTS_SCHEDULED</c>,
-        /// <c>CONTACTS_IN_QUEUE</c>, and <c> OLDEST_CONTACT_AGE</c>.
+        /// If you group by <c>AGENT_STATUS</c>, you must include the <c>QUEUE</c> as the primary
+        /// grouping and use queue filter. When you group by <c>AGENT_STATUS</c>, the only metric
+        /// available is the <c>AGENTS_ONLINE</c> metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If no <c>Grouping</c> is included in the request, a summary of metrics is returned.
+        /// If you group by <c>SUBTYPE</c> or <c>VALIDATION_TEST_TYPE</c> as secondary grouping
+        /// then you must include <c>QUEUE</c> as primary grouping and use Queue as filter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you group by <c>ROUTING_PROFILE</c>, you must include either a queue or routing
+        /// profile filter. In addition, a routing profile filter is required for metrics <c>CONTACTS_SCHEDULED</c>,
+        /// <c>CONTACTS_IN_QUEUE</c>, and <c> OLDEST_CONTACT_AGE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

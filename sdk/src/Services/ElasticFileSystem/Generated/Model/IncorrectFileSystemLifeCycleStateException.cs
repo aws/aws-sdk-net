@@ -39,6 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for IncorrectFileSystemLifeCycleStateException
+        /// message.
+        /// </summary>
+        public IncorrectFileSystemLifeCycleStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncorrectFileSystemLifeCycleStateException with the specified error
         /// message.
         /// </summary>

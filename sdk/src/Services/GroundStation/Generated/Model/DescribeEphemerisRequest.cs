@@ -31,7 +31,7 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEphemeris operation.
-    /// Describes an existing ephemeris.
+    /// Retrieve information about an existing ephemeris.
     /// </summary>
     public partial class DescribeEphemerisRequest : AmazonGroundStationRequest
     {

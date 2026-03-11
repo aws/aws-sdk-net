@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidApplicationNameException
+        /// message.
+        /// </summary>
+        public InvalidApplicationNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidApplicationNameException with the specified error
         /// message.
         /// </summary>

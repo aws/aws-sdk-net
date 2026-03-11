@@ -845,6 +845,16 @@
     <pattern>[!&amp;'()*+,\-./:;?=%@\[\]_{}|&lt;&gt;~^`"]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.B2bi.Model.X12ElementLengthValidationRule.MaxLength</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12ElementLengthValidationRule.MinLength</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.B2bi.Model.X12FunctionalGroupHeaders.ApplicationReceiverCode</property>
     <min>2</min>
     <max>15</max>

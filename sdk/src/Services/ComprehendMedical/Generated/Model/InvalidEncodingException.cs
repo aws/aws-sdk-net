@@ -40,6 +40,13 @@ namespace Amazon.ComprehendMedical.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEncodingException
+        /// message.
+        /// </summary>
+        public InvalidEncodingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEncodingException with the specified error
         /// message.
         /// </summary>

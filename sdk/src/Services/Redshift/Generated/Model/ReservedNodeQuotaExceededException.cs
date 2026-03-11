@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNodeQuotaExceededException
+        /// message.
+        /// </summary>
+        public ReservedNodeQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNodeQuotaExceededException with the specified error
         /// message.
         /// </summary>

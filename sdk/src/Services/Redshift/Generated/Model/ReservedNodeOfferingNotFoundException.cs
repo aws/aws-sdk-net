@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNodeOfferingNotFoundException
+        /// message.
+        /// </summary>
+        public ReservedNodeOfferingNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNodeOfferingNotFoundException with the specified error
         /// message.
         /// </summary>

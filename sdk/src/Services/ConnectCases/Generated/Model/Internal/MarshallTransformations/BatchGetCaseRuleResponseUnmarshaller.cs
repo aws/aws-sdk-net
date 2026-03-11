@@ -64,6 +64,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("unprocessedCaseRules", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.UnprocessedCaseRules = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

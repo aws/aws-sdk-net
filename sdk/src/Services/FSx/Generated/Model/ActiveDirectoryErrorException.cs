@@ -41,6 +41,13 @@ namespace Amazon.FSx.Model
         private ActiveDirectoryErrorType _type;
 
         /// <summary>
+        /// Default constructor for ActiveDirectoryErrorException
+        /// message.
+        /// </summary>
+        public ActiveDirectoryErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActiveDirectoryErrorException with the specified error
         /// message.
         /// </summary>

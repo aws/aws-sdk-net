@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListResourceRecordSets operation
     /// </summary>  
-    public class ListResourceRecordSetsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListResourceRecordSetsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             ListResourceRecordSetsResponse response = new ListResourceRecordSetsResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -111,7 +112,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -145,6 +145,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListResourceRecordSetsResponse response);
 
         private static ListResourceRecordSetsResponseUnmarshaller _instance = new ListResourceRecordSetsResponseUnmarshaller();        
 

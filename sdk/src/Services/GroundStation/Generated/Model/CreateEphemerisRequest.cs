@@ -31,7 +31,7 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEphemeris operation.
-    /// Creates an Ephemeris with the specified <c>EphemerisData</c>.
+    /// Create an ephemeris with your specified <a>EphemerisData</a>.
     /// </summary>
     public partial class CreateEphemerisRequest : AmazonGroundStationRequest
     {
@@ -47,11 +47,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether to set the ephemeris status to <c>ENABLED</c> after validation.
-        /// </para>
-        ///  
-        /// <para>
-        /// Setting this to false will set the ephemeris status to <c>DISABLED</c> after validation.
+        /// Set to <c>true</c> to enable the ephemeris after validation. Set to <c>false</c> to
+        /// keep it disabled.
         /// </para>
         /// </summary>
         public bool? Enabled
@@ -105,7 +102,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The ARN of a KMS key used to encrypt the ephemeris in Ground Station.
+        /// The ARN of the KMS key to use for encrypting the ephemeris.
         /// </para>
         /// </summary>
         public string KmsKeyArn
@@ -123,8 +120,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name string associated with the ephemeris. Used as a human-readable identifier for
-        /// the ephemeris.
+        /// A name that you can use to identify the ephemeris.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -143,17 +139,12 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Customer-provided priority score to establish the order in which overlapping ephemerides
-        /// should be used.
+        /// A priority score that determines which ephemeris to use when multiple ephemerides
+        /// overlap.
         /// </para>
         ///  
         /// <para>
-        /// The default for customer-provided ephemeris priority is 1, and higher numbers take
-        /// precedence.
-        /// </para>
-        ///  
-        /// <para>
-        /// Priority must be 1 or greater
+        /// Higher numbers take precedence. The default is 1. Must be 1 or greater.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=99999)]
@@ -172,10 +163,10 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property SatelliteId. 
         /// <para>
-        /// AWS Ground Station satellite ID for this ephemeris.
+        /// The satellite ID that associates this ephemeris with a satellite in AWS Ground Station.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Min=36, Max=36)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

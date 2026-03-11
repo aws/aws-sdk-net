@@ -41,6 +41,7 @@ namespace Amazon.GroundStation.Model
         private string _satelliteArn;
         private DateTime? _startTime;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TrackingOverrides _trackingOverrides;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -105,7 +106,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a satellite
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=82, Max=132)]
+        [AWSProperty(Min=82, Max=132)]
         public string SatelliteArn
         {
             get { return this._satelliteArn; }
@@ -158,6 +159,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackingOverrides. 
+        /// <para>
+        /// Tracking configuration overrides for the contact.
+        /// </para>
+        /// </summary>
+        public TrackingOverrides TrackingOverrides
+        {
+            get { return this._trackingOverrides; }
+            set { this._trackingOverrides = value; }
+        }
+
+        // Check to see if TrackingOverrides property is set
+        internal bool IsSetTrackingOverrides()
+        {
+            return this._trackingOverrides != null;
         }
 
     }

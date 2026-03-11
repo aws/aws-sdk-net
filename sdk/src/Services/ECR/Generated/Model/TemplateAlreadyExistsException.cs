@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for TemplateAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TemplateAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TemplateAlreadyExistsException with the specified error
         /// message.
         /// </summary>

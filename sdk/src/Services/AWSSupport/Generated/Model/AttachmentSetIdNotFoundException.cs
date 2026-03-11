@@ -39,6 +39,13 @@ namespace Amazon.AWSSupport.Model
     {
 
         /// <summary>
+        /// Default constructor for AttachmentSetIdNotFoundException
+        /// message.
+        /// </summary>
+        public AttachmentSetIdNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttachmentSetIdNotFoundException with the specified error
         /// message.
         /// </summary>

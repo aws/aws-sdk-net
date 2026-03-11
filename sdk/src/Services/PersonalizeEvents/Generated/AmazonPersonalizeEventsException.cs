@@ -36,6 +36,14 @@ namespace Amazon.PersonalizeEvents
         /// <summary>
         /// Construct instance of AmazonPersonalizeEventsException
         /// </summary>
+        public AmazonPersonalizeEventsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPersonalizeEventsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPersonalizeEventsException(string message)
             : base(message)

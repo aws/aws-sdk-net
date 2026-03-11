@@ -39,6 +39,13 @@ namespace Amazon.Cloud9.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentAccessException
+        /// message.
+        /// </summary>
+        public ConcurrentAccessException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentAccessException with the specified error
         /// message.
         /// </summary>

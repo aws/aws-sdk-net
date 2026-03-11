@@ -31,22 +31,15 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVectorBucket operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Returns vector bucket attributes. To specify the bucket, you must use either the vector
     /// bucket name or the vector bucket Amazon Resource Name (ARN). 
-    /// </para>
+    /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You must have the <c>s3vectors:GetVectorBucket</c> permission to use this operation.
     /// 
     /// </para>
     ///  </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class GetVectorBucketRequest : AmazonS3VectorsRequest
     {

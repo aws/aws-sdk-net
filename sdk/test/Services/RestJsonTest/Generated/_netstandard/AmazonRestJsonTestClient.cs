@@ -247,7 +247,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual MemberRefOpResponse MemberRefOp(MemberRefOpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
 
@@ -268,7 +268,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/MemberRefOp">REST API Reference for MemberRefOp Operation</seealso>
         public virtual Task<MemberRefOpResponse> MemberRefOpAsync(MemberRefOpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
 
@@ -280,7 +280,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual NoPayloadResponse NoPayload(NoPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoPayloadResponseUnmarshaller.Instance;
 
@@ -301,7 +301,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/NoPayload">REST API Reference for NoPayload Operation</seealso>
         public virtual Task<NoPayloadResponse> NoPayloadAsync(NoPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoPayloadResponseUnmarshaller.Instance;
 
@@ -313,7 +313,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual NoPayloadPostResponse NoPayloadPost(NoPayloadPostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoPayloadPostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoPayloadPostResponseUnmarshaller.Instance;
 
@@ -335,7 +335,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/NoPayloadPost">REST API Reference for NoPayloadPost Operation</seealso>
         public virtual Task<NoPayloadPostResponse> NoPayloadPostAsync(NoPayloadPostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoPayloadPostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoPayloadPostResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryBooleanListResponse QueryBooleanList(QueryBooleanListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryBooleanListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryBooleanListResponseUnmarshaller.Instance;
 
@@ -368,7 +368,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryBooleanList">REST API Reference for QueryBooleanList Operation</seealso>
         public virtual Task<QueryBooleanListResponse> QueryBooleanListAsync(QueryBooleanListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryBooleanListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryBooleanListResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryIntegerListResponse QueryIntegerList(QueryIntegerListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIntegerListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIntegerListResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerList">REST API Reference for QueryIntegerList Operation</seealso>
         public virtual Task<QueryIntegerListResponse> QueryIntegerListAsync(QueryIntegerListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIntegerListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIntegerListResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryIntegerListMapResponse QueryIntegerListMap(QueryIntegerListMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIntegerListMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIntegerListMapResponseUnmarshaller.Instance;
 
@@ -434,7 +434,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryIntegerListMap">REST API Reference for QueryIntegerListMap Operation</seealso>
         public virtual Task<QueryIntegerListMapResponse> QueryIntegerListMapAsync(QueryIntegerListMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIntegerListMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIntegerListMapResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryStringEscapingResponse QueryStringEscaping(QueryStringEscapingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryStringEscapingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryStringEscapingResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringEscaping">REST API Reference for QueryStringEscaping Operation</seealso>
         public virtual Task<QueryStringEscapingResponse> QueryStringEscapingAsync(QueryStringEscapingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryStringEscapingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryStringEscapingResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryStringListResponse QueryStringList(QueryStringListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryStringListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryStringListResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringList">REST API Reference for QueryStringList Operation</seealso>
         public virtual Task<QueryStringListResponse> QueryStringListAsync(QueryStringListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryStringListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryStringListResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryStringListMapResponse QueryStringListMap(QueryStringListMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryStringListMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryStringListMapResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryStringListMap">REST API Reference for QueryStringListMap Operation</seealso>
         public virtual Task<QueryStringListMapResponse> QueryStringListMapAsync(QueryStringListMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryStringListMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryStringListMapResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual QueryTimestampListResponse QueryTimestampList(QueryTimestampListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryTimestampListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryTimestampListResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/QueryTimestampList">REST API Reference for QueryTimestampList Operation</seealso>
         public virtual Task<QueryTimestampListResponse> QueryTimestampListAsync(QueryTimestampListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryTimestampListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryTimestampListResponseUnmarshaller.Instance;
 
@@ -578,7 +578,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual StaticOpResponse StaticOp(StaticOpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
 
@@ -599,7 +599,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/StaticOp">REST API Reference for StaticOp Operation</seealso>
         public virtual Task<StaticOpResponse> StaticOpAsync(StaticOpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
 
@@ -611,7 +611,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual TestBlobPayloadResponse TestBlobPayload(TestBlobPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestBlobPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestBlobPayloadResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/TestBlobPayload">REST API Reference for TestBlobPayload Operation</seealso>
         public virtual Task<TestBlobPayloadResponse> TestBlobPayloadAsync(TestBlobPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestBlobPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestBlobPayloadResponseUnmarshaller.Instance;
 
@@ -644,7 +644,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual TestBodyResponse TestBody(TestBodyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestBodyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestBodyResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/TestBody">REST API Reference for TestBody Operation</seealso>
         public virtual Task<TestBodyResponse> TestBodyAsync(TestBodyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestBodyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestBodyResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.RestJsonTest
 
         internal virtual TestPayloadResponse TestPayload(TestPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestPayloadResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.RestJsonTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2021-05-13/TestPayload">REST API Reference for TestPayload Operation</seealso>
         public virtual Task<TestPayloadResponse> TestPayloadAsync(TestPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestPayloadResponseUnmarshaller.Instance;
 

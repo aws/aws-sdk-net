@@ -30,5 +30,10 @@ namespace Amazon.CostExplorer.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListCostCategoryDefinitionsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the CostCategoryReferences
+        /// </summary>
+        IPaginatedEnumerable<CostCategoryReference> CostCategoryReferences { get; }
     }
 }

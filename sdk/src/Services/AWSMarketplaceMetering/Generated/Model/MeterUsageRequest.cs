@@ -31,25 +31,74 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// Container for the parameters to the MeterUsage operation.
-    /// API to emit metering records. For identical requests, the API is idempotent and returns
-    /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
-    /// Amazon Machine Images (AMI) and container products.
+    /// As a seller, your software hosted in the buyer's Amazon Web Services account uses
+    /// this API action to emit metering records directly to Amazon Web Services Marketplace.
+    /// You must use the following buyer Amazon Web Services account credentials to sign the
+    /// API request.
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
-    /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
+    /// For <b>Amazon EC2</b> deployments, your software must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM
+    /// role for Amazon EC2</a> to sign the API call for <c>MeterUsage</c> API operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <b>Amazon EKS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IAM
+    /// roles for service accounts (IRSA)</a> to sign the API call for the <c>MeterUsage</c>
+    /// API operation. Using <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html">EKS
+    /// Pod Identity</a>, the node role, or long-term access keys is not supported.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <b>Amazon ECS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
+    /// ECS task IAM</a> role to sign the API call for the <c>MeterUsage</c> API operation.
+    /// Using the node role or long-term access keys are not supported.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, your software must use the
+    /// <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-permissions.html#runtime-permissions-execution">AgentCore
+    /// Runtime execution role</a> to sign the API call for the <c>MeterUsage</c> API operation.
+    /// Long-term access keys are not supported.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The handling of <c>MeterUsage</c> requests varies between Amazon Bedrock AgentCore
+    /// Runtime and non-Amazon Bedrock AgentCore deployments.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For <b>non-Amazon Bedrock AgentCore Runtime</b> deployments, you can only report usage
+    /// once per hour for each dimension. For AMI-based products, this is per dimension and
+    /// per EC2 instance. For container products, this is per dimension and per ECS task or
+    /// EKS pod. You can't modify values after they're recorded. If you report usage before
+    /// a current hour ends, you will be unable to report additional usage until the next
+    /// hour begins. The <c>Timestamp</c> request parameter is rounded down to the hour and
+    /// used to enforce this once-per-hour rule for idempotency. For requests that are identical
+    /// after the <c>Timestamp</c> is rounded down, the API is idempotent and returns the
+    /// metering record ID.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, you can report usage multiple
+    /// times per hour for the same dimension. You do not need to aggregate metering records
+    /// by the hour. You must include an idempotency token in the <c>ClientToken</c> request
+    /// parameter. If using an Amazon SDK or the Amazon Web Services CLI, you must use the
+    /// latest version which automatically includes an idempotency token in the <c>ClientToken</c>
+    /// request parameter so that the request is processed successfully. The <c>Timestamp</c>
+    /// request parameter is not rounded down to the hour and is not used for duplicate validation.
+    /// Requests with duplicate <c>Timestamps</c> are aggregated as long as the <c>ClientToken</c>
+    /// is unique.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you submit records more than six hours after events occur, the records won't be
+    /// accepted. The timestamp in your request determines when an event is recorded.
     /// </para>
     ///  
     /// <para>
-    ///  <c>MeterUsage</c> can optionally include multiple usage allocations, to provide customers
-    /// with usage data split into buckets by tags that you define (or allow the customer
-    /// to define).
-    /// </para>
-    ///  
-    /// <para>
-    /// Usage records are expected to be submitted as quickly as possible after the event
-    /// that is being recorded, and are not accepted more than 6 hours after the event.
+    /// You can optionally include multiple usage allocations, to provide customers with usage
+    /// data split into buckets by tags that you define or allow the customer to define.
     /// </para>
     ///  
     /// <para>
@@ -60,12 +109,47 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </summary>
     public partial class MeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
+        private string _clientToken;
         private bool? _dryRun;
         private string _productCode;
         private DateTime? _timestamp;
         private List<UsageAllocation> _usageAllocations = AWSConfigs.InitializeCollections ? new List<UsageAllocation>() : null;
         private string _usageDimension;
         private int? _usageQuantity;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. This lets you safely retry the request without accidentally performing
+        /// the same operation a second time. Passing the same value to a later call to an operation
+        /// requires that you also pass the same value for all other parameters. We recommend
+        /// that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+        /// type of value</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide this value, then Amazon Web Services generates a random one for
+        /// you.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotencyConflictException</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -96,7 +180,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// product.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }

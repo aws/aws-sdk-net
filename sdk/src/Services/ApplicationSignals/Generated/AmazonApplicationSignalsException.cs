@@ -36,6 +36,14 @@ namespace Amazon.ApplicationSignals
         /// <summary>
         /// Construct instance of AmazonApplicationSignalsException
         /// </summary>
+        public AmazonApplicationSignalsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonApplicationSignalsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonApplicationSignalsException(string message)
             : base(message)

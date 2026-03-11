@@ -34,11 +34,11 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// This data type is designed to support Amazon Web Services Nitro Enclaves, which lets
-    /// you create an isolated compute environment in Amazon EC2. For information about the
-    /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-    /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-    /// Guide</i>.
+    /// This data type is designed to support Amazon Web Services Nitro Enclaves and Amazon
+    /// Web Services NitroTPM, which lets you create an attested environment in Amazon EC2.
+    /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+    /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+    /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class RecipientInfo
@@ -49,8 +49,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AttestationDocument. 
         /// <para>
-        /// The attestation document for an Amazon Web Services Nitro Enclave. This document includes
-        /// the enclave's public key.
+        /// The attestation document for an Amazon Web Services Nitro Enclave or a NitroTPM. This
+        /// document includes the enclave's public key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=262144)]
@@ -70,8 +70,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyEncryptionAlgorithm. 
         /// <para>
         /// The encryption algorithm that KMS should use with the public key for an Amazon Web
-        /// Services Nitro Enclave to encrypt plaintext values for the response. The only valid
-        /// value is <c>RSAES_OAEP_SHA_256</c>.
+        /// Services Nitro Enclave or NitroTPM to encrypt plaintext values for the response. The
+        /// only valid value is <c>RSAES_OAEP_SHA_256</c>.
         /// </para>
         /// </summary>
         public KeyEncryptionMechanism KeyEncryptionAlgorithm

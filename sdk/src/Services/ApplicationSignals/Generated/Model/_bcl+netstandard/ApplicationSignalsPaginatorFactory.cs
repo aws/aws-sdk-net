@@ -37,6 +37,14 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Paginator for ListEntityEvents operation
+        ///</summary>
+        public IListEntityEventsPaginator ListEntityEvents(ListEntityEventsRequest request) 
+        {
+            return new ListEntityEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServiceDependencies operation
         ///</summary>
         public IListServiceDependenciesPaginator ListServiceDependencies(ListServiceDependenciesRequest request) 
@@ -82,6 +90,14 @@ namespace Amazon.ApplicationSignals.Model
         public IListServicesPaginator ListServices(ListServicesRequest request) 
         {
             return new ListServicesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServiceStates operation
+        ///</summary>
+        public IListServiceStatesPaginator ListServiceStates(ListServiceStatesRequest request) 
+        {
+            return new ListServiceStatesPaginator(this.client, request);
         }
     }
 }

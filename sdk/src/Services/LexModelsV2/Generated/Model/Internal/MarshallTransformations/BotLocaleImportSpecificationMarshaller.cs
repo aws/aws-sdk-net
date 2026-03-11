@@ -77,6 +77,34 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetSpeechDetectionSensitivity())
+            {
+                context.Writer.WritePropertyName("speechDetectionSensitivity");
+                context.Writer.WriteStringValue(requestObject.SpeechDetectionSensitivity);
+            }
+
+            if(requestObject.IsSetSpeechRecognitionSettings())
+            {
+                context.Writer.WritePropertyName("speechRecognitionSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SpeechRecognitionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SpeechRecognitionSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetUnifiedSpeechSettings())
+            {
+                context.Writer.WritePropertyName("unifiedSpeechSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UnifiedSpeechSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.UnifiedSpeechSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVoiceSettings())
             {
                 context.Writer.WritePropertyName("voiceSettings");

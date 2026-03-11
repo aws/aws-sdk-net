@@ -52,6 +52,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
+            if(requestObject.IsSetOpacity())
+            {
+                context.Writer.WritePropertyName("opacity");
+                context.Writer.WriteNumberValue(requestObject.Opacity.Value);
+            }
+
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");

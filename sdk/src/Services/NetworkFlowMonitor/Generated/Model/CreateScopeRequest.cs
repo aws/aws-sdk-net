@@ -31,16 +31,38 @@ namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScope operation.
-    /// Create a scope of resources that you want to be available for Network Flow Monitor
-    /// to generate metrics for, when you have active agents on those resources sending metrics
-    /// reports to the Network Flow Monitor backend. This call returns a scope ID to identify
-    /// the scope.
+    /// In Network Flow Monitor, you specify a scope for the service to generate metrics for.
+    /// By using the scope, Network Flow Monitor can generate a topology of all the resources
+    /// to measure performance metrics for. When you create a scope, you enable permissions
+    /// for Network Flow Monitor.
     /// 
     ///  
     /// <para>
-    /// When you create a scope, you enable permissions for Network Flow Monitor. The scope
-    /// is set to the resources for the Amazon Web Services that enables the feature.
+    /// A scope is a Region-account pair or multiple Region-account pairs. Network Flow Monitor
+    /// uses your scope to determine all the resources (the topology) where Network Flow Monitor
+    /// will gather network flow performance metrics for you. To provide performance metrics,
+    /// Network Flow Monitor uses the data that is sent by the Network Flow Monitor agents
+    /// you install on the resources.
     /// </para>
+    ///  
+    /// <para>
+    /// To define the Region-account pairs for your scope, the Network Flow Monitor API uses
+    /// the following constucts, which allow for future flexibility in defining scopes:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Targets</i>, which are arrays of targetResources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Target resources</i>, which are Region-targetIdentifier pairs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Target identifiers</i>, made up of a targetID (currently always an account ID)
+    /// and a targetType (currently always an account). 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateScopeRequest : AmazonNetworkFlowMonitorRequest
     {
@@ -95,8 +117,8 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets to define the scope to be monitored. Currently, a target is an Amazon
-        /// Web Services account.
+        /// The targets to define the scope to be monitored. A target is an array of targetResources,
+        /// which are currently Region-account pairs, defined by targetResource constructs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -60,7 +60,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Amazon
         /// Location Service data providers</a>.
         /// </para>
         /// </summary>
@@ -91,7 +91,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double? Distance
         {
             get { return this._distance; }
@@ -130,7 +130,7 @@ namespace Amazon.LocationService.Model
         /// between every stop on the route.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double? DurationSeconds
         {
             get { return this._durationSeconds; }

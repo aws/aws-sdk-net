@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class OptimizationJobModelSource
     {
         private OptimizationJobModelSourceS3 _s3;
+        private OptimizationSageMakerModel _sageMakerModel;
 
         /// <summary>
         /// Gets and sets the property S3. 
@@ -52,6 +53,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3()
         {
             return this._s3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerModel. 
+        /// <para>
+        /// The name of an existing SageMaker model to optimize with an optimization job.
+        /// </para>
+        /// </summary>
+        public OptimizationSageMakerModel SageMakerModel
+        {
+            get { return this._sageMakerModel; }
+            set { this._sageMakerModel = value; }
+        }
+
+        // Check to see if SageMakerModel property is set
+        internal bool IsSetSageMakerModel()
+        {
+            return this._sageMakerModel != null;
         }
 
     }

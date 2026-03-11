@@ -39,6 +39,13 @@ namespace Amazon.RAM.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingRequiredParameterException
+        /// message.
+        /// </summary>
+        public MissingRequiredParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingRequiredParameterException with the specified error
         /// message.
         /// </summary>

@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// You do not have sufficient permissions to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class AccessDeniedException : AmazonBraketException
     {
+
+        /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new AccessDeniedException with the specified error

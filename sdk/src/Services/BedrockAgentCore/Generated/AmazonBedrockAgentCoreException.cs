@@ -36,6 +36,14 @@ namespace Amazon.BedrockAgentCore
         /// <summary>
         /// Construct instance of AmazonBedrockAgentCoreException
         /// </summary>
+        public AmazonBedrockAgentCoreException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonBedrockAgentCoreException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonBedrockAgentCoreException(string message)
             : base(message)

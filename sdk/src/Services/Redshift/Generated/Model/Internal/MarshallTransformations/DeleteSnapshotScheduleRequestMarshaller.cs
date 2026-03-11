@@ -64,6 +64,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ScheduleIdentifier", StringUtils.FromString(publicRequest.ScheduleIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteSnapshotScheduleRequestMarshaller _instance = new DeleteSnapshotScheduleRequestMarshaller();        

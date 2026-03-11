@@ -39,6 +39,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTaskIdException
+        /// message.
+        /// </summary>
+        public InvalidTaskIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTaskIdException with the specified error
         /// message.
         /// </summary>

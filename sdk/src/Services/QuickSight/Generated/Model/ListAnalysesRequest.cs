@@ -31,7 +31,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnalyses operation.
-    /// Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.
+    /// Lists Amazon Quick Sight analyses that exist in the specified Amazon Web Services
+    /// account.
     /// </summary>
     public partial class ListAnalysesRequest : AmazonQuickSightRequest
     {

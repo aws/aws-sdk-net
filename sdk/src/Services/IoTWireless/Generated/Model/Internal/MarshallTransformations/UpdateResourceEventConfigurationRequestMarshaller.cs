@@ -66,6 +66,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetIdentifier())
                 throw new AmazonIoTWirelessException("Request object does not have required field Identifier set");
             request.AddPathResource("{Identifier}", StringUtils.FromString(publicRequest.Identifier));
+            if (string.IsNullOrEmpty(publicRequest.IdentifierType))
+                throw new AmazonIoTWirelessException("Request object does not have required field IdentifierType set");
             
             if (publicRequest.IsSetIdentifierType())
                 request.Parameters.Add("identifierType", StringUtils.FromString(publicRequest.IdentifierType));

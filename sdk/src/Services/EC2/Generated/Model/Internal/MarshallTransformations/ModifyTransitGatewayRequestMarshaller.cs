@@ -107,6 +107,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));
                     }
+                    if(publicRequest.Options.IsSetEncryptionSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "EncryptionSupport", StringUtils.FromString(publicRequest.Options.EncryptionSupport));
+                    }
                     if(publicRequest.Options.IsSetPropagationDefaultRouteTableId())
                     {
                         request.Parameters.Add("Options" + "." + "PropagationDefaultRouteTableId", StringUtils.FromString(publicRequest.Options.PropagationDefaultRouteTableId));
@@ -139,6 +143,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyTransitGatewayRequestMarshaller _instance = new ModifyTransitGatewayRequestMarshaller();        

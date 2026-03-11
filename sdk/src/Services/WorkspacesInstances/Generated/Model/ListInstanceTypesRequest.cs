@@ -36,8 +36,29 @@ namespace Amazon.WorkspacesInstances.Model
     /// </summary>
     public partial class ListInstanceTypesRequest : AmazonWorkspacesInstancesRequest
     {
+        private InstanceConfigurationFilter _instanceConfigurationFilter;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property InstanceConfigurationFilter. 
+        /// <para>
+        /// Optional filter to narrow instance type results based on configuration requirements.
+        /// Only returns instance types that support the specified combination of tenancy, platform
+        /// type, and billing mode.
+        /// </para>
+        /// </summary>
+        public InstanceConfigurationFilter InstanceConfigurationFilter
+        {
+            get { return this._instanceConfigurationFilter; }
+            set { this._instanceConfigurationFilter = value; }
+        }
+
+        // Check to see if InstanceConfigurationFilter property is set
+        internal bool IsSetInstanceConfigurationFilter()
+        {
+            return this._instanceConfigurationFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -46,7 +67,7 @@ namespace Amazon.WorkspacesInstances.Model
         /// of instance type results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=600)]
         public int? MaxResults
         {
             get { return this._maxResults; }

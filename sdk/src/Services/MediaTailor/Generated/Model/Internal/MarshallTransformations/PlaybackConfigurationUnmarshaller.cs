@@ -62,6 +62,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdConditioningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AdDecisionServerConfiguration", targetDepth))
+                {
+                    var unmarshaller = AdDecisionServerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AdDecisionServerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AdDecisionServerUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

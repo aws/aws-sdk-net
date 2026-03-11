@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified ACL does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ACLNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ACLNotFoundException
+        /// message.
+        /// </summary>
+        public ACLNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ACLNotFoundException with the specified error

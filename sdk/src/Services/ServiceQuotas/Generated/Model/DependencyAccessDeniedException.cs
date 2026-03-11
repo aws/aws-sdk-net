@@ -39,6 +39,13 @@ namespace Amazon.ServiceQuotas.Model
     {
 
         /// <summary>
+        /// Default constructor for DependencyAccessDeniedException
+        /// message.
+        /// </summary>
+        public DependencyAccessDeniedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependencyAccessDeniedException with the specified error
         /// message.
         /// </summary>

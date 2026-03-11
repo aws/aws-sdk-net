@@ -41,6 +41,26 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetV2LoggingOptionsRequest : AmazonIoTRequest
     {
+        private bool? _verbose;
+
+        /// <summary>
+        /// Gets and sets the property Verbose. 
+        /// <para>
+        ///  The flag is used to get all the event types and their respective configuration that
+        /// event-based logging supports. 
+        /// </para>
+        /// </summary>
+        public bool? Verbose
+        {
+            get { return this._verbose; }
+            set { this._verbose = value; }
+        }
+
+        // Check to see if Verbose property is set
+        internal bool IsSetVerbose()
+        {
+            return this._verbose.HasValue; 
+        }
 
     }
 }

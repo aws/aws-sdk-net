@@ -175,7 +175,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property CreateGlossary. 
         /// <para>
-        /// Specifies that this is a create glossary policy.
+        ///  Specifies that this is a create glossary policy.
         /// </para>
         /// </summary>
         public CreateGlossaryPolicyGrantDetail CreateGlossary

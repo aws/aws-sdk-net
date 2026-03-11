@@ -40,6 +40,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for CredentialReportNotPresentException
+        /// message.
+        /// </summary>
+        public CredentialReportNotPresentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CredentialReportNotPresentException with the specified error
         /// message.
         /// </summary>

@@ -77,6 +77,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStates())
                 request.ParameterCollection.Add("States", publicRequest.States);
+            if (string.IsNullOrEmpty(publicRequest.Type))
+                throw new AmazonCodeGuruReviewerException("Request object does not have required field Type set");
             
             if (publicRequest.IsSetType())
                 request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));

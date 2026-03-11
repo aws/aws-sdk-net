@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceDataSyncCountExceededException
+        /// message.
+        /// </summary>
+        public ResourceDataSyncCountExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceDataSyncCountExceededException with the specified error
         /// message.
         /// </summary>

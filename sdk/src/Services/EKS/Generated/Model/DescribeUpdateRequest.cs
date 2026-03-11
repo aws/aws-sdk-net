@@ -43,6 +43,7 @@ namespace Amazon.EKS.Model
     public partial class DescribeUpdateRequest : AmazonEKSRequest
     {
         private string _addonName;
+        private string _capabilityName;
         private string _name;
         private string _nodegroupName;
         private string _updateId;
@@ -64,6 +65,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetAddonName()
         {
             return this._addonName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapabilityName. 
+        /// <para>
+        /// The name of the capability for which you want to describe updates.
+        /// </para>
+        /// </summary>
+        public string CapabilityName
+        {
+            get { return this._capabilityName; }
+            set { this._capabilityName = value; }
+        }
+
+        // Check to see if CapabilityName property is set
+        internal bool IsSetCapabilityName()
+        {
+            return this._capabilityName != null;
         }
 
         /// <summary>

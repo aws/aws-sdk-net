@@ -86,6 +86,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DataPrepConfiguration", targetDepth))
+                {
+                    var unmarshaller = DataPrepConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataPrepConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DataSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -162,6 +168,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RowLevelPermissionTagConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RowLevelPermissionTagConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SemanticModelConfiguration", targetDepth))
+                {
+                    var unmarshaller = SemanticModelConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SemanticModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UseAs", targetDepth))

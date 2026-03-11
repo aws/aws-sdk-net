@@ -109,6 +109,14 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
+        /// Paginator for ListADAssessments operation
+        ///</summary>
+        public IListADAssessmentsPaginator ListADAssessments(ListADAssessmentsRequest request) 
+        {
+            return new ListADAssessmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
         public IListCertificatesPaginator ListCertificates(ListCertificatesRequest request) 

@@ -26,6 +26,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -400,6 +401,7 @@ namespace Amazon.Runtime
             HeaderKeys.ContentRangeHeader,
             HeaderKeys.ContentMD5Header,
             HeaderKeys.ContentEncodingHeader,
+            HeaderKeys.ContentLanguageHeader,
             HeaderKeys.ContentDispositionHeader,
             HeaderKeys.Expires
         };
@@ -527,11 +529,21 @@ namespace Amazon.Runtime
                 {
                     if (httpException.InnerException is IOException)
                     {
+#if NET8_0_OR_GREATER
+                        ExceptionDispatchInfo.Throw(httpException.InnerException);
+#else
                         throw httpException.InnerException;
+#endif
                     }
 
                     if (httpException.InnerException is WebException)
+                    {
+#if NET8_0_OR_GREATER
+                        ExceptionDispatchInfo.Throw(httpException.InnerException);
+#else
                         throw httpException.InnerException;
+#endif
+                    }
                 }
 
                 throw;
@@ -579,7 +591,11 @@ namespace Amazon.Runtime
                 {
                     if (httpException.InnerException is IOException)
                     {
+#if NET8_0_OR_GREATER
+                        ExceptionDispatchInfo.Throw(httpException.InnerException);
+#else
                         throw httpException.InnerException;
+#endif
                     }
 #if !NETSTANDARD
                     if (httpException.InnerException is WebException)
@@ -730,6 +746,10 @@ namespace Amazon.Runtime
             if (contentHeaders.TryGetValue(HeaderKeys.ContentEncodingHeader, out var contentEncodingHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentEncodingHeader,
                     contentEncodingHeader);
+
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentLanguageHeader, out var contentLanguageHeader))
+                _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentLanguageHeader,
+                    contentLanguageHeader);
 
             if (contentHeaders.TryGetValue(HeaderKeys.ContentDispositionHeader, out var contentDispositionHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentDispositionHeader,

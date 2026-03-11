@@ -65,12 +65,16 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAppMonitorName())
                 throw new AmazonCloudWatchRUMException("Request object does not have required field AppMonitorName set");
             request.AddPathResource("{AppMonitorName}", StringUtils.FromString(publicRequest.AppMonitorName));
+            if (string.IsNullOrEmpty(publicRequest.Destination))
+                throw new AmazonCloudWatchRUMException("Request object does not have required field Destination set");
             
             if (publicRequest.IsSetDestination())
                 request.Parameters.Add("destination", StringUtils.FromString(publicRequest.Destination));
             
             if (publicRequest.IsSetDestinationArn())
                 request.Parameters.Add("destinationArn", StringUtils.FromString(publicRequest.DestinationArn));
+            if (publicRequest.MetricDefinitionIds == null)
+                throw new AmazonCloudWatchRUMException("Request object does not have required field MetricDefinitionIds set");
             
             if (publicRequest.IsSetMetricDefinitionIds())
                 request.ParameterCollection.Add("metricDefinitionIds", publicRequest.MetricDefinitionIds);

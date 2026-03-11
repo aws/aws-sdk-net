@@ -55,6 +55,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("DependsOn/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.DependsOn == null)
+                        {
+                            unmarshalledObject.DependsOn = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DependsOn.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

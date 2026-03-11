@@ -98,6 +98,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetErrorMessageConfiguration())
+            {
+                context.Writer.WritePropertyName("errorMessageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ErrorMessageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ErrorMessageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
@@ -128,6 +139,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
                 var marshaller = AnalysisSourceMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Source, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSyntheticDataParameters())
+            {
+                context.Writer.WritePropertyName("syntheticDataParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SyntheticDataParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SyntheticDataParameters, context);
 
                 context.Writer.WriteEndObject();
             }

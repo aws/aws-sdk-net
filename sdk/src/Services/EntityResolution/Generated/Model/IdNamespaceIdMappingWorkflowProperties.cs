@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>IdMappingType</c>, <c>ProviderProperties</c>, and <c>RuleBasedProperties</c>.
+    /// An object containing <c>idMappingType</c>, <c>providerProperties</c>, and <c>ruleBasedProperties</c>.
     /// </summary>
     public partial class IdNamespaceIdMappingWorkflowProperties
     {

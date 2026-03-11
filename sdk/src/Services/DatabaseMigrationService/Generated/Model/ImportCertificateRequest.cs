@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _certificateIdentifier;
         private string _certificatePem;
         private MemoryStream _certificateWallet;
+        private string _kmsKeyId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -102,6 +103,35 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCertificateWallet()
         {
             return this._certificateWallet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// An KMS key identifier that is used to encrypt the certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, then DMS uses your
+        /// default encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// KMS creates the default encryption key for your Amazon Web Services account. Your
+        /// Amazon Web Services account has a different default encryption key for each Amazon
+        /// Web Services Region.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

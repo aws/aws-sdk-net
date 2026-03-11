@@ -34,7 +34,45 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class ContentBlockStart
     {
+        private ImageBlockStart _image;
+        private ToolResultBlockStart _toolResult;
         private ToolUseBlockStart _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// The initial event indicating the start of a streaming image block.
+        /// </para>
+        /// </summary>
+        public ImageBlockStart Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolResult. 
+        /// <para>
+        /// The 
+        /// </para>
+        /// </summary>
+        public ToolResultBlockStart ToolResult
+        {
+            get { return this._toolResult; }
+            set { this._toolResult = value; }
+        }
+
+        // Check to see if ToolResult property is set
+        internal bool IsSetToolResult()
+        {
+            return this._toolResult != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ToolUse. 

@@ -283,19 +283,8 @@ namespace Amazon.MarketplaceEntitlementService
 
         /// <summary>
         /// GetEntitlements retrieves entitlement values for a given product. The results can
-        /// be filtered based on customer identifier, AWS account ID, or product dimensions.
-        /// 
-        ///  <important> 
-        /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is on path for deprecation. Use <c>CustomerAWSAccountID</c>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
-        /// and <c>CustomerAWSAccountID</c> in the same request. 
-        /// </para>
-        ///  </important>
+        /// be filtered based on customer identifier, AWS account ID, license ARN, or product
+        /// dimensions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEntitlements service method.</param>
         /// 
@@ -313,7 +302,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
         public virtual GetEntitlementsResponse GetEntitlements(GetEntitlementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
@@ -323,19 +312,8 @@ namespace Amazon.MarketplaceEntitlementService
 
         /// <summary>
         /// GetEntitlements retrieves entitlement values for a given product. The results can
-        /// be filtered based on customer identifier, AWS account ID, or product dimensions.
-        /// 
-        ///  <important> 
-        /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is on path for deprecation. Use <c>CustomerAWSAccountID</c>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
-        /// and <c>CustomerAWSAccountID</c> in the same request. 
-        /// </para>
-        ///  </important>
+        /// be filtered based on customer identifier, AWS account ID, license ARN, or product
+        /// dimensions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEntitlements service method.</param>
         /// <param name="cancellationToken">
@@ -356,7 +334,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
         public virtual Task<GetEntitlementsResponse> GetEntitlementsAsync(GetEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
             

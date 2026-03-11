@@ -40,6 +40,13 @@ namespace Amazon.Drs.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for UninitializedAccountException
+        /// message.
+        /// </summary>
+        public UninitializedAccountException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UninitializedAccountException with the specified error
         /// message.
         /// </summary>

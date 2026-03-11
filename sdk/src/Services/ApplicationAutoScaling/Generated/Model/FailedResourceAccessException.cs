@@ -43,6 +43,13 @@ namespace Amazon.ApplicationAutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for FailedResourceAccessException
+        /// message.
+        /// </summary>
+        public FailedResourceAccessException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FailedResourceAccessException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for StatisticsNotAvailableException
+        /// message.
+        /// </summary>
+        public StatisticsNotAvailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StatisticsNotAvailableException with the specified error
         /// message.
         /// </summary>

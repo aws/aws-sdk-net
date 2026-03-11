@@ -318,7 +318,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateBillScenarioCommitmentModification">REST API Reference for BatchCreateBillScenarioCommitmentModification Operation</seealso>
         public virtual BatchCreateBillScenarioCommitmentModificationResponse BatchCreateBillScenarioCommitmentModification(BatchCreateBillScenarioCommitmentModificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateBillScenarioCommitmentModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateBillScenarioCommitmentModificationResponseUnmarshaller.Instance;
 
@@ -372,7 +372,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateBillScenarioCommitmentModification">REST API Reference for BatchCreateBillScenarioCommitmentModification Operation</seealso>
         public virtual Task<BatchCreateBillScenarioCommitmentModificationResponse> BatchCreateBillScenarioCommitmentModificationAsync(BatchCreateBillScenarioCommitmentModificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateBillScenarioCommitmentModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateBillScenarioCommitmentModificationResponseUnmarshaller.Instance;
             
@@ -430,7 +430,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateBillScenarioUsageModification">REST API Reference for BatchCreateBillScenarioUsageModification Operation</seealso>
         public virtual BatchCreateBillScenarioUsageModificationResponse BatchCreateBillScenarioUsageModification(BatchCreateBillScenarioUsageModificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateBillScenarioUsageModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateBillScenarioUsageModificationResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateBillScenarioUsageModification">REST API Reference for BatchCreateBillScenarioUsageModification Operation</seealso>
         public virtual Task<BatchCreateBillScenarioUsageModificationResponse> BatchCreateBillScenarioUsageModificationAsync(BatchCreateBillScenarioUsageModificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateBillScenarioUsageModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateBillScenarioUsageModificationResponseUnmarshaller.Instance;
             
@@ -544,7 +544,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateWorkloadEstimateUsage">REST API Reference for BatchCreateWorkloadEstimateUsage Operation</seealso>
         public virtual BatchCreateWorkloadEstimateUsageResponse BatchCreateWorkloadEstimateUsage(BatchCreateWorkloadEstimateUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateWorkloadEstimateUsageResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchCreateWorkloadEstimateUsage">REST API Reference for BatchCreateWorkloadEstimateUsage Operation</seealso>
         public virtual Task<BatchCreateWorkloadEstimateUsageResponse> BatchCreateWorkloadEstimateUsageAsync(BatchCreateWorkloadEstimateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateWorkloadEstimateUsageResponseUnmarshaller.Instance;
             
@@ -659,7 +659,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteBillScenarioCommitmentModification">REST API Reference for BatchDeleteBillScenarioCommitmentModification Operation</seealso>
         public virtual BatchDeleteBillScenarioCommitmentModificationResponse BatchDeleteBillScenarioCommitmentModification(BatchDeleteBillScenarioCommitmentModificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteBillScenarioCommitmentModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteBillScenarioCommitmentModificationResponseUnmarshaller.Instance;
 
@@ -717,7 +717,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteBillScenarioCommitmentModification">REST API Reference for BatchDeleteBillScenarioCommitmentModification Operation</seealso>
         public virtual Task<BatchDeleteBillScenarioCommitmentModificationResponse> BatchDeleteBillScenarioCommitmentModificationAsync(BatchDeleteBillScenarioCommitmentModificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteBillScenarioCommitmentModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteBillScenarioCommitmentModificationResponseUnmarshaller.Instance;
             
@@ -777,7 +777,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteBillScenarioUsageModification">REST API Reference for BatchDeleteBillScenarioUsageModification Operation</seealso>
         public virtual BatchDeleteBillScenarioUsageModificationResponse BatchDeleteBillScenarioUsageModification(BatchDeleteBillScenarioUsageModificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteBillScenarioUsageModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteBillScenarioUsageModificationResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteBillScenarioUsageModification">REST API Reference for BatchDeleteBillScenarioUsageModification Operation</seealso>
         public virtual Task<BatchDeleteBillScenarioUsageModificationResponse> BatchDeleteBillScenarioUsageModificationAsync(BatchDeleteBillScenarioUsageModificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteBillScenarioUsageModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteBillScenarioUsageModificationResponseUnmarshaller.Instance;
             
@@ -891,7 +891,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteWorkloadEstimateUsage">REST API Reference for BatchDeleteWorkloadEstimateUsage Operation</seealso>
         public virtual BatchDeleteWorkloadEstimateUsageResponse BatchDeleteWorkloadEstimateUsage(BatchDeleteWorkloadEstimateUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteWorkloadEstimateUsageResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchDeleteWorkloadEstimateUsage">REST API Reference for BatchDeleteWorkloadEstimateUsage Operation</seealso>
         public virtual Task<BatchDeleteWorkloadEstimateUsageResponse> BatchDeleteWorkloadEstimateUsageAsync(BatchDeleteWorkloadEstimateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteWorkloadEstimateUsageResponseUnmarshaller.Instance;
             
@@ -1000,7 +1000,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateBillScenarioCommitmentModification">REST API Reference for BatchUpdateBillScenarioCommitmentModification Operation</seealso>
         public virtual BatchUpdateBillScenarioCommitmentModificationResponse BatchUpdateBillScenarioCommitmentModification(BatchUpdateBillScenarioCommitmentModificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateBillScenarioCommitmentModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateBillScenarioCommitmentModificationResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateBillScenarioCommitmentModification">REST API Reference for BatchUpdateBillScenarioCommitmentModification Operation</seealso>
         public virtual Task<BatchUpdateBillScenarioCommitmentModificationResponse> BatchUpdateBillScenarioCommitmentModificationAsync(BatchUpdateBillScenarioCommitmentModificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateBillScenarioCommitmentModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateBillScenarioCommitmentModificationResponseUnmarshaller.Instance;
             
@@ -1112,7 +1112,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateBillScenarioUsageModification">REST API Reference for BatchUpdateBillScenarioUsageModification Operation</seealso>
         public virtual BatchUpdateBillScenarioUsageModificationResponse BatchUpdateBillScenarioUsageModification(BatchUpdateBillScenarioUsageModificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateBillScenarioUsageModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateBillScenarioUsageModificationResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateBillScenarioUsageModification">REST API Reference for BatchUpdateBillScenarioUsageModification Operation</seealso>
         public virtual Task<BatchUpdateBillScenarioUsageModificationResponse> BatchUpdateBillScenarioUsageModificationAsync(BatchUpdateBillScenarioUsageModificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateBillScenarioUsageModificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateBillScenarioUsageModificationResponseUnmarshaller.Instance;
             
@@ -1222,7 +1222,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateWorkloadEstimateUsage">REST API Reference for BatchUpdateWorkloadEstimateUsage Operation</seealso>
         public virtual BatchUpdateWorkloadEstimateUsageResponse BatchUpdateWorkloadEstimateUsage(BatchUpdateWorkloadEstimateUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateWorkloadEstimateUsageResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/BatchUpdateWorkloadEstimateUsage">REST API Reference for BatchUpdateWorkloadEstimateUsage Operation</seealso>
         public virtual Task<BatchUpdateWorkloadEstimateUsageResponse> BatchUpdateWorkloadEstimateUsageAsync(BatchUpdateWorkloadEstimateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateWorkloadEstimateUsageResponseUnmarshaller.Instance;
             
@@ -1325,7 +1325,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/CreateBillEstimate">REST API Reference for CreateBillEstimate Operation</seealso>
         public virtual CreateBillEstimateResponse CreateBillEstimate(CreateBillEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillEstimateResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/CreateBillEstimate">REST API Reference for CreateBillEstimate Operation</seealso>
         public virtual Task<CreateBillEstimateResponse> CreateBillEstimateAsync(CreateBillEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillEstimateResponseUnmarshaller.Instance;
             
@@ -1421,7 +1421,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/CreateBillScenario">REST API Reference for CreateBillScenario Operation</seealso>
         public virtual CreateBillScenarioResponse CreateBillScenario(CreateBillScenarioRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillScenarioResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/CreateBillScenario">REST API Reference for CreateBillScenario Operation</seealso>
         public virtual Task<CreateBillScenarioResponse> CreateBillScenarioAsync(CreateBillScenarioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillScenarioResponseUnmarshaller.Instance;
             
@@ -1511,7 +1511,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/CreateWorkloadEstimate">REST API Reference for CreateWorkloadEstimate Operation</seealso>
         public virtual CreateWorkloadEstimateResponse CreateWorkloadEstimate(CreateWorkloadEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkloadEstimateResponseUnmarshaller.Instance;
 
@@ -1555,7 +1555,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/CreateWorkloadEstimate">REST API Reference for CreateWorkloadEstimate Operation</seealso>
         public virtual Task<CreateWorkloadEstimateResponse> CreateWorkloadEstimateAsync(CreateWorkloadEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkloadEstimateResponseUnmarshaller.Instance;
             
@@ -1597,7 +1597,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/DeleteBillEstimate">REST API Reference for DeleteBillEstimate Operation</seealso>
         public virtual DeleteBillEstimateResponse DeleteBillEstimate(DeleteBillEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillEstimateResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/DeleteBillEstimate">REST API Reference for DeleteBillEstimate Operation</seealso>
         public virtual Task<DeleteBillEstimateResponse> DeleteBillEstimateAsync(DeleteBillEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillEstimateResponseUnmarshaller.Instance;
             
@@ -1680,7 +1680,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/DeleteBillScenario">REST API Reference for DeleteBillScenario Operation</seealso>
         public virtual DeleteBillScenarioResponse DeleteBillScenario(DeleteBillScenarioRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillScenarioResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/DeleteBillScenario">REST API Reference for DeleteBillScenario Operation</seealso>
         public virtual Task<DeleteBillScenarioResponse> DeleteBillScenarioAsync(DeleteBillScenarioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillScenarioResponseUnmarshaller.Instance;
             
@@ -1759,7 +1759,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/DeleteWorkloadEstimate">REST API Reference for DeleteWorkloadEstimate Operation</seealso>
         public virtual DeleteWorkloadEstimateResponse DeleteWorkloadEstimate(DeleteWorkloadEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkloadEstimateResponseUnmarshaller.Instance;
 
@@ -1796,7 +1796,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/DeleteWorkloadEstimate">REST API Reference for DeleteWorkloadEstimate Operation</seealso>
         public virtual Task<DeleteWorkloadEstimateResponse> DeleteWorkloadEstimateAsync(DeleteWorkloadEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkloadEstimateResponseUnmarshaller.Instance;
             
@@ -1837,7 +1837,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetBillEstimate">REST API Reference for GetBillEstimate Operation</seealso>
         public virtual GetBillEstimateResponse GetBillEstimate(GetBillEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillEstimateResponseUnmarshaller.Instance;
 
@@ -1877,7 +1877,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetBillEstimate">REST API Reference for GetBillEstimate Operation</seealso>
         public virtual Task<GetBillEstimateResponse> GetBillEstimateAsync(GetBillEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillEstimateResponseUnmarshaller.Instance;
             
@@ -1918,7 +1918,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetBillScenario">REST API Reference for GetBillScenario Operation</seealso>
         public virtual GetBillScenarioResponse GetBillScenario(GetBillScenarioRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillScenarioResponseUnmarshaller.Instance;
 
@@ -1958,7 +1958,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetBillScenario">REST API Reference for GetBillScenario Operation</seealso>
         public virtual Task<GetBillScenarioResponse> GetBillScenarioAsync(GetBillScenarioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillScenarioResponseUnmarshaller.Instance;
             
@@ -1996,7 +1996,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetPreferences">REST API Reference for GetPreferences Operation</seealso>
         public virtual GetPreferencesResponse GetPreferences(GetPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreferencesResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetPreferences">REST API Reference for GetPreferences Operation</seealso>
         public virtual Task<GetPreferencesResponse> GetPreferencesAsync(GetPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreferencesResponseUnmarshaller.Instance;
             
@@ -2074,7 +2074,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetWorkloadEstimate">REST API Reference for GetWorkloadEstimate Operation</seealso>
         public virtual GetWorkloadEstimateResponse GetWorkloadEstimate(GetWorkloadEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadEstimateResponseUnmarshaller.Instance;
 
@@ -2114,7 +2114,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/GetWorkloadEstimate">REST API Reference for GetWorkloadEstimate Operation</seealso>
         public virtual Task<GetWorkloadEstimateResponse> GetWorkloadEstimateAsync(GetWorkloadEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadEstimateResponseUnmarshaller.Instance;
             
@@ -2155,7 +2155,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateCommitments">REST API Reference for ListBillEstimateCommitments Operation</seealso>
         public virtual ListBillEstimateCommitmentsResponse ListBillEstimateCommitments(ListBillEstimateCommitmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateCommitmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateCommitmentsResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateCommitments">REST API Reference for ListBillEstimateCommitments Operation</seealso>
         public virtual Task<ListBillEstimateCommitmentsResponse> ListBillEstimateCommitmentsAsync(ListBillEstimateCommitmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateCommitmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateCommitmentsResponseUnmarshaller.Instance;
             
@@ -2236,7 +2236,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateInputCommitmentModifications">REST API Reference for ListBillEstimateInputCommitmentModifications Operation</seealso>
         public virtual ListBillEstimateInputCommitmentModificationsResponse ListBillEstimateInputCommitmentModifications(ListBillEstimateInputCommitmentModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateInputCommitmentModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateInputCommitmentModificationsResponseUnmarshaller.Instance;
 
@@ -2276,7 +2276,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateInputCommitmentModifications">REST API Reference for ListBillEstimateInputCommitmentModifications Operation</seealso>
         public virtual Task<ListBillEstimateInputCommitmentModificationsResponse> ListBillEstimateInputCommitmentModificationsAsync(ListBillEstimateInputCommitmentModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateInputCommitmentModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateInputCommitmentModificationsResponseUnmarshaller.Instance;
             
@@ -2317,7 +2317,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateInputUsageModifications">REST API Reference for ListBillEstimateInputUsageModifications Operation</seealso>
         public virtual ListBillEstimateInputUsageModificationsResponse ListBillEstimateInputUsageModifications(ListBillEstimateInputUsageModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateInputUsageModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateInputUsageModificationsResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateInputUsageModifications">REST API Reference for ListBillEstimateInputUsageModifications Operation</seealso>
         public virtual Task<ListBillEstimateInputUsageModificationsResponse> ListBillEstimateInputUsageModificationsAsync(ListBillEstimateInputUsageModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateInputUsageModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateInputUsageModificationsResponseUnmarshaller.Instance;
             
@@ -2398,7 +2398,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateLineItems">REST API Reference for ListBillEstimateLineItems Operation</seealso>
         public virtual ListBillEstimateLineItemsResponse ListBillEstimateLineItems(ListBillEstimateLineItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateLineItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateLineItemsResponseUnmarshaller.Instance;
 
@@ -2438,7 +2438,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimateLineItems">REST API Reference for ListBillEstimateLineItems Operation</seealso>
         public virtual Task<ListBillEstimateLineItemsResponse> ListBillEstimateLineItemsAsync(ListBillEstimateLineItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimateLineItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimateLineItemsResponseUnmarshaller.Instance;
             
@@ -2476,7 +2476,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimates">REST API Reference for ListBillEstimates Operation</seealso>
         public virtual ListBillEstimatesResponse ListBillEstimates(ListBillEstimatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimatesResponseUnmarshaller.Instance;
 
@@ -2513,7 +2513,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillEstimates">REST API Reference for ListBillEstimates Operation</seealso>
         public virtual Task<ListBillEstimatesResponse> ListBillEstimatesAsync(ListBillEstimatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillEstimatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillEstimatesResponseUnmarshaller.Instance;
             
@@ -2554,7 +2554,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillScenarioCommitmentModifications">REST API Reference for ListBillScenarioCommitmentModifications Operation</seealso>
         public virtual ListBillScenarioCommitmentModificationsResponse ListBillScenarioCommitmentModifications(ListBillScenarioCommitmentModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillScenarioCommitmentModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillScenarioCommitmentModificationsResponseUnmarshaller.Instance;
 
@@ -2594,7 +2594,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillScenarioCommitmentModifications">REST API Reference for ListBillScenarioCommitmentModifications Operation</seealso>
         public virtual Task<ListBillScenarioCommitmentModificationsResponse> ListBillScenarioCommitmentModificationsAsync(ListBillScenarioCommitmentModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillScenarioCommitmentModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillScenarioCommitmentModificationsResponseUnmarshaller.Instance;
             
@@ -2632,7 +2632,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillScenarios">REST API Reference for ListBillScenarios Operation</seealso>
         public virtual ListBillScenariosResponse ListBillScenarios(ListBillScenariosRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillScenariosRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillScenariosResponseUnmarshaller.Instance;
 
@@ -2669,7 +2669,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillScenarios">REST API Reference for ListBillScenarios Operation</seealso>
         public virtual Task<ListBillScenariosResponse> ListBillScenariosAsync(ListBillScenariosRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillScenariosRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillScenariosResponseUnmarshaller.Instance;
             
@@ -2710,7 +2710,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillScenarioUsageModifications">REST API Reference for ListBillScenarioUsageModifications Operation</seealso>
         public virtual ListBillScenarioUsageModificationsResponse ListBillScenarioUsageModifications(ListBillScenarioUsageModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillScenarioUsageModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillScenarioUsageModificationsResponseUnmarshaller.Instance;
 
@@ -2750,7 +2750,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListBillScenarioUsageModifications">REST API Reference for ListBillScenarioUsageModifications Operation</seealso>
         public virtual Task<ListBillScenarioUsageModificationsResponse> ListBillScenarioUsageModificationsAsync(ListBillScenarioUsageModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillScenarioUsageModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillScenarioUsageModificationsResponseUnmarshaller.Instance;
             
@@ -2788,7 +2788,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2825,7 +2825,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2863,7 +2863,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListWorkloadEstimates">REST API Reference for ListWorkloadEstimates Operation</seealso>
         public virtual ListWorkloadEstimatesResponse ListWorkloadEstimates(ListWorkloadEstimatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadEstimatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadEstimatesResponseUnmarshaller.Instance;
 
@@ -2900,7 +2900,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListWorkloadEstimates">REST API Reference for ListWorkloadEstimates Operation</seealso>
         public virtual Task<ListWorkloadEstimatesResponse> ListWorkloadEstimatesAsync(ListWorkloadEstimatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadEstimatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadEstimatesResponseUnmarshaller.Instance;
             
@@ -2941,7 +2941,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListWorkloadEstimateUsage">REST API Reference for ListWorkloadEstimateUsage Operation</seealso>
         public virtual ListWorkloadEstimateUsageResponse ListWorkloadEstimateUsage(ListWorkloadEstimateUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadEstimateUsageResponseUnmarshaller.Instance;
 
@@ -2981,7 +2981,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListWorkloadEstimateUsage">REST API Reference for ListWorkloadEstimateUsage Operation</seealso>
         public virtual Task<ListWorkloadEstimateUsageResponse> ListWorkloadEstimateUsageAsync(ListWorkloadEstimateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadEstimateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadEstimateUsageResponseUnmarshaller.Instance;
             
@@ -3022,7 +3022,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3062,7 +3062,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -3100,7 +3100,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3137,7 +3137,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -3182,7 +3182,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdateBillEstimate">REST API Reference for UpdateBillEstimate Operation</seealso>
         public virtual UpdateBillEstimateResponse UpdateBillEstimate(UpdateBillEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillEstimateResponseUnmarshaller.Instance;
 
@@ -3226,7 +3226,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdateBillEstimate">REST API Reference for UpdateBillEstimate Operation</seealso>
         public virtual Task<UpdateBillEstimateResponse> UpdateBillEstimateAsync(UpdateBillEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillEstimateResponseUnmarshaller.Instance;
             
@@ -3271,7 +3271,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdateBillScenario">REST API Reference for UpdateBillScenario Operation</seealso>
         public virtual UpdateBillScenarioResponse UpdateBillScenario(UpdateBillScenarioRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillScenarioResponseUnmarshaller.Instance;
 
@@ -3315,7 +3315,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdateBillScenario">REST API Reference for UpdateBillScenario Operation</seealso>
         public virtual Task<UpdateBillScenarioResponse> UpdateBillScenarioAsync(UpdateBillScenarioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillScenarioRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillScenarioResponseUnmarshaller.Instance;
             
@@ -3356,7 +3356,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdatePreferences">REST API Reference for UpdatePreferences Operation</seealso>
         public virtual UpdatePreferencesResponse UpdatePreferences(UpdatePreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreferencesResponseUnmarshaller.Instance;
 
@@ -3396,7 +3396,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdatePreferences">REST API Reference for UpdatePreferences Operation</seealso>
         public virtual Task<UpdatePreferencesResponse> UpdatePreferencesAsync(UpdatePreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreferencesResponseUnmarshaller.Instance;
             
@@ -3441,7 +3441,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdateWorkloadEstimate">REST API Reference for UpdateWorkloadEstimate Operation</seealso>
         public virtual UpdateWorkloadEstimateResponse UpdateWorkloadEstimate(UpdateWorkloadEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadEstimateResponseUnmarshaller.Instance;
 
@@ -3485,7 +3485,7 @@ namespace Amazon.BCMPricingCalculator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/UpdateWorkloadEstimate">REST API Reference for UpdateWorkloadEstimate Operation</seealso>
         public virtual Task<UpdateWorkloadEstimateResponse> UpdateWorkloadEstimateAsync(UpdateWorkloadEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadEstimateResponseUnmarshaller.Instance;
             

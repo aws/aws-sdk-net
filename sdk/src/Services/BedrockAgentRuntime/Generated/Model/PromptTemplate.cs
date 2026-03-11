@@ -68,8 +68,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with Anthropic
-        /// Claude models</a> 
+        ///  <a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use
+        /// XML tags with Anthropic Claude models</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

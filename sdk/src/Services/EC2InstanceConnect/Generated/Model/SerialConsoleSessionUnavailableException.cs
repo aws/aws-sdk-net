@@ -39,6 +39,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for SerialConsoleSessionUnavailableException
+        /// message.
+        /// </summary>
+        public SerialConsoleSessionUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SerialConsoleSessionUnavailableException with the specified error
         /// message.
         /// </summary>

@@ -41,8 +41,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
-        /// The version of the AppStream 2.0 agent to use for this image builder. To use the latest
-        /// version of the AppStream 2.0 agent, specify [LATEST]. 
+        /// The version of the WorkSpaces Applications agent to use for this image builder. To
+        /// use the latest version of the WorkSpaces Applications agent, specify [LATEST]. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

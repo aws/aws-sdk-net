@@ -40,7 +40,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ProviderName. Name of the provider.
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true)]
         public string ProviderName
         {
             get { return this._providerName; }
@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ServiceName. Name of the service.
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }

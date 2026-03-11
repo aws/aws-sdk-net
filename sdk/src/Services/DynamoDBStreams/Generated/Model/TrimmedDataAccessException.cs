@@ -58,6 +58,13 @@ namespace Amazon.DynamoDBStreams.Model
     {
 
         /// <summary>
+        /// Default constructor for TrimmedDataAccessException
+        /// message.
+        /// </summary>
+        public TrimmedDataAccessException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrimmedDataAccessException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.Amplify
         /// <summary>
         /// Construct instance of AmazonAmplifyException
         /// </summary>
+        public AmazonAmplifyException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAmplifyException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAmplifyException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for DependentServiceRequestThrottlingException
+        /// message.
+        /// </summary>
+        public DependentServiceRequestThrottlingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DependentServiceRequestThrottlingException with the specified error
         /// message.
         /// </summary>

@@ -63,9 +63,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-04-15";
             request.HttpMethod = "POST";
 
+            if (publicRequest.EndTime == null)
+                throw new AmazonApplicationSignalsException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+            if (publicRequest.StartTime == null)
+                throw new AmazonApplicationSignalsException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));

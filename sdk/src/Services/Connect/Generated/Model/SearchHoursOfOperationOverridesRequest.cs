@@ -63,8 +63,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page. Valid Range: Minimum value of 1.
-        /// Maximum value of 100.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -84,8 +83,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token for the next set of results. Use the value returned in the previous response
-        /// in the next request to retrieve the next set of results. Length Constraints: Minimum
-        /// length of 1. Maximum length of 2500.
+        /// in the next request to retrieve the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2500)]

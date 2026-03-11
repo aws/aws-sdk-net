@@ -118,6 +118,16 @@ namespace Amazon.ConnectCases.Model
         IListTemplatesPaginator ListTemplates(ListTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for SearchAllRelatedItems operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchAllRelatedItemsPaginator SearchAllRelatedItems(SearchAllRelatedItemsRequest request);
+
+        /// <summary>
         /// Paginator for SearchCases operation
         ///</summary>
         [AWSPaginator(

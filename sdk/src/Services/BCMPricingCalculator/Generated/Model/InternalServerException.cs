@@ -41,6 +41,13 @@ namespace Amazon.BCMPricingCalculator.Model
         private int? _retryAfterSeconds;
 
         /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerException with the specified error
         /// message.
         /// </summary>

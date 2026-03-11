@@ -84,7 +84,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (!selectObjectContentRequest.IsSetOutputSerialization())
                 throw ConstructExceptionArgumentRequired(nameof(selectObjectContentRequest.OutputSerialization));
 
-            var request = new DefaultRequest(selectObjectContentRequest, "AmazonS3")
+            var request = new DefaultRequest(selectObjectContentRequest, "Amazon.S3")
             {
                 HttpMethod = "POST",
                 ResourcePath = "/{Key+}",

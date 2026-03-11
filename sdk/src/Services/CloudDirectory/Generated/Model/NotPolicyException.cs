@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for NotPolicyException
+        /// message.
+        /// </summary>
+        public NotPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotPolicyException with the specified error
         /// message.
         /// </summary>

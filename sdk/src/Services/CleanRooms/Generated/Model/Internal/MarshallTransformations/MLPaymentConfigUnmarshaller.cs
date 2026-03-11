@@ -68,6 +68,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelTraining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("syntheticDataGeneration", targetDepth))
+                {
+                    var unmarshaller = SyntheticDataGenerationPaymentConfigUnmarshaller.Instance;
+                    unmarshalledObject.SyntheticDataGeneration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

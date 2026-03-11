@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListCloudFrontOriginAccessIdentities operation
     /// </summary>  
-    public class ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListCloudFrontOriginAccessIdentitiesResponse response = new ListCloudFrontOriginAccessIdentitiesResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -105,6 +105,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListCloudFrontOriginAccessIdentitiesResponse response);
 
         private static ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller _instance = new ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller();        
 

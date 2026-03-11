@@ -26,150 +26,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListMultipartUploads operation
     /// </summary>
-    public class ListMultipartUploadsResponseUnmarshaller : S3ReponseUnmarshaller
-    {
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            ListMultipartUploadsResponse response = new ListMultipartUploadsResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {                    
-                    UnmarshallResult(context,response);                        
-                    continue;
-                }
-            }
-
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
-                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
-
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ListMultipartUploadsResponse response)
+    public partial class ListMultipartUploadsResponseUnmarshaller : S3ReponseUnmarshaller
+    {  
+        private static void CommonPrefixesCustomUnmarshall(XmlUnmarshallerContext context, ListMultipartUploadsResponse response)
         {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.Read())
+            var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
+
+            if (prefix != null)
             {
-                if (context.IsStartElement || context.IsAttribute)
+                if (response.CommonPrefixes == null)
                 {
-                    if (context.TestExpression("Bucket", targetDepth))
-                    {
-                        response.BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("KeyMarker", targetDepth))
-                    {
-                        response.KeyMarker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("UploadIdMarker", targetDepth))
-                    {
-                        response.UploadIdMarker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NextKeyMarker", targetDepth))
-                    {
-                        response.NextKeyMarker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NextUploadIdMarker", targetDepth))
-                    {
-                        response.NextUploadIdMarker = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MaxUploads", targetDepth))
-                    {
-                        response.MaxUploads = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("IsTruncated", targetDepth))
-                    {
-                        response.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Upload", targetDepth))
-                    {
-                        if (response.MultipartUploads == null)
-                        {
-                            response.MultipartUploads = new List<MultipartUpload>();
-                        }
-
-                        response.MultipartUploads.Add(MultipartUploadUnmarshaller.Instance.Unmarshall(context));
-                        continue;
-                    }
-                    if (context.TestExpression("Delimiter", targetDepth))
-                    {
-                        response.Delimiter = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("Prefix", targetDepth))
-                    {
-                        response.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("CommonPrefixes", targetDepth))
-                    {
-                        var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
-
-                        if (prefix != null)
-                        {
-                            if (response.CommonPrefixes == null)
-                            {
-                                response.CommonPrefixes = new List<string>();
-                            }
-                            response.CommonPrefixes.Add(prefix);
-                        }
-
-                        continue;
-                    }
+                    response.CommonPrefixes = new List<string>();
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
+                response.CommonPrefixes.Add(prefix);
             }
-
             return;
-        }
-
-        private static ListMultipartUploadsResponseUnmarshaller _instance;
-
-        /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static ListMultipartUploadsResponseUnmarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new ListMultipartUploadsResponseUnmarshaller();
-                }
-                return _instance;
-            }
         }
     }
 }

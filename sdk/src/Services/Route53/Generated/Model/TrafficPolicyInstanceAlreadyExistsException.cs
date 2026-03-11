@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TrafficPolicyInstanceAlreadyExistsException
+        /// message.
+        /// </summary>
+        public TrafficPolicyInstanceAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TrafficPolicyInstanceAlreadyExistsException with the specified error
         /// message.
         /// </summary>

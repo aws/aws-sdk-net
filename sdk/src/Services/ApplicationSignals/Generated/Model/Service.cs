@@ -39,6 +39,7 @@ namespace Amazon.ApplicationSignals.Model
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<Dictionary<string, string>> _logGroupReferences = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private List<MetricReference> _metricReferences = AWSConfigs.InitializeCollections ? new List<MetricReference>() : null;
+        private List<ServiceGroup> _serviceGroups = AWSConfigs.InitializeCollections ? new List<ServiceGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeMaps. 
@@ -256,6 +257,30 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetMetricReferences()
         {
             return this._metricReferences != null && (this._metricReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceGroups. 
+        /// <para>
+        /// An array of service groups that this service belongs to, based on the configured grouping
+        /// attributes.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ServiceGroup> ServiceGroups
+        {
+            get { return this._serviceGroups; }
+            set { this._serviceGroups = value; }
+        }
+
+        // Check to see if ServiceGroups property is set
+        internal bool IsSetServiceGroups()
+        {
+            return this._serviceGroups != null && (this._serviceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

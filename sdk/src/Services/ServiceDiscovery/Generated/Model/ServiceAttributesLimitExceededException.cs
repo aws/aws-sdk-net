@@ -40,6 +40,13 @@ namespace Amazon.ServiceDiscovery.Model
     {
 
         /// <summary>
+        /// Default constructor for ServiceAttributesLimitExceededException
+        /// message.
+        /// </summary>
+        public ServiceAttributesLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceAttributesLimitExceededException with the specified error
         /// message.
         /// </summary>

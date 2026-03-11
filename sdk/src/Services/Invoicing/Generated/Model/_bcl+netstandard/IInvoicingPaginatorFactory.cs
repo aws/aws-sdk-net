@@ -46,5 +46,15 @@ namespace Amazon.Invoicing.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListInvoiceUnitsPaginator ListInvoiceUnits(ListInvoiceUnitsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProcurementPortalPreferences operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListProcurementPortalPreferencesPaginator ListProcurementPortalPreferences(ListProcurementPortalPreferencesRequest request);
     }
 }

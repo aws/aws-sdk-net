@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>KMSArn</c>, <c>OutputS3Path</c>, and <c>RoleArn</c>.
+    /// An object containing <c>KMSArn</c>, <c>outputS3Path</c>, and <c>roleArn</c>.
     /// </summary>
     public partial class JobOutputSource
     {

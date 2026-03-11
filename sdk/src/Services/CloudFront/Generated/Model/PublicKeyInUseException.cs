@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for PublicKeyInUseException
+        /// message.
+        /// </summary>
+        public PublicKeyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PublicKeyInUseException with the specified error
         /// message.
         /// </summary>

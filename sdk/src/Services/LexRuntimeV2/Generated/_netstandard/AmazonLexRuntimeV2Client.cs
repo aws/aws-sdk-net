@@ -249,7 +249,7 @@ namespace Amazon.LexRuntimeV2
 
         internal virtual DeleteSessionResponse DeleteSession(DeleteSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
 
@@ -310,7 +310,7 @@ namespace Amazon.LexRuntimeV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
         public virtual Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.LexRuntimeV2
 
         internal virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.LexRuntimeV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -381,7 +381,7 @@ namespace Amazon.LexRuntimeV2
 
         internal virtual PutSessionResponse PutSession(PutSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSessionResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.LexRuntimeV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/PutSession">REST API Reference for PutSession Operation</seealso>
         public virtual Task<PutSessionResponse> PutSessionAsync(PutSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSessionResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.LexRuntimeV2
 
         internal virtual RecognizeTextResponse RecognizeText(RecognizeTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeTextResponseUnmarshaller.Instance;
 
@@ -519,7 +519,7 @@ namespace Amazon.LexRuntimeV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RecognizeText">REST API Reference for RecognizeText Operation</seealso>
         public virtual Task<RecognizeTextResponse> RecognizeTextAsync(RecognizeTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeTextResponseUnmarshaller.Instance;
 
@@ -531,7 +531,7 @@ namespace Amazon.LexRuntimeV2
 
         internal virtual RecognizeUtteranceResponse RecognizeUtterance(RecognizeUtteranceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeUtteranceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeUtteranceResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.LexRuntimeV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RecognizeUtterance">REST API Reference for RecognizeUtterance Operation</seealso>
         public virtual Task<RecognizeUtteranceResponse> RecognizeUtteranceAsync(RecognizeUtteranceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeUtteranceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeUtteranceResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.LexRuntimeV2
 #if NET8_0_OR_GREATER
         internal virtual StartConversationResponse StartConversation(StartConversationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConversationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConversationResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.LexRuntimeV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/StartConversation">REST API Reference for StartConversation Operation</seealso>
         public virtual Task<StartConversationResponse> StartConversationAsync(StartConversationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConversationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConversationResponseUnmarshaller.Instance;
 

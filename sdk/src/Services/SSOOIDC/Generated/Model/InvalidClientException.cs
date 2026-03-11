@@ -43,6 +43,13 @@ namespace Amazon.SSOOIDC.Model
         private string _error_description;
 
         /// <summary>
+        /// Default constructor for InvalidClientException
+        /// message.
+        /// </summary>
+        public InvalidClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClientException with the specified error
         /// message.
         /// </summary>

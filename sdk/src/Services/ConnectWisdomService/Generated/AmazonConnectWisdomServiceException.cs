@@ -36,6 +36,14 @@ namespace Amazon.ConnectWisdomService
         /// <summary>
         /// Construct instance of AmazonConnectWisdomServiceException
         /// </summary>
+        public AmazonConnectWisdomServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonConnectWisdomServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonConnectWisdomServiceException(string message)
             : base(message)

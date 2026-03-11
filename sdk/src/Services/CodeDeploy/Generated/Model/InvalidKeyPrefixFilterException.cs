@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKeyPrefixFilterException
+        /// message.
+        /// </summary>
+        public InvalidKeyPrefixFilterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKeyPrefixFilterException with the specified error
         /// message.
         /// </summary>

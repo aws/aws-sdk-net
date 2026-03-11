@@ -46,6 +46,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetRootVolume())
+            {
+                context.Writer.WritePropertyName("RootVolume");
+                context.Writer.WriteBooleanValue(requestObject.RootVolume.Value);
+            }
+
+            if(requestObject.IsSetVolumeKmsKeyId())
+            {
+                context.Writer.WritePropertyName("VolumeKmsKeyId");
+                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
+            }
+
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");

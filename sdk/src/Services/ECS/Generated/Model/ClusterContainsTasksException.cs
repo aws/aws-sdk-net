@@ -39,6 +39,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterContainsTasksException
+        /// message.
+        /// </summary>
+        public ClusterContainsTasksException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterContainsTasksException with the specified error
         /// message.
         /// </summary>

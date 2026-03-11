@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The container image used to create an Amazon Braket job.
+    /// The container image used to create an Amazon Braket hybrid job.
     /// </summary>
     public partial class ContainerImage
     {

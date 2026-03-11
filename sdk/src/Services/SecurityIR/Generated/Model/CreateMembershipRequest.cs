@@ -31,11 +31,12 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembership operation.
-    /// Grants permissions to create a new membership.
+    /// Creates a new membership.
     /// </summary>
     public partial class CreateMembershipRequest : AmazonSecurityIRRequest
     {
         private string _clientToken;
+        private bool? _coverEntireOrganization;
         private List<IncidentResponder> _incidentResponseTeam = AWSConfigs.InitializeCollections ? new List<IncidentResponder>() : null;
         private string _membershipName;
         private List<OptInFeature> _optInFeatures = AWSConfigs.InitializeCollections ? new List<OptInFeature>() : null;
@@ -44,7 +45,13 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// An optional element used in combination with CreateMembership.
+        /// <note> 
+        /// <para>
+        /// The <c>clientToken</c> field is an idempotency key used to ensure that repeated attempts
+        /// for a single action will be ignored by the server during retries. A caller supplied
+        /// unique ID (typically a UUID) should be provided. 
+        /// </para>
+        ///  </note>
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,9 +68,45 @@ namespace Amazon.SecurityIR.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CoverEntireOrganization. 
+        /// <para>
+        /// The <c>coverEntireOrganization</c> parameter is a boolean flag that determines whether
+        /// the membership should be applied to the entire Amazon Web Services Organization. When
+        /// set to true, the membership will be created for all accounts within the organization.
+        /// When set to false, the membership will only be created for specified accounts. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If not specified, the default value is false.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <i>true</i>: The membership will automatically include all existing and
+        /// future accounts in the Amazon Web Services Organization. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <i>false</i>: The membership will only apply to explicitly specified accounts.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool? CoverEntireOrganization
+        {
+            get { return this._coverEntireOrganization; }
+            set { this._coverEntireOrganization = value; }
+        }
+
+        // Check to see if CoverEntireOrganization property is set
+        internal bool IsSetCoverEntireOrganization()
+        {
+            return this._coverEntireOrganization.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IncidentResponseTeam. 
         /// <para>
-        /// Required element use in combination with CreateMembership to add customer incident
+        /// Required element used in combination with CreateMembership to add customer incident
         /// response team members and trusted partners to the membership. 
         /// </para>
         /// <para />
@@ -88,7 +131,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property MembershipName. 
         /// <para>
-        /// Required element use in combination with CreateMembership to create a name for the
+        /// Required element used in combination with CreateMembership to create a name for the
         /// membership.
         /// </para>
         /// </summary>

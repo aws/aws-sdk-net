@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PutFileEntryConflictException
+        /// message.
+        /// </summary>
+        public PutFileEntryConflictException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PutFileEntryConflictException with the specified error
         /// message.
         /// </summary>

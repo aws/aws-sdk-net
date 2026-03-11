@@ -39,6 +39,13 @@ namespace Amazon.AppSync.Model
     {
 
         /// <summary>
+        /// Default constructor for ApiKeyLimitExceededException
+        /// message.
+        /// </summary>
+        public ApiKeyLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApiKeyLimitExceededException with the specified error
         /// message.
         /// </summary>

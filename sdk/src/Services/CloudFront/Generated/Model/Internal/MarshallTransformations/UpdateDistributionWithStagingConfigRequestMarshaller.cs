@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateDistributionWithStagingConfigRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -71,8 +72,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2020-05-31/distribution/{Id}/promote-staging-config";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static UpdateDistributionWithStagingConfigRequestMarshaller _instance = new UpdateDistributionWithStagingConfigRequestMarshaller();        
@@ -94,5 +95,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionWithStagingConfigRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionWithStagingConfigRequest publicRequest);
     }    
 }

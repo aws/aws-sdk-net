@@ -39,6 +39,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedActionException
+        /// message.
+        /// </summary>
+        public UnsupportedActionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedActionException with the specified error
         /// message.
         /// </summary>

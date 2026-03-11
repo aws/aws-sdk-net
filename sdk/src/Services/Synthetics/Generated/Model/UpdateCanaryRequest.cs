@@ -35,6 +35,20 @@ namespace Amazon.Synthetics.Model
     /// 
     ///  
     /// <para>
+    /// For multibrowser canaries, you can add or remove browsers by updating the browserConfig
+    /// list in the update call. For example:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To add Firefox to a canary that currently uses Chrome, specify browserConfigs as [CHROME,
+    /// FIREFOX]
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To remove Firefox and keep only Chrome, specify browserConfigs as [CHROME]
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// You can't use this operation to update the tags of an existing canary. To change the
     /// tags of an existing canary, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.
     /// </para>
@@ -49,6 +63,7 @@ namespace Amazon.Synthetics.Model
     {
         private ArtifactConfigInput _artifactConfig;
         private string _artifactS3Location;
+        private List<BrowserConfig> _browserConfigs = AWSConfigs.InitializeCollections ? new List<BrowserConfig>() : null;
         private CanaryCodeInput _code;
         private string _dryRunId;
         private string _executionRoleArn;
@@ -60,6 +75,7 @@ namespace Amazon.Synthetics.Model
         private CanaryScheduleInput _schedule;
         private int? _successRetentionPeriodInDays;
         private VisualReferenceInput _visualReference;
+        private List<VisualReferenceInput> _visualReferences = AWSConfigs.InitializeCollections ? new List<VisualReferenceInput>() : null;
         private VpcConfigInput _vpcConfig;
 
         /// <summary>
@@ -100,6 +116,36 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetArtifactS3Location()
         {
             return this._artifactS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserConfigs. 
+        /// <para>
+        /// A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics
+        /// supports running canaries on both <c>CHROME</c> and <c>FIREFOX</c> browsers.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If not specified, <c>browserConfigs</c> defaults to Chrome.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<BrowserConfig> BrowserConfigs
+        {
+            get { return this._browserConfigs; }
+            set { this._browserConfigs = value; }
+        }
+
+        // Check to see if BrowserConfigs property is set
+        internal bool IsSetBrowserConfigs()
+        {
+            return this._browserConfigs != null && (this._browserConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -385,6 +431,57 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetVisualReference()
         {
             return this._visualReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualReferences. 
+        /// <para>
+        /// A list of visual reference configurations for the canary, one for each browser type
+        /// that the canary is configured to run on. Visual references are used for visual monitoring
+        /// comparisons.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>syn-nodejs-puppeteer-11.0</c> and above, and <c>syn-nodejs-playwright-3.0</c>
+        /// and above, only supports <c>visualReferences</c>. <c>visualReference</c> field is
+        /// not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Versions older than <c>syn-nodejs-puppeteer-11.0</c> supports both <c>visualReference</c>
+        /// and <c>visualReferences</c> for backward compatibility. It is recommended to use <c>visualReferences</c>
+        /// for consistency and future compatibility.
+        /// </para>
+        ///  
+        /// <para>
+        /// For multibrowser visual monitoring, you can update the baseline for all configured
+        /// browsers in a single update call by specifying a list of VisualReference objects,
+        /// one per browser. Each VisualReference object maps to a specific browser configuration,
+        /// allowing you to manage visual baselines for multiple browsers simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// For single configuration canaries using Chrome browser (default browser), use visualReferences
+        /// for <c>syn-nodejs-puppeteer-11.0</c> and above, and <c>syn-nodejs-playwright-3.0</c>
+        /// and above canaries. The browserType in the visualReference object is not mandatory.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<VisualReferenceInput> VisualReferences
+        {
+            get { return this._visualReferences; }
+            set { this._visualReferences = value; }
+        }
+
+        // Check to see if VisualReferences property is set
+        internal bool IsSetVisualReferences()
+        {
+            return this._visualReferences != null && (this._visualReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace Amazon.ApplicationSignals.Model
         private DependencyConfig _dependencyConfig;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
+        private string _metricName;
         private ServiceLevelIndicatorMetricType _metricType;
         private string _operationName;
         private int? _periodSeconds;
@@ -139,6 +140,26 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetMetricDataQueries()
         {
             return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the CloudWatch metric to use for the SLO, when using a custom metric rather
+        /// than Application Signals standard metrics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string MetricName
+        {
+            get { return this._metricName; }
+            set { this._metricName = value; }
+        }
+
+        // Check to see if MetricName property is set
+        internal bool IsSetMetricName()
+        {
+            return this._metricName != null;
         }
 
         /// <summary>

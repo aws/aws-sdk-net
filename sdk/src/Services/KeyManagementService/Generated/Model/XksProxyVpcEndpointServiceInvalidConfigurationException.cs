@@ -43,6 +43,13 @@ namespace Amazon.KeyManagementService.Model
     {
 
         /// <summary>
+        /// Default constructor for XksProxyVpcEndpointServiceInvalidConfigurationException
+        /// message.
+        /// </summary>
+        public XksProxyVpcEndpointServiceInvalidConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new XksProxyVpcEndpointServiceInvalidConfigurationException with the specified error
         /// message.
         /// </summary>

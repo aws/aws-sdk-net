@@ -39,6 +39,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationNotFoundException
+        /// message.
+        /// </summary>
+        public OrganizationNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationNotFoundException with the specified error
         /// message.
         /// </summary>

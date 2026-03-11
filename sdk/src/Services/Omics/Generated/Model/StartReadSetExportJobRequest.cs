@@ -31,7 +31,15 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReadSetExportJob operation.
-    /// Exports a read set to Amazon S3.
+    /// Starts a read set export job. When the export job is finished, the read set is exported
+    /// to an Amazon S3 bucket which can be retrieved using the <c>GetReadSetExportJob</c>
+    /// API operation.
+    /// 
+    ///  
+    /// <para>
+    /// To monitor the status of the export job, use the <c>ListReadSetExportJobs</c> API
+    /// operation. 
+    /// </para>
     /// </summary>
     public partial class StartReadSetExportJobRequest : AmazonOmicsRequest
     {

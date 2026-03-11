@@ -361,6 +361,52 @@ namespace Amazon.CloudTrail
 
 
     /// <summary>
+    /// Constants used for properties of type EventCategoryAggregation.
+    /// </summary>
+    public class EventCategoryAggregation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Data for EventCategoryAggregation
+        /// </summary>
+        public static readonly EventCategoryAggregation Data = new EventCategoryAggregation("Data");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventCategoryAggregation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventCategoryAggregation FindValue(string value)
+        {
+            return FindValue<EventCategoryAggregation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventCategoryAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventDataStoreStatus.
     /// </summary>
     public class EventDataStoreStatus : ConstantClass
@@ -694,6 +740,106 @@ namespace Amazon.CloudTrail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InsightType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListInsightsDataDimensionKey.
+    /// </summary>
+    public class ListInsightsDataDimensionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EventId for ListInsightsDataDimensionKey
+        /// </summary>
+        public static readonly ListInsightsDataDimensionKey EventId = new ListInsightsDataDimensionKey("EventId");
+        /// <summary>
+        /// Constant EventName for ListInsightsDataDimensionKey
+        /// </summary>
+        public static readonly ListInsightsDataDimensionKey EventName = new ListInsightsDataDimensionKey("EventName");
+        /// <summary>
+        /// Constant EventSource for ListInsightsDataDimensionKey
+        /// </summary>
+        public static readonly ListInsightsDataDimensionKey EventSource = new ListInsightsDataDimensionKey("EventSource");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListInsightsDataDimensionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListInsightsDataDimensionKey FindValue(string value)
+        {
+            return FindValue<ListInsightsDataDimensionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListInsightsDataDimensionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListInsightsDataType.
+    /// </summary>
+    public class ListInsightsDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InsightsEvents for ListInsightsDataType
+        /// </summary>
+        public static readonly ListInsightsDataType InsightsEvents = new ListInsightsDataType("InsightsEvents");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListInsightsDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListInsightsDataType FindValue(string value)
+        {
+            return FindValue<ListInsightsDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListInsightsDataType(string value)
         {
             return FindValue(value);
         }
@@ -1038,6 +1184,110 @@ namespace Amazon.CloudTrail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RefreshScheduleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceEventCategory.
+    /// </summary>
+    public class SourceEventCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Data for SourceEventCategory
+        /// </summary>
+        public static readonly SourceEventCategory Data = new SourceEventCategory("Data");
+        /// <summary>
+        /// Constant Management for SourceEventCategory
+        /// </summary>
+        public static readonly SourceEventCategory Management = new SourceEventCategory("Management");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceEventCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceEventCategory FindValue(string value)
+        {
+            return FindValue<SourceEventCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceEventCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Template.
+    /// </summary>
+    public class Template : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_ACTIVITY for Template
+        /// </summary>
+        public static readonly Template API_ACTIVITY = new Template("API_ACTIVITY");
+        /// <summary>
+        /// Constant RESOURCE_ACCESS for Template
+        /// </summary>
+        public static readonly Template RESOURCE_ACCESS = new Template("RESOURCE_ACCESS");
+        /// <summary>
+        /// Constant USER_ACTIONS for Template
+        /// </summary>
+        public static readonly Template USER_ACTIONS = new Template("USER_ACTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Template(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Template FindValue(string value)
+        {
+            return FindValue<Template>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Template(string value)
         {
             return FindValue(value);
         }

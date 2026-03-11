@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidReservedNodeStateException
+        /// message.
+        /// </summary>
+        public InvalidReservedNodeStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidReservedNodeStateException with the specified error
         /// message.
         /// </summary>

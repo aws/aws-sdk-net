@@ -153,6 +153,21 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The language that the content is in. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-language">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-language</a>.
+        /// </summary>
+        public string ContentLanguage
+        {
+            get { return this["Content-Language"]; }
+            set { this["Content-Language"] = value; }
+        }
+
+        internal bool IsSetContentLanguage()
+        {
+            return !string.IsNullOrEmpty(this.ContentLanguage);
+        }
+
+        /// <summary>
         /// <para>
         /// The date and time at which the object is no longer cacheable. For more information,
         /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.

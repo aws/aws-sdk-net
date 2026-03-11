@@ -65,6 +65,8 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetCodeInterpreterIdentifier())
                 throw new AmazonBedrockAgentCoreException("Request object does not have required field CodeInterpreterIdentifier set");
             request.AddPathResource("{codeInterpreterIdentifier}", StringUtils.FromString(publicRequest.CodeInterpreterIdentifier));
+            if (string.IsNullOrEmpty(publicRequest.SessionId))
+                throw new AmazonBedrockAgentCoreException("Request object does not have required field SessionId set");
             
             if (publicRequest.IsSetSessionId())
                 request.Parameters.Add("sessionId", StringUtils.FromString(publicRequest.SessionId));

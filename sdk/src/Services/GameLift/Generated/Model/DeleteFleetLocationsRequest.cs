@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFleetLocations operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Removes locations from a multi-location fleet. When deleting a location, all game
     /// server process and all instances that are still active in the location are shut down.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To delete fleet locations, identify the fleet ID and provide a list of the locations

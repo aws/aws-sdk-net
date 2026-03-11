@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateVpcOriginRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -88,11 +89,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.VpcOriginEndpointConfig.IsSetOriginProtocolPolicy())
                         xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.OriginProtocolPolicy));
 
-                    if (publicRequest.VpcOriginEndpointConfig.OriginSslProtocols != null)
+                    if (publicRequest.VpcOriginEndpointConfig.IsSetOriginSslProtocols())
                     {
                         xmlWriter.WriteStartElement("OriginSslProtocols");
                         var publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems = publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.Items;
-                        if (publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems != null && (publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestVpcOriginEndpointConfigOriginSslProtocolsItemsValue in publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems) 
@@ -111,6 +112,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -122,8 +124,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateVpcOriginRequestMarshaller _instance = new UpdateVpcOriginRequestMarshaller();        
@@ -145,5 +145,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateVpcOriginRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateVpcOriginRequest publicRequest);
     }    
 }

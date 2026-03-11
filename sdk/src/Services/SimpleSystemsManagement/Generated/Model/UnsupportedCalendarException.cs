@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedCalendarException
+        /// message.
+        /// </summary>
+        public UnsupportedCalendarException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedCalendarException with the specified error
         /// message.
         /// </summary>

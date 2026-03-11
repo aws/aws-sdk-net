@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating
-    /// point maps</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// point maps</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GeospatialMapVisual
@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private GeospatialMapConfiguration _chartConfiguration;
         private List<ColumnHierarchy> _columnHierarchies = AWSConfigs.InitializeCollections ? new List<ColumnHierarchy>() : null;
+        private List<GeocodePreference> _geocodingPreferences = AWSConfigs.InitializeCollections ? new List<GeocodePreference>() : null;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
         private string _visualContentAltText;
@@ -112,6 +113,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColumnHierarchies()
         {
             return this._columnHierarchies != null && (this._columnHierarchies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeocodingPreferences. 
+        /// <para>
+        /// The geocoding prefences for geospatial map.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<GeocodePreference> GeocodingPreferences
+        {
+            get { return this._geocodingPreferences; }
+            set { this._geocodingPreferences = value; }
+        }
+
+        // Check to see if GeocodingPreferences property is set
+        internal bool IsSetGeocodingPreferences()
+        {
+            return this._geocodingPreferences != null && (this._geocodingPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

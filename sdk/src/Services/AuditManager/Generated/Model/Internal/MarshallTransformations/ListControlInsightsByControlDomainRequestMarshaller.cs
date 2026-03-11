@@ -62,6 +62,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ControlDomainId))
+                throw new AmazonAuditManagerException("Request object does not have required field ControlDomainId set");
             
             if (publicRequest.IsSetControlDomainId())
                 request.Parameters.Add("controlDomainId", StringUtils.FromString(publicRequest.ControlDomainId));

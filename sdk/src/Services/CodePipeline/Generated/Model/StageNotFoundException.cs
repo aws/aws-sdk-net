@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for StageNotFoundException
+        /// message.
+        /// </summary>
+        public StageNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StageNotFoundException with the specified error
         /// message.
         /// </summary>

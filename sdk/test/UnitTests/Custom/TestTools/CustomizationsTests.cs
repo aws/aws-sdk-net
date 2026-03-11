@@ -176,13 +176,6 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         }
 
         [TestMethod][TestCategory("UnitTest")]
-        public void EnsureElasticTranscoderCustomizationsExists()
-        {
-            EnsureParameterlessMethodExists(typeof(Amazon.ElasticTranscoder.AmazonElasticTranscoderClient), "ListPresets");
-            EnsureParameterlessMethodExists(typeof(Amazon.ElasticTranscoder.AmazonElasticTranscoderClient), "ListPipelines");
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
         public void EnsureSimpleEmailCustomizationsExists()
         {
             EnsureParameterlessMethodExists(typeof(Amazon.SimpleEmail.AmazonSimpleEmailServiceClient), "GetSendQuota");
@@ -237,17 +230,6 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             EnsureParameterlessMethodExists(typeof(Amazon.CloudWatch.AmazonCloudWatchClient), "DescribeAlarmHistory");
             EnsureParameterlessMethodExists(typeof(Amazon.CloudWatch.AmazonCloudWatchClient), "DescribeAlarms");
             EnsureParameterlessMethodExists(typeof(Amazon.CloudWatch.AmazonCloudWatchClient), "ListMetrics");
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        public void EnsureOpsWorksCustomizationsExists()
-        {
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeElasticLoadBalancers");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeMyUserProfile");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeUserProfiles");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeServiceErrors");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeStacks");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "UpdateMyUserProfile");
         }
 
         [TestMethod][TestCategory("UnitTest")]

@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidMergeOptionException
+        /// message.
+        /// </summary>
+        public InvalidMergeOptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidMergeOptionException with the specified error
         /// message.
         /// </summary>

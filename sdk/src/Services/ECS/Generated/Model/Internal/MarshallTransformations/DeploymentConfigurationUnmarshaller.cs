@@ -68,6 +68,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.BakeTimeInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("canaryConfiguration", targetDepth))
+                {
+                    var unmarshaller = CanaryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CanaryConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
                 {
                     var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
@@ -78,6 +84,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeploymentLifecycleHook, DeploymentLifecycleHookUnmarshaller>(DeploymentLifecycleHookUnmarshaller.Instance);
                     unmarshalledObject.LifecycleHooks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("linearConfiguration", targetDepth))
+                {
+                    var unmarshaller = LinearConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LinearConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maximumPercent", targetDepth))

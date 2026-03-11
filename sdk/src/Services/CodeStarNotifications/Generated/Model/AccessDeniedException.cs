@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// AWS CodeStar Notifications can't create the notification rule because you do not have
+    /// CodeStar Notifications can't create the notification rule because you do not have
     /// sufficient permissions.
     /// </summary>
     #if !NETSTANDARD
@@ -38,6 +38,13 @@ namespace Amazon.CodeStarNotifications.Model
     #endif
     public partial class AccessDeniedException : AmazonCodeStarNotificationsException
     {
+
+        /// <summary>
+        /// Default constructor for AccessDeniedException
+        /// message.
+        /// </summary>
+        public AccessDeniedException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new AccessDeniedException with the specified error

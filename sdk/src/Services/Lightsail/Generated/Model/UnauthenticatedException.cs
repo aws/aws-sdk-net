@@ -42,6 +42,13 @@ namespace Amazon.Lightsail.Model
         private string _tip;
 
         /// <summary>
+        /// Default constructor for UnauthenticatedException
+        /// message.
+        /// </summary>
+        public UnauthenticatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnauthenticatedException with the specified error
         /// message.
         /// </summary>

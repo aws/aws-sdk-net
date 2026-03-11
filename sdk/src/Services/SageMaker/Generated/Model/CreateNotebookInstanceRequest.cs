@@ -95,6 +95,7 @@ namespace Amazon.SageMaker.Model
         private DirectInternetAccess _directInternetAccess;
         private InstanceMetadataServiceConfiguration _instanceMetadataServiceConfiguration;
         private InstanceType _instanceType;
+        private IPAddressType _ipAddressType;
         private string _kmsKeyId;
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
@@ -254,6 +255,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the notebook instance. Specify <c>ipv4</c> for IPv4-only connectivity
+        /// or <c>dualstack</c> for both IPv4 and IPv6 connectivity. When you specify <c>dualstack</c>,
+        /// the subnet must support IPv6 CIDR blocks. If not specified, defaults to <c>ipv4</c>.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key
@@ -319,10 +340,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PlatformIdentifier. 
         /// <para>
-        /// The platform identifier of the notebook instance runtime environment.
+        /// The platform identifier of the notebook instance runtime environment. The default
+        /// value is <c>notebook-al2-v2</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=15)]
+        [AWSProperty(Min=0, Max=20)]
         public string PlatformIdentifier
         {
             get { return this._platformIdentifier; }

@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for MaxDBShardGroupLimitReachedException
+        /// message.
+        /// </summary>
+        public MaxDBShardGroupLimitReachedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MaxDBShardGroupLimitReachedException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,7 @@ namespace Amazon.Personalize.Model
         private string _name;
         private bool? _performAutoML;
         private bool? _performhpo;
+        private bool? _performIncrementalUpdate;
         private string _recipeArn;
         private string _solutionArn;
         private SolutionConfig _solutionConfig;
@@ -200,6 +201,27 @@ namespace Amazon.Personalize.Model
         internal bool IsSetPerformHPO()
         {
             return this._performhpo.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformIncrementalUpdate. 
+        /// <para>
+        /// Whether the solution version should perform an incremental update. When set to true,
+        /// the training will process only the data that has changed since the latest training,
+        /// similar to when trainingMode is set to UPDATE. This can only be used with solution
+        /// versions that use the User-Personalization recipe.
+        /// </para>
+        /// </summary>
+        public bool? PerformIncrementalUpdate
+        {
+            get { return this._performIncrementalUpdate; }
+            set { this._performIncrementalUpdate = value; }
+        }
+
+        // Check to see if PerformIncrementalUpdate property is set
+        internal bool IsSetPerformIncrementalUpdate()
+        {
+            return this._performIncrementalUpdate.HasValue; 
         }
 
         /// <summary>

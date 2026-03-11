@@ -40,6 +40,13 @@ namespace Amazon.SecurityToken.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIdentityTokenException
+        /// message.
+        /// </summary>
+        public InvalidIdentityTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIdentityTokenException with the specified error
         /// message.
         /// </summary>

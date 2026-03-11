@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryNotAssociatedWithPullRequestException
+        /// message.
+        /// </summary>
+        public RepositoryNotAssociatedWithPullRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryNotAssociatedWithPullRequestException with the specified error
         /// message.
         /// </summary>

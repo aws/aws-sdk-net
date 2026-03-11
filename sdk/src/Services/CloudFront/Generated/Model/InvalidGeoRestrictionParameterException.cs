@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGeoRestrictionParameterException
+        /// message.
+        /// </summary>
+        public InvalidGeoRestrictionParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGeoRestrictionParameterException with the specified error
         /// message.
         /// </summary>

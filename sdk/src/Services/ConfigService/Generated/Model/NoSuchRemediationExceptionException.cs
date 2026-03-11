@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchRemediationExceptionException
+        /// message.
+        /// </summary>
+        public NoSuchRemediationExceptionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchRemediationExceptionException with the specified error
         /// message.
         /// </summary>

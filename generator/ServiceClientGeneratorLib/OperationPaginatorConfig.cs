@@ -123,6 +123,10 @@ namespace ServiceClientGenerator
             {
                 return null;
             }
+            if (operation.OperationModifiers != null && operation.OperationModifiers.ExcludeResultKeys != null && operation.OperationModifiers.ExcludeResultKeys.Contains(node.ToString()))
+            {
+                return null;
+            }
             if (IsJmesPath(node, out var jmesPathChar))
             {
                 return HandleJmesPath(node, (char) jmesPathChar, operation);

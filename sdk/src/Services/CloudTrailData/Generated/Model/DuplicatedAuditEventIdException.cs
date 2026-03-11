@@ -39,6 +39,13 @@ namespace Amazon.CloudTrailData.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicatedAuditEventIdException
+        /// message.
+        /// </summary>
+        public DuplicatedAuditEventIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicatedAuditEventIdException with the specified error
         /// message.
         /// </summary>

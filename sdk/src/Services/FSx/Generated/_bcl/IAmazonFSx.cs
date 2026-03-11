@@ -292,7 +292,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
         /// The request was rejected because the lifecycle status of the source backup isn't <c>AVAILABLE</c>.
@@ -379,7 +379,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
         /// The request was rejected because the lifecycle status of the source backup isn't <c>AVAILABLE</c>.
@@ -416,7 +416,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume">REST API Reference for CopySnapshotAndUpdateVolume Operation</seealso>
         CopySnapshotAndUpdateVolumeResponse CopySnapshotAndUpdateVolume(CopySnapshotAndUpdateVolumeRequest request);
@@ -447,7 +447,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume">REST API Reference for CopySnapshotAndUpdateVolume Operation</seealso>
         Task<CopySnapshotAndUpdateVolumeResponse> CopySnapshotAndUpdateVolumeAsync(CopySnapshotAndUpdateVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -460,8 +460,9 @@ namespace Amazon.FSx
         /// <summary>
         /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
         /// file systems, the volume must be hosted on a high-availability file system, either
-        /// Single-AZ or Multi-AZ. For more information, see <a href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-        /// your data using access points</a> in the Amazon FSx for OpenZFS User Guide. 
+        /// Single-AZ or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
+        /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+        /// 
         /// 
         ///  
         /// <para>
@@ -545,8 +546,9 @@ namespace Amazon.FSx
         /// <summary>
         /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
         /// file systems, the volume must be hosted on a high-availability file system, either
-        /// Single-AZ or Multi-AZ. For more information, see <a href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-        /// your data using access points</a> in the Amazon FSx for OpenZFS User Guide. 
+        /// Single-AZ or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
+        /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+        /// 
         /// 
         ///  
         /// <para>
@@ -732,7 +734,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -847,7 +849,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -904,7 +906,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -958,7 +960,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1021,7 +1023,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1084,7 +1086,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1153,7 +1155,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
         CreateFileCacheResponse CreateFileCache(CreateFileCacheRequest request);
@@ -1219,7 +1221,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
         Task<CreateFileCacheResponse> CreateFileCacheAsync(CreateFileCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1323,7 +1325,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         CreateFileSystemResponse CreateFileSystem(CreateFileSystemRequest request);
@@ -1427,7 +1429,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         Task<CreateFileSystemResponse> CreateFileSystemAsync(CreateFileSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1515,7 +1517,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         CreateFileSystemFromBackupResponse CreateFileSystemFromBackup(CreateFileSystemFromBackupRequest request);
@@ -1603,7 +1605,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         Task<CreateFileSystemFromBackupResponse> CreateFileSystemFromBackupAsync(CreateFileSystemFromBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1662,7 +1664,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
         /// No Amazon FSx volumes were found based upon the supplied parameters.
@@ -1724,7 +1726,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
         /// No Amazon FSx volumes were found based upon the supplied parameters.
@@ -1762,7 +1764,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1800,7 +1802,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1838,7 +1840,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
         /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
@@ -1879,7 +1881,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
         /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
@@ -1924,7 +1926,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
         /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
@@ -1966,7 +1968,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
         /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
@@ -2106,7 +2108,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">REST API Reference for DeleteDataRepositoryAssociation Operation</seealso>
         DeleteDataRepositoryAssociationResponse DeleteDataRepositoryAssociation(DeleteDataRepositoryAssociationRequest request);
@@ -2143,7 +2145,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">REST API Reference for DeleteDataRepositoryAssociation Operation</seealso>
         Task<DeleteDataRepositoryAssociationResponse> DeleteDataRepositoryAssociationAsync(DeleteDataRepositoryAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2190,7 +2192,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
         DeleteFileCacheResponse DeleteFileCache(DeleteFileCacheRequest request);
@@ -2237,7 +2239,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
         Task<DeleteFileCacheResponse> DeleteFileCacheAsync(DeleteFileCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2261,9 +2263,9 @@ namespace Amazon.FSx
         /// <para>
         /// Before deleting an Amazon FSx for OpenZFS file system, make sure that there aren't
         /// any Amazon S3 access points attached to any volume. For more information on how to
-        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list">Listing
+        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list.html">Listing
         /// S3 access point attachments</a>. For more information on how to delete S3 access points,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-points-list">Deleting
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-access-point.html">Deleting
         /// an S3 access point attachment</a>.
         /// </para>
         ///  
@@ -2325,7 +2327,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         DeleteFileSystemResponse DeleteFileSystem(DeleteFileSystemRequest request);
@@ -2346,9 +2348,9 @@ namespace Amazon.FSx
         /// <para>
         /// Before deleting an Amazon FSx for OpenZFS file system, make sure that there aren't
         /// any Amazon S3 access points attached to any volume. For more information on how to
-        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list">Listing
+        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list.html">Listing
         /// S3 access point attachments</a>. For more information on how to delete S3 access points,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-points-list">Deleting
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-access-point.html">Deleting
         /// an S3 access point attachment</a>.
         /// </para>
         ///  
@@ -2413,7 +2415,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2564,7 +2566,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
         /// No Amazon FSx volumes were found based upon the supplied parameters.
@@ -2596,7 +2598,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
         /// No Amazon FSx volumes were found based upon the supplied parameters.
@@ -3837,7 +3839,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ReleaseFileSystemNfsV3Locks">REST API Reference for ReleaseFileSystemNfsV3Locks Operation</seealso>
         ReleaseFileSystemNfsV3LocksResponse ReleaseFileSystemNfsV3Locks(ReleaseFileSystemNfsV3LocksRequest request);
@@ -3869,7 +3871,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ReleaseFileSystemNfsV3Locks">REST API Reference for ReleaseFileSystemNfsV3Locks Operation</seealso>
         Task<ReleaseFileSystemNfsV3LocksResponse> ReleaseFileSystemNfsV3LocksAsync(ReleaseFileSystemNfsV3LocksRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4119,7 +4121,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">REST API Reference for UpdateDataRepositoryAssociation Operation</seealso>
         UpdateDataRepositoryAssociationResponse UpdateDataRepositoryAssociation(UpdateDataRepositoryAssociationRequest request);
@@ -4153,7 +4155,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">REST API Reference for UpdateDataRepositoryAssociation Operation</seealso>
         Task<UpdateDataRepositoryAssociationResponse> UpdateDataRepositoryAssociationAsync(UpdateDataRepositoryAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4189,7 +4191,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -4228,7 +4230,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -4363,6 +4365,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>EndpointIpv6AddressRange</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>FsxAdminPassword</c> 
         /// </para>
         ///  </li> <li> 
@@ -4419,6 +4425,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>EndpointIpv6AddressRange</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ReadCacheConfiguration</c> 
         /// </para>
         ///  </li> <li> 
@@ -4464,7 +4474,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -4596,6 +4606,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>EndpointIpv6AddressRange</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>FsxAdminPassword</c> 
         /// </para>
         ///  </li> <li> 
@@ -4652,6 +4666,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>EndpointIpv6AddressRange</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ReadCacheConfiguration</c> 
         /// </para>
         ///  </li> <li> 
@@ -4700,7 +4718,7 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
-        /// some service limits by contacting Amazon Web ServicesSupport.
+        /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.

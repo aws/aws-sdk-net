@@ -1,45 +1,42 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Amazon.Runtime;
-using System.IO;
-using AWSSDK_DotNet.UnitTests;
-using Amazon.Runtime.Internal.Util;
-using System.Net;
-using System.Reflection;
-using System.Net.Http;
-
+﻿using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
+using AWSSDK_DotNet.UnitTests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
     [TestClass]
+    [TestCategory("UnitTest")]
+    [TestCategory("Runtime")]
+
     public class HttpHandlerTests
     {
         static object callbackSender = new object();
 
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-#if !BCL
+        [TestMethod]
+#if !NETFRAMEWORK
         [Ignore]
 #endif
         public void TestSuccessfulCall()
         {
             var factory = new MockHttpRequestFactory();
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
-
-            var listBucketsRequest = new ListBucketsRequest();
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();     
-
             httpHandler.InvokeSync(executionContext);
 
             Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);
@@ -51,9 +48,8 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(httpRequest.IsAborted);
         }
 
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-#if !BCL
+        [TestMethod]
+#if !NETFRAMEWORK
         [Ignore]
 #endif
         public void TestErrorCall()
@@ -63,9 +59,9 @@ namespace AWSSDK.UnitTests
                 GetResponseAction = () => { throw new IOException(); }
             };
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();
-
             Utils.AssertExceptionExpected(() =>
             {
                 httpHandler.InvokeSync(executionContext);
@@ -78,19 +74,16 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsDisposed);
         }
 
-#if BCL
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
+#if NETFRAMEWORK
+        [TestMethod]
         [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestSuccessfulAsyncCall()
         {
             var factory = new MockHttpRequestFactory();
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
-
-            var listBucketsRequest = new ListBucketsRequest();
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();
-
             await httpHandler.InvokeAsync<ListBucketsResponse>(executionContext);
 
             Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);
@@ -102,8 +95,7 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(httpRequest.IsAborted); 
         }
 
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
+        [TestMethod]
         [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestErrorAsyncCall()
         {
@@ -112,14 +104,11 @@ namespace AWSSDK.UnitTests
                 GetResponseAction = () => { throw new IOException(); }
             };
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
+            _ = new RuntimePipeline(httpHandler);
+            
             var executionContext = CreateExecutionContextForListBuckets();
-
-            await Utils.AssertExceptionExpectedAsync(() =>
-            {
-                return httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext);
-            }, typeof(IOException));
-
+            await Assert.ThrowsExceptionAsync<IOException>(() => httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext));
+            
             var httpRequest = factory.LastCreatedRequest;
             Assert.AreEqual("GET", httpRequest.Method);
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
@@ -128,8 +117,6 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
         public void TestStoringContextAttributes()
         {
             var requestContext = new RequestContext(true, new NullSigner());
@@ -169,7 +156,7 @@ namespace AWSSDK.UnitTests
         {    
             public Action GetResponseAction { get; set; }
 
-#if BCL
+#if NETFRAMEWORK
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 #else
             public Func<MockHttpRequest, HttpResponseMessage> ResponseCreator { get; set; }
@@ -210,7 +197,7 @@ namespace AWSSDK.UnitTests
 
             public Version HttpProtocolVersion { get; set; }
 
-#if BCL
+#if NETFRAMEWORK
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
             public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpWebResponse> responseCreator = null)
@@ -225,7 +212,7 @@ namespace AWSSDK.UnitTests
                 this.ResponseCreator = responseCreator ?? CreateResponse;
             }
 
-#if BCL
+#if NETFRAMEWORK
             private HttpWebResponse CreateResponse(MockHttpRequest request)
 #else
             private HttpResponseMessage CreateResponse(MockHttpRequest request)
@@ -239,7 +226,7 @@ namespace AWSSDK.UnitTests
                 if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode <= (HttpStatusCode)299)
                     return response;
                 else                
-#if BCL
+#if NETFRAMEWORK
                     throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));
 #else
                 {
@@ -278,7 +265,7 @@ namespace AWSSDK.UnitTests
                     this.GetResponseAction();
 
                 var response = ResponseCreator(this);
-#if BCL
+#if NETFRAMEWORK
                 return new HttpWebRequestResponseData(response);
 #else
                 var instance = Activator.CreateInstance(
@@ -319,7 +306,7 @@ namespace AWSSDK.UnitTests
                 this.IsAborted = true;
             }
 
-#if BCL
+#if NETFRAMEWORK
             public Task WriteToRequestBodyAsync(Stream requestContent, Stream contentStream,
                        IDictionary<string, string> contentHeaders, IRequestContext requestContext)
             {
@@ -371,7 +358,7 @@ namespace AWSSDK.UnitTests
                 return originalStream;
             }
 
-#if !BCL
+#if !NETFRAMEWORK
             public Task<Stream> GetRequestContentAsync()
             {
                 throw new NotImplementedException();

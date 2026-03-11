@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedDBInstanceNotFoundException
+        /// message.
+        /// </summary>
+        public ReservedDBInstanceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedDBInstanceNotFoundException with the specified error
         /// message.
         /// </summary>

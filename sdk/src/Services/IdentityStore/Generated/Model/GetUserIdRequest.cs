@@ -35,9 +35,10 @@ namespace Amazon.IdentityStore.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If you have administrator access to a member account, you can use this API from the
-    /// member account. Read about <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
-    /// accounts</a> in the <i>Organizations User Guide</i>. 
+    /// If you have access to a member account, you can use this API operation from the member
+    /// account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-accounts.html#limiting-access-from-member-accounts">Limiting
+    /// access to the identity store from member accounts</a> in the <i> IAM Identity Center
+    /// User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -52,7 +53,7 @@ namespace Amazon.IdentityStore.Model
         /// A unique identifier for a user or group that is not the primary identifier. This value
         /// can be an identifier from an external identity provider (IdP) that is associated with
         /// the user, the group, or a unique attribute. For the unique attribute, the only valid
-        /// paths are <c>userName</c> and <c>emails.value</c>.
+        /// paths are <c> userName</c> and <c>emails.value</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

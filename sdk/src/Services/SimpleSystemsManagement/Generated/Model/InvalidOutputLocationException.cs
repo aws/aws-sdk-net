@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOutputLocationException
+        /// message.
+        /// </summary>
+        public InvalidOutputLocationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOutputLocationException with the specified error
         /// message.
         /// </summary>

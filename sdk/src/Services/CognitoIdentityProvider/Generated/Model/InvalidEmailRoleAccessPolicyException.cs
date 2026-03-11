@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEmailRoleAccessPolicyException
+        /// message.
+        /// </summary>
+        public InvalidEmailRoleAccessPolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEmailRoleAccessPolicyException with the specified error
         /// message.
         /// </summary>

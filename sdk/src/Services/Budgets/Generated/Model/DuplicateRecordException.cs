@@ -39,6 +39,13 @@ namespace Amazon.Budgets.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateRecordException
+        /// message.
+        /// </summary>
+        public DuplicateRecordException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateRecordException with the specified error
         /// message.
         /// </summary>

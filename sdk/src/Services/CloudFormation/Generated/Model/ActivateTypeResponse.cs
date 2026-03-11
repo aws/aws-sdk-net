@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the activated extension, in this account and Region.
+        /// The Amazon Resource Name (ARN) of the activated extension in this account and Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

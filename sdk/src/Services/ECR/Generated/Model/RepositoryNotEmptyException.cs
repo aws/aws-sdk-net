@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryNotEmptyException
+        /// message.
+        /// </summary>
+        public RepositoryNotEmptyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryNotEmptyException with the specified error
         /// message.
         /// </summary>

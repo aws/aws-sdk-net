@@ -65,12 +65,16 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetProfilingGroupName())
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
+            if (publicRequest.EndTime == null)
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetLocale())
                 request.Parameters.Add("locale", StringUtils.FromString(publicRequest.Locale));
+            if (publicRequest.StartTime == null)
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));

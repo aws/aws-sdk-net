@@ -249,7 +249,7 @@ namespace Amazon.Ep2s3hostlabel
 
         internal virtual MyOperationResponse MyOperation(MyOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MyOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MyOperationResponseUnmarshaller.Instance;
 
@@ -270,7 +270,7 @@ namespace Amazon.Ep2s3hostlabel
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-s3-host-label-2022-08-24/MyOperation">REST API Reference for MyOperation Operation</seealso>
         public virtual Task<MyOperationResponse> MyOperationAsync(MyOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MyOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MyOperationResponseUnmarshaller.Instance;
 

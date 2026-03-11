@@ -44,7 +44,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// EC2Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
+    /// EC2Amazon EC2 Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

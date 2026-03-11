@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The unique identifier of the deleted Gateway.
+        /// The unique identifier of the deleted gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Gateway deletion.
+        /// The current status of the gateway deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// The reasons for the current status of the Gateway deletion.
+        /// The reasons for the current status of the gateway deletion.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

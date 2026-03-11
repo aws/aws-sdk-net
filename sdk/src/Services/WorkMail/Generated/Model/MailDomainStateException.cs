@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for MailDomainStateException
+        /// message.
+        /// </summary>
+        public MailDomainStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MailDomainStateException with the specified error
         /// message.
         /// </summary>

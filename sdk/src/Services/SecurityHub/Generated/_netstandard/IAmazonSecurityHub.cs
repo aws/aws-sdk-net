@@ -32,80 +32,82 @@ namespace Amazon.SecurityHub
     /// <summary>
     /// <para>Interface for accessing SecurityHub</para>
     ///
-    /// Security Hub provides you with a comprehensive view of your security state in Amazon
-    /// Web Services and helps you assess your Amazon Web Services environment against security
-    /// industry standards and best practices.
+    /// Security Hub CSPM provides you with a comprehensive view of your security state in
+    /// Amazon Web Services and helps you assess your Amazon Web Services environment against
+    /// security industry standards and best practices.
     /// 
     ///  
     /// <para>
-    /// Security Hub collects security data across Amazon Web Services accounts, Amazon Web
-    /// Services services, and supported third-party products and helps you analyze your security
-    /// trends and identify the highest priority security issues.
+    /// Security Hub CSPM collects security data across Amazon Web Services accounts, Amazon
+    /// Web Services services, and supported third-party products and helps you analyze your
+    /// security trends and identify the highest priority security issues.
     /// </para>
     ///  
     /// <para>
-    /// To help you manage the security state of your organization, Security Hub supports
+    /// To help you manage the security state of your organization, Security Hub CSPM supports
     /// multiple security standards. These include the Amazon Web Services Foundational Security
     /// Best Practices (FSBP) standard developed by Amazon Web Services, and external compliance
     /// frameworks such as the Center for Internet Security (CIS), the Payment Card Industry
     /// Data Security Standard (PCI DSS), and the National Institute of Standards and Technology
     /// (NIST). Each standard includes several security controls, each of which represents
-    /// a security best practice. Security Hub runs checks against security controls and generates
-    /// control findings to help you assess your compliance against security best practices.
+    /// a security best practice. Security Hub CSPM runs checks against security controls
+    /// and generates control findings to help you assess your compliance against security
+    /// best practices.
     /// </para>
     ///  
     /// <para>
-    /// In addition to generating control findings, Security Hub also receives findings from
-    /// other Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector,
+    /// In addition to generating control findings, Security Hub CSPM also receives findings
+    /// from other Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector,
     /// and supported third-party products. This gives you a single pane of glass into a variety
-    /// of security-related issues. You can also send Security Hub findings to other Amazon
-    /// Web Services services and supported third-party products.
+    /// of security-related issues. You can also send Security Hub CSPM findings to other
+    /// Amazon Web Services services and supported third-party products.
     /// </para>
     ///  
     /// <para>
-    /// Security Hub offers automation features that help you triage and remediate security
+    /// Security Hub CSPM offers automation features that help you triage and remediate security
     /// issues. For example, you can use automation rules to automatically update critical
     /// findings when a security check fails. You can also leverage the integration with Amazon
     /// EventBridge to trigger automatic responses to specific findings.
     /// </para>
     ///  
     /// <para>
-    /// This guide, the <i>Security Hub API Reference</i>, provides information about the
-    /// Security Hub API. This includes supported resources, HTTP methods, parameters, and
-    /// schemas. If you're new to Security Hub, you might find it helpful to also review the
-    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
-    /// <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and provides
-    /// procedures that demonstrate how to use Security Hub features. It also provides information
-    /// about topics such as integrating Security Hub with other Amazon Web Services services.
+    /// This guide, the <i>Security Hub CSPM API Reference</i>, provides information about
+    /// the Security Hub CSPM API. This includes supported resources, HTTP methods, parameters,
+    /// and schemas. If you're new to Security Hub CSPM, you might find it helpful to also
+    /// review the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
+    /// <i>Security Hub CSPM User Guide</i> </a>. The user guide explains key concepts and
+    /// provides procedures that demonstrate how to use Security Hub CSPM features. It also
+    /// provides information about topics such as integrating Security Hub CSPM with other
+    /// Amazon Web Services services.
     /// </para>
     ///  
     /// <para>
-    /// In addition to interacting with Security Hub by making calls to the Security Hub API,
-    /// you can use a current version of an Amazon Web Services command line tool or SDK.
-    /// Amazon Web Services provides tools and SDKs that consist of libraries and sample code
-    /// for various languages and platforms, such as PowerShell, Java, Go, Python, C++, and
-    /// .NET. These tools and SDKs provide convenient, programmatic access to Security Hub
-    /// and other Amazon Web Services services . They also handle tasks such as signing requests,
-    /// managing errors, and retrying requests automatically. For information about installing
-    /// and using the Amazon Web Services tools and SDKs, see <a href="http://aws.amazon.com/developer/tools/">Tools
-    /// to Build on Amazon Web Services</a>.
+    /// In addition to interacting with Security Hub CSPM by making calls to the Security
+    /// Hub CSPM API, you can use a current version of an Amazon Web Services command line
+    /// tool or SDK. Amazon Web Services provides tools and SDKs that consist of libraries
+    /// and sample code for various languages and platforms, such as PowerShell, Java, Go,
+    /// Python, C++, and .NET. These tools and SDKs provide convenient, programmatic access
+    /// to Security Hub CSPM and other Amazon Web Services services . They also handle tasks
+    /// such as signing requests, managing errors, and retrying requests automatically. For
+    /// information about installing and using the Amazon Web Services tools and SDKs, see
+    /// <a href="http://aws.amazon.com/developer/tools/">Tools to Build on Amazon Web Services</a>.
     /// </para>
     ///  
     /// <para>
     /// With the exception of operations that are related to central configuration, Security
-    /// Hub API requests are executed only in the Amazon Web Services Region that is currently
-    /// active or in the specific Amazon Web Services Region that you specify in your request.
-    /// Any configuration or settings change that results from the operation is applied only
-    /// to that Region. To make the same change in other Regions, call the same API operation
-    /// in each Region in which you want to apply the change. When you use central configuration,
-    /// API requests for enabling Security Hub, standards, and controls are executed in the
-    /// home Region and all linked Regions. For a list of central configuration operations,
-    /// see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html#central-configuration-concepts">Central
-    /// configuration terms and concepts</a> section of the <i>Security Hub User Guide</i>.
+    /// Hub CSPM API requests are executed only in the Amazon Web Services Region that is
+    /// currently active or in the specific Amazon Web Services Region that you specify in
+    /// your request. Any configuration or settings change that results from the operation
+    /// is applied only to that Region. To make the same change in other Regions, call the
+    /// same API operation in each Region in which you want to apply the change. When you
+    /// use central configuration, API requests for enabling Security Hub CSPM, standards,
+    /// and controls are executed in the home Region and all linked Regions. For a list of
+    /// central configuration operations, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html#central-configuration-concepts">Central
+    /// configuration terms and concepts</a> section of the <i>Security Hub CSPM User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// The following throttling limits apply to Security Hub API operations.
+    /// The following throttling limits apply to Security Hub CSPM API operations.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -155,15 +157,15 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// <note> 
         /// <para>
-        /// We recommend using Organizations instead of Security Hub invitations to manage your
-        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
-        /// Hub User Guide</i>.
+        /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
+        /// your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub CSPM administrator and member accounts with Organizations</a> in the
+        /// <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
-        /// administrator account that the invitation was sent from.
+        /// CSPM administrator account that the invitation was sent from.
         /// </para>
         ///  
         /// <para>
@@ -213,7 +215,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// The Security Hub console continues to use <c>AcceptInvitation</c>. It will eventually
+        /// The Security Hub CSPM console continues to use <c>AcceptInvitation</c>. It will eventually
         /// change to use <c>AcceptAdministratorInvitation</c>. Any IAM policies that specifically
         /// control access to this function must continue to use <c>AcceptInvitation</c>. You
         /// should also add <c>AcceptAdministratorInvitation</c> to your policies to ensure that
@@ -222,7 +224,7 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
-        /// administrator account that the invitation was sent from.
+        /// CSPM administrator account that the invitation was sent from.
         /// </para>
         ///  
         /// <para>
@@ -310,7 +312,7 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-        /// Standards</a> section of the <i>Security Hub User Guide</i>.
+        /// Standards</a> section of the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
@@ -353,7 +355,7 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-        /// Standards</a> section of the <i>Security Hub User Guide</i>.
+        /// Standards</a> section of the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
@@ -430,10 +432,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns associations between an Security Hub configuration and a batch of target
-        /// accounts, organizational units, or the root. Only the Security Hub delegated administrator
-        /// can invoke this operation from the home Region. A configuration can refer to a configuration
-        /// policy or to a self-managed configuration.
+        /// Returns associations between an Security Hub CSPM configuration and a batch of target
+        /// accounts, organizational units, or the root. Only the Security Hub CSPM delegated
+        /// administrator can invoke this operation from the home Region. A configuration can
+        /// refer to a configuration policy or to a self-managed configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetConfigurationPolicyAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -547,8 +549,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Imports security findings generated by a finding provider into Security Hub. This
-        /// action is requested by the finding provider to import its findings into Security Hub.
+        /// Imports security findings generated by a finding provider into Security Hub CSPM.
+        /// This action is requested by the finding provider to import its findings into Security
+        /// Hub CSPM.
         /// 
         ///  
         /// <para>
@@ -565,7 +568,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon Web Services account that Security Hub has allow-listed for an official
+        /// An Amazon Web Services account that Security Hub CSPM has allow-listed for an official
         /// partner integration. In this case, you can call <c>BatchImportFindings</c> from the
         /// allow-listed account and send findings from different customer accounts in the same
         /// batch.
@@ -578,8 +581,8 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// After a finding is created, <c>BatchImportFindings</c> cannot be used to update the
-        /// following finding fields and objects, which Security Hub customers use to manage their
-        /// investigation workflow.
+        /// following finding fields and objects, which Security Hub CSPM customers use to manage
+        /// their investigation workflow.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -696,12 +699,12 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Used by Security Hub customers to update information about their investigation into
-        /// one or more findings. Requested by administrator accounts or member accounts. Administrator
-        /// accounts can update findings for their account and their member accounts. A member
-        /// account can update findings only for their own account. Administrator and member accounts
-        /// can use this operation to update the following fields and objects for one or more
-        /// findings: 
+        /// Used by Security Hub CSPM customers to update information about their investigation
+        /// into one or more findings. Requested by administrator accounts or member accounts.
+        /// Administrator accounts can update findings for their account and their member accounts.
+        /// A member account can update findings only for their own account. Administrator and
+        /// member accounts can use this operation to update the following fields and objects
+        /// for one or more findings: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -743,7 +746,7 @@ namespace Amazon.SecurityHub
         /// <para>
         ///  If you use this operation to update a finding, your updates don’t affect the value
         /// for the <c>UpdatedAt</c> field of the finding. Also note that it can take several
-        /// minutes for Security Hub to process your request and update each finding specified
+        /// minutes for Security Hub CSPM to process your request and update each finding specified
         /// in the request. 
         /// </para>
         ///  
@@ -751,7 +754,7 @@ namespace Amazon.SecurityHub
         ///  You can configure IAM policies to restrict access to fields and field values. For
         /// example, you might not want member accounts to be able to suppress findings or change
         /// the finding severity. For more information see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-        /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>. 
+        /// access to BatchUpdateFindings</a> in the <i>Security Hub CSPM User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -792,8 +795,7 @@ namespace Amazon.SecurityHub
         /// both use <c>securityhub:BatchUpdateFindings</c> in the <c>Action</c> element of an
         /// IAM policy statement. You must have permission to perform the <c>securityhub:BatchUpdateFindings</c>
         /// action. Updates from <c>BatchUpdateFindingsV2</c> don't affect the value of f<c>inding_info.modified_time</c>,
-        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>. This
-        /// API is in private preview and subject to change.
+        /// <c>finding_info.modified_time_dt</c>, <c>time</c>, <c>time_dt for a finding</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindingsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -859,55 +861,17 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
-        #region  ConnectorRegistrationsV2
-
-
-
-        /// <summary>
-        /// Grants permission to complete the authorization based on input parameters. This API
-        /// is in preview release and subject to change.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ConnectorRegistrationsV2 service method, as returned by SecurityHub.</returns>
-        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
-        /// You don't have permission to perform the action specified in the request.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
-        /// The request causes conflict with the current state of the service resource.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
-        /// The request has failed due to an internal failure of the service.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because we can't find the specified resource.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
-        /// The request has failed validation because it's missing required fields or has invalid
-        /// inputs.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConnectorRegistrationsV2">REST API Reference for ConnectorRegistrationsV2 Operation</seealso>
-        Task<ConnectorRegistrationsV2Response> ConnectorRegistrationsV2Async(ConnectorRegistrationsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
         #region  CreateActionTarget
 
 
 
         /// <summary>
-        /// Creates a custom action target in Security Hub.
+        /// Creates a custom action target in Security Hub CSPM.
         /// 
         ///  
         /// <para>
-        /// You can use custom actions on findings and insights in Security Hub to trigger target
-        /// actions in Amazon CloudWatch Events.
+        /// You can use custom actions on findings and insights in Security Hub CSPM to trigger
+        /// target actions in Amazon CloudWatch Events.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActionTarget service method.</param>
@@ -944,8 +908,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables aggregation across Amazon Web Services Regions. This API is in private preview
-        /// and subject to change.
+        /// Enables aggregation across Amazon Web Services Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -964,6 +927,9 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -1018,7 +984,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a V2 automation rule. This API is in private preview and subject to change.
+        /// Creates a V2 automation rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1034,6 +1000,9 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
         /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -1053,7 +1022,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Creates a configuration policy with the defined configuration. Only the Security
-        /// Hub delegated administrator can invoke this operation from the home Region.
+        /// Hub CSPM delegated administrator can invoke this operation from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1092,8 +1061,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to create a connectorV2 based on input parameters. This API is in
-        /// preview release and subject to change.
+        /// Grants permission to create a connectorV2 based on input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1112,6 +1080,9 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -1142,8 +1113,8 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// For information about how cross-Region aggregation works, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Understanding
-        /// cross-Region aggregation in Security Hub</a> in the <i>Security Hub User Guide</i>.
-        /// 
+        /// cross-Region aggregation in Security Hub CSPM</a> in the <i>Security Hub CSPM User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFindingAggregator service method.</param>
@@ -1180,7 +1151,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a custom insight in Security Hub. An insight is a consolidation of findings
+        /// Creates a custom insight in Security Hub CSPM. An insight is a consolidation of findings
         /// that relate to a security issue that requires attention or remediation.
         /// 
         ///  
@@ -1222,10 +1193,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Creates a member association in Security Hub between the specified accounts and the
-        /// account used to make the request, which is the administrator account. If you are integrated
-        /// with Organizations, then the administrator account is designated by the organization
-        /// management account.
+        /// Creates a member association in Security Hub CSPM between the specified accounts and
+        /// the account used to make the request, which is the administrator account. If you are
+        /// integrated with Organizations, then the administrator account is designated by the
+        /// organization management account.
         /// 
         ///  
         /// <para>
@@ -1238,42 +1209,42 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Security Hub is not configured to automatically add new organization accounts.
+        /// Security Hub CSPM is not configured to automatically add new organization accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The account was disassociated or deleted in Security Hub.
+        /// The account was disassociated or deleted in Security Hub CSPM.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This action can only be used by an account that has Security Hub enabled. To enable
-        /// Security Hub, you can use the <c>EnableSecurityHub</c> operation.
+        /// This action can only be used by an account that has Security Hub CSPM enabled. To
+        /// enable Security Hub CSPM, you can use the <c>EnableSecurityHub</c> operation.
         /// </para>
         ///  
         /// <para>
         /// For accounts that are not organization members, you create the account association
         /// and then send an invitation to the member account. To send the invitation, you use
         /// the <c>InviteMembers</c> operation. If the account owner accepts the invitation, the
-        /// account becomes a member account in Security Hub.
+        /// account becomes a member account in Security Hub CSPM.
         /// </para>
         ///  
         /// <para>
         /// Accounts that are managed using Organizations don't receive an invitation. They automatically
-        /// become a member account in Security Hub.
+        /// become a member account in Security Hub CSPM.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the organization account does not have Security Hub enabled, then Security Hub
-        /// and the default standards are automatically enabled. Note that Security Hub cannot
-        /// be enabled automatically for the organization management account. The organization
-        /// management account must enable Security Hub before the administrator account enables
-        /// it as a member account.
+        /// If the organization account does not have Security Hub CSPM enabled, then Security
+        /// Hub CSPM and the default standards are automatically enabled. Note that Security Hub
+        /// CSPM cannot be enabled automatically for the organization management account. The
+        /// organization management account must enable Security Hub CSPM before the administrator
+        /// account enables it as a member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For organization accounts that already have Security Hub enabled, Security Hub does
-        /// not make any other changes to those accounts. It does not change their enabled standards
-        /// or controls.
+        /// For organization accounts that already have Security Hub CSPM enabled, Security Hub
+        /// CSPM does not make any other changes to those accounts. It does not change their enabled
+        /// standards or controls.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1324,8 +1295,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a ticket in the chosen ITSM based on finding information
-        /// for the provided finding metadata UID. This API is in preview release and subject
-        /// to change.
+        /// for the provided finding metadata UID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1364,14 +1334,14 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// <note> 
         /// <para>
-        /// We recommend using Organizations instead of Security Hub invitations to manage your
-        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
-        /// Hub User Guide</i>.
+        /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
+        /// your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub CSPM administrator and member accounts with Organizations</a> in the
+        /// <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Declines invitations to become a Security Hub member account.
+        /// Declines invitations to become a Security Hub CSPM member account.
         /// </para>
         ///  
         /// <para>
@@ -1413,7 +1383,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a custom action target from Security Hub.
+        /// Deletes a custom action target from Security Hub CSPM.
         /// 
         ///  
         /// <para>
@@ -1450,7 +1420,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes the Aggregator V2. This API is in private preview and subject to change.
+        /// Deletes the Aggregator V2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1487,7 +1457,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a V2 automation rule. This API is in private preview and subject to change.
+        /// Deletes a V2 automation rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1524,8 +1494,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes a configuration policy. Only the Security Hub delegated administrator can
-        /// invoke this operation from the home Region. For the deletion to succeed, you must
+        /// Deletes a configuration policy. Only the Security Hub CSPM delegated administrator
+        /// can invoke this operation from the home Region. For the deletion to succeed, you must
         /// first disassociate a configuration policy from target accounts, organizational units,
         /// or the root by invoking the <c>StartConfigurationPolicyDisassociation</c> operation.
         /// </summary>
@@ -1569,8 +1539,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to delete a connectorV2. This API is in preview release and subject
-        /// to change.
+        /// Grants permission to delete a connectorV2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1699,18 +1668,18 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// <note> 
         /// <para>
-        /// We recommend using Organizations instead of Security Hub invitations to manage your
-        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
-        /// Hub User Guide</i>.
+        /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
+        /// your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub CSPM administrator and member accounts with Organizations</a> in the
+        /// <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes invitations to become a Security Hub member account.
+        /// Deletes invitations to become a Security Hub CSPM member account.
         /// </para>
         ///  
         /// <para>
-        /// A Security Hub administrator account can use this operation to delete invitations
+        /// A Security Hub CSPM administrator account can use this operation to delete invitations
         /// sent to one or more prospective member accounts.
         /// </para>
         ///  
@@ -1754,7 +1723,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Deletes the specified member accounts from Security Hub.
+        /// Deletes the specified member accounts from Security Hub CSPM.
         /// 
         ///  
         /// <para>
@@ -1796,7 +1765,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of the custom action targets in Security Hub in your account.
+        /// Returns a list of the custom action targets in Security Hub CSPM in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeActionTargets service method.</param>
         /// <param name="cancellationToken">
@@ -1828,7 +1797,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Returns details about the Hub resource in your account, including the <c>HubArn</c>
-        /// and the time when you enabled Security Hub.
+        /// and the time when you enabled Security Hub CSPM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// <param name="cancellationToken">
@@ -1864,8 +1833,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns information about the way your organization is configured in Security Hub.
-        /// Only the Security Hub administrator account can invoke this operation.
+        /// Returns information about the way your organization is configured in Security Hub
+        /// CSPM. Only the Security Hub CSPM administrator account can invoke this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1898,7 +1867,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns information about product integrations in Security Hub.
+        /// Returns information about product integrations in Security Hub CSPM.
         /// 
         ///  
         /// <para>
@@ -1942,8 +1911,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Gets information about the product integration. This API is in private preview and
-        /// subject to change.
+        /// Gets information about the product integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProductsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1977,8 +1945,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns details about the service resource in your account. This API is in private
-        /// preview and subject to change.
+        /// Returns details about the service resource in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2009,7 +1976,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of the available standards in Security Hub.
+        /// Returns a list of the available standards in Security Hub CSPM.
         /// 
         ///  
         /// <para>
@@ -2085,8 +2052,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables the integration of the specified product with Security Hub. After the integration
-        /// is disabled, findings from that product are no longer sent to Security Hub.
+        /// Disables the integration of the specified product with Security Hub CSPM. After the
+        /// integration is disabled, findings from that product are no longer sent to Security
+        /// Hub CSPM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImportFindingsForProduct service method.</param>
         /// <param name="cancellationToken">
@@ -2122,7 +2090,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables a Security Hub administrator account. Can only be called by the organization
+        /// Disables a Security Hub CSPM administrator account. Can only be called by the organization
         /// management account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
@@ -2159,25 +2127,26 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disables Security Hub in your account only in the current Amazon Web Services Region.
-        /// To disable Security Hub in all Regions, you must submit one request per Region where
-        /// you have enabled Security Hub.
+        /// Disables Security Hub CSPM in your account only in the current Amazon Web Services
+        /// Region. To disable Security Hub CSPM in all Regions, you must submit one request per
+        /// Region where you have enabled Security Hub CSPM.
         /// 
         ///  
         /// <para>
-        /// You can't disable Security Hub in an account that is currently the Security Hub administrator.
+        /// You can't disable Security Hub CSPM in an account that is currently the Security Hub
+        /// CSPM administrator.
         /// </para>
         ///  
         /// <para>
-        /// When you disable Security Hub, your existing findings and insights and any Security
-        /// Hub configuration settings are deleted after 90 days and cannot be recovered. Any
-        /// standards that were enabled are disabled, and your administrator and member account
+        /// When you disable Security Hub CSPM, your existing findings and insights and any Security
+        /// Hub CSPM configuration settings are deleted after 90 days and cannot be recovered.
+        /// Any standards that were enabled are disabled, and your administrator and member account
         /// associations are removed.
         /// </para>
         ///  
         /// <para>
         /// If you want to save your existing findings, you must export them before you disable
-        /// Security Hub.
+        /// Security Hub CSPM.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHub service method.</param>
@@ -2214,7 +2183,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disable the service for the current Amazon Web Services Region or specified Amazon
-        /// Web Services Region. This API is in private preview and subject to change.
+        /// Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2245,7 +2214,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Disassociates the current Security Hub member account from the associated administrator
+        /// Disassociates the current Security Hub CSPM member account from the associated administrator
         /// account.
         /// 
         ///  
@@ -2292,15 +2261,16 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// The Security Hub console continues to use <c>DisassociateFromMasterAccount</c>. It
-        /// will eventually change to use <c>DisassociateFromAdministratorAccount</c>. Any IAM
-        /// policies that specifically control access to this function must continue to use <c>DisassociateFromMasterAccount</c>.
-        /// You should also add <c>DisassociateFromAdministratorAccount</c> to your policies to
-        /// ensure that the correct permissions are in place after the console begins to use <c>DisassociateFromAdministratorAccount</c>.
+        /// The Security Hub CSPM console continues to use <c>DisassociateFromMasterAccount</c>.
+        /// It will eventually change to use <c>DisassociateFromAdministratorAccount</c>. Any
+        /// IAM policies that specifically control access to this function must continue to use
+        /// <c>DisassociateFromMasterAccount</c>. You should also add <c>DisassociateFromAdministratorAccount</c>
+        /// to your policies to ensure that the correct permissions are in place after the console
+        /// begins to use <c>DisassociateFromAdministratorAccount</c>.
         /// </para>
         ///  
         /// <para>
-        /// Disassociates the current Security Hub member account from the associated administrator
+        /// Disassociates the current Security Hub CSPM member account from the associated administrator
         /// account.
         /// </para>
         ///  
@@ -2389,13 +2359,13 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables the integration of a partner product with Security Hub. Integrated products
-        /// send findings to Security Hub.
+        /// Enables the integration of a partner product with Security Hub CSPM. Integrated products
+        /// send findings to Security Hub CSPM.
         /// 
         ///  
         /// <para>
         /// When you enable a product integration, a permissions policy that grants permission
-        /// for the product to send findings to Security Hub is applied.
+        /// for the product to send findings to Security Hub CSPM is applied.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImportFindingsForProduct service method.</param>
@@ -2432,8 +2402,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Designates the Security Hub administrator account for an organization. Can only be
-        /// called by the organization management account.
+        /// Designates the Security Hub CSPM administrator account for an organization. Can only
+        /// be called by the organization management account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2469,18 +2439,19 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables Security Hub for your account in the current Region or the Region you specify
-        /// in the request.
+        /// Enables Security Hub CSPM for your account in the current Region or the Region you
+        /// specify in the request.
         /// 
         ///  
         /// <para>
-        /// When you enable Security Hub, you grant to Security Hub the permissions necessary
-        /// to gather findings from other services that are integrated with Security Hub.
+        /// When you enable Security Hub CSPM, you grant to Security Hub CSPM the permissions
+        /// necessary to gather findings from other services that are integrated with Security
+        /// Hub CSPM.
         /// </para>
         ///  
         /// <para>
-        /// When you use the <c>EnableSecurityHub</c> operation to enable Security Hub, you also
-        /// automatically enable the following standards:
+        /// When you use the <c>EnableSecurityHub</c> operation to enable Security Hub CSPM, you
+        /// also automatically enable the following standards:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2501,13 +2472,13 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// After you enable Security Hub, to enable a standard, use the <c>BatchEnableStandards</c>
+        /// After you enable Security Hub CSPM, to enable a standard, use the <c>BatchEnableStandards</c>
         /// operation. To disable a standard, use the <c>BatchDisableStandards</c> operation.
         /// </para>
         ///  
         /// <para>
         /// To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
-        /// information</a> in the <i>Security Hub User Guide</i>.
+        /// information</a> in the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
@@ -2544,7 +2515,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Enables the service in account for the current Amazon Web Services Region or specified
-        /// Amazon Web Services Region. This API is in private preview and subject to change.
+        /// Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHubV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2575,8 +2546,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Provides the details for the Security Hub administrator account for the current member
-        /// account.
+        /// Provides the details for the Security Hub CSPM administrator account for the current
+        /// member account.
         /// 
         ///  
         /// <para>
@@ -2618,8 +2589,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the configuration of the specified Aggregator V2. This API is in private preview
-        /// and subject to change.
+        /// Returns the configuration of the specified Aggregator V2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2656,8 +2626,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns an automation rule for the V2 service. This API is in private preview and
-        /// subject to change.
+        /// Returns an automation rule for the V2 service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2694,7 +2663,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Provides information about a configuration policy. Only the Security Hub delegated
+        /// Provides information about a configuration policy. Only the Security Hub CSPM delegated
         /// administrator can invoke this operation from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfigurationPolicy service method.</param>
@@ -2736,7 +2705,7 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Returns the association between a configuration and a target account, organizational
         /// unit, or the root. The configuration can be a configuration policy or self-managed
-        /// behavior. Only the Security Hub delegated administrator can invoke this operation
+        /// behavior. Only the Security Hub CSPM delegated administrator can invoke this operation
         /// from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfigurationPolicyAssociation service method.</param>
@@ -2776,8 +2745,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to retrieve details for a connectorV2 based on connector id. This
-        /// API is in preview release and subject to change.
+        /// Grants permission to retrieve details for a connectorV2 based on connector id.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2895,10 +2863,10 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the history of a Security Hub finding for the past 90 days. The history includes
-        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
-        /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
-        /// fields. 
+        /// Returns the history of a Security Hub CSPM finding. The history includes changes
+        /// made to any fields in the Amazon Web Services Security Finding Format (ASFF) except
+        /// top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c> fields.
+        /// 
         /// 
         ///  
         /// <para>
@@ -2984,8 +2952,7 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
         /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
-        /// policy statement. You must have permission to perform the <c>s</c> action. This API
-        /// is in private preview and subject to change.
+        /// policy statement. You must have permission to perform the <c>s</c> action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingStatisticsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3014,6 +2981,38 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
+        #region  GetFindingsTrendsV2
+
+
+
+        /// <summary>
+        /// Returns findings trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in findings over time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsTrendsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingsTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">REST API Reference for GetFindingsTrendsV2 Operation</seealso>
+        Task<GetFindingsTrendsV2Response> GetFindingsTrendsV2Async(GetFindingsTrendsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetFindingsV2
 
 
@@ -3022,7 +3021,7 @@ namespace Amazon.SecurityHub
         /// Return a list of findings that match the specified criteria. <c>GetFindings</c> and
         /// <c>GetFindingsV2</c> both use <c>securityhub:GetFindings</c> in the <c>Action</c>
         /// element of an IAM policy statement. You must have permission to perform the <c>securityhub:GetFindings</c>
-        /// action. This API is in private preview and subject to change.
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3056,7 +3055,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists the results of the Security Hub insight specified by the insight ARN.
+        /// Lists the results of the Security Hub CSPM insight specified by the insight ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightResults service method.</param>
         /// <param name="cancellationToken">
@@ -3130,15 +3129,15 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// <note> 
         /// <para>
-        /// We recommend using Organizations instead of Security Hub invitations to manage your
-        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
-        /// Hub User Guide</i>.
+        /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
+        /// your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub CSPM administrator and member accounts with Organizations</a> in the
+        /// <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns the count of all Security Hub membership invitations that were sent to the
-        /// calling member account, not including the currently accepted invitation. 
+        /// Returns the count of all Security Hub CSPM membership invitations that were sent to
+        /// the calling member account, not including the currently accepted invitation. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInvitationsCount service method.</param>
@@ -3176,7 +3175,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// The Security Hub console continues to use <c>GetMasterAccount</c>. It will eventually
+        /// The Security Hub CSPM console continues to use <c>GetMasterAccount</c>. It will eventually
         /// change to use <c>GetAdministratorAccount</c>. Any IAM policies that specifically control
         /// access to this function must continue to use <c>GetMasterAccount</c>. You should also
         /// add <c>GetAdministratorAccount</c> to your policies to ensure that the correct permissions
@@ -3184,8 +3183,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Provides the details for the Security Hub administrator account for the current member
-        /// account.
+        /// Provides the details for the Security Hub CSPM administrator account for the current
+        /// member account.
         /// </para>
         ///  
         /// <para>
@@ -3228,13 +3227,14 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the details for the Security Hub member accounts for the specified account
+        /// Returns the details for the Security Hub CSPM member accounts for the specified account
         /// IDs.
         /// 
         ///  
         /// <para>
-        /// An administrator account can be either the delegated Security Hub administrator account
-        /// for an organization or an administrator account that enabled Security Hub manually.
+        /// An administrator account can be either the delegated Security Hub CSPM administrator
+        /// account for an organization or an administrator account that enabled Security Hub
+        /// CSPM manually.
         /// </para>
         ///  
         /// <para>
@@ -3277,7 +3277,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Retrieves statistical information about Amazon Web Services resources and their associated
-        /// security findings. This API is in private preview and subject to change.
+        /// security findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesStatisticsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3309,12 +3309,44 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
+        #region  GetResourcesTrendsV2
+
+
+
+        /// <summary>
+        /// Returns resource trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in resource compliance over time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesTrendsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcesTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">REST API Reference for GetResourcesTrendsV2 Operation</seealso>
+        Task<GetResourcesTrendsV2Response> GetResourcesTrendsV2Async(GetResourcesTrendsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetResourcesV2
 
 
 
         /// <summary>
-        /// Returns a list of resources. This API is in private preview and subject to change.
+        /// Returns a list of resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcesV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3390,15 +3422,15 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// <note> 
         /// <para>
-        /// We recommend using Organizations instead of Security Hub invitations to manage your
-        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
-        /// Hub User Guide</i>.
+        /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
+        /// your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub CSPM administrator and member accounts with Organizations</a> in the
+        /// <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Invites other Amazon Web Services accounts to become member accounts for the Security
-        /// Hub administrator account that the invitation is sent from.
+        /// Hub CSPM administrator account that the invitation is sent from.
         /// </para>
         ///  
         /// <para>
@@ -3408,13 +3440,13 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// Before you can use this action to invite a member, you must first use the <c>CreateMembers</c>
-        /// action to create the member account in Security Hub.
+        /// action to create the member account in Security Hub CSPM.
         /// </para>
         ///  
         /// <para>
-        /// When the account owner enables Security Hub and accepts the invitation to become a
-        /// member account, the administrator account can view the findings generated in the member
-        /// account.
+        /// When the account owner enables Security Hub CSPM and accepts the invitation to become
+        /// a member account, the administrator account can view the findings generated in the
+        /// member account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -3451,8 +3483,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Retrieves a list of V2 aggregators. This API is in private preview and subject to
-        /// change.
+        /// Retrieves a list of V2 aggregators.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAggregatorsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3525,8 +3556,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns a list of automation rules and metadata for the calling account. This API
-        /// is in private preview and subject to change.
+        /// Returns a list of automation rules and metadata for the calling account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAutomationRulesV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3560,9 +3590,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists the configuration policies that the Security Hub delegated administrator has
-        /// created for your organization. Only the delegated administrator can invoke this operation
-        /// from the home Region.
+        /// Lists the configuration policies that the Security Hub CSPM delegated administrator
+        /// has created for your organization. Only the delegated administrator can invoke this
+        /// operation from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurationPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -3599,7 +3629,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Provides information about the associations for your configuration policies and self-managed
-        /// behavior. Only the Security Hub delegated administrator can invoke this operation
+        /// behavior. Only the Security Hub CSPM delegated administrator can invoke this operation
         /// from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurationPolicyAssociations service method.</param>
@@ -3637,7 +3667,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-        /// account. This API is in preview release and subject to change.
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -3675,7 +3705,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Lists all findings-generating solutions (products) that you are subscribed to receive
-        /// findings from in Security Hub.
+        /// findings from in Security Hub CSPM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledProductsForImport service method.</param>
         /// <param name="cancellationToken">
@@ -3744,14 +3774,14 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// <note> 
         /// <para>
-        /// We recommend using Organizations instead of Security Hub invitations to manage your
-        /// member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-        /// Security Hub administrator and member accounts with Organizations</a> in the <i>Security
-        /// Hub User Guide</i>.
+        /// We recommend using Organizations instead of Security Hub CSPM invitations to manage
+        /// your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+        /// Security Hub CSPM administrator and member accounts with Organizations</a> in the
+        /// <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Lists all Security Hub membership invitations that were sent to the calling account.
+        /// Lists all Security Hub CSPM membership invitations that were sent to the calling account.
         /// </para>
         ///  
         /// <para>
@@ -3790,7 +3820,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current Security Hub administrator
+        /// Lists details about all member accounts for the current Security Hub CSPM administrator
         /// account.
         /// 
         ///  
@@ -3830,7 +3860,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists the Security Hub administrator accounts. Can only be called by the organization
+        /// Lists the Security Hub CSPM administrator accounts. Can only be called by the organization
         /// management account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
@@ -3960,6 +3990,43 @@ namespace Amazon.SecurityHub
 
         #endregion
                 
+        #region  RegisterConnectorV2
+
+
+
+        /// <summary>
+        /// Grants permission to complete the authorization based on input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnectorV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterConnectorV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RegisterConnectorV2">REST API Reference for RegisterConnectorV2 Operation</seealso>
+        Task<RegisterConnectorV2Response> RegisterConnectorV2Async(RegisterConnectorV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartConfigurationPolicyAssociation
 
 
@@ -3967,8 +4034,8 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Associates a target account, organizational unit, or the root with a specified configuration.
         /// The target can be associated with a configuration policy or self-managed behavior.
-        /// Only the Security Hub delegated administrator can invoke this operation from the home
-        /// Region.
+        /// Only the Security Hub CSPM delegated administrator can invoke this operation from
+        /// the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartConfigurationPolicyAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -4011,7 +4078,7 @@ namespace Amazon.SecurityHub
         /// configuration. When you disassociate a configuration from its target, the target inherits
         /// the configuration of the closest parent. If there’s no configuration to inherit, the
         /// target retains its settings but becomes a self-managed account. A target can be disassociated
-        /// from a configuration policy or self-managed behavior. Only the Security Hub delegated
+        /// from a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated
         /// administrator can invoke this operation from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartConfigurationPolicyDisassociation service method.</param>
@@ -4107,7 +4174,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates the name and description of a custom action target in Security Hub.
+        /// Updates the name and description of a custom action target in Security Hub CSPM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateActionTarget service method.</param>
         /// <param name="cancellationToken">
@@ -4138,8 +4205,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Udpates the configuration for the Aggregator V2. This API is in private preview and
-        /// subject to change.
+        /// Udpates the configuration for the Aggregator V2.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAggregatorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4176,7 +4242,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates a V2 automation rule. This API is in private preview and subject to change.
+        /// Updates a V2 automation rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAutomationRuleV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4213,8 +4279,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates a configuration policy. Only the Security Hub delegated administrator can
-        /// invoke this operation from the home Region.
+        /// Updates a configuration policy. Only the Security Hub CSPM delegated administrator
+        /// can invoke this operation from the home Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -4256,8 +4322,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to update a connectorV2 based on its id and input parameters. This
-        /// API is in preview release and subject to change.
+        /// Grants permission to update a connectorV2 based on its id and input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -4352,15 +4417,15 @@ namespace Amazon.SecurityHub
         ///  
         /// <para>
         /// The <c>UpdateFindings</c> operation updates the <c>Note</c> and <c>RecordState</c>
-        /// of the Security Hub aggregated findings that the filter attributes specify. Any member
-        /// account that can view the finding can also see the update to the finding.
+        /// of the Security Hub CSPM aggregated findings that the filter attributes specify. Any
+        /// member account that can view the finding can also see the update to the finding.
         /// </para>
         ///  
         /// <para>
         /// Finding updates made with <c>UpdateFindings</c> aren't persisted if the same finding
         /// is later updated by the finding provider through the <c>BatchImportFindings</c> operation.
-        /// In addition, Security Hub doesn't record updates made with <c>UpdateFindings</c> in
-        /// the finding history.
+        /// In addition, Security Hub CSPM doesn't record updates made with <c>UpdateFindings</c>
+        /// in the finding history.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
@@ -4397,7 +4462,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates the Security Hub insight identified by the specified insight ARN.
+        /// Updates the Security Hub CSPM insight identified by the specified insight ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInsight service method.</param>
         /// <param name="cancellationToken">
@@ -4433,8 +4498,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates the configuration of your organization in Security Hub. Only the Security
-        /// Hub administrator account can invoke this operation.
+        /// Updates the configuration of your organization in Security Hub CSPM. Only the Security
+        /// Hub CSPM administrator account can invoke this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4520,7 +4585,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Updates configuration options for Security Hub.
+        /// Updates configuration options for Security Hub CSPM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityHubConfiguration service method.</param>
         /// <param name="cancellationToken">

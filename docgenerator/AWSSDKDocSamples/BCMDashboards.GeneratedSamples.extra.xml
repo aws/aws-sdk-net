@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.CreateDashboard(Amazon.BCMDashboards.Model.CreateDashboardRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.CreateDashboard(Amazon.BCMDashboards.Model.CreateDashboardRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.CreateDashboardRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.CreateDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Creating a dashboard"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.DeleteDashboard(Amazon.BCMDashboards.Model.DeleteDashboardRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.DeleteDashboard(Amazon.BCMDashboards.Model.DeleteDashboardRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.DeleteDashboardRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.DeleteDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Deleting a dashboard"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.GetDashboard(Amazon.BCMDashboards.Model.GetDashboardRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.GetDashboard(Amazon.BCMDashboards.Model.GetDashboardRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.GetDashboardRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.GetDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Getting information about a dashboard"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.GetResourcePolicy(Amazon.BCMDashboards.Model.GetResourcePolicyRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.GetResourcePolicy(Amazon.BCMDashboards.Model.GetResourcePolicyRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.GetResourcePolicyRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.GetResourcePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Getting resource policy for a resource"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.ListDashboards(Amazon.BCMDashboards.Model.ListDashboardsRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.ListDashboards(Amazon.BCMDashboards.Model.ListDashboardsRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.ListDashboardsRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.ListDashboardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Listing dashboards for a user"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.ListTagsForResource(Amazon.BCMDashboards.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.ListTagsForResource(Amazon.BCMDashboards.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Listing tags for a resource"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.TagResource(Amazon.BCMDashboards.Model.TagResourceRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.TagResource(Amazon.BCMDashboards.Model.TagResourceRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.TagResourceRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Adding tag(s) to a resource"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.UntagResource(Amazon.BCMDashboards.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.UntagResource(Amazon.BCMDashboards.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.UntagResourceRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Removing tag(s) from a resource"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.BCMDashboards.IAmazonBCMDashboards.UpdateDashboard(Amazon.BCMDashboards.Model.UpdateDashboardRequest)" />
+            <member name="M:Amazon.BCMDashboards.AmazonBCMDashboardsClient.UpdateDashboard(Amazon.BCMDashboards.Model.UpdateDashboardRequest)" />
+            <member name="T:Amazon.BCMDashboards.Model.UpdateDashboardRequest" />
+            <member name="T:Amazon.BCMDashboards.Model.UpdateDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updating a dashboard"
+                    source=".\AWSSDKDocSamples\BCMDashboards\BCMDashboards.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

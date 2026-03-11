@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3OriginConfig Object
     /// </summary>  
-    public class S3OriginConfigUnmarshaller : IXmlUnmarshaller<S3OriginConfig, XmlUnmarshallerContext>
+    public partial class S3OriginConfigUnmarshaller : IXmlUnmarshaller<S3OriginConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginAccessIdentity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginReadTimeout", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3OriginConfig unmarshalledObject, int targetDepth);
+
         private static S3OriginConfigUnmarshaller _instance = new S3OriginConfigUnmarshaller();        
 
         /// <summary>

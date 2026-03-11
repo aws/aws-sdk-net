@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContainerFleet operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves the properties for a container fleet. When requesting attributes for multiple
     /// fleets, use the pagination parameters to retrieve results as a set of sequential pages.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

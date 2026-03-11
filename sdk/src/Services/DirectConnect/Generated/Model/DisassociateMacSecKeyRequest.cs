@@ -31,8 +31,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMacSecKey operation.
-    /// Removes the association between a MAC Security (MACsec) security key and an Direct
-    /// Connect dedicated connection.
+    /// Removes the association between a MAC Security (MACsec) security key and a Direct
+    /// Connect connection.
     /// </summary>
     public partial class DisassociateMacSecKeyRequest : AmazonDirectConnectRequest
     {
@@ -42,12 +42,13 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).
+        /// The ID of the dedicated connection (dxcon-xxxx), interconnect (dxcon-xxxx), or LAG
+        /// (dxlag-xxxx).
         /// </para>
         ///  
         /// <para>
-        /// You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection
-        /// ID.
+        /// You can use <a>DescribeConnections</a>, <a>DescribeInterconnects</a>, or <a>DescribeLags</a>
+        /// to retrieve connection ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

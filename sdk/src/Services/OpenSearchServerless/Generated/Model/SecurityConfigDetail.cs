@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _configVersion;
         private long? _createdDate;
         private string _description;
+        private IamFederationConfigOptions _iamFederationOptions;
         private IamIdentityCenterConfigOptions _iamIdentityCenterOptions;
         private string _id;
         private long? _lastModifiedDate;
@@ -97,6 +98,26 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamFederationOptions. 
+        /// <para>
+        /// Describes IAM federation options in the form of a key-value map. Contains configuration
+        /// details about how OpenSearch Serverless integrates with external identity providers
+        /// through federation.
+        /// </para>
+        /// </summary>
+        public IamFederationConfigOptions IamFederationOptions
+        {
+            get { return this._iamFederationOptions; }
+            set { this._iamFederationOptions = value; }
+        }
+
+        // Check to see if IamFederationOptions property is set
+        internal bool IsSetIamFederationOptions()
+        {
+            return this._iamFederationOptions != null;
         }
 
         /// <summary>

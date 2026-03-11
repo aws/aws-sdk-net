@@ -36,6 +36,14 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Construct instance of AmazonChimeSDKMeetingsException
         /// </summary>
+        public AmazonChimeSDKMeetingsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonChimeSDKMeetingsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonChimeSDKMeetingsException(string message)
             : base(message)

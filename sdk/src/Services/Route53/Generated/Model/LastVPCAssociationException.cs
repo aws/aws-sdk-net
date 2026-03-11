@@ -41,6 +41,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for LastVPCAssociationException
+        /// message.
+        /// </summary>
+        public LastVPCAssociationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LastVPCAssociationException with the specified error
         /// message.
         /// </summary>

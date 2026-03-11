@@ -95,6 +95,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceName", StringUtils.FromString(publicRequest.ResourceName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        

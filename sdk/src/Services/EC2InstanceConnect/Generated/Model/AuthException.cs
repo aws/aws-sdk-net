@@ -39,6 +39,13 @@ namespace Amazon.EC2InstanceConnect.Model
     {
 
         /// <summary>
+        /// Default constructor for AuthException
+        /// message.
+        /// </summary>
+        public AuthException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AuthException with the specified error
         /// message.
         /// </summary>

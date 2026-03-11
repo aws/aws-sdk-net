@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
-        /// The ID for the dataset that you want to create. This ID is unique per Amazon Web Services
+        /// The ID for the dataset that you want to update. This ID is unique per Amazon Web Services
         /// Region for each Amazon Web Services account.
         /// </para>
         /// </summary>

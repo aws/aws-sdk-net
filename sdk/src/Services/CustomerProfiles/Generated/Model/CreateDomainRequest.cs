@@ -68,6 +68,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class CreateDomainRequest : AmazonCustomerProfilesRequest
     {
+        private DataStoreRequest _dataStore;
         private string _deadLetterQueueUrl;
         private string _defaultEncryptionKey;
         private int? _defaultExpirationDays;
@@ -75,6 +76,24 @@ namespace Amazon.CustomerProfiles.Model
         private MatchingRequest _matching;
         private RuleBasedMatchingRequest _ruleBasedMatching;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DataStore. 
+        /// <para>
+        /// Set to true to enabled data store for this domain.
+        /// </para>
+        /// </summary>
+        public DataStoreRequest DataStore
+        {
+            get { return this._dataStore; }
+            set { this._dataStore = value; }
+        }
+
+        // Check to see if DataStore property is set
+        internal bool IsSetDataStore()
+        {
+            return this._dataStore != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeadLetterQueueUrl. 

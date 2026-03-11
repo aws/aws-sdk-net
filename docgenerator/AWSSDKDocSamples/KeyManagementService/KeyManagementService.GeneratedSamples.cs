@@ -322,7 +322,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDecrypt()
         {
-            #region to-decrypt-data-for-a-nitro-enclave-2
+            #region to-decrypt-data-for-attestation-2
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.Decrypt(new DecryptRequest 
@@ -332,7 +332,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 Recipient = new RecipientInfo {
                     AttestationDocument = new MemoryStream(<attestation document>),
                     KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document
+                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
             });
 
             MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The decrypted CiphertextBlob encrypted with the public key from the attestation document
@@ -401,6 +401,31 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             string keyId = response.KeyId; // The asymmetric KMS key pair used to derive the shared secret.
             string keyOrigin = response.KeyOrigin; // The source of the key material for the specified KMS key.
             MemoryStream sharedSecret = response.SharedSecret; // The raw secret derived from the specified key agreement algorithm, private key in the asymmetric KMS key, and your peer's public key.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDeriveSharedSecret()
+        {
+            #region to-derive-a-shared-secret-for-attestation-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DeriveSharedSecret(new DeriveSharedSecretRequest 
+            {
+                KeyAgreementAlgorithm = "ECDH", // The key agreement algorithm used to derive the shared secret. The only valid value is ECDH.
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key identifier for an asymmetric KMS key pair. The private key in the specified key pair is used to derive the shared secret.
+                PublicKey = new MemoryStream(MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvH3Yj0wbkLEpUl95Cv1cJVjsVNSjwGq3tCLnzXfhVwVvmzGN8pYj3U8nKwgouaHbBWNJYjP5VutbbkKS4Kv4GojwZBJyHN17kmxo8yTjRmjR15SKIQ8cqRA2uaERMLnpztIXdZp232PQPbWGxDyXYJ0aJ5EFSag), // The public key in your peer's asymmetric key pair.
+                Recipient = new RecipientInfo {
+                    AttestationDocument = new MemoryStream(<attestation document>),
+                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
+                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
+            });
+
+            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The shared secret encrypted by the public key from the attestation document
+            string keyAgreementAlgorithm = response.KeyAgreementAlgorithm; // The key agreement algorithm used to derive the shared secret.
+            string keyId = response.KeyId; // The asymmetric KMS key pair used to derive the shared secret.
+            string keyOrigin = response.KeyOrigin; // The source of the key material for the specified KMS key.
+            MemoryStream sharedSecret = response.SharedSecret; // This field is null or empty
 
             #endregion
         }
@@ -683,7 +708,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGenerateDataKey()
         {
-            #region to-generate-a-data-key-for-a-nitro-enclave-2
+            #region to-generate-a-data-key-for-attestation-2
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKey(new GenerateDataKeyRequest 
@@ -693,7 +718,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 Recipient = new RecipientInfo {
                     AttestationDocument = new MemoryStream(<attestation document>),
                     KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document
+                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
             });
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The data key encrypted by the specified KMS key
@@ -727,7 +752,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGenerateDataKeyPair()
         {
-            #region to-generate-a-data-key-pair-for-a-nitro-enclave-2
+            #region to-generate-a-data-key-pair-for-attestation-2
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
@@ -737,7 +762,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 Recipient = new RecipientInfo {
                     AttestationDocument = new MemoryStream(<attestation document>),
                     KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document.
+                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document.
             });
 
             MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The private key of the RSA data key pair encrypted by the public key from the attestation document
@@ -825,7 +850,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGenerateRandom()
         {
-            #region to-generate-random-data-2
+            #region to-generate-random-data-for-attestation-2
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateRandom(new GenerateRandomRequest 
@@ -834,7 +859,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 Recipient = new RecipientInfo {
                     AttestationDocument = new MemoryStream(<attestation document>),
                     KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
-                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document
+                } // Specifies the attestation document from the Nitro enclave or NitroTPM and the encryption algorithm to use with the public key from the attestation document
             });
 
             MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The random data encrypted under the public key from the attestation document

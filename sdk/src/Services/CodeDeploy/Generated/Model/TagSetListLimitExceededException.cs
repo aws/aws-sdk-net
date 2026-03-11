@@ -40,6 +40,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for TagSetListLimitExceededException
+        /// message.
+        /// </summary>
+        public TagSetListLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagSetListLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -378,6 +378,16 @@ namespace Amazon.Glue.Model
         IListJobsPaginator ListJobs(ListJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListMaterializedViewRefreshTaskRuns operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMaterializedViewRefreshTaskRunsPaginator ListMaterializedViewRefreshTaskRuns(ListMaterializedViewRefreshTaskRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListMLTransforms operation
         ///</summary>
         [AWSPaginator(

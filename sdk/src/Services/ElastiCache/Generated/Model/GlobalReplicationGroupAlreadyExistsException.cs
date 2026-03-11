@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for GlobalReplicationGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public GlobalReplicationGroupAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GlobalReplicationGroupAlreadyExistsException with the specified error
         /// message.
         /// </summary>

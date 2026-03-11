@@ -105,6 +105,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExceptionLevel);
             }
 
+            if(publicRequest.IsSetInterceptorConfigurations())
+            {
+                context.Writer.WritePropertyName("interceptorConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInterceptorConfigurationsListValue in publicRequest.InterceptorConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GatewayInterceptorConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInterceptorConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
@@ -115,6 +131,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPolicyEngineConfiguration())
+            {
+                context.Writer.WritePropertyName("policyEngineConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GatewayPolicyEngineConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PolicyEngineConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetProtocolConfiguration())

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseCbor Condition="'$(UseCbor)'==''">true</UseCbor>
+	<DefineConstants Condition="'$(UseCbor)' == 'true'">$(DefineConstants);USE_CBOR</DefineConstants>
+  </PropertyGroup>
+
+	<ItemGroup Condition="'$(UseCbor)' != 'true'">
+	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Services\SecretsManager\AWSSDK.SecretsManager.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\test\Services\Echo\AWSSDK.Echo.NetStandard.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(UseCbor)' == 'true'">
+	  <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\Services\Echo\AWSSDK.Echo.NetStandard.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="BenchmarkDotNet" Version="0.15.2" />
+	</ItemGroup>
+</Project>

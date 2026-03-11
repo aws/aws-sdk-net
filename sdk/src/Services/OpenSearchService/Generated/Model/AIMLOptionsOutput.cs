@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private NaturalLanguageQueryGenerationOptionsOutput _naturalLanguageQueryGenerationOptions;
         private S3VectorsEngine _s3VectorsEngine;
+        private ServerlessVectorAcceleration _serverlessVectorAcceleration;
 
         /// <summary>
         /// Gets and sets the property NaturalLanguageQueryGenerationOptions. 
@@ -74,6 +75,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetS3VectorsEngine()
         {
             return this._s3VectorsEngine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessVectorAcceleration. 
+        /// <para>
+        /// The current serverless vector acceleration configuration for the domain.
+        /// </para>
+        /// </summary>
+        public ServerlessVectorAcceleration ServerlessVectorAcceleration
+        {
+            get { return this._serverlessVectorAcceleration; }
+            set { this._serverlessVectorAcceleration = value; }
+        }
+
+        // Check to see if ServerlessVectorAcceleration property is set
+        internal bool IsSetServerlessVectorAcceleration()
+        {
+            return this._serverlessVectorAcceleration != null;
         }
 
     }

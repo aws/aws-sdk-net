@@ -67,6 +67,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBProxyName", StringUtils.FromString(publicRequest.DBProxyName));
                 }
+                if(publicRequest.IsSetEndpointNetworkType())
+                {
+                    request.Parameters.Add("EndpointNetworkType", StringUtils.FromString(publicRequest.EndpointNetworkType));
+                }
                 if(publicRequest.IsSetTags())
                 {
                     if (publicRequest.Tags.Count == 0)
@@ -121,6 +125,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateDBProxyEndpointRequestMarshaller _instance = new CreateDBProxyEndpointRequestMarshaller();        

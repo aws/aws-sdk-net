@@ -80,12 +80,14 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _ebsRootVolumeIops;
         private int? _ebsRootVolumeSize;
         private int? _ebsRootVolumeThroughput;
+        private bool? _extendedSupport;
         private JobFlowInstancesConfig _instances;
         private string _jobFlowRole;
         private KerberosAttributes _kerberosAttributes;
         private string _logEncryptionKmsKeyId;
         private string _logUri;
         private ManagedScalingPolicy _managedScalingPolicy;
+        private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = AWSConfigs.InitializeCollections ? new List<SupportedProductConfig>() : null;
         private string _osReleaseLabel;
@@ -355,6 +357,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendedSupport. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public bool? ExtendedSupport
+        {
+            get { return this._extendedSupport; }
+            set { this._extendedSupport = value; }
+        }
+
+        // Check to see if ExtendedSupport property is set
+        internal bool IsSetExtendedSupport()
+        {
+            return this._extendedSupport.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
         /// A specification of the number and type of Amazon EC2 instances.
@@ -472,6 +492,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetManagedScalingPolicy()
         {
             return this._managedScalingPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// Contains CloudWatch log configuration metadata and settings.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
         }
 
         /// <summary>

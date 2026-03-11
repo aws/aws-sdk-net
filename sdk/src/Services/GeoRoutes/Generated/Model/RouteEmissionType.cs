@@ -48,6 +48,7 @@ namespace Amazon.GeoRoutes.Model
         /// The CO 2 emission classes.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Co2EmissionClass
         {
             get { return this._co2EmissionClass; }
@@ -70,7 +71,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Valid values</b>: <c>Euro1, Euro2, Euro3, Euro4, Euro5, Euro6, EuroEev</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Type
         {
             get { return this._type; }

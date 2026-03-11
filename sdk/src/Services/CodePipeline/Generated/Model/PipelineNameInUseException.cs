@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for PipelineNameInUseException
+        /// message.
+        /// </summary>
+        public PipelineNameInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PipelineNameInUseException with the specified error
         /// message.
         /// </summary>

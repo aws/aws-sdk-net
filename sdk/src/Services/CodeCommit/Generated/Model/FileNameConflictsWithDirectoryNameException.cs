@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FileNameConflictsWithDirectoryNameException
+        /// message.
+        /// </summary>
+        public FileNameConflictsWithDirectoryNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileNameConflictsWithDirectoryNameException with the specified error
         /// message.
         /// </summary>

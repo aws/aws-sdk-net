@@ -51,7 +51,7 @@ namespace Amazon.Outposts.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=20)]
         public List<LineItemRequest> LineItems
         {
             get { return this._lineItems; }

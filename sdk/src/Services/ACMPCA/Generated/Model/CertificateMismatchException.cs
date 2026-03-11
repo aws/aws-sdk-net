@@ -40,6 +40,13 @@ namespace Amazon.ACMPCA.Model
     {
 
         /// <summary>
+        /// Default constructor for CertificateMismatchException
+        /// message.
+        /// </summary>
+        public CertificateMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CertificateMismatchException with the specified error
         /// message.
         /// </summary>

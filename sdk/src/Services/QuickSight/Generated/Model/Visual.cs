@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using
-        /// bar charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// bar charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public BarChartVisual BarChartVisual
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using
-        /// box plots</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// box plots</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public BoxPlotVisual BoxPlotVisual
@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using
-        /// combo charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// combo charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public ComboChartVisual ComboChartVisual
@@ -143,7 +143,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using
-        /// custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// custom visual content</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public CustomContentVisual CustomContentVisual
@@ -184,7 +184,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating
-        /// filled maps</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// filled maps</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public FilledMapVisual FilledMapVisual
@@ -207,7 +207,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using
-        /// funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// funnel charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public FunnelChartVisual FunnelChartVisual
@@ -230,7 +230,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using
-        /// gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// gauge charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public GaugeChartVisual GaugeChartVisual
@@ -253,7 +253,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating
-        /// point maps</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// point maps</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public GeospatialMapVisual GeospatialMapVisual
@@ -276,7 +276,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using
-        /// heat maps</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// heat maps</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public HeatMapVisual HeatMapVisual
@@ -299,7 +299,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using
-        /// histograms</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// histograms</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public HistogramVisual HistogramVisual
@@ -322,7 +322,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working
-        /// with insights</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// with insights</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public InsightVisual InsightVisual
@@ -345,7 +345,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/kpi.html">Using
-        /// KPIs</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// KPIs</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public KPIVisual KPIVisual
@@ -386,7 +386,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using
-        /// line charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// line charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public LineChartVisual LineChartVisual
@@ -409,7 +409,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using
-        /// pie charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// pie charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public PieChartVisual PieChartVisual
@@ -432,7 +432,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using
-        /// pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// pivot tables</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public PivotTableVisual PivotTableVisual
@@ -473,7 +473,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using
-        /// radar charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// radar charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public RadarChartVisual RadarChartVisual
@@ -496,7 +496,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html">Using
-        /// Sankey diagrams</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// Sankey diagrams</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public SankeyDiagramVisual SankeyDiagramVisual
@@ -519,7 +519,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using
-        /// scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// scatter plots</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public ScatterPlotVisual ScatterPlotVisual
@@ -542,7 +542,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using
-        /// tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// tables as visuals</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public TableVisual TableVisual
@@ -565,7 +565,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using
-        /// tree maps</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// tree maps</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public TreeMapVisual TreeMapVisual
@@ -588,7 +588,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using
-        /// waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// waterfall charts</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public WaterfallVisual WaterfallVisual
@@ -611,7 +611,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using
-        /// word clouds</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// word clouds</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// </summary>
         public WordCloudVisual WordCloudVisual

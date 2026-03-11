@@ -82,7 +82,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property OpenSearchServerlessEntityId. 
         /// <para>
-        /// Custom entity id attribute to override default entity id for this saml integration.
+        /// Custom entity ID attribute to override the default entity ID for this SAML integration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

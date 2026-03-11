@@ -36,6 +36,14 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <summary>
         /// Construct instance of AmazonElasticLoadBalancingV2Exception
         /// </summary>
+        public AmazonElasticLoadBalancingV2Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonElasticLoadBalancingV2Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonElasticLoadBalancingV2Exception(string message)
             : base(message)

@@ -104,6 +104,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifySubnetAttributeRequestMarshaller _instance = new ModifySubnetAttributeRequestMarshaller();        

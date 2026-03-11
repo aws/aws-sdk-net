@@ -1,32 +1,30 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
-using System;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-using Amazon.Util;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry.Tracing;
-using Amazon.Runtime.Internal.UserAgent;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -151,6 +149,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Resultant Search container.</returns>
         ISearch Scan(ScanOperationConfig config);
 
+        /// <summary>
+        /// Initiates a scan operation on the specified document and returns a search result representing the scan
+        /// outcome.
+        /// </summary>
+        /// <param name="operationRequest">An object containing the parameters and data required to perform the scan operation. Cannot be null.</param>
+        /// <returns>An ISearch instance representing the result of the scan operation. The returned object contains information
+        /// about matches found in the document.</returns>
+        ISearch Scan(ScanDocumentOperationRequest operationRequest);
+
         #endregion
 
         #region Query
@@ -197,6 +204,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <returns>Resultant Search container.</returns>
         ISearch Query(QueryOperationConfig config);
+
+
+        /// <summary>
+        /// Initiates a Search object to Query a DynamoDB table, with the
+        /// specified operation request.
+        /// </summary>
+        /// <param name="operationRequest">Operation request configuration</param>
+        /// <returns></returns>
+        ISearch Query(QueryDocumentOperationRequest operationRequest);
 
         #endregion
 
@@ -537,7 +553,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression)
+        private void ValidateConditional(IConditionalOperationConfig config, Expression updateExpression, HashSet<string> createOnlyAttributes)
         {
 
             if (config == null)
@@ -546,8 +562,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             int conditionsSet = 0;
             conditionsSet += config.Expected != null ? 1 : 0;
             conditionsSet += config.ExpectedState != null ? 1 : 0;
-            conditionsSet += 
-                (config.ConditionalExpression is { ExpressionStatement: not null } || updateExpression is { ExpressionStatement: not null }) ? 1 : 0;
+            conditionsSet +=
+                (config.ConditionalExpression is { ExpressionStatement: not null } ||
+                 updateExpression is { ExpressionStatement: not null } ||
+                 (createOnlyAttributes != null && createOnlyAttributes.Any())) ?
+                    1 : 0;
 
             if (conditionsSet > 1)
                 throw new InvalidOperationException("Only one of the conditional properties Expected, ExpectedState and ConditionalExpression or UpdateExpression can be set.");
@@ -564,6 +583,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             GlobalSecondaryIndexes = new Dictionary<string, GlobalSecondaryIndexDescription>();
             GlobalSecondaryIndexNames = new List<string>();
             Attributes = new List<AttributeDefinition>();
+            
         }
 
         private TableDescription DescribeTable(string tableName)
@@ -835,21 +855,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     indexDescription.KeySchema = new List<KeySchemaElement>();
                 }
 
-                var hashKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
-                indexDescription.KeySchema.Add(new KeySchemaElement()
+                var sortedGsiHashKeyProperties = gsi.HashKeyPropertyNames.OrderBy(kvp => kvp.Value).Select(kvp => kvp.Key).ToList();
+                foreach (var gsiHashKeyPropertyName in sortedGsiHashKeyProperties)
                 {
-                    AttributeName = hashKeyProperty.AttributeName,
-                    KeyType = KeyType.HASH
-                });
-
-                if (!string.IsNullOrEmpty(gsi.RangeKeyPropertyName))
-                {
-                    var rangeKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
+                    var hashKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsiHashKeyPropertyName);
                     indexDescription.KeySchema.Add(new KeySchemaElement()
                     {
-                        AttributeName = rangeKeyProperty.AttributeName,
-                        KeyType = KeyType.RANGE
+                        AttributeName = hashKeyProperty.AttributeName,
+                        KeyType = KeyType.HASH
                     });
+                }
+                
+                if(gsi.RangeKeyPropertyNames.Any())
+                {
+                    var sortedRangeKeyProperties = gsi.RangeKeyPropertyNames.OrderBy(kvp => kvp.Value).Select(kvp => kvp.Key).ToList();
+                    foreach (var gsiRangeKeyPropertyName in sortedRangeKeyProperties)
+                    {
+                        var rangeKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsiRangeKeyPropertyName);
+                        indexDescription.KeySchema.Add(new KeySchemaElement()
+                        {
+                            AttributeName = rangeKeyProperty.AttributeName,
+                            KeyType = KeyType.RANGE
+                        });
+                    }
                 }
 
                 table.GlobalSecondaryIndexes[gsiIndexName] = indexDescription;
@@ -1284,6 +1312,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+        internal async Task<Document> PutItemHelperAsync(PutItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new PutItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        internal Document PutItemHelper(PutItemDocumentOperationRequest request)
+        {
+            var pipeline = new PutItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
         #endregion
 
 
@@ -1345,24 +1385,45 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
+        internal Document GetItemHelper(GetItemDocumentOperationRequest request)
+        {
+            var pipeline = new GetItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> GetItemHelperAsync(GetItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new GetItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
         #endregion
 
 
         #region UpdateItem
 
-        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
+        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config,
+            HashSet<string> ifNotExistAttributeNames = null)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelper(doc, key, config,null);
+            return UpdateHelper(doc, key, config, null, ifNotExistAttributeNames);
         }
 
-        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
+
+        internal Document UpdateHelper(UpdateItemDocumentOperationRequest request)
         {
-            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
+            var pipeline = new UpdateItemPipeline(this);
+            return pipeline.ExecuteSync(request);
         }
 
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
+        internal async Task<Document> UpdateHelperAsync(UpdateItemDocumentOperationRequest request,
+            CancellationToken cancellationToken)
+        {
+            var pipeline = new UpdateItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1386,7 +1447,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
-            ValidateConditional(currentConfig, updateExpression);
+            ValidateConditional(currentConfig, updateExpression, ifNotExistAttributeNames);
 
             if (currentConfig.Expected != null)
             {
@@ -1400,33 +1461,52 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true } ||
+                     (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+                currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
 
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression, this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, ifNotExistAttributeNames, updateExpression, this,
+                    out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
 
-                if (req.ExpressionAttributeValues == null)
-                    req.ExpressionAttributeValues = expressionAttributeValues;
-                else
+                // Common.ConvertAttributeUpdatesToUpdateExpression initializes the expression dictionaries as empty,
+                // so we'll only add them to the request if there are values.
+
+                if (expressionAttributeValues.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeValues)
-                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeValues == null)
+                    {
+                        req.ExpressionAttributeValues = expressionAttributeValues;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeValues)
+                        {
+                            req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
 
-                if (req.ExpressionAttributeNames == null)
-                    req.ExpressionAttributeNames = expressionAttributeNames;
-                else
+                if (expressionAttributeNames.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeNames)
-                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeNames == null)
+                    {
+                        req.ExpressionAttributeNames = expressionAttributeNames;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeNames)
+                        {
+                            req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
             }
 #if NETSTANDARD
@@ -1453,7 +1533,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, CancellationToken cancellationToken)
+        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
+        {
+            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
+            return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
+        }
+
+        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression,
+            CancellationToken cancellationToken, HashSet<string> ifNotExistAttributeNames = null)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -1477,7 +1564,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
-            ValidateConditional(currentConfig, updateExpression);
+            ValidateConditional(currentConfig, updateExpression, ifNotExistAttributeNames);
 
             if (currentConfig.Expected != null)
             {
@@ -1491,7 +1578,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
-            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
+            else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true } ||
+                     (ifNotExistAttributeNames != null && ifNotExistAttributeNames.Any()))
             {
                 currentConfig.ConditionalExpression?.ApplyExpression(req, this);
 
@@ -1499,25 +1587,43 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Dictionary<string, AttributeValue> expressionAttributeValues;
                 Dictionary<string, string> expressionAttributeNames;
 
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression,this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, ifNotExistAttributeNames, updateExpression, this,
+                    out statement, out expressionAttributeValues, out expressionAttributeNames);
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
 
-                if (req.ExpressionAttributeValues == null)
-                    req.ExpressionAttributeValues = expressionAttributeValues;
-                else
+                // Common.ConvertAttributeUpdatesToUpdateExpression initializes the expression dictionaries as empty,
+                // so we'll only add them to the request if there are values.
+
+                if (expressionAttributeValues.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeValues)
-                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeValues == null)
+                    {
+                        req.ExpressionAttributeValues = expressionAttributeValues;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeValues)
+                        {
+                            req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
 
-                if (req.ExpressionAttributeNames == null)
-                    req.ExpressionAttributeNames = expressionAttributeNames;
-                else
+                if (expressionAttributeNames.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeNames)
-                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeNames == null)
+                    {
+                        req.ExpressionAttributeNames = expressionAttributeNames;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeNames)
+                        {
+                            req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
             }
 
@@ -1604,6 +1710,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+
         internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
@@ -1645,6 +1752,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ret = this.FromAttributeMap(attributes);
             }
             return ret;
+        }
+
+
+        internal Document DeleteHelper(DeleteItemDocumentOperationRequest request)
+        {
+            var pipeline = new DeleteItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> DeleteHelperAsync(DeleteItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new DeleteItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         #endregion
@@ -1695,6 +1815,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 ret.TotalSegments = currentConfig.TotalSegments;
                 ret.Segment = currentConfig.Segment;
+            }
+
+            return ret;
+        }
+
+        /// <inheritdoc/>
+        public ISearch Scan(ScanDocumentOperationRequest operationRequest)
+        {
+            if (operationRequest == null)
+                throw new ArgumentNullException("operationRequest");
+
+            Search ret = new Search(SearchType.Scan)
+            {
+                SourceTable = this,
+                TableName = TableName,
+                Limit = operationRequest.Limit,
+                FilterExpression = operationRequest.FilterExpression,
+                ProjectionExpression = operationRequest.ProjectionExpression,
+                Select = operationRequest.Select,
+                CollectResults = operationRequest.CollectResults,
+                IndexName = operationRequest.IndexName,
+                IsConsistentRead = operationRequest.ConsistentRead,
+                PaginationToken = operationRequest.PaginationToken
+            };
+
+            if (operationRequest.TotalSegments != 0)
+            {
+                ret.TotalSegments = operationRequest.TotalSegments;
+                ret.Segment = operationRequest.Segment;
             }
 
             return ret;
@@ -1766,6 +1915,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+        /// <inheritdoc/>
+        public ISearch Query(QueryDocumentOperationRequest operationRequest)
+        {
+            if (operationRequest == null)
+                throw new ArgumentNullException("operationRequest");
+
+            Search ret = new Search(SearchType.Query)
+            {
+                SourceTable = this,
+                TableName = TableName,
+                KeyExpression = operationRequest.KeyConditionExpression,
+                FilterExpression = operationRequest.FilterExpression,
+                ProjectionExpression = operationRequest.ProjectionExpression,
+                Limit = operationRequest.Limit,
+                IsConsistentRead = operationRequest.ConsistentRead,
+                IsBackwardSearch = operationRequest.BackwardSearch,
+                IndexName = operationRequest.IndexName,
+                Select = operationRequest.Select,
+                CollectResults = operationRequest.CollectResults,
+                PaginationToken = operationRequest.PaginationToken
+            };
+
+            return ret;
+        }
+
         #endregion
 
 
@@ -1809,7 +1983,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return new DocumentTransactWrite(this);
         }
-
         #endregion
+  
     }
 }

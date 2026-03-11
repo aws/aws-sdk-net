@@ -36,6 +36,14 @@ namespace Amazon.DynamoDBStreams
         /// <summary>
         /// Construct instance of AmazonDynamoDBStreamsException
         /// </summary>
+        public AmazonDynamoDBStreamsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDynamoDBStreamsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDynamoDBStreamsException(string message)
             : base(message)

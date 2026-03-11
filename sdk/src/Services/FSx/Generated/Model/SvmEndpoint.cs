@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
     {
         private string _dnsName;
         private List<string> _ipAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DNSName.
@@ -59,7 +60,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property IpAddresses. 
         /// <para>
-        /// The SVM endpoint's IP addresses.
+        /// The SVM endpoint's IPv4 addresses.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -78,6 +79,30 @@ namespace Amazon.FSx.Model
         internal bool IsSetIpAddresses()
         {
             return this._ipAddresses != null && (this._ipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// The SVM endpoint's IPv6 addresses.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public List<string> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

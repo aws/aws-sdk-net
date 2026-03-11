@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The identity provider configuration that you gave when the data store was created.
+    /// The identity provider configuration selected when the data store was created.
     /// </summary>
     public partial class IdentityProviderConfiguration
     {
@@ -42,8 +42,28 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property AuthorizationStrategy. 
         /// <para>
-        /// The authorization strategy that you selected when you created the data store.
+        /// The authorization strategy selected when the HealthLake data store is created.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// HealthLake provides support for both SMART on FHIR V1 and V2 as described below.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SMART_ON_FHIR_V1</c> – Support for only SMART on FHIR V1, which includes <c>read</c>
+        /// (read/search) and <c>write</c> (create/update/delete) permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SMART_ON_FHIR</c> – Support for both SMART on FHIR V1 and V2, which includes <c>create</c>,
+        /// <c>read</c>, <c>update</c>, <c>delete</c>, and <c>search</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_AUTH</c> – The default HealthLake authorization strategy; not affiliated with
+        /// SMART on FHIR.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public AuthorizationStrategy AuthorizationStrategy
@@ -61,7 +81,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property FineGrainedAuthorizationEnabled. 
         /// <para>
-        /// If you enabled fine-grained authorization when you created the data store.
+        /// The parameter to enable SMART on FHIR fine-grained authorization for the data store.
         /// </para>
         /// </summary>
         public bool? FineGrainedAuthorizationEnabled
@@ -79,8 +99,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property IdpLambdaArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode
-        /// the access token created by the authorization server.
+        /// The Amazon Resource Name (ARN) of the Lambda function to use to decode the access
+        /// token created by the authorization server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=49, Max=256)]
@@ -99,9 +119,9 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The JSON metadata elements that you want to use in your identity provider configuration.
-        /// Required elements are listed based on the launch specification of the SMART application.
-        /// For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a>
+        /// The JSON metadata elements to use in your identity provider configuration. Required
+        /// elements are listed based on the launch specification of the SMART application. For
+        /// more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a>
         /// in SMART's App Launch specification.
         /// </para>
         ///  

@@ -36,11 +36,12 @@ namespace Amazon.ConnectCases.Model
     {
         private List<GetCaseRuleResponse> _caseRules = AWSConfigs.InitializeCollections ? new List<GetCaseRuleResponse>() : null;
         private List<CaseRuleError> _errors = AWSConfigs.InitializeCollections ? new List<CaseRuleError>() : null;
+        private List<string> _unprocessedCaseRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CaseRules. 
         /// <para>
-        /// List of detailed case rule information.
+        /// A list of detailed case rule information.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +65,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// List of case rule errors.
+        /// A list of case rule errors.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -83,6 +84,30 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetErrors()
         {
             return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnprocessedCaseRules. 
+        /// <para>
+        /// A list of unprocessed case rule identifiers.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<string> UnprocessedCaseRules
+        {
+            get { return this._unprocessedCaseRules; }
+            set { this._unprocessedCaseRules = value; }
+        }
+
+        // Check to see if UnprocessedCaseRules property is set
+        internal bool IsSetUnprocessedCaseRules()
+        {
+            return this._unprocessedCaseRules != null && (this._unprocessedCaseRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

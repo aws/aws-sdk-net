@@ -269,6 +269,10 @@ namespace ServiceClientGenerator
                 {
                     serviceType = "query";
                 }
+                else if (serviceType.Equals("smithy-rpc-v2-cbor", StringComparison.InvariantCulture))
+                {
+                    serviceType = "cbor";
+                }
 
                 if (!Enum.TryParse(serviceType, true, out ServiceType value))
                 {
@@ -288,11 +292,20 @@ namespace ServiceClientGenerator
         /// </summary>
         private readonly List<string> _supportedProtocols = new List<string>
         {
+            "smithy-rpc-v2-cbor",
             "json",
             "rest-json",
             "rest-xml",
             "query",
             "ec2",
+        };
+
+        /// <summary>
+        /// Dictionary of services that should skip a specific protocol.
+        /// </summary>
+        private readonly Dictionary<string, string> _skipProtocolForService = new Dictionary<string, string>()
+        {
+            { "ARC Region switch", "smithy-rpc-v2-cbor" }
         };
 
         private string _preferredProtocol;
@@ -316,7 +329,8 @@ namespace ServiceClientGenerator
                         var serviceProtocols = modelProtocols.Cast<JsonData>().Select(x => x.ToString());
                         foreach (var supportedProtocol in _supportedProtocols)
                         {
-                            if (serviceProtocols.Contains(supportedProtocol))
+                            if (serviceProtocols.Contains(supportedProtocol) && 
+                                !(_skipProtocolForService.ContainsKey(ServiceId) && _skipProtocolForService[ServiceId] == supportedProtocol))
                             {
                                 _preferredProtocol = supportedProtocol;
                                 break;
@@ -459,99 +473,24 @@ namespace ServiceClientGenerator
                 return list.OrderBy(x => x.Name).ToList();
             }
         }
-
-        private List<Operation> _s3AllowListOperations;
-        public List<Operation> S3AllowListOperations
+        private List<string> _s3ExcludeListOperations;
+        public List<string> S3ExcludeListOperations
         {
             get
             {
-                if (_s3AllowListOperations == null)
+                if (_s3ExcludeListOperations == null)
                 {
-                    _s3AllowListOperations = new List<Operation>()
+                    _s3ExcludeListOperations = new List<string>()
                     {
-                        new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
-                        new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "CreateSession", DocumentRoot[OperationsKey]["CreateSession"]),
-                        new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
-                        new Operation(this, "DeleteBucketEncryption", DocumentRoot[OperationsKey]["DeleteBucketEncryption"]),
-                        new Operation(this, "DeleteBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetadataTableConfiguration"]),
-                        new Operation(this, "DeleteBucketOwnershipControls", DocumentRoot[OperationsKey]["DeleteBucketOwnershipControls"]),
-                        new Operation(this, "DeleteBucketPolicy", DocumentRoot[OperationsKey]["DeleteBucketPolicy"]),
-                        new Operation(this, "DeleteBucketReplication", DocumentRoot[OperationsKey]["DeleteBucketReplication"]),
-                        new Operation(this, "DeleteBucketTagging", DocumentRoot[OperationsKey]["DeleteBucketTagging"]),
-                        new Operation(this, "DeletePublicAccessBlock", DocumentRoot[OperationsKey]["DeletePublicAccessBlock"]),
-                        new Operation(this, "GetBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["GetBucketAccelerateConfiguration"]),
-                        //new Operation(this, "GetBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["GetBucketAnalyticsConfiguration"]),
-                        new Operation(this, "GetBucketEncryption", DocumentRoot[OperationsKey]["GetBucketEncryption"]),
-                        //new Operation(this, "GetBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["GetBucketIntelligentTieringConfiguration"]),
-                        //new Operation(this, "GetBucketInventoryConfiguration", DocumentRoot[OperationsKey]["GetBucketInventoryConfiguration"]),
-                        new Operation(this, "GetBucketLocation", DocumentRoot[OperationsKey]["GetBucketLocation"]),
-                        //new Operation(this, "GetBucketLogging", DocumentRoot[OperationsKey]["GetBucketLogging"]),
-                        new Operation(this, "GetBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "GetBucketMetricsConfiguration", DocumentRoot[OperationsKey]["GetBucketMetricsConfiguration"]),
-                        new Operation(this, "GetBucketOwnershipControls", DocumentRoot[OperationsKey]["GetBucketOwnershipControls"]),
-                        new Operation(this, "GetBucketPolicy", DocumentRoot[OperationsKey]["GetBucketPolicy"]),
-                        new Operation(this, "GetBucketPolicyStatus", DocumentRoot[OperationsKey]["GetBucketPolicyStatus"]),
-                        new Operation(this, "GetBucketReplication", DocumentRoot[OperationsKey]["GetBucketReplication"]),
-                        new Operation(this, "GetBucketRequestPayment", DocumentRoot[OperationsKey]["GetBucketRequestPayment"]),
-                        new Operation(this, "GetBucketTagging", DocumentRoot[OperationsKey]["GetBucketTagging"]),
-                        //new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"]),
-                        //new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
-                        new Operation(this, "GetObjectAttributes", DocumentRoot[OperationsKey]["GetObjectAttributes"]),
-                        new Operation(this, "GetObjectLegalHold", DocumentRoot[OperationsKey]["GetObjectLegalHold"]),
-                        new Operation(this, "GetObjectLockConfiguration", DocumentRoot[OperationsKey]["GetObjectLockConfiguration"]),
-                        new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
-                        new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
-                        new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
-                        new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
-                        //new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
-                        //new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
-                        //new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
-                        //new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
-                        new Operation(this, "ListBuckets", DocumentRoot[OperationsKey]["ListBuckets"]),
-                        new Operation(this, "ListDirectoryBuckets", DocumentRoot[OperationsKey]["ListDirectoryBuckets"]),
-                        new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
-                        //new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
-                        new Operation(this, "PutBucketEncryption", DocumentRoot[OperationsKey]["PutBucketEncryption"]),
-                        new Operation(this, "PutBucketReplication", DocumentRoot[OperationsKey]["PutBucketReplication"]),
-                        new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
-                        new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
-                        new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
-                        new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
-                        new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
-                        new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
-                        //new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
-                        //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"])
+                        "SelectObjectContent",
+                        "PutBucketLifecycle",
+                        "GetBucketLifecycle"
                     };
                 }
-                return _s3AllowListOperations;
+                return _s3ExcludeListOperations;
+
             }
         }
-
-        private List<string> _s3AddParametersList;
-        /// <summary>
-        /// Some s3 operations add query string parameters to the Subresources collection instead of the Parameters collection, but we are inconsistent with it across the board.
-        /// This list will contain those operations which add to the parameters instead of subresources
-        /// </summary>
-        public List<string> S3AddParametersList
-        {
-            get
-            {
-                if (_s3AddParametersList == null)
-                {
-                    _s3AddParametersList = new List<string>
-                    {
-                        "ListBuckets",
-                        "ListDirectoryBuckets",
-                        "GetObjectLegalHold",
-                        "GetObjectRetention",
-                        "PutObjectRetention"
-                    };
-                }
-                return _s3AddParametersList;
-            }
-        }
-
 
         private List<string> _s3RequestMarshallerThrowAmazonS3ExceptionList;
         
@@ -571,7 +510,14 @@ namespace ServiceClientGenerator
                     _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
                     {
                         "CreateSession",
-                        "GetObjectAttributes"
+                        "GetObjectAttributes",
+                        "GetBucketAcl",
+                        "PutObjectAcl",
+                        "GetObjectAcl",
+                        "PutBucketAcl",
+                        "CreateBucketMetadataConfiguration",
+                        "GetBucketMetadataConfiguration",
+                        "DeleteBucketMetadataConfiguration"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;
@@ -666,7 +612,17 @@ namespace ServiceClientGenerator
             {
                 var type = kvp.Value["type"];
                 if (type != null && type.ToString() == "string" && kvp.Value["enum"] != null)
-                    list.Add(new Enumeration(this, kvp.Key, kvp.Value));
+                {
+                    // Validate S3 enums that won't be generated
+                    ValidateS3NonGeneratedEnumConsistency(kvp.Key, kvp.Value);
+                    
+                    // Only add to generated list if not excluded or merged
+                    if (!this.Customizations.ExcludeShapes().Contains(kvp.Key)
+                        && !this.Customizations.IsEnumMerged(kvp.Key))
+                    {
+                        list.Add(new Enumeration(this, kvp.Key, kvp.Value));
+                    }
+                }
             }
             list = list.OrderBy(x => x.Name).ToList();
 
@@ -679,6 +635,54 @@ namespace ServiceClientGenerator
                 // Remove enums already defined in the parent model                
                 return list.Where(e => ParentModel.Enumerations(true).All(en => !e.ModelName.Equals(en.ModelName)));
             }         
+        }
+
+        /// <summary>
+        /// Validates S3 enumeration consistency for enums that are not being generated by the standard process.
+        /// </summary>
+        /// <remarks>
+        /// The S3 service has several enumerations that are handled by custom implementations rather than 
+        /// standard generation.
+        /// This method ensures that when new values are added to these enumerations in the service model,
+        /// developers are alerted to check that the custom implementations properly handle the new values.
+        /// 
+        /// When this validation fails, it indicates that:
+        /// 1. A new enum value was added to a service model enum that has custom handling
+        /// 2. The custom enum implementation needs to be reviewed and potentially updated
+        /// 3. The expected count should be updated after verification
+        /// </remarks>
+        /// <param name="enumName">The name of the enum being validated</param>
+        /// <param name="enumData">The JSON data for the enum</param>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the count of enum values doesn't match the expected count for a non-generated enum,
+        /// indicating that new values were added and need manual review.
+        /// </exception>
+        private void ValidateS3NonGeneratedEnumConsistency(string enumName, JsonData enumData)
+        {
+            if (this.ServiceId != "S3") return;
+
+            // Dictionary of S3 enumerations that are not generated by standard process and have custom implementations
+            // Key: Enum name from service model
+            // Value: Expected count of enum values for validation
+            var s3NonGeneratedEnums = new Dictionary<string, int>
+            {
+                { "Protocol", 2 },
+                { "MetadataDirective", 2 },
+            };
+
+            if (s3NonGeneratedEnums.TryGetValue(enumName, out int expectedEnumValuesCount))
+            {
+                var actualCount = enumData["enum"].Count;
+                if (expectedEnumValuesCount != actualCount)
+                {
+                    throw new InvalidOperationException(
+                        $"Enum value count mismatch for S3 enum '{enumName}'. " +
+                        $"Expected {expectedEnumValuesCount} values but found {actualCount}. " +
+                        $"This enum is handled by custom implementation in the S3 SDK for .NET. " +
+                        $"Please verify that the custom implementation properly handles any new values, " +
+                        $"then update the expected count in ValidateS3NonGeneratedEnumConsistency().");
+                }
+            }
         }
 
         /// <summary>

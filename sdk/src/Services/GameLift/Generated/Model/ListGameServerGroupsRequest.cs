@@ -31,7 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGameServerGroups operation.
+    /// <b>This API works with the following fleet types:</b> EC2 (FleetIQ)
+    /// 
+    ///  
+    /// <para>
     /// Lists a game server groups.
+    /// </para>
     /// </summary>
     public partial class ListGameServerGroupsRequest : AmazonGameLiftRequest
     {

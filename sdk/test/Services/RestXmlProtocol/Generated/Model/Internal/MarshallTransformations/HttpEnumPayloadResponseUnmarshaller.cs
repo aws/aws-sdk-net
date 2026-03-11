@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpEnumPayload operation
     /// </summary>  
-    public class HttpEnumPayloadResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpEnumPayloadResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -51,6 +51,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             response.Payload = sr.ReadToEnd();
         }
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -76,6 +77,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpEnumPayloadResponse response);
 
         private static HttpEnumPayloadResponseUnmarshaller _instance = new HttpEnumPayloadResponseUnmarshaller();        
 

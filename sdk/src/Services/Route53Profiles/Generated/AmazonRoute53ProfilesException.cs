@@ -36,6 +36,14 @@ namespace Amazon.Route53Profiles
         /// <summary>
         /// Construct instance of AmazonRoute53ProfilesException
         /// </summary>
+        public AmazonRoute53ProfilesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRoute53ProfilesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRoute53ProfilesException(string message)
             : base(message)

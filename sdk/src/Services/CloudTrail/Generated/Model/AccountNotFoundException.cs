@@ -40,6 +40,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for AccountNotFoundException
+        /// message.
+        /// </summary>
+        public AccountNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccountNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTTLOrderException
+        /// message.
+        /// </summary>
+        public InvalidTTLOrderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTTLOrderException with the specified error
         /// message.
         /// </summary>

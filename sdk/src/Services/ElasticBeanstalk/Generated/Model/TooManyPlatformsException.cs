@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyPlatformsException
+        /// message.
+        /// </summary>
+        public TooManyPlatformsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyPlatformsException with the specified error
         /// message.
         /// </summary>

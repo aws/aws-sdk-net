@@ -46,6 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// Brief readable description of the incident.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Description
         {
             get { return this._description; }
@@ -64,6 +65,7 @@ namespace Amazon.GeoRoutes.Model
         /// End timestamp of the incident.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string EndTime
         {
             get { return this._endTime; }
@@ -85,6 +87,7 @@ namespace Amazon.GeoRoutes.Model
         /// example slightly increased traffic
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteVehicleIncidentSeverity Severity
         {
             get { return this._severity; }
@@ -103,6 +106,7 @@ namespace Amazon.GeoRoutes.Model
         /// Start time of the incident.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StartTime
         {
             get { return this._startTime; }
@@ -121,6 +125,7 @@ namespace Amazon.GeoRoutes.Model
         /// Type of the incident.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteVehicleIncidentType Type
         {
             get { return this._type; }

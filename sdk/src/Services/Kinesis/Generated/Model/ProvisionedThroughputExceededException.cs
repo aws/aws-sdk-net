@@ -44,6 +44,13 @@ namespace Amazon.Kinesis.Model
     {
 
         /// <summary>
+        /// Default constructor for ProvisionedThroughputExceededException
+        /// message.
+        /// </summary>
+        public ProvisionedThroughputExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ProvisionedThroughputExceededException with the specified error
         /// message.
         /// </summary>

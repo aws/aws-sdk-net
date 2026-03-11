@@ -41,6 +41,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for RequestTimeoutException
+        /// message.
+        /// </summary>
+        public RequestTimeoutException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestTimeoutException with the specified error
         /// message.
         /// </summary>

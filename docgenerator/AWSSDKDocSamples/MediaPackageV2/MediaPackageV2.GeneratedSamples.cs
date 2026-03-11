@@ -192,6 +192,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         EncryptionMethod = new EncryptionMethod { TsEncryptionMethod = "AES_128" },
                         KeyRotationIntervalSeconds = 300,
                         SpekeKeyProvider = new SpekeKeyProvider {
+                            CertificateArn = "arn:aws:acm:us-west-2:123456789012:certificate/0c6a65f1-7bd3-48ac-be17-f38675def22e",
                             DrmSystems = new List<string> {
                                 "CLEAR_KEY_AES_128"
                             },
@@ -398,6 +399,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         EncryptionMethod = new EncryptionMethod { CmafEncryptionMethod = "CBCS" },
                         KeyRotationIntervalSeconds = 300,
                         SpekeKeyProvider = new SpekeKeyProvider {
+                            CertificateArn = "arn:aws:acm:us-west-2:123456789012:certificate/0c6a65f1-7bd3-48ac-be17-f38675def22e",
                             DrmSystems = new List<string> {
                                 "PLAYREADY",
                                 "WIDEVINE"
@@ -1127,6 +1129,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         EncryptionMethod = new EncryptionMethod { TsEncryptionMethod = "AES_128" },
                         KeyRotationIntervalSeconds = 300,
                         SpekeKeyProvider = new SpekeKeyProvider {
+                            CertificateArn = "arn:aws:acm:us-west-2:123456789012:certificate/0c6a65f1-7bd3-48ac-be17-f38675def22e",
                             DrmSystems = new List<string> {
                                 "CLEAR_KEY_AES_128"
                             },

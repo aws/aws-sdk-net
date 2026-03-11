@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Specifies the device configuration for an Snowcone job.
+    /// Specifies the device configuration for an Snowball Edge job.
     /// </summary>
     public partial class SnowconeDeviceConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property WirelessConnection. 
         /// <para>
-        /// Configures the wireless connection for the Snowcone device.
+        /// Configures the wireless connection for the Snowball Edge device.
         /// </para>
         /// </summary>
         public WirelessConnection WirelessConnection

@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMatchmakingConfiguration operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
     /// FlexMatch with Amazon GameLift Servers hosting or as a standalone matchmaking service,
     /// the matchmaking configuration sets out rules for matching players and forming teams.
@@ -39,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// handle different game scenarios. All matchmaking requests identify the matchmaking
     /// configuration to use and provide player attributes consistent with that configuration.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To create a matchmaking configuration, you must provide the following: configuration
@@ -252,6 +256,19 @@ namespace Amazon.GameLift.Model
         /// new <c>GameSession</c> object that is created for a successful match. This parameter
         /// is not used if <c>FlexMatchMode</c> is set to <c>STANDALONE</c>.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Avoid using periods (".") in property keys if you plan to search for game sessions
+        /// by properties. Property keys containing periods cannot be searched and will be filtered
+        /// out from search results due to search index limitations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

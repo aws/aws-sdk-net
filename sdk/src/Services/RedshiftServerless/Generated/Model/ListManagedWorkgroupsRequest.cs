@@ -83,7 +83,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.
+        /// The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.
         /// </para>
         /// </summary>
         public string SourceArn

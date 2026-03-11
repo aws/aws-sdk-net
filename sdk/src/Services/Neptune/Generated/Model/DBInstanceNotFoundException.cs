@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceNotFoundException
+        /// message.
+        /// </summary>
+        public DBInstanceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceNotFoundException with the specified error
         /// message.
         /// </summary>

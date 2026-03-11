@@ -37,7 +37,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from a member account in the organization.
+    /// You can only call from operation from a member account.
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// A newly created account has a waiting period before it can be removed from its organization.
-    /// You must wait until at least seven days after the account was created. Invited accounts
+    /// You must wait until at least four days after the account was created. Invited accounts
     /// aren't subject to this waiting period.
     /// </para>
     ///  </li> <li> 

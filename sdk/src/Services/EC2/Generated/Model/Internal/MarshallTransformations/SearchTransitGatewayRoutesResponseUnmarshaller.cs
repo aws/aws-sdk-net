@@ -62,6 +62,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.AdditionalRoutesAvailable = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("nextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("routeSet/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayRouteUnmarshaller.Instance;

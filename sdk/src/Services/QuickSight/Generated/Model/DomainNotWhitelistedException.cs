@@ -31,13 +31,20 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The domain specified isn't on the allow list. All domains for embedded dashboards
-    /// must be added to the approved list by an Amazon QuickSight admin.
+    /// must be added to the approved list by an Amazon Quick Suite admin.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class DomainNotWhitelistedException : AmazonQuickSightException
     {
+
+        /// <summary>
+        /// Default constructor for DomainNotWhitelistedException
+        /// message.
+        /// </summary>
+        public DomainNotWhitelistedException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new DomainNotWhitelistedException with the specified error

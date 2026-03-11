@@ -35,6 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationConfigurationUpdate
     {
         private ApplicationCodeConfigurationUpdate _applicationCodeConfigurationUpdate;
+        private ApplicationEncryptionConfigurationUpdate _applicationEncryptionConfigurationUpdate;
         private ApplicationSnapshotConfigurationUpdate _applicationSnapshotConfigurationUpdate;
         private ApplicationSystemRollbackConfigurationUpdate _applicationSystemRollbackConfigurationUpdate;
         private EnvironmentPropertyUpdates _environmentPropertyUpdates;
@@ -62,6 +63,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApplicationEncryptionConfigurationUpdate. 
+        /// <para>
+        /// Represents an update for encryption at rest configuration.
+        /// </para>
+        /// </summary>
+        public ApplicationEncryptionConfigurationUpdate ApplicationEncryptionConfigurationUpdate
+        {
+            get { return this._applicationEncryptionConfigurationUpdate; }
+            set { this._applicationEncryptionConfigurationUpdate = value; }
+        }
+
+        // Check to see if ApplicationEncryptionConfigurationUpdate property is set
+        internal bool IsSetApplicationEncryptionConfigurationUpdate()
+        {
+            return this._applicationEncryptionConfigurationUpdate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfigurationUpdate. 
         /// <para>
         /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
@@ -80,7 +99,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationSystemRollbackConfigurationUpdate.
+        /// Gets and sets the property ApplicationSystemRollbackConfigurationUpdate. 
+        /// <para>
+        /// Describes whether system rollbacks are enabled for a Managed Service for Apache Flink
+        /// application.
+        /// </para>
         /// </summary>
         public ApplicationSystemRollbackConfigurationUpdate ApplicationSystemRollbackConfigurationUpdate
         {

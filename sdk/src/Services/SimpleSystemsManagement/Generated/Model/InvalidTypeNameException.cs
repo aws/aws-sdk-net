@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTypeNameException
+        /// message.
+        /// </summary>
+        public InvalidTypeNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTypeNameException with the specified error
         /// message.
         /// </summary>

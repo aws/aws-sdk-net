@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudFrontOriginAccessIdentityInUseException
+        /// message.
+        /// </summary>
+        public CloudFrontOriginAccessIdentityInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudFrontOriginAccessIdentityInUseException with the specified error
         /// message.
         /// </summary>

@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(QueryPrecedenceRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (publicRequest.IsSetBaz())
             {
@@ -76,8 +77,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/Precedence";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static QueryPrecedenceRequestMarshaller _instance = new QueryPrecedenceRequestMarshaller();        
@@ -99,5 +100,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, QueryPrecedenceRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, QueryPrecedenceRequest publicRequest);
     }    
 }

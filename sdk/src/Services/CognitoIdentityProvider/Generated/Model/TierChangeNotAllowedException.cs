@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for TierChangeNotAllowedException
+        /// message.
+        /// </summary>
+        public TierChangeNotAllowedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TierChangeNotAllowedException with the specified error
         /// message.
         /// </summary>

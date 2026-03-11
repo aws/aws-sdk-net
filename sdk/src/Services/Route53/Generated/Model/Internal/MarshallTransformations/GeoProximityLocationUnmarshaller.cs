@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GeoProximityLocation Object
     /// </summary>  
-    public class GeoProximityLocationUnmarshaller : IXmlUnmarshaller<GeoProximityLocation, XmlUnmarshallerContext>
+    public partial class GeoProximityLocationUnmarshaller : IXmlUnmarshaller<GeoProximityLocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Bias = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, GeoProximityLocation unmarshalledObject, int targetDepth);
+
         private static GeoProximityLocationUnmarshaller _instance = new GeoProximityLocationUnmarshaller();        
 
         /// <summary>

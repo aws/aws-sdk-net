@@ -43,16 +43,17 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextForRecipient. 
         /// <para>
-        /// The plaintext data encrypted with the public key in the attestation document. 
+        /// The plaintext data encrypted with the public key from the attestation document. This
+        /// ciphertext can be decrypted only by using a private key from the attested environment.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// This field is included in the response only when the <c>Recipient</c> parameter in
         /// the request includes a valid attestation document from an Amazon Web Services Nitro
-        /// enclave. For information about the interaction between KMS and Amazon Web Services
-        /// Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// enclave or NitroTPM. For information about the interaction between KMS and Amazon
+        /// Web Services Nitro Enclaves or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

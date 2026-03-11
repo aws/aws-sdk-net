@@ -40,6 +40,13 @@ namespace Amazon.ElasticFileSystem.Model
     {
 
         /// <summary>
+        /// Default constructor for ThroughputLimitExceededException
+        /// message.
+        /// </summary>
+        public ThroughputLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThroughputLimitExceededException with the specified error
         /// message.
         /// </summary>

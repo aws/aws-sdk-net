@@ -132,7 +132,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default Value: <c>Car</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RouteLegTravelMode TravelMode
         {
             get { return this._travelMode; }
@@ -151,7 +151,7 @@ namespace Amazon.GeoRoutes.Model
         /// Type of the leg.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RouteLegType Type
         {
             get { return this._type; }

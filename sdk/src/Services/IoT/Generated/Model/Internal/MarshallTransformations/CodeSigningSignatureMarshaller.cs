@@ -49,7 +49,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInlineDocument())
             {
                 context.Writer.WritePropertyName("inlineDocument");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.InlineDocument));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.InlineDocument);
             }
 
         }

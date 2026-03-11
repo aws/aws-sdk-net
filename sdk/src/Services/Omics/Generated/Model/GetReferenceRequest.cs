@@ -31,7 +31,14 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReference operation.
-    /// Gets a reference file.
+    /// Downloads parts of data from a reference genome and returns the reference file in
+    /// the same format that it was uploaded.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+    /// a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetReferenceRequest : AmazonOmicsRequest
     {

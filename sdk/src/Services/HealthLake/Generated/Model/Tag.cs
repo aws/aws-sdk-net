@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// A tag is a label consisting of a user-defined key and value. The form for tags is
-    /// {"Key", "Value"}
+    /// A label consisting of a user-defined key and value. The form for tags is {"Key", "Value"}
     /// </summary>
     public partial class Tag
     {
@@ -41,7 +40,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  The key portion of a tag. Tag keys are case sensitive. 
+        /// The key portion of a tag. Tag keys are case sensitive. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -60,7 +59,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value portion of a tag. Tag values are case sensitive. 
+        ///  The value portion of a tag. Tag values are case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

@@ -63,6 +63,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-18";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.ClientToken))
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field ClientToken set");
             
             if (publicRequest.IsSetClientToken())
                 request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));

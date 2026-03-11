@@ -62,6 +62,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AppInstanceArn))
+                throw new AmazonChimeSDKIdentityException("Request object does not have required field AppInstanceArn set");
             
             if (publicRequest.IsSetAppInstanceArn())
                 request.Parameters.Add("app-instance-arn", StringUtils.FromString(publicRequest.AppInstanceArn));

@@ -725,6 +725,114 @@ namespace Amazon.Budgets
 
 
     /// <summary>
+    /// Constants used for properties of type HealthStatusReason.
+    /// </summary>
+    public class HealthStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BILLING_VIEW_NO_ACCESS for HealthStatusReason
+        /// </summary>
+        public static readonly HealthStatusReason BILLING_VIEW_NO_ACCESS = new HealthStatusReason("BILLING_VIEW_NO_ACCESS");
+        /// <summary>
+        /// Constant BILLING_VIEW_UNHEALTHY for HealthStatusReason
+        /// </summary>
+        public static readonly HealthStatusReason BILLING_VIEW_UNHEALTHY = new HealthStatusReason("BILLING_VIEW_UNHEALTHY");
+        /// <summary>
+        /// Constant FILTER_INVALID for HealthStatusReason
+        /// </summary>
+        public static readonly HealthStatusReason FILTER_INVALID = new HealthStatusReason("FILTER_INVALID");
+        /// <summary>
+        /// Constant MULTI_YEAR_HISTORICAL_DATA_DISABLED for HealthStatusReason
+        /// </summary>
+        public static readonly HealthStatusReason MULTI_YEAR_HISTORICAL_DATA_DISABLED = new HealthStatusReason("MULTI_YEAR_HISTORICAL_DATA_DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HealthStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthStatusReason FindValue(string value)
+        {
+            return FindValue<HealthStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthStatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HealthStatusValue.
+    /// </summary>
+    public class HealthStatusValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for HealthStatusValue
+        /// </summary>
+        public static readonly HealthStatusValue HEALTHY = new HealthStatusValue("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for HealthStatusValue
+        /// </summary>
+        public static readonly HealthStatusValue UNHEALTHY = new HealthStatusValue("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HealthStatusValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthStatusValue FindValue(string value)
+        {
+            return FindValue<HealthStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MatchOption.
     /// </summary>
     public class MatchOption : ConstantClass
@@ -1082,6 +1190,10 @@ namespace Amazon.Budgets
         /// Constant ANNUALLY for TimeUnit
         /// </summary>
         public static readonly TimeUnit ANNUALLY = new TimeUnit("ANNUALLY");
+        /// <summary>
+        /// Constant CUSTOM for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit CUSTOM = new TimeUnit("CUSTOM");
         /// <summary>
         /// Constant DAILY for TimeUnit
         /// </summary>

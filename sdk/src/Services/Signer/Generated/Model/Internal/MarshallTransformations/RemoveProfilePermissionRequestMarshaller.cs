@@ -68,6 +68,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetStatementId())
                 throw new AmazonSignerException("Request object does not have required field StatementId set");
             request.AddPathResource("{statementId}", StringUtils.FromString(publicRequest.StatementId));
+            if (string.IsNullOrEmpty(publicRequest.RevisionId))
+                throw new AmazonSignerException("Request object does not have required field RevisionId set");
             
             if (publicRequest.IsSetRevisionId())
                 request.Parameters.Add("revisionId", StringUtils.FromString(publicRequest.RevisionId));

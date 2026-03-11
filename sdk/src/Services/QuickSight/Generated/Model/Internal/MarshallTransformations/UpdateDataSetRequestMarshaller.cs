@@ -111,6 +111,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetDataPrepConfiguration())
+            {
+                context.Writer.WritePropertyName("DataPrepConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataPrepConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataPrepConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDatasetParameters())
             {
                 context.Writer.WritePropertyName("DatasetParameters");
@@ -236,6 +247,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = RowLevelPermissionTagConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.RowLevelPermissionTagConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSemanticModelConfiguration())
+            {
+                context.Writer.WritePropertyName("SemanticModelConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SemanticModelConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SemanticModelConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

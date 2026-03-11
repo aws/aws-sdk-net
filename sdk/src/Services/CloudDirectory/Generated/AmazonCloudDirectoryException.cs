@@ -36,6 +36,14 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Construct instance of AmazonCloudDirectoryException
         /// </summary>
+        public AmazonCloudDirectoryException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudDirectoryException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudDirectoryException(string message)
             : base(message)

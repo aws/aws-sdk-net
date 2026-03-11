@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryAlreadySharedException
+        /// message.
+        /// </summary>
+        public DirectoryAlreadySharedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryAlreadySharedException with the specified error
         /// message.
         /// </summary>

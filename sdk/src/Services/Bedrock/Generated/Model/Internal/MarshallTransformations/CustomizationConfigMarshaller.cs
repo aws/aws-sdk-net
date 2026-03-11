@@ -57,6 +57,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRftConfig())
+            {
+                context.Writer.WritePropertyName("rftConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RFTConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.RftConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -35,47 +35,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ServiceNowProviderConfiguration
     {
-        private string _clientId;
-        private string _clientSecret;
         private string _instanceName;
-
-        /// <summary>
-        /// Gets and sets the property ClientId. 
-        /// <para>
-        /// The client ID of ServiceNow ITSM.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ClientId
-        {
-            get { return this._clientId; }
-            set { this._clientId = value; }
-        }
-
-        // Check to see if ClientId property is set
-        internal bool IsSetClientId()
-        {
-            return this._clientId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientSecret. 
-        /// <para>
-        /// The client secret of ServiceNow ITSM.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public string ClientSecret
-        {
-            get { return this._clientSecret; }
-            set { this._clientSecret = value; }
-        }
-
-        // Check to see if ClientSecret property is set
-        internal bool IsSetClientSecret()
-        {
-            return this._clientSecret != null;
-        }
+        private string _secretArn;
 
         /// <summary>
         /// Gets and sets the property InstanceName. 
@@ -94,6 +55,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetInstanceName()
         {
             return this._instanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that
+        /// contains the ServiceNow credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SecretArn
+        {
+            get { return this._secretArn; }
+            set { this._secretArn = value; }
+        }
+
+        // Check to see if SecretArn property is set
+        internal bool IsSetSecretArn()
+        {
+            return this._secretArn != null;
         }
 
     }

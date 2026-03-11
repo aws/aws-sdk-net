@@ -40,6 +40,13 @@ namespace Amazon.Kendra.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceAlreadyExistException
+        /// message.
+        /// </summary>
+        public ResourceAlreadyExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceAlreadyExistException with the specified error
         /// message.
         /// </summary>

@@ -31,7 +31,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWirelessDeviceImportTasks operation.
-    /// List wireless devices that have been added to an import task.
+    /// List of import tasks and summary information of onboarding status of devices in each
+    /// import task.
     /// </summary>
     public partial class ListWirelessDeviceImportTasksRequest : AmazonIoTWirelessRequest
     {

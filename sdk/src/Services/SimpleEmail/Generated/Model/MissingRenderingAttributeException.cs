@@ -42,6 +42,13 @@ namespace Amazon.SimpleEmail.Model
         private string _templateName;
 
         /// <summary>
+        /// Default constructor for MissingRenderingAttributeException
+        /// message.
+        /// </summary>
+        public MissingRenderingAttributeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingRenderingAttributeException with the specified error
         /// message.
         /// </summary>

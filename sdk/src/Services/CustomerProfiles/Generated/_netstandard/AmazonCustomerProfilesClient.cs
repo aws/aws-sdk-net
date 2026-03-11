@@ -289,7 +289,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual AddProfileKeyResponse AddProfileKey(AddProfileKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddProfileKeyResponseUnmarshaller.Instance;
 
@@ -331,7 +331,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey">REST API Reference for AddProfileKey Operation</seealso>
         public virtual Task<AddProfileKeyResponse> AddProfileKeyAsync(AddProfileKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddProfileKeyResponseUnmarshaller.Instance;
 
@@ -343,7 +343,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual BatchGetCalculatedAttributeForProfileResponse BatchGetCalculatedAttributeForProfile(BatchGetCalculatedAttributeForProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">REST API Reference for BatchGetCalculatedAttributeForProfile Operation</seealso>
         public virtual Task<BatchGetCalculatedAttributeForProfileResponse> BatchGetCalculatedAttributeForProfileAsync(BatchGetCalculatedAttributeForProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual BatchGetProfileResponse BatchGetProfile(BatchGetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetProfileResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetProfile">REST API Reference for BatchGetProfile Operation</seealso>
         public virtual Task<BatchGetProfileResponse> BatchGetProfileAsync(BatchGetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetProfileResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateCalculatedAttributeDefinitionResponse CreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
         public virtual Task<CreateCalculatedAttributeDefinitionResponse> CreateCalculatedAttributeDefinitionAsync(CreateCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -492,7 +492,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateDomainLayoutResponse CreateDomainLayout(CreateDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -610,7 +610,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">REST API Reference for CreateDomainLayout Operation</seealso>
         public virtual Task<CreateDomainLayoutResponse> CreateDomainLayoutAsync(CreateDomainLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateEventStreamResponse CreateEventStream(CreateEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
         public virtual Task<CreateEventStreamResponse> CreateEventStreamAsync(CreateEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateEventTriggerResponse CreateEventTrigger(CreateEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
 
@@ -720,7 +720,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
         public virtual Task<CreateEventTriggerResponse> CreateEventTriggerAsync(CreateEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateIntegrationWorkflowResponse CreateIntegrationWorkflow(CreateIntegrationWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationWorkflowResponseUnmarshaller.Instance;
 
@@ -770,7 +770,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateIntegrationWorkflow">REST API Reference for CreateIntegrationWorkflow Operation</seealso>
         public virtual Task<CreateIntegrationWorkflowResponse> CreateIntegrationWorkflowAsync(CreateIntegrationWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationWorkflowResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -832,11 +832,59 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  CreateRecommender
+
+        internal virtual CreateRecommenderResponse CreateRecommender(CreateRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a recommender
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        public virtual Task<CreateRecommenderResponse> CreateRecommenderAsync(CreateRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateSegmentDefinition
 
         internal virtual CreateSegmentDefinitionResponse CreateSegmentDefinition(CreateSegmentDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -872,7 +920,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">REST API Reference for CreateSegmentDefinition Operation</seealso>
         public virtual Task<CreateSegmentDefinitionResponse> CreateSegmentDefinitionAsync(CreateSegmentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -884,7 +932,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateSegmentEstimateResponse CreateSegmentEstimate(CreateSegmentEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -920,7 +968,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentEstimate">REST API Reference for CreateSegmentEstimate Operation</seealso>
         public virtual Task<CreateSegmentEstimateResponse> CreateSegmentEstimateAsync(CreateSegmentEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -932,7 +980,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateSegmentSnapshotResponse CreateSegmentSnapshot(CreateSegmentSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -968,7 +1016,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentSnapshot">REST API Reference for CreateSegmentSnapshot Operation</seealso>
         public virtual Task<CreateSegmentSnapshotResponse> CreateSegmentSnapshotAsync(CreateSegmentSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -980,7 +1028,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual CreateUploadJobResponse CreateUploadJob(CreateUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadJobResponseUnmarshaller.Instance;
 
@@ -1017,7 +1065,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateUploadJob">REST API Reference for CreateUploadJob Operation</seealso>
         public virtual Task<CreateUploadJobResponse> CreateUploadJobAsync(CreateUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadJobResponseUnmarshaller.Instance;
 
@@ -1029,7 +1077,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteCalculatedAttributeDefinitionResponse DeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -1068,7 +1116,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
         public virtual Task<DeleteCalculatedAttributeDefinitionResponse> DeleteCalculatedAttributeDefinitionAsync(DeleteCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -1080,7 +1128,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1117,7 +1165,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1129,7 +1177,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteDomainLayoutResponse DeleteDomainLayout(DeleteDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
 
@@ -1166,7 +1214,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">REST API Reference for DeleteDomainLayout Operation</seealso>
         public virtual Task<DeleteDomainLayoutResponse> DeleteDomainLayoutAsync(DeleteDomainLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
 
@@ -1174,11 +1222,59 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  DeleteDomainObjectType
+
+        internal virtual DeleteDomainObjectTypeResponse DeleteDomainObjectType(DeleteDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainObjectTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a DomainObjectType for the given Domain and ObjectType name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainObjectType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainObjectType">REST API Reference for DeleteDomainObjectType Operation</seealso>
+        public virtual Task<DeleteDomainObjectTypeResponse> DeleteDomainObjectTypeAsync(DeleteDomainObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDomainObjectTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteEventStream
 
         internal virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
@@ -1214,7 +1310,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         public virtual Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
@@ -1226,7 +1322,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteEventTriggerResponse DeleteEventTrigger(DeleteEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
 
@@ -1268,7 +1364,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
         public virtual Task<DeleteEventTriggerResponse> DeleteEventTriggerAsync(DeleteEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
 
@@ -1280,7 +1376,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -1316,7 +1412,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -1328,7 +1424,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1364,7 +1460,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1376,7 +1472,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteProfileKeyResponse DeleteProfileKey(DeleteProfileKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileKeyResponseUnmarshaller.Instance;
 
@@ -1412,7 +1508,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileKey">REST API Reference for DeleteProfileKey Operation</seealso>
         public virtual Task<DeleteProfileKeyResponse> DeleteProfileKeyAsync(DeleteProfileKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileKeyResponseUnmarshaller.Instance;
 
@@ -1424,7 +1520,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteProfileObjectResponse DeleteProfileObject(DeleteProfileObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectResponseUnmarshaller.Instance;
 
@@ -1460,7 +1556,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObject">REST API Reference for DeleteProfileObject Operation</seealso>
         public virtual Task<DeleteProfileObjectResponse> DeleteProfileObjectAsync(DeleteProfileObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectResponseUnmarshaller.Instance;
 
@@ -1472,7 +1568,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteProfileObjectTypeResponse DeleteProfileObjectType(DeleteProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -1511,7 +1607,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObjectType">REST API Reference for DeleteProfileObjectType Operation</seealso>
         public virtual Task<DeleteProfileObjectTypeResponse> DeleteProfileObjectTypeAsync(DeleteProfileObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -1519,11 +1615,59 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  DeleteRecommender
+
+        internal virtual DeleteRecommenderResponse DeleteRecommender(DeleteRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        public virtual Task<DeleteRecommenderResponse> DeleteRecommenderAsync(DeleteRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteSegmentDefinition
 
         internal virtual DeleteSegmentDefinitionResponse DeleteSegmentDefinition(DeleteSegmentDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -1559,7 +1703,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentDefinition">REST API Reference for DeleteSegmentDefinition Operation</seealso>
         public virtual Task<DeleteSegmentDefinitionResponse> DeleteSegmentDefinitionAsync(DeleteSegmentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -1571,7 +1715,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -1608,7 +1752,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -1620,7 +1764,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual DetectProfileObjectTypeResponse DetectProfileObjectType(DetectProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -1656,7 +1800,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType">REST API Reference for DetectProfileObjectType Operation</seealso>
         public virtual Task<DetectProfileObjectTypeResponse> DetectProfileObjectTypeAsync(DetectProfileObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -1668,7 +1812,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetAutoMergingPreviewResponse GetAutoMergingPreview(GetAutoMergingPreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoMergingPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoMergingPreviewResponseUnmarshaller.Instance;
 
@@ -1723,7 +1867,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">REST API Reference for GetAutoMergingPreview Operation</seealso>
         public virtual Task<GetAutoMergingPreviewResponse> GetAutoMergingPreviewAsync(GetAutoMergingPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoMergingPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoMergingPreviewResponseUnmarshaller.Instance;
 
@@ -1735,7 +1879,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetCalculatedAttributeDefinitionResponse GetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -1771,7 +1915,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
         public virtual Task<GetCalculatedAttributeDefinitionResponse> GetCalculatedAttributeDefinitionAsync(GetCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -1783,7 +1927,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetCalculatedAttributeForProfileResponse GetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -1819,7 +1963,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
         public virtual Task<GetCalculatedAttributeForProfileResponse> GetCalculatedAttributeForProfileAsync(GetCalculatedAttributeForProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -1831,7 +1975,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -1867,7 +2011,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -1879,7 +2023,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetDomainLayoutResponse GetDomainLayout(GetDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainLayoutResponseUnmarshaller.Instance;
 
@@ -1916,7 +2060,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">REST API Reference for GetDomainLayout Operation</seealso>
         public virtual Task<GetDomainLayoutResponse> GetDomainLayoutAsync(GetDomainLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainLayoutResponseUnmarshaller.Instance;
 
@@ -1924,11 +2068,59 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  GetDomainObjectType
+
+        internal virtual GetDomainObjectTypeResponse GetDomainObjectType(GetDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainObjectTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Return a DomainObjectType for the input Domain and ObjectType names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainObjectType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainObjectType">REST API Reference for GetDomainObjectType Operation</seealso>
+        public virtual Task<GetDomainObjectTypeResponse> GetDomainObjectTypeAsync(GetDomainObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainObjectTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetEventStream
 
         internal virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
@@ -1964,7 +2156,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         public virtual Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
@@ -1976,7 +2168,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetEventTriggerResponse GetEventTrigger(GetEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
 
@@ -2012,7 +2204,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
         public virtual Task<GetEventTriggerResponse> GetEventTriggerAsync(GetEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
 
@@ -2024,7 +2216,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetIdentityResolutionJobResponse GetIdentityResolutionJob(GetIdentityResolutionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityResolutionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityResolutionJobResponseUnmarshaller.Instance;
 
@@ -2067,7 +2259,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">REST API Reference for GetIdentityResolutionJob Operation</seealso>
         public virtual Task<GetIdentityResolutionJobResponse> GetIdentityResolutionJobAsync(GetIdentityResolutionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityResolutionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityResolutionJobResponseUnmarshaller.Instance;
 
@@ -2079,7 +2271,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -2115,7 +2307,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -2127,7 +2319,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetMatchesResponse GetMatches(GetMatchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchesResponseUnmarshaller.Instance;
 
@@ -2229,7 +2421,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">REST API Reference for GetMatches Operation</seealso>
         public virtual Task<GetMatchesResponse> GetMatchesAsync(GetMatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchesResponseUnmarshaller.Instance;
 
@@ -2237,11 +2429,127 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  GetObjectTypeAttributeStatistics
+
+        internal virtual GetObjectTypeAttributeStatisticsResponse GetObjectTypeAttributeStatistics(GetObjectTypeAttributeStatisticsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetObjectTypeAttributeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTypeAttributeStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectTypeAttributeStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The GetObjectTypeAttributeValues API delivers statistical insights about attributes
+        /// within a specific object type, but is exclusively available for domains with data
+        /// store enabled. This API performs daily calculations to provide statistical information
+        /// about your attribute values, helping you understand patterns and trends in your data.
+        /// The statistical calculations are performed once per day, providing a consistent snapshot
+        /// of your attribute data characteristics.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You'll receive null values in two scenarios: 
+        /// </para>
+        ///  
+        /// <para>
+        /// During the first period after enabling data vault (unless a calculation cycle occurs,
+        /// which happens once daily).
+        /// </para>
+        ///  
+        /// <para>
+        /// For attributes that don't contain numeric values. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTypeAttributeStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetObjectTypeAttributeStatistics service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetObjectTypeAttributeStatistics">REST API Reference for GetObjectTypeAttributeStatistics Operation</seealso>
+        public virtual Task<GetObjectTypeAttributeStatisticsResponse> GetObjectTypeAttributeStatisticsAsync(GetObjectTypeAttributeStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetObjectTypeAttributeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTypeAttributeStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectTypeAttributeStatisticsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetProfileHistoryRecord
+
+        internal virtual GetProfileHistoryRecordResponse GetProfileHistoryRecord(GetProfileHistoryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileHistoryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileHistoryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileHistoryRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a history record for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileHistoryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProfileHistoryRecord service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">REST API Reference for GetProfileHistoryRecord Operation</seealso>
+        public virtual Task<GetProfileHistoryRecordResponse> GetProfileHistoryRecordAsync(GetProfileHistoryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileHistoryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileHistoryRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProfileHistoryRecordResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetProfileObjectType
 
         internal virtual GetProfileObjectTypeResponse GetProfileObjectType(GetProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -2277,7 +2585,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType">REST API Reference for GetProfileObjectType Operation</seealso>
         public virtual Task<GetProfileObjectTypeResponse> GetProfileObjectTypeAsync(GetProfileObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -2289,7 +2597,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetProfileObjectTypeTemplateResponse GetProfileObjectTypeTemplate(GetProfileObjectTypeTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeTemplateResponseUnmarshaller.Instance;
 
@@ -2332,7 +2640,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectTypeTemplate">REST API Reference for GetProfileObjectTypeTemplate Operation</seealso>
         public virtual Task<GetProfileObjectTypeTemplateResponse> GetProfileObjectTypeTemplateAsync(GetProfileObjectTypeTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeTemplateResponseUnmarshaller.Instance;
 
@@ -2340,11 +2648,108 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  GetProfileRecommendations
+
+        internal virtual GetProfileRecommendationsResponse GetProfileRecommendations(GetProfileRecommendationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetches the recommendations for a profile in the input Customer Profiles domain. Fetches
+        /// all the profile recommendations
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProfileRecommendations service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileRecommendations">REST API Reference for GetProfileRecommendations Operation</seealso>
+        public virtual Task<GetProfileRecommendationsResponse> GetProfileRecommendationsAsync(GetProfileRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProfileRecommendationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRecommender
+
+        internal virtual GetRecommenderResponse GetRecommender(GetRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommender">REST API Reference for GetRecommender Operation</seealso>
+        public virtual Task<GetRecommenderResponse> GetRecommenderAsync(GetRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetSegmentDefinition
 
         internal virtual GetSegmentDefinitionResponse GetSegmentDefinition(GetSegmentDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -2380,7 +2785,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentDefinition">REST API Reference for GetSegmentDefinition Operation</seealso>
         public virtual Task<GetSegmentDefinitionResponse> GetSegmentDefinitionAsync(GetSegmentDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -2392,7 +2797,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetSegmentEstimateResponse GetSegmentEstimate(GetSegmentEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -2428,7 +2833,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentEstimate">REST API Reference for GetSegmentEstimate Operation</seealso>
         public virtual Task<GetSegmentEstimateResponse> GetSegmentEstimateAsync(GetSegmentEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -2440,7 +2845,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetSegmentMembershipResponse GetSegmentMembership(GetSegmentMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentMembershipResponseUnmarshaller.Instance;
 
@@ -2476,7 +2881,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentMembership">REST API Reference for GetSegmentMembership Operation</seealso>
         public virtual Task<GetSegmentMembershipResponse> GetSegmentMembershipAsync(GetSegmentMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentMembershipResponseUnmarshaller.Instance;
 
@@ -2488,7 +2893,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetSegmentSnapshotResponse GetSegmentSnapshot(GetSegmentSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -2524,7 +2929,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSnapshot">REST API Reference for GetSegmentSnapshot Operation</seealso>
         public virtual Task<GetSegmentSnapshotResponse> GetSegmentSnapshotAsync(GetSegmentSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -2536,7 +2941,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetSimilarProfilesResponse GetSimilarProfiles(GetSimilarProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
 
@@ -2574,7 +2979,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
         public virtual Task<GetSimilarProfilesResponse> GetSimilarProfilesAsync(GetSimilarProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
 
@@ -2586,7 +2991,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetUploadJobResponse GetUploadJob(GetUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobResponseUnmarshaller.Instance;
 
@@ -2622,7 +3027,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJob">REST API Reference for GetUploadJob Operation</seealso>
         public virtual Task<GetUploadJobResponse> GetUploadJobAsync(GetUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobResponseUnmarshaller.Instance;
 
@@ -2634,7 +3039,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetUploadJobPathResponse GetUploadJobPath(GetUploadJobPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobPathResponseUnmarshaller.Instance;
 
@@ -2671,7 +3076,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJobPath">REST API Reference for GetUploadJobPath Operation</seealso>
         public virtual Task<GetUploadJobPathResponse> GetUploadJobPathAsync(GetUploadJobPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobPathResponseUnmarshaller.Instance;
 
@@ -2683,7 +3088,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -2719,7 +3124,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -2731,7 +3136,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual GetWorkflowStepsResponse GetWorkflowSteps(GetWorkflowStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -2767,7 +3172,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflowSteps">REST API Reference for GetWorkflowSteps Operation</seealso>
         public virtual Task<GetWorkflowStepsResponse> GetWorkflowStepsAsync(GetWorkflowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -2779,7 +3184,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListAccountIntegrationsResponse ListAccountIntegrations(ListAccountIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountIntegrationsResponseUnmarshaller.Instance;
 
@@ -2815,7 +3220,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListAccountIntegrations">REST API Reference for ListAccountIntegrations Operation</seealso>
         public virtual Task<ListAccountIntegrationsResponse> ListAccountIntegrationsAsync(ListAccountIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountIntegrationsResponseUnmarshaller.Instance;
 
@@ -2827,7 +3232,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListCalculatedAttributeDefinitionsResponse ListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
 
@@ -2863,7 +3268,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
         public virtual Task<ListCalculatedAttributeDefinitionsResponse> ListCalculatedAttributeDefinitionsAsync(ListCalculatedAttributeDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
 
@@ -2875,7 +3280,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListCalculatedAttributesForProfileResponse ListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
 
@@ -2911,7 +3316,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
         public virtual Task<ListCalculatedAttributesForProfileResponse> ListCalculatedAttributesForProfileAsync(ListCalculatedAttributesForProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
 
@@ -2923,7 +3328,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListDomainLayoutsResponse ListDomainLayouts(ListDomainLayoutsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainLayoutsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainLayoutsResponseUnmarshaller.Instance;
 
@@ -2960,7 +3365,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">REST API Reference for ListDomainLayouts Operation</seealso>
         public virtual Task<ListDomainLayoutsResponse> ListDomainLayoutsAsync(ListDomainLayoutsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainLayoutsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainLayoutsResponseUnmarshaller.Instance;
 
@@ -2968,11 +3373,59 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  ListDomainObjectTypes
+
+        internal virtual ListDomainObjectTypesResponse ListDomainObjectTypes(ListDomainObjectTypesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainObjectTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainObjectTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainObjectTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List all DomainObjectType(s) in a Customer Profiles domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainObjectTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainObjectTypes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainObjectTypes">REST API Reference for ListDomainObjectTypes Operation</seealso>
+        public virtual Task<ListDomainObjectTypesResponse> ListDomainObjectTypesAsync(ListDomainObjectTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainObjectTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainObjectTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDomainObjectTypesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListDomains
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -3008,7 +3461,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -3020,7 +3473,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListEventStreamsResponse ListEventStreams(ListEventStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
 
@@ -3056,7 +3509,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
         public virtual Task<ListEventStreamsResponse> ListEventStreamsAsync(ListEventStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
 
@@ -3068,7 +3521,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListEventTriggersResponse ListEventTriggers(ListEventTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
 
@@ -3104,7 +3557,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
         public virtual Task<ListEventTriggersResponse> ListEventTriggersAsync(ListEventTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
 
@@ -3116,7 +3569,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListIdentityResolutionJobsResponse ListIdentityResolutionJobs(ListIdentityResolutionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityResolutionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityResolutionJobsResponseUnmarshaller.Instance;
 
@@ -3153,7 +3606,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">REST API Reference for ListIdentityResolutionJobs Operation</seealso>
         public virtual Task<ListIdentityResolutionJobsResponse> ListIdentityResolutionJobsAsync(ListIdentityResolutionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityResolutionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityResolutionJobsResponseUnmarshaller.Instance;
 
@@ -3165,7 +3618,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListIntegrationsResponse ListIntegrations(ListIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIntegrationsResponseUnmarshaller.Instance;
 
@@ -3201,7 +3654,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIntegrations">REST API Reference for ListIntegrations Operation</seealso>
         public virtual Task<ListIntegrationsResponse> ListIntegrationsAsync(ListIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIntegrationsResponseUnmarshaller.Instance;
 
@@ -3213,7 +3666,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListObjectTypeAttributesResponse ListObjectTypeAttributes(ListObjectTypeAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectTypeAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectTypeAttributesResponseUnmarshaller.Instance;
 
@@ -3249,7 +3702,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributes">REST API Reference for ListObjectTypeAttributes Operation</seealso>
         public virtual Task<ListObjectTypeAttributesResponse> ListObjectTypeAttributesAsync(ListObjectTypeAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectTypeAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectTypeAttributesResponseUnmarshaller.Instance;
 
@@ -3257,11 +3710,64 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  ListObjectTypeAttributeValues
+
+        internal virtual ListObjectTypeAttributeValuesResponse ListObjectTypeAttributeValues(ListObjectTypeAttributeValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributeValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectTypeAttributeValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The ListObjectTypeAttributeValues API provides access to the most recent distinct
+        /// values for any specified attribute, making it valuable for real-time data validation
+        /// and consistency checks within your object types. This API works across domain, supporting
+        /// both custom and standard object types. The API accepts the object type name, attribute
+        /// name, and domain name as input parameters and returns values up to the storage limit
+        /// of approximately 350KB.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectTypeAttributeValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListObjectTypeAttributeValues service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributeValues">REST API Reference for ListObjectTypeAttributeValues Operation</seealso>
+        public virtual Task<ListObjectTypeAttributeValuesResponse> ListObjectTypeAttributeValuesAsync(ListObjectTypeAttributeValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributeValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListObjectTypeAttributeValuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListProfileAttributeValues
 
         internal virtual ListProfileAttributeValuesResponse ListProfileAttributeValues(ListProfileAttributeValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileAttributeValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
 
@@ -3297,7 +3803,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileAttributeValues">REST API Reference for ListProfileAttributeValues Operation</seealso>
         public virtual Task<ListProfileAttributeValuesResponse> ListProfileAttributeValuesAsync(ListProfileAttributeValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileAttributeValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
 
@@ -3305,11 +3811,59 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  ListProfileHistoryRecords
+
+        internal virtual ListProfileHistoryRecordsResponse ListProfileHistoryRecords(ListProfileHistoryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProfileHistoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileHistoryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfileHistoryRecordsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of history records for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileHistoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProfileHistoryRecords service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">REST API Reference for ListProfileHistoryRecords Operation</seealso>
+        public virtual Task<ListProfileHistoryRecordsResponse> ListProfileHistoryRecordsAsync(ListProfileHistoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProfileHistoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileHistoryRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProfileHistoryRecordsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListProfileObjects
 
         internal virtual ListProfileObjectsResponse ListProfileObjects(ListProfileObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectsResponseUnmarshaller.Instance;
 
@@ -3345,7 +3899,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjects">REST API Reference for ListProfileObjects Operation</seealso>
         public virtual Task<ListProfileObjectsResponse> ListProfileObjectsAsync(ListProfileObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectsResponseUnmarshaller.Instance;
 
@@ -3357,7 +3911,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListProfileObjectTypesResponse ListProfileObjectTypes(ListProfileObjectTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypesResponseUnmarshaller.Instance;
 
@@ -3393,7 +3947,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypes">REST API Reference for ListProfileObjectTypes Operation</seealso>
         public virtual Task<ListProfileObjectTypesResponse> ListProfileObjectTypesAsync(ListProfileObjectTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypesResponseUnmarshaller.Instance;
 
@@ -3405,7 +3959,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListProfileObjectTypeTemplatesResponse ListProfileObjectTypeTemplates(ListProfileObjectTypeTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypeTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
 
@@ -3441,7 +3995,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates">REST API Reference for ListProfileObjectTypeTemplates Operation</seealso>
         public virtual Task<ListProfileObjectTypeTemplatesResponse> ListProfileObjectTypeTemplatesAsync(ListProfileObjectTypeTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypeTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
 
@@ -3449,11 +4003,104 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  ListRecommenderRecipes
+
+        internal virtual ListRecommenderRecipesResponse ListRecommenderRecipes(ListRecommenderRecipesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderRecipesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderRecipesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of available recommender recipes that can be used to create recommenders.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderRecipes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenderRecipes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderRecipes">REST API Reference for ListRecommenderRecipes Operation</seealso>
+        public virtual Task<ListRecommenderRecipesResponse> ListRecommenderRecipesAsync(ListRecommenderRecipesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderRecipesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommenderRecipesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListRecommenders
+
+        internal virtual ListRecommendersResponse ListRecommenders(ListRecommendersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommendersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of recommenders in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenders service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        public virtual Task<ListRecommendersResponse> ListRecommendersAsync(ListRecommendersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommendersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListRuleBasedMatches
 
         internal virtual ListRuleBasedMatchesResponse ListRuleBasedMatches(ListRuleBasedMatchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
 
@@ -3489,7 +4136,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
         public virtual Task<ListRuleBasedMatchesResponse> ListRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
 
@@ -3501,7 +4148,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListSegmentDefinitionsResponse ListSegmentDefinitions(ListSegmentDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentDefinitionsResponseUnmarshaller.Instance;
 
@@ -3537,7 +4184,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentDefinitions">REST API Reference for ListSegmentDefinitions Operation</seealso>
         public virtual Task<ListSegmentDefinitionsResponse> ListSegmentDefinitionsAsync(ListSegmentDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentDefinitionsResponseUnmarshaller.Instance;
 
@@ -3549,7 +4196,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3581,7 +4228,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3593,7 +4240,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListUploadJobsResponse ListUploadJobs(ListUploadJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUploadJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUploadJobsResponseUnmarshaller.Instance;
 
@@ -3629,7 +4276,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListUploadJobs">REST API Reference for ListUploadJobs Operation</seealso>
         public virtual Task<ListUploadJobsResponse> ListUploadJobsAsync(ListUploadJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUploadJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUploadJobsResponseUnmarshaller.Instance;
 
@@ -3641,7 +4288,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -3677,7 +4324,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -3689,7 +4336,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual MergeProfilesResponse MergeProfiles(MergeProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeProfilesResponseUnmarshaller.Instance;
 
@@ -3767,7 +4414,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">REST API Reference for MergeProfiles Operation</seealso>
         public virtual Task<MergeProfilesResponse> MergeProfilesAsync(MergeProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeProfilesResponseUnmarshaller.Instance;
 
@@ -3775,11 +4422,60 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  PutDomainObjectType
+
+        internal virtual PutDomainObjectTypeResponse PutDomainObjectType(PutDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<PutDomainObjectTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create/Update a DomainObjectType in a Customer Profiles domain. To create a new DomainObjectType,
+        /// Data Store needs to be enabled on the Domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDomainObjectType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutDomainObjectType">REST API Reference for PutDomainObjectType Operation</seealso>
+        public virtual Task<PutDomainObjectTypeResponse> PutDomainObjectTypeAsync(PutDomainObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDomainObjectTypeResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  PutIntegration
 
         internal virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
@@ -3827,7 +4523,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
@@ -3839,7 +4535,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual PutProfileObjectResponse PutProfileObject(PutProfileObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectResponseUnmarshaller.Instance;
 
@@ -3893,7 +4589,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject">REST API Reference for PutProfileObject Operation</seealso>
         public virtual Task<PutProfileObjectResponse> PutProfileObjectAsync(PutProfileObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectResponseUnmarshaller.Instance;
 
@@ -3905,7 +4601,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual PutProfileObjectTypeResponse PutProfileObjectType(PutProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -3947,7 +4643,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType">REST API Reference for PutProfileObjectType Operation</seealso>
         public virtual Task<PutProfileObjectTypeResponse> PutProfileObjectTypeAsync(PutProfileObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -3959,7 +4655,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual SearchProfilesResponse SearchProfiles(SearchProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchProfilesResponseUnmarshaller.Instance;
 
@@ -4004,7 +4700,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
         public virtual Task<SearchProfilesResponse> SearchProfilesAsync(SearchProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchProfilesResponseUnmarshaller.Instance;
 
@@ -4012,11 +4708,60 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  StartRecommender
+
+        internal virtual StartRecommenderResponse StartRecommender(StartRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StartRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a recommender that was previously stopped. Starting a recommender resumes its
+        /// ability to generate recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        public virtual Task<StartRecommenderResponse> StartRecommenderAsync(StartRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartUploadJob
 
         internal virtual StartUploadJobResponse StartUploadJob(StartUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
 
@@ -4052,7 +4797,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">REST API Reference for StartUploadJob Operation</seealso>
         public virtual Task<StartUploadJobResponse> StartUploadJobAsync(StartUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
 
@@ -4060,11 +4805,60 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  StopRecommender
+
+        internal virtual StopRecommenderResponse StopRecommender(StopRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StopRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a recommender, suspending its ability to generate recommendations. The recommender
+        /// can be restarted later using StartRecommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        public virtual Task<StopRecommenderResponse> StopRecommenderAsync(StopRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopUploadJob
 
         internal virtual StopUploadJobResponse StopUploadJob(StopUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopUploadJobResponseUnmarshaller.Instance;
 
@@ -4100,7 +4894,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopUploadJob">REST API Reference for StopUploadJob Operation</seealso>
         public virtual Task<StopUploadJobResponse> StopUploadJobAsync(StopUploadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopUploadJobResponseUnmarshaller.Instance;
 
@@ -4112,7 +4906,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4163,7 +4957,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4175,7 +4969,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4207,7 +5001,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4219,7 +5013,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual UpdateCalculatedAttributeDefinitionResponse UpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -4257,7 +5051,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
         public virtual Task<UpdateCalculatedAttributeDefinitionResponse> UpdateCalculatedAttributeDefinitionAsync(UpdateCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -4269,7 +5063,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual UpdateDomainResponse UpdateDomain(UpdateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -4327,7 +5121,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual Task<UpdateDomainResponse> UpdateDomainAsync(UpdateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -4339,7 +5133,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual UpdateDomainLayoutResponse UpdateDomainLayout(UpdateDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -4376,7 +5170,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">REST API Reference for UpdateDomainLayout Operation</seealso>
         public virtual Task<UpdateDomainLayoutResponse> UpdateDomainLayoutAsync(UpdateDomainLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -4388,7 +5182,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual UpdateEventTriggerResponse UpdateEventTrigger(UpdateEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
 
@@ -4424,7 +5218,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
         public virtual Task<UpdateEventTriggerResponse> UpdateEventTriggerAsync(UpdateEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
 
@@ -4436,7 +5230,7 @@ namespace Amazon.CustomerProfiles
 
         internal virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -4480,11 +5274,60 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRecommender
+
+        internal virtual UpdateRecommenderResponse UpdateRecommender(UpdateRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing recommender, allowing you to modify its configuration
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        public virtual Task<UpdateRecommenderResponse> UpdateRecommenderAsync(UpdateRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRecommenderResponse>(request, options, cancellationToken);
         }
         #endregion
         

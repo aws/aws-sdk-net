@@ -39,11 +39,13 @@ namespace Amazon.BillingConductor.Model
         private long? _associationSize;
         private string _billingGroupArn;
         private ListCustomLineItemChargeDetails _chargeDetails;
+        private ComputationRuleEnum _computationRule;
         private long? _creationTime;
         private CurrencyCode _currencyCode;
         private string _description;
         private long? _lastModifiedTime;
         private string _name;
+        private PresentationObject _presentationDetails;
         private string _productCode;
 
         /// <summary>
@@ -140,6 +142,25 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComputationRule. 
+        /// <para>
+        ///  The computation rule that determines how the custom line item charges are computed
+        /// and reflected in the bill. 
+        /// </para>
+        /// </summary>
+        public ComputationRuleEnum ComputationRule
+        {
+            get { return this._computationRule; }
+            set { this._computationRule = value; }
+        }
+
+        // Check to see if ComputationRule property is set
+        internal bool IsSetComputationRule()
+        {
+            return this._computationRule != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The time created.
@@ -231,6 +252,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresentationDetails. 
+        /// <para>
+        ///  Configuration details specifying how the custom line item charges are presented,
+        /// including which service the charges are shown under. 
+        /// </para>
+        /// </summary>
+        public PresentationObject PresentationDetails
+        {
+            get { return this._presentationDetails; }
+            set { this._presentationDetails = value; }
+        }
+
+        // Check to see if PresentationDetails property is set
+        internal bool IsSetPresentationDetails()
+        {
+            return this._presentationDetails != null;
         }
 
         /// <summary>

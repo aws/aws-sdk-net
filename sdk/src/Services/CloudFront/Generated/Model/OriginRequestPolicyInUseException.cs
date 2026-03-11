@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for OriginRequestPolicyInUseException
+        /// message.
+        /// </summary>
+        public OriginRequestPolicyInUseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OriginRequestPolicyInUseException with the specified error
         /// message.
         /// </summary>

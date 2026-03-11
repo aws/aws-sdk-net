@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListCidrCollectionsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetNextToken())
@@ -66,8 +67,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/cidrcollection";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListCidrCollectionsRequestMarshaller _instance = new ListCidrCollectionsRequestMarshaller();        
@@ -89,5 +90,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListCidrCollectionsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListCidrCollectionsRequest publicRequest);
     }    
 }

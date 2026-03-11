@@ -36,6 +36,14 @@ namespace Amazon.ChimeSDKMessaging
         /// <summary>
         /// Construct instance of AmazonChimeSDKMessagingException
         /// </summary>
+        public AmazonChimeSDKMessagingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonChimeSDKMessagingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonChimeSDKMessagingException(string message)
             : base(message)

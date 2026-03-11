@@ -31,6 +31,12 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// The <c>Export</c> structure describes the exported output values for a stack.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">Get
+    /// exported outputs from a deployed CloudFormation stack</a>.
+    /// </para>
     /// </summary>
     public partial class Export
     {

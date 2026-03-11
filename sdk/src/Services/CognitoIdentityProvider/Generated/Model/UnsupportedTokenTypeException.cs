@@ -39,6 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedTokenTypeException
+        /// message.
+        /// </summary>
+        public UnsupportedTokenTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedTokenTypeException with the specified error
         /// message.
         /// </summary>

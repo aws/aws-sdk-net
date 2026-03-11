@@ -60,7 +60,33 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeobuf())
             {
                 context.Writer.WritePropertyName("Geobuf");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Geobuf));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Geobuf);
+            }
+
+            if(requestObject.IsSetMultiPolygon())
+            {
+                context.Writer.WritePropertyName("MultiPolygon");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMultiPolygonListValue in requestObject.MultiPolygon)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var requestObjectMultiPolygonListValueListValue in requestObjectMultiPolygonListValue)
+                    {
+                        context.Writer.WriteStartArray();
+                        foreach(var requestObjectMultiPolygonListValueListValueListValue in requestObjectMultiPolygonListValueListValue)
+                        {
+                            context.Writer.WriteStartArray();
+                            foreach(var requestObjectMultiPolygonListValueListValueListValueListValue in requestObjectMultiPolygonListValueListValueListValue)
+                            {
+                                    context.Writer.WriteNumberValue(requestObjectMultiPolygonListValueListValueListValueListValue);
+                            }
+                            context.Writer.WriteEndArray();
+                        }
+                        context.Writer.WriteEndArray();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPolygon())

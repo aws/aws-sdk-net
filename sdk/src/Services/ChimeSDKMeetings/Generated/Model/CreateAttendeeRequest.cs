@@ -32,7 +32,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// <summary>
     /// Container for the parameters to the CreateAttendee operation.
     /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information
-    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
     /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
     /// </summary>
     public partial class CreateAttendeeRequest : AmazonChimeSDKMeetingsRequest
@@ -77,6 +77,14 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// If you don't set the <c>video</c> capability to receive, the response will contain
         /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
         /// to receive and you set your <c>content</c> capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If meeting features is defined as <c>Video:MaxResolution:None</c> but <c>Content:MaxResolution</c>
+        /// is defined as something other than <c>None</c> and attendee capabilities are not defined
+        /// in the API request, then the default attendee video capability is set to <c>Receive</c>
+        /// and attendee content capability is set to <c>SendReceive</c>. This is because content
+        /// <c>SendReceive</c> requires video to be at least <c>Receive</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

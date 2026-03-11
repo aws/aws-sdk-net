@@ -38,7 +38,8 @@ namespace Amazon.S3Control.Model
     ///  </note> 
     /// <para>
     /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon Web Services account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+    /// This operation returns the effective account-level configuration, which may inherit
+    /// from organization-level policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
     /// Using Amazon S3 block public access</a>.
     /// </para>
     ///  

@@ -74,6 +74,11 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// A list of names of the configuration recorders that you want to specify.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When making a request to this operation, you can only specify one configuration recorder.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

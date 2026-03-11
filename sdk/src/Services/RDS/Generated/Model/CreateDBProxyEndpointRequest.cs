@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
     {
         private string _dbProxyEndpointName;
         private string _dbProxyName;
+        private EndpointNetworkType _endpointNetworkType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DBProxyEndpointTargetRole _targetRole;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -81,6 +82,59 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBProxyName()
         {
             return this._dbProxyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointNetworkType. 
+        /// <para>
+        /// The network type of the DB proxy endpoint. The network type determines the IP version
+        /// that the proxy endpoint supports.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IPV4</c> - The proxy endpoint supports IPv4 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPV6</c> - The proxy endpoint supports IPv6 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DUAL</c> - The proxy endpoint supports both IPv4 and IPv6.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>IPV4</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify <c>IPV6</c> or <c>DUAL</c>, the VPC and all subnets must have an IPv6
+        /// CIDR block.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <c>IPV6</c> or <c>DUAL</c>, the VPC tenancy cannot be <c>dedicated</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EndpointNetworkType EndpointNetworkType
+        {
+            get { return this._endpointNetworkType; }
+            set { this._endpointNetworkType = value; }
+        }
+
+        // Check to see if EndpointNetworkType property is set
+        internal bool IsSetEndpointNetworkType()
+        {
+            return this._endpointNetworkType != null;
         }
 
         /// <summary>

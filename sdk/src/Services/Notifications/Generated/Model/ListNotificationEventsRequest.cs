@@ -54,6 +54,7 @@ namespace Amazon.Notifications.Model
         private LocaleCode _locale;
         private int? _maxResults;
         private string _nextToken;
+        private string _organizationalUnitId;
         private string _source;
         private DateTime? _startTime;
 
@@ -167,6 +168,24 @@ namespace Amazon.Notifications.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// The unique identifier of the organizational unit used to filter notification events.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
         /// <summary>

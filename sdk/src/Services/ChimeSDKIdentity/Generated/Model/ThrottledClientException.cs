@@ -40,6 +40,13 @@ namespace Amazon.ChimeSDKIdentity.Model
         private ErrorCode _code;
 
         /// <summary>
+        /// Default constructor for ThrottledClientException
+        /// message.
+        /// </summary>
+        public ThrottledClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ThrottledClientException with the specified error
         /// message.
         /// </summary>

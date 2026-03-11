@@ -36,6 +36,14 @@ namespace Amazon.MailManager
         /// <summary>
         /// Construct instance of AmazonMailManagerException
         /// </summary>
+        public AmazonMailManagerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMailManagerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMailManagerException(string message)
             : base(message)

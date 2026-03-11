@@ -39,6 +39,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRuleException
+        /// message.
+        /// </summary>
+        public InvalidRuleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRuleException with the specified error
         /// message.
         /// </summary>

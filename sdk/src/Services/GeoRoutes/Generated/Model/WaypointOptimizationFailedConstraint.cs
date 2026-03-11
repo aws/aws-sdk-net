@@ -43,6 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// The failed constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public WaypointOptimizationConstraint Constraint
         {
             get { return this._constraint; }
@@ -61,6 +62,7 @@ namespace Amazon.GeoRoutes.Model
         /// Reason for the failed constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Reason
         {
             get { return this._reason; }

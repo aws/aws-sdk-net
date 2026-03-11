@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNotDiscoveredException
+        /// message.
+        /// </summary>
+        public ResourceNotDiscoveredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotDiscoveredException with the specified error
         /// message.
         /// </summary>

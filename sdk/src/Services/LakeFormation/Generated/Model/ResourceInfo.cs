@@ -34,12 +34,33 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class ResourceInfo
     {
+        private string _expectedResourceOwnerAccount;
         private bool? _hybridAccessEnabled;
         private DateTime? _lastModified;
         private string _resourceArn;
         private string _roleArn;
+        private VerificationStatus _verificationStatus;
         private bool? _withFederation;
         private bool? _withPrivilegedAccess;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedResourceOwnerAccount. 
+        /// <para>
+        /// The Amazon Web Services account that owns the Glue tables associated with specific
+        /// Amazon S3 locations. 
+        /// </para>
+        /// </summary>
+        public string ExpectedResourceOwnerAccount
+        {
+            get { return this._expectedResourceOwnerAccount; }
+            set { this._expectedResourceOwnerAccount = value; }
+        }
+
+        // Check to see if ExpectedResourceOwnerAccount property is set
+        internal bool IsSetExpectedResourceOwnerAccount()
+        {
+            return this._expectedResourceOwnerAccount != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HybridAccessEnabled. 
@@ -112,6 +133,41 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationStatus. 
+        /// <para>
+        /// Indicates whether the registered role has sufficient permissions to access registered
+        /// Amazon S3 location. Verification Status can be one of the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VERIFIED - Registered role has sufficient permissions to access registered Amazon
+        /// S3 location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NOT_VERIFIED - Registered role does not have sufficient permissions to access registered
+        /// Amazon S3 location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VERIFICATION_FAILED - Unable to verify if the registered role can access the registered
+        /// Amazon S3 location.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public VerificationStatus VerificationStatus
+        {
+            get { return this._verificationStatus; }
+            set { this._verificationStatus = value; }
+        }
+
+        // Check to see if VerificationStatus property is set
+        internal bool IsSetVerificationStatus()
+        {
+            return this._verificationStatus != null;
         }
 
         /// <summary>

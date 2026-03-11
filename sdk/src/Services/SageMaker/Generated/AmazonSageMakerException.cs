@@ -36,6 +36,14 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Construct instance of AmazonSageMakerException
         /// </summary>
+        public AmazonSageMakerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSageMakerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSageMakerException(string message)
             : base(message)

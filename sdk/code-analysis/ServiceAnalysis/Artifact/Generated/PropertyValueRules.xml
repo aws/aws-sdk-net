@@ -71,6 +71,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Artifact.Model.ListReportVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Artifact.Model.ListReportVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Artifact.Model.ListReportVersionsRequest.ReportId</property>
+    <pattern>report-[a-zA-Z0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Artifact.Model.ListReportVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Artifact.Model.CustomerAgreementSummary.AgreementArn</property>
     <min>1</min>
     <max>1024</max>

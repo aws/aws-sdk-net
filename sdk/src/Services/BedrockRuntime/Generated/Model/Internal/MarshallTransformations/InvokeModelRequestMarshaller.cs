@@ -101,6 +101,11 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-Bedrock-PerformanceConfig-Latency"] = publicRequest.PerformanceConfigLatency;
             }
         
+            if (publicRequest.IsSetServiceTier()) 
+            {
+                request.Headers["X-Amzn-Bedrock-Service-Tier"] = publicRequest.ServiceTier;
+            }
+        
             if (publicRequest.IsSetTrace()) 
             {
                 request.Headers["X-Amzn-Bedrock-Trace"] = publicRequest.Trace;

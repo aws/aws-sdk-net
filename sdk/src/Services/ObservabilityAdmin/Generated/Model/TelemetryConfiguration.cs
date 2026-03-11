@@ -41,6 +41,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResourceType _resourceType;
         private Dictionary<string, string> _telemetryConfigurationState = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TelemetrySourceType _telemetrySourceType;
 
         /// <summary>
         /// Gets and sets the property AccountIdentifier. 
@@ -84,7 +85,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        ///  The identifier of the resource, for example <c>i-0b22a22eec53b9321</c>. 
+        ///  The identifier of the resource, for example for Amazon VPC, it would be <c>vpc-1a2b3c4d5e6f1a2b3</c>.
+        /// 
         /// </para>
         /// </summary>
         public string ResourceIdentifier
@@ -126,7 +128,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of resource, for example <c>AWS::EC2::Instance</c>. 
+        ///  The type of resource, for example <c>Amazon Web Services::EC2::Instance</c>, or <c>Amazon
+        /// Web Services::EKS::Cluster</c>, etc. 
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -163,6 +166,21 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetTelemetryConfigurationState()
         {
             return this._telemetryConfigurationState != null && (this._telemetryConfigurationState.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySourceType.
+        /// </summary>
+        public TelemetrySourceType TelemetrySourceType
+        {
+            get { return this._telemetrySourceType; }
+            set { this._telemetrySourceType = value; }
+        }
+
+        // Check to see if TelemetrySourceType property is set
+        internal bool IsSetTelemetrySourceType()
+        {
+            return this._telemetrySourceType != null;
         }
 
     }

@@ -36,6 +36,14 @@ namespace Amazon.Translate
         /// <summary>
         /// Construct instance of AmazonTranslateException
         /// </summary>
+        public AmazonTranslateException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTranslateException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTranslateException(string message)
             : base(message)

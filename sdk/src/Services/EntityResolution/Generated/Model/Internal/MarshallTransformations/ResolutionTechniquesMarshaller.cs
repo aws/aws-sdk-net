@@ -74,6 +74,17 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRuleConditionProperties())
+            {
+                context.Writer.WritePropertyName("ruleConditionProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RuleConditionPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.RuleConditionProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

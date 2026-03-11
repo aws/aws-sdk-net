@@ -39,6 +39,13 @@ namespace Amazon.JsonProtocol.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGreetingException
+        /// message.
+        /// </summary>
+        public InvalidGreetingException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGreetingException with the specified error
         /// message.
         /// </summary>

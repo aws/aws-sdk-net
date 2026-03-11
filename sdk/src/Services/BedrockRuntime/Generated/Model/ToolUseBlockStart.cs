@@ -30,12 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The start of a tool use block.
+    /// The start of a tool use block. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ToolUseBlockStart
     {
         private string _name;
         private string _toolUseId;
+        private ToolUseType _type;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -73,6 +75,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetToolUseId()
         {
             return this._toolUseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type for the tool request.
+        /// </para>
+        /// </summary>
+        public ToolUseType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

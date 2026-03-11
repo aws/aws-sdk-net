@@ -46,6 +46,17 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActionabilities())
+            {
+                context.Writer.WritePropertyName("actionabilities");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectActionabilitiesListValue in requestObject.Actionabilities)
+                {
+                        context.Writer.WriteStringValue(requestObjectActionabilitiesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetEventTypeCategories())
             {
                 context.Writer.WritePropertyName("eventTypeCategories");
@@ -64,6 +75,17 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 foreach(var requestObjectEventTypeCodesListValue in requestObject.EventTypeCodes)
                 {
                         context.Writer.WriteStringValue(requestObjectEventTypeCodesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetPersonas())
+            {
+                context.Writer.WritePropertyName("personas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPersonasListValue in requestObject.Personas)
+                {
+                        context.Writer.WriteStringValue(requestObjectPersonasListValue);
                 }
                 context.Writer.WriteEndArray();
             }

@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateInstanceIdException
+        /// message.
+        /// </summary>
+        public DuplicateInstanceIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateInstanceIdException with the specified error
         /// message.
         /// </summary>

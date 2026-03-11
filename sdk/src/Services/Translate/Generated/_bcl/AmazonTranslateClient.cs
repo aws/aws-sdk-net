@@ -303,7 +303,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">REST API Reference for CreateParallelData Operation</seealso>
         public virtual CreateParallelDataResponse CreateParallelData(CreateParallelDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParallelDataResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">REST API Reference for CreateParallelData Operation</seealso>
         public virtual Task<CreateParallelDataResponse> CreateParallelDataAsync(CreateParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParallelDataResponseUnmarshaller.Instance;
             
@@ -392,7 +392,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData">REST API Reference for DeleteParallelData Operation</seealso>
         public virtual DeleteParallelDataResponse DeleteParallelData(DeleteParallelDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteParallelDataResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData">REST API Reference for DeleteParallelData Operation</seealso>
         public virtual Task<DeleteParallelDataResponse> DeleteParallelDataAsync(DeleteParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteParallelDataResponseUnmarshaller.Instance;
             
@@ -465,7 +465,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         public virtual DeleteTerminologyResponse DeleteTerminology(DeleteTerminologyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTerminologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
         public virtual Task<DeleteTerminologyResponse> DeleteTerminologyAsync(DeleteTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTerminologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
             
@@ -535,7 +535,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">REST API Reference for DescribeTextTranslationJob Operation</seealso>
         public virtual DescribeTextTranslationJobResponse DescribeTextTranslationJob(DescribeTextTranslationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTextTranslationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTextTranslationJobResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">REST API Reference for DescribeTextTranslationJob Operation</seealso>
         public virtual Task<DescribeTextTranslationJobResponse> DescribeTextTranslationJobAsync(DescribeTextTranslationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTextTranslationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTextTranslationJobResponseUnmarshaller.Instance;
             
@@ -605,7 +605,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData">REST API Reference for GetParallelData Operation</seealso>
         public virtual GetParallelDataResponse GetParallelData(GetParallelDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParallelDataResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData">REST API Reference for GetParallelData Operation</seealso>
         public virtual Task<GetParallelDataResponse> GetParallelDataAsync(GetParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParallelDataResponseUnmarshaller.Instance;
             
@@ -678,7 +678,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
         public virtual GetTerminologyResponse GetTerminology(GetTerminologyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTerminologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTerminologyResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
         public virtual Task<GetTerminologyResponse> GetTerminologyAsync(GetTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTerminologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTerminologyResponseUnmarshaller.Instance;
             
@@ -768,7 +768,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         public virtual ImportTerminologyResponse ImportTerminology(ImportTerminologyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportTerminologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         public virtual Task<ImportTerminologyResponse> ImportTerminologyAsync(ImportTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportTerminologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
             
@@ -856,7 +856,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages">REST API Reference for ListLanguages Operation</seealso>
         public virtual ListLanguagesResponse ListLanguages(ListLanguagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLanguagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLanguagesResponseUnmarshaller.Instance;
 
@@ -890,7 +890,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages">REST API Reference for ListLanguages Operation</seealso>
         public virtual Task<ListLanguagesResponse> ListLanguagesAsync(ListLanguagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLanguagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLanguagesResponseUnmarshaller.Instance;
             
@@ -922,7 +922,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">REST API Reference for ListParallelData Operation</seealso>
         public virtual ListParallelDataResponse ListParallelData(ListParallelDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParallelDataResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">REST API Reference for ListParallelData Operation</seealso>
         public virtual Task<ListParallelDataResponse> ListParallelDataAsync(ListParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListParallelDataResponseUnmarshaller.Instance;
             
@@ -988,7 +988,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1022,7 +1022,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1054,7 +1054,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
         public virtual ListTerminologiesResponse ListTerminologies(ListTerminologiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTerminologiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
         public virtual Task<ListTerminologiesResponse> ListTerminologiesAsync(ListTerminologiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTerminologiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
             
@@ -1120,7 +1120,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs">REST API Reference for ListTextTranslationJobs Operation</seealso>
         public virtual ListTextTranslationJobsResponse ListTextTranslationJobs(ListTextTranslationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTextTranslationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTextTranslationJobsResponseUnmarshaller.Instance;
 
@@ -1154,7 +1154,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs">REST API Reference for ListTextTranslationJobs Operation</seealso>
         public virtual Task<ListTextTranslationJobsResponse> ListTextTranslationJobsAsync(ListTextTranslationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTextTranslationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTextTranslationJobsResponseUnmarshaller.Instance;
             
@@ -1213,7 +1213,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">REST API Reference for StartTextTranslationJob Operation</seealso>
         public virtual StartTextTranslationJobResponse StartTextTranslationJob(StartTextTranslationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTextTranslationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTextTranslationJobResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">REST API Reference for StartTextTranslationJob Operation</seealso>
         public virtual Task<StartTextTranslationJobResponse> StartTextTranslationJobAsync(StartTextTranslationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTextTranslationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTextTranslationJobResponseUnmarshaller.Instance;
             
@@ -1318,7 +1318,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob">REST API Reference for StopTextTranslationJob Operation</seealso>
         public virtual StopTextTranslationJobResponse StopTextTranslationJob(StopTextTranslationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTextTranslationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTextTranslationJobResponseUnmarshaller.Instance;
 
@@ -1364,7 +1364,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob">REST API Reference for StopTextTranslationJob Operation</seealso>
         public virtual Task<StopTextTranslationJobResponse> StopTextTranslationJobAsync(StopTextTranslationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTextTranslationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTextTranslationJobResponseUnmarshaller.Instance;
             
@@ -1406,7 +1406,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1447,7 +1447,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1509,7 +1509,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument">REST API Reference for TranslateDocument Operation</seealso>
         public virtual TranslateDocumentResponse TranslateDocument(TranslateDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslateDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslateDocumentResponseUnmarshaller.Instance;
 
@@ -1570,7 +1570,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument">REST API Reference for TranslateDocument Operation</seealso>
         public virtual Task<TranslateDocumentResponse> TranslateDocumentAsync(TranslateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslateDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslateDocumentResponseUnmarshaller.Instance;
             
@@ -1629,7 +1629,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual TranslateTextResponse TranslateText(TranslateTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslateTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
@@ -1687,7 +1687,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual Task<TranslateTextResponse> TranslateTextAsync(TranslateTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslateTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
             
@@ -1726,7 +1726,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1764,7 +1764,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1817,7 +1817,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData">REST API Reference for UpdateParallelData Operation</seealso>
         public virtual UpdateParallelDataResponse UpdateParallelData(UpdateParallelDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParallelDataResponseUnmarshaller.Instance;
 
@@ -1869,7 +1869,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData">REST API Reference for UpdateParallelData Operation</seealso>
         public virtual Task<UpdateParallelDataResponse> UpdateParallelDataAsync(UpdateParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParallelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParallelDataResponseUnmarshaller.Instance;
             

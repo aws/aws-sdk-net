@@ -40,6 +40,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyLoadBalancersException
+        /// message.
+        /// </summary>
+        public TooManyLoadBalancersException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyLoadBalancersException with the specified error
         /// message.
         /// </summary>

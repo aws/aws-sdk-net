@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcPeeringConnections operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Retrieves information on VPC peering connections. Use this operation to get peering
     /// information for all fleets or for one specific fleet ID. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To retrieve connection information, call this operation from the Amazon Web Services

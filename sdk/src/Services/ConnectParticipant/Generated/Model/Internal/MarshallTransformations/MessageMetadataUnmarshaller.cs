@@ -62,6 +62,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MessageProcessingStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MessageProcessingStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Receipts", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Receipt, ReceiptUnmarshaller>(ReceiptUnmarshaller.Instance);

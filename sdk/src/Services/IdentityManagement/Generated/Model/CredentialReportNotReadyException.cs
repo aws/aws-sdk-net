@@ -39,6 +39,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for CredentialReportNotReadyException
+        /// message.
+        /// </summary>
+        public CredentialReportNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CredentialReportNotReadyException with the specified error
         /// message.
         /// </summary>

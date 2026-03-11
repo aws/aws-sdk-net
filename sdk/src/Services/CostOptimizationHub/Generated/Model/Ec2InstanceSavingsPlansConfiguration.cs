@@ -80,7 +80,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property InstanceFamily. 
         /// <para>
-        /// The instance family of the recommended Savings Plan.
+        /// The instance family of the recommended Savings Plans.
         /// </para>
         /// </summary>
         public string InstanceFamily

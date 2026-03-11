@@ -40,6 +40,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryAlreadyInRegionException
+        /// message.
+        /// </summary>
+        public DirectoryAlreadyInRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryAlreadyInRegionException with the specified error
         /// message.
         /// </summary>

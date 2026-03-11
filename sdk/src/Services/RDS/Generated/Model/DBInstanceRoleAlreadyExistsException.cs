@@ -40,6 +40,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBInstanceRoleAlreadyExistsException
+        /// message.
+        /// </summary>
+        public DBInstanceRoleAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBInstanceRoleAlreadyExistsException with the specified error
         /// message.
         /// </summary>

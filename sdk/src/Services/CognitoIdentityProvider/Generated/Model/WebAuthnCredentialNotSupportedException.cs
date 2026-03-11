@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for WebAuthnCredentialNotSupportedException
+        /// message.
+        /// </summary>
+        public WebAuthnCredentialNotSupportedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebAuthnCredentialNotSupportedException with the specified error
         /// message.
         /// </summary>

@@ -43,6 +43,13 @@ namespace Amazon.SimpleEmail.Model
         private string _topic;
 
         /// <summary>
+        /// Default constructor for InvalidSnsTopicException
+        /// message.
+        /// </summary>
+        public InvalidSnsTopicException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSnsTopicException with the specified error
         /// message.
         /// </summary>

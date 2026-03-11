@@ -39,6 +39,13 @@ namespace Amazon.XRay.Model
     {
 
         /// <summary>
+        /// Default constructor for RuleLimitExceededException
+        /// message.
+        /// </summary>
+        public RuleLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RuleLimitExceededException with the specified error
         /// message.
         /// </summary>

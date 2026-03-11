@@ -42,6 +42,13 @@ namespace Amazon.AWSHealth.Model
     {
 
         /// <summary>
+        /// Default constructor for ConcurrentModificationException
+        /// message.
+        /// </summary>
+        public ConcurrentModificationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ConcurrentModificationException with the specified error
         /// message.
         /// </summary>

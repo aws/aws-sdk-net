@@ -44,6 +44,7 @@ namespace Amazon.GeoRoutes.Model
         /// Directional identifier of the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteDirection Direction
         {
             get { return this._direction; }
@@ -81,7 +82,7 @@ namespace Amazon.GeoRoutes.Model
         /// The route number.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Value
         {
             get { return this._value; }

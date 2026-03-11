@@ -36,6 +36,14 @@ namespace Amazon.CodeCatalyst
         /// <summary>
         /// Construct instance of AmazonCodeCatalystException
         /// </summary>
+        public AmazonCodeCatalystException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodeCatalystException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodeCatalystException(string message)
             : base(message)

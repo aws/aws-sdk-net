@@ -41,6 +41,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientAvailableIPsInSubnetException
+        /// message.
+        /// </summary>
+        public InsufficientAvailableIPsInSubnetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientAvailableIPsInSubnetException with the specified error
         /// message.
         /// </summary>

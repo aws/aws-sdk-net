@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateHealthCheck operation
     /// </summary>  
-    public class CreateHealthCheckResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateHealthCheckResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -79,7 +80,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -117,6 +117,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateHealthCheckResponse response);
 
         private static CreateHealthCheckResponseUnmarshaller _instance = new CreateHealthCheckResponseUnmarshaller();        
 

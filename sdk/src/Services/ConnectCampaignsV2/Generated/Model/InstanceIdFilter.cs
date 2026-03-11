@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// <summary>
         /// Gets and sets the property Value.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

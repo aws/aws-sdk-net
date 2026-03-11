@@ -39,6 +39,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for DisabledApiException
+        /// message.
+        /// </summary>
+        public DisabledApiException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DisabledApiException with the specified error
         /// message.
         /// </summary>

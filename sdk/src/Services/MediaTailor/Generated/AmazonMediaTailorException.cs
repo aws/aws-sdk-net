@@ -36,6 +36,14 @@ namespace Amazon.MediaTailor
         /// <summary>
         /// Construct instance of AmazonMediaTailorException
         /// </summary>
+        public AmazonMediaTailorException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMediaTailorException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMediaTailorException(string message)
             : base(message)

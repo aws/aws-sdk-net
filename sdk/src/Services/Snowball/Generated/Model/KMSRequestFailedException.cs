@@ -40,6 +40,13 @@ namespace Amazon.Snowball.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSRequestFailedException
+        /// message.
+        /// </summary>
+        public KMSRequestFailedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSRequestFailedException with the specified error
         /// message.
         /// </summary>

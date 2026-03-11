@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConflictingAlias Object
     /// </summary>  
-    public class ConflictingAliasUnmarshaller : IXmlUnmarshaller<ConflictingAlias, XmlUnmarshallerContext>
+    public partial class ConflictingAliasUnmarshaller : IXmlUnmarshaller<ConflictingAlias, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.DistributionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ConflictingAlias unmarshalledObject, int targetDepth);
+
         private static ConflictingAliasUnmarshaller _instance = new ConflictingAliasUnmarshaller();        
 
         /// <summary>

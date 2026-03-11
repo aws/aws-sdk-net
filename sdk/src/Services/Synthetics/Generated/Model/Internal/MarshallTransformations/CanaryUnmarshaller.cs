@@ -68,6 +68,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactS3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("BrowserConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<BrowserConfig, BrowserConfigUnmarshaller>(BrowserConfigUnmarshaller.Instance);
+                    unmarshalledObject.BrowserConfigs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Code", targetDepth))
                 {
                     var unmarshaller = CanaryCodeOutputUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EngineConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<EngineConfig, EngineConfigUnmarshaller>(EngineConfigUnmarshaller.Instance);
+                    unmarshalledObject.EngineConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExecutionRoleArn", targetDepth))
@@ -162,6 +174,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = VisualReferenceOutputUnmarshaller.Instance;
                     unmarshalledObject.VisualReference = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VisualReferences", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<VisualReferenceOutput, VisualReferenceOutputUnmarshaller>(VisualReferenceOutputUnmarshaller.Instance);
+                    unmarshalledObject.VisualReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcConfig", targetDepth))

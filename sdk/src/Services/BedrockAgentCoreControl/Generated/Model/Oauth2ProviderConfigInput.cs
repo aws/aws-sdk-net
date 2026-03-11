@@ -34,12 +34,33 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class Oauth2ProviderConfigInput
     {
+        private AtlassianOauth2ProviderConfigInput _atlassianOauth2ProviderConfig;
         private CustomOauth2ProviderConfigInput _customOauth2ProviderConfig;
         private GithubOauth2ProviderConfigInput _githubOauth2ProviderConfig;
         private GoogleOauth2ProviderConfigInput _googleOauth2ProviderConfig;
+        private IncludedOauth2ProviderConfigInput _includedOauth2ProviderConfig;
+        private LinkedinOauth2ProviderConfigInput _linkedinOauth2ProviderConfig;
         private MicrosoftOauth2ProviderConfigInput _microsoftOauth2ProviderConfig;
         private SalesforceOauth2ProviderConfigInput _salesforceOauth2ProviderConfig;
         private SlackOauth2ProviderConfigInput _slackOauth2ProviderConfig;
+
+        /// <summary>
+        /// Gets and sets the property AtlassianOauth2ProviderConfig. 
+        /// <para>
+        /// Configuration settings for Atlassian OAuth2 provider integration.
+        /// </para>
+        /// </summary>
+        public AtlassianOauth2ProviderConfigInput AtlassianOauth2ProviderConfig
+        {
+            get { return this._atlassianOauth2ProviderConfig; }
+            set { this._atlassianOauth2ProviderConfig = value; }
+        }
+
+        // Check to see if AtlassianOauth2ProviderConfig property is set
+        internal bool IsSetAtlassianOauth2ProviderConfig()
+        {
+            return this._atlassianOauth2ProviderConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomOauth2ProviderConfig. 
@@ -93,6 +114,43 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetGoogleOauth2ProviderConfig()
         {
             return this._googleOauth2ProviderConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludedOauth2ProviderConfig. 
+        /// <para>
+        /// The configuration for a non-custom OAuth2 provider. This includes settings for supported
+        /// OAuth2 providers that have built-in integration support.
+        /// </para>
+        /// </summary>
+        public IncludedOauth2ProviderConfigInput IncludedOauth2ProviderConfig
+        {
+            get { return this._includedOauth2ProviderConfig; }
+            set { this._includedOauth2ProviderConfig = value; }
+        }
+
+        // Check to see if IncludedOauth2ProviderConfig property is set
+        internal bool IsSetIncludedOauth2ProviderConfig()
+        {
+            return this._includedOauth2ProviderConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedinOauth2ProviderConfig. 
+        /// <para>
+        /// Configuration settings for LinkedIn OAuth2 provider integration.
+        /// </para>
+        /// </summary>
+        public LinkedinOauth2ProviderConfigInput LinkedinOauth2ProviderConfig
+        {
+            get { return this._linkedinOauth2ProviderConfig; }
+            set { this._linkedinOauth2ProviderConfig = value; }
+        }
+
+        // Check to see if LinkedinOauth2ProviderConfig property is set
+        internal bool IsSetLinkedinOauth2ProviderConfig()
+        {
+            return this._linkedinOauth2ProviderConfig != null;
         }
 
         /// <summary>

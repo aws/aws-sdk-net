@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for SchedulerTransitioningException
+        /// message.
+        /// </summary>
+        public SchedulerTransitioningException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SchedulerTransitioningException with the specified error
         /// message.
         /// </summary>

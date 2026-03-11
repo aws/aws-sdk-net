@@ -66,7 +66,7 @@ namespace Amazon.PaymentCryptographyData.Model
     /// which is translated to a PEK encrypted PIN block for use within the service. You can
     /// also use ECDH for reveal PIN, wherein the service translates the PIN block from PEK
     /// to a ECDH derived encryption key. For more information on establishing ECDH derived
-    /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating
+    /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
     /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// </para>
     ///  
@@ -112,6 +112,7 @@ namespace Amazon.PaymentCryptographyData.Model
     public partial class TranslatePinDataRequest : AmazonPaymentCryptographyDataRequest
     {
         private string _encryptedPinBlock;
+        private As2805PekDerivationAttributes _incomingAs2805Attributes;
         private DukptDerivationAttributes _incomingDukptAttributes;
         private string _incomingKeyIdentifier;
         private TranslationIsoFormats _incomingTranslationAttributes;
@@ -138,6 +139,25 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetEncryptedPinBlock()
         {
             return this._encryptedPinBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncomingAs2805Attributes. 
+        /// <para>
+        /// The attributes and values to use for incoming AS2805 encryption key for PIN block
+        /// translation.
+        /// </para>
+        /// </summary>
+        public As2805PekDerivationAttributes IncomingAs2805Attributes
+        {
+            get { return this._incomingAs2805Attributes; }
+            set { this._incomingAs2805Attributes = value; }
+        }
+
+        // Check to see if IncomingAs2805Attributes property is set
+        internal bool IsSetIncomingAs2805Attributes()
+        {
+            return this._incomingAs2805Attributes != null;
         }
 
         /// <summary>

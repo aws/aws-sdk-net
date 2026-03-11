@@ -42,6 +42,13 @@ namespace Amazon.IdentityManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for CredentialReportExpiredException
+        /// message.
+        /// </summary>
+        public CredentialReportExpiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CredentialReportExpiredException with the specified error
         /// message.
         /// </summary>

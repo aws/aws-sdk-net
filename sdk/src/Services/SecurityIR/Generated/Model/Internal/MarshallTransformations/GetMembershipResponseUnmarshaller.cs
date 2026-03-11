@@ -70,6 +70,12 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                     response.IncidentResponseTeam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("membershipAccountsConfigurations", targetDepth))
+                {
+                    var unmarshaller = MembershipAccountsConfigurationsUnmarshaller.Instance;
+                    response.MembershipAccountsConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("membershipActivationTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

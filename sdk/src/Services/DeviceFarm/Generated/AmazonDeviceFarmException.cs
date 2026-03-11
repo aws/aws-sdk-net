@@ -36,6 +36,14 @@ namespace Amazon.DeviceFarm
         /// <summary>
         /// Construct instance of AmazonDeviceFarmException
         /// </summary>
+        public AmazonDeviceFarmException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDeviceFarmException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDeviceFarmException(string message)
             : base(message)

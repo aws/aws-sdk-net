@@ -36,6 +36,14 @@ namespace Amazon.ManagedBlockchainQuery
         /// <summary>
         /// Construct instance of AmazonManagedBlockchainQueryException
         /// </summary>
+        public AmazonManagedBlockchainQueryException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonManagedBlockchainQueryException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonManagedBlockchainQueryException(string message)
             : base(message)

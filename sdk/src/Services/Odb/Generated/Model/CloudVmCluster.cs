@@ -34,6 +34,7 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class CloudVmCluster
     {
+        private string _cloudExadataInfrastructureArn;
         private string _cloudExadataInfrastructureId;
         private string _cloudVmClusterArn;
         private string _cloudVmClusterId;
@@ -50,6 +51,7 @@ namespace Amazon.Odb.Model
         private string _domain;
         private string _giVersion;
         private string _hostname;
+        private List<IamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<IamRole>() : null;
         private ExadataIormConfig _iormConfigCache;
         private bool? _isLocalBackupEnabled;
         private bool? _isSparseDiskgroupEnabled;
@@ -61,6 +63,7 @@ namespace Amazon.Odb.Model
         private string _ocid;
         private string _ociResourceAnchorName;
         private string _ociUrl;
+        private string _odbNetworkArn;
         private string _odbNetworkId;
         private float? _percentProgress;
         private string _scanDnsName;
@@ -74,6 +77,26 @@ namespace Amazon.Odb.Model
         private string _systemVersion;
         private string _timeZone;
         private List<string> _vipIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CloudExadataInfrastructureArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster
+        /// belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CloudExadataInfrastructureArn
+        {
+            get { return this._cloudExadataInfrastructureArn; }
+            set { this._cloudExadataInfrastructureArn = value; }
+        }
+
+        // Check to see if CloudExadataInfrastructureArn property is set
+        internal bool IsSetCloudExadataInfrastructureArn()
+        {
+            return this._cloudExadataInfrastructureArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudExadataInfrastructureId. 
@@ -376,6 +399,30 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamRoles. 
+        /// <para>
+        /// The Amazon Web Services Identity and Access Management (IAM) service roles associated
+        /// with the VM cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IamRole> IamRoles
+        {
+            get { return this._iamRoles; }
+            set { this._iamRoles = value; }
+        }
+
+        // Check to see if IamRoles property is set
+        internal bool IsSetIamRoles()
+        {
+            return this._iamRoles != null && (this._iamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property IormConfigCache. 
         /// <para>
         /// The ExadataIormConfig cache details for the VM cluster.
@@ -572,6 +619,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetOciUrl()
         {
             return this._ociUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OdbNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string OdbNetworkArn
+        {
+            get { return this._odbNetworkArn; }
+            set { this._odbNetworkArn = value; }
+        }
+
+        // Check to see if OdbNetworkArn property is set
+        internal bool IsSetOdbNetworkArn()
+        {
+            return this._odbNetworkArn != null;
         }
 
         /// <summary>

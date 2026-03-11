@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AdvancedDataProtectionMetrics Object
     /// </summary>  
-    public class AdvancedDataProtectionMetricsUnmarshaller : IXmlUnmarshaller<AdvancedDataProtectionMetrics, XmlUnmarshallerContext>
+    public partial class AdvancedDataProtectionMetricsUnmarshaller : IXmlUnmarshaller<AdvancedDataProtectionMetrics, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AdvancedDataProtectionMetrics unmarshalledObject, int targetDepth);
+
         private static AdvancedDataProtectionMetricsUnmarshaller _instance = new AdvancedDataProtectionMetricsUnmarshaller();        
 
         /// <summary>

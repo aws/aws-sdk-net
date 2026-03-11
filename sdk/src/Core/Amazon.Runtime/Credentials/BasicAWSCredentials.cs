@@ -70,10 +70,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()
         {
-            if (this._credentials == null)
-                return null;
-
-            return _credentials.Copy();
+            return _credentials;
         }
 
         #endregion

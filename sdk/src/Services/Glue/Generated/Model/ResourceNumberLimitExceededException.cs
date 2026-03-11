@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceNumberLimitExceededException
+        /// message.
+        /// </summary>
+        public ResourceNumberLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNumberLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamScopeId", StringUtils.FromString(publicRequest.IpamScopeId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIpamScopeRequestMarshaller _instance = new DeleteIpamScopeRequestMarshaller();        

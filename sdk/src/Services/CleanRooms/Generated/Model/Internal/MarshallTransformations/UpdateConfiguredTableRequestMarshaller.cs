@@ -76,6 +76,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowedColumns())
+            {
+                context.Writer.WritePropertyName("allowedColumns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedColumnsListValue in publicRequest.AllowedColumns)
+                {
+                        context.Writer.WriteStringValue(publicRequestAllowedColumnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetAnalysisMethod())
             {
                 context.Writer.WritePropertyName("analysisMethod");
@@ -103,6 +114,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestSelectedAnalysisMethodsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTableReference())
+            {
+                context.Writer.WritePropertyName("tableReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TableReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TableReference, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

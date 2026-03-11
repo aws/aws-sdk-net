@@ -41,6 +41,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsAssociatedToKeyGroupException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsAssociatedToKeyGroupException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsAssociatedToKeyGroupException with the specified error
         /// message.
         /// </summary>

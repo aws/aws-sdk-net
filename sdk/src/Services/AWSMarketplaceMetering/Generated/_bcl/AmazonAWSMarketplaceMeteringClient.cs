@@ -118,8 +118,8 @@ namespace Amazon.AWSMarketplaceMetering
     ///  <ul> <li> 
     /// <para>
     /// Resolves the registration token that the buyer submits through the browser during
-    /// the registration process. Obtains a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
-    /// and <c>ProductCode</c>.
+    /// the registration process. Obtains a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>,
+    /// <c>ProductCode</c>, and <c>LicenseArn</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -411,13 +411,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// <important> 
         /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
-        /// and <c>CustomerAWSAccountID</c> in the same request. 
+        /// Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers
+        /// to make multiple purchases per Amazon Web Services account. Starting June 1, 2026,
+        /// new SaaS products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
+        /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. Existing
+        /// integrations will continue to work. Review the new integration for Concurrent Agreements
+        /// <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -470,6 +469,10 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
         /// You have metered usage for a <c>CustomerIdentifier</c> that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidLicenseException">
+        /// Ensure the <c>LicenseArn</c> is valid, matches the customer, and usage is within the
+        /// license activation period.
+        /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
         /// </exception>
@@ -498,7 +501,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
 
@@ -509,13 +512,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// <important> 
         /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
-        /// and <c>CustomerAWSAccountID</c> in the same request. 
+        /// Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers
+        /// to make multiple purchases per Amazon Web Services account. Starting June 1, 2026,
+        /// new SaaS products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
+        /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. Existing
+        /// integrations will continue to work. Review the new integration for Concurrent Agreements
+        /// <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -571,6 +573,10 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
         /// You have metered usage for a <c>CustomerIdentifier</c> that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidLicenseException">
+        /// Ensure the <c>LicenseArn</c> is valid, matches the customer, and usage is within the
+        /// license activation period.
+        /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
         /// </exception>
@@ -599,7 +605,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
             
@@ -612,25 +618,74 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// API to emit metering records. For identical requests, the API is idempotent and returns
-        /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
-        /// Amazon Machine Images (AMI) and container products.
+        /// As a seller, your software hosted in the buyer's Amazon Web Services account uses
+        /// this API action to emit metering records directly to Amazon Web Services Marketplace.
+        /// You must use the following buyer Amazon Web Services account credentials to sign the
+        /// API request.
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
-        /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
+        /// For <b>Amazon EC2</b> deployments, your software must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM
+        /// role for Amazon EC2</a> to sign the API call for <c>MeterUsage</c> API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon EKS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IAM
+        /// roles for service accounts (IRSA)</a> to sign the API call for the <c>MeterUsage</c>
+        /// API operation. Using <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html">EKS
+        /// Pod Identity</a>, the node role, or long-term access keys is not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon ECS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
+        /// ECS task IAM</a> role to sign the API call for the <c>MeterUsage</c> API operation.
+        /// Using the node role or long-term access keys are not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, your software must use the
+        /// <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-permissions.html#runtime-permissions-execution">AgentCore
+        /// Runtime execution role</a> to sign the API call for the <c>MeterUsage</c> API operation.
+        /// Long-term access keys are not supported.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The handling of <c>MeterUsage</c> requests varies between Amazon Bedrock AgentCore
+        /// Runtime and non-Amazon Bedrock AgentCore deployments.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <b>non-Amazon Bedrock AgentCore Runtime</b> deployments, you can only report usage
+        /// once per hour for each dimension. For AMI-based products, this is per dimension and
+        /// per EC2 instance. For container products, this is per dimension and per ECS task or
+        /// EKS pod. You can't modify values after they're recorded. If you report usage before
+        /// a current hour ends, you will be unable to report additional usage until the next
+        /// hour begins. The <c>Timestamp</c> request parameter is rounded down to the hour and
+        /// used to enforce this once-per-hour rule for idempotency. For requests that are identical
+        /// after the <c>Timestamp</c> is rounded down, the API is idempotent and returns the
+        /// metering record ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, you can report usage multiple
+        /// times per hour for the same dimension. You do not need to aggregate metering records
+        /// by the hour. You must include an idempotency token in the <c>ClientToken</c> request
+        /// parameter. If using an Amazon SDK or the Amazon Web Services CLI, you must use the
+        /// latest version which automatically includes an idempotency token in the <c>ClientToken</c>
+        /// request parameter so that the request is processed successfully. The <c>Timestamp</c>
+        /// request parameter is not rounded down to the hour and is not used for duplicate validation.
+        /// Requests with duplicate <c>Timestamps</c> are aggregated as long as the <c>ClientToken</c>
+        /// is unique.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you submit records more than six hours after events occur, the records won't be
+        /// accepted. The timestamp in your request determines when an event is recorded.
         /// </para>
         ///  
         /// <para>
-        ///  <c>MeterUsage</c> can optionally include multiple usage allocations, to provide customers
-        /// with usage data split into buckets by tags that you define (or allow the customer
-        /// to define).
-        /// </para>
-        ///  
-        /// <para>
-        /// Usage records are expected to be submitted as quickly as possible after the event
-        /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// You can optionally include multiple usage allocations, to provide customers with usage
+        /// data split into buckets by tags that you define or allow the customer to define.
         /// </para>
         ///  
         /// <para>
@@ -648,6 +703,9 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
         /// A metering record has already been emitted by the same EC2 instance, ECS task, or
         /// EKS pod for the given {<c>usageDimension</c>, <c>timestamp</c>} with a different <c>usageQuantity</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.IdempotencyConflictException">
+        /// The <c>ClientToken</c> is being used for multiple requests.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
@@ -686,7 +744,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual MeterUsageResponse MeterUsage(MeterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
@@ -695,25 +753,74 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// API to emit metering records. For identical requests, the API is idempotent and returns
-        /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
-        /// Amazon Machine Images (AMI) and container products.
+        /// As a seller, your software hosted in the buyer's Amazon Web Services account uses
+        /// this API action to emit metering records directly to Amazon Web Services Marketplace.
+        /// You must use the following buyer Amazon Web Services account credentials to sign the
+        /// API request.
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
-        /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
+        /// For <b>Amazon EC2</b> deployments, your software must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">IAM
+        /// role for Amazon EC2</a> to sign the API call for <c>MeterUsage</c> API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon EKS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">IAM
+        /// roles for service accounts (IRSA)</a> to sign the API call for the <c>MeterUsage</c>
+        /// API operation. Using <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html">EKS
+        /// Pod Identity</a>, the node role, or long-term access keys is not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon ECS</b> deployments, your software must use <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
+        /// ECS task IAM</a> role to sign the API call for the <c>MeterUsage</c> API operation.
+        /// Using the node role or long-term access keys are not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, your software must use the
+        /// <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-permissions.html#runtime-permissions-execution">AgentCore
+        /// Runtime execution role</a> to sign the API call for the <c>MeterUsage</c> API operation.
+        /// Long-term access keys are not supported.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The handling of <c>MeterUsage</c> requests varies between Amazon Bedrock AgentCore
+        /// Runtime and non-Amazon Bedrock AgentCore deployments.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <b>non-Amazon Bedrock AgentCore Runtime</b> deployments, you can only report usage
+        /// once per hour for each dimension. For AMI-based products, this is per dimension and
+        /// per EC2 instance. For container products, this is per dimension and per ECS task or
+        /// EKS pod. You can't modify values after they're recorded. If you report usage before
+        /// a current hour ends, you will be unable to report additional usage until the next
+        /// hour begins. The <c>Timestamp</c> request parameter is rounded down to the hour and
+        /// used to enforce this once-per-hour rule for idempotency. For requests that are identical
+        /// after the <c>Timestamp</c> is rounded down, the API is idempotent and returns the
+        /// metering record ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <b>Amazon Bedrock AgentCore Runtime</b> deployments, you can report usage multiple
+        /// times per hour for the same dimension. You do not need to aggregate metering records
+        /// by the hour. You must include an idempotency token in the <c>ClientToken</c> request
+        /// parameter. If using an Amazon SDK or the Amazon Web Services CLI, you must use the
+        /// latest version which automatically includes an idempotency token in the <c>ClientToken</c>
+        /// request parameter so that the request is processed successfully. The <c>Timestamp</c>
+        /// request parameter is not rounded down to the hour and is not used for duplicate validation.
+        /// Requests with duplicate <c>Timestamps</c> are aggregated as long as the <c>ClientToken</c>
+        /// is unique.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you submit records more than six hours after events occur, the records won't be
+        /// accepted. The timestamp in your request determines when an event is recorded.
         /// </para>
         ///  
         /// <para>
-        ///  <c>MeterUsage</c> can optionally include multiple usage allocations, to provide customers
-        /// with usage data split into buckets by tags that you define (or allow the customer
-        /// to define).
-        /// </para>
-        ///  
-        /// <para>
-        /// Usage records are expected to be submitted as quickly as possible after the event
-        /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// You can optionally include multiple usage allocations, to provide customers with usage
+        /// data split into buckets by tags that you define or allow the customer to define.
         /// </para>
         ///  
         /// <para>
@@ -734,6 +841,9 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
         /// A metering record has already been emitted by the same EC2 instance, ECS task, or
         /// EKS pod for the given {<c>usageDimension</c>, <c>timestamp</c>} with a different <c>usageQuantity</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.IdempotencyConflictException">
+        /// The <c>ClientToken</c> is being used for multiple requests.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
@@ -772,7 +882,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
             
@@ -865,7 +975,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual RegisterUsageResponse RegisterUsage(RegisterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
 
@@ -957,7 +1067,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual Task<RegisterUsageResponse> RegisterUsageAsync(RegisterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
             
@@ -973,8 +1083,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <c>ResolveCustomer</c> is called by a SaaS application during the registration process.
         /// When a buyer visits your website during the registration process, the buyer submits
         /// a registration token through their browser. The registration token is resolved through
-        /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
-        /// and <c>ProductCode</c>.
+        /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>,
+        /// <c>ProductCode</c>, and <c>LicenseArn</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -1024,7 +1134,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
 
@@ -1036,8 +1146,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <c>ResolveCustomer</c> is called by a SaaS application during the registration process.
         /// When a buyer visits your website during the registration process, the buyer submits
         /// a registration token through their browser. The registration token is resolved through
-        /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
-        /// and <c>ProductCode</c>.
+        /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>,
+        /// <c>ProductCode</c>, and <c>LicenseArn</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -1090,7 +1200,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
             

@@ -154,7 +154,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Positioning. 
         /// <para>
-        /// FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+        /// The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.
         /// </para>
         /// </summary>
         public PositioningConfigStatus Positioning

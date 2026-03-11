@@ -42,7 +42,7 @@ namespace Amazon.WorkSpaces.Model
     ///  
     /// <para>
     /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-    /// Amazon Web ServicesSupport.
+    /// Amazon Web Services Support.
     /// </para>
     ///  <important> 
     /// <para>

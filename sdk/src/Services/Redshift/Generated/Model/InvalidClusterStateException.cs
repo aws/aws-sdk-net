@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidClusterStateException
+        /// message.
+        /// </summary>
+        public InvalidClusterStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidClusterStateException with the specified error
         /// message.
         /// </summary>

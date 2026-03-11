@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensConfiguration Object
     /// </summary>  
-    public class StorageLensConfigurationUnmarshaller : IXmlUnmarshaller<StorageLensConfiguration, XmlUnmarshallerContext>
+    public partial class StorageLensConfigurationUnmarshaller : IXmlUnmarshaller<StorageLensConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Exclude = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExpandedPrefixesDataExport", targetDepth))
+                    {
+                        var unmarshaller = StorageLensExpandedPrefixesDataExportUnmarshaller.Instance;
+                        unmarshalledObject.ExpandedPrefixesDataExport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Id", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -98,12 +104,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PrefixDelimiter", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrefixDelimiter = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StorageLensArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StorageLensArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -112,6 +126,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensConfiguration unmarshalledObject, int targetDepth);
+
         private static StorageLensConfigurationUnmarshaller _instance = new StorageLensConfigurationUnmarshaller();        
 
         /// <summary>

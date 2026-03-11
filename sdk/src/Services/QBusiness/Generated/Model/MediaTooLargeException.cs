@@ -39,6 +39,13 @@ namespace Amazon.QBusiness.Model
     {
 
         /// <summary>
+        /// Default constructor for MediaTooLargeException
+        /// message.
+        /// </summary>
+        public MediaTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MediaTooLargeException with the specified error
         /// message.
         /// </summary>

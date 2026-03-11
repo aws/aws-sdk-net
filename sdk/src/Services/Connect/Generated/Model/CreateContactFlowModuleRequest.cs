@@ -38,8 +38,10 @@ namespace Amazon.Connect.Model
         private string _clientToken;
         private string _content;
         private string _description;
+        private ExternalInvocationConfiguration _externalInvocationConfiguration;
         private string _instanceId;
         private string _name;
+        private string _settings;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -104,6 +106,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExternalInvocationConfiguration. 
+        /// <para>
+        /// The external invocation configuration for the flow module.
+        /// </para>
+        /// </summary>
+        public ExternalInvocationConfiguration ExternalInvocationConfiguration
+        {
+            get { return this._externalInvocationConfiguration; }
+            set { this._externalInvocationConfiguration = value; }
+        }
+
+        // Check to see if ExternalInvocationConfiguration property is set
+        internal bool IsSetExternalInvocationConfiguration()
+        {
+            return this._externalInvocationConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
@@ -140,6 +160,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// The configuration settings for the flow module.
+        /// </para>
+        /// </summary>
+        public string Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
         }
 
         /// <summary>

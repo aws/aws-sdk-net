@@ -42,6 +42,13 @@ namespace Amazon.SecurityIR.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalServerException with the specified error
         /// message.
         /// </summary>
@@ -124,7 +131,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// Element providing advice to clients on when the call can be safely retried.
+        /// The number of seconds after which to retry the request.
         /// </para>
         /// </summary>
         public int? RetryAfterSeconds

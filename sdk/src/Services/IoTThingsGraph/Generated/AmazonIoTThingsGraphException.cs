@@ -36,6 +36,14 @@ namespace Amazon.IoTThingsGraph
         /// <summary>
         /// Construct instance of AmazonIoTThingsGraphException
         /// </summary>
+        public AmazonIoTThingsGraphException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIoTThingsGraphException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIoTThingsGraphException(string message)
             : base(message)

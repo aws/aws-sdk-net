@@ -40,6 +40,13 @@ namespace Amazon.Connect.Model
         private List<PropertyValidationExceptionProperty> _propertyList = AWSConfigs.InitializeCollections ? new List<PropertyValidationExceptionProperty>() : null;
 
         /// <summary>
+        /// Default constructor for PropertyValidationException
+        /// message.
+        /// </summary>
+        public PropertyValidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PropertyValidationException with the specified error
         /// message.
         /// </summary>

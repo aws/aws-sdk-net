@@ -62,6 +62,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-10-28";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.Simulation))
+                throw new AmazonSimSpaceWeaverException("Request object does not have required field Simulation set");
             
             if (publicRequest.IsSetSimulation())
                 request.Parameters.Add("simulation", StringUtils.FromString(publicRequest.Simulation));

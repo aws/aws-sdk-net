@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceAssociatedException
+        /// message.
+        /// </summary>
+        public ResourceAssociatedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceAssociatedException with the specified error
         /// message.
         /// </summary>

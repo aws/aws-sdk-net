@@ -34,7 +34,26 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormNumericQuestionAutomation
     {
+        private EvaluationFormQuestionAutomationAnswerSource _answerSource;
         private NumericQuestionPropertyValueAutomation _propertyValue;
+
+        /// <summary>
+        /// Gets and sets the property AnswerSource. 
+        /// <para>
+        /// A source of automation answer for numeric question.
+        /// </para>
+        /// </summary>
+        public EvaluationFormQuestionAutomationAnswerSource AnswerSource
+        {
+            get { return this._answerSource; }
+            set { this._answerSource = value; }
+        }
+
+        // Check to see if AnswerSource property is set
+        internal bool IsSetAnswerSource()
+        {
+            return this._answerSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PropertyValue. 

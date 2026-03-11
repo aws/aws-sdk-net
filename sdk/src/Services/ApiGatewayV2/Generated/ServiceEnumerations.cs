@@ -615,6 +615,60 @@ namespace Amazon.ApiGatewayV2
 
 
     /// <summary>
+    /// Constants used for properties of type PreviewStatus.
+    /// </summary>
+    public class PreviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PREVIEW_FAILED for PreviewStatus
+        /// </summary>
+        public static readonly PreviewStatus PREVIEW_FAILED = new PreviewStatus("PREVIEW_FAILED");
+        /// <summary>
+        /// Constant PREVIEW_IN_PROGRESS for PreviewStatus
+        /// </summary>
+        public static readonly PreviewStatus PREVIEW_IN_PROGRESS = new PreviewStatus("PREVIEW_IN_PROGRESS");
+        /// <summary>
+        /// Constant PREVIEW_READY for PreviewStatus
+        /// </summary>
+        public static readonly PreviewStatus PREVIEW_READY = new PreviewStatus("PREVIEW_READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreviewStatus FindValue(string value)
+        {
+            return FindValue<PreviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProtocolType.
     /// </summary>
     public class ProtocolType : ConstantClass
@@ -658,6 +712,64 @@ namespace Amazon.ApiGatewayV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PublishStatus.
+    /// </summary>
+    public class PublishStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for PublishStatus
+        /// </summary>
+        public static readonly PublishStatus DISABLED = new PublishStatus("DISABLED");
+        /// <summary>
+        /// Constant PUBLISH_FAILED for PublishStatus
+        /// </summary>
+        public static readonly PublishStatus PUBLISH_FAILED = new PublishStatus("PUBLISH_FAILED");
+        /// <summary>
+        /// Constant PUBLISH_IN_PROGRESS for PublishStatus
+        /// </summary>
+        public static readonly PublishStatus PUBLISH_IN_PROGRESS = new PublishStatus("PUBLISH_IN_PROGRESS");
+        /// <summary>
+        /// Constant PUBLISHED for PublishStatus
+        /// </summary>
+        public static readonly PublishStatus PUBLISHED = new PublishStatus("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PublishStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PublishStatus FindValue(string value)
+        {
+            return FindValue<PublishStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PublishStatus(string value)
         {
             return FindValue(value);
         }
@@ -762,6 +874,110 @@ namespace Amazon.ApiGatewayV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for Status
+        /// </summary>
+        public static readonly Status AVAILABLE = new Status("AVAILABLE");
+        /// <summary>
+        /// Constant FAILED for Status
+        /// </summary>
+        public static readonly Status FAILED = new Status("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for Status
+        /// </summary>
+        public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TryItState.
+    /// </summary>
+    public class TryItState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for TryItState
+        /// </summary>
+        public static readonly TryItState DISABLED = new TryItState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for TryItState
+        /// </summary>
+        public static readonly TryItState ENABLED = new TryItState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TryItState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TryItState FindValue(string value)
+        {
+            return FindValue<TryItState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TryItState(string value)
         {
             return FindValue(value);
         }

@@ -31,14 +31,21 @@ namespace Amazon.DAX.Model
 {
     /// <summary>
     /// You have reached the maximum number of x509 certificates that can be created for encrypted
-    /// clusters in a 30 day period. Contact AWS customer support to discuss options for continuing
-    /// to create encrypted clusters.
+    /// clusters in a 30 day period. Contact Amazon Web Services customer support to discuss
+    /// options for continuing to create encrypted clusters.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ServiceQuotaExceededException : AmazonDAXException
     {
+
+        /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error

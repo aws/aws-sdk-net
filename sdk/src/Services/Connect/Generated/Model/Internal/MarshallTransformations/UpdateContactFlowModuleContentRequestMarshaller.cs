@@ -85,6 +85,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Content);
             }
 
+            if(publicRequest.IsSetSettings())
+            {
+                context.Writer.WritePropertyName("Settings");
+                context.Writer.WriteStringValue(publicRequest.Settings);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

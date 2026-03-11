@@ -36,6 +36,14 @@ namespace Amazon.ECRPublic
         /// <summary>
         /// Construct instance of AmazonECRPublicException
         /// </summary>
+        public AmazonECRPublicException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonECRPublicException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonECRPublicException(string message)
             : base(message)

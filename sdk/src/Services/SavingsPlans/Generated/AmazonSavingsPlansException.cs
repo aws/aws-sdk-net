@@ -36,6 +36,14 @@ namespace Amazon.SavingsPlans
         /// <summary>
         /// Construct instance of AmazonSavingsPlansException
         /// </summary>
+        public AmazonSavingsPlansException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSavingsPlansException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSavingsPlansException(string message)
             : base(message)

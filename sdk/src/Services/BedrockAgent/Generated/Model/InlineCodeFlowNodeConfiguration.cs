@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgent.Model
         /// The code must be valid in the programming <c>language</c> that you specify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5000000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=5000000)]
         public string Code
         {
             get { return this._code; }

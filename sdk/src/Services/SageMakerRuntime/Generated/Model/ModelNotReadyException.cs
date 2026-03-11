@@ -41,6 +41,13 @@ namespace Amazon.SageMakerRuntime.Model
     {
 
         /// <summary>
+        /// Default constructor for ModelNotReadyException
+        /// message.
+        /// </summary>
+        public ModelNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ModelNotReadyException with the specified error
         /// message.
         /// </summary>

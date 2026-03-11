@@ -57,6 +57,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPush())
+            {
+                context.Writer.WritePropertyName("push");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PushMessageTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Push, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSms())
             {
                 context.Writer.WritePropertyName("sms");
@@ -64,6 +75,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 
                 var marshaller = SMSMessageTemplateContentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sms, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWhatsApp())
+            {
+                context.Writer.WritePropertyName("whatsApp");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WhatsAppMessageTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.WhatsApp, context);
 
                 context.Writer.WriteEndObject();
             }

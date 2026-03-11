@@ -71,6 +71,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFlowIdentifier())
                 throw new AmazonBedrockAgentRuntimeException("Request object does not have required field FlowIdentifier set");
             request.AddPathResource("{flowIdentifier}", StringUtils.FromString(publicRequest.FlowIdentifier));
+            if (string.IsNullOrEmpty(publicRequest.EventType))
+                throw new AmazonBedrockAgentRuntimeException("Request object does not have required field EventType set");
             
             if (publicRequest.IsSetEventType())
                 request.Parameters.Add("eventType", StringUtils.FromString(publicRequest.EventType));

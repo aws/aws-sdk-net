@@ -103,6 +103,56 @@ namespace Amazon.MarketplaceAgreement
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentRequestApprovalStrategy.
+    /// </summary>
+    public class PaymentRequestApprovalStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO_APPROVE_ON_EXPIRATION for PaymentRequestApprovalStrategy
+        /// </summary>
+        public static readonly PaymentRequestApprovalStrategy AUTO_APPROVE_ON_EXPIRATION = new PaymentRequestApprovalStrategy("AUTO_APPROVE_ON_EXPIRATION");
+        /// <summary>
+        /// Constant WAIT_FOR_APPROVAL for PaymentRequestApprovalStrategy
+        /// </summary>
+        public static readonly PaymentRequestApprovalStrategy WAIT_FOR_APPROVAL = new PaymentRequestApprovalStrategy("WAIT_FOR_APPROVAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentRequestApprovalStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentRequestApprovalStrategy FindValue(string value)
+        {
+            return FindValue<PaymentRequestApprovalStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentRequestApprovalStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

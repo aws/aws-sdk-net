@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for TagsMapRequiredException
+        /// message.
+        /// </summary>
+        public TagsMapRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TagsMapRequiredException with the specified error
         /// message.
         /// </summary>

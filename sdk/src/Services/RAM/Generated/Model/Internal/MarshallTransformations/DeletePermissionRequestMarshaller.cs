@@ -65,6 +65,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetClientToken())
                 request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            if (string.IsNullOrEmpty(publicRequest.PermissionArn))
+                throw new AmazonRAMException("Request object does not have required field PermissionArn set");
             
             if (publicRequest.IsSetPermissionArn())
                 request.Parameters.Add("permissionArn", StringUtils.FromString(publicRequest.PermissionArn));

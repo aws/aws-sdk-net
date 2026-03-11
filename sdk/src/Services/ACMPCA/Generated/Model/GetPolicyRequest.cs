@@ -81,8 +81,8 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved.
-        /// You can find the CA's ARN by calling the ListCertificateAuthorities action. <pre><c>
-        /// &lt;/p&gt; </c></pre>
+        /// You can find the CA's ARN by calling the ListCertificateAuthorities action. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]
         public string ResourceArn

@@ -101,6 +101,7 @@
   <property-value-rule>
     <property>Amazon.Personalize.Model.CreateDatasetRequest.DatasetType</property>
     <max>256</max>
+    <pattern>^[A-Za-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.CreateDatasetRequest.Name</property>
@@ -1126,6 +1127,7 @@
   <property-value-rule>
     <property>Amazon.Personalize.Model.Dataset.DatasetType</property>
     <max>256</max>
+    <pattern>^[A-Za-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.Dataset.Name</property>
@@ -1300,6 +1302,7 @@
   <property-value-rule>
     <property>Amazon.Personalize.Model.DatasetSummary.DatasetType</property>
     <max>256</max>
+    <pattern>^[A-Za-z_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.DatasetSummary.Name</property>

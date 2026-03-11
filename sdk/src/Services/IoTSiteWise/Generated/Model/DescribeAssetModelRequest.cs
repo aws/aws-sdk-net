@@ -31,7 +31,9 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssetModel operation.
-    /// Retrieves information about an asset model.
+    /// Retrieves information about an asset model. This includes details about the asset
+    /// model's properties, hierarchies, composite models, and any interface relationships
+    /// if the asset model implements interfaces.
     /// </summary>
     public partial class DescribeAssetModelRequest : AmazonIoTSiteWiseRequest
     {

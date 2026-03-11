@@ -188,6 +188,16 @@ namespace Amazon.NetworkManager.Model
         IGetTransitGatewayRegistrationsPaginator GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request);
 
         /// <summary>
+        /// Paginator for ListAttachmentRoutingPolicyAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAttachmentRoutingPolicyAssociationsPaginator ListAttachmentRoutingPolicyAssociations(ListAttachmentRoutingPolicyAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListAttachments operation
         ///</summary>
         [AWSPaginator(
@@ -216,6 +226,26 @@ namespace Amazon.NetworkManager.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListCoreNetworkPolicyVersionsPaginator ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCoreNetworkPrefixListAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCoreNetworkPrefixListAssociationsPaginator ListCoreNetworkPrefixListAssociations(ListCoreNetworkPrefixListAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCoreNetworkRoutingInformation operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCoreNetworkRoutingInformationPaginator ListCoreNetworkRoutingInformation(ListCoreNetworkRoutingInformationRequest request);
 
         /// <summary>
         /// Paginator for ListCoreNetworks operation

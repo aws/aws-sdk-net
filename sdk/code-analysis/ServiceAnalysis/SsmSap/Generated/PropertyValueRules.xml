@@ -41,6 +41,10 @@
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SsmSap.Model.GetConfigurationCheckOperationRequest.OperationId</property>
+    <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SsmSap.Model.GetDatabaseRequest.ApplicationId</property>
     <min>1</min>
     <max>60</max>
@@ -77,11 +81,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListApplicationsRequest.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListApplicationsResponse.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListComponentsRequest.ApplicationId</property>
@@ -96,11 +100,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListComponentsRequest.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListComponentsResponse.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckDefinitionsRequest.NextToken</property>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckDefinitionsResponse.NextToken</property>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckOperationsRequest.ApplicationId</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckOperationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckOperationsRequest.NextToken</property>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListConfigurationCheckOperationsResponse.NextToken</property>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListDatabasesRequest.ApplicationId</property>
@@ -121,11 +157,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListDatabasesRequest.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListDatabasesResponse.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationEventsRequest.MaxResults</property>
@@ -134,7 +170,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationEventsRequest.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationEventsRequest.OperationId</property>
@@ -142,7 +178,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationEventsResponse.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationsRequest.ApplicationId</property>
@@ -157,11 +193,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationsRequest.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListOperationsResponse.NextToken</property>
-    <pattern>.{16,1024}</pattern>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckResultsRequest.NextToken</property>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckResultsRequest.OperationId</property>
+    <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckResultsResponse.NextToken</property>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckRuleResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckRuleResultsRequest.NextToken</property>
+    <pattern>.{16,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckRuleResultsRequest.SubCheckResultId</property>
+    <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ListSubCheckRuleResultsResponse.NextToken</property>
+    <pattern>.{16,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -216,6 +286,12 @@
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StartApplicationRefreshResponse.OperationId</property>
     <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.StartConfigurationChecksRequest.ApplicationId</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SsmSap.Model.StopApplicationRequest.ApplicationId</property>
@@ -334,6 +410,16 @@
     <pattern>[\w\d-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SsmSap.Model.ConfigurationCheckOperation.ApplicationId</property>
+    <min>1</min>
+    <max>60</max>
+    <pattern>[\w\d\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ConfigurationCheckOperation.Id</property>
+    <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SsmSap.Model.Database.ApplicationId</property>
     <min>1</min>
     <max>60</max>
@@ -416,5 +502,13 @@
   <property-value-rule>
     <property>Amazon.SsmSap.Model.Resource.ResourceType</property>
     <pattern>[\w]+::[\w]+::[\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.RuleResult.Id</property>
+    <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.SubCheckResult.Id</property>
+    <pattern>[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?</pattern>
   </property-value-rule>
 </property-value-rules>

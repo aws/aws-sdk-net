@@ -36,6 +36,14 @@ namespace Amazon.Pipes
         /// <summary>
         /// Construct instance of AmazonPipesException
         /// </summary>
+        public AmazonPipesException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonPipesException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonPipesException(string message)
             : base(message)

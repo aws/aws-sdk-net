@@ -181,6 +181,10 @@ namespace Amazon.RecycleBin
         /// </summary>
         public static readonly ResourceType EBS_SNAPSHOT = new ResourceType("EBS_SNAPSHOT");
         /// <summary>
+        /// Constant EBS_VOLUME for ResourceType
+        /// </summary>
+        public static readonly ResourceType EBS_VOLUME = new ResourceType("EBS_VOLUME");
+        /// <summary>
         /// Constant EC2_IMAGE for ResourceType
         /// </summary>
         public static readonly ResourceType EC2_IMAGE = new ResourceType("EC2_IMAGE");

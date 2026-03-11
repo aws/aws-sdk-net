@@ -44,7 +44,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CaptionChannel. A number for the channel for this caption,
         /// 1 to 4.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4)]
+        [AWSProperty(Required=true)]
         public int? CaptionChannel
         {
             get { return this._captionChannel; }
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LanguageCode. Language code for the language of the caption
         /// in this channel.  For example, ger/deu. See http://www.loc.gov/standards/iso639-2
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=3)]
+        [AWSProperty(Required=true)]
         public string LanguageCode
         {
             get { return this._languageCode; }

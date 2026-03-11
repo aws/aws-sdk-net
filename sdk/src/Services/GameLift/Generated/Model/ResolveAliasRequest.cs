@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveAlias operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Attempts to retrieve a fleet ID that is associated with an alias. Specify a unique
     /// alias identifier.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If the alias has a <c>SIMPLE</c> routing strategy, Amazon GameLift Servers returns

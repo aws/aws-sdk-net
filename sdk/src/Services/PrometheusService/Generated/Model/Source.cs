@@ -35,6 +35,7 @@ namespace Amazon.PrometheusService.Model
     public partial class Source
     {
         private EksConfiguration _eksConfiguration;
+        private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property EksConfiguration. 
@@ -52,6 +53,26 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetEksConfiguration()
         {
             return this._eksConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The Amazon VPC configuration for the Prometheus collector when connecting to Amazon
+        /// MSK clusters. This configuration enables secure, private network connectivity between
+        /// the collector and your Amazon MSK cluster within your Amazon VPC.
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

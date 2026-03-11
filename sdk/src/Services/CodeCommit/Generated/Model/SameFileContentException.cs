@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for SameFileContentException
+        /// message.
+        /// </summary>
+        public SameFileContentException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SameFileContentException with the specified error
         /// message.
         /// </summary>

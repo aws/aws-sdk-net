@@ -109,7 +109,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property ParagraphSummary. 
         /// <para>
-        /// A paragraph long or multiple sentence summary. For example, Chatbot notifications.
+        /// A paragraph long or multiple sentence summary. For example, Amazon Q Developer in
+        /// chat applications notifications.
         /// </para>
         /// </summary>
         public string ParagraphSummary

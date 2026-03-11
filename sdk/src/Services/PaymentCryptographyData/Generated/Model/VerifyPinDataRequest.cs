@@ -210,7 +210,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// card that associates the card with a specific account holder.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=12, Max=19)]
+        [AWSProperty(Sensitive=true, Min=12, Max=19)]
         public string PrimaryAccountNumber
         {
             get { return this._primaryAccountNumber; }

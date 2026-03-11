@@ -36,6 +36,14 @@ namespace Amazon.AppIntegrationsService
         /// <summary>
         /// Construct instance of AmazonAppIntegrationsServiceException
         /// </summary>
+        public AmazonAppIntegrationsServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppIntegrationsServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppIntegrationsServiceException(string message)
             : base(message)

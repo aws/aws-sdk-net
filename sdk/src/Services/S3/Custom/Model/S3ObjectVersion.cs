@@ -25,31 +25,9 @@ namespace Amazon.S3.Model
     /// that also has a version identifier, an indication of whether this is the latest version of the object 
     /// and whether it's a DeleteMarker or not.
     /// </summary>
-    public class S3ObjectVersion : S3Object
+    public partial class S3ObjectVersion : S3Object
     {
-
-        private bool? isLatest;
-        private string versionId;
         private bool? isDeleteMarker;
-
-        /// <summary>
-        /// Specifies whether the object is (true) or is not (false) the latest version of an object.
-        /// </summary>
-        public bool? IsLatest
-        {
-            get { return this.isLatest; }
-            set { this.isLatest = value; }
-        }
-
-        /// <summary>
-        /// Version ID of an object.
-        /// </summary>
-        public string VersionId
-        {
-            get { return this.versionId; }
-            set { this.versionId = value; }
-        }
-
         /// <summary>
         /// If true, the object is a delete marker for a deleted object.
         /// </summary>

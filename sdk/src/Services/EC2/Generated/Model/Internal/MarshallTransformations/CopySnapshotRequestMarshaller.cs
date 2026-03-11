@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDestinationAvailabilityZone())
+                {
+                    request.Parameters.Add("DestinationAvailabilityZone", StringUtils.FromString(publicRequest.DestinationAvailabilityZone));
+                }
                 if(publicRequest.IsSetDestinationOutpostArn())
                 {
                     request.Parameters.Add("DestinationOutpostArn", StringUtils.FromString(publicRequest.DestinationOutpostArn));
@@ -138,6 +142,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopySnapshotRequestMarshaller _instance = new CopySnapshotRequestMarshaller();        

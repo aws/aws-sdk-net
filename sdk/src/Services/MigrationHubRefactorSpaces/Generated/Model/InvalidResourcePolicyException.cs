@@ -39,6 +39,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResourcePolicyException
+        /// message.
+        /// </summary>
+        public InvalidResourcePolicyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResourcePolicyException with the specified error
         /// message.
         /// </summary>

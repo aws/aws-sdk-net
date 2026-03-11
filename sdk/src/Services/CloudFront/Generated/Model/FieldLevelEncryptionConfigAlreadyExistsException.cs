@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for FieldLevelEncryptionConfigAlreadyExistsException
+        /// message.
+        /// </summary>
+        public FieldLevelEncryptionConfigAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FieldLevelEncryptionConfigAlreadyExistsException with the specified error
         /// message.
         /// </summary>

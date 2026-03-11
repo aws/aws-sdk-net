@@ -41,6 +41,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupRequest.TargetControlPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupRequest.UnhealthyThresholdCount</property>
     <min>2</min>
     <max>10</max>
@@ -229,6 +234,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.TargetDescription.QuicServerId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.TargetGroup.HealthCheckIntervalSeconds</property>
     <min>5</min>
     <max>300</max>
@@ -250,6 +260,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.TargetGroup.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.TargetGroup.TargetControlPort</property>
     <min>1</min>
     <max>65535</max>
   </property-value-rule>

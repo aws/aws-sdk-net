@@ -58,6 +58,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     response.ImageTagMutability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("imageTagMutabilityExclusionFilters", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ImageTagMutabilityExclusionFilter, ImageTagMutabilityExclusionFilterUnmarshaller>(ImageTagMutabilityExclusionFilterUnmarshaller.Instance);
+                    response.ImageTagMutabilityExclusionFilters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("registryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

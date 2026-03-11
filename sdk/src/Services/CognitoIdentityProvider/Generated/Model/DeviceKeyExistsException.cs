@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for DeviceKeyExistsException
+        /// message.
+        /// </summary>
+        public DeviceKeyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeviceKeyExistsException with the specified error
         /// message.
         /// </summary>

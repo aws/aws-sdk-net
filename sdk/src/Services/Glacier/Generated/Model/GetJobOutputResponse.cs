@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon S3 Glacier response to your request.
+    /// Contains the Amazon Glacier response to your request.
     /// </summary>
     public partial class GetJobOutputResponse : AmazonWebServiceResponse, IDisposable
     {
@@ -139,9 +139,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ContentRange. 
         /// <para>
-        /// The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded,
-        /// the response provides the range of bytes Amazon S3 Glacier returned. For example,
-        /// bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
+        /// The range of bytes returned by Amazon Glacier. If only partial output is downloaded,
+        /// the response provides the range of bytes Amazon Glacier returned. For example, bytes
+        /// 0-1048575/8388608 returns the first 1 MB from 8 MB.
         /// </para>
         /// </summary>
         public string ContentRange

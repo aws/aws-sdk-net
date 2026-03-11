@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
     {
         private EFSFileSystem _efsFileSystem;
         private FSxLustreFileSystem _fSxLustreFileSystem;
+        private S3FileSystem _s3FileSystem;
 
         /// <summary>
         /// Gets and sets the property EFSFileSystem. 
@@ -73,6 +74,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFSxLustreFileSystem()
         {
             return this._fSxLustreFileSystem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3FileSystem. 
+        /// <para>
+        /// A custom file system in Amazon S3. This is only supported in Amazon SageMaker Unified
+        /// Studio.
+        /// </para>
+        /// </summary>
+        public S3FileSystem S3FileSystem
+        {
+            get { return this._s3FileSystem; }
+            set { this._s3FileSystem = value; }
+        }
+
+        // Check to see if S3FileSystem property is set
+        internal bool IsSetS3FileSystem()
+        {
+            return this._s3FileSystem != null;
         }
 
     }

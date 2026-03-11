@@ -39,6 +39,8 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private string _clientToken;
         private string _description;
+        private AIPromptInferenceConfiguration _inferenceConfiguration;
+        private string _modelId;
         private AIPromptTemplateConfiguration _templateConfiguration;
         private VisibilityStatus _visibilityStatus;
 
@@ -120,6 +122,50 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// The updated inference configuration for the AI Prompt.
+        /// </para>
+        /// </summary>
+        public AIPromptInferenceConfiguration InferenceConfiguration
+        {
+            get { return this._inferenceConfiguration; }
+            set { this._inferenceConfiguration = value; }
+        }
+
+        // Check to see if InferenceConfiguration property is set
+        internal bool IsSetInferenceConfiguration()
+        {
+            return this._inferenceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelId. 
+        /// <para>
+        /// The identifier of the model used for this AI Prompt.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For information about which models are supported in each Amazon Web Services Region,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+        /// models for system/custom prompts</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ModelId
+        {
+            get { return this._modelId; }
+            set { this._modelId = value; }
+        }
+
+        // Check to see if ModelId property is set
+        internal bool IsSetModelId()
+        {
+            return this._modelId != null;
         }
 
         /// <summary>

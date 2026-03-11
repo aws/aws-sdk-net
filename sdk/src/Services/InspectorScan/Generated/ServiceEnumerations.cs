@@ -88,6 +88,10 @@ namespace Amazon.InspectorScan
         /// Constant INSPECTOR for OutputFormat
         /// </summary>
         public static readonly OutputFormat INSPECTOR = new OutputFormat("INSPECTOR");
+        /// <summary>
+        /// Constant INSPECTOR_ALT for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat INSPECTOR_ALT = new OutputFormat("INSPECTOR_ALT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private Dictionary<string, string> _customProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DataLakeAccessProperties _dataLakeAccessProperties;
+        private IcebergOptimizationProperties _icebergOptimizationProperties;
 
         /// <summary>
         /// Gets and sets the property CustomProperties. 
@@ -77,6 +78,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetDataLakeAccessProperties()
         {
             return this._dataLakeAccessProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IcebergOptimizationProperties. 
+        /// <para>
+        /// A structure that specifies Iceberg table optimization properties for the catalog.
+        /// This includes configuration for compaction, retention, and orphan file deletion operations
+        /// that can be applied to Iceberg tables in this catalog.
+        /// </para>
+        /// </summary>
+        public IcebergOptimizationProperties IcebergOptimizationProperties
+        {
+            get { return this._icebergOptimizationProperties; }
+            set { this._icebergOptimizationProperties = value; }
+        }
+
+        // Check to see if IcebergOptimizationProperties property is set
+        internal bool IsSetIcebergOptimizationProperties()
+        {
+            return this._icebergOptimizationProperties != null;
         }
 
     }

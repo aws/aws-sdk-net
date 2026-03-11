@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class GetSegmentMembershipResponse : AmazonWebServiceResponse
     {
         private List<ProfileQueryFailures> _failures = AWSConfigs.InitializeCollections ? new List<ProfileQueryFailures>() : null;
+        private DateTime? _lastComputedAt;
         private List<ProfileQueryResult> _profiles = AWSConfigs.InitializeCollections ? new List<ProfileQueryResult>() : null;
         private string _segmentDefinitionName;
 
@@ -59,6 +60,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetFailures()
         {
             return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastComputedAt. 
+        /// <para>
+        /// The timestamp indicating when the segment membership was last computed or updated.
+        /// </para>
+        /// </summary>
+        public DateTime? LastComputedAt
+        {
+            get { return this._lastComputedAt; }
+            set { this._lastComputedAt = value; }
+        }
+
+        // Check to see if LastComputedAt property is set
+        internal bool IsSetLastComputedAt()
+        {
+            return this._lastComputedAt.HasValue; 
         }
 
         /// <summary>

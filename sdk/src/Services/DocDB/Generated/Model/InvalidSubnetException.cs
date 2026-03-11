@@ -40,6 +40,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSubnetException
+        /// message.
+        /// </summary>
+        public InvalidSubnetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSubnetException with the specified error
         /// message.
         /// </summary>

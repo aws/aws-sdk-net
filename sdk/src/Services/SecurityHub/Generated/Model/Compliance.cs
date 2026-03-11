@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// This object typically provides details about a control finding, such as applicable
     /// standards and the status of control checks. While finding providers can add custom
     /// content in <c>Compliance</c> object fields, they are typically used to review details
-    /// of Security Hub control findings.
+    /// of Security Hub CSPM control findings.
     /// </summary>
     public partial class Compliance
     {
@@ -100,8 +100,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SecurityControlId. 
         /// <para>
         ///  Typically provides the unique identifier of a control across standards. For Security
-        /// Hub controls, this field consists of an Amazon Web Services service and a unique number,
-        /// such as <c>APIGateway.5</c>. 
+        /// Hub CSPM controls, this field consists of an Amazon Web Services service and a unique
+        /// number, such as <c>APIGateway.5</c>. 
         /// </para>
         /// </summary>
         public string SecurityControlId
@@ -146,7 +146,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For Security Hub controls, valid values for <c>Status</c> are as follows.
+        /// For Security Hub CSPM controls, valid values for <c>Status</c> are as follows.
         /// </para>
         ///  <ul> <li> <ul> <li> 
         /// <para>
@@ -165,8 +165,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  <c>NOT_AVAILABLE</c> - Check could not be performed due to a service outage, API
         /// error, or because the result of the Config evaluation was <c>NOT_APPLICABLE</c>. If
-        /// the Config evaluation result was <c>NOT_APPLICABLE</c> for a Security Hub control,
-        /// Security Hub automatically archives the finding after 3 days.
+        /// the Config evaluation result was <c>NOT_APPLICABLE</c> for a Security Hub CSPM control,
+        /// Security Hub CSPM automatically archives the finding after 3 days.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

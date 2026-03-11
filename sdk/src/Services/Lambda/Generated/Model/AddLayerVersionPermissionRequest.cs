@@ -58,7 +58,7 @@ namespace Amazon.Lambda.Model
         /// The API action that grants access to the layer. For example, <c>lambda:GetLayerVersion</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=22)]
+        [AWSProperty(Required=true, Min=0, Max=22)]
         public string Action
         {
             get { return this._action; }
@@ -97,7 +97,7 @@ namespace Amazon.Lambda.Model
         /// organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=34)]
+        [AWSProperty(Min=0, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

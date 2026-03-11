@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchConfigurationRecorderException
+        /// message.
+        /// </summary>
+        public NoSuchConfigurationRecorderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchConfigurationRecorderException with the specified error
         /// message.
         /// </summary>

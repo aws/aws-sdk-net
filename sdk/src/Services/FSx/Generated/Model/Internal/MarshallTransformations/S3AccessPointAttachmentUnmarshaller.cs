@@ -80,6 +80,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("OntapConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3AccessPointOntapConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OntapConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("OpenZFSConfiguration", targetDepth))
                 {
                     var unmarshaller = S3AccessPointOpenZFSConfigurationUnmarshaller.Instance;

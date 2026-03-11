@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for DBSubnetGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public DBSubnetGroupQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBSubnetGroupQuotaExceededException with the specified error
         /// message.
         /// </summary>

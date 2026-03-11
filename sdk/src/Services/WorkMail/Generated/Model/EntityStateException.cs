@@ -40,6 +40,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for EntityStateException
+        /// message.
+        /// </summary>
+        public EntityStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityStateException with the specified error
         /// message.
         /// </summary>

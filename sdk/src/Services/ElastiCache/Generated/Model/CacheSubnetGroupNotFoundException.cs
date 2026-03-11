@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheSubnetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public CacheSubnetGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheSubnetGroupNotFoundException with the specified error
         /// message.
         /// </summary>

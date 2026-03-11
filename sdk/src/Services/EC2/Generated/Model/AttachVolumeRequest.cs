@@ -80,6 +80,7 @@ namespace Amazon.EC2.Model
     {
         private string _device;
         private bool? _dryRun;
+        private int? _ebsCardIndex;
         private string _instanceId;
         private string _volumeId;
 
@@ -138,6 +139,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsCardIndex. 
+        /// <para>
+        /// The index of the EBS card. Some instance types support multiple EBS cards. The default
+        /// EBS card index is 0.
+        /// </para>
+        /// </summary>
+        public int? EbsCardIndex
+        {
+            get { return this._ebsCardIndex; }
+            set { this._ebsCardIndex = value; }
+        }
+
+        // Check to see if EbsCardIndex property is set
+        internal bool IsSetEbsCardIndex()
+        {
+            return this._ebsCardIndex.HasValue; 
         }
 
         /// <summary>

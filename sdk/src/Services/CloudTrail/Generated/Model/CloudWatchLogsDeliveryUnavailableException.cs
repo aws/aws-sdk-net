@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for CloudWatchLogsDeliveryUnavailableException
+        /// message.
+        /// </summary>
+        public CloudWatchLogsDeliveryUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CloudWatchLogsDeliveryUnavailableException with the specified error
         /// message.
         /// </summary>

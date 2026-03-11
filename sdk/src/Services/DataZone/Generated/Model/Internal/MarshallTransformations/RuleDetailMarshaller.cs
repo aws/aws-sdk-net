@@ -46,6 +46,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGlossaryTermEnforcementDetail())
+            {
+                context.Writer.WritePropertyName("glossaryTermEnforcementDetail");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GlossaryTermEnforcementDetailMarshaller.Instance;
+                marshaller.Marshall(requestObject.GlossaryTermEnforcementDetail, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMetadataFormEnforcementDetail())
             {
                 context.Writer.WritePropertyName("metadataFormEnforcementDetail");

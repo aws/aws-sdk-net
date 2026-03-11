@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPullRequestEventTypeException
+        /// message.
+        /// </summary>
+        public InvalidPullRequestEventTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPullRequestEventTypeException with the specified error
         /// message.
         /// </summary>

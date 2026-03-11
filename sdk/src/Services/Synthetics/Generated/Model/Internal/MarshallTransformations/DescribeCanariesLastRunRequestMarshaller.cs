@@ -73,6 +73,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBrowserType())
+            {
+                context.Writer.WritePropertyName("BrowserType");
+                context.Writer.WriteStringValue(publicRequest.BrowserType);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

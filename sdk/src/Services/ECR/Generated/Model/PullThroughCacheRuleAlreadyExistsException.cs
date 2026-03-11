@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for PullThroughCacheRuleAlreadyExistsException
+        /// message.
+        /// </summary>
+        public PullThroughCacheRuleAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullThroughCacheRuleAlreadyExistsException with the specified error
         /// message.
         /// </summary>

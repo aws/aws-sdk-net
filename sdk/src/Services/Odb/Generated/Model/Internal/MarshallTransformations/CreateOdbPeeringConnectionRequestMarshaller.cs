@@ -98,10 +98,32 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.OdbNetworkId);
             }
 
+            if(publicRequest.IsSetPeerNetworkCidrsToBeAdded())
+            {
+                context.Writer.WritePropertyName("peerNetworkCidrsToBeAdded");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPeerNetworkCidrsToBeAddedListValue in publicRequest.PeerNetworkCidrsToBeAdded)
+                {
+                        context.Writer.WriteStringValue(publicRequestPeerNetworkCidrsToBeAddedListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetPeerNetworkId())
             {
                 context.Writer.WritePropertyName("peerNetworkId");
                 context.Writer.WriteStringValue(publicRequest.PeerNetworkId);
+            }
+
+            if(publicRequest.IsSetPeerNetworkRouteTableIds())
+            {
+                context.Writer.WritePropertyName("peerNetworkRouteTableIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPeerNetworkRouteTableIdsListValue in publicRequest.PeerNetworkRouteTableIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestPeerNetworkRouteTableIdsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetTags())

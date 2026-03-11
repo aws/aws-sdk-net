@@ -36,7 +36,7 @@ namespace Amazon.SageMakerRuntime.Model
     ///  <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> 
     /// <para>
     /// The model failed to finish sending the response within the timeout period allowed
-    /// by Amazon SageMaker.
+    /// by Amazon SageMaker AI.
     /// </para>
     ///  </dd> <dt>StreamBroken</dt> <dd> 
     /// <para>
@@ -50,6 +50,13 @@ namespace Amazon.SageMakerRuntime.Model
     #endif
     public partial class ModelStreamErrorException : AmazonSageMakerRuntimeException
     {
+
+        /// <summary>
+        /// Default constructor for ModelStreamErrorException
+        /// message.
+        /// </summary>
+        public ModelStreamErrorException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ModelStreamErrorException with the specified error

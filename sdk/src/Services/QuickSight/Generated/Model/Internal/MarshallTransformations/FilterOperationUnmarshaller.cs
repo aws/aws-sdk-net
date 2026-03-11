@@ -62,6 +62,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConditionExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DateFilterCondition", targetDepth))
+                {
+                    var unmarshaller = DataSetDateFilterConditionUnmarshaller.Instance;
+                    unmarshalledObject.DateFilterCondition = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NumericFilterCondition", targetDepth))
+                {
+                    var unmarshaller = DataSetNumericFilterConditionUnmarshaller.Instance;
+                    unmarshalledObject.NumericFilterCondition = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("StringFilterCondition", targetDepth))
+                {
+                    var unmarshaller = DataSetStringFilterConditionUnmarshaller.Instance;
+                    unmarshalledObject.StringFilterCondition = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

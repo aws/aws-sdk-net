@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
-    /// A collection of Amazon Redshift compute resources managed by AWS Glue.
+    /// A collection of Amazon Redshift compute resources managed by Glue.
     /// </summary>
     public partial class ManagedWorkgroupListItem
     {
@@ -98,7 +98,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.
+        /// The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.
         /// </para>
         /// </summary>
         public string SourceArn

@@ -39,6 +39,13 @@ namespace Amazon.SimpleNotificationService.Model
     {
 
         /// <summary>
+        /// Default constructor for BatchEntryIdsNotDistinctException
+        /// message.
+        /// </summary>
+        public BatchEntryIdsNotDistinctException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BatchEntryIdsNotDistinctException with the specified error
         /// message.
         /// </summary>

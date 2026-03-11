@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// Information about a dataset that contains permissions for row-level security (RLS).
     /// The permissions dataset maps fields to users or groups. For more information, see
     /// <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using
-    /// Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight
+    /// Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Quick Sight
     /// User Guide</i>.
     /// 
     ///  

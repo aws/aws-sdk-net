@@ -40,6 +40,13 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAccountStatusException
+        /// message.
+        /// </summary>
+        public InvalidAccountStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAccountStatusException with the specified error
         /// message.
         /// </summary>

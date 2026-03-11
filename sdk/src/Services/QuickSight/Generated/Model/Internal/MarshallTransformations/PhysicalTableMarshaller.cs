@@ -79,6 +79,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSaaSTable())
+            {
+                context.Writer.WritePropertyName("SaaSTable");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SaaSTableMarshaller.Instance;
+                marshaller.Marshall(requestObject.SaaSTable, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.WorkMail.Model
     {
 
         /// <summary>
+        /// Default constructor for EntityAlreadyRegisteredException
+        /// message.
+        /// </summary>
+        public EntityAlreadyRegisteredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EntityAlreadyRegisteredException with the specified error
         /// message.
         /// </summary>

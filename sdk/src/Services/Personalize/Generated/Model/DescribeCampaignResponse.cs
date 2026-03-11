@@ -37,10 +37,21 @@ namespace Amazon.Personalize.Model
         private Campaign _campaign;
 
         /// <summary>
-        /// Gets and sets the property Campaign. 
+        /// Gets and sets the property Campaign. <note> 
+        /// <para>
+        /// The <c>latestCampaignUpdate</c> field is only returned when the campaign has had at
+        /// least one <c>UpdateCampaign</c> call. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The properties of the campaign.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>latestCampaignUpdate</c> field is only returned when the campaign has had at
+        /// least one <c>UpdateCampaign</c> call.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Campaign Campaign
         {

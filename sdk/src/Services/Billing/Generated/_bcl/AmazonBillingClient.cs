@@ -269,6 +269,103 @@ namespace Amazon.Billing
         #endregion
 
 
+        #region  AssociateSourceViews
+
+
+        /// <summary>
+        /// Associates one or more source billing views with an existing billing view. This allows
+        /// creating aggregate billing views that combine data from multiple sources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceViews service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
+        public virtual AssociateSourceViewsResponse AssociateSourceViews(AssociateSourceViewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSourceViewsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates one or more source billing views with an existing billing view. This allows
+        /// creating aggregate billing views that combine data from multiple sources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
+        public virtual Task<AssociateSourceViewsResponse> AssociateSourceViewsAsync(AssociateSourceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateSourceViewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBillingView
 
 
@@ -281,12 +378,19 @@ namespace Amazon.Billing
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service
         /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.InternalServerException">
         /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
         /// You've reached the limit of resources you can create, or exceeded the size of an
@@ -301,7 +405,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateBillingView">REST API Reference for CreateBillingView Operation</seealso>
         public virtual CreateBillingViewResponse CreateBillingView(CreateBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillingViewResponseUnmarshaller.Instance;
 
@@ -321,12 +425,19 @@ namespace Amazon.Billing
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service
         /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.InternalServerException">
         /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
         /// You've reached the limit of resources you can create, or exceeded the size of an
@@ -341,7 +452,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateBillingView">REST API Reference for CreateBillingView Operation</seealso>
         public virtual Task<CreateBillingViewResponse> CreateBillingViewAsync(CreateBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillingViewResponseUnmarshaller.Instance;
             
@@ -378,7 +489,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
         public virtual DeleteBillingViewResponse DeleteBillingView(DeleteBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
 
@@ -414,11 +525,100 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
         public virtual Task<DeleteBillingViewResponse> DeleteBillingViewAsync(DeleteBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteBillingViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateSourceViews
+
+
+        /// <summary>
+        /// Removes the association between one or more source billing views and an existing
+        /// billing view. This allows modifying the composition of aggregate billing views.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceViews service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
+        public virtual DisassociateSourceViewsResponse DisassociateSourceViews(DisassociateSourceViewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceViewsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSourceViewsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the association between one or more source billing views and an existing
+        /// billing view. This allows modifying the composition of aggregate billing views.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
+        public virtual Task<DisassociateSourceViewsResponse> DisassociateSourceViewsAsync(DisassociateSourceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceViewsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateSourceViewsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -450,7 +650,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">REST API Reference for GetBillingView Operation</seealso>
         public virtual GetBillingViewResponse GetBillingView(GetBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
 
@@ -485,7 +685,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">REST API Reference for GetBillingView Operation</seealso>
         public virtual Task<GetBillingViewResponse> GetBillingViewAsync(GetBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
             
@@ -522,7 +722,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -558,7 +758,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -599,7 +799,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViews">REST API Reference for ListBillingViews Operation</seealso>
         public virtual ListBillingViewsResponse ListBillingViews(ListBillingViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingViewsResponseUnmarshaller.Instance;
 
@@ -639,7 +839,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViews">REST API Reference for ListBillingViews Operation</seealso>
         public virtual Task<ListBillingViewsResponse> ListBillingViewsAsync(ListBillingViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingViewsResponseUnmarshaller.Instance;
             
@@ -676,7 +876,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListSourceViewsForBillingView">REST API Reference for ListSourceViewsForBillingView Operation</seealso>
         public virtual ListSourceViewsForBillingViewResponse ListSourceViewsForBillingView(ListSourceViewsForBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceViewsForBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceViewsForBillingViewResponseUnmarshaller.Instance;
 
@@ -712,7 +912,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListSourceViewsForBillingView">REST API Reference for ListSourceViewsForBillingView Operation</seealso>
         public virtual Task<ListSourceViewsForBillingViewResponse> ListSourceViewsForBillingViewAsync(ListSourceViewsForBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceViewsForBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceViewsForBillingViewResponseUnmarshaller.Instance;
             
@@ -748,7 +948,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -783,7 +983,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -819,7 +1019,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -854,7 +1054,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -891,7 +1091,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -927,7 +1127,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -947,6 +1147,10 @@ namespace Amazon.Billing
         /// <returns>The response from the UpdateBillingView service method, as returned by Billing.</returns>
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service
@@ -971,7 +1175,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingView">REST API Reference for UpdateBillingView Operation</seealso>
         public virtual UpdateBillingViewResponse UpdateBillingView(UpdateBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillingViewResponseUnmarshaller.Instance;
 
@@ -990,6 +1194,10 @@ namespace Amazon.Billing
         /// <returns>The response from the UpdateBillingView service method, as returned by Billing.</returns>
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service
@@ -1014,7 +1222,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingView">REST API Reference for UpdateBillingView Operation</seealso>
         public virtual Task<UpdateBillingViewResponse> UpdateBillingViewAsync(UpdateBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillingViewResponseUnmarshaller.Instance;
             

@@ -53,6 +53,52 @@ namespace Amazon.Billing
         IBillingPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AssociateSourceViews
+
+
+
+        /// <summary>
+        /// Associates one or more source billing views with an existing billing view. This allows
+        /// creating aggregate billing views that combine data from multiple sources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
+        Task<AssociateSourceViewsResponse> AssociateSourceViewsAsync(AssociateSourceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateBillingView
 
 
@@ -69,12 +115,19 @@ namespace Amazon.Billing
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service
         /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.InternalServerException">
         /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
         /// You've reached the limit of resources you can create, or exceeded the size of an
@@ -122,6 +175,48 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
         Task<DeleteBillingViewResponse> DeleteBillingViewAsync(DeleteBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateSourceViews
+
+
+
+        /// <summary>
+        /// Removes the association between one or more source billing views and an existing
+        /// billing view. This allows modifying the composition of aggregate billing views.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
+        Task<DisassociateSourceViewsResponse> DisassociateSourceViewsAsync(DisassociateSourceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -379,6 +474,10 @@ namespace Amazon.Billing
         /// <returns>The response from the UpdateBillingView service method, as returned by Billing.</returns>
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service

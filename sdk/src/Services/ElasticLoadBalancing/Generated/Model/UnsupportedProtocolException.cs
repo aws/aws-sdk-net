@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedProtocolException
+        /// message.
+        /// </summary>
+        public UnsupportedProtocolException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedProtocolException with the specified error
         /// message.
         /// </summary>

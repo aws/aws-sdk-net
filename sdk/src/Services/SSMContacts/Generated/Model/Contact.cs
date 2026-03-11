@@ -99,9 +99,21 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Refers to the type of contact. A single contact is type <c>PERSONAL</c> and an escalation
-        /// plan is type <c>ESCALATION</c>.
+        /// The type of contact.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PERSONAL</c>: A single, individual contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ESCALATION</c>: An escalation plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ONCALL_SCHEDULE</c>: An on-call schedule.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ContactType Type

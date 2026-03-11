@@ -193,6 +193,25 @@
         {"shape":"ValidationException"}
       ]
     },
+    "CreateIndex":{
+      "name":"CreateIndex",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/index"
+      },
+      "input":{"shape":"CreateIndexRequest"},
+      "output":{"shape":"CreateIndexResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"InternalException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"},
+        {"shape":"ThrottlingException"}
+      ]
+    },
     "CreateOutboundConnection":{
       "name":"CreateOutboundConnection",
       "http":{
@@ -320,6 +339,24 @@
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"DisabledOperationException"}
+      ]
+    },
+    "DeleteIndex":{
+      "name":"DeleteIndex",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/index/{IndexName}"
+      },
+      "input":{"shape":"DeleteIndexRequest"},
+      "output":{"shape":"DeleteIndexResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "DeleteOutboundConnection":{
@@ -679,6 +716,22 @@
         {"shape":"DependencyFailureException"}
       ]
     },
+    "GetDefaultApplicationSetting":{
+      "name":"GetDefaultApplicationSetting",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/defaultApplicationSetting",
+        "responseCode":200
+      },
+      "input":{"shape":"GetDefaultApplicationSettingRequest"},
+      "output":{"shape":"GetDefaultApplicationSettingResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "GetDirectQueryDataSource":{
       "name":"GetDirectQueryDataSource",
       "http":{
@@ -709,6 +762,24 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
         {"shape":"DisabledOperationException"}
+      ]
+    },
+    "GetIndex":{
+      "name":"GetIndex",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/index/{IndexName}"
+      },
+      "input":{"shape":"GetIndexRequest"},
+      "output":{"shape":"GetIndexResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "GetPackageVersionHistory":{
@@ -993,6 +1064,22 @@
         {"shape":"InternalException"}
       ]
     },
+    "PutDefaultApplicationSetting":{
+      "name":"PutDefaultApplicationSetting",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2021-01-01/opensearch/defaultApplicationSetting",
+        "responseCode":200
+      },
+      "input":{"shape":"PutDefaultApplicationSettingRequest"},
+      "output":{"shape":"PutDefaultApplicationSettingResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "RejectInboundConnection":{
       "name":"RejectInboundConnection",
       "http":{
@@ -1115,7 +1202,8 @@
         {"shape":"InternalException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
-        {"shape":"DisabledOperationException"}
+        {"shape":"DisabledOperationException"},
+        {"shape":"LimitExceededException"}
       ]
     },
     "UpdateDomainConfig":{
@@ -1133,6 +1221,24 @@
         {"shape":"LimitExceededException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"}
+      ]
+    },
+    "UpdateIndex":{
+      "name":"UpdateIndex",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2021-01-01/opensearch/domain/{DomainName}/index/{IndexName}"
+      },
+      "input":{"shape":"UpdateIndexRequest"},
+      "output":{"shape":"UpdateIndexResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"},
+        {"shape":"DisabledOperationException"},
+        {"shape":"DependencyFailureException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "UpdatePackage":{
@@ -1226,14 +1332,16 @@
       "type":"structure",
       "members":{
         "NaturalLanguageQueryGenerationOptions":{"shape":"NaturalLanguageQueryGenerationOptionsInput"},
-        "S3VectorsEngine":{"shape":"S3VectorsEngine"}
+        "S3VectorsEngine":{"shape":"S3VectorsEngine"},
+        "ServerlessVectorAcceleration":{"shape":"ServerlessVectorAcceleration"}
       }
     },
     "AIMLOptionsOutput":{
       "type":"structure",
       "members":{
         "NaturalLanguageQueryGenerationOptions":{"shape":"NaturalLanguageQueryGenerationOptionsOutput"},
-        "S3VectorsEngine":{"shape":"S3VectorsEngine"}
+        "S3VectorsEngine":{"shape":"S3VectorsEngine"},
+        "ServerlessVectorAcceleration":{"shape":"ServerlessVectorAcceleration"}
       }
     },
     "AIMLOptionsStatus":{
@@ -1363,6 +1471,7 @@
         "DataSourceType":{"shape":"DirectQueryDataSourceType"},
         "Description":{"shape":"DirectQueryDataSourceDescription"},
         "OpenSearchArns":{"shape":"DirectQueryOpenSearchARNList"},
+        "DataSourceAccessPolicy":{"shape":"PolicyDocument"},
         "TagList":{"shape":"TagList"}
       }
     },
@@ -1417,6 +1526,7 @@
         "InternalUserDatabaseEnabled":{"shape":"Boolean"},
         "SAMLOptions":{"shape":"SAMLOptionsOutput"},
         "JWTOptions":{"shape":"JWTOptionsOutput"},
+        "IAMFederationOptions":{"shape":"IAMFederationOptionsOutput"},
         "AnonymousAuthDisableDate":{"shape":"DisableTimestamp"},
         "AnonymousAuthEnabled":{"shape":"Boolean"}
       }
@@ -1429,6 +1539,7 @@
         "MasterUserOptions":{"shape":"MasterUserOptions"},
         "SAMLOptions":{"shape":"SAMLOptionsInput"},
         "JWTOptions":{"shape":"JWTOptionsInput"},
+        "IAMFederationOptions":{"shape":"IAMFederationOptionsInput"},
         "AnonymousAuthEnabled":{"shape":"Boolean"}
       }
     },
@@ -1960,7 +2071,8 @@
         "dataSources":{"shape":"DataSources"},
         "iamIdentityCenterOptions":{"shape":"IamIdentityCenterOptionsInput"},
         "appConfigs":{"shape":"AppConfigs"},
-        "tagList":{"shape":"TagList"}
+        "tagList":{"shape":"TagList"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "CreateApplicationResponse":{
@@ -1973,7 +2085,8 @@
         "iamIdentityCenterOptions":{"shape":"IamIdentityCenterOptions"},
         "appConfigs":{"shape":"AppConfigs"},
         "tagList":{"shape":"TagList"},
-        "createdAt":{"shape":"Timestamp"}
+        "createdAt":{"shape":"Timestamp"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "CreateDomainRequest":{
@@ -2000,13 +2113,38 @@
         "AutoTuneOptions":{"shape":"AutoTuneOptionsInput"},
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptions"},
         "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"},
-        "AIMLOptions":{"shape":"AIMLOptionsInput"}
+        "AIMLOptions":{"shape":"AIMLOptionsInput"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptions"}
       }
     },
     "CreateDomainResponse":{
       "type":"structure",
       "members":{
         "DomainStatus":{"shape":"DomainStatus"}
+      }
+    },
+    "CreateIndexRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "IndexName",
+        "IndexSchema"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "IndexName":{"shape":"IndexName"},
+        "IndexSchema":{"shape":"IndexSchema"}
+      }
+    },
+    "CreateIndexResponse":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{"shape":"IndexStatus"}
       }
     },
     "CreateOutboundConnectionRequest":{
@@ -2090,7 +2228,8 @@
       "type":"structure",
       "members":{
         "dataSourceArn":{"shape":"ARN"},
-        "dataSourceDescription":{"shape":"DataSourceDescription"}
+        "dataSourceDescription":{"shape":"DataSourceDescription"},
+        "iamRoleForDataSourceArn":{"shape":"RoleArn"}
       }
     },
     "DataSourceDescription":{
@@ -2220,6 +2359,32 @@
         "Connection":{"shape":"InboundConnection"}
       }
     },
+    "DeleteIndexRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "IndexName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "IndexName":{
+          "shape":"IndexName",
+          "location":"uri",
+          "locationName":"IndexName"
+        }
+      }
+    },
+    "DeleteIndexResponse":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{"shape":"IndexStatus"}
+      }
+    },
     "DeleteOutboundConnectionRequest":{
       "type":"structure",
       "required":["ConnectionId"],
@@ -2289,6 +2454,31 @@
         "ELIGIBLE"
       ]
     },
+    "DeploymentStrategy":{
+      "type":"string",
+      "enum":[
+        "Default",
+        "CapacityOptimized"
+      ]
+    },
+    "DeploymentStrategyOptions":{
+      "type":"structure",
+      "required":["DeploymentStrategy"],
+      "members":{
+        "DeploymentStrategy":{"shape":"DeploymentStrategy"}
+      }
+    },
+    "DeploymentStrategyOptionsStatus":{
+      "type":"structure",
+      "required":[
+        "Options",
+        "Status"
+      ],
+      "members":{
+        "Options":{"shape":"DeploymentStrategyOptions"},
+        "Status":{"shape":"OptionStatus"}
+      }
+    },
     "DeploymentType":{
       "type":"string",
       "max":128,
@@ -2303,8 +2493,16 @@
           "location":"uri",
           "locationName":"DomainName"
         },
-        "MaxResults":{"shape":"MaxResults"},
-        "NextToken":{"shape":"NextToken"}
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
       }
     },
     "DescribeDomainAutoTunesResponse":{
@@ -2762,7 +2960,8 @@
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptionsStatus"},
         "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptionsStatus"},
         "ModifyingProperties":{"shape":"ModifyingPropertiesList"},
-        "AIMLOptions":{"shape":"AIMLOptionsStatus"}
+        "AIMLOptions":{"shape":"AIMLOptionsStatus"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptionsStatus"}
       }
     },
     "DomainEndpointOptions":{
@@ -2959,7 +3158,8 @@
         "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"},
         "DomainProcessingStatus":{"shape":"DomainProcessingStatusType"},
         "ModifyingProperties":{"shape":"ModifyingPropertiesList"},
-        "AIMLOptions":{"shape":"AIMLOptionsOutput"}
+        "AIMLOptions":{"shape":"AIMLOptionsOutput"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptions"}
       }
     },
     "DomainStatusList":{
@@ -3132,7 +3332,8 @@
         "dataSources":{"shape":"DataSources"},
         "appConfigs":{"shape":"AppConfigs"},
         "createdAt":{"shape":"Timestamp"},
-        "lastUpdatedAt":{"shape":"Timestamp"}
+        "lastUpdatedAt":{"shape":"Timestamp"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "GetCompatibleVersionsRequest":{
@@ -3179,6 +3380,16 @@
         "Status":{"shape":"DataSourceStatus"}
       }
     },
+    "GetDefaultApplicationSettingRequest":{
+      "type":"structure",
+      "members":{}
+    },
+    "GetDefaultApplicationSettingResponse":{
+      "type":"structure",
+      "members":{
+        "applicationArn":{"shape":"ARN"}
+      }
+    },
     "GetDirectQueryDataSourceRequest":{
       "type":"structure",
       "required":["DataSourceName"],
@@ -3197,6 +3408,7 @@
         "DataSourceType":{"shape":"DirectQueryDataSourceType"},
         "Description":{"shape":"DirectQueryDataSourceDescription"},
         "OpenSearchArns":{"shape":"DirectQueryOpenSearchARNList"},
+        "DataSourceAccessPolicy":{"shape":"PolicyDocument"},
         "DataSourceArn":{"shape":"String"}
       }
     },
@@ -3228,6 +3440,32 @@
         "Action":{"shape":"MaintenanceType"},
         "CreatedAt":{"shape":"UpdateTimestamp"},
         "UpdatedAt":{"shape":"UpdateTimestamp"}
+      }
+    },
+    "GetIndexRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "IndexName"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "IndexName":{
+          "shape":"IndexName",
+          "location":"uri",
+          "locationName":"IndexName"
+        }
+      }
+    },
+    "GetIndexResponse":{
+      "type":"structure",
+      "required":["IndexSchema"],
+      "members":{
+        "IndexSchema":{"shape":"IndexSchema"}
       }
     },
     "GetPackageVersionHistoryRequest":{
@@ -3307,6 +3545,34 @@
       }
     },
     "HostedZoneId":{"type":"string"},
+    "IAMFederationOptionsInput":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"},
+        "SubjectKey":{"shape":"IAMFederationSubjectKey"},
+        "RolesKey":{"shape":"IAMFederationRolesKey"}
+      }
+    },
+    "IAMFederationOptionsOutput":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"},
+        "SubjectKey":{"shape":"IAMFederationSubjectKey"},
+        "RolesKey":{"shape":"IAMFederationRolesKey"}
+      }
+    },
+    "IAMFederationRolesKey":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^(null|[A-Za-z][A-Za-z0-9_.:/=+\\-@]*)$"
+    },
+    "IAMFederationSubjectKey":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^(null|[A-Za-z][A-Za-z0-9_.:/=+\\-@]*)$"
+    },
     "IPAddressType":{
       "type":"string",
       "enum":[
@@ -3435,6 +3701,25 @@
       "type":"list",
       "member":{"shape":"InboundConnection"}
     },
+    "IndexName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^(?!\\.\\.?$)[^_ ,:\"+/*\\\\|?#><A-Z-][^ ,:\"+/*\\\\|?#><A-Z]*$"
+    },
+    "IndexSchema":{
+      "type":"structure",
+      "members":{},
+      "document":true
+    },
+    "IndexStatus":{
+      "type":"string",
+      "enum":[
+        "CREATED",
+        "UPDATED",
+        "DELETED"
+      ]
+    },
     "InitiatedBy":{
       "type":"string",
       "enum":[
@@ -3537,6 +3822,12 @@
         "KeyAccessRoleArn":{"shape":"RoleArn"},
         "KeyStoreAccessEnabled":{"shape":"Boolean"}
       }
+    },
+    "KmsKeyArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"^arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
     },
     "KmsKeyId":{
       "type":"string",
@@ -4114,7 +4405,8 @@
       "enum":[
         "Data",
         "Ultrawarm",
-        "Master"
+        "Master",
+        "Warm"
       ]
     },
     "NonEmptyString":{
@@ -4575,6 +4867,23 @@
         "ReservationName":{"shape":"ReservationToken"}
       }
     },
+    "PutDefaultApplicationSettingRequest":{
+      "type":"structure",
+      "required":[
+        "applicationArn",
+        "setAsDefault"
+      ],
+      "members":{
+        "applicationArn":{"shape":"ARN"},
+        "setAsDefault":{"shape":"Boolean"}
+      }
+    },
+    "PutDefaultApplicationSettingResponse":{
+      "type":"structure",
+      "members":{
+        "applicationArn":{"shape":"ARN"}
+      }
+    },
     "RecurringCharge":{
       "type":"structure",
       "members":{
@@ -4879,6 +5188,12 @@
         "RoleArn":{"shape":"DirectQueryDataSourceRoleArn"}
       }
     },
+    "ServerlessVectorAcceleration":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
+    },
     "ServiceSoftwareOptions":{
       "type":"structure",
       "members":{
@@ -5069,6 +5384,12 @@
       "min":0,
       "pattern":".*"
     },
+    "ThrottlingException":{
+      "type":"structure",
+      "members":{},
+      "error":{"httpStatusCode":429},
+      "exception":true
+    },
     "TimeUnit":{
       "type":"string",
       "enum":["HOURS"]
@@ -5150,7 +5471,8 @@
         },
         "DataSourceType":{"shape":"DirectQueryDataSourceType"},
         "Description":{"shape":"DirectQueryDataSourceDescription"},
-        "OpenSearchArns":{"shape":"DirectQueryOpenSearchARNList"}
+        "OpenSearchArns":{"shape":"DirectQueryOpenSearchARNList"},
+        "DataSourceAccessPolicy":{"shape":"PolicyDocument"}
       }
     },
     "UpdateDirectQueryDataSourceResponse":{
@@ -5187,7 +5509,8 @@
         "DryRunMode":{"shape":"DryRunMode"},
         "OffPeakWindowOptions":{"shape":"OffPeakWindowOptions"},
         "SoftwareUpdateOptions":{"shape":"SoftwareUpdateOptions"},
-        "AIMLOptions":{"shape":"AIMLOptionsInput"}
+        "AIMLOptions":{"shape":"AIMLOptionsInput"},
+        "DeploymentStrategyOptions":{"shape":"DeploymentStrategyOptions"}
       }
     },
     "UpdateDomainConfigResponse":{
@@ -5197,6 +5520,34 @@
         "DomainConfig":{"shape":"DomainConfig"},
         "DryRunResults":{"shape":"DryRunResults"},
         "DryRunProgressStatus":{"shape":"DryRunProgressStatus"}
+      }
+    },
+    "UpdateIndexRequest":{
+      "type":"structure",
+      "required":[
+        "DomainName",
+        "IndexName",
+        "IndexSchema"
+      ],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "IndexName":{
+          "shape":"IndexName",
+          "location":"uri",
+          "locationName":"IndexName"
+        },
+        "IndexSchema":{"shape":"IndexSchema"}
+      }
+    },
+    "UpdateIndexResponse":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{"shape":"IndexStatus"}
       }
     },
     "UpdatePackageRequest":{

@@ -34,8 +34,8 @@ namespace Amazon.ConnectParticipant.Model
     /// <note> 
     /// <para>
     /// The <c>application/vnd.amazonaws.connect.event.connection.acknowledged</c> ContentType
-    /// will no longer be supported starting December 31, 2024. This event has been migrated
-    /// to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+    /// is no longer maintained since December 31, 2024. This event has been migrated to the
+    /// <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
     /// API using the <c>ConnectParticipant</c> field.
     /// </para>
     ///  </note> 
@@ -47,7 +47,7 @@ namespace Amazon.ConnectParticipant.Model
     ///  
     /// <para>
     /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-    /// Connect Chat security best practices</a>.
+    /// Connect Chat security best practices</a>. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -142,8 +142,8 @@ namespace Amazon.ConnectParticipant.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated
-        /// on December 31, 2024) 
+        /// application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained
+        /// since December 31, 2024) 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -34,7 +34,26 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class GetWorkflowResponse : AmazonWebServiceResponse
     {
+        private LatestVersionReferences _latestVersionReferences;
         private Workflow _workflow;
+
+        /// <summary>
+        /// Gets and sets the property LatestVersionReferences. 
+        /// <para>
+        /// The resource ARNs with different wildcard variations of semantic versioning.
+        /// </para>
+        /// </summary>
+        public LatestVersionReferences LatestVersionReferences
+        {
+            get { return this._latestVersionReferences; }
+            set { this._latestVersionReferences = value; }
+        }
+
+        // Check to see if LatestVersionReferences property is set
+        internal bool IsSetLatestVersionReferences()
+        {
+            return this._latestVersionReferences != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Workflow. 

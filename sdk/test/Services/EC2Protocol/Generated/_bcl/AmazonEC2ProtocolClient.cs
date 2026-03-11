@@ -253,7 +253,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/DatetimeOffsets">REST API Reference for DatetimeOffsets Operation</seealso>
         public virtual DatetimeOffsetsResponse DatetimeOffsets(DatetimeOffsetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -273,7 +273,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/DatetimeOffsets">REST API Reference for DatetimeOffsets Operation</seealso>
         public virtual Task<DatetimeOffsetsResponse> DatetimeOffsetsAsync(DatetimeOffsetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
             
@@ -300,7 +300,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual EmptyInputAndEmptyOutputResponse EmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual Task<EmptyInputAndEmptyOutputResponse> EmptyInputAndEmptyOutputAsync(EmptyInputAndEmptyOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
             
@@ -347,7 +347,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual EndpointOperationResponse EndpointOperation(EndpointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual Task<EndpointOperationResponse> EndpointOperationAsync(EndpointOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
             
@@ -388,7 +388,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual EndpointWithHostLabelOperationResponse EndpointWithHostLabelOperation(EndpointWithHostLabelOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual Task<EndpointWithHostLabelOperationResponse> EndpointWithHostLabelOperationAsync(EndpointWithHostLabelOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
             
@@ -429,7 +429,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual FractionalSecondsResponse FractionalSeconds(FractionalSecondsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual Task<FractionalSecondsResponse> FractionalSecondsAsync(FractionalSecondsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
             
@@ -479,7 +479,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual GreetingWithErrorsResponse GreetingWithErrors(GreetingWithErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual Task<GreetingWithErrorsResponse> GreetingWithErrorsAsync(GreetingWithErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
             
@@ -529,7 +529,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual HostWithPathOperationResponse HostWithPathOperation(HostWithPathOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
 
@@ -549,7 +549,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual Task<HostWithPathOperationResponse> HostWithPathOperationAsync(HostWithPathOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
             
@@ -575,7 +575,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/IgnoresWrappingXmlName">REST API Reference for IgnoresWrappingXmlName Operation</seealso>
         public virtual IgnoresWrappingXmlNameResponse IgnoresWrappingXmlName(IgnoresWrappingXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IgnoresWrappingXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IgnoresWrappingXmlNameResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/IgnoresWrappingXmlName">REST API Reference for IgnoresWrappingXmlName Operation</seealso>
         public virtual Task<IgnoresWrappingXmlNameResponse> IgnoresWrappingXmlNameAsync(IgnoresWrappingXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IgnoresWrappingXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IgnoresWrappingXmlNameResponseUnmarshaller.Instance;
             
@@ -627,7 +627,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual NoInputAndOutputResponse NoInputAndOutput(NoInputAndOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual Task<NoInputAndOutputResponse> NoInputAndOutputAsync(NoInputAndOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
             
@@ -674,7 +674,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual PutWithContentEncodingResponse PutWithContentEncoding(PutWithContentEncodingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual Task<PutWithContentEncodingResponse> PutWithContentEncodingAsync(PutWithContentEncodingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
             
@@ -715,7 +715,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/QueryIdempotencyTokenAutoFill">REST API Reference for QueryIdempotencyTokenAutoFill Operation</seealso>
         public virtual QueryIdempotencyTokenAutoFillResponse QueryIdempotencyTokenAutoFill(QueryIdempotencyTokenAutoFillRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIdempotencyTokenAutoFillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIdempotencyTokenAutoFillResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/QueryIdempotencyTokenAutoFill">REST API Reference for QueryIdempotencyTokenAutoFill Operation</seealso>
         public virtual Task<QueryIdempotencyTokenAutoFillResponse> QueryIdempotencyTokenAutoFillAsync(QueryIdempotencyTokenAutoFillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIdempotencyTokenAutoFillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIdempotencyTokenAutoFillResponseUnmarshaller.Instance;
             
@@ -756,7 +756,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/QueryLists">REST API Reference for QueryLists Operation</seealso>
         public virtual QueryListsResponse QueryLists(QueryListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryListsResponseUnmarshaller.Instance;
 
@@ -776,7 +776,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/QueryLists">REST API Reference for QueryLists Operation</seealso>
         public virtual Task<QueryListsResponse> QueryListsAsync(QueryListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryListsResponseUnmarshaller.Instance;
             
@@ -801,7 +801,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/QueryTimestamps">REST API Reference for QueryTimestamps Operation</seealso>
         public virtual QueryTimestampsResponse QueryTimestamps(QueryTimestampsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryTimestampsResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/QueryTimestamps">REST API Reference for QueryTimestamps Operation</seealso>
         public virtual Task<QueryTimestampsResponse> QueryTimestampsAsync(QueryTimestampsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryTimestampsResponseUnmarshaller.Instance;
             
@@ -846,7 +846,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/RecursiveXmlShapes">REST API Reference for RecursiveXmlShapes Operation</seealso>
         public virtual RecursiveXmlShapesResponse RecursiveXmlShapes(RecursiveXmlShapesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecursiveXmlShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecursiveXmlShapesResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/RecursiveXmlShapes">REST API Reference for RecursiveXmlShapes Operation</seealso>
         public virtual Task<RecursiveXmlShapesResponse> RecursiveXmlShapesAsync(RecursiveXmlShapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecursiveXmlShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecursiveXmlShapesResponseUnmarshaller.Instance;
             
@@ -887,7 +887,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/SimpleInputParams">REST API Reference for SimpleInputParams Operation</seealso>
         public virtual SimpleInputParamsResponse SimpleInputParams(SimpleInputParamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleInputParamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleInputParamsResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/SimpleInputParams">REST API Reference for SimpleInputParams Operation</seealso>
         public virtual Task<SimpleInputParamsResponse> SimpleInputParamsAsync(SimpleInputParamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleInputParamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleInputParamsResponseUnmarshaller.Instance;
             
@@ -928,7 +928,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/SimpleScalarXmlProperties">REST API Reference for SimpleScalarXmlProperties Operation</seealso>
         public virtual SimpleScalarXmlPropertiesResponse SimpleScalarXmlProperties(SimpleScalarXmlPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarXmlPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarXmlPropertiesResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/SimpleScalarXmlProperties">REST API Reference for SimpleScalarXmlProperties Operation</seealso>
         public virtual Task<SimpleScalarXmlPropertiesResponse> SimpleScalarXmlPropertiesAsync(SimpleScalarXmlPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarXmlPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarXmlPropertiesResponseUnmarshaller.Instance;
             
@@ -969,7 +969,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlBlobs">REST API Reference for XmlBlobs Operation</seealso>
         public virtual XmlBlobsResponse XmlBlobs(XmlBlobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlBlobsResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlBlobs">REST API Reference for XmlBlobs Operation</seealso>
         public virtual Task<XmlBlobsResponse> XmlBlobsAsync(XmlBlobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlBlobsResponseUnmarshaller.Instance;
             
@@ -1010,7 +1010,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlEmptyBlobs">REST API Reference for XmlEmptyBlobs Operation</seealso>
         public virtual XmlEmptyBlobsResponse XmlEmptyBlobs(XmlEmptyBlobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyBlobsResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlEmptyBlobs">REST API Reference for XmlEmptyBlobs Operation</seealso>
         public virtual Task<XmlEmptyBlobsResponse> XmlEmptyBlobsAsync(XmlEmptyBlobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyBlobsResponseUnmarshaller.Instance;
             
@@ -1051,7 +1051,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlEmptyLists">REST API Reference for XmlEmptyLists Operation</seealso>
         public virtual XmlEmptyListsResponse XmlEmptyLists(XmlEmptyListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyListsResponseUnmarshaller.Instance;
 
@@ -1071,7 +1071,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlEmptyLists">REST API Reference for XmlEmptyLists Operation</seealso>
         public virtual Task<XmlEmptyListsResponse> XmlEmptyListsAsync(XmlEmptyListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyListsResponseUnmarshaller.Instance;
             
@@ -1092,7 +1092,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlEnums">REST API Reference for XmlEnums Operation</seealso>
         public virtual XmlEnumsResponse XmlEnums(XmlEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEnumsResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlEnums">REST API Reference for XmlEnums Operation</seealso>
         public virtual Task<XmlEnumsResponse> XmlEnumsAsync(XmlEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEnumsResponseUnmarshaller.Instance;
             
@@ -1133,7 +1133,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlIntEnums">REST API Reference for XmlIntEnums Operation</seealso>
         public virtual XmlIntEnumsResponse XmlIntEnums(XmlIntEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlIntEnumsResponseUnmarshaller.Instance;
 
@@ -1153,7 +1153,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlIntEnums">REST API Reference for XmlIntEnums Operation</seealso>
         public virtual Task<XmlIntEnumsResponse> XmlIntEnumsAsync(XmlIntEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlIntEnumsResponseUnmarshaller.Instance;
             
@@ -1179,7 +1179,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlLists">REST API Reference for XmlLists Operation</seealso>
         public virtual XmlListsResponse XmlLists(XmlListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlListsResponseUnmarshaller.Instance;
 
@@ -1204,7 +1204,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlLists">REST API Reference for XmlLists Operation</seealso>
         public virtual Task<XmlListsResponse> XmlListsAsync(XmlListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlListsResponseUnmarshaller.Instance;
             
@@ -1225,7 +1225,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlNamespaces">REST API Reference for XmlNamespaces Operation</seealso>
         public virtual XmlNamespacesResponse XmlNamespaces(XmlNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlNamespacesResponseUnmarshaller.Instance;
 
@@ -1245,7 +1245,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlNamespaces">REST API Reference for XmlNamespaces Operation</seealso>
         public virtual Task<XmlNamespacesResponse> XmlNamespacesAsync(XmlNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlNamespacesResponseUnmarshaller.Instance;
             
@@ -1267,7 +1267,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlTimestamps">REST API Reference for XmlTimestamps Operation</seealso>
         public virtual XmlTimestampsResponse XmlTimestamps(XmlTimestampsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlTimestampsResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.EC2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-protocol-2020-01-08/XmlTimestamps">REST API Reference for XmlTimestamps Operation</seealso>
         public virtual Task<XmlTimestampsResponse> XmlTimestampsAsync(XmlTimestampsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlTimestampsResponseUnmarshaller.Instance;
             

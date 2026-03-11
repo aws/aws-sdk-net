@@ -119,6 +119,10 @@ namespace Amazon.LaunchWizard.Model
         /// <para>
         /// The status of a workload.
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>You can list deployments in the <c>DISABLED</c> status.</i> 
+        /// </para>
         /// </summary>
         public WorkloadStatus Status
         {

@@ -96,15 +96,16 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     ///  <c>Decrypt</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
-    /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-    /// Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+    /// Web Services Nitro Enclaves</a> and NitroTPM, which provide attested environments
+    /// in Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave or NitroTPM, use the <a
+    /// href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
     /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-    /// parameter to provide the attestation document for the enclave. Instead of the plaintext
-    /// data, the response includes the plaintext data encrypted with the public key from
-    /// the attestation document (<c>CiphertextForRecipient</c>). For information about the
-    /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-    /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-    /// Guide</i>.
+    /// parameter to provide the attestation document for the attested environment. Instead
+    /// of the plaintext data, the response includes the plaintext data encrypted with the
+    /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+    /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+    /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+    /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -154,6 +155,7 @@ namespace Amazon.KeyManagementService.Model
     {
         private MemoryStream _ciphertextBlob;
         private bool? _dryRun;
+        private List<string> _dryRunModifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionAlgorithmSpec _encryptionAlgorithm;
         private Dictionary<string, string> _encryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -165,8 +167,13 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Ciphertext to be decrypted. The blob includes metadata.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required in all cases except when <c>DryRun</c> is <c>true</c> and
+        /// <c>DryRunModifiers</c> is set to <c>IGNORE_CIPHERTEXT</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6144)]
+        [AWSProperty(Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -200,6 +207,41 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRunModifiers. 
+        /// <para>
+        /// Specifies the modifiers to apply to the dry run operation. <c>DryRunModifiers</c>
+        /// is an optional parameter that only applies when <c>DryRun</c> is set to <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to <c>IGNORE_CIPHERTEXT</c>, KMS performs only authorization validation without
+        /// ciphertext validation. This allows you to test permissions without requiring a valid
+        /// ciphertext blob.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+        /// your permissions</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> DryRunModifiers
+        {
+            get { return this._dryRunModifiers; }
+            set { this._dryRunModifiers = value; }
+        }
+
+        // Check to see if DryRunModifiers property is set
+        internal bool IsSetDryRunModifiers()
+        {
+            return this._dryRunModifiers != null && (this._dryRunModifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -313,9 +355,11 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// This parameter is required only when the ciphertext was encrypted under an asymmetric
-        /// KMS key. If you used a symmetric encryption KMS key, KMS can get the KMS key from
-        /// metadata that it adds to the symmetric ciphertext blob. However, it is always recommended
-        /// as a best practice. This practice ensures that you use the KMS key that you intend.
+        /// KMS key or when <c>DryRun</c> is <c>true</c> and <c>DryRunModifiers</c> is set to
+        /// <c>IGNORE_CIPHERTEXT</c>. If you used a symmetric encryption KMS key, KMS can get
+        /// the KMS key from metadata that it adds to the symmetric ciphertext blob. However,
+        /// it is always recommended as a best practice. This practice ensures that you use the
+        /// KMS key that you intend.
         /// </para>
         ///  
         /// <para>
@@ -367,30 +411,30 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Recipient. 
         /// <para>
         /// A signed <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc">attestation
-        /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
-        /// to use with the enclave's public key. The only valid encryption algorithm is <c>RSAES_OAEP_SHA_256</c>.
-        /// 
+        /// document</a> from an Amazon Web Services Nitro enclave or NitroTPM, and the encryption
+        /// algorithm to use with the public key in the attestation document. The only valid encryption
+        /// algorithm is <c>RSAES_OAEP_SHA_256</c>. 
         /// </para>
         ///  
         /// <para>
-        /// This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves.
-        /// To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
-        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.
+        /// This parameter supports the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK for Amazon Web
+        /// Services Nitro Enclaves. It supports any Amazon Web Services SDK for Amazon Web Services
+        /// NitroTPM. 
         /// </para>
         ///  
         /// <para>
         /// When you use this parameter, instead of returning the plaintext data, KMS encrypts
         /// the plaintext data with the public key in the attestation document, and returns the
         /// resulting ciphertext in the <c>CiphertextForRecipient</c> field in the response. This
-        /// ciphertext can be decrypted only with the private key in the enclave. The <c>Plaintext</c>
-        /// field in the response is null or empty.
+        /// ciphertext can be decrypted only with the private key in the attested environment.
+        /// The <c>Plaintext</c> field in the response is null or empty.
         /// </para>
         ///  
         /// <para>
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public RecipientInfo Recipient

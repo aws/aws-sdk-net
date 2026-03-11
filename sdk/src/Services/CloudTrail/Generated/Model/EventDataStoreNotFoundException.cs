@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for EventDataStoreNotFoundException
+        /// message.
+        /// </summary>
+        public EventDataStoreNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new EventDataStoreNotFoundException with the specified error
         /// message.
         /// </summary>

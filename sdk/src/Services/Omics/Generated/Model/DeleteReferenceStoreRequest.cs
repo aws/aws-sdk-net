@@ -31,7 +31,16 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReferenceStore operation.
-    /// Deletes a genome reference store.
+    /// Deletes a reference store and returns a response with no body if the operation is
+    /// successful. You can only delete a reference store when it does not contain any reference
+    /// genomes. To empty a reference store, use <c>DeleteReference</c>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about your workflow status, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+    /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+    /// User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteReferenceStoreRequest : AmazonOmicsRequest
     {

@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for IntegrationTargetNotFoundException
+        /// message.
+        /// </summary>
+        public IntegrationTargetNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IntegrationTargetNotFoundException with the specified error
         /// message.
         /// </summary>

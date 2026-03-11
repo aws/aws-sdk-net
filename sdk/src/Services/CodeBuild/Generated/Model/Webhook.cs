@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private DateTime? _lastModifiedSecret;
         private bool? _manualCreation;
         private string _payloadUrl;
+        private PullRequestBuildPolicy _pullRequestBuildPolicy;
         private ScopeConfiguration _scopeConfiguration;
         private string _secret;
         private WebhookStatus _status;
@@ -191,6 +192,21 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetPayloadUrl()
         {
             return this._payloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullRequestBuildPolicy.
+        /// </summary>
+        public PullRequestBuildPolicy PullRequestBuildPolicy
+        {
+            get { return this._pullRequestBuildPolicy; }
+            set { this._pullRequestBuildPolicy = value; }
+        }
+
+        // Check to see if PullRequestBuildPolicy property is set
+        internal bool IsSetPullRequestBuildPolicy()
+        {
+            return this._pullRequestBuildPolicy != null;
         }
 
         /// <summary>

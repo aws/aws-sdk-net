@@ -49,7 +49,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetByteBuffer())
             {
                 context.Writer.WritePropertyName("byteBuffer");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ByteBuffer));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.ByteBuffer);
             }
 
             if(requestObject.IsSetContentType())

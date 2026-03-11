@@ -36,6 +36,14 @@ namespace Amazon.TaxSettings
         /// <summary>
         /// Construct instance of AmazonTaxSettingsException
         /// </summary>
+        public AmazonTaxSettingsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTaxSettingsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTaxSettingsException(string message)
             : base(message)

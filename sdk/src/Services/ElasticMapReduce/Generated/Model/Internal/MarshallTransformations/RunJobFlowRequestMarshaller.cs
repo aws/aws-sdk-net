@@ -176,6 +176,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.EbsRootVolumeThroughput.Value);
             }
 
+            if(publicRequest.IsSetExtendedSupport())
+            {
+                context.Writer.WritePropertyName("ExtendedSupport");
+                context.Writer.WriteBooleanValue(publicRequest.ExtendedSupport.Value);
+            }
+
             if(publicRequest.IsSetInstances())
             {
                 context.Writer.WritePropertyName("Instances");
@@ -223,6 +229,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
                 var marshaller = ManagedScalingPolicyMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ManagedScalingPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("MonitoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MonitoringConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

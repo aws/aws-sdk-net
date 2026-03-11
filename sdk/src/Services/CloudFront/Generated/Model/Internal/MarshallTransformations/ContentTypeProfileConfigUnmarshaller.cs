@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContentTypeProfileConfig Object
     /// </summary>  
-    public class ContentTypeProfileConfigUnmarshaller : IXmlUnmarshaller<ContentTypeProfileConfig, XmlUnmarshallerContext>
+    public partial class ContentTypeProfileConfigUnmarshaller : IXmlUnmarshaller<ContentTypeProfileConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ForwardWhenContentTypeIsUnknown = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ContentTypeProfileConfig unmarshalledObject, int targetDepth);
+
         private static ContentTypeProfileConfigUnmarshaller _instance = new ContentTypeProfileConfigUnmarshaller();        
 
         /// <summary>

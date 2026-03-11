@@ -78,6 +78,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
+                    if (context.TestExpression("ServiceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                     if (context.TestExpression("ServiceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

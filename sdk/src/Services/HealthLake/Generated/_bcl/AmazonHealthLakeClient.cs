@@ -40,8 +40,9 @@ namespace Amazon.HealthLake
     /// <summary>
     /// <para>Implementation for accessing HealthLake</para>
     ///
-    /// AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform,
-    /// query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.
+    /// This is the <i>AWS HealthLake API Reference</i>. For an introduction to the service,
+    /// see <a href="https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html">What
+    /// is AWS HealthLake?</a> in the <i>AWS HealthLake Developer Guide</i>.
     /// </summary>
     public partial class AmazonHealthLakeClient : AmazonServiceClient, IAmazonHealthLake
     {
@@ -264,7 +265,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Creates a data store that can ingest and export FHIR formatted data.
+        /// Create a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFHIRDatastore service method.</param>
         /// 
@@ -273,7 +274,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -284,7 +285,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">REST API Reference for CreateFHIRDatastore Operation</seealso>
         public virtual CreateFHIRDatastoreResponse CreateFHIRDatastore(CreateFHIRDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -293,7 +294,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Creates a data store that can ingest and export FHIR formatted data.
+        /// Create a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFHIRDatastore service method.</param>
         /// <param name="cancellationToken">
@@ -305,7 +306,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -316,7 +317,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">REST API Reference for CreateFHIRDatastore Operation</seealso>
         public virtual Task<CreateFHIRDatastoreResponse> CreateFHIRDatastoreAsync(CreateFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFHIRDatastoreResponseUnmarshaller.Instance;
             
@@ -329,7 +330,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Deletes a data store.
+        /// Delete a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFHIRDatastore service method.</param>
         /// 
@@ -338,10 +339,10 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ConflictException">
-        /// The data store is in a transition state and the user requested action can not be performed.
+        /// The data store is in a transition state and the user requested action cannot be performed.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -355,7 +356,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">REST API Reference for DeleteFHIRDatastore Operation</seealso>
         public virtual DeleteFHIRDatastoreResponse DeleteFHIRDatastore(DeleteFHIRDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -364,7 +365,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Deletes a data store.
+        /// Delete a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFHIRDatastore service method.</param>
         /// <param name="cancellationToken">
@@ -376,10 +377,10 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ConflictException">
-        /// The data store is in a transition state and the user requested action can not be performed.
+        /// The data store is in a transition state and the user requested action cannot be performed.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -393,7 +394,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">REST API Reference for DeleteFHIRDatastore Operation</seealso>
         public virtual Task<DeleteFHIRDatastoreResponse> DeleteFHIRDatastoreAsync(DeleteFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFHIRDatastoreResponseUnmarshaller.Instance;
             
@@ -406,15 +407,13 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Gets the properties associated with the FHIR data store, including the data store
-        /// ID, data store ARN, data store name, data store status, when the data store was created,
-        /// data store type version, and the data store's endpoint.
+        /// Get properties for a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRDatastore service method.</param>
         /// 
         /// <returns>The response from the DescribeFHIRDatastore service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -428,7 +427,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">REST API Reference for DescribeFHIRDatastore Operation</seealso>
         public virtual DescribeFHIRDatastoreResponse DescribeFHIRDatastore(DescribeFHIRDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -437,9 +436,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Gets the properties associated with the FHIR data store, including the data store
-        /// ID, data store ARN, data store name, data store status, when the data store was created,
-        /// data store type version, and the data store's endpoint.
+        /// Get properties for a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRDatastore service method.</param>
         /// <param name="cancellationToken">
@@ -448,7 +445,7 @@ namespace Amazon.HealthLake
         /// 
         /// <returns>The response from the DescribeFHIRDatastore service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -462,7 +459,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">REST API Reference for DescribeFHIRDatastore Operation</seealso>
         public virtual Task<DescribeFHIRDatastoreResponse> DescribeFHIRDatastoreAsync(DescribeFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRDatastoreResponseUnmarshaller.Instance;
             
@@ -475,14 +472,13 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Displays the properties of a FHIR export job, including the ID, ARN, name, and the
-        /// status of the job.
+        /// Get FHIR export job properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRExportJob service method.</param>
         /// 
         /// <returns>The response from the DescribeFHIRExportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -496,7 +492,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
         public virtual DescribeFHIRExportJobResponse DescribeFHIRExportJob(DescribeFHIRExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRExportJobResponseUnmarshaller.Instance;
 
@@ -505,8 +501,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Displays the properties of a FHIR export job, including the ID, ARN, name, and the
-        /// status of the job.
+        /// Get FHIR export job properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRExportJob service method.</param>
         /// <param name="cancellationToken">
@@ -515,7 +510,7 @@ namespace Amazon.HealthLake
         /// 
         /// <returns>The response from the DescribeFHIRExportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -529,7 +524,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
         public virtual Task<DescribeFHIRExportJobResponse> DescribeFHIRExportJobAsync(DescribeFHIRExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRExportJobResponseUnmarshaller.Instance;
             
@@ -542,14 +537,13 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Displays the properties of a FHIR import job, including the ID, ARN, name, and the
-        /// status of the job.
+        /// Get the import job properties to learn more about the job or job progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRImportJob service method.</param>
         /// 
         /// <returns>The response from the DescribeFHIRImportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -563,7 +557,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">REST API Reference for DescribeFHIRImportJob Operation</seealso>
         public virtual DescribeFHIRImportJobResponse DescribeFHIRImportJob(DescribeFHIRImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRImportJobResponseUnmarshaller.Instance;
 
@@ -572,8 +566,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Displays the properties of a FHIR import job, including the ID, ARN, name, and the
-        /// status of the job.
+        /// Get the import job properties to learn more about the job or job progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -582,7 +575,7 @@ namespace Amazon.HealthLake
         /// 
         /// <returns>The response from the DescribeFHIRImportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -596,7 +589,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">REST API Reference for DescribeFHIRImportJob Operation</seealso>
         public virtual Task<DescribeFHIRImportJobResponse> DescribeFHIRImportJobAsync(DescribeFHIRImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRImportJobResponseUnmarshaller.Instance;
             
@@ -609,14 +602,13 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Lists all FHIR data stores that are in the user’s account, regardless of data store
-        /// status.
+        /// List all FHIR-enabled data stores in a user’s account, regardless of data store status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRDatastores service method.</param>
         /// 
         /// <returns>The response from the ListFHIRDatastores service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -627,7 +619,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">REST API Reference for ListFHIRDatastores Operation</seealso>
         public virtual ListFHIRDatastoresResponse ListFHIRDatastores(ListFHIRDatastoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRDatastoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRDatastoresResponseUnmarshaller.Instance;
 
@@ -636,8 +628,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Lists all FHIR data stores that are in the user’s account, regardless of data store
-        /// status.
+        /// List all FHIR-enabled data stores in a user’s account, regardless of data store status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRDatastores service method.</param>
         /// <param name="cancellationToken">
@@ -646,7 +637,7 @@ namespace Amazon.HealthLake
         /// 
         /// <returns>The response from the ListFHIRDatastores service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -657,7 +648,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">REST API Reference for ListFHIRDatastores Operation</seealso>
         public virtual Task<ListFHIRDatastoresResponse> ListFHIRDatastoresAsync(ListFHIRDatastoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRDatastoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRDatastoresResponseUnmarshaller.Instance;
             
@@ -679,7 +670,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -693,7 +684,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs">REST API Reference for ListFHIRExportJobs Operation</seealso>
         public virtual ListFHIRExportJobsResponse ListFHIRExportJobs(ListFHIRExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRExportJobsResponseUnmarshaller.Instance;
 
@@ -714,7 +705,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -728,7 +719,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs">REST API Reference for ListFHIRExportJobs Operation</seealso>
         public virtual Task<ListFHIRExportJobsResponse> ListFHIRExportJobsAsync(ListFHIRExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRExportJobsResponseUnmarshaller.Instance;
             
@@ -741,7 +732,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Lists all FHIR import jobs associated with an account and their statuses.
+        /// List all FHIR import jobs associated with an account and their statuses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRImportJobs service method.</param>
         /// 
@@ -750,7 +741,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -764,7 +755,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs">REST API Reference for ListFHIRImportJobs Operation</seealso>
         public virtual ListFHIRImportJobsResponse ListFHIRImportJobs(ListFHIRImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRImportJobsResponseUnmarshaller.Instance;
 
@@ -773,7 +764,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Lists all FHIR import jobs associated with an account and their statuses.
+        /// List all FHIR import jobs associated with an account and their statuses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -785,7 +776,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -799,7 +790,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs">REST API Reference for ListFHIRImportJobs Operation</seealso>
         public virtual Task<ListFHIRImportJobsResponse> ListFHIRImportJobsAsync(ListFHIRImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRImportJobsResponseUnmarshaller.Instance;
             
@@ -826,7 +817,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -852,7 +843,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -865,7 +856,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Begins a FHIR export job.
+        /// Start a FHIR export job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFHIRExportJob service method.</param>
         /// 
@@ -874,7 +865,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -888,7 +879,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
         public virtual StartFHIRExportJobResponse StartFHIRExportJob(StartFHIRExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRExportJobResponseUnmarshaller.Instance;
 
@@ -897,7 +888,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Begins a FHIR export job.
+        /// Start a FHIR export job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFHIRExportJob service method.</param>
         /// <param name="cancellationToken">
@@ -909,7 +900,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -923,7 +914,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
         public virtual Task<StartFHIRExportJobResponse> StartFHIRExportJobAsync(StartFHIRExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRExportJobResponseUnmarshaller.Instance;
             
@@ -936,7 +927,9 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Begins a FHIR Import job.
+        /// Start importing bulk FHIR data into an ACTIVE data store. The import job imports FHIR
+        /// data found in the <c>InputDataConfig</c> object and stores processing results in the
+        /// <c>JobOutputDataConfig</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFHIRImportJob service method.</param>
         /// 
@@ -945,7 +938,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -959,7 +952,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRImportJob">REST API Reference for StartFHIRImportJob Operation</seealso>
         public virtual StartFHIRImportJobResponse StartFHIRImportJob(StartFHIRImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRImportJobResponseUnmarshaller.Instance;
 
@@ -968,7 +961,9 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Begins a FHIR Import job.
+        /// Start importing bulk FHIR data into an ACTIVE data store. The import job imports FHIR
+        /// data found in the <c>InputDataConfig</c> object and stores processing results in the
+        /// <c>JobOutputDataConfig</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFHIRImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -980,7 +975,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -994,7 +989,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRImportJob">REST API Reference for StartFHIRImportJob Operation</seealso>
         public virtual Task<StartFHIRImportJobResponse> StartFHIRImportJobAsync(StartFHIRImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRImportJobResponseUnmarshaller.Instance;
             
@@ -1007,7 +1002,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Adds a user specified key and value tag to a data store.
+        /// Add a user-specifed key and value tag to a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1021,7 +1016,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1030,7 +1025,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Adds a user specified key and value tag to a data store.
+        /// Add a user-specifed key and value tag to a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1047,7 +1042,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1060,7 +1055,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Removes tags from a data store.
+        /// Remove a user-specifed key and value tag from a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1074,7 +1069,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1083,7 +1078,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Removes tags from a data store.
+        /// Remove a user-specifed key and value tag from a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1100,7 +1095,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

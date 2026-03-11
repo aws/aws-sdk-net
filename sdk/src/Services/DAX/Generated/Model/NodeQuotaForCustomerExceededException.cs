@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DAX.Model
 {
     /// <summary>
-    /// You have attempted to exceed the maximum number of nodes for your AWS account.
+    /// You have attempted to exceed the maximum number of nodes for your Amazon Web Services
+    /// account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class NodeQuotaForCustomerExceededException : AmazonDAXException
     {
+
+        /// <summary>
+        /// Default constructor for NodeQuotaForCustomerExceededException
+        /// message.
+        /// </summary>
+        public NodeQuotaForCustomerExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new NodeQuotaForCustomerExceededException with the specified error

@@ -39,6 +39,13 @@ namespace Amazon.WorkSpaces.Model
     {
 
         /// <summary>
+        /// Default constructor for ComputeNotCompatibleException
+        /// message.
+        /// </summary>
+        public ComputeNotCompatibleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ComputeNotCompatibleException with the specified error
         /// message.
         /// </summary>

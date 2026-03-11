@@ -34,9 +34,30 @@ namespace Amazon.SecurityIR.Model
     /// </summary>
     public partial class IncidentResponder
     {
+        private List<string> _communicationPreferences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _email;
         private string _jobTitle;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property CommunicationPreferences.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> CommunicationPreferences
+        {
+            get { return this._communicationPreferences; }
+            set { this._communicationPreferences = value; }
+        }
+
+        // Check to see if CommunicationPreferences property is set
+        internal bool IsSetCommunicationPreferences()
+        {
+            return this._communicationPreferences != null && (this._communicationPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Email.

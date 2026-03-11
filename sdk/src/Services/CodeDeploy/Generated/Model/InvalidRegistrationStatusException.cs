@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidRegistrationStatusException
+        /// message.
+        /// </summary>
+        public InvalidRegistrationStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidRegistrationStatusException with the specified error
         /// message.
         /// </summary>

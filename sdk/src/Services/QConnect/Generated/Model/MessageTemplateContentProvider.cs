@@ -35,7 +35,9 @@ namespace Amazon.QConnect.Model
     public partial class MessageTemplateContentProvider
     {
         private EmailMessageTemplateContent _email;
+        private PushMessageTemplateContent _push;
         private SMSMessageTemplateContent _sms;
+        private WhatsAppMessageTemplateContent _whatsApp;
 
         /// <summary>
         /// Gets and sets the property Email. 
@@ -56,6 +58,21 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Push.
+        /// </summary>
+        public PushMessageTemplateContent Push
+        {
+            get { return this._push; }
+            set { this._push = value; }
+        }
+
+        // Check to see if Push property is set
+        internal bool IsSetPush()
+        {
+            return this._push != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Sms. 
         /// <para>
         /// The content of the message template that applies to the SMS channel subtype.
@@ -71,6 +88,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetSms()
         {
             return this._sms != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WhatsApp. 
+        /// <para>
+        /// The content of the message template that applies to the WHATSAPP channel subtype.
+        /// </para>
+        /// </summary>
+        public WhatsAppMessageTemplateContent WhatsApp
+        {
+            get { return this._whatsApp; }
+            set { this._whatsApp = value; }
+        }
+
+        // Check to see if WhatsApp property is set
+        internal bool IsSetWhatsApp()
+        {
+            return this._whatsApp != null;
         }
 
     }

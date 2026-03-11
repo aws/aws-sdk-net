@@ -62,7 +62,7 @@ namespace Amazon.CleanRooms.Model
         ///  The object key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }

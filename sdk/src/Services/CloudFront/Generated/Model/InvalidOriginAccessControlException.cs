@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOriginAccessControlException
+        /// message.
+        /// </summary>
+        public InvalidOriginAccessControlException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOriginAccessControlException with the specified error
         /// message.
         /// </summary>

@@ -65,7 +65,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property NextItemOffset. 
         /// <para>
-        /// The next incremental starting point after the defined <c>itemOffset</c>.
+        /// The next item offset for the search results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]

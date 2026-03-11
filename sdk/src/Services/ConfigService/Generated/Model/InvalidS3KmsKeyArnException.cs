@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidS3KmsKeyArnException
+        /// message.
+        /// </summary>
+        public InvalidS3KmsKeyArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidS3KmsKeyArnException with the specified error
         /// message.
         /// </summary>

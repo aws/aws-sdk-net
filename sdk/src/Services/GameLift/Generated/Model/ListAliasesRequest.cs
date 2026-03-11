@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves all aliases for this Amazon Web Services account. You can filter the result
     /// set by alias name and/or routing strategy type. Use the pagination parameters to retrieve
     /// results in sequential pages.
-    /// 
+    /// </para>
     ///  <note> 
     /// <para>
     /// Returned aliases are not listed in any particular order.

@@ -13,9 +13,11 @@
  * permissions and limitations under the License.
  */
 
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Credentials;
+using Amazon.S3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -87,6 +89,32 @@ namespace AWSSDK.UnitTests
             // Since the specified profile does not exist, the identity resolver will throw an exception.
             Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "non-existent-profile");
             Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity(clientConfig: null));
+        }
+
+        /// <summary>
+        /// Reported in https://github.com/aws/aws-sdk-net/issues/4028
+        /// <para />
+        /// If the name property in the "Profile" property is not set (which can happen when its value
+        /// is only set in a non-production environment), the resolver should not throw an exception and 
+        /// move to the next provider in the chain (which in this test will be the access / secret key pair
+        /// set in the environment variables).
+        /// </summary>
+        [DataTestMethod]
+        [DataRow("")]
+        [DataRow(null)]
+        public void CredentialsResolver_HandlesEmptyProfileNameInConfig(string profileName)
+        {
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
+
+            var identityResolver = new DefaultAWSCredentialsIdentityResolver();
+            var resolvedIdentity = identityResolver.ResolveIdentity(new AmazonS3Config
+            {
+                Profile = new Profile(profileName)
+            });
+
+            Assert.IsNotNull(resolvedIdentity);
+            Assert.IsTrue(resolvedIdentity is EnvironmentVariablesAWSCredentials);
         }
     }
 }

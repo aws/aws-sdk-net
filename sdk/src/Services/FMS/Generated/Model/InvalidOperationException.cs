@@ -44,6 +44,13 @@ namespace Amazon.FMS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidOperationException
+        /// message.
+        /// </summary>
+        public InvalidOperationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidOperationException with the specified error
         /// message.
         /// </summary>

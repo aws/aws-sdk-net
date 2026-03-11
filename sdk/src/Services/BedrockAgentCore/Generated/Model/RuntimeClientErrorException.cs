@@ -41,6 +41,13 @@ namespace Amazon.BedrockAgentCore.Model
     {
 
         /// <summary>
+        /// Default constructor for RuntimeClientErrorException
+        /// message.
+        /// </summary>
+        public RuntimeClientErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RuntimeClientErrorException with the specified error
         /// message.
         /// </summary>

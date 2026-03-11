@@ -100,9 +100,16 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -200,20 +207,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -305,20 +321,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -411,20 +436,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -565,7 +599,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -576,13 +612,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
         Task<BatchWriteItemResponse> BatchWriteItemAsync(Dictionary<string, List<WriteRequest>> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -719,7 +762,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -730,13 +775,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
         Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1307,7 +1359,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -1318,13 +1372,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -1373,7 +1434,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -1384,13 +1447,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -1438,7 +1508,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -1449,13 +1521,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -2541,20 +2620,29 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -2596,20 +2684,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
         /// The entire transaction request was canceled.
@@ -2674,10 +2771,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3032,20 +3128,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3075,20 +3180,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool? consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3117,20 +3231,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         Task<GetItemResponse> GetItemAsync(GetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3361,7 +3484,8 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Lists completed exports within the past 90 days.
+        /// Lists completed exports within the past 90 days, in reverse alphanumeric order of
+        /// <c>ExportArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
         /// <param name="cancellationToken">
@@ -3659,6 +3783,12 @@ namespace Amazon.DynamoDBv2
         /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
         /// item exists.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To determine whether <c>PutItem</c> overwrote an existing item, use <c>ReturnValues</c>
+        /// set to <c>ALL_OLD</c>. If the response includes the <c>Attributes</c> element, an
+        /// existing item was overwritten.
+        /// </para>
         ///  </note> 
         /// <para>
         /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
@@ -3683,7 +3813,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -3694,13 +3826,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -3740,6 +3879,12 @@ namespace Amazon.DynamoDBv2
         /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
         /// item exists.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To determine whether <c>PutItem</c> overwrote an existing item, use <c>ReturnValues</c>
+        /// set to <c>ALL_OLD</c>. If the response includes the <c>Attributes</c> element, an
+        /// existing item was overwritten.
+        /// </para>
         ///  </note> 
         /// <para>
         /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
@@ -3765,7 +3910,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -3776,13 +3923,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -3823,6 +3977,12 @@ namespace Amazon.DynamoDBv2
         /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
         /// item exists.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To determine whether <c>PutItem</c> overwrote an existing item, use <c>ReturnValues</c>
+        /// set to <c>ALL_OLD</c>. If the response includes the <c>Attributes</c> element, an
+        /// existing item was overwritten.
+        /// </para>
         ///  </note> 
         /// <para>
         /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
@@ -3846,7 +4006,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -3857,13 +4019,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -4065,20 +4234,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
         Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4402,20 +4580,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4488,20 +4675,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         Task<ScanResponse> ScanAsync(string tableName, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4575,20 +4771,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4661,20 +4866,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         Task<ScanResponse> ScanAsync(ScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4831,20 +5045,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
         /// The entire transaction request was canceled.
@@ -4909,10 +5132,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5189,20 +5411,29 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
         /// The entire transaction request was canceled.
@@ -5267,10 +5498,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5928,7 +6158,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -5939,13 +6171,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -5986,7 +6225,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -5997,13 +6238,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -6042,7 +6290,9 @@ namespace Amazon.DynamoDBv2
         /// one or more local secondary indexes.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
-        /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
         /// retry requests that receive this exception. Your request is eventually successful,
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -6053,13 +6303,20 @@ namespace Amazon.DynamoDBv2
         /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput quota for your account. Please contact <a
-        /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-        /// quota increase.
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.

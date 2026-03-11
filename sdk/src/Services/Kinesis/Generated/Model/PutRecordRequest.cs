@@ -34,7 +34,7 @@ namespace Amazon.Kinesis.Model
     /// Writes a single data record into an Amazon Kinesis data stream. Call <c>PutRecord</c>
     /// to send data into the stream for real-time ingestion and subsequent processing, one
     /// record at a time. Each shard can support writes up to 1,000 records per second, up
-    /// to a maximum data write total of 1 MiB per second.
+    /// to a maximum data write total of 10 MiB per second.
     /// 
     ///  <note> 
     /// <para>
@@ -107,6 +107,7 @@ namespace Amazon.Kinesis.Model
         private string _partitionKey;
         private string _sequenceNumberForOrdering;
         private string _streamARN;
+        private string _streamId;
         private string _streamName;
 
         /// <summary>
@@ -114,10 +115,10 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The data blob to put into the record, which is base64-encoded when the blob is serialized.
         /// When the data blob (the payload before base64-encoding) is added to the partition
-        /// key size, the total size must not exceed the maximum record size (1 MiB).
+        /// key size, the total size must not exceed the maximum record size (10 MiB).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1048576)]
+        [AWSProperty(Required=true, Min=0, Max=10485760)]
         public MemoryStream Data
         {
             get { return this._data; }
@@ -213,6 +214,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamARN()
         {
             return this._streamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>

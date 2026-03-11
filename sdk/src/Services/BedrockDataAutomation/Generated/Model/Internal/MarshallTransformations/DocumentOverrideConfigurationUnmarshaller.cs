@@ -62,6 +62,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sensitiveDataConfiguration", targetDepth))
+                {
+                    var unmarshaller = SensitiveDataConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SensitiveDataConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("splitter", targetDepth))
                 {
                     var unmarshaller = SplitterConfigurationUnmarshaller.Instance;

@@ -39,6 +39,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFDisallowedNameException
+        /// message.
+        /// </summary>
+        public WAFDisallowedNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFDisallowedNameException with the specified error
         /// message.
         /// </summary>

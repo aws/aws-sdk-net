@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=3600)]
+        [AWSProperty(Required=true, Min=0, Max=21600)]
         public int? KeepAlivePeriodInSeconds
         {
             get { return this._keepAlivePeriodInSeconds; }

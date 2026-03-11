@@ -32,6 +32,37 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the SearchTypes operation.
     /// Searches for types in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// --search-scope must be one of the valid values including: ASSET_TYPE, GLOSSARY_TERM_TYPE,
+    /// DATA_PRODUCT_TYPE.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The --managed flag must be present without a value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The user must have permissions for form or asset types in the domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If using --filters, ensure that the JSON is valid.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Filters contain correct structure (attribute, value, operator).
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SearchTypesRequest : AmazonDataZoneRequest
     {
@@ -196,7 +227,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the text for which to search.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=512)]
         public string SearchText
         {
             get { return this._searchText; }

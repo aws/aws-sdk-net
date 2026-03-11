@@ -36,6 +36,14 @@ namespace Amazon.TranscribeStreaming
         /// <summary>
         /// Construct instance of AmazonTranscribeStreamingException
         /// </summary>
+        public AmazonTranscribeStreamingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonTranscribeStreamingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonTranscribeStreamingException(string message)
             : base(message)

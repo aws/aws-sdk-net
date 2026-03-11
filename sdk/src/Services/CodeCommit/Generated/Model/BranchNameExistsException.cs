@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for BranchNameExistsException
+        /// message.
+        /// </summary>
+        public BranchNameExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BranchNameExistsException with the specified error
         /// message.
         /// </summary>

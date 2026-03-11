@@ -69,9 +69,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetUploadId())
                 throw new AmazonOmicsException("Request object does not have required field UploadId set");
             request.AddPathResource("{uploadId}", StringUtils.FromString(publicRequest.UploadId));
+            if (publicRequest.PartNumber == null)
+                throw new AmazonOmicsException("Request object does not have required field PartNumber set");
             
             if (publicRequest.IsSetPartNumber())
                 request.Parameters.Add("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
+            if (string.IsNullOrEmpty(publicRequest.PartSource))
+                throw new AmazonOmicsException("Request object does not have required field PartSource set");
             
             if (publicRequest.IsSetPartSource())
                 request.Parameters.Add("partSource", StringUtils.FromString(publicRequest.PartSource));

@@ -41,6 +41,13 @@ namespace Amazon.AccessAnalyzer.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>

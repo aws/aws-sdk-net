@@ -39,6 +39,13 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Default constructor for DirectoryUnavailableException
+        /// message.
+        /// </summary>
+        public DirectoryUnavailableException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DirectoryUnavailableException with the specified error
         /// message.
         /// </summary>

@@ -58,6 +58,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("jobType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("outputSourceConfig", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdMappingJobOutputSource, IdMappingJobOutputSourceUnmarshaller>(IdMappingJobOutputSourceUnmarshaller.Instance);

@@ -39,6 +39,13 @@ namespace Amazon.ElasticBeanstalk.Model
     {
 
         /// <summary>
+        /// Default constructor for S3SubscriptionRequiredException
+        /// message.
+        /// </summary>
+        public S3SubscriptionRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new S3SubscriptionRequiredException with the specified error
         /// message.
         /// </summary>

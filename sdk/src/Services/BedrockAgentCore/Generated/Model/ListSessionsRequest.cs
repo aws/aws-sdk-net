@@ -31,12 +31,12 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSessions operation.
-    /// Lists sessions in a memory store based on specified criteria. We recommend using pagination
-    /// to ensure that the operation returns quickly and successfully.
+    /// Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend
+    /// using pagination to ensure that the operation returns quickly and successfully.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:ListSessions</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
     /// </para>
     /// </summary>
     public partial class ListSessionsRequest : AmazonBedrockAgentCoreRequest
@@ -49,8 +49,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ActorId. 
         /// <para>
-        /// The identifier of the actor for which to list sessions. If specified, only sessions
-        /// involving this actor are returned.
+        /// The identifier of the actor for which to list sessions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -69,8 +68,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Minimum value of 1, maximum
-        /// value of 100. Default is 20.
+        /// The maximum number of results to return in a single call. The default value is 20.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -89,7 +87,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store for which to list sessions.
+        /// The identifier of the AgentCore Memory resource for which to list sessions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

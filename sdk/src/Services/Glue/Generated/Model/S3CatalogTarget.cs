@@ -34,12 +34,33 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class S3CatalogTarget
     {
+        private AutoDataQuality _autoDataQuality;
         private string _database;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private CatalogSchemaChangePolicy _schemaChangePolicy;
         private string _table;
+
+        /// <summary>
+        /// Gets and sets the property AutoDataQuality. 
+        /// <para>
+        /// Specifies whether to automatically enable data quality evaluation for the S3 catalog
+        /// target. When set to <c>true</c>, data quality checks are performed automatically during
+        /// the write operation.
+        /// </para>
+        /// </summary>
+        public AutoDataQuality AutoDataQuality
+        {
+            get { return this._autoDataQuality; }
+            set { this._autoDataQuality = value; }
+        }
+
+        // Check to see if AutoDataQuality property is set
+        internal bool IsSetAutoDataQuality()
+        {
+            return this._autoDataQuality != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Database. 

@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for WebAuthnRelyingPartyMismatchException
+        /// message.
+        /// </summary>
+        public WebAuthnRelyingPartyMismatchException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WebAuthnRelyingPartyMismatchException with the specified error
         /// message.
         /// </summary>

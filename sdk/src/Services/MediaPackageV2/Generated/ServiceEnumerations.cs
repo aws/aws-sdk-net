@@ -84,6 +84,10 @@ namespace Amazon.MediaPackageV2
         /// Constant DATERANGE for AdMarkerHls
         /// </summary>
         public static readonly AdMarkerHls DATERANGE = new AdMarkerHls("DATERANGE");
+        /// <summary>
+        /// Constant SCTE35_ENHANCED for AdMarkerHls
+        /// </summary>
+        public static readonly AdMarkerHls SCTE35_ENHANCED = new AdMarkerHls("SCTE35_ENHANCED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1253,6 +1257,56 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type ScteInSegments.
+    /// </summary>
+    public class ScteInSegments : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments ALL = new ScteInSegments("ALL");
+        /// <summary>
+        /// Constant NONE for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments NONE = new ScteInSegments("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScteInSegments(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScteInSegments FindValue(string value)
+        {
+            return FindValue<ScteInSegments>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScteInSegments(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TsEncryptionMethod.
     /// </summary>
     public class TsEncryptionMethod : ConstantClass
@@ -1317,6 +1371,14 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType CENC_IV_INCOMPATIBLE = new ValidationExceptionType("CENC_IV_INCOMPATIBLE");
         /// <summary>
+        /// Constant CERTIFICATE_ACCESS_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CERTIFICATE_ACCESS_DENIED = new ValidationExceptionType("CERTIFICATE_ACCESS_DENIED");
+        /// <summary>
+        /// Constant CERTIFICATE_RESOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CERTIFICATE_RESOURCE_NOT_FOUND = new ValidationExceptionType("CERTIFICATE_RESOURCE_NOT_FOUND");
+        /// <summary>
         /// Constant CLIP_START_TIME_WITH_START_OR_END for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CLIP_START_TIME_WITH_START_OR_END = new ValidationExceptionType("CLIP_START_TIME_WITH_START_OR_END");
@@ -1340,6 +1402,10 @@ namespace Amazon.MediaPackageV2
         /// Constant DECRYPT_SECRET_FAILED for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType DECRYPT_SECRET_FAILED = new ValidationExceptionType("DECRYPT_SECRET_FAILED");
+        /// <summary>
+        /// Constant DESCRIBE_CERTIFICATE_FAILED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DESCRIBE_CERTIFICATE_FAILED = new ValidationExceptionType("DESCRIBE_CERTIFICATE_FAILED");
         /// <summary>
         /// Constant DESCRIBE_SECRET_DENIED for ValidationExceptionType
         /// </summary>
@@ -1424,6 +1490,26 @@ namespace Amazon.MediaPackageV2
         /// Constant INCOMPATIBLE_XML_ENCODING for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INCOMPATIBLE_XML_ENCODING = new ValidationExceptionType("INCOMPATIBLE_XML_ENCODING");
+        /// <summary>
+        /// Constant INVALID_ARN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_ARN = new ValidationExceptionType("INVALID_ARN");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_KEY_ALGORITHM for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_KEY_ALGORITHM = new ValidationExceptionType("INVALID_CERTIFICATE_KEY_ALGORITHM");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_SIGNATURE_ALGORITHM for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_SIGNATURE_ALGORITHM = new ValidationExceptionType("INVALID_CERTIFICATE_SIGNATURE_ALGORITHM");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_STATUS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_STATUS = new ValidationExceptionType("INVALID_CERTIFICATE_STATUS");
+        /// <summary>
+        /// Constant INVALID_DRM_SETTINGS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_DRM_SETTINGS = new ValidationExceptionType("INVALID_DRM_SETTINGS");
         /// <summary>
         /// Constant INVALID_HARVEST_JOB_DURATION for ValidationExceptionType
         /// </summary>
@@ -1533,6 +1619,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType MEMBER_MISSING = new ValidationExceptionType("MEMBER_MISSING");
         /// <summary>
+        /// Constant MISSING_CERTIFICATE_DOMAIN_NAME for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MISSING_CERTIFICATE_DOMAIN_NAME = new ValidationExceptionType("MISSING_CERTIFICATE_DOMAIN_NAME");
+        /// <summary>
         /// Constant NONE_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType NONE_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("NONE_MODE_WITH_TIMING_SOURCE");
@@ -1557,9 +1647,17 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
         /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION");
+        /// <summary>
         /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES = new ValidationExceptionType("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
+        /// <summary>
+        /// Constant RESOURCE_NOT_IN_SAME_REGION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType RESOURCE_NOT_IN_SAME_REGION = new ValidationExceptionType("RESOURCE_NOT_IN_SAME_REGION");
         /// <summary>
         /// Constant ROLE_ARN_INVALID_FORMAT for ValidationExceptionType
         /// </summary>

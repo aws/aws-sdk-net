@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for InconsistentQuantitiesException
+        /// message.
+        /// </summary>
+        public InconsistentQuantitiesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InconsistentQuantitiesException with the specified error
         /// message.
         /// </summary>

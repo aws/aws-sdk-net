@@ -40,6 +40,13 @@ namespace Amazon.Budgets.Model
     {
 
         /// <summary>
+        /// Default constructor for ResourceLockedException
+        /// message.
+        /// </summary>
+        public ResourceLockedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceLockedException with the specified error
         /// message.
         /// </summary>

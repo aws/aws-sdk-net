@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedPlsAlphabetException
+        /// message.
+        /// </summary>
+        public UnsupportedPlsAlphabetException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedPlsAlphabetException with the specified error
         /// message.
         /// </summary>

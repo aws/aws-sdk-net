@@ -40,7 +40,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ChannelTargetInfo. 
         /// <para>
-        /// Information about the contact channel Incident Manager is engaging.
+        /// Information about the contact channel that Incident Manager engages.
         /// </para>
         /// </summary>
         public ChannelTargetInfo ChannelTargetInfo
@@ -58,7 +58,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ContactTargetInfo. 
         /// <para>
-        /// Information about the contact that Incident Manager is engaging.
+        /// Information about the contact that Incident Manager engages.
         /// </para>
         /// </summary>
         public ContactTargetInfo ContactTargetInfo

@@ -250,7 +250,6 @@ namespace Amazon.MediaLive.Model
         /// 16-byte hex value represented by a 32-character text string. If ivSource is set to
         /// "explicit" then this parameter is required and is used as the IV for encryption.
         /// </summary>
-        [AWSProperty(Min=32, Max=32)]
         public string ConstantIv
         {
             get { return this._constantIv; }
@@ -408,7 +407,6 @@ namespace Amazon.MediaLive.Model
         /// segments are removed from the media manifest. This number must be smaller than the
         /// number in the Keep Segments field.
         /// </summary>
-        [AWSProperty(Min=3)]
         public int? IndexNSegments
         {
             get { return this._indexNSegments; }
@@ -483,7 +481,6 @@ namespace Amazon.MediaLive.Model
         /// been removed from the destination directory (as directed by indexNSegments). This
         /// situation would result in a 404 HTTP error on the player.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? KeepSegments
         {
             get { return this._keepSegments; }
@@ -581,7 +578,6 @@ namespace Amazon.MediaLive.Model
         /// and back within the specified range for a nearby avail and extending the segment size
         /// if needed.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? MinSegmentLength
         {
             get { return this._minSegmentLength; }
@@ -673,7 +669,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ProgramDateTimePeriod. Period of insertion of EXT-X-PROGRAM-DATE-TIME
         /// entry, in seconds.
         /// </summary>
-        [AWSProperty(Min=0, Max=3600)]
         public int? ProgramDateTimePeriod
         {
             get { return this._programDateTimePeriod; }
@@ -731,7 +726,6 @@ namespace Amazon.MediaLive.Model
         /// to create in seconds. Note that segments will end on the next keyframe after this
         /// duration, so actual segment length may be longer.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? SegmentLength
         {
             get { return this._segmentLength; }
@@ -749,7 +743,6 @@ namespace Amazon.MediaLive.Model
         /// a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream
         /// for this setting to have an effect.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? SegmentsPerSubdirectory
         {
             get { return this._segmentsPerSubdirectory; }
@@ -797,7 +790,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property TimedMetadataId3Period. Timed Metadata interval in seconds.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? TimedMetadataId3Period
         {
             get { return this._timedMetadataId3Period; }
@@ -814,7 +806,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimestampDeltaMilliseconds. Provides an extra millisecond
         /// delta offset to fine tune the timestamps.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? TimestampDeltaMilliseconds
         {
             get { return this._timestampDeltaMilliseconds; }

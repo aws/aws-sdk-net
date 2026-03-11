@@ -41,7 +41,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property InputLossThresholdMsec. The amount of time (in milliseconds)
         /// that no input is detected. After that time, an input failover will occur.
         /// </summary>
-        [AWSProperty(Min=100)]
         public int? InputLossThresholdMsec
         {
             get { return this._inputLossThresholdMsec; }

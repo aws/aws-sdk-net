@@ -36,6 +36,14 @@ namespace Amazon.ECS
         /// <summary>
         /// Construct instance of AmazonECSException
         /// </summary>
+        public AmazonECSException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonECSException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonECSException(string message)
             : base(message)

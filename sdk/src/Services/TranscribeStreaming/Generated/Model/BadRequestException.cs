@@ -42,6 +42,13 @@ namespace Amazon.TranscribeStreaming.Model
     {
 
         /// <summary>
+        /// Default constructor for BadRequestException
+        /// message.
+        /// </summary>
+        public BadRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new BadRequestException with the specified error
         /// message.
         /// </summary>

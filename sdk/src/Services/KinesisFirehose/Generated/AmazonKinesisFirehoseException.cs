@@ -36,6 +36,14 @@ namespace Amazon.KinesisFirehose
         /// <summary>
         /// Construct instance of AmazonKinesisFirehoseException
         /// </summary>
+        public AmazonKinesisFirehoseException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonKinesisFirehoseException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonKinesisFirehoseException(string message)
             : base(message)

@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ImagePipeline
     {
         private string _arn;
+        private int? _consecutiveFailures;
         private string _containerRecipeArn;
         private string _dateCreated;
         private string _dateLastRun;
@@ -48,6 +49,8 @@ namespace Amazon.Imagebuilder.Model
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
+        private ImageStatus _lastRunStatus;
+        private PipelineLoggingConfiguration _loggingConfiguration;
         private string _name;
         private Platform _platform;
         private Schedule _schedule;
@@ -71,6 +74,54 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsecutiveFailures. 
+        /// <para>
+        /// Image Builder tracks the number of consecutive failures for scheduled pipeline executions
+        /// and takes one of the following actions each time it runs on a schedule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the pipeline execution is successful, the number of consecutive failures resets
+        /// to zero.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the pipeline execution fails, Image Builder increments the number of consecutive
+        /// failures. If the failure count exceeds the limit defined in the <c>AutoDisablePolicy</c>,
+        /// Image Builder disables the pipeline.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The consecutive failure count is also reset to zero under the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The pipeline runs manually and succeeds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The pipeline configuration is updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the pipeline runs manually and fails, the count remains the same. The next scheduled
+        /// run continues to increment where it left off before.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? ConsecutiveFailures
+        {
+            get { return this._consecutiveFailures; }
+            set { this._consecutiveFailures = value; }
+        }
+
+        // Check to see if ConsecutiveFailures property is set
+        internal bool IsSetConsecutiveFailures()
+        {
+            return this._consecutiveFailures.HasValue; 
         }
 
         /// <summary>
@@ -312,6 +363,43 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInfrastructureConfigurationArn()
         {
             return this._infrastructureConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastRunStatus. 
+        /// <para>
+        /// The status of the last image that this pipeline built, such as <c>BUILDING</c>, <c>TESTING</c>,
+        /// <c>FAILED</c>, or <c>AVAILABLE</c>.
+        /// </para>
+        /// </summary>
+        public ImageStatus LastRunStatus
+        {
+            get { return this._lastRunStatus; }
+            set { this._lastRunStatus = value; }
+        }
+
+        // Check to see if LastRunStatus property is set
+        internal bool IsSetLastRunStatus()
+        {
+            return this._lastRunStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// Defines logging configuration for the output image.
+        /// </para>
+        /// </summary>
+        public PipelineLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

@@ -97,6 +97,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.FunctionUrlAuthType);
             }
 
+            if(publicRequest.IsSetInvokedViaFunctionUrl())
+            {
+                context.Writer.WritePropertyName("InvokedViaFunctionUrl");
+                context.Writer.WriteBooleanValue(publicRequest.InvokedViaFunctionUrl.Value);
+            }
+
             if(publicRequest.IsSetPrincipal())
             {
                 context.Writer.WritePropertyName("Principal");

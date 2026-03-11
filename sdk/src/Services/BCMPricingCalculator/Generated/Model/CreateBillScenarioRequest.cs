@@ -37,6 +37,8 @@ namespace Amazon.BCMPricingCalculator.Model
     public partial class CreateBillScenarioRequest : AmazonBCMPricingCalculatorRequest
     {
         private string _clientToken;
+        private string _costCategoryGroupSharingPreferenceArn;
+        private GroupSharingPreferenceEnum _groupSharingPreference;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -57,6 +59,44 @@ namespace Amazon.BCMPricingCalculator.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CostCategoryGroupSharingPreferenceArn. 
+        /// <para>
+        /// The arn of the cost category used in the reserved and prioritized group sharing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CostCategoryGroupSharingPreferenceArn
+        {
+            get { return this._costCategoryGroupSharingPreferenceArn; }
+            set { this._costCategoryGroupSharingPreferenceArn = value; }
+        }
+
+        // Check to see if CostCategoryGroupSharingPreferenceArn property is set
+        internal bool IsSetCostCategoryGroupSharingPreferenceArn()
+        {
+            return this._costCategoryGroupSharingPreferenceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupSharingPreference. 
+        /// <para>
+        /// The setting for the reserved instance and savings plan group sharing used in this
+        /// estimate.
+        /// </para>
+        /// </summary>
+        public GroupSharingPreferenceEnum GroupSharingPreference
+        {
+            get { return this._groupSharingPreference; }
+            set { this._groupSharingPreference = value; }
+        }
+
+        // Check to see if GroupSharingPreference property is set
+        internal bool IsSetGroupSharingPreference()
+        {
+            return this._groupSharingPreference != null;
         }
 
         /// <summary>

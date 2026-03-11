@@ -36,7 +36,10 @@ namespace Amazon.CloudFront.Model
     public partial class AnycastIpListSummary
     {
         private string _arn;
+        private string _eTag;
         private string _id;
+        private IpAddressType _ipAddressType;
+        private IpamConfig _ipamConfig;
         private int? _ipCount;
         private DateTime? _lastModifiedTime;
         private string _name;
@@ -62,6 +65,24 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version (ETag value) of the Anycast static IP list.
+        /// </para>
+        /// </summary>
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the Anycast static IP list.
@@ -78,6 +99,43 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Anycast static IP list.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamConfig. 
+        /// <para>
+        /// The IPAM configuration for the Anycast static IP list, that contains the quantity
+        /// and list of IPAM CIDR configurations.
+        /// </para>
+        /// </summary>
+        public IpamConfig IpamConfig
+        {
+            get { return this._ipamConfig; }
+            set { this._ipamConfig = value; }
+        }
+
+        // Check to see if IpamConfig property is set
+        internal bool IsSetIpamConfig()
+        {
+            return this._ipamConfig != null;
         }
 
         /// <summary>

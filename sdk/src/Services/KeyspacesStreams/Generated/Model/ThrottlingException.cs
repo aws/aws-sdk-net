@@ -38,12 +38,25 @@ namespace Amazon.KeyspacesStreams.Model
     /// exponential backoff in your retry strategy to handle this exception. Reducing your
     /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
     /// </para>
+    ///  
+    /// <para>
+    /// This exception can also occur when more than two processes are reading from the same
+    /// stream shard at the same time. Ensure that only one process reads from a stream shard
+    /// at the same time. 
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ThrottlingException : AmazonKeyspacesStreamsException
     {
+
+        /// <summary>
+        /// Default constructor for ThrottlingException
+        /// message.
+        /// </summary>
+        public ThrottlingException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error

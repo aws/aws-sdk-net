@@ -104,6 +104,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
                                 }
+                                if(publicRequestlistValue.Ebs.IsSetEbsCardIndex())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "EbsCardIndex", StringUtils.FromInt(publicRequestlistValue.Ebs.EbsCardIndex));
+                                }
                                 if(publicRequestlistValue.Ebs.IsSetEncrypted())
                                 {
                                     request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
@@ -248,6 +252,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VirtualizationType", StringUtils.FromString(publicRequest.VirtualizationType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RegisterImageRequestMarshaller _instance = new RegisterImageRequestMarshaller();        

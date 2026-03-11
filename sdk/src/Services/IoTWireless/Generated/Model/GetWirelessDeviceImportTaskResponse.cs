@@ -42,6 +42,7 @@ namespace Amazon.IoTWireless.Model
         private long? _initializedImportedDeviceCount;
         private long? _onboardedImportedDeviceCount;
         private long? _pendingImportedDeviceCount;
+        private PositioningConfigStatus _positioning;
         private SidewalkGetStartImportInfo _sidewalk;
         private ImportTaskStatus _status;
         private string _statusReason;
@@ -194,6 +195,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetPendingImportedDeviceCount()
         {
             return this._pendingImportedDeviceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.
+        /// </para>
+        /// </summary>
+        public PositioningConfigStatus Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
         /// <summary>

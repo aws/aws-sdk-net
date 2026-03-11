@@ -39,6 +39,13 @@ namespace Amazon.CloudTrail.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidKmsKeyIdException
+        /// message.
+        /// </summary>
+        public InvalidKmsKeyIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidKmsKeyIdException with the specified error
         /// message.
         /// </summary>

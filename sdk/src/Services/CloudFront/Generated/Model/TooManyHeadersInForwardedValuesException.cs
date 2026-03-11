@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyHeadersInForwardedValuesException
+        /// message.
+        /// </summary>
+        public TooManyHeadersInForwardedValuesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyHeadersInForwardedValuesException with the specified error
         /// message.
         /// </summary>

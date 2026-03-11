@@ -110,6 +110,12 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IamRoleArn);
             }
 
+            if(publicRequest.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("NetworkType");
+                context.Writer.WriteStringValue(publicRequest.NetworkType);
+            }
+
             if(publicRequest.IsSetNodeType())
             {
                 context.Writer.WritePropertyName("NodeType");

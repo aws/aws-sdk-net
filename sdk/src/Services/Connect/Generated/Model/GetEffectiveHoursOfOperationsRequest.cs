@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property FromDate. 
         /// <para>
-        /// The Date from when the hours of operation are listed.
+        /// The date from when the hours of operation are listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ToDate. 
         /// <para>
-        /// The Date until when the hours of operation are listed.
+        /// The date until when the hours of operation are listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

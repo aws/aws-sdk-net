@@ -24,23 +24,19 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class AbortMultipartUploadsCommand : BaseCommand
+    internal partial class AbortMultipartUploadsCommand : BaseCommand<TransferUtilityAbortMultipartUploadsResponse>
     {
-        TransferUtilityConfig _config;
 
-        internal AbortMultipartUploadsCommand(IAmazonS3 s3Client, string bucketName, DateTime initiateDate, TransferUtilityConfig config)
+        public override async Task<TransferUtilityAbortMultipartUploadsResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
-            this._s3Client = s3Client;
-            this._bucketName = bucketName;
-            this._initiatedDate = initiateDate;
-            this._config = config;
-        }
-
-        public override async Task ExecuteAsync(CancellationToken cancellationToken)
-        {
-            if (string.IsNullOrEmpty(this._bucketName))
+            if (string.IsNullOrEmpty(this._request.BucketName))
             {
                 throw new InvalidOperationException("The bucketName specified is null or empty!");
+            }
+
+            if (!this._request.IsSetInitiatedDate())
+            {
+                throw new InvalidOperationException("InitiatedDate must be specified!");
             }
 
             SemaphoreSlim asyncThrottler = null;
@@ -72,7 +68,7 @@ namespace Amazon.S3.Transfer.Internal
                                 // responses and throw the original exception.
                                 break;
                             }
-                            if (upload.Initiated < this._initiatedDate)
+                            if (upload.Initiated < this._request.InitiatedDate.Value)
                             {
                                 await asyncThrottler.WaitAsync(cancellationToken)
                                     .ConfigureAwait(continueOnCapturedContext: false);
@@ -86,8 +82,10 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 while (listResponse.IsTruncated.GetValueOrDefault());
 
-                await WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
+                await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
+
+                return new TransferUtilityAbortMultipartUploadsResponse();
             }
             finally
             {

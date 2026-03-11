@@ -268,7 +268,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">REST API Reference for AssociateRoleToGroup Operation</seealso>
         public virtual AssociateRoleToGroupResponse AssociateRoleToGroup(AssociateRoleToGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRoleToGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRoleToGroupResponseUnmarshaller.Instance;
 
@@ -296,7 +296,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">REST API Reference for AssociateRoleToGroup Operation</seealso>
         public virtual Task<AssociateRoleToGroupResponse> AssociateRoleToGroupAsync(AssociateRoleToGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRoleToGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRoleToGroupResponseUnmarshaller.Instance;
             
@@ -325,7 +325,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
         public virtual AssociateServiceRoleToAccountResponse AssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateServiceRoleToAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
         public virtual Task<AssociateServiceRoleToAccountResponse> AssociateServiceRoleToAccountAsync(AssociateServiceRoleToAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateServiceRoleToAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
             
@@ -378,7 +378,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
         public virtual CreateConnectorDefinitionResponse CreateConnectorDefinition(CreateConnectorDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorDefinitionResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
         public virtual Task<CreateConnectorDefinitionResponse> CreateConnectorDefinitionAsync(CreateConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorDefinitionResponseUnmarshaller.Instance;
             
@@ -426,7 +426,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
         public virtual CreateConnectorDefinitionVersionResponse CreateConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
         public virtual Task<CreateConnectorDefinitionVersionResponse> CreateConnectorDefinitionVersionAsync(CreateConnectorDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -475,7 +475,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">REST API Reference for CreateCoreDefinition Operation</seealso>
         public virtual CreateCoreDefinitionResponse CreateCoreDefinition(CreateCoreDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoreDefinitionResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">REST API Reference for CreateCoreDefinition Operation</seealso>
         public virtual Task<CreateCoreDefinitionResponse> CreateCoreDefinitionAsync(CreateCoreDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoreDefinitionResponseUnmarshaller.Instance;
             
@@ -525,7 +525,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">REST API Reference for CreateCoreDefinitionVersion Operation</seealso>
         public virtual CreateCoreDefinitionVersionResponse CreateCoreDefinitionVersion(CreateCoreDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoreDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoreDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -549,7 +549,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">REST API Reference for CreateCoreDefinitionVersion Operation</seealso>
         public virtual Task<CreateCoreDefinitionVersionResponse> CreateCoreDefinitionVersionAsync(CreateCoreDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoreDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoreDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -574,7 +574,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -598,7 +598,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
             
@@ -623,7 +623,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">REST API Reference for CreateDeviceDefinition Operation</seealso>
         public virtual CreateDeviceDefinitionResponse CreateDeviceDefinition(CreateDeviceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceDefinitionResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">REST API Reference for CreateDeviceDefinition Operation</seealso>
         public virtual Task<CreateDeviceDefinitionResponse> CreateDeviceDefinitionAsync(CreateDeviceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceDefinitionResponseUnmarshaller.Instance;
             
@@ -671,7 +671,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion">REST API Reference for CreateDeviceDefinitionVersion Operation</seealso>
         public virtual CreateDeviceDefinitionVersionResponse CreateDeviceDefinitionVersion(CreateDeviceDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion">REST API Reference for CreateDeviceDefinitionVersion Operation</seealso>
         public virtual Task<CreateDeviceDefinitionVersionResponse> CreateDeviceDefinitionVersionAsync(CreateDeviceDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -721,7 +721,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">REST API Reference for CreateFunctionDefinition Operation</seealso>
         public virtual CreateFunctionDefinitionResponse CreateFunctionDefinition(CreateFunctionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionDefinitionResponseUnmarshaller.Instance;
 
@@ -747,7 +747,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">REST API Reference for CreateFunctionDefinition Operation</seealso>
         public virtual Task<CreateFunctionDefinitionResponse> CreateFunctionDefinitionAsync(CreateFunctionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionDefinitionResponseUnmarshaller.Instance;
             
@@ -771,7 +771,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">REST API Reference for CreateFunctionDefinitionVersion Operation</seealso>
         public virtual CreateFunctionDefinitionVersionResponse CreateFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">REST API Reference for CreateFunctionDefinitionVersion Operation</seealso>
         public virtual Task<CreateFunctionDefinitionVersionResponse> CreateFunctionDefinitionVersionAsync(CreateFunctionDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -820,7 +820,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -845,7 +845,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
             
@@ -872,7 +872,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority">REST API Reference for CreateGroupCertificateAuthority Operation</seealso>
         public virtual CreateGroupCertificateAuthorityResponse CreateGroupCertificateAuthority(CreateGroupCertificateAuthorityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupCertificateAuthorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupCertificateAuthorityResponseUnmarshaller.Instance;
 
@@ -898,7 +898,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority">REST API Reference for CreateGroupCertificateAuthority Operation</seealso>
         public virtual Task<CreateGroupCertificateAuthorityResponse> CreateGroupCertificateAuthorityAsync(CreateGroupCertificateAuthorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupCertificateAuthorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupCertificateAuthorityResponseUnmarshaller.Instance;
             
@@ -922,7 +922,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion">REST API Reference for CreateGroupVersion Operation</seealso>
         public virtual CreateGroupVersionResponse CreateGroupVersion(CreateGroupVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupVersionResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion">REST API Reference for CreateGroupVersion Operation</seealso>
         public virtual Task<CreateGroupVersionResponse> CreateGroupVersionAsync(CreateGroupVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupVersionResponseUnmarshaller.Instance;
             
@@ -970,7 +970,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">REST API Reference for CreateLoggerDefinition Operation</seealso>
         public virtual CreateLoggerDefinitionResponse CreateLoggerDefinition(CreateLoggerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggerDefinitionResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">REST API Reference for CreateLoggerDefinition Operation</seealso>
         public virtual Task<CreateLoggerDefinitionResponse> CreateLoggerDefinitionAsync(CreateLoggerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggerDefinitionResponseUnmarshaller.Instance;
             
@@ -1018,7 +1018,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion">REST API Reference for CreateLoggerDefinitionVersion Operation</seealso>
         public virtual CreateLoggerDefinitionVersionResponse CreateLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggerDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggerDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion">REST API Reference for CreateLoggerDefinitionVersion Operation</seealso>
         public virtual Task<CreateLoggerDefinitionVersionResponse> CreateLoggerDefinitionVersionAsync(CreateLoggerDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggerDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggerDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -1067,7 +1067,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
         public virtual CreateResourceDefinitionResponse CreateResourceDefinition(CreateResourceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceDefinitionResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
         public virtual Task<CreateResourceDefinitionResponse> CreateResourceDefinitionAsync(CreateResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceDefinitionResponseUnmarshaller.Instance;
             
@@ -1116,7 +1116,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
         public virtual CreateResourceDefinitionVersionResponse CreateResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
         public virtual Task<CreateResourceDefinitionVersionResponse> CreateResourceDefinitionVersionAsync(CreateResourceDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -1169,7 +1169,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
         public virtual CreateSoftwareUpdateJobResponse CreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSoftwareUpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSoftwareUpdateJobResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
         public virtual Task<CreateSoftwareUpdateJobResponse> CreateSoftwareUpdateJobAsync(CreateSoftwareUpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSoftwareUpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSoftwareUpdateJobResponseUnmarshaller.Instance;
             
@@ -1223,7 +1223,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">REST API Reference for CreateSubscriptionDefinition Operation</seealso>
         public virtual CreateSubscriptionDefinitionResponse CreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionDefinitionResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">REST API Reference for CreateSubscriptionDefinition Operation</seealso>
         public virtual Task<CreateSubscriptionDefinitionResponse> CreateSubscriptionDefinitionAsync(CreateSubscriptionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionDefinitionResponseUnmarshaller.Instance;
             
@@ -1271,7 +1271,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
         public virtual CreateSubscriptionDefinitionVersionResponse CreateSubscriptionDefinitionVersion(CreateSubscriptionDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -1294,7 +1294,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
         public virtual Task<CreateSubscriptionDefinitionVersionResponse> CreateSubscriptionDefinitionVersionAsync(CreateSubscriptionDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -1318,7 +1318,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
         public virtual DeleteConnectorDefinitionResponse DeleteConnectorDefinition(DeleteConnectorDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorDefinitionResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
         public virtual Task<DeleteConnectorDefinitionResponse> DeleteConnectorDefinitionAsync(DeleteConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorDefinitionResponseUnmarshaller.Instance;
             
@@ -1365,7 +1365,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">REST API Reference for DeleteCoreDefinition Operation</seealso>
         public virtual DeleteCoreDefinitionResponse DeleteCoreDefinition(DeleteCoreDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoreDefinitionResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">REST API Reference for DeleteCoreDefinition Operation</seealso>
         public virtual Task<DeleteCoreDefinitionResponse> DeleteCoreDefinitionAsync(DeleteCoreDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoreDefinitionResponseUnmarshaller.Instance;
             
@@ -1412,7 +1412,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">REST API Reference for DeleteDeviceDefinition Operation</seealso>
         public virtual DeleteDeviceDefinitionResponse DeleteDeviceDefinition(DeleteDeviceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceDefinitionResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">REST API Reference for DeleteDeviceDefinition Operation</seealso>
         public virtual Task<DeleteDeviceDefinitionResponse> DeleteDeviceDefinitionAsync(DeleteDeviceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceDefinitionResponseUnmarshaller.Instance;
             
@@ -1459,7 +1459,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">REST API Reference for DeleteFunctionDefinition Operation</seealso>
         public virtual DeleteFunctionDefinitionResponse DeleteFunctionDefinition(DeleteFunctionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionDefinitionResponseUnmarshaller.Instance;
 
@@ -1482,7 +1482,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">REST API Reference for DeleteFunctionDefinition Operation</seealso>
         public virtual Task<DeleteFunctionDefinitionResponse> DeleteFunctionDefinitionAsync(DeleteFunctionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionDefinitionResponseUnmarshaller.Instance;
             
@@ -1506,7 +1506,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -1529,7 +1529,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
             
@@ -1553,7 +1553,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
         public virtual DeleteLoggerDefinitionResponse DeleteLoggerDefinition(DeleteLoggerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggerDefinitionResponseUnmarshaller.Instance;
 
@@ -1576,7 +1576,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
         public virtual Task<DeleteLoggerDefinitionResponse> DeleteLoggerDefinitionAsync(DeleteLoggerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggerDefinitionResponseUnmarshaller.Instance;
             
@@ -1600,7 +1600,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
         public virtual DeleteResourceDefinitionResponse DeleteResourceDefinition(DeleteResourceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceDefinitionResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
         public virtual Task<DeleteResourceDefinitionResponse> DeleteResourceDefinitionAsync(DeleteResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceDefinitionResponseUnmarshaller.Instance;
             
@@ -1647,7 +1647,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">REST API Reference for DeleteSubscriptionDefinition Operation</seealso>
         public virtual DeleteSubscriptionDefinitionResponse DeleteSubscriptionDefinition(DeleteSubscriptionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionDefinitionResponseUnmarshaller.Instance;
 
@@ -1670,7 +1670,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">REST API Reference for DeleteSubscriptionDefinition Operation</seealso>
         public virtual Task<DeleteSubscriptionDefinitionResponse> DeleteSubscriptionDefinitionAsync(DeleteSubscriptionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionDefinitionResponseUnmarshaller.Instance;
             
@@ -1697,7 +1697,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup">REST API Reference for DisassociateRoleFromGroup Operation</seealso>
         public virtual DisassociateRoleFromGroupResponse DisassociateRoleFromGroup(DisassociateRoleFromGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRoleFromGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRoleFromGroupResponseUnmarshaller.Instance;
 
@@ -1723,7 +1723,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup">REST API Reference for DisassociateRoleFromGroup Operation</seealso>
         public virtual Task<DisassociateRoleFromGroupResponse> DisassociateRoleFromGroupAsync(DisassociateRoleFromGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRoleFromGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRoleFromGroupResponseUnmarshaller.Instance;
             
@@ -1748,7 +1748,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
         public virtual DisassociateServiceRoleFromAccountResponse DisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateServiceRoleFromAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
 
@@ -1772,7 +1772,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
         public virtual Task<DisassociateServiceRoleFromAccountResponse> DisassociateServiceRoleFromAccountAsync(DisassociateServiceRoleFromAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateServiceRoleFromAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
             
@@ -1799,7 +1799,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole">REST API Reference for GetAssociatedRole Operation</seealso>
         public virtual GetAssociatedRoleResponse GetAssociatedRole(GetAssociatedRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedRoleResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole">REST API Reference for GetAssociatedRole Operation</seealso>
         public virtual Task<GetAssociatedRoleResponse> GetAssociatedRoleAsync(GetAssociatedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedRoleResponseUnmarshaller.Instance;
             
@@ -1849,7 +1849,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
         public virtual GetBulkDeploymentStatusResponse GetBulkDeploymentStatus(GetBulkDeploymentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBulkDeploymentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBulkDeploymentStatusResponseUnmarshaller.Instance;
 
@@ -1872,7 +1872,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
         public virtual Task<GetBulkDeploymentStatusResponse> GetBulkDeploymentStatusAsync(GetBulkDeploymentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBulkDeploymentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBulkDeploymentStatusResponseUnmarshaller.Instance;
             
@@ -1899,7 +1899,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
         public virtual GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectivityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
         public virtual Task<GetConnectivityInfoResponse> GetConnectivityInfoAsync(GetConnectivityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectivityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
             
@@ -1949,7 +1949,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
         public virtual GetConnectorDefinitionResponse GetConnectorDefinition(GetConnectorDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorDefinitionResponseUnmarshaller.Instance;
 
@@ -1972,7 +1972,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
         public virtual Task<GetConnectorDefinitionResponse> GetConnectorDefinitionAsync(GetConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorDefinitionResponseUnmarshaller.Instance;
             
@@ -1998,7 +1998,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
         public virtual GetConnectorDefinitionVersionResponse GetConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2023,7 +2023,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
         public virtual Task<GetConnectorDefinitionVersionResponse> GetConnectorDefinitionVersionAsync(GetConnectorDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2047,7 +2047,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition">REST API Reference for GetCoreDefinition Operation</seealso>
         public virtual GetCoreDefinitionResponse GetCoreDefinition(GetCoreDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreDefinitionResponseUnmarshaller.Instance;
 
@@ -2070,7 +2070,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition">REST API Reference for GetCoreDefinition Operation</seealso>
         public virtual Task<GetCoreDefinitionResponse> GetCoreDefinitionAsync(GetCoreDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreDefinitionResponseUnmarshaller.Instance;
             
@@ -2094,7 +2094,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion">REST API Reference for GetCoreDefinitionVersion Operation</seealso>
         public virtual GetCoreDefinitionVersionResponse GetCoreDefinitionVersion(GetCoreDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2117,7 +2117,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion">REST API Reference for GetCoreDefinitionVersion Operation</seealso>
         public virtual Task<GetCoreDefinitionVersionResponse> GetCoreDefinitionVersionAsync(GetCoreDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2141,7 +2141,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus">REST API Reference for GetDeploymentStatus Operation</seealso>
         public virtual GetDeploymentStatusResponse GetDeploymentStatus(GetDeploymentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentStatusResponseUnmarshaller.Instance;
 
@@ -2164,7 +2164,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus">REST API Reference for GetDeploymentStatus Operation</seealso>
         public virtual Task<GetDeploymentStatusResponse> GetDeploymentStatusAsync(GetDeploymentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentStatusResponseUnmarshaller.Instance;
             
@@ -2188,7 +2188,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition">REST API Reference for GetDeviceDefinition Operation</seealso>
         public virtual GetDeviceDefinitionResponse GetDeviceDefinition(GetDeviceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceDefinitionResponseUnmarshaller.Instance;
 
@@ -2211,7 +2211,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition">REST API Reference for GetDeviceDefinition Operation</seealso>
         public virtual Task<GetDeviceDefinitionResponse> GetDeviceDefinitionAsync(GetDeviceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceDefinitionResponseUnmarshaller.Instance;
             
@@ -2235,7 +2235,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion">REST API Reference for GetDeviceDefinitionVersion Operation</seealso>
         public virtual GetDeviceDefinitionVersionResponse GetDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2258,7 +2258,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion">REST API Reference for GetDeviceDefinitionVersion Operation</seealso>
         public virtual Task<GetDeviceDefinitionVersionResponse> GetDeviceDefinitionVersionAsync(GetDeviceDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2283,7 +2283,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">REST API Reference for GetFunctionDefinition Operation</seealso>
         public virtual GetFunctionDefinitionResponse GetFunctionDefinition(GetFunctionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionDefinitionResponseUnmarshaller.Instance;
 
@@ -2307,7 +2307,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">REST API Reference for GetFunctionDefinition Operation</seealso>
         public virtual Task<GetFunctionDefinitionResponse> GetFunctionDefinitionAsync(GetFunctionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionDefinitionResponseUnmarshaller.Instance;
             
@@ -2332,7 +2332,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">REST API Reference for GetFunctionDefinitionVersion Operation</seealso>
         public virtual GetFunctionDefinitionVersionResponse GetFunctionDefinitionVersion(GetFunctionDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2356,7 +2356,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">REST API Reference for GetFunctionDefinitionVersion Operation</seealso>
         public virtual Task<GetFunctionDefinitionVersionResponse> GetFunctionDefinitionVersionAsync(GetFunctionDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2380,7 +2380,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -2403,7 +2403,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
             
@@ -2430,7 +2430,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority">REST API Reference for GetGroupCertificateAuthority Operation</seealso>
         public virtual GetGroupCertificateAuthorityResponse GetGroupCertificateAuthority(GetGroupCertificateAuthorityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupCertificateAuthorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupCertificateAuthorityResponseUnmarshaller.Instance;
 
@@ -2456,7 +2456,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority">REST API Reference for GetGroupCertificateAuthority Operation</seealso>
         public virtual Task<GetGroupCertificateAuthorityResponse> GetGroupCertificateAuthorityAsync(GetGroupCertificateAuthorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupCertificateAuthorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupCertificateAuthorityResponseUnmarshaller.Instance;
             
@@ -2483,7 +2483,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration">REST API Reference for GetGroupCertificateConfiguration Operation</seealso>
         public virtual GetGroupCertificateConfigurationResponse GetGroupCertificateConfiguration(GetGroupCertificateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupCertificateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupCertificateConfigurationResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration">REST API Reference for GetGroupCertificateConfiguration Operation</seealso>
         public virtual Task<GetGroupCertificateConfigurationResponse> GetGroupCertificateConfigurationAsync(GetGroupCertificateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupCertificateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupCertificateConfigurationResponseUnmarshaller.Instance;
             
@@ -2533,7 +2533,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion">REST API Reference for GetGroupVersion Operation</seealso>
         public virtual GetGroupVersionResponse GetGroupVersion(GetGroupVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupVersionResponseUnmarshaller.Instance;
 
@@ -2556,7 +2556,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion">REST API Reference for GetGroupVersion Operation</seealso>
         public virtual Task<GetGroupVersionResponse> GetGroupVersionAsync(GetGroupVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupVersionResponseUnmarshaller.Instance;
             
@@ -2580,7 +2580,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition">REST API Reference for GetLoggerDefinition Operation</seealso>
         public virtual GetLoggerDefinitionResponse GetLoggerDefinition(GetLoggerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggerDefinitionResponseUnmarshaller.Instance;
 
@@ -2603,7 +2603,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition">REST API Reference for GetLoggerDefinition Operation</seealso>
         public virtual Task<GetLoggerDefinitionResponse> GetLoggerDefinitionAsync(GetLoggerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggerDefinitionResponseUnmarshaller.Instance;
             
@@ -2627,7 +2627,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion">REST API Reference for GetLoggerDefinitionVersion Operation</seealso>
         public virtual GetLoggerDefinitionVersionResponse GetLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggerDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggerDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2650,7 +2650,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion">REST API Reference for GetLoggerDefinitionVersion Operation</seealso>
         public virtual Task<GetLoggerDefinitionVersionResponse> GetLoggerDefinitionVersionAsync(GetLoggerDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggerDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggerDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2675,7 +2675,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
         public virtual GetResourceDefinitionResponse GetResourceDefinition(GetResourceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceDefinitionResponseUnmarshaller.Instance;
 
@@ -2699,7 +2699,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
         public virtual Task<GetResourceDefinitionResponse> GetResourceDefinitionAsync(GetResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceDefinitionResponseUnmarshaller.Instance;
             
@@ -2724,7 +2724,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
         public virtual GetResourceDefinitionVersionResponse GetResourceDefinitionVersion(GetResourceDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2748,7 +2748,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
         public virtual Task<GetResourceDefinitionVersionResponse> GetResourceDefinitionVersionAsync(GetResourceDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2772,7 +2772,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
         public virtual GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRoleForAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
 
@@ -2795,7 +2795,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
         public virtual Task<GetServiceRoleForAccountResponse> GetServiceRoleForAccountAsync(GetServiceRoleForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRoleForAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
             
@@ -2819,7 +2819,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition">REST API Reference for GetSubscriptionDefinition Operation</seealso>
         public virtual GetSubscriptionDefinitionResponse GetSubscriptionDefinition(GetSubscriptionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionDefinitionResponseUnmarshaller.Instance;
 
@@ -2842,7 +2842,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition">REST API Reference for GetSubscriptionDefinition Operation</seealso>
         public virtual Task<GetSubscriptionDefinitionResponse> GetSubscriptionDefinitionAsync(GetSubscriptionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionDefinitionResponseUnmarshaller.Instance;
             
@@ -2866,7 +2866,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion">REST API Reference for GetSubscriptionDefinitionVersion Operation</seealso>
         public virtual GetSubscriptionDefinitionVersionResponse GetSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
 
@@ -2889,7 +2889,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion">REST API Reference for GetSubscriptionDefinitionVersion Operation</seealso>
         public virtual Task<GetSubscriptionDefinitionVersionResponse> GetSubscriptionDefinitionVersionAsync(GetSubscriptionDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionDefinitionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
             
@@ -2916,7 +2916,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">REST API Reference for GetThingRuntimeConfiguration Operation</seealso>
         public virtual GetThingRuntimeConfigurationResponse GetThingRuntimeConfiguration(GetThingRuntimeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThingRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThingRuntimeConfigurationResponseUnmarshaller.Instance;
 
@@ -2942,7 +2942,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">REST API Reference for GetThingRuntimeConfiguration Operation</seealso>
         public virtual Task<GetThingRuntimeConfigurationResponse> GetThingRuntimeConfigurationAsync(GetThingRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThingRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThingRuntimeConfigurationResponseUnmarshaller.Instance;
             
@@ -2967,7 +2967,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
         public virtual ListBulkDeploymentDetailedReportsResponse ListBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkDeploymentDetailedReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkDeploymentDetailedReportsResponseUnmarshaller.Instance;
 
@@ -2991,7 +2991,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
         public virtual Task<ListBulkDeploymentDetailedReportsResponse> ListBulkDeploymentDetailedReportsAsync(ListBulkDeploymentDetailedReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkDeploymentDetailedReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkDeploymentDetailedReportsResponseUnmarshaller.Instance;
             
@@ -3015,7 +3015,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
         public virtual ListBulkDeploymentsResponse ListBulkDeployments(ListBulkDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkDeploymentsResponseUnmarshaller.Instance;
 
@@ -3038,7 +3038,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
         public virtual Task<ListBulkDeploymentsResponse> ListBulkDeploymentsAsync(ListBulkDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkDeploymentsResponseUnmarshaller.Instance;
             
@@ -3059,7 +3059,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
         public virtual ListConnectorDefinitionsResponse ListConnectorDefinitions(ListConnectorDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorDefinitionsResponseUnmarshaller.Instance;
 
@@ -3079,7 +3079,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
         public virtual Task<ListConnectorDefinitionsResponse> ListConnectorDefinitionsAsync(ListConnectorDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorDefinitionsResponseUnmarshaller.Instance;
             
@@ -3105,7 +3105,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
         public virtual ListConnectorDefinitionVersionsResponse ListConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3130,7 +3130,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
         public virtual Task<ListConnectorDefinitionVersionsResponse> ListConnectorDefinitionVersionsAsync(ListConnectorDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3151,7 +3151,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitions">REST API Reference for ListCoreDefinitions Operation</seealso>
         public virtual ListCoreDefinitionsResponse ListCoreDefinitions(ListCoreDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreDefinitionsResponseUnmarshaller.Instance;
 
@@ -3171,7 +3171,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitions">REST API Reference for ListCoreDefinitions Operation</seealso>
         public virtual Task<ListCoreDefinitionsResponse> ListCoreDefinitionsAsync(ListCoreDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreDefinitionsResponseUnmarshaller.Instance;
             
@@ -3195,7 +3195,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">REST API Reference for ListCoreDefinitionVersions Operation</seealso>
         public virtual ListCoreDefinitionVersionsResponse ListCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">REST API Reference for ListCoreDefinitionVersions Operation</seealso>
         public virtual Task<ListCoreDefinitionVersionsResponse> ListCoreDefinitionVersionsAsync(ListCoreDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3242,7 +3242,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -3265,7 +3265,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
             
@@ -3286,7 +3286,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitions">REST API Reference for ListDeviceDefinitions Operation</seealso>
         public virtual ListDeviceDefinitionsResponse ListDeviceDefinitions(ListDeviceDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceDefinitionsResponseUnmarshaller.Instance;
 
@@ -3306,7 +3306,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitions">REST API Reference for ListDeviceDefinitions Operation</seealso>
         public virtual Task<ListDeviceDefinitionsResponse> ListDeviceDefinitionsAsync(ListDeviceDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceDefinitionsResponseUnmarshaller.Instance;
             
@@ -3330,7 +3330,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions">REST API Reference for ListDeviceDefinitionVersions Operation</seealso>
         public virtual ListDeviceDefinitionVersionsResponse ListDeviceDefinitionVersions(ListDeviceDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3353,7 +3353,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions">REST API Reference for ListDeviceDefinitionVersions Operation</seealso>
         public virtual Task<ListDeviceDefinitionVersionsResponse> ListDeviceDefinitionVersionsAsync(ListDeviceDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3374,7 +3374,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitions">REST API Reference for ListFunctionDefinitions Operation</seealso>
         public virtual ListFunctionDefinitionsResponse ListFunctionDefinitions(ListFunctionDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionDefinitionsResponseUnmarshaller.Instance;
 
@@ -3394,7 +3394,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitions">REST API Reference for ListFunctionDefinitions Operation</seealso>
         public virtual Task<ListFunctionDefinitionsResponse> ListFunctionDefinitionsAsync(ListFunctionDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionDefinitionsResponseUnmarshaller.Instance;
             
@@ -3418,7 +3418,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions">REST API Reference for ListFunctionDefinitionVersions Operation</seealso>
         public virtual ListFunctionDefinitionVersionsResponse ListFunctionDefinitionVersions(ListFunctionDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3441,7 +3441,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions">REST API Reference for ListFunctionDefinitionVersions Operation</seealso>
         public virtual Task<ListFunctionDefinitionVersionsResponse> ListFunctionDefinitionVersionsAsync(ListFunctionDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3468,7 +3468,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities">REST API Reference for ListGroupCertificateAuthorities Operation</seealso>
         public virtual ListGroupCertificateAuthoritiesResponse ListGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupCertificateAuthoritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupCertificateAuthoritiesResponseUnmarshaller.Instance;
 
@@ -3494,7 +3494,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities">REST API Reference for ListGroupCertificateAuthorities Operation</seealso>
         public virtual Task<ListGroupCertificateAuthoritiesResponse> ListGroupCertificateAuthoritiesAsync(ListGroupCertificateAuthoritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupCertificateAuthoritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupCertificateAuthoritiesResponseUnmarshaller.Instance;
             
@@ -3515,7 +3515,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -3535,7 +3535,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
             
@@ -3559,7 +3559,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">REST API Reference for ListGroupVersions Operation</seealso>
         public virtual ListGroupVersionsResponse ListGroupVersions(ListGroupVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupVersionsResponseUnmarshaller.Instance;
 
@@ -3582,7 +3582,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">REST API Reference for ListGroupVersions Operation</seealso>
         public virtual Task<ListGroupVersionsResponse> ListGroupVersionsAsync(ListGroupVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupVersionsResponseUnmarshaller.Instance;
             
@@ -3603,7 +3603,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitions">REST API Reference for ListLoggerDefinitions Operation</seealso>
         public virtual ListLoggerDefinitionsResponse ListLoggerDefinitions(ListLoggerDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggerDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggerDefinitionsResponseUnmarshaller.Instance;
 
@@ -3623,7 +3623,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitions">REST API Reference for ListLoggerDefinitions Operation</seealso>
         public virtual Task<ListLoggerDefinitionsResponse> ListLoggerDefinitionsAsync(ListLoggerDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggerDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggerDefinitionsResponseUnmarshaller.Instance;
             
@@ -3647,7 +3647,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions">REST API Reference for ListLoggerDefinitionVersions Operation</seealso>
         public virtual ListLoggerDefinitionVersionsResponse ListLoggerDefinitionVersions(ListLoggerDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggerDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggerDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3670,7 +3670,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions">REST API Reference for ListLoggerDefinitionVersions Operation</seealso>
         public virtual Task<ListLoggerDefinitionVersionsResponse> ListLoggerDefinitionVersionsAsync(ListLoggerDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggerDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggerDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3691,7 +3691,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">REST API Reference for ListResourceDefinitions Operation</seealso>
         public virtual ListResourceDefinitionsResponse ListResourceDefinitions(ListResourceDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceDefinitionsResponseUnmarshaller.Instance;
 
@@ -3711,7 +3711,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions">REST API Reference for ListResourceDefinitions Operation</seealso>
         public virtual Task<ListResourceDefinitionsResponse> ListResourceDefinitionsAsync(ListResourceDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceDefinitionsResponseUnmarshaller.Instance;
             
@@ -3735,7 +3735,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
         public virtual ListResourceDefinitionVersionsResponse ListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3758,7 +3758,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
         public virtual Task<ListResourceDefinitionVersionsResponse> ListResourceDefinitionVersionsAsync(ListResourceDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3779,7 +3779,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitions">REST API Reference for ListSubscriptionDefinitions Operation</seealso>
         public virtual ListSubscriptionDefinitionsResponse ListSubscriptionDefinitions(ListSubscriptionDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionDefinitionsResponseUnmarshaller.Instance;
 
@@ -3799,7 +3799,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitions">REST API Reference for ListSubscriptionDefinitions Operation</seealso>
         public virtual Task<ListSubscriptionDefinitionsResponse> ListSubscriptionDefinitionsAsync(ListSubscriptionDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionDefinitionsResponseUnmarshaller.Instance;
             
@@ -3823,7 +3823,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">REST API Reference for ListSubscriptionDefinitionVersions Operation</seealso>
         public virtual ListSubscriptionDefinitionVersionsResponse ListSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -3846,7 +3846,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">REST API Reference for ListSubscriptionDefinitionVersions Operation</seealso>
         public virtual Task<ListSubscriptionDefinitionVersionsResponse> ListSubscriptionDefinitionVersionsAsync(ListSubscriptionDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -3870,7 +3870,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3893,7 +3893,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -3917,7 +3917,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
         public virtual ResetDeploymentsResponse ResetDeployments(ResetDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
 
@@ -3940,7 +3940,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
         public virtual Task<ResetDeploymentsResponse> ResetDeploymentsAsync(ResetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
             
@@ -3968,7 +3968,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
         public virtual StartBulkDeploymentResponse StartBulkDeployment(StartBulkDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBulkDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBulkDeploymentResponseUnmarshaller.Instance;
 
@@ -3995,7 +3995,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
         public virtual Task<StartBulkDeploymentResponse> StartBulkDeploymentAsync(StartBulkDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBulkDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBulkDeploymentResponseUnmarshaller.Instance;
             
@@ -4022,7 +4022,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
         public virtual StopBulkDeploymentResponse StopBulkDeployment(StopBulkDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBulkDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBulkDeploymentResponseUnmarshaller.Instance;
 
@@ -4048,7 +4048,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
         public virtual Task<StopBulkDeploymentResponse> StopBulkDeploymentAsync(StopBulkDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBulkDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBulkDeploymentResponseUnmarshaller.Instance;
             
@@ -4074,7 +4074,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4099,7 +4099,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4123,7 +4123,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4146,7 +4146,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4175,7 +4175,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
         public virtual UpdateConnectivityInfoResponse UpdateConnectivityInfo(UpdateConnectivityInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectivityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
 
@@ -4203,7 +4203,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
         public virtual Task<UpdateConnectivityInfoResponse> UpdateConnectivityInfoAsync(UpdateConnectivityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectivityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
             
@@ -4227,7 +4227,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
         public virtual UpdateConnectorDefinitionResponse UpdateConnectorDefinition(UpdateConnectorDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorDefinitionResponseUnmarshaller.Instance;
 
@@ -4250,7 +4250,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
         public virtual Task<UpdateConnectorDefinitionResponse> UpdateConnectorDefinitionAsync(UpdateConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorDefinitionResponseUnmarshaller.Instance;
             
@@ -4274,7 +4274,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition">REST API Reference for UpdateCoreDefinition Operation</seealso>
         public virtual UpdateCoreDefinitionResponse UpdateCoreDefinition(UpdateCoreDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCoreDefinitionResponseUnmarshaller.Instance;
 
@@ -4297,7 +4297,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition">REST API Reference for UpdateCoreDefinition Operation</seealso>
         public virtual Task<UpdateCoreDefinitionResponse> UpdateCoreDefinitionAsync(UpdateCoreDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCoreDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCoreDefinitionResponseUnmarshaller.Instance;
             
@@ -4321,7 +4321,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition">REST API Reference for UpdateDeviceDefinition Operation</seealso>
         public virtual UpdateDeviceDefinitionResponse UpdateDeviceDefinition(UpdateDeviceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceDefinitionResponseUnmarshaller.Instance;
 
@@ -4344,7 +4344,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition">REST API Reference for UpdateDeviceDefinition Operation</seealso>
         public virtual Task<UpdateDeviceDefinitionResponse> UpdateDeviceDefinitionAsync(UpdateDeviceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceDefinitionResponseUnmarshaller.Instance;
             
@@ -4368,7 +4368,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition">REST API Reference for UpdateFunctionDefinition Operation</seealso>
         public virtual UpdateFunctionDefinitionResponse UpdateFunctionDefinition(UpdateFunctionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionDefinitionResponseUnmarshaller.Instance;
 
@@ -4391,7 +4391,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition">REST API Reference for UpdateFunctionDefinition Operation</seealso>
         public virtual Task<UpdateFunctionDefinitionResponse> UpdateFunctionDefinitionAsync(UpdateFunctionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionDefinitionResponseUnmarshaller.Instance;
             
@@ -4415,7 +4415,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -4438,7 +4438,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
             
@@ -4465,7 +4465,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">REST API Reference for UpdateGroupCertificateConfiguration Operation</seealso>
         public virtual UpdateGroupCertificateConfigurationResponse UpdateGroupCertificateConfiguration(UpdateGroupCertificateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupCertificateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupCertificateConfigurationResponseUnmarshaller.Instance;
 
@@ -4491,7 +4491,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">REST API Reference for UpdateGroupCertificateConfiguration Operation</seealso>
         public virtual Task<UpdateGroupCertificateConfigurationResponse> UpdateGroupCertificateConfigurationAsync(UpdateGroupCertificateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupCertificateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupCertificateConfigurationResponseUnmarshaller.Instance;
             
@@ -4515,7 +4515,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
         public virtual UpdateLoggerDefinitionResponse UpdateLoggerDefinition(UpdateLoggerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggerDefinitionResponseUnmarshaller.Instance;
 
@@ -4538,7 +4538,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
         public virtual Task<UpdateLoggerDefinitionResponse> UpdateLoggerDefinitionAsync(UpdateLoggerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggerDefinitionResponseUnmarshaller.Instance;
             
@@ -4562,7 +4562,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
         public virtual UpdateResourceDefinitionResponse UpdateResourceDefinition(UpdateResourceDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceDefinitionResponseUnmarshaller.Instance;
 
@@ -4585,7 +4585,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
         public virtual Task<UpdateResourceDefinitionResponse> UpdateResourceDefinitionAsync(UpdateResourceDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceDefinitionResponseUnmarshaller.Instance;
             
@@ -4609,7 +4609,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">REST API Reference for UpdateSubscriptionDefinition Operation</seealso>
         public virtual UpdateSubscriptionDefinitionResponse UpdateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionDefinitionResponseUnmarshaller.Instance;
 
@@ -4632,7 +4632,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">REST API Reference for UpdateSubscriptionDefinition Operation</seealso>
         public virtual Task<UpdateSubscriptionDefinitionResponse> UpdateSubscriptionDefinitionAsync(UpdateSubscriptionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionDefinitionResponseUnmarshaller.Instance;
             
@@ -4659,7 +4659,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">REST API Reference for UpdateThingRuntimeConfiguration Operation</seealso>
         public virtual UpdateThingRuntimeConfigurationResponse UpdateThingRuntimeConfiguration(UpdateThingRuntimeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThingRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThingRuntimeConfigurationResponseUnmarshaller.Instance;
 
@@ -4685,7 +4685,7 @@ namespace Amazon.Greengrass
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">REST API Reference for UpdateThingRuntimeConfiguration Operation</seealso>
         public virtual Task<UpdateThingRuntimeConfigurationResponse> UpdateThingRuntimeConfigurationAsync(UpdateThingRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThingRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThingRuntimeConfigurationResponseUnmarshaller.Instance;
             

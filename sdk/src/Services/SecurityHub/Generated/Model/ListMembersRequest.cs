@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Lists details about all member accounts for the current Security Hub administrator
+    /// Lists details about all member accounts for the current Security Hub CSPM administrator
     /// account.
     /// 
     ///  

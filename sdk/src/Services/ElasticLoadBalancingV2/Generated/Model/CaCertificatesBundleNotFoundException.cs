@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for CaCertificatesBundleNotFoundException
+        /// message.
+        /// </summary>
+        public CaCertificatesBundleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CaCertificatesBundleNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// Empty visuals are used in layouts but have not been configured to show any data. A
-    /// new visual created in the Amazon QuickSight console is considered an <c>EmptyVisual</c>
+    /// new visual created in the Quick Sight console is considered an <c>EmptyVisual</c>
     /// until a visual type is selected.
     /// </para>
     /// </summary>

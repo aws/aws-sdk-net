@@ -36,6 +36,14 @@ namespace Amazon.AppMesh
         /// <summary>
         /// Construct instance of AmazonAppMeshException
         /// </summary>
+        public AmazonAppMeshException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAppMeshException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAppMeshException(string message)
             : base(message)

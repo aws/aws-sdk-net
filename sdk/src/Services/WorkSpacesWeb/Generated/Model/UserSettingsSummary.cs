@@ -34,6 +34,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class UserSettingsSummary
     {
+        private BrandingConfiguration _brandingConfiguration;
         private CookieSynchronizationConfiguration _cookieSynchronizationConfiguration;
         private EnabledType _copyAllowed;
         private EnabledType _deepLinkAllowed;
@@ -45,6 +46,26 @@ namespace Amazon.WorkSpacesWeb.Model
         private ToolbarConfiguration _toolbarConfiguration;
         private EnabledType _uploadAllowed;
         private string _userSettingsArn;
+        private EnabledType _webAuthnAllowed;
+
+        /// <summary>
+        /// Gets and sets the property BrandingConfiguration. 
+        /// <para>
+        /// The branding configuration output that customizes the appearance of the web portal
+        /// for end users.
+        /// </para>
+        /// </summary>
+        public BrandingConfiguration BrandingConfiguration
+        {
+            get { return this._brandingConfiguration; }
+            set { this._brandingConfiguration = value; }
+        }
+
+        // Check to see if BrandingConfiguration property is set
+        internal bool IsSetBrandingConfiguration()
+        {
+            return this._brandingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CookieSynchronizationConfiguration. 
@@ -254,6 +275,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetUserSettingsArn()
         {
             return this._userSettingsArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAuthnAllowed. 
+        /// <para>
+        /// Specifies whether the user can use WebAuthn redirection for passwordless login to
+        /// websites within the streaming session.
+        /// </para>
+        /// </summary>
+        public EnabledType WebAuthnAllowed
+        {
+            get { return this._webAuthnAllowed; }
+            set { this._webAuthnAllowed = value; }
+        }
+
+        // Check to see if WebAuthnAllowed property is set
+        internal bool IsSetWebAuthnAllowed()
+        {
+            return this._webAuthnAllowed != null;
         }
 
     }

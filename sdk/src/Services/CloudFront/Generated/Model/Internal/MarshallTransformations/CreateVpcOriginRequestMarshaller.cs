@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateVpcOriginRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/vpc-origin";
 
@@ -63,30 +64,30 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("CreateVpcOriginRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
-                if (publicRequest.Tags != null)
+                if (publicRequest.IsSetTags())
                 {
                     xmlWriter.WriteStartElement("Tags");
                     var publicRequestTagsItems = publicRequest.Tags.Items;
-                    if (publicRequestTagsItems != null && (publicRequestTagsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tags.IsSetItems()) 
                     {
                         xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
                         {
-                        if (publicRequestTagsItemsValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
-                            if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTagsItemsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTagsItemsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
+                                if(publicRequestTagsItemsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
                     xmlWriter.WriteEndElement();
                 }
-                if (publicRequest.VpcOriginEndpointConfig != null)
+                if (publicRequest.IsSetVpcOriginEndpointConfig())
                 {
                     xmlWriter.WriteStartElement("VpcOriginEndpointConfig");
                     if(publicRequest.VpcOriginEndpointConfig.IsSetArn())
@@ -99,11 +100,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.Name));
                     if(publicRequest.VpcOriginEndpointConfig.IsSetOriginProtocolPolicy())
                         xmlWriter.WriteElementString("OriginProtocolPolicy", StringUtils.FromString(publicRequest.VpcOriginEndpointConfig.OriginProtocolPolicy));
-                    if (publicRequest.VpcOriginEndpointConfig.OriginSslProtocols != null)
+                    if (publicRequest.VpcOriginEndpointConfig.IsSetOriginSslProtocols())
                     {
                         xmlWriter.WriteStartElement("OriginSslProtocols");
                         var publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems = publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.Items;
-                        if (publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems != null && (publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.VpcOriginEndpointConfig.OriginSslProtocols.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestVpcOriginEndpointConfigOriginSslProtocolsItemsValue in publicRequestVpcOriginEndpointConfigOriginSslProtocolsItems) 
@@ -123,6 +124,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -134,8 +136,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateVpcOriginRequestMarshaller _instance = new CreateVpcOriginRequestMarshaller();        
@@ -157,5 +157,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateVpcOriginRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateVpcOriginRequest publicRequest);
     }    
 }

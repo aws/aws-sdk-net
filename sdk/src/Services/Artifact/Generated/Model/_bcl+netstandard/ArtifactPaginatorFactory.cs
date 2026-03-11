@@ -51,5 +51,13 @@ namespace Amazon.Artifact.Model
         {
             return new ListReportsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListReportVersions operation
+        ///</summary>
+        public IListReportVersionsPaginator ListReportVersions(ListReportVersionsRequest request) 
+        {
+            return new ListReportVersionsPaginator(this.client, request);
+        }
     }
 }

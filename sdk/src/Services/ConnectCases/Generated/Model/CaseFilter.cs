@@ -38,6 +38,7 @@ namespace Amazon.ConnectCases.Model
         private FieldFilter _field;
         private CaseFilter _not;
         private List<CaseFilter> _orAll = AWSConfigs.InitializeCollections ? new List<CaseFilter>() : null;
+        private TagFilter _tag;
 
         /// <summary>
         /// Gets and sets the property AndAll. 
@@ -118,6 +119,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetOrAll()
         {
             return this._orAll != null && (this._orAll.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tag. 
+        /// <para>
+        /// A list of tags to filter on.
+        /// </para>
+        /// </summary>
+        public TagFilter Tag
+        {
+            get { return this._tag; }
+            set { this._tag = value; }
+        }
+
+        // Check to see if Tag property is set
+        internal bool IsSetTag()
+        {
+            return this._tag != null;
         }
 
     }

@@ -39,6 +39,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchBucketException
+        /// message.
+        /// </summary>
+        public NoSuchBucketException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchBucketException with the specified error
         /// message.
         /// </summary>

@@ -64,6 +64,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("containerRegistryMap", targetDepth))
+                {
+                    var unmarshaller = ContainerRegistryMapUnmarshaller.Instance;
+                    response.ContainerRegistryMap = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Definition = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("definitionRepositoryDetails", targetDepth))
+                {
+                    var unmarshaller = DefinitionRepositoryDetailsUnmarshaller.Instance;
+                    response.DefinitionRepositoryDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
@@ -110,6 +122,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, WorkflowParameter, StringUnmarshaller, WorkflowParameterUnmarshaller>(StringUnmarshaller.Instance, WorkflowParameterUnmarshaller.Instance);
                     response.ParameterTemplate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("readme", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Readme = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("readmePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReadmePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

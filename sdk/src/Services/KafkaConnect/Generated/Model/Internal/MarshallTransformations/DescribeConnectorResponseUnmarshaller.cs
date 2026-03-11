@@ -130,6 +130,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     response.LogDelivery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("networkType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NetworkType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("plugins", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PluginDescription, PluginDescriptionUnmarshaller>(PluginDescriptionUnmarshaller.Instance);

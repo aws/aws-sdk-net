@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.BatchGetFindingDetails(Amazon.Inspector2.Model.BatchGetFindingDetailsRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.BatchGetFindingDetails(Amazon.Inspector2.Model.BatchGetFindingDetailsRequest)" />
+            <member name="T:Amazon.Inspector2.Model.BatchGetFindingDetailsRequest" />
+            <member name="T:Amazon.Inspector2.Model.BatchGetFindingDetailsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample BatchGetFindingDetails Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.CreateCisScanConfiguration(Amazon.Inspector2.Model.CreateCisScanConfigurationRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.CreateCisScanConfiguration(Amazon.Inspector2.Model.CreateCisScanConfigurationRequest)" />
+            <member name="T:Amazon.Inspector2.Model.CreateCisScanConfigurationRequest" />
+            <member name="T:Amazon.Inspector2.Model.CreateCisScanConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreateCisScanConfiguration Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.DeleteCisScanConfiguration(Amazon.Inspector2.Model.DeleteCisScanConfigurationRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.DeleteCisScanConfiguration(Amazon.Inspector2.Model.DeleteCisScanConfigurationRequest)" />
+            <member name="T:Amazon.Inspector2.Model.DeleteCisScanConfigurationRequest" />
+            <member name="T:Amazon.Inspector2.Model.DeleteCisScanConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample DeleteCisScanConfiguration Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.GetCisScanReport(Amazon.Inspector2.Model.GetCisScanReportRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.GetCisScanReport(Amazon.Inspector2.Model.GetCisScanReportRequest)" />
+            <member name="T:Amazon.Inspector2.Model.GetCisScanReportRequest" />
+            <member name="T:Amazon.Inspector2.Model.GetCisScanReportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetCisScanReport Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.GetCisScanResultDetails(Amazon.Inspector2.Model.GetCisScanResultDetailsRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.GetCisScanResultDetails(Amazon.Inspector2.Model.GetCisScanResultDetailsRequest)" />
+            <member name="T:Amazon.Inspector2.Model.GetCisScanResultDetailsRequest" />
+            <member name="T:Amazon.Inspector2.Model.GetCisScanResultDetailsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetCisScanResultDetails Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.ListCisScanConfigurations(Amazon.Inspector2.Model.ListCisScanConfigurationsRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.ListCisScanConfigurations(Amazon.Inspector2.Model.ListCisScanConfigurationsRequest)" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScanConfigurationsRequest" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScanConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListCisScanConfigurations Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.ListCisScanResultsAggregatedByChecks(Amazon.Inspector2.Model.ListCisScanResultsAggregatedByChecksRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.ListCisScanResultsAggregatedByChecks(Amazon.Inspector2.Model.ListCisScanResultsAggregatedByChecksRequest)" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScanResultsAggregatedByChecksRequest" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScanResultsAggregatedByChecksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListCisScanResultsAggregatedByChecks Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.ListCisScanResultsAggregatedByTargetResource(Amazon.Inspector2.Model.ListCisScanResultsAggregatedByTargetResourceRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.ListCisScanResultsAggregatedByTargetResource(Amazon.Inspector2.Model.ListCisScanResultsAggregatedByTargetResourceRequest)" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScanResultsAggregatedByTargetResourceRequest" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScanResultsAggregatedByTargetResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListCisScanResultsAggregatedByTargetResource Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.ListCisScans(Amazon.Inspector2.Model.ListCisScansRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.ListCisScans(Amazon.Inspector2.Model.ListCisScansRequest)" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScansRequest" />
+            <member name="T:Amazon.Inspector2.Model.ListCisScansResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListCisScans Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.SendCisSessionHealth(Amazon.Inspector2.Model.SendCisSessionHealthRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.SendCisSessionHealth(Amazon.Inspector2.Model.SendCisSessionHealthRequest)" />
+            <member name="T:Amazon.Inspector2.Model.SendCisSessionHealthRequest" />
+            <member name="T:Amazon.Inspector2.Model.SendCisSessionHealthResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample SendCisSessionHealth Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.SendCisSessionTelemetry(Amazon.Inspector2.Model.SendCisSessionTelemetryRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.SendCisSessionTelemetry(Amazon.Inspector2.Model.SendCisSessionTelemetryRequest)" />
+            <member name="T:Amazon.Inspector2.Model.SendCisSessionTelemetryRequest" />
+            <member name="T:Amazon.Inspector2.Model.SendCisSessionTelemetryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample SendCisSessionTelemetry Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.StartCisSession(Amazon.Inspector2.Model.StartCisSessionRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.StartCisSession(Amazon.Inspector2.Model.StartCisSessionRequest)" />
+            <member name="T:Amazon.Inspector2.Model.StartCisSessionRequest" />
+            <member name="T:Amazon.Inspector2.Model.StartCisSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample SendCisSessionHealth Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.StopCisSession(Amazon.Inspector2.Model.StopCisSessionRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.StopCisSession(Amazon.Inspector2.Model.StopCisSessionRequest)" />
+            <member name="T:Amazon.Inspector2.Model.StopCisSessionRequest" />
+            <member name="T:Amazon.Inspector2.Model.StopCisSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StopCisSession Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Inspector2.IAmazonInspector2.UpdateCisScanConfiguration(Amazon.Inspector2.Model.UpdateCisScanConfigurationRequest)" />
+            <member name="M:Amazon.Inspector2.AmazonInspector2Client.UpdateCisScanConfiguration(Amazon.Inspector2.Model.UpdateCisScanConfigurationRequest)" />
+            <member name="T:Amazon.Inspector2.Model.UpdateCisScanConfigurationRequest" />
+            <member name="T:Amazon.Inspector2.Model.UpdateCisScanConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdateCisScanConfiguration Call"
+                    source=".\AWSSDKDocSamples\Inspector2\Inspector2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LifecycleRuleAndOperator Object
     /// </summary>  
-    public class LifecycleRuleAndOperatorUnmarshaller : IXmlUnmarshaller<LifecycleRuleAndOperator, XmlUnmarshallerContext>
+    public partial class LifecycleRuleAndOperatorUnmarshaller : IXmlUnmarshaller<LifecycleRuleAndOperator, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -84,6 +84,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -92,6 +94,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, LifecycleRuleAndOperator unmarshalledObject, int targetDepth);
+
         private static LifecycleRuleAndOperatorUnmarshaller _instance = new LifecycleRuleAndOperatorUnmarshaller();        
 
         /// <summary>

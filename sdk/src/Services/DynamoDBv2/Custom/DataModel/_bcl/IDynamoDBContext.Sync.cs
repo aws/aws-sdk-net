@@ -566,6 +566,16 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Executes a Query operation against DynamoDB, finding items
+        /// that match the specified query condition.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="queryConditional">Hash key of the items to query.</param>
+        /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Lazy-loaded collection of results.</returns>
+        IEnumerable<T> Query<T>(QueryConditional queryConditional, QueryConfig queryConfig);
+
+        /// <summary>
+        /// Executes a Query operation against DynamoDB, finding items
         /// that match the specified range element condition for a hash-and-range primary key.
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>

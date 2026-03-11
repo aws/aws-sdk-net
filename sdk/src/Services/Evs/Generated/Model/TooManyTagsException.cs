@@ -30,13 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    ///  <c>TooManyTagsException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ServiceQuotaExceededException.html">
+    /// <c>ServiceQuotaExceededException</c> </a> instead.
+    /// 
+    ///  </note> 
+    /// <para>
     /// A service resource associated with the request has more than 200 tags.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class TooManyTagsException : AmazonEvsException
     {
+
+        /// <summary>
+        /// Default constructor for TooManyTagsException
+        /// message.
+        /// </summary>
+        public TooManyTagsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TooManyTagsException with the specified error

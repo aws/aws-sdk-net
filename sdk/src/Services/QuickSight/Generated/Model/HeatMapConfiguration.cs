@@ -35,11 +35,13 @@ namespace Amazon.QuickSight.Model
     public partial class HeatMapConfiguration
     {
         private ColorScale _colorScale;
+        private AxisDisplayOptions _columnAxisDisplayOptions;
         private ChartAxisLabelOptions _columnLabelOptions;
         private DataLabelOptions _dataLabels;
         private HeatMapFieldWells _fieldWells;
         private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
+        private AxisDisplayOptions _rowAxisDisplayOptions;
         private ChartAxisLabelOptions _rowLabelOptions;
         private HeatMapSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
@@ -60,6 +62,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColorScale()
         {
             return this._colorScale != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnAxisDisplayOptions. 
+        /// <para>
+        /// The options that determine the presentation of the row axis label.
+        /// </para>
+        /// </summary>
+        public AxisDisplayOptions ColumnAxisDisplayOptions
+        {
+            get { return this._columnAxisDisplayOptions; }
+            set { this._columnAxisDisplayOptions = value; }
+        }
+
+        // Check to see if ColumnAxisDisplayOptions property is set
+        internal bool IsSetColumnAxisDisplayOptions()
+        {
+            return this._columnAxisDisplayOptions != null;
         }
 
         /// <summary>
@@ -150,6 +170,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetLegend()
         {
             return this._legend != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowAxisDisplayOptions. 
+        /// <para>
+        /// The options that determine the presentation of the row axis label.
+        /// </para>
+        /// </summary>
+        public AxisDisplayOptions RowAxisDisplayOptions
+        {
+            get { return this._rowAxisDisplayOptions; }
+            set { this._rowAxisDisplayOptions = value; }
+        }
+
+        // Check to see if RowAxisDisplayOptions property is set
+        internal bool IsSetRowAxisDisplayOptions()
+        {
+            return this._rowAxisDisplayOptions != null;
         }
 
         /// <summary>

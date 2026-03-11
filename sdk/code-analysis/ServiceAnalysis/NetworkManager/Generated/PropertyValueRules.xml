@@ -115,6 +115,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateConnectAttachmentRequest.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateConnectAttachmentRequest.TransportAttachmentId</property>
     <min>0</min>
     <max>50</max>
@@ -211,6 +217,48 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationRequest.PrefixListAlias</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationRequest.PrefixListArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationResponse.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationResponse.PrefixListAlias</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateCoreNetworkPrefixListAssociationResponse.PrefixListArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateDeviceRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -269,6 +317,12 @@
     <min>0</min>
     <max>500</max>
     <pattern>^arn:[^:]{1,63}:directconnect::[^:]{0,63}:dx-gateway\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateDirectConnectGatewayAttachmentRequest.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateGlobalNetworkRequest.Description</property>
@@ -331,6 +385,12 @@
     <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateSiteToSiteVpnAttachmentRequest.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateSiteToSiteVpnAttachmentRequest.VpnConnectionArn</property>
     <min>0</min>
     <max>500</max>
@@ -367,6 +427,12 @@
     <pattern>^peering-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayRouteTableAttachmentRequest.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateTransitGatewayRouteTableAttachmentRequest.TransitGatewayRouteTableArn</property>
     <min>0</min>
     <max>500</max>
@@ -383,6 +449,12 @@
     <min>0</min>
     <max>50</max>
     <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateVpcAttachmentRequest.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateVpcAttachmentRequest.VpcArn</property>
@@ -425,6 +497,30 @@
     <min>0</min>
     <max>50</max>
     <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DeleteCoreNetworkPrefixListAssociationRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DeleteCoreNetworkPrefixListAssociationRequest.PrefixListArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DeleteCoreNetworkPrefixListAssociationResponse.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DeleteCoreNetworkPrefixListAssociationResponse.PrefixListArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.DeleteDeviceRequest.DeviceId</property>
@@ -1161,6 +1257,35 @@
     <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentRoutingPolicyAssociationsRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentRoutingPolicyAssociationsRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentRoutingPolicyAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentRoutingPolicyAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListAttachmentRoutingPolicyAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.ListAttachmentsRequest.CoreNetworkId</property>
     <min>0</min>
     <max>50</max>
@@ -1242,6 +1367,70 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkPrefixListAssociationsRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkPrefixListAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkPrefixListAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkPrefixListAssociationsRequest.PrefixListArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkPrefixListAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkRoutingInformationRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkRoutingInformationRequest.EdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkRoutingInformationRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkRoutingInformationRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkRoutingInformationRequest.SegmentName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListCoreNetworkRoutingInformationResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.ListCoreNetworksRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -1311,6 +1500,48 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelRequest.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelResponse.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelResponse.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PutAttachmentRoutingPolicyLabelResponse.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.PutCoreNetworkPolicyRequest.ClientToken</property>
     <min>0</min>
     <max>256</max>
@@ -1363,6 +1594,36 @@
     <min>0</min>
     <max>50</max>
     <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RemoveAttachmentRoutingPolicyLabelRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RemoveAttachmentRoutingPolicyLabelRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RemoveAttachmentRoutingPolicyLabelResponse.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RemoveAttachmentRoutingPolicyLabelResponse.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RemoveAttachmentRoutingPolicyLabelResponse.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.RestoreCoreNetworkPolicyVersionRequest.CoreNetworkId</property>
@@ -1648,6 +1909,18 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AttachmentRoutingPolicyAssociationSummary.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.AttachmentRoutingPolicyAssociationSummary.RoutingPolicyLabel</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.AWSLocation.SubnetArn</property>
     <min>0</min>
     <max>500</max>
@@ -1918,7 +2191,19 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.PeerEdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.SegmentName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeValues.AttachmentId</property>
     <min>0</min>
     <max>256</max>
     <pattern>[\s\S]*</pattern>
@@ -1939,6 +2224,12 @@
     <property>Amazon.NetworkManager.Model.CoreNetworkChangeValues.NetworkFunctionGroupName</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeValues.RoutingPolicy</property>
+    <min>0</min>
+    <max>10000000</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2021,6 +2312,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.CoreNetworkPolicyVersion.Description</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkRoutingInformation.LocalPreference</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkRoutingInformation.Med</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkRoutingInformation.Prefix</property>
     <min>0</min>
     <max>256</max>
     <pattern>[\s\S]*</pattern>
@@ -2540,6 +2849,24 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PrefixListAssociation.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PrefixListAssociation.PrefixListAlias</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.PrefixListAssociation.PrefixListArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.ProposedNetworkFunctionGroupChange.NetworkFunctionGroupName</property>
     <min>0</min>
     <max>256</max>
@@ -2627,6 +2954,42 @@
     <property>Amazon.NetworkManager.Model.RouteTableIdentifier.TransitGatewayRouteTableArn</property>
     <min>0</min>
     <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RoutingInformationNextHop.CoreNetworkAttachmentId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RoutingInformationNextHop.EdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RoutingInformationNextHop.IpAddress</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RoutingInformationNextHop.ResourceId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RoutingInformationNextHop.ResourceType</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.RoutingInformationNextHop.SegmentName</property>
+    <min>0</min>
+    <max>256</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>

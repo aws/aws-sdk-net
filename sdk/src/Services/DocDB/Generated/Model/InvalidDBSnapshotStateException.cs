@@ -39,6 +39,13 @@ namespace Amazon.DocDB.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDBSnapshotStateException
+        /// message.
+        /// </summary>
+        public InvalidDBSnapshotStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDBSnapshotStateException with the specified error
         /// message.
         /// </summary>

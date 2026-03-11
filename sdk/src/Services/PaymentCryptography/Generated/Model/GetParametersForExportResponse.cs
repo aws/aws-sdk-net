@@ -107,7 +107,7 @@ namespace Amazon.PaymentCryptography.Model
         /// within the TR-34 key block. The certificate expires after 30 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string SigningKeyCertificate
         {
             get { return this._signingKeyCertificate; }
@@ -127,7 +127,7 @@ namespace Amazon.PaymentCryptography.Model
         /// format (base64 encoded).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string SigningKeyCertificateChain
         {
             get { return this._signingKeyCertificateChain; }

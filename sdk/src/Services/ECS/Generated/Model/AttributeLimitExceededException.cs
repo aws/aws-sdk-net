@@ -41,6 +41,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for AttributeLimitExceededException
+        /// message.
+        /// </summary>
+        public AttributeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AttributeLimitExceededException with the specified error
         /// message.
         /// </summary>

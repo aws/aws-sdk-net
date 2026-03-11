@@ -34,14 +34,60 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchCriteria
     {
+        private List<string> _activeRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SearchContactsAdditionalTimeRange _additionalTimeRange;
         private AgentHierarchyGroups _agentHierarchyGroups;
         private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactAnalysis _contactAnalysis;
+        private ControlPlaneTagFilter _contactTags;
         private List<string> _initiationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private NameCriteria _name;
         private List<string> _queueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SearchableRoutingCriteria _routingCriteria;
         private SearchableContactAttributes _searchableContactAttributes;
         private SearchableSegmentAttributes _searchableSegmentAttributes;
+
+        /// <summary>
+        /// Gets and sets the property ActiveRegions. 
+        /// <para>
+        /// The list of active regions for contacts in ACGR instances.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ActiveRegions
+        {
+            get { return this._activeRegions; }
+            set { this._activeRegions = value; }
+        }
+
+        // Check to see if ActiveRegions property is set
+        internal bool IsSetActiveRegions()
+        {
+            return this._activeRegions != null && (this._activeRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalTimeRange. 
+        /// <para>
+        /// Additional TimeRange used to filter contacts.
+        /// </para>
+        /// </summary>
+        public SearchContactsAdditionalTimeRange AdditionalTimeRange
+        {
+            get { return this._additionalTimeRange; }
+            set { this._additionalTimeRange = value; }
+        }
+
+        // Check to see if AdditionalTimeRange property is set
+        internal bool IsSetAdditionalTimeRange()
+        {
+            return this._additionalTimeRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentHierarchyGroups. 
@@ -127,6 +173,21 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactTags.
+        /// </summary>
+        public ControlPlaneTagFilter ContactTags
+        {
+            get { return this._contactTags; }
+            set { this._contactTags = value; }
+        }
+
+        // Check to see if ContactTags property is set
+        internal bool IsSetContactTags()
+        {
+            return this._contactTags != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InitiationMethods. 
         /// <para>
         /// The list of initiation methods associated with contacts.
@@ -147,6 +208,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetInitiationMethods()
         {
             return this._initiationMethods != null && (this._initiationMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of the contact.
+        /// </para>
+        /// </summary>
+        public NameCriteria Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
@@ -171,6 +250,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueIds()
         {
             return this._queueIds != null && (this._queueIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingCriteria. 
+        /// <para>
+        /// Routing criteria for the contact.
+        /// </para>
+        /// </summary>
+        public SearchableRoutingCriteria RoutingCriteria
+        {
+            get { return this._routingCriteria; }
+            set { this._routingCriteria = value; }
+        }
+
+        // Check to see if RoutingCriteria property is set
+        internal bool IsSetRoutingCriteria()
+        {
+            return this._routingCriteria != null;
         }
 
         /// <summary>

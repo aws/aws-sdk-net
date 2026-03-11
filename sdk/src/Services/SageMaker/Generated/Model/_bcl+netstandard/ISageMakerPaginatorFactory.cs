@@ -128,6 +128,16 @@ namespace Amazon.SageMaker.Model
         IListCandidatesForAutoMLJobPaginator ListCandidatesForAutoMLJob(ListCandidatesForAutoMLJobRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListClusterEventsPaginator ListClusterEvents(ListClusterEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListClusterNodes operation
         ///</summary>
         [AWSPaginator(
@@ -416,6 +426,16 @@ namespace Amazon.SageMaker.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListLineageGroupsPaginator ListLineageGroups(ListLineageGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMlflowApps operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMlflowAppsPaginator ListMlflowApps(ListMlflowAppsRequest request);
 
         /// <summary>
         /// Paginator for ListMlflowTrackingServers operation
@@ -796,6 +816,16 @@ namespace Amazon.SageMaker.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTrialsPaginator ListTrials(ListTrialsRequest request);
+
+        /// <summary>
+        /// Paginator for ListUltraServersByReservedCapacity operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListUltraServersByReservedCapacityPaginator ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request);
 
         /// <summary>
         /// Paginator for ListUserProfiles operation

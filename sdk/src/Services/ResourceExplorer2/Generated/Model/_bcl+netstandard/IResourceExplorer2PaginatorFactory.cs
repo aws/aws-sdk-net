@@ -28,6 +28,16 @@ namespace Amazon.ResourceExplorer2.Model
     {
 
         /// <summary>
+        /// Paginator for GetResourceExplorerSetup operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetResourceExplorerSetupPaginator GetResourceExplorerSetup(GetResourceExplorerSetupRequest request);
+
+        /// <summary>
         /// Paginator for ListIndexes operation
         ///</summary>
         [AWSPaginator(
@@ -66,6 +76,36 @@ namespace Amazon.ResourceExplorer2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListResourcesPaginator ListResources(ListResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListServiceIndexes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListServiceIndexesPaginator ListServiceIndexes(ListServiceIndexesRequest request);
+
+        /// <summary>
+        /// Paginator for ListServiceViews operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListServiceViewsPaginator ListServiceViews(ListServiceViewsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStreamingAccessForServices operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListStreamingAccessForServicesPaginator ListStreamingAccessForServices(ListStreamingAccessForServicesRequest request);
 
         /// <summary>
         /// Paginator for ListSupportedResourceTypes operation

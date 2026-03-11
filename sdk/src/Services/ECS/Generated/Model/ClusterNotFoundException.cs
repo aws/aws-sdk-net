@@ -40,6 +40,13 @@ namespace Amazon.ECS.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterNotFoundException
+        /// message.
+        /// </summary>
+        public ClusterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterNotFoundException with the specified error
         /// message.
         /// </summary>

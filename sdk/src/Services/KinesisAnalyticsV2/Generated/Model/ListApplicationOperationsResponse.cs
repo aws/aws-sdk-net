@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Response with the list of operations for an application
+    /// A response that returns a list of operations for an application.
     /// </summary>
     public partial class ListApplicationOperationsResponse : AmazonWebServiceResponse
     {

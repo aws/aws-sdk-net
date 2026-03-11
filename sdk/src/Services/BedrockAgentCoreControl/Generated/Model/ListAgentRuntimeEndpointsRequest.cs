@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime to list endpoints for.
+        /// The unique identifier of the AgentCore Runtime to list endpoints for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

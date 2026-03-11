@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAgentStatuses operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Lists agent statuses.
-    /// </para>
     /// </summary>
     public partial class ListAgentStatusesRequest : AmazonConnectRequest
     {

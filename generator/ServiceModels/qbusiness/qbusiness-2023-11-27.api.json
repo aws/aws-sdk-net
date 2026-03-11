@@ -143,7 +143,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "CreateAnonymousWebExperienceUrl":{
       "name":"CreateAnonymousWebExperienceUrl",
@@ -446,6 +447,7 @@
       "errors":[
         {"shape":"InternalServerException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"ConflictException"},
         {"shape":"LicenseNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
@@ -639,7 +641,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetChatControlsConfiguration":{
       "name":"GetChatControlsConfiguration",
@@ -656,7 +659,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetChatResponseConfiguration":{
       "name":"GetChatResponseConfiguration",
@@ -673,7 +677,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetDataAccessor":{
       "name":"GetDataAccessor",
@@ -690,7 +695,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetDataSource":{
       "name":"GetDataSource",
@@ -707,7 +713,26 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "GetDocumentContent":{
+      "name":"GetDocumentContent",
+      "http":{
+        "method":"GET",
+        "requestUri":"/applications/{applicationId}/index/{indexId}/documents/{documentId}/content",
+        "responseCode":200
+      },
+      "input":{"shape":"GetDocumentContentRequest"},
+      "output":{"shape":"GetDocumentContentResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "readonly":true
     },
     "GetGroup":{
       "name":"GetGroup",
@@ -725,7 +750,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetIndex":{
       "name":"GetIndex",
@@ -742,7 +768,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetMedia":{
       "name":"GetMedia",
@@ -761,7 +788,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetPlugin":{
       "name":"GetPlugin",
@@ -778,7 +806,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetPolicy":{
       "name":"GetPolicy",
@@ -795,7 +824,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetRetriever":{
       "name":"GetRetriever",
@@ -812,7 +842,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetUser":{
       "name":"GetUser",
@@ -830,7 +861,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetWebExperience":{
       "name":"GetWebExperience",
@@ -847,7 +879,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListApplications":{
       "name":"ListApplications",
@@ -863,7 +896,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListAttachments":{
       "name":"ListAttachments",
@@ -881,7 +915,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListChatResponseConfigurations":{
       "name":"ListChatResponseConfigurations",
@@ -898,7 +933,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListConversations":{
       "name":"ListConversations",
@@ -916,7 +952,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListDataAccessors":{
       "name":"ListDataAccessors",
@@ -933,7 +970,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListDataSourceSyncJobs":{
       "name":"ListDataSourceSyncJobs",
@@ -951,7 +989,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListDataSources":{
       "name":"ListDataSources",
@@ -968,7 +1007,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListDocuments":{
       "name":"ListDocuments",
@@ -985,7 +1025,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListGroups":{
       "name":"ListGroups",
@@ -1003,7 +1044,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListIndices":{
       "name":"ListIndices",
@@ -1020,7 +1062,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListMessages":{
       "name":"ListMessages",
@@ -1038,7 +1081,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListPluginActions":{
       "name":"ListPluginActions",
@@ -1055,7 +1099,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListPluginTypeActions":{
       "name":"ListPluginTypeActions",
@@ -1071,7 +1116,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListPluginTypeMetadata":{
       "name":"ListPluginTypeMetadata",
@@ -1087,7 +1133,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListPlugins":{
       "name":"ListPlugins",
@@ -1104,7 +1151,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListRetrievers":{
       "name":"ListRetrievers",
@@ -1121,7 +1169,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListSubscriptions":{
       "name":"ListSubscriptions",
@@ -1139,7 +1188,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -1156,7 +1206,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListWebExperiences":{
       "name":"ListWebExperiences",
@@ -1173,7 +1224,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "PutFeedback":{
       "name":"PutFeedback",
@@ -1643,8 +1695,7 @@
     },
     "ActionPayloadFieldValue":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "ActionReview":{
@@ -1701,8 +1752,7 @@
     },
     "ActionReviewPayloadFieldArrayItemJsonSchema":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "ActionSummary":{
@@ -2865,8 +2915,7 @@
     },
     "CreateUserResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CreateWebExperienceRequest":{
       "type":"structure",
@@ -3038,8 +3087,7 @@
     },
     "DataSourceConfiguration":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "document":true
     },
     "DataSourceId":{
@@ -3151,8 +3199,7 @@
     },
     "DeleteApplicationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteAttachmentRequest":{
       "type":"structure",
@@ -3186,8 +3233,7 @@
     },
     "DeleteAttachmentResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteChatControlsConfigurationRequest":{
       "type":"structure",
@@ -3202,8 +3248,7 @@
     },
     "DeleteChatControlsConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteChatResponseConfigurationRequest":{
       "type":"structure",
@@ -3226,8 +3271,7 @@
     },
     "DeleteChatResponseConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteConversationRequest":{
       "type":"structure",
@@ -3255,8 +3299,7 @@
     },
     "DeleteConversationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteDataAccessorRequest":{
       "type":"structure",
@@ -3279,8 +3322,7 @@
     },
     "DeleteDataAccessorResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteDataSourceRequest":{
       "type":"structure",
@@ -3309,8 +3351,7 @@
     },
     "DeleteDataSourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteDocument":{
       "type":"structure",
@@ -3355,8 +3396,7 @@
     },
     "DeleteGroupResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteIndexRequest":{
       "type":"structure",
@@ -3379,8 +3419,7 @@
     },
     "DeleteIndexResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeletePluginRequest":{
       "type":"structure",
@@ -3403,8 +3442,7 @@
     },
     "DeletePluginResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteRetrieverRequest":{
       "type":"structure",
@@ -3427,8 +3465,7 @@
     },
     "DeleteRetrieverResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteUserRequest":{
       "type":"structure",
@@ -3451,8 +3488,7 @@
     },
     "DeleteUserResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteWebExperienceRequest":{
       "type":"structure",
@@ -3475,8 +3511,7 @@
     },
     "DeleteWebExperienceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "Description":{
       "type":"string",
@@ -3505,8 +3540,7 @@
     },
     "DisassociatePermissionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DisplayName":{
       "type":"string",
@@ -3782,8 +3816,7 @@
     },
     "EndOfInputEvent":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "event":true
     },
     "ErrorCode":{
@@ -4049,6 +4082,52 @@
         "error":{"shape":"ErrorDetail"},
         "documentEnrichmentConfiguration":{"shape":"DocumentEnrichmentConfiguration"},
         "mediaExtractionConfiguration":{"shape":"MediaExtractionConfiguration"}
+      }
+    },
+    "GetDocumentContentRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "indexId",
+        "documentId"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "indexId":{
+          "shape":"IndexId",
+          "location":"uri",
+          "locationName":"indexId"
+        },
+        "dataSourceId":{
+          "shape":"DataSourceId",
+          "location":"querystring",
+          "locationName":"dataSourceId"
+        },
+        "documentId":{
+          "shape":"DocumentId",
+          "location":"uri",
+          "locationName":"documentId"
+        },
+        "outputFormat":{
+          "shape":"OutputFormat",
+          "location":"querystring",
+          "locationName":"outputFormat"
+        }
+      }
+    },
+    "GetDocumentContentResponse":{
+      "type":"structure",
+      "required":[
+        "presignedUrl",
+        "mimeType"
+      ],
+      "members":{
+        "presignedUrl":{"shape":"String"},
+        "mimeType":{"shape":"String"}
       }
     },
     "GetGroupRequest":{
@@ -4399,13 +4478,13 @@
       "type":"string",
       "max":2048,
       "min":20,
-      "pattern":"arn:aws:iam::\\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\\.\\/@\\-]+"
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:iam::\\d{12}:(oidc-provider|saml-provider)/[a-zA-Z0-9_\\.\\/@\\-]+"
     },
     "IdcApplicationArn":{
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}"
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:sso::\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}"
     },
     "IdcAuthConfiguration":{
       "type":"structure",
@@ -4422,7 +4501,7 @@
       "type":"string",
       "max":1284,
       "min":0,
-      "pattern":"arn:aws:sso::[0-9]{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:sso::[0-9]{12}:trustedTokenIssuer/(sso)?ins-[a-zA-Z0-9-.]{16}/tti-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
     },
     "IdentityProviderConfiguration":{
       "type":"structure",
@@ -4557,7 +4636,7 @@
       "type":"string",
       "max":1224,
       "min":10,
-      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}"
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}"
     },
     "Instruction":{
       "type":"string",
@@ -4615,7 +4694,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"arn:aws[a-zA-Z-]*:lambda:[a-z-]*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?"
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:lambda:[a-z-]*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?"
     },
     "LicenseNotFoundException":{
       "type":"structure",
@@ -5259,7 +5338,9 @@
     },
     "MaxResults":{
       "type":"integer",
-      "box":true
+      "box":true,
+      "max":100,
+      "min":1
     },
     "MaxResultsIntegerForGetTopicConfigurations":{
       "type":"integer",
@@ -5548,8 +5629,7 @@
     },
     "NoAuthConfiguration":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "NumberAttributeBoostingConfiguration":{
       "type":"structure",
@@ -5610,6 +5690,13 @@
       "min":1,
       "pattern":"(http://|https://)[a-zA-Z0-9-_.]+(?::[0-9]{1,5})?"
     },
+    "OutputFormat":{
+      "type":"string",
+      "enum":[
+        "RAW",
+        "EXTRACTED"
+      ]
+    },
     "Payload":{
       "type":"string",
       "sensitive":true
@@ -5629,7 +5716,7 @@
     },
     "PermissionConditionKey":{
       "type":"string",
-      "pattern":"aws:PrincipalTag/qbusiness-dataaccessor:[a-zA-Z]+.*"
+      "pattern":"aws:[a-zA-Z][a-zA-Z0-9-/:]*"
     },
     "PermissionConditionOperator":{
       "type":"string",
@@ -5639,7 +5726,7 @@
       "type":"string",
       "max":1000,
       "min":1,
-      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_-]*"
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9._-]*"
     },
     "PermissionConditionValues":{
       "type":"list",
@@ -5804,7 +5891,7 @@
       "type":"string",
       "max":1284,
       "min":1,
-      "pattern":"arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+"
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+"
     },
     "PrincipalUser":{
       "type":"structure",
@@ -5880,8 +5967,7 @@
     },
     "PutGroupResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "QAppsConfiguration":{
       "type":"structure",
@@ -6175,7 +6261,10 @@
         "queryText":{"shape":"QueryText"},
         "contentSource":{"shape":"ContentSource"},
         "attributeFilter":{"shape":"AttributeFilter"},
-        "maxResults":{"shape":"MaxResults"},
+        "maxResults":{
+          "shape":"MaxResults",
+          "box":true
+        },
         "nextToken":{"shape":"NextToken"}
       }
     },
@@ -6243,7 +6332,10 @@
         "url":{"shape":"String"},
         "citationNumber":{"shape":"Integer"},
         "updatedAt":{"shape":"Timestamp"},
-        "textMessageSegments":{"shape":"TextSegmentList"}
+        "textMessageSegments":{"shape":"TextSegmentList"},
+        "documentId":{"shape":"String"},
+        "indexId":{"shape":"String"},
+        "datasourceId":{"shape":"String"}
       }
     },
     "SourceAttributionMediaId":{
@@ -6336,8 +6428,7 @@
     },
     "StopDataSourceSyncJobResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "String":{
       "type":"string",
@@ -6500,8 +6591,7 @@
     },
     "TagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagValue":{
       "type":"string",
@@ -6635,8 +6725,7 @@
     },
     "UntagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateApplicationRequest":{
       "type":"structure",
@@ -6659,8 +6748,7 @@
     },
     "UpdateApplicationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateChatControlsConfigurationRequest":{
       "type":"structure",
@@ -6686,8 +6774,7 @@
     },
     "UpdateChatControlsConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateChatResponseConfigurationRequest":{
       "type":"structure",
@@ -6717,8 +6804,7 @@
     },
     "UpdateChatResponseConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateDataAccessorRequest":{
       "type":"structure",
@@ -6745,8 +6831,7 @@
     },
     "UpdateDataAccessorResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateDataSourceRequest":{
       "type":"structure",
@@ -6783,8 +6868,7 @@
     },
     "UpdateDataSourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateIndexRequest":{
       "type":"structure",
@@ -6811,8 +6895,7 @@
     },
     "UpdateIndexResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdatePluginRequest":{
       "type":"structure",
@@ -6840,8 +6923,7 @@
     },
     "UpdatePluginResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateRetrieverRequest":{
       "type":"structure",
@@ -6867,8 +6949,7 @@
     },
     "UpdateRetrieverResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateSubscriptionRequest":{
       "type":"structure",
@@ -6963,8 +7044,7 @@
     },
     "UpdateWebExperienceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "Url":{
       "type":"string",

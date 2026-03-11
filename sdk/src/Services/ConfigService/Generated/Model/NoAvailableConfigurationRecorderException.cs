@@ -41,6 +41,13 @@ namespace Amazon.ConfigService.Model
     {
 
         /// <summary>
+        /// Default constructor for NoAvailableConfigurationRecorderException
+        /// message.
+        /// </summary>
+        public NoAvailableConfigurationRecorderException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoAvailableConfigurationRecorderException with the specified error
         /// message.
         /// </summary>

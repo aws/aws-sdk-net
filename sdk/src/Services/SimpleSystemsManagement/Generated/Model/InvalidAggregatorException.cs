@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidAggregatorException
+        /// message.
+        /// </summary>
+        public InvalidAggregatorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidAggregatorException with the specified error
         /// message.
         /// </summary>

@@ -44,9 +44,9 @@ namespace Amazon.Kinesis.Model
     ///  </note> 
     /// <para>
     /// Each <c>PutRecords</c> request can support up to 500 records. Each record in the request
-    /// can be as large as 1 MiB, up to a limit of 5 MiB for the entire request, including
+    /// can be as large as 10 MiB, up to a limit of 10 MiB for the entire request, including
     /// partition keys. Each shard can support writes up to 1,000 records per second, up to
-    /// a maximum data write total of 1 MiB per second.
+    /// a maximum data write total of 1 MB per second.
     /// </para>
     ///  
     /// <para>
@@ -130,6 +130,7 @@ namespace Amazon.Kinesis.Model
     {
         private List<PutRecordsRequestEntry> _records = AWSConfigs.InitializeCollections ? new List<PutRecordsRequestEntry>() : null;
         private string _streamARN;
+        private string _streamId;
         private string _streamName;
 
         /// <summary>
@@ -173,6 +174,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamARN()
         {
             return this._streamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>

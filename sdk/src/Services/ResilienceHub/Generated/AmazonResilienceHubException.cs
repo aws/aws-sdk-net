@@ -36,6 +36,14 @@ namespace Amazon.ResilienceHub
         /// <summary>
         /// Construct instance of AmazonResilienceHubException
         /// </summary>
+        public AmazonResilienceHubException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonResilienceHubException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonResilienceHubException(string message)
             : base(message)

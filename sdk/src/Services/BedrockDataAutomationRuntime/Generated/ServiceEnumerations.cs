@@ -137,6 +137,56 @@ namespace Amazon.BedrockDataAutomationRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type CustomOutputStatus.
+    /// </summary>
+    public class CustomOutputStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATCH for CustomOutputStatus
+        /// </summary>
+        public static readonly CustomOutputStatus MATCH = new CustomOutputStatus("MATCH");
+        /// <summary>
+        /// Constant NO_MATCH for CustomOutputStatus
+        /// </summary>
+        public static readonly CustomOutputStatus NO_MATCH = new CustomOutputStatus("NO_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomOutputStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomOutputStatus FindValue(string value)
+        {
+            return FindValue<CustomOutputStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomOutputStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataAutomationStage.
     /// </summary>
     public class DataAutomationStage : ConstantClass
@@ -180,6 +230,64 @@ namespace Amazon.BedrockDataAutomationRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataAutomationStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SemanticModality.
+    /// </summary>
+    public class SemanticModality : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO for SemanticModality
+        /// </summary>
+        public static readonly SemanticModality AUDIO = new SemanticModality("AUDIO");
+        /// <summary>
+        /// Constant DOCUMENT for SemanticModality
+        /// </summary>
+        public static readonly SemanticModality DOCUMENT = new SemanticModality("DOCUMENT");
+        /// <summary>
+        /// Constant IMAGE for SemanticModality
+        /// </summary>
+        public static readonly SemanticModality IMAGE = new SemanticModality("IMAGE");
+        /// <summary>
+        /// Constant VIDEO for SemanticModality
+        /// </summary>
+        public static readonly SemanticModality VIDEO = new SemanticModality("VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SemanticModality(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SemanticModality FindValue(string value)
+        {
+            return FindValue<SemanticModality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SemanticModality(string value)
         {
             return FindValue(value);
         }

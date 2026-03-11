@@ -36,6 +36,14 @@ namespace Amazon.Detective
         /// <summary>
         /// Construct instance of AmazonDetectiveException
         /// </summary>
+        public AmazonDetectiveException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDetectiveException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDetectiveException(string message)
             : base(message)

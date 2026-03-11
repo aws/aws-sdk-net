@@ -39,6 +39,13 @@ namespace Amazon.ImportExport.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToCancelJobIdException
+        /// message.
+        /// </summary>
+        public UnableToCancelJobIdException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToCancelJobIdException with the specified error
         /// message.
         /// </summary>

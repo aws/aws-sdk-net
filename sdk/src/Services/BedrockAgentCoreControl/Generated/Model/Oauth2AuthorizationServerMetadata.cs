@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _issuer;
         private List<string> _responseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tokenEndpoint;
+        private List<string> _tokenEndpointAuthMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizationEndpoint. 
@@ -117,6 +118,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetTokenEndpoint()
         {
             return this._tokenEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenEndpointAuthMethods. 
+        /// <para>
+        /// The authentication methods supported by the token endpoint. This specifies how clients
+        /// can authenticate when requesting tokens from the authorization server.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> TokenEndpointAuthMethods
+        {
+            get { return this._tokenEndpointAuthMethods; }
+            set { this._tokenEndpointAuthMethods = value; }
+        }
+
+        // Check to see if TokenEndpointAuthMethods property is set
+        internal bool IsSetTokenEndpointAuthMethods()
+        {
+            return this._tokenEndpointAuthMethods != null && (this._tokenEndpointAuthMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

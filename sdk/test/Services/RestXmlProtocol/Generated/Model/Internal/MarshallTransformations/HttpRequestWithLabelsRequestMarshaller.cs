@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpRequestWithLabelsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetBoolean())
                 throw new AmazonRestXmlProtocolException("Request object does not have required field Boolean set");
@@ -106,5 +107,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithLabelsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, HttpRequestWithLabelsRequest publicRequest);
     }    
 }

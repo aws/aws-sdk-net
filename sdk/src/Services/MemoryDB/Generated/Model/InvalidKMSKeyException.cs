@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified KMS key is not valid or accessible.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidKMSKeyException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidKMSKeyException
+        /// message.
+        /// </summary>
+        public InvalidKMSKeyException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidKMSKeyException with the specified error

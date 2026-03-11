@@ -40,6 +40,13 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Default constructor for UnrecognizedClientException
+        /// message.
+        /// </summary>
+        public UnrecognizedClientException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnrecognizedClientException with the specified error
         /// message.
         /// </summary>

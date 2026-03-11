@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The customer managed key that is registered to your Amazon QuickSight account is unavailable.
+    /// The customer managed key that is registered to your Amazon Quick Sight account is
+    /// unavailable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class CustomerManagedKeyUnavailableException : AmazonQuickSightException
     {
+
+        /// <summary>
+        /// Default constructor for CustomerManagedKeyUnavailableException
+        /// message.
+        /// </summary>
+        public CustomerManagedKeyUnavailableException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new CustomerManagedKeyUnavailableException with the specified error

@@ -34,6 +34,23 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MediaPackageOutputSettings
     {
+        private MediaPackageV2DestinationSettings _mediaPackageV2DestinationSettings;
+
+        /// <summary>
+        /// Gets and sets the property MediaPackageV2DestinationSettings. Optional settings for
+        /// MediaPackage V2 destinations
+        /// </summary>
+        public MediaPackageV2DestinationSettings MediaPackageV2DestinationSettings
+        {
+            get { return this._mediaPackageV2DestinationSettings; }
+            set { this._mediaPackageV2DestinationSettings = value; }
+        }
+
+        // Check to see if MediaPackageV2DestinationSettings property is set
+        internal bool IsSetMediaPackageV2DestinationSettings()
+        {
+            return this._mediaPackageV2DestinationSettings != null;
+        }
 
     }
 }

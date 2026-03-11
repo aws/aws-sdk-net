@@ -36,6 +36,14 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <summary>
         /// Construct instance of AmazonCloudFrontKeyValueStoreException
         /// </summary>
+        public AmazonCloudFrontKeyValueStoreException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCloudFrontKeyValueStoreException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCloudFrontKeyValueStoreException(string message)
             : base(message)

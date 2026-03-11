@@ -36,6 +36,14 @@ namespace Amazon.Repostspace
         /// <summary>
         /// Construct instance of AmazonRepostspaceException
         /// </summary>
+        public AmazonRepostspaceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonRepostspaceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonRepostspaceException(string message)
             : base(message)

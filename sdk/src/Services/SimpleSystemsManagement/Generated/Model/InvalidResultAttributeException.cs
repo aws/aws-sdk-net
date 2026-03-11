@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidResultAttributeException
+        /// message.
+        /// </summary>
+        public InvalidResultAttributeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidResultAttributeException with the specified error
         /// message.
         /// </summary>

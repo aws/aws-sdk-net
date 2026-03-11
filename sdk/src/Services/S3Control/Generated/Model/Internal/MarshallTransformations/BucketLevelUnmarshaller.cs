@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BucketLevel Object
     /// </summary>  
-    public class BucketLevelUnmarshaller : IXmlUnmarshaller<BucketLevel, XmlUnmarshallerContext>
+    public partial class BucketLevelUnmarshaller : IXmlUnmarshaller<BucketLevel, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.AdvancedDataProtectionMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdvancedPerformanceMetrics", targetDepth))
+                    {
+                        var unmarshaller = AdvancedPerformanceMetricsUnmarshaller.Instance;
+                        unmarshalledObject.AdvancedPerformanceMetrics = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DetailedStatusCodesMetrics", targetDepth))
                     {
                         var unmarshaller = DetailedStatusCodesMetricsUnmarshaller.Instance;
@@ -86,6 +92,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrefixLevel = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +102,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, BucketLevel unmarshalledObject, int targetDepth);
+
         private static BucketLevelUnmarshaller _instance = new BucketLevelUnmarshaller();        
 
         /// <summary>

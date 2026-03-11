@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AlarmIdentifier Object
     /// </summary>  
-    public class AlarmIdentifierUnmarshaller : IXmlUnmarshaller<AlarmIdentifier, XmlUnmarshallerContext>
+    public partial class AlarmIdentifierUnmarshaller : IXmlUnmarshaller<AlarmIdentifier, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AlarmIdentifier unmarshalledObject, int targetDepth);
+
         private static AlarmIdentifierUnmarshaller _instance = new AlarmIdentifierUnmarshaller();        
 
         /// <summary>

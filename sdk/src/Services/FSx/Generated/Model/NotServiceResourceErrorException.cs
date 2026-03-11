@@ -41,6 +41,13 @@ namespace Amazon.FSx.Model
         private string _resourceARN;
 
         /// <summary>
+        /// Default constructor for NotServiceResourceErrorException
+        /// message.
+        /// </summary>
+        public NotServiceResourceErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotServiceResourceErrorException with the specified error
         /// message.
         /// </summary>

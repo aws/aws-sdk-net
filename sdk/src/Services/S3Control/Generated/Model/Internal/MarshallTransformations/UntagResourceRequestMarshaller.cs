@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "DELETE";
         
             if (publicRequest.IsSetAccountId()) 
@@ -65,14 +66,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonS3ControlException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn+}", StringUtils.FromString(publicRequest.ResourceArn.TrimStart('/')));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonS3ControlException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = "/v20180820/tags/{resourceArn+}";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
@@ -94,5 +97,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UntagResourceRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UntagResourceRequest publicRequest);
     }    
 }

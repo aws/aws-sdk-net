@@ -34,15 +34,112 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationSummary
     {
+        private EvaluationAcknowledgementSummary _acknowledgement;
+        private bool? _autoEvaluationEnabled;
+        private AutoEvaluationStatus _autoEvaluationStatus;
+        private string _calibrationSessionId;
+        private EvaluationContactParticipant _contactParticipant;
         private DateTime? _createdTime;
         private string _evaluationArn;
         private string _evaluationFormId;
         private string _evaluationFormTitle;
         private string _evaluationId;
+        private EvaluationType _evaluationType;
         private string _evaluatorArn;
         private DateTime? _lastModifiedTime;
         private EvaluationScore _score;
         private EvaluationStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Acknowledgement. 
+        /// <para>
+        /// Information related to evaluation acknowledgement.
+        /// </para>
+        /// </summary>
+        public EvaluationAcknowledgementSummary Acknowledgement
+        {
+            get { return this._acknowledgement; }
+            set { this._acknowledgement = value; }
+        }
+
+        // Check to see if Acknowledgement property is set
+        internal bool IsSetAcknowledgement()
+        {
+            return this._acknowledgement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEvaluationEnabled. 
+        /// <para>
+        /// Whether automated evaluation is enabled.
+        /// </para>
+        /// </summary>
+        public bool? AutoEvaluationEnabled
+        {
+            get { return this._autoEvaluationEnabled; }
+            set { this._autoEvaluationEnabled = value; }
+        }
+
+        // Check to see if AutoEvaluationEnabled property is set
+        internal bool IsSetAutoEvaluationEnabled()
+        {
+            return this._autoEvaluationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEvaluationStatus. 
+        /// <para>
+        /// The status of the contact auto evaluation. 
+        /// </para>
+        /// </summary>
+        public AutoEvaluationStatus AutoEvaluationStatus
+        {
+            get { return this._autoEvaluationStatus; }
+            set { this._autoEvaluationStatus = value; }
+        }
+
+        // Check to see if AutoEvaluationStatus property is set
+        internal bool IsSetAutoEvaluationStatus()
+        {
+            return this._autoEvaluationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CalibrationSessionId. 
+        /// <para>
+        /// The calibration session ID that this evaluation belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string CalibrationSessionId
+        {
+            get { return this._calibrationSessionId; }
+            set { this._calibrationSessionId = value; }
+        }
+
+        // Check to see if CalibrationSessionId property is set
+        internal bool IsSetCalibrationSessionId()
+        {
+            return this._calibrationSessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactParticipant. 
+        /// <para>
+        /// Information about a contact participant in the evaluation.
+        /// </para>
+        /// </summary>
+        public EvaluationContactParticipant ContactParticipant
+        {
+            get { return this._contactParticipant; }
+            set { this._contactParticipant = value; }
+        }
+
+        // Check to see if ContactParticipant property is set
+        internal bool IsSetContactParticipant()
+        {
+            return this._contactParticipant != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -107,7 +204,7 @@ namespace Amazon.Connect.Model
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string EvaluationFormTitle
         {
             get { return this._evaluationFormTitle; }
@@ -137,6 +234,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluationId()
         {
             return this._evaluationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationType. 
+        /// <para>
+        /// Type of the evaluation. 
+        /// </para>
+        /// </summary>
+        public EvaluationType EvaluationType
+        {
+            get { return this._evaluationType; }
+            set { this._evaluationType = value; }
+        }
+
+        // Check to see if EvaluationType property is set
+        internal bool IsSetEvaluationType()
+        {
+            return this._evaluationType != null;
         }
 
         /// <summary>

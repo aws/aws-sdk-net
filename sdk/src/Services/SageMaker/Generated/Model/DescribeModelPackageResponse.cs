@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         private string _modelPackageDescription;
         private string _modelPackageGroupName;
         private string _modelPackageName;
+        private ModelPackageRegistrationType _modelPackageRegistrationType;
         private ModelPackageStatus _modelPackageStatus;
         private ModelPackageStatusDetails _modelPackageStatusDetails;
         private int? _modelPackageVersion;
@@ -447,6 +448,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelPackageName()
         {
             return this._modelPackageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageRegistrationType. 
+        /// <para>
+        ///  The package registration type of the model package output. 
+        /// </para>
+        /// </summary>
+        public ModelPackageRegistrationType ModelPackageRegistrationType
+        {
+            get { return this._modelPackageRegistrationType; }
+            set { this._modelPackageRegistrationType = value; }
+        }
+
+        // Check to see if ModelPackageRegistrationType property is set
+        internal bool IsSetModelPackageRegistrationType()
+        {
+            return this._modelPackageRegistrationType != null;
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ManagedCertificateDetails Object
     /// </summary>  
-    public class ManagedCertificateDetailsUnmarshaller : IXmlUnmarshaller<ManagedCertificateDetails, XmlUnmarshallerContext>
+    public partial class ManagedCertificateDetailsUnmarshaller : IXmlUnmarshaller<ManagedCertificateDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -84,6 +84,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ValidationTokenHost = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -92,6 +94,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ManagedCertificateDetails unmarshalledObject, int targetDepth);
+
         private static ManagedCertificateDetailsUnmarshaller _instance = new ManagedCertificateDetailsUnmarshaller();        
 
         /// <summary>

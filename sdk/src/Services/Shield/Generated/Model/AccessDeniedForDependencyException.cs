@@ -42,6 +42,13 @@ namespace Amazon.Shield.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessDeniedForDependencyException
+        /// message.
+        /// </summary>
+        public AccessDeniedForDependencyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedForDependencyException with the specified error
         /// message.
         /// </summary>

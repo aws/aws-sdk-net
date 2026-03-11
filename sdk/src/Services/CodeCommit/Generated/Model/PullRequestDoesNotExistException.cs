@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for PullRequestDoesNotExistException
+        /// message.
+        /// </summary>
+        public PullRequestDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new PullRequestDoesNotExistException with the specified error
         /// message.
         /// </summary>

@@ -53,7 +53,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ApplyOnTransformedLogs. 
         /// <para>
-        /// Specify <c>true</c> to have this rule evalute log events after they have been transformed
+        /// Specify <c>true</c> to have this rule evaluate log events after they have been transformed
         /// by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html">Log
         /// transformation</a>. If you specify <c>true</c>, then the log events in log groups
         /// that have transformers will be evaluated by Contributor Insights after being transformed.

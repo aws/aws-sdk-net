@@ -32,8 +32,8 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// <summary>
     /// Container for the parameters to the StartDeviceDiscovery operation.
     /// This API is used to start device discovery for hub-connected and third-party-connected
-    /// devices. The authentication material (install code) is passed as a message to the
-    /// controller telling it to start the discovery.
+    /// devices. The authentication material (install code) is delivered as a message to the
+    /// controller instructing it to start the discovery.
     /// </summary>
     public partial class StartDeviceDiscoveryRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -42,9 +42,12 @@ namespace Amazon.IoTManagedIntegrations.Model
         private DiscoveryAuthMaterialType _authenticationMaterialType;
         private string _clientToken;
         private string _connectorAssociationIdentifier;
+        private List<string> _connectorDeviceIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _controllerIdentifier;
         private Dictionary<string, string> _customProtocolDetail = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DiscoveryType _discoveryType;
+        private string _endDeviceIdentifier;
+        private ProtocolType _protocol;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -146,6 +149,30 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectorDeviceIdList. 
+        /// <para>
+        /// Used as a filter for PLA discoveries.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> ConnectorDeviceIdList
+        {
+            get { return this._connectorDeviceIdList; }
+            set { this._connectorDeviceIdList = value; }
+        }
+
+        // Check to see if ConnectorDeviceIdList property is set
+        internal bool IsSetConnectorDeviceIdList()
+        {
+            return this._connectorDeviceIdList != null && (this._connectorDeviceIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ControllerIdentifier. 
         /// <para>
         /// The id of the end-user's IoT hub.
@@ -213,6 +240,53 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetDiscoveryType()
         {
             return this._discoveryType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndDeviceIdentifier. 
+        /// <para>
+        /// The unique id of the end device for capability rediscovery.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string EndDeviceIdentifier
+        {
+            get { return this._endDeviceIdentifier; }
+            set { this._endDeviceIdentifier = value; }
+        }
+
+        // Check to see if EndDeviceIdentifier property is set
+        internal bool IsSetEndDeviceIdentifier()
+        {
+            return this._endDeviceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ProtocolType Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
         /// <summary>

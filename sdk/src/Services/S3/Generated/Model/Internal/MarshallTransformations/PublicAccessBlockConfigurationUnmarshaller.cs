@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicAccessBlockConfiguration Object
     /// </summary>  
-    public class PublicAccessBlockConfigurationUnmarshaller : IXmlUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>
+    public partial class PublicAccessBlockConfigurationUnmarshaller : IXmlUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.RestrictPublicBuckets = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, PublicAccessBlockConfiguration unmarshalledObject, int targetDepth);
+
         private static PublicAccessBlockConfigurationUnmarshaller _instance = new PublicAccessBlockConfigurationUnmarshaller();        
 
         /// <summary>

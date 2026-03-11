@@ -39,6 +39,13 @@ namespace Amazon.CloudFormation.Model
     {
 
         /// <summary>
+        /// Default constructor for StackRefactorNotFoundException
+        /// message.
+        /// </summary>
+        public StackRefactorNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StackRefactorNotFoundException with the specified error
         /// message.
         /// </summary>

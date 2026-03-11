@@ -39,6 +39,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for ClusterSubnetGroupNotFoundException
+        /// message.
+        /// </summary>
+        public ClusterSubnetGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ClusterSubnetGroupNotFoundException with the specified error
         /// message.
         /// </summary>

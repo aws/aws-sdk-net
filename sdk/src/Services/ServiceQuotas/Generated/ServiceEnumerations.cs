@@ -137,6 +137,152 @@ namespace Amazon.ServiceQuotas
 
 
     /// <summary>
+    /// Constants used for properties of type OptInLevel.
+    /// </summary>
+    public class OptInLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for OptInLevel
+        /// </summary>
+        public static readonly OptInLevel ACCOUNT = new OptInLevel("ACCOUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptInLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptInLevel FindValue(string value)
+        {
+            return FindValue<OptInLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptInLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OptInStatus.
+    /// </summary>
+    public class OptInStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for OptInStatus
+        /// </summary>
+        public static readonly OptInStatus DISABLED = new OptInStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for OptInStatus
+        /// </summary>
+        public static readonly OptInStatus ENABLED = new OptInStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptInStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptInStatus FindValue(string value)
+        {
+            return FindValue<OptInStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptInStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OptInType.
+    /// </summary>
+    public class OptInType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NotifyAndAdjust for OptInType
+        /// </summary>
+        public static readonly OptInType NotifyAndAdjust = new OptInType("NotifyAndAdjust");
+        /// <summary>
+        /// Constant NotifyOnly for OptInType
+        /// </summary>
+        public static readonly OptInType NotifyOnly = new OptInType("NotifyOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptInType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptInType FindValue(string value)
+        {
+            return FindValue<OptInType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptInType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PeriodUnit.
     /// </summary>
     public class PeriodUnit : ConstantClass
@@ -257,6 +403,64 @@ namespace Amazon.ServiceQuotas
 
 
     /// <summary>
+    /// Constants used for properties of type ReportStatus.
+    /// </summary>
+    public class ReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus COMPLETED = new ReportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus FAILED = new ReportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus IN_PROGRESS = new ReportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus PENDING = new ReportStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportStatus FindValue(string value)
+        {
+            return FindValue<ReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RequestStatus.
     /// </summary>
     public class RequestStatus : ConstantClass
@@ -320,6 +524,52 @@ namespace Amazon.ServiceQuotas
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RequestType.
+    /// </summary>
+    public class RequestType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutomaticManagement for RequestType
+        /// </summary>
+        public static readonly RequestType AutomaticManagement = new RequestType("AutomaticManagement");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RequestType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RequestType FindValue(string value)
+        {
+            return FindValue<RequestType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RequestType(string value)
         {
             return FindValue(value);
         }

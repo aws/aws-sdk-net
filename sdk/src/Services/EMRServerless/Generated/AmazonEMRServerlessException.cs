@@ -36,6 +36,14 @@ namespace Amazon.EMRServerless
         /// <summary>
         /// Construct instance of AmazonEMRServerlessException
         /// </summary>
+        public AmazonEMRServerlessException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEMRServerlessException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEMRServerlessException(string message)
             : base(message)

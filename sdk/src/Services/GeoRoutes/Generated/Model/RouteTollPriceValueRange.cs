@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// Maximum price.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double? Max
         {
             get { return this._max; }
@@ -62,7 +62,7 @@ namespace Amazon.GeoRoutes.Model
         /// Minimum price.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double? Min
         {
             get { return this._min; }

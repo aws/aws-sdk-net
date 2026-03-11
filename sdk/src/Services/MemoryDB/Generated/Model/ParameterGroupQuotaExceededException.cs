@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of parameter
+    /// groups allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ParameterGroupQuotaExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ParameterGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public ParameterGroupQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ParameterGroupQuotaExceededException with the specified error

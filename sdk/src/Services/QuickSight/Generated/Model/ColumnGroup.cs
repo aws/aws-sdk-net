@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Groupings of columns that work together in certain Amazon QuickSight features. This
-    /// is a variant type structure. For this structure to be valid, only one of the attributes
+    /// Groupings of columns that work together in certain Quick Sight features. This is a
+    /// variant type structure. For this structure to be valid, only one of the attributes
     /// can be non-null.
     /// </summary>
     public partial class ColumnGroup

@@ -40,6 +40,13 @@ namespace Amazon.Elasticsearch.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTypeException
+        /// message.
+        /// </summary>
+        public InvalidTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTypeException with the specified error
         /// message.
         /// </summary>

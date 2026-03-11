@@ -39,6 +39,13 @@ namespace Amazon.CodePipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTagsException
+        /// message.
+        /// </summary>
+        public InvalidTagsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTagsException with the specified error
         /// message.
         /// </summary>

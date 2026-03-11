@@ -40,6 +40,13 @@ namespace Amazon.Signer.Model
         private string _code;
 
         /// <summary>
+        /// Default constructor for ServiceLimitExceededException
+        /// message.
+        /// </summary>
+        public ServiceLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ServiceLimitExceededException with the specified error
         /// message.
         /// </summary>

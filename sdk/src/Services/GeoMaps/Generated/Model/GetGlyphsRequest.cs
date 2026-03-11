@@ -32,6 +32,12 @@ namespace Amazon.GeoMaps.Model
     /// <summary>
     /// Container for the parameters to the GetGlyphs operation.
     /// <c>GetGlyphs</c> returns the map's glyphs.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-labels-with-glyphs.html">Style
+    /// labels with glyphs</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetGlyphsRequest : AmazonGeoMapsRequest
     {
@@ -390,10 +396,10 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <c>0-255.pdf</c> 
+        /// Example: <c>0-255.pbf</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string FontUnicodeRange
         {
             get { return this._fontUnicodeRange; }

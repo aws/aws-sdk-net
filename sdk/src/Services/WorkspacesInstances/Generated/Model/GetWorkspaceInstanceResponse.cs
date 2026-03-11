@@ -34,11 +34,31 @@ namespace Amazon.WorkspacesInstances.Model
     /// </summary>
     public partial class GetWorkspaceInstanceResponse : AmazonWebServiceResponse
     {
+        private BillingConfiguration _billingConfiguration;
         private List<EC2InstanceError> _ec2InstanceErrors = AWSConfigs.InitializeCollections ? new List<EC2InstanceError>() : null;
         private EC2ManagedInstance _ec2ManagedInstance;
         private ProvisionStateEnum _provisionState;
         private List<WorkspaceInstanceError> _workspaceInstanceErrors = AWSConfigs.InitializeCollections ? new List<WorkspaceInstanceError>() : null;
         private string _workspaceInstanceId;
+
+        /// <summary>
+        /// Gets and sets the property BillingConfiguration. 
+        /// <para>
+        /// Returns the current billing configuration for the WorkSpace Instance, indicating the
+        /// active billing mode.
+        /// </para>
+        /// </summary>
+        public BillingConfiguration BillingConfiguration
+        {
+            get { return this._billingConfiguration; }
+            set { this._billingConfiguration = value; }
+        }
+
+        // Check to see if BillingConfiguration property is set
+        internal bool IsSetBillingConfiguration()
+        {
+            return this._billingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EC2InstanceErrors. 

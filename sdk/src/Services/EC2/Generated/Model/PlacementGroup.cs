@@ -37,6 +37,8 @@ namespace Amazon.EC2.Model
         private string _groupArn;
         private string _groupId;
         private string _groupName;
+        private string _linkedGroupId;
+        private OperatorResponse _operator;
         private int? _partitionCount;
         private SpreadLevel _spreadLevel;
         private PlacementGroupState _state;
@@ -109,6 +111,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedGroupId. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string LinkedGroupId
+        {
+            get { return this._linkedGroupId; }
+            set { this._linkedGroupId = value; }
+        }
+
+        // Check to see if LinkedGroupId property is set
+        internal bool IsSetLinkedGroupId()
+        {
+            return this._linkedGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The service provider that manages the Placement Group.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

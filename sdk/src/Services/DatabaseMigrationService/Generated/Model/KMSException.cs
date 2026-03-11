@@ -39,6 +39,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
 
         /// <summary>
+        /// Default constructor for KMSException
+        /// message.
+        /// </summary>
+        public KMSException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KMSException with the specified error
         /// message.
         /// </summary>

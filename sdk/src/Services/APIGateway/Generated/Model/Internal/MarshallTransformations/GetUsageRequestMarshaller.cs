@@ -65,6 +65,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetUsagePlanId())
                 throw new AmazonAPIGatewayException("Request object does not have required field UsagePlanId set");
             request.AddPathResource("{usageplanId}", StringUtils.FromString(publicRequest.UsagePlanId));
+            if (string.IsNullOrEmpty(publicRequest.EndDate))
+                throw new AmazonAPIGatewayException("Request object does not have required field EndDate set");
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("endDate", StringUtils.FromString(publicRequest.EndDate));
@@ -77,6 +79,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPosition())
                 request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));
+            if (string.IsNullOrEmpty(publicRequest.StartDate))
+                throw new AmazonAPIGatewayException("Request object does not have required field StartDate set");
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("startDate", StringUtils.FromString(publicRequest.StartDate));

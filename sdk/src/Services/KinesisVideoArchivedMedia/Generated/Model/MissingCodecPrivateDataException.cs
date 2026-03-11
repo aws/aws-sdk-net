@@ -39,6 +39,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     {
 
         /// <summary>
+        /// Default constructor for MissingCodecPrivateDataException
+        /// message.
+        /// </summary>
+        public MissingCodecPrivateDataException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MissingCodecPrivateDataException with the specified error
         /// message.
         /// </summary>

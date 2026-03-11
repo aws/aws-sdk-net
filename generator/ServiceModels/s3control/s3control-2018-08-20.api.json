@@ -1745,6 +1745,7 @@
         "AdvancedCostOptimizationMetrics":{"shape":"AdvancedCostOptimizationMetrics"},
         "AdvancedDataProtectionMetrics":{"shape":"AdvancedDataProtectionMetrics"},
         "DetailedStatusCodesMetrics":{"shape":"DetailedStatusCodesMetrics"},
+        "AdvancedPerformanceMetrics":{"shape":"AdvancedPerformanceMetrics"},
         "StorageLensGroupLevel":{"shape":"StorageLensGroupLevel"}
       }
     },
@@ -1761,6 +1762,12 @@
       }
     },
     "AdvancedDataProtectionMetrics":{
+      "type":"structure",
+      "members":{
+        "IsEnabled":{"shape":"IsEnabled"}
+      }
+    },
+    "AdvancedPerformanceMetrics":{
       "type":"structure",
       "members":{
         "IsEnabled":{"shape":"IsEnabled"}
@@ -1889,7 +1896,8 @@
         "PrefixLevel":{"shape":"PrefixLevel"},
         "AdvancedCostOptimizationMetrics":{"shape":"AdvancedCostOptimizationMetrics"},
         "AdvancedDataProtectionMetrics":{"shape":"AdvancedDataProtectionMetrics"},
-        "DetailedStatusCodesMetrics":{"shape":"DetailedStatusCodesMetrics"}
+        "DetailedStatusCodesMetrics":{"shape":"DetailedStatusCodesMetrics"},
+        "AdvancedPerformanceMetrics":{"shape":"AdvancedPerformanceMetrics"}
       }
     },
     "BucketLocationConstraint":{
@@ -1940,6 +1948,24 @@
       "members":{
         "IsEnabled":{"shape":"IsEnabled"}
       }
+    },
+    "ComputeObjectChecksumAlgorithm":{
+      "type":"string",
+      "enum":[
+        "CRC32",
+        "CRC32C",
+        "CRC64NVME",
+        "MD5",
+        "SHA1",
+        "SHA256"
+      ]
+    },
+    "ComputeObjectChecksumType":{
+      "type":"string",
+      "enum":[
+        "FULL_OBJECT",
+        "COMPOSITE"
+      ]
     },
     "ConfigId":{
       "type":"string",
@@ -2107,7 +2133,8 @@
         "VpcConfiguration":{"shape":"VpcConfiguration"},
         "PublicAccessBlockConfiguration":{"shape":"PublicAccessBlockConfiguration"},
         "BucketAccountId":{"shape":"AccountId"},
-        "Scope":{"shape":"Scope"}
+        "Scope":{"shape":"Scope"},
+        "Tags":{"shape":"TagList"}
       }
     },
     "CreateAccessPointResult":{
@@ -2307,6 +2334,15 @@
         "Expiration":{"shape":"Expiration"}
       },
       "sensitive":true
+    },
+    "DSSEKMSFilter":{
+      "type":"structure",
+      "members":{
+        "KmsKeyArn":{
+          "shape":"NonEmptyKmsKeyArnString",
+          "box":true
+        }
+      }
     },
     "DataSourceId":{
       "type":"string",
@@ -4023,7 +4059,8 @@
           "shape":"ObjectSizeLessThanBytes",
           "box":true
         },
-        "MatchAnyStorageClass":{"shape":"StorageClassList"}
+        "MatchAnyStorageClass":{"shape":"StorageClassList"},
+        "MatchAnyObjectEncryption":{"shape":"ObjectEncryptionFilterList"}
       }
     },
     "JobManifestLocation":{
@@ -4098,6 +4135,14 @@
         "S3ReplicateObject":{
           "shape":"S3ReplicateObjectOperation",
           "box":true
+        },
+        "S3ComputeObjectChecksum":{
+          "shape":"S3ComputeObjectChecksumOperation",
+          "box":true
+        },
+        "S3UpdateObjectEncryption":{
+          "shape":"S3UpdateObjectEncryptionOperation",
+          "box":true
         }
       }
     },
@@ -4143,6 +4188,10 @@
         },
         "ReportScope":{
           "shape":"JobReportScope",
+          "box":true
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
           "box":true
         }
       }
@@ -5016,6 +5065,12 @@
       "exception":true
     },
     "NoSuchPublicAccessBlockConfigurationMessage":{"type":"string"},
+    "NonEmptyKmsKeyArnString":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+"
+    },
     "NonEmptyMaxLength1024String":{
       "type":"string",
       "max":1024,
@@ -5072,8 +5127,56 @@
       },
       "exception":true
     },
+    "NotSSEFilter":{
+      "type":"structure",
+      "members":{}
+    },
     "ObjectAgeValue":{"type":"integer"},
     "ObjectCreationTime":{"type":"timestamp"},
+    "ObjectEncryption":{
+      "type":"structure",
+      "members":{
+        "SSEKMS":{
+          "shape":"S3UpdateObjectEncryptionSSEKMS",
+          "locationName":"SSE-KMS"
+        }
+      }
+    },
+    "ObjectEncryptionFilter":{
+      "type":"structure",
+      "members":{
+        "SSES3":{
+          "shape":"SSES3Filter",
+          "locationName":"SSE-S3"
+        },
+        "SSEKMS":{
+          "shape":"SSEKMSFilter",
+          "locationName":"SSE-KMS"
+        },
+        "DSSEKMS":{
+          "shape":"DSSEKMSFilter",
+          "locationName":"DSSE-KMS"
+        },
+        "SSEC":{
+          "shape":"SSECFilter",
+          "locationName":"SSE-C"
+        },
+        "NOTSSE":{
+          "shape":"NotSSEFilter",
+          "locationName":"NOT-SSE"
+        }
+      },
+      "union":true
+    },
+    "ObjectEncryptionFilterList":{
+      "type":"list",
+      "member":{
+        "shape":"ObjectEncryptionFilter",
+        "locationName":"ObjectEncryption"
+      },
+      "max":1,
+      "min":1
+    },
     "ObjectLambdaAccessPoint":{
       "type":"structure",
       "required":["Name"],
@@ -5216,7 +5319,9 @@
         "S3InitiateRestoreObject",
         "S3PutObjectLegalHold",
         "S3PutObjectRetention",
-        "S3ReplicateObject"
+        "S3ReplicateObject",
+        "S3ComputeObjectChecksum",
+        "S3UpdateObjectEncryption"
       ]
     },
     "Organization":{
@@ -6019,6 +6124,13 @@
         "CRC64NVME"
       ]
     },
+    "S3ComputeObjectChecksumOperation":{
+      "type":"structure",
+      "members":{
+        "ChecksumAlgorithm":{"shape":"ComputeObjectChecksumAlgorithm"},
+        "ChecksumType":{"shape":"ComputeObjectChecksumType"}
+      }
+    },
     "S3ContentLength":{
       "type":"long",
       "min":0
@@ -6325,11 +6437,33 @@
       "type":"list",
       "member":{"shape":"S3Tag"}
     },
+    "S3UpdateObjectEncryptionOperation":{
+      "type":"structure",
+      "members":{
+        "ObjectEncryption":{"shape":"ObjectEncryption"}
+      }
+    },
+    "S3UpdateObjectEncryptionSSEKMS":{
+      "type":"structure",
+      "required":["KMSKeyArn"],
+      "members":{
+        "KMSKeyArn":{"shape":"NonEmptyKmsKeyArnString"},
+        "BucketKeyEnabled":{
+          "shape":"Boolean",
+          "box":true
+        }
+      },
+      "locationName":"SSE-KMS"
+    },
     "S3UserMetadata":{
       "type":"map",
       "key":{"shape":"NonEmptyMaxLength1024String"},
       "value":{"shape":"MaxLength1024String"},
       "max":8192
+    },
+    "SSECFilter":{
+      "type":"structure",
+      "members":{}
     },
     "SSEKMS":{
       "type":"structure",
@@ -6347,6 +6481,19 @@
       },
       "locationName":"SSE-KMS"
     },
+    "SSEKMSFilter":{
+      "type":"structure",
+      "members":{
+        "KmsKeyArn":{
+          "shape":"NonEmptyKmsKeyArnString",
+          "box":true
+        },
+        "BucketKeyEnabled":{
+          "shape":"Boolean",
+          "box":true
+        }
+      }
+    },
     "SSEKMSKeyId":{"type":"string"},
     "SSES3":{
       "type":"structure",
@@ -6357,6 +6504,10 @@
       "type":"structure",
       "members":{},
       "locationName":"SSE-S3"
+    },
+    "SSES3Filter":{
+      "type":"structure",
+      "members":{}
     },
     "Scope":{
       "type":"structure",
@@ -6459,9 +6610,11 @@
         "Include":{"shape":"Include"},
         "Exclude":{"shape":"Exclude"},
         "DataExport":{"shape":"StorageLensDataExport"},
+        "ExpandedPrefixesDataExport":{"shape":"StorageLensExpandedPrefixesDataExport"},
         "IsEnabled":{"shape":"IsEnabled"},
         "AwsOrg":{"shape":"StorageLensAwsOrg"},
-        "StorageLensArn":{"shape":"StorageLensArn"}
+        "StorageLensArn":{"shape":"StorageLensArn"},
+        "PrefixDelimiter":{"shape":"StorageLensPrefixLevelDelimiter"}
       }
     },
     "StorageLensConfigurationList":{
@@ -6476,7 +6629,8 @@
       "type":"structure",
       "members":{
         "S3BucketDestination":{"shape":"S3BucketDestination"},
-        "CloudWatchMetrics":{"shape":"CloudWatchMetrics"}
+        "CloudWatchMetrics":{"shape":"CloudWatchMetrics"},
+        "StorageLensTableDestination":{"shape":"StorageLensTableDestination"}
       }
     },
     "StorageLensDataExportEncryption":{
@@ -6490,6 +6644,13 @@
           "shape":"SSEKMS",
           "locationName":"SSE-KMS"
         }
+      }
+    },
+    "StorageLensExpandedPrefixesDataExport":{
+      "type":"structure",
+      "members":{
+        "S3BucketDestination":{"shape":"S3BucketDestination"},
+        "StorageLensTableDestination":{"shape":"StorageLensTableDestination"}
       }
     },
     "StorageLensGroup":{
@@ -6591,6 +6752,14 @@
       "type":"integer",
       "max":10,
       "min":1
+    },
+    "StorageLensTableDestination":{
+      "type":"structure",
+      "required":["IsEnabled"],
+      "members":{
+        "IsEnabled":{"shape":"IsEnabled"},
+        "Encryption":{"shape":"StorageLensDataExportEncryption"}
+      }
     },
     "StorageLensTag":{
       "type":"structure",

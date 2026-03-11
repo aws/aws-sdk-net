@@ -61,7 +61,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Name. The logical name of an AWS media resource.
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

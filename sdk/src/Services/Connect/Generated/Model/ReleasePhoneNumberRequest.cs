@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// After releasing a phone number, the phone number enters into a cooldown period for
     /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-    /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
+    /// If you accidentally release a phone number, contact Amazon Web Services Support.
     /// </para>
     ///  </important> 
     /// <para>

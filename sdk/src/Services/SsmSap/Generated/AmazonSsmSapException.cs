@@ -36,6 +36,14 @@ namespace Amazon.SsmSap
         /// <summary>
         /// Construct instance of AmazonSsmSapException
         /// </summary>
+        public AmazonSsmSapException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSsmSapException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSsmSapException(string message)
             : base(message)

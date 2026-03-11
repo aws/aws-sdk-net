@@ -78,7 +78,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Data));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Data);
             }
 
             if(publicRequest.IsSetExplicitHashKey())
@@ -103,6 +103,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("StreamARN");
                 context.Writer.WriteStringValue(publicRequest.StreamARN);
+            }
+
+            if(publicRequest.IsSetStreamId())
+            {
+                context.Writer.WritePropertyName("StreamId");
+                context.Writer.WriteStringValue(publicRequest.StreamId);
             }
 
             if(publicRequest.IsSetStreamName())

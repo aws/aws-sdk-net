@@ -90,6 +90,17 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetIncrementalRunConfig())
+            {
+                context.Writer.WritePropertyName("incrementalRunConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdMappingIncrementalRunConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncrementalRunConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInputSourceConfig())
             {
                 context.Writer.WritePropertyName("inputSourceConfig");

@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException with the specified error
         /// message.
         /// </summary>

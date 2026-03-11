@@ -31,22 +31,15 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIndex operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Deletes a vector index. To specify the vector index, you can either use both the vector
     /// bucket name and vector index name, or use the vector index Amazon Resource Name (ARN).
     /// 
-    /// </para>
+    /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You must have the <c>s3vectors:DeleteIndex</c> permission to use this operation. 
     /// </para>
     ///  </dd> </dl>
-    /// </para>
     /// </summary>
     public partial class DeleteIndexRequest : AmazonS3VectorsRequest
     {

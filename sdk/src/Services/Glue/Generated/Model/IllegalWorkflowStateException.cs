@@ -39,6 +39,13 @@ namespace Amazon.Glue.Model
     {
 
         /// <summary>
+        /// Default constructor for IllegalWorkflowStateException
+        /// message.
+        /// </summary>
+        public IllegalWorkflowStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IllegalWorkflowStateException with the specified error
         /// message.
         /// </summary>

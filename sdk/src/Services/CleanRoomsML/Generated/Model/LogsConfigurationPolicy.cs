@@ -36,6 +36,8 @@ namespace Amazon.CleanRoomsML.Model
     {
         private List<string> _allowedAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _filterPattern;
+        private LogRedactionConfiguration _logRedactionConfiguration;
+        private LogType _logType;
 
         /// <summary>
         /// Gets and sets the property AllowedAccountIds. 
@@ -79,6 +81,43 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetFilterPattern()
         {
             return this._filterPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogRedactionConfiguration. 
+        /// <para>
+        /// Specifies the log redaction configuration for this policy.
+        /// </para>
+        /// </summary>
+        public LogRedactionConfiguration LogRedactionConfiguration
+        {
+            get { return this._logRedactionConfiguration; }
+            set { this._logRedactionConfiguration = value; }
+        }
+
+        // Check to see if LogRedactionConfiguration property is set
+        internal bool IsSetLogRedactionConfiguration()
+        {
+            return this._logRedactionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogType. 
+        /// <para>
+        /// Specifies the type of log this policy applies to. The currently supported policies
+        /// are ALL or ERROR_SUMMARY.
+        /// </para>
+        /// </summary>
+        public LogType LogType
+        {
+            get { return this._logType; }
+            set { this._logType = value; }
+        }
+
+        // Check to see if LogType property is set
+        internal bool IsSetLogType()
+        {
+            return this._logType != null;
         }
 
     }

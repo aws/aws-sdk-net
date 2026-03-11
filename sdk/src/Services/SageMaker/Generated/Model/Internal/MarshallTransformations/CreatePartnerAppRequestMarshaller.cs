@@ -103,6 +103,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetEnableAutoMinorVersionUpgrade())
+            {
+                context.Writer.WritePropertyName("EnableAutoMinorVersionUpgrade");
+                context.Writer.WriteBooleanValue(publicRequest.EnableAutoMinorVersionUpgrade.Value);
+            }
+
             if(publicRequest.IsSetEnableIamSessionBasedIdentity())
             {
                 context.Writer.WritePropertyName("EnableIamSessionBasedIdentity");

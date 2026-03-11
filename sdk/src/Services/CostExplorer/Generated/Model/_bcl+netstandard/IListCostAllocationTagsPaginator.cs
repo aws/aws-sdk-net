@@ -30,5 +30,10 @@ namespace Amazon.CostExplorer.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListCostAllocationTagsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the CostAllocationTags
+        /// </summary>
+        IPaginatedEnumerable<CostAllocationTag> CostAllocationTags { get; }
     }
 }

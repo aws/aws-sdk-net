@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for NotConfiguredException
+        /// message.
+        /// </summary>
+        public NotConfiguredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotConfiguredException with the specified error
         /// message.
         /// </summary>

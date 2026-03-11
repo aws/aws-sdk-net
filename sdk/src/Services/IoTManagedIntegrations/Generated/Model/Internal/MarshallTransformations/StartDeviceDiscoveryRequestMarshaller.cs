@@ -103,6 +103,17 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ConnectorAssociationIdentifier);
             }
 
+            if(publicRequest.IsSetConnectorDeviceIdList())
+            {
+                context.Writer.WritePropertyName("ConnectorDeviceIdList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConnectorDeviceIdListListValue in publicRequest.ConnectorDeviceIdList)
+                {
+                        context.Writer.WriteStringValue(publicRequestConnectorDeviceIdListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetControllerIdentifier())
             {
                 context.Writer.WritePropertyName("ControllerIdentifier");
@@ -127,6 +138,18 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DiscoveryType");
                 context.Writer.WriteStringValue(publicRequest.DiscoveryType);
+            }
+
+            if(publicRequest.IsSetEndDeviceIdentifier())
+            {
+                context.Writer.WritePropertyName("EndDeviceIdentifier");
+                context.Writer.WriteStringValue(publicRequest.EndDeviceIdentifier);
+            }
+
+            if(publicRequest.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("Protocol");
+                context.Writer.WriteStringValue(publicRequest.Protocol);
             }
 
             if(publicRequest.IsSetTags())

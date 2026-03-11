@@ -36,6 +36,14 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Construct instance of AmazonSecurityHubException
         /// </summary>
+        public AmazonSecurityHubException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSecurityHubException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSecurityHubException(string message)
             : base(message)

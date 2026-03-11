@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The properties of a FHIR export job, including the ID, ARN, name, and the status of
-    /// the job.
+    /// The properties of a FHIR export job.
     /// </summary>
     public partial class ExportJobProperties
     {
@@ -48,7 +47,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name used during the initiation of the job.
+        /// The Amazon Resource Name (ARN) used during the initiation of the export job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -67,8 +66,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS generated ID for the data store from which files are being exported for an
-        /// export job.
+        /// The data store identifier from which files are being exported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -87,7 +85,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time an export job completed.
+        /// The time the export job completed.
         /// </para>
         /// </summary>
         public DateTime? EndTime
@@ -105,7 +103,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The AWS generated ID for an export job.
+        /// The export job identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -124,7 +122,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The user generated name for an export job.
+        /// The export job name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -143,8 +141,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED,
-        /// or FAILED.
+        /// The export job status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,7 +160,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// An explanation of any errors that may have occurred during the export job.
+        /// An explanation of any errors that might have occurred during the export job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -182,7 +179,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// The output data configuration that was supplied when the export job was created.
+        /// The output data configuration supplied when the export job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,7 +198,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property SubmitTime. 
         /// <para>
-        /// The time an export job was initiated.
+        /// The time the export job was initiated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

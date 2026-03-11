@@ -77,6 +77,22 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Paginator for GetReservationPurchaseRecommendation operation
+        ///</summary>
+        public IGetReservationPurchaseRecommendationPaginator GetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request) 
+        {
+            return new GetReservationPurchaseRecommendationPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetRightsizingRecommendation operation
+        ///</summary>
+        public IGetRightsizingRecommendationPaginator GetRightsizingRecommendation(GetRightsizingRecommendationRequest request) 
+        {
+            return new GetRightsizingRecommendationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSavingsPlansCoverage operation
         ///</summary>
         public IGetSavingsPlansCoveragePaginator GetSavingsPlansCoverage(GetSavingsPlansCoverageRequest request) 
@@ -90,6 +106,14 @@ namespace Amazon.CostExplorer.Model
         public IGetSavingsPlansUtilizationDetailsPaginator GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request) 
         {
             return new GetSavingsPlansUtilizationDetailsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCommitmentPurchaseAnalyses operation
+        ///</summary>
+        public IListCommitmentPurchaseAnalysesPaginator ListCommitmentPurchaseAnalyses(ListCommitmentPurchaseAnalysesRequest request) 
+        {
+            return new ListCommitmentPurchaseAnalysesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -114,6 +138,22 @@ namespace Amazon.CostExplorer.Model
         public IListCostCategoryDefinitionsPaginator ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request) 
         {
             return new ListCostCategoryDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCostCategoryResourceAssociations operation
+        ///</summary>
+        public IListCostCategoryResourceAssociationsPaginator ListCostCategoryResourceAssociations(ListCostCategoryResourceAssociationsRequest request) 
+        {
+            return new ListCostCategoryResourceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSavingsPlansPurchaseRecommendationGeneration operation
+        ///</summary>
+        public IListSavingsPlansPurchaseRecommendationGenerationPaginator ListSavingsPlansPurchaseRecommendationGeneration(ListSavingsPlansPurchaseRecommendationGenerationRequest request) 
+        {
+            return new ListSavingsPlansPurchaseRecommendationGenerationPaginator(this.client, request);
         }
     }
 }

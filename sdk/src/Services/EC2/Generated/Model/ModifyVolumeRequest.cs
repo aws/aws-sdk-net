@@ -57,9 +57,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// After modifying a volume, you must wait at least six hours and ensure that the volume
-    /// is in the <c>in-use</c> or <c>available</c> state before you can modify the same volume.
-    /// This is sometimes referred to as a cooldown period.
+    /// After you initiate a volume modification, you must wait for that modification to reach
+    /// the <c>completed</c> state before you can initiate another modification for the same
+    /// volume. You can modify a volume up to four times within a rolling 24-hour period,
+    /// as long as the volume is in the <c>in-use</c> or <c>available</c> state, and all previous
+    /// modifications for that volume are <c>completed</c>. If you exceed this limit, you
+    /// get an error message that indicates when you can perform your next modification.
     /// </para>
     /// </summary>
     public partial class ModifyVolumeRequest : AmazonEC2Request
@@ -104,7 +107,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
+        ///  <c>gp3</c>: 3,000 - 80,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -114,13 +117,13 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>io2</c>: 100 - 256,000 IOPS
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
-        /// built on the Nitro System</a>. On other instances, you can achieve performance up
-        /// to 32,000 IOPS.
+        ///  <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
+        /// Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances
+        /// can support up to 32,000 IOPS.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Default: The existing value is retained if you keep the same volume type. If you change
         /// the volume type to <c>io1</c>, <c>io2</c>, or <c>gp3</c>, the default is 3,000.
@@ -172,7 +175,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB
+        ///  <c>gp2</c>: 1 - 16,384 GiB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>gp3</c>: 1 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -211,7 +218,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Throughput. 
         /// <para>
         /// The target throughput of the volume, in MiB/s. This parameter is valid only for <c>gp3</c>
-        /// volumes. The maximum value is 1,000.
+        /// volumes. The maximum value is 2,000.
         /// </para>
         ///  
         /// <para>
@@ -220,7 +227,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// Valid Range: Minimum value of 125. Maximum value of 2,000.
         /// </para>
         /// </summary>
         public int? Throughput

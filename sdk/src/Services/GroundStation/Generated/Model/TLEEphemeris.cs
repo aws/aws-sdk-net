@@ -31,6 +31,13 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Two-line element set (TLE) ephemeris.
+    /// 
+    ///  
+    /// <para>
+    ///  For more detail about providing Two-line element sets to AWS Ground Station, see
+    /// the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-tle-ephemeris-data.html">TLE
+    /// section</a> of the AWS Ground Station user guide. 
+    /// </para>
     /// </summary>
     public partial class TLEEphemeris
     {
@@ -40,7 +47,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property S3Object. 
         /// <para>
-        /// Identifies the S3 object to be used as the ephemeris.
+        /// The Amazon S3 object that contains the ephemeris data.
         /// </para>
         /// </summary>
         public S3Object S3Object
@@ -58,8 +65,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property TleData. 
         /// <para>
-        /// The data for a TLE ephemeris, supplied directly in the request rather than through
-        /// an S3 object.
+        /// TLE data that you provide directly instead of using an Amazon S3 object.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

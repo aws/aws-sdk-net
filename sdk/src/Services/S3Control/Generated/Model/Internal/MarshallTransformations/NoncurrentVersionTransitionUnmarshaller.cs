@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoncurrentVersionTransition Object
     /// </summary>  
-    public class NoncurrentVersionTransitionUnmarshaller : IXmlUnmarshaller<NoncurrentVersionTransition, XmlUnmarshallerContext>
+    public partial class NoncurrentVersionTransitionUnmarshaller : IXmlUnmarshaller<NoncurrentVersionTransition, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageClass = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, NoncurrentVersionTransition unmarshalledObject, int targetDepth);
+
         private static NoncurrentVersionTransitionUnmarshaller _instance = new NoncurrentVersionTransitionUnmarshaller();        
 
         /// <summary>

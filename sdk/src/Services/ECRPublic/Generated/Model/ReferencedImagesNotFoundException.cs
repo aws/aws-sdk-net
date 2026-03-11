@@ -39,6 +39,13 @@ namespace Amazon.ECRPublic.Model
     {
 
         /// <summary>
+        /// Default constructor for ReferencedImagesNotFoundException
+        /// message.
+        /// </summary>
+        public ReferencedImagesNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReferencedImagesNotFoundException with the specified error
         /// message.
         /// </summary>

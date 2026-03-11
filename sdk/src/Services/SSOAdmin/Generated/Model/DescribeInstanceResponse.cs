@@ -35,11 +35,13 @@ namespace Amazon.SSOAdmin.Model
     public partial class DescribeInstanceResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdDate;
+        private EncryptionConfigurationDetails _encryptionConfigurationDetails;
         private string _identityStoreId;
         private string _instanceArn;
         private string _name;
         private string _ownerAccountId;
         private InstanceStatus _status;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -57,6 +59,25 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfigurationDetails. 
+        /// <para>
+        /// Contains the encryption configuration for your IAM Identity Center instance, including
+        /// the encryption status, KMS key type, and KMS key ARN.
+        /// </para>
+        /// </summary>
+        public EncryptionConfigurationDetails EncryptionConfigurationDetails
+        {
+            get { return this._encryptionConfigurationDetails; }
+            set { this._encryptionConfigurationDetails = value; }
+        }
+
+        // Check to see if EncryptionConfigurationDetails property is set
+        internal bool IsSetEncryptionConfigurationDetails()
+        {
+            return this._encryptionConfigurationDetails != null;
         }
 
         /// <summary>
@@ -155,6 +176,28 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Provides additional context about the current status of the IAM Identity Center instance.
+        /// This field is particularly useful when an instance is in a non-ACTIVE state, such
+        /// as CREATE_FAILED. When an instance fails to create or update, this field contains
+        /// information about the cause, which may include issues with KMS key configuration,
+        /// permission problems with the specified KMS key, or service-related errors. 
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

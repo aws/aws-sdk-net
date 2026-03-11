@@ -40,6 +40,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPortRangeException
+        /// message.
+        /// </summary>
+        public InvalidPortRangeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPortRangeException with the specified error
         /// message.
         /// </summary>

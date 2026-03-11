@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgentRuntimeEndpoint operation.
-    /// Creates an Amazon Secure AgentEndpoint.
+    /// Creates an AgentCore Runtime endpoint.
     /// </summary>
     public partial class CreateAgentRuntimeEndpointRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -40,11 +40,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _clientToken;
         private string _description;
         private string _name;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime to create an endpoint for.
+        /// The unique identifier of the AgentCore Runtime to create an endpoint for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +64,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeVersion. 
         /// <para>
-        /// The version of the agent runtime to use for the endpoint.
+        /// The version of the AgentCore Runtime to use for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -101,7 +102,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the agent runtime endpoint.
+        /// The description of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -120,7 +121,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the agent runtime endpoint.
+        /// The name of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -134,6 +135,32 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of tag keys and values to assign to the agent runtime endpoint. Tags enable
+        /// you to categorize your resources in different ways, for example, by purpose, owner,
+        /// or environment.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

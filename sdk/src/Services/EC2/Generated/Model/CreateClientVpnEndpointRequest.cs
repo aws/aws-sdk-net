@@ -48,12 +48,14 @@ namespace Amazon.EC2.Model
         private bool? _disconnectOnSessionTimeout;
         private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _dryRun;
+        private EndpointIpAddressType _endpointIpAddressType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SelfServicePortal _selfServicePortal;
         private string _serverCertificateArn;
         private int? _sessionTimeoutHours;
         private bool? _splitTunnel;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private TrafficIpAddressType _trafficIpAddressType;
         private TransportProtocol _transportProtocol;
         private string _vpcId;
         private int? _vpnPort;
@@ -92,7 +94,6 @@ namespace Amazon.EC2.Model
         /// a size of at least /22 and must not be greater than /12.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ClientCidrBlock
         {
             get { return this._clientCidrBlock; }
@@ -316,6 +317,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndpointIpAddressType. 
+        /// <para>
+        /// The IP address type for the Client VPN endpoint. Valid values are <c>ipv4</c> (default)
+        /// for IPv4 addressing only, <c>ipv6</c> for IPv6 addressing only, or <c>dual-stack</c>
+        /// for both IPv4 and IPv6 addressing. When set to <c>dual-stack,</c> clients can connect
+        /// to the endpoint using either IPv4 or IPv6 addresses..
+        /// </para>
+        /// </summary>
+        public EndpointIpAddressType EndpointIpAddressType
+        {
+            get { return this._endpointIpAddressType; }
+            set { this._endpointIpAddressType = value; }
+        }
+
+        // Check to see if EndpointIpAddressType property is set
+        internal bool IsSetEndpointIpAddressType()
+        {
+            return this._endpointIpAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The IDs of one or more security groups to apply to the target network. You must also
@@ -455,6 +477,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficIpAddressType. 
+        /// <para>
+        /// The IP address type for traffic within the Client VPN tunnel. Valid values are <c>ipv4</c>
+        /// (default) for IPv4 traffic only, <c>ipv6</c> for IPv6 addressing only, or <c>dual-stack</c>
+        /// for both IPv4 and IPv6 traffic. When set to <c>dual-stack</c>, clients can access
+        /// both IPv4 and IPv6 resources through the VPN .
+        /// </para>
+        /// </summary>
+        public TrafficIpAddressType TrafficIpAddressType
+        {
+            get { return this._trafficIpAddressType; }
+            set { this._trafficIpAddressType = value; }
+        }
+
+        // Check to see if TrafficIpAddressType property is set
+        internal bool IsSetTrafficIpAddressType()
+        {
+            return this._trafficIpAddressType != null;
         }
 
         /// <summary>

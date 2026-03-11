@@ -94,6 +94,8 @@ namespace Amazon.CognitoIdentityProvider.Internal
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "GetDeviceRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
+                case "GetTokensFromRefreshTokenRequest":
+                    return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "GetUserRequest":
                     return AuthSchemeOption.DEFAULT_NOAUTH;
                 case "GetUserAttributeVerificationCodeRequest":

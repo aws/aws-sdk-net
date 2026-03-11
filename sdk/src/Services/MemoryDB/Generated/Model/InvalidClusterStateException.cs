@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The cluster is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidClusterStateException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidClusterStateException
+        /// message.
+        /// </summary>
+        public InvalidClusterStateException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidClusterStateException with the specified error

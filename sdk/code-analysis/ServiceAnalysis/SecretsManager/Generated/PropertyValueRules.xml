@@ -65,6 +65,11 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CreateSecretRequest.Type</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.CreateSecretResponse.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -124,6 +129,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DescribeSecretResponse.ExternalSecretRotationRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.DescribeSecretResponse.KmsKeyId</property>
     <min>0</min>
     <max>2048</max>
@@ -148,6 +158,11 @@
     <property>Amazon.SecretsManager.Model.DescribeSecretResponse.RotationLambdaARN</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DescribeSecretResponse.Type</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetRandomPasswordRequest.ExcludeCharacters</property>
@@ -371,6 +386,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.RotateSecretRequest.ExternalSecretRotationRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.RotateSecretRequest.RotationLambdaARN</property>
     <min>0</min>
     <max>2048</max>
@@ -445,6 +465,11 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.UpdateSecretRequest.Type</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.UpdateSecretResponse.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -505,6 +530,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ExternalSecretRotationMetadataItem.Key</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ExternalSecretRotationMetadataItem.Value</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.ReplicaRegionType.KmsKeyId</property>
     <min>0</min>
     <max>2048</max>
@@ -540,7 +575,7 @@
     <property>Amazon.SecretsManager.Model.RotationRulesType.Duration</property>
     <min>2</min>
     <max>3</max>
-    <pattern>[0-9h]+</pattern>
+    <pattern>[0-9]+h</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.RotationRulesType.ScheduleExpression</property>
@@ -555,6 +590,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.SecretListEntry.Description</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretListEntry.ExternalSecretRotationRoleArn</property>
+    <min>20</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -582,6 +622,11 @@
     <property>Amazon.SecretsManager.Model.SecretListEntry.RotationLambdaARN</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.SecretListEntry.Type</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.SecretValueEntry.ARN</property>

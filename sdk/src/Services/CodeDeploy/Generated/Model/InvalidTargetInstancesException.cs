@@ -57,6 +57,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTargetInstancesException
+        /// message.
+        /// </summary>
+        public InvalidTargetInstancesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTargetInstancesException with the specified error
         /// message.
         /// </summary>

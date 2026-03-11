@@ -134,6 +134,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.XksProxyVpcEndpointServiceName);
             }
 
+            if(publicRequest.IsSetXksProxyVpcEndpointServiceOwner())
+            {
+                context.Writer.WritePropertyName("XksProxyVpcEndpointServiceOwner");
+                context.Writer.WriteStringValue(publicRequest.XksProxyVpcEndpointServiceOwner);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

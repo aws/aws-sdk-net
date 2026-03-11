@@ -92,6 +92,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetImageId())
+            {
+                context.Writer.WritePropertyName("ImageId");
+                context.Writer.WriteStringValue(publicRequest.ImageId);
+            }
+
             if(publicRequest.IsSetInstanceGroups())
             {
                 context.Writer.WritePropertyName("InstanceGroups");

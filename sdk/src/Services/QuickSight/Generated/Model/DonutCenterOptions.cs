@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LabelVisibility. 
         /// <para>
-        /// Determines the visibility of the label in a donut chart. In the Amazon QuickSight
-        /// console, this option is called <c>'Show total'</c>.
+        /// Determines the visibility of the label in a donut chart. In the Quick Sight console,
+        /// this option is called <c>'Show total'</c>.
         /// </para>
         /// </summary>
         public Visibility LabelVisibility

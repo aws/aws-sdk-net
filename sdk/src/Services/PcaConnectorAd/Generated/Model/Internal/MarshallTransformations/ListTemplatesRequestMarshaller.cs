@@ -62,6 +62,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ConnectorArn))
+                throw new AmazonPcaConnectorAdException("Request object does not have required field ConnectorArn set");
             
             if (publicRequest.IsSetConnectorArn())
                 request.Parameters.Add("ConnectorArn", StringUtils.FromString(publicRequest.ConnectorArn));

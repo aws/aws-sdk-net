@@ -39,6 +39,13 @@ namespace Amazon.Organizations.Model
     {
 
         /// <summary>
+        /// Default constructor for OrganizationalUnitNotFoundException
+        /// message.
+        /// </summary>
+        public OrganizationalUnitNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OrganizationalUnitNotFoundException with the specified error
         /// message.
         /// </summary>

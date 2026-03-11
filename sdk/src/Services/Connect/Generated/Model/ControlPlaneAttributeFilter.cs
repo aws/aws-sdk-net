@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// An object that can be used to specify Tag conditions inside the <c>SearchFilter</c>.
-    /// This accepts an <c>OR</c> or <c>AND</c> (List of List) input where: 
+    /// This accepts an <c>OR</c> or <c>AND</c> (List of List) input where:
     /// 
     ///  <ul> <li> 
     /// <para>

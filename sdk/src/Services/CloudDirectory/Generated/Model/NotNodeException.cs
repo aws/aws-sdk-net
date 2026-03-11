@@ -40,6 +40,13 @@ namespace Amazon.CloudDirectory.Model
     {
 
         /// <summary>
+        /// Default constructor for NotNodeException
+        /// message.
+        /// </summary>
+        public NotNodeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NotNodeException with the specified error
         /// message.
         /// </summary>

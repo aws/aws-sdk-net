@@ -43,5 +43,21 @@ namespace Amazon.SocialMessaging.Model
         {
             return new ListLinkedWhatsAppBusinessAccountsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWhatsAppMessageTemplates operation
+        ///</summary>
+        public IListWhatsAppMessageTemplatesPaginator ListWhatsAppMessageTemplates(ListWhatsAppMessageTemplatesRequest request) 
+        {
+            return new ListWhatsAppMessageTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatsAppTemplateLibrary operation
+        ///</summary>
+        public IListWhatsAppTemplateLibraryPaginator ListWhatsAppTemplateLibrary(ListWhatsAppTemplateLibraryRequest request) 
+        {
+            return new ListWhatsAppTemplateLibraryPaginator(this.client, request);
+        }
     }
 }

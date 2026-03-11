@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     public partial class GetTablesRequest : AmazonGlueRequest
     {
         private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
         private string _expression;
@@ -80,6 +81,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetAttributesToGet()
         {
             return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuditContext. 
+        /// <para>
+        /// A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit
+        /// context</a>.
+        /// </para>
+        /// </summary>
+        public AuditContext AuditContext
+        {
+            get { return this._auditContext; }
+            set { this._auditContext = value; }
+        }
+
+        // Check to see if AuditContext property is set
+        internal bool IsSetAuditContext()
+        {
+            return this._auditContext != null;
         }
 
         /// <summary>

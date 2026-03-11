@@ -50,6 +50,13 @@ namespace Amazon.CognitoIdentity.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidIdentityPoolConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidIdentityPoolConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidIdentityPoolConfigurationException with the specified error
         /// message.
         /// </summary>

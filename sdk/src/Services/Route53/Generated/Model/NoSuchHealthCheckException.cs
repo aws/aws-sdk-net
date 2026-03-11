@@ -39,6 +39,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchHealthCheckException
+        /// message.
+        /// </summary>
+        public NoSuchHealthCheckException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchHealthCheckException with the specified error
         /// message.
         /// </summary>

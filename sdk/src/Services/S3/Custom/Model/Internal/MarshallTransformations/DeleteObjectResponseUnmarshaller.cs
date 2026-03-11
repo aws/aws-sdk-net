@@ -20,59 +20,21 @@ using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     ///    Response Unmarshaller for DeleteObject operation
     /// </summary>
-    public class DeleteObjectResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class DeleteObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            DeleteObjectResponse response = new DeleteObjectResponse();
-            
-            UnmarshallResult(context,response);                        
-                 
-                        
-            return response;
-        }
-        
-        private static void UnmarshallResult(XmlUnmarshallerContext context,DeleteObjectResponse response)
+        // custom unmarshall to preserve backwards compatibility since DeleteMarker is being swapped from a bool to a string.
+        void DeleteMarkerCustomUnmarshall(XmlUnmarshallerContext context, DeleteObjectResponse response)
         {
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent("x-amz-delete-marker"))
-                response.DeleteMarker = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-delete-marker"));
-            if (responseData.IsHeaderPresent("x-amz-version-id"))
-                response.VersionId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-version-id"));
-            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
-                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
-
-            return;
+            if (context.ResponseData.IsHeaderPresent("x-amz-delete-marker"))
+                response.DeleteMarker = context.ResponseData.GetHeaderValue("x-amz-delete-marker");
         }
-
-        private static DeleteObjectResponseUnmarshaller _instance;
-
-        /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static DeleteObjectResponseUnmarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new DeleteObjectResponseUnmarshaller();
-                }
-                return _instance;
-            }
-        }
-
     }
 }
     

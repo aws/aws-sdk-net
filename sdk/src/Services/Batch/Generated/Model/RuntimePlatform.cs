@@ -41,7 +41,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CpuArchitecture. 
         /// <para>
-        ///  The vCPU architecture. The default value is <c>X86_64</c>. Valid values are <c>X86_64</c>
+        /// The vCPU architecture. The default value is <c>X86_64</c>. Valid values are <c>X86_64</c>
         /// and <c>ARM64</c>.
         /// </para>
         ///  <note> 
@@ -50,10 +50,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Fargate Spot is not supported for <c>ARM64</c> and Windows-based containers on Fargate.
-        /// A job queue will be blocked if a Fargate <c>ARM64</c> or Windows job is submitted
-        /// to a job queue with only Fargate Spot compute environments. However, you can attach
-        /// both <c>FARGATE</c> and <c>FARGATE_SPOT</c> compute environments to the same job queue.
+        /// Fargate Spot is not supported on Windows-based containers on Fargate. A job queue
+        /// will be blocked if a Windows job is submitted to a job queue with only Fargate Spot
+        /// compute environments. However, you can attach both <c>FARGATE</c> and <c>FARGATE_SPOT</c>
+        /// compute environments to the same job queue.
         /// </para>
         ///  </note>
         /// </summary>
@@ -92,10 +92,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Fargate Spot is not supported for <c>ARM64</c> and Windows-based containers on Fargate.
-        /// A job queue will be blocked if a Fargate <c>ARM64</c> or Windows job is submitted
-        /// to a job queue with only Fargate Spot compute environments. However, you can attach
-        /// both <c>FARGATE</c> and <c>FARGATE_SPOT</c> compute environments to the same job queue.
+        /// Fargate Spot is not supported on Windows-based containers on Fargate. A job queue
+        /// will be blocked if a Windows job is submitted to a job queue with only Fargate Spot
+        /// compute environments. However, you can attach both <c>FARGATE</c> and <c>FARGATE_SPOT</c>
+        /// compute environments to the same job queue.
         /// </para>
         ///  </note>
         /// </summary>

@@ -35,8 +35,10 @@ namespace Amazon.BedrockRuntime.Model
     public partial class ContentBlockDelta
     {
         private CitationsDelta _citation;
+        private ImageBlockDelta _image;
         private ReasoningContentBlockDelta _reasoningContent;
         private string _text;
+        private List<ToolResultBlockDelta> _toolResult = AWSConfigs.InitializeCollections ? new List<ToolResultBlockDelta>() : null;
         private ToolUseBlockDelta _toolUse;
 
         /// <summary>
@@ -56,6 +58,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetCitation()
         {
             return this._citation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// A streaming delta event containing incremental image data.
+        /// </para>
+        /// </summary>
+        public ImageBlockDelta Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
         }
 
         /// <summary>
@@ -95,6 +115,29 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolResult. 
+        /// <para>
+        /// An incremental update that contains the results from a tool call.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ToolResultBlockDelta> ToolResult
+        {
+            get { return this._toolResult; }
+            set { this._toolResult = value; }
+        }
+
+        // Check to see if ToolResult property is set
+        internal bool IsSetToolResult()
+        {
+            return this._toolResult != null && (this._toolResult.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

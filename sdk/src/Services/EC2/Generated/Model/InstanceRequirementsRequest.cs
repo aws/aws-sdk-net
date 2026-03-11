@@ -102,6 +102,7 @@ namespace Amazon.EC2.Model
         private NetworkBandwidthGbpsRequest _networkBandwidthGbps;
         private NetworkInterfaceCountRequest _networkInterfaceCount;
         private int? _onDemandMaxPricePercentageOverLowestPrice;
+        private bool? _requireEncryptionInTransit;
         private bool? _requireHibernateSupport;
         private int? _spotMaxPricePercentageOverLowestPrice;
         private TotalLocalStorageGBRequest _totalLocalStorageGB;
@@ -204,11 +205,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For instance types with Amazon Web Services Inferentia2 chips, specify <c>inferentia2</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Habana Gaudi HL-205 GPUs, specify <c>gaudi-hl-205</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For instance types with NVIDIA GRID K520 GPUs, specify <c>k520</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For instance types with NVIDIA K80 GPUs, specify <c>k80</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with NVIDIA L4 GPUs, specify <c>l4</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with NVIDIA L40S GPUs, specify <c>l40s</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -220,11 +237,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For instance types with Amazon Web Services Trainium chips, specify <c>trainium</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Amazon Web Services Trainium2 chips, specify <c>trainium2</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For instance types with NVIDIA T4 GPUs, specify <c>t4</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For instance types with NVIDIA T4G GPUs, specify <c>t4g</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Xilinx U30 cards, specify <c>u30</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -294,6 +323,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// For instance types with Inference accelerators, specify <c>inference</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Media accelerators, specify <c>media</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -858,6 +891,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetOnDemandMaxPricePercentageOverLowestPrice()
         {
             return this._onDemandMaxPricePercentageOverLowestPrice.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequireEncryptionInTransit. 
+        /// <para>
+        /// Specifies whether instance types must support encrypting in-transit traffic between
+        /// instances. For more information, including the supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit">Encryption
+        /// in transit</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? RequireEncryptionInTransit
+        {
+            get { return this._requireEncryptionInTransit; }
+            set { this._requireEncryptionInTransit = value; }
+        }
+
+        // Check to see if RequireEncryptionInTransit property is set
+        internal bool IsSetRequireEncryptionInTransit()
+        {
+            return this._requireEncryptionInTransit.HasValue; 
         }
 
         /// <summary>

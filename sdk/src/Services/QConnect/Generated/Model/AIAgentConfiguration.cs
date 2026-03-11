@@ -35,7 +35,13 @@ namespace Amazon.QConnect.Model
     public partial class AIAgentConfiguration
     {
         private AnswerRecommendationAIAgentConfiguration _answerRecommendationAIAgentConfiguration;
+        private CaseSummarizationAIAgentConfiguration _caseSummarizationAIAgentConfiguration;
+        private EmailGenerativeAnswerAIAgentConfiguration _emailGenerativeAnswerAIAgentConfiguration;
+        private EmailOverviewAIAgentConfiguration _emailOverviewAIAgentConfiguration;
+        private EmailResponseAIAgentConfiguration _emailResponseAIAgentConfiguration;
         private ManualSearchAIAgentConfiguration _manualSearchAIAgentConfiguration;
+        private NoteTakingAIAgentConfiguration _noteTakingAIAgentConfiguration;
+        private OrchestrationAIAgentConfiguration _orchestrationaiAgentConfiguration;
         private SelfServiceAIAgentConfiguration _selfServiceAIAgentConfiguration;
 
         /// <summary>
@@ -57,6 +63,81 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CaseSummarizationAIAgentConfiguration. 
+        /// <para>
+        /// The configuration for AI Agents of type <c>CASE_SUMMARIZATION</c>.
+        /// </para>
+        /// </summary>
+        public CaseSummarizationAIAgentConfiguration CaseSummarizationAIAgentConfiguration
+        {
+            get { return this._caseSummarizationAIAgentConfiguration; }
+            set { this._caseSummarizationAIAgentConfiguration = value; }
+        }
+
+        // Check to see if CaseSummarizationAIAgentConfiguration property is set
+        internal bool IsSetCaseSummarizationAIAgentConfiguration()
+        {
+            return this._caseSummarizationAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailGenerativeAnswerAIAgentConfiguration. 
+        /// <para>
+        /// Configuration for the EMAIL_GENERATIVE_ANSWER AI agent that provides comprehensive
+        /// knowledge-based answers for customer queries.
+        /// </para>
+        /// </summary>
+        public EmailGenerativeAnswerAIAgentConfiguration EmailGenerativeAnswerAIAgentConfiguration
+        {
+            get { return this._emailGenerativeAnswerAIAgentConfiguration; }
+            set { this._emailGenerativeAnswerAIAgentConfiguration = value; }
+        }
+
+        // Check to see if EmailGenerativeAnswerAIAgentConfiguration property is set
+        internal bool IsSetEmailGenerativeAnswerAIAgentConfiguration()
+        {
+            return this._emailGenerativeAnswerAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailOverviewAIAgentConfiguration. 
+        /// <para>
+        /// Configuration for the EMAIL_OVERVIEW AI agent that generates structured overview of
+        /// email conversations.
+        /// </para>
+        /// </summary>
+        public EmailOverviewAIAgentConfiguration EmailOverviewAIAgentConfiguration
+        {
+            get { return this._emailOverviewAIAgentConfiguration; }
+            set { this._emailOverviewAIAgentConfiguration = value; }
+        }
+
+        // Check to see if EmailOverviewAIAgentConfiguration property is set
+        internal bool IsSetEmailOverviewAIAgentConfiguration()
+        {
+            return this._emailOverviewAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailResponseAIAgentConfiguration. 
+        /// <para>
+        /// Configuration for the EMAIL_RESPONSE AI agent that generates professional email responses
+        /// using knowledge base content.
+        /// </para>
+        /// </summary>
+        public EmailResponseAIAgentConfiguration EmailResponseAIAgentConfiguration
+        {
+            get { return this._emailResponseAIAgentConfiguration; }
+            set { this._emailResponseAIAgentConfiguration = value; }
+        }
+
+        // Check to see if EmailResponseAIAgentConfiguration property is set
+        internal bool IsSetEmailResponseAIAgentConfiguration()
+        {
+            return this._emailResponseAIAgentConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ManualSearchAIAgentConfiguration. 
         /// <para>
         /// The configuration for AI Agents of type <c>MANUAL_SEARCH</c>.
@@ -72,6 +153,42 @@ namespace Amazon.QConnect.Model
         internal bool IsSetManualSearchAIAgentConfiguration()
         {
             return this._manualSearchAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NoteTakingAIAgentConfiguration. 
+        /// <para>
+        /// The configuration for AI Agents of type <c>NOTE_TAKING</c>.
+        /// </para>
+        /// </summary>
+        public NoteTakingAIAgentConfiguration NoteTakingAIAgentConfiguration
+        {
+            get { return this._noteTakingAIAgentConfiguration; }
+            set { this._noteTakingAIAgentConfiguration = value; }
+        }
+
+        // Check to see if NoteTakingAIAgentConfiguration property is set
+        internal bool IsSetNoteTakingAIAgentConfiguration()
+        {
+            return this._noteTakingAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationAIAgentConfiguration. 
+        /// <para>
+        /// The configuration for AI Agents of type <c>ORCHESTRATION</c>.
+        /// </para>
+        /// </summary>
+        public OrchestrationAIAgentConfiguration OrchestrationAIAgentConfiguration
+        {
+            get { return this._orchestrationaiAgentConfiguration; }
+            set { this._orchestrationaiAgentConfiguration = value; }
+        }
+
+        // Check to see if OrchestrationAIAgentConfiguration property is set
+        internal bool IsSetOrchestrationAIAgentConfiguration()
+        {
+            return this._orchestrationaiAgentConfiguration != null;
         }
 
         /// <summary>

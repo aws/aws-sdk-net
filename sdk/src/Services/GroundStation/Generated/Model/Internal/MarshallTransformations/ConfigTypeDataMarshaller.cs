@@ -101,6 +101,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetTelemetrySinkConfig())
+            {
+                context.Writer.WritePropertyName("telemetrySinkConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TelemetrySinkConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TelemetrySinkConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTrackingConfig())
             {
                 context.Writer.WritePropertyName("trackingConfig");

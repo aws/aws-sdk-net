@@ -56,6 +56,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("audioSelectors", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AudioSelector, StringUnmarshaller, AudioSelectorUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorUnmarshaller.Instance);
+                    unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("fileInput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

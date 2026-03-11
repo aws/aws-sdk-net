@@ -39,6 +39,13 @@ namespace Amazon.SecretsManager.Model
     {
 
         /// <summary>
+        /// Default constructor for DecryptionFailureException
+        /// message.
+        /// </summary>
+        public DecryptionFailureException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DecryptionFailureException with the specified error
         /// message.
         /// </summary>

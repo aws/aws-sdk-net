@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _affinity;
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _groupId;
         private string _groupName;
         private string _hostId;
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Placement with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone of the instance. If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region. This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</param>
+        /// <param name="availabilityZone">The Availability Zone of the instance. On input, you can specify <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c>, but not both. If you specify neither one, Amazon EC2 automatically selects an Availability Zone for you. This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</param>
         public Placement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -88,8 +89,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If not specified, an Availability Zone will be automatically chosen for you based
-        /// on the load balancing criteria for the Region.
+        /// On input, you can specify <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c>, but
+        /// not both. If you specify neither one, Amazon EC2 automatically selects an Availability
+        /// Zone for you.
         /// </para>
         ///  
         /// <para>
@@ -109,10 +111,41 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// On input, you can specify <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c>, but
+        /// not both. If you specify neither one, Amazon EC2 automatically selects an Availability
+        /// Zone for you.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the placement group that the instance is in. If you specify <c>GroupId</c>,
-        /// you can't specify <c>GroupName</c>.
+        /// The ID of the placement group that the instance is in.
+        /// </para>
+        ///  
+        /// <para>
+        /// On input, you can specify <c>GroupId</c> or <c>GroupName</c>, but not both.
         /// </para>
         /// </summary>
         public string GroupId
@@ -130,8 +163,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the placement group that the instance is in. If you specify <c>GroupName</c>,
-        /// you can't specify <c>GroupId</c>.
+        /// The name of the placement group that the instance is in.
+        /// </para>
+        ///  
+        /// <para>
+        /// On input, you can specify <c>GroupId</c> or <c>GroupName</c>, but not both.
         /// </para>
         /// </summary>
         public string GroupName
@@ -176,8 +212,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it
-        /// to <c>host</c>.
+        /// On input, if you specify this parameter, either omit the <b>Tenancy</b> parameter
+        /// or set it to <c>host</c>.
         /// </para>
         ///  
         /// <para>

@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutObjectTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("tagging");
         
@@ -85,7 +86,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetVersionId())
-                request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
+                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
@@ -94,20 +95,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Tagging", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestTaggingTagSet = publicRequest.Tagging.TagSet;
-                    if (publicRequestTaggingTagSet != null && (publicRequestTaggingTagSet.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Tagging.IsSetTagSet()) 
                     {
                         xmlWriter.WriteStartElement("TagSet");
                         foreach (var publicRequestTaggingTagSetValue in publicRequestTaggingTagSet) 
                         {
-                        if (publicRequestTaggingTagSetValue != null)
-                        {
-                            xmlWriter.WriteStartElement("Tag");
-                            if(publicRequestTaggingTagSetValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
-                            if(publicRequestTaggingTagSetValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
-                            xmlWriter.WriteEndElement();
-                        }
+                            if (publicRequestTaggingTagSetValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTaggingTagSetValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTaggingTagSetValue.Key));
+                                if(publicRequestTaggingTagSetValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTaggingTagSetValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                         }            
                         xmlWriter.WriteEndElement();            
                     }
@@ -115,13 +116,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -135,9 +135,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
             request.UseQueryString = true;
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutObjectTaggingRequestMarshaller _instance = new PutObjectTaggingRequestMarshaller();        
@@ -159,5 +157,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutObjectTaggingRequest publicRequest);
     }    
 }

@@ -40,6 +40,7 @@ namespace Amazon.DAX.Model
         private string _clusterName;
         private string _description;
         private string _iamRoleArn;
+        private NetworkType _networkType;
         private string _nodeType;
         private string _notificationTopicArn;
         private string _parameterGroupName;
@@ -178,6 +179,42 @@ namespace Amazon.DAX.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Specifies the IP protocol(s) the cluster uses for network communications. Values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipv4</c> - The cluster is accessible only through IPv4 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> - The cluster is accessible only through IPv6 addresses
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>dual_stack</c> - The cluster is accessible through both IPv4 and IPv6 addresses.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If no explicit <c>NetworkType</c> is provided, the network type is derived based on
+        /// the subnet group's configuration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
         /// The compute and memory capacity of the nodes in the cluster.
@@ -310,7 +347,7 @@ namespace Amazon.DAX.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS recommends that you have at least two read replicas per cluster.
+        /// Amazon Web Services recommends that you have at least two read replicas per cluster.
         /// </para>
         ///  </note>
         /// </summary>

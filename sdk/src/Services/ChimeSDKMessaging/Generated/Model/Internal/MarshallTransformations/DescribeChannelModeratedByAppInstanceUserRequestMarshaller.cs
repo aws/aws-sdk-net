@@ -66,6 +66,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetChannelArn())
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
+            if (string.IsNullOrEmpty(publicRequest.AppInstanceUserArn))
+                throw new AmazonChimeSDKMessagingException("Request object does not have required field AppInstanceUserArn set");
             
             if (publicRequest.IsSetAppInstanceUserArn())
                 request.Parameters.Add("app-instance-user-arn", StringUtils.FromString(publicRequest.AppInstanceUserArn));

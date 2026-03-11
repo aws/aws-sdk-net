@@ -40,6 +40,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFInternalErrorException
+        /// message.
+        /// </summary>
+        public WAFInternalErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFInternalErrorException with the specified error
         /// message.
         /// </summary>

@@ -148,6 +148,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.Ttl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("warmThroughputSpecification", targetDepth))
+                {
+                    var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
+                    response.WarmThroughputSpecification = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

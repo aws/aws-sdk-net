@@ -39,6 +39,13 @@ namespace Amazon.AppStream.Model
     {
 
         /// <summary>
+        /// Default constructor for IncompatibleImageException
+        /// message.
+        /// </summary>
+        public IncompatibleImageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IncompatibleImageException with the specified error
         /// message.
         /// </summary>

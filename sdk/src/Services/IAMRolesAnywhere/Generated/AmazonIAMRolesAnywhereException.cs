@@ -36,6 +36,14 @@ namespace Amazon.IAMRolesAnywhere
         /// <summary>
         /// Construct instance of AmazonIAMRolesAnywhereException
         /// </summary>
+        public AmazonIAMRolesAnywhereException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonIAMRolesAnywhereException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonIAMRolesAnywhereException(string message)
             : base(message)

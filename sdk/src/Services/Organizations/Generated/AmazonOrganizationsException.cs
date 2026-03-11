@@ -36,6 +36,14 @@ namespace Amazon.Organizations
         /// <summary>
         /// Construct instance of AmazonOrganizationsException
         /// </summary>
+        public AmazonOrganizationsException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonOrganizationsException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonOrganizationsException(string message)
             : base(message)

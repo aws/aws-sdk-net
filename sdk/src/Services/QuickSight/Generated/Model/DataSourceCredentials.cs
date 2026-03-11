@@ -37,7 +37,9 @@ namespace Amazon.QuickSight.Model
     {
         private string _copySourceArn;
         private CredentialPair _credentialPair;
+        private KeyPairCredentials _keyPairCredentials;
         private string _secretArn;
+        private WebProxyCredentials _webProxyCredentials;
 
         /// <summary>
         /// Gets and sets the property CopySourceArn. 
@@ -80,6 +82,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeyPairCredentials. 
+        /// <para>
+        /// The credentials for connecting using key-pair.
+        /// </para>
+        /// </summary>
+        public KeyPairCredentials KeyPairCredentials
+        {
+            get { return this._keyPairCredentials; }
+            set { this._keyPairCredentials = value; }
+        }
+
+        // Check to see if KeyPairCredentials property is set
+        internal bool IsSetKeyPairCredentials()
+        {
+            return this._keyPairCredentials != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon
@@ -97,6 +117,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebProxyCredentials. 
+        /// <para>
+        /// The credentials for connecting through a web proxy server.
+        /// </para>
+        /// </summary>
+        public WebProxyCredentials WebProxyCredentials
+        {
+            get { return this._webProxyCredentials; }
+            set { this._webProxyCredentials = value; }
+        }
+
+        // Check to see if WebProxyCredentials property is set
+        internal bool IsSetWebProxyCredentials()
+        {
+            return this._webProxyCredentials != null;
         }
 
     }

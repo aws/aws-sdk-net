@@ -62,6 +62,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (publicRequest.Date == null)
+                throw new AmazonCodeGuruSecurityException("Request object does not have required field Date set");
             
             if (publicRequest.IsSetDate())
                 request.Parameters.Add("date", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Date));

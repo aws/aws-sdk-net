@@ -32,18 +32,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
     /// Creates a new DB instance that acts as a read replica for an existing source DB instance
-    /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MariaDB,
-    /// MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
-    /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+    /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2,
+    /// MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for
+    /// a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
     /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
     /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
     /// RDS User Guide</i>.
     /// 
-    ///  
-    /// <para>
-    /// Amazon RDS for Db2 supports this operation for standby replicas. To create a standby
-    /// replica for a DB instance running Db2, you must set <c>ReplicaMode</c> to <c>mounted</c>.
-    /// </para>
     ///  
     /// <para>
     /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
@@ -63,6 +58,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateDBInstanceReadReplicaRequest : AmazonRDSRequest
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
@@ -107,6 +103,7 @@ namespace Amazon.RDS.Model
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private bool? _upgradeStorageConfig;
         private bool? _useDefaultProcessorFeatures;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -125,6 +122,32 @@ namespace Amazon.RDS.Model
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to create for the DB instance. You can create
+        /// up to three additional storage volumes using the names <c>rdsdbdata2</c>, <c>rdsdbdata3</c>,
+        /// and <c>rdsdbdata4</c>. Additional storage volumes are supported for RDS for Oracle
+        /// and RDS for SQL Server DB instances only.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -412,14 +435,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For the Db2 DB engine, if your source DB instance uses the Bring Your Own License
-        /// model, then a custom parameter group must be associated with the replica. For a same
-        /// Amazon Web Services Region replica, if you don't specify a custom parameter group,
-        /// Amazon RDS associates the custom parameter group associated with the source DB instance.
-        /// For a cross-Region replica, you must specify a custom parameter group. This custom
-        /// parameter group must include your IBM Site ID and IBM Customer ID. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html#db2-prereqs-ibm-info">
-        /// IBM IDs for Bring Your Own License for Db2</a>. 
+        /// For the Db2 DB engine, if your source DB instance uses the bring your own license
+        /// (BYOL) model, then a custom parameter group must be associated with the replica. For
+        /// a same Amazon Web Services Region replica, if you don't specify a custom parameter
+        /// group, Amazon RDS associates the custom parameter group associated with the source
+        /// DB instance. For a cross-Region replica, you must specify a custom parameter group.
+        /// This custom parameter group must include your IBM Site ID and IBM Customer ID. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html#db2-prereqs-ibm-info">IBM
+        /// IDs for bring your own license (BYOL) for Db2</a>. 
         /// </para>
         ///  
         /// <para>
@@ -1307,6 +1330,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }
@@ -1388,11 +1412,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The open mode of the replica database.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This parameter is only supported for Db2 DB instances and Oracle DB instances.
         /// </para>
-        ///  </note> <dl> <dt>Db2</dt> <dd> 
+        ///  <dl> <dt>Db2</dt> <dd> 
         /// <para>
         /// Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition
         /// (SE). The main use case for standby replicas is cross-Region disaster recovery. Because
@@ -1402,7 +1426,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// You can create a combination of standby and read-only DB replicas for the same primary
         /// DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-        /// with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.
+        /// with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1627,6 +1651,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to resources associated with the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>auto-backup</c> - The DB instance's automated backup.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

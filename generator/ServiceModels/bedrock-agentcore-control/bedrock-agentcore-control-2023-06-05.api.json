@@ -6,7 +6,7 @@
     "endpointPrefix":"bedrock-agentcore-control",
     "protocol":"rest-json",
     "protocols":["rest-json"],
-    "serviceFullName":"Amazon Bedrock Agent Core Control Plane Fronting Layer",
+    "serviceFullName":"Amazon Bedrock AgentCore Control",
     "serviceId":"Bedrock AgentCore Control",
     "signatureVersion":"v4",
     "signingName":"bedrock-agentcore",
@@ -18,7 +18,7 @@
       "http":{
         "method":"PUT",
         "requestUri":"/runtimes/",
-        "responseCode":201
+        "responseCode":202
       },
       "input":{"shape":"CreateAgentRuntimeRequest"},
       "output":{"shape":"CreateAgentRuntimeResponse"},
@@ -37,7 +37,7 @@
       "http":{
         "method":"PUT",
         "requestUri":"/runtimes/{agentRuntimeId}/runtime-endpoints/",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"CreateAgentRuntimeEndpointRequest"},
       "output":{"shape":"CreateAgentRuntimeEndpointResponse"},
@@ -57,7 +57,7 @@
       "http":{
         "method":"POST",
         "requestUri":"/identities/CreateApiKeyCredentialProvider",
-        "responseCode":200
+        "responseCode":201
       },
       "input":{"shape":"CreateApiKeyCredentialProviderRequest"},
       "output":{"shape":"CreateApiKeyCredentialProviderResponse"},
@@ -81,10 +81,29 @@
       "http":{
         "method":"PUT",
         "requestUri":"/browsers",
-        "responseCode":201
+        "responseCode":202
       },
       "input":{"shape":"CreateBrowserRequest"},
       "output":{"shape":"CreateBrowserResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "CreateBrowserProfile":{
+      "name":"CreateBrowserProfile",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/browser-profiles",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateBrowserProfileRequest"},
+      "output":{"shape":"CreateBrowserProfileResponse"},
       "errors":[
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"AccessDeniedException"},
@@ -100,7 +119,7 @@
       "http":{
         "method":"PUT",
         "requestUri":"/code-interpreters",
-        "responseCode":201
+        "responseCode":202
       },
       "input":{"shape":"CreateCodeInterpreterRequest"},
       "output":{"shape":"CreateCodeInterpreterResponse"},
@@ -113,6 +132,24 @@
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
+    },
+    "CreateEvaluator":{
+      "name":"CreateEvaluator",
+      "http":{
+        "method":"POST",
+        "requestUri":"/evaluators/create",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateEvaluatorRequest"},
+      "output":{"shape":"CreateEvaluatorResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
     },
     "CreateGateway":{
       "name":"CreateGateway",
@@ -158,7 +195,7 @@
       "http":{
         "method":"POST",
         "requestUri":"/memories/create",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"CreateMemoryInput"},
       "output":{"shape":"CreateMemoryOutput"},
@@ -178,7 +215,7 @@
       "http":{
         "method":"POST",
         "requestUri":"/identities/CreateOauth2CredentialProvider",
-        "responseCode":200
+        "responseCode":201
       },
       "input":{"shape":"CreateOauth2CredentialProviderRequest"},
       "output":{"shape":"CreateOauth2CredentialProviderResponse"},
@@ -197,12 +234,67 @@
       ],
       "idempotent":true
     },
+    "CreateOnlineEvaluationConfig":{
+      "name":"CreateOnlineEvaluationConfig",
+      "http":{
+        "method":"POST",
+        "requestUri":"/online-evaluation-configs/create",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateOnlineEvaluationConfigRequest"},
+      "output":{"shape":"CreateOnlineEvaluationConfigResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "CreatePolicy":{
+      "name":"CreatePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/policy-engines/{policyEngineId}/policies",
+        "responseCode":202
+      },
+      "input":{"shape":"CreatePolicyRequest"},
+      "output":{"shape":"CreatePolicyResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "CreatePolicyEngine":{
+      "name":"CreatePolicyEngine",
+      "http":{
+        "method":"POST",
+        "requestUri":"/policy-engines",
+        "responseCode":202
+      },
+      "input":{"shape":"CreatePolicyEngineRequest"},
+      "output":{"shape":"CreatePolicyEngineResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "CreateWorkloadIdentity":{
       "name":"CreateWorkloadIdentity",
       "http":{
         "method":"POST",
         "requestUri":"/identities/CreateWorkloadIdentity",
-        "responseCode":200
+        "responseCode":201
       },
       "input":{"shape":"CreateWorkloadIdentityRequest"},
       "output":{"shape":"CreateWorkloadIdentityResponse"},
@@ -221,7 +313,7 @@
       "http":{
         "method":"DELETE",
         "requestUri":"/runtimes/{agentRuntimeId}/",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"DeleteAgentRuntimeRequest"},
       "output":{"shape":"DeleteAgentRuntimeResponse"},
@@ -239,7 +331,7 @@
       "http":{
         "method":"DELETE",
         "requestUri":"/runtimes/{agentRuntimeId}/runtime-endpoints/{endpointName}/",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"DeleteAgentRuntimeEndpointRequest"},
       "output":{"shape":"DeleteAgentRuntimeEndpointResponse"},
@@ -257,7 +349,7 @@
       "http":{
         "method":"POST",
         "requestUri":"/identities/DeleteApiKeyCredentialProvider",
-        "responseCode":200
+        "responseCode":204
       },
       "input":{"shape":"DeleteApiKeyCredentialProviderRequest"},
       "output":{"shape":"DeleteApiKeyCredentialProviderResponse"},
@@ -276,7 +368,7 @@
       "http":{
         "method":"DELETE",
         "requestUri":"/browsers/{browserId}",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"DeleteBrowserRequest"},
       "output":{"shape":"DeleteBrowserResponse"},
@@ -291,12 +383,31 @@
       ],
       "idempotent":true
     },
+    "DeleteBrowserProfile":{
+      "name":"DeleteBrowserProfile",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/browser-profiles/{profileId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteBrowserProfileRequest"},
+      "output":{"shape":"DeleteBrowserProfileResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "DeleteCodeInterpreter":{
       "name":"DeleteCodeInterpreter",
       "http":{
         "method":"DELETE",
         "requestUri":"/code-interpreters/{codeInterpreterId}",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"DeleteCodeInterpreterRequest"},
       "output":{"shape":"DeleteCodeInterpreterResponse"},
@@ -305,6 +416,25 @@
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteEvaluator":{
+      "name":"DeleteEvaluator",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/evaluators/{evaluatorId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeleteEvaluatorRequest"},
+      "output":{"shape":"DeleteEvaluatorResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
@@ -354,7 +484,7 @@
       "http":{
         "method":"DELETE",
         "requestUri":"/memories/{memoryId}/delete",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"DeleteMemoryInput"},
       "output":{"shape":"DeleteMemoryOutput"},
@@ -362,6 +492,7 @@
         {"shape":"ServiceException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottledException"}
       ],
@@ -372,7 +503,7 @@
       "http":{
         "method":"POST",
         "requestUri":"/identities/DeleteOauth2CredentialProvider",
-        "responseCode":200
+        "responseCode":204
       },
       "input":{"shape":"DeleteOauth2CredentialProviderRequest"},
       "output":{"shape":"DeleteOauth2CredentialProviderResponse"},
@@ -386,12 +517,87 @@
       ],
       "idempotent":true
     },
+    "DeleteOnlineEvaluationConfig":{
+      "name":"DeleteOnlineEvaluationConfig",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/online-evaluation-configs/{onlineEvaluationConfigId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeleteOnlineEvaluationConfigRequest"},
+      "output":{"shape":"DeleteOnlineEvaluationConfigResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeletePolicy":{
+      "name":"DeletePolicy",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/policy-engines/{policyEngineId}/policies/{policyId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeletePolicyRequest"},
+      "output":{"shape":"DeletePolicyResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeletePolicyEngine":{
+      "name":"DeletePolicyEngine",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/policy-engines/{policyEngineId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeletePolicyEngineRequest"},
+      "output":{"shape":"DeletePolicyEngineResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteResourcePolicy":{
+      "name":"DeleteResourcePolicy",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/resourcepolicy/{resourceArn}",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteResourcePolicyRequest"},
+      "output":{"shape":"DeleteResourcePolicyResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "DeleteWorkloadIdentity":{
       "name":"DeleteWorkloadIdentity",
       "http":{
         "method":"POST",
         "requestUri":"/identities/DeleteWorkloadIdentity",
-        "responseCode":200
+        "responseCode":204
       },
       "input":{"shape":"DeleteWorkloadIdentityRequest"},
       "output":{"shape":"DeleteWorkloadIdentityResponse"},
@@ -420,7 +626,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetAgentRuntimeEndpoint":{
       "name":"GetAgentRuntimeEndpoint",
@@ -437,7 +644,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetApiKeyCredentialProvider":{
       "name":"GetApiKeyCredentialProvider",
@@ -456,7 +664,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetBrowser":{
       "name":"GetBrowser",
@@ -473,7 +682,26 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "GetBrowserProfile":{
+      "name":"GetBrowserProfile",
+      "http":{
+        "method":"GET",
+        "requestUri":"/browser-profiles/{profileId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetBrowserProfileRequest"},
+      "output":{"shape":"GetBrowserProfileResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "GetCodeInterpreter":{
       "name":"GetCodeInterpreter",
@@ -490,7 +718,26 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "GetEvaluator":{
+      "name":"GetEvaluator",
+      "http":{
+        "method":"GET",
+        "requestUri":"/evaluators/{evaluatorId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetEvaluatorRequest"},
+      "output":{"shape":"GetEvaluatorResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "GetGateway":{
       "name":"GetGateway",
@@ -507,7 +754,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetGatewayTarget":{
       "name":"GetGatewayTarget",
@@ -524,7 +772,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetMemory":{
       "name":"GetMemory",
@@ -541,7 +790,8 @@
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottledException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetOauth2CredentialProvider":{
       "name":"GetOauth2CredentialProvider",
@@ -560,7 +810,98 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "GetOnlineEvaluationConfig":{
+      "name":"GetOnlineEvaluationConfig",
+      "http":{
+        "method":"GET",
+        "requestUri":"/online-evaluation-configs/{onlineEvaluationConfigId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetOnlineEvaluationConfigRequest"},
+      "output":{"shape":"GetOnlineEvaluationConfigResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetPolicy":{
+      "name":"GetPolicy",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines/{policyEngineId}/policies/{policyId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPolicyRequest"},
+      "output":{"shape":"GetPolicyResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetPolicyEngine":{
+      "name":"GetPolicyEngine",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines/{policyEngineId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPolicyEngineRequest"},
+      "output":{"shape":"GetPolicyEngineResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetPolicyGeneration":{
+      "name":"GetPolicyGeneration",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines/{policyEngineId}/policy-generations/{policyGenerationId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPolicyGenerationRequest"},
+      "output":{"shape":"GetPolicyGenerationResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetResourcePolicy":{
+      "name":"GetResourcePolicy",
+      "http":{
+        "method":"GET",
+        "requestUri":"/resourcepolicy/{resourceArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetResourcePolicyRequest"},
+      "output":{"shape":"GetResourcePolicyResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "GetTokenVault":{
       "name":"GetTokenVault",
@@ -578,7 +919,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetWorkloadIdentity":{
       "name":"GetWorkloadIdentity",
@@ -596,7 +938,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListAgentRuntimeEndpoints":{
       "name":"ListAgentRuntimeEndpoints",
@@ -612,7 +955,8 @@
         {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListAgentRuntimeVersions":{
       "name":"ListAgentRuntimeVersions",
@@ -629,7 +973,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListAgentRuntimes":{
       "name":"ListAgentRuntimes",
@@ -645,7 +990,8 @@
         {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListApiKeyCredentialProviders":{
       "name":"ListApiKeyCredentialProviders",
@@ -663,7 +1009,25 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "ListBrowserProfiles":{
+      "name":"ListBrowserProfiles",
+      "http":{
+        "method":"POST",
+        "requestUri":"/browser-profiles",
+        "responseCode":200
+      },
+      "input":{"shape":"ListBrowserProfilesRequest"},
+      "output":{"shape":"ListBrowserProfilesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "ListBrowsers":{
       "name":"ListBrowsers",
@@ -679,7 +1043,8 @@
         {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListCodeInterpreters":{
       "name":"ListCodeInterpreters",
@@ -695,7 +1060,25 @@
         {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "ListEvaluators":{
+      "name":"ListEvaluators",
+      "http":{
+        "method":"POST",
+        "requestUri":"/evaluators",
+        "responseCode":200
+      },
+      "input":{"shape":"ListEvaluatorsRequest"},
+      "output":{"shape":"ListEvaluatorsResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "ListGatewayTargets":{
       "name":"ListGatewayTargets",
@@ -711,7 +1094,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListGateways":{
       "name":"ListGateways",
@@ -727,7 +1111,8 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListMemories":{
       "name":"ListMemories",
@@ -744,7 +1129,8 @@
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottledException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListOauth2CredentialProviders":{
       "name":"ListOauth2CredentialProviders",
@@ -762,7 +1148,114 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "ListOnlineEvaluationConfigs":{
+      "name":"ListOnlineEvaluationConfigs",
+      "http":{
+        "method":"POST",
+        "requestUri":"/online-evaluation-configs",
+        "responseCode":200
+      },
+      "input":{"shape":"ListOnlineEvaluationConfigsRequest"},
+      "output":{"shape":"ListOnlineEvaluationConfigsResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListPolicies":{
+      "name":"ListPolicies",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines/{policyEngineId}/policies",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPoliciesRequest"},
+      "output":{"shape":"ListPoliciesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListPolicyEngines":{
+      "name":"ListPolicyEngines",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPolicyEnginesRequest"},
+      "output":{"shape":"ListPolicyEnginesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListPolicyGenerationAssets":{
+      "name":"ListPolicyGenerationAssets",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines/{policyEngineId}/policy-generations/{policyGenerationId}/assets",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPolicyGenerationAssetsRequest"},
+      "output":{"shape":"ListPolicyGenerationAssetsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListPolicyGenerations":{
+      "name":"ListPolicyGenerations",
+      "http":{
+        "method":"GET",
+        "requestUri":"/policy-engines/{policyEngineId}/policy-generations",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPolicyGenerationsRequest"},
+      "output":{"shape":"ListPolicyGenerationsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListTagsForResource":{
+      "name":"ListTagsForResource",
+      "http":{
+        "method":"GET",
+        "requestUri":"/tags/{resourceArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"ListTagsForResourceRequest"},
+      "output":{"shape":"ListTagsForResourceResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
     },
     "ListWorkloadIdentities":{
       "name":"ListWorkloadIdentities",
@@ -780,7 +1273,26 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "PutResourcePolicy":{
+      "name":"PutResourcePolicy",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/resourcepolicy/{resourceArn}",
+        "responseCode":201
+      },
+      "input":{"shape":"PutResourcePolicyRequest"},
+      "output":{"shape":"PutResourcePolicyResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
     },
     "SetTokenVaultCMK":{
       "name":"SetTokenVaultCMK",
@@ -801,12 +1313,87 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "StartPolicyGeneration":{
+      "name":"StartPolicyGeneration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/policy-engines/{policyEngineId}/policy-generations",
+        "responseCode":202
+      },
+      "input":{"shape":"StartPolicyGenerationRequest"},
+      "output":{"shape":"StartPolicyGenerationResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "SynchronizeGatewayTargets":{
+      "name":"SynchronizeGatewayTargets",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/gateways/{gatewayIdentifier}/synchronizeTargets",
+        "responseCode":202
+      },
+      "input":{"shape":"SynchronizeGatewayTargetsRequest"},
+      "output":{"shape":"SynchronizeGatewayTargetsResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "TagResource":{
+      "name":"TagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/tags/{resourceArn}",
+        "responseCode":204
+      },
+      "input":{"shape":"TagResourceRequest"},
+      "output":{"shape":"TagResourceResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "UntagResource":{
+      "name":"UntagResource",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/tags/{resourceArn}",
+        "responseCode":204
+      },
+      "input":{"shape":"UntagResourceRequest"},
+      "output":{"shape":"UntagResourceResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "UpdateAgentRuntime":{
       "name":"UpdateAgentRuntime",
       "http":{
         "method":"PUT",
         "requestUri":"/runtimes/{agentRuntimeId}/",
-        "responseCode":201
+        "responseCode":202
       },
       "input":{"shape":"UpdateAgentRuntimeRequest"},
       "output":{"shape":"UpdateAgentRuntimeResponse"},
@@ -826,7 +1413,7 @@
       "http":{
         "method":"PUT",
         "requestUri":"/runtimes/{agentRuntimeId}/runtime-endpoints/{endpointName}/",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"UpdateAgentRuntimeEndpointRequest"},
       "output":{"shape":"UpdateAgentRuntimeEndpointResponse"},
@@ -861,6 +1448,26 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"},
         {"shape":"EncryptionFailure"}
+      ],
+      "idempotent":true
+    },
+    "UpdateEvaluator":{
+      "name":"UpdateEvaluator",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/evaluators/{evaluatorId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateEvaluatorRequest"},
+      "output":{"shape":"UpdateEvaluatorResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
       ],
       "idempotent":true
     },
@@ -909,7 +1516,7 @@
       "http":{
         "method":"PUT",
         "requestUri":"/memories/{memoryId}/update",
-        "responseCode":200
+        "responseCode":202
       },
       "input":{"shape":"UpdateMemoryInput"},
       "output":{"shape":"UpdateMemoryOutput"},
@@ -946,6 +1553,64 @@
         {"shape":"EncryptionFailure"}
       ]
     },
+    "UpdateOnlineEvaluationConfig":{
+      "name":"UpdateOnlineEvaluationConfig",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/online-evaluation-configs/{onlineEvaluationConfigId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateOnlineEvaluationConfigRequest"},
+      "output":{"shape":"UpdateOnlineEvaluationConfigResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "UpdatePolicy":{
+      "name":"UpdatePolicy",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/policy-engines/{policyEngineId}/policies/{policyId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdatePolicyRequest"},
+      "output":{"shape":"UpdatePolicyResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "UpdatePolicyEngine":{
+      "name":"UpdatePolicyEngine",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/policy-engines/{policyEngineId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdatePolicyEngineRequest"},
+      "output":{"shape":"UpdatePolicyEngineResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "UpdateWorkloadIdentity":{
       "name":"UpdateWorkloadIdentity",
       "http":{
@@ -978,7 +1643,27 @@
       },
       "exception":true
     },
-    "Agent":{
+    "AdditionalModelRequestFields":{
+      "type":"structure",
+      "members":{},
+      "document":true
+    },
+    "AgentEndpointDescription":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "AgentManagedRuntimeType":{
+      "type":"string",
+      "enum":[
+        "PYTHON_3_10",
+        "PYTHON_3_11",
+        "PYTHON_3_12",
+        "PYTHON_3_13",
+        "PYTHON_3_14"
+      ]
+    },
+    "AgentRuntime":{
       "type":"structure",
       "required":[
         "agentRuntimeArn",
@@ -996,17 +1681,22 @@
         "agentRuntimeName":{"shape":"AgentRuntimeName"},
         "description":{"shape":"Description"},
         "lastUpdatedAt":{"shape":"DateTimestamp"},
-        "status":{"shape":"AgentStatus"}
+        "status":{"shape":"AgentRuntimeStatus"}
       }
     },
-    "AgentArtifact":{
+    "AgentRuntimeArn":{
+      "type":"string",
+      "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:agent/[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}:([0-9]{0,4}[1-9][0-9]{0,4})"
+    },
+    "AgentRuntimeArtifact":{
       "type":"structure",
       "members":{
-        "containerConfiguration":{"shape":"ContainerConfiguration"}
+        "containerConfiguration":{"shape":"ContainerConfiguration"},
+        "codeConfiguration":{"shape":"CodeConfiguration"}
       },
       "union":true
     },
-    "AgentEndpoint":{
+    "AgentRuntimeEndpoint":{
       "type":"structure",
       "required":[
         "name",
@@ -1023,36 +1713,12 @@
         "targetVersion":{"shape":"AgentRuntimeVersion"},
         "agentRuntimeEndpointArn":{"shape":"AgentRuntimeEndpointArn"},
         "agentRuntimeArn":{"shape":"AgentRuntimeArn"},
-        "status":{"shape":"AgentEndpointStatus"},
+        "status":{"shape":"AgentRuntimeEndpointStatus"},
         "id":{"shape":"AgentRuntimeEndpointId"},
         "description":{"shape":"AgentEndpointDescription"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
-    },
-    "AgentEndpointDescription":{
-      "type":"string",
-      "max":256,
-      "min":1
-    },
-    "AgentEndpointStatus":{
-      "type":"string",
-      "enum":[
-        "CREATING",
-        "CREATE_FAILED",
-        "UPDATING",
-        "UPDATE_FAILED",
-        "READY",
-        "DELETING"
-      ]
-    },
-    "AgentEndpoints":{
-      "type":"list",
-      "member":{"shape":"AgentEndpoint"}
-    },
-    "AgentRuntimeArn":{
-      "type":"string",
-      "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:agent/[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}:([0-9]{0,4}[1-9][0-9]{0,4})"
     },
     "AgentRuntimeEndpointArn":{
       "type":"string",
@@ -1062,21 +1728,7 @@
       "type":"string",
       "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}"
     },
-    "AgentRuntimeId":{
-      "type":"string",
-      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}"
-    },
-    "AgentRuntimeName":{
-      "type":"string",
-      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
-    },
-    "AgentRuntimeVersion":{
-      "type":"string",
-      "max":5,
-      "min":1,
-      "pattern":"([1-9][0-9]{0,4})"
-    },
-    "AgentStatus":{
+    "AgentRuntimeEndpointStatus":{
       "type":"string",
       "enum":[
         "CREATING",
@@ -1087,9 +1739,38 @@
         "DELETING"
       ]
     },
-    "Agents":{
+    "AgentRuntimeEndpoints":{
       "type":"list",
-      "member":{"shape":"Agent"}
+      "member":{"shape":"AgentRuntimeEndpoint"}
+    },
+    "AgentRuntimeId":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}"
+    },
+    "AgentRuntimeName":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
+    },
+    "AgentRuntimeStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "CREATE_FAILED",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "READY",
+        "DELETING"
+      ]
+    },
+    "AgentRuntimeVersion":{
+      "type":"string",
+      "max":5,
+      "min":1,
+      "pattern":"([1-9][0-9]{0,4})"
+    },
+    "AgentRuntimes":{
+      "type":"list",
+      "member":{"shape":"AgentRuntime"}
     },
     "AllowedAudience":{"type":"string"},
     "AllowedAudienceList":{
@@ -1102,6 +1783,89 @@
       "type":"list",
       "member":{"shape":"AllowedClient"},
       "min":1
+    },
+    "AllowedQueryParameters":{
+      "type":"list",
+      "member":{"shape":"HttpQueryParameterName"},
+      "max":10,
+      "min":1
+    },
+    "AllowedRequestHeaders":{
+      "type":"list",
+      "member":{"shape":"HttpHeaderName"},
+      "max":10,
+      "min":1
+    },
+    "AllowedResponseHeaders":{
+      "type":"list",
+      "member":{"shape":"HttpHeaderName"},
+      "max":10,
+      "min":1
+    },
+    "AllowedScopeType":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[\\x21\\x23-\\x5B\\x5D-\\x7E]+"
+    },
+    "AllowedScopesType":{
+      "type":"list",
+      "member":{"shape":"AllowedScopeType"},
+      "min":1
+    },
+    "ApiGatewayTargetConfiguration":{
+      "type":"structure",
+      "required":[
+        "restApiId",
+        "stage",
+        "apiGatewayToolConfiguration"
+      ],
+      "members":{
+        "restApiId":{"shape":"String"},
+        "stage":{"shape":"String"},
+        "apiGatewayToolConfiguration":{"shape":"ApiGatewayToolConfiguration"}
+      }
+    },
+    "ApiGatewayToolConfiguration":{
+      "type":"structure",
+      "required":["toolFilters"],
+      "members":{
+        "toolOverrides":{"shape":"ApiGatewayToolOverrides"},
+        "toolFilters":{"shape":"ApiGatewayToolFilters"}
+      }
+    },
+    "ApiGatewayToolFilter":{
+      "type":"structure",
+      "required":[
+        "filterPath",
+        "methods"
+      ],
+      "members":{
+        "filterPath":{"shape":"String"},
+        "methods":{"shape":"RestApiMethods"}
+      }
+    },
+    "ApiGatewayToolFilters":{
+      "type":"list",
+      "member":{"shape":"ApiGatewayToolFilter"}
+    },
+    "ApiGatewayToolOverride":{
+      "type":"structure",
+      "required":[
+        "name",
+        "path",
+        "method"
+      ],
+      "members":{
+        "name":{"shape":"String"},
+        "description":{"shape":"String"},
+        "path":{"shape":"String"},
+        "method":{"shape":"RestApiMethod"}
+      }
+    },
+    "ApiGatewayToolOverrides":{
+      "type":"list",
+      "member":{"shape":"ApiGatewayToolOverride"}
     },
     "ApiKeyCredentialLocation":{
       "type":"string",
@@ -1175,6 +1939,25 @@
       "type":"string",
       "pattern":"arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}"
     },
+    "AtlassianOauth2ProviderConfigInput":{
+      "type":"structure",
+      "required":[
+        "clientId",
+        "clientSecret"
+      ],
+      "members":{
+        "clientId":{"shape":"ClientIdType"},
+        "clientSecret":{"shape":"ClientSecretType"}
+      }
+    },
+    "AtlassianOauth2ProviderConfigOutput":{
+      "type":"structure",
+      "required":["oauthDiscovery"],
+      "members":{
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
+      }
+    },
     "AuthorizationEndpointType":{"type":"string"},
     "AuthorizerConfiguration":{
       "type":"structure",
@@ -1185,11 +1968,40 @@
     },
     "AuthorizerType":{
       "type":"string",
-      "enum":["CUSTOM_JWT"]
+      "enum":[
+        "CUSTOM_JWT",
+        "AWS_IAM",
+        "NONE"
+      ]
+    },
+    "AuthorizingClaimMatchValueType":{
+      "type":"structure",
+      "required":[
+        "claimMatchValue",
+        "claimMatchOperator"
+      ],
+      "members":{
+        "claimMatchValue":{"shape":"ClaimMatchValueType"},
+        "claimMatchOperator":{"shape":"ClaimMatchOperatorType"}
+      }
     },
     "AwsAccountId":{
       "type":"string",
       "pattern":"[0-9]{12}"
+    },
+    "BedrockAgentcoreResourceArn":{
+      "type":"string",
+      "max":1011,
+      "min":20
+    },
+    "BedrockEvaluatorModelConfig":{
+      "type":"structure",
+      "required":["modelId"],
+      "members":{
+        "modelId":{"shape":"ModelId"},
+        "inferenceConfig":{"shape":"InferenceConfiguration"},
+        "additionalModelRequestFields":{"shape":"AdditionalModelRequestFields"}
+      }
     },
     "Boolean":{
       "type":"boolean",
@@ -1207,12 +2019,82 @@
       "type":"structure",
       "required":["networkMode"],
       "members":{
-        "networkMode":{"shape":"BrowserNetworkMode"}
+        "networkMode":{"shape":"BrowserNetworkMode"},
+        "vpcConfig":{"shape":"VpcConfig"}
       }
     },
     "BrowserNetworkMode":{
       "type":"string",
-      "enum":["PUBLIC"]
+      "enum":[
+        "PUBLIC",
+        "VPC"
+      ]
+    },
+    "BrowserProfileArn":{
+      "type":"string",
+      "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:browser-profile/[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}"
+    },
+    "BrowserProfileId":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}"
+    },
+    "BrowserProfileName":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
+    },
+    "BrowserProfileStatus":{
+      "type":"string",
+      "enum":[
+        "READY",
+        "DELETING",
+        "DELETED",
+        "SAVING"
+      ]
+    },
+    "BrowserProfileSummaries":{
+      "type":"list",
+      "member":{"shape":"BrowserProfileSummary"}
+    },
+    "BrowserProfileSummary":{
+      "type":"structure",
+      "required":[
+        "profileId",
+        "profileArn",
+        "name",
+        "status",
+        "createdAt",
+        "lastUpdatedAt"
+      ],
+      "members":{
+        "profileId":{"shape":"BrowserProfileId"},
+        "profileArn":{"shape":"BrowserProfileArn"},
+        "name":{"shape":"BrowserProfileName"},
+        "description":{"shape":"Description"},
+        "status":{"shape":"BrowserProfileStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "lastSavedAt":{"shape":"DateTimestamp"},
+        "lastSavedBrowserSessionId":{"shape":"BrowserSessionId"},
+        "lastSavedBrowserId":{"shape":"BrowserId"}
+      }
+    },
+    "BrowserSessionId":{
+      "type":"string",
+      "pattern":"[0-9a-zA-Z]{1,40}"
+    },
+    "BrowserSigningConfigInput":{
+      "type":"structure",
+      "required":["enabled"],
+      "members":{
+        "enabled":{"shape":"Boolean"}
+      }
+    },
+    "BrowserSigningConfigOutput":{
+      "type":"structure",
+      "required":["enabled"],
+      "members":{
+        "enabled":{"shape":"Boolean"}
+      }
     },
     "BrowserStatus":{
       "type":"string",
@@ -1247,6 +2129,49 @@
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
     },
+    "CategoricalScaleDefinition":{
+      "type":"structure",
+      "required":[
+        "definition",
+        "label"
+      ],
+      "members":{
+        "definition":{"shape":"String"},
+        "label":{"shape":"CategoricalScaleDefinitionLabelString"}
+      }
+    },
+    "CategoricalScaleDefinitionLabelString":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "CategoricalScaleDefinitions":{
+      "type":"list",
+      "member":{"shape":"CategoricalScaleDefinition"}
+    },
+    "CedarPolicy":{
+      "type":"structure",
+      "required":["statement"],
+      "members":{
+        "statement":{"shape":"Statement"}
+      }
+    },
+    "ClaimMatchOperatorType":{
+      "type":"string",
+      "enum":[
+        "EQUALS",
+        "CONTAINS",
+        "CONTAINS_ANY"
+      ]
+    },
+    "ClaimMatchValueType":{
+      "type":"structure",
+      "members":{
+        "matchValueString":{"shape":"MatchValueString"},
+        "matchValueStringList":{"shape":"MatchValueStringList"}
+      },
+      "union":true
+    },
     "ClientIdType":{
       "type":"string",
       "max":256,
@@ -1264,6 +2189,62 @@
       "min":33,
       "pattern":"[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}"
     },
+    "CloudWatchLogsInputConfig":{
+      "type":"structure",
+      "required":[
+        "logGroupNames",
+        "serviceNames"
+      ],
+      "members":{
+        "logGroupNames":{"shape":"CloudWatchLogsInputConfigLogGroupNamesList"},
+        "serviceNames":{"shape":"CloudWatchLogsInputConfigServiceNamesList"}
+      }
+    },
+    "CloudWatchLogsInputConfigLogGroupNamesList":{
+      "type":"list",
+      "member":{"shape":"LogGroupName"},
+      "max":5,
+      "min":1
+    },
+    "CloudWatchLogsInputConfigServiceNamesList":{
+      "type":"list",
+      "member":{"shape":"ServiceName"},
+      "max":1,
+      "min":1
+    },
+    "CloudWatchOutputConfig":{
+      "type":"structure",
+      "required":["logGroupName"],
+      "members":{
+        "logGroupName":{"shape":"LogGroupName"}
+      }
+    },
+    "Code":{
+      "type":"structure",
+      "members":{
+        "s3":{"shape":"S3Location"}
+      },
+      "union":true
+    },
+    "CodeConfiguration":{
+      "type":"structure",
+      "required":[
+        "code",
+        "runtime",
+        "entryPoint"
+      ],
+      "members":{
+        "code":{"shape":"Code"},
+        "runtime":{"shape":"AgentManagedRuntimeType"},
+        "entryPoint":{"shape":"CodeConfigurationEntryPointList"}
+      }
+    },
+    "CodeConfigurationEntryPointList":{
+      "type":"list",
+      "member":{"shape":"entryPoint"},
+      "max":2,
+      "min":1
+    },
     "CodeInterpreterArn":{
       "type":"string",
       "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):code-interpreter(-custom)?/(aws\\.codeinterpreter\\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})"
@@ -1276,14 +2257,16 @@
       "type":"structure",
       "required":["networkMode"],
       "members":{
-        "networkMode":{"shape":"CodeInterpreterNetworkMode"}
+        "networkMode":{"shape":"CodeInterpreterNetworkMode"},
+        "vpcConfig":{"shape":"VpcConfig"}
       }
     },
     "CodeInterpreterNetworkMode":{
       "type":"string",
       "enum":[
         "PUBLIC",
-        "SANDBOX"
+        "SANDBOX",
+        "VPC"
       ]
     },
     "CodeInterpreterStatus":{
@@ -1356,6 +2339,32 @@
         "containerUri":{"shape":"RuntimeContainerUri"}
       }
     },
+    "Content":{
+      "type":"structure",
+      "members":{
+        "rawText":{"shape":"NaturalLanguage"}
+      },
+      "union":true
+    },
+    "ContentConfiguration":{
+      "type":"structure",
+      "required":["type"],
+      "members":{
+        "type":{"shape":"ContentType"},
+        "level":{"shape":"ContentLevel"}
+      }
+    },
+    "ContentLevel":{
+      "type":"string",
+      "enum":[
+        "METADATA_ONLY",
+        "FULL_CONTENT"
+      ]
+    },
+    "ContentType":{
+      "type":"string",
+      "enum":["MEMORY_RECORDS"]
+    },
     "CreateAgentRuntimeEndpointRequest":{
       "type":"structure",
       "required":[
@@ -1374,7 +2383,8 @@
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
-        }
+        },
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateAgentRuntimeEndpointResponse":{
@@ -1390,7 +2400,9 @@
         "targetVersion":{"shape":"AgentRuntimeVersion"},
         "agentRuntimeEndpointArn":{"shape":"AgentRuntimeEndpointArn"},
         "agentRuntimeArn":{"shape":"AgentRuntimeArn"},
-        "status":{"shape":"AgentEndpointStatus"},
+        "agentRuntimeId":{"shape":"AgentRuntimeId"},
+        "endpointName":{"shape":"EndpointName"},
+        "status":{"shape":"AgentRuntimeEndpointStatus"},
         "createdAt":{"shape":"DateTimestamp"}
       }
     },
@@ -1404,17 +2416,20 @@
       ],
       "members":{
         "agentRuntimeName":{"shape":"AgentRuntimeName"},
-        "description":{"shape":"Description"},
-        "agentRuntimeArtifact":{"shape":"AgentArtifact"},
+        "agentRuntimeArtifact":{"shape":"AgentRuntimeArtifact"},
         "roleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"NetworkConfiguration"},
-        "protocolConfiguration":{"shape":"ProtocolConfiguration"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
         },
+        "description":{"shape":"Description"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "requestHeaderConfiguration":{"shape":"RequestHeaderConfiguration"},
+        "protocolConfiguration":{"shape":"ProtocolConfiguration"},
+        "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
         "environmentVariables":{"shape":"EnvironmentVariablesMap"},
-        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"}
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateAgentRuntimeResponse":{
@@ -1432,7 +2447,7 @@
         "agentRuntimeId":{"shape":"AgentRuntimeId"},
         "agentRuntimeVersion":{"shape":"AgentRuntimeVersion"},
         "createdAt":{"shape":"DateTimestamp"},
-        "status":{"shape":"AgentStatus"}
+        "status":{"shape":"AgentRuntimeStatus"}
       }
     },
     "CreateApiKeyCredentialProviderRequest":{
@@ -1443,7 +2458,8 @@
       ],
       "members":{
         "name":{"shape":"CredentialProviderName"},
-        "apiKey":{"shape":"ApiKeyType"}
+        "apiKey":{"shape":"ApiKeyType"},
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateApiKeyCredentialProviderResponse":{
@@ -1459,6 +2475,34 @@
         "credentialProviderArn":{"shape":"ApiKeyCredentialProviderArnType"}
       }
     },
+    "CreateBrowserProfileRequest":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"BrowserProfileName"},
+        "description":{"shape":"Description"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreateBrowserProfileResponse":{
+      "type":"structure",
+      "required":[
+        "profileId",
+        "profileArn",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "profileId":{"shape":"BrowserProfileId"},
+        "profileArn":{"shape":"BrowserProfileArn"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"BrowserProfileStatus"}
+      }
+    },
     "CreateBrowserRequest":{
       "type":"structure",
       "required":[
@@ -1471,10 +2515,12 @@
         "executionRoleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"BrowserNetworkConfiguration"},
         "recording":{"shape":"RecordingConfig"},
+        "browserSigning":{"shape":"BrowserSigningConfigInput"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
-        }
+        },
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateBrowserResponse":{
@@ -1506,7 +2552,8 @@
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
-        }
+        },
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateCodeInterpreterResponse":{
@@ -1524,14 +2571,47 @@
         "status":{"shape":"CodeInterpreterStatus"}
       }
     },
+    "CreateEvaluatorRequest":{
+      "type":"structure",
+      "required":[
+        "evaluatorName",
+        "evaluatorConfig",
+        "level"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "evaluatorName":{"shape":"CustomEvaluatorName"},
+        "description":{"shape":"EvaluatorDescription"},
+        "evaluatorConfig":{"shape":"EvaluatorConfig"},
+        "level":{"shape":"EvaluatorLevel"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreateEvaluatorResponse":{
+      "type":"structure",
+      "required":[
+        "evaluatorArn",
+        "evaluatorId",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "evaluatorArn":{"shape":"CustomEvaluatorArn"},
+        "evaluatorId":{"shape":"EvaluatorId"},
+        "createdAt":{"shape":"Timestamp"},
+        "status":{"shape":"EvaluatorStatus"}
+      }
+    },
     "CreateGatewayRequest":{
       "type":"structure",
       "required":[
         "name",
         "roleArn",
         "protocolType",
-        "authorizerType",
-        "authorizerConfiguration"
+        "authorizerType"
       ],
       "members":{
         "name":{"shape":"GatewayName"},
@@ -1546,7 +2626,10 @@
         "authorizerType":{"shape":"AuthorizerType"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
         "kmsKeyArn":{"shape":"KmsKeyArn"},
-        "exceptionLevel":{"shape":"ExceptionLevel"}
+        "interceptorConfigurations":{"shape":"GatewayInterceptorConfigurations"},
+        "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
+        "exceptionLevel":{"shape":"ExceptionLevel"},
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateGatewayResponse":{
@@ -1577,6 +2660,8 @@
         "authorizerType":{"shape":"AuthorizerType"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
         "kmsKeyArn":{"shape":"KmsKeyArn"},
+        "interceptorConfigurations":{"shape":"GatewayInterceptorConfigurations"},
+        "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
         "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
         "exceptionLevel":{"shape":"ExceptionLevel"}
       }
@@ -1586,8 +2671,7 @@
       "required":[
         "gatewayIdentifier",
         "name",
-        "targetConfiguration",
-        "credentialProviderConfigurations"
+        "targetConfiguration"
       ],
       "members":{
         "gatewayIdentifier":{
@@ -1602,7 +2686,8 @@
           "idempotencyToken":true
         },
         "targetConfiguration":{"shape":"TargetConfiguration"},
-        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"}
+        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
+        "metadataConfiguration":{"shape":"MetadataConfiguration"}
       }
     },
     "CreateGatewayTargetResponse":{
@@ -1627,7 +2712,9 @@
         "name":{"shape":"TargetName"},
         "description":{"shape":"TargetDescription"},
         "targetConfiguration":{"shape":"TargetConfiguration"},
-        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"}
+        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
+        "lastSynchronizedAt":{"shape":"DateTimestamp"},
+        "metadataConfiguration":{"shape":"MetadataConfiguration"}
       }
     },
     "CreateMemoryInput":{
@@ -1646,7 +2733,9 @@
         "encryptionKeyArn":{"shape":"Arn"},
         "memoryExecutionRoleArn":{"shape":"Arn"},
         "eventExpiryDuration":{"shape":"CreateMemoryInputEventExpiryDurationInteger"},
-        "memoryStrategies":{"shape":"MemoryStrategyInputList"}
+        "memoryStrategies":{"shape":"MemoryStrategyInputList"},
+        "streamDeliveryResources":{"shape":"StreamDeliveryResources"},
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateMemoryInputClientTokenString":{
@@ -1658,7 +2747,7 @@
       "type":"integer",
       "box":true,
       "max":365,
-      "min":7
+      "min":3
     },
     "CreateMemoryOutput":{
       "type":"structure",
@@ -1676,7 +2765,8 @@
       "members":{
         "name":{"shape":"CredentialProviderName"},
         "credentialProviderVendor":{"shape":"CredentialProviderVendorType"},
-        "oauth2ProviderConfigInput":{"shape":"Oauth2ProviderConfigInput"}
+        "oauth2ProviderConfigInput":{"shape":"Oauth2ProviderConfigInput"},
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateOauth2CredentialProviderResponse":{
@@ -1689,7 +2779,139 @@
       "members":{
         "clientSecretArn":{"shape":"Secret"},
         "name":{"shape":"CredentialProviderName"},
-        "credentialProviderArn":{"shape":"CredentialProviderArnType"}
+        "credentialProviderArn":{"shape":"CredentialProviderArnType"},
+        "callbackUrl":{"shape":"String"},
+        "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"}
+      }
+    },
+    "CreateOnlineEvaluationConfigRequest":{
+      "type":"structure",
+      "required":[
+        "onlineEvaluationConfigName",
+        "rule",
+        "dataSourceConfig",
+        "evaluators",
+        "evaluationExecutionRoleArn",
+        "enableOnCreate"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "onlineEvaluationConfigName":{"shape":"EvaluationConfigName"},
+        "description":{"shape":"EvaluationConfigDescription"},
+        "rule":{"shape":"Rule"},
+        "dataSourceConfig":{"shape":"DataSourceConfig"},
+        "evaluators":{"shape":"EvaluatorList"},
+        "evaluationExecutionRoleArn":{"shape":"RoleArn"},
+        "enableOnCreate":{"shape":"Boolean"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreateOnlineEvaluationConfigResponse":{
+      "type":"structure",
+      "required":[
+        "onlineEvaluationConfigArn",
+        "onlineEvaluationConfigId",
+        "createdAt",
+        "status",
+        "executionStatus"
+      ],
+      "members":{
+        "onlineEvaluationConfigArn":{"shape":"OnlineEvaluationConfigArn"},
+        "onlineEvaluationConfigId":{"shape":"OnlineEvaluationConfigId"},
+        "createdAt":{"shape":"Timestamp"},
+        "outputConfig":{"shape":"OutputConfig"},
+        "status":{"shape":"OnlineEvaluationConfigStatus"},
+        "executionStatus":{"shape":"OnlineEvaluationExecutionStatus"},
+        "failureReason":{"shape":"String"}
+      }
+    },
+    "CreatePolicyEngineRequest":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"PolicyEngineName"},
+        "description":{"shape":"Description"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "encryptionKeyArn":{"shape":"KmsKeyArn"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreatePolicyEngineResponse":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "name",
+        "createdAt",
+        "updatedAt",
+        "policyEngineArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyEngineName"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyEngineArn":{"shape":"PolicyEngineArn"},
+        "status":{"shape":"PolicyEngineStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
+      }
+    },
+    "CreatePolicyRequest":{
+      "type":"structure",
+      "required":[
+        "name",
+        "definition",
+        "policyEngineId"
+      ],
+      "members":{
+        "name":{"shape":"PolicyName"},
+        "definition":{"shape":"PolicyDefinition"},
+        "description":{"shape":"Description"},
+        "validationMode":{"shape":"PolicyValidationMode"},
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreatePolicyResponse":{
+      "type":"structure",
+      "required":[
+        "policyId",
+        "name",
+        "policyEngineId",
+        "definition",
+        "createdAt",
+        "updatedAt",
+        "policyArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyName"},
+        "policyEngineId":{"shape":"ResourceId"},
+        "definition":{"shape":"PolicyDefinition"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyArn":{"shape":"PolicyArn"},
+        "status":{"shape":"PolicyStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"}
       }
     },
     "CreateWorkloadIdentityRequest":{
@@ -1697,7 +2919,8 @@
       "required":["name"],
       "members":{
         "name":{"shape":"WorkloadIdentityNameType"},
-        "allowedResourceOauth2ReturnUrls":{"shape":"ResourceOauth2ReturnUrlListType"}
+        "allowedResourceOauth2ReturnUrls":{"shape":"ResourceOauth2ReturnUrlListType"},
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreateWorkloadIdentityResponse":{
@@ -1760,15 +2983,54 @@
         "SlackOauth2",
         "SalesforceOauth2",
         "MicrosoftOauth2",
-        "CustomOauth2"
+        "CustomOauth2",
+        "AtlassianOauth2",
+        "LinkedinOauth2",
+        "XOauth2",
+        "OktaOauth2",
+        "OneLoginOauth2",
+        "PingOneOauth2",
+        "FacebookOauth2",
+        "YandexOauth2",
+        "RedditOauth2",
+        "ZoomOauth2",
+        "TwitchOauth2",
+        "SpotifyOauth2",
+        "DropboxOauth2",
+        "NotionOauth2",
+        "HubspotOauth2",
+        "CyberArkOauth2",
+        "FusionAuthOauth2",
+        "Auth0Oauth2",
+        "CognitoOauth2"
       ]
+    },
+    "CustomClaimValidationType":{
+      "type":"structure",
+      "required":[
+        "inboundTokenClaimName",
+        "inboundTokenClaimValueType",
+        "authorizingClaimMatchValue"
+      ],
+      "members":{
+        "inboundTokenClaimName":{"shape":"InboundTokenClaimNameType"},
+        "inboundTokenClaimValueType":{"shape":"InboundTokenClaimValueType"},
+        "authorizingClaimMatchValue":{"shape":"AuthorizingClaimMatchValueType"}
+      }
+    },
+    "CustomClaimValidationsType":{
+      "type":"list",
+      "member":{"shape":"CustomClaimValidationType"},
+      "min":1
     },
     "CustomConfigurationInput":{
       "type":"structure",
       "members":{
         "semanticOverride":{"shape":"SemanticOverrideConfigurationInput"},
         "summaryOverride":{"shape":"SummaryOverrideConfigurationInput"},
-        "userPreferenceOverride":{"shape":"UserPreferenceOverrideConfigurationInput"}
+        "userPreferenceOverride":{"shape":"UserPreferenceOverrideConfigurationInput"},
+        "episodicOverride":{"shape":"EpisodicOverrideConfigurationInput"},
+        "selfManagedConfiguration":{"shape":"SelfManagedConfigurationInput"}
       },
       "union":true
     },
@@ -1777,7 +3039,8 @@
       "members":{
         "semanticConsolidationOverride":{"shape":"SemanticConsolidationOverride"},
         "summaryConsolidationOverride":{"shape":"SummaryConsolidationOverride"},
-        "userPreferenceConsolidationOverride":{"shape":"UserPreferenceConsolidationOverride"}
+        "userPreferenceConsolidationOverride":{"shape":"UserPreferenceConsolidationOverride"},
+        "episodicConsolidationOverride":{"shape":"EpisodicConsolidationOverride"}
       },
       "union":true
     },
@@ -1786,15 +3049,25 @@
       "members":{
         "semanticConsolidationOverride":{"shape":"SemanticOverrideConsolidationConfigurationInput"},
         "summaryConsolidationOverride":{"shape":"SummaryOverrideConsolidationConfigurationInput"},
-        "userPreferenceConsolidationOverride":{"shape":"UserPreferenceOverrideConsolidationConfigurationInput"}
+        "userPreferenceConsolidationOverride":{"shape":"UserPreferenceOverrideConsolidationConfigurationInput"},
+        "episodicConsolidationOverride":{"shape":"EpisodicOverrideConsolidationConfigurationInput"}
       },
       "union":true
+    },
+    "CustomEvaluatorArn":{
+      "type":"string",
+      "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
+    },
+    "CustomEvaluatorName":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
     },
     "CustomExtractionConfiguration":{
       "type":"structure",
       "members":{
         "semanticExtractionOverride":{"shape":"SemanticExtractionOverride"},
-        "userPreferenceExtractionOverride":{"shape":"UserPreferenceExtractionOverride"}
+        "userPreferenceExtractionOverride":{"shape":"UserPreferenceExtractionOverride"},
+        "episodicExtractionOverride":{"shape":"EpisodicExtractionOverride"}
       },
       "union":true
     },
@@ -1802,7 +3075,8 @@
       "type":"structure",
       "members":{
         "semanticExtractionOverride":{"shape":"SemanticOverrideExtractionConfigurationInput"},
-        "userPreferenceExtractionOverride":{"shape":"UserPreferenceOverrideExtractionConfigurationInput"}
+        "userPreferenceExtractionOverride":{"shape":"UserPreferenceOverrideExtractionConfigurationInput"},
+        "episodicExtractionOverride":{"shape":"EpisodicOverrideExtractionConfigurationInput"}
       },
       "union":true
     },
@@ -1812,7 +3086,9 @@
       "members":{
         "discoveryUrl":{"shape":"DiscoveryUrl"},
         "allowedAudience":{"shape":"AllowedAudienceList"},
-        "allowedClients":{"shape":"AllowedClientsList"}
+        "allowedClients":{"shape":"AllowedClientsList"},
+        "allowedScopes":{"shape":"AllowedScopesType"},
+        "customClaims":{"shape":"CustomClaimValidationsType"}
       }
     },
     "CustomMemoryStrategyInput":{
@@ -1842,8 +3118,30 @@
       "type":"structure",
       "required":["oauthDiscovery"],
       "members":{
-        "oauthDiscovery":{"shape":"Oauth2Discovery"}
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
       }
+    },
+    "CustomReflectionConfiguration":{
+      "type":"structure",
+      "members":{
+        "episodicReflectionOverride":{"shape":"EpisodicReflectionOverride"}
+      },
+      "union":true
+    },
+    "CustomReflectionConfigurationInput":{
+      "type":"structure",
+      "members":{
+        "episodicReflectionOverride":{"shape":"EpisodicOverrideReflectionConfigurationInput"}
+      },
+      "union":true
+    },
+    "DataSourceConfig":{
+      "type":"structure",
+      "members":{
+        "cloudWatchLogs":{"shape":"CloudWatchLogsInputConfig"}
+      },
+      "union":true
     },
     "DateTimestamp":{
       "type":"timestamp",
@@ -1890,7 +3188,9 @@
       "type":"structure",
       "required":["status"],
       "members":{
-        "status":{"shape":"AgentEndpointStatus"}
+        "status":{"shape":"AgentRuntimeEndpointStatus"},
+        "agentRuntimeId":{"shape":"AgentRuntimeId"},
+        "endpointName":{"shape":"EndpointName"}
       }
     },
     "DeleteAgentRuntimeRequest":{
@@ -1901,6 +3201,12 @@
           "shape":"AgentRuntimeId",
           "location":"uri",
           "locationName":"agentRuntimeId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"querystring",
+          "locationName":"clientToken"
         }
       }
     },
@@ -1908,7 +3214,8 @@
       "type":"structure",
       "required":["status"],
       "members":{
-        "status":{"shape":"AgentStatus"}
+        "status":{"shape":"AgentRuntimeStatus"},
+        "agentRuntimeId":{"shape":"AgentRuntimeId"}
       }
     },
     "DeleteApiKeyCredentialProviderRequest":{
@@ -1921,6 +3228,39 @@
     "DeleteApiKeyCredentialProviderResponse":{
       "type":"structure",
       "members":{}
+    },
+    "DeleteBrowserProfileRequest":{
+      "type":"structure",
+      "required":["profileId"],
+      "members":{
+        "profileId":{
+          "shape":"BrowserProfileId",
+          "location":"uri",
+          "locationName":"profileId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"querystring",
+          "locationName":"clientToken"
+        }
+      }
+    },
+    "DeleteBrowserProfileResponse":{
+      "type":"structure",
+      "required":[
+        "profileId",
+        "profileArn",
+        "status",
+        "lastUpdatedAt"
+      ],
+      "members":{
+        "profileId":{"shape":"BrowserProfileId"},
+        "profileArn":{"shape":"BrowserProfileArn"},
+        "status":{"shape":"BrowserProfileStatus"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "lastSavedAt":{"shape":"DateTimestamp"}
+      }
     },
     "DeleteBrowserRequest":{
       "type":"structure",
@@ -1980,6 +3320,30 @@
         "codeInterpreterId":{"shape":"CodeInterpreterId"},
         "status":{"shape":"CodeInterpreterStatus"},
         "lastUpdatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "DeleteEvaluatorRequest":{
+      "type":"structure",
+      "required":["evaluatorId"],
+      "members":{
+        "evaluatorId":{
+          "shape":"EvaluatorId",
+          "location":"uri",
+          "locationName":"evaluatorId"
+        }
+      }
+    },
+    "DeleteEvaluatorResponse":{
+      "type":"structure",
+      "required":[
+        "evaluatorArn",
+        "evaluatorId",
+        "status"
+      ],
+      "members":{
+        "evaluatorArn":{"shape":"EvaluatorArn"},
+        "evaluatorId":{"shape":"EvaluatorId"},
+        "status":{"shape":"EvaluatorStatus"}
       }
     },
     "DeleteGatewayRequest":{
@@ -2090,6 +3454,124 @@
       "type":"structure",
       "members":{}
     },
+    "DeleteOnlineEvaluationConfigRequest":{
+      "type":"structure",
+      "required":["onlineEvaluationConfigId"],
+      "members":{
+        "onlineEvaluationConfigId":{
+          "shape":"OnlineEvaluationConfigId",
+          "location":"uri",
+          "locationName":"onlineEvaluationConfigId"
+        }
+      }
+    },
+    "DeleteOnlineEvaluationConfigResponse":{
+      "type":"structure",
+      "required":[
+        "onlineEvaluationConfigArn",
+        "onlineEvaluationConfigId",
+        "status"
+      ],
+      "members":{
+        "onlineEvaluationConfigArn":{"shape":"OnlineEvaluationConfigArn"},
+        "onlineEvaluationConfigId":{"shape":"OnlineEvaluationConfigId"},
+        "status":{"shape":"OnlineEvaluationConfigStatus"}
+      }
+    },
+    "DeletePolicyEngineRequest":{
+      "type":"structure",
+      "required":["policyEngineId"],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        }
+      }
+    },
+    "DeletePolicyEngineResponse":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "name",
+        "createdAt",
+        "updatedAt",
+        "policyEngineArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyEngineName"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyEngineArn":{"shape":"PolicyEngineArn"},
+        "status":{"shape":"PolicyEngineStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
+      }
+    },
+    "DeletePolicyRequest":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "policyId"
+      ],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "policyId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyId"
+        }
+      }
+    },
+    "DeletePolicyResponse":{
+      "type":"structure",
+      "required":[
+        "policyId",
+        "name",
+        "policyEngineId",
+        "definition",
+        "createdAt",
+        "updatedAt",
+        "policyArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyName"},
+        "policyEngineId":{"shape":"ResourceId"},
+        "definition":{"shape":"PolicyDefinition"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyArn":{"shape":"PolicyArn"},
+        "status":{"shape":"PolicyStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"}
+      }
+    },
+    "DeleteResourcePolicyRequest":{
+      "type":"structure",
+      "required":["resourceArn"],
+      "members":{
+        "resourceArn":{
+          "shape":"BedrockAgentcoreResourceArn",
+          "location":"uri",
+          "locationName":"resourceArn"
+        }
+      }
+    },
+    "DeleteResourcePolicyResponse":{
+      "type":"structure",
+      "members":{}
+    },
     "DeleteWorkloadIdentityRequest":{
       "type":"structure",
       "required":["name"],
@@ -2114,6 +3596,10 @@
     "DiscoveryUrlType":{
       "type":"string",
       "pattern":".+/\\.well-known/openid-configuration"
+    },
+    "Double":{
+      "type":"double",
+      "box":true
     },
     "EncryptionFailure":{
       "type":"structure",
@@ -2150,6 +3636,220 @@
       "min":0,
       "sensitive":true
     },
+    "EpisodicConsolidationOverride":{
+      "type":"structure",
+      "required":[
+        "appendToPrompt",
+        "modelId"
+      ],
+      "members":{
+        "appendToPrompt":{"shape":"Prompt"},
+        "modelId":{"shape":"String"}
+      }
+    },
+    "EpisodicExtractionOverride":{
+      "type":"structure",
+      "required":[
+        "appendToPrompt",
+        "modelId"
+      ],
+      "members":{
+        "appendToPrompt":{"shape":"Prompt"},
+        "modelId":{"shape":"String"}
+      }
+    },
+    "EpisodicMemoryStrategyInput":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"Name"},
+        "description":{"shape":"Description"},
+        "namespaces":{"shape":"NamespacesList"},
+        "reflectionConfiguration":{"shape":"EpisodicReflectionConfigurationInput"}
+      }
+    },
+    "EpisodicOverrideConfigurationInput":{
+      "type":"structure",
+      "members":{
+        "extraction":{"shape":"EpisodicOverrideExtractionConfigurationInput"},
+        "consolidation":{"shape":"EpisodicOverrideConsolidationConfigurationInput"},
+        "reflection":{"shape":"EpisodicOverrideReflectionConfigurationInput"}
+      }
+    },
+    "EpisodicOverrideConsolidationConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "appendToPrompt",
+        "modelId"
+      ],
+      "members":{
+        "appendToPrompt":{"shape":"Prompt"},
+        "modelId":{"shape":"String"}
+      }
+    },
+    "EpisodicOverrideExtractionConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "appendToPrompt",
+        "modelId"
+      ],
+      "members":{
+        "appendToPrompt":{"shape":"Prompt"},
+        "modelId":{"shape":"String"}
+      }
+    },
+    "EpisodicOverrideReflectionConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "appendToPrompt",
+        "modelId"
+      ],
+      "members":{
+        "appendToPrompt":{"shape":"Prompt"},
+        "modelId":{"shape":"String"},
+        "namespaces":{"shape":"NamespacesList"}
+      }
+    },
+    "EpisodicReflectionConfiguration":{
+      "type":"structure",
+      "required":["namespaces"],
+      "members":{
+        "namespaces":{"shape":"NamespacesList"}
+      }
+    },
+    "EpisodicReflectionConfigurationInput":{
+      "type":"structure",
+      "required":["namespaces"],
+      "members":{
+        "namespaces":{"shape":"NamespacesList"}
+      }
+    },
+    "EpisodicReflectionOverride":{
+      "type":"structure",
+      "required":[
+        "appendToPrompt",
+        "modelId"
+      ],
+      "members":{
+        "appendToPrompt":{"shape":"Prompt"},
+        "modelId":{"shape":"String"},
+        "namespaces":{"shape":"NamespacesList"}
+      }
+    },
+    "EvaluationConfigDescription":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "pattern":".+",
+      "sensitive":true
+    },
+    "EvaluationConfigName":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
+    },
+    "EvaluatorArn":{
+      "type":"string",
+      "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws:bedrock-agentcore:::evaluator/Builtin.[a-zA-Z0-9_-]+"
+    },
+    "EvaluatorConfig":{
+      "type":"structure",
+      "members":{
+        "llmAsAJudge":{"shape":"LlmAsAJudgeEvaluatorConfig"}
+      },
+      "union":true
+    },
+    "EvaluatorDescription":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "sensitive":true
+    },
+    "EvaluatorId":{
+      "type":"string",
+      "pattern":"(Builtin.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})"
+    },
+    "EvaluatorInstructions":{
+      "type":"string",
+      "sensitive":true
+    },
+    "EvaluatorLevel":{
+      "type":"string",
+      "enum":[
+        "TOOL_CALL",
+        "TRACE",
+        "SESSION"
+      ]
+    },
+    "EvaluatorList":{
+      "type":"list",
+      "member":{"shape":"EvaluatorReference"},
+      "max":10,
+      "min":1
+    },
+    "EvaluatorModelConfig":{
+      "type":"structure",
+      "members":{
+        "bedrockEvaluatorModelConfig":{"shape":"BedrockEvaluatorModelConfig"}
+      },
+      "union":true
+    },
+    "EvaluatorName":{
+      "type":"string",
+      "pattern":"(Builtin.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9_]{0,47})"
+    },
+    "EvaluatorReference":{
+      "type":"structure",
+      "members":{
+        "evaluatorId":{"shape":"EvaluatorId"}
+      },
+      "union":true
+    },
+    "EvaluatorStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "CREATING",
+        "CREATE_FAILED",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "DELETING"
+      ]
+    },
+    "EvaluatorSummary":{
+      "type":"structure",
+      "required":[
+        "evaluatorArn",
+        "evaluatorId",
+        "evaluatorName",
+        "evaluatorType",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "evaluatorArn":{"shape":"EvaluatorArn"},
+        "evaluatorId":{"shape":"EvaluatorId"},
+        "evaluatorName":{"shape":"EvaluatorName"},
+        "description":{"shape":"EvaluatorDescription"},
+        "evaluatorType":{"shape":"EvaluatorType"},
+        "level":{"shape":"EvaluatorLevel"},
+        "status":{"shape":"EvaluatorStatus"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"},
+        "lockedForModification":{"shape":"Boolean"}
+      }
+    },
+    "EvaluatorSummaryList":{
+      "type":"list",
+      "member":{"shape":"EvaluatorSummary"}
+    },
+    "EvaluatorType":{
+      "type":"string",
+      "enum":[
+        "Builtin",
+        "Custom"
+      ]
+    },
     "ExceptionLevel":{
       "type":"string",
       "enum":["DEBUG"]
@@ -2160,6 +3860,81 @@
         "customExtractionConfiguration":{"shape":"CustomExtractionConfiguration"}
       },
       "union":true
+    },
+    "Filter":{
+      "type":"structure",
+      "required":[
+        "key",
+        "operator",
+        "value"
+      ],
+      "members":{
+        "key":{"shape":"FilterKeyString"},
+        "operator":{"shape":"FilterOperator"},
+        "value":{"shape":"FilterValue"}
+      }
+    },
+    "FilterKeyString":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._-]+"
+    },
+    "FilterList":{
+      "type":"list",
+      "member":{"shape":"Filter"},
+      "max":5,
+      "min":0
+    },
+    "FilterOperator":{
+      "type":"string",
+      "enum":[
+        "Equals",
+        "NotEquals",
+        "GreaterThan",
+        "LessThan",
+        "GreaterThanOrEqual",
+        "LessThanOrEqual",
+        "Contains",
+        "NotContains"
+      ]
+    },
+    "FilterValue":{
+      "type":"structure",
+      "members":{
+        "stringValue":{"shape":"FilterValueStringValueString"},
+        "doubleValue":{"shape":"Double"},
+        "booleanValue":{"shape":"Boolean"}
+      },
+      "union":true
+    },
+    "FilterValueStringValueString":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "Finding":{
+      "type":"structure",
+      "members":{
+        "type":{"shape":"FindingType"},
+        "description":{"shape":"String"}
+      }
+    },
+    "FindingType":{
+      "type":"string",
+      "enum":[
+        "VALID",
+        "INVALID",
+        "NOT_TRANSLATABLE",
+        "ALLOW_ALL",
+        "ALLOW_NONE",
+        "DENY_ALL",
+        "DENY_NONE"
+      ]
+    },
+    "Findings":{
+      "type":"list",
+      "member":{"shape":"Finding"}
     },
     "GatewayArn":{
       "type":"string",
@@ -2179,6 +3954,37 @@
       "type":"string",
       "pattern":"([0-9a-z][-]?){1,100}-[0-9a-z]{10}"
     },
+    "GatewayInterceptionPoint":{
+      "type":"string",
+      "enum":[
+        "REQUEST",
+        "RESPONSE"
+      ]
+    },
+    "GatewayInterceptionPoints":{
+      "type":"list",
+      "member":{"shape":"GatewayInterceptionPoint"},
+      "max":2,
+      "min":1
+    },
+    "GatewayInterceptorConfiguration":{
+      "type":"structure",
+      "required":[
+        "interceptor",
+        "interceptionPoints"
+      ],
+      "members":{
+        "interceptor":{"shape":"InterceptorConfiguration"},
+        "interceptionPoints":{"shape":"GatewayInterceptionPoints"},
+        "inputConfiguration":{"shape":"InterceptorInputConfiguration"}
+      }
+    },
+    "GatewayInterceptorConfigurations":{
+      "type":"list",
+      "member":{"shape":"GatewayInterceptorConfiguration"},
+      "max":2,
+      "min":1
+    },
     "GatewayMaxResults":{
       "type":"integer",
       "box":true,
@@ -2195,6 +4001,30 @@
       "max":2048,
       "min":1,
       "pattern":"\\S*"
+    },
+    "GatewayPolicyEngineArn":{
+      "type":"string",
+      "max":170,
+      "min":1,
+      "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:policy-engine\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9_]{10}"
+    },
+    "GatewayPolicyEngineConfiguration":{
+      "type":"structure",
+      "required":[
+        "arn",
+        "mode"
+      ],
+      "members":{
+        "arn":{"shape":"GatewayPolicyEngineArn"},
+        "mode":{"shape":"GatewayPolicyEngineMode"}
+      }
+    },
+    "GatewayPolicyEngineMode":{
+      "type":"string",
+      "enum":[
+        "LOG_ONLY",
+        "ENFORCE"
+      ]
     },
     "GatewayProtocolConfiguration":{
       "type":"structure",
@@ -2244,6 +4074,37 @@
         "protocolType":{"shape":"GatewayProtocolType"}
       }
     },
+    "GatewayTarget":{
+      "type":"structure",
+      "required":[
+        "gatewayArn",
+        "targetId",
+        "createdAt",
+        "updatedAt",
+        "status",
+        "name",
+        "targetConfiguration",
+        "credentialProviderConfigurations"
+      ],
+      "members":{
+        "gatewayArn":{"shape":"GatewayArn"},
+        "targetId":{"shape":"TargetId"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"TargetStatus"},
+        "statusReasons":{"shape":"StatusReasons"},
+        "name":{"shape":"TargetName"},
+        "description":{"shape":"TargetDescription"},
+        "targetConfiguration":{"shape":"TargetConfiguration"},
+        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
+        "lastSynchronizedAt":{"shape":"DateTimestamp"},
+        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+      }
+    },
+    "GatewayTargetList":{
+      "type":"list",
+      "member":{"shape":"GatewayTarget"}
+    },
     "GatewayUrl":{
       "type":"string",
       "max":1024,
@@ -2285,7 +4146,7 @@
         "agentRuntimeEndpointArn":{"shape":"AgentRuntimeEndpointArn"},
         "agentRuntimeArn":{"shape":"AgentRuntimeArn"},
         "description":{"shape":"AgentEndpointDescription"},
-        "status":{"shape":"AgentEndpointStatus"},
+        "status":{"shape":"AgentRuntimeEndpointStatus"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"},
         "failureReason":{"shape":"String"},
@@ -2320,24 +4181,29 @@
         "lastUpdatedAt",
         "roleArn",
         "networkConfiguration",
-        "status"
+        "status",
+        "lifecycleConfiguration"
       ],
       "members":{
         "agentRuntimeArn":{"shape":"AgentRuntimeArn"},
-        "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
         "agentRuntimeName":{"shape":"AgentRuntimeName"},
-        "description":{"shape":"Description"},
         "agentRuntimeId":{"shape":"AgentRuntimeId"},
         "agentRuntimeVersion":{"shape":"AgentRuntimeVersion"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"},
         "roleArn":{"shape":"RoleArn"},
-        "agentRuntimeArtifact":{"shape":"AgentArtifact"},
         "networkConfiguration":{"shape":"NetworkConfiguration"},
+        "status":{"shape":"AgentRuntimeStatus"},
+        "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
+        "failureReason":{"shape":"String"},
+        "description":{"shape":"Description"},
+        "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
+        "agentRuntimeArtifact":{"shape":"AgentRuntimeArtifact"},
         "protocolConfiguration":{"shape":"ProtocolConfiguration"},
         "environmentVariables":{"shape":"EnvironmentVariablesMap"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
-        "status":{"shape":"AgentStatus"}
+        "requestHeaderConfiguration":{"shape":"RequestHeaderConfiguration"},
+        "metadataConfiguration":{"shape":"RuntimeMetadataConfiguration"}
       }
     },
     "GetApiKeyCredentialProviderRequest":{
@@ -2362,6 +4228,40 @@
         "credentialProviderArn":{"shape":"ApiKeyCredentialProviderArnType"},
         "createdTime":{"shape":"Timestamp"},
         "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "GetBrowserProfileRequest":{
+      "type":"structure",
+      "required":["profileId"],
+      "members":{
+        "profileId":{
+          "shape":"BrowserProfileId",
+          "location":"uri",
+          "locationName":"profileId"
+        }
+      }
+    },
+    "GetBrowserProfileResponse":{
+      "type":"structure",
+      "required":[
+        "profileId",
+        "profileArn",
+        "name",
+        "status",
+        "createdAt",
+        "lastUpdatedAt"
+      ],
+      "members":{
+        "profileId":{"shape":"BrowserProfileId"},
+        "profileArn":{"shape":"BrowserProfileArn"},
+        "name":{"shape":"BrowserProfileName"},
+        "description":{"shape":"Description"},
+        "status":{"shape":"BrowserProfileStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "lastSavedAt":{"shape":"DateTimestamp"},
+        "lastSavedBrowserSessionId":{"shape":"BrowserSessionId"},
+        "lastSavedBrowserId":{"shape":"BrowserId"}
       }
     },
     "GetBrowserRequest":{
@@ -2394,7 +4294,9 @@
         "executionRoleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"BrowserNetworkConfiguration"},
         "recording":{"shape":"RecordingConfig"},
+        "browserSigning":{"shape":"BrowserSigningConfigOutput"},
         "status":{"shape":"BrowserStatus"},
+        "failureReason":{"shape":"String"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
@@ -2429,8 +4331,45 @@
         "executionRoleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"CodeInterpreterNetworkConfiguration"},
         "status":{"shape":"CodeInterpreterStatus"},
+        "failureReason":{"shape":"String"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "GetEvaluatorRequest":{
+      "type":"structure",
+      "required":["evaluatorId"],
+      "members":{
+        "evaluatorId":{
+          "shape":"EvaluatorId",
+          "location":"uri",
+          "locationName":"evaluatorId"
+        }
+      }
+    },
+    "GetEvaluatorResponse":{
+      "type":"structure",
+      "required":[
+        "evaluatorArn",
+        "evaluatorId",
+        "evaluatorName",
+        "evaluatorConfig",
+        "level",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "evaluatorArn":{"shape":"EvaluatorArn"},
+        "evaluatorId":{"shape":"EvaluatorId"},
+        "evaluatorName":{"shape":"EvaluatorName"},
+        "description":{"shape":"EvaluatorDescription"},
+        "evaluatorConfig":{"shape":"EvaluatorConfig"},
+        "level":{"shape":"EvaluatorLevel"},
+        "status":{"shape":"EvaluatorStatus"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"},
+        "lockedForModification":{"shape":"Boolean"}
       }
     },
     "GetGatewayRequest":{
@@ -2472,6 +4411,8 @@
         "authorizerType":{"shape":"AuthorizerType"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
         "kmsKeyArn":{"shape":"KmsKeyArn"},
+        "interceptorConfigurations":{"shape":"GatewayInterceptorConfigurations"},
+        "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
         "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
         "exceptionLevel":{"shape":"ExceptionLevel"}
       }
@@ -2517,7 +4458,9 @@
         "name":{"shape":"TargetName"},
         "description":{"shape":"TargetDescription"},
         "targetConfiguration":{"shape":"TargetConfiguration"},
-        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"}
+        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
+        "lastSynchronizedAt":{"shape":"DateTimestamp"},
+        "metadataConfiguration":{"shape":"MetadataConfiguration"}
       }
     },
     "GetMemoryInput":{
@@ -2528,6 +4471,11 @@
           "shape":"MemoryId",
           "location":"uri",
           "locationName":"memoryId"
+        },
+        "view":{
+          "shape":"MemoryView",
+          "location":"querystring",
+          "locationName":"view"
         }
       }
     },
@@ -2561,9 +4509,193 @@
         "name":{"shape":"CredentialProviderName"},
         "credentialProviderArn":{"shape":"CredentialProviderArnType"},
         "credentialProviderVendor":{"shape":"CredentialProviderVendorType"},
+        "callbackUrl":{"shape":"String"},
         "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"},
         "createdTime":{"shape":"Timestamp"},
         "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "GetOnlineEvaluationConfigRequest":{
+      "type":"structure",
+      "required":["onlineEvaluationConfigId"],
+      "members":{
+        "onlineEvaluationConfigId":{
+          "shape":"OnlineEvaluationConfigId",
+          "location":"uri",
+          "locationName":"onlineEvaluationConfigId"
+        }
+      }
+    },
+    "GetOnlineEvaluationConfigResponse":{
+      "type":"structure",
+      "required":[
+        "onlineEvaluationConfigArn",
+        "onlineEvaluationConfigId",
+        "onlineEvaluationConfigName",
+        "rule",
+        "dataSourceConfig",
+        "evaluators",
+        "status",
+        "executionStatus",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "onlineEvaluationConfigArn":{"shape":"OnlineEvaluationConfigArn"},
+        "onlineEvaluationConfigId":{"shape":"OnlineEvaluationConfigId"},
+        "onlineEvaluationConfigName":{"shape":"EvaluationConfigName"},
+        "description":{"shape":"EvaluationConfigDescription"},
+        "rule":{"shape":"Rule"},
+        "dataSourceConfig":{"shape":"DataSourceConfig"},
+        "evaluators":{"shape":"EvaluatorList"},
+        "outputConfig":{"shape":"OutputConfig"},
+        "evaluationExecutionRoleArn":{"shape":"RoleArn"},
+        "status":{"shape":"OnlineEvaluationConfigStatus"},
+        "executionStatus":{"shape":"OnlineEvaluationExecutionStatus"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"},
+        "failureReason":{"shape":"String"}
+      }
+    },
+    "GetPolicyEngineRequest":{
+      "type":"structure",
+      "required":["policyEngineId"],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        }
+      }
+    },
+    "GetPolicyEngineResponse":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "name",
+        "createdAt",
+        "updatedAt",
+        "policyEngineArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyEngineName"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyEngineArn":{"shape":"PolicyEngineArn"},
+        "status":{"shape":"PolicyEngineStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
+      }
+    },
+    "GetPolicyGenerationRequest":{
+      "type":"structure",
+      "required":[
+        "policyGenerationId",
+        "policyEngineId"
+      ],
+      "members":{
+        "policyGenerationId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyGenerationId"
+        },
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        }
+      }
+    },
+    "GetPolicyGenerationResponse":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "policyGenerationId",
+        "name",
+        "policyGenerationArn",
+        "resource",
+        "createdAt",
+        "updatedAt",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "policyGenerationId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyGenerationName"},
+        "policyGenerationArn":{"shape":"PolicyGenerationArn"},
+        "resource":{"shape":"Resource"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PolicyGenerationStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "findings":{"shape":"String"}
+      }
+    },
+    "GetPolicyRequest":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "policyId"
+      ],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "policyId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyId"
+        }
+      }
+    },
+    "GetPolicyResponse":{
+      "type":"structure",
+      "required":[
+        "policyId",
+        "name",
+        "policyEngineId",
+        "definition",
+        "createdAt",
+        "updatedAt",
+        "policyArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyName"},
+        "policyEngineId":{"shape":"ResourceId"},
+        "definition":{"shape":"PolicyDefinition"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyArn":{"shape":"PolicyArn"},
+        "status":{"shape":"PolicyStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"}
+      }
+    },
+    "GetResourcePolicyRequest":{
+      "type":"structure",
+      "required":["resourceArn"],
+      "members":{
+        "resourceArn":{
+          "shape":"BedrockAgentcoreResourceArn",
+          "location":"uri",
+          "locationName":"resourceArn"
+        }
+      }
+    },
+    "GetResourcePolicyResponse":{
+      "type":"structure",
+      "members":{
+        "policy":{"shape":"ResourcePolicyBody"}
       }
     },
     "GetTokenVaultRequest":{
@@ -2623,7 +4755,8 @@
       "type":"structure",
       "required":["oauthDiscovery"],
       "members":{
-        "oauthDiscovery":{"shape":"Oauth2Discovery"}
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
       }
     },
     "GoogleOauth2ProviderConfigInput":{
@@ -2641,12 +4774,114 @@
       "type":"structure",
       "required":["oauthDiscovery"],
       "members":{
-        "oauthDiscovery":{"shape":"Oauth2Discovery"}
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
       }
+    },
+    "HeaderName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"(Authorization|X-Amzn-Bedrock-AgentCore-Runtime-Custom-[a-zA-Z0-9-]+)"
+    },
+    "HttpHeaderName":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "HttpQueryParameterName":{
+      "type":"string",
+      "max":40,
+      "min":1
+    },
+    "InboundTokenClaimNameType":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[A-Za-z0-9_.-:]+"
+    },
+    "InboundTokenClaimValueType":{
+      "type":"string",
+      "enum":[
+        "STRING",
+        "STRING_ARRAY"
+      ]
+    },
+    "IncludedOauth2ProviderConfigInput":{
+      "type":"structure",
+      "required":[
+        "clientId",
+        "clientSecret"
+      ],
+      "members":{
+        "clientId":{"shape":"ClientIdType"},
+        "clientSecret":{"shape":"ClientSecretType"},
+        "issuer":{"shape":"IssuerUrlType"},
+        "authorizationEndpoint":{"shape":"AuthorizationEndpointType"},
+        "tokenEndpoint":{"shape":"TokenEndpointType"}
+      }
+    },
+    "IncludedOauth2ProviderConfigOutput":{
+      "type":"structure",
+      "required":["oauthDiscovery"],
+      "members":{
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
+      }
+    },
+    "InferenceConfiguration":{
+      "type":"structure",
+      "members":{
+        "maxTokens":{"shape":"InferenceConfigurationMaxTokensInteger"},
+        "temperature":{"shape":"InferenceConfigurationTemperatureFloat"},
+        "topP":{"shape":"InferenceConfigurationTopPFloat"},
+        "stopSequences":{"shape":"InferenceConfigurationStopSequencesList"}
+      }
+    },
+    "InferenceConfigurationMaxTokensInteger":{
+      "type":"integer",
+      "box":true,
+      "min":1
+    },
+    "InferenceConfigurationStopSequencesList":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"},
+      "max":2500,
+      "min":0
+    },
+    "InferenceConfigurationTemperatureFloat":{
+      "type":"float",
+      "box":true,
+      "max":1,
+      "min":0
+    },
+    "InferenceConfigurationTopPFloat":{
+      "type":"float",
+      "box":true,
+      "max":1,
+      "min":0
     },
     "InlinePayload":{
       "type":"string",
       "sensitive":true
+    },
+    "Integer":{
+      "type":"integer",
+      "box":true
+    },
+    "InterceptorConfiguration":{
+      "type":"structure",
+      "members":{
+        "lambda":{"shape":"LambdaInterceptorConfiguration"}
+      },
+      "union":true
+    },
+    "InterceptorInputConfiguration":{
+      "type":"structure",
+      "required":["passRequestHeaders"],
+      "members":{
+        "passRequestHeaders":{"shape":"Boolean"}
+      }
     },
     "InternalServerException":{
       "type":"structure",
@@ -2657,6 +4892,32 @@
       "exception":true,
       "fault":true
     },
+    "InvocationConfiguration":{
+      "type":"structure",
+      "required":[
+        "topicArn",
+        "payloadDeliveryBucketName"
+      ],
+      "members":{
+        "topicArn":{"shape":"Arn"},
+        "payloadDeliveryBucketName":{"shape":"String"}
+      }
+    },
+    "InvocationConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "topicArn",
+        "payloadDeliveryBucketName"
+      ],
+      "members":{
+        "topicArn":{"shape":"Arn"},
+        "payloadDeliveryBucketName":{"shape":"InvocationConfigurationInputPayloadDeliveryBucketNameString"}
+      }
+    },
+    "InvocationConfigurationInputPayloadDeliveryBucketNameString":{
+      "type":"string",
+      "pattern":"[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]"
+    },
     "IssuerUrlType":{"type":"string"},
     "KeyType":{
       "type":"string",
@@ -2664,6 +4925,23 @@
         "CustomerManagedKey",
         "ServiceManagedKey"
       ]
+    },
+    "KinesisResource":{
+      "type":"structure",
+      "required":[
+        "dataStreamArn",
+        "contentConfigurations"
+      ],
+      "members":{
+        "dataStreamArn":{"shape":"Arn"},
+        "contentConfigurations":{"shape":"KinesisResourceContentConfigurationsList"}
+      }
+    },
+    "KinesisResourceContentConfigurationsList":{
+      "type":"list",
+      "member":{"shape":"ContentConfiguration"},
+      "max":1,
+      "min":1
     },
     "KmsConfiguration":{
       "type":"structure",
@@ -2684,6 +4962,51 @@
       "max":170,
       "min":1,
       "pattern":"arn:(aws[a-zA-Z-]*)?:lambda:([a-z]{2}(-gov)?-[a-z]+-\\d{1}):(\\d{12}):function:([a-zA-Z0-9-_.]+)(:(\\$LATEST|[a-zA-Z0-9-]+))?"
+    },
+    "LambdaInterceptorConfiguration":{
+      "type":"structure",
+      "required":["arn"],
+      "members":{
+        "arn":{"shape":"LambdaFunctionArn"}
+      }
+    },
+    "LifecycleConfiguration":{
+      "type":"structure",
+      "members":{
+        "idleRuntimeSessionTimeout":{"shape":"LifecycleConfigurationIdleRuntimeSessionTimeoutInteger"},
+        "maxLifetime":{"shape":"LifecycleConfigurationMaxLifetimeInteger"}
+      }
+    },
+    "LifecycleConfigurationIdleRuntimeSessionTimeoutInteger":{
+      "type":"integer",
+      "box":true,
+      "max":28800,
+      "min":60
+    },
+    "LifecycleConfigurationMaxLifetimeInteger":{
+      "type":"integer",
+      "box":true,
+      "max":28800,
+      "min":60
+    },
+    "LinkedinOauth2ProviderConfigInput":{
+      "type":"structure",
+      "required":[
+        "clientId",
+        "clientSecret"
+      ],
+      "members":{
+        "clientId":{"shape":"ClientIdType"},
+        "clientSecret":{"shape":"ClientSecretType"}
+      }
+    },
+    "LinkedinOauth2ProviderConfigOutput":{
+      "type":"structure",
+      "required":["oauthDiscovery"],
+      "members":{
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
+      }
     },
     "ListAgentRuntimeEndpointsRequest":{
       "type":"structure",
@@ -2710,7 +5033,7 @@
       "type":"structure",
       "required":["runtimeEndpoints"],
       "members":{
-        "runtimeEndpoints":{"shape":"AgentEndpoints"},
+        "runtimeEndpoints":{"shape":"AgentRuntimeEndpoints"},
         "nextToken":{"shape":"NextToken"}
       }
     },
@@ -2739,7 +5062,7 @@
       "type":"structure",
       "required":["agentRuntimes"],
       "members":{
-        "agentRuntimes":{"shape":"Agents"},
+        "agentRuntimes":{"shape":"AgentRuntimes"},
         "nextToken":{"shape":"NextToken"}
       }
     },
@@ -2762,7 +5085,7 @@
       "type":"structure",
       "required":["agentRuntimes"],
       "members":{
-        "agentRuntimes":{"shape":"Agents"},
+        "agentRuntimes":{"shape":"AgentRuntimes"},
         "nextToken":{"shape":"NextToken"}
       }
     },
@@ -2779,6 +5102,29 @@
       "members":{
         "credentialProviders":{"shape":"ApiKeyCredentialProviders"},
         "nextToken":{"shape":"String"}
+      }
+    },
+    "ListBrowserProfilesRequest":{
+      "type":"structure",
+      "members":{
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListBrowserProfilesResponse":{
+      "type":"structure",
+      "required":["profileSummaries"],
+      "members":{
+        "profileSummaries":{"shape":"BrowserProfileSummaries"},
+        "nextToken":{"shape":"NextToken"}
       }
     },
     "ListBrowsersRequest":{
@@ -2835,6 +5181,35 @@
       "members":{
         "codeInterpreterSummaries":{"shape":"CodeInterpreterSummaries"},
         "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListEvaluatorsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"ListEvaluatorsRequestMaxResultsInteger",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListEvaluatorsRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListEvaluatorsResponse":{
+      "type":"structure",
+      "required":["evaluators"],
+      "members":{
+        "evaluators":{"shape":"EvaluatorSummaryList"},
+        "nextToken":{"shape":"String"}
       }
     },
     "ListGatewayTargetsRequest":{
@@ -2931,6 +5306,174 @@
         "nextToken":{"shape":"String"}
       }
     },
+    "ListOnlineEvaluationConfigsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"ListOnlineEvaluationConfigsRequestMaxResultsInteger",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListOnlineEvaluationConfigsRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListOnlineEvaluationConfigsResponse":{
+      "type":"structure",
+      "required":["onlineEvaluationConfigs"],
+      "members":{
+        "onlineEvaluationConfigs":{"shape":"OnlineEvaluationConfigSummaryList"},
+        "nextToken":{"shape":"String"}
+      }
+    },
+    "ListPoliciesRequest":{
+      "type":"structure",
+      "required":["policyEngineId"],
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "targetResourceScope":{
+          "shape":"BedrockAgentcoreResourceArn",
+          "location":"querystring",
+          "locationName":"targetResourceScope"
+        }
+      }
+    },
+    "ListPoliciesResponse":{
+      "type":"structure",
+      "required":["policies"],
+      "members":{
+        "policies":{"shape":"Policies"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListPolicyEnginesRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListPolicyEnginesResponse":{
+      "type":"structure",
+      "required":["policyEngines"],
+      "members":{
+        "policyEngines":{"shape":"PolicyEngines"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListPolicyGenerationAssetsRequest":{
+      "type":"structure",
+      "required":[
+        "policyGenerationId",
+        "policyEngineId"
+      ],
+      "members":{
+        "policyGenerationId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyGenerationId"
+        },
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListPolicyGenerationAssetsResponse":{
+      "type":"structure",
+      "members":{
+        "policyGenerationAssets":{"shape":"PolicyGenerationAssets"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListPolicyGenerationsRequest":{
+      "type":"structure",
+      "required":["policyEngineId"],
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        }
+      }
+    },
+    "ListPolicyGenerationsResponse":{
+      "type":"structure",
+      "required":["policyGenerations"],
+      "members":{
+        "policyGenerations":{"shape":"PolicyGenerations"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListTagsForResourceRequest":{
+      "type":"structure",
+      "required":["resourceArn"],
+      "members":{
+        "resourceArn":{
+          "shape":"TaggableResourcesArn",
+          "location":"uri",
+          "locationName":"resourceArn"
+        }
+      }
+    },
+    "ListTagsForResourceResponse":{
+      "type":"structure",
+      "members":{
+        "tags":{"shape":"TagsMap"}
+      }
+    },
     "ListWorkloadIdentitiesRequest":{
       "type":"structure",
       "members":{
@@ -2952,6 +5495,25 @@
         "nextToken":{"shape":"String"}
       }
     },
+    "LlmAsAJudgeEvaluatorConfig":{
+      "type":"structure",
+      "required":[
+        "instructions",
+        "ratingScale",
+        "modelConfig"
+      ],
+      "members":{
+        "instructions":{"shape":"EvaluatorInstructions"},
+        "ratingScale":{"shape":"RatingScale"},
+        "modelConfig":{"shape":"EvaluatorModelConfig"}
+      }
+    },
+    "LogGroupName":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[.\\-_/#A-Za-z0-9]+"
+    },
     "MCPGatewayConfiguration":{
       "type":"structure",
       "members":{
@@ -2959,6 +5521,17 @@
         "instructions":{"shape":"McpInstructions"},
         "searchType":{"shape":"SearchType"}
       }
+    },
+    "MatchValueString":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[A-Za-z0-9_.-]+"
+    },
+    "MatchValueStringList":{
+      "type":"list",
+      "member":{"shape":"MatchValueString"},
+      "min":1
     },
     "MaxResults":{
       "type":"integer",
@@ -2982,6 +5555,17 @@
         "toolSchema":{"shape":"ToolSchema"}
       }
     },
+    "McpServerTargetConfiguration":{
+      "type":"structure",
+      "required":["endpoint"],
+      "members":{
+        "endpoint":{"shape":"McpServerTargetConfigurationEndpointString"}
+      }
+    },
+    "McpServerTargetConfigurationEndpointString":{
+      "type":"string",
+      "pattern":"https://.*"
+    },
     "McpSupportedVersions":{
       "type":"list",
       "member":{"shape":"McpVersion"}
@@ -2991,7 +5575,9 @@
       "members":{
         "openApiSchema":{"shape":"ApiSchemaConfiguration"},
         "smithyModel":{"shape":"ApiSchemaConfiguration"},
-        "lambda":{"shape":"McpLambdaTargetConfiguration"}
+        "lambda":{"shape":"McpLambdaTargetConfiguration"},
+        "mcpServer":{"shape":"McpServerTargetConfiguration"},
+        "apiGateway":{"shape":"ApiGatewayTargetConfiguration"}
       },
       "union":true
     },
@@ -3019,7 +5605,8 @@
         "failureReason":{"shape":"String"},
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
-        "strategies":{"shape":"MemoryStrategyList"}
+        "strategies":{"shape":"MemoryStrategyList"},
+        "streamDeliveryResources":{"shape":"StreamDeliveryResources"}
       }
     },
     "MemoryArn":{
@@ -3077,7 +5664,8 @@
         "semanticMemoryStrategy":{"shape":"SemanticMemoryStrategyInput"},
         "summaryMemoryStrategy":{"shape":"SummaryMemoryStrategyInput"},
         "userPreferenceMemoryStrategy":{"shape":"UserPreferenceMemoryStrategyInput"},
-        "customMemoryStrategy":{"shape":"CustomMemoryStrategyInput"}
+        "customMemoryStrategy":{"shape":"CustomMemoryStrategyInput"},
+        "episodicMemoryStrategy":{"shape":"EpisodicMemoryStrategyInput"}
       },
       "union":true
     },
@@ -3104,7 +5692,8 @@
         "SEMANTIC",
         "SUMMARIZATION",
         "USER_PREFERENCE",
-        "CUSTOM"
+        "CUSTOM",
+        "EPISODIC"
       ]
     },
     "MemorySummary":{
@@ -3125,6 +5714,39 @@
       "type":"list",
       "member":{"shape":"MemorySummary"}
     },
+    "MemoryView":{
+      "type":"string",
+      "enum":[
+        "full",
+        "without_decryption"
+      ]
+    },
+    "MessageBasedTrigger":{
+      "type":"structure",
+      "members":{
+        "messageCount":{"shape":"Integer"}
+      }
+    },
+    "MessageBasedTriggerInput":{
+      "type":"structure",
+      "members":{
+        "messageCount":{"shape":"MessageBasedTriggerInputMessageCountInteger"}
+      }
+    },
+    "MessageBasedTriggerInputMessageCountInteger":{
+      "type":"integer",
+      "box":true,
+      "max":50,
+      "min":1
+    },
+    "MetadataConfiguration":{
+      "type":"structure",
+      "members":{
+        "allowedRequestHeaders":{"shape":"AllowedRequestHeaders"},
+        "allowedQueryParameters":{"shape":"AllowedQueryParameters"},
+        "allowedResponseHeaders":{"shape":"AllowedResponseHeaders"}
+      }
+    },
     "MicrosoftOauth2ProviderConfigInput":{
       "type":"structure",
       "required":[
@@ -3133,16 +5755,19 @@
       ],
       "members":{
         "clientId":{"shape":"ClientIdType"},
-        "clientSecret":{"shape":"ClientSecretType"}
+        "clientSecret":{"shape":"ClientSecretType"},
+        "tenantId":{"shape":"TenantIdType"}
       }
     },
     "MicrosoftOauth2ProviderConfigOutput":{
       "type":"structure",
       "required":["oauthDiscovery"],
       "members":{
-        "oauthDiscovery":{"shape":"Oauth2Discovery"}
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
       }
     },
+    "ModelId":{"type":"string"},
     "ModifyConsolidationConfiguration":{
       "type":"structure",
       "members":{
@@ -3156,6 +5781,17 @@
         "customExtractionConfiguration":{"shape":"CustomExtractionConfigurationInput"}
       },
       "union":true
+    },
+    "ModifyInvocationConfigurationInput":{
+      "type":"structure",
+      "members":{
+        "topicArn":{"shape":"Arn"},
+        "payloadDeliveryBucketName":{"shape":"ModifyInvocationConfigurationInputPayloadDeliveryBucketNameString"}
+      }
+    },
+    "ModifyInvocationConfigurationInputPayloadDeliveryBucketNameString":{
+      "type":"string",
+      "pattern":"[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]"
     },
     "ModifyMemoryStrategies":{
       "type":"structure",
@@ -3179,11 +5815,35 @@
         "configuration":{"shape":"ModifyStrategyConfiguration"}
       }
     },
+    "ModifyReflectionConfiguration":{
+      "type":"structure",
+      "members":{
+        "episodicReflectionConfiguration":{"shape":"EpisodicReflectionConfigurationInput"},
+        "customReflectionConfiguration":{"shape":"CustomReflectionConfigurationInput"}
+      },
+      "union":true
+    },
+    "ModifySelfManagedConfiguration":{
+      "type":"structure",
+      "members":{
+        "triggerConditions":{"shape":"TriggerConditionInputList"},
+        "invocationConfiguration":{"shape":"ModifyInvocationConfigurationInput"},
+        "historicalContextWindowSize":{"shape":"ModifySelfManagedConfigurationHistoricalContextWindowSizeInteger"}
+      }
+    },
+    "ModifySelfManagedConfigurationHistoricalContextWindowSizeInteger":{
+      "type":"integer",
+      "box":true,
+      "max":50,
+      "min":0
+    },
     "ModifyStrategyConfiguration":{
       "type":"structure",
       "members":{
         "extraction":{"shape":"ModifyExtractionConfiguration"},
-        "consolidation":{"shape":"ModifyConsolidationConfiguration"}
+        "consolidation":{"shape":"ModifyConsolidationConfiguration"},
+        "reflection":{"shape":"ModifyReflectionConfiguration"},
+        "selfManagedConfiguration":{"shape":"ModifySelfManagedConfiguration"}
       }
     },
     "Name":{
@@ -3201,16 +5861,25 @@
       "member":{"shape":"Namespace"},
       "min":1
     },
+    "NaturalLanguage":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
     "NetworkConfiguration":{
       "type":"structure",
       "required":["networkMode"],
       "members":{
-        "networkMode":{"shape":"NetworkMode"}
+        "networkMode":{"shape":"NetworkMode"},
+        "networkModeConfig":{"shape":"VpcConfig"}
       }
     },
     "NetworkMode":{
       "type":"string",
-      "enum":["PUBLIC"]
+      "enum":[
+        "PUBLIC",
+        "VPC"
+      ]
     },
     "NextToken":{
       "type":"string",
@@ -3222,6 +5891,37 @@
       "type":"string",
       "pattern":"[\\s\\S]+"
     },
+    "NonEmptyString":{
+      "type":"string",
+      "min":1
+    },
+    "NumericalScaleDefinition":{
+      "type":"structure",
+      "required":[
+        "definition",
+        "value",
+        "label"
+      ],
+      "members":{
+        "definition":{"shape":"String"},
+        "value":{"shape":"NumericalScaleDefinitionValueDouble"},
+        "label":{"shape":"NumericalScaleDefinitionLabelString"}
+      }
+    },
+    "NumericalScaleDefinitionLabelString":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "NumericalScaleDefinitionValueDouble":{
+      "type":"double",
+      "box":true,
+      "min":0
+    },
+    "NumericalScaleDefinitions":{
+      "type":"list",
+      "member":{"shape":"NumericalScaleDefinition"}
+    },
     "OAuthCredentialProvider":{
       "type":"structure",
       "required":[
@@ -3231,7 +5931,9 @@
       "members":{
         "providerArn":{"shape":"OAuthCredentialProviderArn"},
         "scopes":{"shape":"OAuthScopes"},
-        "customParameters":{"shape":"OAuthCustomParameters"}
+        "customParameters":{"shape":"OAuthCustomParameters"},
+        "grantType":{"shape":"OAuthGrantType"},
+        "defaultReturnUrl":{"shape":"OAuthDefaultReturnUrl"}
       }
     },
     "OAuthCredentialProviderArn":{
@@ -3256,6 +5958,19 @@
       "min":1,
       "sensitive":true
     },
+    "OAuthDefaultReturnUrl":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"\\w+:(\\/?\\/?)[^\\s]+"
+    },
+    "OAuthGrantType":{
+      "type":"string",
+      "enum":[
+        "CLIENT_CREDENTIALS",
+        "AUTHORIZATION_CODE"
+      ]
+    },
     "OAuthScope":{
       "type":"string",
       "max":64,
@@ -3278,7 +5993,8 @@
         "issuer":{"shape":"IssuerUrlType"},
         "authorizationEndpoint":{"shape":"AuthorizationEndpointType"},
         "tokenEndpoint":{"shape":"TokenEndpointType"},
-        "responseTypes":{"shape":"ResponseListType"}
+        "responseTypes":{"shape":"ResponseListType"},
+        "tokenEndpointAuthMethods":{"shape":"TokenEndpointAuthMethodsType"}
       }
     },
     "Oauth2CredentialProviderItem":{
@@ -3318,7 +6034,10 @@
         "githubOauth2ProviderConfig":{"shape":"GithubOauth2ProviderConfigInput"},
         "slackOauth2ProviderConfig":{"shape":"SlackOauth2ProviderConfigInput"},
         "salesforceOauth2ProviderConfig":{"shape":"SalesforceOauth2ProviderConfigInput"},
-        "microsoftOauth2ProviderConfig":{"shape":"MicrosoftOauth2ProviderConfigInput"}
+        "microsoftOauth2ProviderConfig":{"shape":"MicrosoftOauth2ProviderConfigInput"},
+        "atlassianOauth2ProviderConfig":{"shape":"AtlassianOauth2ProviderConfigInput"},
+        "linkedinOauth2ProviderConfig":{"shape":"LinkedinOauth2ProviderConfigInput"},
+        "includedOauth2ProviderConfig":{"shape":"IncludedOauth2ProviderConfigInput"}
       },
       "union":true
     },
@@ -3330,16 +6049,291 @@
         "githubOauth2ProviderConfig":{"shape":"GithubOauth2ProviderConfigOutput"},
         "slackOauth2ProviderConfig":{"shape":"SlackOauth2ProviderConfigOutput"},
         "salesforceOauth2ProviderConfig":{"shape":"SalesforceOauth2ProviderConfigOutput"},
-        "microsoftOauth2ProviderConfig":{"shape":"MicrosoftOauth2ProviderConfigOutput"}
+        "microsoftOauth2ProviderConfig":{"shape":"MicrosoftOauth2ProviderConfigOutput"},
+        "atlassianOauth2ProviderConfig":{"shape":"AtlassianOauth2ProviderConfigOutput"},
+        "linkedinOauth2ProviderConfig":{"shape":"LinkedinOauth2ProviderConfigOutput"},
+        "includedOauth2ProviderConfig":{"shape":"IncludedOauth2ProviderConfigOutput"}
       },
       "union":true
+    },
+    "OnlineEvaluationConfigArn":{
+      "type":"string",
+      "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
+    },
+    "OnlineEvaluationConfigId":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
+    },
+    "OnlineEvaluationConfigStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "CREATING",
+        "CREATE_FAILED",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "DELETING"
+      ]
+    },
+    "OnlineEvaluationConfigSummary":{
+      "type":"structure",
+      "required":[
+        "onlineEvaluationConfigArn",
+        "onlineEvaluationConfigId",
+        "onlineEvaluationConfigName",
+        "status",
+        "executionStatus",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "onlineEvaluationConfigArn":{"shape":"OnlineEvaluationConfigArn"},
+        "onlineEvaluationConfigId":{"shape":"OnlineEvaluationConfigId"},
+        "onlineEvaluationConfigName":{"shape":"EvaluationConfigName"},
+        "description":{"shape":"EvaluationConfigDescription"},
+        "status":{"shape":"OnlineEvaluationConfigStatus"},
+        "executionStatus":{"shape":"OnlineEvaluationExecutionStatus"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"},
+        "failureReason":{"shape":"String"}
+      }
+    },
+    "OnlineEvaluationConfigSummaryList":{
+      "type":"list",
+      "member":{"shape":"OnlineEvaluationConfigSummary"}
+    },
+    "OnlineEvaluationExecutionStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "OutputConfig":{
+      "type":"structure",
+      "required":["cloudWatchConfig"],
+      "members":{
+        "cloudWatchConfig":{"shape":"CloudWatchOutputConfig"}
+      }
     },
     "OverrideType":{
       "type":"string",
       "enum":[
         "SEMANTIC_OVERRIDE",
         "SUMMARY_OVERRIDE",
-        "USER_PREFERENCE_OVERRIDE"
+        "USER_PREFERENCE_OVERRIDE",
+        "SELF_MANAGED",
+        "EPISODIC_OVERRIDE"
+      ]
+    },
+    "Policies":{
+      "type":"list",
+      "member":{"shape":"Policy"},
+      "max":100,
+      "min":0
+    },
+    "Policy":{
+      "type":"structure",
+      "required":[
+        "policyId",
+        "name",
+        "policyEngineId",
+        "definition",
+        "createdAt",
+        "updatedAt",
+        "policyArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyName"},
+        "policyEngineId":{"shape":"ResourceId"},
+        "definition":{"shape":"PolicyDefinition"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyArn":{"shape":"PolicyArn"},
+        "status":{"shape":"PolicyStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"}
+      }
+    },
+    "PolicyArn":{
+      "type":"string",
+      "max":203,
+      "min":96,
+      "pattern":"arn:aws[-a-z]{0,7}:bedrock-agentcore:[a-z0-9-]{9,15}:[0-9]{12}:policy-engine/[a-zA-Z][a-zA-Z0-9-_]{0,47}-[a-zA-Z0-9_]{10}/policy/[a-zA-Z][a-zA-Z0-9-_]{0,47}-[a-zA-Z0-9_]{10}"
+    },
+    "PolicyDefinition":{
+      "type":"structure",
+      "members":{
+        "cedar":{"shape":"CedarPolicy"},
+        "policyGeneration":{"shape":"PolicyGenerationDetails"}
+      },
+      "union":true
+    },
+    "PolicyEngine":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "name",
+        "createdAt",
+        "updatedAt",
+        "policyEngineArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyEngineName"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyEngineArn":{"shape":"PolicyEngineArn"},
+        "status":{"shape":"PolicyEngineStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
+      }
+    },
+    "PolicyEngineArn":{
+      "type":"string",
+      "max":136,
+      "min":76,
+      "pattern":"arn:aws[-a-z]{0,7}:bedrock-agentcore:[a-z0-9-]{9,15}:[0-9]{12}:policy-engine/[a-zA-Z][a-zA-Z0-9-_]{0,47}-[a-zA-Z0-9_]{10}"
+    },
+    "PolicyEngineName":{
+      "type":"string",
+      "max":48,
+      "min":1,
+      "pattern":"[A-Za-z][A-Za-z0-9_]*"
+    },
+    "PolicyEngineStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "ACTIVE",
+        "UPDATING",
+        "DELETING",
+        "CREATE_FAILED",
+        "UPDATE_FAILED",
+        "DELETE_FAILED"
+      ]
+    },
+    "PolicyEngines":{
+      "type":"list",
+      "member":{"shape":"PolicyEngine"},
+      "max":100,
+      "min":0
+    },
+    "PolicyGeneration":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "policyGenerationId",
+        "name",
+        "policyGenerationArn",
+        "resource",
+        "createdAt",
+        "updatedAt",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "policyGenerationId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyGenerationName"},
+        "policyGenerationArn":{"shape":"PolicyGenerationArn"},
+        "resource":{"shape":"Resource"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PolicyGenerationStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "findings":{"shape":"String"}
+      }
+    },
+    "PolicyGenerationArn":{
+      "type":"string",
+      "max":210,
+      "min":103,
+      "pattern":"arn:aws[-a-z]{0,7}:bedrock-agentcore:[a-z0-9-]{9,15}:[0-9]{12}:policy-engine/[a-zA-Z][a-zA-Z0-9-_]{0,47}-[a-zA-Z0-9_]{10}/policy-generation/[a-zA-Z][a-zA-Z0-9-_]{0,47}-[a-zA-Z0-9_]{10}"
+    },
+    "PolicyGenerationAsset":{
+      "type":"structure",
+      "required":[
+        "policyGenerationAssetId",
+        "rawTextFragment",
+        "findings"
+      ],
+      "members":{
+        "policyGenerationAssetId":{"shape":"ResourceId"},
+        "definition":{"shape":"PolicyDefinition"},
+        "rawTextFragment":{"shape":"NaturalLanguage"},
+        "findings":{"shape":"Findings"}
+      }
+    },
+    "PolicyGenerationAssets":{
+      "type":"list",
+      "member":{"shape":"PolicyGenerationAsset"}
+    },
+    "PolicyGenerationDetails":{
+      "type":"structure",
+      "required":[
+        "policyGenerationId",
+        "policyGenerationAssetId"
+      ],
+      "members":{
+        "policyGenerationId":{"shape":"ResourceId"},
+        "policyGenerationAssetId":{"shape":"ResourceId"}
+      }
+    },
+    "PolicyGenerationName":{
+      "type":"string",
+      "max":48,
+      "min":1,
+      "pattern":"[A-Za-z][A-Za-z0-9_]*"
+    },
+    "PolicyGenerationStatus":{
+      "type":"string",
+      "enum":[
+        "GENERATING",
+        "GENERATED",
+        "GENERATE_FAILED",
+        "DELETE_FAILED"
+      ]
+    },
+    "PolicyGenerations":{
+      "type":"list",
+      "member":{"shape":"PolicyGeneration"},
+      "max":100,
+      "min":0
+    },
+    "PolicyName":{
+      "type":"string",
+      "max":48,
+      "min":1,
+      "pattern":"[A-Za-z][A-Za-z0-9_]*"
+    },
+    "PolicyStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "ACTIVE",
+        "UPDATING",
+        "DELETING",
+        "CREATE_FAILED",
+        "UPDATE_FAILED",
+        "DELETE_FAILED"
+      ]
+    },
+    "PolicyStatusReasons":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
+    "PolicyValidationMode":{
+      "type":"string",
+      "enum":[
+        "FAIL_ON_ANY_FINDINGS",
+        "IGNORE_ALL_FINDINGS"
       ]
     },
     "Prompt":{
@@ -3355,6 +6349,36 @@
         "serverProtocol":{"shape":"ServerProtocol"}
       }
     },
+    "PutResourcePolicyRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "policy"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"BedrockAgentcoreResourceArn",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "policy":{"shape":"ResourcePolicyBody"}
+      }
+    },
+    "PutResourcePolicyResponse":{
+      "type":"structure",
+      "required":["policy"],
+      "members":{
+        "policy":{"shape":"ResourcePolicyBody"}
+      }
+    },
+    "RatingScale":{
+      "type":"structure",
+      "members":{
+        "numerical":{"shape":"NumericalScaleDefinitions"},
+        "categorical":{"shape":"CategoricalScaleDefinitions"}
+      },
+      "union":true
+    },
     "RecordingConfig":{
       "type":"structure",
       "members":{
@@ -3362,9 +6386,43 @@
         "s3Location":{"shape":"S3Location"}
       }
     },
+    "ReflectionConfiguration":{
+      "type":"structure",
+      "members":{
+        "customReflectionConfiguration":{"shape":"CustomReflectionConfiguration"},
+        "episodicReflectionConfiguration":{"shape":"EpisodicReflectionConfiguration"}
+      },
+      "union":true
+    },
+    "RequestHeaderAllowlist":{
+      "type":"list",
+      "member":{"shape":"HeaderName"},
+      "max":20,
+      "min":1
+    },
+    "RequestHeaderConfiguration":{
+      "type":"structure",
+      "members":{
+        "requestHeaderAllowlist":{"shape":"RequestHeaderAllowlist"}
+      },
+      "union":true
+    },
     "RequiredProperties":{
       "type":"list",
       "member":{"shape":"String"}
+    },
+    "Resource":{
+      "type":"structure",
+      "members":{
+        "arn":{"shape":"BedrockAgentcoreResourceArn"}
+      },
+      "union":true
+    },
+    "ResourceId":{
+      "type":"string",
+      "max":59,
+      "min":12,
+      "pattern":"[A-Za-z][A-Za-z0-9_]*-[a-z0-9_]{10}"
     },
     "ResourceLimitExceededException":{
       "type":"structure",
@@ -3398,6 +6456,11 @@
       "min":1,
       "pattern":"\\w+:(\\/?\\/?)[^\\s]+"
     },
+    "ResourcePolicyBody":{
+      "type":"string",
+      "max":20480,
+      "min":1
+    },
     "ResourceType":{
       "type":"string",
       "enum":[
@@ -3410,17 +6473,49 @@
       "member":{"shape":"ResponseType"}
     },
     "ResponseType":{"type":"string"},
+    "RestApiMethod":{
+      "type":"string",
+      "enum":[
+        "GET",
+        "DELETE",
+        "HEAD",
+        "OPTIONS",
+        "PATCH",
+        "PUT",
+        "POST"
+      ]
+    },
+    "RestApiMethods":{
+      "type":"list",
+      "member":{"shape":"RestApiMethod"}
+    },
     "RoleArn":{
       "type":"string",
       "max":2048,
       "min":1,
       "pattern":"arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+"
     },
+    "Rule":{
+      "type":"structure",
+      "required":["samplingConfig"],
+      "members":{
+        "samplingConfig":{"shape":"SamplingConfig"},
+        "filters":{"shape":"FilterList"},
+        "sessionConfig":{"shape":"SessionConfig"}
+      }
+    },
     "RuntimeContainerUri":{
       "type":"string",
       "max":1024,
       "min":1,
-      "pattern":"\\d{12}\\.dkr\\.ecr\\.([a-z0-9-]+)\\.amazonaws\\.com/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)([:@]\\S+)"
+      "pattern":"([0-9]{12})\\.dkr\\.ecr\\.([a-z0-9-]+)\\.amazonaws\\.com/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?::([^:@]{1,300}))?(?:@(.+))?"
+    },
+    "RuntimeMetadataConfiguration":{
+      "type":"structure",
+      "required":["requireMMDSV2"],
+      "members":{
+        "requireMMDSV2":{"shape":"Boolean"}
+      }
     },
     "S3BucketUri":{
       "type":"string",
@@ -3441,7 +6536,8 @@
       ],
       "members":{
         "bucket":{"shape":"S3LocationBucketString"},
-        "prefix":{"shape":"S3LocationPrefixString"}
+        "prefix":{"shape":"S3LocationPrefixString"},
+        "versionId":{"shape":"S3LocationVersionIdString"}
       }
     },
     "S3LocationBucketString":{
@@ -3450,7 +6546,13 @@
     },
     "S3LocationPrefixString":{
       "type":"string",
+      "max":1024,
       "min":1
+    },
+    "S3LocationVersionIdString":{
+      "type":"string",
+      "max":1024,
+      "min":3
     },
     "SalesforceOauth2ProviderConfigInput":{
       "type":"structure",
@@ -3467,8 +6569,22 @@
       "type":"structure",
       "required":["oauthDiscovery"],
       "members":{
-        "oauthDiscovery":{"shape":"Oauth2Discovery"}
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
       }
+    },
+    "SamplingConfig":{
+      "type":"structure",
+      "required":["samplingPercentage"],
+      "members":{
+        "samplingPercentage":{"shape":"SamplingConfigSamplingPercentageDouble"}
+      }
+    },
+    "SamplingConfigSamplingPercentageDouble":{
+      "type":"double",
+      "box":true,
+      "max":100.0,
+      "min":0.01
     },
     "SandboxName":{
       "type":"string",
@@ -3515,6 +6631,44 @@
     "SecretArn":{
       "type":"string",
       "pattern":"arn:(aws|aws-us-gov):secretsmanager:[A-Za-z0-9-]{1,64}:[0-9]{12}:secret:[a-zA-Z0-9-_/+=.@!]+"
+    },
+    "SecurityGroupId":{
+      "type":"string",
+      "pattern":"sg-[0-9a-zA-Z]{8,17}"
+    },
+    "SecurityGroups":{
+      "type":"list",
+      "member":{"shape":"SecurityGroupId"},
+      "max":16,
+      "min":1
+    },
+    "SelfManagedConfiguration":{
+      "type":"structure",
+      "required":[
+        "triggerConditions",
+        "invocationConfiguration",
+        "historicalContextWindowSize"
+      ],
+      "members":{
+        "triggerConditions":{"shape":"TriggerConditionsList"},
+        "invocationConfiguration":{"shape":"InvocationConfiguration"},
+        "historicalContextWindowSize":{"shape":"Integer"}
+      }
+    },
+    "SelfManagedConfigurationInput":{
+      "type":"structure",
+      "required":["invocationConfiguration"],
+      "members":{
+        "triggerConditions":{"shape":"TriggerConditionInputList"},
+        "invocationConfiguration":{"shape":"InvocationConfigurationInput"},
+        "historicalContextWindowSize":{"shape":"SelfManagedConfigurationInputHistoricalContextWindowSizeInteger"}
+      }
+    },
+    "SelfManagedConfigurationInputHistoricalContextWindowSizeInteger":{
+      "type":"integer",
+      "box":true,
+      "max":50,
+      "min":0
     },
     "SemanticConsolidationOverride":{
       "type":"structure",
@@ -3580,7 +6734,9 @@
       "type":"string",
       "enum":[
         "MCP",
-        "HTTP"
+        "HTTP",
+        "A2A",
+        "AGUI"
       ]
     },
     "ServiceException":{
@@ -3593,6 +6749,12 @@
       "fault":true,
       "retryable":{"throttling":false}
     },
+    "ServiceName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._-]+"
+    },
     "ServiceQuotaExceededException":{
       "type":"structure",
       "members":{
@@ -3603,6 +6765,19 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "SessionConfig":{
+      "type":"structure",
+      "required":["sessionTimeoutMinutes"],
+      "members":{
+        "sessionTimeoutMinutes":{"shape":"SessionConfigSessionTimeoutMinutesInteger"}
+      }
+    },
+    "SessionConfigSessionTimeoutMinutesInteger":{
+      "type":"integer",
+      "box":true,
+      "max":1440,
+      "min":1
     },
     "SetTokenVaultCMKRequest":{
       "type":"structure",
@@ -3640,8 +6815,63 @@
       "type":"structure",
       "required":["oauthDiscovery"],
       "members":{
-        "oauthDiscovery":{"shape":"Oauth2Discovery"}
+        "oauthDiscovery":{"shape":"Oauth2Discovery"},
+        "clientId":{"shape":"ClientIdType"}
       }
+    },
+    "StartPolicyGenerationRequest":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "resource",
+        "content",
+        "name"
+      ],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "resource":{"shape":"Resource"},
+        "content":{"shape":"Content"},
+        "name":{"shape":"PolicyGenerationName"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "StartPolicyGenerationResponse":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "policyGenerationId",
+        "name",
+        "policyGenerationArn",
+        "resource",
+        "createdAt",
+        "updatedAt",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "policyGenerationId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyGenerationName"},
+        "policyGenerationArn":{"shape":"PolicyGenerationArn"},
+        "resource":{"shape":"Resource"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PolicyGenerationStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "findings":{"shape":"String"}
+      }
+    },
+    "Statement":{
+      "type":"string",
+      "max":10000,
+      "min":35
     },
     "StatusReason":{
       "type":"string",
@@ -3659,10 +6889,42 @@
       "members":{
         "type":{"shape":"OverrideType"},
         "extraction":{"shape":"ExtractionConfiguration"},
-        "consolidation":{"shape":"ConsolidationConfiguration"}
+        "consolidation":{"shape":"ConsolidationConfiguration"},
+        "reflection":{"shape":"ReflectionConfiguration"},
+        "selfManagedConfiguration":{"shape":"SelfManagedConfiguration"}
       }
     },
+    "StreamDeliveryResource":{
+      "type":"structure",
+      "members":{
+        "kinesis":{"shape":"KinesisResource"}
+      },
+      "union":true
+    },
+    "StreamDeliveryResources":{
+      "type":"structure",
+      "required":["resources"],
+      "members":{
+        "resources":{"shape":"StreamDeliveryResourcesList"}
+      }
+    },
+    "StreamDeliveryResourcesList":{
+      "type":"list",
+      "member":{"shape":"StreamDeliveryResource"},
+      "max":1,
+      "min":0
+    },
     "String":{"type":"string"},
+    "SubnetId":{
+      "type":"string",
+      "pattern":"subnet-[0-9a-zA-Z]{8,17}"
+    },
+    "Subnets":{
+      "type":"list",
+      "member":{"shape":"SubnetId"},
+      "max":16,
+      "min":1
+    },
     "SummaryConsolidationOverride":{
       "type":"structure",
       "required":[
@@ -3700,6 +6962,77 @@
         "modelId":{"shape":"String"}
       }
     },
+    "SynchronizeGatewayTargetsRequest":{
+      "type":"structure",
+      "required":[
+        "gatewayIdentifier",
+        "targetIdList"
+      ],
+      "members":{
+        "gatewayIdentifier":{
+          "shape":"GatewayIdentifier",
+          "location":"uri",
+          "locationName":"gatewayIdentifier"
+        },
+        "targetIdList":{"shape":"TargetIdList"}
+      }
+    },
+    "SynchronizeGatewayTargetsResponse":{
+      "type":"structure",
+      "members":{
+        "targets":{"shape":"GatewayTargetList"}
+      }
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\s._:/=+@-]*"
+    },
+    "TagKeyList":{
+      "type":"list",
+      "member":{"shape":"TagKey"},
+      "max":200,
+      "min":0
+    },
+    "TagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tags"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"TaggableResourcesArn",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "TagResourceResponse":{
+      "type":"structure",
+      "members":{}
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"[a-zA-Z0-9\\s._:/=+@-]*"
+    },
+    "TaggableResourcesArn":{
+      "type":"string",
+      "max":1011,
+      "min":20,
+      "pattern":"arn:(?:[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:([a-z-]+/[^/]+)(?:/[a-z-]+/[^/]+)*"
+    },
+    "TagsMap":{
+      "type":"map",
+      "key":{"shape":"TagKey"},
+      "value":{"shape":"TagValue"},
+      "max":50,
+      "min":0
+    },
     "TargetConfiguration":{
       "type":"structure",
       "members":{
@@ -3716,6 +7049,12 @@
     "TargetId":{
       "type":"string",
       "pattern":"[0-9a-zA-Z]{10}"
+    },
+    "TargetIdList":{
+      "type":"list",
+      "member":{"shape":"TargetId"},
+      "max":1,
+      "min":1
     },
     "TargetMaxResults":{
       "type":"integer",
@@ -3742,7 +7081,9 @@
         "UPDATE_UNSUCCESSFUL",
         "DELETING",
         "READY",
-        "FAILED"
+        "FAILED",
+        "SYNCHRONIZING",
+        "SYNCHRONIZE_UNSUCCESSFUL"
       ]
     },
     "TargetSummaries":{
@@ -3767,6 +7108,11 @@
         "updatedAt":{"shape":"DateTimestamp"}
       }
     },
+    "TenantIdType":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
     "ThrottledException":{
       "type":"structure",
       "members":{
@@ -3790,7 +7136,53 @@
       },
       "exception":true
     },
+    "TimeBasedTrigger":{
+      "type":"structure",
+      "members":{
+        "idleSessionTimeout":{"shape":"Integer"}
+      }
+    },
+    "TimeBasedTriggerInput":{
+      "type":"structure",
+      "members":{
+        "idleSessionTimeout":{"shape":"TimeBasedTriggerInputIdleSessionTimeoutInteger"}
+      }
+    },
+    "TimeBasedTriggerInputIdleSessionTimeoutInteger":{
+      "type":"integer",
+      "box":true,
+      "max":3000,
+      "min":10
+    },
     "Timestamp":{"type":"timestamp"},
+    "TokenAuthMethod":{
+      "type":"string",
+      "pattern":"(client_secret_post|client_secret_basic)"
+    },
+    "TokenBasedTrigger":{
+      "type":"structure",
+      "members":{
+        "tokenCount":{"shape":"Integer"}
+      }
+    },
+    "TokenBasedTriggerInput":{
+      "type":"structure",
+      "members":{
+        "tokenCount":{"shape":"TokenBasedTriggerInputTokenCountInteger"}
+      }
+    },
+    "TokenBasedTriggerInputTokenCountInteger":{
+      "type":"integer",
+      "box":true,
+      "max":500000,
+      "min":100
+    },
+    "TokenEndpointAuthMethodsType":{
+      "type":"list",
+      "member":{"shape":"TokenAuthMethod"},
+      "max":2,
+      "min":1
+    },
     "TokenEndpointType":{"type":"string"},
     "TokenVaultIdType":{
       "type":"string",
@@ -3824,6 +7216,34 @@
       },
       "union":true
     },
+    "TriggerCondition":{
+      "type":"structure",
+      "members":{
+        "messageBasedTrigger":{"shape":"MessageBasedTrigger"},
+        "tokenBasedTrigger":{"shape":"TokenBasedTrigger"},
+        "timeBasedTrigger":{"shape":"TimeBasedTrigger"}
+      },
+      "union":true
+    },
+    "TriggerConditionInput":{
+      "type":"structure",
+      "members":{
+        "messageBasedTrigger":{"shape":"MessageBasedTriggerInput"},
+        "tokenBasedTrigger":{"shape":"TokenBasedTriggerInput"},
+        "timeBasedTrigger":{"shape":"TimeBasedTriggerInput"}
+      },
+      "union":true
+    },
+    "TriggerConditionInputList":{
+      "type":"list",
+      "member":{"shape":"TriggerConditionInput"},
+      "min":1
+    },
+    "TriggerConditionsList":{
+      "type":"list",
+      "member":{"shape":"TriggerCondition"},
+      "min":1
+    },
     "UnauthorizedException":{
       "type":"structure",
       "members":{
@@ -3834,6 +7254,29 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "UntagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tagKeys"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"TaggableResourcesArn",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "tagKeys":{
+          "shape":"TagKeyList",
+          "location":"querystring",
+          "locationName":"tagKeys"
+        }
+      }
+    },
+    "UntagResourceResponse":{
+      "type":"structure",
+      "members":{}
     },
     "UpdateAgentRuntimeEndpointRequest":{
       "type":"structure",
@@ -3874,7 +7317,7 @@
         "targetVersion":{"shape":"AgentRuntimeVersion"},
         "agentRuntimeEndpointArn":{"shape":"AgentRuntimeEndpointArn"},
         "agentRuntimeArn":{"shape":"AgentRuntimeArn"},
-        "status":{"shape":"AgentEndpointStatus"},
+        "status":{"shape":"AgentRuntimeEndpointStatus"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
@@ -3893,17 +7336,20 @@
           "location":"uri",
           "locationName":"agentRuntimeId"
         },
-        "description":{"shape":"Description"},
-        "agentRuntimeArtifact":{"shape":"AgentArtifact"},
+        "agentRuntimeArtifact":{"shape":"AgentRuntimeArtifact"},
         "roleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"NetworkConfiguration"},
+        "description":{"shape":"Description"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "requestHeaderConfiguration":{"shape":"RequestHeaderConfiguration"},
         "protocolConfiguration":{"shape":"ProtocolConfiguration"},
+        "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
+        "metadataConfiguration":{"shape":"RuntimeMetadataConfiguration"},
+        "environmentVariables":{"shape":"EnvironmentVariablesMap"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
-        },
-        "environmentVariables":{"shape":"EnvironmentVariablesMap"},
-        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"}
+        }
       }
     },
     "UpdateAgentRuntimeResponse":{
@@ -3923,7 +7369,7 @@
         "agentRuntimeVersion":{"shape":"AgentRuntimeVersion"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"},
-        "status":{"shape":"AgentStatus"}
+        "status":{"shape":"AgentRuntimeStatus"}
       }
     },
     "UpdateApiKeyCredentialProviderRequest":{
@@ -3954,6 +7400,39 @@
         "lastUpdatedTime":{"shape":"Timestamp"}
       }
     },
+    "UpdateEvaluatorRequest":{
+      "type":"structure",
+      "required":["evaluatorId"],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "evaluatorId":{
+          "shape":"EvaluatorId",
+          "location":"uri",
+          "locationName":"evaluatorId"
+        },
+        "description":{"shape":"EvaluatorDescription"},
+        "evaluatorConfig":{"shape":"EvaluatorConfig"},
+        "level":{"shape":"EvaluatorLevel"}
+      }
+    },
+    "UpdateEvaluatorResponse":{
+      "type":"structure",
+      "required":[
+        "evaluatorArn",
+        "evaluatorId",
+        "updatedAt",
+        "status"
+      ],
+      "members":{
+        "evaluatorArn":{"shape":"EvaluatorArn"},
+        "evaluatorId":{"shape":"EvaluatorId"},
+        "updatedAt":{"shape":"Timestamp"},
+        "status":{"shape":"EvaluatorStatus"}
+      }
+    },
     "UpdateGatewayRequest":{
       "type":"structure",
       "required":[
@@ -3961,8 +7440,7 @@
         "name",
         "roleArn",
         "protocolType",
-        "authorizerType",
-        "authorizerConfiguration"
+        "authorizerType"
       ],
       "members":{
         "gatewayIdentifier":{
@@ -3978,6 +7456,8 @@
         "authorizerType":{"shape":"AuthorizerType"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
         "kmsKeyArn":{"shape":"KmsKeyArn"},
+        "interceptorConfigurations":{"shape":"GatewayInterceptorConfigurations"},
+        "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
         "exceptionLevel":{"shape":"ExceptionLevel"}
       }
     },
@@ -4009,6 +7489,8 @@
         "authorizerType":{"shape":"AuthorizerType"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
         "kmsKeyArn":{"shape":"KmsKeyArn"},
+        "interceptorConfigurations":{"shape":"GatewayInterceptorConfigurations"},
+        "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
         "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
         "exceptionLevel":{"shape":"ExceptionLevel"}
       }
@@ -4019,8 +7501,7 @@
         "gatewayIdentifier",
         "targetId",
         "name",
-        "targetConfiguration",
-        "credentialProviderConfigurations"
+        "targetConfiguration"
       ],
       "members":{
         "gatewayIdentifier":{
@@ -4036,7 +7517,8 @@
         "name":{"shape":"TargetName"},
         "description":{"shape":"TargetDescription"},
         "targetConfiguration":{"shape":"TargetConfiguration"},
-        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"}
+        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
+        "metadataConfiguration":{"shape":"MetadataConfiguration"}
       }
     },
     "UpdateGatewayTargetResponse":{
@@ -4061,7 +7543,9 @@
         "name":{"shape":"TargetName"},
         "description":{"shape":"TargetDescription"},
         "targetConfiguration":{"shape":"TargetConfiguration"},
-        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"}
+        "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
+        "lastSynchronizedAt":{"shape":"DateTimestamp"},
+        "metadataConfiguration":{"shape":"MetadataConfiguration"}
       }
     },
     "UpdateMemoryInput":{
@@ -4080,7 +7564,8 @@
         "description":{"shape":"Description"},
         "eventExpiryDuration":{"shape":"UpdateMemoryInputEventExpiryDurationInteger"},
         "memoryExecutionRoleArn":{"shape":"Arn"},
-        "memoryStrategies":{"shape":"ModifyMemoryStrategies"}
+        "memoryStrategies":{"shape":"ModifyMemoryStrategies"},
+        "streamDeliveryResources":{"shape":"StreamDeliveryResources"}
       }
     },
     "UpdateMemoryInputClientTokenString":{
@@ -4092,7 +7577,7 @@
       "type":"integer",
       "box":true,
       "max":365,
-      "min":7
+      "min":3
     },
     "UpdateMemoryOutput":{
       "type":"structure",
@@ -4129,9 +7614,132 @@
         "name":{"shape":"CredentialProviderName"},
         "credentialProviderVendor":{"shape":"CredentialProviderVendorType"},
         "credentialProviderArn":{"shape":"CredentialProviderArnType"},
+        "callbackUrl":{"shape":"String"},
         "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"},
         "createdTime":{"shape":"Timestamp"},
         "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "UpdateOnlineEvaluationConfigRequest":{
+      "type":"structure",
+      "required":["onlineEvaluationConfigId"],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "onlineEvaluationConfigId":{
+          "shape":"OnlineEvaluationConfigId",
+          "location":"uri",
+          "locationName":"onlineEvaluationConfigId"
+        },
+        "description":{"shape":"EvaluationConfigDescription"},
+        "rule":{"shape":"Rule"},
+        "dataSourceConfig":{"shape":"DataSourceConfig"},
+        "evaluators":{"shape":"EvaluatorList"},
+        "evaluationExecutionRoleArn":{"shape":"RoleArn"},
+        "executionStatus":{"shape":"OnlineEvaluationExecutionStatus"}
+      }
+    },
+    "UpdateOnlineEvaluationConfigResponse":{
+      "type":"structure",
+      "required":[
+        "onlineEvaluationConfigArn",
+        "onlineEvaluationConfigId",
+        "updatedAt",
+        "status",
+        "executionStatus"
+      ],
+      "members":{
+        "onlineEvaluationConfigArn":{"shape":"OnlineEvaluationConfigArn"},
+        "onlineEvaluationConfigId":{"shape":"OnlineEvaluationConfigId"},
+        "updatedAt":{"shape":"Timestamp"},
+        "status":{"shape":"OnlineEvaluationConfigStatus"},
+        "executionStatus":{"shape":"OnlineEvaluationExecutionStatus"},
+        "failureReason":{"shape":"String"}
+      }
+    },
+    "UpdatePolicyEngineRequest":{
+      "type":"structure",
+      "required":["policyEngineId"],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "description":{"shape":"UpdatedDescription"}
+      }
+    },
+    "UpdatePolicyEngineResponse":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "name",
+        "createdAt",
+        "updatedAt",
+        "policyEngineArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyEngineId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyEngineName"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyEngineArn":{"shape":"PolicyEngineArn"},
+        "status":{"shape":"PolicyEngineStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
+      }
+    },
+    "UpdatePolicyRequest":{
+      "type":"structure",
+      "required":[
+        "policyEngineId",
+        "policyId"
+      ],
+      "members":{
+        "policyEngineId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyEngineId"
+        },
+        "policyId":{
+          "shape":"ResourceId",
+          "location":"uri",
+          "locationName":"policyId"
+        },
+        "description":{"shape":"UpdatedDescription"},
+        "definition":{"shape":"PolicyDefinition"},
+        "validationMode":{"shape":"PolicyValidationMode"}
+      }
+    },
+    "UpdatePolicyResponse":{
+      "type":"structure",
+      "required":[
+        "policyId",
+        "name",
+        "policyEngineId",
+        "definition",
+        "createdAt",
+        "updatedAt",
+        "policyArn",
+        "status",
+        "statusReasons"
+      ],
+      "members":{
+        "policyId":{"shape":"ResourceId"},
+        "name":{"shape":"PolicyName"},
+        "policyEngineId":{"shape":"ResourceId"},
+        "definition":{"shape":"PolicyDefinition"},
+        "description":{"shape":"Description"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "policyArn":{"shape":"PolicyArn"},
+        "status":{"shape":"PolicyStatus"},
+        "statusReasons":{"shape":"PolicyStatusReasons"}
       }
     },
     "UpdateWorkloadIdentityRequest":{
@@ -4156,6 +7764,12 @@
         "allowedResourceOauth2ReturnUrls":{"shape":"ResourceOauth2ReturnUrlListType"},
         "createdTime":{"shape":"Timestamp"},
         "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "UpdatedDescription":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"Description"}
       }
     },
     "UserPreferenceConsolidationOverride":{
@@ -4260,6 +7874,17 @@
         "ResourceConflict"
       ]
     },
+    "VpcConfig":{
+      "type":"structure",
+      "required":[
+        "securityGroups",
+        "subnets"
+      ],
+      "members":{
+        "securityGroups":{"shape":"SecurityGroups"},
+        "subnets":{"shape":"Subnets"}
+      }
+    },
     "WorkloadIdentityArn":{
       "type":"string",
       "max":1024,
@@ -4297,6 +7922,11 @@
         "name":{"shape":"WorkloadIdentityNameType"},
         "workloadIdentityArn":{"shape":"WorkloadIdentityArnType"}
       }
+    },
+    "entryPoint":{
+      "type":"string",
+      "max":128,
+      "min":1
     }
   }
 }

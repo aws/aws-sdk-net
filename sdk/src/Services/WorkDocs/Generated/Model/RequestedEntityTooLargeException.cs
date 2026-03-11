@@ -40,6 +40,13 @@ namespace Amazon.WorkDocs.Model
     {
 
         /// <summary>
+        /// Default constructor for RequestedEntityTooLargeException
+        /// message.
+        /// </summary>
+        public RequestedEntityTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RequestedEntityTooLargeException with the specified error
         /// message.
         /// </summary>

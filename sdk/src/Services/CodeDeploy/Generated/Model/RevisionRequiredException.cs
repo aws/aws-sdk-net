@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for RevisionRequiredException
+        /// message.
+        /// </summary>
+        public RevisionRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RevisionRequiredException with the specified error
         /// message.
         /// </summary>

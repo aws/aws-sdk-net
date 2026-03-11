@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// You've reached the limit on the number of tags you can associate with a resource.
+    /// You've reached a Service Quota limit on this resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ServiceQuotaExceededException : AmazonBudgetsException
     {
+
+        /// <summary>
+        /// Default constructor for ServiceQuotaExceededException
+        /// message.
+        /// </summary>
+        public ServiceQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error

@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
-    /// This structure contains Amazon Web Services-specific parameter extensions for the
-    /// token endpoint responses and includes the identity context.
+    /// This structure contains Amazon Web Services-specific parameter extensions and the
+    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">identity
+    /// context</a>.
     /// </summary>
     public partial class AwsAdditionalDetails
     {
@@ -40,9 +41,13 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property IdentityContext. 
         /// <para>
-        /// STS context assertion that carries a user identifier to the Amazon Web Services service
-        /// that it calls and can be used to obtain an identity-enhanced IAM role session. This
-        /// value corresponds to the <c>sts:identity_context</c> claim in the ID token.
+        /// The trusted context assertion is signed and encrypted by STS. It provides access to
+        /// <c>sts:identity_context</c> claim in the <c>idToken</c> without JWT parsing
+        /// </para>
+        ///  
+        /// <para>
+        /// Identity context comprises information that Amazon Web Services services use to make
+        /// authorization decisions when they receive requests.
         /// </para>
         /// </summary>
         public string IdentityContext

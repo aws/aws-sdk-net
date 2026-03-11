@@ -36,6 +36,14 @@ namespace Amazon.ComprehendMedical
         /// <summary>
         /// Construct instance of AmazonComprehendMedicalException
         /// </summary>
+        public AmazonComprehendMedicalException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonComprehendMedicalException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonComprehendMedicalException(string message)
             : base(message)

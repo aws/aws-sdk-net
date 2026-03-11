@@ -36,7 +36,17 @@ namespace Amazon.Billing.Endpoints
         /// </summary>
         public BillingEndpointParameters()
         {
+            UseDualStack = false;
             UseFIPS = false;
+        }
+
+        /// <summary>
+        /// UseDualStack parameter
+        /// </summary>
+        public bool? UseDualStack 
+        { 
+            get { return (bool?)this["UseDualStack"]; }
+            set { this["UseDualStack"] = value; } 
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for DeploymentTargetDoesNotExistException
+        /// message.
+        /// </summary>
+        public DeploymentTargetDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DeploymentTargetDoesNotExistException with the specified error
         /// message.
         /// </summary>

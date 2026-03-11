@@ -41,6 +41,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _parameterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
+        /// Default constructor for ResourcePolicyInvalidParameterException
+        /// message.
+        /// </summary>
+        public ResourcePolicyInvalidParameterException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourcePolicyInvalidParameterException with the specified error
         /// message.
         /// </summary>

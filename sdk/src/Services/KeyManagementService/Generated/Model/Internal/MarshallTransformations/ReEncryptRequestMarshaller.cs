@@ -78,7 +78,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCiphertextBlob())
             {
                 context.Writer.WritePropertyName("CiphertextBlob");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.CiphertextBlob));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.CiphertextBlob);
             }
 
             if(publicRequest.IsSetDestinationEncryptionAlgorithm())
@@ -111,6 +111,17 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DryRun");
                 context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
+            if(publicRequest.IsSetDryRunModifiers())
+            {
+                context.Writer.WritePropertyName("DryRunModifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDryRunModifiersListValue in publicRequest.DryRunModifiers)
+                {
+                        context.Writer.WriteStringValue(publicRequestDryRunModifiersListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetGrantTokens())

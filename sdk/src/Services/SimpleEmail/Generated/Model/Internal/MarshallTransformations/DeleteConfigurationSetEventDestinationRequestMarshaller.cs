@@ -68,6 +68,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("EventDestinationName", StringUtils.FromString(publicRequest.EventDestinationName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteConfigurationSetEventDestinationRequestMarshaller _instance = new DeleteConfigurationSetEventDestinationRequestMarshaller();        

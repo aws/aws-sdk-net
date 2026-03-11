@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidPermissionTypeException
+        /// message.
+        /// </summary>
+        public InvalidPermissionTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidPermissionTypeException with the specified error
         /// message.
         /// </summary>

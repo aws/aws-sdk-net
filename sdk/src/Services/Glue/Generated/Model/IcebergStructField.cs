@@ -37,9 +37,11 @@ namespace Amazon.Glue.Model
     {
         private string _doc;
         private int? _id;
+        private Amazon.Runtime.Documents.Document _initialDefault;
         private string _name;
         private bool? _required;
         private Amazon.Runtime.Documents.Document _type;
+        private Amazon.Runtime.Documents.Document _writeDefault;
 
         /// <summary>
         /// Gets and sets the property Doc. 
@@ -79,6 +81,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetId()
         {
             return this._id.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitialDefault. 
+        /// <para>
+        /// Default value used to populate the field's value for all records that were written
+        /// before the field was added to the schema. This enables backward compatibility when
+        /// adding new fields to existing Iceberg tables.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document InitialDefault
+        {
+            get { return this._initialDefault; }
+            set { this._initialDefault = value; }
+        }
+
+        // Check to see if InitialDefault property is set
+        internal bool IsSetInitialDefault()
+        {
+            return !this._initialDefault.IsNull();
         }
 
         /// <summary>
@@ -138,6 +160,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetType()
         {
             return !this._type.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteDefault. 
+        /// <para>
+        /// Default value used to populate the field's value for any records written after the
+        /// field was added to the schema, if the writer does not supply the field's value. This
+        /// can be changed through schema evolution.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document WriteDefault
+        {
+            get { return this._writeDefault; }
+            set { this._writeDefault = value; }
+        }
+
+        // Check to see if WriteDefault property is set
+        internal bool IsSetWriteDefault()
+        {
+            return !this._writeDefault.IsNull();
         }
 
     }

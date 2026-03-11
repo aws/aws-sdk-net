@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A user with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class UserAlreadyExistsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for UserAlreadyExistsException
+        /// message.
+        /// </summary>
+        public UserAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new UserAlreadyExistsException with the specified error

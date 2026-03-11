@@ -40,6 +40,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidHsmConfigurationStateException
+        /// message.
+        /// </summary>
+        public InvalidHsmConfigurationStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidHsmConfigurationStateException with the specified error
         /// message.
         /// </summary>

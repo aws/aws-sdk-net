@@ -36,6 +36,14 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Construct instance of AmazonSimpleNotificationServiceException
         /// </summary>
+        public AmazonSimpleNotificationServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonSimpleNotificationServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonSimpleNotificationServiceException(string message)
             : base(message)

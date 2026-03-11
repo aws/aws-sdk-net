@@ -40,10 +40,12 @@ namespace Amazon.Mgn.Model
         private bool? _copyPrivateIp;
         private bool? _copyTags;
         private bool? _enableMapAutoTagging;
+        private bool? _enableParametersEncryption;
         private LaunchTemplateDiskConf _largeVolumeConf;
         private LaunchDisposition _launchDisposition;
         private Licensing _licensing;
         private string _mapAutoTaggingMpeID;
+        private string _parametersEncryptionKey;
         private PostLaunchActions _postLaunchActions;
         private LaunchTemplateDiskConf _smallVolumeConf;
         private long? _smallVolumeMaxSize;
@@ -141,6 +143,24 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableParametersEncryption. 
+        /// <para>
+        /// Enable parameters encryption.
+        /// </para>
+        /// </summary>
+        public bool? EnableParametersEncryption
+        {
+            get { return this._enableParametersEncryption; }
+            set { this._enableParametersEncryption = value; }
+        }
+
+        // Check to see if EnableParametersEncryption property is set
+        internal bool IsSetEnableParametersEncryption()
+        {
+            return this._enableParametersEncryption.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LargeVolumeConf. 
         /// <para>
         /// Large volume config.
@@ -208,6 +228,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetMapAutoTaggingMpeID()
         {
             return this._mapAutoTaggingMpeID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParametersEncryptionKey. 
+        /// <para>
+        /// Parameters encryption key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=276)]
+        public string ParametersEncryptionKey
+        {
+            get { return this._parametersEncryptionKey; }
+            set { this._parametersEncryptionKey = value; }
+        }
+
+        // Check to see if ParametersEncryptionKey property is set
+        internal bool IsSetParametersEncryptionKey()
+        {
+            return this._parametersEncryptionKey != null;
         }
 
         /// <summary>

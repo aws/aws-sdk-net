@@ -116,8 +116,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property ImageTag. 
         /// <para>
-        /// The tag to associate with the image. This parameter is required for images that use
-        /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
+        /// The tag to associate with the image. This parameter is optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

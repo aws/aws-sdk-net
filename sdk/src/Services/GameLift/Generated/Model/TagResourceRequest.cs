@@ -31,12 +31,16 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Assigns a tag to an Amazon GameLift Servers resource. You can use tags to organize
     /// resources, create IAM permissions policies to manage access to groups of resources,
     /// customize Amazon Web Services cost breakdowns, and more. This operation handles the
     /// permissions necessary to manage tags for Amazon GameLift Servers resources that support
     /// tagging.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To add a tag to a resource, specify the unique ARN value for the resource and provide

@@ -41,6 +41,13 @@ namespace Amazon.VPCLattice.Model
         private string _resourceType;
 
         /// <summary>
+        /// Default constructor for ResourceNotFoundException
+        /// message.
+        /// </summary>
+        public ResourceNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
         /// message.
         /// </summary>

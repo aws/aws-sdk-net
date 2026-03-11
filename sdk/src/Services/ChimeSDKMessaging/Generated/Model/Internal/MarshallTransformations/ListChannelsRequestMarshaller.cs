@@ -62,6 +62,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AppInstanceArn))
+                throw new AmazonChimeSDKMessagingException("Request object does not have required field AppInstanceArn set");
             
             if (publicRequest.IsSetAppInstanceArn())
                 request.Parameters.Add("app-instance-arn", StringUtils.FromString(publicRequest.AppInstanceArn));

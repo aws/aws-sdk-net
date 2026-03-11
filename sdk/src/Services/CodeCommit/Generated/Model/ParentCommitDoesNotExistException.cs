@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ParentCommitDoesNotExistException
+        /// message.
+        /// </summary>
+        public ParentCommitDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ParentCommitDoesNotExistException with the specified error
         /// message.
         /// </summary>

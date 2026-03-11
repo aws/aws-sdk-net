@@ -40,6 +40,13 @@ namespace Amazon.DynamoDBv2.Model
     {
 
         /// <summary>
+        /// Default constructor for ItemCollectionSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public ItemCollectionSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ItemCollectionSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

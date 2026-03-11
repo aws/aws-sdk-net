@@ -85,7 +85,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// Endpoint ID of the prviate grpah endpoint.
+        /// Endpoint ID of the private graph endpoint.
         /// </para>
         /// </summary>
         public string VpcEndpointId

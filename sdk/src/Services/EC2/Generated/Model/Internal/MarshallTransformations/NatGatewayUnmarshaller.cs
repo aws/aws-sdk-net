@@ -55,6 +55,35 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("attachedApplianceSet/item", targetDepth))
+                    {
+                        var unmarshaller = NatGatewayAttachedApplianceUnmarshaller.Instance;
+                        if (unmarshalledObject.AttachedAppliances == null)
+                        {
+                            unmarshalledObject.AttachedAppliances = new List<NatGatewayAttachedAppliance>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AttachedAppliances.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("autoProvisionZones", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoProvisionZones = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("autoScalingIps", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutoScalingIps = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("availabilityMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("connectivityType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +135,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ProvisionedBandwidthUnmarshaller.Instance;
                         unmarshalledObject.ProvisionedBandwidth = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("routeTableId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))

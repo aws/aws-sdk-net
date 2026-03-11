@@ -39,6 +39,13 @@ namespace Amazon.GameLift.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedRegionException
+        /// message.
+        /// </summary>
+        public UnsupportedRegionException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedRegionException with the specified error
         /// message.
         /// </summary>

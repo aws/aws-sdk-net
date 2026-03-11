@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A parameter group with the specified name already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ParameterGroupAlreadyExistsException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for ParameterGroupAlreadyExistsException
+        /// message.
+        /// </summary>
+        public ParameterGroupAlreadyExistsException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new ParameterGroupAlreadyExistsException with the specified error

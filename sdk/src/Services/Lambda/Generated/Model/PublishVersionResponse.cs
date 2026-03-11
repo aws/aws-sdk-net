@@ -35,10 +35,13 @@ namespace Amazon.Lambda.Model
     public partial class PublishVersionResponse : AmazonWebServiceResponse
     {
         private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private CapacityProviderConfig _capacityProviderConfig;
         private string _codeSha256;
         private long? _codeSize;
+        private string _configSha256;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private DurableConfig _durableConfig;
         private EnvironmentResponse _environment;
         private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
@@ -66,6 +69,7 @@ namespace Amazon.Lambda.Model
         private State _state;
         private string _stateReason;
         private StateReasonCode _stateReasonCode;
+        private TenancyConfig _tenancyConfig;
         private int? _timeout;
         private TracingConfigResponse _tracingConfig;
         private string _version;
@@ -94,6 +98,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetArchitectures()
         {
             return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderConfig. 
+        /// <para>
+        /// Configuration for the capacity provider that manages compute resources for Lambda
+        /// functions.
+        /// </para>
+        /// </summary>
+        public CapacityProviderConfig CapacityProviderConfig
+        {
+            get { return this._capacityProviderConfig; }
+            set { this._capacityProviderConfig = value; }
+        }
+
+        // Check to see if CapacityProviderConfig property is set
+        internal bool IsSetCapacityProviderConfig()
+        {
+            return this._capacityProviderConfig != null;
         }
 
         /// <summary>
@@ -133,6 +156,24 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigSha256. 
+        /// <para>
+        /// The SHA256 hash of the function configuration.
+        /// </para>
+        /// </summary>
+        public string ConfigSha256
+        {
+            get { return this._configSha256; }
+            set { this._configSha256 = value; }
+        }
+
+        // Check to see if ConfigSha256 property is set
+        internal bool IsSetConfigSha256()
+        {
+            return this._configSha256 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
         /// The function's dead letter queue.
@@ -167,6 +208,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableConfig. 
+        /// <para>
+        /// The function's durable execution configuration settings, if the function is configured
+        /// for durability.
+        /// </para>
+        /// </summary>
+        public DurableConfig DurableConfig
+        {
+            get { return this._durableConfig; }
+            set { this._durableConfig = value; }
+        }
+
+        // Check to see if DurableConfig property is set
+        internal bool IsSetDurableConfig()
+        {
+            return this._durableConfig != null;
         }
 
         /// <summary>
@@ -221,7 +281,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<FileSystemConfig> FileSystemConfigs
         {
             get { return this._fileSystemConfigs; }
@@ -240,6 +300,7 @@ namespace Amazon.Lambda.Model
         /// The function's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string FunctionArn
         {
             get { return this._functionArn; }
@@ -258,7 +319,7 @@ namespace Amazon.Lambda.Model
         /// The name of the function.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=170)]
+        [AWSProperty(Min=1, Max=256)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -277,7 +338,7 @@ namespace Amazon.Lambda.Model
         /// The function that Lambda calls to begin running your function.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Handler
         {
             get { return this._handler; }
@@ -477,6 +538,7 @@ namespace Amazon.Lambda.Model
         /// For Lambda@Edge functions, the ARN of the main function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string MasterArn
         {
             get { return this._masterArn; }
@@ -495,7 +557,7 @@ namespace Amazon.Lambda.Model
         /// The amount of memory available to the function at runtime.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=10240)]
+        [AWSProperty(Min=128, Max=32768)]
         public int? MemorySize
         {
             get { return this._memorySize; }
@@ -725,6 +787,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStateReasonCode()
         {
             return this._stateReasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenancyConfig. 
+        /// <para>
+        /// The function's tenant isolation configuration settings. Determines whether the Lambda
+        /// function runs on a shared or dedicated infrastructure per unique tenant.
+        /// </para>
+        /// </summary>
+        public TenancyConfig TenancyConfig
+        {
+            get { return this._tenancyConfig; }
+            set { this._tenancyConfig = value; }
+        }
+
+        // Check to see if TenancyConfig property is set
+        internal bool IsSetTenancyConfig()
+        {
+            return this._tenancyConfig != null;
         }
 
         /// <summary>

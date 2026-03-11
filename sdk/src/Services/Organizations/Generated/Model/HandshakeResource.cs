@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Contains additional data that is needed to process a handshake.
+    /// Contains additional details for a handshake.
     /// </summary>
     public partial class HandshakeResource
     {
@@ -41,7 +41,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// When needed, contains an additional array of <c>HandshakeResource</c> objects.
+        /// An array of <c>HandshakeResource</c> objects. When needed, contains additional details
+        /// for a handshake. For example, the email address for the sender.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -69,31 +70,27 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ACCOUNT</c> - Specifies an Amazon Web Services account ID number.
+        ///  <b>ACCOUNT</b>: ID for an Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ORGANIZATION</c> - Specifies an organization ID number.
+        ///  <b>ORGANIZATION</b>: ID for an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EMAIL</c> - Specifies the email address that is associated with the account that
-        /// receives the handshake. 
+        ///  <b>EMAIL</b>: Email address for the recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OWNER_EMAIL</c> - Specifies the email address associated with the management account.
-        /// Included as information about an organization. 
+        ///  <b>OWNER_EMAIL</b>: Email address for the sender.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OWNER_NAME</c> - Specifies the name associated with the management account. Included
-        /// as information about an organization. 
+        ///  <b>OWNER_NAME</b>: Name of the sender.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NOTES</c> - Additional text provided by the handshake initiator and intended for
-        /// the recipient to read.
+        ///  <b>NOTES</b>: Additional text included by the sender for the recipient.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -112,8 +109,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The information that is passed to the other party in the handshake. The format of
-        /// the value string must match the requirements of the specified type.
+        /// Additional information for the handshake. The format of the value string must match
+        /// the requirements of the specified type.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

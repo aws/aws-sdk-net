@@ -45,9 +45,9 @@ namespace Amazon.BCMDataExports.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -61,39 +61,27 @@ namespace Amazon.BCMDataExports.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && Equals(refs["UseFIPS"], false))
                     {
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                            {
-                                return new Endpoint(Interpolate(@"https://bcm-data-exports-fips.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                        }
-                        return new Endpoint("https://bcm-data-exports.us-east-1.api.aws", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""bcm-data-exports"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://bcm-data-exports.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-iso-east-1""}]}", refs), InterpolateJson(@"", refs));
                     }
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b") && Equals(refs["UseFIPS"], false))
                     {
-                        if (Equals(refs["UseFIPS"], true))
-                        {
-                            if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                            {
-                                return new Endpoint(Interpolate(@"https://bcm-data-exports-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                        }
-                        return new Endpoint(Interpolate(@"https://bcm-data-exports.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("https://bcm-data-exports.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-isob-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e") && Equals(refs["UseFIPS"], false))
+                    {
+                        return new Endpoint("https://bcm-data-exports.eu-isoe-west-1.cloud.adc-e.uk", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""eu-isoe-west-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f") && Equals(refs["UseFIPS"], false))
+                    {
+                        return new Endpoint("https://bcm-data-exports.us-isof-south-1.csp.hci.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-isof-south-1""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://bcm-data-exports-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                        return new Endpoint(Interpolate(@"https://bcm-data-exports-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""{PartitionResult#implicitGlobalRegion}""}]}", refs), InterpolateJson(@"", refs));
                     }
-                    return new Endpoint(Interpolate(@"https://bcm-data-exports.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    return new Endpoint(Interpolate(@"https://bcm-data-exports.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""{PartitionResult#implicitGlobalRegion}""}]}", refs), InterpolateJson(@"", refs));
                 }
             }
             throw new AmazonClientException("Invalid Configuration: Missing Region");

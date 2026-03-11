@@ -40,6 +40,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyDistributionsException
+        /// message.
+        /// </summary>
+        public TooManyDistributionsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyDistributionsException with the specified error
         /// message.
         /// </summary>

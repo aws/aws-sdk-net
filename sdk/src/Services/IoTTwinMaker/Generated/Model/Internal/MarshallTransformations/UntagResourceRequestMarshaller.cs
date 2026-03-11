@@ -62,9 +62,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceARN))
+                throw new AmazonIoTTwinMakerException("Request object does not have required field ResourceARN set");
             
             if (publicRequest.IsSetResourceARN())
                 request.Parameters.Add("resourceARN", StringUtils.FromString(publicRequest.ResourceARN));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonIoTTwinMakerException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

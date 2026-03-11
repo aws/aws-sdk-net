@@ -44,6 +44,13 @@ namespace Amazon.Neptunedata.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for MemoryLimitExceededException
+        /// message.
+        /// </summary>
+        public MemoryLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new MemoryLimitExceededException with the specified error
         /// message.
         /// </summary>

@@ -37,6 +37,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private List<string> _allowedAudience = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedClients = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CustomClaimValidationType> _customClaims = AWSConfigs.InitializeCollections ? new List<CustomClaimValidationType>() : null;
         private string _discoveryUrl;
 
         /// <summary>
@@ -87,6 +89,55 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAllowedClients()
         {
             return this._allowedClients != null && (this._allowedClients.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedScopes. 
+        /// <para>
+        /// An array of scopes that are allowed to access the token.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> AllowedScopes
+        {
+            get { return this._allowedScopes; }
+            set { this._allowedScopes = value; }
+        }
+
+        // Check to see if AllowedScopes property is set
+        internal bool IsSetAllowedScopes()
+        {
+            return this._allowedScopes != null && (this._allowedScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomClaims. 
+        /// <para>
+        /// An array of objects that define a custom claim validation name, value, and operation
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<CustomClaimValidationType> CustomClaims
+        {
+            get { return this._customClaims; }
+            set { this._customClaims = value; }
+        }
+
+        // Check to see if CustomClaims property is set
+        internal bool IsSetCustomClaims()
+        {
+            return this._customClaims != null && (this._customClaims.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

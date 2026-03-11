@@ -41,6 +41,13 @@ namespace Amazon.CloudSearch.Model
     {
 
         /// <summary>
+        /// Default constructor for InternalException
+        /// message.
+        /// </summary>
+        public InternalException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InternalException with the specified error
         /// message.
         /// </summary>

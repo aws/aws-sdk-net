@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.CancelMetadataModelConversionRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.CancelMetadataModelCreationRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceRequest.ReplicationInstanceClass</property>
     <max>30</max>
   </property-value-rule>
@@ -21,11 +29,23 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelAssessmentsRequest.MigrationProjectIdentifier</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelChildrenRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelConversionsRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.DescribeMetadataModelCreationsRequest.MigrationProjectIdentifier</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -42,6 +62,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.ExportMetadataModelAssessmentRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.GetTargetSelectionRulesRequest.MigrationProjectIdentifier</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -62,6 +86,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelConversionRequest.MigrationProjectIdentifier</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.StartMetadataModelCreationRequest.MigrationProjectIdentifier</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>

@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlNamespacesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlNamespaces";
 
@@ -63,13 +64,13 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("XmlNamespacesRequest", "http://foo.com");
-                if (publicRequest.Nested != null)
+                if (publicRequest.IsSetNested())
                 {
-                    xmlWriter.WriteStartElement("nested");
+                    xmlWriter.WriteStartElement("nested","http://foo.com");
                     if(publicRequest.Nested.IsSetFoo())
                         xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));
                     var publicRequestNestedValues = publicRequest.Nested.Values;
-                    if (publicRequestNestedValues != null && (publicRequestNestedValues.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Nested.IsSetValues()) 
                     {
                         xmlWriter.WriteStartElement("values", "http://qux.com");
                         foreach (var publicRequestNestedValuesValue in publicRequestNestedValues) 
@@ -86,6 +87,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -97,8 +99,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static XmlNamespacesRequestMarshaller _instance = new XmlNamespacesRequestMarshaller();        
@@ -120,5 +120,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlNamespacesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlNamespacesRequest publicRequest);
     }    
 }

@@ -306,6 +306,69 @@ namespace Amazon.EKS
 
         #endregion
                 
+        #region  CreateCapability
+
+
+
+        /// <summary>
+        /// Creates a managed capability resource for an Amazon EKS cluster.
+        /// 
+        ///  
+        /// <para>
+        /// Capabilities provide fully managed capabilities to build and scale with Kubernetes.
+        /// When you create a capability, Amazon EKSprovisions and manages the infrastructure
+        /// required to run the capability outside of your cluster. This approach reduces operational
+        /// overhead and preserves cluster resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only create one Capability of each type on a given Amazon EKS cluster. Valid
+        /// types are Argo CD for declarative GitOps deployment, Amazon Web Services Controllers
+        /// for Kubernetes (ACK) for resource management, and Kube Resource Orchestrator (KRO)
+        /// for Kubernetes custom resource orchestration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/capabilities.html">EKS
+        /// Capabilities</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
+        Task<CreateCapabilityResponse> CreateCapabilityAsync(CreateCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCluster
 
 
@@ -759,6 +822,55 @@ namespace Amazon.EKS
 
         #endregion
                 
+        #region  DeleteCapability
+
+
+
+        /// <summary>
+        /// Deletes a managed capability from your Amazon EKS cluster. When you delete a capability,
+        /// Amazon EKS removes the capability infrastructure but retains all resources that were
+        /// managed by the capability.
+        /// 
+        ///  
+        /// <para>
+        /// Before deleting a capability, you should delete all Kubernetes resources that were
+        /// created by the capability. After the capability is deleted, these resources become
+        /// difficult to manage because the controller that managed them is no longer available.
+        /// To delete resources before removing the capability, use <c>kubectl delete</c> or remove
+        /// them through your GitOps workflow.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
+        Task<DeleteCapabilityResponse> DeleteCapabilityAsync(DeleteCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCluster
 
 
@@ -768,10 +880,11 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// If you have active services in your cluster that are associated with a load balancer,
-        /// you must delete those services before deleting the cluster so that the load balancers
-        /// are deleted properly. Otherwise, you can have orphaned resources in your VPC that
-        /// prevent you from being able to delete the VPC. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
+        /// If you have active services and ingress resources in your cluster that are associated
+        /// with a load balancer, you must delete those services before deleting the cluster so
+        /// that the load balancers are deleted properly. Otherwise, you can have orphaned resources
+        /// in your VPC that prevent you from being able to delete the VPC. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
         /// a cluster</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         ///  
@@ -791,6 +904,10 @@ namespace Amazon.EKS
         /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
         /// principal</a> that doesn't have permissions to use the action or resource or specifying
         /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -1164,6 +1281,43 @@ namespace Amazon.EKS
 
         #endregion
                 
+        #region  DescribeCapability
+
+
+
+        /// <summary>
+        /// Returns detailed information about a specific managed capability in your Amazon EKS
+        /// cluster, including its current status, configuration, health information, and any
+        /// issues that may be affecting its operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCapability">REST API Reference for DescribeCapability Operation</seealso>
+        Task<DescribeCapabilityResponse> DescribeCapabilityAsync(DescribeCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeCluster
 
 
@@ -1379,6 +1533,39 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
         Task<DescribeInsightResponse> DescribeInsightAsync(DescribeInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInsightsRefresh
+
+
+
+        /// <summary>
+        /// Returns the status of the latest on-demand cluster insights refresh operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        Task<DescribeInsightsRefreshResponse> DescribeInsightsRefreshAsync(DescribeInsightsRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1705,6 +1892,31 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAssociatedAccessPolicies">REST API Reference for ListAssociatedAccessPolicies Operation</seealso>
         Task<ListAssociatedAccessPoliciesResponse> ListAssociatedAccessPoliciesAsync(ListAssociatedAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCapabilities
+
+
+
+        /// <summary>
+        /// Lists all managed capabilities in your Amazon EKS cluster. You can use this operation
+        /// to get an overview of all capabilities and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapabilities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCapabilities service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
+        Task<ListCapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2109,6 +2321,40 @@ namespace Amazon.EKS
 
         #endregion
                 
+        #region  StartInsightsRefresh
+
+
+
+        /// <summary>
+        /// Initiates an on-demand refresh operation for cluster insights, getting the latest
+        /// analysis outside of the standard refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        Task<StartInsightsRefreshResponse> StartInsightsRefreshAsync(StartInsightsRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 
@@ -2239,6 +2485,53 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon">REST API Reference for UpdateAddon Operation</seealso>
         Task<UpdateAddonResponse> UpdateAddonAsync(UpdateAddonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCapability
+
+
+
+        /// <summary>
+        /// Updates the configuration of a managed capability in your Amazon EKS cluster. You
+        /// can update the IAM role, configuration settings, and delete propagation policy for
+        /// a capability.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a capability, Amazon EKS applies the changes and may restart capability
+        /// components as needed. The capability remains available during the update process,
+        /// but some operations may be temporarily unavailable.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
+        Task<UpdateCapabilityResponse> UpdateCapabilityAsync(UpdateCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

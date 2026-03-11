@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for DuplicateTargetGroupNameException
+        /// message.
+        /// </summary>
+        public DuplicateTargetGroupNameException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DuplicateTargetGroupNameException with the specified error
         /// message.
         /// </summary>

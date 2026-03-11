@@ -38,6 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private ContainerProductSort _containerProductSort;
         private DataProductSort _dataProductSort;
         private MachineLearningProductSort _machineLearningProductSort;
+        private OfferSetSort _offerSetSort;
         private OfferSort _offerSort;
         private ResaleAuthorizationSort _resaleAuthorizationSort;
         private SaaSProductSort _saaSProductSort;
@@ -109,6 +110,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetMachineLearningProductSort()
         {
             return this._machineLearningProductSort != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSetSort. 
+        /// <para>
+        /// A sort for offer sets.
+        /// </para>
+        /// </summary>
+        public OfferSetSort OfferSetSort
+        {
+            get { return this._offerSetSort; }
+            set { this._offerSetSort = value; }
+        }
+
+        // Check to see if OfferSetSort property is set
+        internal bool IsSetOfferSetSort()
+        {
+            return this._offerSetSort != null;
         }
 
         /// <summary>

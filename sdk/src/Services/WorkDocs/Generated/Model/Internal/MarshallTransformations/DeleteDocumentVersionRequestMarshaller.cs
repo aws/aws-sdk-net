@@ -68,6 +68,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetVersionId())
                 throw new AmazonWorkDocsException("Request object does not have required field VersionId set");
             request.AddPathResource("{VersionId}", StringUtils.FromString(publicRequest.VersionId));
+            if (publicRequest.DeletePriorVersions == null)
+                throw new AmazonWorkDocsException("Request object does not have required field DeletePriorVersions set");
             
             if (publicRequest.IsSetDeletePriorVersions())
                 request.Parameters.Add("deletePriorVersions", StringUtils.FromBool(publicRequest.DeletePriorVersions));

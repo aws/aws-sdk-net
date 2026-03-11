@@ -80,7 +80,7 @@ namespace AWSSDK.CSM.IntegrationTests
                     {
                         testUtils.Validate(JsonConvert.DeserializeObject<MonitoringAPICallEvent>(value));
                     }
-                    catch (Exception e)
+                    catch
                     {
                         testUtils.Validate(JsonConvert.DeserializeObject<MonitoringAPICallAttempt>(value));
                     }

@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for DBClusterBacktrackNotFoundException
+        /// message.
+        /// </summary>
+        public DBClusterBacktrackNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new DBClusterBacktrackNotFoundException with the specified error
         /// message.
         /// </summary>

@@ -287,6 +287,11 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.BucketName;
                 return result;
             }
+            if (requestContext.RequestName == "GetBucketAbacRequest") {
+                var request = (GetBucketAbacRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "GetBucketAccelerateConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (GetBucketAccelerateConfigurationRequest)requestContext.OriginalRequest;
@@ -548,6 +553,11 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.BucketName;
                 return result;
             }
+            if (requestContext.RequestName == "PutBucketAbacRequest") {
+                var request = (PutBucketAbacRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "PutBucketAccelerateConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (PutBucketAccelerateConfigurationRequest)requestContext.OriginalRequest;
@@ -719,6 +729,11 @@ namespace Amazon.S3.Internal
             if (requestContext.RequestName == "UpdateBucketMetadataJournalTableConfigurationRequest") {
                 result.UseS3ExpressControlEndpoint = true;
                 var request = (UpdateBucketMetadataJournalTableConfigurationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateObjectEncryptionRequest") {
+                var request = (UpdateObjectEncryptionRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }

@@ -26,6 +26,14 @@ namespace <#=this.Config.Namespace#>
         /// <summary>
         /// Construct instance of Amazon<#=this.Config.ClassName#>Exception
         /// </summary>
+        public Amazon<#=this.Config.ClassName#>Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of Amazon<#=this.Config.ClassName#>Exception
+        /// </summary>
         /// <param name="message"></param>
         public Amazon<#=this.Config.ClassName#>Exception(string message)
             : base(message)

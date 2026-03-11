@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutAccessPointScopeRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetAccountId()) 
@@ -71,11 +72,11 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
                 xmlWriter.WriteStartElement("PutAccessPointScopeRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if (publicRequest.Scope != null)
+                if (publicRequest.IsSetScope())
                 {
                     xmlWriter.WriteStartElement("Scope");
                     var publicRequestScopePermissions = publicRequest.Scope.Permissions;
-                    if (publicRequestScopePermissions != null && (publicRequestScopePermissions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPermissions()) 
                     {
                         xmlWriter.WriteStartElement("Permissions");
                         foreach (var publicRequestScopePermissionsValue in publicRequestScopePermissions) 
@@ -87,7 +88,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     var publicRequestScopePrefixes = publicRequest.Scope.Prefixes;
-                    if (publicRequestScopePrefixes != null && (publicRequestScopePrefixes.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    if (publicRequest.Scope.IsSetPrefixes()) 
                     {
                         xmlWriter.WriteStartElement("Prefixes");
                         foreach (var publicRequestScopePrefixesValue in publicRequestScopePrefixes) 
@@ -103,6 +104,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -114,8 +116,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static PutAccessPointScopeRequestMarshaller _instance = new PutAccessPointScopeRequestMarshaller();        
@@ -137,5 +137,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutAccessPointScopeRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutAccessPointScopeRequest publicRequest);
     }    
 }

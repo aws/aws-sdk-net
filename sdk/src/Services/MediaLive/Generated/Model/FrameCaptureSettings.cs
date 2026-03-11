@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// for inclusion in the output. May be specified in either seconds or milliseconds, as
         /// specified by captureIntervalUnits.
         /// </summary>
-        [AWSProperty(Min=1, Max=3600000)]
         public int? CaptureInterval
         {
             get { return this._captureInterval; }

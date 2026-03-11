@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _name;
+        private List<HoursOfOperationsIdentifier> _parentHoursOfOperations = AWSConfigs.InitializeCollections ? new List<HoursOfOperationsIdentifier>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _timeZone;
 
@@ -176,6 +177,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentHoursOfOperations. 
+        /// <para>
+        /// Information about parent hours of operations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<HoursOfOperationsIdentifier> ParentHoursOfOperations
+        {
+            get { return this._parentHoursOfOperations; }
+            set { this._parentHoursOfOperations = value; }
+        }
+
+        // Check to see if ParentHoursOfOperations property is set
+        internal bool IsSetParentHoursOfOperations()
+        {
+            return this._parentHoursOfOperations != null && (this._parentHoursOfOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

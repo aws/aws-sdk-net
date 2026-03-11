@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidExportSourceStateException
+        /// message.
+        /// </summary>
+        public InvalidExportSourceStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidExportSourceStateException with the specified error
         /// message.
         /// </summary>

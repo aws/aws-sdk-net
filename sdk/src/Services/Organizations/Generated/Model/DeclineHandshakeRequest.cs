@@ -31,20 +31,17 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the DeclineHandshake operation.
-    /// Declines a handshake request. This sets the handshake state to <c>DECLINED</c> and
-    /// effectively deactivates the request.
+    /// Declines a <a>Handshake</a>.
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the account that received the handshake. The
-    /// originator of the handshake can use <a>CancelHandshake</a> instead. The originator
-    /// can't reactivate a declined request, but can reinitiate the process with a new handshake
-    /// request.
+    /// Only the account that receives a handshake can call this operation. The sender of
+    /// the handshake can use <a>CancelHandshake</a> to cancel if the handshake hasn't yet
+    /// been responded to.
     /// </para>
     ///  
     /// <para>
-    /// After you decline a handshake, it continues to appear in the results of relevant APIs
-    /// for only 30 days. After that, it's deleted.
+    /// You can view canceled handshakes in API responses for 30 days before they are deleted.
     /// </para>
     /// </summary>
     public partial class DeclineHandshakeRequest : AmazonOrganizationsRequest
@@ -54,8 +51,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property HandshakeId. 
         /// <para>
-        /// The unique identifier (ID) of the handshake that you want to decline. You can get
-        /// the ID from the <a>ListHandshakesForAccount</a> operation.
+        /// ID for the handshake that you want to decline. You can get the ID from the <a>ListHandshakesForAccount</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>

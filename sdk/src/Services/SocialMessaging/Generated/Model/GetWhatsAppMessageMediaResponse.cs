@@ -40,7 +40,7 @@ namespace Amazon.SocialMessaging.Model
         /// <summary>
         /// Gets and sets the property FileSize. 
         /// <para>
-        /// The file size of the media, in KB.
+        /// The size of the media file, in KB.
         /// </para>
         /// </summary>
         public long? FileSize

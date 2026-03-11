@@ -41,6 +41,13 @@ namespace Amazon.Neptunedata.Model
         private string _detailedMessage;
 
         /// <summary>
+        /// Default constructor for CancelledByUserException
+        /// message.
+        /// </summary>
+        public CancelledByUserException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CancelledByUserException with the specified error
         /// message.
         /// </summary>

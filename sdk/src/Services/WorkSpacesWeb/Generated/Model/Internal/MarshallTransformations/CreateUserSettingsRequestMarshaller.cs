@@ -87,6 +87,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetBrandingConfigurationInput())
+            {
+                context.Writer.WritePropertyName("brandingConfigurationInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BrandingConfigurationCreateInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BrandingConfigurationInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -188,6 +199,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("uploadAllowed");
                 context.Writer.WriteStringValue(publicRequest.UploadAllowed);
+            }
+
+            if(publicRequest.IsSetWebAuthnAllowed())
+            {
+                context.Writer.WritePropertyName("webAuthnAllowed");
+                context.Writer.WriteStringValue(publicRequest.WebAuthnAllowed);
             }
 
             writer.WriteEndObject();

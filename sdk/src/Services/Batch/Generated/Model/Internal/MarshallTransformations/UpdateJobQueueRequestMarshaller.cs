@@ -123,6 +123,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SchedulingPolicyArn);
             }
 
+            if(publicRequest.IsSetServiceEnvironmentOrder())
+            {
+                context.Writer.WritePropertyName("serviceEnvironmentOrder");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestServiceEnvironmentOrderListValue in publicRequest.ServiceEnvironmentOrder)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ServiceEnvironmentOrderMarshaller.Instance;
+                    marshaller.Marshall(publicRequestServiceEnvironmentOrderListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetState())
             {
                 context.Writer.WritePropertyName("state");

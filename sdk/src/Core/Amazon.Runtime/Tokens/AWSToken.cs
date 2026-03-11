@@ -13,10 +13,12 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Diagnostics;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.UserAgent;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Amazon.Runtime
 {
@@ -43,5 +45,15 @@ namespace Amazon.Runtime
         public override DateTime? Expiration { get; set; }
 
         public override string ToString() => Token;
+
+        /// <summary>
+        /// Internal property that can be used to specify how this instance of AWS credentials were resolved.
+        /// </summary>
+        /// <remarks>
+        /// Credential providers MUST add to this property to have their specific feature ID tracked.
+        /// <para />
+        /// If empty, no value will be included in the user agent header.
+        /// </remarks>
+        internal HashSet<UserAgentFeatureId> FeatureIdSources { get; set; } = new();
     }
 }

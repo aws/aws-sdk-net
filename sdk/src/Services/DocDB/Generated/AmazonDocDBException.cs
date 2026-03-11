@@ -36,6 +36,14 @@ namespace Amazon.DocDB
         /// <summary>
         /// Construct instance of AmazonDocDBException
         /// </summary>
+        public AmazonDocDBException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonDocDBException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonDocDBException(string message)
             : base(message)

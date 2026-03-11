@@ -56,6 +56,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         public IRequest Marshall(MemberRefOpRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXMLTest");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/path";
 
@@ -69,6 +70,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -81,7 +83,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
-
             var hostPrefixLabels = new
             {
                 Name = StringUtils.FromString(publicRequest.Name),
@@ -91,7 +92,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
                 throw new AmazonRestXMLTestException("Name can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
             
             request.HostPrefix = $"foo-{hostPrefixLabels.Name}.";
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static MemberRefOpRequestMarshaller _instance = new MemberRefOpRequestMarshaller();        
@@ -113,5 +113,6 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, MemberRefOpRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, MemberRefOpRequest publicRequest);
     }    
 }

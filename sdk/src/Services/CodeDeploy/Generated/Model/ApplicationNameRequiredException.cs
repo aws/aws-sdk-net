@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for ApplicationNameRequiredException
+        /// message.
+        /// </summary>
+        public ApplicationNameRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ApplicationNameRequiredException with the specified error
         /// message.
         /// </summary>

@@ -71,6 +71,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetFile())
                 request.Parameters.Add("file", StringUtils.FromString(publicRequest.File));
+            if (publicRequest.PartNumber == null)
+                throw new AmazonOmicsException("Request object does not have required field PartNumber set");
             
             if (publicRequest.IsSetPartNumber())
                 request.Parameters.Add("partNumber", StringUtils.FromInt(publicRequest.PartNumber));

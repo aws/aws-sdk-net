@@ -36,6 +36,14 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Construct instance of AmazonAutoScalingException
         /// </summary>
+        public AmazonAutoScalingException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonAutoScalingException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonAutoScalingException(string message)
             : base(message)

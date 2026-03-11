@@ -43,8 +43,8 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The attribute path that is used to specify which attribute name to search. Length
         /// limit is 255 characters. For example, <c>UserName</c> is a valid attribute path for
-        /// the <c>ListUsers</c> API, and <c>DisplayName</c> is a valid attribute path for the
-        /// <c>ListGroups</c> API.
+        /// the <c> ListUsers</c> API, and <c>DisplayName</c> is a valid attribute path for the
+        /// <c> ListGroups</c> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

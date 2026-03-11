@@ -40,6 +40,13 @@ namespace Amazon.SimpleDB.Model
         private float? _boxUsage;
 
         /// <summary>
+        /// Default constructor for InvalidNumberPredicatesException
+        /// message.
+        /// </summary>
+        public InvalidNumberPredicatesException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidNumberPredicatesException with the specified error
         /// message.
         /// </summary>

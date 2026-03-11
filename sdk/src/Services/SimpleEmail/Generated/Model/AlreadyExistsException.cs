@@ -40,6 +40,13 @@ namespace Amazon.SimpleEmail.Model
         private string _name;
 
         /// <summary>
+        /// Default constructor for AlreadyExistsException
+        /// message.
+        /// </summary>
+        public AlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AlreadyExistsException with the specified error
         /// message.
         /// </summary>

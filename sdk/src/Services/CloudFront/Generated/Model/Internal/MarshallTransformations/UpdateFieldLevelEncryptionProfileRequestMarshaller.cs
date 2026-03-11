@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateFieldLevelEncryptionProfileRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -79,43 +80,43 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));
 
-                    if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null)
+                    if (publicRequest.FieldLevelEncryptionProfileConfig.IsSetEncryptionEntities())
                     {
                         xmlWriter.WriteStartElement("EncryptionEntities");
                         var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems = publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Items;
-                        if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems != null && (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.IsSetItems()) 
                         {
                             xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems) 
                             {
-                            if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
-                            {
-                                xmlWriter.WriteStartElement("EncryptionEntity");
-                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns != null)
+                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("FieldPatterns");
-                                    var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
-                                    if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems != null && (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                    xmlWriter.WriteStartElement("EncryptionEntity");
+                                    if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetFieldPatterns())
                                     {
-                                        xmlWriter.WriteStartElement("Items");
-                                        foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 
+                                        xmlWriter.WriteStartElement("FieldPatterns");
+                                        var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
+                                        if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetItems()) 
                                         {
-                                            xmlWriter.WriteStartElement("FieldPattern");
-                                            xmlWriter.WriteValue(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue);
-                                            xmlWriter.WriteEndElement();
-                                        }            
-                                        xmlWriter.WriteEndElement();            
+                                            xmlWriter.WriteStartElement("Items");
+                                            foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 
+                                            {
+                                                xmlWriter.WriteStartElement("FieldPattern");
+                                                xmlWriter.WriteValue(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue);
+                                                xmlWriter.WriteEndElement();
+                                            }            
+                                            xmlWriter.WriteEndElement();            
+                                        }
+                                        if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
+                                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));
+                                        xmlWriter.WriteEndElement();
                                     }
-                                    if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));
+                                    if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetProviderId())
+                                        xmlWriter.WriteElementString("ProviderId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));
+                                    if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetPublicKeyId())
+                                        xmlWriter.WriteElementString("PublicKeyId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));
                                     xmlWriter.WriteEndElement();
                                 }
-                                if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetProviderId())
-                                    xmlWriter.WriteElementString("ProviderId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));
-                                if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetPublicKeyId())
-                                    xmlWriter.WriteElementString("PublicKeyId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));
-                                xmlWriter.WriteEndElement();
-                            }
                             }            
                             xmlWriter.WriteEndElement();            
                         }
@@ -130,6 +131,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -141,8 +143,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateFieldLevelEncryptionProfileRequestMarshaller _instance = new UpdateFieldLevelEncryptionProfileRequestMarshaller();        
@@ -164,5 +164,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateFieldLevelEncryptionProfileRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateFieldLevelEncryptionProfileRequest publicRequest);
     }    
 }

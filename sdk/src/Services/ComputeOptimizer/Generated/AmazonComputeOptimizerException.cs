@@ -36,6 +36,14 @@ namespace Amazon.ComputeOptimizer
         /// <summary>
         /// Construct instance of AmazonComputeOptimizerException
         /// </summary>
+        public AmazonComputeOptimizerException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonComputeOptimizerException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonComputeOptimizerException(string message)
             : base(message)

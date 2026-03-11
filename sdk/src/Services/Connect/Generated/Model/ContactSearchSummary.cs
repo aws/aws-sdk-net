@@ -38,14 +38,18 @@ namespace Amazon.Connect.Model
         private string _arn;
         private Channel _channel;
         private DateTime? _disconnectTimestamp;
+        private GlobalResiliencyMetadata _globalResiliencyMetadata;
         private string _id;
         private string _initialContactId;
         private ContactInitiationMethod _initiationMethod;
         private DateTime? _initiationTimestamp;
+        private string _name;
         private string _previousContactId;
         private ContactSearchSummaryQueueInfo _queueInfo;
+        private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, ContactSearchSummarySegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, ContactSearchSummarySegmentAttributeValue>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -117,6 +121,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetDisconnectTimestamp()
         {
             return this._disconnectTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalResiliencyMetadata. 
+        /// <para>
+        /// Additional routing information for contacts created in ACGR instances.
+        /// </para>
+        /// </summary>
+        public GlobalResiliencyMetadata GlobalResiliencyMetadata
+        {
+            get { return this._globalResiliencyMetadata; }
+            set { this._globalResiliencyMetadata = value; }
+        }
+
+        // Check to see if GlobalResiliencyMetadata property is set
+        internal bool IsSetGlobalResiliencyMetadata()
+        {
+            return this._globalResiliencyMetadata != null;
         }
 
         /// <summary>
@@ -200,6 +222,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Indicates name of the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreviousContactId. 
         /// <para>
         /// If this contact is not the first contact, this is the ID of the previous contact.
@@ -237,6 +278,21 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RoutingCriteria.
+        /// </summary>
+        public RoutingCriteria RoutingCriteria
+        {
+            get { return this._routingCriteria; }
+            set { this._routingCriteria = value; }
+        }
+
+        // Check to see if RoutingCriteria property is set
+        internal bool IsSetRoutingCriteria()
+        {
+            return this._routingCriteria != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduledTimestamp. 
         /// <para>
         /// The timestamp, in Unix epoch time format, at which to start running the inbound flow.
@@ -265,6 +321,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, ContactSearchSummarySegmentAttributeValue> SegmentAttributes
         {
             get { return this._segmentAttributes; }
@@ -275,6 +332,31 @@ namespace Amazon.Connect.Model
         internal bool IsSetSegmentAttributes()
         {
             return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags associated with the contact. This contains both Amazon Web Services generated
+        /// and user-defined tags.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

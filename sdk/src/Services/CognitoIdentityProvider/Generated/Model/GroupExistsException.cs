@@ -40,6 +40,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for GroupExistsException
+        /// message.
+        /// </summary>
+        public GroupExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GroupExistsException with the specified error
         /// message.
         /// </summary>

@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListVPCAssociationAuthorizationsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
@@ -69,8 +70,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListVPCAssociationAuthorizationsRequestMarshaller _instance = new ListVPCAssociationAuthorizationsRequestMarshaller();        
@@ -92,5 +93,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListVPCAssociationAuthorizationsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListVPCAssociationAuthorizationsRequest publicRequest);
     }    
 }

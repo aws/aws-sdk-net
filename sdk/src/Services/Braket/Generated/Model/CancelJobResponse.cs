@@ -40,7 +40,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CancellationStatus. 
         /// <para>
-        /// The status of the job cancellation request.
+        /// The status of the hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

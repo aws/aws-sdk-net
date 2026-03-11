@@ -38,8 +38,10 @@ namespace Amazon.SageMaker.Model
         private AmazonQSettings _amazonQSettings;
         private DockerSettings _dockerSettings;
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
+        private IPAddressType _ipAddressType;
         private RStudioServerProDomainSettings _rStudioServerProDomainSettings;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private TrustedIdentityPropagationSettings _trustedIdentityPropagationSettings;
         private UnifiedStudioSettings _unifiedStudioSettings;
 
         /// <summary>
@@ -100,6 +102,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the domain. Specify <c>ipv4</c> for IPv4-only connectivity
+        /// or <c>dualstack</c> for both IPv4 and IPv6 connectivity. When you specify <c>dualstack</c>,
+        /// the subnet must support IPv6 CIDR blocks. If not specified, defaults to <c>ipv4</c>.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RStudioServerProDomainSettings. 
         /// <para>
         /// A collection of settings that configure the <c>RStudioServerPro</c> Domain-level app.
@@ -140,6 +162,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustedIdentityPropagationSettings. 
+        /// <para>
+        /// The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings
+        /// determine how user identities from IAM Identity Center are propagated through the
+        /// domain to TIP enabled Amazon Web Services services.
+        /// </para>
+        /// </summary>
+        public TrustedIdentityPropagationSettings TrustedIdentityPropagationSettings
+        {
+            get { return this._trustedIdentityPropagationSettings; }
+            set { this._trustedIdentityPropagationSettings = value; }
+        }
+
+        // Check to see if TrustedIdentityPropagationSettings property is set
+        internal bool IsSetTrustedIdentityPropagationSettings()
+        {
+            return this._trustedIdentityPropagationSettings != null;
         }
 
         /// <summary>

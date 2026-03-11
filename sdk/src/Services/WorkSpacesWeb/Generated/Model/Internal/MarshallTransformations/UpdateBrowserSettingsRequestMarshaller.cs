@@ -93,6 +93,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetWebContentFilteringPolicy())
+            {
+                context.Writer.WritePropertyName("webContentFilteringPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WebContentFilteringPolicyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WebContentFilteringPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

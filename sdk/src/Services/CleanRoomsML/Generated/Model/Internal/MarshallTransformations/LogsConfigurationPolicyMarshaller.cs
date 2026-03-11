@@ -63,6 +63,23 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FilterPattern);
             }
 
+            if(requestObject.IsSetLogRedactionConfiguration())
+            {
+                context.Writer.WritePropertyName("logRedactionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogRedactionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogRedactionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetLogType())
+            {
+                context.Writer.WritePropertyName("logType");
+                context.Writer.WriteStringValue(requestObject.LogType);
+            }
+
         }
 
         /// <summary>

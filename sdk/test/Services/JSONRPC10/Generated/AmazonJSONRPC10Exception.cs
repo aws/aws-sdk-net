@@ -36,6 +36,14 @@ namespace Amazon.JSONRPC10
         /// <summary>
         /// Construct instance of AmazonJSONRPC10Exception
         /// </summary>
+        public AmazonJSONRPC10Exception()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonJSONRPC10Exception
+        /// </summary>
         /// <param name="message"></param>
         public AmazonJSONRPC10Exception(string message)
             : base(message)

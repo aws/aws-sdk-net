@@ -47,7 +47,7 @@ namespace Amazon.LocationService.Model
         /// The travel distance between the step's <c>StartPosition</c> and <c>EndPosition</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double? Distance
         {
             get { return this._distance; }
@@ -68,7 +68,7 @@ namespace Amazon.LocationService.Model
         /// determines the calculated time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double? DurationSeconds
         {
             get { return this._durationSeconds; }

@@ -52,6 +52,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AfdSignaling);
             }
 
+            if(requestObject.IsSetBitDepth())
+            {
+                context.Writer.WritePropertyName("bitDepth");
+                context.Writer.WriteStringValue(requestObject.BitDepth);
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
@@ -130,6 +136,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
             }
 
+            if(requestObject.IsSetMinBitrate())
+            {
+                context.Writer.WritePropertyName("minBitrate");
+                context.Writer.WriteNumberValue(requestObject.MinBitrate.Value);
+            }
+
             if(requestObject.IsSetMinIInterval())
             {
                 context.Writer.WritePropertyName("minIInterval");
@@ -166,6 +178,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SceneChangeDetect);
             }
 
+            if(requestObject.IsSetSpatialAq())
+            {
+                context.Writer.WritePropertyName("spatialAq");
+                context.Writer.WriteStringValue(requestObject.SpatialAq);
+            }
+
+            if(requestObject.IsSetTemporalAq())
+            {
+                context.Writer.WritePropertyName("temporalAq");
+                context.Writer.WriteStringValue(requestObject.TemporalAq);
+            }
+
             if(requestObject.IsSetTimecodeBurninSettings())
             {
                 context.Writer.WritePropertyName("timecodeBurninSettings");
@@ -175,6 +199,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTimecodeInsertion())
+            {
+                context.Writer.WritePropertyName("timecodeInsertion");
+                context.Writer.WriteStringValue(requestObject.TimecodeInsertion);
             }
 
         }

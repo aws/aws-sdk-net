@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for RepositoryLimitExceededException
+        /// message.
+        /// </summary>
+        public RepositoryLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RepositoryLimitExceededException with the specified error
         /// message.
         /// </summary>

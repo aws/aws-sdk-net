@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for StatusUnchangedException
+        /// message.
+        /// </summary>
+        public StatusUnchangedException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new StatusUnchangedException with the specified error
         /// message.
         /// </summary>

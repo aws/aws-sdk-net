@@ -30,13 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The request cannot be processed because it would exceed the maximum number of subnet
+    /// groups allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class SubnetGroupQuotaExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for SubnetGroupQuotaExceededException
+        /// message.
+        /// </summary>
+        public SubnetGroupQuotaExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new SubnetGroupQuotaExceededException with the specified error

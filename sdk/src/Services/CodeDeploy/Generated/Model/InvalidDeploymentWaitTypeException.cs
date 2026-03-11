@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeploymentWaitTypeException
+        /// message.
+        /// </summary>
+        public InvalidDeploymentWaitTypeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeploymentWaitTypeException with the specified error
         /// message.
         /// </summary>

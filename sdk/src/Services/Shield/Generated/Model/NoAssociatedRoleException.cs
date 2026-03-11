@@ -39,6 +39,13 @@ namespace Amazon.Shield.Model
     {
 
         /// <summary>
+        /// Default constructor for NoAssociatedRoleException
+        /// message.
+        /// </summary>
+        public NoAssociatedRoleException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoAssociatedRoleException with the specified error
         /// message.
         /// </summary>

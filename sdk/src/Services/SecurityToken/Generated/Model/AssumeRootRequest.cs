@@ -32,7 +32,9 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the AssumeRoot operation.
     /// Returns a set of short term credentials you can use to perform privileged tasks on
-    /// a member account in your organization.
+    /// a member account in your organization. You must use credentials from an Organizations
+    /// management account or a delegated administrator account for IAM to call <c>AssumeRoot</c>.
+    /// You cannot use root user credentials to make this call.
     /// 
     ///  
     /// <para>
@@ -50,6 +52,15 @@ namespace Amazon.SecurityToken.Model
     /// You can track AssumeRoot in CloudTrail logs to determine what actions were performed
     /// in a session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track
     /// privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// When granting access to privileged tasks you should only grant the necessary permissions
+    /// required to perform that task. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">Security
+    /// best practices in IAM</a>. In addition, you can use <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html">service
+    /// control policies</a> (SCPs) to manage and limit permissions in your organization.
+    /// See <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples_general.html">General
+    /// examples</a> in the <i>Organizations User Guide</i> for more information on SCPs.
     /// </para>
     /// </summary>
     public partial class AssumeRootRequest : AmazonSecurityTokenServiceRequest
@@ -106,8 +117,8 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property TaskPolicyArn. 
         /// <para>
         /// The identity based policy that scopes the session to the privileged tasks that can
-        /// be performed. You can use one of following Amazon Web Services managed policies to
-        /// scope root session actions.
+        /// be performed. You must use one of following Amazon Web Services managed policies to
+        /// scope root session actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>

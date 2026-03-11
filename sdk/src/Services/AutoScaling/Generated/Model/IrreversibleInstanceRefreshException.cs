@@ -42,6 +42,13 @@ namespace Amazon.AutoScaling.Model
     {
 
         /// <summary>
+        /// Default constructor for IrreversibleInstanceRefreshException
+        /// message.
+        /// </summary>
+        public IrreversibleInstanceRefreshException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IrreversibleInstanceRefreshException with the specified error
         /// message.
         /// </summary>

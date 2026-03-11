@@ -52,7 +52,6 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AndConditions. 
         /// <para>
         /// A list of conditions which would be applied together with an <c>AND</c> condition.
-        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -140,7 +139,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// The currently supported values for <c>FieldName</c> are <c>Username</c>, <c>FirstName</c>,
-        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>ResourceId</c>.
+        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>resourceId</c>.
         /// </para>
         /// </summary>
         public StringCondition StringCondition

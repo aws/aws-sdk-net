@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidDeploymentStatusException
+        /// message.
+        /// </summary>
+        public InvalidDeploymentStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidDeploymentStatusException with the specified error
         /// message.
         /// </summary>

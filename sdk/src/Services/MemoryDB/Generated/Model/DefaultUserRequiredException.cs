@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A default user is required and must be specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class DefaultUserRequiredException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for DefaultUserRequiredException
+        /// message.
+        /// </summary>
+        public DefaultUserRequiredException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new DefaultUserRequiredException with the specified error

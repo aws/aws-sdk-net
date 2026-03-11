@@ -52,6 +52,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DeviceCreationFile);
             }
 
+            if(requestObject.IsSetPositioning())
+            {
+                context.Writer.WritePropertyName("Positioning");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SidewalkPositioningMarshaller.Instance;
+                marshaller.Marshall(requestObject.Positioning, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");

@@ -40,6 +40,13 @@ namespace Amazon.ServiceQuotas.Model
     {
 
         /// <summary>
+        /// Default constructor for AWSServiceAccessNotEnabledException
+        /// message.
+        /// </summary>
+        public AWSServiceAccessNotEnabledException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AWSServiceAccessNotEnabledException with the specified error
         /// message.
         /// </summary>

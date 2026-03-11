@@ -46,6 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// Additional feedback about the GuardDuty findings.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Comments
         {
             get { return this._comments; }

@@ -37,6 +37,7 @@ namespace Amazon.EntityResolution.Model
         private ProviderProperties _providerProperties;
         private ResolutionType _resolutionType;
         private RuleBasedProperties _ruleBasedProperties;
+        private RuleConditionProperties _ruleConditionProperties;
 
         /// <summary>
         /// Gets and sets the property ProviderProperties. 
@@ -59,9 +60,21 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionType. 
         /// <para>
-        /// The type of matching. There are three types of matching: <c>RULE_MATCHING</c>, <c>ML_MATCHING</c>,
-        /// and <c>PROVIDER</c>.
+        /// The type of matching workflow to create. Specify one of the following types: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RULE_MATCHING</c>: Match records using configurable rule-based criteria 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ML_MATCHING</c>: Match records using machine learning models 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PROVIDER</c>: Match records using a third-party matching provider
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResolutionType ResolutionType
@@ -79,7 +92,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property RuleBasedProperties. 
         /// <para>
-        /// An object which defines the list of matching rules to run and has a field <c>Rules</c>,
+        /// An object which defines the list of matching rules to run and has a field <c>rules</c>,
         /// which is a list of rule objects.
         /// </para>
         /// </summary>
@@ -93,6 +106,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetRuleBasedProperties()
         {
             return this._ruleBasedProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleConditionProperties. 
+        /// <para>
+        /// An object containing the <c>rules</c> for a matching workflow.
+        /// </para>
+        /// </summary>
+        public RuleConditionProperties RuleConditionProperties
+        {
+            get { return this._ruleConditionProperties; }
+            set { this._ruleConditionProperties = value; }
+        }
+
+        // Check to see if RuleConditionProperties property is set
+        internal bool IsSetRuleConditionProperties()
+        {
+            return this._ruleConditionProperties != null;
         }
 
     }

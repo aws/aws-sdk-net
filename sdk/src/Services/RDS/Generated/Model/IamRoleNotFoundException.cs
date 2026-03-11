@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for IamRoleNotFoundException
+        /// message.
+        /// </summary>
+        public IamRoleNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IamRoleNotFoundException with the specified error
         /// message.
         /// </summary>

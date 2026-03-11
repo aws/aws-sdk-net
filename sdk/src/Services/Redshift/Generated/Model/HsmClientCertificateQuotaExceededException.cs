@@ -41,6 +41,13 @@ namespace Amazon.Redshift.Model
     {
 
         /// <summary>
+        /// Default constructor for HsmClientCertificateQuotaExceededException
+        /// message.
+        /// </summary>
+        public HsmClientCertificateQuotaExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new HsmClientCertificateQuotaExceededException with the specified error
         /// message.
         /// </summary>

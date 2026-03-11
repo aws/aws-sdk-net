@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheClusterNotFoundException
+        /// message.
+        /// </summary>
+        public CacheClusterNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheClusterNotFoundException with the specified error
         /// message.
         /// </summary>

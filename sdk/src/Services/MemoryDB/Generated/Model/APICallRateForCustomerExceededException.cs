@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The customer has exceeded the maximum number of API requests allowed per time period.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class APICallRateForCustomerExceededException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for APICallRateForCustomerExceededException
+        /// message.
+        /// </summary>
+        public APICallRateForCustomerExceededException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new APICallRateForCustomerExceededException with the specified error

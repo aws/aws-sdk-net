@@ -38,11 +38,11 @@ namespace Amazon.SecurityHub.Model
         private string _accountId;
         private List<ResourceFindingsSummary> _findingsSummary = AWSConfigs.InitializeCollections ? new List<ResourceFindingsSummary>() : null;
         private string _region;
-        private string _resourceArn;
         private ResourceCategory _resourceCategory;
         private Amazon.Runtime.Documents.Document _resourceConfig;
         private string _resourceCreationTimeDt;
         private string _resourceDetailCaptureTimeDt;
+        private string _resourceGuid;
         private string _resourceId;
         private string _resourceName;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
@@ -107,24 +107,6 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// Specifies the ARN that uniquely identifies a resource.
-        /// </para>
-        /// </summary>
-        public string ResourceArn
-        {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
-        }
-
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
-        {
-            return this._resourceArn != null;
         }
 
         /// <summary>
@@ -199,6 +181,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResourceDetailCaptureTimeDt()
         {
             return this._resourceDetailCaptureTimeDt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceGuid. 
+        /// <para>
+        /// The global identifier used to identify a resource.
+        /// </para>
+        /// </summary>
+        public string ResourceGuid
+        {
+            get { return this._resourceGuid; }
+            set { this._resourceGuid = value; }
+        }
+
+        // Check to see if ResourceGuid property is set
+        internal bool IsSetResourceGuid()
+        {
+            return this._resourceGuid != null;
         }
 
         /// <summary>

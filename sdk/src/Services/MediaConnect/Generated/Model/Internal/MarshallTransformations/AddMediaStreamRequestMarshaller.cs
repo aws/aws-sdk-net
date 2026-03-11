@@ -81,6 +81,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MediaStreamName);
             }
 
+            if(requestObject.IsSetMediaStreamTags())
+            {
+                context.Writer.WritePropertyName("mediaStreamTags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectMediaStreamTagsKvp in requestObject.MediaStreamTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectMediaStreamTagsKvp.Key);
+                    var requestObjectMediaStreamTagsValue = requestObjectMediaStreamTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectMediaStreamTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMediaStreamType())
             {
                 context.Writer.WritePropertyName("mediaStreamType");

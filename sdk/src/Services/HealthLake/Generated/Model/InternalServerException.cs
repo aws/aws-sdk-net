@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Unknown error occurs in the service.
+    /// An unknown internal error occurred in the service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InternalServerException : AmazonHealthLakeException
     {
+
+        /// <summary>
+        /// Default constructor for InternalServerException
+        /// message.
+        /// </summary>
+        public InternalServerException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error

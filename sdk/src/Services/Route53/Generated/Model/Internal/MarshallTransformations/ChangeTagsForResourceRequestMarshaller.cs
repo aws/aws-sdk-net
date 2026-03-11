@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ChangeTagsForResourceRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetResourceType())
                 throw new AmazonRoute53Exception("Request object does not have required field ResourceType set");
@@ -70,25 +71,25 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("ChangeTagsForResourceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 var publicRequestAddTags = publicRequest.AddTags;
-                if (publicRequestAddTags != null && (publicRequestAddTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetAddTags()) 
                 {
                     xmlWriter.WriteStartElement("AddTags");
                     foreach (var publicRequestAddTagsValue in publicRequestAddTags) 
                     {
-                    if (publicRequestAddTagsValue != null)
-                    {
-                        xmlWriter.WriteStartElement("Tag");
-                        if(publicRequestAddTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));
-                        if(publicRequestAddTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));
-                        xmlWriter.WriteEndElement();
-                    }
+                        if (publicRequestAddTagsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Tag");
+                            if(publicRequestAddTagsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));
+                            if(publicRequestAddTagsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 var publicRequestRemoveTagKeys = publicRequest.RemoveTagKeys;
-                if (publicRequestRemoveTagKeys != null && (publicRequestRemoveTagKeys.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                if (publicRequest.IsSetRemoveTagKeys()) 
                 {
                     xmlWriter.WriteStartElement("RemoveTagKeys");
                     foreach (var publicRequestRemoveTagKeysValue in publicRequestRemoveTagKeys) 
@@ -102,6 +103,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -113,8 +115,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ChangeTagsForResourceRequestMarshaller _instance = new ChangeTagsForResourceRequestMarshaller();        
@@ -136,5 +136,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ChangeTagsForResourceRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ChangeTagsForResourceRequest publicRequest);
     }    
 }

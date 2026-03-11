@@ -37,6 +37,14 @@ namespace Amazon.ResourceExplorer2.Model
         }
 
         /// <summary>
+        /// Paginator for GetResourceExplorerSetup operation
+        ///</summary>
+        public IGetResourceExplorerSetupPaginator GetResourceExplorerSetup(GetResourceExplorerSetupRequest request) 
+        {
+            return new GetResourceExplorerSetupPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIndexes operation
         ///</summary>
         public IListIndexesPaginator ListIndexes(ListIndexesRequest request) 
@@ -66,6 +74,30 @@ namespace Amazon.ResourceExplorer2.Model
         public IListResourcesPaginator ListResources(ListResourcesRequest request) 
         {
             return new ListResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServiceIndexes operation
+        ///</summary>
+        public IListServiceIndexesPaginator ListServiceIndexes(ListServiceIndexesRequest request) 
+        {
+            return new ListServiceIndexesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServiceViews operation
+        ///</summary>
+        public IListServiceViewsPaginator ListServiceViews(ListServiceViewsRequest request) 
+        {
+            return new ListServiceViewsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStreamingAccessForServices operation
+        ///</summary>
+        public IListStreamingAccessForServicesPaginator ListStreamingAccessForServices(ListStreamingAccessForServicesRequest request) 
+        {
+            return new ListStreamingAccessForServicesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -153,6 +153,19 @@ namespace AWSSDK.UnitTests
             .Append($"sso_start_url={SampleValues.SsoStartUrl}")
             .ToString();
 
+        private static readonly string SsoSplitCredentialFile = new StringBuilder()
+            .AppendLine("[idcProfileNew]")
+            .AppendLine("region=us-east-1")
+            .AppendLine("sso_session=idcProfileNew")
+            .AppendLine("toolkit_artifact_guid=c2fcb78b-7a05-470a-a82f-c056b2fb613f")
+            .ToString();
+        private static readonly string SsoSplitConfigFile = new StringBuilder()
+            .AppendLine("[sso-session idcProfileNew]")
+            .AppendLine("sso_region=us-east-1")
+            .AppendLine("sso_registration_scopes=sso:account:access,codewhisperer:completions,codewhisperer:analysis,codewhisperer:conversations,codewhisperer:transformations")
+            .AppendLine("sso_start_url=https://amzn.awsapps.com/start")
+            .ToString();
+
         private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions
         {
             SsoAccountId = SampleValues.SsoAccountId,
@@ -1640,6 +1653,34 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
             }
         }
+
+        [TestMethod]
+        public void SplitSsoWithNoSsoAccountIdOrSsoRoleNameResolvesSso()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SsoSplitCredentialFile, SsoSplitConfigFile))
+            {
+                CredentialProfile profile1;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("idcProfileNew", out profile1));
+                Assert.IsTrue(profile1.ProfileType == CredentialProfileType.SSO);
+            }
+        }
+
+        [TestMethod]
+        public void SsoToolkitScenario()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SsoSplitConfigFile))
+            {
+                var options = new CredentialProfileOptions
+                {
+                    SsoSession = "idcProfileNew"
+                };
+                var ssoSessionOnlyProfile = new CredentialProfile("mainToolkitProfile", options);
+                tester.CredentialsFile.RegisterProfile(ssoSessionOnlyProfile);
+                tester.CredentialsFile.TryGetProfile("mainToolkitProfile", out var combinedProfile);
+                Assert.IsTrue(combinedProfile.ProfileType == CredentialProfileType.SSO);
+            }
+        }
+
         private static void Create2Profiles(SharedCredentialsFileTestFixture tester)
         {
             var options1 = new CredentialProfileOptions

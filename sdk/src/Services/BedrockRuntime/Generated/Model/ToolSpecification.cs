@@ -30,13 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The specification for the tool.
+    /// The specification for the tool. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tool-use.html">Call
+    /// a tool with the Converse API</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ToolSpecification
     {
         private string _description;
         private ToolInputSchema _inputSchema;
         private string _name;
+        private bool? _strict;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -93,6 +95,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Strict. 
+        /// <para>
+        /// Flag to enable structured output enforcement on a tool usage response.
+        /// </para>
+        /// </summary>
+        public bool? Strict
+        {
+            get { return this._strict; }
+            set { this._strict = value; }
+        }
+
+        // Check to see if Strict property is set
+        internal bool IsSetStrict()
+        {
+            return this._strict.HasValue; 
         }
 
     }

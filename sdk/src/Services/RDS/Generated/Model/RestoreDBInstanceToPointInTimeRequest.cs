@@ -54,9 +54,11 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RestoreDBInstanceToPointInTimeRequest : AmazonRDSRequest
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private int? _backupRetentionPeriod;
         private string _backupTarget;
         private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
@@ -87,6 +89,7 @@ namespace Amazon.RDS.Model
         private string _networkType;
         private string _optionGroupName;
         private int? _port;
+        private string _preferredBackupWindow;
         private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
         private bool? _publiclyAccessible;
         private DateTime? _restoreTime;
@@ -96,6 +99,7 @@ namespace Amazon.RDS.Model
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _targetDBInstanceIdentifier;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
@@ -117,6 +121,32 @@ namespace Amazon.RDS.Model
         {
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
             _targetDBInstanceIdentifier = targetDBInstanceIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to restore to the DB instance. You can restore
+        /// up to three additional storage volumes using the names <c>rdsdbdata2</c>, <c>rdsdbdata3</c>,
+        /// and <c>rdsdbdata4</c>. Additional storage volumes are supported for RDS for Oracle
+        /// and RDS for SQL Server DB instances only.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,6 +239,56 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days to retain automated backups. Setting this parameter to a positive
+        /// number enables backups. Setting this parameter to 0 disables automated backups.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Enabling and disabling backups can result in a brief I/O suspension that lasts from
+        /// a few seconds to a few minutes, depending on the size and class of your DB instance.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora DB instances. The retention period for
+        /// automated backups is managed by the DB cluster. For more information, see <c>ModifyDBCluster</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a value from 0 to 35.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be set to 0 if the DB instance is a source to read replicas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be set to 0 for an RDS Custom for Oracle DB instance.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int? BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod; }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
         }
 
         /// <summary>
@@ -988,8 +1068,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// License models for RDS for Db2 require additional configuration. The Bring Your Own
-        /// License (BYOL) model requires a custom parameter group and an Amazon Web Services
+        /// License models for RDS for Db2 require additional configuration. The bring your own
+        /// license (BYOL) model requires a custom parameter group and an Amazon Web Services
         /// License Manager self-managed license. The Db2 license through Amazon Web Services
         /// Marketplace model requires an Amazon Web Services Marketplace subscription. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon
@@ -1284,6 +1364,57 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c> parameter. Changing
+        /// this parameter doesn't result in an outage and the change is asynchronously applied
+        /// as soon as possible. The default is a 30-minute window selected at random from an
+        /// 8-hour block of time for each Amazon Web Services Region. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+        /// window</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora DB instances. The daily time range for
+        /// creating automated backups is managed by the DB cluster. For more information, see
+        /// <c>ModifyDBCluster</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be in Universal Coordinated Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProcessorFeatures. 
         /// <para>
         /// The number of CPU cores and the number of threads per core for the DB instance class
@@ -1532,6 +1663,38 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// Tags to assign to resources associated with the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>auto-backup</c> - The DB instance's automated backup.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetDBInstanceIdentifier. 
         /// <para>
         /// The name of the new DB instance to create.
@@ -1599,6 +1762,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }

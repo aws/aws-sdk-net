@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for SubscriptionCategoryNotFoundException
+        /// message.
+        /// </summary>
+        public SubscriptionCategoryNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SubscriptionCategoryNotFoundException with the specified error
         /// message.
         /// </summary>

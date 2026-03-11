@@ -39,6 +39,13 @@ namespace Amazon.Neptune.Model
     {
 
         /// <summary>
+        /// Default constructor for InsufficientDBClusterCapacityException
+        /// message.
+        /// </summary>
+        public InsufficientDBClusterCapacityException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InsufficientDBClusterCapacityException with the specified error
         /// message.
         /// </summary>

@@ -41,6 +41,7 @@ namespace Amazon.XRay.Model
         private int? _reservoirQuota;
         private DateTime? _reservoirQuotaTTL;
         private string _ruleName;
+        private SamplingBoost _samplingBoost;
 
         /// <summary>
         /// Gets and sets the property FixedRate. 
@@ -130,6 +131,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamplingBoost. 
+        /// <para>
+        /// The sampling boost that X-Ray allocated for this service.
+        /// </para>
+        /// </summary>
+        public SamplingBoost SamplingBoost
+        {
+            get { return this._samplingBoost; }
+            set { this._samplingBoost = value; }
+        }
+
+        // Check to see if SamplingBoost property is set
+        internal bool IsSetSamplingBoost()
+        {
+            return this._samplingBoost != null;
         }
 
     }

@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsItemNotFoundException
+        /// message.
+        /// </summary>
+        public OpsItemNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsItemNotFoundException with the specified error
         /// message.
         /// </summary>

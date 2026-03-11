@@ -41,6 +41,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for FileTooLargeException
+        /// message.
+        /// </summary>
+        public FileTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new FileTooLargeException with the specified error
         /// message.
         /// </summary>

@@ -36,6 +36,14 @@ namespace Amazon.MarketplaceEntitlementService
         /// <summary>
         /// Construct instance of AmazonMarketplaceEntitlementServiceException
         /// </summary>
+        public AmazonMarketplaceEntitlementServiceException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonMarketplaceEntitlementServiceException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonMarketplaceEntitlementServiceException(string message)
             : base(message)

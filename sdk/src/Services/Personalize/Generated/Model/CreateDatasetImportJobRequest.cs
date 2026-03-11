@@ -214,7 +214,7 @@ namespace Amazon.Personalize.Model
         /// The ARN of the IAM role that has permissions to read from the Amazon S3 data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }

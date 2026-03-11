@@ -40,6 +40,13 @@ namespace Amazon.CloudControlApi.Model
     {
 
         /// <summary>
+        /// Default constructor for GeneralServiceException
+        /// message.
+        /// </summary>
+        public GeneralServiceException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new GeneralServiceException with the specified error
         /// message.
         /// </summary>

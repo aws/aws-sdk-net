@@ -39,6 +39,13 @@ namespace Amazon.MemoryDB.Model
     {
 
         /// <summary>
+        /// Default constructor for ReservedNodesOfferingNotFoundException
+        /// message.
+        /// </summary>
+        public ReservedNodesOfferingNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ReservedNodesOfferingNotFoundException with the specified error
         /// message.
         /// </summary>

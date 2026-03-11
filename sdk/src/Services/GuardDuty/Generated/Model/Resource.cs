@@ -37,7 +37,9 @@ namespace Amazon.GuardDuty.Model
     {
         private AccessKeyDetails _accessKeyDetails;
         private Container _containerDetails;
+        private EbsSnapshotDetails _ebsSnapshotDetails;
         private EbsVolumeDetails _ebsVolumeDetails;
+        private Ec2ImageDetails _ec2ImageDetails;
         private EcsClusterDetails _ecsClusterDetails;
         private EksClusterDetails _eksClusterDetails;
         private InstanceDetails _instanceDetails;
@@ -46,6 +48,7 @@ namespace Amazon.GuardDuty.Model
         private RdsDbInstanceDetails _rdsDbInstanceDetails;
         private RdsDbUserDetails _rdsDbUserDetails;
         private RdsLimitlessDbDetails _rdsLimitlessDbDetails;
+        private RecoveryPointDetails _recoveryPointDetails;
         private string _resourceType;
         private List<S3BucketDetail> _s3BucketDetails = AWSConfigs.InitializeCollections ? new List<S3BucketDetail>() : null;
 
@@ -84,6 +87,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EbsSnapshotDetails. 
+        /// <para>
+        /// Contains details about the EBS snapshot that was scanned.
+        /// </para>
+        /// </summary>
+        public EbsSnapshotDetails EbsSnapshotDetails
+        {
+            get { return this._ebsSnapshotDetails; }
+            set { this._ebsSnapshotDetails = value; }
+        }
+
+        // Check to see if EbsSnapshotDetails property is set
+        internal bool IsSetEbsSnapshotDetails()
+        {
+            return this._ebsSnapshotDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EbsVolumeDetails. 
         /// <para>
         /// Contains list of scanned and skipped EBS volumes with details.
@@ -99,6 +120,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEbsVolumeDetails()
         {
             return this._ebsVolumeDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2ImageDetails. 
+        /// <para>
+        /// Contains details about the EC2 image that was scanned.
+        /// </para>
+        /// </summary>
+        public Ec2ImageDetails Ec2ImageDetails
+        {
+            get { return this._ec2ImageDetails; }
+            set { this._ec2ImageDetails = value; }
+        }
+
+        // Check to see if Ec2ImageDetails property is set
+        internal bool IsSetEc2ImageDetails()
+        {
+            return this._ec2ImageDetails != null;
         }
 
         /// <summary>
@@ -247,6 +286,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetRdsLimitlessDbDetails()
         {
             return this._rdsLimitlessDbDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryPointDetails. 
+        /// <para>
+        /// Contains details about the backup recovery point that was scanned.
+        /// </para>
+        /// </summary>
+        public RecoveryPointDetails RecoveryPointDetails
+        {
+            get { return this._recoveryPointDetails; }
+            set { this._recoveryPointDetails = value; }
+        }
+
+        // Check to see if RecoveryPointDetails property is set
+        internal bool IsSetRecoveryPointDetails()
+        {
+            return this._recoveryPointDetails != null;
         }
 
         /// <summary>

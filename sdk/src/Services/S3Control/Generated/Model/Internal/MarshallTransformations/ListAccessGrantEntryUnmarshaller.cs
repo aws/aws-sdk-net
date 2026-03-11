@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListAccessGrantEntry Object
     /// </summary>  
-    public class ListAccessGrantEntryUnmarshaller : IXmlUnmarshaller<ListAccessGrantEntry, XmlUnmarshallerContext>
+    public partial class ListAccessGrantEntryUnmarshaller : IXmlUnmarshaller<ListAccessGrantEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -110,6 +110,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Permission = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -118,6 +120,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ListAccessGrantEntry unmarshalledObject, int targetDepth);
+
         private static ListAccessGrantEntryUnmarshaller _instance = new ListAccessGrantEntryUnmarshaller();        
 
         /// <summary>

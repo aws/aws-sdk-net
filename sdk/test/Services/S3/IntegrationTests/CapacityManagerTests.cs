@@ -12,35 +12,23 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Xml;
-using System.Threading;
-using System.Net;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime;
 using Amazon.S3;
-using Amazon.S3.Model;
-using System.IO;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet.CommonTest.Utils;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Xml;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Integration Test class for Capacity Manager test on S3 ListObject operation.
-    /// </summary>
-    
     [TestClass]
+    [TestCategory("S3")]
     public class CapacityManagerTests
     {
         public static int requestCount;
-        [TestMethod]
-        [TestCategory("S3")]
+
         /// <summary>
         /// Background Info:- Each retry request requires 5 capacity. On successful retry response 5 would be put back into the
         /// capacity. On a successful response which is not a retry request 1 is added to the capacity. The capacity has a max cap 
@@ -54,13 +42,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// response. This puts back enough capacity to make a 100 retry requests.
         /// Phase 3. Phase 1 is repeated again with an assert to prove that Phase 2 added the said capacity.
         /// </summary>
-        public void S3CapacityManagerIntegrationTest()
+        [TestMethod]
+        public async Task S3CapacityManagerIntegrationTest()
         {
             int TotalRequests = 500;
             int RetryRequests = 100;
             int ExtraRequests = TotalRequests-RetryRequests;
             requestCount = 0;
             var retryFlag = true;
+
             using (MultipleResponseServlet servlet = new MultipleResponseServlet())
             {
                 servlet.OnRequest += path =>
@@ -81,6 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         XmlDocument myxml = new XmlDocument();
                         myxml.LoadXml(xmlDoc);
                         string contents = myxml.InnerXml;
+                        
                         return new MultipleResponseServlet.Response
                         {
                             Contents = contents,
@@ -89,10 +80,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         };
                     }
                 };
-                string server = "http://localhost:" + servlet.Port;
+
                 using (var client = new AmazonS3Client(new AmazonS3Config 
                 { 
-                    ServiceURL = server,
+                    ServiceURL = "http://localhost:" + servlet.Port,
                     MaxErrorRetry = 1
                 }))
                 {
@@ -102,13 +93,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     requestCount = 0;
                     for (int i = 0; i < TotalRequests; i++)
                     {
-                        var response = client.ListObjects("CapacityManagerTests");
+                        var response = await client.ListObjectsAsync("CapacityManagerTests");
                     }
                     retryFlag = true;
                     requestCount = 0;
                     FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
                 }
-                      
             }
         }
 

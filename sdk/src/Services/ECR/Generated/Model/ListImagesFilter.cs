@@ -34,13 +34,32 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ListImagesFilter
     {
+        private ImageStatusFilter _imageStatus;
         private TagStatus _tagStatus;
+
+        /// <summary>
+        /// Gets and sets the property ImageStatus. 
+        /// <para>
+        /// The image status with which to filter your <a>ListImages</a> results. Valid values
+        /// are <c>ACTIVE</c>, <c>ARCHIVED</c>, and <c>ACTIVATING</c>.
+        /// </para>
+        /// </summary>
+        public ImageStatusFilter ImageStatus
+        {
+            get { return this._imageStatus; }
+            set { this._imageStatus = value; }
+        }
+
+        // Check to see if ImageStatus property is set
+        internal bool IsSetImageStatus()
+        {
+            return this._imageStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TagStatus. 
         /// <para>
-        /// The tag status with which to filter your <a>ListImages</a> results. You can filter
-        /// results based on whether they are <c>TAGGED</c> or <c>UNTAGGED</c>.
+        /// The tag status with which to filter your <a>ListImages</a> results.
         /// </para>
         /// </summary>
         public TagStatus TagStatus

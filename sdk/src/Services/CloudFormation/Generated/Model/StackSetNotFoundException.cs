@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The specified stack set doesn't exist.
+    /// The specified StackSet doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class StackSetNotFoundException : AmazonCloudFormationException
     {
+
+        /// <summary>
+        /// Default constructor for StackSetNotFoundException
+        /// message.
+        /// </summary>
+        public StackSetNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new StackSetNotFoundException with the specified error

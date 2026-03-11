@@ -65,7 +65,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The description of the segment definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4000)]
         public string Description
         {
             get { return this._description; }

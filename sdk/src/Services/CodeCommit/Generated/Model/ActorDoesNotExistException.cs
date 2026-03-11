@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for ActorDoesNotExistException
+        /// message.
+        /// </summary>
+        public ActorDoesNotExistException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ActorDoesNotExistException with the specified error
         /// message.
         /// </summary>

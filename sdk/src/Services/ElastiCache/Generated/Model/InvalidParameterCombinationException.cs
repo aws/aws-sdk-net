@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidParameterCombinationException
+        /// message.
+        /// </summary>
+        public InvalidParameterCombinationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidParameterCombinationException with the specified error
         /// message.
         /// </summary>

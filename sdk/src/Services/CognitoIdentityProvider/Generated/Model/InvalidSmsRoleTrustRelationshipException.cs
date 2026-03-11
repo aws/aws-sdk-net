@@ -42,6 +42,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSmsRoleTrustRelationshipException
+        /// message.
+        /// </summary>
+        public InvalidSmsRoleTrustRelationshipException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSmsRoleTrustRelationshipException with the specified error
         /// message.
         /// </summary>

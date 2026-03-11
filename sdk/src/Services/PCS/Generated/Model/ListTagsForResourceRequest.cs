@@ -31,7 +31,7 @@ namespace Amazon.PCS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of all tags on an Amazon Web Services PCS resource.
+    /// Returns a list of all tags on an PCS resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonPCSRequest
     {

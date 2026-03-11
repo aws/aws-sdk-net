@@ -84,7 +84,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The policy document for this index policy, in JSON format.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Min=1, Max=51200)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

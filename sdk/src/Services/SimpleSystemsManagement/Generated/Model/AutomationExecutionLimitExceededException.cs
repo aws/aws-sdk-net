@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for AutomationExecutionLimitExceededException
+        /// message.
+        /// </summary>
+        public AutomationExecutionLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AutomationExecutionLimitExceededException with the specified error
         /// message.
         /// </summary>

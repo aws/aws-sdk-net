@@ -369,7 +369,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions">REST API Reference for BatchCreateRumMetricDefinitions Operation</seealso>
         public virtual BatchCreateRumMetricDefinitionsResponse BatchCreateRumMetricDefinitions(BatchCreateRumMetricDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateRumMetricDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateRumMetricDefinitionsResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions">REST API Reference for BatchCreateRumMetricDefinitions Operation</seealso>
         public virtual Task<BatchCreateRumMetricDefinitionsResponse> BatchCreateRumMetricDefinitionsAsync(BatchCreateRumMetricDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateRumMetricDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateRumMetricDefinitionsResponseUnmarshaller.Instance;
             
@@ -525,7 +525,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions">REST API Reference for BatchDeleteRumMetricDefinitions Operation</seealso>
         public virtual BatchDeleteRumMetricDefinitionsResponse BatchDeleteRumMetricDefinitions(BatchDeleteRumMetricDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteRumMetricDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteRumMetricDefinitionsResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions">REST API Reference for BatchDeleteRumMetricDefinitions Operation</seealso>
         public virtual Task<BatchDeleteRumMetricDefinitionsResponse> BatchDeleteRumMetricDefinitionsAsync(BatchDeleteRumMetricDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteRumMetricDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteRumMetricDefinitionsResponseUnmarshaller.Instance;
             
@@ -609,7 +609,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions">REST API Reference for BatchGetRumMetricDefinitions Operation</seealso>
         public virtual BatchGetRumMetricDefinitionsResponse BatchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRumMetricDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRumMetricDefinitionsResponseUnmarshaller.Instance;
 
@@ -642,7 +642,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions">REST API Reference for BatchGetRumMetricDefinitions Operation</seealso>
         public virtual Task<BatchGetRumMetricDefinitionsResponse> BatchGetRumMetricDefinitionsAsync(BatchGetRumMetricDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRumMetricDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRumMetricDefinitionsResponseUnmarshaller.Instance;
             
@@ -700,7 +700,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/CreateAppMonitor">REST API Reference for CreateAppMonitor Operation</seealso>
         public virtual CreateAppMonitorResponse CreateAppMonitor(CreateAppMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppMonitorResponseUnmarshaller.Instance;
 
@@ -757,7 +757,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/CreateAppMonitor">REST API Reference for CreateAppMonitor Operation</seealso>
         public virtual Task<CreateAppMonitorResponse> CreateAppMonitorAsync(CreateAppMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppMonitorResponseUnmarshaller.Instance;
             
@@ -796,7 +796,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteAppMonitor">REST API Reference for DeleteAppMonitor Operation</seealso>
         public virtual DeleteAppMonitorResponse DeleteAppMonitor(DeleteAppMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppMonitorResponseUnmarshaller.Instance;
 
@@ -834,7 +834,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteAppMonitor">REST API Reference for DeleteAppMonitor Operation</seealso>
         public virtual Task<DeleteAppMonitorResponse> DeleteAppMonitorAsync(DeleteAppMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppMonitorResponseUnmarshaller.Instance;
             
@@ -880,7 +880,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             
@@ -965,7 +965,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination">REST API Reference for DeleteRumMetricsDestination Operation</seealso>
         public virtual DeleteRumMetricsDestinationResponse DeleteRumMetricsDestination(DeleteRumMetricsDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRumMetricsDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRumMetricsDestinationResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination">REST API Reference for DeleteRumMetricsDestination Operation</seealso>
         public virtual Task<DeleteRumMetricsDestinationResponse> DeleteRumMetricsDestinationAsync(DeleteRumMetricsDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRumMetricsDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRumMetricsDestinationResponseUnmarshaller.Instance;
             
@@ -1040,7 +1040,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/GetAppMonitor">REST API Reference for GetAppMonitor Operation</seealso>
         public virtual GetAppMonitorResponse GetAppMonitor(GetAppMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppMonitorResponseUnmarshaller.Instance;
 
@@ -1075,7 +1075,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/GetAppMonitor">REST API Reference for GetAppMonitor Operation</seealso>
         public virtual Task<GetAppMonitorResponse> GetAppMonitorAsync(GetAppMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppMonitorResponseUnmarshaller.Instance;
             
@@ -1112,7 +1112,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/GetAppMonitorData">REST API Reference for GetAppMonitorData Operation</seealso>
         public virtual GetAppMonitorDataResponse GetAppMonitorData(GetAppMonitorDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppMonitorDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppMonitorDataResponseUnmarshaller.Instance;
 
@@ -1148,7 +1148,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/GetAppMonitorData">REST API Reference for GetAppMonitorData Operation</seealso>
         public virtual Task<GetAppMonitorDataResponse> GetAppMonitorDataAsync(GetAppMonitorDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppMonitorDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppMonitorDataResponseUnmarshaller.Instance;
             
@@ -1191,7 +1191,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1266,7 +1266,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListAppMonitors">REST API Reference for ListAppMonitors Operation</seealso>
         public virtual ListAppMonitorsResponse ListAppMonitors(ListAppMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppMonitorsResponseUnmarshaller.Instance;
 
@@ -1298,7 +1298,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListAppMonitors">REST API Reference for ListAppMonitors Operation</seealso>
         public virtual Task<ListAppMonitorsResponse> ListAppMonitorsAsync(ListAppMonitorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppMonitorsResponseUnmarshaller.Instance;
             
@@ -1337,7 +1337,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations">REST API Reference for ListRumMetricsDestinations Operation</seealso>
         public virtual ListRumMetricsDestinationsResponse ListRumMetricsDestinations(ListRumMetricsDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRumMetricsDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRumMetricsDestinationsResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations">REST API Reference for ListRumMetricsDestinations Operation</seealso>
         public virtual Task<ListRumMetricsDestinationsResponse> ListRumMetricsDestinationsAsync(ListRumMetricsDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRumMetricsDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRumMetricsDestinationsResponseUnmarshaller.Instance;
             
@@ -1405,7 +1405,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1487,7 +1487,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1539,7 +1539,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1582,7 +1582,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumEvents">REST API Reference for PutRumEvents Operation</seealso>
         public virtual PutRumEventsResponse PutRumEvents(PutRumEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRumEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRumEventsResponseUnmarshaller.Instance;
 
@@ -1624,7 +1624,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumEvents">REST API Reference for PutRumEvents Operation</seealso>
         public virtual Task<PutRumEventsResponse> PutRumEventsAsync(PutRumEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRumEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRumEventsResponseUnmarshaller.Instance;
             
@@ -1669,7 +1669,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination">REST API Reference for PutRumMetricsDestination Operation</seealso>
         public virtual PutRumMetricsDestinationResponse PutRumMetricsDestination(PutRumMetricsDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRumMetricsDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRumMetricsDestinationResponseUnmarshaller.Instance;
 
@@ -1713,7 +1713,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination">REST API Reference for PutRumMetricsDestination Operation</seealso>
         public virtual Task<PutRumMetricsDestinationResponse> PutRumMetricsDestinationAsync(PutRumMetricsDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRumMetricsDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRumMetricsDestinationResponseUnmarshaller.Instance;
             
@@ -1773,7 +1773,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1832,7 +1832,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1862,7 +1862,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1891,7 +1891,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1949,7 +1949,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateAppMonitor">REST API Reference for UpdateAppMonitor Operation</seealso>
         public virtual UpdateAppMonitorResponse UpdateAppMonitor(UpdateAppMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppMonitorResponseUnmarshaller.Instance;
 
@@ -2006,7 +2006,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateAppMonitor">REST API Reference for UpdateAppMonitor Operation</seealso>
         public virtual Task<UpdateAppMonitorResponse> UpdateAppMonitorAsync(UpdateAppMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppMonitorResponseUnmarshaller.Instance;
             
@@ -2049,7 +2049,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition">REST API Reference for UpdateRumMetricDefinition Operation</seealso>
         public virtual UpdateRumMetricDefinitionResponse UpdateRumMetricDefinition(UpdateRumMetricDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRumMetricDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRumMetricDefinitionResponseUnmarshaller.Instance;
 
@@ -2091,7 +2091,7 @@ namespace Amazon.CloudWatchRUM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition">REST API Reference for UpdateRumMetricDefinition Operation</seealso>
         public virtual Task<UpdateRumMetricDefinitionResponse> UpdateRumMetricDefinitionAsync(UpdateRumMetricDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRumMetricDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRumMetricDefinitionResponseUnmarshaller.Instance;
             

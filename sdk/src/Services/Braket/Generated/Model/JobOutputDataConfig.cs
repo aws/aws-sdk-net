@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Specifies the path to the S3 location where you want to store job artifacts and the
-    /// encryption key used to store them.
+    /// Specifies the path to the S3 location where you want to store hybrid job artifacts
+    /// and the encryption key used to store them.
     /// </summary>
     public partial class JobOutputDataConfig
     {
@@ -42,7 +42,7 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
-        /// job training artifacts at rest using Amazon S3 server-side encryption.
+        /// hybrid job training artifacts at rest using Amazon S3 server-side encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -61,8 +61,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property S3Path. 
         /// <para>
-        /// Identifies the S3 path where you want Amazon Braket to store the job training artifacts.
-        /// For example, <c>s3://bucket-name/key-name-prefix</c>.
+        /// Identifies the S3 path where you want Amazon Braket to store the hybrid job training
+        /// artifacts. For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

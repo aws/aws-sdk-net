@@ -39,6 +39,13 @@ namespace Amazon.StepFunctions.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidLoggingConfigurationException
+        /// message.
+        /// </summary>
+        public InvalidLoggingConfigurationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidLoggingConfigurationException with the specified error
         /// message.
         /// </summary>

@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContainerFleet operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Creates a managed fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to
     /// host your containerized game servers. Use this operation to define how to deploy a
     /// container architecture onto each fleet instance and configure fleet settings. You
@@ -38,7 +42,7 @@ namespace Amazon.GameLift.Model
     /// Servers supports for multi-location fleets. A container fleet can be deployed to a
     /// single location or multiple locations. Container fleets are deployed with Amazon Linux
     /// 2023 as the instance operating system.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Define the fleet's container architecture using container group definitions. Each
@@ -129,9 +133,21 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// You can update most of the properties of a fleet, including container group definitions,
-    /// and deploy the update across all fleet instances. Use a fleet update to deploy a new
-    /// game server version update across the container fleet. 
+    /// and deploy the update across all fleet instances. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerFleet.html">UpdateContainerFleet</a>
+    /// to deploy a new game server version update across the container fleet. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// A managed fleet's runtime environment depends on the Amazon Machine Image (AMI) version
+    /// it uses. When a new fleet is created, Amazon GameLift Servers assigns the latest available
+    /// AMI version to the fleet, and all compute instances in that fleet are deployed with
+    /// that version. To update the AMI version, you must create a new fleet. As a best practice,
+    /// we recommend replacing your managed fleets every 30 days to maintain a secure and
+    /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
+    /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
+    /// Security best practices for Amazon GameLift Servers</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateContainerFleetRequest : AmazonGameLiftRequest
     {
@@ -149,6 +165,7 @@ namespace Amazon.GameLift.Model
         private List<string> _metricGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private string _perInstanceContainerGroupDefinitionName;
+        private PlayerGatewayMode _playerGatewayMode;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -600,6 +617,59 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPerInstanceContainerGroupDefinitionName()
         {
             return this._perInstanceContainerGroupDefinitionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayMode. 
+        /// <para>
+        /// Configures player gateway for your fleet. Player gateway provides benefits such as
+        /// DDoS protection by rate limiting and validating traﬃc before it reaches game servers,
+        /// hiding game server IP addresses from players, and providing updated endpoints when
+        /// relay endpoints become unhealthy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>How it works:</b> When enabled, game clients connect to relay endpoints instead
+        /// of to your game servers. Player gateway validates player gateway tokens and routes
+        /// traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+        /// to retrieve relay endpoints and player gateway tokens for your game clients. To learn
+        /// more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS
+        /// protection with Amazon GameLift Servers player gateway</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default) -- Game clients connect to the game server endpoint. Use
+        /// this when you do not intend to integrate your game with player gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENABLED</c> -- Player gateway is available in fleet locations where it is supported.
+        /// Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+        /// to obtain a player gateway token and endpoints for game clients.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REQUIRED</c> -- Player gateway is available in fleet locations where it is supported,
+        /// and the fleet can only use locations that support this feature. Attempting to add
+        /// a remote location to your fleet which does not support player gateway will result
+        /// in an <c>InvalidRequestException</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PlayerGatewayMode PlayerGatewayMode
+        {
+            get { return this._playerGatewayMode; }
+            set { this._playerGatewayMode = value; }
+        }
+
+        // Check to see if PlayerGatewayMode property is set
+        internal bool IsSetPlayerGatewayMode()
+        {
+            return this._playerGatewayMode != null;
         }
 
         /// <summary>

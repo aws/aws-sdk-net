@@ -233,7 +233,8 @@ namespace Amazon.Athena.Model
         /// The type of query statement that was run. <c>DDL</c> indicates DDL query statements.
         /// <c>DML</c> indicates DML (Data Manipulation Language) query statements, such as <c>CREATE
         /// TABLE AS SELECT</c>. <c>UTILITY</c> indicates query statements other than DDL and
-        /// DML, such as <c>SHOW CREATE TABLE</c>, or <c>DESCRIBE TABLE</c>.
+        /// DML, such as <c>SHOW CREATE TABLE</c>, <c>EXPLAIN</c>, <c>DESCRIBE</c>, or <c>SHOW
+        /// TABLES</c>.
         /// </para>
         /// </summary>
         public StatementType StatementType

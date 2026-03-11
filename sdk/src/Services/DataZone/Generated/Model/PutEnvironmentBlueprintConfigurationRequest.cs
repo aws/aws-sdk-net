@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private List<string> _enabledRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _environmentBlueprintIdentifier;
         private string _environmentRolePermissionBoundary;
+        private Dictionary<string, string> _globalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _manageAccessRoleArn;
         private List<ProvisioningConfiguration> _provisioningConfigurations = AWSConfigs.InitializeCollections ? new List<ProvisioningConfiguration>() : null;
         private string _provisioningRoleArn;
@@ -122,6 +123,29 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentRolePermissionBoundary()
         {
             return this._environmentRolePermissionBoundary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalParameters. 
+        /// <para>
+        /// Region-agnostic environment blueprint parameters. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> GlobalParameters
+        {
+            get { return this._globalParameters; }
+            set { this._globalParameters = value; }
+        }
+
+        // Check to see if GlobalParameters property is set
+        internal bool IsSetGlobalParameters()
+        {
+            return this._globalParameters != null && (this._globalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMemory operation.
-    /// Deletes a memory.
+    /// Deletes an Amazon Bedrock AgentCore Memory resource.
     /// </summary>
     public partial class DeleteMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {

@@ -40,6 +40,13 @@ namespace Amazon.QuickSight.Model
         private ExceptionResourceType _resourceType;
 
         /// <summary>
+        /// Default constructor for LimitExceededException
+        /// message.
+        /// </summary>
+        public LimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new LimitExceededException with the specified error
         /// message.
         /// </summary>

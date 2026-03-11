@@ -25,6 +25,80 @@ namespace Amazon.Route53
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceleratedRecoveryStatus.
+    /// </summary>
+    public class AcceleratedRecoveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE_FAILED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLE_FAILED = new AcceleratedRecoveryStatus("DISABLE_FAILED");
+        /// <summary>
+        /// Constant DISABLED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLED = new AcceleratedRecoveryStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLING = new AcceleratedRecoveryStatus("DISABLING");
+        /// <summary>
+        /// Constant DISABLING_HOSTED_ZONE_LOCKED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLING_HOSTED_ZONE_LOCKED = new AcceleratedRecoveryStatus("DISABLING_HOSTED_ZONE_LOCKED");
+        /// <summary>
+        /// Constant ENABLE_FAILED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLE_FAILED = new AcceleratedRecoveryStatus("ENABLE_FAILED");
+        /// <summary>
+        /// Constant ENABLED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLED = new AcceleratedRecoveryStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLING = new AcceleratedRecoveryStatus("ENABLING");
+        /// <summary>
+        /// Constant ENABLING_HOSTED_ZONE_LOCKED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLING_HOSTED_ZONE_LOCKED = new AcceleratedRecoveryStatus("ENABLING_HOSTED_ZONE_LOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceleratedRecoveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceleratedRecoveryStatus FindValue(string value)
+        {
+            return FindValue<AcceleratedRecoveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceleratedRecoveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccountLimitType.
     /// </summary>
     public class AccountLimitType : ConstantClass
@@ -299,6 +373,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion ApSoutheast5 = new CloudWatchRegion("ap-southeast-5");
         /// <summary>
+        /// Constant ApSoutheast6 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApSoutheast6 = new CloudWatchRegion("ap-southeast-6");
+        /// <summary>
         /// Constant ApSoutheast7 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion ApSoutheast7 = new CloudWatchRegion("ap-southeast-7");
@@ -334,6 +412,10 @@ namespace Amazon.Route53
         /// Constant EuNorth1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion EuNorth1 = new CloudWatchRegion("eu-north-1");
+        /// <summary>
+        /// Constant EuscDeEast1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuscDeEast1 = new CloudWatchRegion("eusc-de-east-1");
         /// <summary>
         /// Constant EuSouth1 for CloudWatchRegion
         /// </summary>
@@ -394,6 +476,10 @@ namespace Amazon.Route53
         /// Constant UsIsobEast1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion UsIsobEast1 = new CloudWatchRegion("us-isob-east-1");
+        /// <summary>
+        /// Constant UsIsobWest1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion UsIsobWest1 = new CloudWatchRegion("us-isob-west-1");
         /// <summary>
         /// Constant UsIsoEast1 for CloudWatchRegion
         /// </summary>
@@ -977,6 +1063,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion ApSoutheast5 = new ResourceRecordSetRegion("ap-southeast-5");
         /// <summary>
+        /// Constant ApSoutheast6 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion ApSoutheast6 = new ResourceRecordSetRegion("ap-southeast-6");
+        /// <summary>
         /// Constant ApSoutheast7 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion ApSoutheast7 = new ResourceRecordSetRegion("ap-southeast-7");
@@ -1008,6 +1098,10 @@ namespace Amazon.Route53
         /// Constant EuNorth1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuNorth1 = new ResourceRecordSetRegion("eu-north-1");
+        /// <summary>
+        /// Constant EuscDeEast1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion EuscDeEast1 = new ResourceRecordSetRegion("eusc-de-east-1");
         /// <summary>
         /// Constant EuSouth1 for ResourceRecordSetRegion
         /// </summary>
@@ -1435,6 +1529,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly VPCRegion ApSoutheast5 = new VPCRegion("ap-southeast-5");
         /// <summary>
+        /// Constant ApSoutheast6 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApSoutheast6 = new VPCRegion("ap-southeast-6");
+        /// <summary>
         /// Constant ApSoutheast7 for VPCRegion
         /// </summary>
         public static readonly VPCRegion ApSoutheast7 = new VPCRegion("ap-southeast-7");
@@ -1470,6 +1568,10 @@ namespace Amazon.Route53
         /// Constant EuNorth1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion EuNorth1 = new VPCRegion("eu-north-1");
+        /// <summary>
+        /// Constant EuscDeEast1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuscDeEast1 = new VPCRegion("eusc-de-east-1");
         /// <summary>
         /// Constant EuSouth1 for VPCRegion
         /// </summary>
@@ -1530,6 +1632,10 @@ namespace Amazon.Route53
         /// Constant UsIsobEast1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion UsIsobEast1 = new VPCRegion("us-isob-east-1");
+        /// <summary>
+        /// Constant UsIsobWest1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion UsIsobWest1 = new VPCRegion("us-isob-west-1");
         /// <summary>
         /// Constant UsIsoEast1 for VPCRegion
         /// </summary>

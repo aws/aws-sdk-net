@@ -44,6 +44,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedFeatureRequiredException
+        /// message.
+        /// </summary>
+        public UnsupportedFeatureRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedFeatureRequiredException with the specified error
         /// message.
         /// </summary>

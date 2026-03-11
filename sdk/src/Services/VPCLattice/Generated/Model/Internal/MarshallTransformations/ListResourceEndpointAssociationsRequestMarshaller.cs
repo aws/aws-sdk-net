@@ -68,6 +68,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.ResourceConfigurationIdentifier))
+                throw new AmazonVPCLatticeException("Request object does not have required field ResourceConfigurationIdentifier set");
             
             if (publicRequest.IsSetResourceConfigurationIdentifier())
                 request.Parameters.Add("resourceConfigurationIdentifier", StringUtils.FromString(publicRequest.ResourceConfigurationIdentifier));

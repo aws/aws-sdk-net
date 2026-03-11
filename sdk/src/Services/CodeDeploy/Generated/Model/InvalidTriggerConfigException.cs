@@ -39,6 +39,13 @@ namespace Amazon.CodeDeploy.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidTriggerConfigException
+        /// message.
+        /// </summary>
+        public InvalidTriggerConfigException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTriggerConfigException with the specified error
         /// message.
         /// </summary>

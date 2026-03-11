@@ -117,7 +117,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6)]
+        [AWSProperty(Required=true, Min=1)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

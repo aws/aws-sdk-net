@@ -34,13 +34,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class ListAgentRuntimesResponse : AmazonWebServiceResponse
     {
-        private List<Agent> _agentRuntimes = AWSConfigs.InitializeCollections ? new List<Agent>() : null;
+        private List<AgentRuntime> _agentRuntimes = AWSConfigs.InitializeCollections ? new List<AgentRuntime>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimes. 
         /// <para>
-        /// The list of agent runtimes.
+        /// The list of AgentCore Runtime resources.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<Agent> AgentRuntimes
+        public List<AgentRuntime> AgentRuntimes
         {
             get { return this._agentRuntimes; }
             set { this._agentRuntimes = value; }

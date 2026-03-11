@@ -25,6 +25,214 @@ namespace Amazon.Invoicing
 {
 
     /// <summary>
+    /// Constants used for properties of type BuyerDomain.
+    /// </summary>
+    public class BuyerDomain : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NetworkID for BuyerDomain
+        /// </summary>
+        public static readonly BuyerDomain NetworkID = new BuyerDomain("NetworkID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BuyerDomain(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BuyerDomain FindValue(string value)
+        {
+            return FindValue<BuyerDomain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BuyerDomain(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionTestingMethod.
+    /// </summary>
+    public class ConnectionTestingMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROD_ENV_DOLLAR_TEST for ConnectionTestingMethod
+        /// </summary>
+        public static readonly ConnectionTestingMethod PROD_ENV_DOLLAR_TEST = new ConnectionTestingMethod("PROD_ENV_DOLLAR_TEST");
+        /// <summary>
+        /// Constant TEST_ENV_REPLAY_TEST for ConnectionTestingMethod
+        /// </summary>
+        public static readonly ConnectionTestingMethod TEST_ENV_REPLAY_TEST = new ConnectionTestingMethod("TEST_ENV_REPLAY_TEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionTestingMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionTestingMethod FindValue(string value)
+        {
+            return FindValue<ConnectionTestingMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionTestingMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EinvoiceDeliveryAttachmentType.
+    /// </summary>
+    public class EinvoiceDeliveryAttachmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVOICE_PDF for EinvoiceDeliveryAttachmentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryAttachmentType INVOICE_PDF = new EinvoiceDeliveryAttachmentType("INVOICE_PDF");
+        /// <summary>
+        /// Constant RFP_PDF for EinvoiceDeliveryAttachmentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryAttachmentType RFP_PDF = new EinvoiceDeliveryAttachmentType("RFP_PDF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EinvoiceDeliveryAttachmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EinvoiceDeliveryAttachmentType FindValue(string value)
+        {
+            return FindValue<EinvoiceDeliveryAttachmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EinvoiceDeliveryAttachmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EinvoiceDeliveryDocumentType.
+    /// </summary>
+    public class EinvoiceDeliveryDocumentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_CLOUD_CREDIT_MEMO for EinvoiceDeliveryDocumentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryDocumentType AWS_CLOUD_CREDIT_MEMO = new EinvoiceDeliveryDocumentType("AWS_CLOUD_CREDIT_MEMO");
+        /// <summary>
+        /// Constant AWS_CLOUD_INVOICE for EinvoiceDeliveryDocumentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryDocumentType AWS_CLOUD_INVOICE = new EinvoiceDeliveryDocumentType("AWS_CLOUD_INVOICE");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE_CREDIT_MEMO for EinvoiceDeliveryDocumentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryDocumentType AWS_MARKETPLACE_CREDIT_MEMO = new EinvoiceDeliveryDocumentType("AWS_MARKETPLACE_CREDIT_MEMO");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE_INVOICE for EinvoiceDeliveryDocumentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryDocumentType AWS_MARKETPLACE_INVOICE = new EinvoiceDeliveryDocumentType("AWS_MARKETPLACE_INVOICE");
+        /// <summary>
+        /// Constant AWS_REQUEST_FOR_PAYMENT for EinvoiceDeliveryDocumentType
+        /// </summary>
+        public static readonly EinvoiceDeliveryDocumentType AWS_REQUEST_FOR_PAYMENT = new EinvoiceDeliveryDocumentType("AWS_REQUEST_FOR_PAYMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EinvoiceDeliveryDocumentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EinvoiceDeliveryDocumentType FindValue(string value)
+        {
+            return FindValue<EinvoiceDeliveryDocumentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EinvoiceDeliveryDocumentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvoiceType.
     /// </summary>
     public class InvoiceType : ConstantClass
@@ -118,6 +326,264 @@ namespace Amazon.Invoicing
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListInvoiceSummariesResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProcurementPortalName.
+    /// </summary>
+    public class ProcurementPortalName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COUPA for ProcurementPortalName
+        /// </summary>
+        public static readonly ProcurementPortalName COUPA = new ProcurementPortalName("COUPA");
+        /// <summary>
+        /// Constant SAP_BUSINESS_NETWORK for ProcurementPortalName
+        /// </summary>
+        public static readonly ProcurementPortalName SAP_BUSINESS_NETWORK = new ProcurementPortalName("SAP_BUSINESS_NETWORK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProcurementPortalName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProcurementPortalName FindValue(string value)
+        {
+            return FindValue<ProcurementPortalName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProcurementPortalName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProcurementPortalPreferenceStatus.
+    /// </summary>
+    public class ProcurementPortalPreferenceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus ACTIVE = new ProcurementPortalPreferenceStatus("ACTIVE");
+        /// <summary>
+        /// Constant PENDING_VERIFICATION for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus PENDING_VERIFICATION = new ProcurementPortalPreferenceStatus("PENDING_VERIFICATION");
+        /// <summary>
+        /// Constant SUSPENDED for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus SUSPENDED = new ProcurementPortalPreferenceStatus("SUSPENDED");
+        /// <summary>
+        /// Constant TEST_FAILED for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus TEST_FAILED = new ProcurementPortalPreferenceStatus("TEST_FAILED");
+        /// <summary>
+        /// Constant TEST_INITIALIZATION_FAILED for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus TEST_INITIALIZATION_FAILED = new ProcurementPortalPreferenceStatus("TEST_INITIALIZATION_FAILED");
+        /// <summary>
+        /// Constant TEST_INITIALIZED for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus TEST_INITIALIZED = new ProcurementPortalPreferenceStatus("TEST_INITIALIZED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProcurementPortalPreferenceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProcurementPortalPreferenceStatus FindValue(string value)
+        {
+            return FindValue<ProcurementPortalPreferenceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProcurementPortalPreferenceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Protocol.
+    /// </summary>
+    public class Protocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CXML for Protocol
+        /// </summary>
+        public static readonly Protocol CXML = new Protocol("CXML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Protocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Protocol FindValue(string value)
+        {
+            return FindValue<Protocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PurchaseOrderDataSourceType.
+    /// </summary>
+    public class PurchaseOrderDataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED_PURCHASE_ORDER_REQUIRED for PurchaseOrderDataSourceType
+        /// </summary>
+        public static readonly PurchaseOrderDataSourceType ASSOCIATED_PURCHASE_ORDER_REQUIRED = new PurchaseOrderDataSourceType("ASSOCIATED_PURCHASE_ORDER_REQUIRED");
+        /// <summary>
+        /// Constant PURCHASE_ORDER_NOT_REQUIRED for PurchaseOrderDataSourceType
+        /// </summary>
+        public static readonly PurchaseOrderDataSourceType PURCHASE_ORDER_NOT_REQUIRED = new PurchaseOrderDataSourceType("PURCHASE_ORDER_NOT_REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PurchaseOrderDataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PurchaseOrderDataSourceType FindValue(string value)
+        {
+            return FindValue<PurchaseOrderDataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PurchaseOrderDataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupplierDomain.
+    /// </summary>
+    public class SupplierDomain : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NetworkID for SupplierDomain
+        /// </summary>
+        public static readonly SupplierDomain NetworkID = new SupplierDomain("NetworkID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupplierDomain(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupplierDomain FindValue(string value)
+        {
+            return FindValue<SupplierDomain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupplierDomain(string value)
         {
             return FindValue(value);
         }

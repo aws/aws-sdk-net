@@ -1357,8 +1357,15 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Returns information about a specific operation performed on a Managed Service for
-        /// Apache Flink application
+        /// Provides a detailed description of a specified application operation. To see a list
+        /// of all the operations of an application, invoke the <a>ListApplicationOperations</a>
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Managed Service for Apache Flink.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationOperation service method.</param>
         /// 
@@ -1379,8 +1386,15 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Returns information about a specific operation performed on a Managed Service for
-        /// Apache Flink application
+        /// Provides a detailed description of a specified application operation. To see a list
+        /// of all the operations of an application, invoke the <a>ListApplicationOperations</a>
+        /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Managed Service for Apache Flink.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationOperation service method.</param>
         /// <param name="cancellationToken">
@@ -1613,8 +1627,19 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Lists information about operations performed on a Managed Service for Apache Flink
-        /// application
+        /// Lists all the operations performed for the specified application such as UpdateApplication,
+        /// StartApplication etc. The response also includes a summary of the operation.
+        /// 
+        ///  
+        /// <para>
+        /// To get the complete description of a specific operation, invoke the <a>DescribeApplicationOperation</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Managed Service for Apache Flink.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplicationOperations service method.</param>
         /// 
@@ -1635,8 +1660,19 @@ namespace Amazon.KinesisAnalyticsV2
 
 
         /// <summary>
-        /// Lists information about operations performed on a Managed Service for Apache Flink
-        /// application
+        /// Lists all the operations performed for the specified application such as UpdateApplication,
+        /// StartApplication etc. The response also includes a summary of the operation.
+        /// 
+        ///  
+        /// <para>
+        /// To get the complete description of a specific operation, invoke the <a>DescribeApplicationOperation</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is supported only for Managed Service for Apache Flink.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplicationOperations service method.</param>
         /// <param name="cancellationToken">

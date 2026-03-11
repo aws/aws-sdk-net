@@ -37,6 +37,7 @@ namespace Amazon.DirectoryService.Model
         private string _availabilityZone;
         private string _directoryId;
         private string _dnsIpAddr;
+        private string _dnsIpv6Addr;
         private string _domainControllerId;
         private DateTime? _launchTime;
         private DomainControllerStatus _status;
@@ -97,6 +98,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDnsIpAddr()
         {
             return this._dnsIpAddr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIpv6Addr. 
+        /// <para>
+        /// The IPv6 address of the domain controller.
+        /// </para>
+        /// </summary>
+        public string DnsIpv6Addr
+        {
+            get { return this._dnsIpv6Addr; }
+            set { this._dnsIpv6Addr = value; }
+        }
+
+        // Check to see if DnsIpv6Addr property is set
+        internal bool IsSetDnsIpv6Addr()
+        {
+            return this._dnsIpv6Addr != null;
         }
 
         /// <summary>

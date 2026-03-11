@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified parameter value is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidParameterValueException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for InvalidParameterValueException
+        /// message.
+        /// </summary>
+        public InvalidParameterValueException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new InvalidParameterValueException with the specified error

@@ -62,6 +62,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateWorkforceRequest : AmazonSageMakerRequest
     {
         private CognitoConfig _cognitoConfig;
+        private WorkforceIpAddressType _ipAddressType;
         private OidcConfig _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -90,6 +91,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCognitoConfig()
         {
             return this._cognitoConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Use this parameter to specify whether you want <c>IPv4</c> only or <c>dualstack</c>
+        /// (<c>IPv4</c> and <c>IPv6</c>) to support your labeling workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

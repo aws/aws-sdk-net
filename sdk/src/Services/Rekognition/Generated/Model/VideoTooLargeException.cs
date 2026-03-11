@@ -40,6 +40,13 @@ namespace Amazon.Rekognition.Model
     {
 
         /// <summary>
+        /// Default constructor for VideoTooLargeException
+        /// message.
+        /// </summary>
+        public VideoTooLargeException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new VideoTooLargeException with the specified error
         /// message.
         /// </summary>

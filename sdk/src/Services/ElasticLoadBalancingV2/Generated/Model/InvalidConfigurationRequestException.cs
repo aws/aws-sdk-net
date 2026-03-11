@@ -39,6 +39,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidConfigurationRequestException
+        /// message.
+        /// </summary>
+        public InvalidConfigurationRequestException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidConfigurationRequestException with the specified error
         /// message.
         /// </summary>

@@ -93,6 +93,9 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetByResourceType())
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ByResourceType));
             
+            if (publicRequest.IsSetBySourceRecoveryPointArn())
+                request.Parameters.Add("sourceRecoveryPointArn", StringUtils.FromString(publicRequest.BySourceRecoveryPointArn));
+            
             if (publicRequest.IsSetByState())
                 request.Parameters.Add("state", StringUtils.FromString(publicRequest.ByState));
             

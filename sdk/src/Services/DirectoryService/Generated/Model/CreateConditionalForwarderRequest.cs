@@ -39,6 +39,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _directoryId;
         private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsIpv6Addrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _remoteDomainName;
 
         /// <summary>
@@ -72,7 +73,6 @@ namespace Amazon.DirectoryService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> DnsIpAddrs
         {
             get { return this._dnsIpAddrs; }
@@ -83,6 +83,29 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDnsIpAddrs()
         {
             return this._dnsIpAddrs != null && (this._dnsIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIpv6Addrs. 
+        /// <para>
+        /// The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> DnsIpv6Addrs
+        {
+            get { return this._dnsIpv6Addrs; }
+            set { this._dnsIpv6Addrs = value; }
+        }
+
+        // Check to see if DnsIpv6Addrs property is set
+        internal bool IsSetDnsIpv6Addrs()
+        {
+            return this._dnsIpv6Addrs != null && (this._dnsIpv6Addrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

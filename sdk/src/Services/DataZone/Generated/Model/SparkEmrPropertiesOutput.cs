@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SparkEmrPropertiesOutput
     {
+        private string _certificateData;
         private string _computeArn;
         private UsernamePassword _credentials;
         private DateTime? _credentialsExpiration;
@@ -42,9 +43,29 @@ namespace Amazon.DataZone.Model
         private string _javaVirtualEnv;
         private string _livyEndpoint;
         private string _logUri;
+        private string _managedEndpointArn;
+        private ManagedEndpointCredentials _managedEndpointCredentials;
         private string _pythonVirtualEnv;
         private string _runtimeRole;
         private string _trustedCertificatesS3Uri;
+
+        /// <summary>
+        /// Gets and sets the property CertificateData. 
+        /// <para>
+        /// The certificate data of the EMR on EKS cluster.
+        /// </para>
+        /// </summary>
+        public string CertificateData
+        {
+            get { return this._certificateData; }
+            set { this._certificateData = value; }
+        }
+
+        // Check to see if CertificateData property is set
+        internal bool IsSetCertificateData()
+        {
+            return this._certificateData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComputeArn. 
@@ -189,6 +210,44 @@ namespace Amazon.DataZone.Model
         internal bool IsSetLogUri()
         {
             return this._logUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedEndpointArn. 
+        /// <para>
+        /// The managed endpoint ARN of the EMR on EKS cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string ManagedEndpointArn
+        {
+            get { return this._managedEndpointArn; }
+            set { this._managedEndpointArn = value; }
+        }
+
+        // Check to see if ManagedEndpointArn property is set
+        internal bool IsSetManagedEndpointArn()
+        {
+            return this._managedEndpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedEndpointCredentials. 
+        /// <para>
+        /// The managed endpoint credentials of the EMR on EKS cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ManagedEndpointCredentials ManagedEndpointCredentials
+        {
+            get { return this._managedEndpointCredentials; }
+            set { this._managedEndpointCredentials = value; }
+        }
+
+        // Check to see if ManagedEndpointCredentials property is set
+        internal bool IsSetManagedEndpointCredentials()
+        {
+            return this._managedEndpointCredentials != null;
         }
 
         /// <summary>

@@ -221,7 +221,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SseConfig. 
         /// <para>
-        /// The store's SSE settings.
+        /// Server-side encryption (SSE) settings for the store. This contains the KMS key ARN
+        /// that is used to encrypt read set objects.
         /// </para>
         /// </summary>
         public SseConfig SseConfig

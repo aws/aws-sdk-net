@@ -36,6 +36,14 @@ namespace Amazon.Chatbot
         /// <summary>
         /// Construct instance of AmazonChatbotException
         /// </summary>
+        public AmazonChatbotException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonChatbotException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonChatbotException(string message)
             : base(message)

@@ -40,6 +40,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidEmailException
+        /// message.
+        /// </summary>
+        public InvalidEmailException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidEmailException with the specified error
         /// message.
         /// </summary>

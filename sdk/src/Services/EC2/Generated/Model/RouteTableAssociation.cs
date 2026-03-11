@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private RouteTableAssociationState _associationState;
         private string _gatewayId;
         private bool? _main;
+        private string _publicIpv4Pool;
         private string _routeTableAssociationId;
         private string _routeTableId;
         private string _subnetId;
@@ -93,6 +94,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMain()
         {
             return this._main.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpv4Pool. 
+        /// <para>
+        /// The ID of a public IPv4 pool. A public IPv4 pool is a pool of IPv4 addresses that
+        /// you've brought to Amazon Web Services with BYOIP.
+        /// </para>
+        /// </summary>
+        public string PublicIpv4Pool
+        {
+            get { return this._publicIpv4Pool; }
+            set { this._publicIpv4Pool = value; }
+        }
+
+        // Check to see if PublicIpv4Pool property is set
+        internal bool IsSetPublicIpv4Pool()
+        {
+            return this._publicIpv4Pool != null;
         }
 
         /// <summary>

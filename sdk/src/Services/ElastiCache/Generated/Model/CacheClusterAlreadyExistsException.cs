@@ -39,6 +39,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheClusterAlreadyExistsException
+        /// message.
+        /// </summary>
+        public CacheClusterAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheClusterAlreadyExistsException with the specified error
         /// message.
         /// </summary>

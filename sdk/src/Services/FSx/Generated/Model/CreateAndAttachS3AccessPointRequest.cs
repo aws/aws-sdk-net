@@ -33,8 +33,9 @@ namespace Amazon.FSx.Model
     /// Container for the parameters to the CreateAndAttachS3AccessPoint operation.
     /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
     /// file systems, the volume must be hosted on a high-availability file system, either
-    /// Single-AZ or Multi-AZ. For more information, see <a href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-    /// your data using access points</a> in the Amazon FSx for OpenZFS User Guide. 
+    /// Single-AZ or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
+    /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+    /// 
     /// 
     ///  
     /// <para>
@@ -78,6 +79,7 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private string _name;
+        private CreateAndAttachS3AccessPointOntapConfiguration _ontapConfiguration;
         private CreateAndAttachS3AccessPointOpenZFSConfiguration _openZFSConfiguration;
         private CreateAndAttachS3AccessPointS3Configuration _s3AccessPoint;
         private S3AccessPointAttachmentType _type;
@@ -115,6 +117,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OntapConfiguration.
+        /// </summary>
+        public CreateAndAttachS3AccessPointOntapConfiguration OntapConfiguration
+        {
+            get { return this._ontapConfiguration; }
+            set { this._ontapConfiguration = value; }
+        }
+
+        // Check to see if OntapConfiguration property is set
+        internal bool IsSetOntapConfiguration()
+        {
+            return this._ontapConfiguration != null;
         }
 
         /// <summary>

@@ -39,6 +39,13 @@ namespace Amazon.SocialMessaging.Model
     {
 
         /// <summary>
+        /// Default constructor for AccessDeniedByMetaException
+        /// message.
+        /// </summary>
+        public AccessDeniedByMetaException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AccessDeniedByMetaException with the specified error
         /// message.
         /// </summary>

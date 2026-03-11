@@ -702,6 +702,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateHostedZoneFeaturesRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Id</property>
     <min>1</min>
     <max>36</max>

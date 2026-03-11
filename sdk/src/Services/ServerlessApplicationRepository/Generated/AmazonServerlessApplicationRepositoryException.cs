@@ -36,6 +36,14 @@ namespace Amazon.ServerlessApplicationRepository
         /// <summary>
         /// Construct instance of AmazonServerlessApplicationRepositoryException
         /// </summary>
+        public AmazonServerlessApplicationRepositoryException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonServerlessApplicationRepositoryException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonServerlessApplicationRepositoryException(string message)
             : base(message)

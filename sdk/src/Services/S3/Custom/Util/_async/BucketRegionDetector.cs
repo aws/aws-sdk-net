@@ -61,7 +61,7 @@ namespace Amazon.S3.Util
         private static async Task<string> GetBucketRegionNoPipelineAsync(string bucketName, IRequestContext requestContext)
         {
             var headBucketPreSignedUrl = GetHeadBucketPreSignedUrl(bucketName, requestContext);
-            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ClientConfig.DefaultAWSCredentials))
+            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ExplicitAWSCredentials ?? requestContext.ClientConfig.DefaultAWSCredentials))
             {
                 return (await AmazonS3HttpUtil.GetHeadAsync(s3Client, s3Client.Config, headBucketPreSignedUrl,
                     HeaderKeys.XAmzBucketRegion).ConfigureAwait(false)).HeaderValue;

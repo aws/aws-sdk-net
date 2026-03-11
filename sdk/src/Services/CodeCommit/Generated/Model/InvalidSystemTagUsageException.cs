@@ -39,6 +39,13 @@ namespace Amazon.CodeCommit.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSystemTagUsageException
+        /// message.
+        /// </summary>
+        public InvalidSystemTagUsageException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSystemTagUsageException with the specified error
         /// message.
         /// </summary>

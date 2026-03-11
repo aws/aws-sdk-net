@@ -36,6 +36,14 @@ namespace Amazon.ManagedGrafana
         /// <summary>
         /// Construct instance of AmazonManagedGrafanaException
         /// </summary>
+        public AmazonManagedGrafanaException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonManagedGrafanaException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonManagedGrafanaException(string message)
             : base(message)

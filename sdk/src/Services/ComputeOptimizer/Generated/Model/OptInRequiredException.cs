@@ -39,6 +39,13 @@ namespace Amazon.ComputeOptimizer.Model
     {
 
         /// <summary>
+        /// Default constructor for OptInRequiredException
+        /// message.
+        /// </summary>
+        public OptInRequiredException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OptInRequiredException with the specified error
         /// message.
         /// </summary>

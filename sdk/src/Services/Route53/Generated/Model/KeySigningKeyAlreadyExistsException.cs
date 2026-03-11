@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for KeySigningKeyAlreadyExistsException
+        /// message.
+        /// </summary>
+        public KeySigningKeyAlreadyExistsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KeySigningKeyAlreadyExistsException with the specified error
         /// message.
         /// </summary>

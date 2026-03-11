@@ -41,6 +41,13 @@ namespace Amazon.SecurityIR.Model
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
+        /// Default constructor for InvalidTokenException
+        /// message.
+        /// </summary>
+        public InvalidTokenException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidTokenException with the specified error
         /// message.
         /// </summary>

@@ -89,12 +89,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>Target.ResponseCodeMismatch</c> - The health checks did not return an expected
-        /// HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.
+        /// HTTP code.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Target.Timeout</c> - The health check requests timed out. Applies only to Application
-        /// Load Balancers and Gateway Load Balancers.
+        ///  <c>Target.Timeout</c> - The health check requests timed out.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,8 +102,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Elb.InternalError</c> - The health checks failed due to an internal error. Applies
-        /// only to Application Load Balancers.
+        ///  <c>Elb.InternalError</c> - The health checks failed due to an internal error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -144,12 +142,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>Target.HealthCheckDisabled</c> - Health checks are disabled for the target group.
-        /// Applies only to Application Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>Elb.InternalError</c> - Target health is unavailable due to an internal error.
-        /// Applies only to Network Load Balancers.
         /// </para>
         ///  </li> </ul>
         /// </summary>

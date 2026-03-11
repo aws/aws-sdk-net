@@ -21,7 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../src/AWSSDK.Extensions.CloudFront.Signers/AWSSDK.Extensions.CloudFront.Signers.NetFramework.csproj" />
-	<ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
+	<ProjectReference Include="../../../sdk/test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
   </ItemGroup>
   <ItemGroup>
 	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />

@@ -46,6 +46,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuxiliaryApps())
+            {
+                context.Writer.WritePropertyName("auxiliaryApps");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAuxiliaryAppsListValue in requestObject.AuxiliaryApps)
+                {
+                        context.Writer.WriteStringValue(requestObjectAuxiliaryAppsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetBillingMethod())
             {
                 context.Writer.WritePropertyName("billingMethod");

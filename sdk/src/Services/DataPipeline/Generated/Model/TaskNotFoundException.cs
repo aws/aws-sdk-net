@@ -39,6 +39,13 @@ namespace Amazon.DataPipeline.Model
     {
 
         /// <summary>
+        /// Default constructor for TaskNotFoundException
+        /// message.
+        /// </summary>
+        public TaskNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TaskNotFoundException with the specified error
         /// message.
         /// </summary>

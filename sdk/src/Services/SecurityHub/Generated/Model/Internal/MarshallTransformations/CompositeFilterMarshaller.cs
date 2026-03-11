@@ -78,6 +78,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetIpFilters())
+            {
+                context.Writer.WritePropertyName("IpFilters");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectIpFiltersListValue in requestObject.IpFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfIpFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIpFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetMapFilters())
             {
                 context.Writer.WritePropertyName("MapFilters");
@@ -88,6 +104,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                     var marshaller = OcsfMapFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectMapFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetNestedCompositeFilters())
+            {
+                context.Writer.WritePropertyName("NestedCompositeFilters");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectNestedCompositeFiltersListValue in requestObject.NestedCompositeFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CompositeFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNestedCompositeFiltersListValue, context);
 
                     context.Writer.WriteEndObject();
                 }

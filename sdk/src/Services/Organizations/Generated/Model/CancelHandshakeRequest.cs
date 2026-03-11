@@ -31,19 +31,17 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelHandshake operation.
-    /// Cancels a handshake. Canceling a handshake sets the handshake state to <c>CANCELED</c>.
+    /// Cancels a <a>Handshake</a>.
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the account that originated the handshake.
-    /// The recipient of the handshake can't cancel it, but can use <a>DeclineHandshake</a>
-    /// instead. After a handshake is canceled, the recipient can no longer respond to that
-    /// handshake.
+    /// Only the account that sent a handshake can call this operation. The recipient of the
+    /// handshake can't cancel it, but can use <a>DeclineHandshake</a> to decline. After a
+    /// handshake is canceled, the recipient can no longer respond to the handshake.
     /// </para>
     ///  
     /// <para>
-    /// After you cancel a handshake, it continues to appear in the results of relevant APIs
-    /// for only 30 days. After that, it's deleted.
+    /// You can view canceled handshakes in API responses for 30 days before they are deleted.
     /// </para>
     /// </summary>
     public partial class CancelHandshakeRequest : AmazonOrganizationsRequest
@@ -53,8 +51,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property HandshakeId. 
         /// <para>
-        /// The unique identifier (ID) of the handshake that you want to cancel. You can get the
-        /// ID from the <a>ListHandshakesForOrganization</a> operation.
+        /// ID for the handshake that you want to cancel. You can get the ID from the <a>ListHandshakesForOrganization</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>

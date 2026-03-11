@@ -45,6 +45,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
     {
 
         /// <summary>
+        /// Default constructor for TimestampOutOfBoundsException
+        /// message.
+        /// </summary>
+        public TimestampOutOfBoundsException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TimestampOutOfBoundsException with the specified error
         /// message.
         /// </summary>

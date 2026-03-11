@@ -40,6 +40,13 @@ namespace Amazon.Polly.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSnsTopicArnException
+        /// message.
+        /// </summary>
+        public InvalidSnsTopicArnException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSnsTopicArnException with the specified error
         /// message.
         /// </summary>

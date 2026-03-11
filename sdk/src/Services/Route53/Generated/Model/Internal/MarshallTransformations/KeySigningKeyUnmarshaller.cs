@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeySigningKey Object
     /// </summary>  
-    public class KeySigningKeyUnmarshaller : IXmlUnmarshaller<KeySigningKey, XmlUnmarshallerContext>
+    public partial class KeySigningKeyUnmarshaller : IXmlUnmarshaller<KeySigningKey, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -152,6 +152,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -160,6 +162,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, KeySigningKey unmarshalledObject, int targetDepth);
+
         private static KeySigningKeyUnmarshaller _instance = new KeySigningKeyUnmarshaller();        
 
         /// <summary>

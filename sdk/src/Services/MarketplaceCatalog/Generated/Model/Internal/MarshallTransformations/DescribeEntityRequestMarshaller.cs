@@ -62,9 +62,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.Catalog))
+                throw new AmazonMarketplaceCatalogException("Request object does not have required field Catalog set");
             
             if (publicRequest.IsSetCatalog())
                 request.Parameters.Add("catalog", StringUtils.FromString(publicRequest.Catalog));
+            if (string.IsNullOrEmpty(publicRequest.EntityId))
+                throw new AmazonMarketplaceCatalogException("Request object does not have required field EntityId set");
             
             if (publicRequest.IsSetEntityId())
                 request.Parameters.Add("entityId", StringUtils.FromString(publicRequest.EntityId));

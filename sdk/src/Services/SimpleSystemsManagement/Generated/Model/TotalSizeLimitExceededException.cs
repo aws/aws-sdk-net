@@ -39,6 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for TotalSizeLimitExceededException
+        /// message.
+        /// </summary>
+        public TotalSizeLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TotalSizeLimitExceededException with the specified error
         /// message.
         /// </summary>

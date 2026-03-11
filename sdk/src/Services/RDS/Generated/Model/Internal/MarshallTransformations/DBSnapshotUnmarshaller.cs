@@ -55,6 +55,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdditionalStorageVolumes/member", targetDepth))
+                    {
+                        var unmarshaller = AdditionalStorageVolumeUnmarshaller.Instance;
+                        if (unmarshalledObject.AdditionalStorageVolumes == null)
+                        {
+                            unmarshalledObject.AdditionalStorageVolumes = new List<AdditionalStorageVolume>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalStorageVolumes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -65,6 +76,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("BackupRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBInstanceIdentifier", targetDepth))
@@ -187,6 +204,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PreferredBackupWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreferredBackupWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ProcessorFeatures/ProcessorFeature", targetDepth))
                     {
                         var unmarshaller = ProcessorFeatureUnmarshaller.Instance;
@@ -244,6 +267,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncryptionType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StorageThroughput", targetDepth))

@@ -42,9 +42,29 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeploymentLifecycleHook
     {
+        private Amazon.Runtime.Documents.Document _hookDetails;
         private string _hookTargetArn;
         private List<string> _lifecycleStages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property HookDetails. 
+        /// <para>
+        /// Use this field to specify custom parameters that Amazon ECS will pass to your hook
+        /// target invocations (such as a Lambda function).
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document HookDetails
+        {
+            get { return this._hookDetails; }
+            set { this._hookDetails = value; }
+        }
+
+        // Check to see if HookDetails property is set
+        internal bool IsSetHookDetails()
+        {
+            return !this._hookDetails.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property HookTargetArn. 

@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UnsupportedUpstreamRegistryException
+        /// message.
+        /// </summary>
+        public UnsupportedUpstreamRegistryException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnsupportedUpstreamRegistryException with the specified error
         /// message.
         /// </summary>

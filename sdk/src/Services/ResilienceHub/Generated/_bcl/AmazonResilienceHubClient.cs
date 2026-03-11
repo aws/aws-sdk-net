@@ -295,7 +295,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AcceptResourceGroupingRecommendations">REST API Reference for AcceptResourceGroupingRecommendations Operation</seealso>
         public virtual AcceptResourceGroupingRecommendationsResponse AcceptResourceGroupingRecommendations(AcceptResourceGroupingRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptResourceGroupingRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptResourceGroupingRecommendationsResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AcceptResourceGroupingRecommendations">REST API Reference for AcceptResourceGroupingRecommendations Operation</seealso>
         public virtual Task<AcceptResourceGroupingRecommendationsResponse> AcceptResourceGroupingRecommendationsAsync(AcceptResourceGroupingRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptResourceGroupingRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptResourceGroupingRecommendationsResponseUnmarshaller.Instance;
             
@@ -389,7 +389,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AddDraftAppVersionResourceMappings">REST API Reference for AddDraftAppVersionResourceMappings Operation</seealso>
         public virtual AddDraftAppVersionResourceMappingsResponse AddDraftAppVersionResourceMappings(AddDraftAppVersionResourceMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddDraftAppVersionResourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddDraftAppVersionResourceMappingsResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AddDraftAppVersionResourceMappings">REST API Reference for AddDraftAppVersionResourceMappings Operation</seealso>
         public virtual Task<AddDraftAppVersionResourceMappingsResponse> AddDraftAppVersionResourceMappingsAsync(AddDraftAppVersionResourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddDraftAppVersionResourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddDraftAppVersionResourceMappingsResponseUnmarshaller.Instance;
             
@@ -482,7 +482,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus">REST API Reference for BatchUpdateRecommendationStatus Operation</seealso>
         public virtual BatchUpdateRecommendationStatusResponse BatchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateRecommendationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateRecommendationStatusResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus">REST API Reference for BatchUpdateRecommendationStatus Operation</seealso>
         public virtual Task<BatchUpdateRecommendationStatusResponse> BatchUpdateRecommendationStatusAsync(BatchUpdateRecommendationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateRecommendationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateRecommendationStatusResponseUnmarshaller.Instance;
             
@@ -587,7 +587,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
             
@@ -711,7 +711,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionAppComponent">REST API Reference for CreateAppVersionAppComponent Operation</seealso>
         public virtual CreateAppVersionAppComponentResponse CreateAppVersionAppComponent(CreateAppVersionAppComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppVersionAppComponentResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionAppComponent">REST API Reference for CreateAppVersionAppComponent Operation</seealso>
         public virtual Task<CreateAppVersionAppComponentResponse> CreateAppVersionAppComponentAsync(CreateAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppVersionAppComponentResponseUnmarshaller.Instance;
             
@@ -837,7 +837,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionResource">REST API Reference for CreateAppVersionResource Operation</seealso>
         public virtual CreateAppVersionResourceResponse CreateAppVersionResource(CreateAppVersionResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppVersionResourceResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionResource">REST API Reference for CreateAppVersionResource Operation</seealso>
         public virtual Task<CreateAppVersionResourceResponse> CreateAppVersionResourceAsync(CreateAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppVersionResourceResponseUnmarshaller.Instance;
             
@@ -955,7 +955,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateRecommendationTemplate">REST API Reference for CreateRecommendationTemplate Operation</seealso>
         public virtual CreateRecommendationTemplateResponse CreateRecommendationTemplate(CreateRecommendationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecommendationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecommendationTemplateResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateRecommendationTemplate">REST API Reference for CreateRecommendationTemplate Operation</seealso>
         public virtual Task<CreateRecommendationTemplateResponse> CreateRecommendationTemplateAsync(CreateRecommendationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecommendationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecommendationTemplateResponseUnmarshaller.Instance;
             
@@ -1062,7 +1062,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateResiliencyPolicy">REST API Reference for CreateResiliencyPolicy Operation</seealso>
         public virtual CreateResiliencyPolicyResponse CreateResiliencyPolicy(CreateResiliencyPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResiliencyPolicyResponseUnmarshaller.Instance;
 
@@ -1119,7 +1119,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateResiliencyPolicy">REST API Reference for CreateResiliencyPolicy Operation</seealso>
         public virtual Task<CreateResiliencyPolicyResponse> CreateResiliencyPolicyAsync(CreateResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResiliencyPolicyResponseUnmarshaller.Instance;
             
@@ -1160,7 +1160,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
             
@@ -1246,7 +1246,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppAssessment">REST API Reference for DeleteAppAssessment Operation</seealso>
         public virtual DeleteAppAssessmentResponse DeleteAppAssessment(DeleteAppAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppAssessmentResponseUnmarshaller.Instance;
 
@@ -1291,7 +1291,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppAssessment">REST API Reference for DeleteAppAssessment Operation</seealso>
         public virtual Task<DeleteAppAssessmentResponse> DeleteAppAssessmentAsync(DeleteAppAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppAssessmentResponseUnmarshaller.Instance;
             
@@ -1337,7 +1337,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppInputSource">REST API Reference for DeleteAppInputSource Operation</seealso>
         public virtual DeleteAppInputSourceResponse DeleteAppInputSource(DeleteAppInputSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInputSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInputSourceResponseUnmarshaller.Instance;
 
@@ -1382,7 +1382,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppInputSource">REST API Reference for DeleteAppInputSource Operation</seealso>
         public virtual Task<DeleteAppInputSourceResponse> DeleteAppInputSourceAsync(DeleteAppInputSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInputSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInputSourceResponseUnmarshaller.Instance;
             
@@ -1440,7 +1440,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionAppComponent">REST API Reference for DeleteAppVersionAppComponent Operation</seealso>
         public virtual DeleteAppVersionAppComponentResponse DeleteAppVersionAppComponent(DeleteAppVersionAppComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppVersionAppComponentResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionAppComponent">REST API Reference for DeleteAppVersionAppComponent Operation</seealso>
         public virtual Task<DeleteAppVersionAppComponentResponse> DeleteAppVersionAppComponentAsync(DeleteAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppVersionAppComponentResponseUnmarshaller.Instance;
             
@@ -1559,7 +1559,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionResource">REST API Reference for DeleteAppVersionResource Operation</seealso>
         public virtual DeleteAppVersionResourceResponse DeleteAppVersionResource(DeleteAppVersionResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppVersionResourceResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionResource">REST API Reference for DeleteAppVersionResource Operation</seealso>
         public virtual Task<DeleteAppVersionResourceResponse> DeleteAppVersionResourceAsync(DeleteAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppVersionResourceResponseUnmarshaller.Instance;
             
@@ -1659,7 +1659,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteRecommendationTemplate">REST API Reference for DeleteRecommendationTemplate Operation</seealso>
         public virtual DeleteRecommendationTemplateResponse DeleteRecommendationTemplate(DeleteRecommendationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommendationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommendationTemplateResponseUnmarshaller.Instance;
 
@@ -1697,7 +1697,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteRecommendationTemplate">REST API Reference for DeleteRecommendationTemplate Operation</seealso>
         public virtual Task<DeleteRecommendationTemplateResponse> DeleteRecommendationTemplateAsync(DeleteRecommendationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommendationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommendationTemplateResponseUnmarshaller.Instance;
             
@@ -1742,7 +1742,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteResiliencyPolicy">REST API Reference for DeleteResiliencyPolicy Operation</seealso>
         public virtual DeleteResiliencyPolicyResponse DeleteResiliencyPolicy(DeleteResiliencyPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResiliencyPolicyResponseUnmarshaller.Instance;
 
@@ -1786,7 +1786,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteResiliencyPolicy">REST API Reference for DeleteResiliencyPolicy Operation</seealso>
         public virtual Task<DeleteResiliencyPolicyResponse> DeleteResiliencyPolicyAsync(DeleteResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResiliencyPolicyResponseUnmarshaller.Instance;
             
@@ -1825,7 +1825,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual DescribeAppResponse DescribeApp(DescribeAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual Task<DescribeAppResponse> DescribeAppAsync(DescribeAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppResponseUnmarshaller.Instance;
             
@@ -1902,7 +1902,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppAssessment">REST API Reference for DescribeAppAssessment Operation</seealso>
         public virtual DescribeAppAssessmentResponse DescribeAppAssessment(DescribeAppAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppAssessmentResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppAssessment">REST API Reference for DescribeAppAssessment Operation</seealso>
         public virtual Task<DescribeAppAssessmentResponse> DescribeAppAssessmentAsync(DescribeAppAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppAssessmentResponseUnmarshaller.Instance;
             
@@ -1979,7 +1979,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersion">REST API Reference for DescribeAppVersion Operation</seealso>
         public virtual DescribeAppVersionResponse DescribeAppVersion(DescribeAppVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersion">REST API Reference for DescribeAppVersion Operation</seealso>
         public virtual Task<DescribeAppVersionResponse> DescribeAppVersionAsync(DescribeAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionResponseUnmarshaller.Instance;
             
@@ -2062,7 +2062,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionAppComponent">REST API Reference for DescribeAppVersionAppComponent Operation</seealso>
         public virtual DescribeAppVersionAppComponentResponse DescribeAppVersionAppComponent(DescribeAppVersionAppComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionAppComponentResponseUnmarshaller.Instance;
 
@@ -2106,7 +2106,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionAppComponent">REST API Reference for DescribeAppVersionAppComponent Operation</seealso>
         public virtual Task<DescribeAppVersionAppComponentResponse> DescribeAppVersionAppComponentAsync(DescribeAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionAppComponentResponseUnmarshaller.Instance;
             
@@ -2170,7 +2170,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResource">REST API Reference for DescribeAppVersionResource Operation</seealso>
         public virtual DescribeAppVersionResourceResponse DescribeAppVersionResource(DescribeAppVersionResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionResourceResponseUnmarshaller.Instance;
 
@@ -2233,7 +2233,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResource">REST API Reference for DescribeAppVersionResource Operation</seealso>
         public virtual Task<DescribeAppVersionResourceResponse> DescribeAppVersionResourceAsync(DescribeAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionResourceResponseUnmarshaller.Instance;
             
@@ -2274,7 +2274,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResourcesResolutionStatus">REST API Reference for DescribeAppVersionResourcesResolutionStatus Operation</seealso>
         public virtual DescribeAppVersionResourcesResolutionStatusResponse DescribeAppVersionResourcesResolutionStatus(DescribeAppVersionResourcesResolutionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionResourcesResolutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionResourcesResolutionStatusResponseUnmarshaller.Instance;
 
@@ -2314,7 +2314,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResourcesResolutionStatus">REST API Reference for DescribeAppVersionResourcesResolutionStatus Operation</seealso>
         public virtual Task<DescribeAppVersionResourcesResolutionStatusResponse> DescribeAppVersionResourcesResolutionStatusAsync(DescribeAppVersionResourcesResolutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionResourcesResolutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionResourcesResolutionStatusResponseUnmarshaller.Instance;
             
@@ -2353,7 +2353,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionTemplate">REST API Reference for DescribeAppVersionTemplate Operation</seealso>
         public virtual DescribeAppVersionTemplateResponse DescribeAppVersionTemplate(DescribeAppVersionTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionTemplateResponseUnmarshaller.Instance;
 
@@ -2391,7 +2391,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionTemplate">REST API Reference for DescribeAppVersionTemplate Operation</seealso>
         public virtual Task<DescribeAppVersionTemplateResponse> DescribeAppVersionTemplateAsync(DescribeAppVersionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppVersionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppVersionTemplateResponseUnmarshaller.Instance;
             
@@ -2439,7 +2439,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeDraftAppVersionResourcesImportStatus">REST API Reference for DescribeDraftAppVersionResourcesImportStatus Operation</seealso>
         public virtual DescribeDraftAppVersionResourcesImportStatusResponse DescribeDraftAppVersionResourcesImportStatus(DescribeDraftAppVersionResourcesImportStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDraftAppVersionResourcesImportStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDraftAppVersionResourcesImportStatusResponseUnmarshaller.Instance;
 
@@ -2486,7 +2486,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeDraftAppVersionResourcesImportStatus">REST API Reference for DescribeDraftAppVersionResourcesImportStatus Operation</seealso>
         public virtual Task<DescribeDraftAppVersionResourcesImportStatusResponse> DescribeDraftAppVersionResourcesImportStatusAsync(DescribeDraftAppVersionResourcesImportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDraftAppVersionResourcesImportStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDraftAppVersionResourcesImportStatusResponseUnmarshaller.Instance;
             
@@ -2525,7 +2525,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeMetricsExport">REST API Reference for DescribeMetricsExport Operation</seealso>
         public virtual DescribeMetricsExportResponse DescribeMetricsExport(DescribeMetricsExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricsExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricsExportResponseUnmarshaller.Instance;
 
@@ -2563,7 +2563,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeMetricsExport">REST API Reference for DescribeMetricsExport Operation</seealso>
         public virtual Task<DescribeMetricsExportResponse> DescribeMetricsExportAsync(DescribeMetricsExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricsExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricsExportResponseUnmarshaller.Instance;
             
@@ -2604,7 +2604,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResiliencyPolicy">REST API Reference for DescribeResiliencyPolicy Operation</seealso>
         public virtual DescribeResiliencyPolicyResponse DescribeResiliencyPolicy(DescribeResiliencyPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResiliencyPolicyResponseUnmarshaller.Instance;
 
@@ -2644,7 +2644,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResiliencyPolicy">REST API Reference for DescribeResiliencyPolicy Operation</seealso>
         public virtual Task<DescribeResiliencyPolicyResponse> DescribeResiliencyPolicyAsync(DescribeResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResiliencyPolicyResponseUnmarshaller.Instance;
             
@@ -2684,7 +2684,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResourceGroupingRecommendationTask">REST API Reference for DescribeResourceGroupingRecommendationTask Operation</seealso>
         public virtual DescribeResourceGroupingRecommendationTaskResponse DescribeResourceGroupingRecommendationTask(DescribeResourceGroupingRecommendationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceGroupingRecommendationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResourceGroupingRecommendationTask">REST API Reference for DescribeResourceGroupingRecommendationTask Operation</seealso>
         public virtual Task<DescribeResourceGroupingRecommendationTaskResponse> DescribeResourceGroupingRecommendationTaskAsync(DescribeResourceGroupingRecommendationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceGroupingRecommendationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
             
@@ -2776,7 +2776,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ImportResourcesToDraftAppVersion">REST API Reference for ImportResourcesToDraftAppVersion Operation</seealso>
         public virtual ImportResourcesToDraftAppVersionResponse ImportResourcesToDraftAppVersion(ImportResourcesToDraftAppVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportResourcesToDraftAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportResourcesToDraftAppVersionResponseUnmarshaller.Instance;
 
@@ -2828,7 +2828,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ImportResourcesToDraftAppVersion">REST API Reference for ImportResourcesToDraftAppVersion Operation</seealso>
         public virtual Task<ImportResourcesToDraftAppVersionResponse> ImportResourcesToDraftAppVersionAsync(ImportResourcesToDraftAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportResourcesToDraftAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportResourcesToDraftAppVersionResponseUnmarshaller.Instance;
             
@@ -2867,7 +2867,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAlarmRecommendations">REST API Reference for ListAlarmRecommendations Operation</seealso>
         public virtual ListAlarmRecommendationsResponse ListAlarmRecommendations(ListAlarmRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmRecommendationsResponseUnmarshaller.Instance;
 
@@ -2905,7 +2905,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAlarmRecommendations">REST API Reference for ListAlarmRecommendations Operation</seealso>
         public virtual Task<ListAlarmRecommendationsResponse> ListAlarmRecommendationsAsync(ListAlarmRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmRecommendationsResponseUnmarshaller.Instance;
             
@@ -2941,7 +2941,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">REST API Reference for ListAppAssessmentComplianceDrifts Operation</seealso>
         public virtual ListAppAssessmentComplianceDriftsResponse ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAssessmentComplianceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAssessmentComplianceDriftsResponseUnmarshaller.Instance;
 
@@ -2976,7 +2976,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">REST API Reference for ListAppAssessmentComplianceDrifts Operation</seealso>
         public virtual Task<ListAppAssessmentComplianceDriftsResponse> ListAppAssessmentComplianceDriftsAsync(ListAppAssessmentComplianceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAssessmentComplianceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAssessmentComplianceDriftsResponseUnmarshaller.Instance;
             
@@ -3012,7 +3012,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">REST API Reference for ListAppAssessmentResourceDrifts Operation</seealso>
         public virtual ListAppAssessmentResourceDriftsResponse ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAssessmentResourceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAssessmentResourceDriftsResponseUnmarshaller.Instance;
 
@@ -3047,7 +3047,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">REST API Reference for ListAppAssessmentResourceDrifts Operation</seealso>
         public virtual Task<ListAppAssessmentResourceDriftsResponse> ListAppAssessmentResourceDriftsAsync(ListAppAssessmentResourceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAssessmentResourceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAssessmentResourceDriftsResponseUnmarshaller.Instance;
             
@@ -3087,7 +3087,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessments">REST API Reference for ListAppAssessments Operation</seealso>
         public virtual ListAppAssessmentsResponse ListAppAssessments(ListAppAssessmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAssessmentsResponseUnmarshaller.Instance;
 
@@ -3126,7 +3126,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessments">REST API Reference for ListAppAssessments Operation</seealso>
         public virtual Task<ListAppAssessmentsResponse> ListAppAssessmentsAsync(ListAppAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAssessmentsResponseUnmarshaller.Instance;
             
@@ -3165,7 +3165,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentCompliances">REST API Reference for ListAppComponentCompliances Operation</seealso>
         public virtual ListAppComponentCompliancesResponse ListAppComponentCompliances(ListAppComponentCompliancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppComponentCompliancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppComponentCompliancesResponseUnmarshaller.Instance;
 
@@ -3203,7 +3203,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentCompliances">REST API Reference for ListAppComponentCompliances Operation</seealso>
         public virtual Task<ListAppComponentCompliancesResponse> ListAppComponentCompliancesAsync(ListAppComponentCompliancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppComponentCompliancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppComponentCompliancesResponseUnmarshaller.Instance;
             
@@ -3242,7 +3242,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentRecommendations">REST API Reference for ListAppComponentRecommendations Operation</seealso>
         public virtual ListAppComponentRecommendationsResponse ListAppComponentRecommendations(ListAppComponentRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppComponentRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppComponentRecommendationsResponseUnmarshaller.Instance;
 
@@ -3280,7 +3280,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentRecommendations">REST API Reference for ListAppComponentRecommendations Operation</seealso>
         public virtual Task<ListAppComponentRecommendationsResponse> ListAppComponentRecommendationsAsync(ListAppComponentRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppComponentRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppComponentRecommendationsResponseUnmarshaller.Instance;
             
@@ -3321,7 +3321,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppInputSources">REST API Reference for ListAppInputSources Operation</seealso>
         public virtual ListAppInputSourcesResponse ListAppInputSources(ListAppInputSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInputSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInputSourcesResponseUnmarshaller.Instance;
 
@@ -3361,7 +3361,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppInputSources">REST API Reference for ListAppInputSources Operation</seealso>
         public virtual Task<ListAppInputSourcesResponse> ListAppInputSourcesAsync(ListAppInputSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInputSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInputSourcesResponseUnmarshaller.Instance;
             
@@ -3410,7 +3410,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual ListAppsResponse ListApps(ListAppsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
 
@@ -3458,7 +3458,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
             
@@ -3503,7 +3503,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionAppComponents">REST API Reference for ListAppVersionAppComponents Operation</seealso>
         public virtual ListAppVersionAppComponentsResponse ListAppVersionAppComponents(ListAppVersionAppComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionAppComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionAppComponentsResponseUnmarshaller.Instance;
 
@@ -3547,7 +3547,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionAppComponents">REST API Reference for ListAppVersionAppComponents Operation</seealso>
         public virtual Task<ListAppVersionAppComponentsResponse> ListAppVersionAppComponentsAsync(ListAppVersionAppComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionAppComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionAppComponentsResponseUnmarshaller.Instance;
             
@@ -3588,7 +3588,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResourceMappings">REST API Reference for ListAppVersionResourceMappings Operation</seealso>
         public virtual ListAppVersionResourceMappingsResponse ListAppVersionResourceMappings(ListAppVersionResourceMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionResourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionResourceMappingsResponseUnmarshaller.Instance;
 
@@ -3628,7 +3628,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResourceMappings">REST API Reference for ListAppVersionResourceMappings Operation</seealso>
         public virtual Task<ListAppVersionResourceMappingsResponse> ListAppVersionResourceMappingsAsync(ListAppVersionResourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionResourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionResourceMappingsResponseUnmarshaller.Instance;
             
@@ -3673,7 +3673,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResources">REST API Reference for ListAppVersionResources Operation</seealso>
         public virtual ListAppVersionResourcesResponse ListAppVersionResources(ListAppVersionResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionResourcesResponseUnmarshaller.Instance;
 
@@ -3717,7 +3717,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResources">REST API Reference for ListAppVersionResources Operation</seealso>
         public virtual Task<ListAppVersionResourcesResponse> ListAppVersionResourcesAsync(ListAppVersionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionResourcesResponseUnmarshaller.Instance;
             
@@ -3752,7 +3752,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersions">REST API Reference for ListAppVersions Operation</seealso>
         public virtual ListAppVersionsResponse ListAppVersions(ListAppVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionsResponseUnmarshaller.Instance;
 
@@ -3786,7 +3786,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersions">REST API Reference for ListAppVersions Operation</seealso>
         public virtual Task<ListAppVersionsResponse> ListAppVersionsAsync(ListAppVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppVersionsResponseUnmarshaller.Instance;
             
@@ -3822,7 +3822,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual ListMetricsResponse ListMetrics(ListMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
 
@@ -3857,7 +3857,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
             
@@ -3893,7 +3893,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListRecommendationTemplates">REST API Reference for ListRecommendationTemplates Operation</seealso>
         public virtual ListRecommendationTemplatesResponse ListRecommendationTemplates(ListRecommendationTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationTemplatesResponseUnmarshaller.Instance;
 
@@ -3928,7 +3928,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListRecommendationTemplates">REST API Reference for ListRecommendationTemplates Operation</seealso>
         public virtual Task<ListRecommendationTemplatesResponse> ListRecommendationTemplatesAsync(ListRecommendationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationTemplatesResponseUnmarshaller.Instance;
             
@@ -3967,7 +3967,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResiliencyPolicies">REST API Reference for ListResiliencyPolicies Operation</seealso>
         public virtual ListResiliencyPoliciesResponse ListResiliencyPolicies(ListResiliencyPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResiliencyPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResiliencyPoliciesResponseUnmarshaller.Instance;
 
@@ -4005,7 +4005,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResiliencyPolicies">REST API Reference for ListResiliencyPolicies Operation</seealso>
         public virtual Task<ListResiliencyPoliciesResponse> ListResiliencyPoliciesAsync(ListResiliencyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResiliencyPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResiliencyPoliciesResponseUnmarshaller.Instance;
             
@@ -4044,7 +4044,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResourceGroupingRecommendations">REST API Reference for ListResourceGroupingRecommendations Operation</seealso>
         public virtual ListResourceGroupingRecommendationsResponse ListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceGroupingRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceGroupingRecommendationsResponseUnmarshaller.Instance;
 
@@ -4082,7 +4082,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResourceGroupingRecommendations">REST API Reference for ListResourceGroupingRecommendations Operation</seealso>
         public virtual Task<ListResourceGroupingRecommendationsResponse> ListResourceGroupingRecommendationsAsync(ListResourceGroupingRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceGroupingRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceGroupingRecommendationsResponseUnmarshaller.Instance;
             
@@ -4128,7 +4128,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSopRecommendations">REST API Reference for ListSopRecommendations Operation</seealso>
         public virtual ListSopRecommendationsResponse ListSopRecommendations(ListSopRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSopRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSopRecommendationsResponseUnmarshaller.Instance;
 
@@ -4173,7 +4173,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSopRecommendations">REST API Reference for ListSopRecommendations Operation</seealso>
         public virtual Task<ListSopRecommendationsResponse> ListSopRecommendationsAsync(ListSopRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSopRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSopRecommendationsResponseUnmarshaller.Instance;
             
@@ -4212,7 +4212,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSuggestedResiliencyPolicies">REST API Reference for ListSuggestedResiliencyPolicies Operation</seealso>
         public virtual ListSuggestedResiliencyPoliciesResponse ListSuggestedResiliencyPolicies(ListSuggestedResiliencyPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuggestedResiliencyPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuggestedResiliencyPoliciesResponseUnmarshaller.Instance;
 
@@ -4250,7 +4250,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSuggestedResiliencyPolicies">REST API Reference for ListSuggestedResiliencyPolicies Operation</seealso>
         public virtual Task<ListSuggestedResiliencyPoliciesResponse> ListSuggestedResiliencyPoliciesAsync(ListSuggestedResiliencyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuggestedResiliencyPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuggestedResiliencyPoliciesResponseUnmarshaller.Instance;
             
@@ -4289,7 +4289,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4327,7 +4327,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -4372,7 +4372,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTestRecommendations">REST API Reference for ListTestRecommendations Operation</seealso>
         public virtual ListTestRecommendationsResponse ListTestRecommendations(ListTestRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRecommendationsResponseUnmarshaller.Instance;
 
@@ -4416,7 +4416,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTestRecommendations">REST API Reference for ListTestRecommendations Operation</seealso>
         public virtual Task<ListTestRecommendationsResponse> ListTestRecommendationsAsync(ListTestRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRecommendationsResponseUnmarshaller.Instance;
             
@@ -4463,7 +4463,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListUnsupportedAppVersionResources">REST API Reference for ListUnsupportedAppVersionResources Operation</seealso>
         public virtual ListUnsupportedAppVersionResourcesResponse ListUnsupportedAppVersionResources(ListUnsupportedAppVersionResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUnsupportedAppVersionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUnsupportedAppVersionResourcesResponseUnmarshaller.Instance;
 
@@ -4509,7 +4509,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListUnsupportedAppVersionResources">REST API Reference for ListUnsupportedAppVersionResources Operation</seealso>
         public virtual Task<ListUnsupportedAppVersionResourcesResponse> ListUnsupportedAppVersionResourcesAsync(ListUnsupportedAppVersionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUnsupportedAppVersionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUnsupportedAppVersionResourcesResponseUnmarshaller.Instance;
             
@@ -4554,7 +4554,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PublishAppVersion">REST API Reference for PublishAppVersion Operation</seealso>
         public virtual PublishAppVersionResponse PublishAppVersion(PublishAppVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishAppVersionResponseUnmarshaller.Instance;
 
@@ -4598,7 +4598,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PublishAppVersion">REST API Reference for PublishAppVersion Operation</seealso>
         public virtual Task<PublishAppVersionResponse> PublishAppVersionAsync(PublishAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishAppVersionResponseUnmarshaller.Instance;
             
@@ -4643,7 +4643,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PutDraftAppVersionTemplate">REST API Reference for PutDraftAppVersionTemplate Operation</seealso>
         public virtual PutDraftAppVersionTemplateResponse PutDraftAppVersionTemplate(PutDraftAppVersionTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDraftAppVersionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDraftAppVersionTemplateResponseUnmarshaller.Instance;
 
@@ -4687,7 +4687,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PutDraftAppVersionTemplate">REST API Reference for PutDraftAppVersionTemplate Operation</seealso>
         public virtual Task<PutDraftAppVersionTemplateResponse> PutDraftAppVersionTemplateAsync(PutDraftAppVersionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDraftAppVersionTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDraftAppVersionTemplateResponseUnmarshaller.Instance;
             
@@ -4726,7 +4726,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RejectResourceGroupingRecommendations">REST API Reference for RejectResourceGroupingRecommendations Operation</seealso>
         public virtual RejectResourceGroupingRecommendationsResponse RejectResourceGroupingRecommendations(RejectResourceGroupingRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectResourceGroupingRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectResourceGroupingRecommendationsResponseUnmarshaller.Instance;
 
@@ -4764,7 +4764,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RejectResourceGroupingRecommendations">REST API Reference for RejectResourceGroupingRecommendations Operation</seealso>
         public virtual Task<RejectResourceGroupingRecommendationsResponse> RejectResourceGroupingRecommendationsAsync(RejectResourceGroupingRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectResourceGroupingRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectResourceGroupingRecommendationsResponseUnmarshaller.Instance;
             
@@ -4809,7 +4809,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RemoveDraftAppVersionResourceMappings">REST API Reference for RemoveDraftAppVersionResourceMappings Operation</seealso>
         public virtual RemoveDraftAppVersionResourceMappingsResponse RemoveDraftAppVersionResourceMappings(RemoveDraftAppVersionResourceMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveDraftAppVersionResourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveDraftAppVersionResourceMappingsResponseUnmarshaller.Instance;
 
@@ -4853,7 +4853,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RemoveDraftAppVersionResourceMappings">REST API Reference for RemoveDraftAppVersionResourceMappings Operation</seealso>
         public virtual Task<RemoveDraftAppVersionResourceMappingsResponse> RemoveDraftAppVersionResourceMappingsAsync(RemoveDraftAppVersionResourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveDraftAppVersionResourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveDraftAppVersionResourceMappingsResponseUnmarshaller.Instance;
             
@@ -4898,7 +4898,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResolveAppVersionResources">REST API Reference for ResolveAppVersionResources Operation</seealso>
         public virtual ResolveAppVersionResourcesResponse ResolveAppVersionResources(ResolveAppVersionResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveAppVersionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveAppVersionResourcesResponseUnmarshaller.Instance;
 
@@ -4942,7 +4942,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResolveAppVersionResources">REST API Reference for ResolveAppVersionResources Operation</seealso>
         public virtual Task<ResolveAppVersionResourcesResponse> ResolveAppVersionResourcesAsync(ResolveAppVersionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveAppVersionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveAppVersionResourcesResponseUnmarshaller.Instance;
             
@@ -4992,7 +4992,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartAppAssessment">REST API Reference for StartAppAssessment Operation</seealso>
         public virtual StartAppAssessmentResponse StartAppAssessment(StartAppAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAppAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAppAssessmentResponseUnmarshaller.Instance;
 
@@ -5041,7 +5041,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartAppAssessment">REST API Reference for StartAppAssessment Operation</seealso>
         public virtual Task<StartAppAssessmentResponse> StartAppAssessmentAsync(StartAppAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAppAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAppAssessmentResponseUnmarshaller.Instance;
             
@@ -5088,7 +5088,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartMetricsExport">REST API Reference for StartMetricsExport Operation</seealso>
         public virtual StartMetricsExportResponse StartMetricsExport(StartMetricsExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetricsExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetricsExportResponseUnmarshaller.Instance;
 
@@ -5134,7 +5134,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartMetricsExport">REST API Reference for StartMetricsExport Operation</seealso>
         public virtual Task<StartMetricsExportResponse> StartMetricsExportAsync(StartMetricsExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetricsExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetricsExportResponseUnmarshaller.Instance;
             
@@ -5179,7 +5179,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartResourceGroupingRecommendationTask">REST API Reference for StartResourceGroupingRecommendationTask Operation</seealso>
         public virtual StartResourceGroupingRecommendationTaskResponse StartResourceGroupingRecommendationTask(StartResourceGroupingRecommendationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceGroupingRecommendationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
 
@@ -5223,7 +5223,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartResourceGroupingRecommendationTask">REST API Reference for StartResourceGroupingRecommendationTask Operation</seealso>
         public virtual Task<StartResourceGroupingRecommendationTaskResponse> StartResourceGroupingRecommendationTaskAsync(StartResourceGroupingRecommendationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceGroupingRecommendationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceGroupingRecommendationTaskResponseUnmarshaller.Instance;
             
@@ -5262,7 +5262,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5300,7 +5300,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5339,7 +5339,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5377,7 +5377,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -5422,7 +5422,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
 
@@ -5466,7 +5466,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
             
@@ -5519,7 +5519,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersion">REST API Reference for UpdateAppVersion Operation</seealso>
         public virtual UpdateAppVersionResponse UpdateAppVersion(UpdateAppVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppVersionResponseUnmarshaller.Instance;
 
@@ -5571,7 +5571,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersion">REST API Reference for UpdateAppVersion Operation</seealso>
         public virtual Task<UpdateAppVersionResponse> UpdateAppVersionAsync(UpdateAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppVersionResponseUnmarshaller.Instance;
             
@@ -5624,7 +5624,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionAppComponent">REST API Reference for UpdateAppVersionAppComponent Operation</seealso>
         public virtual UpdateAppVersionAppComponentResponse UpdateAppVersionAppComponent(UpdateAppVersionAppComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppVersionAppComponentResponseUnmarshaller.Instance;
 
@@ -5676,7 +5676,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionAppComponent">REST API Reference for UpdateAppVersionAppComponent Operation</seealso>
         public virtual Task<UpdateAppVersionAppComponentResponse> UpdateAppVersionAppComponentAsync(UpdateAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppVersionAppComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppVersionAppComponentResponseUnmarshaller.Instance;
             
@@ -5743,7 +5743,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionResource">REST API Reference for UpdateAppVersionResource Operation</seealso>
         public virtual UpdateAppVersionResourceResponse UpdateAppVersionResource(UpdateAppVersionResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppVersionResourceResponseUnmarshaller.Instance;
 
@@ -5809,7 +5809,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionResource">REST API Reference for UpdateAppVersionResource Operation</seealso>
         public virtual Task<UpdateAppVersionResourceResponse> UpdateAppVersionResourceAsync(UpdateAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppVersionResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppVersionResourceResponseUnmarshaller.Instance;
             
@@ -5865,7 +5865,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateResiliencyPolicy">REST API Reference for UpdateResiliencyPolicy Operation</seealso>
         public virtual UpdateResiliencyPolicyResponse UpdateResiliencyPolicy(UpdateResiliencyPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResiliencyPolicyResponseUnmarshaller.Instance;
 
@@ -5920,7 +5920,7 @@ namespace Amazon.ResilienceHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateResiliencyPolicy">REST API Reference for UpdateResiliencyPolicy Operation</seealso>
         public virtual Task<UpdateResiliencyPolicyResponse> UpdateResiliencyPolicyAsync(UpdateResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResiliencyPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResiliencyPolicyResponseUnmarshaller.Instance;
             

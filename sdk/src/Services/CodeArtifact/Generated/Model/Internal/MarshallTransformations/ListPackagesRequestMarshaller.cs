@@ -62,6 +62,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCodeArtifactException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
@@ -86,6 +88,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPublish())
                 request.Parameters.Add("publish", StringUtils.FromString(publicRequest.Publish));
+            if (string.IsNullOrEmpty(publicRequest.Repository))
+                throw new AmazonCodeArtifactException("Request object does not have required field Repository set");
             
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));

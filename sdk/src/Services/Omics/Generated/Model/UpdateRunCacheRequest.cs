@@ -31,7 +31,17 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRunCache operation.
-    /// Update a run cache.
+    /// Updates a run cache using its ID and returns a response with no body if the operation
+    /// is successful. You can update the run cache description, name, or the default run
+    /// cache behavior with <c>CACHE_ON_FAILURE</c> or <c>CACHE_ALWAYS</c>. To confirm that
+    /// your run cache settings have been properly updated, use the <c>GetRunCache</c> API
+    /// operation.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html">How
+    /// call caching works</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class UpdateRunCacheRequest : AmazonOmicsRequest
     {

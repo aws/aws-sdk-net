@@ -65,6 +65,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonKafkaException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonKafkaException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

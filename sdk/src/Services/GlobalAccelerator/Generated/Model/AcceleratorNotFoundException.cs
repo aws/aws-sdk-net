@@ -39,6 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
     {
 
         /// <summary>
+        /// Default constructor for AcceleratorNotFoundException
+        /// message.
+        /// </summary>
+        public AcceleratorNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new AcceleratorNotFoundException with the specified error
         /// message.
         /// </summary>

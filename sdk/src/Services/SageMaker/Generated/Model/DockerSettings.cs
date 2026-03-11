@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class DockerSettings
     {
         private FeatureStatus _enableDockerAccess;
+        private FeatureStatus _rootlessDocker;
         private List<string> _vpcOnlyTrustedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableDockerAccess()
         {
             return this._enableDockerAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootlessDocker. 
+        /// <para>
+        /// Indicates whether to use rootless Docker.
+        /// </para>
+        /// </summary>
+        public FeatureStatus RootlessDocker
+        {
+            get { return this._rootlessDocker; }
+            set { this._rootlessDocker = value; }
+        }
+
+        // Check to see if RootlessDocker property is set
+        internal bool IsSetRootlessDocker()
+        {
+            return this._rootlessDocker != null;
         }
 
         /// <summary>

@@ -31,11 +31,13 @@ namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecommendationResources operation.
-    /// List Resources of a Recommendation
+    /// List Resources of a Recommendation. This API provides global recommendations, eliminating
+    /// the need to call the API in each AWS Region.
     /// </summary>
     public partial class ListRecommendationResourcesRequest : AmazonTrustedAdvisorRequest
     {
         private ExclusionStatus _exclusionStatus;
+        private RecommendationLanguage _language;
         private int? _maxResults;
         private string _nextToken;
         private string _recommendationIdentifier;
@@ -61,12 +63,30 @@ namespace Amazon.TrustedAdvisor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The ISO 639-1 code for the language that you want your recommendations to appear in.
+        /// </para>
+        /// </summary>
+        public RecommendationLanguage Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=1, Max=5000)]
         public int? MaxResults
         {
             get { return this._maxResults; }

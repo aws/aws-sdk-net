@@ -40,6 +40,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidSigningStatusException
+        /// message.
+        /// </summary>
+        public InvalidSigningStatusException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidSigningStatusException with the specified error
         /// message.
         /// </summary>

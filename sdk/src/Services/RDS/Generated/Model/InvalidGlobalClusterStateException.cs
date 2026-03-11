@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidGlobalClusterStateException
+        /// message.
+        /// </summary>
+        public InvalidGlobalClusterStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidGlobalClusterStateException with the specified error
         /// message.
         /// </summary>

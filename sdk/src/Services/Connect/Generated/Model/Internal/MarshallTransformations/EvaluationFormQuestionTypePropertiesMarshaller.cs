@@ -46,6 +46,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMultiSelect())
+            {
+                context.Writer.WritePropertyName("MultiSelect");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormMultiSelectQuestionPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiSelect, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetNumeric())
             {
                 context.Writer.WritePropertyName("Numeric");
@@ -64,6 +75,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
                 var marshaller = EvaluationFormSingleSelectQuestionPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SingleSelect, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetText())
+            {
+                context.Writer.WritePropertyName("Text");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormTextQuestionPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Text, context);
 
                 context.Writer.WriteEndObject();
             }

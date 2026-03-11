@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDomainConflictsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/domain-conflicts";
 
@@ -66,7 +67,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDomain())
                     xmlWriter.WriteElementString("Domain", StringUtils.FromString(publicRequest.Domain));
 
-                if (publicRequest.DomainControlValidationResource != null)
+                if (publicRequest.IsSetDomainControlValidationResource())
                 {
                     xmlWriter.WriteStartElement("DomainControlValidationResource");
                     if(publicRequest.DomainControlValidationResource.IsSetDistributionId())
@@ -84,6 +85,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -95,8 +97,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static ListDomainConflictsRequestMarshaller _instance = new ListDomainConflictsRequestMarshaller();        
@@ -118,5 +118,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDomainConflictsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDomainConflictsRequest publicRequest);
     }    
 }

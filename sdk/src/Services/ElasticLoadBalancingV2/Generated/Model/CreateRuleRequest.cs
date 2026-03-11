@@ -36,11 +36,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Each rule consists of a priority, one or more actions, and one or more conditions.
-    /// Rules are evaluated in priority order, from the lowest value to the highest value.
-    /// When the conditions for a rule are met, its actions are performed. If the conditions
-    /// for no rules are met, the actions for the default rule are performed. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+    /// Each rule consists of a priority, one or more actions, one or more conditions, and
+    /// up to two optional transforms. Rules are evaluated in priority order, from the lowest
+    /// value to the highest value. When the conditions for a rule are met, its actions are
+    /// performed. If the conditions for no rules are met, the actions for the default rule
+    /// are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
     /// rules</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     /// </summary>
@@ -51,6 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _listenerArn;
         private int? _priority;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<RuleTransform> _transforms = AWSConfigs.InitializeCollections ? new List<RuleTransform>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -160,6 +161,30 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Transforms. 
+        /// <para>
+        /// The transforms to apply to requests that match this rule. You can add one host header
+        /// rewrite transform and one URL rewrite transform.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RuleTransform> Transforms
+        {
+            get { return this._transforms; }
+            set { this._transforms = value; }
+        }
+
+        // Check to see if Transforms property is set
+        internal bool IsSetTransforms()
+        {
+            return this._transforms != null && (this._transforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

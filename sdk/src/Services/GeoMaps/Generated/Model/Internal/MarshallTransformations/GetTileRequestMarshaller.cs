@@ -75,6 +75,9 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
                 throw new AmazonGeoMapsException("Request object does not have required field Z set");
             request.AddPathResource("{Z}", StringUtils.FromString(publicRequest.Z));
             
+            if (publicRequest.IsSetAdditionalFeatures())
+                request.ParameterCollection.Add("additional-features", publicRequest.AdditionalFeatures);
+            
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/tiles/{Tileset}/{Z}/{X}/{Y}";

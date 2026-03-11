@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutAccessGrantsInstanceResourcePolicy operation
     /// </summary>  
-    public class PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             PutAccessGrantsInstanceResourcePolicyResponse response = new PutAccessGrantsInstanceResourcePolicyResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -89,7 +90,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -115,6 +115,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutAccessGrantsInstanceResourcePolicyResponse response);
 
         private static PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller _instance = new PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller();        
 

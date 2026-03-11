@@ -39,6 +39,13 @@ namespace Amazon.SQS.Model
     {
 
         /// <summary>
+        /// Default constructor for KmsNotFoundException
+        /// message.
+        /// </summary>
+        public KmsNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new KmsNotFoundException with the specified error
         /// message.
         /// </summary>

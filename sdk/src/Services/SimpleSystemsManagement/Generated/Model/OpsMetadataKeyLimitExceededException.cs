@@ -40,6 +40,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
 
         /// <summary>
+        /// Default constructor for OpsMetadataKeyLimitExceededException
+        /// message.
+        /// </summary>
+        public OpsMetadataKeyLimitExceededException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new OpsMetadataKeyLimitExceededException with the specified error
         /// message.
         /// </summary>

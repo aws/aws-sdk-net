@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

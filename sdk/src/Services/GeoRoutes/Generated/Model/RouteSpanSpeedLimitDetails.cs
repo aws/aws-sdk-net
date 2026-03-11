@@ -52,7 +52,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>KilometersPerHour</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double? MaxSpeed
         {
             get { return this._maxSpeed; }
@@ -71,6 +71,7 @@ namespace Amazon.GeoRoutes.Model
         /// If the span doesn't have a speed limit like the Autobahn.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? Unlimited
         {
             get { return this._unlimited; }

@@ -118,9 +118,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationMode. 
         /// <para>
-        /// The mode of an evaluation. The valid values for this API are <c>DETECTIVE</c> and
-        /// <c>PROACTIVE</c>.
+        /// The mode of an evaluation.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only valid value for this API is <c>PROACTIVE</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public EvaluationMode EvaluationMode

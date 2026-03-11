@@ -136,6 +136,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("targetWorkerCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

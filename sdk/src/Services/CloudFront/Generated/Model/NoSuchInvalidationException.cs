@@ -39,6 +39,13 @@ namespace Amazon.CloudFront.Model
     {
 
         /// <summary>
+        /// Default constructor for NoSuchInvalidationException
+        /// message.
+        /// </summary>
+        public NoSuchInvalidationException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new NoSuchInvalidationException with the specified error
         /// message.
         /// </summary>

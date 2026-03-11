@@ -31,7 +31,9 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchPutDataQualityStatisticAnnotation operation.
-    /// Annotate datapoints over time for a specific data quality statistic.
+    /// Annotate datapoints over time for a specific data quality statistic. The API requires
+    /// both profileID and statisticID as part of the InclusionAnnotation input. The API only
+    /// works for a single statisticId across multiple profiles.
     /// </summary>
     public partial class BatchPutDataQualityStatisticAnnotationRequest : AmazonGlueRequest
     {
@@ -60,7 +62,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property InclusionAnnotations. 
         /// <para>
-        /// A list of <c>DatapointInclusionAnnotation</c>'s.
+        /// A list of <c>DatapointInclusionAnnotation</c>'s. The InclusionAnnotations must contain
+        /// a profileId and statisticId. If there are multiple InclusionAnnotations, the list
+        /// must refer to a single statisticId across multiple profileIds.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

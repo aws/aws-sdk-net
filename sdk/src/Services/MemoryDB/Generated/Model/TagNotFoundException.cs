@@ -30,13 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified tag does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class TagNotFoundException : AmazonMemoryDBException
     {
+
+        /// <summary>
+        /// Default constructor for TagNotFoundException
+        /// message.
+        /// </summary>
+        public TagNotFoundException() 
+            : base() {}
 
         /// <summary>
         /// Constructs a new TagNotFoundException with the specified error

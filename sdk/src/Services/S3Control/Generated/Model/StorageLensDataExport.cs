@@ -37,6 +37,7 @@ namespace Amazon.S3Control.Model
     {
         private CloudWatchMetrics _cloudWatchMetrics;
         private S3BucketDestination _s3BucketDestination;
+        private StorageLensTableDestination _storageLensTableDestination;
 
         /// <summary>
         /// Gets and sets the property CloudWatchMetrics. 
@@ -78,6 +79,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetS3BucketDestination()
         {
             return this._s3BucketDestination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageLensTableDestination. 
+        /// <para>
+        /// A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.
+        /// </para>
+        /// </summary>
+        public StorageLensTableDestination StorageLensTableDestination
+        {
+            get { return this._storageLensTableDestination; }
+            set { this._storageLensTableDestination = value; }
+        }
+
+        // Check to see if StorageLensTableDestination property is set
+        internal bool IsSetStorageLensTableDestination()
+        {
+            return this._storageLensTableDestination != null;
         }
 
     }

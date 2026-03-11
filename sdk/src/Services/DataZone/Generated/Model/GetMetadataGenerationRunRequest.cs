@@ -32,11 +32,30 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the GetMetadataGenerationRun operation.
     /// Gets a metadata generation run in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Valid domain and run identifier. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The metadata generation run must exist.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have read access to the metadata run.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetMetadataGenerationRunRequest : AmazonDataZoneRequest
     {
         private string _domainIdentifier;
         private string _identifier;
+        private MetadataGenerationRunType _type;
 
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
@@ -75,6 +94,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the metadata generation run.
+        /// </para>
+        /// </summary>
+        public MetadataGenerationRunType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

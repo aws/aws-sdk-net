@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for IndexNotReadyException
+        /// message.
+        /// </summary>
+        public IndexNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new IndexNotReadyException with the specified error
         /// message.
         /// </summary>

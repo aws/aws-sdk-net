@@ -50,6 +50,7 @@ namespace Amazon.AutoScaling.Model
     public partial class CancelInstanceRefreshRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private bool? _waitForTransitioningInstances;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -68,6 +69,30 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitForTransitioningInstances. 
+        /// <para>
+        /// When cancelling an instance refresh, this indicates whether to wait for in-flight
+        /// launches and terminations to complete. The default is true.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to false, Amazon EC2 Auto Scaling cancels the instance refresh without waiting
+        /// for any pending launches or terminations to complete.
+        /// </para>
+        /// </summary>
+        public bool? WaitForTransitioningInstances
+        {
+            get { return this._waitForTransitioningInstances; }
+            set { this._waitForTransitioningInstances = value; }
+        }
+
+        // Check to see if WaitForTransitioningInstances property is set
+        internal bool IsSetWaitForTransitioningInstances()
+        {
+            return this._waitForTransitioningInstances.HasValue; 
         }
 
     }

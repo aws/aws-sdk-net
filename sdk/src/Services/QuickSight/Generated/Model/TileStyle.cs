@@ -34,7 +34,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TileStyle
     {
+        private string _backgroundColor;
         private BorderStyle _border;
+        private string _borderRadius;
+        private string _padding;
+
+        /// <summary>
+        /// Gets and sets the property BackgroundColor. 
+        /// <para>
+        /// The background color of a tile.
+        /// </para>
+        /// </summary>
+        public string BackgroundColor
+        {
+            get { return this._backgroundColor; }
+            set { this._backgroundColor = value; }
+        }
+
+        // Check to see if BackgroundColor property is set
+        internal bool IsSetBackgroundColor()
+        {
+            return this._backgroundColor != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Border. 
@@ -52,6 +73,44 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBorder()
         {
             return this._border != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BorderRadius. 
+        /// <para>
+        /// The border radius of a tile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public string BorderRadius
+        {
+            get { return this._borderRadius; }
+            set { this._borderRadius = value; }
+        }
+
+        // Check to see if BorderRadius property is set
+        internal bool IsSetBorderRadius()
+        {
+            return this._borderRadius != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Padding. 
+        /// <para>
+        /// The padding of a tile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public string Padding
+        {
+            get { return this._padding; }
+            set { this._padding = value; }
+        }
+
+        // Check to see if Padding property is set
+        internal bool IsSetPadding()
+        {
+            return this._padding != null;
         }
 
     }

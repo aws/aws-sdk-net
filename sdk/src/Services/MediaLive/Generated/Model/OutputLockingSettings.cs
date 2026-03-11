@@ -34,8 +34,24 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class OutputLockingSettings
     {
+        private DisabledLockingSettings _disabledLockingSettings;
         private EpochLockingSettings _epochLockingSettings;
         private PipelineLockingSettings _pipelineLockingSettings;
+
+        /// <summary>
+        /// Gets and sets the property DisabledLockingSettings.
+        /// </summary>
+        public DisabledLockingSettings DisabledLockingSettings
+        {
+            get { return this._disabledLockingSettings; }
+            set { this._disabledLockingSettings = value; }
+        }
+
+        // Check to see if DisabledLockingSettings property is set
+        internal bool IsSetDisabledLockingSettings()
+        {
+            return this._disabledLockingSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EpochLockingSettings.

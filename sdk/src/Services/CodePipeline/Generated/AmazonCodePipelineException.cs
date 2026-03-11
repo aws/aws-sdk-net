@@ -36,6 +36,14 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Construct instance of AmazonCodePipelineException
         /// </summary>
+        public AmazonCodePipelineException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonCodePipelineException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonCodePipelineException(string message)
             : base(message)

@@ -31,7 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRunTasks operation.
-    /// Retrieves a list of tasks for a run.
+    /// Returns a list of tasks and status information within their specified run. Use this
+    /// operation to monitor runs and to identify which specific tasks have failed.
     /// </summary>
     public partial class ListRunTasksRequest : AmazonOmicsRequest
     {

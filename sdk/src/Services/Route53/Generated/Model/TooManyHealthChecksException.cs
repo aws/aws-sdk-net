@@ -58,6 +58,13 @@ namespace Amazon.Route53.Model
     {
 
         /// <summary>
+        /// Default constructor for TooManyHealthChecksException
+        /// message.
+        /// </summary>
+        public TooManyHealthChecksException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new TooManyHealthChecksException with the specified error
         /// message.
         /// </summary>

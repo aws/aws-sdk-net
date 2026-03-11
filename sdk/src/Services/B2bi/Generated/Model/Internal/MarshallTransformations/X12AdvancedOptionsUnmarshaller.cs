@@ -62,6 +62,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     unmarshalledObject.SplitOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("validationOptions", targetDepth))
+                {
+                    var unmarshaller = X12ValidationOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ValidationOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

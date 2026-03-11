@@ -74,6 +74,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnvironmentParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("environmentResolvedAccount", targetDepth))
+                {
+                    var unmarshaller = EnvironmentResolvedAccountUnmarshaller.Instance;
+                    unmarshalledObject.EnvironmentResolvedAccount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

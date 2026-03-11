@@ -328,7 +328,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates a web app based on specified parameters, and returns the ID for the new web
-        /// app.
+        /// app. You can configure the web app to be publicly accessible or hosted within a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -896,6 +902,15 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Describes the certificate that's identified by the <c>CertificateId</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Transfer Family automatically publishes a Amazon CloudWatch metric called <c>DaysUntilExpiry</c>
+        /// for imported certificates. This metric tracks the number of days until the certificate
+        /// expires based on the <c>InactiveDate</c>. The metric is available in the <c>AWS/Transfer</c>
+        /// namespace and includes the <c>CertificateId</c> as a dimension.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1181,7 +1196,15 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the web app that's identified by <c>WebAppId</c>.
+        /// Describes the web app that's identified by <c>WebAppId</c>. The response includes
+        /// endpoint configuration details such as whether the web app is publicly accessible
+        /// or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -1288,12 +1311,49 @@ namespace Amazon.Transfer
         /// <para>
         /// You can import both the certificate and its chain in the <c>Certificate</c> parameter.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// After importing a certificate, Transfer Family automatically creates a Amazon CloudWatch
+        /// metric called <c>DaysUntilExpiry</c> that tracks the number of days until the certificate
+        /// expires. The metric is based on the <c>InactiveDate</c> parameter and is published
+        /// daily in the <c>AWS/Transfer</c> namespace.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// It can take up to a full day after importing a certificate for Transfer Family to
+        /// emit the <c>DaysUntilExpiry</c> metric to your account.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// If you use the <c>Certificate</c> parameter to upload both the certificate and its
         /// chain, don't use the <c>CertificateChain</c> parameter.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  <b>CloudWatch monitoring</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>DaysUntilExpiry</c> metric includes the following specifications:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Units:</b> Count (days)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dimensions:</b> <c>CertificateId</c> (always present), <c>Description</c> (if
+        /// provided during certificate import)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Statistics:</b> Minimum, Maximum, Average
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Frequency:</b> Published daily
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1850,7 +1910,14 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Lists all web apps associated with your Amazon Web Services account for your current
-        /// region.
+        /// region. The response includes the endpoint type for each web app, showing whether
+        /// it is publicly accessible or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebApps service method.</param>
         /// <param name="cancellationToken">
@@ -2832,7 +2899,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Assigns new properties to a web app. You can modify the access point, identity provider
-        /// details, and the web app units.
+        /// details, endpoint configuration, and the web app units.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp service method.</param>
         /// <param name="cancellationToken">

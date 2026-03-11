@@ -39,6 +39,13 @@ namespace Amazon.WAF.Model
     {
 
         /// <summary>
+        /// Default constructor for WAFTagOperationInternalErrorException
+        /// message.
+        /// </summary>
+        public WAFTagOperationInternalErrorException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new WAFTagOperationInternalErrorException with the specified error
         /// message.
         /// </summary>

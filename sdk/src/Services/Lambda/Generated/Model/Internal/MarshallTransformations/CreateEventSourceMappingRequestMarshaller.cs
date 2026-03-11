@@ -63,7 +63,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/2015-03-31/event-source-mappings/";
+            request.ResourcePath = "/2015-03-31/event-source-mappings";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -162,6 +162,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("KMSKeyArn");
                 context.Writer.WriteStringValue(publicRequest.KMSKeyArn);
+            }
+
+            if(publicRequest.IsSetLoggingConfig())
+            {
+                context.Writer.WritePropertyName("LoggingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventSourceMappingLoggingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoggingConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetMaximumBatchingWindowInSeconds())

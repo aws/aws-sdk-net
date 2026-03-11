@@ -63,8 +63,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityBlockId. 
         /// <para>
-        /// The ID of the Capacity Block. This parameter is only supported for Ultraserver instances
-        /// and identifies instances within the Ultraserver domain.
+        /// The ID of the Capacity Block. This parameter is only supported for UltraServer instances
+        /// and identifies instances within the UltraServer domain.
         /// </para>
         /// </summary>
         public string CapacityBlockId
@@ -139,6 +139,19 @@ namespace Amazon.EC2.Model
         /// The network nodes. The nodes are hashed based on your account. Instances from different
         /// accounts running under the same server will return a different hashed list of strings.
         /// </para>
+        ///  
+        /// <para>
+        /// The value is <c>null</c> or empty if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The instance type is not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance is in a state other than <c>running</c>.
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

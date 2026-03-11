@@ -39,6 +39,13 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Default constructor for SqlParseException
+        /// message.
+        /// </summary>
+        public SqlParseException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new SqlParseException with the specified error
         /// message.
         /// </summary>

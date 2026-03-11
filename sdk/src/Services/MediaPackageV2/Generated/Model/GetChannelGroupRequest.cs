@@ -31,8 +31,7 @@ namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChannelGroup operation.
-    /// Retrieves the specified channel group that's configured in AWS Elemental MediaPackage,
-    /// including the channels and origin endpoints that are associated with it.
+    /// Retrieves the specified channel group that's configured in AWS Elemental MediaPackage.
     /// </summary>
     public partial class GetChannelGroupRequest : AmazonMediaPackageV2Request
     {

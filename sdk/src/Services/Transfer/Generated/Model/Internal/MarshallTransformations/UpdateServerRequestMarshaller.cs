@@ -115,6 +115,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetIdentityProviderType())
+            {
+                context.Writer.WritePropertyName("IdentityProviderType");
+                context.Writer.WriteStringValue(publicRequest.IdentityProviderType);
+            }
+
             if(publicRequest.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("IpAddressType");

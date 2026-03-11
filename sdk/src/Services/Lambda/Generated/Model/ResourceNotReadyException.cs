@@ -41,6 +41,13 @@ namespace Amazon.Lambda.Model
         private string _type;
 
         /// <summary>
+        /// Default constructor for ResourceNotReadyException
+        /// message.
+        /// </summary>
+        public ResourceNotReadyException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new ResourceNotReadyException with the specified error
         /// message.
         /// </summary>

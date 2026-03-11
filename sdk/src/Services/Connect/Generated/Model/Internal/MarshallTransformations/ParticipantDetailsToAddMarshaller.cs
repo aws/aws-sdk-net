@@ -52,6 +52,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
+            if(requestObject.IsSetParticipantCapabilities())
+            {
+                context.Writer.WritePropertyName("ParticipantCapabilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParticipantCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ParticipantCapabilities, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetParticipantRole())
             {
                 context.Writer.WritePropertyName("ParticipantRole");

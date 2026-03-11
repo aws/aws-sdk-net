@@ -40,6 +40,13 @@ namespace Amazon.ElastiCache.Model
     {
 
         /// <summary>
+        /// Default constructor for CacheSecurityGroupNotFoundException
+        /// message.
+        /// </summary>
+        public CacheSecurityGroupNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new CacheSecurityGroupNotFoundException with the specified error
         /// message.
         /// </summary>

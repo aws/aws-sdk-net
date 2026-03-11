@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FieldPatterns Object
     /// </summary>  
-    public class FieldPatternsUnmarshaller : IXmlUnmarshaller<FieldPatterns, XmlUnmarshallerContext>
+    public partial class FieldPatternsUnmarshaller : IXmlUnmarshaller<FieldPatterns, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, FieldPatterns unmarshalledObject, int targetDepth);
+
         private static FieldPatternsUnmarshaller _instance = new FieldPatternsUnmarshaller();        
 
         /// <summary>

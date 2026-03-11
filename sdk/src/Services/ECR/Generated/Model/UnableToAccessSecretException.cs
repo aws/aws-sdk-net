@@ -40,6 +40,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for UnableToAccessSecretException
+        /// message.
+        /// </summary>
+        public UnableToAccessSecretException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new UnableToAccessSecretException with the specified error
         /// message.
         /// </summary>

@@ -102,7 +102,8 @@ namespace Amazon.MediaConvert.Model
         /// LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2.
         /// HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates.
         /// HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio
-        /// at very low bitrates.
+        /// at very low bitrates. For improved audio quality at lower bitrates, adaptive audio
+        /// bitrate switching, and loudness control: Choose XHE.
         /// </summary>
         public AacCodecProfile CodecProfile
         {
@@ -124,7 +125,9 @@ namespace Amazon.MediaConvert.Model
         /// mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description
         /// data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0
         /// Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
-        /// C, L, R, Ls, Rs, LFE.
+        /// C, L, R, Ls, Rs, LFE. To follow the number of channels from your input audio, choose
+        /// CODING_MODE_AUTO, and the service will automatically choose from one of the coding
+        /// modes above.
         /// </summary>
         public AacCodingMode CodingMode
         {

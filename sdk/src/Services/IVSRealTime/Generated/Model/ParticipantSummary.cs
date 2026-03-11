@@ -178,7 +178,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property SourceStageArn. 
         /// <para>
-        /// ARN of the stage from which this participant is replicated.
+        /// Source stage ARN from which this participant is replicated, if <c>replicationType</c>
+        /// is <c>REPLICA</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

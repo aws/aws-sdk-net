@@ -39,6 +39,13 @@ namespace Amazon.ECR.Model
     {
 
         /// <summary>
+        /// Default constructor for RegistryPolicyNotFoundException
+        /// message.
+        /// </summary>
+        public RegistryPolicyNotFoundException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new RegistryPolicyNotFoundException with the specified error
         /// message.
         /// </summary>

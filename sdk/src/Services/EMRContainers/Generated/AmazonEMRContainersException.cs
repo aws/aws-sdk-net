@@ -36,6 +36,14 @@ namespace Amazon.EMRContainers
         /// <summary>
         /// Construct instance of AmazonEMRContainersException
         /// </summary>
+        public AmazonEMRContainersException()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Construct instance of AmazonEMRContainersException
+        /// </summary>
         /// <param name="message"></param>
         public AmazonEMRContainersException(string message)
             : base(message)

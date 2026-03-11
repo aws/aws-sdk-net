@@ -30,31 +30,37 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
     /// This command is for doing regular PutObject requests.
     /// </summary>
-    internal partial class SimpleUploadCommand : BaseCommand
+    internal partial class SimpleUploadCommand : BaseCommand<TransferUtilityUploadResponse>
     {
         IAmazonS3 _s3Client;
         TransferUtilityConfig _config;
         TransferUtilityUploadRequest _fileTransporterRequest;
+        long _totalTransferredBytes;
+        private readonly long _contentLength;
 
         internal SimpleUploadCommand(IAmazonS3 s3Client, TransferUtilityConfig config, TransferUtilityUploadRequest fileTransporterRequest)
         {
             this._s3Client = s3Client;
             this._config = config;
             this._fileTransporterRequest = fileTransporterRequest;
+            
+            // Cache content length immediately while stream is accessible to avoid ObjectDisposedException in failure scenarios
+            this._contentLength = this._fileTransporterRequest.ContentLength;
+            
             var fileName = fileTransporterRequest.FilePath;
         }
 
-        private PutObjectRequest ConstructRequest()
+        internal PutObjectRequest ConstructRequest()
         {
             PutObjectRequest putRequest = new PutObjectRequest()
             {
-                Headers = this._fileTransporterRequest.Headers,
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 CannedACL = this._fileTransporterRequest.CannedACL,
@@ -78,8 +84,33 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
+                ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
+                Grants = this._fileTransporterRequest.Grants,
+                ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
+                WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
+                Expires = this._fileTransporterRequest.Expires
             };
+            
+            // We are iterating over the Headers to avoid setting the Header from the Transfer utility upload request 
+            // to the PutObjectRequest since that will cause issues down the line.
+            // The AmazonS3PreMarshallHandler modifies the content type on the headers collection 
+            // which would impact other requests in a directory upload if the Headers were referenced.
+            if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
+            {
+                foreach (var headerKey in this._fileTransporterRequest.Headers.Keys)
+                {
+                    if (string.Equals(headerKey, HeaderKeys.ContentTypeHeader) && this._fileTransporterRequest.IsSetContentType())
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        putRequest.Headers[headerKey] = this._fileTransporterRequest.Headers[headerKey];
+                    }
+                }
+            }
 
             // Avoid setting ContentType to null, as that may clear
             // out an existing value in Headers collection
@@ -103,9 +134,48 @@ namespace Amazon.S3.Transfer.Internal
 
         private void PutObjectProgressEventCallback(object sender, UploadProgressArgs e)
         {
-            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, e.TransferredBytes, e.TotalBytes, 
-                e.CompensationForRetry, _fileTransporterRequest.FilePath);
+            // Keep track of the total transferred bytes so that we can also return this value in case of failure
+            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
+            
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, _contentLength, 
+                e.CompensationForRetry, _fileTransporterRequest.FilePath, _fileTransporterRequest);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+
+        private void FireTransferInitiatedEvent()
+        {
+            var initiatedArgs = new UploadInitiatedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferInitiatedEvent(initiatedArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityUploadResponse response)
+        {
+            var completedArgs = new UploadCompletedEventArgs(
+                request: _fileTransporterRequest,
+                response: response,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferCompletedEvent(completedArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var failedArgs = new UploadFailedEventArgs(
+                request: _fileTransporterRequest,
+                filePath: _fileTransporterRequest.FilePath,
+                transferredBytes: Interlocked.Read(ref _totalTransferredBytes),
+                totalBytes: _contentLength
+            );
+            
+            _fileTransporterRequest.OnRaiseTransferFailedEvent(failedArgs);
         }
     }
 }

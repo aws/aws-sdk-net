@@ -39,6 +39,13 @@ namespace Amazon.RDS.Model
     {
 
         /// <summary>
+        /// Default constructor for InvalidExportTaskStateException
+        /// message.
+        /// </summary>
+        public InvalidExportTaskStateException() 
+            : base() {}
+
+        /// <summary>
         /// Constructs a new InvalidExportTaskStateException with the specified error
         /// message.
         /// </summary>
